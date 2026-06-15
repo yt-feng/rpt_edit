@@ -1,0 +1,5140 @@
+[
+    {
+        "type": "text",
+        "text": "Global Music",
+        "text_level": 2,
+        "bbox": [
+            66,
+            130,
+            210,
+            148
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Global Music: The Long View - Super fan economics, why concerts are now BTS company's center of gravity",
+        "text_level": 1,
+        "bbox": [
+            66,
+            161,
+            921,
+            217
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/b8ad375b0246512b1fbe4fbb5dd81619b5666726693ecede3e52b7140c417fc1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            271,
+            122,
+            311
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Min-Joo Kang",
+        "bbox": [
+            138,
+            276,
+            230,
+            289
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+852 2123 2644",
+        "bbox": [
+            140,
+            290,
+            227,
+            300
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            140,
+            301,
+            290,
+            311
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/ac826548d3244c23b7a93c613c5d0d6d548556317ce22f48e303e4d692a4da5f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            321,
+            122,
+            364
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Robin Zhu",
+        "bbox": [
+            140,
+            327,
+            209,
+            338
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+852 2123 2659",
+        "bbox": [
+            140,
+            340,
+            230,
+            349
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "robin.zhu@bernsteinsg.com",
+        "bbox": [
+            140,
+            351,
+            277,
+            362
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/17180a6e173b94fec5f211729cf924279644635d2d094256ab7322de44b52d9a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            373,
+            122,
+            412
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ian Moore",
+        "bbox": [
+            140,
+            377,
+            207,
+            388
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1 917 344 8434",
+        "bbox": [
+            140,
+            390,
+            232,
+            400
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ian.moore@bernsteinsg.com",
+        "bbox": [
+            140,
+            401,
+            279,
+            412
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/51ab4587dac1b9bb7b2463ac5270caf0207a4f33a45b9a8717106923400b1ac3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            421,
+            122,
+            463
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "David Dai, CFA",
+        "bbox": [
+            140,
+            426,
+            238,
+            439
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+852 2918 5704",
+        "bbox": [
+            140,
+            440,
+            230,
+            450
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "david.dai@bernsteinsg.com",
+        "bbox": [
+            140,
+            450,
+            274,
+            462
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/519ac0ca45564eb47b4b8631d7146897b1086295960e8ffe46f560dffe371431.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            472,
+            122,
+            513
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Christophe Cherblanc",
+        "bbox": [
+            140,
+            477,
+            284,
+            489
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+41 582 723 540",
+        "bbox": [
+            140,
+            489,
+            232,
+            500
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "christophe.cherblanc@bernsteinsg.com",
+        "bbox": [
+            140,
+            501,
+            334,
+            512
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/fbba873dddac89faab40d669ad726c0e469ce03136ae42e6f28665a79340186f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            522,
+            122,
+            564
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Charles Gou",
+        "bbox": [
+            140,
+            527,
+            210,
+            537
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+852 2123 2618",
+        "bbox": [
+            140,
+            540,
+            230,
+            549
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "charles.gou@bernsteinsg.com",
+        "bbox": [
+            140,
+            551,
+            289,
+            561
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/a6f95904abf84b9ec6213f4c7e0c4605bae817900eef684459fd0ed18def8fdc.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            571,
+            122,
+            614
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Hyrum Caesar",
+        "bbox": [
+            140,
+            578,
+            220,
+            589
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+81 3 6777 6979",
+        "bbox": [
+            140,
+            590,
+            232,
+            599
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "hyrum.caesar@bernsteinsg.com",
+        "bbox": [
+            140,
+            601,
+            297,
+            611
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/5cddd6faddc106d0ec9690b43b593638760e4159311a5c328efc334beb5b0a34.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            623,
+            122,
+            664
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Nosher Ali Khan",
+        "bbox": [
+            140,
+            628,
+            230,
+            638
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1 917 344 8578",
+        "bbox": [
+            140,
+            640,
+            232,
+            648
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "nosher-ali.khan@bernsteinsg.com",
+        "bbox": [
+            140,
+            651,
+            307,
+            662
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/04dc687e0b7722044970ea87868981fe97412870fdedfab7d4bb964eadebba91.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            672,
+            122,
+            714
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jack Lin",
+        "bbox": [
+            140,
+            678,
+            187,
+            688
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+852 2123 2683",
+        "bbox": [
+            140,
+            690,
+            230,
+            700
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "jack.lin@bernsteinsg.com",
+        "bbox": [
+            140,
+            700,
+            266,
+            712
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/cf29dd95fb3d1f1500e7d93d331be2b768a0b55088d6570c59f8420af724c119.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            722,
+            122,
+            763
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Christopher Pancur",
+        "bbox": [
+            140,
+            728,
+            250,
+            739
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+44 20 7676 7280",
+        "bbox": [
+            140,
+            739,
+            238,
+            750
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "christopher.pancur@bernsteinsg.com",
+        "bbox": [
+            140,
+            751,
+            323,
+            762
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "K-pop has moved from a unit-driven business to a moment economy where fans spend less on albums and more on live, time-bound experiences with their artists. As the perceived value of emotional return per hour rises, concerts have become the natural center of gravity for industry monetization. Hybe demonstrates this shift at scale, using each show as a platform to monetize fandom across tickets, merch, and digital content.",
+        "bbox": [
+            356,
+            268,
+            921,
+            343
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "“Moment” economy: Concerts take the wheel in K-pop. K-pop fandom has shifted from buying albums to buying time with their artists, with spend increasingly flowing to live moments rather than physical units, built around monetizing real-time interaction between fans and artists. In this framework, concert revenue becomes the natural center of gravity for the industry’s profit pool as the model rotates from unit-based albums to platforms that can repeatedly monetize live, time-bound fan engagement at scale.",
+        "bbox": [
+            356,
+            357,
+            915,
+            446
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Fans paying for time: Why experiences beat physical goods. The perceived value of time is rising even as the real value of a dollar is squeezed, pushing consumers toward experiences that maximize their emotional return per hour. In K-pop, intense fandom, social signaling, and constant digital sharing mean a 2-3 hour show throws off months of residual value through clips, interactions with the artist, and ongoing community engagement, supporting ticket and bundle pricing that would look excessive for any standalone product.",
+        "bbox": [
+            356,
+            460,
+            918,
+            549
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Filling seats, owning screens: How Hybe monetizes every moment. Hybe has turned BTS fandom into hard crowd-pulling power, filling 50k-capacity venues and selling out 80+ shows, so that every night on tour seeds a high-margin online profit pool in streaming, buzz, and digital content. Its 300+ concerts over 50+ cities looks beyond a local label calendar. BTS's latest comeback crystallises the model: a new album, a physical comeback stage, and instant dominance on global platforms show how a single IP can move the content value chain, shift bargaining power to the IP owner, and monetize fan consumption across Spotify, Netflix, and beyond.",
+        "bbox": [
+            356,
+            561,
+            923,
+            681
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Monetizing the hype: Hybe's concert-plus-merch profit engine. Concert revenue is usually a low-margin business once you factor in staging costs and promoter revenue share, but large-fandom IPs flip that script. In Hybe's case, each show is treated as a monetization node for a full stack of revenue streams: tickets, VIP and soundcheck packages, tour-exclusive merch, fan club memberships, and digital content layered on top. Hybe also benefits from structurally higher margins, retaining a greater share of tour economics as its global scale reduces reliance on local promoters.",
+        "bbox": [
+            356,
+            695,
+            901,
+            799
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Streaming to Stadiums: Unlocking superfan lifetime value. K-pop superfan monetization is becoming a powerful flywheel for both Spotify and Live Nation, converting high-ARPU digital engagement directly into live revenue. These fans already spend heavily, making them ideal for Spotify's premium upsell, while tools like Reserved seamlessly channel them into concerts, where they drive above-average pricing and sell-through. Spotify monetizes the fan online, Live Nation monetizes them offline, and together they maximize lifetime value.",
+        "bbox": [
+            356,
+            811,
+            921,
+            915
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "LONG VIEW",
+        "bbox": [
+            532,
+            13,
+            633,
+            27
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            836,
+            13,
+            939,
+            30
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BERNSTEIN",
+        "bbox": [
+            66,
+            34,
+            292,
+            63
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "SG GROUP",
+        "bbox": [
+            66,
+            66,
+            292,
+            79
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See the Disclosure Appendix of this report for required disclosures, analyst certifications and other important information. Alternatively, visit our Global Research Disclosure Website.",
+        "bbox": [
+            65,
+            935,
+            699,
+            963
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "First Published: 14 Jun 2026 23:22 UTC Completion Date: 14 Jun 2026 23:22 UTC",
+        "bbox": [
+            66,
+            963,
+            584,
+            976
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "www.bernsteinresearch.com",
+        "bbox": [
+            777,
+            936,
+            918,
+            946
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/ff9a2cad6795e78ea4212b00dac6568e04874075eb6611be682350ef47ad0fe0.jpg",
+        "table_caption": [
+            "BERNSTEIN TICKER TABLE"
+        ],
+        "table_footnote": [
+            "O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended 352820.KS, UMG.NA estimate is Adjusted EPS; 352820.KS, UMG.NA valuation is Adjusted P/E (x); Source: Bloomberg, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Ticker</td><td rowspan=\"2\">Rating</td><td colspan=\"3\">12 Jun 2026</td><td rowspan=\"2\">TTMRel.</td><td colspan=\"4\">Reported EPS</td><td colspan=\"3\">Reported P/E (x)</td></tr><tr><td>Cur</td><td>Closing Price</td><td>Price Target</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>352820.KS (Hybe)</td><td>O</td><td>KRW</td><td>228,000</td><td>400,000</td><td>(63.7)%</td><td colspan=\"2\">KRW (5,713.11)</td><td>10,055</td><td>10,175</td><td>(39.9)</td><td>22.7</td><td>22.4</td></tr><tr><td>LYV (Live Nation)</td><td>O</td><td>USD</td><td>172.51</td><td>200.00</td><td>(0.9)%</td><td>USD</td><td>(0.24)</td><td>0.24</td><td>2.84</td><td>(729.5)</td><td>710.6</td><td>60.8</td></tr><tr><td>SPOT (Spotify )</td><td>O</td><td>USD</td><td>482.00</td><td>625.00</td><td>(54.3)%</td><td>EUR</td><td>10.51</td><td>12.78</td><td>16.16</td><td>39.7</td><td>32.6</td><td>25.8</td></tr><tr><td>6758.JP (Sony)</td><td>M</td><td>JPY</td><td>3,292.00</td><td>3,500.00</td><td>(52.6)%</td><td>JPY</td><td>171.30</td><td>198.75</td><td>207.66</td><td>19.2</td><td>16.6</td><td>15.9</td></tr><tr><td>SONY (Sony )</td><td>M</td><td>USD</td><td>20.53</td><td>22.00</td><td>(43.2)%</td><td>USD</td><td>1.08</td><td>1.25</td><td>1.30</td><td>19.1</td><td>16.4</td><td>15.7</td></tr><tr><td>UMG.NA (Universal Music)</td><td>O</td><td>EUR</td><td>17.76</td><td>29.00</td><td>(52.5)%</td><td>EUR</td><td>1.03</td><td>1.09</td><td>1.17</td><td>17.3</td><td>16.4</td><td>15.1</td></tr><tr><td>ASIAX</td><td></td><td></td><td>1,966.72</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>SPX</td><td></td><td></td><td>7,431.46</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>JPL</td><td></td><td></td><td>2,549.03</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>EDME</td><td></td><td></td><td>1,570.59</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            107,
+            98,
+            890,
+            297
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "INVESTMENT IMPLICATIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            354,
+            328,
+            369
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We rate Hybe (352820.KS) Outperform.",
+        "bbox": [
+            104,
+            386,
+            367,
+            400
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We rate SPOT & LYV Outperform.",
+        "bbox": [
+            104,
+            412,
+            323,
+            426
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We rate Sony Market-Perform with PT = ¥3,500.00.",
+        "bbox": [
+            104,
+            440,
+            444,
+            455
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We rate UMG Outperform.",
+        "bbox": [
+            104,
+            468,
+            279,
+            483
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            51
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            106,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "VALUATION COMPS TABLE",
+        "text_level": 2,
+        "bbox": [
+            104,
+            70,
+            308,
+            84
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/61176ef8119f90a6e0be0f1cffa3f8181dde69573773c87edaf5bc7659ecb8b5.jpg",
+        "table_caption": [
+            "EXHIBIT 1: Asia Internet: valuation summary"
+        ],
+        "table_footnote": [
+            "Pricing date June 12, 2026. The valuation multiples of our China and Asian Internet coverage are based on Bernstein estimates; the other companies shown reflect Bloomberg consensus estimates.",
+            "Source: Corporate reports, Bloomberg, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td></td><td>Rating</td><td>Price target</td><td>Last price</td><td>Crncy</td><td>Market cap (US$mn)</td><td>2026E</td><td>PE 2027E</td><td>2028E</td><td>2026E</td><td>EV/sales 2027E</td><td>2028E</td></tr><tr><td colspan=\"12\">China Internet coverage</td></tr><tr><td>Tencent</td><td>O</td><td>780</td><td>463.60</td><td>HKD</td><td>538,857</td><td>13.5x</td><td>11.6x</td><td>10.0x</td><td>4.4x</td><td>3.8x</td><td>3.3x</td></tr><tr><td>PDD</td><td>M</td><td>110</td><td>81.56</td><td>USD</td><td>116,092</td><td>7.5x</td><td>6.7x</td><td>6.0x</td><td>0.6x</td><td>0.4x</td><td>0.1x</td></tr><tr><td>Meituan</td><td>M</td><td>85</td><td>77.90</td><td>HKD</td><td>61,384</td><td>174.5x</td><td>16.2x</td><td>9.4x</td><td>0.8x</td><td>0.7x</td><td>0.6x</td></tr><tr><td>NetEase</td><td>O</td><td>150</td><td>125.82</td><td>USD</td><td>80,289</td><td>13.8x</td><td>12.9x</td><td>12.2x</td><td>3.3x</td><td>3.0x</td><td>2.8x</td></tr><tr><td>Boss Zhipin</td><td>O</td><td>18</td><td>13.70</td><td>USD</td><td>6,625</td><td>11.1x</td><td>9.2x</td><td>8.2x</td><td>2.6x</td><td>1.8x</td><td>1.3x</td></tr><tr><td>JD</td><td>O</td><td>40</td><td>28.56</td><td>USD</td><td>39,008</td><td>9.2x</td><td>6.8x</td><td>5.1x</td><td>0.2x</td><td>0.2x</td><td>0.2x</td></tr><tr><td>Alibaba</td><td>O</td><td>180</td><td>112.82</td><td>USD</td><td>270,670</td><td>28.3x</td><td>16.6x</td><td>14.1x</td><td>1.8x</td><td>1.7x</td><td>1.6x</td></tr><tr><td colspan=\"12\">China Internet other</td></tr><tr><td>Kuaishou</td><td></td><td></td><td>45.88</td><td>HKD</td><td>25,396</td><td>10.4x</td><td>9.2x</td><td>8.1x</td><td>1.0x</td><td>0.9x</td><td>0.9x</td></tr><tr><td>Bilibili</td><td></td><td></td><td>17.86</td><td>USD</td><td>7,591</td><td>17.3x</td><td>13.6x</td><td>10.5x</td><td>1.1x</td><td>1.0x</td><td>0.9x</td></tr><tr><td>TME</td><td></td><td></td><td>9.22</td><td>USD</td><td>15,319</td><td>9.5x</td><td>8.6x</td><td>7.8x</td><td>2.0x</td><td>1.8x</td><td>1.7x</td></tr><tr><td>Baidu</td><td></td><td></td><td>115.77</td><td>USD</td><td>39,391</td><td>15.6x</td><td>13.2x</td><td>10.6x</td><td>1.2x</td><td>1.1x</td><td>1.0x</td></tr><tr><td>VIPshop</td><td></td><td></td><td>13.92</td><td>USD</td><td>6,685</td><td>5.4x</td><td>5.2x</td><td>5.0x</td><td>0.2x</td><td>0.2x</td><td>0.2x</td></tr><tr><td>Tencent Music</td><td></td><td></td><td>9.22</td><td>USD</td><td>15,319</td><td>9.5x</td><td>8.6x</td><td>7.8x</td><td>2.0x</td><td>1.8x</td><td>1.7x</td></tr><tr><td>Trip.com</td><td></td><td></td><td>46.47</td><td>USD</td><td>29,262</td><td>11.3x</td><td>9.9x</td><td>8.8x</td><td>2.3x</td><td>2.0x</td><td>1.8x</td></tr><tr><td>KE Holdings</td><td></td><td></td><td>16.89</td><td>USD</td><td>19,547</td><td>19.3x</td><td>16.5x</td><td>16.5x</td><td>1.1x</td><td>1.1x</td><td>1.1x</td></tr><tr><td colspan=\"12\">Asian Internet</td></tr><tr><td>Naver</td><td>O</td><td>330,000</td><td>242,500</td><td>KRW</td><td>25,076</td><td>17.5x</td><td>15.9x</td><td>14.1x</td><td>1.9x</td><td>1.6x</td><td>1.4x</td></tr><tr><td>Kakao</td><td>O</td><td>80,000</td><td>40,900</td><td>KRW</td><td>11,910</td><td>23.0x</td><td>20.3x</td><td>16.7x</td><td>1.3x</td><td>1.0x</td><td>0.7x</td></tr><tr><td>Hybe</td><td>O</td><td>400,000</td><td>228,000</td><td>KRW</td><td>6,478</td><td>22.7x</td><td>22.4x</td><td>18.3x</td><td>1.5x</td><td>1.7x</td><td>1.4x</td></tr><tr><td>Coupang</td><td>U</td><td>12</td><td>16.82</td><td>USD</td><td>30,193</td><td>-45.9x</td><td>72.3x</td><td>36.4x</td><td>0.7x</td><td>0.6x</td><td>0.6x</td></tr><tr><td>Sea Ltd.</td><td></td><td></td><td>82.94</td><td>USD</td><td>50,799</td><td>22.2x</td><td>16.2x</td><td>12.9x</td><td>1.5x</td><td>1.2x</td><td>1.0x</td></tr><tr><td>Grab</td><td></td><td></td><td>3.30</td><td>USD</td><td>13,532</td><td>32.0x</td><td>21.4x</td><td>15.9x</td><td>2.3x</td><td>1.9x</td><td>1.6x</td></tr><tr><td colspan=\"12\">US Internet</td></tr><tr><td>Amazon</td><td></td><td></td><td>238.55</td><td>USD</td><td>2,566,108</td><td>23.1x</td><td>20.6x</td><td>16.8x</td><td>3.2x</td><td>2.8x</td><td>2.6x</td></tr><tr><td>Alphabet</td><td></td><td></td><td>359.68</td><td>USD</td><td>4,369,972</td><td>25.2x</td><td>23.6x</td><td>19.5x</td><td>10.3x</td><td>8.5x</td><td>7.2x</td></tr><tr><td>Meta</td><td></td><td></td><td>566.98</td><td>USD</td><td>1,439,235</td><td>16.0x</td><td>14.7x</td><td>12.2x</td><td>5.7x</td><td>4.8x</td><td>4.1x</td></tr><tr><td>Netflix</td><td></td><td></td><td>80.34</td><td>USD</td><td>338,296</td><td>22.6x</td><td>20.8x</td><td>17.5x</td><td>6.7x</td><td>6.0x</td><td>5.4x</td></tr><tr><td>Uber</td><td></td><td></td><td>68.85</td><td>USD</td><td>140,151</td><td>21.2x</td><td>15.4x</td><td>12.5x</td><td>2.5x</td><td>2.2x</td><td>1.9x</td></tr><tr><td>Spotify</td><td></td><td></td><td>482.00</td><td>USD</td><td>99,211</td><td>32.5x</td><td>26.4x</td><td>21.6x</td><td>4.0x</td><td>3.5x</td><td>3.1x</td></tr><tr><td>DoorDash</td><td></td><td></td><td>150.58</td><td>USD</td><td>65,611</td><td>32.3x</td><td>21.9x</td><td>17.0x</td><td>3.6x</td><td>3.0x</td><td>2.5x</td></tr></table>",
+        "bbox": [
+            104,
+            118,
+            888,
+            534
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "DETAILS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            70,
+            174,
+            84
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "SUPER FAN ECONOMICS, WHY CONCERTS ARE NOW K-POP'S CENTER OF GRAVITY",
+        "text_level": 2,
+        "bbox": [
+            102,
+            114,
+            736,
+            131
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "K-pop's first generation emerged in the 1990s, led by SM Entertainment, with flagship IPs such as H.O.T. and S.E.S. defining the early idol model. Fan engagement was largely physical - album collecting, cable TV viewership, and intimate fan meetings and concerts. BoA marked the first true breakout at a regional level, paving the way for broader expansion. By the second generation, the industry had deepened its talent bench, building a pipeline of skilled producers and tiered regional IPs. That said, monetization remained heavily skewed toward physical album sales, which continued to anchor K-pop consumption through this period.",
+        "bbox": [
+            102,
+            136,
+            890,
+            226
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Over the past two decades, as K-pop evolved from 1st to 3rd to 4th generation, K-pop fandom has shifted from buying albums to buying time with their artists, with spend now flowing to live “moments” rather than physical units. As the value of time rises, fans are willing to pay up for experiences, making concert revenue the natural center of gravity for the industry’s profit pool. We see this “moment economy” - monetizing real-time interaction between fandom and artists via concerts and live formats - as the core money-making engine of modern K-pop, with Hybe at the forefront of capturing that value. With BTS returning as a global IP, concert revenue is set to become Hybe’s key earnings driver in 2026-2027, shifting investor focus from unit-based models to platforms that can repeatedly monetize live, time-bound fan engagement at scale.",
+        "bbox": [
+            102,
+            239,
+            890,
+            344
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Fans paying for time... why experiences beat physical goods",
+        "text_level": 2,
+        "bbox": [
+            102,
+            359,
+            517,
+            375
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "As asset prices inflate, the true bottleneck is no longer capital - it is “time”. As time scarcity rises, its value compounds, while the relative value of physical goods declines. In this context, artist management is fundamentally about optimizing time: maximizing how artist hours are allocated and, more importantly, monetized.",
+        "bbox": [
+            102,
+            378,
+            885,
+            422
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "At the same time, fandom willingness to pay for access, interaction, and shared moments is structurally increasing. This is already evident at Hybe, where even newly incubated IPs are commanding concert ticket prices comparable to global-tier acts. The implication is clear: the priority is no longer just maximizing artist output, but fully monetizing every touchpoint between artist and fandom. Concerts sit at the core, but the opportunity extends across all live and semi-live interactions.",
+        "bbox": [
+            102,
+            436,
+            883,
+            494
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "This dynamic is reinforced by the rising “emotional return per hour.” In K-pop, a 2-3 hour concert does not end when the show finishes - it compounds through social sharing, fan content, and ongoing community engagement, effectively stretching a single event into months of monetizable value. This supports premium pricing not just for tickets, but for bundled experiences.",
+        "bbox": [
+            102,
+            508,
+            888,
+            554
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Hybe's BTS tour is a live case study: more than 80 global shows, every ticket sold, with scarcity turning each night into a prized \"slice\" of the artists' time that fans are eager to pay for. That willingness to buy the experience, layered on top of the scarcity of artist time, is driving a step-up in concert monetization and spilling into the online arena, as seen in the Arirang comeback where BTS took positions 1-14 on Spotify's global daily chart and the Netflix live special quickly hit the global no.1 spot.",
+        "bbox": [
+            102,
+            566,
+            888,
+            626
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Filling seats, owning screens...how Hybe monetizes every moment",
+        "text_level": 2,
+        "bbox": [
+            102,
+            641,
+            565,
+            656
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The global scaling of K-pop IP into franchise-level assets has laid the foundation for mainstream penetration. What began as a regional content export has evolved into a globally consumable live experience, with fandom expanding both geographically and in intensity. The data clearly points to a structural shift in monetization. Since 2015, industry revenue mix has steadily tilted toward concerts, with live events taking an increasing share of the profit pool through 2026E. This reweighting reflects a deeper behavioral change: fans are moving from product ownership to experience consumption, with concerts emerging as the core monetization layer.",
+        "bbox": [
+            102,
+            660,
+            887,
+            750
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "K-pop is now a meaningful force on the global touring stage. Its share of the Top 100 global tours is approaching \\~10%, underscoring both rising demand and increasing pricing power. This is no longer a niche category - K-pop is scaling within the global live entertainment ecosystem. Within this, Hybe is the clear market leader, commanding c.70% of K-pop concert revenue. Its scale advantage is translating into global positioning, effectively placing the company within a structurally expanding live market rather than a domestic idol industry. The post-2022 recovery marks a clear inflection. As global touring resumed, concert revenue has outpaced both album and digital growth, signaling that fandom expansion is increasingly monetized through live formats. This growth is not cyclical, but structural, driven by a larger and more engaged global fan base.",
+        "bbox": [
+            102,
+            763,
+            890,
+            868
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Importantly, the monetization opportunity is compounding. A more engaged \"super fan\" base is supporting higher spend per capita, opening incremental layers of IP monetization beyond ticket sales across merchandise, digital content, and ongoing",
+        "bbox": [
+            102,
+            881,
+            866,
+            912
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            880,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "engagement loops.",
+        "bbox": [
+            104,
+            71,
+            227,
+            85
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Hybe has operationalized this at scale. The company consistently fills 50k-capacity venues and executes high-density tour schedules, with over 80 sold-out shows and 279 concerts across 53 cities in 2024 alone. This cadence resembles a global promoter model. Each offline event acts as a demand engine, seeding high-margin digital monetization through streaming, social amplification, and content recycling.",
+        "bbox": [
+            102,
+            98,
+            859,
+            157
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "BTS represents the clearest expression of this model. Each comeback is orchestrated as a multi-platform global event: album release, live stage, and immediate chart dominance. The impact cascades across the value chain, reinforcing HYBE's bargaining power as an IP owner while driving simultaneous monetization across both offline and online channels.",
+        "bbox": [
+            102,
+            171,
+            888,
+            215
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The latest cycle illustrates the scalability. A full album sweep on global charts, paired with a Netflix live special and a global stadium tour, positions BTS as a repeatable touring franchise rather than a one-off act. With peak comeback revenue of \\~KRW 1.5tn and a resilient long tail from catalog and streaming, BTS anchors HYBE's live earnings engine and underwrites its medium-term growth visibility.",
+        "bbox": [
+            102,
+            229,
+            877,
+            287
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/355f205cb31200711042a589b658f755cdf9aaa782d811521bb68056a836fbf4.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 2: Over the past two decades, as K-pop evolved from 1st to 3rd to 4th generation, K-pop fandom has shifted from buying albums to buying time with their artists, with spend now flowing to live “moments” rather than physical units."
+        ],
+        "chart_footnote": [
+            "Note 1: Market size is based on our estimation. Note 2: \\*Founder of SM Entertainment, \\*\\* Founder of JYP, \\*\\*\\* Founder of HYBE (previously, Mr. Bang was JYP producer).",
+            "Source: Bernstein estimates and analysis."
+        ],
+        "sub_type": "table",
+        "bbox": [
+            109,
+            352,
+            888,
+            648
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            51
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            106,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/c6a895d775643986fc1d3d43b729e2c028e3004d7783a142d736c8138a32c8b8.jpg",
+        "image_caption": [
+            "EXHIBIT 3: Hybe has a clear strategic positioning and execution capability to scale in Western markets."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            112,
+            94,
+            877,
+            392
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- The K-pop training system and processes will be implemented in local markets to incubate new artists, enhancing localization efforts vs. end-to-end process in Korea (e.g. Hybe's Multi-home, Multi-genre strategy).",
+        "bbox": [
+            122,
+            316,
+            346,
+            391
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- K-pop companies organically gaining their popularity and bargaining power as global entertainment players and music platforms invest in K-pop music. (e.g. UMG has exclusive global distribution rights for Hybe's music)",
+        "bbox": [
+            372,
+            316,
+            598,
+            391
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- In order to attract larger scale of global fandom, new contents will be more focusing on western mainstream audiences with collaborative works with the foreign producers and artists.",
+        "bbox": [
+            638,
+            316,
+            851,
+            378
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Source: Bernstein analysis.",
+        "bbox": [
+            104,
+            409,
+            238,
+            422
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/403618f2d91a1c256e1ed17d2cad7cf105dd8cb415ca308d742e51adaeddf1d9.jpg",
+        "content": "2018-2030: K-pop market (gross revenue) sizing\n| Year | Hybe (KRW bn) | Others (KRW bn) | Growth YoY (%) |\n| :--- | :--- | :--- | :--- |\n| 2016 | 1000 | 1000 | 23 |\n| 2017 | 150 | 1200 | 19 |\n| 2018 | 300 | 1400 | 18 |\n| 2019 | 500 | 1600 | 26 |\n| 2020 | 700 | 1800 | 11 |\n| 2021 | 1200 | 2200 | 44 |\n| 2022 | 1700 | 2400 | 34 |\n| 2023 | 2100 | 2800 | 31 |\n| 2024 | 2200 | 2600 | -3 |\n| 2025 | 2600 | 3200 | 27 |\n| 2026E | 4000 | 3400 | 29 |\n| 2027E | 4600 | 3800 | 13 |\n| 2028E | 5300 | 4100 | 13 |",
+        "chart_caption": [
+            "EXHIBIT 4: K-pop is the most promising subsector within Korea's internet industry, driven by the global expansion of K-pop artists' large-scale international tours."
+        ],
+        "chart_footnote": [
+            "Source: Corporate reports, Bloomberg, Bernstein estimates and analysis."
+        ],
+        "sub_type": "bar-line hybrid",
+        "bbox": [
+            125,
+            479,
+            872,
+            739
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            51
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cfc67a43e02a0725ebf78ba9140f67cc89195d68ff268a7ffcc095c46e0710d1.jpg",
+        "content": "| Product           | Axis X: Youtube followers (m) | Global | Regional | Local |\n| ----------------- | ----------------------------- | ------ | -------- | ----- |\n| Blackpink (YG)    | 102                           | 39     | -        | -     |\n| BTS (Hybe)        | 84                            | 25     | -        | -     |\n| TWS (Hybe)        | 7                             | -      | -        | -     |\n| Le Sserafim (Hybe)| 16                            | -      | -        | -     |\n| Katseye (Hybe)    | 17                            | -      | -        | -     |\n| Seventeen (Hybe)  | 19                            | -      | -        | -     |\n| Tomorrow X Together (Hybe) | 22                        | -          | -        | -     |\n| ENHYPEN (Hybe)   | 13                            | -      | -        | -     |\n| &team (Hybe)     | 13                            | -      | -        | -     |\n| ILLIT (Hybe)      | 13                            | -      | -        | -     |\n| Cortis (Hybe)     | 7                             | -      | -        | -     |",
+        "chart_caption": [
+            "EXHIBIT 5: The rise of K-pop IPs into global franchises has laid the groundwork for the genre's penetration into mainstream global audiences.",
+            "Axis Y: Youtube Viewership (Billion times)"
+        ],
+        "chart_footnote": [
+            "Source: Youtube, Bernstein analysis."
+        ],
+        "sub_type": "scatterplot",
+        "bbox": [
+            112,
+            125,
+            888,
+            455
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/26b607526bdc32117dc5fdbcb081e2d90ee46e62f1ef8ce7700994fbfce49616.jpg",
+        "content": "| Year   | Album sales | Concert | Merchandising | Others |\n|--------|-------------|---------|---------------|--------|\n| 2016   | 36%         | 14%     | 27%           | 18%    |\n| 2017   | 41%         | 15%     | 25%           | 16%    |\n| 2018   | 45%         | 14%     | 23%           | 17%    |\n| 2019   | 37%         | 18%     | 24%           | 18%    |\n| 2020   | 48%         | 2%      | 23%           | 23%    |\n| 2021   | 44%         | 2%      | 21%           | 27%    |\n| 2022   | 40%         | 10%     | 20%           | 25%    |\n| 2023   | 46%         | 15%     | 15%           | 18%    |\n| 2024   | 41%         | 17%     | 18%           | 18%    |\n| 2025   | 34%         | 25%     | 19%           | 16%    |\n| 2026E  | 29%         | 33%     | 23%           | 13%    |\n| 2027E  | 30%         | 30%     | 23%           | 13%    |\n| 2028E  | 28%         | 35%     | 20%           | 13%    |\n| 2029E  | 26%         | 37%     | 19%           | 13%    |\n| 2030E  | 24%         | 40%     | 19%           | 13%    |",
+        "chart_caption": [
+            "EXHIBIT 6: Time series of K-pop industry revenue by segment highlighting concerts as an increasing share of total revenue, which we view as evidence of a shift in consumer IP consumption behavior."
+        ],
+        "chart_footnote": [
+            "Source: Corporate reports, Bloomberg, Bernstein estimates and analysis."
+        ],
+        "sub_type": "stacked bar chart",
+        "bbox": [
+            124,
+            540,
+            875,
+            806
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cf37a7b4009d22f0a3ba41bdafcf6436c1c76f3bda484b7fd57f8a44c940aa82.jpg",
+        "content": "| Year   | Album sales | Concert | Merchandising |\n| ------ | ----------- | ------- | ------------- |\n| 2018   | 40%         | 20%     | 5%            |\n| 2019   | 30%         | 55%     | 25%           |\n| 2020   | 30%         | -60%    | 40%           |\n| 2021   | 45%         | -60%    | 25%           |\n| 2022   | 35%         | 270%    | 30%           |\n| 2023   | 40%         | 250%    | 20%           |\n| 2024   | 15%         | 45%     | 10%           |\n| 2025   | -10%        | 45%     | 25%           |\n| 2026E  | 10%         | 75%     | 45%           |\n| 2027E  | 10%         | 30%     | 30%           |\n| 2028E  | 5%          | 10%     | 5%            |\n| 2029E  | 5%          | 30%     | 5%            |\n| 2030E  | 5%          | 30%     | 5%            |",
+        "chart_caption": [
+            "EXHIBIT 7: Highlight the post-2022 inflection as global touring resumes, with concert revenue growth outpacing album and digital segments, reflecting a rapidly expanding K-pop fandom."
+        ],
+        "chart_footnote": [
+            "Source: Corporate reports, Bloomberg, Bernstein estimates and analysis."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            124,
+            114,
+            877,
+            373
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b7b253a369075a8b95816d69012434844e72c4550fba16b8a3c1336c86482c9c.jpg",
+        "content": "| Year   | Global music revenue | K-pop revenue | K-pop concert revenue |\n| ------ | -------------------- | ------------- | --------------------- |\n| 2018   | ~5%                  | ~25%          | ~20%                  |\n| 2019   | ~5%                  | ~30%          | ~55%                  |\n| 2020   | ~5%                  | ~25%          | ~-60%                 |\n| 2021   | ~10%                 | ~30%          | ~-60%                 |\n| 2022   | ~10%                 | ~40%          | ~270%                 |\n| 2023   | ~5%                  | ~35%          | ~245%                 |\n| 2024   | ~5%                  | ~15%          | ~45%                  |\n| 2025   | ~5%                  | ~10%          | ~45%                  |\n| 2026E  | ~5%                  | ~30%          | ~75%                  |\n| 2027E  | ~5%                  | ~15%          | ~25%                  |\n| 2028E  | ~5%                  | ~5%           | ~10%                  |\n| 2029E  | ~5%                  | ~5%           | ~25%                  |\n| 2030E  | ~5%                  | ~5%           | ~25%                  |",
+        "chart_caption": [
+            "EXHIBIT 8: K-pop concert revenue has shown strong compounding growth over time, and we see incremental opportunities for IP monetization through an increasingly engaged “super fan”."
+        ],
+        "chart_footnote": [
+            "Source: IFPI, Corporate reports, Bernstein estimates and analysis."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            114,
+            460,
+            859,
+            724
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3908c1dcd0a561ea4e494d1608d13d909892d33c5d343bd307afa97c2e7f69e2.jpg",
+        "content": "2016-2025: Global top 100 gross revenue and K-pop tour share\n| Year | Top 100 worldwide tours gross (USD billion) | K-pop tour share (%) |\n| :--- | :--- | :--- |\n| 2016 | 4.0 | 2.3 |\n| 2017 | 4.8 | 2.2 |\n| 2018 | 5.2 | 2.7 |\n| 2019 | 5.5 | 4.5 |\n| 2020 | 1.1 | 2.1 |\n| 2021 | 0.8 | 6.6 |\n| 2022 | 0.3 | 4.4 |\n| 2023 | 0.5 | 5.8 |\n| 2024 | 0.5 | 5.3 |\n| 2025 | 0.9 | 9.3 |",
+        "chart_caption": [
+            "EXHIBIT 9: K-pop is rapidly gaining share in the global Top 100 touring circuit, with its tour revenue footprint now approaching \\~10% of global."
+        ],
+        "chart_footnote": [
+            "Source: Corporate reports, Wikipedia, Bernstein estimates and analysis."
+        ],
+        "sub_type": "bar-line hybrid",
+        "bbox": [
+            122,
+            114,
+            875,
+            377
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/62baf0bf1a7a59b5ca16bd45b057d6c6abf6aed6c68163e8608deadb9329a2b2.jpg",
+        "content": "2026-2027: K-pop concert revenue and Hybe share\n| Year | K-pop concert revenue (KRW billion) | Hybe concert revenue share (%) |\n| :--- | :--- | :--- |\n| 2016 | 85 | 10 |\n| 2017 | 95 | 27 |\n| 2018 | 130 | 67 |\n| 2019 | 250 | 89 |\n| 2020 | 15 | 48 |\n| 2021 | 45 | 90 |\n| 2022 | 330 | 79 |\n| 2023 | 620 | 58 |\n| 2024 | 710 | 66 |\n| 2025 | 1240 | 61 |\n| 2026E | 1910 | 76 |\n| 2027E | 1910 | 73 |",
+        "chart_caption": [
+            "EXHIBIT 10: Hybe commands c.70% of K-pop concert revenue, dwarfing peers in scale and positioning itself within a structurally expanding global live market."
+        ],
+        "chart_footnote": [
+            "Source: Corporate reports, Bloomberg, Bernstein estimates and analysis."
+        ],
+        "sub_type": "bar-line hybrid",
+        "bbox": [
+            130,
+            464,
+            880,
+            728
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/dc5fc3fa38381f063e4e30d5acf27b059565d5f64c7ffba85c454d54fc5aee93.jpg",
+        "content": "2022: Average ticket price\n| Artist | Ticket price (USD) |\n| :--- | :--- |\n| Bad Bunny | 312 |\n| Harry Styles | 230 |\n| BTS | 181 |\n| Elton John | 174 |\n| The Rolling Stones | 173 |\n| Cold Play | 95 |\n| Daddy Yankee | 91 |\n| Ed Sheeran | 90 |",
+        "chart_caption": [
+            "EXHIBIT 11: BTS sits at the top tier globally in concert ticket pricing."
+        ],
+        "chart_footnote": [
+            "BTS's last concert was in 2022, just before their military service, ahead of their planned 2026 comeback.",
+            "Source: Billboard Boxscore, Bernstein analysis."
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            124,
+            99,
+            877,
+            359
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5ad03e3093138fea311c43d8db6f2f6f224901427983af85c00745397d699a67.jpg",
+        "content": "2015 vs 2025: ARPU by revenue stream\n| Year | Revenue spending per fan (USD) | Category |\n| :--- | :--- | :--- |\n| 2015 | 50 | Concert |\n| 2015 | 30 | Album Sales |\n| 2025 | 180 | Concert |\n| 2025 | 50 | Album Sales |",
+        "chart_caption": [
+            "EXHIBIT 12: Spending is shifting from goods to experiences, with fandom ARPU from concerts rising meaningfully above physical albums."
+        ],
+        "chart_footnote": [
+            "Source: Bernstein estimates and analysis."
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            129,
+            460,
+            875,
+            720
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/47d8948229fd8771813066f44a0a7f586768704c7880845074ac78ea6a8faa74.jpg",
+        "content": "| Date   | Value (Grams) |\n|--------|---------------|\n| Jun-16 | 21.0          |\n| Jun-17 | 24.5          |\n| Jun-18 | 23.0          |\n| Jun-19 | 22.0          |\n| Jun-20 | 19.0          |\n| Jun-21 | 16.0          |\n| Jun-22 | 17.5          |\n| Jun-23 | 14.5          |\n| Jun-24 | 12.0          |\n| Jun-25 | 9.0           |\n| Jun-26 | 6.0           |",
+        "chart_caption": [
+            "EXHIBIT 13: In a debased currency world, premium IP commands real pricing power."
+        ],
+        "chart_footnote": [
+            "Originally published in our team note, \"Long View: A Golden Age for First-Party Content IP.\"",
+            "Source: Bloomberg, Bernstein analysis."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            127,
+            114,
+            473,
+            391
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/81d53bf7a43392a2e7eeb1eb46a456e26f1c73cc65c58faee6fbceb3470503a3.jpg",
+        "content": "| Category             | Value |\n| -------------------- | ----- |\n| Ordinary workers     | 0     |\n| Top IP time value per hour | 70    |",
+        "chart_caption": [
+            "EXHIBIT 14: Artist time is scarce and valuable - the key is fully monetizing every minute."
+        ],
+        "chart_footnote": [
+            "Source: Bernstein analysis."
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            516,
+            114,
+            875,
+            391
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Monetizing the hype: Hybe's concert-plus-merch profit engine",
+        "text_level": 2,
+        "bbox": [
+            104,
+            476,
+            532,
+            491
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Concert revenue is usually a low-margin business once you factor in staging costs and promoter revenue share, but large-fandom IPs flip that script. In Hybe's case, each show is treated as a monetization node for a full stack of revenue streams: tickets, VIP and soundcheck packages, tour-exclusive merch, fan club memberships, and digital content layered on top. Crucially, tier-1 merch spend per head is now showing up not only at BTS dates but also across newer IP, proving that this bundling playbook is repeatable across the roster rather than a one-group anomaly.",
+        "bbox": [
+            102,
+            494,
+            851,
+            569
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "As the mix shifts from low-margin physical albums toward higher-margin merch, content, fanclub, and streaming, Hybe's gross profit is set to grow much faster than reported revenue, even as concerts take a larger share of the top line. We see “concert plus” - ticket plus merch plus digital plus fanclub - as the right lens for Hybe’s live business, with the show itself as the anchor and an increasingly rich profit pool coming from everything wrapped around that moment.",
+        "bbox": [
+            102,
+            582,
+            880,
+            642
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Hybe's concert business has reached a scale that clearly differentiates it from traditional K-pop labels, positioning the company closer to a global live promoter model. Its revenue profile is increasingly driven by large-scale touring rather than being anchored to recorded music.",
+        "bbox": [
+            102,
+            655,
+            885,
+            698
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This shift is supported by a broad, diversified, and multi-tiered IP portfolio, which allows Hybe to continuously ramp its concert cadence across markets and artist tiers. The ability to deploy multiple acts at different stages of maturity enables a steady expansion in global touring activity. At the same time, Hybe's global tour unit economics stand out. With lower reliance on local promoters and a leaner take structure (c. $10\\%$ vs $20 - 30\\%+$ for peers), the company retains a greater share of tour economics, translating into structurally higher operating margins.",
+        "bbox": [
+            102,
+            700,
+            879,
+            773
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Hybe vs global live leaders: reframing the valuation lens",
+        "text_level": 2,
+        "bbox": [
+            104,
+            790,
+            488,
+            805
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We value Hybe at 400K on a DCF basis, implying one year forward PER of 43x (Q2 2027-Q1 2028), which sits meaningfully below Live Nation's multiple despite both being geared to structurally growing concert economics. Given Hybe's status as a top-four global concert revenue player, its uniquely diversified multi-label IP portfolio, and a BTS comeback that extends the live runway beyond 2026-2027, we believe the appropriate peer frame is global live and experience platforms rather than local K-pop labels.",
+        "bbox": [
+            102,
+            809,
+            888,
+            883
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            879,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This shift in lens reflects a step-change in earnings quality: tour cycles are increasingly discrete monetization windows where Hybe can flex capacity (dates, cities, venue sizes) and pricing (tiering, VIP, dynamic pricing), while bundling in tour merch, online concert tickets, and live video content. In our view, the market will increasingly reward platforms that can consistently convert fandom intensity into live willingness-to-pay rather than simply pushing incremental album volumes, supporting further re-rating potential for Hybe as a global offline concert promoter, with BTS tours and a deep IP bench underpinning concert-led upside and justifying comparison to global live leaders.",
+        "bbox": [
+            102,
+            71,
+            890,
+            161
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4a42c7ab311b2f3c35b8890eb4c279e202fad415ee7bb361516106d6e174671d.jpg",
+        "content": "| Year   | Album sales | Concerts | Ads  | Merch | Contents | Fanclub |\n|--------|-------------|----------|------|-------|----------|---------|\n| 2020   | 300         | 100      | 50   | 200   | 100      | 50      |\n| 2021   | 400         | 150      | 100  | 300   | 150      | 100     |\n| 2022   | 550         | 200      | 150  | 400   | 200      | 150     |\n| 2023   | 950         | 300      | 200  | 500   | 300      | 200     |\n| 2024   | 850         | 400      | 250  | 600   | 350      | 250     |\n| 2025   | 750         | 600      | 300  | 700   | 400      | 300     |\n| 2026E  | 950         | 1100     | 350  | 900   | 450      | 350     |\n| 2027E  | 1100        | 1300     | 400  | 1000  | 500      | 400     |\n| 2028E  | 1150        | 1450     | 450  | 1150  | 550      | 450     |\n| 2029E  | 1250        | 1650     | 500  | 1350  | 650      | 550     |",
+        "chart_caption": [
+            "EXHIBIT 15: Concerts are emerging as the primary growth engine, as scaled IP portfolios enable K-pop companies to fill global venues."
+        ],
+        "chart_footnote": [
+            "Source: Corporate reports, Bernstein estimates and analysis."
+        ],
+        "sub_type": "stacked bar chart",
+        "bbox": [
+            117,
+            218,
+            875,
+            498
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3465a039e44f527cdf9cdb745f9665889a384b0c8c0d198405c522a08a468767.jpg",
+        "content": "2021-2029: Hybe gross profit breakdown\n| Year | Streaming revenue (KRW bn) | Physical album sales (KRW bn) | Concerts (KRW bn) | Artist Indirect-involvement and Others (KRW bn) |\n| :--- | :--- | :--- | :--- | :--- |\n| 2021 | 80 | 50 | 100 | 450 |\n| 2022 | 90 | 100 | 70 | 600 |\n| 2023 | 180 | 250 | 80 | 500 |\n| 2024 | 170 | 150 | 70 | 600 |\n| 2025 | 160 | 100 | 150 | 550 |\n| 2026E | 320 | 200 | 300 | 850 |\n| 2027E | 420 | 180 | 300 | 950 |\n| 2028E | 470 | 150 | 350 | 1150 |\n| 2029E | 530 | 180 | 450 | 1150 |",
+        "chart_caption": [
+            "EXHIBIT 16: Concert margins may be thin, but bundled merch turns global tours into a meaningful profit pool."
+        ],
+        "chart_footnote": [
+            "Source: Corporate reports, Bernstein estimates and analysis."
+        ],
+        "sub_type": "stacked bar chart",
+        "bbox": [
+            112,
+            573,
+            872,
+            853
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            51
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/68391f300ee3b15b4d23668e58a8f6b8c60c9d144aafdf5356acd2ec592ec011.jpg",
+        "content": "| Year | HYBE (KRW bn) | SM (KRW bn) | JYP (KRW bn) | YG (KRW bn) |\n| :--- | :--- | :--- | :--- | :--- |\n| 2016 | 5 | 3 | 4 | 70 |\n| 2017 | 30 | 10 | 10 | 60 |\n| 2018 | 90 | 15 | 15 | 15 |\n| 2019 | 200 | 20 | 25 | 25 |\n| 2020 | 5 | 5 | 5 | 5 |\n| 2021 | 50 | 5 | 5 | 5 |\n| 2022 | 260 | 30 | 30 | 30 |\n| 2023 | 360 | 70 | 60 | 110 |\n| 2024 | 450 | 120 | 110 | 15 |\n| 2025 | 770 | 170 | 190 | 130 |\n| 2026E | 1500 | 190 | 200 | 110 |\n| 2027E | 1610 | 220 | 230 | 110 |\n| 2028E | 1820 | 360 | 240 | 160 |",
+        "chart_caption": [
+            "EXHIBIT 17: Hybe's concert revenue scale sets it apart, aligning its model with global live promoters rather than traditional labels.",
+            "2016-2028E: K-pop concert revenue trend"
+        ],
+        "chart_footnote": [
+            "Source: Corporate reports, Bloomberg, Bernstein estimates and analysis."
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            125,
+            135,
+            875,
+            378
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/01cf1fa4bfb4bbb98f064e69d22ec96a3f1ed4f24bd5cd9eb1680a2f3b138d7c.jpg",
+        "content": "| Year | Number of concerts |\n| :--- | :--- |\n| 2021 | 8 |\n| 2022 | 79 |\n| 2023 | 125 |\n| 2024 | 173 |\n| 2025 | 280 |\n| 2026E | 323 |\nMore announcements to come",
+        "chart_caption": [
+            "EXHIBIT 18: Hybe is ramping concert cadence on the back of a broad, multi-tiered IP portfolio.",
+            "2021-2026: Hybe's number of concerts"
+        ],
+        "chart_footnote": [
+            "Source: Corporate reports, Bernstein estimates and analysis."
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            130,
+            465,
+            875,
+            714
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8cb8f48396f45fc43f6750bace208ef7f73fc06681a2fe8d0eeffe911da87012.jpg",
+        "content": "| Year   | Artist Indirect-involvement and Others | Concerts | Physical album sales | Streaming revenue |\n|--------|------------------------------------------|----------|----------------------|-------------------|\n| 2021   | 54%                                      | 25%      | 30%                  | 60%               |\n| 2022   | 58%                                      | 25%      | 30%                  | 60%               |\n| 2023   | 57%                                      | 23%      | 38%                  | 60%               |\n| 2024   | 58%                                      | 15%      | 28%                  | 60%               |\n| 2025   | 42%                                      | 23%      | 23%                  | 60%               |\n| 2026E  | 45%                                      | 24%      | 34%                  | 60%               |\n| 2027E  | 50%                                      | 25%      | 30%                  | 60%               |\n| 2028E  | 50%                                      | 25%      | 30%                  | 60%               |\n| 2029E  | 50%                                      | 25%      | 30%                  | 60%               |",
+        "chart_caption": [
+            "EXHIBIT 19: Concert GP margins are lower (c.25%), but pairing with high-margin merch (c.50%) lifts blended gross margins."
+        ],
+        "chart_footnote": [
+            "Source: Corporate reports, Bernstein estimates and analysis."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            111,
+            114,
+            857,
+            396
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/82efa102a6d90408325deebae5decc92c38c6e2d94b16425e82f2d9a70a05e28.jpg",
+        "content": "Top tier IP tour unit economics\n| Category | Unit economics (%) |\n| :--- | :--- |\n| Concert revenue | 83.5 |\n| Merch revenue | 99.0 |\n| Total revenue | 100.0 |\n| COGS (incl. artist share) | 42.0 |\n| local promoter, platform, tax | 41.5 |\n| GP margin | 29.0 |\n| SG&A | 28.5 |\n| Margin | 19.0 |",
+        "chart_caption": [
+            "EXHIBIT 20: Hybe's global tour unit economics stand apart, with lower local promoter take rates (\\~10% vs. 20-30%+ for other labels), resulting in structurally higher margins."
+        ],
+        "chart_footnote": [],
+        "sub_type": "bar chart",
+        "bbox": [
+            124,
+            484,
+            875,
+            750
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "This concert unit economics analysis is based on high-level assumptions and rough internal estimates, not on official disclosures or audited figures. The numbers presented (including ticket revenue, costs, margins, attendance, pricing, and profit contribution) are illustrative in nature and are intended solely to help understand the business model conceptually. Actual performance for any specific tour or show may differ materially from these estimates due to changes in pricing, venue mix, production scale, tax and fee structures, deal terms with promoters and partners, FX, and other operational or contractual factors. This analysis should not be relied upon as a precise forecast or as a representation of the company's actual or future financial results, and it should not be used as the sole basis for any investment, commercial, or strategic decision.",
+        "bbox": [
+            102,
+            771,
+            883,
+            840
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Source: Bernstein estimates and analysis.",
+        "bbox": [
+            104,
+            842,
+            307,
+            853
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            51
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ade1c058c5eb2147edd1f594da7a0661b2d7bd2e9da7836f381db67c3bcf6515.jpg",
+        "content": "| Year   | BTS   | Seventeen | TXT   | Enhypen | Le Sserafim | New Jeans | KatsEye | Cortis | Others |\n|--------|-------|-----------|-------|---------|-------------|-----------|---------|--------|--------|\n| 2013   | 0     | 0         | 0     | 0       | 0           | 0         | 0       | 0      | 0      |\n| 2014   | 0     | 0         | 0     | 0       | 0           | 0         | 0       | 0      | 0      |\n| 2015   | 0     | 0         | 0     | 0       | 0           | 0         | 0       | 0      | 0      |\n| 2016   | 0     | 0         | 0     | 0       | 0           | 0         | 0       | 0      | 0      |\n| 2017   | 0     | 0         | 0     | 0       | 0           | 0         | 0       | 0      | 0      |\n| 2018   | 0     | 0         | 0     | 0       | 0           | 0         | 0       | 0      | 0      |\n| 2019   | 0     | 0         | 0     | 0       | 0           | 0         | 0       | 0      | 0      |\n| 2020   | 50    | 50        | 50    | 50      | 50          | 50        | 50      | 50     | 50     |\n| 2021   | 1,00  | 1,00      | 1,00  | 1,00    | 1,00        | 1,00      | 1,00    | 1,00   | 1,00   |\n| 2022   | 1,50  | 1,50      | 1,50  | 1,50    | 1,50        | 1,50      | 1,50    | 1,50   | 1,50   |\n| 2023   | 2,00  | 2,00      | 2,00  | 2,00    | 2,00        | 2,00      | 2,00    | 2,00   | 2,00   |\n| 2024   | 2,50  | 2,50      | 2,50  | 2,50    | 2,50        | 2,50      | 2,50    | 2,50   | 2,50   |\n| 2025   | 3,50  | 3,50      | 3,50  | 3,50    | 3,50        | 3,50      | 3,50    | 3,50   | 3,50   |\n| 2026E  | 4,50  | 4,50      | 4,50  | 4,50    | 4,50        | 4,50      | 4,50    | 4,50   | 4,50   |\n| 2027E  | 4,50  | 4,50      | 4,50  | 4,50    | 4,50        | 4,50      | 4,50    | 4,50   | 4,50   |\n| 2028E  | 4,75  | 4,75      | 4,75  | 4,75    | 4,75        | 4,75      | 4,75    | 4,75   | 4,75   |\n| 2029E  | 5,25  | 5,25      | 5,25  | 5,25    | 5,25        | 5,25      | 5,25    | 5,25   | 5,25   |\nThe chart displays a stacked area chart with the x-axis labeled 'Year' (from '2013 to '2029E) and the y-axis labeled 'Revenue (KRW bn)' (ranging from ~1 to ~6,378). The legend identifies eight categories: BTS (blue), Seventeen (dark blue), TXT (light blue), Enhypen (green), Le Sserafim (gray), New Jeans (purple), KatsEye (teal), Cortis (yellow-green), and Others (black). The data is extracted from the provided image and presented in CSV format as requested. The chart is created using the formula 'Hybe IP portfolio'.",
+        "chart_caption": [
+            "EXHIBIT 21: We like Hybe, as consistent mid-sized successes have built a diversified IP portfolio."
+        ],
+        "chart_footnote": [
+            "Source: Corporate reports, Bernstein estimates and analysis."
+        ],
+        "sub_type": "stacked area chart",
+        "bbox": [
+            127,
+            99,
+            875,
+            368
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "AI can scale, time cannot: the human edge in K-pop",
+        "text_level": 2,
+        "bbox": [
+            104,
+            428,
+            459,
+            443
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "At its core, K-pop remains anchored by the human artist. No matter how advanced technology becomes, the emotional connection between fan and artist is still built on authenticity, presence, and perceived scarcity. That human anchor is what ultimately drives fandom intensity and willingness to pay.",
+        "bbox": [
+            102,
+            446,
+            859,
+            492
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The real bottleneck in the system is not content production, but the artist's time and attention. This scarcity is precisely what creates value. Every hour an artist spends - whether on music, touring, content, or fan interaction - is a finite resource that must be carefully allocated.",
+        "bbox": [
+            102,
+            505,
+            883,
+            550
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "For labels and agencies, this reframes the optimization problem. The question is no longer “How do we produce more content?” but “How do we maximize the value of limited artist time across multiple monetization channels?” In this setup, AI and virtual elements act as operating leverage - amplifying reach, extending engagement, and filling gaps - but not replacing the core human IP.",
+        "bbox": [
+            102,
+            563,
+            888,
+            621
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This is why attempts to fully substitute artists with robots or virtual idols have struggled. Without a true human anchor, the emotional depth, scarcity, and sustained fandom economics are difficult to replicate, limiting their ability to scale into meaningful long-term franchises.",
+        "bbox": [
+            102,
+            635,
+            892,
+            680
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            106,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 22: Human scarcity wins - AI scales reach, but artist time drives K-pop value.",
+        "text_level": 2,
+        "bbox": [
+            104,
+            70,
+            679,
+            85
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Nature of business comparison in Entertainment space \"You can do multiple games, but fandom is only for 1 artist\"",
+        "bbox": [
+            117,
+            95,
+            488,
+            121
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Music is one surface in a broader engagement product \"Who is your bias?\"",
+        "bbox": [
+            500,
+            95,
+            866,
+            121
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/ff3665f57e711817a01cedc64110039977bf2bca84bec019051ceb7087876884.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            192,
+            138,
+            343,
+            179
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/d1f1b4a7c4d939708c069efb1255acbdeb1d5789acaf7af9c4411b2b66d1ef44.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            205,
+            184,
+            267,
+            205
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/1d6b3fefd00f273ae5402ac700e4e8cd527ff7c9f9a67bbd86b2fe02fd18d664.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            277,
+            185,
+            334,
+            204
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/440ed7be0f0ac31191b67b10236a359843dfaf64feed3656c65178b69ec9e841.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            200,
+            210,
+            259,
+            260
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/7889c37cb6b56f6ea105c9631fb20bae5efc8545379468c2e1d687f56763cbec.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            267,
+            210,
+            334,
+            261
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/0e05aaeb9e74c193c6bf73ff55c37b3abcc93635b31ad999590f621292fc458b.jpg",
+        "image_caption": [
+            "Pop Industry (especially K-pop)"
+        ],
+        "image_footnote": [],
+        "content": "Sea\nof\nJIN",
+        "sub_type": "text_image",
+        "bbox": [
+            357,
+            186,
+            480,
+            271
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Purpose Of Use",
+        "bbox": [
+            124,
+            275,
+            183,
+            299
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Break time activities",
+        "bbox": [
+            200,
+            281,
+            336,
+            292
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Engaging",
+        "bbox": [
+            388,
+            281,
+            452,
+            294
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Type of Emotion",
+        "bbox": [
+            125,
+            316,
+            184,
+            342
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Joy",
+        "bbox": [
+            254,
+            325,
+            281,
+            337
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Love",
+        "bbox": [
+            403,
+            325,
+            437,
+            335
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Engaged Big IP",
+        "bbox": [
+            120,
+            361,
+            183,
+            387
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Multiple\n(The more the better)",
+        "bbox": [
+            200,
+            361,
+            336,
+            387
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Only 1 (Top pick)",
+        "bbox": [
+            388,
+            361,
+            452,
+            387
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/a47eaea7c4a8d70686edd3698b68865849181b3e98a90e15cad691f95d7ef3d5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "Black-and-white photo of a young man singing on stage, holding a microphone (no visible text or symbols)",
+        "sub_type": "natural_image",
+        "bbox": [
+            500,
+            138,
+            885,
+            393
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Source: Instagram, Bernstein analysis.",
+        "bbox": [
+            104,
+            412,
+            290,
+            424
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            106,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "US ENTERTAINMENT VIEW",
+        "text_level": 2,
+        "bbox": [
+            104,
+            85,
+            316,
+            101
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The boom in K-pop is a shared tailwind for Live Nation and Spotify: the same Western, high-ARPU fanbase that Spotify monetizes on the stream is the one Live Nation seats at the show, and as of this year the two are wired together through a single partnership.",
+        "bbox": [
+            102,
+            107,
+            887,
+            137
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "K-pop fans are among the prime customers for the superfan upgrades Spotify is now pushing. At its May 2026 Investor Day, Spotify made charging its most engaged listeners more a central part of the growth story, building toward a higher-priced superfan tier plank by plank, with lossless audio and track-mixing tools already live and exclusive concert access the newest addition. That willingness to pay is not theoretical, and HYBE's Weverse is the proof of it: the K-pop superfan platform reached 13.4 million monthly users in early 2026, up 20% quarter on quarter and newly profitable, with roughly 90% of its traffic outside Korea and committed fans spending into the hundreds of dollars a month on memberships, merchandise and content. Tencent Music's Super VIP tier, more than 20 million subscribers paying around five times the standard price, shows the model scales rather than cannibalizes. Because K-pop fandoms already spend like this, they are exactly the cohort Spotify's superfan add-ons are built to convert. And that consumption is increasingly Western: the US is now Spotify's single largest K-pop market (Exhibit 23), so each step up in the genre's popularity lands disproportionately among the high-ARPU listeners Spotify monetizes best.",
+        "bbox": [
+            102,
+            150,
+            890,
+            299
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "table",
+        "img_path": "images/7d6ffb89f7c936c7398dd0efa48906b730b1225eb2fc5810af41cccb1e8e7c5a.jpg",
+        "table_caption": [
+            "EXHIBIT 23: In 2025 the US became Spotify's number one K-pop market for the first time confirming that the genre's streaming center of gravity has shifted to the high-ARPU West"
+        ],
+        "table_footnote": [
+            "Source: All K-pop, USA Inquirer"
+        ],
+        "table_body": "<table><tr><td>Rank</td><td>Market</td><td>Region</td><td>Rank</td><td>Market</td><td>Region</td></tr><tr><td>1</td><td>United States</td><td>North America</td><td>6</td><td>Mexico</td><td>Latin America</td></tr><tr><td>2</td><td>Indonesia</td><td>Asia (SE Asia)</td><td>7</td><td>Thailand</td><td>Asia (SE Asia)</td></tr><tr><td>3</td><td>Japan</td><td>Asia</td><td>8</td><td>Taiwan</td><td>Asia</td></tr><tr><td>4</td><td>Philippines</td><td>Asia (SE Asia)</td><td>9</td><td>India</td><td>Asia (South Asia)</td></tr><tr><td>5</td><td>Brazil</td><td>Latin America</td><td>10</td><td>South Korea</td><td>Asia</td></tr></table>",
+        "bbox": [
+            107,
+            359,
+            892,
+            513
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "That spending does not stay only on the platform, and this is where the streaming story turns into a touring story. The clearest signal came at the same Investor Day, where Spotify launched \"Reserved,\" which identifies an artist's superfans from their streaming activity and sets aside concert tickets for them, with Live Nation signed as the exclusive launch partner and more than \\$1.5 billion in artist ticket sales already driven by Spotify's live tools. That demand is also unusually intense, because K-pop concertgoers behave more like superfans rather than casual buyers: on a like-for-like arena and stadium basis they fill 96% of capacity against 86% for all shows and pay about 27% more per ticket, \\$132 against \\$104 (Exhibit 24-Exhibit 25). These are higher-intent fans, which is precisely why the streaming-to-ticket pipe is worth building, and because their demand is concentrated in the West it favors the promoter best exposed there. Live Nation handles close to half of all Western K-pop touring gross. The fan Spotify surfaces on the stream is, increasingly by design, the fan Live Nation seats at the show.",
+        "bbox": [
+            102,
+            551,
+            875,
+            686
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            106,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "chart",
+        "img_path": "images/20b3ad379de11c9aa392dfb2fcd6d084a6b2b584795ec3adcbce1d7b1e5b6740.jpg",
+        "content": "Avg. Capacity sold at like-for-like venues (2025)\n| Venue Type | Avg. Capacity Sold (%) |\n| :--- | :--- |\n| All shows | 86 |\n| K-pop | 95 |",
+        "chart_caption": [
+            "EXHIBIT 24: On a like-for-like arena and stadium basis K-pop concertgoers behave like superfans, filling 96% of capacity versus 86% for all shows..."
+        ],
+        "chart_footnote": [],
+        "sub_type": "bar chart",
+        "bbox": [
+            109,
+            125,
+            485,
+            351
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "chart",
+        "img_path": "images/23dccf29e5970bd71bdfa86d6f07a9d09d8062f65042c5c4b83fbbae58018ea5.jpg",
+        "content": "Avg. USD Ticket Price at like-for-like venues (2025)\n| Venue Type | Avg. USD Ticket Price ($) |\n| :--- | :--- |\n| All shows | 104 |\n| K-pop | 132 |",
+        "chart_caption": [
+            "EXHIBIT 25: ...and paying about 27% more per ticket (\\$132 versus \\$104)"
+        ],
+        "chart_footnote": [
+            "Source: Pollstar, Bernstein analysis",
+            "Source: Pollstar, Bernstein analysis"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            509,
+            111,
+            880,
+            338
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Western K-pop touring is, to a striking degree, a Live Nation business, and it is the segment we expect to grow from here. The United States is the single largest K-pop touring market in the world and Live Nation promoted about 60% of it in 2025 and roughly 81% of Mexico through OCESA (Exhibit 26). The obvious objection, that labels will self-promote and cut the promoter out as HYBE has begun to, is bounded: promoter relationships track the agency, JYP's touring is roughly 95% Live Nation, and self-promotion is contained to HYBE alone. With Western K-pop streaming still climbing and a heavy 2026 touring calendar already announced, led by BTS's return to stadiums, we see both names benefiting from the continuing popularity of K-pop: Spotify on the streams and the superfan add-ons, and Live Nation on the gate and the Reserved pipeline that now feeds it.",
+        "bbox": [
+            102,
+            395,
+            877,
+            501
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7240ca7687f72a59b987fd64a4e977b8f73fb1ce363c15791b31b79cdfeff6a4.jpg",
+        "content": "K-pop touring gross by country in 2025\n| Country | LN gross ($mm) (%) | Non LN Gross (%) |\n| :--- | :--- | :--- |\n| United States | 60 | 108 |\n| Mexico | 81 | 9 |\n| France | 56 | 14 |\n| United Kingdom | 68 | 10 |\n| Canada | 0 | 9 |\n| Brazil | 96 | 3 |\n| Netherlands | 71 | 6 |\n| Chile | 69 | 2 |\n| Spain | 86 | 1 |",
+        "chart_caption": [
+            "EXHIBIT 26: The US is the single largest K-pop touring market in the world and Live Nation promoted about 60% of it in 2025, with Live Nation also dominant across the other Western markets (Mexico \\~81%, Netherlands \\~71%, UK \\~68%) while self-promotion stays contained to HYBE"
+        ],
+        "chart_footnote": [
+            "Source: Pollstar, Bernstein analysis"
+        ],
+        "sub_type": "stacked bar chart",
+        "bbox": [
+            109,
+            582,
+            880,
+            867
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "I. REQUIRED DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            98,
+            297,
+            111
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "References to \"Bernstein\" or the \"Firm\" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            125,
+            893,
+            219
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.",
+        "bbox": [
+            102,
+            232,
+            892,
+            272
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "VALUATION METHODOLOGY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            286,
+            300,
+            299
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Hybe Co Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            314,
+            191,
+            327
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "We have valued Hybe at a price target of KRW 400,000 based on a DCF valuation method, implying one year forward PER of 43x (Q2 2027-Q1 2028). (DCF assumptions: WACC=10.1%, Terminal growth rate: 3%; Risk-Free Rate of Return (Rf) = 3.4%, Market Risk Premium (Rm - Rf) = 15.3%, Beta = 0.5).",
+        "bbox": [
+            102,
+            342,
+            893,
+            386
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Live Nation Entertainment, Inc.",
+        "text_level": 2,
+        "bbox": [
+            104,
+            398,
+            315,
+            412
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "We reach our price target of \\$200/sh via a two-stage discounted free cash flow model which includes detailed quarterly financial forecasts over three years, annual forecasts of key line items over the following five years, and a terminal perpetuity. We assume a weighted average cost of capital of 9.0% and a terminal free cash flow growth rate of 3.0%.",
+        "bbox": [
+            102,
+            426,
+            892,
+            470
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Spotify Technology SA",
+        "text_level": 2,
+        "bbox": [
+            104,
+            484,
+            261,
+            500
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "We reach our price target of \\$625/sh via a two-stage discounted free cash flow model which includes detailed quarterly financial forecasts over three years, annual forecasts of key line items over the following five years, and a terminal perpetuity. We assume a weighted average cost of capital of 11% and a terminal free cash flow growth rate of 3.0%.",
+        "bbox": [
+            102,
+            512,
+            892,
+            556
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Sony Group Corp",
+        "text_level": 2,
+        "bbox": [
+            104,
+            570,
+            223,
+            583
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "We have a ¥3,500 price target for Sony, based on a 17x P/E multiple of Q5-8 EPS, estimated at ¥208. We value the Sony ADR by converting the JPY price to USD based on an exchange rate of 159.21.",
+        "bbox": [
+            102,
+            597,
+            890,
+            627
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Universal Music Group",
+        "text_level": 2,
+        "bbox": [
+            104,
+            640,
+            259,
+            654
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Our €29 PT is based on a DCF valuation (wacc 7.8%, LT growth 3.3%), including the value of minorities stakes in Spotify and Tencent Music.",
+        "bbox": [
+            102,
+            667,
+            892,
+            696
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "RISKS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            710,
+            153,
+            723
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Hybe Co Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            738,
+            189,
+            751
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Downside risk: Lower-than-expected revenue from the BTS return; margin contraction due to higher take rates on key IPs; greater-than-expected investments in overseas subsidiaries",
+        "bbox": [
+            102,
+            766,
+            890,
+            794
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Live Nation Entertainment, Inc.",
+        "text_level": 2,
+        "bbox": [
+            104,
+            809,
+            315,
+            821
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Key risks to the downside include escalating regulatory scrutiny, GTV deceleration, international expansion challenges, and venue construction costs above expectations.",
+        "bbox": [
+            102,
+            835,
+            890,
+            864
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "DISCLOSURE APPENDIX",
+        "bbox": [
+            727,
+            69,
+            890,
+            83
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Spotify Technology SA",
+        "text_level": 2,
+        "bbox": [
+            104,
+            71,
+            261,
+            85
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Key risks to the downside include subscriber churn on price increases, delays to superfan tier launch, slowing video adoption by creators, geopolitical risks, and currency fluctuations.",
+        "bbox": [
+            102,
+            99,
+            892,
+            127
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Sony Group Corp",
+        "text_level": 2,
+        "bbox": [
+            104,
+            141,
+            223,
+            155
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Upside risks to our Sony target price: (1) A smaller-than-expected memory price hike; (2) A smaller-than-expected share loss to Samsung in Apple CIS orders; (3) Stronger-than-expected game software sales. Downside risks: (1) Fewer mobile/auto CIS sales or larger share loss in CIS market; (2) Slowdown of music streaming market growth or less profit sharing from streaming; (3) Management risk and competition in anime streaming or insufficient successful anime works in the future.",
+        "bbox": [
+            102,
+            169,
+            893,
+            228
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Universal Music Group",
+        "text_level": 2,
+        "bbox": [
+            104,
+            242,
+            261,
+            255
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Downside risks: Music streaming platforms holding prices flat for an extended period, volatility of hard to predict Physical sales, potential cyclicality of ad revenues (12% of group total)",
+        "bbox": [
+            102,
+            268,
+            892,
+            297
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            311,
+            506,
+            324
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "EQUITY RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            337,
+            318,
+            349
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand",
+        "text_level": 2,
+        "bbox": [
+            104,
+            364,
+            217,
+            377
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.",
+        "bbox": [
+            102,
+            388,
+            893,
+            472
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand has three categories of ratings:",
+        "bbox": [
+            104,
+            484,
+            428,
+            498
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform: Stock will outpace the market index by more than 15 pp",
+            "• Market-Perform: Stock will perform in line with the market index to within +/-15 pp",
+            "• Underperform: Stock will trail the performance of the market index by more than 15 pp"
+        ],
+        "bbox": [
+            104,
+            511,
+            635,
+            580
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            102,
+            594,
+            892,
+            621
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            633,
+            893,
+            675
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            686,
+            517,
+            700
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            713,
+            531,
+            727
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – common stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            739,
+            359,
+            753
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).",
+        "bbox": [
+            102,
+            766,
+            893,
+            862
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of common stock ratings:",
+        "bbox": [
+            104,
+            875,
+            540,
+            888
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            875,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform (OP): Stock will outpace the relevant index by more than 10 pp",
+            "- Neutral (N): Stock will perform in line with the market index to within +/-10 pp",
+            "• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp"
+        ],
+        "bbox": [
+            104,
+            71,
+            692,
+            141
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            102,
+            152,
+            892,
+            180
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            193,
+            893,
+            234
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.",
+        "bbox": [
+            104,
+            246,
+            782,
+            260
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            273,
+            517,
+            286
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand common stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            299,
+            606,
+            311
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – preferred stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            325,
+            364,
+            338
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of preferred stock ratings:",
+        "bbox": [
+            104,
+            352,
+            544,
+            364
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+            "- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+            "- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months."
+        ],
+        "bbox": [
+            104,
+            378,
+            892,
+            492
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Autonomous preferred stock ratings are based on a 6-month time horizon.",
+        "bbox": [
+            104,
+            506,
+            562,
+            518
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "AUTONOMOUS CREDIT RESEARCH",
+        "text_level": 2,
+        "bbox": [
+            104,
+            532,
+            346,
+            544
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.",
+        "bbox": [
+            102,
+            558,
+            892,
+            585
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.",
+        "bbox": [
+            102,
+            598,
+            893,
+            652
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "CREDIT RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            665,
+            318,
+            678
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of credit ratings:",
+        "bbox": [
+            104,
+            691,
+            485,
+            705
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+            "- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+            "- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months."
+        ],
+        "bbox": [
+            104,
+            718,
+            893,
+            832
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Autonomous credit ratings are based on a 6-month time horizon.",
+        "bbox": [
+            104,
+            845,
+            503,
+            859
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.",
+        "bbox": [
+            102,
+            872,
+            892,
+            900
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm",
+        "bbox": [
+            102,
+            70,
+            892,
+            111
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "table",
+        "img_path": "images/a462a9867b4d563ec23b9353e96ccf814ef7de99e81dc259351460b767c3acce.jpg",
+        "table_caption": [
+            "DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES"
+        ],
+        "table_footnote": [
+            "\\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.",
+            "As of March 31, 2026. All figures are updated quarterly."
+        ],
+        "table_body": "<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.1%</td><td>16.5%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>36.3%</td><td>17.8%</td></tr><tr><td>Underperform</td><td>SELL</td><td>12.6%</td><td>14.9%</td></tr></table>",
+        "bbox": [
+            104,
+            172,
+            892,
+            297
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            375,
+            488,
+            387
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1e68d9c7cf1a0e78a91e57aeb6970fd3da1bc6aab82af0219f1384a9f56b0ce6.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 10/10/2023 | KRW320,000.00 | KRW320,000.00 |\n| 07/30/2024 | KRW250,000.00 | KRW250,000.00 |\n| 08/29/2024 | CS            | CS           |\n| 08/29/2024 | CS:KRW0.00    | CS:KRW0.00   |\n| 08/30/2024 | D:CS:KRW0.00  | D:CS:KRW0.00  |\n| 02/05/2026 | I:O:KRW500,000.00 | I:O:KRW500,000.00 |\n| 04/30/2026 | O:KRW400,000.00 | O:KRW400,000.00 |",
+        "chart_caption": [
+            "Hybe Co Ltd (352820.KS) Rating History for Bernstein as of 06/12/2026"
+        ],
+        "chart_footnote": [
+            "Outperform (O); Market-Perform (M); Underperform (U); Coverage Suspended (CS); Not Covered (NC)"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            125,
+            420,
+            870,
+            590
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ba8ce2f9275e19b542b52aa8c8b163f355e3b54d25f8679dfb3b5d22d9f8f435.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 06/03/2025 | $185.00       | $185.00      |\n| 02/20/2026 | $200.00       | $200.00      |",
+        "chart_caption": [
+            "Live Nation Entertainment, Inc. (LYV) Rating History for Bernstein as of 06/12/2026"
+        ],
+        "chart_footnote": [
+            "Outperform (O); Market-Perform (M); Underperform (U); Coverage Suspended (CS); Not Covered (NC)"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            120,
+            646,
+            870,
+            815
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a7c79213cf3136c4a5a5882a7aa38f5b42f2f6109b528effc927b31851036813.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 06/03/2025 | $825.00       |              |\n| 07/08/2025 | $840.00       |              |\n| 10/30/2025 | $830.00       |              |\n| 01/14/2026 | $650.00       |              |\n| 04/09/2026 | $625.00       |              |",
+        "chart_caption": [
+            "Spotify Technology SA (SPOT) Rating History for Bernstein as of 06/12/2026"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            120,
+            89,
+            870,
+            281
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6207b41eb71a4f2ef4b28b3ca631c964d4f961669893e60bf6be856b3032b1b0.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 01/16/2025 | $3,900.00     | -            |\n| 02/24/2025 | -             | $4,600.00    |\n| 08/08/2025 | -             | $4,700.00    |\n| 11/11/2025 | -             | $5,100.00    |\n| 01/14/2026 | -             | $4,600.00    |\n| 03/16/2026 | -             | $3,400.00    |\n| 05/08/2026 | -             | $3,500.00    |",
+        "chart_caption": [
+            "Sony Group Corp (6758.JP) Rating History for Bernstein as of 06/12/2026"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            120,
+            313,
+            870,
+            503
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4044b8119d8d00602a8e2b2e5786c0a31e271089db3d441c7a94b54509e9e925.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 01/16/2025 | $24.50        | -            |\n| 07/01/2025 | $32.00        | -            |\n| 11/11/2025 | $33.00        | -            |\n| 01/14/2026 | $30.00        | -            |\n| 03/16/2026 | $22.00        | -            |",
+        "chart_caption": [
+            "Sony Group Corp (SONY) Rating History for Bernstein as of 06/12/2026"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            120,
+            539,
+            870,
+            728
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            37,
+            424,
+            50
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            37,
+            890,
+            49
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            106,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "chart",
+        "img_path": "images/dca8fa83f59176d208132d27cd0ad6ad62f35ae08d799a10851c0752ab7e7230.jpg",
+        "content": "| Date       | Value  |\n| ---------- | ------ |\n| 04/01/2024 | €31.50 |\n| 07/25/2024 | €30.40 |\n| 09/12/2024 | €0.00  |\n| 09/12/2024 | €0.00  |\n| 06/18/2025 | €33.00 |\n| 03/06/2026 | €29.00 |\n| 03/06/2026 | €33.00 |\n| 04/07/2026 | €29.00 |",
+        "chart_caption": [
+            "Universal Music Group (UMG.NA) Rating History for Bernstein as of 06/12/2026"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            120,
+            89,
+            869,
+            253
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "image",
+        "img_path": "images/e2d4e91309c4c066add124b8bf737463bc61177342232f98f327eb382fd04032.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "Closing Price\nPrice Target\nOutperform (O); Market-Perform (M); Underperform (U); Coverage Suspended (CS); Not Covered (NC)",
+        "sub_type": "text_image",
+        "bbox": [
+            263,
+            263,
+            741,
+            297
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report.",
+        "bbox": [
+            102,
+            316,
+            890,
+            330
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "CONFLICTS OF INTEREST",
+        "text_level": 2,
+        "bbox": [
+            104,
+            354,
+            281,
+            367
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "SG acted as Active Joint Bookrunner in UNIVERSAL MUSIC GROUP's bond issue (dual-tranche EUR 500m WNG - 4Y & 10Y). AB and/or its affiliates beneficially own 1% or more of a class of common equity securities of the following company: Hybe Co Ltd.",
+        "bbox": [
+            102,
+            381,
+            890,
+            409
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "SG and/or its affiliates beneficially own 1% or more of a class of common equity securities of the following company: Spotify Technology SA.",
+        "bbox": [
+            102,
+            434,
+            890,
+            460
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "SG and/or its affiliates beneficially own 0.5% or more of [the total issued share capital/any class of common equity securities] with a net [long/short] position of: Sony Group Corp.",
+        "bbox": [
+            102,
+            473,
+            890,
+            502
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates have received compensation for investment banking services in the past twelve months from Universal Music Group.",
+        "bbox": [
+            102,
+            526,
+            890,
+            555
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Live Nation Entertainment, Inc., Sony Group Corp and Universal Music Group.",
+        "bbox": [
+            102,
+            566,
+            890,
+            594
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates expect to receive or intend to seek compensation for investment banking services in the next three months from Universal Music Group.",
+        "bbox": [
+            102,
+            606,
+            890,
+            633
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Certain affiliates of Bernstein act as market maker or liquidity provider in the debt securities of: Live Nation Entertainment, Inc..",
+        "bbox": [
+            102,
+            646,
+            879,
+            659
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Certain affiliates of Bernstein act as market maker or liquidity provider in the equities securities of: Universal Music Group.",
+        "bbox": [
+            102,
+            685,
+            849,
+            699
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates had an investment banking client relationship during the past twelve months with Universal Music Group.",
+        "bbox": [
+            102,
+            710,
+            890,
+            739
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Affiliates of Bernstein managed or co-managed in the past twelve months a public offering of securities of Universal Music Group.",
+        "bbox": [
+            102,
+            751,
+            890,
+            765
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "OTHER MATTERS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            777,
+            225,
+            789
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:",
+        "bbox": [
+            102,
+            804,
+            890,
+            830
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "+1 Bernstein Institutional Services LLC; New York, New York, USA",
+        "bbox": [
+            104,
+            844,
+            513,
+            857
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "+44 Bernstein Autonomous LLP; London UK",
+        "bbox": [
+            104,
+            869,
+            383,
+            883
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "+212 SG Africa Technologies & Services; Casablanca, Morocco",
+        "bbox": [
+            104,
+            896,
+            584,
+            910
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            875,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "+33 BSG France S.A.; Paris, France",
+            "+34 BSG France S.A.; Madrid, Spain",
+            "+41 Bernstein Autonomous LLP; Geneva, Switzerland",
+            "+49 BSG France S.A.; Frankfurt, Germany",
+            "+91 Bernstein (India) Private Limited; Mumbai, India",
+            "+852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China",
+            "+65 Bernstein (Singapore) Private Limited; Singapore",
+            "+81 Bernstein Japan KK; Tokyo, Japan"
+        ],
+        "bbox": [
+            104,
+            70,
+            642,
+            267
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.",
+        "bbox": [
+            102,
+            280,
+            893,
+            377
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            388,
+            892,
+            429
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "CERTIFICATION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            441,
+            215,
+            455
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.",
+        "bbox": [
+            102,
+            468,
+            892,
+            523
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            535,
+            444,
+            547
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.",
+        "bbox": [
+            102,
+            561,
+            892,
+            603
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "III. OTHER IMPORTANT INFORMATION AND DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            614,
+            501,
+            628
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Separate branding is maintained for “Bernstein” and “Autonomous” research products.",
+        "bbox": [
+            102,
+            642,
+            637,
+            656
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.",
+            "- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com."
+        ],
+        "bbox": [
+            104,
+            669,
+            893,
+            845
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.",
+        "bbox": [
+            102,
+            858,
+            892,
+            900
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.",
+        "bbox": [
+            102,
+            70,
+            892,
+            111
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.",
+        "bbox": [
+            102,
+            125,
+            893,
+            191
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.",
+        "bbox": [
+            102,
+            205,
+            892,
+            246
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.",
+        "bbox": [
+            102,
+            258,
+            893,
+            313
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "This document may not be passed onto any person in Canada unless that person qualifies as \"permitted client\" as defined in Section 1.1 of NI 31-103.",
+        "bbox": [
+            102,
+            325,
+            892,
+            352
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. (\"BTG\") is responsible for the distribution of this report in Brazil.",
+        "bbox": [
+            102,
+            364,
+            892,
+            393
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.",
+        "bbox": [
+            102,
+            405,
+            892,
+            446
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.",
+        "bbox": [
+            102,
+            458,
+            893,
+            580
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).",
+        "bbox": [
+            102,
+            594,
+            892,
+            622
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.",
+        "bbox": [
+            102,
+            633,
+            893,
+            715
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore (\"SFA\"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000.",
+        "bbox": [
+            102,
+            728,
+            893,
+            838
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the \"PRC\") in contravention of any applicable laws of the PRC.",
+        "bbox": [
+            102,
+            849,
+            892,
+            892
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            875,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.",
+        "bbox": [
+            102,
+            70,
+            892,
+            98
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.",
+        "bbox": [
+            102,
+            109,
+            893,
+            205
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.",
+        "bbox": [
+            102,
+            218,
+            893,
+            301
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. (\"Daiwa\"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.",
+        "bbox": [
+            102,
+            311,
+            892,
+            368
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:",
+        "bbox": [
+            102,
+            378,
+            893,
+            448
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• providing financial product advice;",
+            "• dealing in a financial product;",
+            "• making a market for a financial product; and",
+            "• providing a custodial or depository service."
+        ],
+        "bbox": [
+            104,
+            460,
+            395,
+            558
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India (\"SEBI\") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.",
+        "bbox": [
+            102,
+            571,
+            893,
+            638
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).",
+            "- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.",
+            "• SCB India does not have any disciplinary history as on the date of this report.",
+            "- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives"
+        ],
+        "bbox": [
+            104,
+            652,
+            893,
+            824
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• do not have any financial interest in the subject company",
+            "- do not have actual/beneficial ownership of one percent or more in securities of the subject company;",
+            "• is not engaged in any investment banking activities for Indian companies, as such;"
+        ],
+        "bbox": [
+            122,
+            838,
+            761,
+            907
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• have not managed or co-managed a public offering in the past twelve months for any Indian companies;",
+            "- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;",
+            "• have not received compensation for brokerage services from the subject company in the past twelve months;",
+            "- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and",
+            "- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.",
+            "• do not have any conflict of interest in the subject company as of the date of this report."
+        ],
+        "bbox": [
+            122,
+            84,
+            890,
+            281
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.",
+            "- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.",
+            "- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com",
+            "- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.",
+            "- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing."
+        ],
+        "bbox": [
+            104,
+            294,
+            893,
+            539
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.",
+        "bbox": [
+            102,
+            551,
+            893,
+            619
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.",
+        "bbox": [
+            102,
+            632,
+            893,
+            715
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "LEGAL",
+        "text_level": 2,
+        "bbox": [
+            104,
+            727,
+            153,
+            739
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.",
+        "bbox": [
+            102,
+            753,
+            893,
+            795
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.",
+        "bbox": [
+            102,
+            806,
+            893,
+            861
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.",
+        "bbox": [
+            102,
+            875,
+            893,
+            915
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            875,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            70,
+            892,
+            220
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.",
+        "bbox": [
+            102,
+            232,
+            892,
+            356
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.",
+        "bbox": [
+            102,
+            368,
+            890,
+            478
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.",
+        "bbox": [
+            102,
+            489,
+            890,
+            517
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.",
+        "bbox": [
+            102,
+            529,
+            890,
+            611
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.",
+        "bbox": [
+            102,
+            625,
+            890,
+            665
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.",
+        "bbox": [
+            102,
+            676,
+            890,
+            800
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.",
+        "bbox": [
+            102,
+            811,
+            890,
+            922
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            104,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "page_number",
+        "text": "29",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            70,
+            892,
+            98
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.",
+        "bbox": [
+            102,
+            109,
+            893,
+            179
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.",
+        "bbox": [
+            102,
+            191,
+            893,
+            260
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.",
+        "bbox": [
+            102,
+            271,
+            893,
+            381
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "Min-Joo Kang +852 2123 2644 minjoo.kang@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            424,
+            50
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "15 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "GLOBAL MUSIC",
+        "bbox": [
+            106,
+            940,
+            166,
+            949
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "30",
+        "bbox": [
+            875,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 29
+    }
+]

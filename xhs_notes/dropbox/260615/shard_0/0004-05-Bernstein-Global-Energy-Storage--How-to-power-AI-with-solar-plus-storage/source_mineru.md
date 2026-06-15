@@ -1,0 +1,752 @@
+## Global Energy Storage
+
+# Global Energy Storage: How to power AI with solar-plus-storage
+
+![](images/0e9de7c08efcadde37d724c27bfb44a41b946ab2d8060b813fa4344ec6e6699a.jpg)
+
+Brian Ho, CFA
+
++852 2123 2615
+
+brian.ho@bernsteinsg.com
+
+![](images/205faff560a86e9a6d7174d727fe62073267961a9c2bc1932a3ace071a2f6a09.jpg)
+
+Neil Beveridge, Ph.D.
+
++852 2123 2648
+
+neil.beveridge@bernsteinsg.com
+
+![](images/ca87267ccf4fe86c835719866576b0a5b9f17d41b445f94a58fbc187e93c0bad.jpg)
+
+Kelvin Yuan, Ph.D., CFA
+
++852 2123 2612
+
+kelvin.yuan@bernsteinsg.com
+
+The industry has long viewed solar-plus-storage as insufficient for baseload power particularly for 24/7 AI-driven demand. Masdar and EWEC's gigascale solar-plus-storage project challenges this view with the world's first deployment of firm renewable power at scale. Our analysis leaves us incrementally more constructive on solar-plus-storage as a competitive source of baseload power, with Sungrow and CATL as key beneficiaries.
+
+Solar-plus-storage can deliver baseload reliability at scale. UAE's Masdar and EWEC are building 5.2 GW of solar combined with 19 GWh of storage (19 hours duration) to deliver \~1 GW of continuous power, with completion targeted by 2027. Based on our analysis, the system could achieve \~99.6% system reliability, representing a structural shift in renewables from intermittent energy sources to providers of firm capacity.
+
+Economics are competitiveness particularly for higher gas price markets. While the upfront capex is high at \~\$6,000/kW, solar-plus-storage benefits from low operating costs and zero fuel exposure. At an estimated LCOE of \$97/MWh for the project, solar-plus-storage can compete with gas-fired power at gas price of \~\$8/mmbtu or higher. At 12-hour storage scenario, the LCOE falls to around \$80/MWh which can still achieve high system reliability of 95%. The attractiveness of solar-plus-storage as baseload is important given ongoing volatility and disruption in global gas supply. That said, we still believe gas-fired power is favored in regions with abundant low cost gas supply such as the US.
+
+Faster deployment versus gas and nuclear is a key advantage. Solar and storage projects can be delivered in roughly two years, compared with current gas turbine lead times of around four years due to supply constraints, and even longer timelines for nuclear, typically six years or more.
+
+The key constraint is access to high solar irradiance and land. While the system is replicable, we think it is still limited to solar-rich regions with abundant, low-cost land. This project alone requires $\sim60\ km^{2}$ of land—roughly the size of Manhattan—highlighting the significant physical footprint required to deliver firm renewable power at scale.
+
+Storage is the primary driver of system economics rather than solar. ESS account for roughly half of total project capex, meaning cost competitiveness is primarily driven by storage cost, efficiency, and performance rather than module pricing.
+
+We expect global ESS demand to grow at \~34% CAGR over the next five years, driven by the need for firming renewable generation and grid stability. Within the value chain, CATL leads in ESS battery supply and technology, while Sungrow is a key player in system integration, inverters, and broader power conversion solutions, positioning both as primary beneficiaries of this structural shift.
+
+BERNSTEIN TICKER TABLE
+
+<table><tr><td rowspan="2">Ticker</td><td rowspan="2">Rating</td><td colspan="3">12 Jun 2026</td><td rowspan="2">TTMRel.</td><td colspan="4">Reported EPS</td><td colspan="3">Reported P/E (x)</td></tr><tr><td>Cur</td><td>Closing Price</td><td>Price Target</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>300750.CH (CATL)</td><td>O</td><td>CNY</td><td>394.85</td><td>800.00</td><td>18.9%</td><td>CNY</td><td>16.14</td><td>21.95</td><td>28.77</td><td>24.5</td><td>18.0</td><td>13.7</td></tr><tr><td>247540.KS (EcoPro BM)</td><td>U</td><td>KRW</td><td>167,800</td><td>140,000</td><td>32.9%</td><td>KRW</td><td>403.00</td><td>854.00</td><td>1,963.00</td><td>416.4</td><td>196.5</td><td>85.5</td></tr><tr><td>051910.KS (LG Chem)</td><td>M</td><td>KRW</td><td>320,000</td><td>298,000</td><td>20.7%</td><td colspan="2">KRW(13,258.70)</td><td>2,042.47</td><td>31,118</td><td>(24.1)</td><td>156.7</td><td>10.3</td></tr><tr><td>373220.KS (LGES)</td><td>M</td><td>KRW</td><td>387,000</td><td>347,000</td><td>(9.9)%</td><td colspan="2">KRW (5,308.10)</td><td>1,811.04</td><td>9,452.97</td><td>(72.9)</td><td>213.7</td><td>40.9</td></tr><tr><td>003670.KS (Posco Future M)</td><td>U</td><td>KRW</td><td>188,800</td><td>190,000</td><td>13.4%</td><td colspan="2">KRW (2,740.96)</td><td>376.72</td><td>898.20</td><td>(68.9)</td><td>501.2</td><td>210.2</td></tr><tr><td>006400.KS (SDI)</td><td>M</td><td>KRW</td><td>507,000</td><td>520,000</td><td>168.1%</td><td colspan="2">KRW (9,933.80)</td><td>2,099.51</td><td>18,376</td><td>(51.0)</td><td>241.5</td><td>27.6</td></tr><tr><td>300274.CH (Sungrow)</td><td>O</td><td>RMB</td><td>148.76</td><td>185.00</td><td>90.9%</td><td>RMB</td><td>6.55</td><td>8.22</td><td>9.33</td><td>22.7</td><td>18.1</td><td>15.9</td></tr><tr><td>002466.CH (Tianqi Lithium)</td><td>O</td><td>CNY</td><td>62.50</td><td>73.00</td><td>63.3%</td><td>CNY</td><td>0.28</td><td>3.29</td><td>6.18</td><td>221.5</td><td>19.0</td><td>10.1</td></tr><tr><td>9696.HK (Tianqi Lithium)</td><td>O</td><td>HKD</td><td>47.58</td><td>61.00</td><td>36.7%</td><td>CNY</td><td>0.28</td><td>3.29</td><td>6.18</td><td>145.5</td><td>12.5</td><td>6.6</td></tr><tr><td>034020.KS (Doosan Enerbility)</td><td>O</td><td>KRW</td><td>90,100</td><td>95,000</td><td>32.8%</td><td>KRW</td><td>173.88</td><td>45.91</td><td>687.53</td><td>518.2</td><td>N/M</td><td>131.0</td></tr><tr><td>3750.HK (CATL)</td><td>M</td><td>HKD</td><td>670.00</td><td>770.00</td><td>77.7%</td><td>CNY</td><td>16.14</td><td>21.95</td><td>28.77</td><td>35.8</td><td>26.3</td><td>20.1</td></tr><tr><td>ASIAX</td><td></td><td></td><td>1,966.72</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended  
+003670.KS, 034020.KS base year is 2024;  
+Source: Bloomberg, Bernstein estimates and analysis.
+
+## INVESTMENT IMPLICATIONS
+
+In a structurally power-constrained world, solar-plus-storage is emerging as an increasingly important solution to deliver stable, baseload-like power, particularly for fast-growing AI and data center demand. The Masdar project demonstrates that, with sufficient overbuild and long-duration storage, renewables could achieve high system reliability while offering competitive economics in higher gas price environments, alongside the key advantages of being emissions-free and having no fuel price risk. While scalability remains dependent on geography, land availability, and grid infrastructure, the overall direction is clearly positive, with costs expected to decline further through scale and ongoing technology improvements, including next-generation batteries such as sodium-ion. As storage now drives system economics and demand continues to accelerate, we see strong upside for global ESS deployment and recommend Sungrow and CATL as key beneficiaries of this structural shift.
+
+## DETAILS
+
+The UAE's Masdar and EWEC project demonstrates at scale that solar-plus-storage can deliver firm baseload power. This fundamentally reframes the role of renewables: the key question is no longer whether solar can generate cheap energy, but whether it can reliably meet a continuous load profile when paired with sufficient storage and overbuild. The project combines 5.2 GW of solar with 19 GWh of storage to deliver \~1 GW of continuous power, with completion targeted by 2027. This represents the first gigascale attempt to overcome solar intermittency through system design, and therefore serves as a key proof point for the industry. We find that solar-plus-storage is increasingly cost competitive in higher gas price environments. At current cost levels, it can compete with gas-fired generation when fuel prices are elevated, making it an attractive alternative amid volatility in global gas markets. However, gas remains structurally advantaged in regions with persistently low fuel costs, such as the US.
+
+EXHIBIT 1: Solar plus storage (12+ hours) are competitive against gas-fired power at high gas prices  
+![](images/766e1072c17a7a2945458340dd99f33f7ce547889c423267c87e0442c09a7170.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Gas price ($/mmbtu) | LCOE ($/MWh) |
+| ------------------- | ------------ |
+| 4                   | 65           |
+| 17                  | 160          |
+</details>
+
+Source: Company data, Bernstein analysis
+
+We estimate total project capex at approximately \$6bn for 1GW of firm solar-plus-storage capacity (or \~\$6,000/kW). This can be broadly broken down into \~\$0.5bn for solar modules, \~\$0.5bn for inverters and balance-of-plant, and \~\$2.5bn for ESS, with the remaining \~\$2.5bn covering grid/electrical infrastructure, EPC, land, and other development costs. The key takeaway is that while solar generation itself is already low cost, storage dominates the economics, accounting for roughly half of total system cost. As a result, the competitiveness of baseload solar-plus-storage is primarily driven by battery cost declines rather than further reductions in module pricing. This reinforces our view that continued cost reductions in ESS will be the critical enabler for scaling firm renewable power.
+
+EXHIBIT 2: We estimate total project capex at approximately \$6bn (or \~\$6,000/kW). Energy storage dominates the economics  
+![](images/6ee1c40b83014698da378c020f9f19d58dd7086427a3b0bac5d8c62075e4bc76.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+Project cost ($bn) for 5.2GW solar + 19GWh storage = 1GW baseload power
+| Project developer | Project cost ($bn) |
+| :--- | :--- |
+| Solar module | 0.5 |
+| Inverter and BOP | 0.5 |
+| ESS (excl. EPC) | 2.5 |
+| Other (Electrical, EPC, Land) | 2.5 |
+Jinko Solar
+JA SOLAR
+CATL SUNGROW
+Jinko MASDAI
+EWEC
+中国电建 POWERCHINA
+Larsen & TOUBRO
+</details>
+
+CATL and Sungrow are covered by Bernstein. All other companies are not covered by Bernstein.  
+Source: Company data, Bernstein analysis and estimates
+
+Solar-plus-storage is emerging as a credible alternative to traditional baseload generation, offering several advantages over gas and nuclear, but with clear trade-offs. The Masdar project demonstrates that, with sufficient overbuild and long-duration storage, renewables can achieve near-baseload reliability (\~99% uptime), while also benefiting from faster deployment timelines of \~2 years compared to \~3–6 years for gas (given turbine bottlenecks) and \~6+ years for nuclear. Economically, solar-plus-storage is increasingly competitive in higher gas price environments, providing cost certainty without fuel price exposure. However, it remains constrained by geography, requiring high solar irradiance and large land footprints, and its economics are heavily dependent on battery costs, which account for \~50% of capex. By contrast, gas remains more flexible and competitive in low-cost fuel markets such as the US, while nuclear offers the highest level of clean baseload reliability but with significantly longer build times and higher execution risk. As such, solar-plus-storage can deliver very competitive firm power in select regions, particularly for new demand such as AI and data centers.
+
+EXHIBIT 3: Comparison of solar-plus-storage, gas and nuclear power for baseload power
+
+<table><tr><td>Metric</td><td colspan="2">Solar + Storage (12+ hours)</td><td colspan="2">Gas - CCGT</td><td colspan="2">Nuclear</td></tr><tr><td>Uptime</td><td>~90–99.x%</td><td>√</td><td>~95–99.9%</td><td>√</td><td>~95–99.9%</td><td>√</td></tr><tr><td>LCOE</td><td>~$80-100/MWh</td><td>√</td><td>~$50/MWh ($3.5/mmbtu) ~$110/MWh ($12/mmbtu)</td><td>√</td><td>~$50-150/MWh</td><td></td></tr><tr><td>Lead time</td><td>~2 years</td><td>√</td><td>~3–6 years</td><td></td><td>6+ years</td><td></td></tr><tr><td>Land requirement</td><td>~60 km2</td><td></td><td>~0.02–0.05 km2</td><td>√</td><td>~1–4 km2</td><td>√</td></tr><tr><td>Carbon emissions</td><td>Zero</td><td>√</td><td>~0.35–0.4 tCO2/MWh</td><td></td><td>Near zero</td><td>√</td></tr><tr><td>Fuel risk</td><td>none</td><td>√</td><td>gas - high fuel cost</td><td></td><td>uranium - low fuel cost</td><td>√</td></tr><tr><td>Bottleneck</td><td>location, grid connection</td><td></td><td>turbine supply, gas supply</td><td></td><td>long development</td><td></td></tr></table>
+
+Assuming a build for 1GW of baseload power  
+Source: Company data, Bernstein analysis
+
+## SOLAR-PLUS-STORAGE PROVIDES BASELOAD POWER
+
+The UAE's Masdar and EWEC project represents a step-change in solar-plus-storage system design. Rather than optimizing for peak shaving, it is engineered to deliver round-the-clock baseload power. By pairing 5.2 GW of solar with 19 GWh of storage, \~1 GW of continuous power output can be achieved to match stable power load of 1GW. This “abundance” is critical: excess midday generation is not curtailed but stored in the battery system (equivalent to \~19 hours of duration) and discharged through the evening and overnight. In effect, the project replaces curtailment with energy shifting, reshaping variable solar generation into a stable, near-continuous output profile.
+
+EXHIBIT 4: By pairing 5.2 GW of solar with 19 GWh of storage, 1 GW of continuous power output can be achieved to match stable a power load of 1GW  
+![](images/1f6874d0328f53d0f055f45f4d7df5793775d19865d89e118223cac414530413.jpg)
+
+<details>
+<summary>text_image</summary>
+
+EWEC
+Enagas Water & Electricity Co.
+J20D
+MASDAR
+5 GW
+19 GW Hrs
+1 GW of
+uninterrupted
+power
+</details>
+
+Source: Company presentation
+
+How does this work? With 5.2 GW of installed solar capacity, the project could generate approximately 12.45 TWh of annual solar output, implying a \~27% capacity factor based on the local irradiance profile. This equates to \~34 GWh per day of energy production vs. a constant 24 GWh/day load for 1 GW baseload, highlighting that the system is intentionally overbuilt by \~40% on an energy basis. Of this total generation, around 4.09 TWh is used to directly supply daytime demand, while \~4.62 TWh is stored in the battery during the day and discharged at nighttime to maintain continuous output. The remaining \~3.74 TWh represents surplus generation, which serves as headroom to meet storage losses, seasonal variability, and system reliability requirements. With this system, we estimate a 99.6% system reliability can be achieved.
+
+EXHIBIT 5: Annual power output of the project (TWh). Solar and storage overbuilt enables continuous 1 GW output  
+![](images/93a71d3e27a97e2b222951ec993cea66d135c06c85ed9f632ef2b0aa4501214b.jpg)
+
+<details>
+<summary>sankey diagram</summary>
+
+| Category                  | Value |
+| ------------------------- | ----- |
+| Daytime supply            | 4.09  |
+| Baseload served          | 8.71  |
+| Battery charging          | 4.62  |
+| Night discharge           | 4.62  |
+| Reserve / curtailment / headroom | 3.74  |
+</details>
+
+Source: Company data, Bernstein analysis
+
+We have carried out an analysis of what the operations and economics would look like for the project based on the region's irradiance profile and the system design. Building solar capacity in UAE offers significant advantages due to the region's abundant solar resources, characterized by high solar irradiance and vast available land, enabling large-scale, cost-effective solar power generation. Additionally, favorable government policy and expanding transmission infrastructure support export of electricity. Based on the irradiance profile, we expect the project can generate 12.45TWh of electricity generation with a 1-axis tilt and azimuth. On average, the annual capacity factor is approximately $27\%$ assuming no curtailment.
+
+EXHIBIT 6: We have modeled 5.2GW of solar capacity. The solar farm can achieve an average capacity factor of 27% although we have not factored in curtailment and power load  
+![](images/708b2c8e5f00e07804428887a292e1aa70e935e8f8a83967040de37de451f6db.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Month   | Capacity factor (%) |
+|---------|---------------------|
+| Jan-01  | 30%                 |
+| Feb-01  | 30%                 |
+| Mar-01  | 30%                 |
+| Apr-01  | 30%                 |
+| May-01  | 30%                 |
+| Jun-01  | 30%                 |
+| Jul-01  | 30%                 |
+| Aug-01  | 30%                 |
+| Sep-01  | 30%                 |
+| Oct-01  | 30%                 |
+| Nov-01  | 30%                 |
+| Dec-01  | 30%                 |
+| Jan-01  | 30%                 |
+</details>
+
+Source: Company data, Bernstein analysis
+
+Solar has significant variability in capacity factor by months and hours of the day. Capacity factors are generally higher in summer months with longer daylight hours and stronger solar irradiance. Solar power generation are typically between 6am to 5pm with peak generation between 10am to 1pm where the sun's ray strikes the panels most directly.
+
+EXHIBIT 7: Solar power is mostly generated between 7am to 5pm, which means there is no power for more than 12 hours of the day without storage or other power source  
+![](images/d3b12dee66954262fd1da127931fff9a0cfbf2edf6ba491b49df0ee013ae9281.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Hour of the day | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    | 10   | 11   | 12   | Average |
+| --------------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ------- |
+| 0               | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%      |
+| 1               | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%      |
+| 2               | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%      |
+| 3               | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%      |
+| 4               | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%      |
+| 5               | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%      |
+| 6               | ~10% | ~15% | ~20% | ~25% | ~30% | ~35% | ~40% | ~45% | ~50% | ~55% | ~60% | ~65% | ~70%    |
+| 7               | ~45% | ~55% | ~65% | ~75% | ~85% | ~95% | ~98% | ~99% | ~98% | ~97% | ~96% | ~95% | ~95%    |
+| 8               | ~65% | ~75% | ~85% | ~95% | ~98% | ~99% | ~99.5| ~99.8| ~99.2| ~98.5| ~97.5| ~96.5| ~96.5    |
+| 9               | ~75% | ~85% | ~95% | ~98% | ~99.5| ~99.8| ~99.9| ~99.95| ~99.8| ~99.7| ~99.6| ~99.5| ~99.5    |
+| 10              | ~78% | ~88% | ~98% | ~99.5| ~99.8| ~99.9| ~99.95| ~99.98| ~99.9| ~99.8| ~99.7| ~99.6| ~99.6    |
+| 11              | ~77% | ~87% | ~97% | ~99.4| ~99.7| ~99.8| ~99.85| ~99.88| ~99.7| ~99.6| ~99.5| ~99.4| ~99.4    |
+| 12              | ~76% | ~86% | ~96% | ~99.3| ~99.6| ~99.7| ~99.75| ~99.78| ~99.6| ~99.5| ~99.4| ~99.3| ~99.3    |
+| 13              | ~74% | ~84% | ~94% | ~98.8| ~98.8| ~98.8| ~98.85| ~98.88| ~98.6| ~98.5| ~98.4| ~98.3| ~98.3    |
+| 14              | ~72% | ~82% | ~92% | ~97.8| ~97.8| ~97.8| ~97.85| ~97.88| ~97.6| ~97.5| ~97.4| ~97.3| ~97.3    |
+| 15              | ~68% | ~78% | ~88% | ~88.8| ~88.8| ~88.8| ~88.85| ~88.88| ~88.6| ~88.5| ~88.4| ~88.3| ~88.3    |
+| 16              | ~55% | ~65% | ~75% | ~72.5| ~72.5| ~72.5| ~72.5| ~72.5| ~71.5| ~71.5| ~71.4| ~71.3| ~71.3    |
+| 17              | ~35% | ~45% | ~55% | ~52.5| ~52.5| ~52.5| ~52.5| ~52.5| ~51.5| ~51.5| ~51.4| ~51.3| ~51.3    |
+| 18              | ~5%  | ~10% | ~15% | ~12.5| ~12.5| ~12.5| ~12.5| ~12.5| ~11.5| ~11.5| ~11.4| ~11.3| ~11.3    |
+| 19              | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%      |
+| 20              | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%      |
+| 21              | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%      |
+| 22              | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%      |
+| 23              | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%   | 0%      |
+</details>
+
+Source: Company data, Bernstein analysis
+
+The hourly generation profile below illustrates significant volatility in electricity generation without storage. Power generation drops to zero during peak evening hours. For a 5.2GW solar farm, the solar project can generate 12.45TWh of electricity annually.
+
+EXHIBIT 8: Annually, the project could generate 12.45TWh of electricity, although this is interruptible  
+![](images/3186a9fcb8e19a4c8c6807c5d84bf5ed487d27320b4d2c5e66d3ac80aa775bc9.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Month   | Electricity generation (MW) |
+| ------- | --------------------------- |
+| Jan-01  | 3500                        |
+| Feb-01  | 4000                        |
+| Mar-01  | 4500                        |
+| Apr-01  | 3800                        |
+| May-01  | 4200                        |
+| Jun-01  | 4000                        |
+| Jul-01  | 3900                        |
+| Aug-01  | 3700                        |
+| Sep-01  | 3800                        |
+| Oct-01  | 3600                        |
+| Nov-01  | 3700                        |
+| Dec-01  | 3500                        |
+| Jan-01  | 3600                        |
+</details>
+
+Source: Company data, Bernstein analysis
+
+While the solar project can theoretically achieve 27% capacity factor, realistically utilization is lower due to curtailment driven by mismatch between supply and demand. After factoring a continuous power load of 1GW, solar power generation would be curtailed at peak production around midday, as supply exceeds the demand. This mismatch leads to intentional reduction of solar output to maintain grid stability and prevent overloads. Curtailment results from limited grid flexibility and insufficient storage.
+
+EXHIBIT 9: While the solar project can theoretically achieve 27% capacity factor, realistically utilization is lower due to curtailment during midday without storage  
+![](images/01d45f2bb10010f0249e52e2c5434352a0902a44e9b13ea6a8d283aa09219260.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Hour of the day | Solar power generation (MW) | Power load (MW) |
+| --------------- | --------------------------- | --------------- |
+| 0               | 0                           | 1000            |
+| 6               | 500                         | 1000            |
+| 7               | 1800                        | 1000            |
+| 8               | 3000                        | 1000            |
+| 9               | 3500                        | 1000            |
+| 10              | 3600                        | 1000            |
+| 11              | 3600                        | 1000            |
+| 12              | 3600                        | 1000            |
+| 13              | 3600                        | 1000            |
+| 14              | 3500                        | 1000            |
+| 15              | 3200                        | 1000            |
+| 16              | 2500                        | 1000            |
+| 17              | 1200                        | 1000            |
+| 18              | 200                         | 1000            |
+| 19              | 0                           | 1000            |
+| 20              | 0                           | 1000            |
+| 21              | 0                           | 1000            |
+| 22              | 0                           | 1000            |
+| 23              | 0                           | 1000            |
+</details>
+
+Source: Company data, Bernstein analysis
+
+After factoring in curtailment, the actual solar power generation from the project is effectively reduced to match the power load during midday. As a result, the generation profile shows lower output during periods when the grid cannot absorb all the solar energy produced. This means the net generation curve is clipped or flattened at these times. Consequently, the curtailment results in lower project revenue and efficiency metrics. After factoring in the curtailment, capacity factor for the system falls to 9%.
+
+EXHIBIT 10: Without storage, the curtailment results in capacity factor falling to 9%  
+![](images/ee4a453236222996eea7d42550b1e918630db2c56e9fbd112b4af1c6203387e1.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | Solar only (MW) | Power Load (MW) |
+|---------|-----------------|-----------------|
+| Jan-01  | 1000            | 1000            |
+| Feb-01  | 1000            | 1000            |
+| Mar-01  | 1000            | 1000            |
+| Apr-01  | 1000            | 1000            |
+| May-01  | 1000            | 1000            |
+| Jun-01  | 1000            | 1000            |
+| Jul-01  | 1000            | 1000            |
+| Aug-01  | 1000            | 1000            |
+| Sep-01  | 1000            | 1000            |
+| Oct-01  | 1000            | 1000            |
+| Nov-01  | 1000            | 1000            |
+| Dec-01  | 1000            | 1000            |
+| Jan-01  | 1000            | 1000            |
+</details>
+
+Source: Company data, Bernstein analysis
+
+Batteries help to store excess power and discharge during higher power load in the morning and evening. Sizing battery storage alongside solar requires a detailed analysis of solar generation and load demand profiles to optimize system performance and cost-efficiency. Key factors include understanding the timing and magnitude of solar output and electricity consumption, determining the required storage duration for balancing supply and demand, and accounting for battery characteristics such as depth of discharge and efficiency. The sizing strategy aims to maximize consumption and ensure reliability during periods of low solar generation. A well-established system prevents power shortfalls and excessive capital investment, enhancing the overall value proposition of solar-plus-storage projects.
+
+EXHIBIT 11: 1GW of continuous power output enabled by the project  
+![](images/0349634d394268c2a70acacb740518af838167ffdf89e42b779b378f70cfe412.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Hour of the day | Solar only (MW) | Solar + storage (MW) | Power load (MW) |
+| --------------- | --------------- | -------------------- | --------------- |
+| 1               | 0               | 1000                 | 1000            |
+| 2               | 0               | 1000                 | 1000            |
+| 3               | 0               | 1000                 | 1000            |
+| 4               | 0               | 1000                 | 1000            |
+| 5               | 0               | 1000                 | 1000            |
+| 6               | 0               | 1000                 | 1000            |
+| 7               | 400             | 1000                 | 1000            |
+| 8               | 1800            | 1000                 | 1000            |
+| 9               | 3000            | 1000                 | 1000            |
+| 10              | 3500            | 1000                 | 1000            |
+| 11              | 3700            | 1000                 | 1000            |
+| 12              | 3750            | 1000                 | 1000            |
+| 13              | 3750            | 1000                 | 1000            |
+| 14              | 3750            | 1000                 | 1000            |
+| 15              | 3650            | 1000                 | 1000            |
+| 16              | 3350            | 1000                 | 1000            |
+| 17              | 2650            | 1000                 | 1000            |
+| 18              | 1250            | 1000                 | 1000            |
+| 19              | 250             | 1000                 | 1000            |
+| 20              | 5               | 100                  | 100             |
+| 21              | 5               | 10                   | 10              |
+| 22              | 5               | 1                    | 1               |
+| 23              | 5               | 1                    | 1               |
+| 24              | 5               | 1                    | 1               |
+</details>
+
+Source: Company data, Bernstein analysis
+
+A key design feature of this project is its \~19 GWh of storage, which equates to \~19 hours of duration at a 1 GW output level. This is sufficient to cover essentially the entire non-solar generation window, including evening, overnight, and early morning hours when PV output is near zero. In practical terms, the system only needs to rely on real-time solar generation for a limited portion of the day, with storage providing the majority of off-peak supply. This long-duration capability is what enables the system to deliver near-continuous output, as it can bridge the full diurnal gap between production and demand. Importantly, the 19-hour duration is not excessive but deliberately allows for full night-time coverage while also providing buffer for efficiency losses and variability in solar generation. Combined with the \~40% energy overbuild, this ensures that sufficient energy can be stored each day to reliably sustain baseload delivery, even under less-than-ideal conditions. Given the irradiance profile and system build, continuous power output at 1GW is achieved almost entirely through the year.
+
+EXHIBIT 12: System sustains \~1 GW of near-continuous output throughout the year  
+![](images/03847e594b1f1ae5e754e9ae3a110e31b83e8da5b222a92638b65f48a5c17798.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Solar + Storage (MW) | Power Load (MW) |
+|---------|----------------------|-----------------|
+| Jan-01  | 0                    | 1000            |
+| Feb-01  | 0                    | 1000            |
+| Mar-01  | 1000                 | 1000            |
+| Apr-01  | 1000                 | 1000            |
+| May-01  | 0                    | 1000            |
+| Jun-01  | 0                    | 1000            |
+| Jul-01  | 0                    | 1000            |
+| Aug-01  | 0                    | 1000            |
+| Sep-01  | 0                    | 1000            |
+| Oct-01  | 0                    | 1000            |
+| Nov-01  | 0                    | 1000            |
+| Dec-01  | 100                  | 100             |
+| Jan-01  | 100                  | 100             |
+</details>
+
+Source: Company data, Bernstein analysis
+
+Below we summarize the key operating characteristics for different configuration of solar+storage systems at different duration. For 19-hour storage, the system is able to sustain \~1 GW of near-continuous output with \~99.7% uptime based on our modelling.
+
+EXHIBIT 13: Key operating metrics for solar vs solar-plus-storage
+
+<table><tr><td></td><td></td><td>Solar only</td><td>Solar + 4-hr ESS</td><td>Solar + 12-hr ESS</td><td>Solar + 19-hr ESS</td></tr><tr><td colspan="6">Combined</td></tr><tr><td>Daily power load</td><td>MW</td><td>24,000</td><td>24,000</td><td>24,000</td><td>24,000</td></tr><tr><td>Daily generation</td><td>MW</td><td>11,217</td><td>15,215</td><td>22,933</td><td>23,879</td></tr><tr><td>Uptime</td><td>%</td><td>50.3%</td><td>66.7%</td><td>97.5%</td><td>99.6%</td></tr><tr><td colspan="6">Solar</td></tr><tr><td>Capacity</td><td>MW</td><td>5200</td><td>5200</td><td>5200</td><td>5200</td></tr><tr><td>Effective utilization</td><td>%</td><td>9%</td><td>12%</td><td>18%</td><td>19%</td></tr><tr><td colspan="6">Battery</td></tr><tr><td>Battery size</td><td>MWh</td><td>0</td><td>4,000</td><td>12,000</td><td>19,000</td></tr><tr><td>Duration</td><td>hours</td><td>0</td><td>4.0</td><td>12.0</td><td>19.0</td></tr><tr><td>DoD per day</td><td>%</td><td>0%</td><td>100%</td><td>98%</td><td>67%</td></tr></table>
+
+Source: Company data, Bernstein analysis
+
+Based on our modelling, this configuration can achieve \~99.7% uptime, effectively delivering baseload-like reliability. Even with a reduced configuration of \~12 hours of storage, uptime could still reach \~97.5%, highlighting the critical role of storage duration in determining system reliability. While short-duration systems (e.g., 2–4 hours) can improve utilization and reduce curtailment, they fully eliminate supply gaps, whereas longer duration storage (12+ hours) enables full day-night energy shifting. Together with deliberate solar overbuild, excess midday generation is stored rather than curtailed and discharged overnight, reshaping variable solar output into a flat, baseload-like profile, representing a structural shift from intermittent renewables to firm power.
+
+EXHIBIT 14: Based on our modelling, this configuration (19 hours) can achieve \~99.7% uptime, effectively delivering baseload-like reliability  
+![](images/65d558d6c21ab512477aed3d586b29f745220036b3761c11c43d76c326b6a241.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| ESS Duration (hours) | Uptime (%) |
+| -------------------- | ---------- |
+| 0                    | 50.3       |
+| 4                    | 66.7       |
+| 12                   | 97.5       |
+| 20                   | 99.6       |
+</details>
+
+Source: Company data, Bernstein analysis
+
+## HOW MUCH WILL IT COST?
+
+Solar and storage costs have declined significantly in recent years, making baseload solar-plus-storage systems increasingly viable. This reflects a combination of scale-driven manufacturing efficiencies, supply chain maturation, and rapid technology improvements across both solar and battery value chains. Solar modules have benefited from continuous efficiency gains, larger wafer formats, and aggressive capacity expansion in China, driving pricing to cyclical lows. At the same time, battery costs have declined with improvements in cell chemistry, energy density, and manufacturing scale, supported by strong growth in EV and stationary storage demand. As a result, prices are now at decade lows, with solar modules at around \$0.09/W, inverters at roughly \$0.09/W, and ESS costs at approximately \$130/kWh, materially improving system economics relative to historical levels and enabling new use cases such as firm power generation.
+
+EXHIBIT 15: Solar ASP are at decade low which makes economics attractive  
+![](images/e2b046438c9c607e734f7965d63f54f7106d39c1daf946355245e7e97a7929d4.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | ASP ($/W) |
+| ---- | --------- |
+| 2017 | 0.50      |
+| 2018 | 0.31      |
+| 2019 | 0.26      |
+| 2020 | 0.20      |
+| 2021 | 0.24      |
+| 2022 | 0.26      |
+| 2023 | 0.18      |
+| 2024 | 0.10      |
+| 2025 | 0.09      |
+</details>
+
+Source: Bloomberg, Bernstein analysis
+
+EXHIBIT 16: ESS costs have also continued to decline in recent years  
+![](images/abf8cda7413c3c7cff442e90ad871dbdb05f27d788fe94881d04ea38fdfbf807.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Turnkey ESS ASP ($/kWh) |
+| ---- | ------------------------ |
+| 2017 | 630                      |
+| 2018 | 430                      |
+| 2019 | 390                      |
+| 2020 | 300                      |
+| 2021 | 290                      |
+| 2022 | 370                      |
+| 2023 | 280                      |
+| 2024 | 170                      |
+| 2025 | 110                      |
+</details>
+
+Source: Bloomberg, Bernstein analysis
+
+We estimate total project capex at approximately \$6bn for 1GW of firm solar-plus-storage capacity (or \~\$6,000/kW). This can be broadly broken down into \~\$0.5bn for solar modules, \~\$0.5bn for inverters and balance-of-plant, and \~\$2.5bn for ESS,
+
+with the remaining \~\$2.5bn covering grid/electrical infrastructure, EPC, land, and other development costs. The key takeaway is that while solar generation itself is already low cost, storage dominates the economics, accounting for roughly half of total system cost. As a result, the competitiveness of baseload solar-plus-storage is primarily driven by battery cost declines rather than further reductions in module pricing. This reinforces our view that continued cost reductions in ESS will be the critical enabler for scaling firm renewable power.
+
+EXHIBIT 17: We estimate total project capex at approximately \$6bn (or \~\$6,000/kW). Energy storage dominates the economics  
+Project cost (\$bn) for 5.2GW solar + 19GWh storage = 1GW baseload power  
+![](images/9b2c6c8ab02862f5eaf516e472e56541d0f49d1f094292dd48f27f41b6a3c4ef.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Project developer | Funding Amount (US$bn) |
+| :--- | :--- |
+| Solar module | 0.5 |
+| Jinko Solar | 1.8 |
+| JA SOLAR | 0.5 |
+| Inverter and BOP | 0.5 |
+| ESS (excl. EPC) | 2.5 |
+| Other (Electrical, EPC, Land) | 6.0 |
+Project developer: Jinko Solar, SUNGROW, CATL SUNGROW, China Power China, Larseen & Toubro (Jinko MASDAI, EWEC Energy Research Co., Ltd.) (Other (Electrical, EPC, Land)).
+</details>
+
+CATL and Sungrow are covered by Bernstein. All other companies are not covered by Bernstein.  
+Source: Company data, Bernstein analysis and estimates
+
+Below we summarize our key assumptions for the project. Based on our modelling, we estimate an LCOE of approximately \$97/MWh, assuming an 8% IRR.
+
+EXHIBIT 18: Our assumptions for the solar + storage (19 hours) results in LCOE of \$97/MWh
+
+<table><tr><td>Solar Assumptions</td><td>Units</td><td>Value</td></tr><tr><td>Capacity</td><td>MW</td><td>5,200</td></tr><tr><td>Capacity factor</td><td>%</td><td>10%</td></tr><tr><td>Electricity generation</td><td>GWh</td><td>4,555</td></tr><tr><td>Capital intensity</td><td>$/kW</td><td>550</td></tr><tr><td>Capital cost</td><td>$M</td><td>2,860</td></tr><tr><td>Fixed O&amp;M cost</td><td>$/kW/year</td><td>10.0</td></tr><tr><td colspan="3"></td></tr><tr><td>Energy Storage Assumptions</td><td>Units</td><td>Value</td></tr><tr><td>Energy Storage</td><td>MWh</td><td>19,000</td></tr><tr><td>Capital intensity</td><td>$/kWh</td><td>165</td></tr><tr><td>Capital cost</td><td>$M</td><td>3,135</td></tr><tr><td>DoD Cycles/Day</td><td>%</td><td>67%</td></tr><tr><td>Annual Degradation</td><td>%</td><td>3%</td></tr><tr><td>Efficiency</td><td>%</td><td>90%</td></tr><tr><td>Number of cycles</td><td>Times</td><td>2446</td></tr><tr><td colspan="3"></td></tr><tr><td>Economics</td><td>Units</td><td>Value</td></tr><tr><td>IRR</td><td>%</td><td>8%</td></tr><tr><td>LCOE</td><td>$/MWh</td><td>97</td></tr></table>
+
+<table><tr><td>Energy Storage Assumptions</td><td>Units</td><td>Value</td></tr><tr><td>Energy Storage</td><td>MWh</td><td>19,000</td></tr><tr><td>Capital intensity</td><td>$/kWh</td><td>165</td></tr><tr><td>Capital cost</td><td>$M</td><td>3,135</td></tr><tr><td>DoD Cycles/Day</td><td>%</td><td>67%</td></tr><tr><td>Annual Degradation</td><td>%</td><td>3%</td></tr><tr><td>Efficiency</td><td>%</td><td>90%</td></tr><tr><td>Number of cycles</td><td>Times</td><td>2446</td></tr></table>
+
+<table><tr><td>Economics</td><td>Units</td><td>Value</td></tr><tr><td>IRR</td><td>%</td><td>8%</td></tr><tr><td>LCOE</td><td>$/MWh</td><td>97</td></tr></table>
+
+Source: Company data, Bernstein analysis
+
+Economics are competitiveness in higher gas price environments. At an estimated LCOE of \$97/MWh for the Masdar project, and around \$80/MWh under a shorter-duration 12-hour storage scenario, solar-plus-storage can compete with gas-fired power at gas price of \~\$8/mmbtu or higher. This is particularly relevant given ongoing volatility and disruption in global gas supply. That said, gas remains favored in regions with structurally low fuel costs such as the US.
+
+EXHIBIT 19: Solar plus storage (12+ hours) are competitive against gas-fired power at high gas prices  
+![](images/d25d0b4dda066a4ddcb05dc3c895c1cc204244f32c2fd1078790d7f78e2154a0.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Gas price ($/mmbtu) | LCOE ($/MWh) |
+| ------------------- | ------------ |
+| 4                   | 60           |
+| 18                  | 160          |
+</details>
+
+Source: Company data, Bernstein analysis
+
+## GLOBAL POWER AND ESS DEMAND OUTLOOK
+
+Since the beginning of the year, we have adopted a more positive outlook on ESS and significantly elevated our forecast to capture the higher ESS penetration driven by improved economics and the critical role of ESS in ensuring grid stability. We expect global ESS demand to grow at \~34% CAGR over the next five years, driven by the need for firming renewable generation and grid stability. Within the value chain, CATL leads in ESS battery supply, while Sungrow is a key player in system integration, inverters, and broader power conversion solutions, positioning both as primary beneficiaries of this structural shift.
+
+EXHIBIT 20: Global power and ESS demand outlook
+
+<table><tr><td></td><td>2020</td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td><td>2050E</td></tr><tr><td>Total power capacity (GW)</td><td>7,690</td><td>8,053</td><td>8,495</td><td>9,160</td><td>9,973</td><td>10,812</td><td>11,755</td><td>12,799</td><td>13,887</td><td>15,012</td><td>16,170</td><td>40,260</td></tr><tr><td>Total solar and wind capacity (GW)</td><td>1,531</td><td>1,802</td><td>2,127</td><td>2,686</td><td>3,399</td><td>4,144</td><td>4,978</td><td>5,877</td><td>6,861</td><td>7,878</td><td>8,920</td><td>33,377</td></tr><tr><td>Share of solar and wind (%)</td><td>20%</td><td>22%</td><td>25%</td><td>29%</td><td>34%</td><td>38%</td><td>42%</td><td>46%</td><td>49%</td><td>52%</td><td>55%</td><td>83%</td></tr><tr><td>Net added solar and wind capacity (GW)</td><td>262</td><td>271</td><td>324</td><td>560</td><td>713</td><td>745</td><td>834</td><td>898</td><td>984</td><td>1,017</td><td>1,042</td><td>1,403</td></tr><tr><td>y-o-y (%)</td><td></td><td>3%</td><td>20%</td><td>73%</td><td>27%</td><td>4%</td><td>12%</td><td>8%</td><td>10%</td><td>3%</td><td>2%</td><td>1%</td></tr><tr><td>Cumulative ESS capacity (GW)</td><td>18</td><td>27</td><td>45</td><td>90</td><td>165</td><td>281</td><td>469</td><td>773</td><td>1,169</td><td>1,576</td><td>1,991</td><td>9,755</td></tr><tr><td>As of total capacity (%)</td><td>0%</td><td>0%</td><td>1%</td><td>1%</td><td>2%</td><td>3%</td><td>4%</td><td>6%</td><td>8%</td><td>11%</td><td>12%</td><td>24%</td></tr><tr><td>As of solar and wind capacity (%)</td><td>1%</td><td>2%</td><td>2%</td><td>3%</td><td>5%</td><td>7%</td><td>9%</td><td>13%</td><td>17%</td><td>20%</td><td>22%</td><td>29%</td></tr><tr><td>Net added ESS capacity (GW)</td><td>6</td><td>10</td><td>18</td><td>45</td><td>75</td><td>116</td><td>189</td><td>304</td><td>396</td><td>408</td><td>414</td><td>410</td></tr><tr><td>y-o-y (%)</td><td></td><td>63%</td><td>82%</td><td>154%</td><td>68%</td><td>55%</td><td>62%</td><td>61%</td><td>30%</td><td>3%</td><td>2%</td><td>2%</td></tr><tr><td>Duration (hours)</td><td>2.0</td><td>2.1</td><td>2.1</td><td>2.1</td><td>2.3</td><td>2.5</td><td>2.6</td><td>2.8</td><td>3.1</td><td>3.3</td><td>3.4</td><td>4.1</td></tr><tr><td>Cumulative ESS capacity (GWh)</td><td>36</td><td>58</td><td>95</td><td>191</td><td>375</td><td>700</td><td>1,228</td><td>2,200</td><td>3,624</td><td>5,173</td><td>6,830</td><td>39,789</td></tr><tr><td>Annual battery installation (GWh)</td><td>12</td><td>22</td><td>37</td><td>96</td><td>184</td><td>325</td><td>542</td><td>1,009</td><td>1,501</td><td>1,712</td><td>1,915</td><td>4,406</td></tr><tr><td>y-o-y</td><td>61%</td><td>78%</td><td>71%</td><td>159%</td><td>91%</td><td>77%</td><td>67%</td><td>86%</td><td>49%</td><td>14%</td><td>12%</td><td>3%</td></tr><tr><td>Annual ESS battery shipment/demand (GWh)</td><td>21</td><td>44</td><td>121</td><td>185</td><td>301</td><td>550</td><td>1,023</td><td>1,523</td><td>1,737</td><td>1,943</td><td>2,109</td><td>4,605</td></tr><tr><td>y-o-y</td><td>73%</td><td>114%</td><td>175%</td><td>53%</td><td>63%</td><td>83%</td><td>86%</td><td>49%</td><td>14%</td><td>12%</td><td>9%</td><td>3%</td></tr></table>
+
+Source: Government websites, Bloomberg, InfoLink, Bernstein analysis and estimates
+
+## I. REQUIRED DISCLOSURES
+
+References to "Bernstein" or the "Firm" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.
+
+Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.
+
+## VALUATION METHODOLOGY
+
+This research publication covers six or more companies. For valuation methodology and other company disclosures:
+
+Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action.
+
+Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+## RISKS
+
+This research publication covers six or more companies. For risks and other company disclosures:
+
+Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action.
+
+Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+## RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION
+
+## EQUITY RATINGS DEFINITIONS
+
+## Bernstein brand
+
+The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.
+
+The Bernstein brand has three categories of ratings:
+
+- Outperform: Stock will outpace the market index by more than 15 pp  
+• Market-Perform: Stock will perform in line with the market index to within +/-15 pp  
+• Underperform: Stock will trail the performance of the market index by more than 15 pp
+
+Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Bernstein brand stock ratings are based on a 12-month time horizon.
+
+## Autonomous brand – common stocks
+
+The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).
+
+The Autonomous brand has three categories of common stock ratings:
+
+- Outperform (OP): Stock will outpace the relevant index by more than 10 pp  
+- Neutral (N): Stock will perform in line with the market index to within +/-10 pp  
+• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp
+
+Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Autonomous brand common stock ratings are based on a 12-month time horizon.
+
+## Autonomous brand – preferred stocks
+
+The Autonomous brand has three categories of preferred stock ratings:
+
+- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.  
+- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.  
+- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous preferred stock ratings are based on a 6-month time horizon.
+
+## AUTONOMOUS CREDIT RESEARCH
+
+Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.
+
+The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.
+
+## CREDIT RATINGS DEFINITIONS
+
+The Autonomous brand has three categories of credit ratings:
+
+\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.  
+- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous credit ratings are based on a 6-month time horizon.
+
+A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm
+
+DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES
+
+<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.1%</td><td>16.5%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>36.3%</td><td>17.8%</td></tr><tr><td>Underperform</td><td>SELL</td><td>12.6%</td><td>14.9%</td></tr></table>
+
+\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.
+As of March 31, 2026. All figures are updated quarterly.
+
+## PRICE CHARTS/ RATINGS AND PRICE TARGET HISTORY
+
+This research publication covers six or more companies. For price chart and other company disclosures, please visit https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action or you can write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+## CONFLICTS OF INTEREST
+
+An affiliate of Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Contemporary Amperex Technology Co Ltd.
+
+Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: EcoPro BM, LG Chem Ltd, LG Energy Solution and Samsung SDI Co Ltd.
+
+Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Samsung SDI Co Ltd.
+
+Certain affiliates of Bernstein act as market maker or liquidity provider in the debt securities of: LG Chem Ltd and LG Energy Solution.
+
+## OTHER MATTERS
+
+The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:
+
++1 Bernstein Institutional Services LLC; New York, New York, USA  
++44 Bernstein Autonomous LLP; London UK
+
++212 SG Africa Technologies & Services; Casablanca, Morocco  
++33 BSG France S.A.; Paris, France  
++34 BSG France S.A.; Madrid, Spain  
++41 Bernstein Autonomous LLP; Geneva, Switzerland  
++49 BSG France S.A.; Frankfurt, Germany  
++91 Bernstein (India) Private Limited; Mumbai, India  
++852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China  
++65 Bernstein (Singapore) Private Limited; Singapore  
++81 Bernstein Japan KK; Tokyo, Japan
+
+Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.
+
+Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.
+
+## CERTIFICATION
+
+Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.
+
+## II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.
+
+## III. OTHER IMPORTANT INFORMATION AND DISCLOSURES
+
+Separate branding is maintained for “Bernstein” and “Autonomous” research products.
+
+- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.  
+- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.
+
+Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to,
+
+generating investment banking revenues.
+
+This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.
+
+To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.
+
+Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.
+
+To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.
+
+This document may not be passed onto any person in Canada unless that person qualifies as "permitted client" as defined in Section 1.1 of NI 31-103.
+
+To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. ("BTG") is responsible for the distribution of this report in Brazil.
+
+To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.
+
+This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.
+
+To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).
+
+To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.
+
+To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore ("SFA"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000.
+
+To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the “PRC”) in contravention of any applicable laws of the PRC.
+
+This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.
+
+We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.
+
+To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.
+
+For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. ("Daiwa"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.
+
+To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:
+
+• providing financial product advice;  
+• dealing in a financial product;  
+• making a market for a financial product; and  
+• providing a custodial or depository service.
+
+To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India ("SEBI") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.
+
+- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).  
+- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.  
+• SCB India does not have any disciplinary history as on the date of this report.  
+- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives
+
+• do not have any financial interest in the subject company  
+• do not have actual/beneficial ownership of one percent or more in securities of the subject company;  
+• is not engaged in any investment banking activities for Indian companies, as such;
+
+• have not managed or co-managed a public offering in the past twelve months for any Indian companies;  
+- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;  
+• have not received compensation for brokerage services from the subject company in the past twelve months;  
+- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and  
+- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.  
+• do not have any conflict of interest in the subject company as of the date of this report.
+
+- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.  
+- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.  
+- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com  
+- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.  
+- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.
+
+To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.
+
+## LEGAL
+
+All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.
+
+This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.
+
+This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.
+
+The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.
+
+Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.
+
+This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.
+
+Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.
+
+This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.
+
+The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.
+
+Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.
+
+No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.

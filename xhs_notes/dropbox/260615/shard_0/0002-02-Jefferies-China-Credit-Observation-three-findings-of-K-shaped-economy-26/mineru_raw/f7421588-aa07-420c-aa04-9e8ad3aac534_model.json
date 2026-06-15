@@ -1,0 +1,5517 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.041,
+                0.283,
+                0.079
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.078,
+                0.102,
+                0.437,
+                0.125
+            ],
+            "angle": 0,
+            "content": "China (PRC) | China Financials"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.82,
+                0.097,
+                0.921,
+                0.123
+            ],
+            "angle": 0,
+            "content": "Equity Research June 13, 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.077,
+                0.144,
+                0.61,
+                0.19
+            ],
+            "angle": 0,
+            "content": "China Credit Observation: three findings of K-shaped economy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.2,
+                0.627,
+                0.321
+            ],
+            "angle": 0,
+            "content": "China's May TSF data unveiled a deepened K-shape economy. Liquidity improved on the surface, yet largely reflect precautionary cash positioning. New loans relied on bill financing, whereas HH credit demand remained subdued. We highlight three findings from recent macro data, and favor three opportunities in China financials: a barbell positioning in China banks, BOC (H) and BONB (A), and HKEx as long-term beneficiary of expanding formal capital connect schemes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.339,
+                0.628,
+                0.41
+            ],
+            "angle": 0,
+            "content": "Headline TSF buoyed by govt credit: May-26 new TSF printed at Rmb2,029bn, 19% above consensus, driven by Rmb1.2tn issuance in government bonds, which contributes to 60% of new monthly TSF. Total TSF balance printed at Rmb458,810bn, +7.7% YoY. Corporate bond financing improved 14.6% YoY, partially offsetting the weakness on corporate LT loans. Shadow banking components further contracted.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.42,
+                0.628,
+                0.506
+            ],
+            "angle": 0,
+            "content": "M1 improved to 5.5%, but likely low quality: M1 and M2 growth printed at 5.5% (0.5ppt above consensus) and 8.6% in May respectively. We read this set of data into two perspectives 1) a narrowing M2-M1 gap indicates further term deposit activation, which can potentially lead to further consumptions/investments; 2) yet M1 strength is likely driven by precautionary liquidity rather than genuine corporate cash deployment, given a weaker PMI new order print (-0.7ppt MoM to 49.9), thus is low quality in our view.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.516,
+                0.628,
+                0.573
+            ],
+            "angle": 0,
+            "content": "Real economy credit demand is yet to recover: New Rmb loans printed at Rmb520bn in May, leading to a 5.5% system level loan balance growth to Rmb281.02tn. Structure was not improving, as 107% of new Rmb loans was boosted by discounted bills, while household ST/LT loans stayed in contraction zones. Overall China's credit impulse weakened on MoM basis.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.583,
+                0.628,
+                0.755
+            ],
+            "angle": 0,
+            "content": "Three findings about K-shaped economy: First, we track the gap between RatingDog PMI and official NBS PMI, and a widening spread in May suggests service-led, export-driven business activities are picking up faster driven by AI super-cycle, whereas overall manufacturing/infra activities landed on a softer patch. Second, export and domestic consumption like come in a divergent pair. China's custom export +19.4% YoY in May-26, beat consensus estimate of 15% YoY, marking the strongest since Feb-26, supported by continued strong demand for renewable and AI-related goods. On the other hand, Core CPI dipped 0.1% MoM to 1.1%, with softness in both services and core goods. Third, PPI continued to edge up at +3.9% YoY (vs +2.8% in Apr-26/3.8% consensus), the inflationary pressure from Middle East shock eased a bit evidenced from sequentially lower PMI raw material price, but the constant gap between purchase and ex-factory price suggests the limited pass-through, as such downstream sectors are still early to a reflationary scenario.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.765,
+                0.629,
+                0.88
+            ],
+            "angle": 0,
+            "content": "Three ideas in China Financials: Amid a K-shaped recovery in real economy, soft domestic demand, and a continued household deleveraging trend, we recommend barbell strategy in China banks - BOC (H) and Bank of Ningbo (A) are our top picks. We believe recent State Council's outbound investment regulations focus more on real investments, and CSRC's agenda is to clean up cross-border stock trading happening onshore with the end goal of facilitating capital flows into official channels, such as QDII, Southbound Connect, and Wealth Management Connect. As such, HKEx will be a long-term beneficiary of expanding formal capital connect channels.",
+            "merge_prev": false
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.66,
+                0.152,
+                0.796,
+                0.163
+            ],
+            "angle": 0,
+            "content": "Figure 1 - TSF quick read"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.662,
+                0.163,
+                0.908,
+                0.337
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>(Rmbbn)</td><td>May-25</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td>New total social financing (TSF)</td><td>2,290</td><td>5,226</td><td>625</td><td>2,029</td></tr><tr><td>- Loans (Rmb &amp; FX)</td><td>606</td><td>3,195</td><td>(382)</td><td>513</td></tr><tr><td>- Shadow banking *</td><td>(116)</td><td>80</td><td>(570)</td><td>(72)</td></tr><tr><td>- Corporate bonds</td><td>150</td><td>395</td><td>452</td><td>172</td></tr><tr><td>- Government bonds (central &amp; local)</td><td>1,459</td><td>1,162</td><td>904</td><td>1,222</td></tr><tr><td>- Others (equity, ABS, write-off, etc.)</td><td>192</td><td>395</td><td>220</td><td>195</td></tr><tr><td>TSF balance</td><td>426,160</td><td>456,460</td><td>456,890</td><td>458,810</td></tr><tr><td>TSF balance growth</td><td>8.7%</td><td>7.9%</td><td>7.8%</td><td>7.7%</td></tr><tr><td colspan=\"5\">* Shadow banking include entrusted loans, trust loans and undiscounted bills</td></tr><tr><td>New Rmb loans</td><td>620</td><td>2,990</td><td>-10</td><td>520</td></tr><tr><td>- Household short-term loans</td><td>(21)</td><td>196</td><td>(446)</td><td>(84)</td></tr><tr><td>- Household long-term loans</td><td>75</td><td>295</td><td>(341)</td><td>(57)</td></tr><tr><td>- Corporate short-term loans</td><td>110</td><td>1,480</td><td>(460)</td><td>100</td></tr><tr><td>- Corporate long-term loans</td><td>330</td><td>1,350</td><td>(410)</td><td>(20)</td></tr><tr><td>- Discounted bills</td><td>75</td><td>(191)</td><td>1,243</td><td>557</td></tr><tr><td>- NBFi loans</td><td>59</td><td>(169)</td><td>175</td><td>(86)</td></tr><tr><td>Loan balance</td><td>266,321</td><td>280,510</td><td>280,502</td><td>281,020</td></tr><tr><td>Loan balance growth</td><td>7.1%</td><td>5.7%</td><td>5.6%</td><td>5.5%</td></tr><tr><td>New deposits</td><td>2,183</td><td>4,470</td><td>273</td><td>1,770</td></tr><tr><td>- Household deposits</td><td>470</td><td>2,440</td><td>-1,940</td><td>-110</td></tr><tr><td>- Corporate deposits</td><td>-418</td><td>2,725</td><td>-1,250</td><td>-170</td></tr><tr><td>M1 growth</td><td>2.3%</td><td>5.1%</td><td>5.0%</td><td>5.5%</td></tr><tr><td>M2 growth</td><td>7.9%</td><td>8.5%</td><td>8.6%</td><td>8.6%</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.661,
+                0.337,
+                0.808,
+                0.345
+            ],
+            "angle": 0,
+            "content": "Source: PBOC, Wind, CEIC, JEF"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.659,
+                0.359,
+                0.89,
+                0.38
+            ],
+            "angle": 0,
+            "content": "Figure 2 - Household deposit vs household debt"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.662,
+                0.381,
+                0.907,
+                0.478
+            ],
+            "angle": 0,
+            "content": "| Year | Household deposit (Rmbtn) | Household debt (Rmbtn) |\n|---|---|---|\n| 2013 | 6 | 4 |\n| 2014 | 4 | 3 |\n| 2015 | 4 | 4 |\n| 2016 | 6 | 5 |\n| 2017 | 5 | 7 |\n| 2018 | 7 | 7 |\n| 2019 | 10 | 7 |\n| 2020 | 11 | 8 |\n| 2021 | 10 | 8 |\n| 2022 | 18 | 4 |\n| 2023 | 17 | 5 |\n| 2024 | 14 | 3 |\n| 2025 | 15 | 0 |\n| 2025Q1-7 | 6 | -1 |",
+            "sub_type": "bar chart"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.661,
+                0.48,
+                0.808,
+                0.489
+            ],
+            "angle": 0,
+            "content": "Source: PBOC, Wind, CEIC, JEF"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.659,
+                0.503,
+                0.881,
+                0.524
+            ],
+            "angle": 0,
+            "content": "Figure 3 - All new deposits breakdown by savers"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.661,
+                0.525,
+                0.908,
+                0.56
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.661,
+                0.56,
+                0.784,
+                0.567
+            ],
+            "angle": 0,
+            "content": "Source: PBOC, Wind, JEF"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.659,
+                0.582,
+                0.825,
+                0.593
+            ],
+            "angle": 0,
+            "content": "Figure 4 - China credit impulse"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.662,
+                0.594,
+                0.907,
+                0.7
+            ],
+            "angle": 0,
+            "content": "China's credit impulse (3-m TSF change % quarterly GDP)\n| Date | Value (%) |\n|---|---|\n| Mar-08 | 30 |\n| Mar-09 | 70 |\n| Sep-09 | 55 |\n| Sep-10 | 40 |\n| Sep-11 | 25 |\n| Sep-12 | 35 |\n| Sep-13 | 45 |\n| Sep-14 | 30 |\n| Sep-15 | 40 |\n| Sep-16 | 35 |\n| Sep-17 | 40 |\n| Sep-18 | 30 |\n| Sep-19 | 35 |\n| Sep-20 | 55 |\n| Sep-21 | 30 |\n| Sep-22 | 25 |\n| Sep-23 | 30 |\n| Sep-24 | 40 |\n| Sep-25 | 35 |\n| Mar-26 | 40 |",
+            "sub_type": "line chart"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.661,
+                0.7,
+                0.784,
+                0.707
+            ],
+            "angle": 0,
+            "content": "Source: PBOC, Wind, JEF"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.659,
+                0.721,
+                0.877,
+                0.733
+            ],
+            "angle": 0,
+            "content": "Figure 5 - RatingDog PMI vs Official PMI"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.662,
+                0.734,
+                0.905,
+                0.825
+            ],
+            "angle": 0,
+            "content": "| Date | Manufacturing | Service | RatingDog PMI | NBS PMI |\n|---|---|---|---|---|\n| 2024-12 | 51.5 | 51.8 | 50.0 | 50.0 |\n| 2025-01 | 51.3 | 51.6 | 50.0 | 49.7 |\n| 2025-02 | 51.1 | 51.4 | 50.0 | 49.4 |\n| 2025-03 | 50.9 | 51.2 | 50.0 | 49.1 |\n| 2025-04 | 50.7 | 51.0 | 50.0 | 48.8 |\n| 2025-05 | 49.8 | 50.8 | 50.0 | 48.5 |\n| 2025-06 | 50.3 | 51.1 | 50.0 | 48.7 |\n| 2025-07 | 50.6 | 51.3 | 50.0 | 48.9 |\n| 2025-08 | 51.0 | 51.6 | 50.0 | 49.1 |\n| 2025-09 | 51.3 | 51.9 | 50.0 | 49.3 |\n| 2025-10 | 51.6 | 52.2 | 50.0 | 49.5 |\n| 2025-11 | 51.9 | 52.5 | 50.0 | 49.7 |\n| 2025-12 | 52.2 | 52.8 | 50.0 | 49.9 |\n| 2026-01 | 52.6 | 53.1 | 50.0 | 50.1 |\n| 2026-02 | 53.1 | 53.4 | 54.4 | 49.8 |\n| 2026-03 | 51.8 | 53.7 | 54.4 | 49.6 |\n| 2026-04 | 51.6 | 53.9 | 54.4 | 49.4 |\n| 2026-05 | 51.8 | 54.0 | 54.4 | 49.3 |",
+            "sub_type": "line chart"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.661,
+                0.827,
+                0.821,
+                0.837
+            ],
+            "angle": 0,
+            "content": "Source: RatingDog, S&P, NBS, JEF"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.659,
+                0.873,
+                0.8,
+                0.885
+            ],
+            "angle": 0,
+            "content": "Betty Li * | Equity Analyst",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.661,
+                0.886,
+                0.838,
+                0.896
+            ],
+            "angle": 0,
+            "content": "+852 3767 1279 | betty.li@JEF.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.66,
+                0.902,
+                0.839,
+                0.914
+            ],
+            "angle": 0,
+            "content": "Hongyu Tian * | Equity Associate",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.661,
+                0.915,
+                0.861,
+                0.926
+            ],
+            "angle": 0,
+            "content": "+852 6806 1456 | hongyu.tian@JEF.com",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.078,
+                0.942,
+                0.751,
+                0.963
+            ],
+            "angle": 0,
+            "content": "Please see analyst certifications, important disclosure information, and information regarding the status of non-US analysts on pages 2 - 7 of this report.  \n* JEF Hong Kong Limited"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.04,
+                0.285,
+                0.082
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.101,
+                0.436,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.82,
+                0.097,
+                0.921,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.834,
+                0.111,
+                0.922,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.144,
+                0.608,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.166,
+                0.286,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.518,
+                0.626,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.533,
+                0.626,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.547,
+                0.624,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.561,
+                0.625,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.2,
+                0.625,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.219,
+                0.624,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.237,
+                0.626,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.254,
+                0.626,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.272,
+                0.625,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.288,
+                0.624,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.307,
+                0.321,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.767,
+                0.625,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.781,
+                0.626,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.795,
+                0.626,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.811,
+                0.626,
+                0.821
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.825,
+                0.626,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.839,
+                0.626,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.854,
+                0.626,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.868,
+                0.23,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.341,
+                0.626,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.355,
+                0.625,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.369,
+                0.625,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.383,
+                0.625,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.398,
+                0.368,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.422,
+                0.626,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.436,
+                0.626,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.451,
+                0.626,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.465,
+                0.626,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.48,
+                0.626,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.493,
+                0.34,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.585,
+                0.625,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.6,
+                0.625,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.615,
+                0.625,
+                0.625
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.628,
+                0.626,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.643,
+                0.626,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.658,
+                0.625,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.672,
+                0.626,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.686,
+                0.625,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.7,
+                0.625,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.714,
+                0.626,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.73,
+                0.626,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.743,
+                0.307,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.659,
+                0.152,
+                0.797,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.66,
+                0.336,
+                0.808,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.66,
+                0.48,
+                0.808,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.66,
+                0.582,
+                0.825,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.661,
+                0.828,
+                0.821,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.659,
+                0.873,
+                0.8,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.659,
+                0.359,
+                0.891,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.661,
+                0.372,
+                0.686,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.659,
+                0.503,
+                0.881,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.661,
+                0.559,
+                0.783,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.661,
+                0.7,
+                0.783,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.66,
+                0.722,
+                0.876,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.66,
+                0.886,
+                0.839,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.66,
+                0.902,
+                0.838,
+                0.913
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.661,
+                0.915,
+                0.861,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.943,
+                0.749,
+                0.952
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.952,
+                0.217,
+                0.962
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.08,
+                0.022,
+                0.216,
+                0.047
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.818,
+                0.023,
+                0.921,
+                0.034
+            ],
+            "angle": 0,
+            "content": "China Financials"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.82,
+                0.038,
+                0.921,
+                0.049
+            ],
+            "angle": 0,
+            "content": "Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.834,
+                0.053,
+                0.921,
+                0.063
+            ],
+            "angle": 0,
+            "content": "June 13, 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.124,
+                0.842,
+                0.138
+            ],
+            "angle": 0,
+            "content": "We would like to thank Tao Xue, employee of Evalueserve Inc., for providing research support services to our preparation of this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.081,
+                0.148,
+                0.31,
+                0.166
+            ],
+            "angle": 0,
+            "content": "Company Valuation/Risks"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.081,
+                0.169,
+                0.208,
+                0.18
+            ],
+            "angle": 0,
+            "content": "Bank of China Limited"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.182,
+                0.922,
+                0.223
+            ],
+            "angle": 0,
+            "content": "Our PT of HKD 6.3 is based on DDM with \\(7.69\\%\\) cost of equity. This implies a 0.67x H-share 2026E P/B and \\(4.0\\%\\) dividend yields. Long term ROE is set at \\(6.4\\%\\), implying a long-term H-share P/B of 0.59x. A/H premium is set at \\(26.4\\%\\), A-share TP is set at Rmb 7.4, implied a 0.84x A-share 2026E P/B. Our base case assumes an EPS of Rmb 0.76 based on \\(1.23\\%\\) NIM and \\(0.50\\%\\) CoR.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.234,
+                0.922,
+                0.276
+            ],
+            "angle": 0,
+            "content": "Upside risks: easing global tension; better-than-expected offshore interest rate movement; and better-than-expected HK market growth; potential upside in cross-border opportunities. Downside risks: worsening geopolitical conditions that hurt China's exports and economy, or prompt sanctions on financial institutions; further weak credit demand; and significant deterioration in asset quality.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.081,
+                0.29,
+                0.21,
+                0.302
+            ],
+            "angle": 0,
+            "content": "Bank of Ningbo Co Ltd"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.303,
+                0.922,
+                0.329
+            ],
+            "angle": 0,
+            "content": "Our PT of Rmb 42.0 is based on DDM with \\(8.6\\%\\) cost of equity. This implies a 1.12X 2026E P/B. Our base case assumes an EPS of Rmb 4.72 based on \\(1.69\\%\\) NIM and \\(1.00\\%\\) CoR.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.341,
+                0.922,
+                0.383
+            ],
+            "angle": 0,
+            "content": "Upside risk: Better than expected earnings recovery; regional economy further outpaces the country; better-than-expected wealth management business development; better-than-expect retail recovery. Downside risks: significant asset quality deterioration; worsening geopolitical conditions that hurt China's exports and economy.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.081,
+                0.397,
+                0.331,
+                0.409
+            ],
+            "angle": 0,
+            "content": "Hong Kong Exchanges and Clearing Limited"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.41,
+                0.922,
+                0.436
+            ],
+            "angle": 0,
+            "content": "We use P/E multiple to value HKEx. Upside risks: better-than-expected market turnover; better-than-expected fund flow; and better-than-expected economy. Downside risks: worse-than-expected market turnover; worse-than-expected fund flow; and worse-than-expected Chinese ADR return.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.081,
+                0.47,
+                0.262,
+                0.485
+            ],
+            "angle": 0,
+            "content": "Analyst Certification:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.486,
+                0.922,
+                0.523
+            ],
+            "angle": 0,
+            "content": "I, Betty Li, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.524,
+                0.922,
+                0.561
+            ],
+            "angle": 0,
+            "content": "I, Hongyu Tian, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.562,
+                0.922,
+                0.6
+            ],
+            "angle": 0,
+            "content": "Registration of non-US analysts: Betty Li is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.601,
+                0.922,
+                0.689
+            ],
+            "angle": 0,
+            "content": "Registration of non-US analysts: Hongyu Tian is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst. As is the case with all JEF employees, the analyst(s) responsible for the coverage of the financial instruments discussed in this report receives compensation based in part on the overall performance of the firm, including investment banking income. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Aside from certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgement.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.081,
+                0.708,
+                0.411,
+                0.723
+            ],
+            "angle": 0,
+            "content": "Investment Recommendation Record"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.081,
+                0.725,
+                0.279,
+                0.737
+            ],
+            "angle": 0,
+            "content": "(Article 3(1)e and Article 7 of MAR)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.738,
+                0.238,
+                0.749
+            ],
+            "angle": 0,
+            "content": "Recommendation Published",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.367,
+                0.738,
+                0.505,
+                0.749
+            ],
+            "angle": 0,
+            "content": "June 12, 2026 14:28 P.M.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.751,
+                0.243,
+                0.761
+            ],
+            "angle": 0,
+            "content": "Recommendation Distributed",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.367,
+                0.751,
+                0.505,
+                0.761
+            ],
+            "angle": 0,
+            "content": "June 12, 2026 14:28 P.M.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.081,
+                0.781,
+                0.349,
+                0.797
+            ],
+            "angle": 0,
+            "content": "Company Specific Disclosures"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.081,
+                0.815,
+                0.361,
+                0.832
+            ],
+            "angle": 0,
+            "content": "Explanation of JEF Ratings"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.833,
+                0.922,
+                0.908
+            ],
+            "angle": 0,
+            "content": "Buy - Describes securities that we expect to provide a total return (price appreciation plus yield) of 15% or more within a 12-month period. Hold - Describes securities that we expect to provide a total return (price appreciation plus yield) of plus 15% or minus 10% within a 12-month period. Underperform - Describes securities that we expect to provide a total return (price appreciation plus yield) of minus 10% or less within a 12-month period. The expected total return (price appreciation plus yield) for Buy rated securities with an average security price consistently below $10 is 20% or more within a 12-month period as these companies are typically more volatile than the overall stock market. For Hold rated securities with an average security price consistently below $10, the expected total return (price appreciation plus yield) is plus or minus 20% within a 12-month period. For Underperform rated",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.081,
+                0.949,
+                0.411,
+                0.96
+            ],
+            "angle": 0,
+            "content": "Please see important disclosure information on pages 2 - 7 of this report."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.913,
+                0.95,
+                0.92,
+                0.958
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.47,
+                0.264,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.708,
+                0.411,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.738,
+                0.237,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.367,
+                0.738,
+                0.504,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.751,
+                0.243,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.367,
+                0.751,
+                0.505,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.148,
+                0.311,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.819,
+                0.023,
+                0.921,
+                0.034
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.82,
+                0.037,
+                0.921,
+                0.049
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.169,
+                0.207,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.291,
+                0.208,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.725,
+                0.279,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.02,
+                0.22,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.834,
+                0.052,
+                0.921,
+                0.064
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.124,
+                0.842,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.183,
+                0.92,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.198,
+                0.92,
+                0.208
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.212,
+                0.586,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.236,
+                0.92,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.25,
+                0.921,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.264,
+                0.71,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.342,
+                0.92,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.358,
+                0.92,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.37,
+                0.312,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.304,
+                0.921,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.319,
+                0.296,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.411,
+                0.92,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.426,
+                0.92,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.486,
+                0.92,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.5,
+                0.921,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.514,
+                0.264,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.525,
+                0.921,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.539,
+                0.921,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.552,
+                0.264,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.564,
+                0.921,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.578,
+                0.92,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.589,
+                0.918,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.397,
+                0.33,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.602,
+                0.92,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.615,
+                0.92,
+                0.625
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.628,
+                0.921,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.641,
+                0.921,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.654,
+                0.92,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.667,
+                0.921,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.679,
+                0.478,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.833,
+                0.832,
+                0.845
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.847,
+                0.895,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.86,
+                0.919,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.871,
+                0.92,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.885,
+                0.921,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.897,
+                0.921,
+                0.908
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.78,
+                0.351,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.813,
+                0.363,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.949,
+                0.41,
+                0.959
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.913,
+                0.951,
+                0.921,
+                0.958
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.022,
+                0.217,
+                0.047
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.818,
+                0.023,
+                0.922,
+                0.036
+            ],
+            "angle": 0,
+            "content": "China Financials"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.819,
+                0.038,
+                0.921,
+                0.05
+            ],
+            "angle": 0,
+            "content": "Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.834,
+                0.052,
+                0.921,
+                0.064
+            ],
+            "angle": 0,
+            "content": "June 13, 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.124,
+                0.922,
+                0.149
+            ],
+            "angle": 0,
+            "content": "securities with an average security price consistently below $10, the expected total return (price appreciation plus yield) is minus 20% or less within a 12-month period.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.151,
+                0.922,
+                0.175
+            ],
+            "angle": 0,
+            "content": "NR - The investment rating and price target have been temporarily suspended. Such suspensions are in compliance with applicable regulations and/or JEF policies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.176,
+                0.514,
+                0.188
+            ],
+            "angle": 0,
+            "content": "CS - Coverage Suspended. JEF has suspended coverage of this company.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.189,
+                0.395,
+                0.2
+            ],
+            "angle": 0,
+            "content": "NC - Not covered. JEF does not cover this company.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.201,
+                0.922,
+                0.226
+            ],
+            "angle": 0,
+            "content": "Restricted - Describes issuers where, in conjunction with JEF engagement in certain transactions, company policy or applicable securities regulations prohibit certain types of communications, including investment recommendations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.227,
+                0.922,
+                0.252
+            ],
+            "angle": 0,
+            "content": "Monitor - Describes securities whose company fundamentals and financials are being monitored, and for which no financial projections or opinions on the investment merits of the company are provided.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.08,
+                0.264,
+                0.286,
+                0.28
+            ],
+            "angle": 0,
+            "content": "Valuation Methodology"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.28,
+                0.922,
+                0.343
+            ],
+            "angle": 0,
+            "content": "JEF' methodology for assigning ratings may include the following: market capitalization, maturity, growth/value, volatility and expected total return over the next 12 months. The price targets are based on several methodologies, which may include, but are not restricted to, analyses of market risk, growth rate, revenue stream, discounted cash flow (DCF), EBITDA, EPS, cash flow (CF), free cash flow (FCF), EV/EBITDA, P/E, PE/growth, P/CF, P/FCF, premium (discount)/average group EV/EBITDA, premium (discount)/average group P/E, sum of the parts, net asset value, dividend returns, and return on equity (ROE) over the next 12 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.08,
+                0.344,
+                0.226,
+                0.355
+            ],
+            "angle": 0,
+            "content": "JEF Franchise Picks"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.356,
+                0.922,
+                0.445
+            ],
+            "angle": 0,
+            "content": "JEF Franchise Picks include stock selections from among the best stock ideas from our equity analysts over a 12 month period. Stock selection is based on fundamental analysis and may take into account other factors such as analyst conviction, differentiated analysis, a favorable risk/reward ratio and investment themes that JEF analysts are recommending. JEF Franchise Picks will include only Buy rated stocks and the number can vary depending on analyst recommendations for inclusion. Stocks will be added as new opportunities arise and removed when the reason for inclusion changes, the stock has met its desired return, if it is no longer rated Buy and/or if it triggers a stop loss. Stocks having 120 day volatility in the bottom quartile of S&P stocks will continue to have a \\(15\\%\\) stop loss, and the remainder will have a \\(20\\%\\) stop. Franchise Picks are not intended to represent a recommended portfolio of stocks and is not sector based, but we may note where we believe a Pick falls within an investment style such as growth or value.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.08,
+                0.457,
+                0.621,
+                0.473
+            ],
+            "angle": 0,
+            "content": "Risks which may impede the achievement of our Price Target"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.474,
+                0.922,
+                0.6
+            ],
+            "angle": 0,
+            "content": "This report was prepared for general circulation and does not provide investment recommendations specific to individual investors. As such, the financial instruments discussed in this report may not be suitable for all investors and investors must make their own investment decisions based upon their specific investment objectives and financial situation utilizing their own financial advisors as they deem necessary. Past performance of the financial instruments recommended in this report should not be taken as an indication or guarantee of future results. The price, value of, and income from, any of the financial instruments mentioned in this report can rise as well as fall and may be affected by changes in economic, financial and political factors. If a financial instrument is denominated in a currency other than the investor's home currency, a change in exchange rates may adversely affect the price of, value of, or income derived from the financial instrument described in this report. To the extent prices are shown in non-US currency, please note that our local currency price targets are based on a currency conversion using an exchange rate as of the prior trading day (unless otherwise noted). Should there be fluctuations in the exchange rate after this date, that will affect the non-US target prices and should no longer be relied upon. In addition, investors in securities such as ADRs, whose values are affected by the currency of the underlying security, effectively assume currency risk.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.08,
+                0.612,
+                0.462,
+                0.628
+            ],
+            "angle": 0,
+            "content": "Other Companies Mentioned in This Report"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.118,
+                0.629,
+                0.393,
+                0.639
+            ],
+            "angle": 0,
+            "content": "• Bank of China Limited (3988 HK: HK$5.37, BUY)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.118,
+                0.641,
+                0.417,
+                0.653
+            ],
+            "angle": 0,
+            "content": "• Bank of Ningbo Co Ltd (002142 CH: CNY32.85, BUY)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.118,
+                0.654,
+                0.519,
+                0.666
+            ],
+            "angle": 0,
+            "content": "• Hong Kong Exchanges and Clearing Limited (388 HK: HK$374.00, BUY)",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.118,
+                0.629,
+                0.519,
+                0.666
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.234,
+                0.677,
+                0.719,
+                0.689
+            ],
+            "angle": 0,
+            "content": "Rating and Price Target History for: Bank of Ningbo Co Ltd (002142 CH) as of 06-11-2026"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.085,
+                0.692,
+                0.871,
+                0.827
+            ],
+            "angle": 0,
+            "content": "| Date       | Price |\n| ---------- | ----- |\n| 05/13/2026 | 34.00 |",
+            "sub_type": "line chart"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.079,
+                0.949,
+                0.412,
+                0.96
+            ],
+            "angle": 0,
+            "content": "Please see important disclosure information on pages 2 - 7 of this report."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.912,
+                0.95,
+                0.921,
+                0.959
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.261,
+                0.287,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.818,
+                0.022,
+                0.922,
+                0.035
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.345,
+                0.224,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.82,
+                0.037,
+                0.922,
+                0.05
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.02,
+                0.22,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.834,
+                0.052,
+                0.922,
+                0.064
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.282,
+                0.921,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.295,
+                0.921,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.307,
+                0.921,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.319,
+                0.921,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.333,
+                0.289,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.125,
+                0.921,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.139,
+                0.158,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.15,
+                0.92,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.164,
+                0.178,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.202,
+                0.921,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.215,
+                0.534,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.227,
+                0.918,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.241,
+                0.342,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.629,
+                0.391,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.359,
+                0.921,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.371,
+                0.921,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.383,
+                0.921,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.396,
+                0.921,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.407,
+                0.921,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.422,
+                0.92,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.435,
+                0.852,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.949,
+                0.41,
+                0.959
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.913,
+                0.951,
+                0.921,
+                0.958
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.176,
+                0.514,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.189,
+                0.394,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.642,
+                0.416,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.454,
+                0.623,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.474,
+                0.921,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.489,
+                0.921,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.501,
+                0.921,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.514,
+                0.921,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.527,
+                0.921,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.54,
+                0.921,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.551,
+                0.921,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.564,
+                0.921,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.578,
+                0.921,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.59,
+                0.676,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.611,
+                0.463,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.654,
+                0.519,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.234,
+                0.677,
+                0.719,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.021,
+                0.217,
+                0.048
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.818,
+                0.023,
+                0.922,
+                0.036
+            ],
+            "angle": 0,
+            "content": "China Financials"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.819,
+                0.038,
+                0.921,
+                0.05
+            ],
+            "angle": 0,
+            "content": "Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.834,
+                0.052,
+                0.922,
+                0.064
+            ],
+            "angle": 0,
+            "content": "June 13, 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.186,
+                0.135,
+                0.764,
+                0.148
+            ],
+            "angle": 0,
+            "content": "Rating and Price Target History for: Hong Kong Exchanges and Clearing Limited (388 HK) as of 06-11-2026"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.088,
+                0.152,
+                0.871,
+                0.289
+            ],
+            "angle": 0,
+            "content": "| Date       | Price (HK$) |\n| ---------- | ----------- |\n| 02/23/2026 | 502.00      |",
+            "sub_type": "line chart"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.242,
+                0.328,
+                0.711,
+                0.34
+            ],
+            "angle": 0,
+            "content": "Rating and Price Target History for: Bank of China Limited (3988 HK) as of 06-11-2026"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.088,
+                0.344,
+                0.871,
+                0.479
+            ],
+            "angle": 0,
+            "content": "| Date       | Price (HK$) |\n| ---------- | ----------- |\n| 05/13/2026 | 6.30        |",
+            "sub_type": "line chart"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.076,
+                0.51,
+                0.923,
+                0.536
+            ],
+            "angle": 0,
+            "content": "Notes: Each box in the Rating and Price Target History chart above represents actions over the past three years in which an analyst initiated on a company, made a change to a rating or price target of a company or discontinued coverage of a company.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.537,
+                0.125,
+                0.548
+            ],
+            "angle": 0,
+            "content": "Legend:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.561,
+                0.195,
+                0.573
+            ],
+            "angle": 0,
+            "content": "I: Initiating Coverage",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.586,
+                0.199,
+                0.599
+            ],
+            "angle": 0,
+            "content": "D: Dropped Coverage",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.612,
+                0.117,
+                0.624
+            ],
+            "angle": 0,
+            "content": "B: Buy",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.637,
+                0.123,
+                0.648
+            ],
+            "angle": 0,
+            "content": "H: Hold",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.662,
+                0.182,
+                0.675
+            ],
+            "angle": 0,
+            "content": "UP: Underperform",
+            "merge_prev": false
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.08,
+                0.699,
+                0.279,
+                0.716
+            ],
+            "angle": 0,
+            "content": "Distribution of Ratings"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.489,
+                0.702,
+                0.631,
+                0.714
+            ],
+            "angle": 0,
+            "content": "IB Serv./Past12 Mos."
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.711,
+                0.702,
+                0.888,
+                0.714
+            ],
+            "angle": 0,
+            "content": "JIL Mkt Serv./Past12 Mos."
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.079,
+                0.715,
+                0.922,
+                0.807
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td></tr><tr><td>BUY</td><td>2201</td><td>62.14%</td><td>379</td><td>17.22%</td><td>113</td><td>5.13%</td></tr><tr><td>HOLD</td><td>1177</td><td>33.23%</td><td>108</td><td>9.18%</td><td>20</td><td>1.70%</td></tr><tr><td>UNDERPERFORM</td><td>164</td><td>4.63%</td><td>1</td><td>0.61%</td><td>1</td><td>0.61%</td></tr></table>"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.079,
+                0.949,
+                0.411,
+                0.96
+            ],
+            "angle": 0,
+            "content": "Please see important disclosure information on pages 2 - 7 of this report."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.913,
+                0.95,
+                0.921,
+                0.959
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.697,
+                0.279,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.818,
+                0.022,
+                0.922,
+                0.035
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.586,
+                0.199,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.663,
+                0.181,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.49,
+                0.702,
+                0.63,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.82,
+                0.037,
+                0.922,
+                0.05
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.561,
+                0.194,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.712,
+                0.702,
+                0.887,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.02,
+                0.22,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.834,
+                0.052,
+                0.922,
+                0.064
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.509,
+                0.92,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.523,
+                0.607,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.949,
+                0.41,
+                0.959
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.913,
+                0.951,
+                0.921,
+                0.958
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.185,
+                0.134,
+                0.763,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.243,
+                0.328,
+                0.71,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.535,
+                0.127,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.61,
+                0.119,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.638,
+                0.123,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.022,
+                0.217,
+                0.047
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.818,
+                0.023,
+                0.921,
+                0.034
+            ],
+            "angle": 0,
+            "content": "China Financials"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.819,
+                0.038,
+                0.921,
+                0.05
+            ],
+            "angle": 0,
+            "content": "Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.834,
+                0.052,
+                0.921,
+                0.063
+            ],
+            "angle": 0,
+            "content": "June 13, 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.078,
+                0.145,
+                0.32,
+                0.162
+            ],
+            "angle": 0,
+            "content": "Other Important Disclosure"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.078,
+                0.172,
+                0.242,
+                0.184
+            ],
+            "angle": 0,
+            "content": "Other Important Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.185,
+                0.922,
+                0.222
+            ],
+            "angle": 0,
+            "content": "JEF does business and seeks to do business with companies covered in its research reports, and expects to receive or intends to seek compensation for investment banking services among other activities from such companies. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.223,
+                0.921,
+                0.247
+            ],
+            "angle": 0,
+            "content": "JEF Equity Research refers to research reports produced by analysts employed by one of the following JEF Financial Group Inc. (\"JEF\") companies:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.248,
+                0.921,
+                0.273
+            ],
+            "angle": 0,
+            "content": "United States: JEF LLC which is an SEC registered broker-dealer and a member of FINRA (and distributed by JEF Services, LLC, an SEC registered Investment Adviser, to clients paying separately for such research).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.274,
+                0.921,
+                0.311
+            ],
+            "angle": 0,
+            "content": "Canada: JEF Securities Inc., which is an investment dealer registered in each of the thirteen Canadian jurisdictions and a dealer member of the Canadian Investment Regulatory Organization, including research reports produced jointly by JEF Securities Inc. and another JEF entity (and distributed by JEF Securities Inc.).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.312,
+                0.922,
+                0.4
+            ],
+            "angle": 0,
+            "content": "Where JEF Securities Inc. distributes research reports produced by JEF LLC, JEF International Limited, JEF Japan Company Limited, or JEF India Private Limited, you are advised that each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited operates as a dealer in your jurisdiction under an exemption from the dealer registration requirements contained in National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations and, as such, each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited is not required to be and is not a registered dealer or adviser in your jurisdiction. You are advised that where JEF LLC or JEF International Limited prepared this research report, it was not prepared in accordance with Canadian disclosure requirements relating to research reports in Canada.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.401,
+                0.921,
+                0.426
+            ],
+            "angle": 0,
+            "content": "United Kingdom: JEF International Limited, which is authorized and regulated by the Financial Conduct Authority; registered in England and Wales No. 1978621; registered office: 100 Bishopsgate, London EC2N 4JL; telephone +44 (0)20 7029 8000; facsimile +44 (0)20 7029 8010.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.427,
+                0.921,
+                0.451
+            ],
+            "angle": 0,
+            "content": "Germany: JEF GmbH, which is authorized and regulated by the Bundesanstalt fuer Finanzdienstleistungsaufsicht, BaFin-ID: 10150151; registered office: Bockenheimer Landstr. 24, 60323 Frankfurt a.M., Germany; telephone: +49 (0) 69 719 1870",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.452,
+                0.921,
+                0.477
+            ],
+            "angle": 0,
+            "content": "Hong Kong: JEF Hong Kong Limited, which is licensed by the Securities and Futures Commission of Hong Kong with CE number ATS546; located at Level 26, Two International Finance Center, 8 Finance Street, Central, Hong Kong; telephone: +852 3743 8000.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.478,
+                0.921,
+                0.502
+            ],
+            "angle": 0,
+            "content": "Singapore: JEF Singapore Limited, which is licensed by the Monetary Authority of Singapore; located at 10 Collyer Quay #41-01, Ocean Financial Centre, Singapore 049315, telephone: +65 6551 3950.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.503,
+                0.921,
+                0.54
+            ],
+            "angle": 0,
+            "content": "Japan: JEF Japan Company Limited, which is a securities company registered by the Financial Services Agency of Japan and is a member of the Japan Securities Dealers Association; located at Tokyo Midtown Hibiya 30F Hibiya Mitsui Tower, 1-1-2 Yuraku-cho, Chiyoda-ku, Tokyo 100-0006; telephone +813 5251 6100; facsimile +813 5251 6101.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.541,
+                0.922,
+                0.604
+            ],
+            "angle": 0,
+            "content": "India: JEF India Private Limited (CIN - U74140MH2007PTC200509), licensed by the Securities and Exchange Board of India for: Stock Broker (NSE & BSE) INZ000243033, Research Analyst INH000000701 and Merchant Banker INM000011443, located at Level 16, Express Towers, Nariman Point, Mumbai 400 021, India; Tel +91 22 4356 6000. Compliance Officer name: Sanjay Pai, Tel No: +91 22 42246150, Email: spai@JEF.com, Grievance officer name: Sanjay Pai, Tel no. +91 22 42246150, Email: compliance_india@JEF.com. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.605,
+                0.921,
+                0.63
+            ],
+            "angle": 0,
+            "content": "Australia: JEF (Australia) Pty Limited (ACN 623 059 898), which holds an Australian financial services license (AFSL 504712) and is located at Level 20, 60 Martin Place, Sydney NSW 2000; telephone +61 2 9364 2800.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.631,
+                0.921,
+                0.655
+            ],
+            "angle": 0,
+            "content": "Dubai: JEF International Limited, Dubai branch, which is licensed by the Dubai Financial Services Authority (DFSA Reference Number F007325); registered office Unit L31-06, L31-07, Level 31, ICD Brookfield Pace, DIFC, PO Box 121208, Dubai, UAE.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.656,
+                0.922,
+                0.77
+            ],
+            "angle": 0,
+            "content": "This report was prepared by personnel who are associated with JEF (JEF Securities Inc., JEF International Limited, JEF GmbH, JEF Hong Kong Limited, JEF Singapore Limited, JEF Japan Company Limited, JEF India Private Limited), and JEF (Australia) Pty Ltd; or by personnel who are associated with both JEF LLC and JEF Services LLC (\"JRS\"). JEF LLC is a US registered broker-dealer and is affiliated with JRS, which is a US registered investment adviser. JRS does not create tailored or personalized research and all research provided by JRS is impersonal. If you are paying separately for this research, it is being provided to you by JRS. Otherwise, it is being provided by JEF LLC. JEF LLC, JRS, and their affiliates are collectively referred to below as \"JEF\". JEF may seek to do business with companies covered in this research report. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only one of many factors in making their investment decisions. Specific conflict of interest and other disclosures that are required by FINRA, the Canadian Investment Regulatory Organization and other rules are set forth in this disclosure section.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.772,
+                0.105,
+                0.779
+            ],
+            "angle": 0,
+            "content": "***",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.783,
+                0.922,
+                0.884
+            ],
+            "angle": 0,
+            "content": "If you are receiving this report from a non-US JEF entity, please note the following: Unless prohibited by the provisions of Regulation S of the U.S. Securities Act of 1933, as amended, this material is distributed in the United States by JEF LLC, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6 under the US Securities Exchange Act of 1934, as amended. Transactions by or on behalf of any US person may only be effected through JEF LLC. In the United Kingdom and European Economic Area this report is issued and/or approved for distribution by JEF International Limited (\"JIL\") and/or JEF GmbH and is intended for use only by persons who have, or have been assessed as having, suitable professional experience and expertise, or by persons to whom it can be otherwise lawfully distributed. JEF LLC, JIL, JEF GmbH and their affiliates, may make a market or provide liquidity in the financial instruments referred to in this report; and where they do make a market, such activity is disclosed specifically in this report under \"company specific disclosures\".",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.885,
+                0.922,
+                0.936
+            ],
+            "angle": 0,
+            "content": "For Canadian investors, this material is intended for use only by professional or institutional investors. None of the investments or investment services mentioned or described herein is available to other persons or to anyone in Canada who is not a \"permitted client\" as defined by National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations, as applicable. This research report is a general discussion of the merits and risks of a security or securities only, and is not in any way meant to be tailored to the needs and circumstances of any recipient. The information contained",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.078,
+                0.949,
+                0.411,
+                0.96
+            ],
+            "angle": 0,
+            "content": "Please see important disclosure information on pages 2 - 7 of this report."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.912,
+                0.95,
+                0.921,
+                0.958
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.172,
+                0.241,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.144,
+                0.321,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.819,
+                0.023,
+                0.921,
+                0.034
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.82,
+                0.037,
+                0.922,
+                0.05
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.02,
+                0.22,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.834,
+                0.052,
+                0.922,
+                0.064
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.544,
+                0.92,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.556,
+                0.92,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.568,
+                0.92,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.582,
+                0.92,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.595,
+                0.526,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.888,
+                0.92,
+                0.898
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.9,
+                0.92,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.913,
+                0.92,
+                0.923
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.926,
+                0.92,
+                0.935
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.187,
+                0.92,
+                0.196
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.199,
+                0.92,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.212,
+                0.899,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.222,
+                0.92,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.238,
+                0.146,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.249,
+                0.921,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.264,
+                0.531,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.275,
+                0.918,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.289,
+                0.92,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.3,
+                0.294,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.402,
+                0.921,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.416,
+                0.804,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.429,
+                0.92,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.44,
+                0.617,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.453,
+                0.921,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.467,
+                0.679,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.478,
+                0.92,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.493,
+                0.374,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.506,
+                0.92,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.517,
+                0.921,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.53,
+                0.322,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.606,
+                0.92,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.62,
+                0.451,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.631,
+                0.918,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.645,
+                0.636,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.313,
+                0.92,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.327,
+                0.92,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.339,
+                0.921,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.352,
+                0.92,
+                0.363
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.365,
+                0.92,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.378,
+                0.92,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.391,
+                0.426,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.949,
+                0.41,
+                0.959
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.913,
+                0.951,
+                0.921,
+                0.958
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.772,
+                0.105,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.659,
+                0.92,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.671,
+                0.921,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.684,
+                0.921,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.696,
+                0.922,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.709,
+                0.921,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.723,
+                0.92,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.735,
+                0.92,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.748,
+                0.92,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.759,
+                0.652,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.785,
+                0.92,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.799,
+                0.92,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.811,
+                0.92,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.824,
+                0.92,
+                0.833
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.835,
+                0.921,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.848,
+                0.92,
+                0.859
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.861,
+                0.92,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.875,
+                0.425,
+                0.884
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.022,
+                0.217,
+                0.047
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.818,
+                0.023,
+                0.921,
+                0.034
+            ],
+            "angle": 0,
+            "content": "China Financials"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.819,
+                0.038,
+                0.921,
+                0.05
+            ],
+            "angle": 0,
+            "content": "Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.834,
+                0.053,
+                0.921,
+                0.063
+            ],
+            "angle": 0,
+            "content": "June 13, 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.124,
+                0.923,
+                0.48
+            ],
+            "angle": 0,
+            "content": "herein is not, and under no circumstances is to be construed as, an offer to sell securities described herein, or solicitation of an offer to buy securities described herein, in Canada or any province or territory thereof. Any offer or sale of the securities described herein in Canada will be made only under an exemption from the requirements to file a prospectus with the relevant Canadian securities regulators, if applicable, and only by a dealer properly registered under applicable securities laws or, alternatively, pursuant to an exemption from the dealer registration requirement in the relevant province or territory of Canada in which such offer or sale is made. The information contained herein is under no circumstances to be construed as investment advice in any province or territory of Canada and is not tailored to the needs of the recipient. To the extent that the information contained herein references securities of an issuer incorporated, formed or created under the laws of Canada or a province or territory of Canada, any trades in such securities must be conducted through a dealer registered in Canada. No securities commission or similar regulatory authority in Canada has reviewed or in any way passed judgment upon this research report, the information contained herein or the merits of the securities described herein, and any representation to the contrary is an offence. In Singapore, JEF Singapore Limited (\"JSL\") is regulated by the Monetary Authority of Singapore. For investors in the Republic of Singapore, where this material is prepared and issued by a JEF affiliate outside of Singapore, it is distributed by JSL pursuant to Regulation 32C of the Financial Advisers Regulations. The material contained in this document is intended solely for accredited, expert or institutional investors, as defined under the Securities and Futures Act 2001 (Singapore). If there are any matters arising from, or in connection with this material, please contact JSL, located at 80 Raffles Place #15-20, UOB Plaza 2, Singapore 048624, telephone: +65 6551 3950. In Dubai, this material is issued and distributed by JEF International Limited, Dubai branch, and is intended solely for Professional Clients and should not be distributed to, or relied upon by, Retail Clients (as defined by DFSA). A distribution of ratings in percentage terms in each sector covered is available upon request from your sales representative. In Japan, this material is issued and distributed by JEF Japan Company Limited to institutional investors only. In Hong Kong, this report is issued and approved by JEF Hong Kong Limited and is intended for use only by professional investors as defined in the Hong Kong Securities and Futures Ordinance and its subsidiary legislation. In the Republic of China (Taiwan), this report should not be distributed. The research in relation to this report is conducted outside the People's Republic of China (\"PRC\"). This report does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. In India, this report is made available by JEF India Private Limited. In Australia, this report is issued and/or approved for distribution by, or on behalf of, JEF (Australia) Securities Pty Ltd (ACN 610 977 074), which holds an Australian financial services license (AFSL 487263). It is directed solely at wholesale clients within the meaning of the Corporations Act 2001 (Cth) of Australia (the \"Corporations Act\"), in connection with their consideration of any investment or investment service that is the subject of this report. This report may contain general financial product advice. Where this report refers to a particular financial product, you should obtain a copy of the relevant product disclosure statement or offer document before making any decision in relation to the product. Recipients of this document in any other jurisdictions should inform themselves about and observe any applicable legal requirements in relation to the receipt of this document.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.481,
+                0.923,
+                0.633
+            ],
+            "angle": 0,
+            "content": "This report is not an offer or solicitation of an offer to buy or sell any security or derivative instrument, or to make any investment. Any opinion or estimate constitutes the preparer's best judgment as of the date of preparation, and is subject to change without notice. JEF assumes no obligation to maintain or update this report based on subsequent information and events. JEF, and their respective officers, directors, and employees, may have long or short positions in, or may buy or sell any of the securities, derivative instruments or other investments mentioned or described herein, either as agent or as principal for their own account. This material is provided solely for informational purposes and is not tailored to any recipient, and is not based on, and does not take into account, the particular investment objectives, portfolio holdings, strategy, financial situation, or needs of any recipient. As such, any advice or recommendation in this report may not be suitable for a particular recipient. JEF assumes recipients of this report are capable of evaluating the information contained herein and of exercising independent judgment. A recipient of this report should not make any investment decision without first considering whether any advice or recommendation in this report is suitable for the recipient based on the recipient's particular circumstances and, if appropriate or otherwise needed, seeking professional advice, including tax advice. JEF does not perform any suitability or other analysis to check whether an investment decision made by the recipient based on this report is consistent with a recipient's investment objectives, portfolio holdings, strategy, financial situation, or needs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.633,
+                0.923,
+                0.709
+            ],
+            "angle": 0,
+            "content": "By providing this report, neither JRS nor any other JEF entity accepts any authority, discretion, or control over the management of the recipient's assets. Any action taken by the recipient of this report, based on the information in the report, is at the recipient's sole judgment and risk. The recipient must perform his or her own independent review of any prospective investment. If the recipient uses the services of JEF LLC (or other affiliated broker-dealers), in connection with a purchase or sale of a security that is a subject of these materials, such broker-dealer may act as principal for its own accounts or as agent for another person. Only JRS is registered with the SEC as an investment adviser; and therefore neither JEF LLC nor any other JEF affiliate has any fiduciary duty in connection with distribution of these reports.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.71,
+                0.923,
+                0.747
+            ],
+            "angle": 0,
+            "content": "The price and value of the investments referred to herein and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.748,
+                0.923,
+                0.786
+            ],
+            "angle": 0,
+            "content": "This report may contain forward looking statements that may be affected by inaccurate assumptions or by known or unknown risks, uncertainties, and other important factors. As a result, the actual results, events, performance or achievements of the financial product may be materially different from those expressed or implied in such statements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.786,
+                0.923,
+                0.824
+            ],
+            "angle": 0,
+            "content": "This report has been prepared independently of any issuer of securities mentioned herein and not as agent of any issuer of securities. No Equity Research personnel have authority whatsoever to make any representations or warranty on behalf of the issuer(s). Any comments or statements made herein are those of the JEF entity producing this report and may differ from the views of other JEF entities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.824,
+                0.923,
+                0.913
+            ],
+            "angle": 0,
+            "content": "This report may contain information obtained from third parties, including ratings from credit ratings agencies such as Standard & Poor's, and information derived from third-party or proprietary generative artificial intelligence (Gen AI) models. JEF does not guarantee the accuracy, completeness, timeliness or availability of this information, and is not responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use of such content. Neither JEF nor any third-party content providers, including providers of Gen AI models, give any express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Neither JEF nor any third-party content provider shall be liable for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use of their content, including ratings. Credit",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.078,
+                0.949,
+                0.412,
+                0.96
+            ],
+            "angle": 0,
+            "content": "Please see important disclosure information on pages 2 - 7 of this report."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.912,
+                0.95,
+                0.921,
+                0.959
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.819,
+                0.023,
+                0.921,
+                0.034
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.82,
+                0.037,
+                0.922,
+                0.05
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.02,
+                0.22,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.834,
+                0.052,
+                0.921,
+                0.064
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.71,
+                0.92,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.723,
+                0.921,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.737,
+                0.342,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.75,
+                0.92,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.763,
+                0.92,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.776,
+                0.307,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.787,
+                0.918,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.801,
+                0.92,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.813,
+                0.659,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.636,
+                0.92,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.649,
+                0.92,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.661,
+                0.92,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.673,
+                0.921,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.686,
+                0.92,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.699,
+                0.506,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.826,
+                0.92,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.838,
+                0.922,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.851,
+                0.92,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.865,
+                0.92,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.877,
+                0.92,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.89,
+                0.92,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.903,
+                0.92,
+                0.913
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.949,
+                0.41,
+                0.959
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.913,
+                0.951,
+                0.921,
+                0.958
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.127,
+                0.92,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.139,
+                0.921,
+                0.151
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.152,
+                0.921,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.164,
+                0.921,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.176,
+                0.921,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.191,
+                0.922,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.204,
+                0.92,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.217,
+                0.92,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.229,
+                0.92,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.242,
+                0.921,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.255,
+                0.92,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.267,
+                0.92,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.28,
+                0.92,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.292,
+                0.92,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.305,
+                0.92,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.317,
+                0.921,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.33,
+                0.92,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.343,
+                0.92,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.356,
+                0.92,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.368,
+                0.922,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.382,
+                0.921,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.394,
+                0.92,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.407,
+                0.921,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.419,
+                0.92,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.432,
+                0.92,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.444,
+                0.92,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.458,
+                0.92,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.47,
+                0.568,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.483,
+                0.92,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.496,
+                0.92,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.507,
+                0.921,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.522,
+                0.92,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.534,
+                0.92,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.545,
+                0.921,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.558,
+                0.92,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.572,
+                0.92,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.585,
+                0.92,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.598,
+                0.92,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.608,
+                0.921,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.622,
+                0.234,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.022,
+                0.216,
+                0.047
+            ],
+            "angle": 0,
+            "content": "JEF"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.818,
+                0.023,
+                0.921,
+                0.034
+            ],
+            "angle": 0,
+            "content": "China Financials"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.82,
+                0.038,
+                0.921,
+                0.05
+            ],
+            "angle": 0,
+            "content": "Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.834,
+                0.053,
+                0.921,
+                0.063
+            ],
+            "angle": 0,
+            "content": "June 13, 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.124,
+                0.922,
+                0.163
+            ],
+            "angle": 0,
+            "content": "ratings are statements of opinions and are not statements of fact or recommendations to purchase, hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Reproduction and distribution of third party content in any form is prohibited except with the prior written permission of the related third party.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.163,
+                0.922,
+                0.239
+            ],
+            "angle": 0,
+            "content": "JEF reports are disseminated and available electronically, and, in some cases, also in printed form. Electronic research is simultaneously made available to all clients. This report or any portion hereof may not be copied, reprinted, sold, or redistributed or disclosed by the recipient or any third party, by content scraping or extraction, automated processing, or any other form or means, without the prior written consent of JEF. Any unauthorized use is prohibited. Neither JEF nor any of its respective directors, officers or employees, is responsible for guaranteeing the financial success of any investment, or accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this report or its contents. Nothing herein shall be construed to waive any liability JEF has under applicable U.S. federal or state securities laws.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.24,
+                0.922,
+                0.277
+            ],
+            "angle": 0,
+            "content": "For Important Disclosure information relating to JRS, please see https://adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=483878 and https://adviserinfo.sec.gov/Firm/292142 or visit our website at https://avatar.bluematrix.com/sellside/Disclosures.action, or www.JEF.com, or call 1.888.JEF.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.278,
+                0.174,
+                0.289
+            ],
+            "angle": 0,
+            "content": "© 2026 JEF",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.079,
+                0.949,
+                0.411,
+                0.96
+            ],
+            "angle": 0,
+            "content": "Please see important disclosure information on pages 2 - 7 of this report."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.913,
+                0.95,
+                0.92,
+                0.958
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.819,
+                0.023,
+                0.921,
+                0.034
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.82,
+                0.037,
+                0.922,
+                0.05
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.02,
+                0.22,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.834,
+                0.052,
+                0.921,
+                0.064
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.279,
+                0.174,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.125,
+                0.92,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.14,
+                0.92,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.151,
+                0.678,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.24,
+                0.921,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.253,
+                0.921,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.267,
+                0.339,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.165,
+                0.921,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.178,
+                0.921,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.19,
+                0.921,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.203,
+                0.92,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.216,
+                0.92,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.227,
+                0.745,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.949,
+                0.41,
+                0.959
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.913,
+                0.951,
+                0.921,
+                0.959
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

@@ -1,0 +1,305 @@
+## China Credit Observation: three findings of K-shaped economy
+
+China's May TSF data unveiled a deepened K-shape economy. Liquidity improved on the surface, yet largely reflect precautionary cash positioning. New loans relied on bill financing, whereas HH credit demand remained subdued. We highlight three findings from recent macro data, and favor three opportunities in China financials: a barbell positioning in China banks, BOC (H) and BONB (A), and HKEx as long-term beneficiary of expanding formal capital connect schemes.
+
+Headline TSF buoyed by govt credit: May-26 new TSF printed at Rmb2,029bn, 19% above consensus, driven by Rmb1.2tn issuance in government bonds, which contributes to 60% of new monthly TSF. Total TSF balance printed at Rmb458,810bn, +7.7% YoY. Corporate bond financing improved 14.6% YoY, partially offsetting the weakness on corporate LT loans. Shadow banking components further contracted.
+
+M1 improved to 5.5%, but likely low quality: M1 and M2 growth printed at 5.5% (0.5ppt above consensus) and 8.6% in May respectively. We read this set of data into two perspectives 1) a narrowing M2-M1 gap indicates further term deposit activation, which can potentially lead to further consumptions/investments; 2) yet M1 strength is likely driven by precautionary liquidity rather than genuine corporate cash deployment, given a weaker PMI new order print (-0.7ppt MoM to 49.9), thus is low quality in our view.
+
+Real economy credit demand is yet to recover: New Rmb loans printed at Rmb520bn in May, leading to a 5.5% system level loan balance growth to Rmb281.02tn. Structure was not improving, as 107% of new Rmb loans was boosted by discounted bills, while household ST/LT loans stayed in contraction zones. Overall China's credit impulse weakened on MoM basis.
+
+Three findings about K-shaped economy: First, we track the gap between RatingDog PMI and official NBS PMI, and a widening spread in May suggests service-led, export-driven business activities are picking up faster driven by AI super-cycle, whereas overall manufacturing/infra activities landed on a softer patch. Second, export and domestic consumption like come in a divergent pair. China's custom export +19.4% YoY in May-26, beat consensus estimate of 15% YoY, marking the strongest since Feb-26, supported by continued strong demand for renewable and AI-related goods. On the other hand, Core CPI dipped 0.1% MoM to 1.1%, with softness in both services and core goods. Third, PPI continued to edge up at +3.9% YoY (vs +2.8% in Apr-26/3.8% consensus), the inflationary pressure from Middle East shock eased a bit evidenced from sequentially lower PMI raw material price, but the constant gap between purchase and ex-factory price suggests the limited pass-through, as such downstream sectors are still early to a reflationary scenario.
+
+Three ideas in China Financials: Amid a K-shaped recovery in real economy, soft domestic demand, and a continued household deleveraging trend, we recommend barbell strategy in China banks - BOC (H) and Bank of Ningbo (A) are our top picks. We believe recent State Council's outbound investment regulations focus more on real investments, and CSRC's agenda is to clean up cross-border stock trading happening onshore with the end goal of facilitating capital flows into official channels, such as QDII, Southbound Connect, and Wealth Management Connect. As such, HKEx will be a long-term beneficiary of expanding formal capital connect channels.
+
+Figure 1 - TSF quick read
+
+<table><tr><td>(Rmbbn)</td><td>May-25</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td>New total social financing (TSF)</td><td>2,290</td><td>5,226</td><td>625</td><td>2,029</td></tr><tr><td>- Loans (Rmb &amp; FX)</td><td>606</td><td>3,195</td><td>(382)</td><td>513</td></tr><tr><td>- Shadow banking *</td><td>(116)</td><td>80</td><td>(570)</td><td>(72)</td></tr><tr><td>- Corporate bonds</td><td>150</td><td>395</td><td>452</td><td>172</td></tr><tr><td>- Government bonds (central &amp; local)</td><td>1,459</td><td>1,162</td><td>904</td><td>1,222</td></tr><tr><td>- Others (equity, ABS, write-off, etc.)</td><td>192</td><td>395</td><td>220</td><td>195</td></tr><tr><td>TSF balance</td><td>426,160</td><td>456,460</td><td>456,890</td><td>458,810</td></tr><tr><td>TSF balance growth</td><td>8.7%</td><td>7.9%</td><td>7.8%</td><td>7.7%</td></tr><tr><td colspan="5">* Shadow banking include entrusted loans, trust loans and undiscounted bills</td></tr><tr><td>New Rmb loans</td><td>620</td><td>2,990</td><td>-10</td><td>520</td></tr><tr><td>- Household short-term loans</td><td>(21)</td><td>196</td><td>(446)</td><td>(84)</td></tr><tr><td>- Household long-term loans</td><td>75</td><td>295</td><td>(341)</td><td>(57)</td></tr><tr><td>- Corporate short-term loans</td><td>110</td><td>1,480</td><td>(460)</td><td>100</td></tr><tr><td>- Corporate long-term loans</td><td>330</td><td>1,350</td><td>(410)</td><td>(20)</td></tr><tr><td>- Discounted bills</td><td>75</td><td>(191)</td><td>1,243</td><td>557</td></tr><tr><td>- NBFi loans</td><td>59</td><td>(169)</td><td>175</td><td>(86)</td></tr><tr><td>Loan balance</td><td>266,321</td><td>280,510</td><td>280,502</td><td>281,020</td></tr><tr><td>Loan balance growth</td><td>7.1%</td><td>5.7%</td><td>5.6%</td><td>5.5%</td></tr><tr><td>New deposits</td><td>2,183</td><td>4,470</td><td>273</td><td>1,770</td></tr><tr><td>- Household deposits</td><td>470</td><td>2,440</td><td>-1,940</td><td>-110</td></tr><tr><td>- Corporate deposits</td><td>-418</td><td>2,725</td><td>-1,250</td><td>-170</td></tr><tr><td>M1 growth</td><td>2.3%</td><td>5.1%</td><td>5.0%</td><td>5.5%</td></tr><tr><td>M2 growth</td><td>7.9%</td><td>8.5%</td><td>8.6%</td><td>8.6%</td></tr></table>
+
+Source: PBOC, Wind, CEIC, JEF
+
+Figure 2 - Household deposit vs household debt  
+![](images/4913cd230bce447eca7a7b343d677abebc9a90f4ecb00df625112f7b3774fe5e.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Year | Household deposit (Rmbtn) | Household debt (Rmbtn) |
+|---|---|---|
+| 2013 | 6 | 4 |
+| 2014 | 4 | 3 |
+| 2015 | 4 | 4 |
+| 2016 | 6 | 5 |
+| 2017 | 5 | 7 |
+| 2018 | 7 | 7 |
+| 2019 | 10 | 7 |
+| 2020 | 11 | 8 |
+| 2021 | 10 | 8 |
+| 2022 | 18 | 4 |
+| 2023 | 17 | 5 |
+| 2024 | 14 | 3 |
+| 2025 | 15 | 0 |
+| 2025Q1-7 | 6 | -1 |
+</details>
+
+Source: PBOC, Wind, CEIC, JEF
+
+Figure 3 - All new deposits breakdown by savers  
+![](images/7cd052c417232eb5c2d8e4a9c2c2f971f9506016e1cf69a884319277fc3debf1.jpg)  
+Source: PBOC, Wind, JEF
+
+Figure 4 - China credit impulse  
+![](images/7f4c93922384806e67898010481069e88e9995679023e0243f4095caee4e20c0.jpg)
+
+<details>
+<summary>line chart</summary>
+
+China's credit impulse (3-m TSF change % quarterly GDP)
+| Date | Value (%) |
+|---|---|
+| Mar-08 | 30 |
+| Mar-09 | 70 |
+| Sep-09 | 55 |
+| Sep-10 | 40 |
+| Sep-11 | 25 |
+| Sep-12 | 35 |
+| Sep-13 | 45 |
+| Sep-14 | 30 |
+| Sep-15 | 40 |
+| Sep-16 | 35 |
+| Sep-17 | 40 |
+| Sep-18 | 30 |
+| Sep-19 | 35 |
+| Sep-20 | 55 |
+| Sep-21 | 30 |
+| Sep-22 | 25 |
+| Sep-23 | 30 |
+| Sep-24 | 40 |
+| Sep-25 | 35 |
+| Mar-26 | 40 |
+</details>
+
+Source: PBOC, Wind, JEF
+
+Figure 5 - RatingDog PMI vs Official PMI  
+![](images/b845122076973268a435c5e31bc00ceef2696ca01268b2efc18bf4e8aec71bb7.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date | Manufacturing | Service | RatingDog PMI | NBS PMI |
+|---|---|---|---|---|
+| 2024-12 | 51.5 | 51.8 | 50.0 | 50.0 |
+| 2025-01 | 51.3 | 51.6 | 50.0 | 49.7 |
+| 2025-02 | 51.1 | 51.4 | 50.0 | 49.4 |
+| 2025-03 | 50.9 | 51.2 | 50.0 | 49.1 |
+| 2025-04 | 50.7 | 51.0 | 50.0 | 48.8 |
+| 2025-05 | 49.8 | 50.8 | 50.0 | 48.5 |
+| 2025-06 | 50.3 | 51.1 | 50.0 | 48.7 |
+| 2025-07 | 50.6 | 51.3 | 50.0 | 48.9 |
+| 2025-08 | 51.0 | 51.6 | 50.0 | 49.1 |
+| 2025-09 | 51.3 | 51.9 | 50.0 | 49.3 |
+| 2025-10 | 51.6 | 52.2 | 50.0 | 49.5 |
+| 2025-11 | 51.9 | 52.5 | 50.0 | 49.7 |
+| 2025-12 | 52.2 | 52.8 | 50.0 | 49.9 |
+| 2026-01 | 52.6 | 53.1 | 50.0 | 50.1 |
+| 2026-02 | 53.1 | 53.4 | 54.4 | 49.8 |
+| 2026-03 | 51.8 | 53.7 | 54.4 | 49.6 |
+| 2026-04 | 51.6 | 53.9 | 54.4 | 49.4 |
+| 2026-05 | 51.8 | 54.0 | 54.4 | 49.3 |
+</details>
+
+Source: RatingDog, S&P, NBS, JEF
+
+Betty Li \* | Equity Analyst
+
++852 3767 1279 | betty.li@JEF.com
+
+Hongyu Tian \* | Equity Associate
+
++852 6806 1456 | hongyu.tian@JEF.com
+
+We would like to thank Tao Xue, employee of Evalueserve Inc., for providing research support services to our preparation of this report.
+
+## Company Valuation/Risks
+
+## Bank of China Limited
+
+Our PT of HKD 6.3 is based on DDM with $7.69\%$ cost of equity. This implies a 0.67x H-share 2026E P/B and $4.0\%$ dividend yields. Long term ROE is set at $6.4\%$ , implying a long-term H-share P/B of 0.59x. A/H premium is set at $26.4\%$ , A-share TP is set at Rmb 7.4, implied a 0.84x A-share 2026E P/B. Our base case assumes an EPS of Rmb 0.76 based on $1.23\%$ NIM and $0.50\%$ CoR.
+
+Upside risks: easing global tension; better-than-expected offshore interest rate movement; and better-than-expected HK market growth; potential upside in cross-border opportunities. Downside risks: worsening geopolitical conditions that hurt China's exports and economy, or prompt sanctions on financial institutions; further weak credit demand; and significant deterioration in asset quality.
+
+## Bank of Ningbo Co Ltd
+
+Our PT of Rmb 42.0 is based on DDM with $8.6\%$ cost of equity. This implies a 1.12X 2026E P/B. Our base case assumes an EPS of Rmb 4.72 based on $1.69\%$ NIM and $1.00\%$ CoR.
+
+Upside risk: Better than expected earnings recovery; regional economy further outpaces the country; better-than-expected wealth management business development; better-than-expect retail recovery. Downside risks: significant asset quality deterioration; worsening geopolitical conditions that hurt China's exports and economy.
+
+## Hong Kong Exchanges and Clearing Limited
+
+We use P/E multiple to value HKEx. Upside risks: better-than-expected market turnover; better-than-expected fund flow; and better-than-expected economy. Downside risks: worse-than-expected market turnover; worse-than-expected fund flow; and worse-than-expected Chinese ADR return.
+
+## Analyst Certification:
+
+I, Betty Li, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.
+
+I, Hongyu Tian, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.
+
+Registration of non-US analysts: Betty Li is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.
+
+Registration of non-US analysts: Hongyu Tian is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst. As is the case with all JEF employees, the analyst(s) responsible for the coverage of the financial instruments discussed in this report receives compensation based in part on the overall performance of the firm, including investment banking income. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Aside from certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgement.
+
+## Investment Recommendation Record
+
+## (Article 3(1)e and Article 7 of MAR)
+
+Recommendation Published
+
+June 12, 2026 14:28 P.M.
+
+Recommendation Distributed
+
+June 12, 2026 14:28 P.M.
+
+## Company Specific Disclosures
+
+## Explanation of JEF Ratings
+
+Buy - Describes securities that we expect to provide a total return (price appreciation plus yield) of 15% or more within a 12-month period. Hold - Describes securities that we expect to provide a total return (price appreciation plus yield) of plus 15% or minus 10% within a 12-month period. Underperform - Describes securities that we expect to provide a total return (price appreciation plus yield) of minus 10% or less within a 12-month period. The expected total return (price appreciation plus yield) for Buy rated securities with an average security price consistently below \$10 is 20% or more within a 12-month period as these companies are typically more volatile than the overall stock market. For Hold rated securities with an average security price consistently below \$10, the expected total return (price appreciation plus yield) is plus or minus 20% within a 12-month period. For Underperform rated securities with an average security price consistently below \$10, the expected total return (price appreciation plus yield) is minus 20% or less within a 12-month period.
+
+NR - The investment rating and price target have been temporarily suspended. Such suspensions are in compliance with applicable regulations and/or JEF policies.
+
+CS - Coverage Suspended. JEF has suspended coverage of this company.
+
+NC - Not covered. JEF does not cover this company.
+
+Restricted - Describes issuers where, in conjunction with JEF engagement in certain transactions, company policy or applicable securities regulations prohibit certain types of communications, including investment recommendations.
+
+Monitor - Describes securities whose company fundamentals and financials are being monitored, and for which no financial projections or opinions on the investment merits of the company are provided.
+
+## Valuation Methodology
+
+JEF' methodology for assigning ratings may include the following: market capitalization, maturity, growth/value, volatility and expected total return over the next 12 months. The price targets are based on several methodologies, which may include, but are not restricted to, analyses of market risk, growth rate, revenue stream, discounted cash flow (DCF), EBITDA, EPS, cash flow (CF), free cash flow (FCF), EV/EBITDA, P/E, PE/growth, P/CF, P/FCF, premium (discount)/average group EV/EBITDA, premium (discount)/average group P/E, sum of the parts, net asset value, dividend returns, and return on equity (ROE) over the next 12 months.
+
+## JEF Franchise Picks
+
+JEF Franchise Picks include stock selections from among the best stock ideas from our equity analysts over a 12 month period. Stock selection is based on fundamental analysis and may take into account other factors such as analyst conviction, differentiated analysis, a favorable risk/reward ratio and investment themes that JEF analysts are recommending. JEF Franchise Picks will include only Buy rated stocks and the number can vary depending on analyst recommendations for inclusion. Stocks will be added as new opportunities arise and removed when the reason for inclusion changes, the stock has met its desired return, if it is no longer rated Buy and/or if it triggers a stop loss. Stocks having 120 day volatility in the bottom quartile of S&P stocks will continue to have a $15\%$ stop loss, and the remainder will have a $20\%$ stop. Franchise Picks are not intended to represent a recommended portfolio of stocks and is not sector based, but we may note where we believe a Pick falls within an investment style such as growth or value.
+
+## Risks which may impede the achievement of our Price Target
+
+This report was prepared for general circulation and does not provide investment recommendations specific to individual investors. As such, the financial instruments discussed in this report may not be suitable for all investors and investors must make their own investment decisions based upon their specific investment objectives and financial situation utilizing their own financial advisors as they deem necessary. Past performance of the financial instruments recommended in this report should not be taken as an indication or guarantee of future results. The price, value of, and income from, any of the financial instruments mentioned in this report can rise as well as fall and may be affected by changes in economic, financial and political factors. If a financial instrument is denominated in a currency other than the investor's home currency, a change in exchange rates may adversely affect the price of, value of, or income derived from the financial instrument described in this report. To the extent prices are shown in non-US currency, please note that our local currency price targets are based on a currency conversion using an exchange rate as of the prior trading day (unless otherwise noted). Should there be fluctuations in the exchange rate after this date, that will affect the non-US target prices and should no longer be relied upon. In addition, investors in securities such as ADRs, whose values are affected by the currency of the underlying security, effectively assume currency risk.
+
+## Other Companies Mentioned in This Report
+
+• Bank of China Limited (3988 HK: HK\$5.37, BUY)  
+• Bank of Ningbo Co Ltd (002142 CH: CNY32.85, BUY)  
+• Hong Kong Exchanges and Clearing Limited (388 HK: HK\$374.00, BUY)
+
+Rating and Price Target History for: Bank of Ningbo Co Ltd (002142 CH) as of 06-11-2026  
+![](images/ae9d8180bb111ac4c7ea4c4614ab959dad35fd69086fab66bf578dce78cc56e4.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date       | Price |
+| ---------- | ----- |
+| 05/13/2026 | 34.00 |
+</details>
+
+Rating and Price Target History for: Hong Kong Exchanges and Clearing Limited (388 HK) as of 06-11-2026  
+![](images/b52400a11e50f2c9f914c6987f85c9ed2578e0d38a0d69083709fc0db208b486.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date       | Price (HK$) |
+| ---------- | ----------- |
+| 02/23/2026 | 502.00      |
+</details>
+
+Rating and Price Target History for: Bank of China Limited (3988 HK) as of 06-11-2026  
+![](images/cbba89a116e20e3d83d5861a0b3d99080916c740d2c38cf0af8c443b8d8cece9.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date       | Price (HK$) |
+| ---------- | ----------- |
+| 05/13/2026 | 6.30        |
+</details>
+
+Notes: Each box in the Rating and Price Target History chart above represents actions over the past three years in which an analyst initiated on a company, made a change to a rating or price target of a company or discontinued coverage of a company.
+
+Legend:
+
+I: Initiating Coverage
+
+D: Dropped Coverage
+
+B: Buy
+
+H: Hold
+
+UP: Underperform
+
+Distribution of Ratings  
+IB Serv./Past12 Mos.  
+JIL Mkt Serv./Past12 Mos.
+
+<table><tr><td></td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td></tr><tr><td>BUY</td><td>2201</td><td>62.14%</td><td>379</td><td>17.22%</td><td>113</td><td>5.13%</td></tr><tr><td>HOLD</td><td>1177</td><td>33.23%</td><td>108</td><td>9.18%</td><td>20</td><td>1.70%</td></tr><tr><td>UNDERPERFORM</td><td>164</td><td>4.63%</td><td>1</td><td>0.61%</td><td>1</td><td>0.61%</td></tr></table>
+
+## Other Important Disclosure
+
+## Other Important Disclosures
+
+JEF does business and seeks to do business with companies covered in its research reports, and expects to receive or intends to seek compensation for investment banking services among other activities from such companies. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.
+
+JEF Equity Research refers to research reports produced by analysts employed by one of the following JEF Financial Group Inc. ("JEF") companies:
+
+United States: JEF LLC which is an SEC registered broker-dealer and a member of FINRA (and distributed by JEF Services, LLC, an SEC registered Investment Adviser, to clients paying separately for such research).
+
+Canada: JEF Securities Inc., which is an investment dealer registered in each of the thirteen Canadian jurisdictions and a dealer member of the Canadian Investment Regulatory Organization, including research reports produced jointly by JEF Securities Inc. and another JEF entity (and distributed by JEF Securities Inc.).
+
+Where JEF Securities Inc. distributes research reports produced by JEF LLC, JEF International Limited, JEF Japan Company Limited, or JEF India Private Limited, you are advised that each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited operates as a dealer in your jurisdiction under an exemption from the dealer registration requirements contained in National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations and, as such, each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited is not required to be and is not a registered dealer or adviser in your jurisdiction. You are advised that where JEF LLC or JEF International Limited prepared this research report, it was not prepared in accordance with Canadian disclosure requirements relating to research reports in Canada.
+
+United Kingdom: JEF International Limited, which is authorized and regulated by the Financial Conduct Authority; registered in England and Wales No. 1978621; registered office: 100 Bishopsgate, London EC2N 4JL; telephone +44 (0)20 7029 8000; facsimile +44 (0)20 7029 8010.
+
+Germany: JEF GmbH, which is authorized and regulated by the Bundesanstalt fuer Finanzdienstleistungsaufsicht, BaFin-ID: 10150151; registered office: Bockenheimer Landstr. 24, 60323 Frankfurt a.M., Germany; telephone: +49 (0) 69 719 1870
+
+Hong Kong: JEF Hong Kong Limited, which is licensed by the Securities and Futures Commission of Hong Kong with CE number ATS546; located at Level 26, Two International Finance Center, 8 Finance Street, Central, Hong Kong; telephone: +852 3743 8000.
+
+Singapore: JEF Singapore Limited, which is licensed by the Monetary Authority of Singapore; located at 10 Collyer Quay #41-01, Ocean Financial Centre, Singapore 049315, telephone: +65 6551 3950.
+
+Japan: JEF Japan Company Limited, which is a securities company registered by the Financial Services Agency of Japan and is a member of the Japan Securities Dealers Association; located at Tokyo Midtown Hibiya 30F Hibiya Mitsui Tower, 1-1-2 Yuraku-cho, Chiyoda-ku, Tokyo 100-0006; telephone +813 5251 6100; facsimile +813 5251 6101.
+
+India: JEF India Private Limited (CIN - U74140MH2007PTC200509), licensed by the Securities and Exchange Board of India for: Stock Broker (NSE & BSE) INZ000243033, Research Analyst INH000000701 and Merchant Banker INM000011443, located at Level 16, Express Towers, Nariman Point, Mumbai 400 021, India; Tel +91 22 4356 6000. Compliance Officer name: Sanjay Pai, Tel No: +91 22 42246150, Email: spai@JEF.com, Grievance officer name: Sanjay Pai, Tel no. +91 22 42246150, Email: compliance\_india@JEF.com. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.
+
+Australia: JEF (Australia) Pty Limited (ACN 623 059 898), which holds an Australian financial services license (AFSL 504712) and is located at Level 20, 60 Martin Place, Sydney NSW 2000; telephone +61 2 9364 2800.
+
+Dubai: JEF International Limited, Dubai branch, which is licensed by the Dubai Financial Services Authority (DFSA Reference Number F007325); registered office Unit L31-06, L31-07, Level 31, ICD Brookfield Pace, DIFC, PO Box 121208, Dubai, UAE.
+
+This report was prepared by personnel who are associated with JEF (JEF Securities Inc., JEF International Limited, JEF GmbH, JEF Hong Kong Limited, JEF Singapore Limited, JEF Japan Company Limited, JEF India Private Limited), and JEF (Australia) Pty Ltd; or by personnel who are associated with both JEF LLC and JEF Services LLC ("JRS"). JEF LLC is a US registered broker-dealer and is affiliated with JRS, which is a US registered investment adviser. JRS does not create tailored or personalized research and all research provided by JRS is impersonal. If you are paying separately for this research, it is being provided to you by JRS. Otherwise, it is being provided by JEF LLC. JEF LLC, JRS, and their affiliates are collectively referred to below as "JEF". JEF may seek to do business with companies covered in this research report. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only one of many factors in making their investment decisions. Specific conflict of interest and other disclosures that are required by FINRA, the Canadian Investment Regulatory Organization and other rules are set forth in this disclosure section.
+
+\*\*\*
+
+If you are receiving this report from a non-US JEF entity, please note the following: Unless prohibited by the provisions of Regulation S of the U.S. Securities Act of 1933, as amended, this material is distributed in the United States by JEF LLC, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6 under the US Securities Exchange Act of 1934, as amended. Transactions by or on behalf of any US person may only be effected through JEF LLC. In the United Kingdom and European Economic Area this report is issued and/or approved for distribution by JEF International Limited ("JIL") and/or JEF GmbH and is intended for use only by persons who have, or have been assessed as having, suitable professional experience and expertise, or by persons to whom it can be otherwise lawfully distributed. JEF LLC, JIL, JEF GmbH and their affiliates, may make a market or provide liquidity in the financial instruments referred to in this report; and where they do make a market, such activity is disclosed specifically in this report under "company specific disclosures".
+
+For Canadian investors, this material is intended for use only by professional or institutional investors. None of the investments or investment services mentioned or described herein is available to other persons or to anyone in Canada who is not a "permitted client" as defined by National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations, as applicable. This research report is a general discussion of the merits and risks of a security or securities only, and is not in any way meant to be tailored to the needs and circumstances of any recipient. The information contained herein is not, and under no circumstances is to be construed as, an offer to sell securities described herein, or solicitation of an offer to buy securities described herein, in Canada or any province or territory thereof. Any offer or sale of the securities described herein in Canada will be made only under an exemption from the requirements to file a prospectus with the relevant Canadian securities regulators, if applicable, and only by a dealer properly registered under applicable securities laws or, alternatively, pursuant to an exemption from the dealer registration requirement in the relevant province or territory of Canada in which such offer or sale is made. The information contained herein is under no circumstances to be construed as investment advice in any province or territory of Canada and is not tailored to the needs of the recipient. To the extent that the information contained herein references securities of an issuer incorporated, formed or created under the laws of Canada or a province or territory of Canada, any trades in such securities must be conducted through a dealer registered in Canada. No securities commission or similar regulatory authority in Canada has reviewed or in any way passed judgment upon this research report, the information contained herein or the merits of the securities described herein, and any representation to the contrary is an offence. In Singapore, JEF Singapore Limited ("JSL") is regulated by the Monetary Authority of Singapore. For investors in the Republic of Singapore, where this material is prepared and issued by a JEF affiliate outside of Singapore, it is distributed by JSL pursuant to Regulation 32C of the Financial Advisers Regulations. The material contained in this document is intended solely for accredited, expert or institutional investors, as defined under the Securities and Futures Act 2001 (Singapore). If there are any matters arising from, or in connection with this material, please contact JSL, located at 80 Raffles Place #15-20, UOB Plaza 2, Singapore 048624, telephone: +65 6551 3950. In Dubai, this material is issued and distributed by JEF International Limited, Dubai branch, and is intended solely for Professional Clients and should not be distributed to, or relied upon by, Retail Clients (as defined by DFSA). A distribution of ratings in percentage terms in each sector covered is available upon request from your sales representative. In Japan, this material is issued and distributed by JEF Japan Company Limited to institutional investors only. In Hong Kong, this report is issued and approved by JEF Hong Kong Limited and is intended for use only by professional investors as defined in the Hong Kong Securities and Futures Ordinance and its subsidiary legislation. In the Republic of China (Taiwan), this report should not be distributed. The research in relation to this report is conducted outside the People's Republic of China ("PRC"). This report does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. In India, this report is made available by JEF India Private Limited. In Australia, this report is issued and/or approved for distribution by, or on behalf of, JEF (Australia) Securities Pty Ltd (ACN 610 977 074), which holds an Australian financial services license (AFSL 487263). It is directed solely at wholesale clients within the meaning of the Corporations Act 2001 (Cth) of Australia (the "Corporations Act"), in connection with their consideration of any investment or investment service that is the subject of this report. This report may contain general financial product advice. Where this report refers to a particular financial product, you should obtain a copy of the relevant product disclosure statement or offer document before making any decision in relation to the product. Recipients of this document in any other jurisdictions should inform themselves about and observe any applicable legal requirements in relation to the receipt of this document.
+
+This report is not an offer or solicitation of an offer to buy or sell any security or derivative instrument, or to make any investment. Any opinion or estimate constitutes the preparer's best judgment as of the date of preparation, and is subject to change without notice. JEF assumes no obligation to maintain or update this report based on subsequent information and events. JEF, and their respective officers, directors, and employees, may have long or short positions in, or may buy or sell any of the securities, derivative instruments or other investments mentioned or described herein, either as agent or as principal for their own account. This material is provided solely for informational purposes and is not tailored to any recipient, and is not based on, and does not take into account, the particular investment objectives, portfolio holdings, strategy, financial situation, or needs of any recipient. As such, any advice or recommendation in this report may not be suitable for a particular recipient. JEF assumes recipients of this report are capable of evaluating the information contained herein and of exercising independent judgment. A recipient of this report should not make any investment decision without first considering whether any advice or recommendation in this report is suitable for the recipient based on the recipient's particular circumstances and, if appropriate or otherwise needed, seeking professional advice, including tax advice. JEF does not perform any suitability or other analysis to check whether an investment decision made by the recipient based on this report is consistent with a recipient's investment objectives, portfolio holdings, strategy, financial situation, or needs.
+
+By providing this report, neither JRS nor any other JEF entity accepts any authority, discretion, or control over the management of the recipient's assets. Any action taken by the recipient of this report, based on the information in the report, is at the recipient's sole judgment and risk. The recipient must perform his or her own independent review of any prospective investment. If the recipient uses the services of JEF LLC (or other affiliated broker-dealers), in connection with a purchase or sale of a security that is a subject of these materials, such broker-dealer may act as principal for its own accounts or as agent for another person. Only JRS is registered with the SEC as an investment adviser; and therefore neither JEF LLC nor any other JEF affiliate has any fiduciary duty in connection with distribution of these reports.
+
+The price and value of the investments referred to herein and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+This report may contain forward looking statements that may be affected by inaccurate assumptions or by known or unknown risks, uncertainties, and other important factors. As a result, the actual results, events, performance or achievements of the financial product may be materially different from those expressed or implied in such statements.
+
+This report has been prepared independently of any issuer of securities mentioned herein and not as agent of any issuer of securities. No Equity Research personnel have authority whatsoever to make any representations or warranty on behalf of the issuer(s). Any comments or statements made herein are those of the JEF entity producing this report and may differ from the views of other JEF entities.
+
+This report may contain information obtained from third parties, including ratings from credit ratings agencies such as Standard & Poor's, and information derived from third-party or proprietary generative artificial intelligence (Gen AI) models. JEF does not guarantee the accuracy, completeness, timeliness or availability of this information, and is not responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use of such content. Neither JEF nor any third-party content providers, including providers of Gen AI models, give any express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Neither JEF nor any third-party content provider shall be liable for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase, hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Reproduction and distribution of third party content in any form is prohibited except with the prior written permission of the related third party.
+
+JEF reports are disseminated and available electronically, and, in some cases, also in printed form. Electronic research is simultaneously made available to all clients. This report or any portion hereof may not be copied, reprinted, sold, or redistributed or disclosed by the recipient or any third party, by content scraping or extraction, automated processing, or any other form or means, without the prior written consent of JEF. Any unauthorized use is prohibited. Neither JEF nor any of its respective directors, officers or employees, is responsible for guaranteeing the financial success of any investment, or accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this report or its contents. Nothing herein shall be construed to waive any liability JEF has under applicable U.S. federal or state securities laws.
+
+For Important Disclosure information relating to JRS, please see https://adviserinfo.sec.gov/IAPD/Content/Common/crd\_iapd\_Brochure.aspx?BRCHR\_VRSN\_ID=483878 and https://adviserinfo.sec.gov/Firm/292142 or visit our website at https://avatar.bluematrix.com/sellside/Disclosures.action, or www.JEF.com, or call 1.888.JEF.
+
+© 2026 JEF
