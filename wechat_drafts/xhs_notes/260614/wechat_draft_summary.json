@@ -1,0 +1,197 @@
+{
+  "date_folder": "260614",
+  "source": "xhs_notes/dropbox",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "selected_count": 10,
+  "articles_per_draft": 8,
+  "draft_count": 2,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多完整报告和后续精译，扫文末图片进群交流。",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit8-ERHEE6dLMEQ8AViUlSP3ldlS02U1XqT-_b27HWibn-",
+      "publish_id": "",
+      "published": false,
+      "article_count": 8,
+      "payload_bytes": 77933,
+      "payload": "wechat_drafts/xhs_notes/260614/draft_payload_01.json",
+      "titles": [
+        "摩根大通：JPM：市场低估的不是贸易摩擦，而是中国电池产能管控的结构性红利",
+        "野村：NOM：中国信贷收缩的“新常态”正在重塑资产定价逻辑",
+        "摩根大通：JPM：市场低估的不是AI算力需求，而是数据中心现场供电的结构性缺口",
+        "摩根斯坦利：市场真正低估的不是通胀，而是美联储转向加息的路径",
+        "摩根大通：JPM：MLCC市场低估的不是需求增长，而是有效供给的结构性收缩",
+        "野村：NOM：3.5D封装竞争序幕拉开，真正的赢家不是台积电或英特尔，而是供应链的再组织者",
+        "摩根斯坦利：MLCC市场真正被低估的不是需求总量，而是AI驱动下的价值迁移速度",
+        "摩根大通：JPM：铝市场的真正拐点不是霍尔木兹重启，而是“隐形库存”耗尽的那一刻"
+      ],
+      "wechat_titles": [
+        "摩根大通：JPM：市场低估的不是贸易摩擦，而是中国电池产能管控的结构性红利",
+        "野村：NOM：中国信贷收缩的“新常态”正在重塑资产定价逻辑",
+        "摩根大通：JPM：市场低估的不是AI算力需求，而是数据中心现场供电的结构性缺口",
+        "摩根斯坦利：市场真正低估的不是通胀，而是美联储转向加息的路径",
+        "摩根大通：JPM：MLCC市场低估的不是需求增长，而是有效供给的结构性收缩",
+        "野村：NOM：3.5D封装竞争序幕拉开，真正的赢家不是台积电或英特尔，而是供应链的再组织者",
+        "摩根斯坦利：MLCC市场真正被低估的不是需求总量，而是AI驱动下的价值迁移速度",
+        "摩根大通：JPM：铝市场的真正拐点不是霍尔木兹重启，而是“隐形库存”耗尽的那一刻"
+      ]
+    },
+    {
+      "draft_index": 2,
+      "media_id": "avPwUQVH0p7DPpCFFkit8_dlbx6Nu5p3IbT8n-GQ1a91GQe3O8NOhZqHny4iWpBk",
+      "publish_id": "",
+      "published": false,
+      "article_count": 2,
+      "payload_bytes": 19616,
+      "payload": "wechat_drafts/xhs_notes/260614/draft_payload_02.json",
+      "titles": [
+        "摩根斯坦利：市场误读了2万亿数据中心投资，真正的瓶颈在芯片而非基建",
+        "摩根斯坦利：市场低估的不是CPO时间表，而是光学内容正在进入不可逆的倍增通道"
+      ],
+      "wechat_titles": [
+        "摩根斯坦利：市场误读了2万亿数据中心投资，真正的瓶颈在芯片而非基建",
+        "摩根斯坦利：市场低估的不是CPO时间表，而是光学内容正在进入不可逆的倍增通道"
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "摩根大通：JPM：市场低估的不是贸易摩擦，而是中国电池产能管控的结构性红利",
+      "wechat_title": "摩根大通：JPM：市场低估的不是贸易摩擦，而是中国电池产能管控的结构性红利",
+      "institution_name": "摩根大通",
+      "source_report_name": "01-JPM-China Battery-Cherry picking amid supply-side reform and global trade tensions-260612",
+      "report_dir": "xhs_notes/dropbox/260614/shard_0/0001-01-J.P.-Morgan-China-Battery-Cherry-picking-amid-supply-side-reform-and-glo",
+      "content_chars": 5481,
+      "content_bytes": 9271,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260614/shard_0/0001-01-J.P.-Morgan-China-Battery-Cherry-picking-amid-supply-side-reform-and-glo/assets/cover.png"
+    },
+    {
+      "title": "野村：NOM：中国信贷收缩的“新常态”正在重塑资产定价逻辑",
+      "wechat_title": "野村：NOM：中国信贷收缩的“新常态”正在重塑资产定价逻辑",
+      "institution_name": "野村",
+      "source_report_name": "02-NOM-Asia Insights China- Credit growth slowed in May and reached another historical low-260613",
+      "report_dir": "xhs_notes/dropbox/260614/shard_0/0002-02-Nomura-Asia-Insights-China--Credit-growth-slowed-in-May-and-reached-anot",
+      "content_chars": 5566,
+      "content_bytes": 9364,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260614/shard_0/0002-02-Nomura-Asia-Insights-China--Credit-growth-slowed-in-May-and-reached-anot/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：JPM：市场低估的不是AI算力需求，而是数据中心现场供电的结构性缺口",
+      "wechat_title": "摩根大通：JPM：市场低估的不是AI算力需求，而是数据中心现场供电的结构性缺口",
+      "institution_name": "摩根大通",
+      "source_report_name": "03-JPM-AIDC Power Supply Chain-Grid constraints and SOFC policy tailwinds drive new era for AIDC onsite power-260612",
+      "report_dir": "xhs_notes/dropbox/260614/shard_0/0003-03-J.P.-Morgan-AIDC-Power-Supply-Chain-Grid-constraints-and-SOFC-policy-tai",
+      "content_chars": 5490,
+      "content_bytes": 9148,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260614/shard_0/0003-03-J.P.-Morgan-AIDC-Power-Supply-Chain-Grid-constraints-and-SOFC-policy-tai/assets/cover.png"
+    },
+    {
+      "title": "摩根斯坦利：市场真正低估的不是通胀，而是美联储转向加息的路径",
+      "wechat_title": "摩根斯坦利：市场真正低估的不是通胀，而是美联储转向加息的路径",
+      "institution_name": "摩根斯坦利",
+      "source_report_name": "04-MS-Reassessing risks to our Fed call after the latest data-260612",
+      "report_dir": "xhs_notes/dropbox/260614/shard_0/0004-04-Morgan-Stanley-Reassessing-risks-to-our-Fed-call-after-the-latest-data-2",
+      "content_chars": 5766,
+      "content_bytes": 9664,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260614/shard_0/0004-04-Morgan-Stanley-Reassessing-risks-to-our-Fed-call-after-the-latest-data-2/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：JPM：MLCC市场低估的不是需求增长，而是有效供给的结构性收缩",
+      "wechat_title": "摩根大通：JPM：MLCC市场低估的不是需求增长，而是有效供给的结构性收缩",
+      "institution_name": "摩根大通",
+      "source_report_name": "05-JPM-Asian MLCC Industry-Introducing our long-term S-D model with a multi-year bullish view- prefer JP TW names over KR-260612",
+      "report_dir": "xhs_notes/dropbox/260614/shard_0/0005-05-J.P.-Morgan-Asian-MLCC-Industry-Introducing-our-long-term-S-D-model-with",
+      "content_chars": 5598,
+      "content_bytes": 9038,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260614/shard_0/0005-05-J.P.-Morgan-Asian-MLCC-Industry-Introducing-our-long-term-S-D-model-with/assets/cover.png"
+    },
+    {
+      "title": "野村：NOM：3.5D封装竞争序幕拉开，真正的赢家不是台积电或英特尔，而是供应链的再组织者",
+      "wechat_title": "野村：NOM：3.5D封装竞争序幕拉开，真正的赢家不是台积电或英特尔，而是供应链的再组织者",
+      "institution_name": "野村",
+      "source_report_name": "06-NOM-Semiconductor packaging industry update-Packaging substrate shipments up 20- y-y-260613",
+      "report_dir": "xhs_notes/dropbox/260614/shard_1/0001-06-Nomura-Semiconductor-packaging-industry-update-Packaging-substrate-shipm",
+      "content_chars": 5741,
+      "content_bytes": 9149,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260614/shard_1/0001-06-Nomura-Semiconductor-packaging-industry-update-Packaging-substrate-shipm/assets/cover.png"
+    },
+    {
+      "title": "摩根斯坦利：MLCC市场真正被低估的不是需求总量，而是AI驱动下的价值迁移速度",
+      "wechat_title": "摩根斯坦利：MLCC市场真正被低估的不是需求总量，而是AI驱动下的价值迁移速度",
+      "institution_name": "摩根斯坦利",
+      "source_report_name": "07-MS-Electronic Components-Apr Capacitor Output -METI-- Expect Continuing Expansion of Demand for Small- Largecapacity MLCCs-260612",
+      "report_dir": "xhs_notes/dropbox/260614/shard_1/0002-07-Morgan-Stanley-Electronic-Components-Apr-Capacitor-Output--METI---Expect",
+      "content_chars": 5728,
+      "content_bytes": 9330,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260614/shard_1/0002-07-Morgan-Stanley-Electronic-Components-Apr-Capacitor-Output--METI---Expect/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：JPM：铝市场的真正拐点不是霍尔木兹重启，而是“隐形库存”耗尽的那一刻",
+      "wechat_title": "摩根大通：JPM：铝市场的真正拐点不是霍尔木兹重启，而是“隐形库存”耗尽的那一刻",
+      "institution_name": "摩根大通",
+      "source_report_name": "08-JPM-Aluminum-The invisible deficit is about to become visible-260612",
+      "report_dir": "xhs_notes/dropbox/260614/shard_1/0003-08-J.P.-Morgan-Aluminum-The-invisible-deficit-is-about-to-become-visible-26",
+      "content_chars": 5774,
+      "content_bytes": 9554,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260614/shard_1/0003-08-J.P.-Morgan-Aluminum-The-invisible-deficit-is-about-to-become-visible-26/assets/cover.png"
+    },
+    {
+      "title": "摩根斯坦利：市场误读了2万亿数据中心投资，真正的瓶颈在芯片而非基建",
+      "wechat_title": "摩根斯坦利：市场误读了2万亿数据中心投资，真正的瓶颈在芯片而非基建",
+      "institution_name": "摩根斯坦利",
+      "source_report_name": "09-MS-Our thoughts on potential government data centre investment-260612",
+      "report_dir": "xhs_notes/dropbox/260614/shard_1/0004-09-Morgan-Stanley-Our-thoughts-on-potential-government-data-centre-investme",
+      "content_chars": 5772,
+      "content_bytes": 9758,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260614/shard_1/0004-09-Morgan-Stanley-Our-thoughts-on-potential-government-data-centre-investme/assets/cover.png"
+    },
+    {
+      "title": "摩根斯坦利：市场低估的不是CPO时间表，而是光学内容正在进入不可逆的倍增通道",
+      "wechat_title": "摩根斯坦利：市场低估的不是CPO时间表，而是光学内容正在进入不可逆的倍增通道",
+      "institution_name": "摩根斯坦利",
+      "source_report_name": "10-MS-Optical-Optical Content Growing - Regardless of Architecture-260612",
+      "report_dir": "xhs_notes/dropbox/260614/shard_1/0005-10-Morgan-Stanley-Optical-Optical-Content-Growing---Regardless-of-Architect",
+      "content_chars": 5540,
+      "content_bytes": 8990,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260614/shard_1/0005-10-Morgan-Stanley-Optical-Optical-Content-Growing---Regardless-of-Architect/assets/cover.png"
+    }
+  ]
+}
