@@ -789,7 +789,7 @@ def post_wechat_json(
     url: str,
     payload: dict[str, Any],
     timeout: int,
-    max_attempts: int = 1,
+    max_attempts: int = WECHAT_REQUEST_MAX_ATTEMPTS,
 ) -> requests.Response:
     body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
     max_attempts = max(1, max_attempts)
@@ -811,6 +811,10 @@ def post_wechat_json(
 
         if is_retryable_wechat_response(response) and attempt < max_attempts:
             sleep_before_wechat_retry(label, attempt, max_attempts, f"HTTP {response.status_code}")
+            continue
+        retryable_error = retryable_wechat_json_error(response)
+        if retryable_error and attempt < max_attempts:
+            sleep_before_wechat_retry(label, attempt, max_attempts, retryable_error)
             continue
         return response
 
@@ -849,6 +853,17 @@ def parse_wechat_json(response: requests.Response, label: str) -> dict[str, Any]
 
 def is_retryable_wechat_response(response: requests.Response) -> bool:
     return response.status_code in WECHAT_RETRYABLE_STATUS_CODES or 500 <= response.status_code < 600
+
+
+def retryable_wechat_json_error(response: requests.Response) -> str:
+    try:
+        data = response.json()
+    except Exception:
+        return ""
+    errcode = data.get("errcode")
+    if errcode in WECHAT_RETRYABLE_ERRCODES:
+        return f"errcode={errcode} errmsg={data.get('errmsg')}"
+    return ""
 
 
 def retry_delay_seconds(attempt: int) -> float:
@@ -927,6 +942,7 @@ def add_draft(session: requests.Session, access_token: str, articles: list[dict[
         f"https://api.weixin.qq.com/cgi-bin/draft/add?access_token={access_token}",
         {"articles": articles},
         timeout,
+        max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
     )
     data = parse_wechat_json(response, "draft/add")
     media_id = data.get("media_id")
@@ -941,6 +957,7 @@ def submit_publish(session: requests.Session, access_token: str, media_id: str, 
         f"https://api.weixin.qq.com/cgi-bin/freepublish/submit?access_token={access_token}",
         {"media_id": media_id},
         timeout,
+        max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
     )
     data = parse_wechat_json(response, "freepublish/submit")
     publish_id = data.get("publish_id")
