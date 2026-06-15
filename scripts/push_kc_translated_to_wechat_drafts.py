@@ -54,6 +54,31 @@ WECHAT_REQUEST_RETRY_BASE_SECONDS = 1.5
 WECHAT_REQUEST_RETRY_MAX_SECONDS = 20.0
 WECHAT_RETRYABLE_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
 WECHAT_RETRYABLE_ERRCODES = {-1}
+WECHAT_TITLE_CHINA_RE = re.compile(
+    r"(中国|大陆|内地|北京|人民币|A股|港股|\bChina\b|\bChinese\b|\bMainland\b|"
+    r"\bBeijing\b|\bRMB\b|\bCNY\b|Hong Kong|\bHK\b|Taiwan)",
+    re.I,
+)
+WECHAT_TITLE_CHINA_NEGATIVE_RE = re.compile(
+    r"(负面|下行|放缓|收缩|疲弱|低迷|恶化|危机|风险|压力|冲击|衰退|萎缩|通缩|失业|"
+    r"违约|债务|赤字|亏损|暴跌|崩盘|崩溃|泡沫|过剩|瓶颈|缺口|短缺|限制|封锁|"
+    r"拖累|警告|担忧|不确定|不及预期|risk|slowdown|slump|weak|weakness|crisis|"
+    r"recession|contraction|deflation|default|debt|deficit|loss|crash|collapse|"
+    r"bubble|overcapacity|bottleneck|shortage|restriction|concern|uncertain)",
+    re.I,
+)
+WECHAT_TITLE_CHINA_POLITICAL_RE = re.compile(
+    r"(政治|政策|监管|管控|管制|供给侧|改革|政府|国务院|中央|官方|当局|审查|国安|"
+    r"关税|贸易战|出口管制|资本管制|制裁|禁令|politic|policy|regulation|regulatory|"
+    r"government|authority|official|censorship|tariff|trade war|export control|sanction|\bban\b)",
+    re.I,
+)
+WECHAT_TITLE_STRONG_CHINA_SENSITIVE_RE = re.compile(
+    r"(中共|共产党|党中央|政治局|习近平|反腐|国安法|台湾|台海|新疆|西藏|人权|民主|"
+    r"抗议|示威|镇压|南海|军事|CCP|Communist Party|Xi Jinping|Taiwan|Taiwan Strait|"
+    r"Xinjiang|Tibet|human rights|democracy|protest|crackdown|South China Sea|military)",
+    re.I,
+)
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_TOKEN_RE = re.compile(r"\[\[KC_IMAGE_(\d{3})\]\]")
 MD_IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^\)]+)\)")
@@ -91,6 +116,49 @@ def log(message: str) -> None:
 
 def normalize_space(text: str) -> str:
     return re.sub(r"\s+", " ", text or "").strip()
+
+
+def regex_matches(pattern: re.Pattern[str], text: str) -> list[str]:
+    matches: list[str] = []
+    for match in pattern.finditer(text or ""):
+        value = normalize_space(match.group(0))
+        if value and value not in matches:
+            matches.append(value)
+    return matches
+
+
+def wechat_title_policy_skip_reason(title: str) -> str:
+    normalized = normalize_space(title)
+    if not normalized:
+        return ""
+
+    strong_sensitive = regex_matches(WECHAT_TITLE_STRONG_CHINA_SENSITIVE_RE, normalized)
+    if strong_sensitive:
+        return "china_political_sensitive_terms=" + ",".join(strong_sensitive[:6])
+
+    china_terms = regex_matches(WECHAT_TITLE_CHINA_RE, normalized)
+    if not china_terms:
+        return ""
+
+    negative_terms = regex_matches(WECHAT_TITLE_CHINA_NEGATIVE_RE, normalized)
+    if negative_terms:
+        return (
+            "china_negative_title_terms="
+            + ",".join(china_terms[:4])
+            + ";negative="
+            + ",".join(negative_terms[:6])
+        )
+
+    political_terms = regex_matches(WECHAT_TITLE_CHINA_POLITICAL_RE, normalized)
+    if political_terms:
+        return (
+            "china_political_policy_terms="
+            + ",".join(china_terms[:4])
+            + ";sensitive="
+            + ",".join(political_terms[:6])
+        )
+
+    return ""
 
 
 def truncate_chars(text: str, max_chars: int) -> str:
@@ -976,6 +1044,31 @@ def fake_static_image_url(path: str) -> str:
     return f"https://example.com/wechat-dry-run/static/{safe}"
 
 
+def translated_article_title_metadata(
+    report_dir: Path,
+    markdown: str | None = None,
+    status: dict[str, Any] | list[Any] | None = None,
+) -> dict[str, str]:
+    if markdown is None:
+        markdown = (report_dir / "translated.md").read_text(encoding="utf-8", errors="ignore")
+    if status is None:
+        status = read_json(report_dir / "translation_status.json")
+    fallback_title = report_dir.name
+    if isinstance(status, dict):
+        fallback_title = str(status.get("title") or fallback_title)
+    institution_name = infer_institution_name(report_dir.name, status, markdown[:1200])
+    source_report_name = source_report_name_from_translated_dir(report_dir, status)
+    title = ensure_title_has_institution(title_from_markdown(markdown, fallback_title), institution_name)
+    wechat_title = truncate_chars(title, WECHAT_TITLE_MAX_CHARS)
+    return {
+        "report_dir": str(report_dir),
+        "title": title,
+        "wechat_title": wechat_title,
+        "institution_name": institution_name,
+        "source_report_name": source_report_name,
+    }
+
+
 def build_article(
     report_dir: Path,
     index: int,
@@ -988,13 +1081,11 @@ def build_article(
     translated_path = report_dir / "translated.md"
     markdown = translated_path.read_text(encoding="utf-8", errors="ignore")
     status = read_json(report_dir / "translation_status.json")
-    fallback_title = report_dir.name
-    if isinstance(status, dict):
-        fallback_title = str(status.get("title") or fallback_title)
-    institution_name = infer_institution_name(report_dir.name, status, markdown[:1200])
-    source_report_name = source_report_name_from_translated_dir(report_dir, status)
-    title = ensure_title_has_institution(title_from_markdown(markdown, fallback_title), institution_name)
-    wechat_title = truncate_chars(title, WECHAT_TITLE_MAX_CHARS)
+    title_metadata = translated_article_title_metadata(report_dir, markdown, status)
+    institution_name = title_metadata["institution_name"]
+    source_report_name = title_metadata["source_report_name"]
+    title = title_metadata["title"]
+    wechat_title = title_metadata["wechat_title"]
     figure_paths = load_figure_paths(report_dir)
 
     tokens = []
@@ -1200,7 +1291,49 @@ def main() -> int:
 
     output_dir = Path(args.output_root) / date_dir.name
     output_dir.mkdir(parents=True, exist_ok=True)
-    log(f"Selected {len(selected)} translated reports from {date_dir}")
+    input_selected_count = len(selected)
+    skipped_title_policy: list[dict[str, str]] = []
+    allowed_selected: list[Path] = []
+    for report_dir in selected:
+        metadata = translated_article_title_metadata(report_dir)
+        reason = wechat_title_policy_skip_reason(metadata["wechat_title"])
+        if reason:
+            record = dict(metadata)
+            record["skip_reason"] = reason
+            skipped_title_policy.append(record)
+            log(
+                "Skipped WeChat draft article by title policy: "
+                f"{metadata['wechat_title']} ({reason})"
+            )
+        else:
+            allowed_selected.append(report_dir)
+    selected = allowed_selected
+
+    if not selected:
+        summary_path = output_dir / "wechat_draft_summary.json"
+        summary = {
+            "date_folder": date_dir.name,
+            "dry_run": args.dry_run,
+            "publish": args.publish,
+            "max_articles": "all" if max_articles is None else max_articles,
+            "input_selected_count": input_selected_count,
+            "selected_count": 0,
+            "skipped_title_policy_count": len(skipped_title_policy),
+            "skipped_title_policy": skipped_title_policy,
+            "draft_count": 0,
+            "status": "skipped_title_policy",
+            "message": f"All selected translated reports were blocked by WeChat title policy from {date_dir}",
+            "drafts": [],
+            "articles": [],
+        }
+        write_json(summary_path, summary)
+        log(f"All selected translated reports blocked by title policy; wrote skip summary: {summary_path}")
+        return 0
+
+    log(
+        f"Selected {len(selected)} translated reports from {date_dir} "
+        f"(skipped_title_policy={len(skipped_title_policy)}/{input_selected_count})"
+    )
 
     session: requests.Session | None = None
     access_token: str | None = None
@@ -1282,7 +1415,10 @@ def main() -> int:
         "dry_run": args.dry_run,
         "publish": args.publish,
         "max_articles": "all" if max_articles is None else max_articles,
+        "input_selected_count": input_selected_count,
         "selected_count": len(selected),
+        "skipped_title_policy_count": len(skipped_title_policy),
+        "skipped_title_policy": skipped_title_policy,
         "articles_per_draft": args.articles_per_draft,
         "draft_count": len(drafts),
         "max_body_chars": args.max_body_chars,

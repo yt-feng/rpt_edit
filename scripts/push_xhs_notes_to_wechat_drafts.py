@@ -52,6 +52,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     upload_article_image,
     upload_cover_material,
     utf8_byte_count,
+    wechat_title_policy_skip_reason,
     write_json,
 )
 
@@ -132,6 +133,27 @@ def xhs_article_title(markdown: str, fallback: str, institution_name: str) -> st
             if title:
                 return truncate_chars(ensure_title_has_institution(title, institution_name), WECHAT_TITLE_MAX_CHARS)
     return truncate_chars(ensure_title_has_institution(fallback, institution_name), WECHAT_TITLE_MAX_CHARS)
+
+
+def xhs_article_title_metadata(report_dir: Path) -> dict[str, str]:
+    markdown_path = report_dir / "wechat_article.md"
+    markdown = clean_xhs_markdown(markdown_path.read_text(encoding="utf-8", errors="ignore"))
+    status = read_json(report_dir / "status.json")
+    institution_name = infer_institution_name(
+        report_dir.name,
+        status.get("source_pdf"),
+        markdown[:1200],
+    )
+    source_report_name = source_report_name_from_xhs_dir(report_dir)
+    title = xhs_article_title(markdown, report_dir.name, institution_name)
+    return {
+        "report_dir": str(report_dir),
+        "wechat_markdown": str(markdown_path),
+        "title": title,
+        "wechat_title": title,
+        "institution_name": institution_name,
+        "source_report_name": source_report_name,
+    }
 
 
 def markdown_local_image_refs(markdown: str) -> list[str]:
@@ -382,7 +404,10 @@ def main() -> int:
             "dry_run": args.dry_run,
             "publish": args.publish,
             "max_articles": "all" if max_articles is None else max_articles,
+            "input_selected_count": 0,
             "selected_count": 0,
+            "skipped_title_policy_count": 0,
+            "skipped_title_policy": [],
             "draft_count": 0,
             "status": "skipped_no_xhs_wechat_articles",
             "message": f"No xhs report articles selected from {date_dir}",
@@ -392,7 +417,51 @@ def main() -> int:
         write_json(summary_path, summary)
         log(f"No xhs report articles selected from {date_dir}; wrote skip summary: {summary_path}")
         return 0
-    log(f"Selected {len(selected)} xhs WeChat articles from {date_dir}")
+
+    input_selected_count = len(selected)
+    skipped_title_policy: list[dict[str, str]] = []
+    allowed_selected: list[Path] = []
+    for report_dir in selected:
+        metadata = xhs_article_title_metadata(report_dir)
+        reason = wechat_title_policy_skip_reason(metadata["wechat_title"])
+        if reason:
+            record = dict(metadata)
+            record["skip_reason"] = reason
+            skipped_title_policy.append(record)
+            log(
+                "Skipped WeChat draft article by title policy: "
+                f"{metadata['wechat_title']} ({reason})"
+            )
+        else:
+            allowed_selected.append(report_dir)
+    selected = allowed_selected
+
+    if not selected:
+        summary_path = output_dir / "wechat_draft_summary.json"
+        summary = {
+            "date_folder": date_dir.name,
+            "source": "xhs_notes/dropbox",
+            "dry_run": args.dry_run,
+            "publish": args.publish,
+            "max_articles": "all" if max_articles is None else max_articles,
+            "input_selected_count": input_selected_count,
+            "selected_count": 0,
+            "skipped_title_policy_count": len(skipped_title_policy),
+            "skipped_title_policy": skipped_title_policy,
+            "draft_count": 0,
+            "status": "skipped_title_policy",
+            "message": f"All selected xhs report articles were blocked by WeChat title policy from {date_dir}",
+            "drafts": [],
+            "articles": [],
+        }
+        write_json(summary_path, summary)
+        log(f"All selected xhs report articles blocked by title policy; wrote skip summary: {summary_path}")
+        return 0
+
+    log(
+        f"Selected {len(selected)} xhs WeChat articles from {date_dir} "
+        f"(skipped_title_policy={len(skipped_title_policy)}/{input_selected_count})"
+    )
 
     session: requests.Session | None = None
     access_token: str | None = None
@@ -475,7 +544,10 @@ def main() -> int:
         "dry_run": args.dry_run,
         "publish": args.publish,
         "max_articles": "all" if max_articles is None else max_articles,
+        "input_selected_count": input_selected_count,
         "selected_count": len(selected),
+        "skipped_title_policy_count": len(skipped_title_policy),
+        "skipped_title_policy": skipped_title_policy,
         "articles_per_draft": args.articles_per_draft,
         "draft_count": len(drafts),
         "max_body_chars": args.max_body_chars,
