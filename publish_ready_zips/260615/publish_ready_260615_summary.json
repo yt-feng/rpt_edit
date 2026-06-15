@@ -1,0 +1,100 @@
+{
+  "created_at_utc": "2026-06-15T23:24:10.201219+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260615",
+  "output_dir": "publish_ready_zips/260615",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 5,
+  "skipped_shards": [],
+  "total_files": 439,
+  "total_renamed_markdown_count": 105,
+  "total_raw_file_bytes": 67235215,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260615/publish_ready_260615.zip",
+      "size_bytes": 62544441,
+      "file_count": 439,
+      "renamed_markdown_count": 105,
+      "raw_file_bytes": 67235215,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15552963,
+      "reports": [
+        "0001-01-Bernstein-Global-Music--The-Long-View-Super-fan-economics-why-concerts-a",
+        "0002-02-Jefferies-China-Credit-Observation-three-findings-of-K-shaped-economy-26",
+        "0003-03-Goldman-Sachs-US-Economics-Analyst-June-FOMC-Preview-Leadership-Transiti",
+        "0004-05-Bernstein-Global-Energy-Storage--How-to-power-AI-with-solar-plus-storage",
+        "0005-06-Bernstein-Global-Energy-Storage-Battery-Weekly-15-June-260615"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 20667634,
+      "reports": [
+        "0001-07-Bofa-Global-Memory-Tech-Weekly-theme-Vera-memory-cut--strong-June--Samsu",
+        "0002-08-Bernstein-Global-Internet--Never-interrupt-your-opponent-while-he-is-mak",
+        "0003-09-Goldman-Sachs-Asia-in-Focus-India--A-More-Favourable-Balance-of-Payments",
+        "0004-10-Goldman-Sachs-China-Musings-Capturing-Alpha-in-HK-IPOs-260614",
+        "0005-12-Goldman-Sachs-China-Consumer-Connection--Online-Brand-Tracker--May-26--D"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 85,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11596605,
+      "reports": [
+        "0001-13-BofA-Securities-China-Flow-Lens---Monthly-Supportive-liquidity-condition",
+        "0002-14-Goldman-Sachs-China--Three-things-in-China-260614",
+        "0003-15-Nomura-USD-CNY-fix-model-Projection--6.7544-260615",
+        "0004-16-Goldman-Sachs-Greater-China-Semis--May--IC-import-export-value--68.0---1",
+        "0005-17-Goldman-Sachs-Japan-Banks--Refocusing-on-new-midterm-plan-ROE-targets--p"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 109,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16184813,
+      "reports": [
+        "0001-18-Goldman-Sachs-Japan-Shipbuilding--Nikkei-reports-Imabari-KHI-Namura-to-r",
+        "0002-19-Goldman-Sachs-South-Korea-Aerospace---Defense--Potential-inflection-poin",
+        "0003-20-Bernstein-JP-EU-Semi-Equipment--Early-signs-of-price-hikes-emerging-2606",
+        "0004-21-J.P.-Morgan-Software-Landscape-Benchmarking-260615",
+        "0005-22-Morgan-Stanley-Monthly-Databook--May-26-shipments--7--vs.-MSe--2Qe-down-"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 1,
+      "file_count": 23,
+      "renamed_markdown_count": 5,
+      "raw_file_bytes": 3233200,
+      "reports": [
+        "0001-23-Morgan-Stanley-Monthly-Databook--iPhone-Build-Strength-to-Carry-into-3Q2"
+      ]
+    }
+  ]
+}
