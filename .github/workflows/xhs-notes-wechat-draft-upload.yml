@@ -1,0 +1,150 @@
+name: Upload XHS notes to WeChat drafts
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_folder:
+        description: "xhs_notes/dropbox date folder, or latest"
+        required: true
+        default: "latest"
+      max_articles:
+        description: "Number of articles to upload. Use all for every article."
+        required: true
+        default: "all"
+      article_offset:
+        description: "Skip this many article folders before selecting articles"
+        required: true
+        default: "0"
+      articles_per_draft:
+        description: "Number of articles in each WeChat draft item"
+        required: true
+        default: "8"
+      max_body_chars:
+        description: "Approximate visible Chinese character budget for each article"
+        required: true
+        default: "2000"
+      min_inline_images:
+        description: "Minimum body images per article"
+        required: true
+        default: "3"
+      max_inline_images:
+        description: "Max body images uploaded into each article body"
+        required: true
+        default: "3"
+      dry_run:
+        description: "Build draft payloads without calling WeChat APIs"
+        required: true
+        type: boolean
+        default: false
+      publish:
+        description: "Submit created WeChat drafts for publishing. Keep false for draft-only uploads."
+        required: true
+        type: boolean
+        default: false
+      commit_summary:
+        description: "Commit generated draft payload summaries back to repo"
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+concurrency:
+  group: xhs-notes-wechat-draft-upload
+  cancel-in-progress: false
+
+jobs:
+  upload-xhs-notes-drafts:
+    runs-on: [self-hosted, linux, x64, wechat-draft]
+    timeout-minutes: 180
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Pull latest generated XHS notes
+        run: |
+          git fetch --depth=1 origin main
+          git reset --hard origin/main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Upload generated XHS notes to WeChat drafts
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          set -o pipefail
+          DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
+          RESOLVED_DATE_FOLDER="$DATE_FOLDER"
+          if [ "$DATE_FOLDER" = "latest" ]; then
+            RESOLVED_DATE_FOLDER="$(python - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path("xhs_notes/dropbox")
+          candidates = [p.name for p in root.iterdir() if p.is_dir() and re.match(r"^\d{6,8}$", p.name)]
+          if not candidates:
+              raise SystemExit("No date-named folders found under xhs_notes/dropbox")
+          print(max(candidates, key=int))
+          PY
+          )"
+          fi
+          MAX_ARTICLES="${{ github.event.inputs.max_articles || 'all' }}"
+          ARTICLE_OFFSET="${{ github.event.inputs.article_offset || '0' }}"
+          ARTICLES_PER_DRAFT="${{ github.event.inputs.articles_per_draft || '8' }}"
+          MAX_BODY_CHARS="${{ github.event.inputs.max_body_chars || '2000' }}"
+          MIN_INLINE_IMAGES="${{ github.event.inputs.min_inline_images || '3' }}"
+          MAX_INLINE_IMAGES="${{ github.event.inputs.max_inline_images || '3' }}"
+          DRY_RUN="${{ github.event.inputs.dry_run || 'false' }}"
+          PUBLISH="${{ github.event.inputs.publish || 'false' }}"
+
+          ARGS=()
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS+=(--dry-run)
+          fi
+          if [ "$PUBLISH" = "true" ]; then
+            ARGS+=(--publish)
+          fi
+
+          python scripts/push_xhs_notes_to_wechat_drafts.py \
+            --dropbox-output-root "xhs_notes/dropbox" \
+            --date-folder "$DATE_FOLDER" \
+            --output-root "wechat_drafts/xhs_notes" \
+            --max-articles "$MAX_ARTICLES" \
+            --article-offset "$ARTICLE_OFFSET" \
+            --articles-per-draft "$ARTICLES_PER_DRAFT" \
+            --max-body-chars "$MAX_BODY_CHARS" \
+            --min-inline-images "$MIN_INLINE_IMAGES" \
+            --max-inline-images "$MAX_INLINE_IMAGES" \
+            "${ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
+
+          echo "WECHAT_DRAFT_DIR=wechat_drafts/xhs_notes/$RESOLVED_DATE_FOLDER" >> "$GITHUB_ENV"
+
+      - name: Upload WeChat draft artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: xhs-notes-wechat-drafts-${{ github.event.inputs.date_folder || 'latest' }}-${{ github.run_id }}
+          path: |
+            ${{ env.WECHAT_DRAFT_DIR }}
+            wechat_drafts_progress.log
+          if-no-files-found: error
+
+      - name: Commit WeChat draft summaries
+        if: ${{ github.event.inputs.commit_summary == 'true' }}
+        run: |
+          bash scripts/commit_output_dir.sh "$WECHAT_DRAFT_DIR" "Generate XHS notes WeChat draft payloads ${{ github.event.inputs.date_folder || 'latest' }}" 8
