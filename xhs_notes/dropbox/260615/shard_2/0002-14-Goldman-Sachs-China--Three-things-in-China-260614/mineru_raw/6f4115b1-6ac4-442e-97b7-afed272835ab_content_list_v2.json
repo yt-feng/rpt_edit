@@ -1,0 +1,2044 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China: Three things in China"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                78,
+                74,
+                375,
+                100
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Three quick highlights from China:"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                171,
+                330,
+                188
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Trade data beat expectations: China's exports and imports increased  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "19.4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " yoy and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "27.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " yoy, respectively, in May, both above market expectations. The ongoing AI capex boom has been a major contributor to China's strong trade growth. Semiconductors and automatic data processing machines (including data center equipment) together accounted for approximately half of export and import growth in May."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                202,
+                697,
+                315
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/11bb14e378545a0b6487bfcbcdf71a74e6023fb38ec090f1ada0969520e22b36.jpg"
+                },
+                "content": "| Year | Exports | Imports |\n|------|---------|---------|\n| 2018 | ~25     | ~20     |\n| 2019 | ~10     | ~5      |\n| 2020 | ~-20    | ~-10    |\n| 2021 | ~60     | ~50     |\n| 2022 | ~30     | ~25     |\n| 2023 | ~-10    | ~-5     |\n| 2024 | ~5      | ~0      |\n| 2025 | ~10     | ~5      |\n| 2026 | ~20     | ~30     |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "China's trade growth accelerated in May"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: China Customs"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                89,
+                361,
+                687,
+                625
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "PPI inflation climbed but CPI inflation unchanged: PPI inflation increased from  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2.8\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " yoy in April to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "3.9\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " yoy in May. However, upstream price increases did not translate into higher consumer prices: CPI inflation stayed unchanged at  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1.2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " yoy in May. The lack of transmission points to weak end-user demand. Credit data show that loan demand is indeed soft. For the May activity data to be released on Tuesday, June 16, we expect both retail sales and fixed asset investment to decline year-on-year."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                660,
+                697,
+                793
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Hui Shan"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                720,
+                173,
+                782,
+                184
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852-2978-6634 | hui.shan@gs.com\nGS (Asia) L.L.C."
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                184,
+                897,
+                202
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Goldman Research Sachs"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                2,
+                297,
+                41
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics Research 14 June 2026 | 11:01PM HKT"
+                    }
+                ]
+            },
+            "bbox": [
+                702,
+                3,
+                918,
+                41
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                922,
+                857,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5376ae0936a67ae296e9d88203c61023920254889280c45eee2635fcae008e55.jpg"
+                },
+                "content": "| Year | CPI  | PPI  |\n|------|------|------|\n| 07   | 3.0  | 3.0  |\n| 08   | 8.0  | 10.0 |\n| 09   | -3.0 | -8.0 |\n| 10   | 4.0  | 6.0  |\n| 11   | 5.0  | 7.0  |\n| 12   | 3.0  | 4.0  |\n| 13   | 2.0  | -2.0 |\n| 14   | 3.0  | -1.0 |\n| 15   | 2.0  | -3.0 |\n| 16   | 3.0  | -5.0 |\n| 17   | 2.0  | 8.0  |\n| 18   | 3.0  | 4.0  |\n| 19   | 2.0  | -1.0 |\n| 20   | 4.0  | -3.0 |\n| 21   | 2.0  | -4.0 |\n| 22   | 3.0  | 14.0 |\n| 23   | 2.0  | -6.0 |\n| 24   | 1.0  | -3.0 |\n| 25   | 2.0  | -2.0 |\n| 26   | 3.0  | 4.0  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Year-over-year PPI inflation increased further from April to May"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: NBS"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                277,
+                96,
+                687,
+                279
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy chatter: A recent Bloomberg article on the Chinese government's plan to spend RMB2tn on data center construction has attracted market attention. However, this is not new and was part of the “Six Networks” laid out in the 15th Five-Year Plan in March: water networks, new-type power grids, computing power networks (including data centers), next-generation communication networks, urban underground pipeline networks, and logistics networks. These areas will be a key focus of investment over the next few years. For example, at the March “Two Sessions”, NDRC head Zheng Shanjie noted that China’s investment in the “Six Networks” could exceed RMB7tn (5% of GDP) this year."
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                316,
+                908,
+                487
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Recent GS China macro research"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                271,
+                502,
+                521,
+                516
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Thematic research:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                272,
+                531,
+                423,
+                545
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia in Focus: Cost of China's Retail Fuel Price Management Modest and Sustainable, 5 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                559,
+                895,
+                593
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Economics Analyst: China: Investment Share of GDP on Structurally Declining Path, 31 May 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                607,
+                905,
+                640
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia in Focus: China's Import Boom and Narrowing Surplus: Gold Leads the Drag, Energy and AI Stay Contained, 31 May 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                653,
+                911,
+                688
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Data comments and trackers:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                272,
+                702,
+                501,
+                715
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China Economic Activity and Policy Tracker: June 12, 12 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                729,
+                756,
+                746
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AEJ Week Ahead: China May activity data; central bank meetings in Taiwan, Philippines, and Indonesia, 12 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                759,
+                906,
+                791
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China: Credit growth surprised to the upside in May, but details show weak credit demand, 12 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                806,
+                862,
+                839
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China: Media reported RMB 2 trillion data center investment not new news, 12 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                852,
+                879,
+                886
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China: Energy-led PPI increased further in May, while core CPI softened, 10 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                900,
+                893,
+                916
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China"
+                    }
+                ]
+            },
+            "bbox": [
+                875,
+                7,
+                916,
+                20
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                953,
+                163,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China: Trade growth accelerated in May, 9 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                38,
+                656,
+                56
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China: Unofficial services PMI rose in May, 3 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                68,
+                671,
+                85
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hong Kong: PMI increased in May, 3 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                96,
+                612,
+                113
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hong Kong: Retail sales fell in April, 2 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                126,
+                622,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China: Unofficial China manufacturing PMI fell in May, 1 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                155,
+                754,
+                171
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China: Official manufacturing PMI fell while non-manufacturing PMI rose in May, 31 May 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                184,
+                910,
+                217
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Team presentation materials and webinar replays:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                269,
+                231,
+                658,
+                248
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Macro & Strategy | Global Views, China activity data, Market Strategy (H-shares down to Marketweight) (In Mandarin), 8 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                260,
+                913,
+                295
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China: GS China Economic Outlook: June 2026 [Presentation], 2 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                307,
+                815,
+                322
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The China Economics Team"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                284,
+                366,
+                509,
+                385
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Andrew Tilton"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                284,
+                409,
+                382,
+                421
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852-2978-1802"
+                    }
+                ]
+            },
+            "bbox": [
+                284,
+                421,
+                370,
+                430
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "andrew.tilton@gs.com"
+                    }
+                ]
+            },
+            "bbox": [
+                284,
+                431,
+                390,
+                440
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS (Asia) L.L.C."
+                    }
+                ]
+            },
+            "bbox": [
+                284,
+                440,
+                413,
+                449
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Hui Shan"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                496,
+                409,
+                555,
+                421
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852-2978-6634"
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                421,
+                581,
+                430
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "hui.shan@gs.com"
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                431,
+                580,
+                440
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS (Asia) L.L.C."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                440,
+                625,
+                449
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Lisheng Wang"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                705,
+                409,
+                802,
+                422
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852-3966-4004"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                422,
+                792,
+                430
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "lisheng.wang@gs.com"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                431,
+                810,
+                440
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS (Asia) L.L.C."
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                440,
+                836,
+                449
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Xinquan Chen"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                284,
+                463,
+                380,
+                476
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852-2978-2418"
+                    }
+                ]
+            },
+            "bbox": [
+                284,
+                476,
+                370,
+                485
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "xinquan.chen@gs.com"
+                    }
+                ]
+            },
+            "bbox": [
+                284,
+                485,
+                390,
+                494
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS (Asia) L.L.C."
+                    }
+                ]
+            },
+            "bbox": [
+                284,
+                494,
+                413,
+                503
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Yuting Yang"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                496,
+                463,
+                576,
+                476
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852-2978-7283"
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                476,
+                580,
+                485
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "yuting.y.yang@gs.com"
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                485,
+                599,
+                494
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS (Asia) L.L.C."
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                494,
+                625,
+                503
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Chelsea Song"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                705,
+                463,
+                797,
+                476
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852-2978-0106"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                476,
+                792,
+                485
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "chelsea.song@gs.com"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                485,
+                810,
+                494
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS (Asia) L.L.C."
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                494,
+                836,
+                503
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China"
+                    }
+                ]
+            },
+            "bbox": [
+                875,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                163,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure Appendix"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                38,
+                251,
+                59
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Reg AC"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                81,
+                135,
+                95
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I, Hui Shan, hereby certify that all of the views expressed in this report accurately reflect my personal views, which have not been influenced by considerations of the firm's business or client relationships."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                103,
+                866,
+                127
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                131,
+                885,
+                145
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Contributing Authors: Hui Shan GS (Asia) L.L.C.."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                151,
+                419,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                169,
+                893,
+                192
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                205,
+                168,
+                219
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Regulatory disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                224,
+                251,
+                239
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures required by United States laws and regulations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                244,
+                514,
+                259
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction;  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                259,
+                906,
+                303
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                308,
+                911,
+                388
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                400,
+                872,
+                414
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                414,
+                916,
+                925
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                5,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China"
+                    }
+                ]
+            },
+            "bbox": [
+                875,
+                7,
+                916,
+                20
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                954,
+                161,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                38,
+                901,
+                63
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                69,
+                906,
+                148
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                153,
+                913,
+                211
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global product; distributing entities"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                223,
+                349,
+                237
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                237,
+                916,
+                360
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                365,
+                879,
+                390
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                395,
+                903,
+                441
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "General disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                453,
+                228,
+                467
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                467,
+                913,
+                523
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org)."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                529,
+                913,
+                564
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                569,
+                913,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                609,
+                888,
+                634
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                639,
+                913,
+                662
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                669,
+                911,
+                693
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                698,
+                883,
+                723
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                728,
+                866,
+                751
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                757,
+                916,
+                826
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc_fcm_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                832,
+                903,
+                888
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g.,"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                894,
+                898,
+                928
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                5,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                7,
+                916,
+                20
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                954,
+                161,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                915,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                38,
+                903,
+                107
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                113,
+                898,
+                158
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                165,
+                887,
+                188
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 GS."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                195,
+                220,
+                206
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                213,
+                911,
+                291
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                5,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                7,
+                916,
+                20
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                954,
+                161,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ]
+]

@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 21,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/13-BofA-China Flow Lens ~ Monthly：Supportive liquidity conditions continued in May， though rising pressure ahead-260612.pdf",
+          "batch_file": "/tmp/pdf_batch_001_93vqmhug/pdfs/0001-13-BofA-China Flow Lens - Monthly-Supportive liquidity conditions continued in May- though rising pressure ahead-260612.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/14-GS-China： Three things in China-260614.pdf",
+          "batch_file": "/tmp/pdf_batch_001_93vqmhug/pdfs/0002-14-GS-China- Three things in China-260614.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/15-NOM-USD CNY fix model：Projection： 6.7544-260615.pdf",
+          "batch_file": "/tmp/pdf_batch_001_93vqmhug/pdfs/0003-15-NOM-USD CNY fix model-Projection- 6.7544-260615.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-GS-Greater China Semis： May： IC import export value +68.0% +110.9% YoY-260614.pdf",
+          "batch_file": "/tmp/pdf_batch_001_93vqmhug/pdfs/0004-16-GS-Greater China Semis- May- IC import export value -68.0- -110.9- YoY-260614.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-GS-Japan Banks： Refocusing on new midterm plan ROE targets， potential P B upside-260614.pdf",
+          "batch_file": "/tmp/pdf_batch_001_93vqmhug/pdfs/0005-17-GS-Japan Banks- Refocusing on new midterm plan ROE targets- potential P B upside-260614.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
