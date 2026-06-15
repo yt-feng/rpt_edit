@@ -1,0 +1,2884 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CHINA MUSINGS"
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                78,
+                238,
+                92
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Capturing Alpha in HK IPOs"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                109,
+                104,
+                398,
+                130
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hong Kong's initial public offering (IPO) market has experienced a powerful resurgence, with more than 60 new listings making their debut ytd. Newly listed companies have delivered strong post-IPO performance,  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "+45\\% / 49\\% / 67\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " on average in the first trading day/first month/three months post-listing, although with significant performance dispersion. We highlight 3 strategies to trade for alpha in this market."
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                210,
+                699,
+                316
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Factors driving post-IPO returns: Standalone, large-cap listings consistently outperform small-caps and dual-listed peers. High retail oversubscription serves as a primary catalyst for short-term price appreciation, while moderate cornerstone ownership of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "30\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "50\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " signals high-quality listings positioned for sustainable outperformance. Over extended horizons exceeding 3 months, structural outperformance is concentrated in high-growth New Economy sectors."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                331,
+                697,
+                445
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Lock-Up Expiration Risks: The HK market may see US\\$274bn of potential new supply from shares due to post-IPO lock-up expiration. Historical precedents indicate a moderate price decline of 4% to 7% within three to six months post-release accompanied by high return dispersion. Near-term post-expiration performance is primarily determined by the volume of released lock-up shares relative to outstanding shares. Conversely, medium-term returns are structurally driven by the post-release free float ratio and the stock's pre-expiration performance."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                452,
+                691,
+                605
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. Tactical Trading via Index and Southbound Inclusion: The selling pressure associated with expiring lock-up periods can be softened by index and Southbound inclusion. Eligible newly listed Hong Kong IPOs can qualify for fast-track inclusion in MSCI and Hang Seng indices, driving meaningful passive inflows. Furthermore, primary listings meeting specific criteria can gain access to deep mainland liquidity via the Southbound Connect."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                612,
+                692,
+                726
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We construct three watchlists for investors: 1) newly listed companies with potential to deliver robust post-IPO returns per historical patterns, 2) stocks facing significant upcoming lock-up expirations, and 3) candidates that could qualify for Southbound Stock Connect inclusion."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                740,
+                689,
+                810
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Si Fu, Ph.D."
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                212,
+                795,
+                224
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852-2978-0200 | si.fu@gs.com"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                224,
+                877,
+                233
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS (Asia) L.L.C."
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                233,
+                851,
+                242
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Kinger Lau, CFA"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                250,
+                828,
+                263
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852-2978-1224 | kinger.lau@gs.com"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                263,
+                901,
+                272
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS (Asia) L.L.C."
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                272,
+                851,
+                281
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Timothy Moe, CFA"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                289,
+                846,
+                301
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+65-6889-1199 | timothy.moe@gs.com"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                301,
+                910,
+                310
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS (Singapore) Pte"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                310,
+                869,
+                320
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Kevin Wang, CFA"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                327,
+                834,
+                339
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852-2978-2446 | kevin.wang@gs.com"
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                339,
+                908,
+                349
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS (Asia) L.L.C."
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                349,
+                851,
+                357
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Goldman Research Sachs"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                3,
+                297,
+                41
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Portfolio Strategy Research 14 June 2026 | 9:12PM HKT"
+                    }
+                ]
+            },
+            "bbox": [
+                710,
+                6,
+                916,
+                42
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                925,
+                854,
+                972
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1e5546ac3c5d56d9b95d3584a6b54b5d271e67006083bcdc40081bc4dffbed74.jpg"
+                },
+                "content": "| Year | IPO amount - HK (US$bn) | IPO amount - A shares (US$bn) | A+H IPOs as % of all China mkt cap (%) |\n|---|---|---|---|\n| 2009 | 50 | 22 | 1.0 |\n| 2010 | 125 | 70 | 2.5 |\n| 2011 | 60 | 40 | 1.5 |\n| 2012 | 23 | 16 | 0.3 |\n| 2013 | 18 | 10 | 0.2 |\n| 2014 | 26 | 10 | 0.3 |\n| 2015 | 55 | 20 | 0.4 |\n| 2016 | 45 | 20 | 0.4 |\n| 2017 | 50 | 35 | 0.4 |\n| 2018 | 55 | 20 | 0.5 |\n| 2019 | 73 | 35 | 0.6 |\n| 2020 | 123 | 70 | 0.7 |\n| 2021 | 128 | 85 | 0.7 |\n| 2022 | 98 | 85 | 0.6 |\n| 2023 | 56 | 45 | 0.5 |\n| 2024 | 20 | 10 | 0.3 |\n| 2025 | 56 | 9 | 0.3 |\n| Ytd | 31 | 9 | - |\n| 2026E | - | - | - |\n| As of Jun 12, 2026: \n| Ytd: 31bn; 2026E: -100bn; \n| \n*Note: The chart plots 'A+H IPOs as % of all China mkt cap' as a line graph overlaying the bars. The data series includes 'IPO amount - HK' (bars) and 'IPO amount - A shares' (bars). The red line represents the percentage of IPOs relative to total China market capitalization.",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 1: Fund-raising activity recovered in 2025 and we expect it to further normalize to historical averages in 2026"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, Bloomberg, GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "bar-line hybrid",
+            "bbox": [
+                84,
+                132,
+                480,
+                329
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/117fbf7734e3aec92f94f3346a66ecc9be3a3077539f43ff94fca616e3567d88.jpg"
+                },
+                "content": "| Year | Foreign sovereign/pension funds (%) | Other foreign cornerstone investors (%) | Ownership of domestic cornerstone investors (%) | Total IPO value - RHS (HK$bn) |\n|---|---|---|---|---|\n| 2021 | 2.4 | 26 | 10 | 30 |\n| 2022 | 8 | 35 | 35 | 125 |\n| 2023 | 27 | 19 | 27 | 40 |\n| 2024 | 17 | 17 | 17 | 75 |\n| 2025 | 3.2 | 17 | 20 | 260 |\n| 2026 ytd | 1.2 | 22 | 17 | 175 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 3: Cornerstone investors contributed around 40% of capital raised by HK IPOs"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "bar-line hybrid",
+            "bbox": [
+                89,
+                416,
+                478,
+                610
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e0de845cbf8b5e5f706de4714b0f022e0ff5acb5492ddbe49bad80da4b49c712.jpg"
+                },
+                "content": "Capital raised by HK IPOs since 2025 (Total = HK$452bn)\n| Sector | Value (HK$ bn) | Percentage (%) |\n| :--- | :--- | :--- |\n| Information Technology | 62 | 36 |\n| Industrials | 21 | 20 |\n| Consumer Discretionary | 26 | 11 |\n| Consumer Staples | 13 | 11 |\n| Materials | 15 | 10 |\n| Health Care | 38 | 10 |\n| Financials | 4 | 2 |\n| Utilities | 1 | 0.1 |\nNote: 1st number = Number of stocks; 2nd number = Capital raised as % of total",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 5: IT, Industrials, and Consumer Discretionary are the top 3 sectors that raised the most capital in HK"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "pie chart",
+            "bbox": [
+                140,
+                687,
+                478,
+                878
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/82114f0e7cad0f4a2597b0b86c767861994b4361d0b8ff2205cb3c523806faaa.jpg"
+                },
+                "content": "Average post-IPO returns (in absolute terms for all HK Main Board IPOs)\n| Period | 2019-23 (%) | 2025 (%) | 2026ytd (%) |\n| :--- | :--- | :--- | :--- |\n| T+1D | 10 | 34 | 59 |\n| T+1W | 9 | 38 | 62 |\n| T+1M | 11 | 45 | 56 |\n| T+3M | 10 | 64 | 79 |\n| T+6M | 2 | 58 | 47 |\nAs of May 31, 2026",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 2: Investors participating in IPOs over the past two years could have achieved approximately 50% returns on average in the first month"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, FactSet, GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                514,
+                136,
+                908,
+                323
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9976bde405b6ef54c723d5ad2d4b36f45ba65c4eebb25a1b31898c0395865458.jpg"
+                },
+                "content": "HK IPO offer-to-demand ratio^\n| Year | Median (%) | Average (%) |\n|---|---|---|\n| 2019 | 14 | 30 |\n| 2020 | 8 | 15.5 |\n| 2021 | 9.5 | 14.8 |\n| 2022 | 27.8 | 42 |\n| 2023 | 17.3 | 35 |\n| 2024 | 7 | 16.8 |\n| 2025 | 1 | 5 |\n| 2026ytd | 0.5 | 1 |\nAs of Jun 8, 2026",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 4: The offer-to-demand ratio for HK IPOs this year dropped to a historical low, which indicates strong retail investor demand"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                522,
+                418,
+                903,
+                609
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9a9c27e1d6113cfe331c8d895aa8b88ddd1c5a7ea071c3117979ecdf3edd32c5.jpg"
+                },
+                "content": "Post-IPO performance\n| Sector | T+1W (%) | T+1M (%) | T+3M (%) | No. of IPOs - RHS |\n|---|---|---|---|---|\n| Health Care | 65 | 80 | 130 | 40 |\n| IT | 60 | 65 | 70 | 65 |\n| Materials | 25 | 15 | 55 | 20 |\n| Cons Disc | 35 | 30 | 40 | 30 |\n| Cons Stap | 15 | 10 | 25 | 15 |\n| Industrials | 15 | 10 | 10 | 25 |\n| Financials | -5 | -5 | -5 | 5 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 6: Biotech and AI companies tend to have stronger post-IPO performance"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                516,
+                687,
+                908,
+                880
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                5,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Musings"
+                    }
+                ]
+            },
+            "bbox": [
+                820,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Review of 2025-26 IPOs"
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                40,
+                277,
+                58
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                953,
+                163,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Factors impacting post-IPO performance"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                40,
+                416,
+                61
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hong Kong IPOs throughout the 2025-26 cycle have demonstrated remarkably post-listing performance. On average, newly listed companies since 2025 delivered a  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "45\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " return on their first trading day, expanding to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "49\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in the first month, and reaching  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "67\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " within three months post-listing."
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                86,
+                906,
+                157
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "However, post-IPO performance dispersion remains high, characterized by extreme outliers; the top-performing stock rallied more than tenfold within six months of its IPO, whereas the worst-performing one declined by  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "74\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". A granular analysis of issuer characteristics reveals several key structural drivers of these return differentials:"
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                170,
+                908,
+                240
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "■ Market Capitalization and Listing Type: Large-cap listings tend to generate superior post-IPO returns, whereas dual-listed companies underperform compared to those executing a fresh, standalone listing in Hong Kong."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Cornerstone Backing: A moderate cornerstone shareholder ownership, specifically within the 30% to 50% range, serves as an indicator of potential long-term outperformance. However, excessive concentration that severely restricts the tradable free float can negatively impact post-IPO liquidity and performance."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "■ Retail Demand: Stocks exhibiting high oversubscription ratios tend to demonstrate stronger price appreciation, particularly during the first week of trading. Nonetheless, these impacts are typically short-lived and tend to fade as initial momentum dissipates."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "■ Growth vs. Valuation: Issuers in New Economy sectors exhibiting higher growth potential tend to yield greater returns. Companies with high revenue growth, even before making profits, tend to be favored and outperform the low growth stocks in traditional sectors. Crucially, entry valuation does not appear to be a primary determinant of post-listing performance."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                271,
+                255,
+                905,
+                576
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Spillover effects to sector peers: Our previous analysis indicated that sectors with new listings in Hong Kong typically see their peers in the same sector modestly outperform the market in the following week. We examine all HK Main Board IPO cases since 2024, and find, for the key fields with more IPOs, such as Health Care and IT, the whole sector tends to outperform the market in the week following the IPO. Similarly, following the large US IPOs, Chinese stocks in the same sector tend to outperform in the subsequent week as well. This post-listing momentum suggests that investor focus often shifts toward broader industry developments and fundamental synergies between domestic firms and their newly listed global peers."
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                590,
+                908,
+                752
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Musings"
+                    }
+                ]
+            },
+            "bbox": [
+                821,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                954,
+                161,
+                963
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/61e74fc7956e861e45d3c2992746eac84a4f0cbc21f622e54d6f7d550ea4b552.jpg"
+                },
+                "content": "3-month returns after IPO (relative to HSCI)\n| Quarter | Average (%) | Median (%) |\n| :--- | :--- | :--- |\n| Q1 (<29%) | 5 | -4 |\n| Q2 (29%-40%) | 10 | 8 |\n| Q3 (40%-50%) | 9 | 16 |\n| Q4 (>52%) | 1.5 | -0.5 |\nBased on HK Main Board IPOs since 2023",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 7: Companies where cornerstone investors acquire 30-50% of shares generally demonstrate stronger post-IPO performance"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, FactSet, GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                91,
+                105,
+                470,
+                287
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/cd1217d75f2fdf22da8468145938b28d8a480c87e3a008a955426a8a8205e875.jpg"
+                },
+                "content": "| Revenue growth (24-27 avg) | PS on IPO date (TTM) | Bubble size = listing-to-date returns |\n| -------------------------- | -------------------- | -------------------------------------- |\n| -20%                       | ~0                   | Small                                  |\n| 0%                         | ~20                  | Medium                                 |\n| 20%                        | ~40                  | Large                                  |\n| 40%                        | ~60                  | Medium                                 |\n| 60%                        | ~80                  | Large                                  |\n| 80%                        | ~100                 | Medium                                 |\n| 100%                       | ~120                 | Large                                  |\n| 120%                       | ~140                 | Medium                                 |\n| 140%                       | ~160                 | Large                                  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 8: Despite higher valuations, newly listed companies with significant growth potential tend to perform better after their IPOs"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, FactSet, GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "bubble chart",
+            "bbox": [
+                516,
+                101,
+                897,
+                294
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7b43309a30fd8660c5fee035ebc9dd1421de87c31e5e65de121a3f8382b01d6b.jpg"
+                },
+                "content": "Factors driving post-IPO relative returns of HK new listings since Sep 2024\n| Factor | 1D (%) | 1W (%) | 1M (%) | 3M (%) | 6M (%) |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| Subscription ratio (x) | 6.5 | 4.5 | 3.2 | 2.2 | 0.2 |\n| Market cap (3 cohorts) | 3.3 | 3.0 | 2.8 | 3.4 | 2.5 |\n| New (1)/Old (0) Economy | 1.5 | 1.8 | 2.3 | 1.4 | 0.7 |\n| Revenue growth (24-27 avg, %) | 1.6 | 0.9 | 0.8 | 0.9 | -0.8 |\n| P/S on IPO date (TTM, x) | 0.4 | -0.2 | -0.5 | -0.1 | 1.8 |\n| Pre-profit (1=yes) | -0.1 | 0.3 | 0.6 | 0.8 | 1.0 |\n| IPO size (3 cohorts) | -0.3 | -0.8 | -1.0 | -0.9 | -1.2 |\n| Cornerstone ownership (%) | -2.3 | -2.2 | -2.1 | -2.0 | 0.3 |\n| AH dual-listed (1=yes) | -2.7 | -2.5 | -2.4 | -2.3 | -1.9 |\nStatistically significant (+)",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 9: Large caps with standalone listings in Hong Kong and high over-subscription ratios tend to generate superior post-IPO returns"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                294,
+                375,
+                900,
+                670
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Performance around lockup expiry"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                717,
+                367,
+                738
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With the resurgence of Hong Kong IPO activity, an estimated $274 billion of lock-up shares are projected to be released into the Hong Kong market over the next 12 months, following the expiration of typical six-month lock-up periods. This represents an unprecedented, record-high volume of lock-up expiration, driven primarily by low initial public float ratios (new issuance as a percentage of total shares) coupled with exceptionally strong post-IPO returns. However, this potential post-lockup supply may not fully materialize if pre-IPO investors and insiders choose to maintain their equity positions."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                763,
+                901,
+                905
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Musings"
+                    }
+                ]
+            },
+            "bbox": [
+                820,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                161,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Despite substantial capital demands arising from new listings, post-IPO secondary financing, and lock-up expiration, we anticipate that robust equity demand could be able to absorb this incoming supply. We estimate that total demand for Hong Kong-listed equities could exceed US$400bn. This demand is supported by US$180bn in corporate distributions (comprising dividends and share buybacks), US$20–30bn in capital reallocation from global long-term institutional investors, US$200bn potential Southbound capital inflows, and additional buying interest from retail investors."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                40,
+                911,
+                163
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Historical precedents suggest that equities typically experience moderate downward price pressure following lock-up expiration, with a median share price decline of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in three months and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "7\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in six months post-release; however, performance exhibits significant divergence across individual issuers. We examined factors that may influence stock performance after lock-up share release. In the near term, the volume of lock-up shares released as a percentage of total outstanding shares serves as the primary determinant of performance (specifically within the first week post-expiration). Conversely, the post-release free float ratio and the stock's pre-expiration post-IPO performance are the key structural drivers of medium-term returns to the following three- and six-month returns. Companies with high cornerstone ownership, especially domestic ones, tend to observe higher selling pressure after lock-up share release."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                176,
+                911,
+                374
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/bfdfab1900ece7bf7a009f48f129f8a3c65626a9e7c638de5e485702514da078.jpg"
+                },
+                "content": "| Date | Value of lock-up shares released (US$bn, monthly) | As % of HK mkt cap - RHS |\n|---|---|---|\n| Jan-25 | 3 | 0.08 |\n| Mar-25 | 5 | 0.12 |\n| May-25 | 6 | 0.15 |\n| Jul-25 | 19 | 0.18 |\n| Sep-25 | 2 | 0.06 |\n| Nov-25 | 10 | 0.12 |\n| Jan-26 | 15 | 0.15 |\n| Mar-26 | 17 | 0.18 |\n| May-26 | 4 | 0.06 |\n| Jul-26 | 11 | 0.35 |\n| Sep-26 | 50 | 0.75 |\n| Nov-26 | 8 | 0.15 |\n| Jan-27 | 70 | 1.15 |\n| Mar-27 | 10 | 0.2 |\n| May-27 | 18 | 0.3 |\nUS$274bn in next 12m (4.4% of mkt cap)",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 10: US\\$274bn of lock-up shares are expected to release to the HK markets in coming 12 months"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "bar-line hybrid",
+            "bbox": [
+                84,
+                430,
+                478,
+                623
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2c1df0bbbf20ceaeb3717930fb0bea8e767203522f4b7af2a6bde25d86a55939.jpg"
+                },
+                "content": "Returns of stocks listed in HK since 2025\n| Return from IPO to lock-up share release | Median (%) | Average (%) |\n| :--- | :--- | :--- |\n| -8 | -9 | 14 |\n| +1W | -1 | -2 |\n| +1M | -1 | -1 |\n| +3M | -4 | 2 |\n| +6M | -7 | 3 |\nAfter lock-up share release",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 11: Equities typically experience moderate downward price pressure following lock-up expirations"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                516,
+                432,
+                910,
+                621
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                5,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Musings"
+                    }
+                ]
+            },
+            "bbox": [
+                820,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                161,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8cab61050046ca3a2cd226dcfcbaf32651e340b01cf27638b1a2795a4dfb376c.jpg"
+                },
+                "content": "Factors driving returns after lock-up share release\n| Factor | Time since lock-up share release (T-stat) | Factors driving near-term returns (T-stat) | Factors driving long-term returns (T-stat) |\n|---|---|---|---|\n| Released lock-up shares % | -0.2 | -1.8 | -0.1 |\n| Domestic cornerstone investor ownership | -0.3 | -2.5 | -0.7 |\n| Foreign cornerstone investor ownership | 1.5 | 0.9 | 0.1 |\n| Total market cap Return from IPO to lock-up share release | -0.4 | -0.6 | -0.8 |\n| Float shares % after lock-up share release | -0.3 | 2.6 | 2.7 |\nRed highlights indicate factors that are statistically significant (p<=0.1)",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 12: The percentage of shares released serves as the primary determinant of the first week post-expiration returns, while the post-release free float ratio and the stock's pre-expiration post-IPO performance are the key drivers of medium-term returns"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                285,
+                107,
+                901,
+                410
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Southbound and index inclusion"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                461,
+                346,
+                481
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Newly listed stocks could qualify for global benchmarks and the Southbound Stock Connect upon satisfying specific listing history, market capitalization, and liquidity thresholds. Under the index methodologies established by MSCI and the Hang Seng Indexes Company, new listings meeting stringent market capitalization and liquidity criteria are eligible for fast-track index inclusion, requiring a minimum listing history of just 10 trading days. We estimate that approximately U "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "134bn in passive assets under management (AUM) currently tracks various MSCI benchmark indices that incorporate Chinese equities. Within the Hang Seng index suite, the flagship Hang Seng Index (HSI) and the Hang Seng TECH Index (HSTECH) command the largest passive investor bases, with"
+                    },
+                    {
+                        "type": "text",
+                        "content": "28 billion and $24 billion in tracking AUM, respectively. Consequently, potential index inclusion serves as a catalyst, driving passive capital inflows that structurally support post-listing stock performance."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                508,
+                908,
+                723
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Inclusion in the Southbound Stock Connect program provides Hong Kong-listed companies with direct access to vast onshore mainland liquidity. While secondary listings are generally excluded from Southbound eligibility, primary Hong Kong listings that satisfy specific market capitalization and liquidity requirements can be seamlessly integrated into this investable universe. Historical data indicates that Southbound buying momentum typically persists for several months following a stock's inclusion, providing sustained price support for the underlying shares. Our historical analysis indicates that Southbound ownership typically increases by 1pp within the first two days of inclusion, expanding to 5 pp over the subsequent three months. HK new listings since 2025 have attracted US$10bn cumulative Southbound net buying. This dual demand from passive index-tracking funds and Southbound investors establishes a vital liquidity buffer, effectively mitigating the selling pressure associated with expiring lock-up periods. The ongoing expansion of the Southbound universe via new IPOs will continue to offer mainland investors highly diversified opportunities to optimize their portfolios."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                736,
+                913,
+                934
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                5,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Musings"
+                    }
+                ]
+            },
+            "bbox": [
+                820,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                953,
+                161,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                269,
+                40,
+                903,
+                92
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/846356dd12205f276ce2d31cee658ef7160855813b14fc3aa88d4c844cdc3b00.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 13: Large caps could be eligible for fast-track index inclusion to key benchmarks"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: Data is as of April 16, 2026."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: HSIL, FactSet, EPFR, GS Global Investment Research"
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"6\">Index Summary</td></tr><tr><td></td><td>MSCI China</td><td>HSI</td><td>HSCEI</td><td>HSTECH</td><td>HSCI</td></tr><tr><td>Current Index Cap (US$bn)</td><td>2,804</td><td>2,004</td><td>1,433</td><td>458</td><td>3,334</td></tr><tr><td>6M ADVT (US$bn)</td><td>118</td><td>11.8</td><td>11.0</td><td>7.8</td><td>19.5</td></tr><tr><td># of constituents</td><td>579</td><td>90</td><td>50</td><td>30</td><td>531</td></tr><tr><td>HK shares</td><td>163</td><td>90</td><td>50</td><td>30</td><td>531</td></tr><tr><td>Passive Tracking AUM (US$bn)</td><td>157</td><td>29.5</td><td>4.8</td><td>47.8</td><td>-</td></tr><tr><td>as % of current index cap</td><td>5.6%</td><td>1.5%</td><td>0.3%</td><td>10.4%</td><td>-</td></tr><tr><td>Fact-track index inclusion</td><td colspan=\"5\"></td></tr><tr><td>Criteria</td><td>Mkt cap &gt; 1.8x cutoff level; and freefloat market cap &gt; 1.8x 1/2 of cutoff level</td><td>No fast track rule; 3 month listing history</td><td>Top 10</td><td>Top 10</td><td>Top 10% of the existing HSCI constituents</td></tr><tr><td>Timing</td><td>After the 10th trading day</td><td>Next quarterly rebalancing after listing for 3-6 months</td><td>After the 10th trading day</td><td>After the 10th trading day</td><td>After the 10th trading day</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                81,
+                157,
+                485,
+                336
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/360f88d468b20466ce1688853ba93991abdb3f86c5bc8e30d021d9d51a9bf3b2.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 15: Primary Hong Kong listings that satisfy specific market capitalization and liquidity requirements can be added into Southbound universe"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: HKEx, GS Global Investment Research"
+                    }
+                ],
+                "html": "<table><tr><td>Southbound inclusion criteria</td></tr><tr><td>AH Dual-listed Companies: Automatically included after the price-stabilization period (typically 1 month post-IPO).</td></tr><tr><td>Non-AH Dual-listed Companies: Included after being added to HSCI, with market cap &gt; HK$5bn</td></tr><tr><td>WVR (“-W”) Companies:</td></tr><tr><td>Included during the March/September HSCI semi-annual review window</td></tr><tr><td>7 months (6 months + 20 trading days) post-IPO</td></tr><tr><td>Average daily turnover &gt; US$6mn</td></tr><tr><td>Average listed market cap ≥ US$2.6bn (HK$20bn)</td></tr><tr><td>Or inclusion in HSCI Mid-Cap.</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                81,
+                441,
+                485,
+                621
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/cc9e95de54c249ba7cc5447cca791ad91f41b99deeb66df730b32ef0c6ebfddc.jpg"
+                },
+                "content": "Average relative returns around historical HS indexes rebalancing\n| Category | - 5D before announcement (%) | + 5D after announcement (%) | - 5D before effective (%) | + 5D after effective (%) |\n|---|---|---|---|---|\n| HSI (Addition/Deletion) | 0 | 5 | -4 | -0 |\n| HSCEI (Addition/Deletion) | -3 | 2 | -2 | -7 |\n| HSTECH (Addition/Deletion) | 4 | 8 | -4 | 3 |\n| HSI (Higher/Lower FAF) | -1 | 1 | 2 | 0 |\n| HSCEI (Higher/Lower FAF) | -1 | 1 | 2 | 0 |\n| HSTECH (Higher/Lower FAF) | -2 | -1 | 1 | 1 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 14: Additions/deletions in HSI and HSTECH experienced stronger price actions compared to those in HSCEI"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, MSCI, GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                516,
+                166,
+                898,
+                352
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/82a72e5be73e9a04a360e64b48ec395bf8a665c07451caf4fa4e50bff70337d3.jpg"
+                },
+                "content": "| Number of days around Southbound inclusion | Price index (equal-wgt) | Cumulative Southbound net buying (average by stock) - RHS (US$mn) |\n| ------------------------------------------ | ------------------------ | --------------------------------------------------------------- |\n| -90                                        | ~95                      | ~0                                                              |\n| -60                                        | ~88                      | ~0                                                              |\n| -30                                        | ~102                     | ~50                                                             |\n| 0                                          | ~107                     | ~100                                                            |\n| 30                                         | ~104                     | ~150                                                            |\n| 60                                         | ~102                     | ~200                                                            |\n| 90                                         | ~90                      | ~250                                                            |\n| 120                                        | ~103                     | ~275                                                            |\n| 150                                        | ~95                      | ~300                                                            |\n| 180                                        | ~88                      | ~325                                                            |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 16: Newly-listed stocks tend to have a short-lived rally after Southbound inclusion, while inflows tend to persist"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, GS Global Investment Research"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                516,
+                447,
+                911,
+                638
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Watchlists for post-IPO outperforms, lock-up share expiry and Southbound inclusion"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                686,
+                769,
+                708
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Following trading strategies across three critical horizons as we identify in previous sections—post-IPO performance, lock-up share expiration, and index or Southbound Stock Connect inclusion—we screen for high-potential stocks that warrant investor attention. First, we screen for year-to-date, large-cap listings characterized by robust revenue growth (>20%) and moderate cornerstone ownership (30–50%), as these attributes typically signal a higher probability of sustainable post-IPO outperformance. Second, we identify stocks with significant lock-up expirations (>30% of total shares outstanding) scheduled over the next 12 months, which may trigger technical selling pressure—particularly for names that have generated extraordinary post-IPO returns. Third, we target companies listed within the past year whose market capitalizations exceed the Southbound Stock Connect inclusion threshold (HK$5bn) but have not yet been added, offering investors a tactical opportunity to capitalize on potential inclusion events that drive capital inflows. For newly listed companies exhibiting robust fundamentals, investors may adopt a hold strategy during the initial post-IPO phase, closely monitor upcoming lock-up expiry windows, and systematically increase exposure once the majority of shares become free float and accessible via the Southbound Stock Connect."
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                732,
+                903,
+                931
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                5,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Musings"
+                    }
+                ]
+            },
+            "bbox": [
+                820,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                953,
+                163,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                269,
+                40,
+                913,
+                145
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/507aa08b942a15e0ea868ac1285a0e51092c9bd9ef0efeb8b721cf9d9dbd9ad5.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 17: We screen for new HK listings ytd with features that could lead to sustainable post-IPO outperformance"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: Prices as of Jun 12, 2026; Valuations are based on IBES consensus forecasts."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, FactSet, GS Global Investment Research"
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"3\"></td><td colspan=\"2\">30-50%</td><td colspan=\"2\">&gt;20%</td><td colspan=\"2\">&gt;US$1bn</td></tr><tr><td>Ticker</td><td>Name</td><td>GICS Sector</td><td>Cornerstone ownership</td><td>IPO subscription ratio (x)</td><td>Revneue growth (24-27 avg)</td><td>Quoted Price (HKD)</td><td>Listed Mkt Cap (US$bn)</td><td>ADVT (US$mn)</td></tr><tr><td>9903 HK</td><td>Iluvatar CoreX Semiconductor</td><td>IT</td><td>43%</td><td>414</td><td>97%</td><td>531</td><td>16.6</td><td>53</td></tr><tr><td>100 HK</td><td>MiniMax Group</td><td>IT</td><td>49%</td><td>459</td><td>162%</td><td>435</td><td>12.9</td><td>196</td></tr><tr><td>1768 HK</td><td>Busy Ming</td><td>Consumer Staples</td><td>36%</td><td>1899</td><td>42%</td><td>380</td><td>10.5</td><td>19</td></tr><tr><td>6656 HK</td><td>Sigenergy Technology</td><td>IT</td><td>50%</td><td>1102</td><td>310%</td><td>375</td><td>6.8</td><td>45</td></tr><tr><td>3277 HK</td><td>Gpixel Changchun Microelectronics</td><td>IT</td><td>50%</td><td>1138</td><td>30%</td><td>87</td><td>3.3</td><td>37</td></tr><tr><td>1236 HK</td><td>Shenzhen LDRobot</td><td>IT</td><td>32%</td><td>6708</td><td>60%</td><td>43</td><td>1.8</td><td>8</td></tr><tr><td>3310 HK</td><td>Viewtrix Technology</td><td>IT</td><td>35%</td><td>3560</td><td>24%</td><td>33</td><td>1.8</td><td>12</td></tr><tr><td>2675 HK</td><td>Edge Medical</td><td>Health Care</td><td>49%</td><td>1092</td><td>118%</td><td>40</td><td>1.7</td><td>4</td></tr><tr><td>1609 HK</td><td>Star Sports Medicine</td><td>Health Care</td><td>35%</td><td>7823</td><td>23%</td><td>194</td><td>1.4</td><td>6</td></tr><tr><td>3388 HK</td><td>Shenzhen Creality 3D Technology</td><td>Industrials</td><td>50%</td><td>3829</td><td>37%</td><td>23</td><td>1.4</td><td>20</td></tr><tr><td>1779 HK</td><td>LongBio Pharma</td><td>Health Care</td><td>50%</td><td>4763</td><td>100%</td><td>142</td><td>1.3</td><td>20</td></tr><tr><td>1021 HK</td><td>Huayan Robotics</td><td>Industrials</td><td>49%</td><td>1265</td><td>36%</td><td>19</td><td>1.3</td><td>8</td></tr><tr><td>600 HK</td><td>Axera Semiconductor</td><td>IT</td><td>48%</td><td>105</td><td>68%</td><td>17</td><td>1.3</td><td>6</td></tr><tr><td colspan=\"3\">Average</td><td>44%</td><td>2628</td><td>85%</td><td>-</td><td>4.8</td><td>33</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                107,
+                188,
+                888,
+                461
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                5,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Musings"
+                    }
+                ]
+            },
+            "bbox": [
+                820,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                161,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/2fd47588f517219ea43ca8fe6ef15d820c65a106c5e1de98d7a4b32ac4544913.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 18: We screen for stocks with a high portion of lock-up shares to expire in the next 12 months that could face potential selling pressure"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: Prices as of Jun 12, 2026; Valuations are based on IBES consensus forecasts."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, FactSet, GS Global Investment Research"
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\">Ticker</td><td rowspan=\"2\">Name</td><td rowspan=\"2\">GICS Sector</td><td>&gt;30%</td><td>&gt;50%</td><td colspan=\"3\">&gt;US$1bn</td></tr><tr><td>Lock-up shares to release in next 12m as % of total</td><td>Post-IPO returns</td><td>Quoted Price (HKD)</td><td>Listed Mkt Cap (US$bn)</td><td>ADVT (US$mn)</td></tr><tr><td>2513 HK</td><td>Knowledge Atlas Technology</td><td>IT</td><td>46%</td><td>844%</td><td>1061</td><td>30.0</td><td>209</td></tr><tr><td>9903 HK</td><td>Iluvatar CoreX Semiconductor</td><td>IT</td><td>91%</td><td>265%</td><td>531</td><td>16.6</td><td>53</td></tr><tr><td>100 HK</td><td>MiniMax</td><td>IT</td><td>67%</td><td>140%</td><td>435</td><td>12.9</td><td>196</td></tr><tr><td>1768 HK</td><td>Busy Ming</td><td>Cons Stap</td><td>94%</td><td>59%</td><td>380</td><td>10.5</td><td>19</td></tr><tr><td>6082 HK</td><td>Biren Technology</td><td>IT</td><td>42%</td><td>155%</td><td>52</td><td>7.9</td><td>54</td></tr><tr><td>6651 HK</td><td>51WORLD Digital Twin Tech</td><td>IT</td><td>82%</td><td>284%</td><td>114</td><td>5.8</td><td>60</td></tr><tr><td>2476 HK</td><td>Victory Giant Technology</td><td>IT</td><td>34%</td><td>80%</td><td>379</td><td>5.3</td><td>268</td></tr><tr><td>3317 HK</td><td>Xunce Technology</td><td>IT</td><td>78%</td><td>207%</td><td>154</td><td>5.2</td><td>81</td></tr><tr><td>3858 HK</td><td>Jiaxin Int&#x27;l Resources</td><td>Materials</td><td>61%</td><td>712%</td><td>87</td><td>5.1</td><td>55</td></tr><tr><td>2788 HK</td><td>Chuangxin Industries</td><td>Materials</td><td>72%</td><td>81%</td><td>19</td><td>5.0</td><td>23</td></tr><tr><td>1879 HK</td><td>Xizhi Technology</td><td>IT</td><td>56%</td><td>156%</td><td>480</td><td>4.7</td><td>87</td></tr><tr><td>2526 HK</td><td>Diagens Biotechnology</td><td>Health Care</td><td>91%</td><td>229%</td><td>318</td><td>3.6</td><td>9</td></tr><tr><td>6809 HK</td><td>Montage Technology</td><td>IT</td><td>43%</td><td>232%</td><td>365</td><td>3.5</td><td>128</td></tr><tr><td>2718 HK</td><td>Mininglamp Technology</td><td>IT</td><td>86%</td><td>74%</td><td>202</td><td>3.4</td><td>7</td></tr><tr><td>3277 HK</td><td>Gpixel Changchun Microelectronics</td><td>IT</td><td>42%</td><td>126%</td><td>87</td><td>3.3</td><td>37</td></tr><tr><td>2706 HK</td><td>Haizhi Technology</td><td>IT</td><td>94%</td><td>106%</td><td>64</td><td>3.3</td><td>24</td></tr><tr><td>68 HK</td><td>Manycore Tech</td><td>IT</td><td>93%</td><td>92%</td><td>15</td><td>3.2</td><td>70</td></tr><tr><td>6810 HK</td><td>Sunmi Technology</td><td>IT</td><td>68%</td><td>206%</td><td>83</td><td>3.2</td><td>8</td></tr><tr><td>3986 HK</td><td>GigaDevice Semiconductor</td><td>IT</td><td>43%</td><td>303%</td><td>687</td><td>2.9</td><td>117</td></tr><tr><td>2723 HK</td><td>DeepZero Technology</td><td>Comm Svcs</td><td>90%</td><td>352%</td><td>237</td><td>2.7</td><td>32</td></tr><tr><td>2670 HK</td><td>Yunji Technology</td><td>Industrials</td><td>78%</td><td>210%</td><td>308</td><td>2.5</td><td>1</td></tr><tr><td>2889 HK</td><td>Pateo Connect Technology</td><td>Cons Disc</td><td>41%</td><td>114%</td><td>210</td><td>2.1</td><td>12</td></tr><tr><td>1384 HK</td><td>Deepexi Technology</td><td>IT</td><td>90%</td><td>84%</td><td>49</td><td>2.1</td><td>54</td></tr><tr><td>1236 HK</td><td>Shenzhen LDRobot</td><td>IT</td><td>93%</td><td>62%</td><td>43</td><td>1.8</td><td>8</td></tr><tr><td>2637 HK</td><td>Haixi Pharmaceuticals</td><td>Health Care</td><td>85%</td><td>105%</td><td>179</td><td>1.8</td><td>6</td></tr><tr><td>3310 HK</td><td>Viewtrix Technology</td><td>IT</td><td>92%</td><td>53%</td><td>33</td><td>1.8</td><td>12</td></tr><tr><td>2632 HK</td><td>New Vision Automotive Electronics</td><td>Cons Disc</td><td>77%</td><td>179%</td><td>125</td><td>1.7</td><td>2</td></tr><tr><td>901 HK</td><td>SDMC Technology</td><td>IT</td><td>91%</td><td>86%</td><td>61</td><td>1.6</td><td>7</td></tr><tr><td>6872 HK</td><td>TenNor Therapeutics</td><td>Health Care</td><td>78%</td><td>246%</td><td>242</td><td>1.6</td><td>7</td></tr><tr><td>2729 HK</td><td>Galaxis Technology</td><td>Industrials</td><td>91%</td><td>71%</td><td>28</td><td>1.5</td><td>4</td></tr><tr><td>3625 HK</td><td>FourSemi Semiconductor</td><td>IT</td><td>88%</td><td>163%</td><td>102</td><td>1.4</td><td>5</td></tr><tr><td>1511 HK</td><td>UISEE Technologies</td><td>Industrials</td><td>72%</td><td>53%</td><td>88</td><td>1.4</td><td>9</td></tr><tr><td>2553 HK</td><td>Shougang LanzaTech Technology</td><td>Energy</td><td>57%</td><td>189%</td><td>41</td><td>1.4</td><td>35</td></tr><tr><td>9887 HK</td><td>Nanjing Leads Biolabs</td><td>Health Care</td><td>56%</td><td>54%</td><td>56</td><td>1.4</td><td>7</td></tr><tr><td>6636 HK</td><td>Extreme Vision Technology</td><td>IT</td><td>90%</td><td>132%</td><td>97</td><td>1.4</td><td>11</td></tr><tr><td>1609 HK</td><td>Star Sports Medicine</td><td>Health Care</td><td>90%</td><td>97%</td><td>194</td><td>1.4</td><td>6</td></tr><tr><td>7630 HK</td><td>IMPACT Therapeutics</td><td>Health Care</td><td>90%</td><td>81%</td><td>37</td><td>1.3</td><td>7</td></tr><tr><td>2617 HK</td><td>TransThera Sciences</td><td>Health Care</td><td>70%</td><td>144%</td><td>33</td><td>1.3</td><td>19</td></tr><tr><td>3200 HK</td><td>Han&#x27;s CNC Technology</td><td>Industrials</td><td>44%</td><td>61%</td><td>152</td><td>1.1</td><td>31</td></tr><tr><td>2687 HK</td><td>Able Digital Science&amp;Tech</td><td>Cons Disc</td><td>83%</td><td>103%</td><td>135</td><td>1.1</td><td>3</td></tr><tr><td>Average</td><td></td><td></td><td>73%</td><td>175%</td><td>-</td><td>4.3</td><td>45</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                107,
+                92,
+                888,
+                828
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Musings"
+                    }
+                ]
+            },
+            "bbox": [
+                820,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                161,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/22faf030df78264fab9c45e81c572e75b6fbe324cb069cf6ccd6238883e82599.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 19: We screen for newly listed HK stocks with potential for Southbound inclusion"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: Prices as of Jun 12, 2026; Valuations are based on IBES consensus forecasts."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: SZSE, FactSet, GS Global Investment Research"
+                    }
+                ],
+                "html": "<table><tr><td>Ticker</td><td>Name</td><td>GICS Sector</td><td>Quoted Price (HKD)</td><td>Mkt Cap (HK$bn, security)</td><td>ADVT (US$mn)</td></tr><tr><td>100 HK</td><td>MiniMax Group</td><td>IT</td><td>435</td><td>92.1</td><td>196</td></tr><tr><td>6656 HK</td><td>Sigenergy Technology</td><td>Industrials</td><td>375</td><td>53.8</td><td>45</td></tr><tr><td>1879 HK</td><td>Xizhi Technology</td><td>IT</td><td>480</td><td>36.0</td><td>87</td></tr><tr><td>2526 HK</td><td>Diagens Biotechnology</td><td>Health Care</td><td>318</td><td>28.9</td><td>9</td></tr><tr><td>3277 HK</td><td>Gpixel Changchun Microelectronics</td><td>IT</td><td>87</td><td>27.2</td><td>37</td></tr><tr><td>68 HK</td><td>Manycore Tech</td><td>IT</td><td>15</td><td>25.2</td><td>70</td></tr><tr><td>2723 HK</td><td>DeepZero Technology</td><td>Comm Svcs</td><td>237</td><td>22.8</td><td>32</td></tr><tr><td>6810 HK</td><td>Sunmi Technology</td><td>IT</td><td>83</td><td>22.7</td><td>8</td></tr><tr><td>2670 HK</td><td>Yunji Technology</td><td>Industrials</td><td>308</td><td>18.5</td><td>1</td></tr><tr><td>3355 HK</td><td>FS.com</td><td>IT</td><td>34</td><td>14.5</td><td>6</td></tr><tr><td>7666 HK</td><td>Metis TechBio</td><td>Health Care</td><td>13</td><td>14.3</td><td>25</td></tr><tr><td>1236 HK</td><td>LDRobot</td><td>IT</td><td>43</td><td>14.3</td><td>8</td></tr><tr><td>3310 HK</td><td>Viewtrix Technology</td><td>IT</td><td>33</td><td>13.6</td><td>12</td></tr><tr><td>6872 HK</td><td>TenNor Therapeutics</td><td>Health Care</td><td>242</td><td>13.6</td><td>7</td></tr><tr><td>2632 HK</td><td>New Vision Automotive Electronics</td><td>Cons Disc</td><td>125</td><td>13.4</td><td>2</td></tr><tr><td>2726 HK</td><td>Epiworld International</td><td>IT</td><td>112</td><td>13.3</td><td>4</td></tr><tr><td>901 HK</td><td>SDMC Technology</td><td>IT</td><td>61</td><td>12.8</td><td>7</td></tr><tr><td>7688 HK</td><td>Top Numerical Control Technology</td><td>Industrials</td><td>35</td><td>12.4</td><td>25</td></tr><tr><td>2729 HK</td><td>Galaxis Technology</td><td>Industrials</td><td>28</td><td>12.2</td><td>4</td></tr><tr><td>1511 HK</td><td>UISEE Technologies</td><td>Industrials</td><td>88</td><td>11.7</td><td>9</td></tr><tr><td>3625 HK</td><td>FourSemi Semiconductor</td><td>IT</td><td>102</td><td>11.6</td><td>5</td></tr><tr><td>2553 HK</td><td>Shougang LanzaTech Technology</td><td>Energy</td><td>41</td><td>11.3</td><td>35</td></tr><tr><td>6887 HK</td><td>Sunshine Lake Pharma</td><td>Health Care</td><td>34</td><td>11.1</td><td>2</td></tr><tr><td>1609 HK</td><td>Star Sports Medicine</td><td>Health Care</td><td>194</td><td>10.6</td><td>6</td></tr><tr><td>3388 HK</td><td>Creality 3D Technology</td><td>Industrials</td><td>23</td><td>10.6</td><td>20</td></tr><tr><td>1779 HK</td><td>LongBio Pharma</td><td>Health Care</td><td>142</td><td>10.5</td><td>20</td></tr><tr><td>6636 HK</td><td>Extreme Vision Technology</td><td>IT</td><td>97</td><td>10.4</td><td>11</td></tr><tr><td>7630 HK</td><td>IMPACT Therapeutics</td><td>Health Care</td><td>37</td><td>10.3</td><td>7</td></tr><tr><td>1021 HK</td><td>Huayan Robotics</td><td>Industrials</td><td>19</td><td>10.2</td><td>8</td></tr><tr><td>600 HK</td><td>Axera Semiconductor</td><td>IT</td><td>17</td><td>9.5</td><td>6</td></tr><tr><td>6938 HK</td><td>Ribo Life Science</td><td>Health Care</td><td>50</td><td>8.7</td><td>4</td></tr><tr><td>3887 HK</td><td>HashKey Holdings</td><td>Financials</td><td>3</td><td>8.3</td><td>2</td></tr><tr><td>6871 HK</td><td>Robotphoenix Intelligent Tech</td><td>Industrials</td><td>23</td><td>7.3</td><td>13</td></tr><tr><td>1081 HK</td><td>Dajin Heavy Industry</td><td>Industrials</td><td>60</td><td>6.4</td><td>46</td></tr><tr><td>Average</td><td></td><td></td><td>-</td><td>17.9</td><td>23</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                107,
+                77,
+                890,
+                790
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Musings"
+                    }
+                ]
+            },
+            "bbox": [
+                820,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                161,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                900,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure Appendix"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                40,
+                251,
+                61
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Reg AC"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                82,
+                135,
+                96
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We, Si Fu, Ph.D., Kinger Lau, CFA, Timothy Moe, CFA and Kevin Wang, CFA, hereby certify that all of the views expressed in this report accurately reflect our personal views, which have not been influenced by considerations of the firm's business or client relationships."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                104,
+                908,
+                127
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                132,
+                885,
+                145
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Contributing Authors: Si Fu, Ph.D. GS (Asia) L.L.C., Kinger Lau, CFA GS (Asia) L.L.C., Timothy Moe, CFA GS (Singapore) Pte, Kevin Wang, CFA GS (Asia) L.L.C.."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                152,
+                869,
+                175
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                181,
+                893,
+                203
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                218,
+                168,
+                230
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other disclosures MSCI"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                237,
+                212,
+                261
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All MSCI data used in this report is the exclusive property of MSCI, Inc. (MSCI). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be reproduced or redisseminated in any form and may not be used to create any financial instruments or products or any indices. This information is provided on an “as is” basis, and the user of this information assumes the entire risk of any use made of this information. Neither MSCI, any of its affiliates nor any third party involved in, or related to, computing or compiling the data makes any express or implied warranties or representations with respect to this information (or the results to be obtained by the use thereof), and MSCI, its affiliates and any such third party hereby expressly disclaim all warranties of originality, accuracy, completeness, merchantability or fitness for a particular purpose with respect to any of this information. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the data have any liability for any direct, indirect, special, punitive, consequential or any other damages (including lost profits) even if notified of the possibility of such damages. MSCI and the MSCI indexes are service marks of MSCI and its affiliates. The Global Industry Classification Standard (GICS) were developed by and is the exclusive property of MSCI and Standard & Poor’s. GICS is a service mark of MSCI and S&P and has been licensed for use by The GS Group, Inc."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                268,
+                910,
+                390
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Baskets"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                398,
+                129,
+                409
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The ability to trade the basket(s) in this report will depend upon market conditions, including liquidity and borrow constraints at the time of trade."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                415,
+                883,
+                428
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Regulatory disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                441,
+                251,
+                455
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures required by United States laws and regulations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                460,
+                514,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction;  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                474,
+                906,
+                518
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                523,
+                911,
+                603
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                616,
+                872,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                630,
+                913,
+                929
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Musings"
+                    }
+                ]
+            },
+            "bbox": [
+                821,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                954,
+                161,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                900,
+                954,
+                915,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request."
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                40,
+                916,
+                274
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                281,
+                906,
+                360
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                366,
+                913,
+                423
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global product; distributing entities"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                434,
+                349,
+                449
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom."
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                449,
+                916,
+                571
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                576,
+                877,
+                601
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                607,
+                903,
+                652
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "General disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                81,
+                665,
+                227,
+                678
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                680,
+                913,
+                734
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org)."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                741,
+                913,
+                775
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                781,
+                913,
+                815
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                821,
+                888,
+                845
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                851,
+                913,
+                874
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                881,
+                911,
+                904
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                910,
+                883,
+                923
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Musings"
+                    }
+                ]
+            },
+            "bbox": [
+                821,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                954,
+                161,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "performance of, or provide analysis of, individual companies within any industry or sector we describe."
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                40,
+                645,
+                52
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                59,
+                866,
+                82
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                87,
+                915,
+                157
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc_fcm_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                162,
+                903,
+                219
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                225,
+                903,
+                327
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                332,
+                897,
+                378
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                384,
+                888,
+                406
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 GS."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                412,
+                220,
+                425
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                432,
+                911,
+                510
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Musings"
+                    }
+                ]
+            },
+            "bbox": [
+                820,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "14 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                83,
+                954,
+                161,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                900,
+                954,
+                916,
+                965
+            ]
+        }
+    ]
+]
