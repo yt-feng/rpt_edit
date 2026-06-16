@@ -1,0 +1,57 @@
+ZH_A: 最近我看到一份关于韩国半导体设备进口的报告，数据非常有意思。研究员，这份报告到底在说什么？
+
+ZH_B: 简单来说，我们通过韩国海关5月发布的设备进口数据，发现了一个强烈的信号：韩国半导体制造商的扩产势头比市场预期的要猛得多。进口总额同比增长了51%，这背后是三星和SK海力士在DRAM上的巨额投入。
+
+ZH_A: 51%的同比增长，这个数字确实很惊人。但市场可能更关心的是，这对哪些公司是直接利好？
+
+ZH_B: 报告的核心是跟踪三家关键设备商：ASML、东京电子和爱德万测试。韩国进口数据是它们业绩的先行指标。比如，从荷兰进口的光刻机数据，暗示ASML在韩国的季度收入可能超过20亿欧元，这远超市场预期。
+
+ZH_A: 等一下，你说光刻机数据很强，但报告里也提到日本设备进口环比下降了27%。这是不是意味着东京电子的前景不太好？
+
+ZH_B: 是的，这是一个关键分歧点。我们的回归模型显示，东京电子在韩国的季度收入可能环比下降15%，而市场预期是持平。但这不一定是坏事，它可能反映了产品组合的短期调整。更值得关注的是，爱德万测试的测试机进口数据环比增长了5%，同比翻了一倍。
+
+ZH_A: 所以爱德万测试的业绩会超预期？
+
+ZH_B: 我们的模型预测，爱德万测试在韩国的季度收入可能环比暴增84%，而市场共识只有3%。这意味着巨大的上行空间。但注意，最近两者的相关性有所减弱，这个结论还需要更多数据验证。
+
+ZH_A: 那三星和SK海力士的资本支出呢？进口数据这么强，它们的投资是不是也在加速？
+
+ZH_B: 有趣的是，它们的季度资本支出在2026年第一季度其实是环比下降的。报告认为，这主要是季节性和基础设施投资前置造成的。但两家公司都明确表示全年资本支出会大幅增加，所以我们预计未来几个季度，资本支出会更强，甚至超过进口数据的增速。
+
+ZH_A: 听起来，这份报告的核心逻辑就是：韩国设备进口是判断全球半导体周期的关键指标。那报告里有没有一些没有完全展开的问题？
+
+ZH_B: 有，而且很重要。第一，进口数据虽然强，但报告指出，ASML的季度收入可能环比下降18%，尽管同比翻倍。这意味着短期节奏和长期趋势可能不同。第二，东京电子的疲软是暂时的，还是结构性的？报告没有给出最终答案。
+
+ZH_A: 所以，对于投资者来说，这份报告只是一个起点？
+
+ZH_B: 完全正确。它提供了一个高精度的数据透镜，但真正的洞见需要结合完整报告中的更多细节，比如产品组合分析、客户订单验证。如果想深挖，建议去读完整版，那里有更详细的回归模型和风险提示。
+
+ZH_A: 好的，感谢你的精彩解读。如果想获取完整报告，可以关注我们的社群或直接联系我们。我们下期再见。
+
+EN_A: So I just came across this report on South Korea's semiconductor equipment imports. The numbers look wild. What's the big takeaway?
+
+EN_B: The headline is simple: imports surged 51% year-over-year in May. That's a clear signal that Samsung and SK hynix are ramping up capacity faster than the market thinks. And it's not just about the total number—it's about what it means for specific equipment makers.
+
+EN_A: Like ASML and Tokyo Electron? The report mentions both, but with very different stories.
+
+EN_B: Exactly. Let's start with ASML. The lithography imports from the Netherlands hit 928 million euros in May. That's the second-highest for any second month of a quarter on record. Our model suggests ASML's Korea sales could be around 2.3 billion euros this quarter. That's down 18% from last quarter, but more than double year-over-year.
+
+EN_A: So strong, but with a short-term dip. What about Tokyo Electron? The Japanese equipment imports dropped 27% month-over-month.
+
+EN_B: That's where it gets interesting. Our regression points to a 15% sequential decline for Tokyo Electron's Korea revenue. The market is expecting flat. So there's a clear disconnect. But the report doesn't fully explain whether this is a temporary blip or a structural shift. That's one of the open questions.
+
+EN_A: And then there's Advantest. The tester imports were up 103% year-over-year. That's massive.
+
+EN_B: Yeah, and our model says Advantest's Korea revenue could jump 84% quarter-over-quarter. The consensus is only 3%. So there's huge upside potential. But—and this is a big but—the correlation between imports and revenue has weakened recently. So we need more data to confirm.
+
+EN_A: So the report is basically saying: use imports as a leading indicator, but don't bet the house on it.
+
+EN_B: Exactly. And there's another layer: Samsung and SK hynix's capex actually fell in the first quarter of 2026, despite rising imports. The report explains that as seasonality and front-loaded spending. But both companies have guided for much higher full-year capex. So we expect capex to catch up and possibly overshoot.
+
+EN_A: So what's the one thing the report leaves you wondering?
+
+EN_B: Two things. First, is Tokyo Electron's weakness temporary or structural? The report doesn't fully answer that. Second, how much of this import surge is driven by the transition to the 1c DRAM node, which requires more lithography? That's a detail you'd need to dig into the full report for.
+
+EN_A: Sounds like the full report has the real meat. Thanks for breaking it down. If our listeners want the complete analysis, check out the full report or join our community. See you next time.
+
+EN_B: See you.
