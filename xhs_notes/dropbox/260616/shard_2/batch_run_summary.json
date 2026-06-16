@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 41,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/13-Bofa-Global Fund Manager Survey The Frozen Bulls-260616.pdf",
+          "batch_file": "/tmp/pdf_batch_001_8fh29m2e/pdfs/0001-13-Bofa-Global Fund Manager Survey The Frozen Bulls-260616.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/14-DB-FX Blog：Beneficiaries of the peace-260615.pdf",
+          "batch_file": "/tmp/pdf_batch_001_8fh29m2e/pdfs/0002-14-DB-FX Blog-Beneficiaries of the peace-260615.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/15-MS-The Oil Manual：'Let the Oil Flow'-260615.pdf",
+          "batch_file": "/tmp/pdf_batch_001_8fh29m2e/pdfs/0003-15-MS-The Oil Manual--Let the Oil Flow--260615.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-GS-Taiwan Technology： US marketing feedback： AI ASIC remains the preferred theme with focus on CPU and next supply chain bottlenecks-260615.pdf",
+          "batch_file": "/tmp/pdf_batch_001_8fh29m2e/pdfs/0004-16-GS-Taiwan Technology- US marketing feedback- AI ASIC remains the preferred theme with focus on CPU and next supply chain bottlenecks-260615.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-Bofa-Asia Fund Manager Survey Tech Hardware rises; Indonesia slips-260616.pdf",
+          "batch_file": "/tmp/pdf_batch_001_8fh29m2e/pdfs/0005-17-Bofa-Asia Fund Manager Survey Tech Hardware rises- Indonesia slips-260616.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_8fh29m2e/pdfs/0001-13-Bofa-Global Fund Manager Survey The Frozen Bulls-260616.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8fh29m2e/pdfs/0002-14-DB-FX Blog-Beneficiaries of the peace-260615.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8fh29m2e/pdfs/0003-15-MS-The Oil Manual--Let the Oil Flow--260615.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8fh29m2e/pdfs/0004-16-GS-Taiwan Technology- US marketing feedback- AI ASIC remains the preferred theme with focus on CPU and next supply chain bottlenecks-260615.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_8fh29m2e/pdfs/0005-17-Bofa-Asia Fund Manager Survey Tech Hardware rises- Indonesia slips-260616.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
