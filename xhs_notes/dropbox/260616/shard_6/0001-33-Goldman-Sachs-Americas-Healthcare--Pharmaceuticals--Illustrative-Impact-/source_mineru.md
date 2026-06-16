@@ -1,0 +1,473 @@
+# Americas Healthcare: Pharmaceuticals: Illustrative Impact Analysis and Company Commentary on CMS Proposed Rule
+
+We have been receiving inbounds regarding the CMS proposed rule on the Medicare Drug Price Negotiation Program, which would, in addition to formally codifying policies previously implemented under the IRA, look to consider formulations with two or more active moieties/ingredients or vaccine antigen components as one for purposes of negotiation eligibility. Combinations with hyaluronidase are specifically called out, suggesting potential implications for MRK's Keytruda Qlex, BMY's Opdivo Qvantig, and JNJ's Darzalex Faspro — contributing to slight underperformance (MRK -2.8%, JNJ -2.2%, BMY -1.6% vs DRG -1.3%, XLV -0.6%). We note this issue was raised last year, as the CMS draft guidance for the IPAY 2028 class included a paragraph around fixed combinations — however this clause was removed in the final guidance. Within, we refresh our illustrative impact analysis for including these SC drugs in the 2029 IRA price negotiations, which implies a theoretical minimal low-single digit EBIT impact for these companies in 2029/2030.
+
+Company responses to the proposal are largely consistent with prior commentary. JNJ notes that their position on Darzalex has not changed — consistent with what the company has shared previously, they do not expect IRA price setting for Darzalex Faspro before 2034. BMY noted the development is not unexpected, and that the company disagrees and is mobilized and will make their thoughts known during the comment period. MRK, while concerned about the precedent the rule sets, and will continue to engage with CMS through the comment period, notes that regardless of whether Keytruda Qlex is included in IRA negotiations, the company does not expect a material financial impact, and have always stated their pricing strategy for Keytruda Qlex will take into account the likelihood that IV Keytruda will be subject to IRA price setting beginning in 2029, and the likely entry of biosimilars in December 2028. Based on the latest draft guidance issued by the CMS, MRK anticipates Keytruda IV and Keytruda Qlex will be subject to IRA price negotiation with an effective date of January 2029. (Given the earliest anticipated biosimilar competition for KEYTRUDA is December 2028, when the compound patent expires, at this time, MRK does not anticipate that biosimilar competition will preclude KEYTRUDA from being subject to IRA negotiation.) With regard to MRK, given their Keytruda Qlex pricing strategy is messaged by the company to be consistent irrespective of price negotiation, we see the possibility that inclusion could theoretically create a tailwind from an access/ coverage perspective.
+
+On next steps, there is a 60-day comment period (through August 17), after which during Fall 2026 CMS plans to issue the final rule for initial price applicability years
+
+Asad Haider, CFA
+
++1(212)902-0691 | asad.haider@gs.com
+
+GS & Co. LLC
+
+Nick Jennings
+
++1(415)249-7412
+
+nick.jennings@gs.com
+
+GS & Co. LLC
+
+Jeff Su
+
++1(212)357-9930 | jeff.su@gs.com
+
+GS & Co. LLC
+
+(IPAY) 2029 and beyond, and February 1, 2027 is the deadline for CMS to publish the list of up to 20 drugs payable under Part B and/or covered under Part D for negotiation.
+
+## Illustrative Impact Analysis
+
+To contextualize and quantify the potential impact of subcutaneous formulation inclusion for IPAY 2029, we update our prior illustrative analysis. Limitations of this analysis include (1) assumption that price impact only applies to the US Medicare and there is no follow through to commercial or other segments; (2) our estimated net price discount of 36% is based on the approximate average discount from the IPAY 2027 class and could be higher, and (3) the latest CMS drug spending data is from 2023, on which we base our estimate of percent Medicare exposure, and this number could be a different percentage today or at the time of impact.
+
+Based on the latest available 2023 CMS drug spending data, Medicare represented \~45% of JNJ's Darzalex sales (Darzalex + Darzalex Faspro) and \~37% for BMY's Opdivo and MRK's Keytruda. (Note, these exposure figures may have changed.)
+
+Exhibit 1: Estimated Medicare Exposure Based On CMS 2023 Medicare Part B and Part D Spending  
+\$ in mn
+
+<table><tr><td rowspan="2">Company</td><td rowspan="2">Drug</td><td colspan="3">2023 Sales/Medicare Spending ($ mn)</td><td rowspan="2">Medicare Exposure</td></tr><tr><td>US Sales</td><td>Medicare Part D Spending</td><td>Medicare Part B Spending</td></tr><tr><td>JNJ</td><td>Darzalex + Darzalex Faspro</td><td>$5,277</td><td>$86</td><td>$2,298</td><td>45.2%</td></tr><tr><td>MRK</td><td>Keytruda</td><td>$15,114</td><td>$117</td><td>$5,434</td><td>36.7%</td></tr><tr><td>BMY</td><td>Opdivo</td><td>$5,283</td><td>$51</td><td>$1,910</td><td>37.1%</td></tr></table>
+
+Source: Company data, CMS, GS Global Investment Research
+
+## JNJ's Darzalex Faspro:
+
+We apply the 36% net price discount to the estimated US portion of Darzalex Faspro sales exposed to Medicare (\~45%, per above). With these assumptions we calculate \~\$1.9bn sales impact per year in the 2029-2030 time frame, which represents \~9% of our estimated total Darzalex sales, \~1.4% of total JNJ sales, and \~4% of JNJ total adjusted EBIT.
+
+Exhibit 2: JNJ's Darzalex: Illustrative Incremental Impact of Potential Darzalex Faspro Inclusion in IRA  
+\$ in mn
+
+<table><tr><td>JNJ&#x27;s Darzalex - GS estimates</td><td>2029</td><td>2030</td></tr><tr><td colspan="3">Before Darzalex Faspro inclusion in IRA:</td></tr><tr><td>US Sales:</td><td>$12,031</td><td>$12,151</td></tr><tr><td>of which Darzalex Faspro (SC):</td><td>$11,429</td><td>$11,544</td></tr><tr><td>of which Medicare</td><td>$5,162</td><td>$5,214</td></tr><tr><td>of which non-Medicare</td><td>$6,267</td><td>$6,330</td></tr><tr><td>of which Darzalex (IV)</td><td>$602</td><td>$608</td></tr><tr><td>OUS Sales:</td><td>$8,420</td><td>$8,504</td></tr><tr><td>Total Darzalex Sales (IV+SC)</td><td>$20,451</td><td>$20,656</td></tr></table>
+
+Illustrative Darzalex Faspro inclusion in IRA:
+
+<table><tr><td>US Sales:</td><td>$10,173</td><td>$10,274</td></tr><tr><td>of which Darzalex Faspro (SC):</td><td>$9,571</td><td>$9,667</td></tr><tr><td>of which Medicare</td><td>$3,304</td><td>$3,337</td></tr><tr><td>of which non-Medicare</td><td>$6,267</td><td>$6,330</td></tr><tr><td>of which Darzalex (IV)</td><td>$602</td><td>$608</td></tr><tr><td>OUS Sales:</td><td>$8,420</td><td>$8,504</td></tr><tr><td>Total Darzalex Sales (IV+SC)</td><td>$18,593</td><td>$18,779</td></tr></table>
+
+<table><tr><td colspan="3">Total Darzalex Sales Impact:</td></tr><tr><td>$ Impact</td><td>-$1,858</td><td>-$1,877</td></tr><tr><td>% Impact</td><td>-9.1%</td><td>-9.1%</td></tr></table>
+
+<table><tr><td>Whole Co. Sales (GS)</td><td>$130,161</td><td>$139,326</td></tr><tr><td>$ Impact % of Whole Co.</td><td>-1.4%</td><td>-1.3%</td></tr></table>
+
+<table><tr><td>Whole Co. Adj. EBIT (GS)</td><td>$46,207</td><td>$49,461</td></tr><tr><td>$ Impact % of Whole Co.</td><td>-4.0%</td><td>-3.8%</td></tr></table>
+
+Source: GS Global Investment Research
+
+## MRK's Keytruda Qlex:
+
+We apply the 36% net price discount to the estimated US portion of Keytruda Qlex sales exposed to Medicare (\~37%, per above). With these assumptions we calculate \~\$900mn sales impact per year in the 2029-2030 time frame, which represents \~3% of our estimated total Keytruda sales, 1.3% of total MRK sales, and 3.0% of MRK total adjusted EBIT.
+
+Exhibit 3: MRK's Keytruda: Illustrative Incremental Impact of Potential SC pembrolizumab Inclusion in IRA  
+\$ in mn
+
+<table><tr><td>MRK&#x27;s Keytruda - GS estimates</td><td>2029</td><td>2030</td></tr><tr><td colspan="3">Before SC Keytruda inclusion in IRA:</td></tr><tr><td>US Sales:</td><td>$15,079</td><td>$10,612</td></tr><tr><td>of which SC Keytruda:</td><td>$6,925</td><td>$6,424</td></tr><tr><td>of which Medicare</td><td>$2,543</td><td>$2,359</td></tr><tr><td>of which non-Medicare</td><td>$4,382</td><td>$4,065</td></tr><tr><td>of which Keytruda (IV)</td><td>$8,154</td><td>$4,188</td></tr><tr><td>OUS Sales:</td><td>$14,372</td><td>$14,151</td></tr><tr><td>Total Keytruda Sales (IV + SC)</td><td>$29,451</td><td>$24,763</td></tr></table>
+
+Illustrative SC Keytruda inclusion in IRA:
+
+<table><tr><td>US Sales:</td><td>$14,164</td><td>$9,763</td></tr><tr><td>of which SC Keytruda:</td><td>$6,010</td><td>$5,575</td></tr><tr><td>of which Medicare</td><td>$1,628</td><td>$1,510</td></tr><tr><td>of which non-Medicare</td><td>$4,382</td><td>$4,065</td></tr><tr><td>of which Keytruda (IV)</td><td>$8,154</td><td>$4,188</td></tr><tr><td>OUS Sales:</td><td>$14,372</td><td>$14,151</td></tr><tr><td>Total Keytruda Sales (IV + SC)</td><td>$28,536</td><td>$23,914</td></tr></table>
+
+<table><tr><td colspan="3">Total Keytruda Sales Impact:</td></tr><tr><td>$ Impact</td><td>-$916</td><td>-$849</td></tr><tr><td>% Impact</td><td>-3.1%</td><td>-3.4%</td></tr></table>
+
+<table><tr><td>Whole Co. Sales (GS)</td><td>$69,953</td><td>$71,802</td></tr><tr><td>$ Impact % of Whole Co.</td><td>-1.3%</td><td>-1.2%</td></tr></table>
+
+<table><tr><td>Whole Co. Adj. EBIT (GS)</td><td>$30,779</td><td>$31,593</td></tr><tr><td>$ Impact % of Whole Co.</td><td>-3.0%</td><td>-2.7%</td></tr></table>
+
+Source: GS Global Investment Research
+
+## BMY's Opdivo Qvantig:
+
+We apply the 36% net price discount to the US Opdivo Qvantig sales exposed to Medicare (\~37%, per above). With these assumptions we calculate \~\$270mn sales impact in the 2029-2030 time frame, which represents 4% of Opdivo sales, \~0.8% of total BMY sales, and \~2.5%% of BMY total adjusted EBIT.
+
+Exhibit 4: BMY's Opdivo: Illustrative Incremental Impact of Potential Opdivo Qvantig Inclusion in IRA  
+\$ in mn
+
+<table><tr><td>BMY&#x27;s Opdivo - GS estimates</td><td>2029</td><td>2030</td></tr><tr><td colspan="3">Before Opdivo Quantig inclusion in IRA:</td></tr><tr><td>US Sales:</td><td>$4,082</td><td>$3,054</td></tr><tr><td>of which Opdivo Quantig:</td><td>$2,068</td><td>$2,019</td></tr><tr><td>of which Medicare</td><td>$768</td><td>$750</td></tr><tr><td>of which non-Medicare</td><td>$1,300</td><td>$1,269</td></tr><tr><td>of which Opdivo (IV)</td><td>$2,015</td><td>$1,035</td></tr><tr><td>OUS Sales:</td><td>$4,073</td><td>$3,388</td></tr><tr><td>Total Opdivo Sales (IV + SC)</td><td>$8,155</td><td>$6,442</td></tr></table>
+
+Illustrative Opdivo Qvantig inclusion in IRA:
+
+<table><tr><td>US Sales:</td><td>$3,806</td><td>$2,784</td></tr><tr><td>of which Opdivo Qvantig:</td><td>$1,791</td><td>$1,749</td></tr><tr><td>of which Medicare</td><td>$491</td><td>$480</td></tr><tr><td>of which non-Medicare</td><td>$1,300</td><td>$1,269</td></tr><tr><td>of which Opdivo (IV)</td><td>$2,015</td><td>$1,035</td></tr><tr><td>OUS Sales:</td><td>$4,073</td><td>$3,388</td></tr><tr><td>Total Opdivo Sales (IV + SC)</td><td>$7,879</td><td>$6,172</td></tr></table>
+
+<table><tr><td colspan="3">Total Opdivo Sales Impact:</td></tr><tr><td>$ Impact</td><td>-$276</td><td>-$270</td></tr><tr><td>% Impact</td><td>-3.4%</td><td>-4.2%</td></tr></table>
+
+<table><tr><td>Whole Co. Sales (GS)</td><td>$36,089</td><td>$35,853</td></tr><tr><td>$ Impact % of Whole Co.</td><td>-0.8%</td><td>-0.8%</td></tr></table>
+
+<table><tr><td>Whole Co. Adj. EBIT (GS)</td><td>$11,187</td><td>$11,294</td></tr><tr><td>$ Impact % of Whole Co.</td><td>-2.5%</td><td>-2.4%</td></tr></table>
+
+Source: GS Global Investment Research
+
+## Valuation and Risks
+
+## JNJ:
+
+Valuation: We arrive at our 12-month price target of \$275 based on a 20x P/E multiple on our Q5-Q8 EPS.
+
+Key downside risks: The ramp of new products could be slower than we expect, resulting in less revenue to replenish declining products. Further uncertainty related to the Talc litigation could result in higher-than-expected payouts and hamper multiples. A more-difficult-to-navigate external environment related to macro and tariffs could create downside to our estimates.
+
+## MRK:
+
+Valuation: We arrive at our 12-month target of \$137 using a 14.0x multiple on our (Q5-Q8) adjusted EPS.
+
+Key Downside Risks: Faster-than-expected erosion of the Keytruda LOE / lower than expected conversion to SubQ Keytruda. Further slowdown in established vaccine products, slower ramp of newly launched products, and regulatory uncertainty. Disappointments from pipeline assets. Tougher-than-expected regulatory/market environment related to vaccines, FDA, and tariffs, and M&A.
+
+## BMY:
+
+Valuation: We derive our 12-month price target of \$61 through a 10.0x multiple on our Q5-Q8 EPS estimates.
+
+Key upside risks: Commercial — higher than expected revenue growth from the growth portfolio (Cobenfy, Camzyos, Reblozyl, Opdualag, Breyanzi) could create upside to our estimates. Additionally, signs of better than expected durability of the legacy portfolio could create further upside. Financial — better than forecast negative impact to legacy business revenues based on LOEs and IRA implementation as well as more significant flow-through of cost-cutting efforts could create upside to our earnings estimates. Clinical/Regulatory — stronger than expected outcomes from key pipeline programs (e.g. Cobenfy in Alzheimer’s disease psychosis, milvexian in SSP and AF) could lead to both upward revisions to our medium-long-term estimates and expansion of multiples.
+
+Key downside risks: Commercial — slower than expected revenue growth from the Growth portfolio (Cobenfy, Camzyos, Reblozyl, Opdualag, Breyanzi) as well as the legacy portfolio eroding at a faster pace could result in downside to our estimates. Financial — greater than forecast negative impact to base business revenues based on LOEs and IRA implementation could result in significant downside to our estimates. Clinical/Regulatory — negative outcomes from key pipeline programs (e.g. Cobenfy in Alzheimer’s disease psychosis, milvexian AF) could create downside to our estimates.
+
+## Disclosure Appendix
+
+## Reg AC
+
+We, Asad Haider, CFA, Nick Jennings and Jeff Su, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Asad Haider, CFA GS & Co. LLC, Nick Jennings GS & Co. LLC, Jeff Su GS & Co. LLC.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+## GS Factor Profile
+
+The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:
+
+Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).
+
+Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).
+
+For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.
+
+## M&A Rank
+
+Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.
+
+## Quantum
+
+Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.
+
+## Disclosures
+
+The rating(s) for Bristol-Myers Squibb Co., Johnson & Johnson and Merck & Co. is/are relative to the other companies in its/their coverage universe: AbbVie Inc., BioNTech, Bristol-Myers Squibb Co., Eli Lilly & Co., Innoviva Inc., Johnson & Johnson, Merck & Co., NewAmsterdam Pharma, Pfizer Inc., Royalty Pharma Plc, Vaxcyte Inc.
+
+## Company-specific regulatory disclosures
+
+The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.
+
+GS has received compensation for investment banking services in the past 12 months: Bristol-Myers Squibb Co. (\$56.24), Johnson & Johnson (\$235.66) and Merck & Co. (\$114.90)
+
+GS expects to receive or intends to seek compensation for investment banking services in the next 3 months: Bristol-Myers Squibb Co. (\$56.24), Johnson & Johnson (\$235.66) and Merck & Co. (\$114.90)
+
+GS has received compensation for non-investment banking services during the past 12 months: Bristol-Myers Squibb Co. (\$56.24), Johnson & Johnson (\$235.66) and Merck & Co. (\$114.90)
+
+GS had an investment banking services client relationship during the past 12 months with: Bristol-Myers Squibb Co. (\$56.24), Johnson & Johnson (\$235.66) and Merck & Co. (\$114.90)
+
+GS had a non-investment banking securities-related services client relationship during the past 12 months with: Bristol-Myers Squibb Co. (\$56.24), Johnson & Johnson (\$235.66) and Merck & Co. (\$114.90)
+
+GS had a non-securities services client relationship during the past 12 months with: Bristol-Myers Squibb Co. (\$56.24), Johnson & Johnson (\$235.66) and Merck & Co. (\$114.90)
+
+GS has managed or co-managed a public or Rule 144A offering in the past 12 months: Merck & Co. (\$114.90)
+
+GS makes a market in the securities or derivatives thereof: Bristol-Myers Squibb Co. (\$56.24), Johnson & Johnson (\$235.66) and Merck & Co. (\$114.90)
+
+## Distribution of ratings/investment banking relationships
+
+GS Investment Research global Equity coverage universe
+
+<table><tr><td rowspan="2"></td><td colspan="3">Rating Distribution</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td></tr></table>
+
+<table><tr><td colspan="3">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>65%</td><td>60%</td><td>45%</td></tr></table>
+
+As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.
+
+Price target and rating history chart(s)  
+![](images/fc48c5577e89926e2d76675b5e0118554c409542a501e39571db415f3bb298fb.jpg)  
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+![](images/1375f08c55e61cbf2404ebd4cae80b2a6a65929313604dbd4a8108844c01c911.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date | Rating | Price Target | Price Target at Removal | S&P 500 | Index Price |
+| --- | --- | --- | --- | --- | --- |
+| Mar 2023 | 89 |  |  |  |  |
+| Jun 2023 |  |  |  |  |  |
+| Sep 2023 |  |  |  |  |  |
+| Dec 2023 |  |  |  |  |  |
+| Mar 2024 |  |  |  |  |  |
+| Jun 2024 |  |  |  |  |  |
+| Sep 2024 |  |  |  |  |  |
+| Dec 2024 |  |  |  |  |  |
+| Mar 2025 |  |  |  |  |  |
+| Jun 2025 |  |  |  |  |  |
+| Sep 2025 |  |  |  |  |  |
+| Dec 2025 |  |  |  |  |  |
+| Mar 2026 |  |  |  |  |  |
+| Jun 2026 |  |  |  |  |  |
+| Sep 2026 |  |  |  |  |  |
+| Dec 2026 |  |  |  |  |  |
+| Mar 2027 |  |  |  |  |  |
+| Jun 2027 |  |  |  |  |  |
+| Sep 2027 |  |  |  |  |  |
+| Dec 2027 |  |  |  |  |  |
+| Mar 2028 |  |  |  |  |  |
+| Jun 2028 |  |  |  |  |  |
+| Sep 2028 |  |  |  |  |  |
+| Dec 2028 |  |  |  |  |  |
+| Mar 2029 |  |  |  |  |  |
+| Jun 2029 |  |  |  |  |  |
+| Sep 2029 |  |  |  |  |  |
+| Dec 2029 |  |  |  |  |  |
+| Mar 2030 |  |  |  |  |  |
+| Jun 2030 |  |  |  |  |  |
+| Sep 2030 |  |  |  |  |  |
+| Dec 2030 |  |  |  |  |  |
+| Mar 2031 |  |  |  |  |  |
+| Jun 2031 |  |  |  |  |  |
+| Sep 2031 |  |  |  |  |  |
+| Dec 2031 |  |  |  |  |  |
+| Mar 2032 |  |  |  |  |  |
+| Jun 2032 |  |  |  |  |  |
+| Sep 2032 |  |  |  |  |  |
+| Dec 2032 |  |  |  |  |  |
+| Mar 2033 |  |  |  |  |  |
+| Jun 2033 |  |  |  |  |  |
+| Sep 2033 |  |  |  |  |  |
+| Dec 2033 |  |  |  |  |  |
+| Mar 2034 |  |  |  |  |  |
+| Jun 2034 |  |  |  |  |  |
+| Sep 2034 |  |  |  |  |  |
+| Dec 2034 |  |  |  |  |  |
+| Mar 2035 |  |  |  |  |  |
+| Jun 2035 |  |  |  |  |  |
+| Sep 2035 |  |  |  |  |  |
+| Dec 2035 |  |  |  |  |  |
+| Mar 2036 |  |  |  |  |  |
+| Jun 2036 |  |  |  |  |  |
+| Sep 2036 |  |  |  |  |  |
+| Dec 2036 |  |  |  |  |  |
+| Mar 2037 |  |  |  |  |  |
+| Jun 2037 |  |  |  |  |  |
+| Sep 2037 |  |  |  |  |  |
+| Dec 2037 |  |  |  |  |  |
+| Mar 2038 |  |  |  |  |  |
+| Jun 2038 |  |  |  |  |  |
+| Sep 2038 |  |  |  |  |  |
+| Dec 2038 |  |  |  |  |  |
+| Mar 2039 |  |  |  |  |  |
+| Jun 2039 |  |  |  |  |  |
+| Sep 2039 |  |  |  |  |  |
+| Dec 2039 |  |  |  |  |  |
+| Mar 2040 |  |  |  |  |  |
+| Jun 2040 |  |  |  |  |  |
+| Sep 2040 |  |  |  |  |  |
+| Dec 2040 |  |  |  |  |  |
+| Mar 2041 |  |  |  |  |  |
+| Jun 2041 |  |  |  |  |  |
+| Sep 2041 |  |  |  |  |  |
+| Dec 2041 |  |  |  |  |  |
+| Mar 2042 |  |  |  |  |  |
+| Jun 2042 |  |  |  |  |  |
+| Sep 2042 |  |  |  |  |  |
+</details>
+
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+![](images/cf8e466b945b3a864db1fb265321ad116871aacf00f4bc3568d2577a8b328f23.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date | Stock Price | Index Price | Rating | Price Target |
+| --- | --- | --- | --- | --- |
+| Mar 2023 | 129 | 127 |  |  |
+| Jun 2023 | 131 |  |  |  |
+| Sep 2023 |  |  |  |  |
+| Dec 2023 | 128 |  |  |  |
+| Feb 2024 | 134 |  |  |  |
+| May 2024 | 139 |  |  |  |
+| Aug 2024 | 145 |  |  |  |
+| Jan 2025 | 140 |  |  |  |
+| Apr 2025 | 135 |  |  |  |
+| Jul 2025 | 129 |  |  |  |
+| Oct 2025 | 103 |  |  |  |
+| Jan 2026 | 99 |  |  |  |
+| Apr 2026 | 94 |  |  |  |
+| Jul 2026 | 93 |  |  |  |
+| Oct 2026 | 92 |  |  |  |
+| Jan 2027 | 120 |  |  |  |
+| Apr 2027 | 133 |  |  |  |
+| Jul 2027 |  |  |  |  |
+| Oct 2027 |  |  |  |  |
+| Jan 2028 |  |  |  |  |
+| Apr 2028 |  |  |  |  |
+| Jul 2028 |  |  |  |  |
+| Oct 2028 |  |  |  |  |
+| Jan 2029 |  |  |  |  |
+| Apr 2029 |  |  |  |  |
+| Jul 2029 |  |  |  |  |
+| Oct 2029 |  |  |  |  |
+| Jan 2030 |  |  |  |  |
+| Apr 2030 |  |  |  |  |
+| Jul 2030 |  |  |  |  |
+| Oct 2030 |  |  |  |  |
+| Jan 2031 |  |  |  |  |
+| Apr 2031 |  |  |  |  |
+| Jul 2031 |  |  |  |  |
+| Oct 2031 |  |  |  |  |
+| Jan 2032 |  |  |  |  |
+| Apr 2032 |  |  |  |  |
+| Jul 2032 |  |  |  |  |
+| Oct 2032 |  |  |  |  |
+| Jan 2033 |  |  |  |  |
+| Apr 2033 |  |  |  |  |
+| Jul 2033 |  |  |  |  |
+| Oct 2033 |  |  |  |  |
+| Jan 2034 |  |  |  |  |
+| Apr 2034 |  |  |  |  |
+| Jul 2034 |  |  |  |  |
+| Oct 2034 |  |  |  |  |
+| Jan 2035 |  |  |  |  |
+| Apr 2035 |  |  |  |  |
+| Jul 2035 |  |  |  |  |
+| Oct 2035 |  |  |  |  |
+| Jan 2036 |  |  |  |  |
+| Apr 2036 |  |  |  |  |
+| Jul 2036 |  |  |  |  |
+| Oct 2036 |  |  |  |  |
+| Jan 2037 |  |  |  |  |
+| Apr 2037 |  |  |  |  |
+| Jul 2037 |  |  |  |  |
+| Oct 2037 |  |  |  |  |
+| Jan 2038 |  |  |  |  |
+| Apr 2038 |  |  |  |  |
+| Jul 2038 |  |  |  |  |
+| Oct 2038 |  |  |  |  |
+| Jan 2039 |  |  |  |  |
+| Apr 2039 |  |  |  |  |
+| Jul 2039 |  |  |  |  |
+| Oct 2039 |  |  |  |  |
+| Jan 2040 |  |  |  |  |
+| Apr 2040 |  |  |  |  |
+| Jul 2040 |  |  |  |  |
+| Oct 2040 |  |  |  |  |
+| Jan 2041 |  |  |  |  |
+| Apr 2041 |  |  |  |  |
+| Jul 2041 |  |  |  |  |
+| Oct 2041 |  |  |  |  |
+| Jan 2042 |  |  |  |  |
+| Apr 2042 |  |  |  |  |
+| Jul 2042 |  |  |  |  |
+| Oct 2042 |  |  |  |  |
+| Jan 2043 |  |  |  |  |
+| Apr 2043 |  |  |  |  |
+| Jul 2043 |  |  |  |  |
+| Oct 2043 |  |  |  |  |
+| Jan 2044 |  |  |  |  |
+| Apr 2044 |  |  |  |  |
+| Jul 2044 |  |  |  |  |
+| Oct 2044 |  |  |  |  |
+| Jan 2045 |  |  |  |  |
+| Apr 2045 |  |  |  |  |
+| Jul 2045 |  |  |  |  |
+| Oct 2045 |  |  |  |  |
+</details>
+
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+Target price history table(s)
+
+<table><tr><td colspan="3">Merck &amp; Co. (MRK)</td><td colspan="3">Bristol-Myers Squibb Co. (BMY)</td></tr><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>01-May-26</td><td>137.00</td><td>112.16</td><td>06-Feb-26</td><td>61.00</td><td>61.99</td></tr><tr><td>04-Feb-26</td><td>133.00</td><td>118.33</td><td>01-Dec-25</td><td>57.00</td><td>49.18</td></tr><tr><td>01-Dec-25</td><td>120.00</td><td>101.83</td><td>01-Aug-25</td><td>51.00</td><td>44.23</td></tr><tr><td>31-Oct-25</td><td>92.00</td><td>85.98</td><td>25-Apr-25</td><td>56.00</td><td>47.90</td></tr><tr><td>10-Oct-25</td><td>93.00</td><td>85.99</td><td>08-Apr-25</td><td>55.00</td><td>53.07</td></tr><tr><td>30-Jul-25</td><td>94.00</td><td>81.75</td><td>07-Feb-25</td><td>67.00</td><td>56.85</td></tr><tr><td>25-Apr-25</td><td>99.00</td><td>82.74</td><td>12-Nov-24</td><td>65.00</td><td>59.02</td></tr><tr><td>08-Apr-25</td><td>103.00</td><td>78.95</td><td>01-Nov-24</td><td>62.00</td><td>54.32</td></tr><tr><td>05-Feb-25</td><td>129.00</td><td>89.67</td><td>21-Oct-24</td><td>60.00</td><td>52.12</td></tr><tr><td>01-Nov-24</td><td>135.00</td><td>101.88</td><td>29-Jul-24</td><td>57.00</td><td>48.98</td></tr><tr><td>21-Oct-24</td><td>139.00</td><td>106.34</td><td>16-Jul-24</td><td>55.00</td><td>41.20</td></tr><tr><td>31-Jul-24</td><td>140.00</td><td>113.13</td><td>29-Apr-24</td><td>56.00</td><td>44.64</td></tr><tr><td>16-Jul-24</td><td>145.00</td><td>125.44</td><td>11-Dec-23</td><td>60.00</td><td>51.09</td></tr></table>
+
+Merck & Co. (MRK)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>26-Apr-24</td><td>144.00</td><td>131.20</td></tr><tr><td>11-Apr-24</td><td>139.00</td><td>126.15</td></tr><tr><td>02-Feb-24</td><td>134.00</td><td>126.41</td></tr><tr><td>11-Dec-23</td><td>128.00</td><td>104.37</td></tr><tr><td>18-Jul-23</td><td>131.00</td><td>105.95</td></tr></table>
+
+Bristol-Myers Squibb Co. (BMY)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>27-Oct-23</td><td>69.00</td><td>51.02</td></tr><tr><td>28-Jul-23</td><td>81.00</td><td>61.41</td></tr></table>
+
+Johnson & Johnson (JNJ)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>15-Apr-26</td><td>275.00</td><td>238.67</td></tr><tr><td>27-Feb-26</td><td>265.00</td><td>248.43</td></tr><tr><td>22-Jan-26</td><td>250.00</td><td>218.49</td></tr><tr><td>18-Dec-25</td><td>240.00</td><td>208.31</td></tr><tr><td>15-Oct-25</td><td>213.00</td><td>191.17</td></tr><tr><td>08-Oct-25</td><td>212.00</td><td>189.69</td></tr><tr><td>19-Sep-25</td><td>186.00</td><td>176.19</td></tr><tr><td>17-Jul-25</td><td>185.00</td><td>162.98</td></tr><tr><td>03-Jul-25</td><td>177.00</td><td>156.01</td></tr><tr><td>02-May-25</td><td>176.00</td><td>156.12</td></tr><tr><td>08-Apr-25</td><td>172.00</td><td>150.00</td></tr><tr><td>23-Jan-25</td><td>157.00</td><td>146.64</td></tr><tr><td>10-Jan-25</td><td>158.00</td><td>142.06</td></tr><tr><td>16-Oct-24</td><td>159.00</td><td>164.28</td></tr><tr><td>08-Oct-24</td><td>162.00</td><td>159.69</td></tr><tr><td>18-Jul-24</td><td>155.00</td><td>155.42</td></tr><tr><td>30-May-24</td><td>160.00</td><td>145.28</td></tr></table>
+
+Price targets shown in table(s) are unadjusted for corporate actions.
+
+## Regulatory disclosures
+
+## Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website at https://www.gs.com/research/hedge.html.
+
+## Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the
+
+securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+## Ratings, coverage universe and related definitions
+
+Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.
+
+Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.
+
+Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.
+
+Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.
+
+## Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+## General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.

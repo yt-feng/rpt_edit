@@ -1,0 +1,46 @@
+EN_A: So I was looking at the GPU rental data and something jumped out at me.
+EN_B: What was that?
+EN_A: The A100, which is like the previous generation chip, its rental price actually went up.
+EN_B: That is exactly one of the counter-intuitive signals in this report.
+EN_A: But everyone is talking about the latest B200 or H100. Why would an older chip get more expensive?
+EN_B: Because demand is so intense that it is pulling in even older silicon. The report shows A100 rentals are up 11 percent over six weeks.
+EN_A: So the real story here is not about whether we have enough compute.
+EN_B: Right. The report is really trying to answer a different question: how is this scarcity reshaping who captures the profit in the AI stack?
+EN_A: Okay, let's start with the models then. I saw something called DiffusionGemma.
+EN_B: That is a new open-weight model from Google. It achieves up to four times faster inference than Gemma 4.
+EN_A: Four times? How?
+EN_B: It shifts the bottleneck from memory bandwidth to compute by using a non-sequential generation method. You trade a bit of quality for a lot of speed.
+EN_A: Could that approach scale to bigger models like Gemini Flash or Pro?
+EN_B: The report says it is plausible, but there is still a quality cost. And this leads to a key insight.
+EN_A: Which is?
+EN_B: No single provider currently holds all three corners of the triangle: intelligence, speed, and price. The latest frontier model gained 4 points of intelligence, but at double the cost.
+EN_A: So everyone has to make a trade-off.
+EN_B: Exactly. Speed is accruing to the mid-tier, while the gap between proprietary and open models on intelligence has widened from 6 to 10 points.
+EN_A: That means the frontier is building a structural moat on intelligence, not competing on price.
+EN_B: That is the read. And the report has a really interesting corollary.
+EN_A: What is that?
+EN_B: Scarcity is being monetized faster than it is being solved.
+EN_A: Can you unpack that?
+EN_B: Sure. The new top model was moved behind usage credits after a certain date. Rationing literally became a product feature.
+EN_A: So who captures the most value from this scarcity?
+EN_B: The report argues it is the layer that compiles inference and owns the routing data.
+EN_A: Routing data? What does that mean?
+EN_B: It means knowing which model, at which quantization, on which hardware, produces the best output for a specific sub-task. The company that owns that data can capture the biggest spread.
+EN_A: Is that data easy to get?
+EN_B: Not at all. You have to capture it without leaking enterprise IP or personal data. That is a huge challenge.
+EN_A: So that is one of the big open questions.
+EN_B: Yes. The report flags the upcoming Databricks and AWS summits as potential venues where enterprise routing primitives might surface.
+EN_A: What about the infrastructure side? The report also covers data centers and power.
+EN_B: Right. It shows that data center locations cluster in regions with retail power rates of 9 to 12 cents per kilowatt-hour.
+EN_A: That makes sense.
+EN_B: But the interesting part is that states with over 25 percent renewable share are drawing disproportionate capacity.
+EN_A: So it is not just about raw power cost, but also ESG commitments.
+EN_B: Exactly. And CapEx per H100-equivalent is steadily rising, because power costs are moving from post-construction operating costs to pre-construction capital costs.
+EN_A: Who feels that pressure the most?
+EN_B: Developers with huge pipelines. One private neocloud announced 4.9 gigawatts contracted against a 40-gigawatt pipeline, but ended its involvement in a 1.8-gigawatt project.
+EN_A: So those pipelines look more like options than firm orders.
+EN_B: That is the framing. There is a lot more in the full report, like the 11 percent weekly increase in multi-provider SDK downloads, suggesting enterprises are actively avoiding lock-in.
+EN_A: That is fascinating. It sounds like the full report has a lot more depth on routing and the power-market intersection.
+EN_B: It does. For example, when exactly will Gemini 3.5 Pro credibly claim all three vertices? And how will the routing data privacy problem be solved?
+EN_A: We will leave those for the full report then. Thanks for walking us through the highlights.
+EN_B: Thanks for having me. If you want to dig deeper, check out the full report or join our community discussion.
