@@ -1,0 +1,20 @@
+Found 41 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_irvhjoll/pdfs/0001-18-Goldman Sachs-CHINA BROKERS - ASSET MANAGERS-Positioned for Structural Growth Amid Shifting Sector Dynamics-260615.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_irvhjoll/pdfs/0002-19-Goldman Sachs-CHINA PROPERTY WEEKLY WRAP-Week 24 Wrap -Transactions and sentiment broadly plateaued- more details on N-T urban renewal funding support outlined-260616.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_irvhjoll/pdfs/0003-20-Nomura-Asia Insights-US-Iran deal- A welcome relief for Asia-260615.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_irvhjoll/pdfs/0004-21-Bernstein-U.S. Multi Industry - Electrical Equipment-Liquid Cooling Primer-Coolant Distribution Units -CDUs--260615.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_irvhjoll/pdfs/0005-22-Morgan Stanley-Greater China Technology Hardware- Building Blocks of Compute- Servers- AI Infrastructure- and Electronic Components-260614.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=cdfdbf84-b049-42e3-83d0-35dae6f29950
+MinerU states: running, running, pending, pending, waiting-file
+MinerU states: running, running, running, running, running
+MinerU states: done, running, running, running, running
+MinerU states: done, done, running, running, running
+MinerU states: done, done, running, running, running
+MinerU states: done, done, running, done, running
+MinerU states: done, done, running, done, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260616/shard_3; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
