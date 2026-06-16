@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_l8w5jjlb/pdfs/0001-28-MS-Asia-Three Actionable Ideas-260614.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_l8w5jjlb/pdfs/0002-29-MS-The Convergence of AI and Energy Financing-260614.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_l8w5jjlb/pdfs/0003-30-NOM-USD CNY fix model-Projection- 6.7575-260616.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_l8w5jjlb/pdfs/0004-31-Bernstein-Bernstein Energy- Applying the 5 -W- s to an upstream capex supercycle...we are unconvinced-260615.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_l8w5jjlb/pdfs/0005-32-Bernstein-US Media - Telecom-Fox-Roku- Strategic Fit at a Strategic Price-260615.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
