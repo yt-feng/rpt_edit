@@ -1,0 +1,17 @@
+Found 41 total PDFs; shard 7/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_csxff6an/pdfs/0001-38-J.P. Morgan-JPM Powering Data Centers Fireside Chat Series-Takeaways from TerraPower Fireside Chat-260615.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_csxff6an/pdfs/0002-39-MS-HDDs - The Next Leg Higher-260615.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_csxff6an/pdfs/0003-40-Morgan Stanley-Software Snippets-Visualising the AI Software Drawdown-260614.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_csxff6an/pdfs/0004-41-Bernstein-India Autos- The hybrid inflection -who-s positioned--260615.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_csxff6an/pdfs/0005-42-Goldman Sachs-Americas Retail- Specialty Hardlines- Analyzing the impact of Best Buy and Meta-s partnership on eyewear retailers-260615.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=8d5b25aa-504b-4c22-8302-6c9b7d12b5f2
+MinerU states: running, running, running, pending, waiting-file
+MinerU states: done, running, running, running, running
+MinerU states: done, running, done, running, running
+MinerU states: done, running, done, done, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260616/shard_7; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
