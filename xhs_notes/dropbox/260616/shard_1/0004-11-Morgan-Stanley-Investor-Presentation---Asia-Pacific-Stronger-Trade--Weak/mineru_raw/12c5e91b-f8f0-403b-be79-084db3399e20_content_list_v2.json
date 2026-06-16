@@ -1,0 +1,3206 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Investor Presentation | Asia Pacific"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                46,
+                137,
+                328,
+                163
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Stronger Trade, Weaker Domestic Demand"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                47,
+                181,
+                590,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS ASIA LIMITED"
+                    }
+                ]
+            },
+            "bbox": [
+                712,
+                138,
+                814,
+                150
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Robin Xing"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                712,
+                153,
+                763,
+                171
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chief China Economist"
+                    }
+                ]
+            },
+            "bbox": [
+                712,
+                173,
+                781,
+                184
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Robin.Xing@morganstanley.com +852 2848-6511"
+                    }
+                ]
+            },
+            "bbox": [
+                712,
+                187,
+                949,
+                200
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Jenny Zheng, CFA"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                712,
+                207,
+                794,
+                223
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Economist"
+                    }
+                ]
+            },
+            "bbox": [
+                712,
+                225,
+                746,
+                236
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jenny.L.Zheng@morganstanley.com +852 3963-4015"
+                    }
+                ]
+            },
+            "bbox": [
+                712,
+                241,
+                949,
+                253
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/98f17a9f8b3a7b281d1a49dae46f8c48ef6ced25b711135eabce7d79977f9de3.jpg"
+                },
+                "content": "Asia Summer School 2026",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "sub_type": "text_image",
+            "bbox": [
+                717,
+                267,
+                949,
+                346
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                200,
+                81
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                224,
+                55,
+                277,
+                71
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 14, 2026 08:05 PM GMT"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                98,
+                196,
+                116
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                852,
+                53,
+                949,
+                75
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "For important disclosures, refer to the Disclosure Section, located at the end of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                710,
+                911,
+                941,
+                944
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Broadening Export Improvement"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                54,
+                179,
+                369,
+                210
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/36b8ae9194349e795e95d1dfe46231c154a48154fc0ebc76b883419a73e0a9be.jpg"
+                },
+                "content": "| Month   | Exports: Tech | Imports: Tech | Exports: Non-Tech | Imports: Non-Tech |\n|---------|---------------|---------------|-------------------|-------------------|\n| May-21  | ~5%           | ~30%          | ~35%              | ~60%              |\n| Aug-21  | ~20%          | ~15%          | ~25%              | ~35%              |\n| Nov-21  | ~15%          | ~20%          | ~20%              | ~30%              |\n| Feb-22  | ~0%           | ~-5%          | ~-10%             | ~-5%              |\n| May-22  | ~10%          | ~-10%         | ~-15%             | ~-10%             |\n| Aug-22  | ~-10%         | ~-15%         | ~-20%             | ~-15%             |\n| Nov-22  | ~-30%         | ~-35%         | ~-25%             | ~-20%             |\n| Feb-23  | ~-25%         | ~-30%         | ~-20%             | ~-15%             |\n| May-23  | ~-15%         | ~-20%         | ~-10%             | ~-5%              |\n| Aug-23  | ~-10%         | ~-15%         | ~-5%              | ~0%               |\n| Nov-23  | ~5%           | ~0%           | ~0%               | ~5%               |\n| Feb-24  | ~10%          | ~15%          | ~5%               | ~10%              |\n| May-24  | ~20%          | ~25%          | ~10%              | ~15%              |\n| Aug-24  | ~15%          | ~20%          | ~5%               | ~10%              |\n| Nov-24  | ~10%          | ~15%          | ~0%               | ~5%               |\n| Feb-25  | ~5%           | ~10%          | ~5%               | ~0%               |\n| May-25  | ~10%          | ~15%          | ~10%              | ~5%               |\n| Aug-25  | ~15%          | ~20%          | ~15%              | ~10%              |\n| Nov-25  | ~20%          | ~25%          | ~20%              | ~15%              |\n| Feb-26  | ~40%          | ~45%          | ~30%              | ~35%              |\n| May-26  | ~90%          | ~70%          | ~10%              | ~15%              |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Global AI cycle drives China trade growth"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                63,
+                328,
+                488,
+                640
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f795da5a04c35596209d281e242ea361a91405ade55dd979419721b2d3d0e19d.jpg"
+                },
+                "content": "China Exports, YoY\n| Category | Apr-26 (%) | May-26 (%) |\n|---|---|---|\n| Electronic Integrated Circuit | 100 | 110 |\n| Computers | 45 | 65 |\n| Mobile Phone | 10 | 45 |\n| Auto | 45 | 40 |\n| Refined Petroleum Product | -5 | 28 |\n| Plastic Article | 8 | 13 |\n| Auto Part | 6 | 4 |\n| Furniture | -3 | 2 |\n| Textile | -1 | 0 |\n| Steel Product | -5 | 1 |\n| Garment | -1 | 2 |\n| Liquid Crystal Display Panel | -3 | -3 |\n| Footwear | -15 | -8 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Elsewhere, export breadth is improving"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, MS"
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                512,
+                328,
+                929,
+                651
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                141,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                154,
+                53,
+                189,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                959,
+                56,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Yet Private Credit Demand Weakened Further"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                54,
+                179,
+                488,
+                207
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d1c788ea4651b5c0c7f1e2fcfa02352044c6efe58fd1170bbbf21ce927547f90.jpg"
+                },
+                "content": "Data in May, RMB Bn\n| Category | Past 5Y Avg (RMB Bn) | 2026 (RMB Bn) |\n| :--- | :--- | :--- |\n| New Short-term Household Loans | 110 | -70 |\n| New Longer-term Household Loans | 165 | -50 |\n| New Longer-term Corporate Loans+Bond Financing | 535 | 145 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Broad-based private credit demand weakness"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                68,
+                308,
+                484,
+                616
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c4feaca47b2790e435077bbef30355b8fc2ec30e740b4788cec8339eeba3bab6.jpg"
+                },
+                "content": "| Month | 2021-2025 Avg. | 2025 | 2026 |\n|-------|----------------|------|------|\n| Jan   | ~11,000        | ~14,000 | ~9,000 |\n| Feb   | ~10,000        | ~13,000 | ~13,000 |\n| Mar   | ~12,000        | ~14,500 | ~7,800 |\n| Apr   | ~14,500        | ~16,500 | ~16,000 |\n| May   | ~12,500        | ~8,000 | ~12,500 |\n| Jun   | ~13,500        | ~13,500 | ~15,500 |\n| Jul   | ~12,500        | ~13,500 | ~12,500 |\n| Aug   | ~11,500        | ~11,500 | ~11,500 |\n| Sep   | ~10,500        | ~9,500 | ~9,500 |\n| Oct   | ~6,500         | ~6,500 | ~6,500 |\n| Nov   | ~11,500        | ~12,500 | ~12,500 |\n| Dec   | ~11,500        | ~13,500 | ~13,500 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Continued household deleveraging in aggregate suggests the recent housing sales rebound is narrow"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, MS"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                525,
+                315,
+                940,
+                620
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                141,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                154,
+                53,
+                189,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                53,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                957,
+                183,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                959,
+                949,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Sequentially Slower Oil Push, Limited Reflation Elsewhere"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                54,
+                179,
+                612,
+                209
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/60dd8c1d904cf4f9a1f737bd57d85a650a9fce19b77a63354f174e3ef7556a75.jpg"
+                },
+                "content": "PPI Breakdown\n| Month | Non-ferrous Metals (%) | Non-ferrous Metals Downstream (%) | Coal (%) | Oil & Petrochemical (%) | Remainder (%) | PPI MoM |\n|---|---|---|---|---|---|---|\n| Jan-25 | -0.1 | -0.1 | -0.1 | -0.1 | -0.2 | -0.2 |\n| Feb | -0.1 | -0.1 | -0.1 | -0.1 | -0.2 | -0.1 |\n| Mar | -0.1 | -0.1 | -0.1 | -0.1 | -0.4 | -0.4 |\n| Apr | -0.1 | -0.1 | -0.1 | -0.1 | -0.3 | -0.4 |\n| May | -0.1 | -0.1 | -0.1 | -0.1 | -0.3 | -0.4 |\n| Jun | -0.1 | -0.1 | -0.1 | -0.1 | -0.3 | -0.4 |\n| Jul | -0.1 | -0.1 | -0.1 | -0.1 | -0.3 | -0.2 |\n| Aug | -0.1 | -0.1 | 0.05 | 0.05 | 0.05 | 0.05 |\n| Sep | 0.05 | 0.05 | 0.1 | 0.1 | 0.15 | 0.1 |\n| Oct | 0.15 | 0.15 | 0.15 | 0.15 | 0.25 | 0.2 |\n| Nov | 0.15 | 0.15 | 0.25 | 0.25 | 0.25 | 0.2 |\n| Dec | 0.25 | 0.25 | 0.25 | 0.25 | 0.25 | 0.3 |\n| Jan-26 | 0.45 | 0.55 | 0.15 | 0.15 | 0.35 | 0.4 |\n| Feb | 0.45 | 0.35 | 0.15 | 0.65 | -0.35 | 0.4 |\n| Mar | 0.15 | 0.25 | 0.15 | 0.85 | 0.95 | 1.2 |\n| Apr | 0.15 | 0.15 | 0.15 | 1.75 | 1.75 | 1.7 |\n| May | 0.15 | 0.15 | 0.15 | 0.35 | 0.35 | 0.45 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "PPI MoM slipped on reduced oil price impulse"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "bar-line hybrid",
+            "bbox": [
+                58,
+                305,
+                486,
+                630
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/72a06e95790541e297e3d615e82f393fb2ab9ef34184de1f0d13cdfa35f55233.jpg"
+                },
+                "content": "| Month   | 6M/6M SAAR | MoM SAAR |\n|---------|------------|----------|\n| May-23  | 0.5        | 0.6      |\n| Aug-23  | 1.3        | 0.9      |\n| Nov-23  | 0.7        | -0.8     |\n| Feb-24  | 0.8        | -0.2     |\n| May-24  | 0.4        | 0.6      |\n| Aug-24  | -0.5       | -0.7     |\n| Nov-24  | 0.6        | 1.7      |\n| Feb-25  | 1.0        | -0.1     |\n| May-25  | 0.8        | 0.3      |\n| Aug-25  | 1.5        | -0.3     |\n| Nov-25  | 1.2        | 1.9      |\n| Feb-26  | 1.4        | -0.9     |\n| May-26  | 0.8        | 0.5      |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Limited transmission to core CPI"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, MS"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                507,
+                307,
+                936,
+                627
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                141,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                154,
+                53,
+                189,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                959,
+                56,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Budget Rollout May Accelerate from 3Q to Support AI and Energy Transition"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                54,
+                179,
+                781,
+                210
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e957e961b4f0fa86c472b927f886e66e2eb99d3f6112e100a984b769b05f51da.jpg"
+                },
+                "content": "| Month | 2023 | 2024 | 2025 | 2026 |\n|-------|------|------|------|------|\n| Jan   | ~5%  | ~3%  | ~7%  | ~8%  |\n| Feb   | ~10% | ~6%  | ~15% | ~17% |\n| Mar   | ~15% | ~10% | ~25% | ~25% |\n| Apr   | ~20% | ~10% | ~30% | ~32% |\n| May   | ~25% | ~15% | ~40% | ~40% |\n| Jun   | ~30% | ~20% | ~50% | -    |\n| Jul   | ~35% | ~35% | ~60% | -    |\n| Aug   | ~40% | ~45% | ~70% | -    |\n| Sep   | ~50% | ~55% | ~80% | -    |\n| Oct   | ~60% | ~65% | ~85% | -    |\n| Nov   | ~75% | ~75% | ~90% | -    |\n| Dec   | 100% | 100% | 100% | 100% |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Pace of fiscal rollout slowed in Apr-May"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                66,
+                313,
+                483,
+                596
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/56e82355fa868580e9f323fbff1a4dff3e47ec6a51c8c119dd452e9da597062d.jpg"
+                },
+                "content": "```mermaid\ngraph TD\n  A[\"THE &quot;SIX NETWORKS&quot;\"] --> B[\"WATER NETWORK\"]\n  A --> C[\"LOG\"]\n  A --> D[\"PIPE\"]\n  A --> E[\"DATA\"]\n  A --> F[\"5G\"]\n  A --> G[\"LOGISTICS NETWORK\"]\n  A --> H[\"NEW-TYPE POWER GRID\"]\n  A --> I[\"COMPUTING NETWORK\"]\n  A --> J[\"Urban UNDERGROUND PIPELINE\"]\n  A --> K[\"2026-30E: > Rmb5trn\"]\n  A --> L[\"2026-30E: > Rmb2trn\"]\n  A --> M[\"2026-30E: ~Rmb7trn\"]\n  A --> N[\"2026-30E: ~30% of 2025 Infra Capex\"]\n```",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Expecting stronger budget execution from 3Q, with Focus on AI and Energy Transition in the “Six Networks”"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                522,
+                276,
+                929,
+                658
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Only 41% of annual government bond quota was utilized (46% by May-25)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• We thus expect an accelerated budget rollout, not additional stimulus, from 3Q"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Policy focus will remain capex-centric, particularly on AI computing networks, internet data centers and smart grids under the \"Six Networks\" initiative"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                694,
+                883,
+                805
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                831,
+                244,
+                849
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                141,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                155,
+                53,
+                189,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                53,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                957,
+                183,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                959,
+                949,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Smarter Industrial Policy Alone May Not Narrow Supply-Demand Imbalances"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                54,
+                179,
+                782,
+                209
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a160fcd1a832495391c95faee322e92434f0d2ebe828ab5a0ccc6dc6ee425011.jpg"
+                },
+                "content": "| Year | GFCF (%) | GFCF ex-Property (%) |\n|---|---|---|\n| 2014 | 7.4 | 9.0 |\n| 2015 | 5.5 | 8.0 |\n| 2016 | 7.3 | 7.7 |\n| 2017 | 6.3 | 7.3 |\n| 2018 | 7.5 | 6.9 |\n| 2019 | 5.8 | 4.5 |\n| 2020 | 3.7 | 2.9 |\n| 2021 | 2.5 | 2.5 |\n| 2022 | 3.5 | 7.8 |\n| 2023 | 4.6 | 7.5 |\n| 2024 | 2.5 | 5.8 |\n| 2025 | 2.0 | 4.7 |\n| 2026E | 3.5 | 5.9 |\n| 2027E | 2.9 | 4.4 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Investment ex-property growth slowed from 2021-23's spike, but only at a modest pace"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                63,
+                303,
+                479,
+                584
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/bee57f9903e82d2658ffddd092ede0b2a79996e4eace3064919e8a8db49a9783.jpg"
+                },
+                "content": "| FAI CAGR in 2021-23 | FAI Growth in 2024-25 |\n| ------------------- | --------------------- |\n| -8%                 | 16%                   |\n| -5%                 | 5%                    |\n| 0%                  | 0%                    |\n| 5%                  | -5%                   |\n| 10%                 | 10%                   |\n| 15%                 | 14%                   |\n| 20%                 | -10%                  |\n| 25%                 | 21%                   |\n| 30%                 | -7%                   |\n| 35%                 | -10%                  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "The \"baton\" of investment has been passed from sectors with overcapacity to those with less oversupply, for now"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "scatter plot",
+            "bbox": [
+                510,
+                308,
+                928,
+                624
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "\"National unified market\" and anti-involution are in the right direction but challenging to implement:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                84,
+                656,
+                837,
+                687
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Top-down coordination unworkable; market mechanisms for specialization still weak"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Local incentives misaligned"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Tax system biases production"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                696,
+                726,
+                802
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, MS estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                831,
+                291,
+                849
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                190,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                959,
+                55,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Reforms Needed for Economic Rebalancing"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                54,
+                179,
+                473,
+                210
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Five-year plan remains supply-centric"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                135,
+                238,
+                407,
+                264
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Growth Target"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                400,
+                150,
+                421
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Not Specified"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                428,
+                140,
+                447
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Consumption"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                210,
+                401,
+                286,
+                421
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Commitments to boost consumption/GDP ratio"
+                    }
+                ]
+            },
+            "bbox": [
+                210,
+                428,
+                328,
+                462
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Tech & Green Transition"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                351,
+                401,
+                429,
+                439
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Clear numerical targets:"
+                    }
+                ]
+            },
+            "bbox": [
+                352,
+                447,
+                434,
+                483
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• R&D (5Y CAGR: >7%)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Labor productivity growth (>GDP growth)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Digital economy (  "
+                            },
+                            {
+                                "type": "equation_inline",
+                                "content": "\\uparrow"
+                            },
+                            {
+                                "type": "text",
+                                "content": " 2pp of GDP by 2030)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• CO2 emissions per unit of GDP (  "
+                            },
+                            {
+                                "type": "equation_inline",
+                                "content": "\\downarrow"
+                            },
+                            {
+                                "type": "text",
+                                "content": " 17% by 2030 vs. 2025)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Additional target on non-fossil fuel consumption"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                353,
+                488,
+                468,
+                684
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Local government incentives should be reoriented towards consumption"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                228,
+                934,
+                274
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d8d9e2f5b5ea91c31e98ae8d5876bd5bc8fcb1bfeb5dfc68d6e45832805489b4.jpg"
+                },
+                "content": "```mermaid\ngraph TD\n  A[\"Economic Rebalancing Reforms Needed\"] --> B[\"CADRE EVALUATION REFORM\"]\n  A --> C[\"SOCIAL WELFARE REFORM\"]\n  A --> D[\"FISCAL SYSTEM REFORM\"]\n  A --> E[\"Social Welfare Reform\"]\n  B --> F[\"Reward outcomes that improve household well-being and the environment.\"]\n  C --> G[\"Strengthen the safety net to reduce precautionary savings and boost consumption.\"]\n  D --> H[\"Shift to efficiency-linked direct taxes and fund public services, not projects.\"]\n```",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                522,
+                367,
+                922,
+                671
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                56,
+                831,
+                244,
+                849
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                141,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                155,
+                53,
+                189,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                53,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                957,
+                183,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                959,
+                949,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Outbound Investment"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                51,
+                148,
+                210,
+                169
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Tightening Outbound Investment Controls to Regulate Flows..."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                54,
+                179,
+                656,
+                210
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7aa013dc024af20a752d23bf86024fc74bbf928cb3e43d55f99252e56082d49d.jpg"
+                },
+                "content": "| Date   | Current Account Balance | Capital and Financial Account Balance (Incl. Error and Omission) |\n|--------|--------------------------|------------------------------------------------------------------|\n| Mar-00 | 0                        | 0                                                                |\n| Mar-01 | 0                        | 0                                                                |\n| Mar-02 | 0                        | 0                                                                |\n| Mar-03 | 0                        | 0                                                                |\n| Mar-04 | 0                        | 0                                                                |\n| Mar-05 | 0                        | 0                                                                |\n| Mar-06 | 0                        | 0                                                                |\n| Mar-07 | 0                        | 0                                                                |\n| Mar-08 | 0                        | 0                                                                |\n| Mar-09 | 0                        | 0                                                                |\n| Mar-10 | 0                        | 0                                                                |\n| Mar-11 | 0                        | 0                                                                |\n| Mar-12 | 0                        | 0                                                                |\n| Mar-13 | 0                        | 0                                                                |\n| Mar-14 | 0                        | 0                                                                |\n| Mar-15 | 0                        | 0                                                                |\n| Mar-16 | 0                        | 0                                                                |\n| Mar-17 | 0                        | 0                                                                |\n| Mar-18 | 0                        | 0                                                                |\n| Mar-19 | 0                        | 0                                                                |\n| Mar-20 | 0                        | 0                                                                |\n| Mar-21 | 0                        | 0                                                                |\n| Mar-22 | 0                        | 0                                                                |\n| Mar-23 | 0                        | 0                                                                |\n| Mar-24 | 0                        | 0                                                                |\n| Mar-25 | 0                        | 0                                                                |\n| Mar-26 | 0                        | 0                                                                |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "China's non-reserve balance of payments: from a unique \"twin surplus\" to the more common \"mirror image\"..."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                58,
+                303,
+                477,
+                614
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c73bc7aa520e9a05ae9a7fdbea471f3c7a94a54fbe7024e9d7d691e95df51271.jpg"
+                },
+                "content": "| Date   | FDI  | Portfolio Investment | Other Investment | Capital and Financial Account |\n|--------|------|----------------------|------------------|-------------------------------|\n| Dec-04 | 0    | 0                    | 0                | 0                             |\n| Dec-05 | 0    | 0                    | 0                | 0                             |\n| Dec-06 | 0    | 0                    | 0                | 0                             |\n| Dec-07 | 0    | 0                    | 0                | 0                             |\n| Dec-08 | 0    | 0                    | 0                | 0                             |\n| Dec-09 | 0    | 0                    | 0                | 0                             |\n| Dec-10 | 0    | 0                    | 0                | 0                             |\n| Dec-11 | 0    | 0                    | 0                | 0                             |\n| Dec-12 | 0    | 0                    | 0                | 0                             |\n| Dec-13 | 0    | 0                    | 0                | 0                             |\n| Dec-14 | 0    | 0                    | 0                | 0                             |\n| Dec-15 | 0    | 0                    | 0                | 0                             |\n| Dec-16 | 0    | 0                    | 0                | 0                             |\n| Dec-17 | 0    | 0                    | 0                | 0                             |\n| Dec-18 | 0    | 0                    | 0                | 0                             |\n| Dec-19 | 0    | 0                    | 0                | 0                             |\n| Dec-20 | 0    | 0                    | 0                | 0                             |\n| Dec-21 | 0    | 0                    | 0                | 0                             |\n| Dec-22 | 0    | 0                    | 0                | 0                             |\n| Dec-23 | 0    | 0                    | 0                | 0                             |\n| Dec-24 | 0    | 0                    | 0                | 0                             |\n| Dec-25 | 0    | 0                    | -300             | -300                          |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "...with capital outflows increasingly led by portfolio investment"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, MS"
+                    }
+                ]
+            },
+            "sub_type": "bar-line hybrid chart",
+            "bbox": [
+                520,
+                308,
+                934,
+                612
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                141,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                154,
+                53,
+                189,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                960,
+                55,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Outbound Investment"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                51,
+                148,
+                210,
+                169
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "...Not Shut Down Overseas Investment Channels"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                179,
+                522,
+                207
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mainland residents still have several legal routes to gain offshore securities exposure..."
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                228,
+                473,
+                274
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/dc98ade2c6b879eb65f5be31dcd5ede8441ec2a7b5f2f9fbed6e33f2060abe02.jpg"
+                },
+                "content": "```mermaid\ngraph TD\n  A[\"QDII\"] --> B[\"01\"]\n  C[\"SOUTHBOUND STOCK CONNECT\"] --> D[\"02\"]\n  E[\"WEALTH MANAGEMENT CONNECT\"] --> F[\"03\"]\n  G[\"MAINLAND-HONG KONG MUTUAL RECOGNITION OF FUNDS SCHEME\"] --> H[\"04\"]\n  I[\"QDLP\"] --> J[\"05\"]\n  K[\"QDIE\"] --> L[\"06\"]\n```",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "CHANNELS FOR OFFSHORE\nSECURITIES EXPOSURE"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                68,
+                395,
+                476,
+                620
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "...albeit with various limitations such as insufficient quotas, product eligibility and regional restrictions etc."
+                    }
+                ]
+            },
+            "bbox": [
+                523,
+                228,
+                920,
+                274
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4cfc6661356b0741b4c35d6132292123ea980292fb5cca97b6bae3c49ba46f53.jpg"
+                },
+                "content": "| Date   | Approved QDII Quota (US$bn) |\n|--------|-----------------------------|\n| May-26 | 176.169                     |",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                516,
+                321,
+                936,
+                619
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                56,
+                831,
+                244,
+                849
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                141,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                155,
+                53,
+                189,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                53,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                957,
+                183,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                959,
+                949,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Outbound Investment"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                51,
+                148,
+                210,
+                169
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Implications: Near-term Support to RMB; Marginal Impact on Growth"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                54,
+                179,
+                709,
+                210
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Regulatory impact on RMB and growth"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                131,
+                240,
+                410,
+                264
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d9e9162628232916c1fbf76e0957180da4468ac52f43f4fa212a2c7362ed1033.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                65,
+                297,
+                97,
+                331
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "IMPACT ON RMB"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                102,
+                303,
+                195,
+                325
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NEAR-TERM SUPPORT, FLOW-BASED"
+                    }
+                ]
+            },
+            "bbox": [
+                348,
+                305,
+                470,
+                321
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a5e0e99bbb3d64c3c841a3d3e41bbcc686c529505b12b6c3bd870ed73045932b.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Tighter capital controls"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                97,
+                338,
+                132,
+                385
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/494b7ce97d73966f701340973c17e84369d53f0fc487d9458638e8ed19fcb883.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                154,
+                351,
+                175,
+                367
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c781b28deb529137766d1be680fd2b0151a980b5cebd7e193228455600b8b554.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Less unmonitored outflow & narrowing informal channels"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                198,
+                333,
+                239,
+                387
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/964d4baf5b271ccd27922bc1076fb55c585183e1befbd9a3dd23131bc5a8d1a7.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                258,
+                351,
+                280,
+                367
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/59a2ee11ba0bbdfe8defa36769ac20c0b0cd8656a8da24dd9d43ed49d7b36eca.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Lower FX demand from households & corporates"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                297,
+                338,
+                332,
+                385
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f10082c347058f4dc733384c888671d994dacded1e65b87ec76f5338709ebe30.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                354,
+                351,
+                376,
+                367
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c495e339577f38bbe0ad96bd035bdecadc16d3da08feb28c30ca1bfe369477b4.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "More current account surplus converted → Near-term RMB support"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                392,
+                333,
+                433,
+                387
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/86e3ec783806233ca64922bb05250a0d6ae4c11fd4a0f5f598f418af1fbf5f1e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                66,
+                447,
+                98,
+                483
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "IMPACT ON GROWTH"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                101,
+                455,
+                213,
+                475
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NEAR-TERM IMPACT LIKELY MARGINAL"
+                    }
+                ]
+            },
+            "bbox": [
+                340,
+                457,
+                464,
+                473
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/0d91e5fb12af433c2f2240a50a47e9f20bf73a84a4032b9815b3c3e81e36fb59.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "More private savings kept onshore"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                98,
+                486,
+                133,
+                527
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2b227a81ac1fa190703503e79e2c7a12ea39e89e943a1272aa07237d4da67a90.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                154,
+                500,
+                175,
+                514
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a0d3eb5180fff0d957699d5e82e75c5825df9bea99d5152b9fd7b41090149f40.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Supports liquidity & asset prices"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                196,
+                483,
+                234,
+                526
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3b7cd9b0a497ad6eea23f418fe400272d2f57239ac80aca05bf1988499017512.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                253,
+                500,
+                275,
+                514
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/ce4d46458def6542e2e8f81eb7fbe2e72100e022f83b6551dca7884eeb0debcd.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Lowers financing costs & eases financial conditions"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                297,
+                483,
+                332,
+                527
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d4d410b66013f5a2f21f3c2153ac8ab648f5e05e5bee796e0bbf1df00585fe51.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                353,
+                500,
+                373,
+                514
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/b5887c32330349760388c432eb35710af5a9cc83566a235e04532d5bd39c7593.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Supports growth — if credit demand picks up"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                395,
+                483,
+                430,
+                527
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f4d0d6cf858b3d861509c0c794e6fe3a9e7f846f806175f0991eece4739b05e3.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                98,
+                593,
+                130,
+                627
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/211712d95f7aaa5dd14b7e6abd977f388318fac532aaf860ed1329465505b985.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "CONFIDENCE IMPROVES"
+                    },
+                    {
+                        "type": "text",
+                        "content": "More borrowing, investment & stronger growth"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                133,
+                586,
+                148,
+                607
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "OUTCOME DEPENDS ON CONFIDENCE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                220,
+                571,
+                325,
+                584
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3f203002b9a1a5727f7f3251a9dd6d7bb586af2e0afc93d736b50ec63a2a23ac.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                260,
+                589,
+                285,
+                622
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/6947901506cd8d3150658bfacb3fa5833efb31bb32445c1ee36873ce5886d514.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "CONFIDENCE REMAINS WEAK"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Funds sit in deposits, money-market products or government bonds, pressuring risk-free rates"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                315,
+                586,
+                330,
+                607
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4c1810d6d62f3da12d222c9f33007735f065cb808d29b4d2f995b45b83ff5a98.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                422,
+                593,
+                446,
+                627
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Tighter controls could reduce risk-adjusted return opportunities for domestic portfolio investors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                542,
+                228,
+                902,
+                274
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/306cdbb0cd3266abc967fe943dbb8633e644d30370f189cec1150e7150010a79.jpg"
+                },
+                "content": "| Category | Value (%) |\n|---|---|\n| Direct Investment | 4.4 |\n| Portfolio Investment | 9.4 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "China Outbound Investment Return, 2025"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                512,
+                343,
+                935,
+                630
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                141,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                155,
+                53,
+                189,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                53,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                56,
+                831,
+                244,
+                849
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                49,
+                959,
+                60,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Outbound Investment"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                51,
+                148,
+                210,
+                169
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China Will Likely Continue with Its Prevailing Capital Account Opening Approach"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                54,
+                179,
+                825,
+                210
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Capital-Account Opening and RMB Internationalization: A Managed Symbiosis"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                118,
+                250,
+                878,
+                300
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mutually Reinforcing. Selectively Opened. Strategically Balanced."
+                    }
+                ]
+            },
+            "bbox": [
+                292,
+                303,
+                736,
+                331
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/15811d271a972cb6c0992bb73725bf1e477046dffcc0ae47ea4aed6416893414.jpg"
+                },
+                "content": "```mermaid\ngraph TD\n  A[\"CAPITAL ACCOUNT OPENING\"] --> B[\"BEIJING'S APPROACH: SELECTIVE AND STATE-MEDIATED\"]\n  B --> C[\"RMB INTERNATIONALIZATION\"]\n  C --> D[\"Creates Demand for Further Opening\"]\n  D --> A\n```",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CEIC, MS"
+                    }
+                ]
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                109,
+                338,
+                887,
+                789
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                141,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                155,
+                53,
+                189,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                957,
+                183,
+                973
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                936,
+                959,
+                949,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure Section"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                46,
+                137,
+                215,
+                161
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Information and opinions in MS were prepared or are disseminated by one or more of the following, which accept responsibility for its contents: MS Asia Limited, and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105), Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS and their affiliates (collectively, \"MS\"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts;"
+                    }
+                ]
+            },
+            "bbox": [
+                44,
+                165,
+                952,
+                325
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA."
+                    }
+                ]
+            },
+            "bbox": [
+                44,
+                326,
+                950,
+                361
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1800 303-2495; Hong Kong +852 2848-5999; Latin America +1718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61(0)2-9770-1505; Tokyo +81(0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA."
+                    }
+                ]
+            },
+            "bbox": [
+                44,
+                362,
+                950,
+                415
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Research Conflict Management Policy"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                46,
+                424,
+                295,
+                444
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                447,
+                950,
+                480
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                46,
+                491,
+                172,
+                509
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments."
+                    }
+                ]
+            },
+            "bbox": [
+                44,
+                511,
+                952,
+                651
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks."
+                    }
+                ]
+            },
+            "bbox": [
+                44,
+                656,
+                950,
+                707
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel."
+                    }
+                ]
+            },
+            "bbox": [
+                44,
+                710,
+                950,
+                761
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS may make investment decisions that are inconsistent with the recommendations or views in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                764,
+                479,
+                779
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited (\"MSTL\"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments."
+                    }
+                ]
+            },
+            "bbox": [
+                44,
+                781,
+                950,
+                867
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only."
+                    }
+                ]
+            },
+            "bbox": [
+                44,
+                870,
+                950,
+                923
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to \"wholesale clients\" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to \"wholesale clients\" and \"retail clients\" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the United States by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 4.9(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only."
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                924,
+                950,
+                941
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                190,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                960,
+                61,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                45,
+                145,
+                952,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P."
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                470,
+                950,
+                504
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS."
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                506,
+                554,
+                522
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework."
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                524,
+                672,
+                540
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative."
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                542,
+                950,
+                612
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA."
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                614,
+                950,
+                648
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations."
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                651,
+                950,
+                702
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing."
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                705,
+                950,
+                750
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                789,
+                179,
+                808
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                190,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                957,
+                183,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                936,
+                959,
+                949,
+                970
+            ]
+        }
+    ]
+]

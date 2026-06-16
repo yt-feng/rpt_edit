@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_229ymzp3/pdfs/0001-08-GS-China- SAFE data suggest some FX inflows in May-260615.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_229ymzp3/pdfs/0002-09-JPM-China Quant Strategy-Growth While It Lasts-260614.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_229ymzp3/pdfs/0003-10-MS-China Equity Strategy- Forging New Horizons-260614.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_229ymzp3/pdfs/0004-11-MS-Investor Presentation - Asia Pacific-Stronger Trade- Weaker Domestic Demand-260614.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_229ymzp3/pdfs/0005-12-MS-ABF Substrates-AT-S announces capacity expansion in Malaysia-260615.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
