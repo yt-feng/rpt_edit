@@ -1,0 +1,17 @@
+Found 41 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7utck3g8/pdfs/0001-23-MS-Semiconductors Takeaways from public company meetings on our bus tour-260615.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7utck3g8/pdfs/0002-24-Goldman Sachs-CHINA TRANSPORTATION-Assessing a Hormuz reopening scenario- Prefer Tankers- Airlines and Shipbuilders-260616.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7utck3g8/pdfs/0003-25-Goldman Sachs-TRACKING U.S.SUPPLY CHAIN CONGESTION-GS Supply Chain Congestion Scale-June 15th-Index Lower W W-Bottleneck Scale Unchanged at -2--260615.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7utck3g8/pdfs/0004-26-J.P. Morgan-EM USD 10s30s Spread Curve Report-260616.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7utck3g8/pdfs/0005-27-J.P. Morgan-GDW Asia EMAX- From hiking from weakness to hiking from strength-260615.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=5583da73-fdba-4adc-a4d9-7c5795011851
+MinerU states: running, running, running, running, waiting-file
+MinerU states: running, running, running, running, running
+MinerU states: running, running, running, running, running
+MinerU states: done, done, done, running, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260616/shard_4; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
