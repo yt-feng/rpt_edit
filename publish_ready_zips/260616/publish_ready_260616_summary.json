@@ -1,0 +1,170 @@
+{
+  "created_at_utc": "2026-06-16T23:30:04.517123+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260616",
+  "output_dir": "publish_ready_zips/260616",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 9,
+  "skipped_shards": [],
+  "total_files": 861,
+  "total_renamed_markdown_count": 205,
+  "total_raw_file_bytes": 145544364,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260616/publish_ready_260616_part001.zip",
+      "size_bytes": 87308714,
+      "file_count": 576,
+      "renamed_markdown_count": 140,
+      "raw_file_bytes": 94167906,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260616/publish_ready_260616_part002.zip",
+      "size_bytes": 48022406,
+      "file_count": 285,
+      "renamed_markdown_count": 65,
+      "raw_file_bytes": 51376458,
+      "shards": [
+        "shard_5",
+        "shard_6",
+        "shard_7",
+        "shard_8"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 95,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15049061,
+      "reports": [
+        "0001-01-J.P.-Morgan-Global-Macro-Outlook-and-Strategy-Global-Rates--Commodities-",
+        "0002-03-Nomura-FX-Insights-Strategy-views-on-the-US-Iran-interim-deal-260615",
+        "0003-05-Morgan-Stanley-Morgan-Stanley-Global-Macro-Forum-Chipflation---Implicati",
+        "0004-06-Bernstein-Global-Semiconductors-Global-Semi--South-Korea-Equipment-Impor",
+        "0005-07-Bernstein-India-Strategy--A-US-Iran-Peace-Deal.-What-after-the-rebound--"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 97,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15221580,
+      "reports": [
+        "0001-08-Goldman-Sachs-China--SAFE-data-suggest-some-FX-inflows-in-May-260615",
+        "0002-09-J.P.-Morgan-China-Quant-Strategy-Growth-While-It-Lasts-260614",
+        "0003-10-Morgan-Stanley-China-Equity-Strategy--Forging-New-Horizons-260614",
+        "0004-11-Morgan-Stanley-Investor-Presentation---Asia-Pacific-Stronger-Trade--Weak",
+        "0005-12-Morgan-Stanley-ABF-Substrates-AT-S-announces-capacity-expansion-in-Malay"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 111,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18481007,
+      "reports": [
+        "0001-13-Bofa-Global-Fund-Manager-Survey-The-Frozen-Bulls-260616",
+        "0002-14-Deutsche-Bank-FX-Blog-Beneficiaries-of-the-peace-260615",
+        "0003-15-Morgan-Stanley-The-Oil-Manual--Let-the-Oil-Flow--260615",
+        "0004-16-Goldman-Sachs-Taiwan-Technology--US-marketing-feedback--AI-ASIC-remains-",
+        "0005-17-Bofa-Asia-Fund-Manager-Survey-Tech-Hardware-rises--Indonesia-slips-26061"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 22838483,
+      "reports": [
+        "0001-18-Goldman-Sachs-CHINA-BROKERS---ASSET-MANAGERS-Positioned-for-Structural-G",
+        "0002-19-Goldman-Sachs-CHINA-PROPERTY-WEEKLY-WRAP-Week-24-Wrap--Transactions-and-",
+        "0003-20-Nomura-Asia-Insights-US-Iran-deal--A-welcome-relief-for-Asia-260615",
+        "0004-21-Bernstein-U.S.-Multi-Industry---Electrical-Equipment-Liquid-Cooling-Prim",
+        "0005-22-Morgan-Stanley-Greater-China-Technology-Hardware--Building-Blocks-of-Com"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 111,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16944597,
+      "reports": [
+        "0001-23-MS-Semiconductors-Takeaways-from-public-company-meetings-on-our-bus-tour",
+        "0002-24-Goldman-Sachs-CHINA-TRANSPORTATION-Assessing-a-Hormuz-reopening-scenario",
+        "0003-25-Goldman-Sachs-TRACKING-U.S.SUPPLY-CHAIN-CONGESTION-GS-Supply-Chain-Conge",
+        "0004-26-J.P.-Morgan-EM-USD-10s30s-Spread-Curve-Report-260616",
+        "0005-27-J.P.-Morgan-GDW-Asia-EMAX--From-hiking-from-weakness-to-hiking-from-stre"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 93,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11610935,
+      "reports": [
+        "0001-28-Morgan-Stanley-Asia-Three-Actionable-Ideas-260614",
+        "0002-29-Morgan-Stanley-The-Convergence-of-AI-and-Energy-Financing-260614",
+        "0003-30-Nomura-USD-CNY-fix-model-Projection--6.7575-260616",
+        "0004-31-Bernstein-Bernstein-Energy--Applying-the-5--W--s-to-an-upstream-capex-su",
+        "0005-32-Bernstein-US-Media---Telecom-Fox-Roku--Strategic-Fit-at-a-Strategic-Pric"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 22874832,
+      "reports": [
+        "0001-33-Goldman-Sachs-Americas-Healthcare--Pharmaceuticals--Illustrative-Impact-",
+        "0002-34-Morgan-Stanley-Finger-On-The-Pulse-US-SMID-Cap-Biotech-Beat-260614",
+        "0003-35-Morgan-Stanley-Siemens-Energy-AG-ENR1n.DE-Investor-feedback-from-our-Gas",
+        "0004-36-Goldman-Sachs-FOMC-Roundtable-June-16-17-Meeting-Presentation-260616",
+        "0005-37-CITI-Artificial-Intelligence-Citi-s-Inference-Ahead---Bridging-the-Gaps-"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 20221016,
+      "reports": [
+        "0001-38-J.P.-Morgan-JPM-Powering-Data-Centers-Fireside-Chat-Series-Takeaways-fro",
+        "0002-39-MS-HDDs---The-Next-Leg-Higher-260615",
+        "0003-40-Morgan-Stanley-Software-Snippets-Visualising-the-AI-Software-Drawdown-26",
+        "0004-41-Bernstein-India-Autos--The-hybrid-inflection--who-s-positioned--260615",
+        "0005-42-Goldman-Sachs-Americas-Retail--Specialty-Hardlines--Analyzing-the-impact"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 1,
+      "file_count": 23,
+      "renamed_markdown_count": 5,
+      "raw_file_bytes": 2302853,
+      "reports": [
+        "0001-43-Goldman-Sachs-Americas-Chemicals--Recent-Chinese-TiO2-Export-Data-Remain"
+      ]
+    }
+  ]
+}
