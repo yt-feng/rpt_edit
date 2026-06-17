@@ -1,0 +1,36 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 37,
+  "pdf_count_before_skip": 2,
+  "pdf_count": 2,
+  "generated_report_count": 2,
+  "batch_size": 5,
+  "shard_index": 7,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 2,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/38-MS-Reflections from MS’s Inaugural National Security Innovation Summit-260616.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vmz7p5ct/pdfs/0001-38-MS-Reflections from MS-s Inaugural National Security Innovation Summit-260616.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/39-MS-Beneficiary of Strait Reopening； Reiterate Bullish Views-260615.pdf",
+          "batch_file": "/tmp/pdf_batch_001_vmz7p5ct/pdfs/0002-39-MS-Beneficiary of Strait Reopening- Reiterate Bullish Views-260615.pdf",
+          "stable_index": "2"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

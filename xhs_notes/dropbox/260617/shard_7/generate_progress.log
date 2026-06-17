@@ -1,0 +1,13 @@
+Found 37 total PDFs; shard 7/40 has 2 PDFs, skips 0 already converted, will process 2 PDFs with batch_size=5.
+Running batch 1: 2 PDFs
+Found 2 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 2 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vmz7p5ct/pdfs/0001-38-Morgan Stanley-Reflections from Morgan Stanley-s Inaugural National Security Innovation Summit-260616.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vmz7p5ct/pdfs/0002-39-Morgan Stanley-Beneficiary of Strait Reopening- Reiterate Bullish Views-260615.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=e386677b-34a7-4af5-84cc-9472f7ca55f8
+MinerU states: pending, pending
+MinerU states: done, running
+MinerU states: done, running
+MinerU states: done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260617/shard_7; successful_reports=2; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 2 report directories.
