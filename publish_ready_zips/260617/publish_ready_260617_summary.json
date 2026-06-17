@@ -1,0 +1,156 @@
+{
+  "created_at_utc": "2026-06-17T23:16:15.413207+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260617",
+  "output_dir": "publish_ready_zips/260617",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 8,
+  "skipped_shards": [],
+  "total_files": 739,
+  "total_renamed_markdown_count": 185,
+  "total_raw_file_bytes": 119332269,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260617/publish_ready_260617_part001.zip",
+      "size_bytes": 87674870,
+      "file_count": 566,
+      "renamed_markdown_count": 140,
+      "raw_file_bytes": 94264334,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260617/publish_ready_260617_part002.zip",
+      "size_bytes": 23373184,
+      "file_count": 173,
+      "renamed_markdown_count": 45,
+      "raw_file_bytes": 25067935,
+      "shards": [
+        "shard_5",
+        "shard_6",
+        "shard_7"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 105,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 20074446,
+      "reports": [
+        "0001-01-CITI-Global-FX-Strategy-Fade-EUR-rallies-if-Warsh-disappoints-hawks-2606",
+        "0002-02-Bernstein-Global-Metals---Mining--Copper-Taco-or-Boco-Season-Finale---U.",
+        "0003-03-Bernstein-Global-Semiconductors-Global-Semis--The-CPU-Renaissance--Benef",
+        "0004-05-Bernstein-Bernstein-Energy--Let-the-oil-flow-260617",
+        "0005-06-Deutsche-Bank-Japan-Monetary-Policy-Watch-MPM-review--an-initial-dovish-"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17871100,
+      "reports": [
+        "0001-07-Deutsche-Bank-Who-is-buying-Treasuries-Mortgages-Credit-and-Munis--26061",
+        "0002-08-Goldman-Sachs-Japan--BOJ--Raises-Policy-Rate-to-1--at-June-MPM--Maintain",
+        "0003-09-J.P.-Morgan-China-alt-data-trackers-chartpack--Series-57--Exports-still-",
+        "0004-10-Morgan-Stanley-From-the-Global-Director-of-Research-Charts-That-Caught-M",
+        "0005-11-Goldman-Sachs-OIL-ANALYST-Reducing-Our-Price-Forecast-on-Deal-to-Reopen-"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 105,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18321131,
+      "reports": [
+        "0001-12-Goldman-Sachs-NAVIGATING-CHINA-INTERNET--ECOMMERCE-TRACKER-May-industry-",
+        "0002-13-Goldman-Sachs-China-Spirits-Tracker--Dragon-Boat-Festival-around-the-cor",
+        "0003-14-Goldman-Sachs-China--May-fixed-asset-investment-and-retail-sales-data-mi",
+        "0004-15-Goldman-Sachs-Natural-Gas-Analyst-US-Iran-Agreement-Paves-Way-For-Europe",
+        "0005-16-Nomura-Asia-Insights-China--Activity-data-remained-weak-in-May-260616"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 97,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15558866,
+      "reports": [
+        "0001-17-CITI-China-Industrials-What-s-New-From-China-Industrial-AI-Infra---Robot",
+        "0002-18-Goldman-Sachs-CHINA-PROPERTY-MONTHLY-TRACKER-Reinforced-T-1-ASP-resilien",
+        "0003-19-Goldman-Sachs-CHINA-NEW-ENERGY-VEHICLE-WEEKLY-CHARTBOOK-2026-Week-24---W",
+        "0004-20-Goldman-Sachs-China--70-city-average-primary-property-price-decline-narr",
+        "0005-21-Morgan-Stanley-China-Property-Weekly-Database-Tracker--24-260615"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 111,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18030585,
+      "reports": [
+        "0001-23-Bernstein-US-Communications-Infrastructure-Data-Center-Interconnection--",
+        "0002-24-Deutsche-Bank-China-Banks-May-TSF-improved-sequentially-demand-stays-wea",
+        "0003-25-Deutsche-Bank-Securitization-Research-2026-The-Mid-Year-Outlook-260616",
+        "0004-26-Morgan-Stanley-Asia-Summer-School--Asia-Robotics-and-Humanoids-260616",
+        "0005-27-Nomura-China-consumer-Retail-sales-momentum-weakened-further-in-May-2606"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12217954,
+      "reports": [
+        "0001-28-Nomura-China-e-commerce-E-commerce-sales-accelerated-slightly-in-May-260",
+        "0002-29-CITI-China-Auto-Manufacturers-May-26-Imported-Car-Retail-Sales--38--YoY-",
+        "0003-30-Morgan-Stanley-Autos---Shared-Mobility-Feedback-from-US-Investor-Visits-",
+        "0004-31-Morgan-Stanley-North-American-Midstream---Renewable-Energy-Infrastructur",
+        "0005-32-Nomura-India-Metals-Update-on-China-coking-coal-disruptions-260616"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 93,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13517960,
+      "reports": [
+        "0001-33-Goldman-Sachs-The-Post-Modern-Cycle---Navigating-the-Capex-Boom-260616",
+        "0002-34-CITI-Artificial-Intelligence-Takeaways-from-the-Research-and-Applied-AI-",
+        "0003-35-Jefferies-Lithium-Value-Chain-Survey--Temporary-Pullback--Diverging-Sign",
+        "0004-36-Bernstein-Liquid-Cooling-What-does-Google-s-Brazos-mean-for-the-broader-",
+        "0005-37-Goldman-Sachs-Japan-Banks--Implications-of-BOJ-MPM-and-bank-deposit-rate"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 2,
+      "file_count": 34,
+      "renamed_markdown_count": 10,
+      "raw_file_bytes": 3740227,
+      "reports": [
+        "0001-38-Morgan-Stanley-Reflections-from-Morgan-Stanley-s-Inaugural-National-Secu",
+        "0002-39-Morgan-Stanley-Beneficiary-of-Strait-Reopening--Reiterate-Bullish-Views-"
+      ]
+    }
+  ]
+}
