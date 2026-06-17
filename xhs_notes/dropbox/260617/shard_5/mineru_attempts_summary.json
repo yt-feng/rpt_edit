@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_vszo7rdj/pdfs/0001-28-NOM-China e-commerce-E-commerce sales accelerated slightly in May-260616.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vszo7rdj/pdfs/0002-29-CITI-China Auto Manufacturers-May-26 Imported Car Retail Sales -38- YoY -0- MoM-260615.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vszo7rdj/pdfs/0003-30-MS-Autos - Shared Mobility-Feedback from US Investor Visits-260615.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vszo7rdj/pdfs/0004-31-MS-North American Midstream - Renewable Energy Infrastructure-Infrastructure Weekly-260616.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vszo7rdj/pdfs/0005-32-NOM-India Metals-Update on China coking coal disruptions-260616.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
