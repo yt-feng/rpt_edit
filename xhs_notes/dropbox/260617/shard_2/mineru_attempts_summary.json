@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_e3snqtre/pdfs/0001-12-GS-NAVIGATING CHINA INTERNET- ECOMMERCE TRACKER May industry online retail GMV -3-- 618 trends- Alibaba debates-260616.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_e3snqtre/pdfs/0002-13-GS-China Spirits Tracker- Dragon Boat Festival around the corner- Weak outlook despite a low base- Muted wholesale price trend-260616.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_e3snqtre/pdfs/0003-14-GS-China- May fixed asset investment and retail sales data missed market expectations-260616.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_e3snqtre/pdfs/0004-15-GS-Natural Gas Analyst-US-Iran Agreement Paves Way For European Storage Refill-260616.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_e3snqtre/pdfs/0005-16-NOM-Asia Insights-China- Activity data remained weak in May-260616.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

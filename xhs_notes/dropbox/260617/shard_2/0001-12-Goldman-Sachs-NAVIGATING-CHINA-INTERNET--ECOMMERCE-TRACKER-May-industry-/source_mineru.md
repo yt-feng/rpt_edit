@@ -1,0 +1,1146 @@
+NAVIGATING CHINA INTERNET: ECOMMERCE TRACKER
+
+May industry online retail GMV +3%; 618 trends; Alibaba debates
+
+## Navigating China Internet / AI models
+
+Explore >
+
+![](images/d67bacfdfc195f51a3b21ae1d724d3324d6a5597b85b78e4dc51835534914853.jpg)
+
+<details>
+<summary>text_image</summary>
+
+Infographic with AI-related icons including network, cloud, shopping cart, and smartwatch
+</details>
+
+May national online retail goods GMV grew +3% yoy vs. flat in Apr, with sequential stabilization/improvement in online spending in food/apparel categories, while home appliances & communication devices declined further/moderated to -16%/+1% yoy (vs. -15%/+6% in Apr) on the high-base of the trade-in program last year (mobile phones were included in trade-in since Jan-2025). We continue to estimate 2Q JD Retail revenue growth of -8%, mainly due to electronics & appliance revenue declines, before a normalization of growth from 2H26. Overall retail sales growth declined by -0.6% yoy in May which missed consensus expectations (vs. GSe: -0.6% yoy; BBG consensus: -0.2% yoy), vs. +0.2% in Apr, driven by weak jewelry/home appliances/sports growth, at -8.9%/-15.6%/-8.0% respectively. We fine-tune our industry online GMV and parcel volume growth forecasts to 5%/5% yoy respectively for 2026E (largely unchanged), and we now estimate 2Q online GMV and parcel volume growth of 2%/6% (prior: 1%/3%).
+
+## Addressing investor focuses/debates around Alibaba's recent share price weakness:
+
+We frame the investor focuses/debates around Alibaba given the recent share price weakness over investor concerns on:
+
+1) eCommerce/CMR weakness, due to slow Apr-May retail sales and its merchant rebate policies, that could lead to a yoy decline in CMR for June quarter; GS views: We already forecast low-to-mid single digit CMR revenue declines for the June quarter (from +1% in March quarter), while we note healthy parcel growth may potentially narrow the gap between GMV and CMR (as merchant rebate policies are dependent on reaching GMV targets), and benign competition should bode well for underlying eCommerce profits.
+
+2) AI cloud computing potential competition with telcos, on the back of media reports on the government's plan to spend Rmb2 trillion on building data centers over the next 5 years, where SOEs such as telcos would operate most of the facilities. GS views: We estimate China internet hyperscalers' (BBAT) capex alone will reach
+
+GS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S.
+
+## Ronald Keung, CFA
+
++852-2978-0856
+
+ronald.keung@gs.com
+
+GS (Asia) L.L.C.
+
+## Lincoln Kong, CFA
+
++852-2978-6603 | lincoln.kong@gs.com
+
+GS (Asia) L.L.C.
+
+## Steve Qiu
+
++852-2978-2672 | steve.qiu@gs.com
+
+GS (Asia) L.L.C.
+
+## Damian Xie
+
++852-2978-1398 | damian.xie@gs.com
+
+GS (Asia) L.L.C.
+
+Rmb1.5 trillion over the next 2 years. Given explosive AI token growth and tight computing supply in the near-to-medium term, we believe first mover advantages of internet hyperscalers in capex spend, and their AI model + chip capabilities (with MaaS and custom silicon) will differentiate the AI cloud landscape (with more favorable pricing/margin profile) vs. the CPU/IaaS cloud landscape in China.
+
+3) AI model landscape, on its ongoing AI model restructuring/investor focus on talent retention and stronger competition from independent AI model players (e.g. GLM5.2 in coding scenarios, higher intelligence driving higher pricing power, or DeepSeek V4 in significant pricing cuts that brought Xiaomi and MiniMax to follow through). GS views: While AI model pricing competition has been more intense than our prior expectations, pricing power is sustaining for top performing models (e.g. GLM and Qwen3.7 Max) while AI cloud computing prices remain solid (even with price hikes since April due to hardware cost push). We believe Alibaba's leadership positioning in the computing layer, and its leading MaaS/AI cloud scale will position Alibaba Cloud as a key beneficiary in the proliferation of AI token computing demand, from coding/agentic usages across in-house Qwen and other AI models.
+
+4) AI capex funding source, given our next three-year Alibaba capex forecast of Rmb600bn vs. its FY27E EBITA of Rmb92bn and Rmb260bn net cash on balance sheet. GS views: We note recent fund raising at US hyperscalers, yet we believe Alibaba continues to have more than sufficient net cash + operating cash flow to drive its AI investment build-out for the next 2 years, alongside improving group profitability over FY27-29E.
+
+5) Widened SOTP discount (15% in our valuation framework) as investors focus more on direct plays of AI infrastructure (upstream, chips/memory), AI models (Knowledge Atlas/MiniMax) or pure eCommerce standalone companies for the respective exposures.
+
+These being said, despite near-term softness around CMR weakness (with 6ppts sequential deceleration in online retail sales for Apr-May vs. 1Q), we see key potential drivers for Alibaba (at 15X 2026E P/E, with EPS revisions bottoming): (+) further cloud revenue acceleration, with margin upside on price hikes, (+) reiteration of MaaS ARR trends, with recent further consolidation of model layer/computing resources on the back of launch of Alibaba Token Foundry, (+/-) gradual stabilization in EPS revisions on sequentially narrower 'All other' losses. See more from our Key AI & mega-cap debates; What to do from here? report where the Cloud & Data Center sub-sector continues to be our top preference into 2H26 (where we highlight Alibaba within). For eCommerce & mobility (#3 in our sub-sector pecking order), we continue to highlight JD as a key idea for 2H26, as we believe 2Q will be the last tough quarter for comps, while we anticipate a 2H top line and profit yoy recovery.
+
+## Other highlights in May by category/segment:
+
+618 trends: The industry is shifting toward more disciplined operation over aggressive price competition, under tightening regulations barring unfair competition/false promotions, as platforms retire from complex sales mechanisms in favor of more straightforward discounting and report results over longer counting windows (from first 1h/4h of the official sales launch to first day/first phase). We note parcel volume grew +8% yoy during May 13 - Jun 14 (vs. +16% yoy during the same period last year).
+
+Express delivery: Industry parcel volume growth came in at c.6% yoy in May (vs. 3% in Apr) driven by the sequential improvement of online goods sales. Our weekly parcel tracker suggests June-to-date parcel volume growth rate at c.9% yoy, compared to May c.6%/Apr 3%, tracking at c.604mn average daily parcels (under the MoT definition) in the first 14 days of June.
+
+Improving Temu US's GMV trends in May: Temu US MAU decreased by -4% mom in May. BBG's second measure tracker suggests strong growth in US GMV at +54% yoy in May (vs. +6%/-12%/-2% yoy in April/March/February) on an easier base. Global MAU decreased by -5% mom to 485mn in May, per Sensor Tower. We also note ASEAN MAU decreased by -30% in May due to official removal of the de minimis exemption and rollout of stricter customs clearance requirements across key regions (e.g. Thailand now subjects all cross-border parcels to 7% VAT + tiered tariffs of up to 30% for apparel, bringing the blended tax rate of direct-shipping small parcels to above 25%). On the merchant side, the number of Temu merchants increased by +1% mom (vs. +1% mom in Apr) as per QuestMobile. We view commencement of its first-party brand (“Xin Pin Mu”) investment cycle for the next three years (targeting to rebuild Pinduoduo) as a multi-year growth driver for Temu + Pinduoduo.
+
+\- Narrower food delivery/quick commerce losses/improving UE: We continue to see the ongoing anti-trust investigations into the food delivery industry and Alibaba’s further pivot into AI/cloud to drive stabilization in quick commerce market shares between the Top 3 food delivery players (with more rational subsidies), which could drive large P&L improvement swings for the transaction platforms over the rest of 2026. For Meituan, we now estimate food delivery (excl. platform-level costs) EBIT of breakeven/-Rmb1.7bn for 2Q/FY26E.
+
+As highlighted in our latest What to do from here report, we continue to rank Cloud & Data Centers as our preferred sub-sector (#1) (with key ideas: GDS, VNET, Alibaba and Kingsoft Cloud) on proliferation of AI token demand from agentic AI with improving cloud pricing/margin upside and hyperscalers' further capex ramp up into 2H26 as key catalysts. We rank Games & Entertainment at #2 (key ideas: Tencent and NetEase) on attractive trough-cycle valuations/new games launches, followed by eCommerce & Mobility (#3, with key ideas: JD) on its profit yoy recovery (from 2Q26) and re-acceleration of top-line from 3Q26. In Logistics, we are Buy rated on respective logistics segment leaders SF-H share (time-definite express), JD Logistics (supply chain), and ZTO (ground/eCommerce express), Neutral on J&T, STO, Yunda, Kerry Logistics, and Sell rated on YTO & Sinotrans.
+
+Related Research: Navigating China Internet/AI models: Key AI & mega-cap debates; What to do from here?, Jun 9, 2026
+
+Exhibit 1: Decomposing Alibaba & Tencent share price performance YTD  
+![](images/9e0b7d50ce033e002c45bb759a1ffae1c25f3bf180db1b908ed89a247a7eb149.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Company   | EPS change % YTD | Multiple change % YTD | Share price YTD |
+| --------- | ---------------- | --------------------- | --------------- |
+| Alibaba   | -15%             | -15%                  | -28%            |
+| Tencent   | -2%              | -25%                  | -27%            |
+</details>
+
+## Potential upside & near-term risks
+
+(+) further cloud revenue acceleration with margin upside  
+(+) reiteration of MaaS ARR trends  
+(+/-) gradual stabilization in EPS revisions on sequentially narrower 'All other' losses  
+(-) CMR weakness in Jun qtr
+
+## Potential upside & near-term risks
+
+(+) sustained high teens-20% ad growth  
+(+) cloud growth acceleration, growing MaaS business from further Hy model launches  
+(+) further capex uplift  
+(+/-) Weixin agent pilot launches over 2H26  
+(-) Fintech weakness on soft 2Q retail sales, slower profit growth on AI investments
+
+Exhibit 2: Food delivery + instant shopping comparisons between Meituan, Alibaba and JD (GS estimates)  
+![](images/d3aefda79322651b48c602f0e1e640fe0b2546ad1ec3825cd8c676a1c86d3680.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Platform | Date       | BABA (food delivery & on-demand retail) | Meituan (food delivery & on-demand retail) | JD (food delivery & on-demand retail) |
+|----------|------------|------------------------------------------|---------------------------------------------|--------------------------------------|
+| Average daily order volume by platform (on-demand retail + food delivery, mn) | Mar 25     | 25                                       | 68                                          | 1                                    |
+| Average daily order volume by platform (on-demand retail + food delivery, mn) | June 25    | 34                                       | 77                                          | 17                                   |
+| Average daily order volume by platform (on-demand retail + food delivery, mn) | Sept 25    | 76                                       | 88                                          | 16                                   |
+| Average daily order volume by platform (on-demand retail + food delivery, mn) | Dec 25     | 65                                       | 82                                          | 14                                   |
+| Average daily order volume by platform (on-demand retail + food delivery, mn) | Mar 26     | 62                                       | 75                                          | 15                                   |
+| Average daily order volume by platform (on-demand retail + food delivery, mn) | June 26    | 66                                       | 80                                          | 16                                   |
+| Average daily order volume by platform (on-demand retail + food delivery, mn) | Sept 26    | 75                                       | 89                                          | 16                                   |
+| Average daily order volume by platform (on-demand retail + food delivery, mn) | Dec 26     | 70                                       | 85                                          | 15                                   |
+| UE by platform (on-demand retail + food delivery, Rmb) | Mar 25     | -                                        | -                                           | -                                    |
+| UE by platform (on-demand retail + food delivery, Rmb) | June 25    | -                                        | -                                           | -                                    |
+| UE by platform (on-demand retail + food delivery, Rmb) | Sept 25    | -                                        | -                                           | -                                    |
+| UE by platform (on-demand retail + food delivery, Rmb) | Dec 25     | -                                        | -                                           | -                                    |
+| UE by platform (on-demand retail + food delivery, Rmb) | Mar 26     | -                                        | -                                           | -                                    |
+| UE by platform (on-demand retail + food delivery, Rmb) | June 26    | -                                        | -                                           | -                                    |
+| UE by platform (on-demand retail + food delivery, Rmb) | Sept 26    | -                                        | -                                           | -                                    |
+| UE by platform (on-demand retail + food delivery, Rmb) | Dec 26     | -                                        | -                                           | -                                    |
+| Adj. operating profit/loss of on-demand retail + food delivery by platform (Rmb mn)   | Mar 25     | -                                        | -                                           | -                                    |
+| Adj. operating profit/loss of on-demand retail + food delivery by platform (Rmb mn)   | June 25    | -                                        | -                                           | -                                    |
+| Adj. operating profit/loss of on-demand retail + food delivery by platform (Rmb mn)   | Sept 25    | -                                        | -                                           | -                                    |
+| Adj. operating profit/loss of on-demand retail + food delivery by platform (Rmb mn)   | Dec 25     | -                                        | -                                           | -                                    |
+| Adj. operating profit/loss of on-demand retail + food delivery by platform (Rmb mn)   | Mar 26     | -                                        | -                                           | -                                    |
+| Adj. operating profit/loss of on-demand retail + food delivery by platform (Rmb mn)   | June 26    | -                                        | -                                           | -                                    |
+| Adj. operating profit/loss of on-demand retail + food delivery by platform (Rmb mn)   | Sept 26    | -                                        | -                                           | -                                    |
+| Adj. operating profit/loss of on-demand retail + food delivery by platform (Rmb mn)   | Dec 26     | -                                        | -                                           | -                                    |
+BABA (food delivery & on-demand retail)   Meituan (food delivery & on-demand retail) JD (food delivery & on-demand retail)   BABA (food delivery & on-demand retail) Meituan (food delivery & on-demand retail) JD (food delivery & on-demand retail)   BABA (food delivery & on-demand retail) Meituan (food delivery & on-demand retail) JD (food delivery & on-demand retail)   BABA (food delivery & on-demand retail) Meituan (food delivery & on-demand retail) JD (food delivery & on-demand retail)   BABA (food delivery & on-demand retail) Meituan (food delivery& on-demand retail) JD (food delivery & on-demand retail)   BABA (food delivery & on-demand retail) Meituan (food delivery & on-demand retail) JD (food delivery & on-demand retail)   BABA (food delivery & on-demand retail) Meituan (food delivery & on-demand retail) JD (food delivery & on-demand retail)
+</details>
+
+Source: GS Global Investment Research
+
+Exhibit 3: We estimate per our industry weekly parcel volume tracker, parcel collection volume growth of c.9% yoy in the first 14 days of June  
+Weekly parcel volume tracker  
+![](images/4fc4c87d6820edc6dc9bdae8f6227d08630a56f0eb97030b34ea411642871578.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month-Year | Weekly Parcel Collected | % yoy |
+|------------|------------------------|-------|
+| Jan-25     | 59%                    | 1%    |
+| Feb-25     | 20%                    | 59%   |
+| Mar-25     | 19%                    | 20%   |
+| Apr-25     | 17%                    | 19%   |
+| May-25     | 16%                    | 17%   |
+| Jun-25     | 15%                    | 16%   |
+| Jul-25     | 12%                    | 15%   |
+| Aug-25     | 13%                    | 12%   |
+| Sep-25     | 8%                     | 13%   |
+| Oct-25     | 5%                     | 8%    |
+| Nov-25     | 2%                     | 5%    |
+| Dec-25     | 23%                    | 2%    |
+| Jan-26     | -11%                   | 23%   |
+| Feb-26     | 3%                     | -11%  |
+| Mar-26     | 3%                     | -11%  |
+| Apr-26     | 3%                     | -11%  |
+| May-26     | 6%                     | -11%  |
+</details>
+
+Note: dotted line denotes average daily parcel volumes in the same week of the previous year
+
+Source: MoT, SPB
+
+Exhibit 4: Potential drivers behind the gap between online retail growth and parcel volume growth
+
+<table><tr><td></td><td>Monthly parcel volume (reported-yoy)</td><td>NBS online goods (yoy)</td><td>Gap between NBS online goods yoy and parcel yoy</td><td>Events</td></tr><tr><td>1/1/2025 &amp; 2/2025</td><td>22%</td><td>5%</td><td>-17% (+) trade-in program</td><td></td></tr><tr><td>3/2025</td><td>20%</td><td>7%</td><td>-13% (+) trade-in program</td><td></td></tr><tr><td>4/2025</td><td>19%</td><td>6%</td><td>-13% (+) trade-in program</td><td></td></tr><tr><td>5/2025</td><td>17%</td><td>8%</td><td>-9% (+) trade-in program</td><td></td></tr><tr><td>6/2025</td><td>16%</td><td>5%</td><td>-11% (+) trade-in program; (-) 6.18 Shopping Festival frontloaded sales into May</td><td></td></tr><tr><td>7/2025</td><td>15%</td><td>8%</td><td>-7% (+) trade-in program</td><td></td></tr><tr><td>8/2025</td><td>12%</td><td>7%</td><td>-5% (+) trade-in program; (+/-) sequentially higher delivery fees in Guangdong and Zhejiang</td><td></td></tr><tr><td>9/2025</td><td>13%</td><td>7%</td><td>-5% (+) trade-in program; (-) higher base for certain categories; (+/-) sequentially higher delivery fees</td><td></td></tr><tr><td>10/2025</td><td>8%</td><td>5%</td><td>-3% (+) 11.11 Shopping Festival frontloaded sales into October; (-) higher base for certain categories; (+/-) sequentially higher delivery fees</td><td></td></tr><tr><td>11/2025</td><td>5%</td><td>2%</td><td>-3% (-) Sales recorded in October; (-) higher base for certain categories; (+/-) sequentially higher delivery fees; (+/-) eCommerce-related taxes</td><td></td></tr><tr><td>12/2025</td><td>2%</td><td>1%</td><td>-2% (-) higher base for certain categories; (+/-) sequentially higher delivery fees; (+/-) eCommerce-related taxes</td><td></td></tr><tr><td>1/2026 &amp; 2/2026</td><td>7%</td><td>10%</td><td>3% (-) higher base for certain categories; (+/-) sequentially higher delivery fees; (+/-) eCommerce-related taxes</td><td></td></tr><tr><td>3/2026</td><td>3%</td><td>3%</td><td>-1% (-) higher base for certain categories; (+/-) sequentially higher delivery fees; (+/-) eCommerce-related taxes</td><td></td></tr><tr><td>4/2026</td><td>3%</td><td>0%</td><td>-3% (-) higher base for certain categories; (+/-) sequentially higher delivery fees; (+/-) eCommerce-related taxes</td><td></td></tr><tr><td>5/2026</td><td>6%</td><td>3%</td><td>-4% (-) higher base for certain categories; (+/-) sequentially higher delivery fees; (+/-) eCommerce-related taxes</td><td></td></tr></table>
+
+Source: NBS, SPB, GS Global Investment Research
+
+Exhibit 5: Comparison of online goods GMV yoy growth and parcel volume growth
+
+<table><tr><td></td><td>SPB parcel volume yoy growth</td><td>NBS online goods GMV yoy growth</td><td>yoy growth pap</td><td>SPB parcel volume 2-year CAGR</td><td>NBS online goods GMV 2-year CAGR</td><td>SPB parcel volume 3-year CAGR</td><td>NBS online goods GMV 3-year CAGR</td></tr><tr><td>Jan-Feb 25</td><td>22%</td><td>5%</td><td>17%</td><td>25%</td><td>10%</td><td>22%</td><td>8%</td></tr><tr><td>Mar-25</td><td>20%</td><td>7%</td><td>13%</td><td>20%</td><td>7%</td><td>25%</td><td>8%</td></tr><tr><td>Apr-25</td><td>19%</td><td>6%</td><td>13%</td><td>21%</td><td>8%</td><td>30%</td><td>12%</td></tr><tr><td>May-25</td><td>17%</td><td>8%</td><td>9%</td><td>20%</td><td>10%</td><td>23%</td><td>13%</td></tr><tr><td>Jun-25</td><td>16%</td><td>5%</td><td>11%</td><td>17%</td><td>1%</td><td>18%</td><td>3%</td></tr><tr><td>Jul-25</td><td>15%</td><td>8%</td><td>7%</td><td>19%</td><td>8%</td><td>19%</td><td>7%</td></tr><tr><td>Aug-25</td><td>12%</td><td>7%</td><td>5%</td><td>16%</td><td>6%</td><td>20%</td><td>6%</td></tr><tr><td>Sep-25</td><td>13%</td><td>7%</td><td>5%</td><td>16%</td><td>7%</td><td>20%</td><td>6%</td></tr><tr><td>Oct-25</td><td>8%</td><td>5%</td><td>3%</td><td>16%</td><td>8%</td><td>21%</td><td>7%</td></tr><tr><td>Nov-25</td><td>5%</td><td>2%</td><td>3%</td><td>10%</td><td>-1%</td><td>20%</td><td>2%</td></tr><tr><td>Dec-25</td><td>2%</td><td>1%</td><td>2%</td><td>12%</td><td>2%</td><td>21%</td><td>5%</td></tr><tr><td>Jan-Feb 26</td><td>7%</td><td>10%</td><td>-3%</td><td>15%</td><td>8%</td><td>19%</td><td>10%</td></tr><tr><td>Mar-26</td><td>3%</td><td>3%</td><td>1%</td><td>12%</td><td>5%</td><td>14%</td><td>5%</td></tr><tr><td>Apr-26</td><td>3%</td><td>0%</td><td>3%</td><td>11%</td><td>3%</td><td>15%</td><td>5%</td></tr><tr><td>May-26</td><td>6%</td><td>3%</td><td>4%</td><td>12%</td><td>5%</td><td>16%</td><td>8%</td></tr></table>
+
+Source: NBS, SPB, GS Global Investment Research
+
+Exhibit 6: 6.18 festival's daily average parcel volume in 2024/25/26  
+![](images/c13f2612e89ce772dcc648aff17911a0cba3c75017594a380f43b2f0c65a33f4.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | 2024 | 2025 | 2026 |
+|--------|------|------|------|
+| May 13 | 480  | 580  | 610  |
+| Jun 14 | 510  | 590  | 620  |
+</details>
+
+Source: MoT, GS Global Investment Research
+
+Exhibit 7: Our estimates for online GMV and parcel volume growth (annual)  
+![](images/220be5238672d0de012c7ce707e1aca9dffe462abab2a0e44417281107df5ba8.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | NBS online goods retail sales (yoy) (%) | Parcel volume (yoy) (%) |
+| :--- | :--- | :--- |
+| 2022 | 6 | 2 |
+| 2023 | 8 | 19 |
+| 2024 | 6 | 21 |
+| 2025 | 5 | 14 |
+| 2026E | 5 | 5 |
+| 2027E | 4 | 5 |
+</details>
+
+Source: NBS, SPB, GS Global Investment Research
+
+Exhibit 8: Our estimates for parcel volume growth (quarterly)  
+![](images/f2e4c430e8e60b4c03c994d05c3b31dd47e38566e53a8d47e7dd0a5c069190a0.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | NBS online goods retail sales (yoy) (%) | Parcel volume (yoy) (%) |
+| :--- | :--- | :--- |
+| 1Q25 | 6 | 22 |
+| 2Q25 | 6 | 17 |
+| 3Q25 | 8 | 13 |
+| 4Q25 | 2 | 5 |
+| 1Q26 | 8 | 6 |
+| 2Q26E | 2 | 6 |
+| 3Q26E | 5 | 5 |
+| 4Q26E | 4 | 4 |
+</details>
+
+Source: NBS, SPB, GS Global Investment Research
+
+The author would like to thank Iris Xiao for her contribution to this report.
+
+## Key numbers for May
+
+## Online
+
+- Overall online retail (goods + services): +3.4% yoy in May (+2.3%/+5.8%/+9.2% yoy in Apr/Mar/Jan-Feb)  
+■ Online retail goods sales: +2.6% yoy in May (+0.2%/+2.5%/+10.3% yoy in Apr/Mar/Jan-Feb)  
+■ Online service sales: +5.0% yoy in May (+6.1%/+11.9%/+7.3% yoy in Apr/Mar/Jan-Feb)
+
+## Overall online+offline
+
+- Overall retail sales (goods + services): -0.6% yoy in May (+0.2%/+1.7%/+2.8% yoy in Apr/Mar/Jan-Feb)  
+- Overall retail goods sales: -0.7% yoy in May (-0.1%/+1.5%/+2.5% yoy in Apr/Mar/Jan-Feb)  
+Overall restaurant dining sales: +0.6% yoy in May (+2.2%/+2.9%/+4.8% yoy in Apr/Mar/Jan-Feb)
+
+Exhibit 9: eCommerce GMV growth comparison across players
+
+<table><tr><td>GMV growth %</td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td></tr><tr><td>Alibaba</td><td>8%</td><td>-4%</td><td>1%</td><td>6%</td><td>3%</td><td>2%</td><td>2%</td><td>5%</td><td>5%</td><td>6%</td><td>-2%</td><td>5%</td><td>1%</td><td>0%</td><td>0%</td></tr><tr><td>Gap vs. industry (ppts)</td><td>-4%</td><td>-11%</td><td>-8%</td><td>-1%</td><td>-2%</td><td>-3%</td><td>-2%</td><td>-1%</td><td>-1%</td><td>-2%</td><td>-4%</td><td>-3%</td><td>-1%</td><td>-5%</td><td>-4%</td></tr><tr><td>JD</td><td>26%</td><td>6%</td><td>5%</td><td>8%</td><td>9%</td><td>3%</td><td>5%</td><td>13%</td><td>20%</td><td>10%</td><td>-2%</td><td>2%</td><td>-3%</td><td>1%</td><td>12%</td></tr><tr><td>Gap vs. industry (ppts)</td><td>14%</td><td>-1%</td><td>-4%</td><td>1%</td><td>4%</td><td>-2%</td><td>1%</td><td>8%</td><td>13%</td><td>2%</td><td>-5%</td><td>-6%</td><td>-5%</td><td>-5%</td><td>8%</td></tr><tr><td>-Amongst which JD direct sales (1P)</td><td>25%</td><td>6%</td><td>1%</td><td>7%</td><td>10%</td><td>1%</td><td>5%</td><td>16%</td><td>21%</td><td>10%</td><td>-3%</td><td>1%</td><td>-10%</td><td>6%</td><td>10%</td></tr><tr><td>Gap vs. industry (ppts)</td><td>13%</td><td>0%</td><td>-8%</td><td>0%</td><td>5%</td><td>-3%</td><td>1%</td><td>11%</td><td>14%</td><td>3%</td><td>-5%</td><td>-6%</td><td>-12%</td><td>1%</td><td>6%</td></tr><tr><td>Pinduoduo</td><td>46%</td><td>22%</td><td>30%</td><td>20%</td><td>11%</td><td>5%</td><td>5%</td><td>13%</td><td>15%</td><td>11%</td><td>7%</td><td>6%</td><td>3%</td><td>5%</td><td>5%</td></tr><tr><td>Gap vs. industry (ppts)</td><td>34%</td><td>16%</td><td>21%</td><td>33%</td><td>6%</td><td>0%</td><td>1%</td><td>7%</td><td>9%</td><td>3%</td><td>5%</td><td>-1%</td><td>1%</td><td>0%</td><td>1%</td></tr><tr><td>Douyin</td><td>73%</td><td>92%</td><td>55%</td><td>28%</td><td>30%</td><td>19%</td><td>11%</td><td>28%</td><td>38%</td><td>30%</td><td>26%</td><td>21%</td><td>19%</td><td>19%</td><td>18%</td></tr><tr><td>Gap vs. industry (ppts)</td><td>61%</td><td>85%</td><td>47%</td><td>21%</td><td>25%</td><td>14%</td><td>7%</td><td>22%</td><td>32%</td><td>22%</td><td>23%</td><td>14%</td><td>17%</td><td>13%</td><td>14%</td></tr><tr><td>Kuaishou</td><td>78%</td><td>33%</td><td>31%</td><td>17%</td><td>15%</td><td>7%</td><td>8%</td><td>15%</td><td>18%</td><td>15%</td><td>13%</td><td>9%</td><td>6%</td><td>5%</td><td>7%</td></tr><tr><td>Gap vs. industry (ppts)</td><td>66%</td><td>26%</td><td>23%</td><td>11%</td><td>10%</td><td>2%</td><td>4%</td><td>10%</td><td>11%</td><td>8%</td><td>11%</td><td>2%</td><td>4%</td><td>-1%</td><td>2%</td></tr><tr><td>WeChat Video Account</td><td></td><td></td><td>290%</td><td>192%</td><td>83%</td><td>50%</td><td>30%</td><td>88%</td><td>70%</td><td>75%</td><td>96%</td><td>47%</td><td>41%</td><td>52%</td><td>56%</td></tr><tr><td>Gap vs. industry (ppts)</td><td></td><td></td><td></td><td>186%</td><td>77%</td><td>45%</td><td>26%</td><td>82%</td><td>64%</td><td>67%</td><td>93%</td><td>39%</td><td>39%</td><td>47%</td><td>51%</td></tr><tr><td>Vipshop</td><td>16%</td><td>-8%</td><td>19%</td><td>1%</td><td>2%</td><td>4%</td><td>3%</td><td>0%</td><td>2%</td><td>7%</td><td>1%</td><td>9%</td><td>1%</td><td>3%</td><td>4%</td></tr><tr><td>Gap vs. industry (ppts)</td><td>4%</td><td>-15%</td><td>10%</td><td>-6%</td><td>-3%</td><td>-1%</td><td>-1%</td><td>-6%</td><td>-5%</td><td>0%</td><td>-2%</td><td>1%</td><td>-1%</td><td>-3%</td><td>-1%</td></tr><tr><td>NBS Industry online goods GMV</td><td>12%</td><td>6%</td><td>8%</td><td>6%</td><td>5%</td><td>5%</td><td>4%</td><td>6%</td><td>6%</td><td>8%</td><td>2%</td><td>8%</td><td>2%</td><td>5%</td><td>4%</td></tr><tr><td>Parcel volume yoy</td><td>30%</td><td>2%</td><td>19%</td><td>21%</td><td>14%</td><td>5%</td><td>5%</td><td>22%</td><td>17%</td><td>13%</td><td>5%</td><td>6%</td><td>6%</td><td>5%</td><td>4%</td></tr></table>
+
+We calculate Bytedance/Douyin's (Not Covered) relevant operating metrics by analyzing the industry and companies that we cover, and then extrapolating them to Bytedance/Douyin.  
+Source: NBS, SPB, Company data, GS Global Investment Research
+
+Exhibit 10: China eCommerce: Gross GMV share % by platform (quarterly)  
+![](images/1f6dba3647d2a0f3c3928379a2a26c44dcfa1f6cb5792eb6fc783b22c553b6f2.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Quarter | Taobao (%) | Tmall (%) | JD (%) | PDD (%) | VIPS (%) | Douyin (%) | Kuaishou (%) | WeChat Video Account (%) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1Q24 | 15 | 18 | 17 | 19 | 18 | 5 | 2 | 6 |
+| 2Q24 | 18 | 18 | 17 | 19 | 18 | 5 | 2 | 6 |
+| 3Q24 | 17 | 16 | 16 | 17 | 19 | 6 | 2 | 6 |
+| 4Q24 | 17 | 16 | 16 | 17 | 20 | 6 | 2 | 6 |
+| 1Q25 | 15 | 16 | 16 | 15 | 22 | 6 | 2 | 6 |
+| 2Q25 | 16 | 16 | 18 | 21 | 21 | 5 | 2 | 6 |
+| 3Q25 | 16 | 14 | 16 | 23 | 21 | 6 | 3 | 6 |
+| 4Q25 | 15 | 14 | 15 | 22 | 23 | 6 | 3 | 6 |
+| 1Q26 | 15 | 14 | 14 | 22 | 24 | 6 | 4 | 6 |
+| 2Q26E | 16 | 15 | 16 | 20 | 24 | 5 | 3 | 5 |
+| 3Q26E | 15 | 13 | 15 | 23 | 23 | 6 | 5 | 6 |
+| 4Q26E | 14 | 13 | 15 | 21 | 25 | 6 | 5 | 6 |
+</details>
+
+Source: Company data, GS Global Investment Research
+
+Exhibit 11: China eCommerce: Gross GMV share % by platform (yearly)  
+![](images/9d227690cdf730271f8d97e8c820854d4de019d9ced8aa145d23d635115d3c32.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Year | Taobao (%) | Tmall (%) | JD (%) | PDD (%) | VIPS (%) | Douyin (%) | Kuashou (%) | WeChat Video Account (%) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2022 | 21 | 22 | 20 | 17 | 5 | 13 | 0 | 0 |
+| 2023 | 18 | 19 | 18 | 19 | 6 | 18 | 1 | 1 |
+| 2024 | 17 | 17 | 16 | 23 | 6 | 19 | 2 | 2 |
+| 2025 | 16 | 15 | 16 | 22 | 6 | 22 | 3 | 3 |
+| 2026E | 15 | 14 | 15 | 21 | 6 | 24 | 4 | 4 |
+| 2027E | 14 | 13 | 15 | 21 | 6 | 25 | 5 | 5 |
+</details>
+
+Source: Company data, GS Global Investment Research
+
+Exhibit 12: Online retail goods sales growth accelerated to +2.6% in May vs. +0.2% in Apr
+Total retail sales, online retail goods sales & express parcel volumes  
+![](images/0ee8d1a0e7ccfcd0c41c9b5fdb51eb5e932080ff1ebbc23aa700552079832924.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month    | Parcel volume growth | Online goods sales growth | Total retail sales growth |
+|----------|----------------------|----------------------------|----------------------------|
+| Feb-22   | 150%                 | 12%                        | 8%                         |
+| Mar-22   | -12%                 | 0%                         | -5%                        |
+| Apr-22   | 0%                   | 7%                         | 6%                         |
+| May-22   | 6%                   | 6%                         | 5%                         |
+| Jun-22   | 5%                   | 8%                         | 3%                         |
+| Jul-22   | 4%                   | 16%                        | 4%                         |
+| Aug-22   | 2%                   | 4%                         | -9%                        |
+| Sep-22   | 4%                   | 11%                        | -18%                       |
+| Oct-22   | 36%                  | 21%                        | 13%                        |
+| Nov-22   | 19%                  | 13%                        | 3%                         |
+| Dec-22   | 11%                  | 7%                         | 3%                         |
+| Jan-23   | 18%                  | 6%                         | 5%                         |
+| Feb-23   | 20%                  | 5%                         | 6%                         |
+| Mar-23   | 28%                  | 8%                         | 9%                         |
+| Apr-23   | 32%                  | 7%                         | 6%                         |
+| May-23   | 14%                  | 6%                         | -18%                       |
+| Jun-23   | 7%                   | 3%                         | 7%                         |
+| Jul-23   | 18%                  | 5%                         | 6%                         |
+| Aug-23   | 20%                  | 6%                         | 5%                         |
+| Sep-23   | 28%                  | 8%                         | 7%                         |
+| Oct-23   | 32%                  | 9%                         | 6%                         |
+| Nov-23   | 14%                  | 10%                        | 6%                         |
+| Dec-23   | 14%                  | 7%                         | 6%                         |
+| Jan-24   | -18%                 | 6%                         | -18%                       |
+| Feb-24   | 23%                  | 7%                         | 3%                         |
+| Mar-24   | 24%                  | 10%                        | 13%                        |
+| Apr-24   | 18%                  | 8%                         | -2%                        |
+| May-24   | 20%                  | 4%                         | 6%                         |
+| Jun-24   | 19%                  | 6%                         | 5%                         |
+| Jul-24   | 24%                  | 11%                        | -5%                        |
+| Aug-24   | 5%                   | 4%                         | -5%                        |
+| Sep-24   | 45%                  | 5%                         | -5%                        |
+| Oct-24   | 59%                  | 7%                         | -5%                        |
+| Nov-24   | 20%                  | 6%                         | -5%                        |
+| Dec-24   | 19%                  | 8%                         | -5%                        |
+| Jan-25   | 17%                  | 5%                         | -5%                        |
+| Feb-25   | 16%                  | 8%                         | -5%                        |
+| Mar-25   | 15%                  | 7%                         | -5%                        |
+| Apr-25   | 13%                  | 8%                         | -5%                        |
+| May-25   | 12%                  | 7%                         | -5%                        |
+| Jun-25   | 8%                   | 5%                         | -5%                        |
+| Jul-25   | 7%                   | 7%                         | -5%                        |
+| Aug-25   | 7%                   | 8%                         | -5%                        |
+| Sep-25   | 8%                   | 5%                         | -5%                        |
+| Oct-25   | 5%                   | 3%                         | -5%                        |
+| Nov-25   | 4%                   | -11%                       | -11%                       |
+| Dec-25   | 10%                  | -11%                       | -11%                       |
+| Jan-26   | -10%                 | -11%                       | -11%                       |
+| Feb-26   | -4%                  | -11%                       | -11%                       |
+| Mar-26   | -3%                  | -11%                       | -11%                       |
+| Apr-26   | -3%                  | -11%                       | -11%                       |
+| May-26   | -3%                  | -11%                       | -11%                       |
+</details>
+
+Source: National Bureau of Statistics
+
+Exhibit 13: Spending on food and clothing +16% and +7% yoy for Jan-May  
+Online retail sales by spending purpose  
+![](images/dcd7a01dbc4ec1eb7a718ee2ed2ffb600e823952d18bdbf8cca916e0d9125770.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month       | Food  | Clothing | Other expenditure |
+|-------------|-------|----------|-------------------|
+| Jan-Feb 2022 | 13%   | 4%       | 15%               |
+| Jan-Mar 2022 | 14%   | 1%       | 11%               |
+| Jan-Apr 2022 | 13%   | -2%      | 6%                |
+| Jan-May 2022 | 16%   | 2%       | 5%                |
+| Jan-Jun 2022 | 16%   | 3%       | 5%                |
+| Jan-Jul 2022 | 17%   | 4%       | 5%                |
+| Jan-Aug 2022 | 16%   | 5%       | 5%                |
+| Jan-Sep 2022 | 17%   | 5%       | 7%                |
+| Jan-Oct 2022 | 15%   | 3%       | 6%                |
+| Jan-Nov 2022 | 16%   | 4%       | 6%                |
+| Jan-Dec 2022 | 5%    | 4%       | 5%                |
+| Jan-Feb 2023 | 7%    | 7%       | 9%                |
+| Jan-Mar 2023 | 14%   | 10%      | 12%               |
+| Jan-Apr 2023 | 9%    | 8%       | 13%               |
+| Jan-May 2023 | 10%   | 9%       | 12%               |
+| Jan-Jun 2023 | 9%    | 10%      | 11%               |
+| Jan-Jul 2023 | 10%   | 8%       | 9%                |
+| Jan-Aug 2023 | 11%   | 8%       | 8%                |
+| Jan-Sep 2023 | 10%   | 9%       | 8%                |
+| Jan-Oct 2023 | 11%   | 8%       | 9%                |
+| Jan-Nov 2023 | 12%   | 7%       | 8%                |
+| Jan-Dec 2023 | 11%   | 11%      | 7%                |
+| Jan-Feb 2024 | 26%   | 18%      | 11%               |
+| Jan-Mar 2024 | 21%   | 10%      | 11%               |
+| Jan-Apr 2024 | 19%   | 9%       | 10%               |
+| Jan-May 2024 | 20%   | 7%       | 8%                |
+| Jan-Jun 2024 | 18%   | 6%       | 8%                |
+| Jan-Jul 2024 | 19%   | 5%       | 7%                |
+| Jan-Aug 2024 | 18%   | 4%       | 7%                |
+| Jan-Sep 2024 | 18%   | 5%       | 8%                |
+| Jan-Oct 2024 | 16%   | 3%       | 6%                |
+| Jan-Nov 2024 | 16%   | -1%      | -1%               |
+| Jan-Dec 2024 | 14%   | -1%      | -1%               |
+| Jan-Feb 2025 | 15%   | -1%      | -1%               |
+| Jan-Mar 2025 | 15%   | -1%      | -1%               |
+| Jan-Apr 2025 | 16%   | -1%      | -1%               |
+| Jan-May 2025 | 15%   | -1%      | -1%               |
+| Jan-Jun 2025 | 15%   | -1%      | -1%               |
+| Jan-Jul 2025 | 15%   | -1%      | -1%               |
+| Jan-Aug 2025 | 15%   | -1%      | -1%               |
+| Jan-Sep 2025 | 15%   | -1%      | -1%               |
+| Jan-Oct 2025 | 15%   | -1%      | -1%               |
+| Jan-Nov 2025 | 15%   | -1%      | -1%               |
+| Jan-Dec 2025 | 15%   | -1%      | -1%               |
+| Jan-Feb 2026 | 21%   | -8%      | -5%               |
+| Jan-Mar 2026 | 7%    | -4%      | -3%               |
+| Jan-Apr 2026 | 16%   | -7%      | -7%               |
+| Jan-May 2026 | -6%   | -7%      | -7%               |
+</details>
+
+Source: National Bureau of Statistics
+
+Exhibit 14: Total retail sales by category  
+![](images/e4d2c70076d6d9eddad735dd95588c717535df2603b4dfd7c671f324ad1c1e59.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category             | Mar-26 | Apr-26 | May-26 | mom growth change, May vs. Apr |
+|----------------------|--------|--------|--------|-------------------------------|
+| Dining               | 3%     | 2%     | 1%     | -2%                           |
+| Total Physical Goods | 1%     | -1%    | -1%    | -1%                           |
+| Food                 | 9%     | 4%     | 2%     | -2%                           |
+| Beverages            | 8%     | 3%     | 6%     | 3%                            |
+| Tobacco & Alcohol    | 7%     | 11%    | 5%     | -7%                           |
+| Apparel              | 7%     | 4%     | 3%     | 0%                            |
+| Cosmetics            | 8%     | 4%     | 2%     | -2%                           |
+| Jewelry              | 11%    | -20%   | -10%   | 12%                           |
+| Household goods      | 5%     | 3%     | 2%     | -2%                           |
+| Sports               | -1%    | -8%    | -5%    | 0%                            |
+| Home Appliances       | -3%    | -15%   | -18%   | -1%                           |
+| Medicine             | 6%     | 4%     | 3%     | 0%                            |
+| Stationery           | 15%    | -5%    | -2%    | 5%                            |
+| Furniture            | -8%    | -10%   | -8%    | 2%                            |
+| Communication devices| 28%    | 6%     | 1%     | -6%                           |
+| Petrol               | -10%   | -5%    | -3%    | 3%                            |
+| Automobile           | -12%   | -15%   | -18%   | -1%                           |
+| Construction         | -8%    | -12%   | -15%   | 0%                            |
+</details>
+
+Source: National Bureau of Statistics
+
+Exhibit 15: Restaurant dining sales at +1% yoy in May (vs. +2% yoy in April)  
+![](images/96cc6a39d802102dc313997d0aee968eec6444452244c61456aadfac32853a5e.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | Restaurant dining sales growth (%) |
+|---|---|
+| Apr-22 | -23 |
+| May-22 | -21 |
+| Jun-22 | -4 |
+| Jul-22 | -2 |
+| Aug-22 | 8 |
+| Sep-22 | -2 |
+| Oct-22 | -8 |
+| Nov-22 | -8 |
+| Dec-22 | -14 |
+| Jan-Feb 2023 | 9 |
+| Mar-23 | 26 |
+| Apr-23 | 44 |
+| May-23 | 35 |
+| Jun-23 | 16 |
+| Jul-23 | 16 |
+| Aug-23 | 12 |
+| Sep-23 | 14 |
+| Oct-23 | 17 |
+| Nov-23 | 26 |
+| Dec-23 | 30 |
+| Jan-Feb 2024 | 13 |
+| Mar-24 | 7 |
+| Apr-24 | 4 |
+| May-24 | 5 |
+| Jun-24 | 5 |
+| Jul-24 | 3 |
+| Aug-24 | 3 |
+| Sep-24 | 3 |
+| Oct-24 | 3 |
+| Nov-24 | 4 |
+| Dec-24 | 3 |
+| Jan-Feb 2025 | 4 |
+| Mar-25 | 6 |
+| Apr-25 | 5 |
+| May-25 | 6 |
+| Jun-25 | 1 |
+| Jul-25 | 1 |
+| Aug-25 | 2 |
+| Sep-25 | 1 |
+| Oct-25 | 4 |
+| Nov-25 | 3 |
+| Dec-25 | 2 |
+| Jan-Feb 2026 | 5 |
+| Mar-26 | 3 |
+| Apr-26 | 2 |
+| May-26 | 1 |
+</details>
+
+Source: National Bureau of Statistics
+
+## Temu GMV & engagement data
+
+Exhibit 16: Bloomberg Second measure weekly Temu US Panel Sales  
+![](images/7e5ff37bd7aea1e8921f32eaf3654d0529ea19e48dccf1669687b01896c2f426.jpg)
+
+<details>
+<summary>bar-line hybrid</summary>
+
+BBG Second measure weekly Temu US Panel Sales
+| Period | weekly GMV (US$ mn) | wow growth (%) |
+|---|---|---|
+| Jan week 1 | 11.0 | 23 |
+| Jan week 2 | 10.0 | -8 |
+| Jan week 3 | 9.5 | -3 |
+| Jan week 4 | 5.0 | -1 |
+| Jan week 5 | 11.0 | 13 |
+| Feb week 1 | 11.0 | 1 |
+| Feb week 2 | 10.0 | -9 |
+| Feb week 3 | 9.5 | 6 |
+| Feb week 4 | 12.0 | 16 |
+| Mar week 1 | 12.5 | 3 |
+| Mar week 2 | 12.0 | -5 |
+| Mar week 3 | 11.5 | -6 |
+| Mar week 4 | 10.5 | -6 |
+| Apr week 1 | 12.0 | 12 |
+| Apr week 2 | 12.0 | -1 |
+| Apr week 3 | 11.5 | -4 |
+| Apr week 4 | 11.0 | -2 |
+| May week 1 | 12.0 | 9 |
+| May week 2 | 11.0 | -10 |
+| May week 3 | 10.5 | -4 |
+| May week 4 | 10.0 | -4 |
+| May week 5 | 10.5 | 4 |
+| May week 6 | 11.0 | 6 |
+</details>
+
+Source: Bloomberg
+
+Exhibit 17: Bloomberg Second Measure monthly Temu US Panel Sales  
+![](images/f8ffa6db23480641b3e06559dfc0a4234ef19ebbb719b1adf8c806f41653ac53.jpg)
+
+<details>
+<summary>bar-line hybrid</summary>
+
+BBG Second Measure monthly Temu US Panel Sales
+| Month | Monthly GMV (US$ mn) | yoy growth (%) |
+|---|---|---|
+| Jan-24 | 34.0 | |
+| Mar-24 | 30.5 | |
+| May-24 | 33.5 | |
+| Jul-24 | 37.0 | 38 |
+| Sep-24 | 39.0 | 35 |
+| Nov-24 | 41.0 | 32 |
+| Jan-25 | 43.0 | 41 |
+| Mar-25 | 44.0 | 44 |
+| May-25 | 30.0 | -18 |
+| Jul-25 | 28.0 | -24 |
+| Sep-25 | 35.0 | -12 |
+| Nov-25 | 40.0 | -10 |
+| Jan-26 | 45.0 | -8 |
+| Mar-26 | 47.0 | -8 |
+| May-26 | 48.0 | 6 |
+| Jun-26 | 47.0 | 54 |
+</details>
+
+Source: Bloomberg
+
+Exhibit 18: Temu merchants increased +1% mom in May  
+![](images/f66b29b6ebbda4343b9aad3ba91484c7b14e9d071802c869f45fe6563186bade.jpg)
+
+<details>
+<summary>bar-line hybrid</summary>
+
+| Date | Temu merchant app MAU (thousand) | % of PDD main app merchant MAU |
+|---|---|---|
+| 2024-05 | 400 | 12% |
+| 2024-06 | 400 | 12% |
+| 2024-07 | 400 | 13% |
+| 2024-08 | 400 | 13% |
+| 2024-09 | 400 | 13% |
+| 2024-10 | 420 | 14% |
+| 2024-11 | 700 | 23% |
+| 2024-12 | 500 | 16% |
+| 2025-01 | 430 | 15% |
+| 2025-02 | 500 | 16% |
+| 2025-03 | 530 | 16% |
+| 2025-04 | 530 | 16% |
+| 2025-05 | 510 | 16% |
+| 2025-06 | 510 | 15% |
+| 2025-07 | 510 | 15% |
+| 2025-08 | 510 | 16% |
+| 2025-09 | 510 | 15% |
+| 2025-10 | 510 | 15% |
+| 2025-11 | 510 | 15% |
+| 2025-12 | 480 | 15% |
+| 2026-01 | 430 | 14% |
+| 2026-02 | 410 | 14% |
+| 2026-03 | 470 | 14% |
+| 2026-04 | 480 | 14% |
+| 2026-05 | 480 | 14% |
+</details>
+
+Source: QuestMobile
+
+Exhibit 19: Temu global MAU down to 485mn in May 2026 (-5% mom)  
+![](images/8eb032a41e461ae443249ba49884090354992732668c9474377d9e517be4ea1d.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Month   | US  | North America ex. US | Europe (other) | ASEAN | South America | Europe (first 6 countries) | Oceania | North Asia | Middle East | Africa |
+|---------|-----|----------------------|----------------|-------|---------------|----------------------------|---------|------------|-------------|--------|
+| May-25  | 40  | 80                   | 70             | 30    | 60            | 100                        | 20      | 10         | 10          | 10     |
+| Jun-25  | 40  | 80                   | 70             | 30    | 60            | 100                        | 20      | 10         | 10          | 10     |
+| Jul-25  | 60  | 90                   | 80             | 30    | 60            | 100                        | 20      | 10         | 10          | 10     |
+| Aug-25  | 70  | 90                   | 80             | 30    | 60            | 100                        | 20      | 10         | 10          | 10     |
+| Sep-25  | 70  | 90                   | 80             | 30    | 60            | 100                        | 20      | 10         | 10          | 10     |
+| Oct-25  | 80  | 90                   | 80             | 30    | 60            | 100                        | 20      | 10         | 10          | 10     |
+| Nov-25  | 80  | 90                   | 80             | 30    | 60            | 100                        | 20      | 10         | 10          | 10     |
+| Dec-25  | 80  | 90                   | 80             | 30    | 60            | 100                        | 20      | 10         | 10          | 10     |
+| Jan-26  | 80  | 90                   | 80             | 30    | 60            | 100                        | 20      | 10         | 10          | 10     |
+| Feb-26  | 80  | 90                   | 80             | 30    | 60            | 100                        | 20      | 10         | 10          | 10     |
+| Mar-26  | 80  | 90                   | 80             | 30    | 60            | 100                        | 20      | 10         | 10          | 10     |
+| Apr-26  | 80  | 90                   | 80             | 30    | 60            | 100                        | 20      | 10         | 10          | 10     |
+| May-26  | 80  | 90                   | 80             | 30    | 60            | 100                        | 20      | 10         | 10          | 10     |
+</details>
+
+The first 6 European countries include France, Germany, Italy, the Netherlands, Spain, and the UK (launched in April 2023)  
+Source: SensorTower
+
+Exhibit 20: Temu engagement data vs. peers
+
+<table><tr><td colspan="13">Global Temu app MAU</td></tr><tr><td>mom% growth</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td><td></td></tr><tr><td>Temu</td><td>9%</td><td>5%</td><td>-7%</td><td>5%</td><td>0%</td><td>-1%</td><td>5%</td><td>-8%</td><td>2%</td><td>-2%</td><td>-5%</td><td></td></tr><tr><td>Amazon</td><td>2%</td><td>-2%</td><td>0%</td><td>3%</td><td>1%</td><td>0%</td><td>-1%</td><td>-3%</td><td>2%</td><td>-1%</td><td>1%</td><td></td></tr><tr><td>AliExpress</td><td>0%</td><td>4%</td><td>-6%</td><td>4%</td><td>11%</td><td>-7%</td><td>2%</td><td>-7%</td><td>5%</td><td>-6%</td><td>2%</td><td></td></tr><tr><td>Temu as % of others</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td><td></td></tr><tr><td>Amazon</td><td>79%</td><td>85%</td><td>79%</td><td>81%</td><td>80%</td><td>79%</td><td>84%</td><td>79%</td><td>79%</td><td>78%</td><td>73%</td><td></td></tr><tr><td>AliExpress</td><td>271%</td><td>274%</td><td>271%</td><td>275%</td><td>249%</td><td>264%</td><td>273%</td><td>270%</td><td>261%</td><td>272%</td><td>253%</td><td></td></tr><tr><td colspan="13">Temu website global daily visit</td></tr><tr><td>mom% growth</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td><td></td></tr><tr><td>Temu</td><td>18%</td><td>4%</td><td>-16%</td><td>-1%</td><td>-4%</td><td>-7%</td><td>17%</td><td>-15%</td><td>-5%</td><td>2%</td><td>-6%</td><td></td></tr><tr><td>Amazon</td><td>6%</td><td>-5%</td><td>-2%</td><td>5%</td><td>7%</td><td>4%</td><td>-12%</td><td>-7%</td><td>-1%</td><td>3%</td><td>2%</td><td></td></tr><tr><td>AliExpress</td><td>-1%</td><td>17%</td><td>-18%</td><td>-2%</td><td>38%</td><td>-20%</td><td>0%</td><td>-12%</td><td>1%</td><td>-4%</td><td>2%</td><td></td></tr><tr><td>Temu as % of others</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td><td></td></tr><tr><td>Amazon</td><td>60%</td><td>66%</td><td>57%</td><td>54%</td><td>48%</td><td>43%</td><td>56%</td><td>52%</td><td>49%</td><td>49%</td><td>45%</td><td></td></tr><tr><td>AliExpress</td><td>277%</td><td>247%</td><td>254%</td><td>256%</td><td>178%</td><td>207%</td><td>242%</td><td>234%</td><td>220%</td><td>233%</td><td>216%</td><td></td></tr></table>
+
+We note that consumers outside China would access and purchase products from eCommerce platforms through both websites and apps, unlike Chinese consumers who typically only purchase on eCommerce apps, thus we leverage SensorTower to track Temu/Amazon/AliExpress app engagement data, and use Similarweb to track their website monthly visits, as a proxy of their website traffic.  
+Source: SensorTower, Similarweb
+
+Exhibit 21: Temu app MAU by region
+
+<table><tr><td colspan="13">Temu app by region</td></tr><tr><td>mom % growth</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td><td></td></tr><tr><td>US</td><td>42%</td><td>18%</td><td>3%</td><td>10%</td><td>4%</td><td>-2%</td><td>5%</td><td>-8%</td><td>3%</td><td>4%</td><td>-4%</td><td></td></tr><tr><td>Europe (first 6 countries)</td><td>5%</td><td>8%</td><td>-3%</td><td>4%</td><td>-5%</td><td>-3%</td><td>8%</td><td>-8%</td><td>1%</td><td>-5%</td><td>-8%</td><td></td></tr><tr><td>North America ex. US</td><td>7%</td><td>1%</td><td>-9%</td><td>1%</td><td>-6%</td><td>-6%</td><td>13%</td><td>-6%</td><td>9%</td><td>-15%</td><td>-2%</td><td></td></tr><tr><td>Oceania</td><td>7%</td><td>3%</td><td>-6%</td><td>4%</td><td>1%</td><td>4%</td><td>-1%</td><td>-7%</td><td>1%</td><td>4%</td><td>-9%</td><td></td></tr><tr><td>Europe (others)</td><td>6%</td><td>6%</td><td>-11%</td><td>6%</td><td>0%</td><td>0%</td><td>4%</td><td>-11%</td><td>-1%</td><td>-6%</td><td>-3%</td><td></td></tr><tr><td>North Asia</td><td>-3%</td><td>6%</td><td>1%</td><td>-2%</td><td>1%</td><td>-18%</td><td>17%</td><td>-3%</td><td>1%</td><td>-1%</td><td>-1%</td><td></td></tr><tr><td>ASEAN</td><td>-8%</td><td>3%</td><td>-11%</td><td>1%</td><td>10%</td><td>13%</td><td>-2%</td><td>-7%</td><td>2%</td><td>4%</td><td>-30%</td><td></td></tr><tr><td>Middle East</td><td>9%</td><td>2%</td><td>-12%</td><td>2%</td><td>3%</td><td>1%</td><td>2%</td><td>-5%</td><td>-20%</td><td>13%</td><td>-4%</td><td></td></tr><tr><td>South America</td><td>18%</td><td>3%</td><td>-17%</td><td>3%</td><td>-1%</td><td>1%</td><td>4%</td><td>-8%</td><td>1%</td><td>1%</td><td>-2%</td><td></td></tr><tr><td>as % of total MAU</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td><td></td></tr><tr><td>US</td><td>11%</td><td>13%</td><td>14%</td><td>15%</td><td>15%</td><td>15%</td><td>15%</td><td>15%</td><td>15%</td><td>17%</td><td>17%</td><td></td></tr><tr><td>Europe (first 6 countries)</td><td>19%</td><td>20%</td><td>21%</td><td>21%</td><td>20%</td><td>20%</td><td>20%</td><td>20%</td><td>20%</td><td>19%</td><td>19%</td><td></td></tr><tr><td>North America ex. US</td><td>14%</td><td>13%</td><td>13%</td><td>12%</td><td>12%</td><td>11%</td><td>12%</td><td>12%</td><td>13%</td><td>11%</td><td>12%</td><td></td></tr><tr><td>Oceania</td><td>2%</td><td>2%</td><td>2%</td><td>2%</td><td>2%</td><td>2%</td><td>2%</td><td>2%</td><td>2%</td><td>2%</td><td>2%</td><td></td></tr><tr><td>Europe (others)</td><td>14%</td><td>14%</td><td>13%</td><td>14%</td><td>14%</td><td>14%</td><td>13%</td><td>13%</td><td>13%</td><td>12%</td><td>13%</td><td></td></tr><tr><td>North Asia</td><td>4%</td><td>4%</td><td>4%</td><td>4%</td><td>4%</td><td>3%</td><td>3%</td><td>4%</td><td>4%</td><td>4%</td><td>4%</td><td></td></tr><tr><td>ASEAN</td><td>5%</td><td>4%</td><td>4%</td><td>4%</td><td>5%</td><td>5%</td><td>5%</td><td>5%</td><td>5%</td><td>5%</td><td>4%</td><td></td></tr><tr><td>Middle East</td><td>5%</td><td>5%</td><td>4%</td><td>4%</td><td>4%</td><td>5%</td><td>4%</td><td>5%</td><td>4%</td><td>4%</td><td>4%</td><td></td></tr><tr><td>South America</td><td>15%</td><td>15%</td><td>14%</td><td>13%</td><td>13%</td><td>14%</td><td>13%</td><td>13%</td><td>13%</td><td>14%</td><td>14%</td><td></td></tr><tr><td>Africa</td><td>7%</td><td>6%</td><td>7%</td><td>7%</td><td>8%</td><td>8%</td><td>8%</td><td>8%</td><td>7%</td><td>8%</td><td>8%</td><td></td></tr><tr><td>South Asia</td><td>4%</td><td>3%</td><td>3%</td><td>3%</td><td>3%</td><td>3%</td><td>3%</td><td>3%</td><td>3%</td><td>3%</td><td>3%</td><td></td></tr><tr><td>Central Asia</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td></td></tr></table>
+
+Source: SensorTower
+
+## Express delivery
+
+Exhibit 22: Parcel volume/ASP trend for key express couriers in China
+
+<table><tr><td colspan="6">ZTO Express</td></tr><tr><td>Month</td><td>Daily vol. (mn)</td><td>Vol. share</td><td>Vol. yoy</td><td>Per parcel ASP (Rmb)</td><td>ASP yoy</td></tr><tr><td>Jan-25</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Feb-25</td><td>94.9</td><td>18.9%</td><td>19%</td><td>1.25</td><td>-8%</td></tr><tr><td>Jan-Feb 2025</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Mar-25</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Apr-25</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>May-25</td><td>108.2</td><td>19.2%</td><td>17%</td><td>1.18</td><td>-5%</td></tr><tr><td>Jun-25</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Jul-25</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Aug-25</td><td>104.1</td><td>19.4%</td><td>10%</td><td>1.22</td><td>2%</td></tr><tr><td>Sep-25</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Oct-25</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Nov-25</td><td>114.8</td><td>19.8%</td><td>9%</td><td>1.35</td><td>3%</td></tr><tr><td>Dec-25</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Jan-26</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Feb-26</td><td>107.4</td><td>20.3%</td><td>13%</td><td>1.36</td><td>8%</td></tr><tr><td>Jan-Feb 2026</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Mar-26</td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+<table><tr><td colspan="6">Yunda Express</td></tr><tr><td>Month</td><td>Daily vol. (mn)</td><td>Vol. share</td><td>Vol. yoy</td><td>Per parcel ASP (Rmb)</td><td>ASP yoy</td></tr><tr><td>Jan-25</td><td>64.9</td><td>13.5%</td><td>3%</td><td>2.02</td><td>-11%</td></tr><tr><td>Feb-25</td><td>64.6</td><td>13.3%</td><td>70%</td><td>1.95</td><td>-14%</td></tr><tr><td>Jan-Feb 2025</td><td>64.8</td><td>13.4%</td><td>27%</td><td>1.99</td><td>-13%</td></tr><tr><td>Mar-25</td><td>72.7</td><td>13.5%</td><td>17%</td><td>1.96</td><td>-6%</td></tr><tr><td>Apr-25</td><td>72.5</td><td>13.3%</td><td>13%</td><td>1.91</td><td>-7%</td></tr><tr><td>May-25</td><td>74.3</td><td>13.3%</td><td>13%</td><td>1.92</td><td>-5%</td></tr><tr><td>Jun-25</td><td>72.4</td><td>12.9%</td><td>7%</td><td>1.91</td><td>-4%</td></tr><tr><td>Jul-25</td><td>69.7</td><td>13.2%</td><td>8%</td><td>1.91</td><td>-4%</td></tr><tr><td>Aug-25</td><td>69.2</td><td>13.3%</td><td>9%</td><td>1.92</td><td>-3%</td></tr><tr><td>Sep-25</td><td>70.3</td><td>12.5%</td><td>4%</td><td>2.02</td><td>0%</td></tr><tr><td>Oct-25</td><td>68.9</td><td>12.1%</td><td>-5%</td><td>2.11</td><td>4%</td></tr><tr><td>Nov-25</td><td>72.5</td><td>12.0%</td><td>-4%</td><td>2.16</td><td>7%</td></tr><tr><td>Dec-25</td><td>69.3</td><td>11.8%</td><td>-7%</td><td>2.15</td><td>6%</td></tr><tr><td>Jan-26</td><td>72.0</td><td>12.1%</td><td>11%</td><td>2.15</td><td>6%</td></tr><tr><td>Feb-26</td><td>43.1</td><td>11.0%</td><td>-26%</td><td>2.25</td><td>15%</td></tr><tr><td>Jan-Feb 2026</td><td>60.5</td><td>11.7%</td><td>-7%</td><td>2.19</td><td>10%</td></tr><tr><td>Mar-26</td><td>69.1</td><td>12.4%</td><td>-5%</td><td>2.14</td><td>9%</td></tr><tr><td>Apr-26</td><td>69.5</td><td>12.4%</td><td>-4%</td><td>2.11</td><td>11%</td></tr></table>
+
+<table><tr><td colspan="6">YTO Express</td></tr><tr><td>Month</td><td>Daily vol. (mn)</td><td>Vol. share</td><td>Vol. yoy</td><td>Per parcel ASP (Rmb)</td><td>ASP yoy</td></tr><tr><td>Jan-25</td><td>73.2</td><td>15.2%</td><td>5%</td><td>2.35</td><td>-4%</td></tr><tr><td>Feb-25</td><td>65.9</td><td>13.6%</td><td>49%</td><td>2.32</td><td>-8%</td></tr><tr><td>Jan-Feb 2025</td><td>69.7</td><td>14.4%</td><td>21%</td><td>2.34</td><td>-6%</td></tr><tr><td>Mar-25</td><td>86.0</td><td>16.0%</td><td>22%</td><td>2.18</td><td>-7%</td></tr><tr><td>Apr-25</td><td>89.8</td><td>16.5%</td><td>25%</td><td>2.14</td><td>-7%</td></tr><tr><td>May-25</td><td>89.2</td><td>16.0%</td><td>21%</td><td>2.12</td><td>-5%</td></tr><tr><td>Jun-25</td><td>87.6</td><td>15.6%</td><td>19%</td><td>2.10</td><td>-7%</td></tr><tr><td>Jul-25</td><td>83.3</td><td>15.8%</td><td>21%</td><td>2.08</td><td>-7%</td></tr><tr><td>Aug-25</td><td>81.0</td><td>15.5%</td><td>11%</td><td>2.15</td><td>-1%</td></tr><tr><td>Sep-25</td><td>87.6</td><td>15.6%</td><td>14%</td><td>2.21</td><td>1%</td></tr><tr><td>Oct-25</td><td>90.0</td><td>15.9%</td><td>13%</td><td>2.23</td><td>-3%</td></tr><tr><td>Nov-25</td><td>96.2</td><td>16.0%</td><td>14%</td><td>2.24</td><td>-2%</td></tr><tr><td>Dec-25</td><td>93.0</td><td>15.8%</td><td>9%</td><td>2.25</td><td>-1%</td></tr><tr><td>Jan-26</td><td>94.9</td><td>16.0%</td><td>30%</td><td>2.25</td><td>-5%</td></tr><tr><td>Feb-26</td><td>59.9</td><td>15.3%</td><td>1%</td><td>2.40</td><td>3%</td></tr><tr><td>Jan-Feb 2026</td><td>81.4</td><td>15.7%</td><td>17%</td><td>2.31</td><td>-2%</td></tr><tr><td>Mar-26</td><td>91.7</td><td>16.5%</td><td>7%</td><td>2.14</td><td>-2%</td></tr><tr><td>Apr-26</td><td>90.9</td><td>16.2%</td><td>1%</td><td>2.23</td><td>4%</td></tr></table>
+
+<table><tr><td colspan="6">S.F.</td></tr><tr><td>Month</td><td>Daily vol. (mn)</td><td>Vol. share</td><td>Vol. yoy</td><td>Per parcel ASP (Rmb)</td><td>ASP yoy</td></tr><tr><td>Jan-25</td><td>42.9</td><td>8.9%</td><td>16%</td><td>15.61</td><td>-8%</td></tr><tr><td>Feb-25</td><td>32.7</td><td>6.7%</td><td>18%</td><td>14.35</td><td>-12%</td></tr><tr><td>Jan-Feb 2025</td><td>38.1</td><td>7.9%</td><td>17%</td><td>15.10</td><td>-10%</td></tr><tr><td>Mar-25</td><td>41.8</td><td>7.8%</td><td>25%</td><td>13.82</td><td>-12%</td></tr><tr><td>Apr-25</td><td>44.5</td><td>8.2%</td><td>30%</td><td>13.49</td><td>-14%</td></tr><tr><td>May-25</td><td>47.6</td><td>8.5%</td><td>32%</td><td>13.12</td><td>-14%</td></tr><tr><td>Jun-25</td><td>48.7</td><td>8.7%</td><td>32%</td><td>13.67</td><td>-13%</td></tr><tr><td>Jul-25</td><td>44.4</td><td>8.4%</td><td>34%</td><td>13.55</td><td>-14%</td></tr><tr><td>Aug-25</td><td>45.4</td><td>8.7%</td><td>35%</td><td>13.27</td><td>-15%</td></tr><tr><td>Sep-25</td><td>50.1</td><td>8.9%</td><td>32%</td><td>13.87</td><td>-13%</td></tr><tr><td>Oct-25</td><td>49.2</td><td>8.7%</td><td>26%</td><td>13.18</td><td>-10%</td></tr><tr><td>Nov-25</td><td>51.1</td><td>8.5%</td><td>20%</td><td>13.47</td><td>-9%</td></tr><tr><td>Dec-25</td><td>47.6</td><td>8.1%</td><td>9%</td><td>13.81</td><td>-5%</td></tr><tr><td>Jan-26</td><td>44.7</td><td>7.5%</td><td>4%</td><td>14.72</td><td>-6%</td></tr><tr><td>Feb-26</td><td>34.6</td><td>8.9%</td><td>17%</td><td>15.32</td><td>7%</td></tr><tr><td>Jan-Feb 2026</td><td>41.7</td><td>8.1%</td><td>9%</td><td>14.98</td><td>-1%</td></tr><tr><td>Mar-26</td><td>40.4</td><td>7.3%</td><td>-3%</td><td>14.40</td><td>4%</td></tr><tr><td>Apr-26</td><td>43.2</td><td>7.7%</td><td>-3%</td><td>14.20</td><td>5%</td></tr></table>
+
+<table><tr><td colspan="6">STO Express</td></tr><tr><td>Month</td><td>Daily vol. (mn)</td><td>Vol. share</td><td>Vol. yoy</td><td>Per parcel ASP (Rmb)</td><td>ASP yoy</td></tr><tr><td>Jan-25</td><td>65.3</td><td>13.6%</td><td>12%</td><td>2.06</td><td>-6%</td></tr><tr><td>Feb-25</td><td>60.7</td><td>12.5%</td><td>63%</td><td>2.04</td><td>-9%</td></tr><tr><td>Jan-Feb 2025</td><td>63.1</td><td>13.1%</td><td>31%</td><td>2.05</td><td>-7%</td></tr><tr><td>Mar-25</td><td>67.3</td><td>12.5%</td><td>20%</td><td>2.01</td><td>-4%</td></tr><tr><td>Apr-25</td><td>69.7</td><td>12.8%</td><td>21%</td><td>1.97</td><td>-4%</td></tr><tr><td>May-25</td><td>73.0</td><td>13.1%</td><td>16%</td><td>1.95</td><td>-3%</td></tr><tr><td>Jun-25</td><td>72.8</td><td>12.9%</td><td>11%</td><td>1.99</td><td>-1%</td></tr><tr><td>Jul-25</td><td>70.4</td><td>13.3%</td><td>12%</td><td>1.97</td><td>-2%</td></tr><tr><td>Aug-25</td><td>69.3</td><td>13.3%</td><td>11%</td><td>2.07</td><td>3%</td></tr><tr><td>Sep-25</td><td>72.9</td><td>13.0%</td><td>9%</td><td>2.12</td><td>5%</td></tr><tr><td>Oct-25</td><td>73.3</td><td>12.9%</td><td>4%</td><td>2.18</td><td>8%</td></tr><tr><td>Nov-25</td><td>83.4</td><td>13.9%</td><td>15%</td><td>2.41</td><td>16%</td></tr><tr><td>Dec-25</td><td>80.7</td><td>13.7%</td><td>11%</td><td>2.33</td><td>15%</td></tr><tr><td>Jan-26</td><td>81.9</td><td>13.8%</td><td>26%</td><td>2.35</td><td>14%</td></tr><tr><td>Feb-26</td><td>51.6</td><td>13.2%</td><td>-6%</td><td>2.44</td><td>20%</td></tr><tr><td>Jan-Feb 2026</td><td>70.2</td><td>13.6%</td><td>11%</td><td>2.39</td><td>16%</td></tr><tr><td>Mar-26</td><td>80.7</td><td>14.5%</td><td>20%</td><td>2.24</td><td>11%</td></tr><tr><td>Apr-26</td><td>79.3</td><td>14.1%</td><td>14%</td><td>2.26</td><td>15%</td></tr></table>
+
+<table><tr><td colspan="6">J&amp;T</td></tr><tr><td>Month</td><td>Daily vol. (mn)</td><td>Vol. share</td><td>Vol. yoy</td><td>Per parcel ASP (Rmb)</td><td>ASP yoy</td></tr><tr><td>Jan-25</td><td rowspan="3">55.4</td><td rowspan="3">11.0%</td><td rowspan="3">28%</td><td rowspan="7">2.13</td><td rowspan="7">-13%</td></tr><tr><td>Feb-25</td></tr><tr><td>Jan-Feb 2025</td></tr><tr><td>Mar-25</td><td rowspan="4">61.7</td><td rowspan="4">11.1%</td><td rowspan="4">15%</td></tr><tr><td>Apr-25</td></tr><tr><td>May-25</td></tr><tr><td>Jun-25</td></tr><tr><td>Jul-25</td><td rowspan="3">60.6</td><td rowspan="3">11.3%</td><td rowspan="3">10%</td><td rowspan="6">2.20</td><td rowspan="6">-1%</td></tr><tr><td>Aug-25</td></tr><tr><td>Sep-25</td></tr><tr><td>Oct-25</td><td rowspan="3">64.0</td><td rowspan="3">10.9%</td><td rowspan="3">0%</td></tr><tr><td>Nov-25</td></tr><tr><td>Dec-25</td></tr><tr><td>Jan-26</td><td rowspan="3">60.0</td><td rowspan="3">11.3%</td><td rowspan="3">8%</td><td rowspan="3"></td><td rowspan="3"></td></tr><tr><td>Feb-26</td></tr><tr><td>Mar-26</td></tr></table>
+
+Source: Company data
+
+## Price Target Risks and Methodology - Alibaba Group
+
+Valuation methodology: We are Buy rated on BABA/9988.HK, with SOTP-based
+
+12-month target prices of US\$186/HK\$180 per ADS/share (FY27E-based).
+
+Key risks: (1) Lower-than-expected GMV growth due to macro/competition; (2) Slower-than-expected monetization in China retail; (3) Weaker-than-expected execution in key strategic investments; and (4) Cloud revenue growth deceleration.
+
+## Price Target Risks and Methodology - JD.com Inc.
+
+Valuation: We are Buy-rated on JD.com with 12-m SOTP-based target prices of US\$43/HK\$169.
+
+Key risks: Tougher than expected competition in China's eCommerce/food delivery markets; Online GMV slowdown and electronics & appliance facing tougher comps starting Sept-2025, general merchandise/JD supermarket execution: there would be downside risks to our forecasts if JD cannot deliver the expected growth; Fluctuations in JD Retail margin, as JD continues to invest into price competitiveness/user experience/3P ecosystem.
+
+## Price Target Risks and Methodology - PDD Holdings
+
+Valuation methodology: Our 12-m SOTP-based TP is US\$145, based on a 10X 2026E P/E for the domestic main platform and 25X P/E on Temu (ex. US full-entrusted), respectively less a 15% holdco discount.
+
+Key downside risks: 1) lower-than-expected online marketing revenues on increased eCommerce ROI/sales-based ad inventory and narrower GMV growth gap at Alibaba vs. industry, 2) wider-than-expected geopolitical headwinds into Europe and other developed markets with high spending power, 3) higher-than-expected competition if Alibaba's new low-price adtech initiatives gain traction/faster-than-expected Douyin shelf-based expansion in low ticket size items at lower take rates (Douyin has been offering commission free initiatives) vs. eCommerce platforms, 4) reinvestments to sustain growth that may pose downside risks to core profit margins, and 5) lack of segmental disclosures of business performance, which could lead to difficulty in analyzing/estimating domestic and int'l (Temu) performance and profitability.
+
+## Price Target Risks and Methodology - Meituan
+
+We are Buy rated on Meituan with a 12-month 2026E SOTP-based TP of HK\$116.
+
+Key downside risks: Worse-than-expected competition that may impact growth or pace of profit turnaround; labor cost inflation/efficiencies; food safety concerns/stricter regulations; larger-than-expected investment in Keeta.
+
+## Disclosure Appendix
+
+## Reg AC
+
+We, Ronald Keung, CFA, Lincoln Kong, CFA, Steve Qiu and Damian Xie, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Ronald Keung, CFA GS (Asia) L.L.C., Lincoln Kong, CFA GS (Asia) L.L.C., Steve Qiu GS (Asia) L.L.C., Damian Xie GS (Asia) L.L.C..
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+## GS Factor Profile
+
+The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:
+
+Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).
+
+Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).
+
+For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.
+
+## M&A Rank
+
+Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.
+
+## Quantum
+
+Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.
+
+## Disclosures
+
+## Pricing information
+
+Alibaba Group (ADR) (Buy, \$112.55), Alibaba Group (H) (Buy, HK\$109.30), GDS Holdings (ADR) (Buy, \$33.49), GDS Holdings (H) (Buy, HK\$31.76), J&T Global Express Ltd. (Neutral, HK\$9.10), JD Logistics (Buy, HK\$13.11), JD.com Inc. (ADR) (Buy, \$28.68), JD.com Inc. (H) (Buy, HK\$112.50), Kerry Logistics Network Ltd. (Neutral, HK\$6.08), Kingsoft Cloud (Buy, \$11.34), Meituan (Buy, HK\$78.25), NetEase Inc. (ADR) (Buy, \$125.93), PDD Holdings (Buy, \$83.55), S.F. Holding (H) (Buy, HK\$30.94), STO Express (Neutral, Rmb13.98), Sinotrans Ltd. (A) (Sell, Rmb5.76), Sinotrans Ltd. (H) (Sell, HK\$4.43), Tencent Holdings (Buy, HK\$459.60), VNET Group (Buy, \$9.34), YTO Express Group (Sell, Rmb17.11), Yunda Holding (Neutral, Rmb6.71), ZTO Express (Cayman) Inc. (ADR) (Buy, \$22.88) and ZTO Express (Cayman) Inc. (H) (Buy, HK\$178.90)
+
+## Other disclosures
+
+Third party brands used in this report are the property of their respective owners, and are used here for informational purposes only. The use of such brands should not be viewed as an endorsement, affiliation or sponsorship by or for GS or any of its products/services.
+
+## Financial Advisory disclosure
+
+GS and/or one of its affiliates is acting as a financial advisor in connection with an announced strategic matter involving the following company or one of its affiliates: Jd.com, Inc.
+
+The rating(s) for Alibaba Group (ADR), Alibaba Group (H), JD.com Inc. (ADR), JD.com Inc. (H), Meituan and PDD Holdings is/are relative to the other companies in its/their coverage universe: Alibaba Group (ADR), Alibaba Group (H), DiDi Global Inc., Full Truck Alliance Co., J&T Global Express Ltd., JD Logistics, JD.com Inc. (ADR), JD.com Inc. (H), Jingdong Industrials Inc., Kerry Logistics Network Ltd., Meituan, MiniMax Group, PDD Holdings, S.F. Holding (A), S.F. Holding (H), STO Express, Sinotrans Ltd. (A), Sinotrans Ltd. (H), Tencent Holdings, Vipshop Holdings, YTO Express Group, Yunda Holding, ZTO Express (Cayman) Inc. (ADR), ZTO Express (Cayman) Inc. (H)
+
+## Company-specific regulatory disclosures
+
+The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.
+
+GS beneficially owned 1% or more of common equity (excluding positions managed by affiliates and business units not required to be aggregated under US securities law) as of the month end preceding this report: JD.com Inc. (ADR) $28.68$ and JD.com Inc. (H) $112.50$
+
+GS has received compensation for investment banking services in the past 12 months: Alibaba Group (ADR) (\$112.55), Alibaba Group (H)
+
+(HK\$109.30), JD.com Inc. (ADR) (\$28.68), JD.com Inc. (H) (HK\$112.50), Meituan (HK\$78.25) and PDD Holdings (\$83.55)
+
+GS expects to receive or intends to seek compensation for investment banking services in the next 3 months: Alibaba Group (ADR) (\$112.55), Alibaba Group (H) (HK\$109.30), JD.com Inc. (ADR) (\$28.68), JD.com Inc. (H) (HK\$112.50), Meituan (HK\$78.25) and PDD Holdings (\$83.55)
+
+GS has received compensation for non-investment banking services during the past 12 months: Alibaba Group (ADR) (\$112.55) and Alibaba Group (H) (HK\$109.30)
+
+GS had an investment banking services client relationship during the past 12 months with: Alibaba Group (ADR) (\$112.55), Alibaba Group (H) (HK\$109.30), JD.com Inc. (ADR) (\$28.68), JD.com Inc. (H) (HK\$112.50), Meituan (HK\$78.25) and PDD Holdings (\$83.55)
+
+GS had a non-investment banking securities-related services client relationship during the past 12 months with: Alibaba Group (ADR) (\$112.55), Alibaba Group (H) (HK\$109.30), JD.com Inc. (ADR) (\$28.68), JD.com Inc. (H) (HK\$112.50) and Meituan (HK\$78.25)
+
+GS had a non-securities services client relationship during the past 12 months with: Alibaba Group (ADR) (\$112.55), Alibaba Group (H) (HK\$109.30), JD.com Inc. (ADR) (\$28.68), JD.com Inc. (H) (HK\$112.50) and Meituan (HK\$78.25)
+
+GS makes a market in the securities or derivatives thereof: Alibaba Group (ADR) (\$112.55), Alibaba Group (H) (HK\$109.30), JD.com Inc. (ADR) (\$28.68), JD.com Inc. (H) (HK\$112.50), Meituan (HK\$78.25) and PDD Holdings (\$83.55)
+
+## Distribution of ratings/investment banking relationships
+
+GS Investment Research global Equity coverage universe
+
+<table><tr><td></td><td colspan="3">Rating Distribution</td></tr><tr><td></td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td></tr></table>
+
+<table><tr><td colspan="3">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>65%</td><td>60%</td><td>45%</td></tr></table>
+
+As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.
+
+Price target and rating history chart(s)  
+![](images/cbe83fc64e949323aaa53ab0300373b16371c2c6fede53b2b43b297eb02baab0.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date | Stock Price | Index Price | Rating |
+| --- | --- | --- | --- |
+| Apr 24 | 93 | 10,000 | N |
+| Aug 30 | 97 | 12,000 | B |
+| May 24 | 195 | 18,000 | B |
+| May 24 | 143 | 16,000 | B |
+| May 24 | 145 | 17,000 | B |
+| May 24 | 165 | 18,000 | B |
+| May 24 | 169 | 16,000 | B |
+| May 24 | 172 | 18,000 | B |
+| May 24 | 157 | 18,000 | B |
+| May 24 | 152 | 16,000 | B |
+| May 24 | 131 | 14,000 | B |
+| May 24 | 148 | 16,000 | B |
+| May 24 | 157 | 18,000 | B |
+| May 24 | 158 | 18,000 | B |
+| May 24 | 147 | 14,000 | B |
+| May 24 | 166 | 16,000 | B |
+| May 24 | 169 | 16,000 | B |
+| May 24 | 172 | 18,000 | B |
+| May 24 | 166 | 16,000 | B |
+| May 24 | 157 | 18,000 | B |
+| May 24 | 152 | 18,000 | B |
+| May 24 | 131 | 16,000 | B |
+| May 24 | 148 | 18,000 | B |
+| May 24 | 157 | 18,000 | B |
+| May 24 | 158 | 18,000 | B |
+| May 24 | 147 | 16,000 | B |
+| May 24 | 166 | 16,000 | B |
+| May 24 | 157 | 18,000 | B |
+| May 24 | 152 | 18,000 | B |
+| May 24 | 131 | 14,000 | B |
+| May 24 | 148 | 16,000 | B |
+| May 24 | 157 | 18,000 | B |
+| May 24 | 158 | 16,000 | B |
+| May 24 | 147 | 14,000 | B |
+| May 24 | 166 | 16,000 | B |
+| May 24 | 157 | 18,000 | B |
+| May 24 | 152 | 18,000 | B |
+| May 24 | 131 | 18,000 | B |
+| May 24 | 148 | 18,000 | B |
+| May 24 | 157 | 18,000 | B |
+| May 24 | 158 | 18,000 | B |
+| May 24 | 147 | 14,000 | B |
+| May 24 | 166 | 14,000 | B |
+| May 24 | 157 | 18,000 | B |
+| May 24 | 152 | 18,000 | B |
+| May 24 | 131 | 16,000 | B |
+| May 24 | 148 | 16,000 | B |
+| May 24 | 157 | 18,000 | B |
+| May 24 | 158 | 18,000 | B |
+| May 24 | 147 | 16,000 | B |
+| May 24 | 166 | 14,000 | B |
+| May 24 | 157 | 18,000 | B |
+| May 24 | 152 | 18,000 | B |
+| May 24 | 131 | 18,000 | B |
+| May 24 | 148 | 16,000 | B |
+| May 24 | 157 | 18,000 | B |
+| May 24 | 158 | 18,000 | B |
+| May 24 | 147 | 18,000 | B |
+| May 24 | 166 | 16,000 | B |
+| May 24 | nan | nan | N/A |
+</details>
+
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+![](images/f328dd6649b70c61b864da5ecf7302e31e952245ab9b0b31a1d3dd38ab1829fa.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date | Rating | Price Target | Price Target at Removal | Not Covered by Current Analyst | Hang Seng Index |
+| --- | --- | --- | --- | --- | --- |
+| M 2023 |  | 207 |  |  |  |
+| J 2023 |  | 205 |  |  |  |
+| A 2023 |  |  |  |  |  |
+| S 2023 |  |  |  |  |  |
+| O 2023 |  | 176 |  |  |  |
+| N 2023 |  |  |  |  |  |
+| D 2023 |  | 151 |  |  |  |
+| J 2024 |  | 139 |  |  |  |
+| F 2024 |  | 148 |  |  |  |
+| M 2024 |  | 194 |  |  |  |
+| A 2024 |  | 157 |  |  |  |
+| J 2024 |  | 212 |  |  |  |
+| A 2024 |  | 200 |  |  |  |
+| S 2024 |  |  |  |  |  |
+| O 2024 |  |  |  |  |  |
+| N 2024 |  |  |  |  |  |
+| D 2024 |  |  |  |  |  |
+| J 2025 |  |  |  |  |  |
+| F 2025 |  |  |  |  |  |
+| M 2025 |  |  |  |  |  |
+| A 2025 |  |  |  |  |  |
+| J 2025 |  |  |  |  |  |
+| A 2025 |  |  |  |  |  |
+| S 2025 |  |  |  |  |  |
+| O 2025 |  |  |  |  |  |
+| N 2025 |  |  |  |  |  |
+| D 2025 |  |  |  |  |  |
+| J 2026 |  |  |  |  |  |
+| F 2026 |  |  |  |  |  |
+| M 2026 |  |  |  |  |  |
+| B |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+</details>
+
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+![](images/14d9b4110f90627c97f62773c1ce66d88d42696ea712a4308ca08981ccbd970e.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date | Rating | Price target | Not covered by current analyst | S&P 500 |
+| --- | --- | --- | --- | --- |
+| 2023 M |  |  |  |  |
+| 2023 J |  | 135 |  |  |
+| 2023 J |  | 132 |  |  |
+| 2023 A |  | 133 |  |  |
+| 2023 S |  | 138 |  |  |
+| 2023 O |  | 134 |  |  |
+| 2023 N |  |  |  |  |
+| 2023 D |  | 105 |  |  |
+| 2024 J |  | 102 |  |  |
+| 2024 F |  | 106 |  |  |
+| 2024 M |  | 107 |  |  |
+| 2024 A |  | 108 |  |  |
+| 2024 J |  | 134 |  |  |
+| 2024 J |  | 117 |  |  |
+| 2024 A |  | 159 |  |  |
+| 2024 S |  | 160 |  |  |
+| 2024 O |  | 150 |  |  |
+| 2024 N |  | 147 |  |  |
+| 2024 D |  | 163 |  |  |
+| 2025 J |  |  |  |  |
+| 2025 A |  |  |  |  |
+| 2025 M |  |  |  |  |
+| 2025 J |  |  |  |  |
+| 2025 J |  |  |  |  |
+| 2025 A |  |  |  |  |
+| 2025 S |  |  |  |  |
+| 2025 O |  |  |  |  |
+| 2025 N |  |  |  |  |
+| 2025 D |  |  |  |  |
+| 2025 J |  |  |  |  |
+| 2025 F |  |  |  |  |
+| 2025 M |  |  |  |  |
+| 2026 J |  |  |  |  |
+| 2026 M |  |  |  |  |
+| 2026 F |  |  |  |  |
+| 2026 M |  |  |  |  |
+| 2026 A |  |  |  |  |
+| 2026 S |  |  |  |  |
+| 2026 O |  |  |  |  |
+| 2026 N |  |  |  |  |
+| 2026 D |  |  |  |  |
+| 2026 J |  |  |  |  |
+| 2026 F |  |  |  |  |
+| 2026 M |  |  |  |  |
+| 2026 A |  |  |  |  |
+| 2026 S |  |  |  |  |
+| 2026 O |  |  |  |  |
+</details>
+
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+![](images/169cbb81509ca118bb3ec536058872c7db468ed748055ec4094dad79e780cd06.jpg)  
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+![](images/c8146057c0405b35d24673b9bad4b217cbedf8e9d31f21009579c015694dc1d0.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date | Stock Price | Index Price | Rating | Price Target | Price Target at Removal | Not Covered by Current Analyst | NASDAQ Composite |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Feb 19 | 72 | 30 | B |  |  |  |  |
+| Jun 20 | 63 | 35 | B |  |  |  |  |
+| Sep 20 | 61 | 40 | B |  |  |  |  |
+| Dec 20 | 53 | 45 | B |  |  |  |  |
+| Mar 21 | 49 | 50 | B |  |  |  |  |
+| Jun 21 | 37 | 55 | B |  |  |  |  |
+| Sep 21 | 41 | 60 | B |  |  |  |  |
+| Dec 21 | 38 | 65 | B |  |  |  |  |
+| Mar 22 | 40 | 70 | B |  |  |  |  |
+| Jun 22 | 45 | 75 | B |  |  |  |  |
+| Sep 22 | 46 | 80 | B |  |  |  |  |
+| Dec 22 | 50 | 85 | B |  |  |  |  |
+| Mar 23 | 52 | 90 | B |  |  |  |  |
+| Jun 23 | 50 | 95 | B |  |  |  |  |
+| Sep 23 | 48 | 100 | B |  |  |  |  |
+| Dec 23 | 45 | 105 | B |  |  |  |  |
+| Mar 24 | 43 | 110 | B |  |  |  |  |
+| Jun 24 |  |  |  |  |  |  |  |
+| Sep 24 |  |  |  |  |  |  |  |
+| Dec 24 |  |  |  |  |  |  |  |
+| Mar 25 |  |  |  |  |  |  |  |
+| Jun 25 |  |  |  |  |  |  |  |
+| Sep 25 |  |  |  |  |  |  |  |
+| Dec 25 |  |  |  |  |  |  |  |
+| Mar 26 |  |  |  |  |  |  |  |
+| Jun 26 |  |  |  |  |  |  |  |
+| Sep 26 |  |  |  |  |  |  |  |
+| Dec 26 |  |  |  |  |  |  |  |
+| Mar 27 |  |  |  |  |  |  |  |
+| Jun 27 |  |  |  |  |  |  |  |
+| Sep 27 |  |  |  |  |  |  |  |
+| Dec 27 |  |  |  |  |  |  |  |
+| Mar 28 |  |  |  |  |  |  |  |
+| Jun 28 |  |  |  |  |  |  |  |
+| Sep 28 |  |  |  |  |  |  |  |
+| Dec 28 |  |  |  |  |  |  |  |
+| Mar 29 |  |  |  |  |  |  |  |
+| Jun 29 |  |  |  |  |  |  |  |
+| Sep 29 |  |  |  |  |  |  |  |
+| Dec 29 |  |  |  |  |  |  |  |
+| Mar 30 |  |  |  |  |  |  |  |
+| Jun 30 |  |  |  |  |  |  |  |
+| Sep 30 |  |  |  |  |  |  |  |
+| Dec 30 |  |  |  |  |  |  |  |
+</details>
+
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+![](images/f39fd66b40c2394fd4823c1ab06b51d3f4176df310d88ef8ad109747be9b4d9b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date | Stock Price | Rating | Price Target | Price Target at Removal | Hang Seng Index | Not Covered by Current Analyst |
+| --- | --- | --- | --- | --- | --- | --- |
+| Feb 19 | 281 |  |  |  |  |  |
+| Apr 25 | 193 |  |  |  |  |  |
+| May 2024 | 161 |  |  |  |  |  |
+| Jun 2024 | 149 |  |  |  |  |  |
+| Jul 2024 | 157 |  |  |  |  |  |
+| Aug 2024 | 178 |  |  |  |  |  |
+| Sep 2024 | 181 |  |  |  |  |  |
+| Oct 2024 | 196 |  |  |  |  |  |
+| Nov 2024 | 204 |  |  |  |  |  |
+| Dec 2024 | 194 |  |  |  |  |  |
+| Jan 2025 | 187 |  |  |  |  |  |
+| Feb 2025 | 174 |  |  |  |  |  |
+| Mar 2025 | 169 |  |  |  |  |  |
+| Apr 2025 |  |  |  |  |  |  |
+| May 2025 |  |  |  |  |  |  |
+| Jun 2025 |  |  |  |  |  |  |
+| Jul 2025 |  |  |  |  |  |  |
+| Aug 2025 |  |  |  |  |  |  |
+| Sep 2025 |  |  |  |  |  |  |
+| Oct 2025 |  |  |  |  |  |  |
+| Nov 2025 |  |  |  |  |  |  |
+| Dec 2025 |  |  |  |  |  |  |
+| Jan 2026 |  |  |  |  |  |  |
+| Feb 2026 |  |  |  |  |  |  |
+| Mar 2026 |  |  |  |  |  |  |
+</details>
+
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+Target price history table(s)
+Alibaba Group (ADR) (BABA)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>27-Feb-26</td><td>186.00</td><td>144.11</td></tr><tr><td>25-Nov-25</td><td>197.00</td><td>157.01</td></tr><tr><td>12-Oct-25</td><td>205.00</td><td>159.01</td></tr><tr><td>16-Sep-25</td><td>179.00</td><td>162.21</td></tr><tr><td>31-Aug-25</td><td>163.00</td><td>135.00</td></tr><tr><td>15-Jul-25</td><td>147.00</td><td>116.97</td></tr><tr><td>02-Jul-25</td><td>150.00</td><td>110.71</td></tr><tr><td>21-Apr-25</td><td>159.00</td><td>110.15</td></tr><tr><td>20-Feb-25</td><td>160.00</td><td>135.97</td></tr><tr><td>20-Jan-25</td><td>117.00</td><td>85.12</td></tr><tr><td>29-Sep-24</td><td>134.00</td><td>107.33</td></tr><tr><td>15-Aug-24</td><td>108.00</td><td>79.54</td></tr><tr><td>16-Jul-24</td><td>107.00</td><td>78.38</td></tr><tr><td>15-May-24</td><td>106.00</td><td>80.99</td></tr><tr><td>11-Apr-24</td><td>102.00</td><td>74.85</td></tr><tr><td>07-Feb-24</td><td>105.00</td><td>73.64</td></tr><tr><td>15-Jan-24</td><td>121.00</td><td>71.84</td></tr><tr><td>09-Oct-23</td><td>134.00</td><td>84.85</td></tr><tr><td>10-Aug-23</td><td>138.00</td><td>99.21</td></tr><tr><td>16-Jul-23</td><td>133.00</td><td>94.56</td></tr><tr><td>20-Jun-23</td><td>132.00</td><td>87.93</td></tr></table>
+
+Meituan (3690.HK)
+
+<table><tr><td>Date of report</td><td>Target price (HK$)</td><td>Closing price (HK$)</td></tr><tr><td>01-Jun-26</td><td>116.00</td><td>78.25</td></tr><tr><td>12-Mar-26</td><td>112.00</td><td>76.70</td></tr><tr><td>30-Nov-25</td><td>120.00</td><td>102.50</td></tr><tr><td>09-Nov-25</td><td>139.00</td><td>102.00</td></tr><tr><td>27-Aug-25</td><td>144.00</td><td>116.30</td></tr><tr><td>02-Jul-25</td><td>159.00</td><td>126.00</td></tr><tr><td>26-May-25</td><td>172.00</td><td>129.40</td></tr><tr><td>01-Dec-24</td><td>200.00</td><td>168.70</td></tr><tr><td>07-Nov-24</td><td>212.00</td><td>199.90</td></tr><tr><td>29-Sep-24</td><td>194.00</td><td>164.60</td></tr><tr><td>28-Aug-24</td><td>157.00</td><td>102.80</td></tr><tr><td>06-Jun-24</td><td>148.00</td><td>112.70</td></tr><tr><td>24-Mar-24</td><td>139.00</td><td>88.25</td></tr><tr><td>11-Jan-24</td><td>151.00</td><td>75.60</td></tr><tr><td>28-Nov-23</td><td>176.00</td><td>103.00</td></tr><tr><td>16-Aug-23</td><td>205.00</td><td>132.40</td></tr></table>
+
+JD.com Inc. (ADR) (JD)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>16-Nov-25</td><td>43.00</td><td>29.31</td></tr><tr><td>14-Aug-25</td><td>45.00</td><td>31.58</td></tr><tr><td>29-May-25</td><td>48.00</td><td>32.94</td></tr><tr><td>29-Apr-25</td><td>50.00</td><td>32.88</td></tr><tr><td>06-Mar-25</td><td>52.00</td><td>43.92</td></tr><tr><td>20-Jan-25</td><td>50.00</td><td>39.00</td></tr><tr><td>14-Nov-24</td><td>46.00</td><td>33.35</td></tr><tr><td>29-Sep-24</td><td>45.00</td><td>39.90</td></tr><tr><td>18-Aug-24</td><td>40.00</td><td>29.29</td></tr><tr><td>16-Jul-24</td><td>38.00</td><td>27.20</td></tr><tr><td>19-May-24</td><td>41.00</td><td>35.27</td></tr><tr><td>25-Apr-24</td><td>37.00</td><td>28.59</td></tr><tr><td>15-Jan-24</td><td>49.00</td><td>24.70</td></tr><tr><td>24-Oct-23</td><td>53.00</td><td>25.25</td></tr><tr><td>16-Aug-23</td><td>61.00</td><td>34.88</td></tr><tr><td>20-Jun-23</td><td>63.00</td><td>37.17</td></tr></table>
+
+JD.com Inc. (H) (9618.HK)
+
+<table><tr><td>Date of report</td><td>Target price (HK$)</td><td>Closing price (HK$)</td></tr><tr><td>16-Nov-25</td><td>169.00</td><td>116.90</td></tr><tr><td>14-Aug-25</td><td>174.00</td><td>125.10</td></tr><tr><td>29-May-25</td><td>187.00</td><td>131.80</td></tr><tr><td>29-Apr-25</td><td>194.00</td><td>128.90</td></tr><tr><td>06-Mar-25</td><td>204.00</td><td>179.00</td></tr><tr><td>20-Jan-25</td><td>196.00</td><td>157.40</td></tr><tr><td>14-Nov-24</td><td>181.00</td><td>135.10</td></tr><tr><td>29-Sep-24</td><td>178.00</td><td>152.00</td></tr><tr><td>18-Aug-24</td><td>157.00</td><td>108.20</td></tr><tr><td>16-Jul-24</td><td>149.00</td><td>104.50</td></tr><tr><td>19-May-24</td><td>161.00</td><td>134.10</td></tr><tr><td>25-Apr-24</td><td>145.00</td><td>111.30</td></tr><tr><td>15-Jan-24</td><td>193.00</td><td>96.65</td></tr><tr><td>24-Oct-23</td><td>205.00</td><td>93.90</td></tr><tr><td>16-Aug-23</td><td>239.00</td><td>140.60</td></tr><tr><td>20-Jun-23</td><td>247.00</td><td>149.70</td></tr></table>
+
+PDD Holdings (PDD)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td><td>Date of report</td><td>Target price (HK$)</td><td>Closing price (HK$)</td></tr><tr><td>27-May-26</td><td>145.00</td><td>86.61</td><td>27-Feb-26</td><td>180.00</td><td>142.90</td></tr><tr><td>18-Jan-26</td><td>158.00</td><td>106.76</td><td>25-Nov-25</td><td>192.00</td><td>157.80</td></tr><tr><td>18-Nov-25</td><td>147.00</td><td>119.58</td><td>12-Oct-25</td><td>199.00</td><td>165.40</td></tr><tr><td>09-Nov-25</td><td>157.00</td><td>135.78</td><td>16-Sep-25</td><td>174.00</td><td>153.50</td></tr><tr><td>25-Aug-25</td><td>148.00</td><td>128.21</td><td>31-Aug-25</td><td>158.00</td><td>115.70</td></tr><tr><td>27-May-25</td><td>131.00</td><td>102.98</td><td>15-Jul-25</td><td>142.00</td><td>113.50</td></tr><tr><td>06-Apr-25</td><td>152.00</td><td>104.21</td><td>02-Jul-25</td><td>146.00</td><td>109.40</td></tr><tr><td>20-Jan-25</td><td>157.00</td><td>105.57</td><td>21-Apr-25</td><td>154.00</td><td>108.70</td></tr><tr><td>21-Nov-24</td><td>166.00</td><td>104.09</td><td>20-Feb-25</td><td>156.00</td><td>120.90</td></tr><tr><td>07-Nov-24</td><td>172.00</td><td>125.87</td><td>20-Jan-25</td><td>114.00</td><td>84.55</td></tr><tr><td>29-Sep-24</td><td>169.00</td><td>135.38</td><td>29-Sep-24</td><td>131.00</td><td>102.50</td></tr><tr><td>26-Aug-24</td><td>165.00</td><td>100.00</td><td>15-Aug-24</td><td>105.00</td><td>76.40</td></tr><tr><td>24-May-24</td><td>184.00</td><td>157.57</td><td>16-Jul-24</td><td>104.00</td><td>75.50</td></tr><tr><td>16-May-24</td><td>145.00</td><td>143.38</td><td>15-May-24</td><td>103.00</td><td>82.65</td></tr><tr><td>20-Mar-24</td><td>143.00</td><td>132.17</td><td>11-Apr-24</td><td>99.00</td><td>74.20</td></tr><tr><td>11-Mar-24</td><td>136.00</td><td>111.89</td><td>07-Feb-24</td><td>102.00</td><td>74.90</td></tr><tr><td>18-Feb-24</td><td>196.00</td><td>135.26</td><td>15-Jan-24</td><td>118.00</td><td>70.00</td></tr><tr><td>15-Jan-24</td><td>195.00</td><td>148.63</td><td>09-Oct-23</td><td>131.00</td><td>82.10</td></tr><tr><td>28-Nov-23</td><td>176.00</td><td>139.00</td><td>10-Aug-23</td><td>134.00</td><td>94.30</td></tr><tr><td>06-Nov-23</td><td>155.00</td><td>107.13</td><td>16-Jul-23</td><td>130.00</td><td>92.95</td></tr><tr><td>18-Oct-23</td><td>137.00</td><td>105.33</td><td>20-Jun-23</td><td>128.00</td><td>88.35</td></tr><tr><td>30-Aug-23</td><td>129.00</td><td>98.14</td><td></td><td></td><td></td></tr><tr><td>08-Aug-23</td><td>99.00</td><td>83.72</td><td></td><td></td><td></td></tr><tr><td>17-Jul-23</td><td>98.00</td><td>79.10</td><td></td><td></td><td></td></tr></table>
+
+Alibaba Group (H) (9988.HK)  
+Price targets shown in table(s) are unadjusted for corporate actions.
+
+## Regulatory disclosures
+
+## Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website at https://www.gs.com/research/hedge.html.
+
+## Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information
+
+on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+## Ratings, coverage universe and related definitions
+
+Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.
+
+Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.
+
+Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.
+
+Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.
+
+## Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+## General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.
