@@ -1,0 +1,20 @@
+EN_A: Google just released a new liquid cooling spec called Brazos. Is it a game changer or just noise?
+EN_B: Honestly, it is not as flashy as it sounds. Brazos is a reference design for liquid-to-air CDUs, not a product Google will build. It runs at 60 kilowatts, which is not even enough to cool one Blackwell rack. So it is clearly not for high-end training.
+EN_A: Then what is the point?
+EN_B: It is all about inference. Training needs massive power and density, but inference can work with lower specs. Brazos is designed to fit into older data centers, using DC power from busbars, without complex plumbing retrofits.
+EN_A: So this is Google betting on inference growth?
+EN_B: Exactly. The report says inference could grow faster than training through 2030. But data center capacity is tight, and new builds often get delayed. With Brazos, you can retrofit existing facilities quickly to support inference workloads.
+EN_A: That sounds like good news for CDU makers like Vertiv or nVent.
+EN_B: Not necessarily in the long run. There are two mid-term risks. First, commoditization. Brazos specs are easier to meet than the previous Deschutes standard. More vendors can compete, which squeezes margins, especially for inference CDUs.
+EN_A: So the high-end players lose out?
+EN_B: Not entirely. The report thinks flagship training CDUs still command an innovation premium. But it all depends on inference rack density. If future inference chips stay below 60 kilowatts, Brazos-style CDUs could capture a big share. If densities go higher, you will need the more powerful Deschutes units.
+EN_A: What is the second risk?
+EN_B: A shift from greenfield builds to retrofits. If projects get delayed, hyperscalers might prefer upgrading existing data centers instead of waiting for new ones. The report has some anecdotal evidence of customers pushing out deliveries.
+EN_A: Is that bad for manufacturers?
+EN_B: It could mean higher volume but lower margins. And the service attach for inference CDUs is less sticky than for training, where a cooling failure is catastrophic.
+EN_A: So is Brazos a threat or just a complement?
+EN_B: The report sees it as accelerating a trend that was already expected. Commoditization is happening, but mainly for lower-spec products. However, one big question remains unanswered: what will the actual power density of inference chips be? If it is much higher than 60 kilowatts, Brazos might not matter as much.
+EN_A: That is a key unknown. What else does the full report cover?
+EN_B: It also looks at the scale of the retrofit opportunity and whether Google's two projects, Deschutes and Brazos, could end up competing with each other. Those details are worth checking out.
+EN_A: If you want to understand the real impact on CDU makers, read the full report. Thanks for the insights.
+EN_B: Thanks for having me.

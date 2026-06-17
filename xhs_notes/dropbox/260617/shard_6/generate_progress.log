@@ -1,0 +1,15 @@
+Found 37 total PDFs; shard 6/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3uz8hwnq/pdfs/0001-33-Goldman Sachs-The Post Modern Cycle - Navigating the Capex Boom-260616.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3uz8hwnq/pdfs/0002-34-CITI-Artificial Intelligence-Takeaways from the Research and Applied AI Summit-260615.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3uz8hwnq/pdfs/0003-35-Jefferies-Lithium Value Chain Survey- Temporary Pullback- Diverging Signals-260615.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3uz8hwnq/pdfs/0004-36-Bernstein-Liquid Cooling-What does Google-s Brazos mean for the broader CDU ecosystem-260617.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3uz8hwnq/pdfs/0005-37-Goldman Sachs-Japan Banks- Implications of BOJ MPM and bank deposit rate hike- continued upside for bank shares-260617.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=59b19c67-0f7f-45a2-9e0c-48fa34d5dac7
+MinerU states: running, running, running, running, waiting-file
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260617/shard_6; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
