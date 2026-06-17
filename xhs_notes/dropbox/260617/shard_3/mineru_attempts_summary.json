@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_yby3jm_m/pdfs/0001-17-CITI-China Industrials-What-s New From China Industrial AI-Infra - Robotics Tour - More Earnings Upside on AI-Infra-260615.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_yby3jm_m/pdfs/0002-18-GS-CHINA PROPERTY MONTHLY TRACKER Reinforced T-1 ASP resilience amid mixed May prints- Secondary listing vol picked up but still down yoy-260616.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_yby3jm_m/pdfs/0003-19-GS-CHINA NEW ENERGY VEHICLE WEEKLY CHARTBOOK 2026 Week 24 - Weekly NEV orders -14- -13- yoy wow- 67- NEV penetration-260616.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_yby3jm_m/pdfs/0004-20-GS-China- 70-city average primary property price decline narrowed in May- with Tier-1 cities posting sequential gains-260616.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_yby3jm_m/pdfs/0005-21-MS-China Property-Weekly Database Tracker -24-260615.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

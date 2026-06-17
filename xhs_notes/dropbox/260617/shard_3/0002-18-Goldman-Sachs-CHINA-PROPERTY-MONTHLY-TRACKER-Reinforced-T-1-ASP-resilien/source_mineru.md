@@ -1,0 +1,1306 @@
+CHINA PROPERTY MONTHLY TRACKER
+
+# Reinforced T-1 ASP resilience amid mixed May prints; Secondary listing vol picked up but still down yoy
+
+## China Property
+
+Finding the new balance of the China housing market; investing in the consolidators.
+
+Explore >
+
+![](images/d16e1db70188bca4246c32e37193f174b618068e7d5c004cc2f81575d2dc18c5.jpg)
+
+May 70-city primary ASP decline pace was similar to Apr/Mar while secondary ASP decline widened sequentially, of which T1 remained strong; May primary sales (vol/val at -13%/-9% yoy) came slightly below/largely in-line with our expectation, and sluggish construction activities were moderately below GSe; secondary sales above GSe at +HSD% yoy; rent resilient in Tier-1 cities while continuing to trend lower in 50-cities; tracked developers' landbanking intensity mixed with margins remaining solid:
+
+1) May ASP decline pace resembled both Apr and Mar in primary market at an average -0.2% mom while widened sequentially to -0.3% mom in the secondary market; of which, T1 cities continued to record solid performance, with primary/secondary ASP at +0.2%/+0.3% mom (respectively 4th/3rd consecutive month of positive mom), and T2 cities' primary/secondary ASP decline pace was similar to Apr at -0.1%/-0.2% mom in May. 13 Cities out of 70 cities recorded mom positive or flat secondary price change in May (vs. 16/17 in Apr/Mar) and among them, 10 cities had achieved 3 consecutive months of positive/flat mom through Mar to May. We also note that Shenzhen and Shanghai registered broad-based secondary transaction ASP improvements across most product types, and Beijing's high-end projects outperformed in May. 2) May nationwide property sales were above our high-frequency tracking, and was slightly below/largely inline with GSe in volume/value terms at -13%/-9% yoy. 3) Construction activities stayed weak as expected with new starts/completions decline (-25%/-20% yoy) both moderately below GSe, mirroring continued sluggish performance in FAI/land markets. Separately, 4) May secondary sales volume in 15 cities was above GSe at +8% yoy (vs. +4% in Apr), with secondary listing volume in 100 cities declining yoy for a third consecutive month, mom accelerating transaction turnover pace and marginally improving residential rental yields. Besides, 5) while 50-cities' average rent level continued to trend lower in May-26, we note that Tier-1 cities' rent had on average increased mom for three consecutive months, also outperforming May-24/-25 which both recorded negative mom trend. Top-performing cities since
+
+## Yi Wang, CFA
+
++86(21)2401-8930 |
+yi.wang@goldmansachs.cn
+GS (China) Securities Company Limited
+
+## Shi Xu
+
++86(21)2401-8929 |
+shi.x.xu@goldmansachs.cn
+GS (China) Securities
+Company Limited
+
+## Kaiyan Jing
+
++86(21)2411-8092 |
+kaiyan.jing@goldmansachs.cn
+GS (China) Securities Company Limited
+
+Mar to May include: Shanghai, Shenzhen, Tianjin and Urumqi. 6) Tracked developers' new land acquisition pace were mixed in May, with their average land investment as share of contract sales decreasing compared to Apr, echoing the broader sluggish land market, and estimated project-level GPM solid at average c.23% in May (similar as 4M26 overall).
+
+Looking into Jun 2026, we expect 1) primary and secondary ASPs to both decline at a slower pace, with T1's recovery momentum extending and key T2 potentially reverting to positive mom; 2) yoy declines likely to carry forward at current pace for new home sales volume and value, reflecting MTD sequential moderation and stronger base effects; 3) yoy declines to persist for completion and new starts, aligning with uninspiring value-chain indicators; 4) MSD % yoy improvements for secondary transaction volume, factoring in stable leading indicators and moderate comparison base.
+
+What we watch out for: Signs of property price stabilization/inflection in core T1 cities (i.e. Shanghai and Shenzhen) and whether other key cities will follow suit; easing of secondary supply pressure and improvement of rental yields in high-tier cities; policy stimulus such as full relaxation of HPR in T1 cities.
+
+Summary of key market indicators in May 2026 and GS forecasts for Jun 2026
+
+<table><tr><td colspan="3">(nationwide, unless stated otherwise)</td><td>May-26</td><td>5M26</td><td>May vs. Apr</td><td>May vs. GSe</td><td>June GSe</td></tr><tr><td rowspan="3">Primary sales</td><td>Volume</td><td>yoy</td><td>-13%</td><td>-11%</td><td></td><td>Below</td><td>Down low-teens % yoy</td></tr><tr><td>Value</td><td>yoy</td><td>-9%</td><td>-14%</td><td></td><td>Inline</td><td>Down c.10% yoy</td></tr><tr><td>Price</td><td>70 cities mom</td><td>-0.2% (May)</td><td>-0.2% (Apr)</td><td></td><td>Inline</td><td>Narrower declining pace; T1 cities recovery to continue</td></tr><tr><td rowspan="2">Secondary sales</td><td>Volume</td><td>15 cities yoy</td><td>8%</td><td>-3%</td><td></td><td>Above</td><td>Up MSD % yoy</td></tr><tr><td>Price</td><td>70 cities mom</td><td>-0.3% (May)</td><td>-0.2% (Apr)</td><td></td><td>Below</td><td>Narrower declining pace; T1 cities recovery to continue</td></tr><tr><td rowspan="2">Construction</td><td>New starts</td><td>yoy</td><td>-25%</td><td>-23%</td><td></td><td>Below</td><td>Down high-twenties % yoy</td></tr><tr><td>Completion</td><td>yoy</td><td>-20%</td><td>-23%</td><td></td><td>Below</td><td>Down c.20% yoy</td></tr><tr><td colspan="3"></td><td>May-26</td><td>5M26</td><td>May vs. Apr</td><td></td><td></td></tr><tr><td rowspan="4">Developers&#x27; Landbanking(6 coverage DPs)</td><td>Intensity</td><td>as % of sales</td><td>20%</td><td>21%</td><td></td><td></td><td></td></tr><tr><td rowspan="2">Strategy*</td><td>% Top-10</td><td>87%</td><td>78%</td><td></td><td></td><td rowspan="3">Remain regionally-focused and profitability-oriented;land replenishment pace to sequentially recover</td></tr><tr><td>% Class I</td><td>95%</td><td>91%</td><td></td><td></td></tr><tr><td>Profitability</td><td>Project GPM</td><td>23%</td><td>24%</td><td></td><td></td></tr></table>
+
+<table><tr><td>What to watch</td><td>Signs of property price stabilization/positive inflection in core T1 cities, and whether rest cities follow suitWhether secondary listing balance in high-tier cities to trend lowerImproving rental yields and signs of rent stabilization in high tier citiesHousing Provident Fund reforms, large-scale mortgage interest subsidies or further commercial mortgage rate cutsWhether core districts of T-1 cities could fully remove housing purchase restrictionsPro-employment/demand stimulus to boost broader income outlookMore funding supports to urban renewal/urban village redevelopmentImpact of commercial property REITs pilot on developers&#x27; liquidityAccelerating government inventory buybacks from non-LGFV developersOther improvement to developers&#x27; financing, e.g. expansion of Whitelist project, etc.</td></tr></table>
+
+\*By attributable land acquisition value.  
+Source: NBS, Centraline, CREIS, CRIC, GS Global Investment Research
+
+## Related reports:
+
+China Property: Positioning ahead (No.2): Share rally - what's priced in
+
+China Property: Positioning ahead of Tier-1 cities turnaround
+
+China Property: 2026 Outlook: New uncertainties from continued weak housing market
+
+China Real Estate: Slower margin/growth recovery for SOEs, heightened liquidity pressure for POEs; downgrade Seazen to Sell and Longfor to Neutral
+
+China Property Monthly Tracker: Apr ASP strengthened further yet sales/construction
+
+below GSe; more modest expectations into May
+
+China Property: Expert call series: Ongoing structural divergence along the recovery path
+
+China Property: Expert remains cautious on market outlook, stressing the need to accelerate de-stocking efforts
+
+China Property: Housing trade-in program refined in Shanghai, more effectively supporting upgrade demand
+
+China Property: 3RL removal not new, but raise market expectations on timely policy support to strengthen YTD positive momentum
+
+China Property: Potential housing provident fund (HPF) reform might help to stabilize market
+
+China Property: Potential new round of policy stimulus would be positive on both housing market and consumption
+
+China Property: What would it take to clear China's housing inventory (No. 3): Forming a positive feedback loop is the key
+
+## Summary of key market indicators and GS forecasts
+
+May 70-city primary ASP decline pace was similar to Apr/Mar while secondary ASP decline widened sequentially, of which T1 remained strong; May primary sales (vol/val at -13%/-9% yoy) came slightly below/largely in-line with our expectation, and sluggish construction activities were moderately below GSe; secondary sales above GSe at +HSD% yoy; rent resilient in Tier-1 cities while continuing to trend lower in 50-cities; tracked developers' landbanking intensity mixed with margins remaining solid:
+
+1) May ASP decline pace resembled both Apr and Mar in primary market at an average -0.2% mom while widened sequentially to -0.3% mom in the secondary market; of which, T1 cities continued to record solid performance, with primary/secondary ASP at +0.2%/+0.3% mom (respectively 4th/3rd consecutive month of positive mom), and T2 cities' primary/secondary ASP decline pace was similar to Apr at -0.1%/-0.2% mom in May. 13 Cities out of 70 cities recorded mom positive or flat secondary price change in May (vs. 16/17 in Apr/Mar) and among them, 10 cities had achieved 3 consecutive months of positive/flat mom through Mar to May. We also note that Shenzhen and Shanghai registered broad-based secondary transaction ASP improvements across most product types, and Beijing's high-end projects outperformed in May. 2) May nationwide property sales were above our high-frequency tracking, and was slightly below/largely inline with GSe in volume/value terms at -13%/-9% yoy. 3) Construction activities stayed weak as expected with new starts/completions decline (-25%/-20% yoy) both moderately below GSe, mirroring continued sluggish performance in FAI/land markets. Separately, 4) May secondary sales volume in 15 cities was above GSe at +8% yoy (vs. +4% in Apr), with secondary listing volume in 100 cities declining yoy for a third consecutive month, mom accelerating transaction turnover pace and marginally improving residential rental yields. Besides, 5) while 50-cities' average rent level continued to trend lower in May-26, we note that Tier-1 cities' rent had on average increased mom for three consecutive months, also outperforming May-24/-25 which both recorded negative mom trend. Top-performing cities since Mar to May include: Shanghai, Shenzhen, Tianjin and Urumqi.
+
+Tracked developers' new land acquisition pace was mixed in May, with Poly A and Greentown accelerated landbanking while the rest of the developers slowed down their investment intensities, echoing sluggish broader land market activity. Our covered stronger SOE developers on average spent 20% of their May contract sales in land acquisition, which on average carry c.23% project level GPM, with 95% exposure to Tier-1 & 2 cities and 78% exposure to Top-10 cities; overall their 5M26 land investment on average accounted for 21% of contract sales and carried c.24% GPM.
+
+Looking into Jun 2026, we expect 1) primary and secondary ASPs to both decline at a slower pace, with T1's recovery momentum extending and key T2 potentially reverting to positive mom; 2) yoy declines likely to carry forward at current pace for new home sales volume and value, reflecting MTD sequential moderation and stronger base effects; 3) yoy declines to persist for completion and new starts, aligning with uninspiring value-chain indicators; 4) MSD % yoy improvements for secondary transaction volume, factoring in stable leading indicators and moderate comparison base.
+
+Prices: Primary: We see primary ASPs in T1s and key T2s to be supported by product mix upgrades (e.g. superior quality with higher net-to-gross ratio and better ceiling heights) and limited new home supply competition (esp. in core areas). For example, Hangzhou's 6 high-profile, recently-launched ultra-luxury home projects recorded rather strong prices and sell-through momentum. Secondary: We see 1) easing secondary listing supply pressure, driven by rising rental yields (especially by low-total-price housing units) and property owners' reluctance to sell at deeply discounted prices; and 2) structural performance divergence for different product positionings (catering to high-yield buyers, home upgraders, etc.) in different cities. The latest average transaction price (subject to mix change) in Beike's 15 monitored cities recorded stable trends since May. Looking ahead, we expect primary and secondary ASPs to both decline at a slower pace in Jun, with T1's recovery momentum extending and key T2 potentially reverting to positive mom.
+
+Primary volume: We expect yoy declines to carry forward current pace into upcoming month, factoring in 1) mom moderation in new home sales volume in MTD June in monitored cities; 2) a sequentially stronger base from prior year (June-25 saw 54% mom improvement). As a result, we estimate low-teens % yoy decline for national sales volume and c.10% yoy decline for sales value in June 2026.
+
+Secondary volume: MTD June market activities largely carried forward May pace with transaction volumes -2% mom. Factoring in the stable momentum in leading indicators, coupled with a moderate year-ago base (June-25 was flattish mom), we forecast June 2026 secondary volume in 15 large cities to improve MSD % yoy.
+
+Construction: We anticipate a c.20% yoy decline for completions and a high-twenties % yoy decline for new starts in June 2026, considering 1) seasonal tailwinds, with historical trends showing average mom improvements of +52% for completions and +26% for new starts since 2021; that said, 2) MTD-June value chain indicators momentum remain uninspiring: for completions, expedited sequential decline in glass prices, and inventories continue to edge higher from end-May levels; for new starts, cement shipment ratios plateaued mom at mid-40s% range in MTD June, down from \~50% in the prior year.
+
+Developers' land banking: According to CREIS, the Top-5 cities in MTD Jun by land transaction value were respectively Beijing, Shenzhen, Hangzhou, Jinhua and Yancheng. Some high-profile land sales included a Shenzhen Nanshan district land plot acquired by Poly H (0119.HK, NC) at a land cost of Rmb109k/sqm and a Hangzhou Shangcheng district land plot acquired jointly by Greentown and Hangzhou Metro Group at a land consideration of Rmb2.1bn. Looking ahead, we expect developers to continue to be regionally-focused, profitability-oriented and disciplined, synchronizing their investment pace with contract sales performance.
+
+Exhibit 1: Summary of the latest property development activity in China  
+YTD national property market development data comparison
+
+<table><tr><td rowspan="2" colspan="2"></td><td colspan="2">Latest trend</td><td colspan="2">GSe</td><td colspan="12">Key national property data summary</td></tr><tr><td>May-26</td><td>5M26</td><td>Jun-Dec 26E</td><td>2026E</td><td>2025</td><td>2024</td><td>2023</td><td>2022</td><td>2021</td><td>2020</td><td>2019</td><td>2018</td><td>2017</td><td>2016</td><td>2015</td><td>2014</td></tr><tr><td rowspan="2">GFA sold</td><td>(mn sqm)</td><td>61</td><td>313</td><td>531</td><td>845</td><td>881</td><td>965</td><td>1,108</td><td>1,211</td><td>1,614</td><td>1,588</td><td>1,554</td><td>1,562</td><td>1,554</td><td>1,460</td><td>1,215</td><td>1,153</td></tr><tr><td>YoY</td><td>-13.2%</td><td>-10.8%</td><td>0%</td><td>-4%</td><td>-9%</td><td>-13%</td><td>-9%</td><td>-25%</td><td>2%</td><td>2%</td><td>0%</td><td>1%</td><td>6%</td><td>20%</td><td>5%</td><td>-8%</td></tr><tr><td rowspan="2">Property sales</td><td>(Rmb tn)</td><td>0.6</td><td>2.9</td><td>5.0</td><td>7.9</td><td>8.4</td><td>9.6</td><td>11.6</td><td>12.4</td><td>17.0</td><td>16.3</td><td>15.0</td><td>14.1</td><td>12.7</td><td>11.2</td><td>8.4</td><td>7.4</td></tr><tr><td>YoY</td><td>-9.3%</td><td>-13.5%</td><td>0%</td><td>-6%</td><td>-13%</td><td>-17%</td><td>-6%</td><td>-27%</td><td>5%</td><td>8%</td><td>6%</td><td>11%</td><td>13%</td><td>33%</td><td>14%</td><td>-7%</td></tr><tr><td rowspan="2">ASP</td><td>(Rmb/sqm)</td><td>10,501</td><td>9,376</td><td>9,362</td><td>9,367</td><td>9,527</td><td>9,952</td><td>10,457</td><td>10,233</td><td>10,546</td><td>10,248</td><td>9,673</td><td>9,045</td><td>8,160</td><td>7,699</td><td>6,932</td><td>6,427</td></tr><tr><td>YoY</td><td>4.5%</td><td>-3.0%</td><td>-1%</td><td>-2%</td><td>-4%</td><td>-5%</td><td>2%</td><td>-3%</td><td>3%</td><td>6%</td><td>7%</td><td>11%</td><td>6%</td><td>11%</td><td>8%</td><td>2%</td></tr><tr><td rowspan="2">GFA new starts</td><td>(mn sqm)</td><td>40</td><td>179</td><td>299</td><td>479</td><td>588</td><td>738</td><td>959</td><td>1,199</td><td>1,989</td><td>2,244</td><td>2,272</td><td>2,095</td><td>1,787</td><td>1,669</td><td>1,545</td><td>1,796</td></tr><tr><td>YoY</td><td>-24.6%</td><td>-22.6%</td><td>-16%</td><td>-19%</td><td>-20%</td><td>-23%</td><td>-20%</td><td>-40%</td><td>-11%</td><td>-1%</td><td>8%</td><td>17%</td><td>7%</td><td>8%</td><td>-14%</td><td>-11%</td></tr><tr><td rowspan="2">GFA completions</td><td>(mn sqm)</td><td>22</td><td>141</td><td>454</td><td>595</td><td>603</td><td>737</td><td>1,019</td><td>854</td><td>1,014</td><td>912</td><td>959</td><td>944</td><td>1,015</td><td>1,061</td><td>1,000</td><td>1,075</td></tr><tr><td>YoY</td><td>-20.0%</td><td>-23.4%</td><td>8%</td><td>-1%</td><td>-18%</td><td>-28%</td><td>19%</td><td>-16%</td><td>11%</td><td>-5%</td><td>2%</td><td>-7%</td><td>-4%</td><td>6%</td><td>-7%</td><td>6%</td></tr><tr><td rowspan="2">Property FAI</td><td>(Rmb tn)</td><td>0.6</td><td>3.0</td><td>4.3</td><td>7.3</td><td>8.3</td><td>10.0</td><td>11.2</td><td>12.4</td><td>13.8</td><td>13.2</td><td>12.4</td><td>11.3</td><td>10.3</td><td>9.7</td><td>9.1</td><td>9.0</td></tr><tr><td>YoY</td><td>-24.4%</td><td>-16.2%</td><td>-8%</td><td>-12%</td><td>-17%</td><td>-11%</td><td>-10%</td><td>-10%</td><td>5%</td><td>6%</td><td>10%</td><td>10%</td><td>6%</td><td>7%</td><td>1%</td><td>10%</td></tr></table>
+
+Source: NBS, CREIS, GS Global Investment Research
+
+Exhibit 2: May-26 70-city ASP index was -0.2%/-0.3% mom (vs. -0.2%/-0.2% mom for Apr), with 16/10 cities (vs. 14/12 in Apr) recording sequentially improved ASPs and 2/3 cities (vs. 7/4 in Apr) recording sequentially flattened ASPs in primary/secondary  
+![](images/878759c24c217347858a017cac2908afd7f4e788f660eaf1900dbdd10c8b9e80.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | No. of cities where primary ASP increased mom (RHS) | No. of cities where primary ASP decreased (RHS) | Avg 70 cities primary ASP index mom % (LHS) |
+|----------|--------------------------------------------------|--------------------------------------------------|---------------------------------------------|
+| Apr-23   | 1.8                                              | 0.5                                              | -10                                         |
+| Jun-23   | 1.5                                              | 0.3                                              | -15                                         |
+| Aug-23   | 1.2                                              | 0.1                                              | -20                                         |
+| Oct-23   | 0.9                                              | -0.1                                             | -25                                         |
+| Dec-23   | 0.6                                              | -0.3                                             | -30                                         |
+| Feb-24   | 0.3                                              | -0.5                                             | -35                                         |
+| Apr-24   | 0.0                                              | -0.7                                             | -40                                         |
+| Jun-24   | -0.3                                             | -0.9                                             | -45                                         |
+| Aug-24   | -0.6                                             | -1.1                                             | -50                                         |
+| Oct-24   | -0.9                                             | -1.3                                             | -55                                         |
+| Dec-24   | -1.2                                             | -1.5                                             | -60                                         |
+| Feb-25   | -1.5                                             | -1.7                                             | -65                                         |
+| Apr-25   | -1.8                                             | -1.9                                             | -70                                         |
+| Jun-25   | -2.1                                             | -2.1                                             | -75                                         |
+| Aug-25   | -2.4                                             | -2.3                                             | -80                                         |
+| Oct-25   | -2.7                                             | -2.5                                             | -85                                         |
+| Dec-25   | -3.0                                             | -2.7                                             | -90                                         |
+| Feb-26   | -3.3                                             | -2.9                                             | -95                                         |
+| Apr-26   | -3.6                                             | -3.1                                             | -100                                        |
+</details>
+
+![](images/87514d91129cd6817a743471fdf213c539ff6fe59544f7021942c6276a8db40f.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Tier-1 cities | Tier-2 cities | Rest cities |
+|---------|---------------|---------------|-------------|
+| Apr-23  | 0.8           | 0.8           | 0.8         |
+| Jun-23  | 0.6           | 0.6           | 0.6         |
+| Aug-23  | 0.4           | 0.4           | 0.4         |
+| Oct-23  | 0.2           | 0.2           | 0.2         |
+| Dec-23  | -0.2          | -0.2          | -0.2        |
+| Feb-24  | -0.4          | -0.4          | -0.4        |
+| Apr-24  | -0.6          | -0.6          | -0.6        |
+| Jun-24  | -0.8          | -0.8          | -0.8        |
+| Aug-24  | -0.6          | -0.6          | -0.6        |
+| Oct-24  | -0.4          | -0.4          | -0.4        |
+| Dec-24  | -0.2          | -0.2          | -0.2        |
+| Feb-25  | 0.0           | 0.0           | 0.0         |
+| Apr-25  | 0.2           | 0.2           | 0.2         |
+| Jun-25  | 0.4           | 0.4           | 0.4         |
+| Aug-25  | 0.6           | 0.6           | 0.6         |
+| Oct-25  | 0.8           | 0.8           | 0.8         |
+| Dec-25  | 1.0           | 1.0           | 1.0         |
+| Feb-26  | 1.2           | 1.2           | 1.2         |
+| Apr-26  | 1.4           | 1.4           | 1.4         |
+</details>
+
+![](images/058e95bca3beb9e8c3e5ae34d741d18dd4bb783a3e04ad2442aa8ec81094915b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+70 cities primary ASP Index mom within Tier-1 cities
+| Date | Shanghai (%) | Shenzhen (%) | Beijing (%) | Guangzhou (%) |
+|---|---|---|---|---|
+| Apr-23 | 0.4 | 0.2 | 0.5 | 0.3 |
+| Jun-23 | 0.3 | 0.1 | 0.4 | 0.2 |
+| Aug-23 | 0.2 | -0.1 | 0.3 | 0.1 |
+| Oct-23 | 0.5 | -0.3 | -0.1 | -0.2 |
+| Dec-23 | 0.4 | -0.5 | -0.2 | -0.4 |
+| Feb-24 | 0.3 | -0.4 | -0.3 | -0.5 |
+| Apr-24 | 0.6 | -0.8 | -0.6 | -0.9 |
+| Jun-24 | 0.5 | -0.7 | -0.5 | -0.8 |
+| Aug-24 | 0.7 | -0.6 | -0.4 | -0.7 |
+| Oct-24 | 0.6 | -0.5 | -0.3 | -0.6 |
+| Dec-24 | 0.5 | -0.4 | -0.2 | -0.5 |
+| Feb-25 | 0.8 | -0.2 | -0.1 | -0.3 |
+| Apr-25 | 0.7 | -0.1 | 0.1 | -0.2 |
+| Jun-25 | 0.6 | 0.1 | 0.2 | -0.1 |
+| Aug-25 | 0.5 | 0.2 | 0.3 | 0.1 |
+| Oct-25 | 0.4 | 0.3 | 0.4 | 0.2 |
+| Dec-25 | 0.3 | 0.4 | 0.5 | 0.3 |
+| Feb-26 | 0.2 | 0.5 | 0.6 | 0.4 |
+| Apr-26 | 0.4 | 0.6 | 0.7 | 0.5 |
+</details>
+
+![](images/c94eebf4a1f148991e278f62ab8d0603b3324ea2f9ba973b8fbd693dbcf6b6be.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | No. of cities where secondary ASP increased mom (RHS) | No. of cities where secondary ASP decreased mom (RHS) | Avg 70 cities secondary ASP Index mom % (LHS) |
+|----------|------------------------------------------------------|--------------------------------------------------------|-----------------------------------------------|
+| Apr-23   | 1.5                                                  | 0.5                                                    | -10                                           |
+| Jun-23   | 0.5                                                  | -0.5                                                   | -50                                           |
+| Aug-23   | -0.5                                                 | -1.0                                                   | -100                                          |
+| Oct-23   | -1.0                                                 | -1.5                                                   | -150                                          |
+| Dec-23   | -0.5                                                 | -1.0                                                   | -100                                          |
+| Feb-24   | 0.0                                                  | -0.5                                                   | -50                                           |
+| Apr-24   | 0.5                                                  | 0.0                                                    | 0                                             |
+| Jun-24   | 1.0                                                  | 0.5                                                    | 50                                            |
+| Aug-24   | 0.5                                                  | 0.0                                                    | 100                                           |
+| Oct-24   | 0.0                                                  | -0.5                                                   | 150                                           |
+| Dec-24   | -0.5                                                 | -1.0                                                   | 100                                           |
+| Feb-25   | 0.5                                                  | 0.0                                                    | 50                                            |
+| Apr-25   | 1.0                                                  | 0.5                                                    | 100                                           |
+| Jun-25   | 0.5                                                  | 0.0                                                    | 50                                            |
+| Aug-25   | 0.0                                                  | -0.5                                                   | 100                                           |
+| Oct-25   | -0.5                                                 | -1.0                                                   | 150                                           |
+| Dec-25   | -1.0                                                 | -1.5                                                   | 100                                           |
+| Feb-26   | -0.5                                                 | -1.0                                                   | 50                                            |
+| Apr-26   | 0.5                                                  | 0.0                                                    | 100                                           |
+</details>
+
+![](images/f9239f8a3e691434f70c5193779423498850f65bc6264de58deb9e7b93e07d4d.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Tier-1 cities | Tier-2 cities | Rest cities |
+|---------|---------------|---------------|-------------|
+| Apr-23  | 0.8           | 0.4           | 0.3         |
+| Jun-23  | -0.8          | -0.4          | -0.6        |
+| Aug-23  | -0.6          | -0.6          | -0.8        |
+| Oct-23  | 0.2           | -0.4          | -0.8        |
+| Dec-23  | -1.4          | -0.8          | -0.8        |
+| Feb-24  | -0.8          | -0.8          | -0.8        |
+| Apr-24  | -0.4          | -0.8          | -0.8        |
+| Jun-24  | -1.2          | -0.8          | -0.8        |
+| Aug-24  | -0.4          | -0.8          | -0.8        |
+| Oct-24  | -1.2          | -0.4          | -0.6        |
+| Dec-24  | 0.4           | -0.4          | -0.4        |
+| Feb-25  | 0.2           | -0.4          | -0.4        |
+| Apr-25  | 0.4           | -0.4          | -0.4        |
+| Jun-25  | -0.8          | -0.4          | -0.4        |
+| Aug-25  | -0.8          | -0.4          | -0.4        |
+| Oct-25  | -1.2          | -0.4          | -0.4        |
+| Dec-25  | -1.2          | -0.4          | -0.4        |
+| Feb-26  | -0.8          | -0.4          | -0.4        |
+| Apr-26  | 0.4           | -0.4          | -0.4        |
+</details>
+
+![](images/fedaf656ed63681de26df70a23023233169f385ad1539af799bbf8234bfc6ae5.jpg)
+
+<details>
+<summary>line chart</summary>
+
+70 cities secondary ASP Index mom within Tier-1 cities
+| Date | Shanghai (Price index mom%) | Shenzhen (Price index mom%) | Beijing (Price index mom%) | Guangzhou (Price index mom%) |
+|---|---|---|---|---|
+| Apr-23 | 0.4 | 0.5 | 0.8 | 0.4 |
+| Jun-23 | -0.6 | -0.2 | -0.4 | -0.6 |
+| Aug-23 | -1.2 | -0.8 | -0.6 | -0.8 |
+| Oct-23 | 0.8 | -0.4 | 0.9 | -0.2 |
+| Dec-23 | -1.4 | -1.0 | -1.2 | -1.4 |
+| Feb-24 | -0.4 | -0.6 | -0.8 | -0.6 |
+| Apr-24 | -0.8 | -1.2 | -1.4 | -1.2 |
+| Jun-24 | 0.4 | -0.8 | -0.6 | -0.8 |
+| Aug-24 | -1.2 | -1.4 | -1.6 | -1.4 |
+| Oct-24 | 0.8 | -0.6 | 0.9 | -0.6 |
+| Dec-24 | 0.8 | -0.4 | 0.9 | -0.4 |
+| Feb-25 | 0.4 | -0.2 | 0.8 | -0.2 |
+| Apr-25 | -0.4 | -0.6 | -0.8 | -0.6 |
+| Jun-25 | -0.8 | -1.0 | -1.2 | -1.0 |
+| Aug-25 | -1.2 | -1.4 | -1.6 | -1.4 |
+| Oct-25 | -1.4 | -1.6 | -1.8 | -1.6 |
+| Dec-25 | -1.2 | -1.4 | -1.6 | -1.4 |
+| Feb-26 | 0.4 | -0.2 | 0.9 | -0.2 |
+| Apr-26 | 0.8 | 0.5 | 0.8 | 0.4 |
+</details>
+
+Source: NBS, Data compiled by GS Global Investment Research
+
+## NBS and primary data snapshot
+
+Property sales volume/value were +6%/+11% mom (vs. avg +12%/+11% mom for May during 2014-2021 and flattish mom for May-26 indicated by our high-frequency tracking) and were -13%/-9% yoy in May (vs. -10%/-8% yoy in Apr), sending 5M26 sales volume/value -11%/-14% yoy, respectively. Residential property sales volume and value were -12%/-14% yoy in 5M26 (vs. -12%/-16% in 4M25).  
+■ Blended ASP in May was +5% mom and +5% yoy (vs. +2% yoy in Apr) and 5M26 ASP was -3% yoy.  
+70-city primary ASP index on average was -0.2% mom in May (vs. -0.2% mom in Apr), and Tier 1/2/3 cities recorded +0.2%/-0.1%/-0.3% mom in May (vs. +0.1%/-0.1%/-0.3% in Apr), respectively.  
+GFA completions were -20% yoy in May (vs. -19% yoy in Apr), slightly below GSe of high-teens % yoy declines as indicated by our refined GS Property Completion (GSPC) tracker, and bringing 5M26 GFA completions to -23% yoy.  
+GFA new starts recorded -25% yoy in May (vs. -27% yoy in Apr and moderately below GSe of low-twenties % yoy declines), leading 5M26 new starts to decline 23% yoy.  
+■ Property FAI declined by 24% yoy in May (vs. -20% yoy in Apr) and was -16% yoy in 5M26.  
+- Land sales volume/value (excl. industrial land) recorded -31%/-14% yoy in May-26 (vs. -25%/-34% yoy in Apr), sending 5M26 land sales volume/value to -22%/-33% yoy.
+
+Exhibit 3: May 2026: Nationwide property sales above high-frequency tracking and inline with GSe on value terms, while construction activities stayed weak as expected  
+![](images/aeef281e5adf5c86bd21f119595c796a71d9e9142f45bb12a6d40222c05d280b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2023 | 2024 | 2025 | 2026 |
+|-------|------|------|------|------|
+| Feb   | 70   | 60   | 50   | 45   |
+| Mar   | 140  | 110  | 105  | 100  |
+| Apr   | 80   | 60   | 60   | 55   |
+| May   | 130  | 110  | 105  | 60   |
+| Jun   | 135  | 115  | 105  | -    |
+| Jul   | 70   | 60   | 55   | -    |
+| Aug   | 110  | 90   | 85   | -    |
+| Sep   | 105  | 85   | 80   | -    |
+| Oct   | 75   | 70   | 65   | -    |
+| Nov   | 85   | 80   | 75   | -    |
+| Dec   | 110  | 105  | 95   | -    |
+</details>
+
+![](images/6521958934a783566955c62fd4d0690830aa35d23375a07dba9f6577811fd85f.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2023 | 2024 | 2025 | 2026 |
+|-------|------|------|------|------|
+| Feb   |      |      |      | 25   |
+| Mar   |      |      |      | 55   |
+| Apr   |      |      |      | 35   |
+| May   |      |      |      | 40   |
+| Jun   |      |      |      |      |
+| Jul   |      |      |      |      |
+| Aug   |      |      |      |      |
+| Sep   |      |      |      |      |
+| Oct   |      |      |      |      |
+| Nov   |      |      |      |      |
+| Dec   |      |      |      |      |
+</details>
+
+![](images/3cc643ff18c27657dcbf1d2f6ba084303736f578428e72a5facb2a76203cc9b2.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2023 (mn sqm) | 2024 (mn sqm) | 2025 (mn sqm) | 2026 (mn sqm) |
+|-------|---------------|---------------|---------------|---------------|
+| Feb   | ~50           | ~50           | ~50           | ~50           |
+| Mar   | ~40           | ~40           | ~40           | ~40           |
+| Apr   | ~30           | ~30           | ~30           | ~30           |
+| May   | ~40           | ~40           | ~40           | ~40           |
+| Jun   | ~50           | ~50           | ~50           | ~50           |
+| Jul   | ~40           | ~40           | ~40           | ~40           |
+| Aug   | ~50           | ~50           | ~50           | ~50           |
+| Sep   | ~60           | ~60           | ~60           | ~60           |
+| Oct   | ~70           | ~70           | ~70           | ~70           |
+| Nov   | ~100          | ~100          | ~100          | ~100          |
+| Dec   | ~380          | ~380          | ~380          | ~380          |
+</details>
+
+![](images/decf2fcd77d645a173d9d836e061f5c462f31b42c06485a54e78b9c12b4d085b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2023 | 2024 | 2025 | 2026 |
+|-------|------|------|------|------|
+| Feb   | 100  | 100  | 100  | 100  |
+| Mar   | 250  | 200  | 180  | 180  |
+| Apr   | 350  | 250  | 250  | 250  |
+| May   | 450  | 350  | 350  | 350  |
+| Jun   | 600  | 450  | 450  | -    |
+| Jul   | 700  | 550  | 550  | -    |
+| Aug   | 800  | 650  | 650  | -    |
+| Sep   | 900  | 750  | 750  | -    |
+| Oct   | 1000 | 850  | 850  | -    |
+| Nov   | 1100 | 950  | 950  | -    |
+| Dec   | 1200 | 1050 | 1050 | -    |
+</details>
+
+![](images/492aa230c65c53d8e80602bf7ddb4bf12ac339988323a7fe3717f5d5f0d1d99e.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2023 | 2024 | 2025 | 2026 |
+|-------|------|------|------|------|
+| Feb   | 100  | 100  | 100  | 100  |
+| Mar   | 200  | 150  | 150  | 150  |
+| Apr   | 300  | 200  | 200  | 150  |
+| May   | 400  | 250  | 250  | 175  |
+| Jun   | 500  | 300  | 300  | -    |
+| Jul   | 600  | 350  | 350  | -    |
+| Aug   | 700  | 400  | 400  | -    |
+| Sep   | 800  | 450  | 450  | -    |
+| Oct   | 900  | 500  | 500  | -    |
+| Nov   | 1,000| 550  | 550  | -    |
+| Dec   | -    | -    | -    | -    |
+</details>
+
+![](images/4863405e85bbed2035f281e7d860c379f887582ab2c2502a554d0d1a38eb008b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2023 | 2024 | 2025 | 2026 |
+|-------|------|------|------|------|
+| Feb   | 100  | 100  | 100  | 100  |
+| Mar   | 150  | 150  | 150  | 150  |
+| Apr   | 200  | 200  | 200  | 200  |
+| May   | 250  | 250  | 250  | 250  |
+| Jun   | 300  | 300  | 300  | 300  |
+| Jul   | 350  | 350  | 350  | 350  |
+| Aug   | 400  | 400  | 400  | 400  |
+| Sep   | 450  | 450  | 450  | 450  |
+| Oct   | 500  | 500  | 500  | 500  |
+| Nov   | 600  | 600  | 600  | 600  |
+| Dec   | 1,100| 750  | 650  | -    |
+</details>
+
+![](images/9ea21e920798ee21fbcf0dd2bfe9a4850c3b7277768a8da89d64bcca2ac36c08.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | New starts/Sold-12MMA (LHS) | Unsold GFA yoy (RHS) |
+|--------|-----------------------------|----------------------|
+| May-14 | 1.5                         | 20%                  |
+| May-15 | 1.4                         | 30%                  |
+| May-16 | 1.3                         | 25%                  |
+| May-17 | 1.2                         | 10%                  |
+| May-18 | 1.1                         | -20%                 |
+| May-19 | 1.2                         | 0%                   |
+| May-20 | 1.3                         | 10%                  |
+| May-21 | 1.2                         | 5%                   |
+| May-22 | 1.1                         | 15%                  |
+| May-23 | 1.0                         | 20%                  |
+| May-24 | 0.9                         | 18%                  |
+| May-25 | 0.8                         | 10%                  |
+| May-26 | 0.7                         | 5%                   |
+</details>
+
+![](images/f3bc8e05208848fefb376d21dd2a2744cd1d1a8390a511a8aadcb05486b61676.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Property FAI (Mthly yoy) | GFA new starts (Mthly yoy) |
+|---------|--------------------------|-----------------------------|
+| May-19  | ~10%                     | ~10%                        |
+| Nov-19  | ~0%                      | ~-40%                       |
+| May-20  | ~10%                     | ~-20%                       |
+| Nov-20  | ~10%                     | ~70%                        |
+| May-21  | ~10%                     | ~-20%                       |
+| Nov-21  | ~0%                      | ~-40%                       |
+| May-22  | ~-10%                    | ~-60%                       |
+| Nov-22  | ~-10%                    | ~-40%                       |
+| May-23  | ~-10%                    | ~-20%                       |
+| Nov-23  | ~-10%                    | ~-10%                       |
+| May-24  | ~-10%                    | ~-10%                       |
+| Nov-24  | ~-10%                    | ~-10%                       |
+| May-25  | ~-10%                    | ~-10%                       |
+| Nov-25  | ~-10%                    | ~-10%                       |
+| May-26  | ~-10%                    | ~-10%                       |
+</details>
+
+![](images/ee0a6e18c1834808bd462489497cd52152bcde3923d57c9789c0bac91ab411a3.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | National ASP (mom) | National ASP (YTD yoy) |
+|---------|--------------------|------------------------|
+| May-18  | ~0%                | ~5%                    |
+| Nov-18  | ~5%                | ~10%                   |
+| May-19  | ~0%                | ~5%                    |
+| Nov-19  | ~5%                | ~0%                    |
+| May-20  | ~0%                | ~5%                    |
+| Nov-20  | ~5%                | ~10%                   |
+| May-21  | ~15%               | ~15%                   |
+| Nov-21  | ~0%                | ~0%                    |
+| May-22  | ~5%                | ~-10%                  |
+| Nov-22  | ~0%                | ~-5%                   |
+| May-23  | ~5%                | ~10%                   |
+| Nov-23  | ~0%                | ~-10%                  |
+| May-24  | ~5%                | ~-5%                   |
+| Nov-24  | ~0%                | ~0%                    |
+| May-25  | ~5%                | ~5%                    |
+| Nov-25  | ~0%                | ~0%                    |
+| May-26  | ~15%               | ~-5%                   |
+</details>
+
+Source: NBS, Data compiled by GS Global Investment Research
+
+Exhibit 4: May-26 70-city primary ASP index was -0.2% mom (vs. -0.2% mom for Apr) and 16 cities (vs. 14 in Apr) recorded sequential ASP improvements in primary markets  
+![](images/cf83681be0efe1deae585b88d32df8a197f8d44242c7d98f3cec9821a1b3822b.jpg)
+
+<details>
+<summary>bar-line hybrid</summary>
+
+Average 70 cities primary ASP Index mom
+| Date | No. of cities where primary ASP increased mom (RHS) (%) | No. of cities where primary ASP decreased mom (RHS) (%) | Avg 70 cities primary ASP Index mom % (LHS) (%) |
+|---|---|---|---|
+| May-23 | 1.8 | -0.4 | 5 |
+| Jul-23 | 1.5 | -0.6 | 4 |
+| Sep-23 | 1.0 | -0.8 | 3 |
+| Nov-23 | 0.8 | -0.9 | 2 |
+| Jan-24 | 0.6 | -1.0 | 1 |
+| Mar-24 | 0.5 | -1.1 | 0 |
+| May-24 | 0.4 | -1.2 | -1 |
+| Jul-24 | 0.3 | -1.3 | -2 |
+| Sep-24 | 0.4 | -1.2 | -3 |
+| Nov-24 | 0.5 | -1.1 | -4 |
+| Jan-25 | 0.6 | -1.0 | -5 |
+| Mar-25 | 0.7 | -0.9 | -6 |
+| May-25 | 0.8 | -0.8 | -7 |
+| Jul-25 | 0.7 | -0.7 | -8 |
+| Sep-25 | 0.6 | -0.6 | -9 |
+| Nov-25 | 0.5 | -0.5 | -10 |
+| Jan-26 | 0.4 | -0.4 | -11 |
+| Mar-26 | 0.5 | -0.3 | -12 |
+| May-26 | 0.6 | -0.2 | -13 |
+</details>
+
+![](images/723112f9fc2adc0dca1ecf09ee9052e83cb9fbfcfae90ddae3aab7c18e955db1.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Tier-1 cities | Tier-2 cities | Rest cities |
+|---------|---------------|---------------|-------------|
+| May-23  | 0.4           | 0.4           | 0.4         |
+| Jul-23  | 0.2           | 0.2           | 0.2         |
+| Sep-23  | -0.2          | -0.2          | -0.2        |
+| Nov-23  | -0.4          | -0.4          | -0.4        |
+| Jan-24  | -0.6          | -0.6          | -0.6        |
+| Mar-24  | -0.8          | -0.8          | -0.8        |
+| May-24  | -0.6          | -0.6          | -0.6        |
+| Jul-24  | -0.4          | -0.4          | -0.4        |
+| Sep-24  | -0.2          | -0.2          | -0.2        |
+| Nov-24  | 0.0           | 0.0           | 0.0         |
+| Jan-25  | 0.2           | 0.2           | 0.2         |
+| Mar-25  | 0.4           | 0.4           | 0.4         |
+| May-25  | 0.2           | 0.2           | 0.2         |
+| Jul-25  | 0.0           | 0.0           | 0.0         |
+| Sep-25  | -0.2          | -0.2          | -0.2        |
+| Nov-25  | -0.4          | -0.4          | -0.4        |
+| Jan-26  | -0.6          | -0.6          | -0.6        |
+| Mar-26  | -0.8          | -0.8          | -0.8        |
+| May-26  | -1.0          | -1.0          | -1.0        |
+</details>
+
+![](images/4cd82850c85953ef13c0c46f30a746d79bab2297499ac3ead7e18f893c5e75f2.jpg)
+
+<details>
+<summary>line chart</summary>
+
+70 cities primary ASP Index mom within Tier-1 cities
+| Date | Shanghai (%) | Shenzhen (%) | Beijing (%) | Guangzhou (%) |
+|---|---|---|---|---|
+| May '23 | 0.4 | -0.2 | 0.5 | 0.3 |
+| Jul '23 | 0.3 | -0.4 | 0.4 | 0.2 |
+| Sep '23 | 0.5 | -0.6 | 0.2 | 0.1 |
+| Nov '23 | 0.6 | -0.8 | 0.1 | 0.0 |
+| Jan '24 | 0.7 | -1.0 | 0.0 | -0.1 |
+| Mar '24 | 0.5 | -0.8 | -0.2 | -0.3 |
+| May '24 | 0.4 | -0.6 | -0.4 | -0.5 |
+| Jul '24 | 0.6 | -0.4 | -0.6 | -0.7 |
+| Sep '24 | 0.5 | -0.2 | -0.8 | -0.9 |
+| Nov '24 | 0.7 | 0.1 | -0.6 | -1.1 |
+| Jan '25 | 0.6 | 0.3 | -0.4 | -1.3 |
+| Mar '25 | 0.8 | 0.5 | -0.2 | -1.5 |
+| May '25 | 0.7 | 0.7 | 0.1 | -1.7 |
+| Jul '25 | 0.6 | 0.9 | 0.3 | -1.9 |
+| Sep '25 | 0.5 | 1.1 | 0.5 | -2.1 |
+| Nov '25 | 0.4 | 1.3 | 0.7 | -2.3 |
+| Jan '26 | 0.3 | 1.5 | 0.9 | -2.5 |
+| Mar '26 | 0.4 | 1.7 | 1.1 | -2.7 |
+| May '26 | 0.5 | 1.9 | 1.3 | -2.9 |
+</details>
+
+Source: NBS, Data compiled by GS Global Investment Research
+
+## Exhibit 5: Land market activity remained sluggish in May-26, with volume/value at -31%/-14% yoy (vs. -25%/-34% yoy in Apr), sending 5M26 nationwide land sales volume/value to -22%/-33% yoy
+
+Summary of nationwide land sales volume and value, nationwide and by city tier
+
+Nationwide land sales volume  
+![](images/89ae4302fa4787aafd70dedd3dc18734ac2d87bc6b473951d9155c8cdedf2bb1.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month    | National land sales volume (LHS) | Monthly avg (LHS) | YoY (%) |
+|----------|----------------------------------|-------------------|---------|
+| May-07   | ~50                              | ~50               | ~0%     |
+| Dec-08   | ~100                             | ~100              | ~50%    |
+| Jul-10   | ~200                             | ~200              | ~150%   |
+| Feb-12   | ~300                             | ~300              | ~100%   |
+| Sep-13   | ~450                             | ~450              | ~50%    |
+| Apr-15   | ~250                             | ~250              | ~-50%   |
+| Nov-16   | ~300                             | ~300              | ~0%     |
+| Jun-18   | ~400                             | ~400              | ~50%    |
+| Jan-20   | ~550                             | ~550              | ~100%   |
+| Aug-21   | ~500                             | ~500              | ~50%    |
+| Mar-23   | ~350                             | ~350              | ~-50%   |
+| Oct-24   | ~300                             | ~300              | ~-50%   |
+| May-26   | ~250                             | ~250              | ~-100%  |
+</details>
+
+<table><tr><td>Land sales volume YoY</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>Apr-26</td><td>May-26</td><td>5M26</td></tr><tr><td>National</td><td>-5%</td><td>-8%</td><td>-16%</td><td>-17%</td><td>-25%</td><td>-31%</td><td>-22%</td></tr><tr><td>Tier 1 cities</td><td>31%</td><td>-51%</td><td>-41%</td><td>-19%</td><td>71%</td><td>-7%</td><td>-5%</td></tr><tr><td>Tier 2 cities</td><td>20%</td><td>-19%</td><td>-8%</td><td>-37%</td><td>-37%</td><td>-54%</td><td>-41%</td></tr><tr><td>Lower tier cities</td><td>-13%</td><td>-3%</td><td>-17%</td><td>-10%</td><td>-24%</td><td>-23%</td><td>-16%</td></tr></table>
+
+Nationwide land sales value  
+![](images/a5bf6aa35f76b9a6f754e98208b526456dd29e3ac4d170d0491871ae906e8492.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Date | National land sales value (Rmb bn) | Monthly avg (RHS) | YoY (%) |
+|---|---|---|---|
+| May-07 | 50 | 10 | -10 |
+| Dec-08 | 100 | 150 | 30 |
+| Jul-10 | 350 | 200 | 150 |
+| Feb-12 | 200 | 150 | -40 |
+| Sep-13 | 400 | 250 | 90 |
+| Apr-15 | 250 | 150 | -35 |
+| Nov-16 | 600 | 300 | 70 |
+| Jun-18 | 500 | 350 | 45 |
+| Jan-20 | 900 | 450 | 40 |
+| Aug-21 | 1300 | 550 | 35 |
+| Mar-23 | 1000 | 400 | -25 |
+| Oct-24 | 950 | 350 | -35 |
+| May-26 | 700 | 150 | -45 |
+</details>
+
+<table><tr><td>Land sales value YoY</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>Apr-26</td><td>May-26</td><td>5M26</td></tr><tr><td>National</td><td>19%</td><td>-9%</td><td>-27%</td><td>-38%</td><td>-34%</td><td>-14%</td><td>-33%</td></tr><tr><td>Tier 1 cities</td><td>42%</td><td>-27%</td><td>-45%</td><td>-40%</td><td>34%</td><td>12%</td><td>-22%</td></tr><tr><td>Tier 2 cities</td><td>44%</td><td>-10%</td><td>-21%</td><td>-54%</td><td>-52%</td><td>-22%</td><td>-48%</td></tr><tr><td>Lower tier cities</td><td>-13%</td><td>-2%</td><td>-26%</td><td>-17%</td><td>-30%</td><td>-18%</td><td>-19%</td></tr></table>
+
+Excl. industrial land transactions.
+
+Source: CREIS, Data compiled by GS Global Investment Research
+
+## Exhibit 6: In May, land auction premium ratio increased mom, mainly driven by Tier-1 cities; and land auction failure ratio improved mom, mainly supported by lower tier cities
+
+Summary of land market auction failure ratio and premium ratio nationwide, and by city tier
+
+Monthly land transaction failure ratio nationwide and breakdown by city-tier  
+![](images/f9dc032e7b375f3f9172707b8047191000f14d2bc8d1aca1dd115464405903cb.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | National | Tier 2 | Lower tier | National avg |
+|--------|----------|--------|------------|--------------|
+| May-07 | 8%       | 10%    | 5%         | 10%          |
+| May-08 | 10%      | 28%    | 5%         | 10%          |
+| May-09 | 5%       | 5%     | 3%         | 5%           |
+| May-10 | 5%       | 5%     | 3%         | 5%           |
+| May-11 | 5%       | 5%     | 3%         | 5%           |
+| May-12 | 5%       | 5%     | 3%         | 5%           |
+| May-13 | 5%       | 5%     | 3%         | 5%           |
+| May-14 | 5%       | 5%     | 3%         | 5%           |
+| May-15 | 5%       | 5%     | 3%         | 5%           |
+| May-16 | 5%       | 5%     | 3%         | 5%           |
+| May-17 | 5%       | 5%     | 3%         | 5%           |
+| May-18 | 5%       | 5%     | 3%         | 5%           |
+| May-19 | 5%       | 10%    | 5%         | 10%          |
+| May-20 | 20%      | 15%    | 25%        | 20%          |
+| May-21 | 25%      | 20%    | 30%        | 25%          |
+| May-22 | 20%      | 15%    | 25%        | 20%          |
+| May-23 | 15%      | 10%    | 20%        | 15%          |
+| May-24 | 10%      | 5%     | 15%        | 10%          |
+| May-25 | 5%       | 3%     | 10%        | 5%           |
+| May-26 | 3%       | 2%     | 8%         | 3%           |
+</details>
+
+<table><tr><td>Auction failure ratio</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>Apr-26</td><td>May-26</td><td>Peak</td></tr><tr><td>National</td><td>18%</td><td>17%</td><td>17%</td><td>20%</td><td>19%</td><td>5%</td><td>40%</td></tr><tr><td>Tier 1 cities</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>68%</td></tr><tr><td>Tier 2 cities</td><td>9%</td><td>8%</td><td>11%</td><td>12%</td><td>3%</td><td>7%</td><td>28%</td></tr><tr><td>Lower tier cities</td><td>21%</td><td>18%</td><td>18%</td><td>22%</td><td>22%</td><td>5%</td><td>43%</td></tr></table>
+
+Monthly land transaction premium ratio nationwide and breakdown by city-tier  
+![](images/61040ee434a52409197e9a66fb464ca042f733563a24581225c94a817e4e3401.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | National | Tier 1 | Tier 2 | Lower tier | National avg |
+|--------|----------|--------|--------|------------|--------------|
+| May-07 | 40%      | 100%   | 60%    | 50%        | 50%          |
+| May-08 | 30%      | 90%    | 50%    | 40%        | 40%          |
+| May-09 | 20%      | 70%    | 30%    | 20%        | 20%          |
+| May-10 | 10%      | 60%    | 20%    | 10%        | 10%          |
+| May-11 | 5%       | 40%    | 10%    | 5%         | 5%           |
+| May-12 | 10%      | 30%    | 5%     | 10%        | 10%          |
+| May-13 | 5%       | 20%    | 10%    | 5%         | 5%           |
+| May-14 | 10%      | 15%    | 5%     | 10%        | 10%          |
+| May-15 | 5%       | 10%    | 5%     | 5%         | 5%           |
+| May-16 | 10%      | 5%     | 5%     | 5%         | 5%           |
+| May-17 | 5%       | 5%     | 5%     | 5%         | 5%           |
+| May-18 | 10%      | 5%     | 5%     | 5%         | 5%           |
+| May-19 | 5%       | 5%     | 5%     | 5%         | 5%           |
+| May-20 | 10%      | 5%     | 5%     | 5%         | 5%           |
+| May-21 | 5%       | 5%     | 5%     | 5%         | 5%           |
+| May-22 | 10%      | 5%     | 5%     | 5%         | 5%           |
+| May-23 | 5%       | 5%     | 5%     | 5%         | 5%           |
+| May-24 | 10%      | 5%     | 5%     | 5%         | 5%           |
+| May-25 | 5%       | 5%     | 5%     | 5%         | 5%           |
+| May-26 | 10%      | 5%     | 5%     | 5%         | 5%           |
+</details>
+
+<table><tr><td>Land premium ratio</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>Apr-26</td><td>May-26</td><td>Peak</td></tr><tr><td>National</td><td>6.8%</td><td>5.2%</td><td>2.9%</td><td>4.9%</td><td>7.5%</td><td>8.4%</td><td>90%</td></tr><tr><td>Tier 1 cities</td><td>6.0%</td><td>19.7%</td><td>5.3%</td><td>6.6%</td><td>5.2%</td><td>14.6%</td><td>153%</td></tr><tr><td>Tier 2 cities</td><td>9.1%</td><td>2.9%</td><td>2.1%</td><td>4.3%</td><td>10.8%</td><td>9.4%</td><td>93%</td></tr><tr><td>Lower tier cities</td><td>3.6%</td><td>3.4%</td><td>3.0%</td><td>2.6%</td><td>5.8%</td><td>3.6%</td><td>62%</td></tr></table>
+
+Excl. industrial land transactions.
+
+Source: CREIS, Data compiled by GS Global Investment Research
+
+Exhibit 7: We estimate developers' total new funding sources were -60% mom and -14% yoy in May-26, implying +8% yoy in 5M26 (vs. +4% yoy in 2025)  
+Breakdown of developers' external funding source  
+![](images/f7f51e8acf97b020d92d8b52531d88e1c435f32fe3acdd3e8775fb44ca0423a8.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Date | Domestic bonds (excl. ABS/ABN) (Rmb bn) | FX bonds (Rmb bn) | Trust fund (Rmb bn) | ABS/ABN (Rmb bn) |
+|---|---|---|---|---|
+| Jun-22 | 48 | 10 | 15 | 39 |
+| Sep-22 | 50 | 10 | 15 | 37 |
+| Dec-22 | 33 | 10 | 15 | 47 |
+| Mar-23 | 30 | 10 | 15 | 44 |
+| Jun-23 | 25 | 10 | 15 | 51 |
+| Sep-23 | 45 | 10 | 15 | 49 |
+| Dec-23 | 15 | 5 | 10 | 33 |
+| Mar-24 | 15 | 5 | 10 | 37 |
+| Jun-24 | 10 | 5 | 10 | 31 |
+| Sep-24 | 20 | 10 | 10 | 43 |
+| Dec-24 | 25 | 10 | 10 | 48 |
+| Mar-25 | 15 | 10 | 10 | 46 |
+| Jun-25 | 10 | 10 | 10 | 49 |
+| Sep-25 | 30 | 10 | 10 | 56 |
+| Dec-25 | 25 | 10 | 10 | 51 |
+| Mar-26 | 15 | 10 | 10 | 40 |
+| Jun-26 | 10 | 10 | 10 | 36 |
+The chart displays the total issuance volume for domestic bonds (excluding ABS/ABN) over time, broken down by four categories: FX bonds, Trust fund, and ABS/ABN. The data is presented in a horizontal bar format with each bar representing a single year's total. The values are labeled on top of each bar. The x-axis represents time in quarters from Jun-22 to Mar-26. The y-axis represents the issuance volume in Rmb bn. The legend indicates that the bars represent different bond types or instruments. The chart is saved as a PNG file named "XXX" and displayed at the bottom.
+</details>
+
+Excl. loans and sales proceeds.
+
+Exhibit 8: We estimate Rmb1.53tn local government special bonds have been issued by mid-June  
+Monthly local government special bond issuance tracker  
+![](images/7a76588de5525829a7b1bba0af16919f1873b0d9d94c448fe28ffc6684af4c85.jpg)
+
+<details>
+<summary>area chart</summary>
+
+| Month | 2024 (Rmb tn) | 2025 (Rmb tn) | 2026E (Rmb tn) |
+|-------|---------------|---------------|----------------|
+| Jan   | ~0.3          | ~0.3          | ~0.3           |
+| Feb   | ~0.5          | ~0.5          | ~0.5           |
+| Mar   | ~0.7          | ~0.7          | ~0.7           |
+| Apr   | ~0.9          | ~0.9          | ~0.9           |
+| May   | ~1.1          | ~1.1          | ~1.1           |
+| Jun   | ~1.3          | ~1.3          | ~1.3           |
+| Jul   | ~1.5          | ~1.5          | ~1.5           |
+| Aug   | ~1.7          | ~1.7          | ~1.7           |
+| Sep   | ~1.9          | ~1.9          | ~1.9           |
+| Oct   | ~2.1          | ~2.1          | ~2.1           |
+| Nov   | ~2.3          | ~2.3          | ~2.3           |
+| Dec   | ~2.5          | ~2.5          | ~2.5           |
+</details>
+
+Mid-June as of June 12th, 2026  
+Source: CREIS, Data compiled by GS Global Investment Research  
+Source: Wind, Data compiled by GS Global Investment Research
+
+## Secondary market monthly mosaic
+
+Secondary transaction volumes in 15 major cities were -12% mom and +8% yoy in May (vs. +4% in Apr and above the LSD % yoy improvements in prior GSe), and were -3% yoy in 5M26; Tier-1 cities recorded +11% yoy in May (vs. +6% in Apr) and flattish yoy in 5M26.  
+70-city secondary ASP index on average was -0.3% mom in May (vs. -0.2% mom in Apr), and Tier 1/2/3 cities recorded +0.3%/-0.2%/-0.4% mom (vs.+0.4%/-0.2%/-0.4% in Apr), respectively.  
+Secondary transaction breakdown by price range in May indicated that Shenzhen and Shanghai saw broad-based secondary transaction ASP improvements across most product types, and Beijing's high-end projects outperformed.  
+Secondary housing sentiment overall slightly improved in May-26, with 1) secondary listing volume in 100 cities continuing to drop yoy in May-26, the 3rd consecutive month, though at a slower decline pace and inched up mom (partially due to seasonality); 2) online secondary transaction turnover pace strengthening mom in all city tiers; and 3) residential rental yield continuing to improve mom in May-26; that said, 4) May online secondary home searching activities slightly moderated mom.  
+Rent: While 50-cities' average rent level trended lower in May-26, we note that Tier-1 cities' rent had on average increased mom for three consecutive months, also outperforming May-24/-25 which both recorded negative mom.
+
+Exhibit 9: 15 major cities' secondary sales volume on average fell $12\%$ mom and was $+8\%$ yoy in May-26, and recorded $-3\%$ yoy in 5M26  
+15 major cities' secondary market transaction volume tracker  
+15 major cities secondary sales volume trend  
+![](images/903b475b685fbb4bc2ed053a1d5464d627c498d0e4c0605a9810846ae0561a88.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month    | Monthly YoY | YTD YoY |
+|----------|-------------|---------|
+| Mar-17   | -20%        | -20%    |
+| Aug-17   | -40%        | -40%    |
+| Jan-18   | -30%        | -30%    |
+| Jun-18   | -20%        | -20%    |
+| Nov-18   | 0%          | 0%      |
+| Apr-19   | 20%         | 20%     |
+| Sep-19   | 40%         | 40%     |
+| Feb-20   | 20%         | 20%     |
+| Jun-20   | 0%          | 0%      |
+| Dec-20   | 20%         | 20%     |
+| May-21   | 100%        | 100%    |
+| Oct-21   | -40%        | -40%    |
+| Mar-22   | -60%        | -60%    |
+| Aug-22   | -40%        | -40%    |
+| Jan-23   | 0%          | 0%      |
+| Jun-23   | 60%         | 60%     |
+| Nov-23   | 40%         | 40%     |
+| Apr-24   | 20%         | 20%     |
+| Sep-24   | 0%          | 0%      |
+| Feb-25   | 20%         | 20%     |
+| Jun-25   | 40%         | 40%     |
+| Dec-25   | 20%         | 20%     |
+| May-26   | 0%          | 0%      |
+</details>
+
+Tier 1 cities secondary sales volume YoY  
+![](images/f321cd787b4455c47d894b7fba6c49a7dbb5b539c1a3d9b89491685613f93da1.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | Beijing (%) | Shanghai (%) | Guangzhou (%) | Shenzhen (%) | Tier 1 (%) |
+|---|---|---|---|---|---|
+| Jan-24 | 50 | 80 | -10 | 150 | 50 |
+| Mar-24 | -30 | -70 | -10 | -30 | -20 |
+| May-24 | 20 | 90 | -10 | 40 | 30 |
+| Jul-24 | 30 | 100 | 10 | 120 | 40 |
+| Sep-24 | 10 | -10 | 10 | 50 | 20 |
+| Nov-24 | 50 | 70 | 30 | 130 | 60 |
+| Jan-25 | 80 | 80 | 30 | 210 | 70 |
+| Mar-25 | 90 | 130 | 30 | 60 | 50 |
+| May-25 | 30 | -10 | 10 | 30 | -5 |
+| Jul-25 | -5 | -15 | -5 | -5 | -10 |
+| Sep-25 | 10 | 30 | -10 | 40 | 10 |
+| Nov-25 | -10 | -5 | -10 | -30 | -15 |
+| Jan-26 | -15 | -5 | -15 | -40 | -25 |
+| Mar-26 | -5 | 10 | -15 | -30 | -15 |
+| May-26 | 10 | 30 | -30 | 10 | 5 |
+</details>
+
+Secondary sales volume comparison by cities (May-26)  
+![](images/81ccce2576b85701aa750e0b2abc7cf44f5e9e4af01125db559f334fa3abe937.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| City      | Lowest (k sqm) | Highest (k sqm) | YTD average (k sqm) | Lowest / Highest % (%) |
+|-----------|----------------|-----------------|---------------------|------------------------|
+| Shanghai  | ~500           | ~2,500          | ~2,000              | 28%                    |
+| Chengdu   | ~300           | ~2,000          | ~1,800              | 11%                    |
+| Beijing   | ~800           | ~1,600          | ~1,500              | 10%                    |
+| Tianjin   | ~500           | ~1,400          | ~1,300              | -1%                    |
+| Chongqing | ~700           | ~1,200          | ~1,100              | -21%                   |
+| Nanjing   | ~600           | ~1,000          | ~900                | 1%                     |
+| Guangzhou | ~600           | ~1,200          | ~800                | -16%                   |
+| Suzhou    | ~500           | ~900            | ~700                | 4%                     |
+| Qingdao   | ~300           | ~600            | ~500                | 8%                     |
+| Shenzhen  | ~300           | ~500            | ~400                | -6%                    |
+| Changsha  | ~300           | ~400            | ~300                | -1%                    |
+| Hangzhou  | ~200           | ~300            | ~200                | -20%                   |
+| Nanning   | ~150           | ~200            | ~150                | -8%                    |
+| Dalian    | ~150           | ~150            | ~150                | 32%                    |
+| Xiamen    | ~150           | ~150            | ~150                | 18%                    |
+| Nanning   | ~150           | ~150            | ~150                | -44%                   |
+</details>
+
+Source: Centraline, CREIS, Data compiled by GS Global Investment Research
+
+Exhibit 10: May-26 70-city secondary ASP index was -0.3% mom (vs. -0.2% mom for Apr), and 10 cities (vs. 12 in Apr) recorded sequential ASP improvements in secondary markets  
+Average 70 cities secondary ASP Index mom  
+![](images/d19c19d95bee5d66585d09002d6b8210385859956fa4e2bb2bb15e23c8841733.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | No. of cities where secondary ASP increased mom (RHS) | No. of cities where secondary ASP decreased mom (RHS) | Avg 70 cities secondary ASP Index mom % (LHS) |
+|---------|------------------------------------------------------|--------------------------------------------------------|---------------------------------------------|
+| May-23  | 1.0                                                  | 0.0                                                    | -50                                         |
+| Jul-23  | 0.5                                                  | -0.5                                                   | -50                                         |
+| Sep-23  | 0.0                                                  | -1.0                                                   | -50                                         |
+| Nov-23  | -0.5                                                 | -1.5                                                   | -50                                         |
+| Jan-24  | -1.0                                                 | -2.0                                                   | -50                                         |
+| Mar-24  | -0.5                                                 | -1.5                                                   | -50                                         |
+| May-24  | 0.0                                                  | -1.0                                                   | -50                                         |
+| Jul-24  | 0.5                                                  | -0.5                                                   | -50                                         |
+| Sep-24  | 1.0                                                  | 0.0                                                    | -50                                         |
+| Nov-24  | 0.5                                                  | 0.5                                                    | -50                                         |
+| Jan-25  | 0.0                                                  | 1.0                                                    | -50                                         |
+| Mar-25  | -0.5                                                 | 1.5                                                    | -50                                         |
+| May-25  | -1.0                                                 | 2.0                                                    | -50                                         |
+| Jul-25  | -0.5                                                 | 1.5                                                    | -50                                         |
+| Sep-25  | 0.0                                                  | 1.0                                                    | -50                                         |
+| Nov-25  | 0.5                                                  | 0.5                                                    | -50                                         |
+| Jan-26  | 1.0                                                  | 0.0                                                    | -50                                         |
+| Mar-26  | 1.5                                                  | -0.5                                                   | -50                                         |
+| May-26  | 2.0                                                  | -1.0                                                   | -50                                         |
+</details>
+
+70 cities secondary ASP Index mom by city tiers  
+![](images/21bae2c71f5c283fbfc55cf886a899196bcb98fa7b09424bf51b86f4c92a79c7.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Tier-1 cities | Tier-2 cities | Rest cities |
+|----------|---------------|---------------|-------------|
+| May-23   | 0.0           | 0.0           | 0.0         |
+| Jul-23   | -0.4          | -0.4          | -0.4        |
+| Sep-23   | -0.8          | -0.8          | -0.8        |
+| Nov-23   | -1.2          | -1.2          | -1.2        |
+| Jan-24   | -0.8          | -0.8          | -0.8        |
+| Mar-24   | -0.4          | -0.4          | -0.4        |
+| May-24   | -0.8          | -0.8          | -0.8        |
+| Jul-24   | -1.2          | -1.2          | -1.2        |
+| Sep-24   | -0.8          | -0.8          | -0.8        |
+| Nov-24   | 0.0           | 0.0           | 0.0         |
+| Jan-25   | 0.4           | 0.4           | 0.4         |
+| Mar-25   | 0.0           | 0.0           | 0.0         |
+| May-25   | -0.8          | -0.8          | -0.8        |
+| Jul-25   | -1.2          | -1.2          | -1.2        |
+| Sep-25   | -0.8          | -0.8          | -0.8        |
+| Nov-25   | -0.4          | -0.4          | -0.4        |
+| Jan-26   | 0.0           | 0.0           | 0.0         |
+| Mar-26   | 0.4           | 0.4           | 0.4         |
+| May-26   | 0.0           | 0.0           | 0.0         |
+</details>
+
+70 cities secondary ASP Index mom within Tier-1 cities  
+![](images/197c2f27bc61f7e26e80886e7989274a9bbebe31a4feaa65f1aff39204610661.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month    | Shanghai | Shenzhen | Beijing | Guangzhou |
+|----------|----------|----------|---------|-----------|
+| May-23   | -1.2     | 0.4      | -0.4    | -0.8      |
+| Jul-23   | -0.8     | 0.6      | -0.6    | -0.9      |
+| Sep-23   | -0.4     | 0.8      | -0.2    | -1.0      |
+| Nov-23   | 0.2      | 0.6      | 0.4     | -0.8      |
+| Jan-24   | -0.6     | 0.4      | -0.8    | -1.0      |
+| Mar-24   | -0.8     | 0.2      | -1.0    | -1.2      |
+| May-24   | -1.0     | 0.0      | -1.2    | -1.4      |
+| Jul-24   | -0.8     | -0.2     | -1.0    | -1.2      |
+| Sep-24   | -0.6     | -0.4     | -0.8    | -1.0      |
+| Nov-24   | -0.4     | -0.2     | -0.6    | -0.8      |
+| Jan-25   | -0.2     | 0.0      | -0.4    | -0.6      |
+| Mar-25   | 0.2      | 0.2      | 0.4     | -0.4      |
+| May-25   | 0.4      | 0.4      | 0.6     | -0.2      |
+| Jul-25   | 0.6      | 0.6      | 0.8     | 0.0       |
+| Sep-25   | 0.8      | 0.8      | 1.0     | 0.2       |
+| Nov-25   | 1.0      | 1.0      | 1.2     | 0.4       |
+| Jan-26   | 1.2      | 1.2      | 1.4     | 0.6       |
+| Mar-26   | 1.4      | 1.4      | 1.6     | 0.8       |
+| May-26   | 1.6      | 1.6      | 1.8     | 1.0       |
+</details>
+
+Source: NBS, Data compiled by GS Global Investment Research
+
+Exhibit 11: Blended 2nd transaction ASP in Shanghai improved 3% mom in May-26, with broad-based improvements except for the lowest/highest-end categories  
+Secondary performance by price range in Shanghai  
+![](images/f70b8964a5418043416a1d8df797aea774c19c0b640b88c92242c144721d442d.jpg)
+
+<table><tr><td rowspan="2">Price range (mn Rmb)</td><td colspan="2">% of sales vol</td><td colspan="2">May-26 ASP</td><td rowspan="2">Price range (mn Rmb)</td><td colspan="2">% of sales vol</td><td colspan="2">May-26 ASP</td></tr><tr><td>2025</td><td>5M26</td><td>MoM</td><td>vs. Peak</td><td>2025</td><td>5M26</td><td>MoM</td><td>vs. Peak</td></tr><tr><td>Below 2</td><td>19%</td><td>25%</td><td>-5%</td><td>-23%</td><td>7-9</td><td>7%</td><td>6%</td><td>8%</td><td>-10%</td></tr><tr><td>2-3</td><td>20%</td><td>22%</td><td>2%</td><td>-11%</td><td>9-10</td><td>3%</td><td>2%</td><td>1%</td><td>-23%</td></tr><tr><td>3-5</td><td>25%</td><td>24%</td><td>2%</td><td>-17%</td><td>10-20</td><td>10%</td><td>8%</td><td>11%</td><td>-8%</td></tr><tr><td>5-7</td><td>12%</td><td>11%</td><td>3%</td><td>-17%</td><td>Above 20</td><td>4%</td><td>3%</td><td>-9%</td><td>-24%</td></tr><tr><td>Total</td><td>100%</td><td>100%</td><td>3%</td><td>-27%</td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: CREIS, GS Global Investment Research
+
+Exhibit 13: ASP in Beijing was -1% mom in May, with high-end products outperforming  
+Secondary performance by price range in Beijing  
+![](images/845acb706a6c2a1fabc67741cb95dc1324af320f198c38af515aab6b858a3e86.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Below Rmb2mn | Rmb2-3mn | Rmb3-5mn | Rmb7-9mn | Rmb9-10mn | Above Rmb10mn |
+|----------|--------------|----------|----------|----------|-----------|---------------|
+| May-28   | 78           |          |          |          |           |               |
+</details>
+
+<table><tr><td rowspan="2">Price range (mn Rmb)</td><td colspan="2">% of sales vol</td><td colspan="2">May-26 ASP</td><td rowspan="2">Price range (mn Rmb)</td><td colspan="2">% of sales vol</td><td colspan="2">May-26 ASP</td></tr><tr><td>2025</td><td>5M26</td><td>MoM</td><td>vs. Peak</td><td>2025</td><td>5M26</td><td>MoM</td><td>vs. Peak</td></tr><tr><td>Below 2</td><td>12%</td><td>15%</td><td>-5%</td><td>-17%</td><td>7-9</td><td>9%</td><td>8%</td><td>-6%</td><td>-24%</td></tr><tr><td>2-3</td><td>17%</td><td>19%</td><td>-3%</td><td>-17%</td><td>9-10</td><td>3%</td><td>3%</td><td>1%</td><td>-20%</td></tr><tr><td>3-5</td><td>27%</td><td>28%</td><td>-4%</td><td>-20%</td><td>Above 10</td><td>17%</td><td>12%</td><td>-2%</td><td>-19%</td></tr><tr><td>5-7</td><td>16%</td><td>14%</td><td>-3%</td><td>-19%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Total</td><td>100%</td><td>100%</td><td>-2%</td><td>-28%</td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: CREIS, GS Global Investment Research
+
+Exhibit 12: Similarly, 2nd transaction ASP in Shenzhen rose 2% mom in May-26, driven by broad-based improvements across product types  
+Secondary performance by price range in Shenzhen  
+![](images/05bb698a40a870dc7ffe9441123b1d9b16cdcedf89b84f1e07dd44d47174bf9d.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date       | Below Rmb 3mn | Rmb3-6mn | Rmb6-10mn | Above Rmb 20mn | Total |
+|------------|---------------|----------|-----------|----------------|-------|
+| May-28     | 97            |          |           |                | 97    |
+</details>
+
+<table><tr><td rowspan="2">Price range (mn Rmb)</td><td colspan="2">% of sales vol</td><td colspan="2">May-26 ASP</td><td rowspan="2">Price range (mn Rmb)</td><td colspan="2">% of sales vol</td><td colspan="2">May-26 ASP</td></tr><tr><td>2025</td><td>5M26</td><td>MoM</td><td>vs. Peak</td><td>2025</td><td>5M26</td><td>MoM</td><td>vs. Peak</td></tr><tr><td>Below 3</td><td>17%</td><td>23%</td><td>3%</td><td>-30%</td><td>10-20</td><td>14%</td><td>12%</td><td>-3%</td><td>-12%</td></tr><tr><td>3-6</td><td>40%</td><td>43%</td><td>0%</td><td>-16%</td><td>Above 20</td><td>6%</td><td>3%</td><td>9%</td><td>0%</td></tr><tr><td>6-10</td><td>22%</td><td>20%</td><td>5%</td><td>-13%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Total</td><td>100%</td><td>100%</td><td>2%</td><td>-22%</td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: CREIS, GS Global Investment Research
+
+Exhibit 14: May-26 secondary listing volume in 100 cities continued to decline yoy (3nd consecutive month), yet at a slower pace compared to Apr, and inched up mom...  
+Monthly secondary GFA sold in 15 key cities monitored by Centraline, against secondary listing volume in 100 cities monitored by 58 Anjuke  
+![](images/c8d5f5300b0c30f0322ee53f137ce7f8d281b8e717bb79839bbcc99a1d64058e.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month    | 100-Cities secondary housing listing volume (mn unit) | Monthly secondary GFA sold in 15 cities (mn sqm) |
+|----------|------------------------------------------------------|--------------------------------------------------|
+| Jan-22   | 0.8                                                  | 12                                               |
+| May-22   | 1.0                                                  | 10                                               |
+| Sep-22   | 1.3                                                  | 14                                               |
+| Jan-23   | 1.5                                                  | 16                                               |
+| May-23   | 1.7                                                  | 18                                               |
+| Sep-23   | 1.9                                                  | 14                                               |
+| Jan-24   | 2.0                                                  | 10                                               |
+| May-24   | 2.3                                                  | 16                                               |
+| Sep-24   | 2.4                                                  | 14                                               |
+| Jan-25   | 2.5                                                  | 18                                               |
+| May-25   | 2.7                                                  | 16                                               |
+| Sep-25   | 2.6                                                  | 14                                               |
+| Jan-26   | 2.7                                                  | 12                                               |
+| May-26   | 2.8                                                  | 14                                               |
+</details>
+
+Source: Wind, Centraline, 58 Anjuke Real Estate Research Institute, Data compiled GS Global Investment Research
+
+Exhibit 15: ...with yoy secondary supply balance declines recorded in both Tier-1 and lower tier cities  
+Average secondary listing volume per city, by city tier  
+![](images/20acf1acb58b18409b7e6823986b83b51767c79712b2c5d3bf9e389bce2a54b2.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month    | 100-Cities | Tier 1 | Tier 2 | Lower tiers |
+| -------- | ---------- | ------ | ------ | ----------- |
+| Jan-22   | 10         | 25     | 15     | 5           |
+| May-22   | 12         | 35     | 20     | 6           |
+| Sep-22   | 14         | 50     | 25     | 7           |
+| Jan-23   | 16         | 55     | 30     | 8           |
+| May-23   | 18         | 65     | 35     | 9           |
+| Sep-23   | 20         | 70     | 40     | 10          |
+| Jan-24   | 22         | 60     | 45     | 8           |
+| May-24   | 24         | 75     | 50     | 9           |
+| Sep-24   | 26         | 80     | 55     | 10          |
+| Jan-25   | 28         | 85     | 60     | 11          |
+| May-25   | 30         | 80     | 55     | 10          |
+| Sep-25   | 32         | 85     | 50     | 9           |
+| Jan-26   | 34         | 80     | 45     | 8           |
+| May-26   | 36         | 75     | 40     | 7           |
+</details>
+
+Source: 58 Anjuke Real Estate Research Institute, Data compiled by GS Global Investment Research
+
+Exhibit 17: Online secondary home searching activities slightly moderated mom in May-26  
+Secondary home search demand heat index  
+![](images/168bd6821358ef93f306461908e539a65e32c8a05e65beaef2797cb03125b4e3.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | 100-Cities | Tier 1 | Tier 2 | Lower tiers |
+|---------|------------|--------|--------|-------------|
+| Apr-22  | 70         | 58     | 70     | 70          |
+| Aug-22  | 70         | 60     | 70     | 70          |
+| Dec-22  | 65         | 55     | 65     | 65          |
+| Apr-23  | 83         | 73     | 83     | 83          |
+| Aug-23  | 74         | 65     | 74     | 74          |
+| Dec-23  | 74         | 65     | 74     | 74          |
+| Apr-24  | 76         | 70     | 76     | 76          |
+| Aug-24  | 74         | 68     | 74     | 74          |
+| Dec-24  | 75         | 65     | 75     | 75          |
+| Apr-25  | 78         | 72     | 78     | 78          |
+| Aug-25  | 71         | 68     | 71     | 71          |
+| Dec-25  | 69         | 65     | 69     | 69          |
+| Apr-26  | 74         | 68     | 74     | 74          |
+</details>
+
+Source: 58 Anjuke Real Estate Research Institute, Data compiled by GS Global Investment Research
+
+Exhibit 16: Secondary housing transaction turnover pace marginally accelerated in May-26  
+Average number of days on listing, by city tier  
+![](images/487384b526bd5e8fb898775dda994c7641d0815978636f2723c88ba78f1973d9.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | 100-Cities | Tier 1 | Tier 2 | Lower tiers |
+|--------|------------|--------|--------|-------------|
+| Jan-22 | 70         | 60     | 65     | 75          |
+| May-22 | 75         | 65     | 70     | 80          |
+| Sep-22 | 80         | 70     | 75     | 85          |
+| Jan-23 | 90         | 80     | 85     | 95          |
+| May-23 | 70         | 75     | 80     | 85          |
+| Sep-23 | 80         | 85     | 85     | 90          |
+| Jan-24 | 90         | 90     | 90     | 95          |
+| May-24 | 85         | 95     | 85     | 90          |
+| Sep-24 | 90         | 100    | 90     | 95          |
+| Jan-25 | 100        | 110    | 100    | 105         |
+| May-25 | 95         | 105    | 95     | 100         |
+| Sep-25 | 100        | 110    | 100    | 105         |
+| Jan-26 | 105        | 115    | 105    | 110         |
+| May-26 | 90         | 105    | 90     | 95          |
+</details>
+
+Source: 58 Anjuke Real Estate Research Institute, Data compiled by GS Global Investment Research
+
+Exhibit 18: Residential rental yield continued to improve in May-26  
+100 cities' residential rental yield vs. 30-yr Treasury yield and first-home mortgage rate  
+![](images/94f20c185e4bf1506da3685745aea9031063cc4db370cf263e5df7d657f48a5a.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | 30-Yr treasury yield | 100 Cities | Tier-2 cities | 1st Home mortgage rate | Tier-1 cities | Tier-3 cities |
+|----------|----------------------|------------|---------------|------------------------|---------------|---------------|
+| Aug-18   | 4.1%                 | 2.1%       | 2.6%          | 5.6%                   | 1.6%          | 2.6%          |
+| Dec-18   | 4.0%                 | 2.1%       | 2.6%          | 5.5%                   | 1.6%          | 2.6%          |
+| Apr-19   | 3.9%                 | 2.1%       | 2.6%          | 5.4%                   | 1.6%          | 2.6%          |
+| Aug-19   | 3.8%                 | 2.1%       | 2.6%          | 5.3%                   | 1.6%          | 2.6%          |
+| Dec-19   | 3.7%                 | 2.1%       | 2.6%          | 5.2%                   | 1.6%          | 2.6%          |
+| Apr-20   | 3.6%                 | 2.1%       | 2.6%          | 5.1%                   | 1.6%          | 2.6%          |
+| Aug-20   | 3.5%                 | 2.1%       | 2.6%          | 5.0%                   | 1.6%          | 2.6%          |
+| Dec-20   | 3.4%                 | 2.1%       | 2.6%          | 4.9%                   | 1.6%          | 2.6%          |
+| Apr-21   | 3.3%                 | 2.1%       | 2.6%          | 4.8%                   | 1.6%          | 2.6%          |
+| Aug-21   | 3.2%                 | 2.1%       | 2.6%          | 4.7%                   | 1.6%          | 2.6%          |
+| Dec-21   | 3.1%                 | 2.1%       | 2.6%          | 4.6%                   | 1.6%          | 2.6%          |
+| Apr-22   | 3.0%                 | 2.1%       | 2.6%          | 4.5%                   | 1.6%          | 2.6%          |
+| Aug-22   | 2.9%                 | 2.1%       | 2.6%          | 4.4%                   | 1.6%          | 2.6%          |
+| Dec-22   | 2.8%                 | 2.1%       | 2.6%          | 4.3%                   | 1.6%          | 2.6%          |
+| Apr-23   | 2.7%                 | 2.1%       | 2.6%          | 4.2%                   | 1.6%          | 2.6%          |
+| Aug-23   | 2.6%                 | 2.1%       | 2.6%          | 4.1%                   | 1.6%          | 2.6%          |
+| Dec-23   | 2.5%                 | 2.1%       | 2.6%          | 4.0%                   | 1.6%          | 2.6%          |
+| Apr-24   | 2.4%                 | 2.1%       | 2.6%          | 3.9%                   | 1.6%          | 2.6%          |
+| Aug-24   | 2.3%                 | 2.1%       | 2.6%          | 3.8%                   | 1.6%          | 2.6%          |
+| Dec-24   | 2.2%                 | 2.1%       | 2.6%          | 3.7%                   | 1.6%          | 2.6%          |
+| Apr-25   | 2.1%                 | 2.1%       | 2.6%          | 3.6%                   | 1.6%          | 2.6%          |
+| Aug-25   | 2.0%                 | 2.1%       | 2.6%          | 3.5%                   | 1.6%          | 2.6%          |
+| Dec-25   | 1.9%                 | 2.1%       | 2.6%          | 3.4%                   | 1.6%          | 2.6%          |
+| Apr-26   | 1.8%                 | 2.1%       | 2.6%          | 3.3%                   | 1.6%          | 2.6%          |
+</details>
+
+Source: Wind, GS Global Investment Research
+
+Exhibit 19: 50 cities' average rent level trended lower in May-26...  
+Average residential rent and mom in 50 cities monitored by CREIS  
+![](images/029119550fbe358b3eaf0a0668297bead2f2232ca4b16f3d061d66b78a882a65.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Date    | Average rent mom (Rmb/sqm/mth) | 50-Cities average rent level (LHS) |
+|---------|--------------------------------|------------------------------------|
+| Sep-21  | 39                             | 0.4%                               |
+| Jan-22  | 37                             | -0.2%                              |
+| May-22  | 38                             | -0.1%                              |
+| Sep-22  | 37                             | -0.1%                              |
+| Jan-23  | 36                             | -0.2%                              |
+| May-23  | 37                             | -0.1%                              |
+| Sep-23  | 37                             | -0.1%                              |
+| Jan-24  | 36                             | -0.2%                              |
+| May-24  | 36                             | -0.3%                              |
+| Sep-24  | 35                             | -0.4%                              |
+| Jan-25  | 35                             | -0.5%                              |
+| May-25  | 34                             | -0.6%                              |
+| Sep-25  | 34                             | -0.7%                              |
+| Jan-26  | 34                             | -0.8%                              |
+| May-26  | 34                             | -0.8%                              |
+</details>
+
+Source: CREIS, Data compiled by GS Global Investment Research
+
+Exhibit 20: ...while Tier-1 cities' rent on average achieved positive mom for three consecutive months, also outperforming May-24/-25 which both recorded negative mom  
+Average residential rent and mom in 4 Tier-1 cities  
+![](images/337e3873a42952d7f6d8b55ace3d8023123dd36d31ce316c002156682c51a3b6.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Date    | Average rent mom (Rmb/sqm/mth) | Tier-1 cities average rent level (LHS) |
+|---------|----------------------------------|----------------------------------------|
+| Sep-21  | 82                               | 0.5%                                   |
+| Jan-22  | 70                               | -1.0%                                  |
+| May-22  | 79                               | -0.5%                                  |
+| Sep-22  | 79                               | -0.5%                                  |
+| Jan-23  | 76                               | -0.5%                                  |
+| May-23  | 82                               | -0.5%                                  |
+| Sep-23  | 79                               | -0.5%                                  |
+| Jan-24  | 79                               | -0.5%                                  |
+| May-24  | 79                               | -0.5%                                  |
+| Sep-24  | 76                               | -0.5%                                  |
+| Jan-25  | 76                               | -0.5%                                  |
+| May-25  | 79                               | -0.5%                                  |
+| Sep-25  | 79                               | -0.5%                                  |
+| Jan-26  | 76                               | -0.5%                                  |
+| May-26  | 73                               | -1.0%                                  |
+</details>
+
+Source: CREIS, Data compiled by GS Global Investment Research
+
+## Developers' profitability monitor
+
+In May-26, our tracked six developers' new land acquisition spending was about 20% of their contract sales, on average carrying c.23% project-level GPM, with 95% exposure to Tier-1 & 2 cities and 78% exposure to Top-10 cities; overall their 5M2026 land investment on average accounted for 21% of contract sales and carried c.24% project level GPM;  
+■ Applying our local housing supply ratio analysis, Class I cities (cities with the most promising longer-term outlook) account for on average 91% of both land acquisition cost and GS estimated project-level profit for the six developers during 5M2026.
+
+Exhibit 21: In May-26, our tracked six developers' new land acquisition spending was about 20% of their contract sales, on average carrying c.23% project-level GPM, with 95% exposure to Tier-1 & 2 cities and 78% exposure to Top-10 cities; overall their 5M2026 land investment on average accounted for 21% of contract sales and carried c.24% project level GPM  
+Snapshot of land acquisitions by six developers among our coverage universe which have continued to actively engage in landbanking  
+![](images/2d75ebaefd82eb346c5e77456201e89448e7dca818abeaa2e0cac0f0cb1540f4.jpg)  
+1) Due to data disclosure, we use company land acquisition newsletters for COLI, CRL, Poly A and CMSK, and CREIS land transaction data for Greentown and Jinmao; 2) % of contract sales are on gross basis due to contract sales data availability; 3) Estimated GPMs and breakdown by city tiers/groups are weighted based on attributable land premium; 4) Top-10 cities include Beijing, Shanghai, Guangzhou, Shenzhen, Hangzhou, Nanjing, Suzhou, Chengdu, Xi'an, Tianjin and Hong Kong (if applicable).  
+Source: Company data, CREIS, CRIC, GS Global Investment Research
+
+## Disclosure Appendix
+
+## Reg AC
+
+We, Yi Wang, CFA, Shi Xu and Kaiyan Jing, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.
+
+Contributing Authors: Yi Wang, CFA GS (China) Securities Company Limited, Shi Xu GS (China) Securities Company Limited, Kaiyan Jing GS (China) Securities Company Limited.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+## GS Factor Profile
+
+The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:
+
+Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).
+
+Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).
+
+For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.
+
+## M&A Rank
+
+Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.
+
+## Quantum
+
+Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.
+
+## Disclosures
+
+## Distribution of ratings/investment banking relationships
+
+GS Investment Research global Equity coverage universe
+
+<table><tr><td rowspan="2"></td><td colspan="3">Rating Distribution</td><td colspan="3">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>60%</td><td>45%</td></tr></table>
+
+As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.
+
+## Regulatory disclosures
+
+## Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website
+
+at https://www.gs.com/research/hedge.html.
+
+## Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+## Ratings, coverage universe and related definitions
+
+Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.
+
+Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.
+
+Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at
+
+https://www.gs.com/research/hedge.html.
+
+Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.
+
+## Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+## General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for
+
+equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.
