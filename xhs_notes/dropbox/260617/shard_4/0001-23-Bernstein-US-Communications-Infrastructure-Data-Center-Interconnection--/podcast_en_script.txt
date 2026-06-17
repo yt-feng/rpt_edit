@@ -1,0 +1,16 @@
+EN_A: So, we keep hearing about data center interconnection. But what is it, really? And why is everyone suddenly talking about it?
+EN_B: Interconnection is basically the private links between networks inside a data center. It keeps traffic off the public internet, which lowers costs, reduces latency, and improves security. A recent report from a global investment bank built a proprietary database on this, and the findings are pretty striking.
+EN_A: What was the main question the report was trying to answer?
+EN_B: It wanted to figure out which data center operators have built a real, defensible moat through interconnection. And the answer is clear: Equinix is much stronger than most people realize.
+EN_A: Stronger in what sense? Can you give me some numbers?
+EN_B: Sure. The report tracked 645 key enterprise interconnection facilities globally and found over 21,000 network connections. Equinix alone has 222 facilities, with an average of 58 interconnection partners per site, supporting 513,000 revenue-generating cross-connects. The next closest competitor, CoreSite, has only 29 facilities. The gap is enormous.
+EN_A: That’s a big lead. But what makes interconnection such a powerful business?
+EN_B: It’s a high-margin business, around 70 to 90 percent. And once a customer sets up a cross-connect, it’s very sticky because it’s tied to production traffic. Plus, there’s a literal network effect: the more connections in a campus, the more valuable each new connection becomes.
+EN_A: So it’s a winner-take-most kind of dynamic. What does that mean for other players?
+EN_B: The report highlights a few key points. For example, 60 percent of all cloud on-ramps are inside Equinix facilities. And in the U.S., Equinix charges about 342 dollars per cross-connect, compared to 197 dollars in the rest of the world. So they dominate the most profitable market.
+EN_A: What about Digital Realty? Where do they fit in?
+EN_B: Digital Realty ranks second in total networks, but only fourth in average networks per facility. The report suggests that’s because they shifted to enterprise colocation relatively late. Still, they have some standout sites, like their Frankfurt hub with 611 networks, the densest in the world.
+EN_A: That’s interesting. Are there any questions the report leaves open? Like, could virtual connections change this picture?
+EN_B: Great question. The report doesn’t fully explore how software-defined virtual cross-connects might erode the physical moat over time. Also, the demand patterns from new cloud players like CoreWeave might be different from traditional enterprises. The full report goes deeper into these questions.
+EN_A: So this isn’t just a ranking, it’s a framework for understanding the future of data centers.
+EN_B: Exactly. And if you want the full analysis, including the valuation models and updates on each company, you can find it in our complete report. Join our community to get access.

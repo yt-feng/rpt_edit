@@ -1,0 +1,19 @@
+Found 37 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zs_98_f9/pdfs/0001-23-Bernstein-US Communications Infrastructure Data Center Interconnection- A literal network effect-260616.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zs_98_f9/pdfs/0002-24-Deutsche Bank-China Banks-May TSF improved sequentially-demand stays weak-260615.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zs_98_f9/pdfs/0003-25-Deutsche Bank-Securitization Research 2026 The Mid-Year Outlook-260616.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zs_98_f9/pdfs/0004-26-Morgan Stanley-Asia Summer School- Asia Robotics and Humanoids-260616.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_zs_98_f9/pdfs/0005-27-Nomura-China consumer-Retail sales momentum weakened further in May-260616.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=8d5f2776-7a4c-4de3-9bf8-6cd947a28217
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, running, running, done
+MinerU states: done, done, running, done, done
+MinerU states: done, done, running, done, done
+MinerU states: done, done, running, done, done
+MinerU states: done, done, running, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260617/shard_4; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
