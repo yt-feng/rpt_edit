@@ -1,0 +1,379 @@
+{
+  "date_folder": "260617",
+  "max_reports": "all",
+  "selected_count": 37,
+  "successful_count": 37,
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_0/0001-01-CITI-Global-FX-Strategy-Fade-EUR-rallies-if-Warsh-disappoints-hawks-2606",
+      "title": "Citi：市场对美联储的“鹰派”定价已足够充分，真正的交易机会在于美元走弱时的战术性做空",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 4,
+      "output_dir": "kc_translated_reports/260617/01-0001-01-CITI-Global-FX-Strategy-Fade-EUR-rallies-if-Warsh-disappoints-hawks-2606",
+      "pdf_path": "kc_translated_reports/260617/01-0001-01-CITI-Global-FX-Strategy-Fade-EUR-rallies-if-Warsh-disappoints-hawks-2606/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_0/0002-02-Bernstein-Global-Metals---Mining--Copper-Taco-or-Boco-Season-Finale---U.",
+      "title": "Global Metals & Mining: Copper Taco or Boco Season Finale - U.S. policy is distorting copper price but what can we do about it?",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 13,
+      "output_dir": "kc_translated_reports/260617/02-0002-02-Bernstein-Global-Metals---Mining--Copper-Taco-or-Boco-Season-Finale---U",
+      "pdf_path": "kc_translated_reports/260617/02-0002-02-Bernstein-Global-Metals---Mining--Copper-Taco-or-Boco-Season-Finale---U/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_0/0003-03-Bernstein-Global-Semiconductors-Global-Semis--The-CPU-Renaissance--Benef",
+      "title": "Bernstein：AI从聊天走向智能体，CPU正在经历一场被低估的复兴",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 24,
+      "output_dir": "kc_translated_reports/260617/03-0003-03-Bernstein-Global-Semiconductors-Global-Semis--The-CPU-Renaissance--Benef",
+      "pdf_path": "kc_translated_reports/260617/03-0003-03-Bernstein-Global-Semiconductors-Global-Semis--The-CPU-Renaissance--Benef/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_0/0004-05-Bernstein-Bernstein-Energy--Let-the-oil-flow-260617",
+      "title": "Bernstein：市场低估的不是供给恢复的速度，而是库存重建的深度",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 19,
+      "output_dir": "kc_translated_reports/260617/04-0004-05-Bernstein-Bernstein-Energy--Let-the-oil-flow-260617",
+      "pdf_path": "kc_translated_reports/260617/04-0004-05-Bernstein-Bernstein-Energy--Let-the-oil-flow-260617/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_0/0005-06-Deutsche-Bank-Japan-Monetary-Policy-Watch-MPM-review--an-initial-dovish-",
+      "title": "DB：日本央行鸽派转向比加息本身更值得关注",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 5,
+      "output_dir": "kc_translated_reports/260617/05-0005-06-Deutsche-Bank-Japan-Monetary-Policy-Watch-MPM-review--an-initial-dovish",
+      "pdf_path": "kc_translated_reports/260617/05-0005-06-Deutsche-Bank-Japan-Monetary-Policy-Watch-MPM-review--an-initial-dovish/kc_translated_report_05.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_1/0001-07-Deutsche-Bank-Who-is-buying-Treasuries-Mortgages-Credit-and-Munis--26061",
+      "title": "DB：美国债券市场的真正变化不在需求端，而在持有者结构的不可逆重置",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_06.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260617/06-0001-07-Deutsche-Bank-Who-is-buying-Treasuries-Mortgages-Credit-and-Munis--26061",
+      "pdf_path": "kc_translated_reports/260617/06-0001-07-Deutsche-Bank-Who-is-buying-Treasuries-Mortgages-Credit-and-Munis--26061/kc_translated_report_06.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_1/0002-08-Goldman-Sachs-Japan--BOJ--Raises-Policy-Rate-to-1--at-June-MPM--Maintain",
+      "title": "GS：日本央行加息至1%，市场真正低估的不是终点利率，而是加息节奏的重新定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_07.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260617/07-0002-08-Goldman-Sachs-Japan--BOJ--Raises-Policy-Rate-to-1--at-June-MPM--Maintain",
+      "pdf_path": "kc_translated_reports/260617/07-0002-08-Goldman-Sachs-Japan--BOJ--Raises-Policy-Rate-to-1--at-June-MPM--Maintain/kc_translated_report_07.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_1/0003-09-J.P.-Morgan-China-alt-data-trackers-chartpack--Series-57--Exports-still-",
+      "title": "JPM：出口仍是唯一结构性亮点，但国内需求疲软正在拉长政策等待期",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_08.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260617/08-0003-09-J.P",
+      "pdf_path": "kc_translated_reports/260617/08-0003-09-J.P/kc_translated_report_08.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_1/0004-10-Morgan-Stanley-From-the-Global-Director-of-Research-Charts-That-Caught-M",
+      "title": "摩根斯坦利：市场真正低估的不是AI泡沫，而是供给侧的定价权转移",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_09.pdf",
+      "figure_count": 18,
+      "output_dir": "kc_translated_reports/260617/09-0004-10-Morgan-Stanley-From-the-Global-Director-of-Research-Charts-That-Caught-M",
+      "pdf_path": "kc_translated_reports/260617/09-0004-10-Morgan-Stanley-From-the-Global-Director-of-Research-Charts-That-Caught-M/kc_translated_report_09.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_1/0005-11-Goldman-Sachs-OIL-ANALYST-Reducing-Our-Price-Forecast-on-Deal-to-Reopen-",
+      "title": "GS：市场低估的不是供需平衡，而是安全溢价的结构性重置",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_10.pdf",
+      "figure_count": 14,
+      "output_dir": "kc_translated_reports/260617/10-0005-11-Goldman-Sachs-OIL-ANALYST-Reducing-Our-Price-Forecast-on-Deal-to-Reopen",
+      "pdf_path": "kc_translated_reports/260617/10-0005-11-Goldman-Sachs-OIL-ANALYST-Reducing-Our-Price-Forecast-on-Deal-to-Reopen/kc_translated_report_10.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_2/0001-12-Goldman-Sachs-NAVIGATING-CHINA-INTERNET--ECOMMERCE-TRACKER-May-industry-",
+      "title": "GS：市场低估的不是电商增速放缓，而是云计算在AI需求下的重新定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_11.pdf",
+      "figure_count": 16,
+      "output_dir": "kc_translated_reports/260617/11-0001-12-Goldman-Sachs-NAVIGATING-CHINA-INTERNET--ECOMMERCE-TRACKER-May-industry",
+      "pdf_path": "kc_translated_reports/260617/11-0001-12-Goldman-Sachs-NAVIGATING-CHINA-INTERNET--ECOMMERCE-TRACKER-May-industry/kc_translated_report_11.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_2/0002-13-Goldman-Sachs-China-Spirits-Tracker--Dragon-Boat-Festival-around-the-cor",
+      "title": "GS：白酒端午动销预期转弱，市场低估了渠道库存周期的“钝化”",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_12.pdf",
+      "figure_count": 11,
+      "output_dir": "kc_translated_reports/260617/12-0002-13-Goldman-Sachs-China-Spirits-Tracker--Dragon-Boat-Festival-around-the-cor",
+      "pdf_path": "kc_translated_reports/260617/12-0002-13-Goldman-Sachs-China-Spirits-Tracker--Dragon-Boat-Festival-around-the-cor/kc_translated_report_12.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_2/0003-14-Goldman-Sachs-China--May-fixed-asset-investment-and-retail-sales-data-mi",
+      "title": "GS：5月经济数据低于预期，但政策窗口正在打开",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_13.pdf",
+      "figure_count": 5,
+      "output_dir": "kc_translated_reports/260617/13-0003-14-Goldman-Sachs-China--May-fixed-asset-investment-and-retail-sales-data-mi",
+      "pdf_path": "kc_translated_reports/260617/13-0003-14-Goldman-Sachs-China--May-fixed-asset-investment-and-retail-sales-data-mi/kc_translated_report_13.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_2/0004-15-Goldman-Sachs-Natural-Gas-Analyst-US-Iran-Agreement-Paves-Way-For-Europe",
+      "title": "GS：市场低估了全球LNG供给的结构性改善，而非地缘政治风险",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_14.pdf",
+      "figure_count": 6,
+      "output_dir": "kc_translated_reports/260617/14-0004-15-Goldman-Sachs-Natural-Gas-Analyst-US-Iran-Agreement-Paves-Way-For-Europe",
+      "pdf_path": "kc_translated_reports/260617/14-0004-15-Goldman-Sachs-Natural-Gas-Analyst-US-Iran-Agreement-Paves-Way-For-Europe/kc_translated_report_14.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_2/0005-16-Nomura-Asia-Insights-China--Activity-data-remained-weak-in-May-260616",
+      "title": "NOM：五月经济数据印证了一个被市场低估的核心矛盾——供给侧的约束比需求侧更顽固",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_15.pdf",
+      "figure_count": 4,
+      "output_dir": "kc_translated_reports/260617/15-0005-16-Nomura-Asia-Insights-China--Activity-data-remained-weak-in-May-260616",
+      "pdf_path": "kc_translated_reports/260617/15-0005-16-Nomura-Asia-Insights-China--Activity-data-remained-weak-in-May-260616/kc_translated_report_15.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_3/0001-17-CITI-China-Industrials-What-s-New-From-China-Industrial-AI-Infra---Robot",
+      "title": "Citi：市场低估了中国AI供应链在下一代GPU架构中的份额跃迁",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_16.pdf",
+      "figure_count": 11,
+      "output_dir": "kc_translated_reports/260617/16-0001-17-CITI-China-Industrials-What-s-New-From-China-Industrial-AI-Infra---Robot",
+      "pdf_path": "kc_translated_reports/260617/16-0001-17-CITI-China-Industrials-What-s-New-From-China-Industrial-AI-Infra---Robot/kc_translated_report_16.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_3/0002-18-Goldman-Sachs-CHINA-PROPERTY-MONTHLY-TRACKER-Reinforced-T-1-ASP-resilien",
+      "title": "GS：中国房地产市场的真实信号并非全面回暖，而是核心城市的结构性再定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_17.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260617/17-0002-18-Goldman-Sachs-CHINA-PROPERTY-MONTHLY-TRACKER-Reinforced-T-1-ASP-resilien",
+      "pdf_path": "kc_translated_reports/260617/17-0002-18-Goldman-Sachs-CHINA-PROPERTY-MONTHLY-TRACKER-Reinforced-T-1-ASP-resilien/kc_translated_report_17.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_3/0003-19-Goldman-Sachs-CHINA-NEW-ENERGY-VEHICLE-WEEKLY-CHARTBOOK-2026-Week-24---W",
+      "title": "GS：新能源车周订单回落，但渗透率突破67%才是市场真正该关注的信号",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_18.pdf",
+      "figure_count": 6,
+      "output_dir": "kc_translated_reports/260617/18-0003-19-Goldman-Sachs-CHINA-NEW-ENERGY-VEHICLE-WEEKLY-CHARTBOOK-2026-Week-24---W",
+      "pdf_path": "kc_translated_reports/260617/18-0003-19-Goldman-Sachs-CHINA-NEW-ENERGY-VEHICLE-WEEKLY-CHARTBOOK-2026-Week-24---W/kc_translated_report_18.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_3/0004-20-Goldman-Sachs-China--70-city-average-primary-property-price-decline-narr",
+      "title": "GS：五月新房价格跌幅收窄，但市场真正的信号藏在二手房与库存之间",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_19.pdf",
+      "figure_count": 3,
+      "output_dir": "kc_translated_reports/260617/19-0004-20-Goldman-Sachs-China--70-city-average-primary-property-price-decline-narr",
+      "pdf_path": "kc_translated_reports/260617/19-0004-20-Goldman-Sachs-China--70-city-average-primary-property-price-decline-narr/kc_translated_report_19.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_3/0005-21-Morgan-Stanley-China-Property-Weekly-Database-Tracker--24-260615",
+      "title": "摩根斯坦利：中国房地产市场真正的拐点信号，不是成交量的反弹，而是成交结构的断裂",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_20.pdf",
+      "figure_count": 2,
+      "output_dir": "kc_translated_reports/260617/20-0005-21-Morgan-Stanley-China-Property-Weekly-Database-Tracker--24-260615",
+      "pdf_path": "kc_translated_reports/260617/20-0005-21-Morgan-Stanley-China-Property-Weekly-Database-Tracker--24-260615/kc_translated_report_20.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_4/0001-23-Bernstein-US-Communications-Infrastructure-Data-Center-Interconnection--",
+      "title": "Bernstein：数据中心互联的“网络效应”才是真正的护城河",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_21.pdf",
+      "figure_count": 17,
+      "output_dir": "kc_translated_reports/260617/21-0001-23-Bernstein-US-Communications-Infrastructure-Data-Center-Interconnection",
+      "pdf_path": "kc_translated_reports/260617/21-0001-23-Bernstein-US-Communications-Infrastructure-Data-Center-Interconnection/kc_translated_report_21.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_4/0002-24-Deutsche-Bank-China-Banks-May-TSF-improved-sequentially-demand-stays-wea",
+      "title": "DB：五月社融回暖但需求根基未稳，银行股的选股逻辑正在从规模转向定价权",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_22.pdf",
+      "figure_count": 7,
+      "output_dir": "kc_translated_reports/260617/22-0002-24-Deutsche-Bank-China-Banks-May-TSF-improved-sequentially-demand-stays-wea",
+      "pdf_path": "kc_translated_reports/260617/22-0002-24-Deutsche-Bank-China-Banks-May-TSF-improved-sequentially-demand-stays-wea/kc_translated_report_22.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_4/0003-25-Deutsche-Bank-Securitization-Research-2026-The-Mid-Year-Outlook-260616",
+      "title": "DB：市场真正低估的不是风险，而是结构性资金洪流对资产定价的重塑",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_23.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260617/23-0003-25-Deutsche-Bank-Securitization-Research-2026-The-Mid-Year-Outlook-260616",
+      "pdf_path": "kc_translated_reports/260617/23-0003-25-Deutsche-Bank-Securitization-Research-2026-The-Mid-Year-Outlook-260616/kc_translated_report_23.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_4/0004-26-Morgan-Stanley-Asia-Summer-School--Asia-Robotics-and-Humanoids-260616",
+      "title": "摩根斯坦利：人形机器人市场真正被低估的不是需求，而是供应链的再定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_24.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260617/24-0004-26-Morgan-Stanley-Asia-Summer-School--Asia-Robotics-and-Humanoids-260616",
+      "pdf_path": "kc_translated_reports/260617/24-0004-26-Morgan-Stanley-Asia-Summer-School--Asia-Robotics-and-Humanoids-260616/kc_translated_report_24.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_4/0005-27-Nomura-China-consumer-Retail-sales-momentum-weakened-further-in-May-2606",
+      "title": "NOM：消费数据跌破疫后低点，市场正在低估“无政策刺激”下的结构性分化",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_25.pdf",
+      "figure_count": 2,
+      "output_dir": "kc_translated_reports/260617/25-0005-27-Nomura-China-consumer-Retail-sales-momentum-weakened-further-in-May-2606",
+      "pdf_path": "kc_translated_reports/260617/25-0005-27-Nomura-China-consumer-Retail-sales-momentum-weakened-further-in-May-2606/kc_translated_report_25.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_5/0001-28-Nomura-China-e-commerce-E-commerce-sales-accelerated-slightly-in-May-260",
+      "title": "NOM：电商渗透率回升背后，消费结构的分化比总量更值得关注",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_26.pdf",
+      "figure_count": 4,
+      "output_dir": "kc_translated_reports/260617/26-0001-28-Nomura-China-e-commerce-E-commerce-sales-accelerated-slightly-in-May-260",
+      "pdf_path": "kc_translated_reports/260617/26-0001-28-Nomura-China-e-commerce-E-commerce-sales-accelerated-slightly-in-May-260/kc_translated_report_26.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_5/0002-29-CITI-China-Auto-Manufacturers-May-26-Imported-Car-Retail-Sales--38--YoY-",
+      "title": "Citi：进口车市场正在经历的不是周期性波动，而是品牌溢价能力的根本性分化",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_27.pdf",
+      "figure_count": 1,
+      "output_dir": "kc_translated_reports/260617/27-0002-29-CITI-China-Auto-Manufacturers-May-26-Imported-Car-Retail-Sales--38--YoY",
+      "pdf_path": "kc_translated_reports/260617/27-0002-29-CITI-China-Auto-Manufacturers-May-26-Imported-Car-Retail-Sales--38--YoY/kc_translated_report_27.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_5/0003-30-Morgan-Stanley-Autos---Shared-Mobility-Feedback-from-US-Investor-Visits-",
+      "title": "摩根斯坦利：市场对日本汽车股的悲观定价，忽略了三个尚未被充分理解的变量",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_28.pdf",
+      "figure_count": 1,
+      "output_dir": "kc_translated_reports/260617/28-0003-30-Morgan-Stanley-Autos---Shared-Mobility-Feedback-from-US-Investor-Visits",
+      "pdf_path": "kc_translated_reports/260617/28-0003-30-Morgan-Stanley-Autos---Shared-Mobility-Feedback-from-US-Investor-Visits/kc_translated_report_28.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_5/0004-31-Morgan-Stanley-North-American-Midstream---Renewable-Energy-Infrastructur",
+      "title": "摩根斯坦利：能源基础设施的定价权正在从宏观叙事转向微观资产",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_29.pdf",
+      "figure_count": 17,
+      "output_dir": "kc_translated_reports/260617/29-0004-31-Morgan-Stanley-North-American-Midstream---Renewable-Energy-Infrastructur",
+      "pdf_path": "kc_translated_reports/260617/29-0004-31-Morgan-Stanley-North-American-Midstream---Renewable-Energy-Infrastructur/kc_translated_report_29.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_5/0005-32-Nomura-India-Metals-Update-on-China-coking-coal-disruptions-260616",
+      "title": "NOM：中国焦煤供应冲击的真正影响，不在中国，而在印度钢厂的利润结构",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_30.pdf",
+      "figure_count": 11,
+      "output_dir": "kc_translated_reports/260617/30-0005-32-Nomura-India-Metals-Update-on-China-coking-coal-disruptions-260616",
+      "pdf_path": "kc_translated_reports/260617/30-0005-32-Nomura-India-Metals-Update-on-China-coking-coal-disruptions-260616/kc_translated_report_30.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_6/0001-33-Goldman-Sachs-The-Post-Modern-Cycle---Navigating-the-Capex-Boom-260616",
+      "title": "GS：市场低估了资本支出超级周期对资产定价的深远重塑",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_31.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260617/31-0001-33-Goldman-Sachs-The-Post-Modern-Cycle---Navigating-the-Capex-Boom-260616",
+      "pdf_path": "kc_translated_reports/260617/31-0001-33-Goldman-Sachs-The-Post-Modern-Cycle---Navigating-the-Capex-Boom-260616/kc_translated_report_31.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_6/0002-34-CITI-Artificial-Intelligence-Takeaways-from-the-Research-and-Applied-AI-",
+      "title": "Citi：AI产业真正的分水岭不是模型能力，而是推理成本的精细化控制",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_32.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260617/32-0002-34-CITI-Artificial-Intelligence-Takeaways-from-the-Research-and-Applied-AI",
+      "pdf_path": "kc_translated_reports/260617/32-0002-34-CITI-Artificial-Intelligence-Takeaways-from-the-Research-and-Applied-AI/kc_translated_report_32.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_6/0003-35-Jefferies-Lithium-Value-Chain-Survey--Temporary-Pullback--Diverging-Sign",
+      "title": "JEF：锂电产业链的真实信号不是价格下跌，而是库存认知的分裂",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_33.pdf",
+      "figure_count": 9,
+      "output_dir": "kc_translated_reports/260617/33-0003-35-Jefferies-Lithium-Value-Chain-Survey--Temporary-Pullback--Diverging-Sign",
+      "pdf_path": "kc_translated_reports/260617/33-0003-35-Jefferies-Lithium-Value-Chain-Survey--Temporary-Pullback--Diverging-Sign/kc_translated_report_33.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_6/0004-36-Bernstein-Liquid-Cooling-What-does-Google-s-Brazos-mean-for-the-broader-",
+      "title": "Bernstein：液冷CDU的真正分化不在技术路线，而在推理与训练的两极定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_34.pdf",
+      "figure_count": 7,
+      "output_dir": "kc_translated_reports/260617/34-0004-36-Bernstein-Liquid-Cooling-What-does-Google-s-Brazos-mean-for-the-broader",
+      "pdf_path": "kc_translated_reports/260617/34-0004-36-Bernstein-Liquid-Cooling-What-does-Google-s-Brazos-mean-for-the-broader/kc_translated_report_34.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_6/0005-37-Goldman-Sachs-Japan-Banks--Implications-of-BOJ-MPM-and-bank-deposit-rate",
+      "title": "GS：日本银行股正在定价的利率路径，可能比市场意识到的更陡",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_35.pdf",
+      "figure_count": 1,
+      "output_dir": "kc_translated_reports/260617/35-0005-37-Goldman-Sachs-Japan-Banks--Implications-of-BOJ-MPM-and-bank-deposit-rate",
+      "pdf_path": "kc_translated_reports/260617/35-0005-37-Goldman-Sachs-Japan-Banks--Implications-of-BOJ-MPM-and-bank-deposit-rate/kc_translated_report_35.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_7/0001-38-Morgan-Stanley-Reflections-from-Morgan-Stanley-s-Inaugural-National-Secu",
+      "title": "摩根斯坦利：国防产业正经历一场“去空心化”的结构性重塑，而非简单的周期上行",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_36.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260617/36-0001-38-Morgan-Stanley-Reflections-from-Morgan-Stanley-s-Inaugural-National-Secu",
+      "pdf_path": "kc_translated_reports/260617/36-0001-38-Morgan-Stanley-Reflections-from-Morgan-Stanley-s-Inaugural-National-Secu/kc_translated_report_36.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260617/shard_7/0002-39-Morgan-Stanley-Beneficiary-of-Strait-Reopening--Reiterate-Bullish-Views-",
+      "title": "摩根斯坦利：市场低估的不是油运需求，而是供给侧的再定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_37.pdf",
+      "figure_count": 7,
+      "output_dir": "kc_translated_reports/260617/37-0002-39-Morgan-Stanley-Beneficiary-of-Strait-Reopening--Reiterate-Bullish-Views",
+      "pdf_path": "kc_translated_reports/260617/37-0002-39-Morgan-Stanley-Beneficiary-of-Strait-Reopening--Reiterate-Bullish-Views/kc_translated_report_37.pdf"
+    }
+  ]
+}
