@@ -1,0 +1,35 @@
+Found 32 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_2b8r30el/pdfs/0001-11-Goldman Sachs-China- Lujiazui Forum- Price-based monetary policy and rules-based capital account opening-260618.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_2b8r30el/pdfs/0002-12-Nomura-Asia Insights-BI and RBI continued to drain their FX reserves aggressively in May-260617.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_2b8r30el/pdfs/0003-13-Bernstein-China Pharma - Biotech- Policy headwinds and implications for valuation-260618.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_2b8r30el/pdfs/0004-14-UBS-China Oil- Gas and Chemical Sector-Weekly tracker- preferred chemical stocks on Middle East conflict de-escalation-260616.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_2b8r30el/pdfs/0005-15-Goldman Sachs-Oil Tracker- 70- of Pre-War Hormuz Flows Might Become the New 100--260617.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=a00c7e93-5a4f-4b69-9d99-11805fb83ed5
+MinerU states: failed, running, running, running, pending
+MinerU states: failed, done, done, running, running
+MinerU states: failed, done, done, done, done
+1 PDF(s) remain incomplete after attempt 1.
+MinerU attempt 2/4 using MINER_U: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_2b8r30el/pdfs/0001-11-Goldman Sachs-China- Lujiazui Forum- Price-based monetary policy and rules-based capital account opening-260618.pdf
+MinerU attempt 2 using MINER_U batch_id=addb6d0d-e488-490d-b1c8-2662197ea428
+MinerU states: waiting-file
+MinerU states: failed
+1 PDF(s) remain incomplete after attempt 2.
+MinerU attempt 3/4 using MINER_U_2: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_2b8r30el/pdfs/0001-11-Goldman Sachs-China- Lujiazui Forum- Price-based monetary policy and rules-based capital account opening-260618.pdf
+MinerU attempt 3 using MINER_U_2 batch_id=c24f4a7c-2566-4044-8d6c-e922910a3414
+MinerU states: waiting-file
+MinerU states: failed
+1 PDF(s) remain incomplete after attempt 3.
+MinerU attempt 4/4 using MINER_U: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_2b8r30el/pdfs/0001-11-Goldman Sachs-China- Lujiazui Forum- Price-based monetary policy and rules-based capital account opening-260618.pdf
+MinerU attempt 4 using MINER_U batch_id=93efca17-8c4a-465a-b438-09ef2ab98410
+MinerU states: waiting-file
+MinerU states: failed
+1 PDF(s) remain incomplete after attempt 4.
+Skipping PDF after MinerU retry exhaustion: 0001-11-Goldman Sachs-China- Lujiazui Forum- Price-based monetary policy and rules-based capital account opening-260618.pdf
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260618/shard_2; successful_reports=4; mineru_timed_out=False; mineru_attempts=4
+All batches completed successfully. Generated 4 report directories.
