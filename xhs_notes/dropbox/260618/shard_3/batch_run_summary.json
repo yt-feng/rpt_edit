@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 32,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 3,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-JPM-China Housing：Tier~1 holds up，lower tiers still drag：Urban renewal agenda ramps-260616.pdf",
+          "batch_file": "/tmp/pdf_batch_001_x3hkdk9r/pdfs/0001-16-JPM-China Housing-Tier-1 holds up-lower tiers still drag-Urban renewal agenda ramps-260616.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-GS-POWERING UP EUROPE：Booming Datacenter pipeline and AI spending boom ~ the pivotal role of energy-260617.pdf",
+          "batch_file": "/tmp/pdf_batch_001_x3hkdk9r/pdfs/0002-17-GS-POWERING UP EUROPE-Booming Datacenter pipeline and AI spending boom - the pivotal role of energy-260617.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-MS-China Property：Re~weakened Sales in May； We Expect a Weaker 3Q-260616.pdf",
+          "batch_file": "/tmp/pdf_batch_001_x3hkdk9r/pdfs/0003-18-MS-China Property-Re-weakened Sales in May- We Expect a Weaker 3Q-260616.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-Bernstein-Asia Tech Hardware： Insights from a 15~year balance sheet & cash flow analysis； Chroma ATE and Sunny Optical model update-260617.pdf",
+          "batch_file": "/tmp/pdf_batch_001_x3hkdk9r/pdfs/0004-19-Bernstein-Asia Tech Hardware- Insights from a 15-year balance sheet - cash flow analysis- Chroma ATE and Sunny Optical model update-260617.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-CITI-China Auto Manufacturers：Weekly EV Orders Miss Consensus （8~14 Jun）-260616.pdf",
+          "batch_file": "/tmp/pdf_batch_001_x3hkdk9r/pdfs/0005-20-CITI-China Auto Manufacturers-Weekly EV Orders Miss Consensus -8-14 Jun--260616.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
