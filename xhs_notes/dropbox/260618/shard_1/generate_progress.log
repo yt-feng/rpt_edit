@@ -1,0 +1,17 @@
+Found 32 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_el2qj31l/pdfs/0001-06-UBS-China Industrials-Shipping supply chain weekly- trade flows- freight and Hormuz updates -week 24--260616.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_el2qj31l/pdfs/0002-07-Morgan Stanley-Going Global- China-s Expansion into Europe-260616.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_el2qj31l/pdfs/0003-08-J.P. Morgan-China Steel-Channel checker-10-day China steel output -4- vs previous --2- YoY-. Bulk iron ore freight rates drop significantly-260616.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_el2qj31l/pdfs/0004-09-Bernstein-China and Japan Semiconductors-Global Semis- SOCAMM2-Innovative but niche- limited impact on memory interface chip TAM-260618.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_el2qj31l/pdfs/0005-10-Deutsche Bank-Asia Chart Alert-RMB- Exporters- FX conversion slowing but portfolio flows picking up-260616.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=aed8c03d-3f14-4806-94ae-850f669d4ecd
+MinerU states: running, running, running, running, pending
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260618/shard_1; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

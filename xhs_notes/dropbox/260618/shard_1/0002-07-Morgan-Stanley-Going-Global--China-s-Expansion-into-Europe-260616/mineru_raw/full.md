@@ -1,0 +1,3899 @@
+## Autos & Shared Mobility
+
+# Going Global: China's Expansion into Europe
+
+China's entry into Europe highlights further downside risk to earnings for European OEMs. We trim our estimates, keeping our In-line sector view despite the bottoming earning cycle and recent underperformance. We maintain our preference for Mercedes-Benz over BMW, and reiterate our UW in Renault.
+
+Our new analysis indicates further earnings risk for European OEMs. In a collaborative analysis involving MS European and China Auto teams, we assess: (i) market share trends in all key European countries, (ii) China OEMs' segment exposure and (iii) European OEMs' defensive features, in order to quantify additional share transfer going forward. In our view, the worst is yet to come, and we still see $>10\%$ downside risk to European OEM's FY27 consensus estimates.
+
+Pressure from Chinese OEMs only increases from here. EU OEMs' market share in EU5 has declined from 72% to 67% (2020-25). With continued pressure from Chinese OEMs, we see a decline towards 62% by 2027. Considering OEM exposure to the segments most targeted by Chinese OEMs (SUVs, BEVs, PHEVs, UK, entry-level), we expect downside risk to earnings across the board, and reiterate our preference for premium OEMs over mass market players.
+
+## We reduce MBG/BMW estimates, and reiterate our Underweight in Renault.
+
+Lower UK and SUV exposure positions our Top Pick, Mercedes-Benz (OW), well against peer BMW (OW). Stellantis (EW) has been the largest share donor so far, but we're incrementally most concerned about Renault (UW), which is closest to Chinese OEMs' entry-level pricing territory. Volkswagen's (EW) mass market SUV exposure also presents risk. Although a significant degree of competitive pressure is already embedded in our below-consensus estimates for mass-market OEMs, with this report we reduce MBG and BMW estimates to reflect our new analysis.
+
+Chinese OEMs are poised to drive further share transfer in Europe. Among the leading EV players our China team covers, BYD (1211.HK) and Geely (0175.HK) are capturing growth opportunities in Europe, supported by strong uptake of their new EV models. BYD ranks among the top-selling EV brands in the UK and EU YTD, while Geely continues to gain market share through its diversified product portfolio and premium brand, Zeekr.
+
+Approaching, but not quite at the bottom of the cycle. European OEMs have consistently underperformed the market since April 2024. Cyclical troughs have historically been good entry points in the Auto sector, but it may not work this time, as the incremental pressure coming from China suggests a complex medium-term outlook, keeping us very selective in the sector. Tactically, short-term opportunities may arise around the Middle East conflict and USMCA tariff negotiations.
+
+MS EUROPE S.E., MADRID BRANCH+
+
+## Javier Martinez de Olcoz Cerdan
+
+Equity Analyst
+
+Javier.Martinez.Olcoz@morganstanley.com +34 9141-81289
+
+MS & CO. INTERNATIONAL PLC+
+
+## Shaqeal A Kirunda
+
+Equity Analyst
+
+Shaqeal.Kirunda@morganstanley.com +44 20 7425-0736
+
+## Matias Rodriguez Florez-Estrada
+
+Research Associate
+
+Matias.Rodriguez@morganstanley.com +44 20 7425-1091
+
+MS ASIA LIMITED+
+
+## Tim Hsiao
+
+Equity Analyst
+
+Tim.Hsiao@morganstanley.com +852 2848-1982
+
+## Joey Xu, CFA
+
+Equity Analyst
+
+Joey.Xu@morganstanley.com +852 3963-0337
+
+## Shelley Wang, CFA
+
+Equity Analyst
+
+Shelley.Wang@morganstanley.com +852 3963-0047
+
+## AUTOS & SHARED MOBILITY
+
+Europe
+
+Industry View In-Line
+
+Exhibit 1: European OEMs have continued to see their market share in Europe decline – consensus, optimistically, assumes this ceases  
+![](images/18b55e85859a3e3ec02cc44b92734e2aa8d8ae9ac21bb4fa238fe17bb4b0407e.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | Market Share (%) |
+| ------- | ---------------- |
+| Q1'10   | 74%              |
+| Q4'10   | 75%              |
+| Q1'11   | 74%              |
+| Q2'11   | 73%              |
+| Q3'11   | 74%              |
+| Q4'11   | 73%              |
+| Q1'12   | 74%              |
+| Q2'12   | 73%              |
+| Q3'12   | 74%              |
+| Q4'12   | 73%              |
+| Q1'13   | 74%              |
+| Q2'13   | 73%              |
+| Q3'13   | 74%              |
+| Q4'13   | 73%              |
+| Q1'14   | 74%              |
+| Q2'14   | 73%              |
+| Q3'14   | 74%              |
+| Q4'14   | 73%              |
+| Q1'15   | 74%              |
+| Q2'15   | 73%              |
+| Q3'15   | 74%              |
+| Q4'15   | 73%              |
+| Q1'16   | 74%              |
+| Q2'16   | 73%              |
+| Q3'16   | 74%              |
+| Q4'16   | 73%              |
+| Q1'17   | 74%              |
+| Q2'17   | 73%              |
+| Q3'17   | 74%              |
+| Q4'17   | 73%              |
+| Q1'18   | 74%              |
+| Q2'18   | 73%              |
+| Q3'18   | 74%              |
+| Q4'18   | 73%              |
+| Q1'19   | 74%              |
+| Q2'19   | 73%              |
+| Q3'19   | 74%              |
+| Q4'19   | 73%              |
+| Q1'20   | 74%              |
+| Q2'20   | 73%              |
+| Q3'20   | 74%              |
+| Q4'20   | 73%              |
+| Q1'21   | 74%              |
+| Q2'21   | 73%              |
+| Q3'21   | 74%              |
+| Q4'21   | 73%              |
+| Q1'22   | 74%              |
+| Q2'22   | 73%              |
+| Q3'22   | 74%              |
+| Q4'22   | 73%              |
+| Q1'23   | 74%              |
+| Q2'23   | 73%              |
+| Q3'23   | 74%              |
+| Q4'23   | 73%              |
+| Q1'24   | 74%              |
+| Q2'24   | 73%              |
+| Q3'24   | 74%              |
+| Q4'24   | 73%              |
+| Q1'25   | 74%              |
+| Q2'25   | 73%              |
+| Q3'25   | 74%              |
+| Q4'25   | 73%              |
+| Q1'26   | 74%              |
+| Q2'26   | 65%              |
+| Q3'26   | 66%              |
+| Q4'26   | 65%              |
+| Q1'27   | 66%              |
+| Q2'27   | 65%              |
+</details>
+
+Source: Local Auto Associations, MS estimates. Notes: 1) This chart includes Germany, UK, France, Italy and Spain auto sales. 2) This chart includes as EU OEMs: Stellantis, VW, Renault, MBG, BMW, Porsche, Iveco, Lada, Ferrari.
+
+MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.
+
+## For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
++= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.
+
+## Executive Summary
+
+Consensus expectations remain too optimistic. We see $>10\%$ downside risk for European OEM earnings expectations as Chinese players accelerate expansion into Europe amid weak domestic demand. We think consensus assumptions of flat or growing volumes appear optimistic given Chinese OEMs' localised production efforts, highly competitive product, tactical go-to-market strategy and rapid progress in dealerships, fleet sales, and financing offerings.
+
+China is targeting all of Europe's key market segments. Chinese OEMs' entry into Europe is focused on affordable entry-level vehicles, the large and profitable SUV segment, and both BEV and HEV powertrains, widening Chinese OEMs' addressable market. Renault is most exposed to entry-level competition, while Volkswagen, Mercedes-Benz and BMW face greater SUV exposure. Chinese OEMs have made major progress in the UK, Italy and Spain in recent years, with Chinese share up 7–10 percentage points over 2020–25. Germany and France remain more resilient for now, but we suspect pressure may also start to build up here in the years to come.
+
+Mass market OEMs more exposed, already reflected in our estimates. In our analysis, Volkswagen stands out as having the largest exposure to mass market SUVs – placing it in direct competition with Chinese OEMs in a key market segment. Whilst the company has successfully defended, and even grown share so far, we think the breadth of models available at lower price points ultimately drives demand towards Chinese OEMs. Renault is the only major OEM with meaningful exposure to the entry-level segment. Chinese OEMs are much more focused on this segment than the wider market, putting Renault in competition with some of the cheapest models in the market.
+
+We update our estimates to reflect our new analysis. We think the pressure from Chinese OEMs will only intensify from here, supported by localisation efforts and a weak Chinese auto market. This is already well reflected in our estimates for european mass market OEMs, that, in our view, are more exposed to China competition in Europe and globally, and we now prune our estimates for premium players, reducing MBG 2027e EPS by -6% and BMW 2026e EPS by -4%, also reducing its PT by -5%. Whilst Mercedes-Benz and BMW have mostly been shielded by the premium segment for now, we think Chinese OEMs' sustained efforts to target the D-SUV and C-SUV segments will drive continued competitiveness in the market, likely driving pressure on pricing before any meaningful market share losses.
+
+Exhibit 2: Price Target changes
+
+<table><tr><td colspan="2"></td><td>BMW</td><td>Mercedes</td><td>Porsche</td><td>Volkswagen</td><td>Renault</td><td>Stellantis</td><td>OEMs</td></tr><tr><td rowspan="3">New</td><td>Base</td><td>91.0</td><td>65.0</td><td>42.0</td><td>100.0</td><td>29.0</td><td>7.1</td><td></td></tr><tr><td>Bull</td><td>107.0</td><td>76.0</td><td>51.0</td><td>118.0</td><td>35.0</td><td>9.4</td><td></td></tr><tr><td>Bear</td><td>64.0</td><td>44.0</td><td>32.0</td><td>68.0</td><td>22.0</td><td>4.0</td><td></td></tr><tr><td rowspan="3">Previous</td><td>Base</td><td>96.0</td><td>65.00</td><td>42.00</td><td>100.00</td><td>29.00</td><td>7.1</td><td></td></tr><tr><td>Bull</td><td>114.0</td><td>76.00</td><td>51.00</td><td>118.00</td><td>35.00</td><td>9.4</td><td></td></tr><tr><td>Bear</td><td>67.0</td><td>44.00</td><td>32.00</td><td>68.00</td><td>22.00</td><td>4.0</td><td></td></tr><tr><td rowspan="3">Change</td><td>Base</td><td>-5%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>-1%</td></tr><tr><td>Bull</td><td>-6%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>-1%</td></tr><tr><td>Bear</td><td>-4%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>-1%</td></tr></table>
+
+Source: MS
+
+Do not confuse tactical rallies for underlying improvement. Despite sustained underperformance over the past two years, European OEMs have once again started the year with shares lagging the wider European market. At this time, OEM shares are down \~15-30% YTD, and near-term share price performance is mostly driven by sentiment surrounding the Middle East conflict, and the impact it may have on supply chains, inflation, interest rates, supply chains, and consumer confidence. Valuation multiples are above recent averages, reflecting a degree of optimism about the direction of travel for earnings going forward. Whilst we see the case for a Middle East conflict resolution (or US tariff improvement) related tactical rally, we still think fundamental underlying market dynamics will largely be driven by Chinese OEMs' global expansion efforts. Whilst this is far from a new topic, consensus expectations continue to assume flat or even growing volumes, suggesting further downside could be ahead, and keeping us In-line on the sector for now.
+
+## Quantifying the impact on European OEMs
+
+Further downside risk to mass market OEM earnings. Our new analysis implies $>10\%$ downside risk to mass market OEMs' FY27 earnings. We see European OEM market shares in EU5 continuing to decline, falling to 62% by FY27, from 67% in FY25. The decline is driven by Chinese OEMs' sharp gains in Italy, Spain and the UK – whilst France and Germany remain relatively resilient.
+
+## More Headwinds for European OEMs
+
+The worst is yet to come – market share losses have been modest so far. Despite Chinese OEMs' aggressive plans for growth in Europe, consensus continues to expect flattish volume for European OEMs into the medium term. Chinese OEMs have gained share within the European market, and this has indeed mostly come at the expense of European OEMs, but these losses can be disproportionately attributed to one player – Stellantis, which lost 6%pp during 2020-25. In the meantime, most legacy OEMs have steadily held market share, or even grown it in some cases. EU5 individual country trends highlight that European market share losses are constant, or even accelerating YoY in some countries – suggesting the pressure is likely to continue.
+
+## Dissecting China's Go-To-Market Strategy
+
+Chinese players are highly targeted in where they compete. Across Europe, Chinese OEMs employ a range of entry models, focusing on affordable models targeting the, SUVs, BEVs, PHEVs and HEVs market segments. The Chinese offering is particularly suited to the European light vehicle market, which has struggled with affordability issues, has seen rapid growth in hybrids, and continues to favour SUVs over all other model types.
+
+## Protective Market Dynamics
+
+European OEMs benefit from inherent defence mechanisms. Whilst we think price is ultimately king for many consumers, the very nature of the European automotive market creates some degree of inherent protection for incumbents. Weak underlying BEV demand, technological preferences, protectionist measures, brand loyalty, financing, fleets and residual value are all critical elements of the market that legacy European OEMs
+
+know best.
+
+## Improving Competitiveness
+
+## European OEMs are doing everything in their power to improve competitiveness.
+
+Legacy players are engaging in a broad overhaul of fixed and variable cost structures, software capability, and overall product competitiveness. A major focus is battery cost reduction through LFP adoption, localised sourcing, cell standardisation, and partnerships with key battery players, while software-defined vehicle capabilities, 800V charging systems, advanced ADAS, AI-enabled cockpits, and OTA functionality are increasingly being integrated to close the technology gap with Chinese OEMs.
+
+## Valuation
+
+## Valuation multiples reflecting an improving outlook despite potential earnings risk.
+
+Cyclical sectors tend to trade at low multiples at cycle peaks (exit points), on concerns that OEMs will eventually see a margin reset, and at high multiples at the bottom (entry points). Examining current valuation multiplies implies that the market already expects a considerable portion of earnings cuts to be priced in, with OEM P/E multiples above recent averages. We see valuation multiples as indicative of investor confidence in earnings growth from here, despite the risk of Chinese OEMs continuing to gain share.
+
+Exhibit 3: Report structure
+
+<table><tr><td>Page</td><td>Section / Subsection</td><td>Key Messages</td></tr><tr><td>2</td><td>Executive Summary</td><td></td></tr><tr><td>5</td><td>Quantifying impact on European OEMs</td><td></td></tr><tr><td>8</td><td>Analysing China&#x27;s Entry into Europe</td><td>The worst is yet to come</td></tr><tr><td>9</td><td>- The EU LV market suits Chinese OEMs product suite</td><td>China offering is well suited to the EU market</td></tr><tr><td>11</td><td>- Europe is emerging as a key competitive market</td><td>Europe is a strategic focus for China OEMs</td></tr><tr><td>12</td><td>- Conditions could become more challenging from here</td><td>The impact on EU OEMs has only just started</td></tr><tr><td>14</td><td>- Europe&#x27;s individual markets paint differing pictures</td><td>Penetration rhythm: UK/Italy/Spain vs France/Germany</td></tr><tr><td>17</td><td>+ Norway</td><td>A glimpse into an electrified future</td></tr><tr><td>19</td><td>+ Germany</td><td>EU OEMs holding share well, US/SK/Japan share down</td></tr><tr><td>21</td><td>+ Italy</td><td>Ongoing China share gains to EU OEMs (Stellantis)</td></tr><tr><td>24</td><td>+ Spain</td><td>Receptive market, China share gains accelerating</td></tr><tr><td>26</td><td>+ UK</td><td>The no-tariff reference</td></tr><tr><td>29</td><td>+ France</td><td>Resilient market</td></tr><tr><td>31</td><td>- BEV growth is not a constraint for Chinese OEMs</td><td>China increasingly focused on hybrid, following demand</td></tr><tr><td>34</td><td>- Chinese OEMs disproportionately target the C/D-SUV segment</td><td>SUV focus, driving entry-level growth</td></tr><tr><td>37</td><td>- Dealership targets imply significant growth ambitions</td><td>China OEMs growing fast retail networks</td></tr><tr><td>38</td><td>- Six key players dominate Chinese OEM sales</td><td>China OEMs: wide range of EU strategies</td></tr><tr><td>40</td><td>- Product mapping highlights Chinese competitiveness</td><td>Competitive price offerings</td></tr><tr><td>43</td><td>Global Profit Pools Attract Chinese OEMs</td><td>China competition moving faster than consensus</td></tr><tr><td>43</td><td>- Building a position in the European market</td><td>China competition increasing in Europe</td></tr><tr><td>44</td><td>- China weakness further weighs on the outlook</td><td>Weak Chinese market increases pressure on legacy OEMs</td></tr><tr><td>45</td><td>- Globalisation continues despite tariffs</td><td>From exports to localization, driving China OEMs&#x27; volume</td></tr><tr><td>46</td><td>Protective Market Dynamics</td><td>Policy, brand loyalty and residual values</td></tr><tr><td>46</td><td>- European BEV demand is policy driven</td><td>Powertrain flexibility would support legacy OEMs</td></tr><tr><td>46</td><td>- Policy support is emerging</td><td>Driving EU-China OEMs JVs</td></tr><tr><td>47</td><td>- Could European consumers care less for tech?</td><td>China strength may not completely translate into EU</td></tr><tr><td>47</td><td>- Brand loyalty still matters</td><td>Price is testing European brand loyalty</td></tr><tr><td>49</td><td>- Residual values, FinCos, Fleets provide structural support</td><td>The incumbent advantage</td></tr><tr><td>50</td><td>Improving competitiveness</td><td>EU OEMs are not standing still</td></tr><tr><td>50</td><td>- Battery cost reduction</td><td>Key for EV competitiveness</td></tr><tr><td>51</td><td>- Platforms and commonality</td><td>Radical overhaul</td></tr><tr><td>52</td><td>- Product pipeline</td><td>Major launch cycle in 2026-28</td></tr><tr><td>54</td><td>Valuation</td><td></td></tr><tr><td>58</td><td>Risk-rewards</td><td></td></tr></table>
+
+Source: MS
+
+# Quantifying impact on European OEMs
+
+Further downside risk for mass market OEMs. Across mass market OEMs, Stellantis, Renault and Volkswagen, consensus largely expects improving earnings estimates into FY27. Our new analysis indicates that mass market OEMs could face further downside risk from the threat of Chinese OEMs. Taking into consideration the below conclusions, as well as our view on company specific dynamics, we see risk of $>10\%$ earnings declines between FY25-27.
+
+## Key Takeaways from our Analysis
+
+## European OEM volume expectations face downside risk
+
+- Chinese OEMs are under pressure to sell in Europe due to weakness in the Chinese market  
+- Consensus volume expectations assume flat or growing volumes for European OEMs  
+- Europe represents a margin-accretive region for Chinese OEMs, even after shift from imports to localised production  
+- European OEM market share losses have been modest so far, Stellantis has been a key share donor whilst other players, such as Volkswagen have gained share in Europe during 2020-25  
+- Chinese OEMs' dealership footprint has significantly grown, and ambitious market share plans are in place  
+- BYD, SAIC (MG) and Chery (Omoda, Jaecoo) have made substantial advances in dealership, fleet sales, financing and local production plans, thus limiting the impact on inherent defence mechanisms  
+- Challenges for European OEMs in China continue, with volume declines still underway for Volkswagen, Porsche, Mercedes-Benz and BMW  
+- We also see RoW as vulnerable markets: given the higher margin some traditional OEMs deliver in EMs, partially compensating for more aggressive pricing in Europe
+
+## Chinese OEMs target key segments of the European market
+
+- Chinese players predominantly focus on entry-level models (50% of volumes vs EU market <10%)  
+- Renault (37%) is the OEM with most exposure to this segment  
+- Chinese OEMs are aggressively targeting SUVs across C, D and B segments (70% of volumes vs EU <50%)  
+• Volkswagen, Mercedes-Benz and BMW have most exposure to this segment, with Volkswagen closest in price segment  
+- Chinese players disproportionately target the UK, for its lack of major incumbent and BEV tariffs  
+• BMW has most exposure to the UK, and has lost share in the region during 2020-25, alongside other European OEMs  
+- Chinese OEMs target full hybrids (HEV) in addition to battery electric vehicle
+
+## (BEV) segments
+
+\- As such they are not constrained to just the BEV segment (\~20%) but also grow in HEV (\~35%)
+
+## The impact on EU5 markets is split
+
+\- The UK, Italy and Spain have been key-target markets for Chinese OEMs in recent years
+
+• Chinese OEM share has grown by 7-10%pp in 2020-25 in these markets
+
+• Renault, Stellantis, and BMW are most exposed to these markets
+
+• European OEM market share losses do not appear to be slowing down in these markets
+
+• Germany and France have been relatively resilient in comparison
+
+• Chinese OEM share has grown just 3%pp in 2020-25 in these markets
+
+• BMW, Mercedes-Benz, Porsche, Volkswagen are most exposed to these markets
+
+• European OEMs have been gaining share in these markets in the last two years
+
+## European OEMs are shielded through structural advantages, self-help and government support
+
+• European BEV demand is policy driven and has grown inorganically over the years
+
+\- The European Commission is introducing a range of protectionist measures through the EU Auto Action Plan
+
+\- European consumers are still less interested in the latest ADAS technology than Chinese consumers
+
+• European consumer still exhibit a degree of brand loyalty towards incumbents
+
+\- Strong residual values, established captive finance businesses and fleet channels provide structural support to established players in Europe
+
+\- European OEMs are coming to market with a wide range of new models, targeting improvements in costs, product and technology, thereby catching up to Chinese competitors
+
+\- European OEMs are undergoing structural cost reduction programs aimed at decreasing overheads and increasing speed-to-market
+
+## Quantifying the impact
+
+Further downside risk to mass market OEM earnings. Our new analysis implies $>10\%$ downside risk to mass market OEMs' FY27 earnings. In order to quantify the impact of Chinese OEMs' market share gains, we evaluate country specific trends within the EU5 and gross up these impacts to the European level. European OEMs' market share within the EU5 has been steadily declining, falling from 72% in 2020 to 67% in 2025. The extent of the decline varies across key markets, with France and Germany relatively more stable than Italy, Spain and the UK. We assume that trend continues, but expect that continued pressure from Chinese OEMs also impacts French and German markets, whilst European market share losses in Italy, Spain and UK continue at pace. This drives EU5 EU OEM
+
+market share to 62% by FY27. This drives assumptions of mid-70s European OEM market share in France and Germany, with 45-60% in UK, Italy and Spain. Against this, we apply an OEM Risk Factor multiple, a measure of each OEM's resilience to market share losses within a specific country. We base this on our judgement of OEMs' historical ability to defend share, competitiveness improvements, cost reduction efforts, product pipeline, market segment exposure, pricing power and powertrain mix. For example, BMW and Mercedes-Benz often score risk factors of 0.7x, reflecting a lower risk of market share losses than the average OEM. Using EU5 unit sales and overall geographic exposure we calculate group revenue at risk, before applying a 2x/3x EBIT dropthrough to arrive at group EBIT impact.
+
+Exhibit 4: We expect European OEMs' market share losses to continue into FY27, driving downside risk for EU5 revenues
+
+<table><tr><td>EU OEM market share</td><td>France</td><td>Germany</td><td>Italy</td><td>Spain</td><td>UK</td></tr><tr><td>FY25A</td><td>76%</td><td>77%</td><td>65%</td><td>57%</td><td>51%</td></tr><tr><td colspan="6"></td></tr><tr><td>EU OEM market share</td><td>France</td><td>Germany</td><td>Italy</td><td>Spain</td><td>UK</td></tr><tr><td>FY27E</td><td>73%</td><td>74%</td><td>60%</td><td>50%</td><td>45%</td></tr><tr><td colspan="6"></td></tr><tr><td>EU OEM market share %pp change</td><td>France</td><td>Germany</td><td>Italy</td><td>Spain</td><td>UK</td></tr><tr><td>FY25-27E</td><td>-3%</td><td>-3%</td><td>-5%</td><td>-7%</td><td>-6%</td></tr><tr><td colspan="6"></td></tr><tr><td>Average EU OEM volume % change</td><td>France</td><td>Germany</td><td>Italy</td><td>Spain</td><td>UK</td></tr><tr><td>FY25-27</td><td>-3.9%</td><td>-3.9%</td><td>-7.7%</td><td>-12.3%</td><td>-11.8%</td></tr><tr><td colspan="6"></td></tr><tr><td>OEM Risk factor</td><td>France</td><td>Germany</td><td>Italy</td><td>Spain</td><td>UK</td></tr><tr><td>BMW</td><td>0.8</td><td>0.7</td><td>0.8</td><td>0.8</td><td>1.0</td></tr><tr><td>Mercedes-Benz</td><td>0.8</td><td>0.7</td><td>0.8</td><td>0.8</td><td>1.0</td></tr><tr><td>Porsche</td><td>0.8</td><td>0.5</td><td>0.7</td><td>0.7</td><td>0.8</td></tr><tr><td>Renault</td><td>0.8</td><td>1.6</td><td>1.4</td><td>1.3</td><td>0.6</td></tr><tr><td>Stellantis</td><td>1.8</td><td>1.6</td><td>1.4</td><td>1.4</td><td>1.3</td></tr><tr><td>Volkswagen</td><td>1.0</td><td>0.9</td><td>1.0</td><td>1.0</td><td>1.3</td></tr><tr><td colspan="6"></td></tr><tr><td>Implied FY25-27 OEM volume change</td><td>France</td><td>Germany</td><td>Italy</td><td>Spain</td><td>UK</td></tr><tr><td>BMW</td><td>-3.2%</td><td>-2.7%</td><td>-6.2%</td><td>-9.8%</td><td>-11.8%</td></tr><tr><td>Mercedes-Benz</td><td>-3.2%</td><td>-2.7%</td><td>-6.2%</td><td>-9.8%</td><td>-11.8%</td></tr><tr><td>Porsche</td><td>-3.2%</td><td>-1.9%</td><td>-5.4%</td><td>-8.6%</td><td>-9.4%</td></tr><tr><td>Renault</td><td>-3.2%</td><td>-6.2%</td><td>-10.4%</td><td>-16.0%</td><td>-7.1%</td></tr><tr><td>Stellantis</td><td>-7.1%</td><td>-6.2%</td><td>-10.4%</td><td>-17.2%</td><td>-15.3%</td></tr><tr><td>Volkswagen</td><td>-3.9%</td><td>-3.5%</td><td>-7.7%</td><td>-12.3%</td><td>-15.3%</td></tr><tr><td colspan="6"></td></tr><tr><td>% unit sales exposure</td><td>France</td><td>Germany</td><td>Italy</td><td>Spain</td><td>UK</td></tr><tr><td>BMW</td><td>9%</td><td>29%</td><td>8%</td><td>6%</td><td>19%</td></tr><tr><td>Mercedes-Benz</td><td>7%</td><td>37%</td><td>6%</td><td>7%</td><td>13%</td></tr><tr><td>Porsche</td><td>5%</td><td>32%</td><td>6%</td><td>3%</td><td>21%</td></tr><tr><td>Renault</td><td>33%</td><td>9%</td><td>12%</td><td>11%</td><td>8%</td></tr><tr><td>Stellantis</td><td>23%</td><td>15%</td><td>20%</td><td>9%</td><td>12%</td></tr><tr><td>Volkswagen</td><td>7%</td><td>33%</td><td>7%</td><td>7%</td><td>13%</td></tr><tr><td colspan="6"></td></tr><tr><td>Implied EU5 revenue at risk</td><td>France</td><td>Germany</td><td>Italy</td><td>Spain</td><td>UK</td></tr><tr><td>BMW</td><td>-0.3%</td><td>-0.8%</td><td>-0.5%</td><td>-0.6%</td><td>-2.2%</td></tr><tr><td>Mercedes-Benz</td><td>-0.2%</td><td>-1.0%</td><td>-0.4%</td><td>-0.7%</td><td>-1.5%</td></tr><tr><td>Porsche</td><td>-0.2%</td><td>-0.6%</td><td>-0.3%</td><td>-0.3%</td><td>-2.0%</td></tr><tr><td>Renault</td><td>-1.0%</td><td>-0.6%</td><td>-1.2%</td><td>-1.7%</td><td>-0.6%</td></tr><tr><td>Stellantis</td><td>-1.6%</td><td>-1.0%</td><td>-2.1%</td><td>-1.6%</td><td>-1.8%</td></tr><tr><td>Volkswagen</td><td>-0.3%</td><td>-1.2%</td><td>-0.6%</td><td>-0.9%</td><td>-2.0%</td></tr></table>
+
+Source: Company data, MS estimates
+
+Exhibit 5: In our base case, mass market OEMs earnings could see >10% downside risk
+
+<table><tr><td>Implied European revenue at risk</td><td>BMW</td><td>Mercedes-Benz</td><td>Porsche</td><td>Renault</td><td>Stellantis</td><td>Volkswagen</td></tr><tr><td>FY27E</td><td>-4.4%</td><td>-3.8%</td><td>-3.3%</td><td>-5.1%</td><td>-8.1%</td><td>-5.0%</td></tr><tr><td colspan="7"></td></tr><tr><td>Exposure to Europe</td><td>BMW</td><td>Mercedes-Benz</td><td>Porsche</td><td>Renault</td><td>Stellantis</td><td>Volkswagen</td></tr><tr><td>Revenue, % of group</td><td>45%</td><td>44%</td><td>37%</td><td>79%</td><td>40%</td><td>64%</td></tr><tr><td colspan="7"></td></tr><tr><td>EBIT drosthrough</td><td>BMW</td><td>Mercedes-Benz</td><td>Porsche</td><td>Renault</td><td>Stellantis</td><td>Volkswagen</td></tr><tr><td>FY27E</td><td>2.0</td><td>2.0</td><td>2.0</td><td>3.0</td><td>3.0</td><td>3.0</td></tr><tr><td colspan="7"></td></tr><tr><td>Implied EBIT decline</td><td>BMW</td><td>Mercedes-Benz</td><td>Porsche</td><td>Renault</td><td>Stellantis</td><td>Volkswagen</td></tr><tr><td>FY25-27</td><td>-4%</td><td>-3%</td><td>-2%</td><td>-12%</td><td>-10%</td><td>-10%</td></tr></table>
+
+Source: Company data, MS estimates
+
+## Analysing China's Entry into Europe
+
+Chinese OEMs' offering is well suited to the European market. Across Europe, Chinese OEMs employ a range of entry models, focusing on affordable models targeting the, SUVs, BEVs, PHEVs and HEVs market segments. The Chinese offering is particularly suited to the European light vehicle market, which has struggled with affordability issues, has seen rapid growth in hybrids, and continues to favour SUVs over all other model types.
+
+Chinese players are highly targeted in where they compete. Chinese OEMs naturally favour the UK, the only EU5 market without specific BEV tariffs, and a market without a large legacy incumbent. As such, it is no surprise that the UK has become one of the major growth regions for Chinese OEMs, alongside Spain and Italy, where Chinese OEMs have gained share despite the presence of incumbents. Germany and France have proven to be tougher markets for Chinese OEMs so far, supported by strong incumbent brands and premium model offerings. The focus on mass market SUVs leaves Volkswagen particularly exposed, but Renault's entry-level models are at risk too. BMW and Mercedes are less exposed for now, but we think they will eventually also feel competitive pressure – similar to the China playbook.
+
+The worst is yet to come – market share losses have been modest so far. Sure, Chinese OEMs have gained share within the European market, and this has indeed mostly come at the expense of European OEMs, but these losses have been rather concentrated. Most of the market share losses can be attributed to one player – Stellantis, which lost 6%pp in EU5 market share over 2020-25. The company's previous strategy failed to pay off and a pivot is underway. In the meantime, most legacy OEMs have steadily held market share, or even grown it in some cases. EU5 individual country trends highlight that European market share losses are constant, or even accelerating in some cases – suggesting the pressure is likely to continue. Chinese OEMs' dealership targets further imply that market share ambitions are significantly higher than today's sales figures.
+
+Local production is the next major milestone. As competition intensifies and trade barriers increase, OEMs are placing greater emphasis on localisation. This includes investments in European assembly capacity, expansion of aftersales and service networks, development of local management teams, and the establishment of regional R&D and design centers. The evolution from export-led growth to a more localized and integrated European presence reflects Chinese OEMs' long-term ambition to become mainstream automotive players across the globe rather than niche import brands – and in the case of Europe, avoid import tariffs.
+
+Exhibit 6: Timeline: Chinese OEMs in Europe
+
+<table><tr><td colspan="3">First wave of direct imports</td><td colspan="3">Acquisition-led growth</td><td colspan="3">Direct EV start-up entry</td><td colspan="4">Scaled rollout</td><td>Scaled local production</td></tr><tr><td>2005</td><td>2007</td><td>2010</td><td></td><td>2019</td><td>2020</td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026</td><td></td><td></td></tr><tr><td>2005: Jamgling / Landwind2005-07: MG acquired by Nanjing, SAC2007: Brilliance, Chery via DR</td><td colspan="4">2010: Geely acquired Volve&#x27;s Cars2011: SAC launches HGG, Manus2012: GWM adds assembly plant in Bulgaria2013: Geely acquires London Taxi Company2016: Geely launches Lynk &amp; Co2017: Geely acquires Lotus2018: Foton launches Borgward brand</td><td colspan="3">2020: Airways starts European deliveries2020: Xpeng starts European deliveries2021: BYD starts European deliveries2021: NIO starts European deliveries2021: Hongqi starts European deliveries2022: GWM ORA starts European deliveries</td><td colspan="4">2022: Dongfeng (Voyah) starts European deliveries2023: Geely (Zeekr) starts European deliveries2024: Chery (Omoda, Jaeco) starts European deliveries2024: Leapmotor assembly in Poland2025: Chey (Omoda, Jaeco) production in Spain</td><td>2026: JAC opens JAC Motors Italy2026: BYD opens Hungary plant2026: Leapmotor opens Spain plant2026-27: BYD opens Turkey plant</td><td></td></tr></table>
+
+Source: Company data, MS. Note: Timeline is illustrative and not exhaustive.
+
+# The European Light Vehicle Market suits Chinese OEMs' product suite
+
+## Chinese OEMs are targeting a market aligned to their existing product
+
+strengths. Most (c.67%) of European light vehicle demand is concentrated in the B- and C-segments, with B-SUVs and C-SUVs representing the largest and fastest-growing sub-segments, while mid-priced vehicles account for roughly 70% of total market volume. At the same time, the entry-level segment is gradually expanding as affordability becomes an increasingly important purchasing criterion. These dynamics play to the competitive advantages of Chinese manufacturers, many of which have built scale around affordable, technology-rich SUVs and EVs in the B- and C-segment categories.
+
+The European light vehicle market is characterized by a high degree of concentration across vehicle segments, pricing tiers, and key national markets. From a segment perspective, the B- and C-segments form the backbone of the European market, together accounting for roughly two-thirds of total light vehicle sales. Within these categories, SUVs have become the dominant body style, reflecting the continued shift in consumer preferences away from traditional hatchbacks and sedans. In particular, C-SUVs and B-SUVs represent the largest individual sub-segments, together accounting for nearly 40% of the market, while the combination of C-SUVs, B-SUVs and B-hatchbacks exceeds half of total European light vehicle demand. Although D-segment vehicles and light commercial vehicles (LCVs) remain important, they represent a substantially smaller share of overall industry volume.
+
+Exhibit 7: The B and C segments represent c. of the European light vehicle market  
+![](images/90c68faf89cf7f6951a56d1d8ec7015d073a41ebc38fe29fb392b447a3e5e13b.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Year | A-Segment | B-Segment | C-Segment | D-Segment | E-Segment | F-Segment | LCV | Others |
+|---|---|---|---|---|---|---|---|---|
+| 2020 | 0.8 | 4.1 | 4.8 | 1.7 | 0.7 | 0.0 | 1.7 | 0.0 |
+| 2021 | 0.9 | 4.0 | 4.7 | 1.6 | 0.6 | 0.0 | 1.9 | 0.0 |
+| 2022 | 0.8 | 3.8 | 4.6 | 1.7 | 0.6 | 0.0 | 1.6 | 0.0 |
+| 2023 | 0.9 | 4.2 | 5.3 | 2.0 | 0.7 | 0.0 | 1.8 | 0.0 |
+| 2024 | 0.9 | 4.4 | 5.4 | 2.0 | 0.7 | 0.0 | 1.9 | 0.0 |
+| 2025 | 0.9 | 4.4 | 5.6 | 2.1 | 0.7 | 0.0 | 1.8 | 0.0 |
+| 2026e | 0.9 | 4.4 | 5.6 | 2.3 | 0.7 | 0.0 | 1.8 | 0.0 |
+| 2027e | 0.9 | 4.4 | 5.5 | 2.4 | 0.7 | 0.0 | 1.8 | 0.0 |
+</details>
+
+Source: S&P Global estimates, MS. Note: West and Central Europe only.
+
+Exhibit 8: Other important segments include D and LCVs  
+![](images/f9c258f59999a3b40e549cc45d882e0f5affa1d23a9b824cb83914b884b00c1b.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Year | A-Segment (%) | B-Segment (%) | C-Segment (%) | D-Segment (%) | E-Segment (%) | F-Segment (%) | LCV (%) | Others (%) |
+|---|---|---|---|---|---|---|---|---|
+| 2020 | 30 | 5 | 35 | 12 | 12 | 0 | 0 | 0 |
+| 2021 | 29 | 5 | 34 | 12 | 12 | 0 | 0 | 0 |
+| 2022 | 29 | 5 | 35 | 13 | 5 | 0 | 0 | 0 |
+| 2023 | 28 | 4 | 36 | 14 | 4 | 0 | 0 | 0 |
+| 2024 | 29 | 5 | 36 | 13 | 5 | 0 | 0 | 0 |
+| 2025 | 29 | 5 | 37 | 14 | 5 | 0 | 0 | 0 |
+| 2026e | 29 | 4 | 37 | 15 | 4 | 0 | 0 | 0 |
+| 2027e | 29 | 4 | 36 | 15 | 4 | 0 | 0 | 0 |
+</details>
+
+Source: S&P Global estimates, MS. Note: West and Central Europe only.
+
+Exhibit 9: Amongst sub-segments, the C-SUV and B-SUV are the most important  
+![](images/3b4b65655135bc2eb2542f3c43c088a9c7d0557d686517efb7ffde1ead7d5dcd.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Year | C-SUV | B-SUV | B-Hatchback | D-SUV | C-Hatchback | D-Van | Other |
+|---|---|---|---|---|---|---|---|
+| 2020 | 2.2 | 1.8 | 2.3 | 1.3 | 0.6 | 0.7 | 5.0 |
+| 2021 | 2.6 | 1.9 | 2.1 | 1.1 | 0.7 | 0.7 | 4.7 |
+| 2022 | 2.7 | 1.9 | 1.9 | 1.0 | 0.8 | 0.6 | 4.1 |
+| 2023 | 3.2 | 2.2 | 2.0 | 1.0 | 1.2 | 0.7 | 4.5 |
+| 2024 | 3.3 | 2.4 | 2.0 | 1.0 | 1.1 | 0.8 | 4.5 |
+| 2025 | 3.6 | 2.5 | 2.1 | 1.2 | 1.0 | 0.7 | 4.1 |
+| 2026 | 3.6 | 2.5 | 2.1 | 1.3 | 1.0 | 0.7 | 4.1 |
+| 2027 | 3.5 | 2.5 | 2.0 | 1.4 | 1.0 | 0.8 | 4.2 |
+</details>
+
+Source: S&P Global estimates, MS. Note: West and Central Europe only.
+
+Exhibit 10: C-SUV, B-SUV and B-Hatchbacks make up over half of the market  
+![](images/18f6ae1bebb00fc8840ac9bb3a42e5a14c40eff7732706b6b662125a98f9dd44.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Year | C-SUV (%) | B-SUV (%) | B-Hatchback (%) | D-SUV (%) | C-Hatchback (%) | D-Van (%) | Other (%) |
+|---|---|---|---|---|---|---|---|
+| 2020 | 16 | 13 | 16 | 5 | 9 | 5 | 36 |
+| 2021 | 19 | 14 | 15 | 5 | 8 | 5 | 34 |
+| 2022 | 21 | 15 | 14 | 6 | 8 | 5 | 31 |
+| 2023 | 22 | 15 | 14 | 7 | 8 | 5 | 31 |
+| 2024 | 22 | 16 | 14 | 7 | 7 | 5 | 30 |
+| 2025 | 23 | 17 | 14 | 8 | 7 | 5 | 27 |
+| 2026 | 23 | 16 | 14 | 9 | 7 | 5 | 27 |
+| 2027 | 23 | 16 | 13 | 9 | 7 | 5 | 27 |
+</details>
+
+Source: S&P Global estimates, MS. Note: West and Central Europe only.
+
+The market is also concentrated around mid-priced vehicles. Mid-segment products account for approximately 70% of European light vehicle sales, significantly outweighing both premium and luxury vehicles. However, the entry-level category has gradually expanded in recent years and is expected, by S&P, to reach around 10% of the market by 2027, reflecting growing affordability concerns among consumers and increasing demand for lower-priced electrified vehicles. Premium vehicles continue to represent roughly 25% of total market demand, underlining the importance of brand positioning and product differentiation in Europe.
+
+Exhibit 11: Most of the European market can be categorised as Mid category pricing  
+![](images/dbaec46fd239a10dc4d1fbdea9d77c15faa03905e3f325067b0ff87a631d20fc.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Year | Entry | Luxury | Mid | Premium |
+| :--- | :--- | :--- | :--- | :--- |
+| 2020 | 0.5 | 0.0 | 10.1 | 3.2 |
+| 2021 | 0.5 | 0.0 | 10.1 | 3.1 |
+| 2022 | 0.7 | 0.0 | 9.1 | 3.1 |
+| 2023 | 0.9 | 0.0 | 10.2 | 3.6 |
+| 2024 | 0.9 | 0.0 | 10.4 | 3.6 |
+| 2025 | 1.2 | 0.0 | 10.4 | 3.5 |
+| 2026e | 1.4 | 0.0 | 10.4 | 3.3 |
+| 2027e | 1.6 | 0.0 | 10.3 | 3.3 |
+</details>
+
+Source: S&P Global estimates, MS. Note: West and Central Europe only.
+
+Exhibit 12: The entry-level segment has been growing in recent years  
+![](images/13f04ea7040cf19610acd06f26de186769602908761e67cd59472431c446a967.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Year | Entry (%) | Luxury (%) | Mid (%) | Premium (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| 2020 | 3 | 4 | 73 | 23 |
+| 2021 | 4 | 5 | 73 | 23 |
+| 2022 | 5 | 6 | 70 | 24 |
+| 2023 | 6 | 6 | 69 | 24 |
+| 2024 | 6 | 8 | 69 | 24 |
+| 2025 | 8 | 9 | 69 | 23 |
+| 2026e | 9 | 10 | 68 | 22 |
+| 2027e | 10 | 10 | 67 | 22 |
+</details>
+
+Source: S&P Global estimates, MS. Note: West and Central Europe only.
+
+The EU5 account for c.70% of regional light vehicle sales. Germany remains the single largest market, representing around 20% of total European demand, while the United Kingdom accounts for approximately 15-16%. France, Italy and Spain collectively contribute a further one-third of regional volume. As a result, successful market entry strategies are typically built around establishing scale in these core markets before expanding into smaller European countries.
+
+Exhibit 13: EU5 are the most important European car markets  
+![](images/a045824f29fb5cdec7cc227f2b4785f5d830e7d7a194fcfe9420eb8a64fa7a94.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Year | France | Germany | Italy | Spain | United Kingdom | Others |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2020 | 2.1 | 3.2 | 1.5 | 1.0 | 1.9 | 4.1 |
+| 2021 | 2.1 | 2.9 | 1.6 | 1.0 | 2.0 | 4.2 |
+| 2022 | 1.9 | 2.9 | 1.5 | 0.9 | 1.9 | 3.9 |
+| 2023 | 2.2 | 3.1 | 1.8 | 1.1 | 2.3 | 4.4 |
+| 2024 | 2.1 | 3.1 | 1.8 | 1.2 | 2.3 | 4.6 |
+| 2025 | 2.0 | 3.1 | 1.7 | 1.3 | 2.3 | 4.7 |
+| 2026e | 2.0 | 3.2 | 1.7 | 1.4 | 2.4 | 4.6 |
+| 2027e | 2.0 | 3.2 | 1.7 | 1.3 | 2.5 | 4.7 |
+</details>
+
+Source: S&P Global estimates, MS. Note: West and Central Europe only.
+
+Exhibit 14: Amongst the EU5, Germany and UK represents the largest markets  
+![](images/e43eacb8a383fe4d63366e65c565c402241eb882dc850ee9e1fcde8426359770.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Year | France (%) | Germany (%) | Italy (%) | Spain (%) | United Kingdom (%) | Others (%) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2020 | 15 | 23 | 11 | 7 | 14 | 30 |
+| 2021 | 15 | 21 | 12 | 7 | 15 | 30 |
+| 2022 | 14 | 22 | 11 | 7 | 15 | 30 |
+| 2023 | 15 | 21 | 12 | 7 | 15 | 30 |
+| 2024 | 14 | 21 | 12 | 8 | 15 | 31 |
+| 2025 | 13 | 21 | 11 | 9 | 15 | 31 |
+| 2026e | 13 | 21 | 11 | 9 | 16 | 30 |
+| 2027e | 13 | 21 | 11 | 9 | 16 | 30 |
+</details>
+
+Source: S&P Global estimates, MS. Note: West and Central Europe only.
+
+Chinese OEM strategies are well suited to the European market. SUVs have become the dominant vehicle category across many European countries, while electrification continues to grow in popularity, through both hybrids and BEVs. At the same time, affordability remains a key challenge as consumers face elevated vehicle prices and higher financing costs. These trends have created an opportunity for new entrants, particularly Chinese OEMs, whose product portfolios are heavily concentrated in the fast-growing SUV, BEV and PHEV categories and whose cost structures enable competitive pricing in the entry and mid-market segments.
+
+## Europe is emerging as a key competitive market
+
+Europe is emerging as a key competitive market. Among major global automotive markets, Europe is arguably the first large-scale arena outside China where the competitive transition is starting to play out. Chinese brands have already established a meaningful presence in several European countries and continue to gain share, albeit from a low base, while incumbent European OEMs still command $\frac{2}{3}$ of the EU5 market. In contrast, the US market remains largely insulated due to regulatory barriers and limited Chinese OEM participation. Latin America is the other major competitive arena, although progress in Brazil is slower than in Europe.
+
+Exhibit 15: Market share in China by Region (e.g. EU OEMs, US OEMs, JP, SK, CH)  
+![](images/3cbe693bb13107399c879ba7a3fb05cb0234b28aa5779a175330b3cb06903609.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | EU OEMs | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|--------|---------|---------|---------|---------|------------|------------|
+| Jan-03 | 50%     | 10%     | 20%     | 5%      | 25%        | 0%         |
+| Jan-04 | 40%     | 15%     | 25%     | 5%      | 30%        | 0%         |
+| Jan-05 | 35%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-06 | 30%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-07 | 25%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-08 | 25%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-09 | 25%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-10 | 25%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-11 | 25%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-12 | 25%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-13 | 25%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-14 | 25%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-15 | 25%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-16 | 25%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-17 | 25%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-18 | 25%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-19 | 25%     | 15%     | 25%     | 5%      | 35%        | 0%         |
+| Jan-20 | 25%     | 15%     | 25%     | 5%      | 40%        | 0%         |
+| Jan-21 | 20%     | 10%     | 20%     | 5%      | 40%        | 0%         |
+| Jan-22 | 15%     | 10%     | 15%     | 5%      | 40%        | 0%         |
+| Jan-23 | 10%     | 10%     | 10%     | 5%      | 40%        | 0%         |
+| Jan-24 | 10%     | 10%     | 10%     | 5%      | 40%        | 0%         |
+| Jan-25 | 10%     | 10%     | 10%     | 5%      | 40%        | 0%         |
+| Jan-26 | 10%     | 10%     | 10%     | 5%      | 40%        | 0%         |
+</details>
+
+Source: CPCA, Yiche, MS. Note: this chart includes as EU OEMs: Stellantis, VW, Renault, MBG, BMW, Porsche; US OEMs: GM, Ford, Tesla; JP OEMs: Toyota, Nissan, Honda, Suzuki, Mitsubishi, Mazda; SK OEMs: Hyundai, Kia; China OEM: Local Chinese OEMs, Volvo; Other OEMs: JLR and Others.
+
+Exhibit 17: Market share in Brazil by Region (e.g. EU OEMs, US OEMs, JP, SK, CH)  
+![](images/95c5486a357abf9ecae7b33eff98da72298e52d4ffbd1c96e1199c3d9756980b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | EU OEMs | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|--------|---------|---------|---------|---------|------------|------------|
+| Jan-00 | 65%     | 35%     | 5%      | 0%      | 0%         | 0%         |
+| Jan-01 | 64%     | 34%     | 6%      | 0%      | 0%         | 0%         |
+| Jan-02 | 63%     | 33%     | 7%      | 0%      | 0%         | 0%         |
+| Jan-03 | 62%     | 32%     | 8%      | 0%      | 0%         | 0%         |
+| Jan-04 | 61%     | 31%     | 9%      | 0%      | 0%         | 0%         |
+| Jan-05 | 60%     | 30%     | 10%     | 0%      | 0%         | 0%         |
+| Jan-06 | 59%     | 29%     | 11%     | 0%      | 0%         | 0%         |
+| Jan-07 | 58%     | 28%     | 12%     | 0%      | 0%         | 0%         |
+| Jan-08 | 57%     | 27%     | 13%     | 0%      | 0%         | 0%         |
+| Jan-09 | 56%     | 26%     | 14%     | 0%      | 0%         | 0%         |
+| Jan-10 | 55%     | 25%     | 15%     | 0%      | 0%         | 0%         |
+| Jan-11 | 54%     | 24%     | 16%     | 0%      | 0%         | 0%         |
+| Jan-12 | 53%     | 23%     | 17%     | 0%      | 0%         | 0%         |
+| Jan-13 | 52%     | 22%     | 18%     | 0%      | 0%         | 0%         |
+| Jan-14 | 51%     | 21%     | 19%     | 0%      | 0%         | 0%         |
+| Jan-15 | 50%     | 20%     | 20%     | 0%      | 0%         | 0%         |
+| Jan-16 | 49%     | 19%     | 21%     | 0%      | 0%         | 0%         |
+| Jan-17 | 48%     | 18%     | 22%     | 0%      | 0%         | 0%         |
+| Jan-18 | 47%     | 17%     | 23%     | 0%      | 0%         | 0%         |
+| Jan-19 | 46%     | 16%     | 24%     | 0%      | 0%         | 0%         |
+| Jan-20 | 45%     | 15%     | 25%     | 0%      | 0%         | 0%         |
+| Jan-21 | 44%     | 14%     | 26%     | 0%      | 0%         | 0%         |
+| Jan-22 | 43%     | 13%     | 27%     | 0%      | 0%         | 0%         |
+| Jan-23 | 42%     | 12%     | 28%     | 0%      | 0%         | 0%         |
+| Jan-24 | 41%     | 11%     | 29%     | 0%      | 0%         | 0%         |
+| Jan-25 | 40%     | 10%     | 30%     | 0%      | 0%         | 0%         |
+| Jan-26 | 39%     | 9%      | 31%     | 0%      | 0%         | 0%         |
+</details>
+
+Source: Anfavea, MS estimates. Note: this chart includes as EU OEMs: Stellantis, VW, Renault, MBG, BMW, Iveco; US OEMs: GM, Ford; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi; SK OEMs: Hyundai; China OEMs: Leapmotor, Changan, Chery, Geely, Volvo; Other OEMs: JLR, Agrale, Mahindra and Others.
+
+Exhibit 16: Market share in EU5 by Region (e.g. EU OEMs, US OEMs, JP, SK, CH)  
+![](images/e3f331b51febf0b130a243f11adbc1f4db4bf957452837e5b78f7e237da76163.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | EU OEMs | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|--------|---------|---------|---------|---------|------------|------------|
+| Jan-07 | 60%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-08 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-09 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-10 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-11 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-12 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-13 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-14 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-15 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-16 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-17 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-18 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-19 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-20 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-21 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-22 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-23 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-24 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-25 | 70%     | 10%     | 15%     | 5%      | 5%         | 5%         |
+| Jan-26 | 60%     | 10%     | 10%     | 5%      | 10%        | 10%        |
+</details>
+
+Source: Local Auto Associations, MS. Notes: 1) This chart includes Germany, UK, France, Italy and Spain auto sales. 2) This chart includes as EU OEMs: Stellantis, VW, Renault, MBG, BMW, Porsche, Iveco, Lada, Ferrari; US OEMs: GM, Ford, Tesla; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi, Mazda; SK OEMs: Hyundai, Kia, KGM; China OEMs: Leapmotor, Changan, Chery, Geely, Volvo, BYD, Dongfeng, GWM, SAIC, NIO, Xpeng, SWM, DR; Other OEMs: JLR, Togg, Mahindra, Tata and Others.
+
+Exhibit 18: Market share in US by Region (e.g. EU OEMs, US OEMs, JP, SK, CH)  
+![](images/0f999e5a0d3ef8c6f1576475d0122116a7070b6906510147c3558ce3a5b2b294.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | EU OEMs | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|--------|---------|---------|---------|---------|------------|------------|
+| Jan-00 | 20%     | 55%     | 25%     | 2%      | 1%         | 1%         |
+| Jan-01 | 20%     | 55%     | 28%     | 2%      | 1%         | 1%         |
+| Jan-02 | 20%     | 55%     | 30%     | 2%      | 1%         | 1%         |
+| Jan-03 | 20%     | 55%     | 32%     | 2%      | 1%         | 1%         |
+| Jan-04 | 20%     | 55%     | 34%     | 2%      | 1%         | 1%         |
+| Jan-05 | 20%     | 55%     | 36%     | 2%      | 1%         | 1%         |
+| Jan-06 | 20%     | 55%     | 38%     | 2%      | 1%         | 1%         |
+| Jan-07 | 20%     | 55%     | 40%     | 2%      | 1%         | 1%         |
+| Jan-08 | 20%     | 55%     | 42%     | 2%      | 1%         | 1%         |
+| Jan-09 | 20%     | 55%     | 44%     | 2%      | 1%         | 1%         |
+| Jan-10 | 20%     | 55%     | 46%     | 2%      | 1%         | 1%         |
+| Jan-11 | 20%     | 55%     | 48%     | 2%      | 1%         | 1%         |
+| Jan-12 | 20%     | 55%     | 50%     | 2%      | 1%         | 1%         |
+| Jan-13 | 20%     | 55%     | 52%     | 2%      | 1%         | 1%         |
+| Jan-14 | 20%     | 55%     | 54%     | 2%      | 1%         | 1%         |
+| Jan-15 | 20%     | 55%     | 56%     | 2%      | 1%         | 1%         |
+| Jan-16 | 20%     | 55%     | 58%     | 2%      | 1%         | 1%         |
+| Jan-17 | 20%     | 55%     | 60%     | 2%      | 1%         | 1%         |
+| Jan-18 | 20%     | 55%     | 62%     | 2%      | 1%         | 1%         |
+| Jan-19 | 20%     | 55%     | 64%     | 2%      | 1%         | 1%         |
+| Jan-20 | 20%     | 55%     | 66%     | 2%      | 1%         | 1%         |
+| Jan-21 | 20%     | 55%     | 68%     | 2%      | 1%         | 1%         |
+| Jan-22 | 20%     | 55%     | 70%     | 2%      | 1%         | 1%         |
+| Jan-23 | 20%     | 55%     | 72%     | 2%      | 1%         | 1%         |
+| Jan-24 | 20%     | 55%     | 74%     | 2%      | 1%         | 1%         |
+| Jan-25 | 20%     | 55%     | 76%     | 2%      | 1%         | 1%         |
+| Jan-26 | 20%     | 55%     | 78%     | 2%      | 1%         | 1%         |
+</details>
+
+Source: Motor Intelligence, MS. Note: this chart includes as EU OEMs: Stellantis, VW, MBG, BMW, Porsche, Ferrari; US OEMs: GM, Ford, Tesla, Rivian, Lucid, Karma; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi, Mazda, Isuzu; SK OEMs: Hyundai, Kia; China OEMs: Polestar, Volvo; Other OEMs: JLR and Others.
+
+## Conditions could become more challenging from here
+
+The impact on European OEMs has only just started. The rise of Chinese OEMs in Europe has come primarily at the expense of European manufacturers, whose market share declined by \~5%pp in EU5, while Chinese OEMs gained >6%pp between 2020-25. These losses have been highly concentrated, with Stellantis emerging as the clear underperformer following a strategy that prioritised pricing and margins over volume. Volkswagen and Renault have broadly maintained their market positions during this period. Korean and Japanese manufacturers have gained modest share over the period, suggesting that Europe has not yet experienced a broad-based "China shock" but rather an early-stage competitive rebalancing in which Chinese OEMs are primarily benefiting from the weaknesses of specific incumbents, most notably Stellantis.
+
+## The rise of Chinese OEMs has come primarily at the expense of European players...
+
+European OEM market share declined by c.5%pp between 2020-25, while Chinese OEMs gained >6%pp over the same period. So far, the losses have not been evenly distributed across European incumbents. Stellantis stands out as the clear underperformer, with market share falling from 22% to 16%, representing the largest decline among major European OEMs. This is consistent with the group's previous strategy of prioritising price discipline over volume, while delaying investment in new model launches and allowing product portfolios at key brands such as Peugeot, Citroën, Fiat and Opel to age relative to competitors. The share donated by Stellantis has been rapidly absorbed by Chinese entrants, particularly SAIC, BYD and Chery, all of which have shown strong growth since 2022. SAIC appears to have been the earliest beneficiary, while BYD and Chery have emerged as the fastest-growing players more recently.
+
+...however, most European OEMs have maintained share so far. Volkswagen Group has broadly maintained and even modestly increased its EU5 share over the 2020-25 period, while Renault's position has remained relatively stable despite intensifying competition. This indicates that Chinese OEM gains are not yet being distributed evenly across incumbents but are instead concentrated among manufacturers with weaker product cycles or less competitive value propositions. The aggregate decline in European OEM share therefore masks significant divergence between winners and losers within the group.
+
+More pain to come for global automotive OEMs. Korean OEMs have gained \~1%pp during the 2020-25 period, while Japanese manufacturers also posted modest gains. In other words, alongside most of the European players, market share for most groups have been relatively stable. We think this highlights how Europe has not yet experienced a true "China shock" on the scale observed in some global markets, but rather an early-stage competitive rebalancing in which Chinese OEMs are emerging as the primary beneficiaries of market share losses among specific European incumbents, most notably Stellantis.
+
+Exhibit 19: Global OEMs' market share in Europe (EU5) has been relatively constant, except for Chinese OEMs  
+![](images/22763be9e039517e99f8ab5bb88bc5e6cc694ee9e4f190ae077bc6735553b8cc.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|--------|---------|---------|---------|------------|------------|
+| Jan-18 | 8%      | 12%     | 6%      | 1%         | 3%         |
+| Jan-19 | 7%      | 14%     | 7%      | 1%         | 3%         |
+| Jan-20 | 6%      | 13%     | 7%      | 1%         | 5%         |
+| Jan-21 | 6%      | 14%     | 8%      | 2%         | 3%         |
+| Jan-22 | 9%      | 12%     | 9%      | 3%         | 2%         |
+| Jan-23 | 7%      | 13%     | 8%      | 4%         | 2%         |
+| Jan-24 | 6%      | 15%     | 8%      | 5%         | 2%         |
+| Jan-25 | 5%      | 13%     | 7%      | 7%         | 2%         |
+| Jan-26 | 4%      | 12%     | 7%      | 12%        | 2%         |
+</details>
+
+Source: Local Auto Associations, MS. Notes: 1) This chart includes Germany, UK, France, Italy and Spain auto sales. 2) This chart includes as US OEMs: GM, Ford, Tesla; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi, Mazda; SK OEMs: Hyundai, Kia, KGM; China OEMs: Leapmotor, Changan, Chery, Geely, Volvo, BYD, Dongfeng, GWM, SAIC, NIO, Xpeng, SWM, DR; Other OEMs: JLR, Togg, Mahindra, Tata and Others.
+
+Exhibit 20: European OEMs have continued to see market share decline in the region as a result  
+![](images/dc79bb40c47c1a38a0ad75389d5cf9b41db8e518d6c6248fedf484fc08506e86.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | Market Share (%) |
+| ------- | ---------------- |
+| Q1-18   | 70.5             |
+| Q2-18   | 73.8             |
+| Q3-18   | 70.2             |
+| Q4-18   | 71.8             |
+| Q1-19   | 72.5             |
+| Q2-19   | 73.5             |
+| Q3-19   | 70.8             |
+| Q4-19   | 71.5             |
+| Q1-20   | 70.5             |
+| Q2-20   | 73.8             |
+| Q3-20   | 70.0             |
+| Q4-20   | 72.8             |
+| Q1-21   | 72.0             |
+| Q2-21   | 71.5             |
+| Q3-21   | 67.5             |
+| Q4-21   | 69.5             |
+| Q1-22   | 68.0             |
+| Q2-22   | 70.0             |
+| Q3-22   | 67.0             |
+| Q4-22   | 67.5             |
+| Q1-23   | 68.5             |
+| Q2-23   | 66.5             |
+| Q3-23   | 67.5             |
+| Q4-23   | 68.0             |
+| Q1-24   | 67.0             |
+| Q2-24   | 69.0             |
+| Q3-24   | 65.5             |
+| Q4-24   | 67.0             |
+| Q1-25   | 66.5             |
+| Q2-25   | 67.5             |
+| Q3-25   | 65.0             |
+| Q4-25   | 66.0             |
+| Q1-26   | 64.5             |
+</details>
+
+Source: Local Auto Associations, MS. Notes: 1) This chart includes Germany, UK, France, Italy and Spain auto sales. 2) This chart includes as EU OEMs: Stellantis, VW, Renault, MBG, BMW, Porsche, Iveco, Lada, Ferrari.
+
+Exhibit 21: At EU5 level, Stellantis has lost the most share amongst European legacy OEMs  
+![](images/c6e55d5de6b7f83f251faf07c56c468499c42f07b3a8a7e8eaf84b1a47ccd923.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | BMW  | Mercedes-Benz | Stellantis | Renault | VW Group | Other EU OEMs |
+|---------|------|---------------|------------|---------|----------|--------------|
+| Q1-18   | 6.5% | 6.0%          | 25.0%      | 10.5%   | 23.0%    | 9.0%         |
+| Q2-18   | 6.5% | 6.5%          | 24.0%      | 10.0%   | 24.0%    | 9.5%         |
+| Q3-18   | 7.0% | 7.0%          | 23.0%      | 10.0%   | 22.0%    | 10.0%        |
+| Q4-18   | 7.5% | 6.5%          | 24.0%      | 10.0%   | 23.0%    | 10.5%        |
+| Q1-19   | 7.0% | 6.0%          | 23.0%      | 10.5%   | 24.0%    | 11.0%        |
+| Q2-19   | 7.5% | 6.5%          | 22.0%      | 10.0%   | 23.0%    | 11.5%        |
+| Q3-19   | 7.0% | 7.0%          | 21.0%      | 9.5%    | 24.0%    | 12.0%        |
+| Q4-19   | 7.5% | 7.5%          | 22.0%      | 10.0%   | 23.0%    | 12.5%        |
+| Q1-20   | 7.0% | 7.0%          | 23.0%      | 13.0%   | 25.0%    | 13.0%        |
+| Q2-20   | 7.5% | 6.5%          | 22.0%      | 10.5%   | 24.0%    | 12.5%        |
+| Q3-20   | 7.0% | 7.0%          | 23.0%      | 10.0%   | 23.0%    | 13.0%        |
+| Q4-20   | 7.5% | 7.5%          | 24.0%      | 9.5%    | 24.0%    | 13.5%        |
+| Q1-21   | 7.0% | 7.0%          | 23.0%      | 9.0%    | 25.0%    | 14.0%        |
+| Q2-21   | 7.5% | 6.5%          | 22.0%      | 9.5%    | 26.0%    | 14.5%        |
+| Q3-21   | 7.0% | 7.0%          | 23.0%      | 10.0%   | 24.0%    | 15.0%        |
+| Q4-21   | 7.5% | 7.5%          | 24.0%      | 9.5%    | 23.0%    | 15.5%        |
+| Q1-22   | 7.0% | 7.0%          | 23.0%      | 9.0%    | 24.0%    | 16.0%        |
+| Q2-22   | 7.5% | 6.5%          | 24.0%      | 9.5%    | 25.0%    | 16.5%        |
+| Q3-22   | 7.0% | 7.0%          | 23.0%      | 9.0%    | 24.0%    | 17.0%        |
+| Q4-22   | 7.5% | 7.5%          | 24.0%      | 9.5%    | 25.0%    | 17.5%        |
+| Q1-23   | 7.0% | 7.0%          | 23.0%      | 9.0%    | 24.0%    | 18.0%        |
+| Q2-23   | 7.5% | 6.5%          | 24.0%      | 9.5%    | 25.0%    | 18.5%        |
+| Q3-23   | 7.0% | 7.0%          | 23.0%      | 9.0%    | 24.0%    | 19.0%        |
+| Q4-23   | 7.5% | 6.5%          | 24.0%      | 9.5%    | 25.0%    | 19.5%        |
+| Q1-24   | 7.0% | 7.0%          | 23.0%      | 9.0%    | 24.0%    | 20.0%        |
+| Q2-24   | 7.5% | 6.5%          | 24.0%      | 9.5%    | 26.0%    | 21.0%        |
+| Q3-24   | 7.0% | 7.0%          | 23.0%      | 9.0%    | 25.0%    | 21.5%        |
+| Q4-24   | 7.5% | 6.5%          | 24.0%      | 9.5%    | 26.0%    | 22.0%        |
+| Q1-25   | 7.0% | 7.0%          | 23.0%      | 9.0%    | 25.0%    | 22.5%        |
+| Q2-25   | 7.5% | 6.5%          | 24.0%      | 9.5%    | 26.0%    | 23.0%        |
+| Q3-25   | 7.0% | 7.0%          | 23.0%      | 9.0%    | 25.0%    | 23.5%        |
+| Q4-25   | 7.5% | 6.5%          | 24.0%      | 9.5%    | 26.0%    | 24.0%        |
+| Q1-26   | 7.0% | 6.0%          | 18.0%      | -       | -        | -            |
+</details>
+
+Source: Local Autos Associations, MS
+
+Exhibit 23: Stellantis stands out as the most meaningful share donor over the 2020-2025 period  
+![](images/da93989dffee0e2c63ce2fd82b7119903c2a481f5f33387bd9c13a97e981e6b2.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Company | Mkt Share Change 2020-2025 - EU OEMs in EU5 (%) |
+| :--- | :--- |
+| Stellantis | -5.7 |
+| Mercedes-Benz | -1.3 |
+| BMW | 0.2 |
+| Renault | 0.2 |
+| VW Group | 1.7 |
+</details>
+
+Source: Local Autos Associations, MS
+
+Exhibit 22: European OEMs have lost more share vs Chinese OEMs than any other global group  
+![](images/71e1d15fd5c4979f0c07357710ef80908259ef0a3e067ff45aba3a272dc92314.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - EU5 (%) |
+| :--- | :--- |
+| European OEMs | -5.1 |
+| Other OEMs | -1.4 |
+| US OEMs | -1.3 |
+| Japanese OEMs | 0.5 |
+| SK OEMs | 1.0 |
+| Chinese OEMs | 6.2 |
+</details>
+
+Source: Local Autos Associations, MS
+
+Exhibit 24: European OEM market share losses appear to have slowed down, with Japanese and US players losing share in recent years  
+![](images/cac6f1ab21bc064b630b4f8c9e05974f11ca9b255ae3bb37e0959ce0711d18ed.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category       | 2020  | 2021  | 2022  | 2023  | 2024  | 2025  |
+| -------------- | ----- | ----- | ----- | ----- | ----- | ----- |
+| European OEMs  | -0.5% | -1.5% | -2.5% | -0.5% | -0.5% | -0.5% |
+| Japanese OEMs  | 0.2%  | 0.1%  | 0.1%  | 1.1%  | -1.1% | -1.1% |
+| US OEMs        | -0.5% | -0.5% | 1.1%  | -0.5% | -1.5% | -0.5% |
+| Chinese OEMs   | 0.2%  | 0.7%  | 1.5%  | 0.6%  | 3.0%  | -0.5% |
+| SK OEMs        | 0.1%  | 1.3%  | 0.7%  | -0.7% | -0.5% | -0.5% |
+| Other OEMs     | -0.2% | -0.3% | -0.3% | -0.3% | -0.3% | -0.3% |
+</details>
+
+Source: Local Autos Associations, MS
+
+## Europe's individual markets paint differing pictures
+
+Does Europe take the UK/Italy/Spain path or the France/Germany route? The EU5 markets provide the clearest indication of how Chinese OEM expansion is unfolding across Europe. Penetration has been strongest in the UK, Spain and Italy, where Chinese OEM market share has risen by 7-10%pp since 2020, while France and Germany have proven more resilient due to stronger incumbent brands and customer loyalty.
+
+More pain to come for European OEMs. A consistent theme across almost all markets is that Stellantis has been the largest share donor, while Volkswagen, Renault and, in some cases, BMW have generally maintained or grown share. Overall, Europe appears to be undergoing a gradual and uneven competitive rebalancing rather than a broad-based "China shock", with Chinese OEM success highly dependent on local market characteristics and incumbent positioning. Market share losses are holding constant and even accelerating in some regions, despite OEMs' best efforts. We think the localisation of Chinese manufacturing will only support this trend.
+
+Europe's key markets share an insight into what could be ahead of us. The EU5 markets account for $\frac{2}{3}$ of European light vehicle demand, but outcomes for legacy OEMs vary significantly depending on local market structure, incumbent strength and consumer preferences. Norway, for example, provides a potential preview of a more electrified European market. Chinese OEM share has increased from 10% to 18%, while European OEM share has fallen from 53% to 41%, suggesting EV adoption may reduce some of the traditional advantages enjoyed by incumbents.
+
+The UK, Spain and Italy have emerged as the markets most exposed to Chinese competition. Chinese OEM share has risen from 4% to 14% in the UK, from 2% to 11% in Spain, and from 2% to 9% in Italy, while European OEMs have lost 6-10%pp of share in FY20-25. In the UK, Chinese OEMs benefit from the absence of a domestic legacy OEM and exemption from EU tariffs, while Spain's price-sensitive market and Italy's importance in the B- and C-segments have proven fertile ground for Chinese entrants.
+
+France and Germany remain more resilient on the other hand. Chinese OEM share has reached only 4% in France and 5% in Germany, while German OEMs have actually gained share in Germany over the 2020-25 period, supported by strong domestic brands such as Volkswagen. In France, recent market share losses for European OEMs also appear to be stabilising.
+
+Stellantis consistently the largest donor. Across almost all markets, Stellantis has been the largest share donor, while Volkswagen and Renault have generally proven more resilient. Overall, Europe has not yet experienced a broad-based "China shock", but rather a gradual and uneven competitive rebalancing, with Chinese OEM success heavily influenced by local market characteristics and incumbent positioning.
+
+Exhibit 25: Key European market trends and OEM exposure
+
+<table><tr><td>EU market</td><td>Status</td><td>EU OEM Market Share (2020-25)</td><td>CH OEM Market Share (2020-25)</td><td>Notable trend</td><td>OEM exposure</td><td>Characteristics</td></tr><tr><td>Norway</td><td>[ZOK7]</td><td>12%pp decline, from 53% to 41%</td><td>9%pp gain, from 10% to 18%</td><td>Broadbased market share losses across European, Japanese, US, South Korean OEMsEuropean OEM share losses decelerating in recent years</td><td>All</td><td>Highest European EV penetration</td></tr><tr><td>Spain</td><td><img src="images/8ba9449976f0fadaf69b121cc7266257f4309865febe711c35cbf97be8b4b096.jpg"/></td><td>10%pp decline, from 67% to 57%</td><td>10%pp gain, from 2% to 11%</td><td>European OEM share losses accelerating for three consecutive yearsRenault grew share during the period despite strong Chinese OEM growth</td><td>Renault</td><td>Price-sensitive European market</td></tr><tr><td>Italy</td><td><img src="images/a0a83e10ff79bd8e784dfd22c9715add8fc9fa2e805f2850a85e02f807c06f20.jpg"/></td><td>9%pp decline, from 74% to 65%</td><td>8%pp gain, from 2% to 9%</td><td>Largest gain for Chinese OEMs in EU5 market with strong incumbent brandsEuropean OEM market share losses do not appear to be decelerating</td><td>Stellantis</td><td>Strong incumbent brandsPolicy sensitivityStrong B/C segment</td></tr><tr><td>UK</td><td>[SY2C]</td><td>6%pp decline, from 57% to 51%</td><td>10%pp gain, from 4% to 14%</td><td>Chinese OEM market share approaching 20% in April, an EU5 highEuropean market share losses span across mass market and premium OEMsRenault grew share during the period despite strong Chinese OEM growth</td><td>BMW</td><td>Lack of targeted tariffsLack of local incumbent brand</td></tr><tr><td>EU5</td><td><img src="images/288549571332e04b16764a2d9f5b8a8c0cfaac0fdfef2cc326d5222468c04de6.jpg"/></td><td>5%pp decline, from 72% to 67%</td><td>6%pp gain, from 2% to 8%</td><td>European OEMs have consistently lost market share over the past five yearsChinese OEMs&#x27; market share gains are accelerating</td><td>All</td><td>~67% of European volumes</td></tr><tr><td>France</td><td>[OSA7]</td><td>4%pp decline, from 80% to 76%</td><td>3%pp gain, from 1% to 4%</td><td>European OEM share losses decelerating in recent yearsRenault, Volkswagen grew share during the period despite strong Chinese OEM growthJapanese OEMs gaining share alongside Chinese players</td><td>Renault and Stellantis</td><td>Strong incumbent brandsPolicy sensitivityStrong B/C segment</td></tr><tr><td>Germany</td><td><img src="images/7669ba47a44cf860b619ef4b0620392fed3195fbbbfe7a06b2d6eaa716b00153.jpg"/></td><td>1%pp gain, from 76% to 77%</td><td>3%pp gain, from 2% to 5%</td><td>Only market with growing share for EU OEMs, led by VolkswagenChinese OEMs continue to gain, at expense of South Korea and US players</td><td>BMW, Mercedes-Benz, Porsche, Volkswagen</td><td>Strong incumbent brandsHigh fleet salesStrong premium offering</td></tr></table>
+
+Source: Local auto associations, MS
+
+Exhibit 26: Germany Market Share Change 2020-2025 - US OEMs lost most share whilst Chinese OEMs gained  
+![](images/83276a06c0d47db0fe2f71c03f913ce94bd4aabbb1398bba70a000db60ae2b4e.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - Germany (%) |
+| :--- | :--- |
+| US OEMs | -2.8 |
+| Japanese OEMs | -0.7 |
+| Other OEMs | -0.5 |
+| SK OEMs | -0.4 |
+| European OEMs | 1.4 |
+| Chinese OEMs | 2.9 |
+</details>
+
+Source: Local Auto Association, MS
+
+Exhibit 28: Spain Market Share Change 2020-2025 - EU OEMs lost most share whilst Chinese OEMs gained  
+![](images/bd914d32701d8ed0da731b7303f3984c77dcb30542915bf5a59035e8c60b0ad7.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - Spain (%) |
+| :--- | :--- |
+| European OEMs | -9.5 |
+| Other OEMs | -0.7 |
+| US OEMs | -0.3 |
+| Japanese OEMs | 0.2 |
+| SK OEMs | 0.5 |
+| Chinese OEMs | 9.8 |
+</details>
+
+Source: ANFAC, MS
+
+Exhibit 30: France Market Share Change 2020-2025 - EU OEMs lost most share whilst Chinese OEMs gained  
+![](images/27b329915705901c8b69ffcbcd154d6d0f89fcda9c3b3c91e9bc6b90f0a1dc1b.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - France (%) |
+| :--- | :--- |
+| European OEMs | -4.2 |
+| Other OEMs | -2.5 |
+| SK OEMs | 0.4 |
+| US OEMs | 0.6 |
+| Japanese OEMs | 2.5 |
+| Chinese OEMs | 3.2 |
+</details>
+
+Source: CCFA, MS estimates
+
+Exhibit 27: Italy Market Share Change 2020-2025 - EU OEMs lost most share whilst Chinese OEMs gained  
+![](images/745fd14f112a486c271b2d14690270e243abc6c12a449e947776be6d2a914636.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - Italy (%) |
+| :--- | :--- |
+| European OEMs | -8.9 |
+| US OEMs | -1.9 |
+| Other OEMs | -0.4 |
+| SK OEMs | 0.9 |
+| Japanese OEMs | 2.5 |
+| Chinese OEMs | 7.8 |
+</details>
+
+Source: UNRAE, MS
+
+Exhibit 29: UK Market Share Change 2020-2025 - EU OEMs lost most share whilst Chinese OEMs gained  
+![](images/f81d6814c4761e51af2ec0f5d60268892f983cd686ad62c57ba05eb9a0f1861e.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - UK (%) |
+| :--- | :--- |
+| European OEMs | -5.9 |
+| Other OEMs | -3.5 |
+| Japanese OEMs | -2.3 |
+| US OEMs | -1.2 |
+| SK OEMs | 3.0 |
+| Chinese OEMs | 10.0 |
+</details>
+
+Source: SMMT, MS
+
+Exhibit 31: Norway Market Share Change 2020-2025 - EU OEMs lost most share whilst Chinese/US OEMs gained  
+![](images/650aab74a5514c33a37a677b09c5cb93449a3b2127fb2e2a345192df7a67fa4e.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - Norway (%) |
+| :--- | :--- |
+| European OEMs | -11.9 |
+| Japanese OEMs | -7.8 |
+| SK OEMs | -1.8 |
+| Other OEMs | -0.4 |
+| Chinese OEMs | 8.8 |
+| US OEMs | 13.1 |
+</details>
+
+Source: S&P Global, MS
+
+Exhibit 32: EU5 Market Share Change 2020-2025 - EU OEMs have lost most share whilst Chinese OEMs gained  
+![](images/8b05ac1fd8aba9bb062c9587a5693c900d29defe8e711becda8b0494a4a762b2.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - EU5 (%) |
+| :--- | :--- |
+| European OEMs | -5.1 |
+| Other OEMs | -1.4 |
+| US OEMs | -1.3 |
+| Japanese OEMs | 0.5 |
+| SK OEMs | 1.0 |
+| Chinese OEMs | 6.2 |
+</details>
+
+Source: Local Autos Associations, MS
+
+## Norway
+
+A glimpse into an electrified future. Norway, Europe's most electrified automotive market, provides an indication of how competitive dynamics could evolve across the region as EV adoption matures. Since the pandemic, European OEM market share has fallen from the low-50% range to \~41%, while Chinese OEMs have increased their share to \~18%, with Stellantis emerging as the largest incumbent loser and Geely, SAIC, BYD and Xpeng establishing meaningful scale. We think Norway's unique policy environment means it is not a perfect blueprint for Europe, but the market demonstrates that Chinese OEMs can achieve substantial share gains in highly electrified markets as traditional advantages such as brand heritage become less important.
+
+Norway is the most electrified market in Europe. Norway provides one of the most important case studies for assessing the long-term implications of Chinese OEM expansion in Europe. As the most electrified automotive market in Europe, Norway can be viewed as a leading indicator of what the broader European market may eventually look like as electrification matures. So far, the market share data suggest that the transition to an EV-dominated market has coincided with a meaningful redistribution of share away from traditional incumbents. European OEMs remain the largest group, but their market share has fallen materially since the pandemic, declining from the low-50% range to around 40%, while Chinese OEMs have increased their share from LSD% to \~18%. The gains have not come exclusively at the expense of European manufacturers, with Japanese OEMs experiencing an even steeper decline, while Korean OEMs have remained broadly stable and US OEMs, driven largely by Tesla, have gained meaningful share.
+
+Stellantis leads in losses again. Within the European OEM cohort, Stellantis stands out as the clear loser, with market share falling from around 10-11% in 2018 to \~4-5% today, mirroring the broader European trend. By contrast, Volkswagen has maintained a strong leadership position and BMW and Mercedes-Benz have broadly preserved their market positions despite intensifying competition. Among Chinese manufacturers, Geely has been the standout success story, benefiting from its strong Nordic presence, Volvo affiliation and early EV product offerings to become the largest Chinese player in Norway with close to 10% market share. SAIC established an early foothold through MG, while BYD and Xpeng have accelerated rapidly in recent years, indicating that Chinese share gains are becoming increasingly broad-based rather than dependent on a single brand.
+
+Exhibit 33: Norway: European OEM market share started to decline post-covid, though it has improved recently  
+![](images/26f2f9bd9d0f043b13b209d2534b6d045c64b0a3ede459fd6c7fe76a1ce8a992.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | EU OEMs | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2000 | 52% | 8% | 32% | 3% | 3% | 2% |
+| 2001 | 54% | 10% | 28% | 3% | 3% | 2% |
+| 2002 | 52% | 9% | 30% | 3% | 3% | 2% |
+| 2003 | 50% | 8% | 32% | 3% | 3% | 2% |
+| 2004 | 49% | 7% | 34% | 3% | 3% | 2% |
+| 2005 | 50% | 7% | 33% | 3% | 3% | 2% |
+| 2006 | 48% | 6% | 36% | 3% | 3% | 2% |
+| 2007 | 51% | 7% | 30% | 3% | 4% | 2% |
+| 2008 | 49% | 8% | 32% | 3% | 4% | 2% |
+| 2009 | 48% | 9% | 31% | 3% | 5% | 2% |
+| 2010 | 50% | 9% | 30% | 4% | 5% | 2% |
+| 2011 | 51% | 8% | 28% | 5% | 6% | 2% |
+| 2012 | 52% | 8% | 26% | 6% | 6% | 2% |
+| 2013 | 50% | 8% | 29% | 5% | 6% | 2% |
+| 2014 | 51% | 8% | 28% | 4% | 6% | 2% |
+| 2015 | 52% | 9% | 28% | 4% | 5% | 2% |
+| 2016 | 53% | 9% | 27% | 4% | 5% | 2% |
+| 2017 | 54% | 10% | 24% | 4% | 5% | 2% |
+| 2018 | 53% | 10% | 26% | 4% | 5% | 2% |
+| 2019 | 48% | 15% | 24% | 5% | 5% | 2% |
+| 2020 | 52% | 16% | 21% | 6% | 8% | 1% |
+| 2021 | 47% | 17% | 19% | 6% | 11% | - |
+| 2022 | 46% | - | - | - | - | - |
+| 2023 | - | - | - | - | - | - |
+| 2024E | - | - | - | - | - | - |
+| 2025E | - | - | - | - | - | - |
+| - | - | - | - | - | - | - |
+| - | - | - | - | - | - | - |
+| - | - | - | - | - | - | - |
+| - | - | - | - | - | - | - |
+</details>
+
+Source: S&P Global, MS. Note: this chart includes as EU OEMs: Aston Martin, BMW, Ferrari, Iveco, McLaren, MBG, Renault, Saab, Stellantis, VW, Think; US OEMs: Fisker, Ford, GM, Karma, Lucid, Rivian, Tesla; JP OEMs: Honda, Isuzu, Mazda, Mitsubishi, Nissan, Subaru, Suzuki, Toyota; SK OEMs: Hyundai, Kia, KGM; China OEMs: BYD, Changan, Chery, Dongfeng, FAW, Geely, Volvo, GWM, Jianghuai, NIO, SAIC, Xpeng; Other OEM: Morgan, JLR and Others.
+
+Exhibit 34: Norway: Chinese and US OEMs have grown share whilst Japanese & Europe have ceded  
+![](images/6e70d3f20284c5869d1da593baf2bd3f761be654dd9ef2523d0e1165e4f7dd4f.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|------|---------|---------|---------|------------|------------|
+| 2013 | 9%      | 29%     | 6%      | 7%         | 0%         |
+| 2014 | 9%      | 28%     | 4%      | 6%         | 0%         |
+| 2015 | 9%      | 28%     | 4%      | 5%         | 0%         |
+| 2016 | 9%      | 28%     | 4%      | 5%         | 0%         |
+| 2017 | 10%     | 24%     | 5%      | 6%         | 0%         |
+| 2018 | 10%     | 26%     | 5%      | 6%         | 1%         |
+| 2019 | 15%     | 23%     | 6%      | 6%         | 2%         |
+| 2020 | 10%     | 20%     | 7%      | 10%        | 1%         |
+| 2021 | 16%     | 19%     | 7%      | 12%        | 1%         |
+| 2022 | 15%     | 16%     | 7%      | 15%        | 1%         |
+| 2023 | 21%     | 21%     | 5%      | 11%        | 0%         |
+| 2024 | 21%     | 18%     | 5%      | 16%        | 0%         |
+| 2025 | 22%     | 13%     | 5%      | 18%        | 1%         |
+</details>
+
+Source: S&P Global, MS. Note: this chart includes as US OEMs: Fisker, Ford, GM, Karma, Lucid, Rivian, Tesla; JP OEMs: Honda, Isuzu, Mazda, Mitsubishi, Nissan, Subaru, Suzuki, Toyota; SK OEMs: Hyundai, Kia, KGM; China OEMs: BYD, Changan, Chery, Dongfeng, FAW, Geely, Volvo, GWM, Jianghuai, NIO, SAIC, Xpeng; Other OEM: Morgan, JLR and Others.
+
+Exhibit 35: Norway: Amongst European OEMs, Stellantis has lost the most share  
+![](images/b8c58253548733ea21010a02180acdfaa448d1105f729cbbc5a8b3c731844c06.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | BMW  | Mercedes-Benz | Stellantis | Renault | WV Group | Other EU OEMs |
+|------|------|---------------|------------|---------|----------|---------------|
+| 2018 | 7.0% | 6.0%          | 11.5%      | 3.0%    | 23.5%    | 0%            |
+| 2019 | 6.5% | 4.5%          | 10.5%      | 2.5%    | 24.5%    | 0%            |
+| 2020 | 6.0% | 6.5%          | 10.5%      | 2.5%    | 27.5%    | 0%            |
+| 2021 | 6.0% | 6.5%          | 10.5%      | 1.5%    | 21.5%    | 0%            |
+| 2022 | 7.0% | 8.0%          | 7.5%       | 1.0%    | 24.0%    | 0%            |
+| 2023 | 4.0% | 7.0%          | 7.0%       | 1.0%    | 22.5%    | 0%            |
+| 2024 | 5.0% | 5.5%          | 5.0%       | 1.0%    | 23.5%    | 0%            |
+| 2025 | 5.5% | 4.5%          | 4.5%       | 1.0%    | 25.0%    | 0%            |
+</details>
+
+Source: S&P Global, MS.
+
+Exhibit 36: Norway: Amongst Chinese OEMs, Geely has been the largest gainer  
+![](images/8d13a17766fbd0b923ee74ec0a1cb1f3399ac3980126e6052e5a741b5ff52df6.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | BYD  | SAIC | Geely | Dongfeng | Xpeng | Other China OEMs |
+|------|------|------|-------|----------|-------|------------------|
+| 2018 | 0.0% | 0.0% | 6.0%  | 0.0%     | 0.0%  | 0.0%             |
+| 2019 | 0.0% | 0.0% | 5.5%  | 0.0%     | 0.0%  | 0.0%             |
+| 2020 | 0.5% | 2.5% | 7.0%  | 0.0%     | 0.0%  | 0.0%             |
+| 2021 | 1.0% | 2.0% | 8.5%  | 0.5%     | 0.5%  | 0.5%             |
+| 2022 | 1.5% | 2.8% | 8.5%  | 1.5%     | 1.0%  | 1.5%             |
+| 2023 | 1.0% | 2.5% | 6.8%  | 0.5%     | 1.5%  | 1.0%             |
+| 2024 | 1.8% | 3.5% | 8.5%  | 1.0%     | 2.0%  | 1.5%             |
+| 2025 | 2.8% | 3.0% | 9.2%  | 1.5%     | 2.2%  | 1.8%             |
+</details>
+
+Source: S&P Global, MS.
+
+Exhibit 37: Stellantis stands out as the most meaningful share donor over the 2020-2025 period  
+![](images/937771a264d9fb727b8c33ca8fdb462e67917fef620f382a4133c97efa49ef33.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Company | Mkt Share Change 2020-2025 - EU OEMs in Norway (%) |
+| :--- | :--- |
+| Stellantis | -5.9 |
+| VW Group | -2.2 |
+| Mercedes-Benz | -1.9 |
+| Renault | -1.2 |
+| BMW | -0.6 |
+</details>
+
+Source: S&P Global, MS.
+
+Exhibit 38: On a YoY basis, EU OEM market share losses have been slowing down in recent years, whilst Japan accelerates  
+![](images/a46a86de0e4bc3292eb4acd36b6ab50b607acb61e0ce64b5431f9b4476a7dd17.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | 2020 (%) | 2021 (%) | 2022 (%) | 2023 (%) | 2024 (%) | 2025 (%) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| European OEMs | 4.8 | -7.5 | 1.2 | -6.0 | -1.5 | 1.5 |
+| Japanese OEMs | -2.5 | -1.0 | -3.5 | 5.0 | -2.0 | -6.0 |
+| US OEMs | -6.0 | 6.5 | -1.5 | 6.8 | 1.0 | 1.0 |
+| Chinese OEMs | 4.0 | 1.5 | 3.5 | -3.5 | 4.2 | 2.5 |
+| SK OEMs | 0.8 | -0.5 | 0.3 | -2.0 | -0.2 | 0.1 |
+| Other OEMs | -1.0 | -0.2 | -0.1 | -0.1 | -0.1 | 0.3 |
+</details>
+
+Source: S&P Global, MS.
+
+Exhibit 39: Norway Market Share Change 2020-2025 - EU OEMs lost most share whilst Chinese/US OEMs gained  
+![](images/233b346de2c4318e08c34fd1fc4669cda77a8fb73d7350f9a618efeb23f7a027.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - Norway (%) |
+| :--- | :--- |
+| European OEMs | -11.9 |
+| Japanese OEMs | -7.8 |
+| SK OEMs | -1.8 |
+| Other OEMs | -0.4 |
+| Chinese OEMs | 8.8 |
+| US OEMs | 13.1 |
+</details>
+
+Source: S&P Global, MS
+
+## Germany
+
+## Can Chinese OEMs gain meaningful share in the home of European Autos?
+
+Germany remains a key market in the assessment of the long-term competitive threat posed by Chinese OEMs in Europe. As the home market of Volkswagen, BMW, Mercedes-Benz and Porsche, Germany has remained one of Europe's most resilient markets, with European OEM share stable at around 75% and Chinese OEM penetration reaching only \~5% by 2025. Chinese OEMs have nevertheless gained \~3%pp of share since 2020, but these gains have come primarily at the expense of US, Japanese and Korean manufacturers rather than European incumbents. Volkswagen has been the standout winner, gaining more than 5%pp of market share over the period, demonstrating that strong local brands with competitive product portfolios remain well positioned to defend their home market despite rising Chinese competition.
+
+Germany is the home of European Autos. Germany is arguably the most important market to monitor when assessing the long-term competitive threat posed by Chinese
+
+OEMs in Europe. It is the region's largest automotive market and the home market of several global industry leaders, including Volkswagen, BMW, Mercedes-Benz and Porsche, all of which benefit from strong brand equity, extensive dealer networks and a significant premium vehicle presence. These structural advantages have so far made Germany one of the more resilient European markets, with European OEMs maintaining a remarkably stable market share of \~75% over the past decade. Unlike markets such as Norway or the UK, Chinese manufacturers remain relatively underpenetrated, with market share only reaching \~5% by 2025. We think that Chinese OEMs have, to date, focused their European expansion efforts elsewhere, prioritising markets with fewer incumbent advantages and lower barriers to entry.
+
+Chinese brands are establishing a foothold at the expense of US players. Chinese OEM market share has increased by \~3%pp since 2020, making them the largest share gainers among foreign manufacturers. Importantly, these gains do not appear to have come at the expense of German incumbents. Instead, US OEMs have been the largest share donors over the period, losing close to 3%pp of market share, while Japanese and Korean manufacturers have also ceded ground. At the aggregate level, European OEM market share has actually increased modestly since 2020, highlighting the continued strength of domestic brands in their home market and underscoring the fact that Germany remains significantly more defensive than many other European countries.
+
+Volkswagen the winner in recent years. Volkswagen Group has been the standout performer, gaining more than 5%pp of market share since 2020 and reinforcing its dominant position in the market. By contrast, Mercedes-Benz, Renault and Stellantis have all lost share, with Mercedes-Benz emerging as the largest individual share donor over the period. The Volkswagen share gains are particularly notable given the rise of Chinese competition, suggesting that strong local brands with competitive EV offerings and broad model portfolios remain well positioned to defend share even as new entrants arrive.
+
+Exhibit 40: Germany: European OEM market share stable recently  
+![](images/780d74edf8986ca259ce09a751344e03c0de1a1fd918932629feebec3913eb87.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | EU OEMs | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|---------|---------|---------|---------|---------|------------|------------|
+| Q1-05   | 73%     | 6%      | 11%     | 4%      | 3%         | 2%         |
+| Q4-05   | 74%     | 6%      | 11%     | 4%      | 3%         | 2%         |
+| Q3-06   | 75%     | 6%      | 11%     | 4%      | 3%         | 2%         |
+| Q2-07   | 76%     | 6%      | 11%     | 4%      | 3%         | 2%         |
+| Q1-08   | 77%     | 6%      | 11%     | 4%      | 3%         | 2%         |
+| Q4-08   | 78%     | 6%      | 12%     | 4%      | 3%         | 2%         |
+| Q3-09   | 75%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q2-10   | 76%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q1-11   | 77%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q4-11   | 78%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q3-12   | 79%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q2-13   | 78%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q1-14   | 79%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q4-14   | 78%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q3-15   | 79%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q2-16   | 78%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q1-17   | 79%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q4-17   | 78%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q3-18   | 79%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q2-19   | 78%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q1-20   | 79%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q4-20   | 80%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q3-21   | 78%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q2-22   | 79%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q1-23   | 78%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q4-23   | 79%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q3-24   | 78%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q2-25   | 79%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+| Q1-26   | 78%     | 6%      | 10%     | 4%      | 3%         | 2%         |
+</details>
+
+Source: KBA, MS. Note: this chart includes as EU OEMs: Stellantis, VW, Renault, MBG, BMW, Porsche, Iveco, Lada, Ferrari; US OEMs: GM, Ford, Tesla; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi, Mazda; SK OEMs: Hyundai, Kia, KGM; China OEMs: Leapmotor, Changan, Chery, Geely, Volvo, BYD, Dongfeng, GWM, SAIC, NIO, Xpeng; Other OEMs: JLR, Togg and Others.
+
+Exhibit 41: Germany: Chinese OEMs have grown share whilst US & SK have ceded  
+![](images/4163c05b3618edf332e80201874943997545a0947722027bee8202ff0ff095b0.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|---------|---------|---------|---------|------------|------------|
+| Q1-13   | 7.0%    | 9.0%    | 5.5%    | 1.0%       | 3.0%       |
+| Q3-13   | 7.5%    | 8.5%    | 5.0%    | 1.0%       | 1.0%       |
+| Q1-14   | 7.0%    | 9.5%    | 5.0%    | 1.0%       | 1.5%       |
+| Q3-14   | 7.0%    | 9.0%    | 5.0%    | 1.0%       | 1.5%       |
+| Q1-15   | 7.0%    | 9.5%    | 5.0%    | 1.0%       | 1.5%       |
+| Q3-15   | 7.0%    | 9.0%    | 5.0%    | 1.0%       | 1.5%       |
+| Q1-16   | 7.0%    | 9.5%    | 5.0%    | 1.0%       | 1.5%       |
+| Q3-16   | 7.0%    | 9.0%    | 5.0%    | 1.0%       | 1.5%       |
+| Q1-17   | 7.0%    | 10.0%   | 5.0%    | 1.0%       | 1.5%       |
+| Q3-17   | 7.0%    | 9.5%    | 5.0%    | 1.0%       | 1.5%       |
+| Q1-18   | 7.0%    | 9.0%    | 5.0%    | 1.0%       | 1.5%       |
+| Q3-18   | 7.0%    | 8.5%    | 5.0%    | 1.0%       | 1.5%       |
+| Q1-19   | 7.0%    | 8.0%    | 5.0%    | 1.0%       | 1.5%       |
+| Q3-19   | 7.0%    | 8.5%    | 5.0%    | 1.0%       | 1.5%       |
+| Q1-20   | 7.0%    | 8.0%    | 5.0%    | 1.0%       | 1.5%       |
+| Q3-20   | 7.0%    | 8.5%    | 5.0%    | 1.0%       | 1.5%       |
+| Q1-21   | 7.0%    | 8.0%    | 5.0%    | 1.0%       | 1.5%       |
+| Q3-21   | 7.0%    | 9.5%    | 8.0%    | 2.0%       | 2.0%       |
+| Q1-22   | 7.0%    | 8.5%    | 7.5%    | 2.0%       | 2.0%       |
+| Q3-22   | 7.0%    | 8.0%    | 7.0%    | 3.5%       | 2.0%       |
+| Q1-23   | 7.0%    | 8.5%    | 6.5%    | 3.5%       | 2.0%       |
+| Q3-23   | 7.0%    | 8.0%    | 6.0%    | 3.5%       | 2.0%       |
+| Q1-24   | 7.0%    | 8.5%    | 6.5%    | 3.5%       | 2.0%       |
+| Q3-24   | 7.0%    | 9.0%    | 6.0%    | 3.5%       | 2.0%       |
+| Q1-25   | 7.0%    | 8.5%    | 5.5%    | 4.0%       | 2.0%       |
+| Q3-25   | 7.0%    | 8.0%    | 5.5%    | 4.5%       | 2.0%       |
+| Q1-26   | 7.0%    | 7.5%    | 5.5%    | 5.0%       | 2.0%       |
+</details>
+
+Source: KBA, MS. Note: this chart includes as US OEMs: GM, Ford, Tesla; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi, Mazda; SK OEMs: Hyundai, Kia, KGM; China OEMs: Leapmotor, Changan, Chery, Geely, Volvo, BYD, Dongfeng, GWM, SAIC, NIO, Xpeng; Other OEMs: JLR, Togg and Others.
+
+Exhibit 42: Germany: Amongst European OEMs, Mercedes-Benz lost the most share, whilst VW has continued to gain  
+![](images/ae38e6b5a6a29822dab3c8a05ed0b7c004377ba4fbf906cff99c010aaf5f61a2.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | BMW | Mercedes-Benz | Stellantis | Renault | VW Group | Other EU OEMs |
+| --- | --- | --- | --- | --- | --- | --- |
+| Q1-18 | 8% | 9% | 13% | 7% | 37% | 0% |
+| Q2-18 | 9% | 10% | 13% | 7% | 39% | 0% |
+| Q3-18 | 10% | 11% | 13% | 7% | 32% | 0% |
+| Q4-18 | 9% | 10% | 13% | 7% | 37% | 0% |
+| Q1-19 | 8% | 9% | 13% | 7% | 37% | 0% |
+| Q2-19 | 9% | 10% | 13% | 7% | 36% | 0% |
+| Q3-19 | 10% | 11% | 13% | 7% | 36% | 0% |
+| Q4-19 | 9% | 10% | 13% | 7% | 38% | 0% |
+| Q1-20 | 8% | 9% | 13% | 7% | 36% | 0% |
+| Q2-20 | 9% | 10% | 13% | 7% | 36% | 0% |
+| Q3-20 | 10% | 11% | 13% | 7% | 36% | 0% |
+| Q4-20 | 9% | 10% | 13% | 7% | 39% | 0% |
+| Q1-21 | 8% | 9% | 13% | 7% | 39% | 0% |
+| Q2-21 | 9% | 10% | 14% | 7% | 32% | 0% |
+| Q3-21 | 8% | 9% | 13% | 7% | 37% | 0% |
+| Q4-21 | 9% | 10% | 13% | 7% | 38% | 0% |
+| Q1-22 | 8% | 9% | 13% | 7% | 38% | 0% |
+| Q2-22 | 9% | 10% | 13% | 7% | 38% | 0% |
+| Q3-22 | 8% | 9% | 13% | 7% | 35% | 0% |
+| Q4-22 | 9% | 10% | 13% | 7% | 38% | 0% |
+| Q1-23 | 8% | 9% | 13% | 7% | 40% | 0% |
+| Q2-23 | 9% | 10% | 13% | 7% | 38% | 0% |
+| Q3-23 | 8% | 9% | 13% | 7% | 38% | 0% |
+| Q4-23 | 9% | 10% | 13% | 7% | 40% | 0% |
+| Q1-24 | 8% | 9% | 13% | 7% | 42% | 0% |
+| Q2-24 | 9% | 10% | 13% | 7% | 42% | 0% |
+| Q3-24 | 8% | 9% | 13% | 7% | 42% | 0% |
+| Q4-24 | 9% | 10% | 13% | 7% | 42% | 0% |
+| Q1-25 | 8% | 9% | 13% | 7% | 44% | 0% |
+| Q2-25 | 9% | 10% | 13% | 7% | 42% | 0% |
+| Q3-25 | 8% | 9% | 13% | 7% | 42% | 0% |
+| Q4-25 | 9% | 10% | 13% | 7% | 42% | 0% |
+| Q1-26 | 8% | 9% | 13% | 7% | 42% | 0% |
+| Q2-26 | - | - | - | - | - | - |
+| Q3-26 | - | - | - | - | - | - |
+| Q4-26 | - | - | - | - | - | - |
+| Q1-27 | - | - | - | - | - | - |
+| Q2-27 | - | - | - | - | - | - |
+| Q3-27 | - | - | - | - | - | - |
+| Q4-27 | - | - | - | - | - | - |
+| Q1-28 | - | - | - | - | - | - |
+| Q2-28 | - | - | - | - | - | - |
+| Q3-28 | - | - | - | - | - | - |
+| Q4-28 | - | - | - | - | - | - |
+| Q1-29 | - | - | - | - | - | - |
+| Q2-29 | - | - | - | - | - | - |
+| Q3-29 | - | - | - | - | - | - |
+| Q4-29 | - | - | - | - | - | - |
+| Q1-30 | - | - | - | - | - | - |
+| Q2-30 | - | - | - | - | - | - |
+| Q3-30 | - | - | - | - | - | - |
+| Q4-30 | - | - | - | - | - | - |
+| Q1-31 | - | - | - | - | - | - |
+| Q2-31 | - | - | - | - | - | - |
+| Q3-31 | - | - | - | - | - | - |
+| Q4-31 | - | - | - | - | - | - |
+</details>
+
+Source: KBA, MS.
+
+Exhibit 43: Germany: Amongst Chinese OEMs, BYD has been the largest gainer, though Geely remains strong  
+![](images/3199f696e8ed9121e269a4e67b7bfcb640f7b1a17777bfe500746dab4ac7a037.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | BYD | SAIC | Geely | Xpeng | Leapmotor | Other China OEMs |
+| --- | --- | --- | --- | --- | --- | --- |
+| Q1-18 | 0.0% | 0.0% | 1.0% | 0.0% | 0.0% | 0.0% |
+| Q2-18 | 0.0% | 0.0% | 1.2% | 0.0% | 0.0% | 0.0% |
+| Q3-18 | 0.0% | 0.0% | 1.9% | 0.0% | 0.0% | 0.0% |
+| Q4-18 | 0.0% | 0.0% | 1.4% | 0.0% | 0.0% | 0.0% |
+| Q1-19 | 0.0% | 0.0% | 1.5% | 0.0% | 0.0% | 0.0% |
+| Q2-19 | 0.0% | 0.0% | 1.3% | 0.0% | 0.0% | 0.0% |
+| Q3-19 | 0.0% | 0.0% | 1.7% | 0.0% | 0.0% | 0.0% |
+| Q4-19 | 0.0% | 0.0% | 1.6% | 0.0% | 0.0% | 0.0% |
+| Q1-20 | 0.0% | 0.0% | 1.9% | 0.0% | 0.0% | 0.0% |
+| Q2-20 | 0.0% | 0.0% | 1.3% | 0.0% | 0.0% | 0.0% |
+| Q3-20 | 0.0% | 0.0% | 1.8% | 0.0% | 0.0% | 0.0% |
+| Q4-20 | 0.0% | 0.0% | 1.8% | 0.0% | 0.0% | 0.0% |
+| Q1-21 | 0.0% | 0.0% | 1.8% | 0.0% | 0.0% | 0.0% |
+| Q2-21 | 0.0% | 0.0% | 1.5% | 0.0% | 0.0% | 0.0% |
+| Q3-21 | 0.0% | 0.0% | 2.2% | 0.0% | 0.0% | 0.0% |
+| Q4-21 | 0.5% | 1.5% | 1.7% | 0.5% | 0.5% | 0.5% |
+| Q1-22 | - | - | - | - | - | - |
+| Q2-22 | - | - | - | - | - | - |
+| Q3-22 | - | - | - | - | - | - |
+| Q4-22 | - | - | - | - | - | - |
+| Q1-23 | - | - | - | - | - | - |
+| Q2-23 | - | - | - | - | - | - |
+| Q3-23 | - | - | - | - | - | - |
+| Q4-23 | - | - | - | - | - | - |
+| Q1-24 | - | - | - | - | - | - |
+| Q2-24 | - | - | - | - | - | - |
+| Q3-24 | - | - | - | - | - | - |
+| Q4-24 | - | - | - | - | - | - |
+| Q1-25 | - | - | - | - | - | - |
+| Q2-25 | - | - | - | - | - | - |
+| Q3-25 | - | - | - | - | - | - |
+| Q4-25 | - | - | - | - | - | - |
+| Q1-26 | - | - | - | - | - | - |
+| Q2-26 | - | - | - | - | - | - |
+| Q3-26 | - | - | - | - | - | - |
+| Q4-26 | - | - | - | - | - | - |
+| Q1-27 | - | - | - | - | - | - |
+| Q2-27 | - | - | - | - | - | - |
+| Q3-27 | - | - | - | - | - | - |
+| Q4-27 | - | - | - | - | - | - |
+| Q1-28 | - | - | - | - | - | - |
+| Q2-28 | - | - | - | - | - | - |
+| Q3-28 | - | - | - | - | - | - |
+| Q4-28 | - | - | - | - | - | - |
+| Q1-29 | - | - | - | - | - | - |
+| Q2-29 | - | - | - | - | - | - |
+| Q3-29 | - | - | - | - | - | - |
+| Q4-29 | - | - | - | - | - | - |
+| Q1-30 | - | - | - | - | - | - |
+| Q2-31 | - | - | - | - | - | - |
+| Q3-31 | - | - | - | - | - | - |
+| Q4-31 | - | - | - | - | - | - |
+| Q1-32 | - | - | - | - | - | - |
+</details>
+
+Source: KBA, MS.
+
+Exhibit 44: Germany Market Share Change 2020-2025 - US OEMs have lost most share whilst Chinese OEMs gained  
+![](images/85754160a0114a78db0d09dabe7e1dd7f2a9fa9f65a418fb37bf81e157626427.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - Germany (%) |
+| :--- | :--- |
+| US OEMs | -2.8 |
+| Japanese OEMs | -0.7 |
+| Other OEMs | -0.5 |
+| SK OEMs | -0.4 |
+| European OEMs | 1.4 |
+| Chinese OEMs | 2.9 |
+</details>
+
+Source: Local Auto Association, MS
+
+Exhibit 45: Mercedes-Benz stands out as the largest share donor over the 2020-2025 period  
+![](images/ce7862093b70ef3ad2e0cd43758d7f68b76617687128c450f38759d73d3aab4d.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Company | Mkt Share Change 2020-2025 - EU OEMs in Germany (%) |
+| :--- | :--- |
+| Mercedes-Benz | -1.7 |
+| Renault | -1.3 |
+| Stellantis | -1.2 |
+| BMW | 0.3 |
+| VW Group | 5.2 |
+</details>
+
+Source: Local Auto Association, MS
+
+Exhibit 46: On a YoY basis, EU OEM market share gains are starting to slow down  
+![](images/fddd502af7afe3ddd9ba57ecf59e643003f773afab70ebac54853c51b833efd1.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | 2020 (%) | 2021 (%) | 2022 (%) | 2023 (%) | 2024 (%) | 2025 (%) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| European OEMs | 0.6 | -0.1 | -1.8 | 1.8 | 0.7 | 0.6 |
+| Japanese OEMs | -0.2 | -0.5 | -0.3 | -0.2 | 1.1 | -1.0 |
+| US OEMs | -0.8 | -1.0 | 1.2 | -1.3 | -1.5 | -0.3 |
+| Chinese OEMs | 0.1 | 0.1 | 0.7 | 0.5 | 0.4 | 1.1 |
+| SK OEMs | 0.2 | 0.8 | 0.2 | -0.5 | -0.6 | -0.3 |
+| Other OEMs | 0.1 | 0.1 | 0.1 | -0.5 | -0.3 | -0.1 |
+</details>
+
+Source: Local Auto Association, MS
+
+## Italy
+
+Chinese OEM share gains continue and show no signs of slowing. Italy has emerged as one of the most successful entry markets for Chinese OEMs in Europe, with market share rising from \~2% to 11% since 2020 despite the country's historical status as a Stellantis stronghold. Over the same period, European OEM share has fallen from \~74% to 65%, representing one of the largest declines among major European markets and highlighting the ability of Chinese brands to gain traction even in traditional incumbent markets. Stellantis has been the primary share donor, losing >11%pp of market share since 2020, while Volkswagen, BMW and Renault have broadly maintained or modestly improved their positions. Importantly, European OEM market share losses show little sign of stabilising, suggesting Italy remains one of the clearest examples of the competitive pressure Chinese manufacturers can exert in Europe.
+
+Italy has emerged as a focal market for Chinese OEM expansion in Europe. The Italian market has historically been dominated by Stellantis brands and remains highly relevant to the B- and C- segments that form the core of European demand. However, since the pandemic, European OEM market share has fallen sharply from the \~74% to \~65%, representing one of the largest declines among major European markets. Over the same period, Chinese OEMs have increased their market share from \~2% to 11%, a high level for a major incumbent market and significantly above current penetration levels in Germany and France (4-5%). Italy has become one of the most successful large-market entry points for Chinese manufacturers in Europe, despite the presence of established domestic brands and strong historical customer loyalty.
+
+European OEM market share losses do not appear to be slowing down. Among all European OEMs, Stellantis has been by far the largest share donor, losing $>11\%$ pp of market share between 2020 and 2025. This is in line with the broader European trend and reinforces the view that Stellantis' previous strategy has left it vulnerable to Chinese competitors. By contrast, Volkswagen, BMW and Renault have broadly maintained or modestly improved their positions. Importantly, examining the YoY losses of European OEMs, the most recent data does not show a meaningful slowdown. Unlike other markets, YoY European market share losses in Italy remain persistent while Chinese OEMs continue to gain share. Italy may represent one of the clearest examples within Europe of the competitive pressure that Chinese manufacturers can exert, even in a market traditionally considered an incumbent stronghold.
+
+Exhibit 47: Italy: European OEM market share started to decline post-covid  
+![](images/b2cb67c56b38b1d04be9ad1798438b908ef6c67e931172412f62124916b87bd6.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | EU OEMs | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+| --- | --- | --- | --- | --- | --- | --- |
+| Q1-02 | 75% | 10% | 10% | 5% | 5% | 5% |
+| Q4-02 | 74% | 10% | 10% | 5% | 5% | 5% |
+| Q3-03 | 73% | 10% | 10% | 5% | 5% | 5% |
+| Q2-04 | 72% | 10% | 10% | 5% | 5% | 5% |
+| Q1-05 | 71% | 10% | 10% | 5% | 5% | 5% |
+| Q4-05 | 70% | 10% | 10% | 5% | 5% | 5% |
+| Q3-06 | 69% | 10% | 10% | 5% | 5% | 5% |
+| Q2-07 | 68% | 10% | 10% | 5% | 5% | 5% |
+| Q1-08 | 67% | 10% | 10% | 5% | 5% | 5% |
+| Q4-08 | 66% | 10% | 10% | 5% | 5% | 5% |
+| Q3-09 | 65% | 10% | 10% | 5% | 5% | 5% |
+| Q2-10 | 64% | 10% | 10% | 5% | 5% | 5% |
+| Q1-11 | 63% | 10% | 10% | 5% | 5% | 5% |
+| Q4-11 | 62% | 10% | 10% | 5% | 5% | 5% |
+| Q3-12 | 61% | 10% | 10% | 5% | 5% | 5% |
+| Q2-13 | 60% | 10% | 10% | 5% | 5% | 5% |
+| Q1-14 | 59% | 10% | 10% | 5% | 5% | 5% |
+| Q4-14 | 58% | 10% | 10% | 5% | 5% | 5% |
+| Q3-15 | 57% | 10% | 10% | 5% | 5% | 5% |
+| Q2-16 | 56% | 10% | 10% | 5% | 5% | 5% |
+| Q1-17 | 55% | 10% | 10% | 5% | 5% | 5% |
+| Q4-17 | 54% | 10% | 10% | 5% | 5% | 5% |
+| Q3-18 | 53% | 10% | 10% | 5% | 5% | 5% |
+| Q2-19 | 52% | 10% | 10% | 5% | 5% | 5% |
+| Q1-20 | 51% | 10% | 10% | 5% | 5% | 5% |
+| Q4-20 | 50% | 10% | 10% | 5% | 5% | 5% |
+| Q3-21 | 49% | 10% | 10% | 5% | 5% | 5% |
+| Q2-22 | 48% | 10% | 10% | 5% | 5% | 5% |
+| Q1-23 | 47% | 10% | 10% | 5% | 5% | 5% |
+| Q4-23 | 46% | 10% | 10% | 5% | 5% | 5% |
+| Q3-24 | 45% | 10% | 10% | 5% | 5% | 5% |
+| Q2-25 | 44% | 10% | 10% | 5% | 5% | 5% |
+| Q1-26 | 43% | 10% | 10% | 5% | 5% | 5% |
+| Q4-26 | 42% | 10% | 10% | 5% | 5% | 5% |
+| Q3-27 | - | - | - | - | - | - |
+| Q2-28 | - | - | - | - | - | - |
+| Q1-29 | - | - | - | - | - | - |
+| Q4-30 | - | - | - | - | - | - |
+| Q3-31 | - | - | - | - | - | - |
+| Q2-32 | - | - | - | - | - | - |
+| Q1-33 | - | - | - | - | - | - |
+| Q4-34 | - | - | - | - | - | - |
+| Q3-35 | - | - | - | - | - | - |
+| Q2-36 | - | - | - | - | - | - |
+| Q1-37 | - | - | - | - | - | - |
+| Q4-38 | - | - | - | - | - | - |
+| Q3-39 | - | - | - | - | - | - |
+| Q2-40 | - | - | - | - | - | - |
+| Q1-41 | - | - | - | - | - | - |
+| Q4-42 | - | - | - | - | - | - |
+| Q3-43 | - | - | - | - | - | - |
+| Q2-44 | - | - | - | - | - | - |
+| Q1-45 | - | - | - | - | - | - |
+| Q4-46 | - | - | - | - | - | - |
+| Q3-47 | - | - | - | - | - | - |
+| Q2-48 | - | - | - | - | - | - |
+| Q1-49 | - | - | - | - | - | - |
+</details>
+
+Source: UNRAE, MS. Note: this chart includes as EU OEMs: Stellantis, VW, Renault, MBG, BMW, Porsche, Lada, Ferrari; US OEMs: GM, Ford, Tesla; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi, Mazda; SK OEMs: Hyundai, Kia, KGM; China OEMs: Leapmotor, Chery, Geely, Volvo, BYD, Dongfeng, GWM, SAIC, SWM, DR; Other OEMs: JLR, Mahindra, Tata and Others.
+
+Exhibit 49: Italy: Amongst European OEMs, Stellantis has lost the most share  
+![](images/e948fcdaa5e795377e9d34c853aa4bc7f02928277052dab18337e38624294d58.jpg)  
+Source: UNRAE, MS.
+
+Exhibit 51: Italy Market Share Change 2020-2025 - EU OEMs have lost more share whilst Chinese OEMs gained  
+![](images/f906c918754ddcc24d4ad89957f3be2fe0175c88b018a0740f685e46a5836aa8.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - Italy (%) |
+| :--- | :--- |
+| European OEMs | -8.9 |
+| US OEMs | -1.9 |
+| Other OEMs | -0.4 |
+| SK OEMs | 0.9 |
+| Japanese OEMs | 2.5 |
+| Chinese OEMs | 7.8 |
+</details>
+
+Source: UNRAE, MS.
+
+Exhibit 48: Italy: Chinese and Japanese OEMs have grown share whilst Europe, US & Other have ceded  
+![](images/39b669e9d3ba5e0c9e8cb6221b0c18d97750af676bb40acfa1886674e0c49ec6.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|---------|---------|---------|---------|------------|------------|
+| Q1-13   | 8%      | 10%     | 5%      | 1%         | 1%         |
+| Q3-13   | 9%      | 10%     | 5%      | 1%         | 1%         |
+| Q1-14   | 8%      | 10%     | 5%      | 1%         | 1%         |
+| Q3-14   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q1-15   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q3-15   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q1-16   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q3-16   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q1-17   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q3-17   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q1-18   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q3-18   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q1-19   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q3-19   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q1-20   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q3-20   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q1-21   | 7%      | 10%     | 5%      | 1%         | 1%         |
+| Q3-21   | 7%      | 10%     | 5%      | 2%         | 1%         |
+| Q1-22   | 7%      | 10%     | 5%      | 3%         | 1%         |
+| Q3-22   | 7%      | 10%     | 5%      | 4%         | 1%         |
+| Q1-23   | 7%      | 10%     | 5%      | 5%         | 1%         |
+| Q3-23   | 7%      | 10%     | 5%      | 6%         | 1%         |
+| Q1-24   | 7%      | 10%     | 5%      | 7%         | 1%         |
+| Q3-24   | 7%      | 10%     | 5%      | 8%         | 1%         |
+| Q1-25   | 7%      | 10%     | 5%      | 9%         | 1%         |
+| Q3-25   | 7%      | 10%     | 5%      | 10%        | 1%         |
+| Q1-26   | 4%      | 14%     | 5%      | 13%        | 0.5%       |
+</details>
+
+Source: UNRAE, MS. Note: this chart includes as US OEMs: GM, Ford, Tesla; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi, Mazda; SK OEMs: Hyundai, Kia, KGM; China OEMs: Leapmotor, Chery, Geely, Volvo, BYD, Dongfeng, GWM, SAIC, SWM, DR; Other OEMs: JLR, Mahindra, Tata and Others.
+
+Exhibit 50: Italy: Amongst Chinese OEMs, SAIC have been the largest gainer  
+![](images/5cc6b9960b6803f741606e744af0a11a6f3b9a13e18ec45a4e53d9b98b12f182.jpg)  
+Source: UNRAE, MS.
+
+Exhibit 52: Stellantis stands out as the most meaningful share donor over the 2020-2025 period  
+![](images/2cf7a340415be7557fca8474c58b299d39b28a497b9f15caa773e5fe856e754d.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Company | Mkt Share Change 2020-2025 - EU OEMs in Italy (%) |
+| :--- | :--- |
+| Stellantis | -11.4 |
+| Mercedes-Benz | 0.0 |
+| VW Group | 0.2 |
+| Renault | 1.0 |
+| BMW | 1.3 |
+</details>
+
+Source: UNRAE, MS.
+
+Exhibit 53: On a YoY basis, EU OEM market share losses are stable and do not appear to slow down  
+![](images/afc8f75296b620adc24e7484ca67caff554b5198ece0076ddd26dfe5572f1282.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category       | 2020   | 2021   | 2022   | 2023   | 2024   | 2025   |
+| -------------- | ------ | ------ | ------ | ------ | ------ | ------ |
+| European OEMs  | -0.5%  | -1.8%  | -1.9%  | -1.7%  | -1.6%  | -2.0%  |
+| Japanese OEMs  | 0.7%   | 0.8%   | 0.4%   | 1.8%   | -0.5%  | -0.3%  |
+| US OEMs        | -0.8%  | -0.1%  | -0.1%  | 0.1%   | -0.7%  | -0.4%  |
+| Chinese OEMs   | 0.1%   | 0.5%   | 1.8%   | 1.6%   | 0.5%   | 3.2%   |
+| SK OEMs        | -0.1%  | 1.1%   | 0.1%   | -0.2%  | -0.1%  | -0.3%  |
+| Other OEMs     | -0.3%  | -0.4%  | -0.5%  | -0.3%  | -0.2%  | -0.1%  |
+</details>
+
+Source: UNRAE, MS.
+
+## Spain
+
+Spain has emerged as one of the most receptive markets for Chinese OEMs in Europe. We think driven by the country's price-sensitive consumer base, large B- and C- segment exposure, and relatively limited premium brand dominance. Since 2020, Chinese OEMs have gained almost 10%pp of market share, lifting penetration into the mid-teens and placing Spain alongside the UK and Italy as one of the most penetrated major European markets. Stellantis has been the largest share donor, losing \~8%pps of market share, while Renault has gained share despite the headwinds and Volkswagen has remained relatively resilient. Examining the latest data, market share losses for European OEMs appear to be accelerating, indicating further pain may be ahead.
+
+The price-sensitive Spanish consumer appreciates Chinese cars. Spain's price-sensitive consumer base makes it a natural testing ground for the value proposition of Chinese OEMs. The market exhibits many of the characteristics that should favour new entrants: a large B- and C- segment mix, strong demand for affordable vehicles, and less entrenched premium brand dominance than Germany. The data suggest that Chinese OEMs have been particularly successful in exploiting these dynamics. Since 2020, Chinese manufacturers have gained almost 10%pp of market share, one of the largest increases observed across Europe, with European OEMs the key share donors. Chinese OEM penetration has now reached mid-teen levels, placing Spain among the most penetrated major European markets alongside Italy and the UK.
+
+Growth has been shared amongst several Chinese players. Stellantis has been the dominant share donor, losing \~8%pp of market share since 2020, by far the largest decline among incumbent OEMs. Renault stands out as a notable exception, having increased its market share over the period, while Volkswagen Group has been relatively resilient. Unlike Italy, where SAIC has been the clear leader, Spain appears to be evolving into one of the most diversified Chinese markets in Europe. Chery has emerged as the largest individual winner, rapidly approaching 5% market share, while BYD and SAIC have also built meaningful positions and continue to grow. The breadth of these gains suggests that Chinese success in Spain is no longer dependent on a single brand or business model, but rather reflects growing acceptance of Chinese vehicles across multiple customer segments and distribution channels.
+
+European OEM market share losses are accelerating. While Chinese OEMs have been gaining share consistently since 2020, the pace of gains increased materially during 2023 and 2024, coinciding with sharper declines in European OEM market share. The year-on-year data show that these losses are in fact accelerating. As a result, Spain may represent one of the clearest examples of a market where Chinese OEMs are successfully translating their cost competitiveness and expanding product portfolios into sustained share gains.
+
+Exhibit 54: Spain: European OEM market share started to decline post-covid  
+![](images/93bdaa186cfccbc683ee49186f3eedef0ca6590cd8d49e9681b1f6b9ec82094e.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | EU OEMs | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|---------|---------|---------|---------|---------|------------|------------|
+| Q2-07   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q1-08   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q4-08   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q3-09   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q2-10   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q1-11   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q4-11   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q3-12   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q2-13   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q1-14   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q4-14   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q3-15   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q2-16   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q1-17   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q4-17   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q3-18   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q2-19   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q1-20   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q4-20   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q3-21   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q2-22   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q1-23   | 70%     | 10%     | 12%     | 5%      | 0%         | 0%         |
+| Q4-23   | 70%     | 10%     | 12%     | 5%      | 5%         | 5%         |
+| Q3-24   | 70%     | 10%     | 12%     | 5%      | 5%         | 5%         |
+| Q2-25   | 70%     | 10%     | 12%     | 5%      | 5%         | 5%         |
+| Q1-26   | 70%     | 10%     | 12%     | 5%      | 5%         | 5%         |
+</details>
+
+Source: ANFAC, MS. Note: this chart includes as EU OEMs: Stellantis, VW, Renault, MBG, BMW, Porsche, Iveco, Lada, Ferrari; US OEMs: GM, Ford, Tesla; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi, Mazda; SK OEMs: Hyundai, Kia, KGM; China OEMs: Leapmotor, Changan, Chery, Geely, Volvo, BYD, Dongfeng, SAIC, Xpeng, SWM, DR; Other OEMs: JLR, Mahindra, Tata and Others.
+
+Exhibit 56: Spain: Amongst European OEMs, Stellantis has lost the most share  
+![](images/70600e2aa0e1c8c67d102aa2398b48a59b13b967751ab8d73943d38aaef61995.jpg)  
+Source: ANFAC, MS.
+
+Exhibit 55: Spain: Chinese and Japanese OEMs have grown share whilst Europe, SK, US & Other have ceded  
+![](images/784daad35cdaccf6998b902038486eff1223dce1827191f2441d44095bfc0748.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|---------|---------|---------|---------|------------|------------|
+| Q1-13   | 8%      | 12%     | 7%      | 1%         | 1%         |
+| Q3-13   | 9%      | 14%     | 8%      | 1%         | 1%         |
+| Q1-14   | 8%      | 15%     | 9%      | 1%         | 1%         |
+| Q3-14   | 7%      | 14%     | 8%      | 1%         | 1%         |
+| Q1-15   | 6%      | 15%     | 9%      | 1%         | 1%         |
+| Q3-15   | 5%      | 14%     | 10%     | 1%         | 1%         |
+| Q1-16   | 5%      | 15%     | 9%      | 1%         | 1%         |
+| Q3-16   | 5%      | 14%     | 8%      | 1%         | 1%         |
+| Q1-17   | 5%      | 15%     | 9%      | 1%         | 1%         |
+| Q3-17   | 5%      | 14%     | 8%      | 1%         | 1%         |
+| Q1-18   | 5%      | 15%     | 9%      | 1%         | 1%         |
+| Q3-18   | 5%      | 14%     | 8%      | 1%         | 1%         |
+| Q1-19   | 5%      | 15%     | 9%      | 2%         | 1%         |
+| Q3-19   | 5%      | 14%     | 8%      | 2%         | 1%         |
+| Q1-20   | 5%      | 15%     | 9%      | 2%         | 1%         |
+| Q3-20   | 5%      | 14%     | 8%      | 2%         | 1%         |
+| Q1-21   | 5%      | 15%     | 9%      | 2%         | 1%         |
+| Q3-21   | 5%      | 14%     | 8%      | 2%         | 1%         |
+| Q1-22   | 5%      | 15%     | 9%      | 2%         | 1%         |
+| Q3-22   | 5%      | 14%     | 8%      | 3%         | 1%         |
+| Q1-23   | 5%      | 15%     | 9%      | 4%         | 1%         |
+| Q3-23   | 5%      | 14%     | 8%      | 6%         | 1%         |
+| Q1-24   | 5%      | 18%     | 9%      | 6%         | 1%         |
+| Q3-24   | 5%      | 17%     | 8%      | 8%         | 1%         |
+| Q1-25   | 5%      | 16%     | 7%      | 9%         | 1%         |
+| Q3-25   | 5%      | 17%     | 6%      | 10%        | 1%         |
+| Q1-26   | 5%      | 16%     | 9%      | 14%        | 0.5%       |
+</details>
+
+Source: ANFAC, MS. Note: this chart includes as US OEMs: GM, Ford, Tesla; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi, Mazda; SK OEMs: Hyundai, Kia, KGM; China OEMs: Leapmotor, Changan, Chery, Geely, Volvo, BYD, Dongfeng, SAIC, Xpeng, SWM, DR; Other OEMs: JLR, Mahindra, Tata and Others.
+
+Exhibit 57: Spain: Amongst Chinese OEMs, Chery have been the largest gainer  
+![](images/96bb0c72e4a609c191b1104be130565ff14842d351a668d731dcc448ea095ef5.jpg)  
+Source: ANFAC, MS.
+
+Exhibit 58: Spain Market Share Change 2020-2025 - EU OEMs have lost more share vs Chinese OEMs  
+![](images/f79c9f253ee1c83532ebddef95be48d9641d285cce06406b22e0b7a14d2f6c0c.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - Spain (%) |
+| :--- | :--- |
+| European OEMs | -9.5 |
+| Other OEMs | -0.7 |
+| US OEMs | -0.3 |
+| Japanese OEMs | 0.2 |
+| SK OEMs | 0.5 |
+| Chinese OEMs | 9.8 |
+</details>
+
+Source: ANFAC, MS.
+
+Exhibit 59: Stellantis stands out as the most meaningful share donor over the 2020-2025 period  
+![](images/29ff50ae79a3bcdf9ecdfe83e80234fc8052dfa72d516a5f8d1ae50cd8302513.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Company | Mkt Share Change 2020-2025 - EU OEMs in Spain (%) |
+| :--- | :--- |
+| Stellantis | -8.0 |
+| VW Group | -0.9 |
+| Mercedes-Benz | -0.7 |
+| BMW | -0.4 |
+| Renault | 1.8 |
+</details>
+
+Source: ANFAC, MS.
+
+Exhibit 60: On a YoY basis, EU OEM market share losses appear to be accelerating  
+![](images/8c08e35fd0fe13d1d4bd2c4974fc0fc7c018b4aebe9106b517359a3c7d964854.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category       | 2020   | 2021   | 2022   | 2023   | 2024   | 2025   |
+| -------------- | ------ | ------ | ------ | ------ | ------ | ------ |
+| European OEMs  | -1.5%  | -0.5%  | -3.5%  | -1.0%  | -1.5%  | -2.5%  |
+| Japanese OEMs  | 0.5%   | 0.5%   | 0.0%   | 0.5%   | 1.5%   | -1.0%  |
+| US OEMs        | -0.5%  | -0.5%  | -0.5%  | 0.5%   | -0.5%  | -1.0%  |
+| Chinese OEMs   | 0.5%   | 0.5%   | 0.5%   | 2.5%   | 1.0%   | 4.5%   |
+| SK OEMs        | 1.0%   | 2.5%   | -2.0%  | -1.0%  | -1.0%  | -1.0%  |
+| Other OEMs     | -0.5%  | -0.5%  | -0.5%  | -0.5%  | -0.5%  | -0.5%  |
+</details>
+
+Source: ANFAC, MS.
+
+## UK
+
+The UK represents the no-tariff, no-incumbent scenario. The UK has become a key European market for assessing Chinese OEM expansion, combining large market scale with the absence of a domestic OEM and exemption from EU tariffs on Chinese-made EVs. These factors have helped Chinese OEM market share rise by \~10%pp since 2020 to nearly 20%, making the UK one of the most penetrated major automotive markets in Europe. The gains have come at the expense of almost all incumbent groups, with European, Japanese and US manufacturers all losing share. Stellantis has been the largest share donor, while Mercedes-Benz and BMW have also lost ground. Renault stands out as the key exception, having grown share through a strong product cycle and competitive positioning in affordable electrified vehicles, while the latest data suggest Chinese OEM gains and legacy OEM share losses continue to accelerate.
+
+The UK is arguably the most important European market for assessing the progress of Chinese OEMs. As Europe's second-largest automotive market, the UK combines significant scale with a unique competitive structure: unlike Germany, France or Italy, it
+
+lacks a domestic volume OEM champion and, due to Brexit, is not directly subject to the EU's tariffs on Chinese-made EV imports. These characteristics have made the UK a natural entry point for Chinese manufacturers, and the data suggest that they have been highly successful. Chinese OEM market share has increased by \~10%pp since 2020, and is now approaching \~20% in 2026, making the UK one of the most penetrated major automotive markets in Europe.
+
+Broadbased market share losses for legacy OEMs. European OEM market share has declined by \~6%pp since 2020, while Japanese, US and other manufacturers have also lost share. In contrast to Germany, where domestic brands have remained relatively resilient, the UK appears much more exposed to competitive disruption from new entrants. The absence of a dominant local manufacturer and the openness of the market have created a more level competitive playing field, allowing Chinese brands to compete primarily on product, technology and pricing rather than having to overcome entrenched loyalties.
+
+Chinese OEMs have a strong focus on the UK market. Chinese brands appear to be following a more selective market-entry strategy rather than mirroring the geographic footprint of established European OEMs. Most notably, Chinese OEMs are disproportionately exposed to the UK, which represents \~24% of their European volumes versus \~16% of the overall European market. Nearly all major Chinese brands shown exhibit above-market exposure to the UK, with Chery, SAIC and BYD deriving particularly large shares of their European sales from the country. Several factors likely contribute to this trend: the UK is Europe's second-largest vehicle market, has high EV adoption, lacks a domestic volume OEM champion, and operates outside the EU tariff regime applied to Chinese-made EV imports. Based on current sales footprints, BMW appears most exposed through its relatively high UK concentration.
+
+Both mass market and premium OEMs are losing share. Stellantis once again emerges as the largest share donor, losing \~2.5%pp of market share over the period. Mercedes-Benz and BMW have also ceded meaningful share, highlighting that both volume and premium manufacturers have faced competitive pressure. The most notable exception is Renault, which has actually increased market share during the period. This suggests that Renault's product cycle, pricing strategy and positioning in affordable electrified vehicles have resonated well with UK consumers. Volkswagen's market share has also been relatively resilient, but Renault is the clearest example of a European manufacturer that has managed to grow despite the influx of Chinese competitors. The latest data indicates that the market share losses continue for legacy OEMs however. After strength in 2024, Chinese OEMs continued to gain share in 2025, with European OEM market share losses re-accelerating on a year-on-year basis.
+
+Exhibit 61: UK: European OEM market share started to decline post-covid  
+![](images/bf48579886cbe88ffb3ce3c5482df1b51b611e5e6ed2729860dd00c8196bb952.jpg)  
+Source: SMMT, MS. Note: this chart includes as EU OEMs: Stellantis, VW, Renault, MBG, BMW, Porsche; US OEMs: GM, Ford, Tesla; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi, Mazda; SK OEMs: Hyundai, Kia, KGM; China OEMs: Leapmotor, Changan, Chery, Geely, Volvo, BYD, GWM, SAIC, Xpeng; Other OEMs: JLR and Others.
+
+Exhibit 63: UK: Amongst European OEMs, Stellantis has lost the most share  
+![](images/adaf03927a239124dde04598182802aa524fac13413ca0b6626e84b06604c9dd.jpg)  
+Source: SMMT, MS.
+
+Exhibit 65: UK Market Share Change 2020-2025 - EU OEMs have lost most share whilst Chinese OEMs gained  
+![](images/7209c644dcd4309e9f362e175258a9ed6b29c1a24850e6ee584867b384afa291.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - UK (%) |
+| :--- | :--- |
+| European OEMs | -5.9 |
+| Other OEMs | -3.5 |
+| Japanese OEMs | -2.3 |
+| US OEMs | -1.2 |
+| SK OEMs | 3.0 |
+| Chinese OEMs | 10.0 |
+</details>
+
+Source: SMMT, MS.
+
+Exhibit 62: UK: Chinese and SK OEMs have grown share whilst Europe, Japanese, & US have ceded  
+![](images/2c7f1411aae492fdabfc6d60d22e7d30daafd26dcda2304efc9e1eee60ecd43b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|---------|---------|---------|---------|------------|------------|
+| Q1-13   | 14.5%   | 17.0%   | 6.5%    | 1.5%       | 4.0%       |
+| Q3-13   | 14.0%   | 16.5%   | 6.8%    | 1.6%       | 3.8%       |
+| Q1-14   | 13.5%   | 16.0%   | 6.5%    | 1.7%       | 3.5%       |
+| Q3-14   | 13.0%   | 17.5%   | 6.8%    | 1.8%       | 3.2%       |
+| Q1-15   | 12.5%   | 17.0%   | 7.0%    | 1.9%       | 3.0%       |
+| Q3-15   | 12.0%   | 16.5%   | 7.2%    | 2.0%       | 2.8%       |
+| Q1-16   | 11.5%   | 17.0%   | 7.5%    | 2.1%       | 2.5%       |
+| Q3-16   | 11.0%   | 16.5%   | 7.8%    | 2.2%       | 2.3%       |
+| Q1-17   | 10.5%   | 17.0%   | 8.0%    | 2.3%       | 2.0%       |
+| Q3-17   | 10.0%   | 16.5%   | 8.2%    | 2.4%       | 1.8%       |
+| Q1-18   | 9.5%    | 17.0%   | 8.5%    | 2.5%       | 1.5%       |
+| Q3-18   | 9.0%    | 16.5%   | 8.8%    | 2.6%       | 1.3%       |
+| Q1-19   | 8.5%    | 17.0%   | 9.0%    | 2.7%       | 1.0%       |
+| Q3-19   | 8.0%    | 16.5%   | 9.2%    | 2.8%       | 0.8%       |
+| Q1-20   | 7.5%    | 17.0%   | 9.5%    | 2.9%       | 0.5%       |
+| Q3-20   | 7.0%    | 16.5%   | 9.8%    | 3.0%       | 0.3%       |
+| Q1-21   | 6.5%    | 17.0%   | 10.0%   | 3.1%       | 0.0%       |
+| Q3-21   | 6.0%    | 19.0%   | 12.0%   | 4.0%       | -          |
+| Q1-22   | 5.5%    | 17.5%   | 11.5%   | 5.0%       | -          |
+| Q3-22   | 5.0%    | 17.0%   | 11.0%   | 6.0%       | -          |
+| Q1-23   | 4.5%    | 16.5%   | 10.5%   | 7.0%       | -          |
+| Q3-23   | 4.0%    | 17.0%   | 10.8%   | 8.0%       | -          |
+| Q1-24   | 3.5%    | 16.5%   | 10.5%   | 9.0%       | -          |
+| Q3-24   | 3.0%    | 17.0%   | 10.8%   | 10.0%      | -          |
+| Q1-25   | 2.5%    | 16.5%   | 10.5%   | 12.0%      | -          |
+| Q3-25   | 2.0%    | 17.0%   | 10.8%   | 14.0%      | -          |
+| Q1-26   | 1.5%    | 18.0%   | 9.5%    | 18.0%      | -          |
+</details>
+
+Source: SMMT, MS. Note: this chart includes as US OEMs: GM, Ford, Tesla; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi, Mazda; SK OEMs: Hyundai, Kia, KGM; China OEMs: Leapmotor, Changan, Chery, Geely, Volvo, BYD, GWM, SAIC, Xpeng; Other OEMs: JLR and Others.
+
+Exhibit 64: UK: Amongst Chinese OEMs, Chery have been the largest gainer  
+![](images/55da55599fb508dd3e91d89373a82fdec37df5cd741f2f38cd6b9f44ff630d85.jpg)  
+Source: SMMT, MS.
+
+Exhibit 66: Stellantis stands out as the most meaningful share donor over the 2020-2025 period  
+![](images/544b5b5552bec70ffbf0d199ac191476d6eb39e919765c6fee01c237b63adfea.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Company | Mkt Share Change 2020-2025 - EU OEMs in UK (%) |
+| :--- | :--- |
+| Stellantis | -2.6 |
+| Mercedes-Benz | -2.4 |
+| BMW | -1.5 |
+| VW Group | -0.4 |
+| Renault | 1.0 |
+</details>
+
+Source: SMMT, MS.
+
+Exhibit 67: On a YoY basis, EU OEM market share losses re-accelerated in 2025  
+![](images/c6d7748ee2692ac6ae7fd6fb7450e4ae64c253a696a5958969eb2a9a71f1680f.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category       | 2020   | 2021   | 2022   | 2023   | 2024   | 2025   |
+| -------------- | ------ | ------ | ------ | ------ | ------ | ------ |
+| European OEMs  | -1.5%  | -1.8%  | -3.5%  | 0.2%   | 0.6%   | -1.8%  |
+| Japanese OEMs  | 0.5%   | 0.3%   | -0.2%  | -0.1%  | -0.3%  | -2.5%  |
+| US OEMs        | -1.0%  | -1.2%  | 2.6%   | -0.8%  | -1.5%  | -2.2%  |
+| Chinese OEMs   | 1.0%   | 0.9%   | 0.8%   | 1.8%   | 1.0%   | 5.3%   |
+| SK OEMs        | -0.5%  | 2.5%   | 1.4%   | -1.0%  | 0.1%   | -0.3%  |
+| Other OEMs     | 1.2%   | -1.5%  | -1.8%  | -0.3%  | 0.4%   | -0.5%  |
+</details>
+
+Source: SMMT, MS.
+
+Exhibit 68: EU5 exposure: Chinese OEMs are much more exposed to the UK  
+![](images/53a5034049c515c2ceb6d1901122449cfcdb535d1fdeb21f59b8d1ed1a79e3bc.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Market Segment     | France | Germany | Italy | Spain | United Kingdom | Others |
+| ------------------ | ------ | ------- | ----- | ----- | -------------- | ------ |
+| European market    | 13%    | 21%     | 11%   | 9%    | 16%            | 30%    |
+| Chinese OEMs       | 6%     | 14%     | 12%   | 11%   | 24%            | 33%    |
+</details>
+
+Source: S&P Global, MS. Note: West and Central Europe only.
+
+## France
+
+Incumbents resilient under pressure. France remains one of the most resilient incumbent markets in Europe, supported by strong domestic brands, customer loyalty and a policy environment that has historically favoured local manufacturers. Chinese OEM market share has increased to \~5% by 2025, but penetration remains well below levels seen in the UK, Spain and Italy, while European OEM share losses have been comparatively modest. Although Stellantis has been the largest share donor, losing around 10%pp of market share since 2020, much of this has been offset by gains at Volkswagen, Renault and BMW. Unlike other major European markets, Japanese OEMs have gained almost as much share as Chinese manufacturers. Similar to Germany, recent data suggest European OEM market share is growing, supporting the case for legacy OEM resilience.
+
+France represents a strong incumbent market. As the home market of both Renault and Stellantis, France has historically been characterised by strong domestic brand loyalty, a vehicle mix heavily skewed towards the B- and C- segments, and policy frameworks that have often favoured local manufacturing. These structural advantages appear to have slowed, though not prevented, Chinese expansion. Chinese OEM market share has increased from near-zero levels to \~5% by 2025, which remains materially below penetration levels seen in the UK, Spain and Italy. While European OEMs have lost \~4%pp of share since 2020, the decline is notably less severe than in other major European markets.
+
+As elsewhere in Europe, the losses among European OEMs have been highly concentrated. Stellantis is again the key donor, surrendering \~10%pp of market share since 2020, a remarkably large decline in one of its most important home markets. Unlike Italy or Spain, the losses at Stellantis have been partially offset by gains elsewhere within the European OEM group. Volkswagen has gained >3%pp of market share, while Renault and BMW have also expanded their positions.
+
+Japanese players gaining alongside Chinese OEMs. Chinese OEMs have increased market share by \~3%pp since 2020, making them one of the largest gainers, but Japanese OEMs have gained almost as much share over the same period. Japanese OEMs remain the largest foreign OEM group in France, with market share comfortably above 10%. This contrasts with markets such as the UK and Spain, where Chinese OEMs have become the dominant source of competitive disruption. The French market therefore appears more balanced, with incumbent European manufacturers facing competition from both Chinese entrants and established Asian brands rather than from Chinese OEMs alone.
+
+Competitive pressure on European OEMs may be moderating. While Chinese brands recorded strong gains in recent years, the YoY data for FY24 and FY25 show European OEM market share recovering, mirroring a trend also observed in Germany. This stands in contrast to Italy, Spain and the UK, where European OEM share losses are accelerating. France therefore appears to be one of the markets where incumbent manufacturers have responded more effectively through refreshed product portfolios, pricing actions and improved EV offerings. While Chinese OEMs have unquestionably established a foothold, the French market currently looks less vulnerable to rapid disruption than other major European markets and remains one of the strongest examples of how domestic incumbents can defend share when brand strength, product relevance and policy support align.
+
+Exhibit 69: France: European OEM market share started to decline post-covid, though it has improved recently  
+![](images/3292c8fe2249c5c2a0272fc398970d0f29fa3d708b8d5c5383e29aa448eae117.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | EU OEMs | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+| --- | --- | --- | --- | --- | --- | --- |
+| Q1-03 | 85% | 5% | 5% | 5% | 5% | 5% |
+| Q4-03 | 84% | 5% | 6% | 5% | 5% | 5% |
+| Q1-04 | 83% | 5% | 6% | 5% | 5% | 5% |
+| Q2-04 | 82% | 5% | 6% | 5% | 5% | 5% |
+| Q3-04 | 81% | 5% | 6% | 5% | 5% | 5% |
+| Q4-04 | 80% | 5% | 6% | 5% | 5% | 5% |
+| Q1-05 | 79% | 5% | 6% | 5% | 5% | 5% |
+| Q2-05 | 78% | 5% | 6% | 5% | 5% | 5% |
+| Q3-05 | 77% | 5% | 6% | 5% | 5% | 5% |
+| Q4-05 | 76% | 5% | 6% | 5% | 5% | 5% |
+| Q1-06 | 75% | 5% | 6% | 5% | 5% | 5% |
+| Q2-06 | 74% | 5% | 6% | 5% | 5% | 5% |
+| Q3-06 | 73% | 5% | 6% | 5% | 5% | 5% |
+| Q4-06 | 72% | 5% | 6% | 5% | 5% | 5% |
+| Q1-07 | 71% | 5% | 6% | 5% | 5% | 5% |
+| Q2-07 | 70% | 5% | 6% | 5% | 5% | 5% |
+| Q3-07 | 69% | 5% | 6% | 5% | 5% | 5% |
+| Q4-07 | 68% | 5% | 6% | 5% | 5% | 5% |
+| Q1-08 | 67% | 5% | 6% | 5% | 5% | 5% |
+| Q2-08 | 66% | 5% | 6% | 5% | 5% | 5% |
+| Q3-08 | 65% | 5% | 6% | 5% | 5% | 5% |
+| Q4-08 | 64% | 5% | 6% | 5% | 5% | 5% |
+| Q1-09 | 63% | 5% | 6% | 5% | 5% | 5% |
+| Q2-09 | 62% | 5% | 6% | 5% | 5% | 5% |
+| Q3-09 | 61% | 5% | 6% | 5% | 5% | 5% |
+| Q4-09 | 60% | 5% | 6% | 5% | 5% | 5% |
+| Q1-10 | 59% | 5% | 6% | 5% | 5% | 5% |
+| Q2-10 | 58% | 5% | 6% | 5% | 5% | 5% |
+| Q3-10 | 57% | 5% | 6% | 5% | 5% | 5% |
+| Q4-10 | 56% | 5% | 6% | 5% | 5% | 5% |
+| Q1-11 | 55% | 5% | 6% | 5% | 5% | 5% |
+| Q2-11 | 54% | 5% | 6% | 5% | 5% | 5% |
+| Q3-11 | 53% | 5% | 6% | 5% | 5% | 5% |
+| Q4-11 | 52% | 5% | 6% | 5% | 5% | 5% |
+| Q1-12 | 51% | 5% | 6% | 5% | 5% | 5% |
+| Q2-12 | 50% | 5% | 6% | 5% | 5% | 5% |
+| Q3-12 | 49% | 5% | 6% | 5% | 5% | 5% |
+| Q4-12 | 48% | 5% | 6% | 5% | 5% | 5% |
+| Q1-13 | 47% | 5% | 6% | 5% | 5% | 5% |
+| Q2-13 | 46% | 5% | 6% | 5% | 5% | 5% |
+| Q3-13 | 45% | 5% | 6% | 5% | 5% | 5% |
+| Q4-13 | 44% | 5% | 6% | 5% | 5% | 5% |
+| Q1-14 | - | - | - | - | - | - |
+| Q2-14 | - | - | - | - | - | - |
+| Q3-14 | - | - | - | - | - | - |
+| Q4-14 | - | - | - | - | - | - |
+| Q1-15 | - | - | - | - | - | - |
+| Q2-15 | - | - | - | - | - | - |
+| Q3-15 | - | - | - | - | - | - |
+| Q4-15 | - | - | - | - | - | - |
+| Q1-16 | - | - | - | - | - | - |
+| Q2-16 | - | - | - | - | - | - |
+| Q3-16 | - | - | - | - | - | - |
+| Q4-16 | - | - | - | - | - | - |
+| Q1-17 | - | - | - | - | - | - |
+| Q2-17 | - | - | - | - | - | - |
+| Q3-17 | - | - | - | - | - | - |
+| Q4-17 | - | - | - | - | - | - |
+</details>
+
+Source: CCFA, MS. Note: this chart includes as EU OEMs: Stellantis, VW, Renault, MBG, BMW, Porsche, Lada, Ferrari; US OEMs: GM, Ford, Tesla; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi, Mazda; SK OEMs: Hyundai, Kia; China OEMs: Leapmotor, Geely, Volvo, BYD, SAIC, Xpeng; Other OEMs: JLR and Others.
+
+Exhibit 70: France: Chinese and Japanese OEMs have grown share whilst Europe, SK & Other have ceded  
+![](images/7468c15c039af57d9654b3c6d356ad3cf9e07af93749cbce9f003beb7182b0f1.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|---------|---------|---------|---------|------------|------------|
+| Q1-13   | 5.8%    | 9.5%    | 3.5%    | 0.5%       | 0.5%       |
+| Q3-13   | 5.5%    | 9.8%    | 3.2%    | 0.5%       | 0.5%       |
+| Q1-14   | 5.2%    | 7.2%    | 2.8%    | 0.5%       | 0.5%       |
+| Q3-14   | 4.8%    | 8.0%    | 2.5%    | 0.5%       | 0.5%       |
+| Q1-15   | 4.5%    | 8.2%    | 2.7%    | 0.5%       | 0.5%       |
+| Q3-15   | 4.2%    | 8.0%    | 2.8%    | 0.5%       | 0.5%       |
+| Q1-16   | 4.0%    | 7.8%    | 2.9%    | 0.5%       | 0.5%       |
+| Q3-16   | 3.8%    | 8.0%    | 3.0%    | 0.5%       | 0.5%       |
+| Q1-17   | 4.0%    | 8.2%    | 3.1%    | 0.5%       | 0.5%       |
+| Q3-17   | 3.8%    | 8.0%    | 3.2%    | 0.5%       | 0.5%       |
+| Q1-18   | 3.5%    | 7.8%    | 3.3%    | 0.5%       | 0.5%       |
+| Q3-18   | 3.2%    | 8.0%    | 3.4%    | 0.5%       | 0.5%       |
+| Q1-19   | 3.0%    | 7.8%    | 3.5%    | 0.5%       | 0.5%       |
+| Q3-19   | 3.2%    | 8.0%    | 3.6%    | 0.5%       | 0.5%       |
+| Q1-20   | 3.5%    | 9.5%    | 4.0%    | 0.5%       | 0.5%       |
+| Q3-20   | 3.8%    | 8.5%    | 4.5%    | 0.5%       | 0.5%       |
+| Q1-21   | 4.0%    | 9.0%    | 5.0%    | 0.5%       | 0.5%       |
+| Q3-21   | 4.2%    | 9.5%    | 6.0%    | 0.5%       | 0.5%       |
+| Q1-22   | 4.5%    | 10.0%   | 6.2%    | 0.5%       | 0.5%       |
+| Q3-22   | 4.8%    | 10.5%   | 6.5%    | 0.5%       | 0.5%       |
+| Q1-23   | 5.0%    | 11.0%   | 6.8%    | 0.5%       | 0.5%       |
+| Q3-23   | 5.2%    | 11.5%   | 7.0%    | 0.5%       | 0.5%       |
+| Q1-24   | 7.0%    | 12.0%   | 7.2%    | 3.8%       | 0.5%       |
+| Q3-24   | 6.8%    | 12.2%   | 7.0%    | 3.5%       | 0.5%       |
+| Q1-25   | 6.5%    | 12.5%   | 6.8%    | 4.0%       | 0.5%       |
+| Q3-25   | 6.2%    | 12.8%   | 6.5%    | 4.8%       | 0.5%       |
+| Q1-26   | 6.0%    | 11.0%   | 6.2%    | 6.0%       | 0.5%       |
+</details>
+
+Source: CCFA, MS. Note: this chart includes as US OEMs: GM, Ford, Tesla; JP OEMs: Toyota, Nissan, Honda, Suzuki, Subaru, Mitsubishi, Mazda; SK OEMs: Hyundai, Kia; China OEMs: Leapmotor, Geely, Volvo, BYD, SAIC, Xpeng; Other OEMs: JLR and Others.
+
+Exhibit 71: France: Amongst European OEMs, Stellantis has lost the most share  
+![](images/c9b9b7ce0dd7944e905deeae05788caa9ca494bb5789d48cd74b9ffdb3a90b77.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | BMW | Mercedes-Benz | Stellantis | Renault | VW Group | Other EU OEMs |
+| --- | --- | --- | --- | --- | --- | --- |
+| Q1-18 | 3% | 2% | 37% | 25% | 11% | 0% |
+| Q2-18 | 3% | 2% | 36% | 27% | 12% | 0% |
+| Q3-18 | 3% | 3% | 37% | 24% | 12% | 0% |
+| Q4-18 | 3% | 3% | 37% | 25% | 12% | 0% |
+| Q1-19 | 3% | 3% | 36% | 26% | 12% | 0% |
+| Q2-19 | 3% | 3% | 35% | 24% | 12% | 0% |
+| Q3-19 | 3% | 3% | 34% | 25% | 12% | 0% |
+| Q4-19 | 3% | 3% | 33% | 26% | 12% | 0% |
+| Q1-20 | 3% | 3% | 38% | 29% | 12% | 0% |
+| Q2-20 | 3% | 3% | 32% | 25% | 12% | 0% |
+| Q3-20 | 3% | 3% | 35% | 24% | 12% | 0% |
+| Q4-20 | 3% | 3% | 36% | 25% | 12% | 0% |
+| Q1-21 | 3% | 3% | 35% | 24% | 12% | 0% |
+| Q2-21 | 3% | 3% | 34% | 25% | 12% | 0% |
+| Q3-21 | 3% | 3% | 35% | 26% | 12% | 0% |
+| Q4-21 | 3% | 3% | 34% | 25% | 12% | 0% |
+| Q1-22 | 3% | 3% | 35% | 26% | 12% | 0% |
+| Q2-22 | 3% | 3% | 34% | 25% | 12% | 0% |
+| Q3-22 | 3% | 3% | 35% | 26% | 12% | 0% |
+| Q4-22 | 3% | 3% | 34% | 25% | 12% | 0% |
+| Q1-23 | 3% | 3% | 35% | 26% | 12% | 0% |
+| Q2-23 | 3% | 3% | 34% | 25% | 12% | 0% |
+| Q3-23 | 3% | 3% | 35% | 26% | 12% | 0% |
+| Q4-23 | 3% | 3% | 34% | 25% | 12% | 0% |
+| Q1-24 | 3% | 3% | 35% | 26% | 12% | 0% |
+| Q2-24 | 3% | 3% | 34% | 25% | 12% | 0% |
+| Q3-24 | 3% | 3% | 35% | 26% | 12% | 0% |
+| Q4-24 | 3% | 3% | 34% | 25% | 12% | 0% |
+| Q1-25 | 3% | 3% | 35% | 26% | 12% | 0% |
+| Q2-25 | 3% | 3% | 34% | 25% | 12% | 0% |
+| Q3-25 | 3% | 3% | 35% | 26% | 12% | 0% |
+| Q4-25 | 3% | 3% | 34% | 25% | 12% | 0% |
+| Q1-26 | 3% | 3% | 35% | 26% | 12% | 0% |
+| Q2-26 | 3% | 3% | 34% | 25% | 12% | 0% |
+| Q3-26 | 3% | 3% | 35% | 26% | 12% | 0% |
+| Q4-26 | 3% | 3% | 34% | 25% | 12% | 0% |
+| Q1-27 | 3% | 3% | 35% | 26% | 12% | 0% |
+| Q2-27 | 3% | 3% | - | - | - | - |
+| Q3-27 | - | - | - | - | - | - |
+| Q4-27 | - | - | - | - | - | - |
+| Q1-28 | - | - | - | - | - | - |
+| Q2-28 | - | - | - | - | - | - |
+| Q3-28 | - | - | - | - | - | - |
+| Q4-28 | - | - | - | - | - | - |
+| Q1-29 | - | - | - | - | - | - |
+| Q2-29 | - | - | - | - | - | - |
+| Q3-29 | - | - | - | - | - | - |
+| Q4-29 | - | - | - | - | - | - |
+| Q1-30 | - | - | - | - | - | - |
+| Q2-30 | - | - | - | - | - | - |
+| Q3-30 | - | - | - | - | - | - |
+| Q4-30 | - | - | - | - | - | - |
+| Q1-31 | - | - | - | - | - | - |
+| Q2-31 | - | - | - | - | - | - |
+| Q3-31 | - | - | - | - | - | - |
+| Q4-31 | - | - | - | - | - | - |
+| Q1-32 | - | - | - | - <fcel>- | X\X\Y |  |
+</details>
+
+Source: CCFA, MS.
+
+Exhibit 72: France: Amongst Chinese OEMs, SAIC have been the largest gainers  
+![](images/31bf93ada3f7d7ab4f47c6d75c99b4b9884801eb0a1a57c54289436e80cfbf7b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | BYD | SAIC | Geely | Xpeng | Leapmotor | Other China OEMs |
+| --- | --- | --- | --- | --- | --- | --- |
+| Q1-18 | 0.0% | 0.0% | 0.8% | 0.0% | 0.0% | 0.0% |
+| Q2-18 | 0.0% | 0.0% | 0.7% | 0.0% | 0.0% | 0.0% |
+| Q3-18 | 0.0% | 0.0% | 0.9% | 0.0% | 0.0% | 0.0% |
+| Q4-18 | 0.0% | 0.0% | 1.0% | 0.0% | 0.0% | 0.0% |
+| Q1-19 | 0.0% | 0.0% | 1.1% | 0.0% | 0.0% | 0.0% |
+| Q2-19 | 0.0% | 0.0% | 1.2% | 0.0% | 0.0% | 0.0% |
+| Q3-19 | 0.0% | 0.0% | 1.3% | 0.0% | 0.0% | 0.0% |
+| Q4-19 | 0.0% | 0.0% | 1.4% | 0.0% | 0.0% | 0.0% |
+| Q1-20 | 0.0% | 0.0% | 1.5% | 0.0% | 0.0% | 0.0% |
+| Q2-20 | 0.0% | 0.0% | 1.6% | 0.0% | 0.0% | 0.0% |
+| Q3-20 | 0.0% | 0.0% | 1.7% | 0.0% | 0.0% | 0.0% |
+| Q4-20 | 0.0% | 0.0% | 1.8% | 0.0% | 0.0% | 0.0% |
+| Q1-21 | 0.0% | 0.0% | 1.9% | 0.0% | 0.0% | 0.0% |
+| Q2-21 | 0.0% | 0.0% | 2.0% | 0.0% | 0.0% | 0.0% |
+| Q3-21 | 0.0% | 0.0% | 2.1% | 0.0% | 0.0% | 0.0% |
+| Q4-21 | 0.0% | 0.0% | 2.2% | 0.0% | 0.0% | 0.0% |
+| Q1-22 | 0.5% | 0.5% | 2.3% | 0.5% | 0.5% | 0.5% |
+| Q2-22 | - | - | - | - | - | - |
+| Q3-22 | - | - | - | - | - | - |
+| Q4-22 | - | - | - | - | - | - |
+| Q1-23 | - | - | - | - | - | - |
+| Q2-23 | - | - | - | - | - | - |
+| Q3-23 | - | - | - | - | - | - |
+| Q4-23 | - | - | - | - | - | - |
+| Q1-24 | - | - | - | - | - | - |
+| Q2-24 | - | - | - | - | - | - |
+| Q3-24 | - | - | - | - | - | - |
+| Q4-24 | - | - | - | - | - | - |
+| Q1-25 | - | - | - | - | - | - |
+| Q2-25 | - | - | - | - | - | - |
+| Q3-25 | - | - | - | - | - | - |
+| Q4-25 | - | - | - | - | - | - |
+| Q1-26 | - | - | - | - | - | - |
+| Q2-26 | - | - | - | - | - | - |
+| Q3-26 | - | - | - | - | - | - |
+| Q4-26 | - | - | - | - | - | - |
+| Q1-27 | - | - | - | - | - | - |
+| Q2-27 | - | - | - | - | - | - |
+| Q3-27 | - | - | - | - | - | - |
+| Q4-27 | - | - | - | - | - | - |
+| Q1-28 | - | - | - | - | - | - |
+| Q2-28 | - | - | - | - | - | - |
+| Q3-28 | - | - | - | - | - | - |
+| Q4-28 | - | - | - | - | - | - |
+| Q1-29 | - | - | - | - | - | - |
+| Q2-29 | - | - | - | - | - | - |
+| Q3-29 | - | - | - | - | - | - |
+| Q4-29 | - | - | - | - | - | - |
+| Q1-30 | - | - | - | - | - | - |
+| Q2-31 | - | - | - | - | - | - |
+| Q3-31 | - | - | - | - | - | - |
+| Q4-31 | - | - | - | - | - | - |
+| Q1-32 | - | - | - | - | - | - |
+</details>
+
+Source: CCFA, MS.
+
+Exhibit 73: France Market Share Change 2020-2025 - EU OEMs lost most share whilst Chinese OEMs gained  
+![](images/d55315da1a22de2ca1932d7dae837836e1fe051d8901f9347ab34687e3ab4d83.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - France (%) |
+| :--- | :--- |
+| European OEMs | -4.2 |
+| Other OEMs | -2.5 |
+| SK OEMs | 0.4 |
+| US OEMs | 0.6 |
+| Japanese OEMs | 2.5 |
+| Chinese OEMs | 3.2 |
+</details>
+
+Source: CCFA, MS.
+
+Exhibit 74: Stellantis stands out as the most meaningful share donor over the 2020-2025 period  
+![](images/de1b3683246b125d50a4029fd9591eb8f6275eb649741a8fba9b94c3ddea68e1.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Company | Mkt Share Change 2020-2025 - EU OEMs in France (%) |
+| :--- | :--- |
+| Stellantis | -9.5 |
+| Mercedes-Benz | -0.5 |
+| BMW | 1.3 |
+| Renault | 1.4 |
+| VW Group | 3.1 |
+</details>
+
+Source: CCFA, MS.
+
+Exhibit 75: On a YoY basis, EU OEM market share has been improving in recent years  
+![](images/6a39eb1b9e0ded9e34c840304762cf85d781163fa6df9ee6a2b0f2e756e6f2d7.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category       | 2020   | 2021   | 2022   | 2023   | 2024   | 2025   |
+| -------------- | ------ | ------ | ------ | ------ | ------ | ------ |
+| European OEMs  | -1.0%  | -1.5%  | -2.5%  | 0.5%   | 1.5%   |        |
+| Japanese OEMs  | 1.5%   | 0.3%   | 1.2%   | 0.3%   | 1.5%   |        |
+| US OEMs        | -0.5%  | 0.8%   | 0.7%   | 1.5%   | -1.5%  |        |
+| Chinese OEMs   | -0.1%  | -0.1%  | -0.1%  | 2.0%   | 1.2%   |        |
+| SK OEMs        | 0.6%   | 0.9%   | 0.7%   | -0.5%  | -0.3%  |        |
+| Other OEMs     | -1.0%  | -0.8%  | -0.7%  | -1.0%  | -0.5%  |        |
+</details>
+
+Source: CCFA, MS.
+
+## BEV growth is not a constraint for Chinese OEMs
+
+Growing beyond BEV. Chinese OEMs are broadening their European strategy beyond BEVs, targeting the hybrid segment, an area where demand is currently strongest in Europe. Full hybrids (HEVs) account for \~35% of European registrations in 2025, making them the largest powertrain category in the region, and plug-in hybrids (PHEVs) represent a further \~9%. This gives Chinese manufacturers access to a significantly larger addressable market than BEVs alone, which account for \~16% of registrations. Brands such as Chery and BYD are therefore positioning themselves around multi-powertrain lineups that includes BEVs, HEVs and PHEVs, particularly in SUV segments where European demand remains robust. Importantly, this means Chinese OEM growth is not constrained by the pace of BEV adoption, instead, they are increasingly competing in the hybrid categories that dominate European demand.
+
+Chinese OEMs are increasingly focused on hybrid segments. The Chinese OEM strategy in Europe is becoming less about cheap EVs and more about hybrids, SUVs in particular. Most Chinese entrants are targeting the parts of the market where European demand is actually growing: full hybrids (HEVs), plug-in hybrids (PHEVs), and range-extender-style electrified SUVs.
+
+Full hybrids (HEVs) are at the centre of the European market. ACEA data shows hybrid vehicles represented 34.5% of EU registrations in 2025, making HEVs the single largest powertrain category in Europe, just ahead of petrol and BEVs. ICE (petrol + diesel) vehicles make up \~36% of the market. Plug-in hybrids also rebounded strongly, reaching c.9%, with particularly strong growth in Germany, Spain and Italy, whilst BEVs accounted for c.16%, making c.43% of the EU market is now hybrid or plug-in hybrid. Chinese OEMs are now focused on this segment, targeting the transition segments that offer EV-like tax and emissions advantages without requiring consumers to fully commit to charging infrastructure or pure-electric usage patterns.
+
+Chery's (Omoda, Jaecoo) entry into Europe highlights this trend. Chery offers petrol, HEV and PHEV SUVs, making them well aligned with mainstream European buyer behaviour. The Jaecoo 7 SHS, for example, is positioned as a long-range plug-in hybrid SUV rather than a pure EV. At the same time, the group has rapidly scaled distribution, with Omoda and Jaecoo building a 70+ UK dealer network within months of launch.
+
+BYD is also taking the multi-powertrain route. In Europe, BYD is now promoting its DM-i "Super Hybrid" system alongside BEVs. The European lineup includes several plug-in hybrids with long electric ranges and very high combined range capability, designed specifically for consumers who are hesitant about full electrification.
+
+Mild hybrids (MHEVs) still a strong point for legacy OEMs. Chinese OEMs are not focused on mild hybrids as much (MHEVs). Mild hybrids are essentially ICE vehicles with limited electric assistance and relatively modest fuel economy improvements. They are cheaper and easier to integrate into legacy platforms, which is why European incumbents relied heavily on them during the early stages of emissions reduction and fleet electrification. By contrast, HEVs and especially PHEVs are much closer to EV architectures. They depend more heavily on batteries, software integration, power electronics and electric drivetrain capability. Those are areas where Chinese OEMs have stronger structural advantages because of their battery supply chains, vertical integration and EV manufacturing scale. ICCT European market data shows Chinese OEMs such as SAIC already have very high HEV mix in Europe, while BYD is increasingly leaning into
+
+PHEV expansion.
+
+Exhibit 76: EU5 BEV penetration rate  
+![](images/52ac169d5dd1e1b088ad30c1aa30171f5a898a64f1fd1604eb337733a0944a6d.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | France | Germany | UK  | Italy | Spain |
+|---------|--------|---------|-----|-------|-------|
+| Jan-19  | 1.0%   | 1.0%    | 1.0%| 1.0%  | 1.0%  |
+| May-19  | 1.5%   | 1.5%    | 1.5%| 1.5%  | 1.5%  |
+| Sep-19  | 2.0%   | 2.0%    | 2.0%| 2.0%  | 2.0%  |
+| Jan-20  | 3.0%   | 3.0%    | 3.0%| 3.0%  | 3.0%  |
+| May-20  | 4.0%   | 4.0%    | 4.0%| 4.0%  | 4.0%  |
+| Sep-20  | 5.0%   | 5.0%    | 5.0%| 5.0%  | 5.0%  |
+| Jan-21  | 6.0%   | 6.0%    | 6.0%| 6.0%  | 6.0%  |
+| May-21  | 7.0%   | 7.0%    | 7.0%| 7.0%  | 7.0%  |
+| Sep-21  | 8.0%   | 8.0%    | 8.0%| 8.0%  | 8.0%  |
+| Jan-22  | 9.0%   | 9.0%    | 9.0%| 9.0%  | 9.0%  |
+| May-22  | 10.0%  | 10.0%   | 10.0%| 10.0% | 10.0% |
+| Sep-22  | 11.0%  | 11.0%   | 11.0%| 11.0% | 11.0% |
+| Jan-23  | 12.0%  | 12.0%   | 12.0%| 12.0% | 12.0% |
+| May-23  | 13.0%  | 13.0%   | 13.0%| 13.0% | 13.0% |
+| Sep-23  | 14.0%  | 14.0%   | 14.0%| 14.0% | 14.0% |
+| Jan-24  | 15.0%  | 15.0%   | 15.0%| 15.0% | 15.0% |
+| May-24  | 16.0%  | 16.0%   | 16.0%| 16.0% | 16.0% |
+| Sep-24  | 17.0%  | 17.0%   | 17.0%| 17.0% | 17.0% |
+| Jan-25  | 18.0%  | 18.0%   | 18.0%| 18.0% | 18.0% |
+| May-25  | 19.0%  | 19.0%   | 19.0%| 19.0% | 19.0% |
+| Sep-25  | 20.0%  | 20.0%   | 20.0%| 20.0% | 20.0% |
+| Jan-26  | 21.0%  | 21.0%   | 21.0%| 21.0% | 21.0% |
+</details>
+
+Source: ACEA, MS
+
+Exhibit 77: EU5 PHEV penetration rate  
+![](images/f214a728a59d2a6cc2b4dd6f24c6e65561ea9f609da7b4ba61858e67b6f72b6e.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | France | Germany | UK  | Italy | Spain |
+|---------|--------|---------|-----|-------|-------|
+| Jan-19  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| May-19  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| Sep-19  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| Jan-20  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| May-20  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| Sep-20  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| Jan-21  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| May-21  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| Sep-21  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| Jan-22  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| May-22  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| Sep-22  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| Jan-23  | 0%     | 22%     | 0%  | 0%    | 0%    |
+| May-23  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| Sep-23  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| Jan-24  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| May-24  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| Sep-24  | 0%     | 0%      | 0%  | 0%    | 0%    |
+| Jan-25  | 14%    | 8%      | 8%  | 8%    | 8%    |
+| May-25  | 8%     | 12%     | 12% | 12%   | 12%   |
+| Sep-25  | 8%     | 12%     | 12% | 12%   | 12%   |
+| Jan-26  | 5%     | 11%     | 13% | 13%   | 13%   |
+</details>
+
+Source: ACEA, MS
+
+Exhibit 78: EU5 HEV+MHEV penetration rate  
+![](images/1ab4eafbf03703383c2938793bd34c4e0b184731fd8c59736ced8c344315d98e.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | France | Germany | UK  | Italy | Spain |
+|---------|--------|---------|-----|-------|-------|
+| Jan-19  |        |         |     |       |       |
+| May-19  |        |         |     |       |       |
+| Sep-19  |        |         |     |       |       |
+| Jan-20  |        |         |     |       |       |
+| May-20  |        |         |     |       |       |
+| Sep-20  |        |         |     |       |       |
+| Jan-21  |        |         |     |       |       |
+| May-21  |        |         |     |       |       |
+| Sep-21  |        |         |     |       |       |
+| Jan-22  |        |         |     |       |       |
+| May-22  |        |         |     |       |       |
+| Sep-22  |        |         |     |       |       |
+| Jan-23  |        |         |     |       |       |
+| May-23  |        |         |     |       |       |
+| Sep-23  |        |         |     |       |       |
+| Jan-24  |        |         |     |       |       |
+| May-24  |        |         |     |       |       |
+| Sep-24  |        |         |     |       |       |
+| Jan-25  |        |         |     |       |       |
+| May-25  |        |         |     |       |       |
+| Sep-25  |        |         |     |       |       |
+| Jan-26  |        |         |     |       |       |
+</details>
+
+Source: ACEA, MS
+
+Exhibit 79: EU5 powertrain mix  
+![](images/63a76afa7164c73afa7717e04ddc89b0113f5e929cd45461bc216e557ae41e65.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | EU5 Avg BEV Mkt Share | EU5 Avg PHEV Mkt Share | EU5 Avg HEV+MHEV Mkt Share |
+|---------|------------------------|-------------------------|-----------------------------|
+| Jan-19  | ~1%                    | ~0.5%                   | ~5%                         |
+| Apr-19  | ~2%                    | ~1%                     | ~6%                         |
+| Jul-19  | ~3%                    | ~1.5%                   | ~7%                         |
+| Oct-19  | ~4%                    | ~2%                     | ~8%                         |
+| Jan-20  | ~5%                    | ~3%                     | ~10%                        |
+| Apr-20  | ~6%                    | ~4%                     | ~12%                        |
+| Jul-20  | ~7%                    | ~5%                     | ~15%                        |
+| Oct-20  | ~8%                    | ~6%                     | ~18%                        |
+| Jan-21  | ~9%                    | ~7%                     | ~20%                        |
+| Apr-21  | ~10%                   | ~8%                     | ~22%                        |
+| Jul-21  | ~11%                   | ~9%                     | ~24%                        |
+| Oct-21  | ~12%                   | ~10%                    | ~26%                        |
+| Jan-22  | ~13%                   | ~11%                    | ~28%                        |
+| Apr-22  | ~14%                   | ~12%                    | ~30%                        |
+| Jul-22  | ~15%                   | ~13%                    | ~32%                        |
+| Oct-22  | ~16%                   | ~14%                    | ~34%                        |
+| Jan-23  | ~17%                   | ~15%                    | ~36%                        |
+| Apr-23  | ~18%                   | ~16%                    | ~38%                        |
+| Jul-23  | ~19%                   | ~17%                    | ~40%                        |
+| Oct-23  | ~20%                   | ~18%                    | ~42%                        |
+| Jan-24  | ~21%                   | ~19%                    | ~44%                        |
+| Apr-24  | ~22%                   | ~20%                    | ~46%                        |
+| Jul-24  | ~23%                   | ~21%                    | ~48%                        |
+| Oct-24  | ~24%                   | ~22%                    | ~50%                        |
+| Jan-25  | ~25%                   | ~23%                    | ~52%                        |
+| Apr-25  | ~26%                   | ~24%                    | ~54%                        |
+| Jul-25  | ~27%                   | ~25%                    | ~56%                        |
+| Oct-25  | ~28%                   | ~26%                    | ~58%                        |
+| Jan-26  | ~29%                   | ~27%                    | ~60%                        |
+| Apr-26  | ~30%                   | ~28%                    | ~62%                        |
+</details>
+
+Source: ACEA, MS
+
+Exhibit 80: EU BEV Market Share Change 2020-2025 – SK and EU OEMs lost most share whilst Chinese OEMs gained  
+![](images/545d0407a3b4fcb544f09edd8469ff8375c16aef63caafb9cf5a0a7a00721d63.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Mkt Share Change 2020-2025 - European EV Mkt (%) |
+| :--- | :--- |
+| SK OEMs | -4.9 |
+| European OEMs | -4.5 |
+| Japanese OEMs | -3.9 |
+| US OEMs | 0.1 |
+| Other OEMs | 4.6 |
+| Chinese OEMs | 8.5 |
+</details>
+
+Source: Local Auto Associations, MS
+
+Exhibit 81: EU BEV Market Share Change 2020-2025 – Renault stands out as the most meaningful share donor over the 2020-2025 period  
+![](images/127516744b2af3eb24e3e2a8a2e8e0853d078313d608f6c0b249710dba244831.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Company | Mkt Share Change 2020-2025 - EU OEMs European EV Mkt (%) |
+| :--- | :--- |
+| Renault | -7.9 |
+| Mercedes-Benz | -1.5 |
+| VW Group | 0.5 |
+| Stellantis | 0.6 |
+| BMW | 3.7 |
+</details>
+
+Source: Local Auto Associations, MS
+
+Exhibit 82: On a YoY basis, Chinese OEMs have consistently gained EV market share in EU5  
+![](images/071263fac9692eb55ab9d165a051e1cb494a9e8429c4d7f370f24490b2ae4979.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category       | 2020  | 2021  | 2022  | 2023  | 2024  | 2025  |
+| -------------- | ----- | ----- | ----- | ----- | ----- | ----- |
+| European OEMs  | 18%   | 2%    | -2%   | -5%   | -3%   | 3%    |
+| Japanese OEMs  | -4%   | -1%   | -1%   | 0%    | -1%   | -1%   |
+| US OEMs        | -18%  | 2%    | -1%   | 3%    | -1%   | -4%   |
+| Chinese OEMs   | 1%    | 1%    | 1%    | 4%    | 2%    | 1%    |
+| SK OEMs        | -1%   | -2%   | -3%   | -1%   | -1%   | 1%    |
+| Other OEMs     | -1%   | 2%    | 1%    | 3%    | -1%   | -1%   |
+</details>
+
+Source: Local Auto Associations, MS
+
+## Chinese OEMs disproportionately target the C-SUV and D-SUV segment
+
+Chinese OEMs are aggressively targeting the SUV segment. Chinese OEMs are highly concentrated in Europe's SUV segments, with C-SUVs, D-SUVs and B-SUVs accounting for $>70\%$ of sales and D-SUV exposure almost three times higher than the broader market. This reflects a deliberate focus on Europe's largest and fastest-growing profit pools, while maintaining a strong bias toward entry-level vehicles, which account for roughly half of Chinese OEM sales versus $<10\%$ of the overall market. The strategy places Chinese OEMs directly against mass market OEMs with significant SUV exposure, particularly Volkswagen. Renault is most exposed from a price segment point of view, due to its entry-level exposure. Whilst BMW and Mercedes appear shielded from the lower price market segments, we expect pressure from Chinese OEMs to grow in the years to come, as the European consumer becomes more and more familiar with new Chinese brands.
+
+A sustained focus on small, medium and large SUVs. Chinese OEMs unit sales are highly concentrated in a small number of vehicle segments, with C-SUVs, D-SUVs and B-SUVs accounting for $>70\%$ of their European sales. Chinese OEMs are much more focused on SUVs than their European and global peers, particularly in the D-SUV segment where Chinese OEMs derive $\sim24\%$ of sales versus just 9% for the overall market. The strategy reflects a deliberate focus on Europe's most attractive and growing profit pools, particularly as SUVs now account for more than half of all new vehicle registrations in Europe and remain the dominant body style across the region.
+
+Price competitiveness remains top of mind for now. Chinese OEMs are naturally focused on the most affordability-sensitive segments of the market. According to S&P, around half of projected Chinese OEM sales are expected to come from entry-level vehicles versus <10% for the broader European market, while exposure to premium vehicles is gradually declining as OEMs shift toward higher volume segments. The focus on the entry level segment creates direct competitive pressure for Renault, the only major European OEM with meaningful exposure. Chinese OEMs are also concentrated in the Mid segment where
+
+Volkswagen and Stellantis remain key players.
+
+Volkswagen faces direct competitive pressure from Chinese OEMs. The bestselling Chinese models in Europe are overwhelmingly SUVs, including the MG ZS, MG HS, BYD Seal U, Volvo XC40, Volvo XC60, Omoda 5 and Jaecoo 7. Renault and Stellantis are structurally underexposed to C-SUV and D-SUV segments relative to Chinese competitors and the wider market, whereas Volkswagen, BMW and Mercedes-Benz have greater participation in these categories. Examining pricing segments, for now Volkswagen is much more exposed than its premium peers, although it has maintained, and even grown market share relatively well for now.
+
+No rest for BMW and Mercedes. For now, premium vehicles are a secondary focus, accounting for a smaller proportion of Chinese OEM sales than for BMW and Mercedes-Benz. However, the Chinese playbook in the domestic market suggests this may be a sequencing issue rather than a structural limitation: manufacturers initially build scale through entry-level and mass-market products before expanding into higher-margin premium segments. As a result, the immediate competitive pressure is likely to be felt most acutely by volume manufacturers in the entry and mid-market categories, while premium European OEMs may face greater disruption later as Chinese brands build scale, brand recognition and distribution across Europe.
+
+Chinese OEMs are driving entry-level sales growth. The entry-level segment has grown materially as a proportion of Chinese OEM sales over the past several years, with manufacturers offering higher levels of technology, range, ADAS functionality and electrification at lower price points than many incumbent competitors. Rather than competing solely for existing EV demand, Chinese OEMs appear to be broadening the addressable market and accelerating growth at lower price levels where their cost advantages, battery supply chains and vertically integrated manufacturing models are most difficult for legacy manufacturers to replicate. This could suggest that growth in Chinese OEM volumes may not always be at the expense of legacy OEMs.
+
+Exhibit 83: Europe's best-selling Chinese models
+
+<table><tr><td>Rank</td><td>Brand</td><td>Model</td><td>Segment</td><td>Bodytype</td><td>CY25 Sales</td></tr><tr><td>1</td><td>MG</td><td>ZS</td><td>B</td><td>SUV</td><td>126,000</td></tr><tr><td>2</td><td>Volvo</td><td>XC60</td><td>D</td><td>SUV</td><td>89,000</td></tr><tr><td>3</td><td>Volvo</td><td>XC40</td><td>C</td><td>SUV</td><td>83,000</td></tr><tr><td>4</td><td>BYD</td><td>Seal U</td><td>D</td><td>SUV</td><td>80,000</td></tr><tr><td>5</td><td>MG</td><td>HS</td><td>C</td><td>SUV</td><td>77,000</td></tr><tr><td>6</td><td>MG</td><td>3</td><td>B</td><td>Hatchback</td><td>62,000</td></tr><tr><td>7</td><td>Chery</td><td>Jaecoo 7</td><td>C</td><td>SUV</td><td>53,000</td></tr><tr><td>8</td><td>Volvo</td><td>EX30</td><td>B</td><td>SUV</td><td>49,000</td></tr><tr><td>9</td><td>Chery</td><td>Omoda 5</td><td>C</td><td>SUV</td><td>43,000</td></tr><tr><td>10</td><td>Volvo</td><td>EX40</td><td>C</td><td>SUV</td><td>34,000</td></tr><tr><td>11</td><td>Volvo</td><td>XC90</td><td>E</td><td>SUV</td><td>33,000</td></tr><tr><td>12</td><td>MG</td><td>4</td><td>C</td><td>Hatchback</td><td>27,000</td></tr><tr><td>13</td><td>Geely</td><td>Polestar 4</td><td>D</td><td>SUV</td><td>26,000</td></tr><tr><td>14</td><td>BYD</td><td>Sealion 7</td><td>D</td><td>SUV</td><td>33,000</td></tr><tr><td>15</td><td>BYD</td><td>Dolphin Surf</td><td>B</td><td>Hatchback</td><td>27,000</td></tr><tr><td>16</td><td>Leapmotor</td><td>T03</td><td>A</td><td>Hatchback</td><td>26,000</td></tr><tr><td>17</td><td>BYD</td><td>Seal</td><td>D</td><td>Sedan</td><td>23,000</td></tr><tr><td>18</td><td>Volvo</td><td>V60</td><td>D</td><td>Wagon</td><td>22,000</td></tr><tr><td>19</td><td>Geely</td><td>Polestar 2</td><td>D</td><td>Hatchback</td><td>20,000</td></tr><tr><td>20</td><td>BYD</td><td>Atto 3</td><td>C</td><td>SUV</td><td>20,000</td></tr></table>
+
+Source: S&P Global estimates, MS. Note: West and Central Europe only
+
+Exhibit 84: Chinese OEMs are significantly exposed to the C-SUV, D-SUV and B-SUV sub-segments
+
+<table><tr><td>Segment/Type</td><td>2025</td><td>% of total sales</td></tr><tr><td>C-SUV</td><td>372,096</td><td>32%</td></tr><tr><td>D-SUV</td><td>276,874</td><td>24%</td></tr><tr><td>B-SUV</td><td>200,479</td><td>17%</td></tr><tr><td>B-Hatchback</td><td>100,443</td><td>9%</td></tr><tr><td>E-SUV</td><td>53,005</td><td>5%</td></tr><tr><td>C-Hatchback</td><td>26,915</td><td>2%</td></tr><tr><td>Other</td><td>122,892</td><td>11%</td></tr></table>
+
+Source: S&P Global, MS. Note: West and Central Europe only
+
+Exhibit 85: Chinese OEM sub-segment exposure in Europe – sustained focus on D-SUV and C-SUV  
+![](images/5241a6a28460889fb880e0dc56b99c07503862f53f1d9404e5690d0ccb0aab40.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Manufacturer | C-SUV (%) | D-SUV (%) | B-SUV (%) | B-Hatchback (%) | C-Hatchback (%) | E-SUV (%) | Other (%) |
+|---|---|---|---|---|---|---|---|
+| BYD | 7 | 35 | 10 | 17 | 6 | 24 | 0 |
+| Chery | 72 | 23 | 5 | 0 | 0 | 0 | 0 |
+| Geely | 33 | 29 | 13 | 13 | 8 | 13 | 0 |
+| Leapmotor | 26 | 21 | 2 | 0 | 0 | 50 | 0 |
+| SAIC | 24 | 6 | 34 | 17 | 11 | 8 | 0 |
+| Xpeng EV | 0 | 86 | 0 | 0 | 0 | 13 | 0 |
+| Chinese OEMs | 30 | 24 | 17 | 8 | 4 | 14 | 0 |
+</details>
+
+Source: S&P Global, MS. Note: West and Central Europe only
+
+Exhibit 86: D-SUV and C-SUV segments: Renault and Stellantis less exposed than Volkswagen  
+![](images/d664506b0ffafff5bb13cc1caae71f16d94c07c0ebfdce30b922ccce33a8f2d9.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Company | C-SUV (%) | D-SUV (%) | B-SUV (%) | B-Hatchback (%) | C-Hatchback (%) | E-SUV (%) | Other (%) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| BMW | 29 | 12 | 10 | 8 | 7 | 0 | 31 |
+| Mercedes-Benz | 17 | 14 | 0 | 7 | 0 | 0 | 54 |
+| Renault | 13 | 2 | 25 | 33 | 1 | 1 | 25 |
+| Stellantis | 14 | 0 | 22 | 23 | 6 | 0 | 34 |
+| Volkswagen | 29 | 8 | 10 | 10 | 14 | 0 | 27 |
+</details>
+
+Source: S&P Global, MS. Note: West and Central Europe only
+
+Exhibit 87: SUVs make up more than 70% of Chinese OEMs' EU unit sales  
+![](images/b59cf35e9ce2fa66a33b958666761d8ead2ed7d66e4cb0eaab89f884d9552cbd.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Market Segment     | C-SUV | D-SUV | B-SUV | B-Hatchback | C-Hatchback | E-SUV | Other |
+| ------------------ | ----- | ----- | ----- | ----------- | ----------- | ----- | ----- |
+| European market    | 23%   | 9%    | 16%   | 14%         | 7%          | 2%    | 29%   |
+| Chinese OEMs       | 30%   | 24%   | 17%   | 8%          | 4%          | 4%    | 14%   |
+</details>
+
+Source: S&P Global, MS. Note: West and Central Europe only
+
+Exhibit 88: The entry level segment represents half of Chinese OEM volumes  
+![](images/a1014bf7fba4ca94bb18d509a9ea8bd67f489b3a6585e19f29022bafa937fa5c.jpg)  
+Source: S&P Global, MS. Note: West and Central Europe only
+
+Exhibit 89: BMW, Mercedes and Volkswagen have more exposure to C-SUV and D-SUV than the wider market
+
+<table><tr><td></td><td>C-SUV</td><td>D-SUV</td><td>B-SUV</td><td>B-Hatchback</td><td>C-Hatchback</td><td>E-SUV</td><td>Other</td></tr><tr><td>European market</td><td>23%</td><td>9%</td><td>16%</td><td>14%</td><td>7%</td><td>2%</td><td>29%</td></tr><tr><td>Chinese OEMs</td><td>30%</td><td>24%</td><td>17%</td><td>8%</td><td>4%</td><td>4%</td><td>14%</td></tr><tr><td>BMW</td><td>29%</td><td>12%</td><td>3%</td><td>10%</td><td>8%</td><td>7%</td><td>31%</td></tr><tr><td>Mercedes-Benz</td><td>17%</td><td>14%</td><td>1%</td><td>0%</td><td>7%</td><td>7%</td><td>54%</td></tr><tr><td>Renault</td><td>13%</td><td>2%</td><td>25%</td><td>33%</td><td>2%</td><td>0%</td><td>25%</td></tr><tr><td>Stellantis</td><td>14%</td><td>1%</td><td>22%</td><td>23%</td><td>6%</td><td>0%</td><td>34%</td></tr><tr><td>Volkswagen</td><td>29%</td><td>8%</td><td>10%</td><td>10%</td><td>14%</td><td>2%</td><td>27%</td></tr></table>
+
+Source: S&P Global, MS. Note: West and Central Europe only
+
+Exhibit 90: Chinese OEMs have much more entry level exposure than their European peers
+
+<table><tr><td></td><td>Entry</td><td>Mid</td><td>Premium</td><td>Luxury</td></tr><tr><td>European market</td><td>9%</td><td>68%</td><td>22%</td><td>1%</td></tr><tr><td>Chinese OEMs</td><td>50%</td><td>25%</td><td>26%</td><td>0%</td></tr><tr><td>BMW</td><td>0%</td><td>0%</td><td>100%</td><td>0%</td></tr><tr><td>Mercedes-Benz</td><td>0%</td><td>0%</td><td>100%</td><td>0%</td></tr><tr><td>Renault</td><td>37%</td><td>63%</td><td>0%</td><td>0%</td></tr><tr><td>Stellantis</td><td>0%</td><td>96%</td><td>4%</td><td>0%</td></tr><tr><td>Volkswagen</td><td>0%</td><td>81%</td><td>16%</td><td>2%</td></tr></table>
+
+Source: S&P Global, MS. Note: West and Central Europe only
+
+Exhibit 91: Over the past few years, Chinese OEMs have grown exposure to the entry segment  
+![](images/73364a864c3903d6fdd258f79a6bc28638edd9f06a61c9699d56e7d778d52478.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Year | Entry (%) | Premium (%) | Mid (%) |
+|---|---|---|---|
+| 2023 | 43 | 50 | 7 |
+| 2024 | 40 | 51 | 9 |
+| 2025 | 47 | 33 | 20 |
+| 2026 | 50 | 26 | 25 |
+</details>
+
+Source: S&P Global, MS. Note: West and Central Europe only
+
+## Dealership targets imply significant growth ambitions
+
+Chinese OEMs are rapidly moving past physical distribution being a barrier to scale. In the UK, MG, BYD and Chery's Omoda and Jaecoo brands already have dealer footprints that look comparable with several legacy OEMs. Progress is rapidly being made – at the brand level, MG sold more UK cars than Renault in 2025, and in April 2026, Chinese OEMs took almost 20% of the UK market. Examining BYD's dealership targets further highlights the group's ambitions. Should it be able to achieve similar productivity to established OEMs, then this could imply >10% market share targets. With physical space no longer an issue, the question now shifts to aftersales depth, residual values, insurance costs, finance offers, fleet acceptance and service quality.
+
+Chinese OEMs are growing dealerships across the continent. Stellantis and Leapmotor International began European operations in September 2024 through 250 points of sale by year-end, starting in nine European countries, with expansion later into India and Asia-Pacific, the Middle East and Africa, and South America. Chery/Omoda/Jaecoo's growth has been particularly strong in the UK and wider Europe. Omoda and Jaecoo had already built a 72-strong UK dealer network by March 2025. Omoda & Jaecoo UK later said it had opened its 91st UK dealership by November 2025. Chery also planned to launch a fourth UK brand, Lepas, after selling 53,600 cars in the UK in 2025 and taking 3% UK market share across Omoda, Jaecoo and Chery. MG remains the best-established Chinese-owned European brand. MG Motor UK has a national network of more than 150 UK dealerships.
+
+Exhibit 92: Chinese OEM global expansion roadmap
+
+<table><tr><td>OEM</td><td>Export targets</td><td>Focus market</td><td>Segment priorities</td><td>GTM strategy</td></tr><tr><td>BYD</td><td>~1.5m overseas target for 2026; &gt;1m vehicle exports achieved in 2025; Target 50% of new-car sales from overseas markets by 2030</td><td>Europe (UK, Italy, Spain, Germany, France), LatAm, SE Asia</td><td>BEVs + increasing PHEV mix; SUVs (Atto 3, Seal U DM-i), premium Denza/Yangwang expansion</td><td>Made in Europe for Europe&#x27; localization through Hungary HQ + local production; Turkey PHEV production</td></tr><tr><td>Chery</td><td>1m annual global sales ambition by 2027; Omoda &amp; Jaecoo target 1m annual sales by 2027; 3:2m group target for 2026</td><td>Europe (UK, Spain, Italy, Germany, France), global emerging markets</td><td>SUV-heavy lineup (Omoda 5, Jaecoo 7); expanding into compact/smaller vehicles; hybrid focus</td><td>Localization strategy (&#x27;In somewhere, For somewhere&#x27;); Barcelona JV production with Ebro; partnership-led manufacturing</td></tr><tr><td>Geely</td><td>640k overseas target for 2026 (200k units in Europe); 1m overseas sales target by 2027</td><td>Europe, Russia, ASEAN, Middle East, LatAm, Africa</td><td>Multi-brand: Geely, Zeekr, Lynn &amp; Co, Galaxy; EVs and premium tech SUVs</td><td>Full-value-chain localization; Volvo/Lynk synergies; European R&amp;D hubs in Sweden/Germany; partnerships with Renault and others; 1,000+ planned European sales outlets</td></tr><tr><td>SAIC (MG Motor)</td><td>300k Europe exports in 2025; 5m total sales target for 2026</td><td>Europe-wide with strong UK presence</td><td>Affordable EVs, PHEVs, hybrids, crossovers; Maxus LCVs; premium IM EVs</td><td>MG brand leveraged as European beachhead; shift toward hybrids/PHEVs post-tariffs; Spain factory evaluation; direct sales subsidiaries</td></tr><tr><td>Xpeng</td><td>550k-600k global sales target for 2026; &gt;90k overseas deliveries target (double y/y)</td><td>Europe as largest overseas region (Germany, France, UK, Nordics, Central Europe)</td><td>Premium intelligent EVs (G6, G9, P7+); tech-focused sedans and SUVs</td><td>Localized production with Magna Stey in Austria; Munich R&amp;D center; rapid market expansion into EU; looking at production partnerships in Europe</td></tr><tr><td>Leapmotor</td><td>100k-150k overseas sales target for 2026; &gt;500k global annual sales target by 2030 through Stellantis JV</td><td>Europe first, expanding to LatAm</td><td>Affordable EVs and SUVs (T03, C10, B10); B/C-segment expansion</td><td>Stellantis JV-driven expansion; 850+ sales/service points; Spain (Madrid/Zaragoza) local production plans; joint purchasing and supply chain integration; localization-led strategy</td></tr></table>
+
+Source: Company Data, MS, Reuters, Bloomberg News
+
+BYD's dealership targets indicate plans for large market share gains. BYD is targeting a step-change in European reach, with reported plans for c.2,000 European sales points by end-2026. If BYD reaches 1,000 to 2,000 European outlets, the implied volume ambition is significant. Using UK sales-per-dealer benchmarks, a conservative 250 units per outlet would imply 250k units at 1,000 outlets and 500k units at 2,000 outlets, equal to roughly 2% and 4% of the 2025 European passenger-car market. If BYD (Europe) were eventually to reach current UK BYD productivity of around 467 units per full dealership, the implied volume would be 467k to 934k units, or roughly 4% to 7% European share. If BYD converged toward mass-market legacy benchmarks such as Peugeot or Renault, the implied volume at 2,000 outlets would be around 1.0m to 1.1m units, equivalent to \~8% of the European market. Of course Europe is more fragmented than the UK, and BYD still needs stronger brand awareness, residual values, fleet penetration, aftersales confidence and localised production. But the dealership plan gives BYD the physical capacity to become a material European volume player.
+
+Exhibit 93: Examining UK dealer networks highlights that Chinese OEMs are rapidly scaling their footprint
+
+<table><tr><td>Brand</td><td>UK registrations (2025)</td><td>Dealer network</td><td>Sales per outlet</td></tr><tr><td>VW</td><td>179k</td><td>160+ full dealerships</td><td>~1,116</td></tr><tr><td>BMW</td><td>123k</td><td>110+ full dealerships</td><td>~1,116</td></tr><tr><td>Mercedes</td><td>89k</td><td>100+ full dealerships</td><td>~893</td></tr><tr><td>Renault</td><td>65k</td><td>120+ full dealerships</td><td>~546</td></tr><tr><td>Peugeot</td><td>83k</td><td>160+ full dealerships</td><td>~519</td></tr><tr><td>MG</td><td>85k</td><td>150+ full dealerships</td><td>~568</td></tr><tr><td>Chery, Omoda, Jaecoo</td><td>54k</td><td>91+ combined dealerships</td><td>~589</td></tr><tr><td>BYD</td><td>51k</td><td>110+ full dealerships</td><td>~467</td></tr><tr><td>Leapmotor</td><td>4k</td><td>46+ full dealerships</td><td>~93</td></tr></table>
+
+Source: Autosites.co.uk, SMMT, MS
+
+Exhibit 94: BYD's dealership rollout targets imply significant potential market share growth
+
+<table><tr><td>Productivity benchmark</td><td>Sales per outlet</td><td>BYD @ 1,000 European outlets</td><td>BYD @ 2,000 European outlets</td><td>Implied European market share range</td></tr><tr><td>BYD UK</td><td>467</td><td>467k</td><td>0.9m</td><td>3-7%</td></tr><tr><td>Peugeot UK</td><td>519</td><td>519k</td><td>1.0m</td><td>4-8%</td></tr><tr><td>Renault UK</td><td>550</td><td>550k</td><td>1.1m</td><td>4-8%</td></tr><tr><td>Mercedes UK</td><td>893</td><td>0.9m</td><td>1.8m</td><td>7-14%</td></tr><tr><td>Volkswagen UK</td><td>1,116</td><td>1.1m</td><td>2.2m</td><td>8-17%</td></tr><tr><td>BMW UK</td><td>1,116</td><td>1.1m</td><td>2.2m</td><td>8-17%</td></tr></table>
+
+Source: Autosites.co.uk, SMMT, MS
+
+## Six key players dominate Chinese OEM sales
+
+Chinese players are approaching Europe with a wide range of strategies. The most prominent Chinese names (all except Chery covered by Tim Hsiao and Joey Xu) in the European car market are pursuing distinct but increasingly serious strategies. BYD stands out as the most complete strategic threat, combining broad
+
+European ambition, rapid dealer expansion, leasing partnerships, BEV and PHEV breadth, and localisation efforts. MG, owned by SAIC, is arguably the most normalised Chinese-owned brand in Europe, supported by a familiar badge, dealer coverage, and EV and hybrid range. Chery, through Omoda and Jaecoo, is pushing rapidly with an SUV-led, multi-brand strategy that has rapidly gained popularity in the UK. Leapmotor is distinctive because Stellantis gives it immediate distribution and aftersales credibility, although it may also compete with Stellantis's own affordable brands. XPeng is more of a tech-led EV challenger, relevant in premium and high-spec corporate EV segments where software, charging and cockpit technology matter. Zeekr benefits from Geely's broader ecosystem and premium associations.
+
+There are two distinct categories of Chinese challengers. The first is the mass-market threat, led by BYD, SAIC (MG), Leapmotor and Chery (Omoda, Jaecoo). These brands are building the infrastructure needed to compete directly with Volkswagen, Stellantis and Renault in volume segments: dealer networks, fleet teams, leasing partnerships, hybrid/PHEV products and value-led SUVs. The second is the technology and premium-channel threat, led by Geely (Zeekr) and XPeng, with relevance to BMW, Mercedes, and Audi.
+
+Fleet and financing is the next major hurdle for most players. Access to fleet customers and financing is a key determinant in whether Chinese OEMs remain retail-led challengers or become mainstream European competitors. A brand can gain early share through private buyers attracted to price and equipment, but scalable European penetration typically requires competitive monthly payments, leasing-company support, credible residual values, service coverage and corporate procurement acceptance. BYD is furthest ahead on this measure, MG is already established, Chery (Omoda, Jaecoo) is growing fast, Leapmotor has potential support from Stellantis, whilst Geely and XPeng remain more selective.
+
+Exhibit 95: Chinese challenger overview
+
+<table><tr><td>Chinese OEM</td><td>Dealer scale</td><td>Fleet/leasing access</td><td>Localisation plan</td><td>Strategy</td><td>Geographic focus</td><td>Segment focus</td><td>European OEMs at Risk</td></tr><tr><td>BYD</td><td><img src="images/876de22cf785cefc7c223d2c7e7ab662f57d04b9e6ad2a1db7172f6d8323926e.jpg"/></td><td>[4DD 3]</td><td></td><td>China-native NEV leaderDealer densityLeasing partnershipsLocal production</td><td>26% UK, 19% Germany</td><td>BEVs and PHEVs; compact/mid-size SUVs, sedans, affordable EVs</td><td>Volkswagen, Renault, Stellantis, BMW, Mercedes</td></tr><tr><td>SAIC (MG)</td><td>[40X 0]</td><td><img src="images/dc7f830fa3f7d32ceedfb254f0396b3b8d249fdc9dd1ece4a88166a2d50ef3c8.jpg"/></td><td></td><td>British heritage brand, Chinese ownershipMature dealership networkStrong warranty offering</td><td>27% UK, 16% Italy, 14% Spain</td><td>Affordable EVs, hybrids, family SUVs</td><td>Volkswagen, Renault, Stellantis</td></tr><tr><td>Chery, Omoda, Jaecoo</td><td><img src="images/5018001902856a367a45d8115befd803291a032ad5e73b0724a08e205ac2a8aa.jpg"/></td><td><img src="images/3ecd63bff06cd59cf2cb3438c375a5980d0970b87569ae0a77e9460e5f8ada27.jpg"/></td><td></td><td>Multi-brand, SUV-led offeringValue focusPowertrain flexibilityLocalised production</td><td>39% UK, 15% Spain</td><td>ICE, hybrid, PHEV, EV; B/C-SUVs</td><td>Volkswagen, Renault, Stellantis</td></tr><tr><td>Leapmotor</td><td><img src="images/632f82e05534c360b102ceaacec1b8f6358f985479abdff19a757b262c4f5c08.jpg"/></td><td><img src="images/291acda6bdece860325c696e3b68113ee061a218e4972eb2fb8456500000dd17.jpg"/></td><td></td><td>Distribution via StellantisStrong affordable EV focusGrowing China popularity</td><td>27% Italy, 20% Germany</td><td>Small affordable EV, B/C-SUV</td><td>Volkswagen, Renault, Stellantis</td></tr><tr><td>XiaoPeng</td><td><img src="images/46917ebc03c54d8e84fd58fad19d688de2b7a2880a4cf8c16bca3fd32a2765b3.jpg"/></td><td><img src="images/7e4225cc5531f787f5a1ef2a748678a3f4d01974053878013d4b373b8204684d.jpg"/></td><td></td><td>Technology-first approachPremium EV offering</td><td>17% Germany, 16% France</td><td>Premium EV SUVs/sedans</td><td>Volkswagen (Audi), BMW, Mercedes, Porsche</td></tr><tr><td>Geely (Zeekr)</td><td><img src="images/8e0acbd9ad2ed9f4e952736528d36a837a2ddf027a6003edf6bf531e0c5951eb.jpg"/></td><td><img src="images/3ed1501b76ab2ec0a85aef474c5cec10bec9d5e2824d10523793795f8d1f61d1.jpg"/></td><td></td><td>Accessible premium offering</td><td>20% UK, 17% Germany</td><td>Premium EVs</td><td>Volkswagen (Audi), BMW, Mercedes, Porsche</td></tr></table>
+
+Source: Company data, MS
+
+BYD is the most broadly positioned European challenger. We think BYD scores well across dealer expansion, fleet/leasing access, product breadth, PHEV/BEV capability and localisation. Its partnerships with leasing providers such as Ayvens and Arval give BYD access to fleet customers, SMEs and private leasing customers. This supports BYD to compete on product and financing. Its localisation plans also reduces the risk that EU tariffs cap growth. We see BYD as the highest-quality commercial execution threat to VW, Stellantis, and Renault, with further potential for pressure on BMW and Mercedes in entry-premium EVs.
+
+SAIC (MG) is the most mature Chinese-owned challenger. MG already has meaningful European volume, a familiar Western heritage badge, established dealer coverage, a long warranty proposition, and a practical EV/hybrid range. Its fleet and finance proposition is also more developed than most newer Chinese entrants, especially in the UK, where it has fleet finance offers and a business sales operation. We think the MG case is interesting as it shows that Chinese-owned Western brands can quickly grow in popularity once trust, service and distribution is taken care of. MG's growth plans are most relevant to Stellantis, Renault and VW, targeting affordable family cars, compact EVs and SUVs.
+
+Chery (Omoda and Jaecoo) is the fast-rising, SUV-led challenger. Chery is focused on rapid dealer recruitment, a multi-brand strategy and strong product-market fit in mainstream SUVs. Unlike some of its Chinese peers, it is not dependent on a pure BEV adoption story. Chery's petrol, hybrid and PHEV flexibility gives it a better fit with current European demand, where many buyers remain hesitant about full EVs. Chery has dedicated UK fleet operations, targeting Motability, rental, contract hire and leasing channels. Like many of its peers, the company's European residual value history is still limited, however. As that improves over time, Chery, Omoda, and Jaecoo could become a material threat to Stellantis, Renault, VW, Ford and Nissan in B/C-SUV and family SUV segments.
+
+Leapmotor represents the legacy OEM partnership play. Through Leapmotor International, the company gains access to Stellantis' sales and aftersales network. That gives it one of the fastest possible routes into European retail coverage and service credibility. Whilst it lacks a European residual value record and standalone leasing history, Stellantis' infrastructure could help close that gap. Strategically, Leapmotor is both a defence and a risk for Stellantis: it can help defend affordable EV price points, but it may also cannibalise Peugeot, Citroën, Opel/Vauxhall, Fiat and for Renault, potentially Dacia-adjacent demand.
+
+Geely is a multi-layered, multi-brand challenger. Through Zeekr, it targets accessible premium EVs and company-car channels; through Geely Auto, it is pushing more directly into mainstream electrified crossovers; and through the broader group, it benefits from credibility via Volvo, Polestar, Lotus, Smart and LEVC. The fleet/financing column is especially relevant for Geely because Zeekr's partnership with Arval gives it a credible route into premium leasing, finance and insurance. That makes Geely more relevant to BMW, Mercedes and Audi, than to low-end mass-market brands, although Geely Auto's UK ambitions could broaden the threat over time.
+
+XPeng is a technology-led challenger. The company is less well established than BYD or MG, but it has strategic relevance because its proposition is built around software, ADAS, fast charging and high-spec EVs. Its dealer and importer partnerships improve its route to market, and its products are likely to be most relevant to BMW, Mercedes, Audi and VW's higher-end EV portfolio. Xpeng has a credible corporate-use proposition, but does not yet have the same visible pan-European leasing partnerships or fleet scale as BYD, MG or Zeekr.
+
+## Product mapping highlights Chinese competitiveness
+
+Chinese OEMs are coming to the European market with competitive offerings at cohort-low price points. We conducted a product benchmarking analysis comparing the five bestselling Chinese models against comparable European incumbents. Benchmark vehicles were selected from the bestselling models in Europe and reflect on comparable powertrains, body styles, and price points, providing a representative view of the competitive landscape. Our analysis indicates that Chinese OEMs are bringing highly competitive products to market, offering a meaningful effective price advantage relative to comparable European models while generally delivering stronger value propositions in terms of technology, features, and design. The product mapping further confirms that Chinese OEMs are targeting the core B-, C-, and D- segment markets with particular intensity. Across these segments, Chinese entrants are typically positioned toward the lower end of the price range while offering, on average, a more attractive overall value proposition when considering features, design, powertrain technology, and vehicle performance. Across B-D segments, especially the more premium the segment, the average price gap between best-selling Chinese models and comparable popular/best-selling European models is sizeable - even when comparing PHEV/BEV to basic ICE models. Where there is no price difference, we see a meaningful gap in features, powertrain, performance and technology that makes the Chinese models' value proposition comparatively more compelling.
+
+## Chinese OEMs are more competitive on price, even when models have better features.
+
+Our analysis of the five best-selling Chinese models in Europe reveals an increasingly more competitive landscape for European OEMs. The highest trim Chinese models are typically lower priced than comparable European models without compromising quality – especially in the B and C segments. Examining design, powertrain, body type, and performance, Chinese models are positioned well to compete against European models, even without taking into account the average effective price gap. Chinese OEMs are gaining share with affordable offerings that have a feature and technology advantage at the B/C segments and substantially more competitive prices at the D+ segments, with even more runway once production is localised.
+
+Exhibit 96: Effective price gap vs. equivalent incumbents
+
+<table><tr><td>Model</td><td>Segment</td><td>UK Starting Price</td><td>Powertrain</td><td>Comparable European OEM Models</td><td>Powertrain</td><td>Comparable Model Price</td><td>Effective Price Gap</td><td>Feature Gap</td></tr><tr><td rowspan="4">MG3 Hybrid+ SE</td><td rowspan="4">B-Segment/Hatchback</td><td rowspan="4">£18,995</td><td rowspan="4">BEV/PHEV</td><td>Dacia Sandero</td><td>ICE</td><td>£14,765</td><td>~£4,000</td><td>High</td></tr><tr><td>Volkswagen Polo</td><td>ICE</td><td>£22,055</td><td>~£3,000</td><td>High</td></tr><tr><td>Dacia Duster</td><td>ICE/PHEV</td><td>£22,495</td><td>~£4,000</td><td>Medium</td></tr><tr><td>Renault Clio E-Tech 145</td><td>PHEV</td><td>£24,995</td><td>~£6,000</td><td>Low</td></tr><tr><td rowspan="4">MG ZS Hybrid+</td><td rowspan="4">B-Segment/SUV</td><td rowspan="4">£22,245</td><td rowspan="4">PHEV</td><td>Citroen C3 Collection</td><td>ICE</td><td>£19,670</td><td>~£3,000</td><td>High</td></tr><tr><td>Skoda Fabia SE</td><td>ICE</td><td>£21,070</td><td>~£1,000</td><td>High</td></tr><tr><td>Peugeot 208 Allure</td><td>PHEV</td><td>£22,345</td><td>~£100</td><td>High</td></tr><tr><td>Renault Captor E-Tech Hybrid</td><td>PHEV</td><td>£25,895</td><td>~£3,000</td><td>Medium</td></tr><tr><td rowspan="4">MG HS Hybrid+ SE</td><td rowspan="4">C-Segment/SUV</td><td rowspan="4">£28,495</td><td rowspan="4">PHEV</td><td>Volkswagen T-Roc Life</td><td>ICE</td><td>£31,635</td><td>~£3,000</td><td>High</td></tr><tr><td>Skoda Eiroq SE L</td><td>BEV</td><td>£33,970</td><td>~£5,000</td><td>High</td></tr><tr><td>Volkswagen Tiguan e-Hybrid</td><td>PHEV</td><td>£42,875</td><td>~£14,000</td><td>Low</td></tr><tr><td>Volkswagen Tayron eHybrid Match</td><td>PHEV</td><td>£44,920</td><td>~£16,000</td><td>None</td></tr><tr><td rowspan="4">Jaecoo 7 SHS Deluxe</td><td rowspan="4">C-Segment/SUV</td><td rowspan="4">£32,810</td><td rowspan="4">PHEV</td><td>Volkswagen ID.4</td><td>BEV</td><td>£36,995</td><td>~£4,000</td><td>Medium</td></tr><tr><td>BMW iX1</td><td>ICE</td><td>£37,540</td><td>~£5,000</td><td>None</td></tr><tr><td>BMW iX1 Sport</td><td>BEV</td><td>£43,555</td><td>~£11,000</td><td>None</td></tr><tr><td>Range Rover Evouque S</td><td>PHEV</td><td>£49,115</td><td>~£16,000</td><td>Disadvantage</td></tr><tr><td rowspan="5">BYD Seal U DM-i Comfort</td><td rowspan="5">D-Segment/SUV</td><td rowspan="5">£36,995</td><td rowspan="5">PHEV</td><td>Skoda Kodiaq SE L</td><td>ICE</td><td>£42,140</td><td>~£5,000</td><td>High</td></tr><tr><td>Volkswagen ID.7 Tourer Pro Match Plus</td><td>BEV</td><td>£52,225</td><td>~£15,000</td><td>Equal</td></tr><tr><td>BMW iXC 40</td><td>BEV</td><td>£53,250</td><td>~£16,000</td><td>Disadvantage</td></tr><tr><td>BMW iX3 20 drive</td><td>ICE</td><td>£53,620</td><td>~£17,000</td><td>Disadvantage</td></tr><tr><td>Mercedes GLC 220d 4MATIC</td><td>ICE</td><td>£54,970</td><td>~£18,000</td><td>Disadvantage</td></tr></table>
+
+Source: OEM official website data. Note: UK starting price represents on-the-road (OTR) price; Green color code represents manufacturer recommended retail price (MRRP).
+
+High PHEV/BEV penetration is allowing Chinese OEMs to come to market at low price points with better value propositions. European OEMs' PHEV/BEV versions of models that have historically had an ICE powertrain (e.g. Peugeot 208) are typically more expensive than the most basic ICE model (e.g. Peugeot E-208 Allure is c. 12% more expensive than the most basic ICE 208 Allure). This observed premium among European models adds to the value proposition presented by Chinese models, as consumers can get the BEV/PHEV powertrain linked benefits for the same price as comparable basic ICE versions of European incumbents.
+
+Exhibit 97: MG ZS Hybrid: The #1 best-selling Chinese model in Europe with 124k units forecasted in 2026; starting at £22k in the UK
+
+<table><tr><td colspan="2">Model</td><td>Powertrain</td><td>UK Price</td><td>Max Power</td><td>0-62 mph</td><td>WLTP</td><td>Range</td><td>Key Features / Positioning</td></tr><tr><td>MG ZS Hybrid+</td><td><img src="images/c84b85c32be769b13d7a1f8c54648a150f562df19e8a6674092a12944ca6414d.jpg"/></td><td>PHEV</td><td>£22,245</td><td>196 hp</td><td>8.7 sec</td><td>55 mpg WLTP</td><td>~500-520 miles</td><td>High power output for segment; large infotainment screen; strong value proposition; SUV practicality</td></tr><tr><td>Citroën C3 Collection</td><td><img src="images/4bbcdcbf355dce5261a68d8fd9bb4d704b21672c19be55124549cf76e4c97d97.jpg"/></td><td>ICE</td><td>£19,670</td><td>100 hp</td><td>10.6 sec</td><td>53 mpg WLTP</td><td>N/A</td><td>Budget-oriented urban crossover; comfort-focused suspension; lower equipment/performance</td></tr><tr><td>Škoda Fabia SE</td><td><img src="images/65cbb7e23ffa6b4de5e74c70adda6883904b3e5ef18b32ff70be8ce6a1034b9b.jpg"/></td><td>ICE</td><td>£21,070</td><td>~95-115 hp</td><td>9.7 sec</td><td>~51.4-53.3 mpg WLTP</td><td>N/A</td><td>Practicality leader in B-segment hatchbacks; conservative positioning; strong residual values</td></tr><tr><td>Peugeot 208 Allure Hybrid</td><td><img src="images/bc1d1b6315c93e6cb7eba1c936493593b560bb6b752128e9aea6aaaf229eb59c.jpg"/></td><td>PHEV</td><td>£22,345</td><td>~136 hp</td><td>9.8 sec</td><td>63 mpg WLTP</td><td>~520-560 miles</td><td>Premium interior design; i-Cockpit; strong styling proposition among European rivals</td></tr><tr><td>Renault Captur E-Tech Hybrid</td><td><img src="images/9cba725bce8a1b3b9edf9f6ef3d2bda1a8afe35db8b8bac3380e5faa8a705fe2.jpg"/></td><td>PHEV</td><td>£25,395</td><td>~145 hp</td><td>8.9 sec</td><td>60 mpg WLTP</td><td>~550-600 miles</td><td>Mature hybrid system; strong fleet positioning; efficient urban SUV with established brand equity</td></tr></table>
+
+Source: S&P Light Vehicle sales data, MG, Citroen, Skoda, Peugeot, Renault. Note: Comparable models selected from top 10 best-selling B-segment SUV models in Europe; selection across powertrains to provide representative view of current competitive landscape.
+
+Exhibit 99: MG HS Hybrid+: The #3 best-selling Chinese model in Europe with 67k units in 2026; starting at £29.5k in the UK
+
+<table><tr><td></td><td>Model</td><td>Powertrain</td><td>UK Price</td><td>Max Power</td><td>0-42 mph</td><td>WLTP</td><td>Range</td><td>Key Features / Positioning</td></tr><tr><td>MG HS Hybrid+</td><td><img src="images/09537ecb42f2ba012c6fb4ecefd8176ead773a36f205c4fea3d0566cc039a2b2.jpg"/></td><td>PHEV</td><td>£28,495</td><td>224 hp</td><td>7.9 sec</td><td>51 mpg WLTP</td><td>~€20–700 miles total</td><td>Aggressive value proposition; high system output; long EV-only range; family SUV practicality</td></tr><tr><td>Volkswagen T-Roc Life</td><td><img src="images/96b2b304c44ba65a0619e3bcd44f983d7ca6653596b44ec6bb561a797b57bbff.jpg"/></td><td>ICE</td><td>£31,635</td><td>114 hp</td><td>10.6 sec</td><td>51 mpg WLTP</td><td>N/A</td><td>Compact SUV benchmark; strong residual values; conservative/refined positioning</td></tr><tr><td>Škoda Etroq SE L 60</td><td><img src="images/515d9c980cb7fab1f2a85a1e18a99fe2cdc3349d075ba484c1ceea2b62cd7151.jpg"/></td><td>BEV</td><td>£33,970</td><td>~188 hp</td><td>~8.0 sec</td><td>135 mpg WLTP</td><td>280 miles</td><td>Value-oriented EV SUV; VW Group MEB platform; practicality-focused positioning</td></tr><tr><td>Volkswagen Tiguan eHybrid Life</td><td><img src="images/845034a619fe118f808204785182c4e296aac0e7d28e4f5e98cb05a9d6fdd48d.jpg"/></td><td>PHEV</td><td>£42,875</td><td>~148 hp</td><td>~7.2 sec</td><td>~150 mpg WLTP</td><td>N/A</td><td>Mainstream European benchmark PHEV SUV; strong fleet appeal; mature hybrid system</td></tr><tr><td>Volkswagen Tayron eHybrid Match</td><td><img src="images/933f6be2e3b846af07884fd5bd5caf0648220940d567c2c638b48de0c9cbc854.jpg"/></td><td>PHEV</td><td>£44,920</td><td>~148 hp</td><td>8.6 sec</td><td>~150 mpg WLTP</td><td>N/A</td><td>Large family PHEV SUV; highly practical; positioned above Tiguan</td></tr></table>
+
+Source: S&P Light Vehicle sales data, MG, Volkswagen, Skoda. Note: Comparable models selected from top 20 best-selling C-segment SUV models in Europe; selection across powertrains to provide representative view of current competitive landscape.
+
+Exhibit 101: Jaecoo 7 Deluxe: The #5 best-selling Chinese model in Europe with 60k units forecasted in 2026, starting at £32.8k in the UK
+
+<table><tr><td colspan="2">Model</td><td>Powertrain</td><td>UK Price</td><td>Max Power</td><td>0-62 mph</td><td>WLTP</td><td>Range</td><td>Key Features / Positioning</td></tr><tr><td>Jaecoo 7 SHS Deluxe</td><td><img src="images/4cf40a393ffb0dea8b01d339507ea10471e4a70ca166a1bf314d0ad399994d21.jpg"/></td><td>PHEV</td><td>£32,810</td><td>204 hp</td><td>8.5 sec</td><td>~53 mpg WLTP</td><td>N/A</td><td>Premium-value SUV positioning; Range Rover-inspired styling; large screens and high equipment levels</td></tr><tr><td>Volkswagen ID.4 Pure</td><td><img src="images/8a9d6c2a91bd709d17297502aa17d293ad777f195e8f21c11e7a30870ddd167c.jpg"/></td><td>BEV</td><td>£36,995</td><td>~188 hp</td><td>8.5 sec</td><td>~130 mpg WLTP</td><td>~270-350 miles</td><td>Mainstream European EV SUV benchmark; strong refinement and practicality</td></tr><tr><td>BMW X1 sDrive20i</td><td><img src="images/11b6b0773ba7df82dba026712443f5f791ddcab7f548dfa256cee4ad1d6c53b4.jpg"/></td><td>ICE</td><td>£37,540</td><td>170 hp</td><td>8.3 sec</td><td>~48 mpg WLTP</td><td>N/A</td><td>Premium compact SUV benchmark; strong residuals and brand strength</td></tr><tr><td>BMW iX1 Sport</td><td><img src="images/b05dc19c769d9aa376d79c7bb89c522951bbc125829fd43ecf83d8b3e3175fdd.jpg"/></td><td>BEV</td><td>£43,555</td><td>204 hp</td><td>8.6 sec</td><td>~135 mpg WLTP</td><td>297-318 miles</td><td>Performance-oriented premium compact EV SUV; BMW handling and software ecosystem</td></tr><tr><td>Range Rover Evoque S</td><td><img src="images/a6f3797c627d35e8b0492a97e6c48461f2120477efbcf18d5514172bb36bf396.jpg"/></td><td>PHEV</td><td>£49,115</td><td>269 hp</td><td>6.8 sec</td><td>~75 mpg WLTP</td><td>~500-600 miles total</td><td>Luxury compact SUV; strongest brand cachet and interior refinement in segment</td></tr></table>
+
+Source: S&P Light Vehicle sales data, Chery, Volkswagen, BMW, Land Rover Note: Comparable models selected from top 20 best-selling D-segment SUV models in Europe; selection across powertrains to provide representative view of current competitive landscape.
+
+Exhibit 98: BYD Seal U Comfort: The #2 best-selling Chinese model in Europe with 68k units in 2026; starting at £37k in the UK
+
+<table><tr><td>Model</td><td>Trim</td><td>Powertrain</td><td>UK Price</td><td>Max Power</td><td>0-62 mph</td><td>WLTP</td><td>Range</td><td>Key Features / Positioning</td></tr><tr><td>BYD Seal U DM-i Comfort</td><td><img src="images/382cb38dd68873e2de58c812330e474d7a785e897c2d4869210b209af5a4f6e6.jpg"/></td><td>PHEV</td><td>£36,995</td><td>218 hp</td><td>8.9 sec</td><td>51 mpg WLTP</td><td>~670-700 miles total</td><td>Long-range PHEV value leader; premium interior and infotainment; aggressive pricing</td></tr><tr><td>Škoda Kodiaq SE L</td><td><img src="images/44b32a4782be11d63f503a83f835278f7e09fa847c108f7f0d986beda6c75892.jpg"/></td><td>PHEV</td><td>£42,140</td><td>204 hp</td><td>8.4 sec</td><td>N/A</td><td>N/A</td><td>Practicality benchmark; very large boot; family SUV positioning; strong European brand trust</td></tr><tr><td>Volkswagen ID.7 Pro Match</td><td><img src="images/a470d3e1c74840292256d58420fe5d441d14f2ed623270934639827e1fe99294.jpg"/></td><td>BEV</td><td>£51,445</td><td>~286 hp</td><td>6.5 sec</td><td>~190 mpg WLTP</td><td>~400 miles</td><td>Long-range executive EV; Sedan type leader; fleet-oriented premium EV</td></tr><tr><td>BMW iX3 40</td><td><img src="images/25b30e60b424159a73efd59a2978172e875f7fce8fae05c3be12ea1b88535d4d.jpg"/></td><td>BEV</td><td>£53,250</td><td>320 hp</td><td>5.9 sec</td><td>~135 mpg WLTP</td><td>~380 miles</td><td>Mature premium EV SUV; BMW dynamics; positioned above BYD on brand and refinement</td></tr><tr><td>BMW X3 20 xDrive</td><td><img src="images/76aab47875fea7a760a3b59bedd176f79d040fe5e07b2d848e2116de96550e5c.jpg"/></td><td>ICE</td><td>£53,620</td><td>208 hp</td><td>7.8 sec</td><td>~40 mpg WLTP</td><td>N/A</td><td>Premium benchmark ICE SUV; strong performance and refinement; entry luxury positioning</td></tr><tr><td>Mercedes-Benz GLC 220 d AMG</td><td><img src="images/9efc8cdf3efd65074ed1e37f2c821cb5a0e212d3983123ab82f21751270e24df.jpg"/></td><td>ICE</td><td>£54,970</td><td>220 hp</td><td>8.0 sec</td><td>53 mpg WLTP</td><td>N/A</td><td>Luxury-focused midsize SUV; strong ride comfort; premium interior and technology</td></tr></table>
+
+Source: S&P Light Vehicle sales data, BYD, Skoda, Volkswagen, BMW, Mercedez-Benz. Note: Comparable models selected from top 20 best-selling D-segment SUV models in Europe; selection across powertrains to provide representative view of current competitive landscape.
+
+Exhibit 100: MG3 Hybrid+: The #4 best-selling Chinese model in Europe with 63k units forecasted in 2026; starting at £19.9k in the UK
+
+<table><tr><td colspan="2">Model</td><td>Powertrain</td><td>UK Price</td><td>Max Power</td><td>0-62 mph</td><td>WLTP</td><td>Range</td><td>Key Features / Positioning</td></tr><tr><td>MG3 Hybrid+ SE</td><td><img src="images/5792b146373cc0f7252de4c9319602ae2ed0898a35de09a8dff68f4d2e2f5aa2.jpg"/></td><td>PHEV</td><td>£18,995</td><td>194 hp</td><td>8.0 sec</td><td>64 mpg WLTP</td><td>~500 miles</td><td>Segment-leading power output;aggressive pricing; hybrid systemtuned for performance; strongstandard equipment</td></tr><tr><td>Dacia Sandero Essential</td><td><img src="images/c6d13903a5a8d6ce83f1ed8ef1d98268d0abd464cb9157e2eb5ae06c88d1979d.jpg"/></td><td>ICE</td><td>£14,765</td><td>100 hp</td><td>9.7 sec</td><td>53 mpg WLTP</td><td>N/A</td><td>Lowest-cost mainstream hatchbackin Europe; value-focused positioning;simple ICE powertrains</td></tr><tr><td>Volkswagen Polo Life</td><td><img src="images/3765b644cb26a0a44675acdf4ad609a54bf612ee170b4c59059f102bc0b34c67.jpg"/></td><td>ICE</td><td>£22,055</td><td>80 hp</td><td>10.8 sec</td><td>54 mpg WLTP</td><td>N/A</td><td>Benchmark European supermini;stronger refinement and residualvalues; conservative positioning</td></tr><tr><td>Dacia Duster Expression</td><td><img src="images/73bc0e7491b35f1ec7896c813735e862a6881958eaeaa9d9737c32420e2c78b7.jpg"/></td><td>ICE/PHEV</td><td>£22,495</td><td>130 hp</td><td>9.9 sec</td><td>51 mpg WLTP</td><td>N/A</td><td>SUV practicality at low price point;outdoors/off-road positioning; strongvalue-per-space proposition</td></tr><tr><td>Renault Clio E-Tech 145Alpine</td><td><img src="images/0211742eefd801f1c4d99faaec41788f249b9e527290c5e8240a537583204231.jpg"/></td><td>PHEV</td><td>£24,995</td><td>145 hp</td><td>9.3 sec</td><td>64 mpg WLTP</td><td>~560 miles</td><td>Mature hybrid powertrain; refinedchassis; strong efficiency and fleetappeal</td></tr></table>
+
+Source: S&P Light Vehicle sales data, MG, Volkswagen, Dacia, Renault Note: Comparable models selected from top 20 best-selling B-segment hatchback models in Europe; selection across powertrains to provide representative view of current competitive landscape.
+
+# Global profit pools attract Chinese OEMs
+
+## Building a position in the European market
+
+Chinese OEMs have transformed from domestically focused manufacturers into globally competitive automotive players. Supported by Chinese industrial policy, NEV incentives, supplier relationships, integrated supply chains, and intense domestic competition, Chinese OEMs have captured c.70% of China's passenger vehicle market. The focus now shifts towards Europe and other export markets where they are reaching critical mass, creating an additional challenge for legacy OEMs that are already managing electrification, weaker Chinese profitability, geopolitical uncertainty, and slowing end-market demand.
+
+We see further downside for European OEMs. We believe consensus underestimates the scale of potential share losses facing European manufacturers, as Chinese brands are unlikely to achieve sustained growth without displacing incumbent volumes, particularly in a subdued demand environment. The pressure is intensified by a weakening Chinese domestic market, where falling sales, reduced subsidies, and continued pricing competition are making overseas expansion increasingly necessary. Exports are increasingly becoming the primary growth engine for Chinese OEMs, with Europe a key target market. At the same time, Chinese manufacturers are evolving beyond an export model by localising production in Europe and other regions through investments such as BYD's plants in Hungary and Turkey, Chery's Spanish manufacturing partnership, and Leapmotor's cooperation with Stellantis. This localisation strategy reduces tariff exposure, improves economics, and positions Chinese OEMs to compete more directly and sustainably with incumbent European manufacturers over the coming decade.
+
+Exhibit 102: Chinese OEMs keep gaining share in China (12M rolling monthly market share)  
+![](images/5e227ae1bf8b2b498784583bd425b6bb5e866c3f8befe53f38aa2c90a36a7c06.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Domestic | Germany | Japan | US ex-Tesla | Tesla | Other Foreign OEM |
+|---------|----------|---------|-------|-------------|-------|-------------------|
+| Jan-04  | 30%      | 25%     | 20%   | 10%         | 10%   | 10%               |
+| Nov-04  | 25%      | 20%     | 15%   | 10%         | 10%   | 10%               |
+| Sep-05  | 20%      | 15%     | 10%   | 10%         | 10%   | 10%               |
+| Jul-06  | 15%      | 10%     | 10%   | 10%         | 10%   | 10%               |
+| May-07  | 10%      | 15%     | 15%   | 10%         | 10%   | 10%               |
+| Mar-08  | 15%      | 20%     | 20%   | 10%         | 10%   | 10%               |
+| Jan-09  | 20%      | 25%     | 25%   | 10%         | 10%   | 10%               |
+| Nov-09  | 25%      | 30%     | 30%   | 10%         | 10%   | 10%               |
+| Sep-10  | 30%      | 35%     | 35%   | 10%         | 10%   | 10%               |
+| Jul-11  | 35%      | 40%     | 40%   | 10%         | 10%   | 10%               |
+| May-12  | 40%      | 45%     | 45%   | 10%         | 10%   | 10%               |
+| Mar-13  | 45%      | 50%     | 50%   | 10%         | 10%   | 10%               |
+| Jan-14  | 50%      | 55%     | 55%   | 10%         | 10%   | 10%               |
+| Nov-14  | 55%      | 60%     | 60%   | 10%         | 10%   | 10%               |
+| Sep-15  | 60%      | 65%     | 65%   | 10%         | 10%   | 10%               |
+| Jul-16  | 65%      | 70%     | 70%   | 10%         | 10%   | 10%               |
+| May-17  | 70%      | 75%     | 75%   | 10%         | 10%   | 10%               |
+| Mar-18  | 75%      | 80%     | 80%   | 10%         | 10%   | 10%               |
+| Jan-19  | 80%      | 85%     | 85%   | 10%         | 10%   | 10%               |
+| Nov-20  | 85%      | 90%     | 90%   | 10%         | 10%   | 10%               |
+| Sep-21  | 90%      | 95%     | 95%   | 10%         | 10%   | 10%               |
+| Jul-22  | 95%      | 100%    | 100%  | 10%         | 10%   | 10%               |
+| May-23  | 100%     | 105%    | 105%  | 10%         | 10%   | 10%               |
+| Mar-24  | 105%     | 110%    | 110%  | 10%         | 10%   | 10%               |
+| Jan-25  | 110%     | 115%    | 115%  | 10%         | 10%   | 10%               |
+| Sep-25  | 65%      | 65%     | 65%   | ~5%         | ~5%   | ~5%               |
+</details>
+
+Source: CPCA, MS
+
+Exhibit 103: Chinese OEMs are also gaining share globally: China automobile export (USD)  
+![](images/91247ab75f5ae1fe7c8c3c878ca55d656dd033783667f9b15a92428372ffd34f.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | China Automobile exports globally (USD) | Q Average (USD) |
+| ------- | ---------------------------------------- | ---------------- |
+| 4Q24    | ~15,000,000                              | -                |
+| 4Q25    | ~15,000,000                              | -                |
+</details>
+
+Source: CPCA, MS
+
+## China weakness further weighs on the outlook for European OEMs
+
+A weaker Chinese auto market only increases pressure on legacy OEMs. The outlook from our China auto team reinforces the view that overseas expansion is becoming less optional and increasingly necessary for Chinese OEMs. The team forecasts that China passenger vehicle wholesales will decline 2% YoY in 2026 to 29.4mn units, with domestic sales expected to fall 11% YoY to 21.4mn units, ending the market's three-year growth streak. The weakness is expected to be driven by a combination of cyclical and policy-related headwinds, including the removal of key stimulus measures, a 5% NEV purchase tax increase (from 0%), reduced trade-in subsidies, softer consumer confidence, and continued macroeconomic pressure. Around 40% of passenger vehicle sales in 2025 were supported by national or local subsidy schemes, underscoring how dependent recent demand has been on policy support. At the same time, domestic competition remains extremely intense, with continued pricing pressure, shorter product cycles, and slowing NEV growth versus prior years.
+
+Overseas sales are now the growth engine. Against this backdrop, Chinese OEMs are increasingly relying on export markets as a critical growth engine. Our China Auto team expects Chinese vehicle exports to grow 33% YoY in 2026, with particularly strong growth expected in Europe, Latin America, and ASEAN. The China team expects Chinese EV brands to account for \~30% of NEV sales outside China by 2030, implying that the competitive dynamics already seen within China are increasingly likely to extend globally. In our view, this reinforces the risk that weaker domestic conditions in China increase pressure on Chinese OEMs to aggressively pursue international market share, including in Europe and LatAm.
+
+Exhibit 104: China Auto Market Forecast  
+![](images/1e3031bbe69f269c9ac983b45c2fa3eaf7c9b6e97d3a720c15a3f44455b13250.jpg)
+
+<details>
+<summary>bar-line hybrid</summary>
+
+China - PV Wholesale Volume (mn units)
+| Year | Domestic (mn units) | Export (mn units) | Total PV growth (%) |
+|---|---|---|---|
+| 2015 | 21.1 | 0.4 | |
+| 2016 | 24.3 | 0.7 | 15.0 |
+| 2017 | 24.7 | 0.9 | 2.0 |
+| 2018 | 23.7 | 1.0 | -4.0 |
+| 2019 | 21.4 | 0.6 | -9.0 |
+| 2020 | 20.1 | 0.5 | -6.0 |
+| 2021 | 21.5 | 0.8 | 7.0 |
+| 2022 | 23.6 | 1.0 | 10.0 |
+| 2023 | 26.0 | 1.0 | 10.0 |
+| 2024 | 27.6 | 1.3 | 6.0 |
+| 2025 | 30.1 | 1.5 | 9.0 |
+| 2026E | 29.4 | 1.8 | -2.0 |
+| 2027E | 30.5 | 1.9 | 4.0 |
+| 2028E | 31.3 | 2.1 | 2.0 |
+</details>
+
+Source: CAAM, MS estimates (E)
+
+Exhibit 105: Stimulus Policies: Nationwide NEV Purchase Tax Exemption
+
+<table><tr><td>Period</td><td>Vehicle Purchase Tax</td><td>Purchase Tax Exemption Cap</td></tr><tr><td>Before Sep 2014</td><td>10%</td><td>No exemption</td></tr><tr><td>Sep 2014 - Dec 2023</td><td>10% -&gt; 0%</td><td>Full exemption</td></tr><tr><td>Jan 2024 - Dec 2025</td><td>0%</td><td>Rmb30k exemption cap</td></tr><tr><td>Jan 2026 - Dec 2027</td><td>0% -&gt; 5%</td><td>Rmb15k exemption cap</td></tr><tr><td>Jan 2028 +</td><td>5% -&gt; 10%</td><td>No exemption</td></tr></table>
+
+Source: Ministry of Commerce, MS
+
+Exhibit 106: Our China Auto team sees 8m units exported in 2026  
+![](images/4cdc44d41682014a6b8e2dbd4965f9d69f66d4b680e40ded1935047d43298194.jpg)
+
+<details>
+<summary>bar-line hybrid</summary>
+
+PV export forecast (mn units)
+| Year | ICEV export (mn units) | NEV export (mn units) | PV export YoY growth (%) |
+|---|---|---|---|
+| 2020 | 0.8 | 0.0 | -15.0 |
+| 2021 | 1.6 | 0.4 | 117.0 |
+| 2022 | 2.5 | 0.8 | 65.0 |
+| 2023 | 3.1 | 1.5 | 71.0 |
+| 2024 | 3.7 | 1.9 | 18.0 |
+| 2025 | 3.7 | 2.5 | 19.0 |
+| 2026E | 3.6 | 4.0 | 33.0 |
+| 2027E | 3.1 | 5.5 | 11.0 |
+| 2028E | 2.5 | 6.5 | 4.0 |
+| 2029E | 1.8 | 7.5 | 4.0 |
+| 2030E | 0.8 | 9.5 | 3.0 |
+</details>
+
+Source: CAAM, MS estimates
+
+Exhibit 107: Competition in China remains fierce amongst local players, particularly in EVs  
+![](images/072e206f01e7035843b14c8d36b1fe4727a96bf91580165e56eb53256ee18192.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+2026 NEV Wholesale Volume Share and 2026 vs 2025 Volume Share Change
+| Manufacturer | 2026 NEV Wholesale Volume Share (%) | 2026 vs 2025 Volume Share Change (%) |
+| :--- | :--- | :--- |
+| BYD | 25 | -4 |
+| Geely | 13 | 2 |
+| SAIC | 10 | -1 |
+| Tesla | 8 | 2 |
+| Chang'an | 6 | -1 |
+| Chery | 5 | 0 |
+| Leapmotor | 4 | 0 |
+| GAC | 4 | 1 |
+| Li Auto | 3 | 1 |
+| NIO | 3 | 1 |
+| Xiaomi | 3 | 0 |
+| Alto | 3 | 0 |
+| Xpeng | 2 | 0 |
+| Great Wall | 2 | -1 |
+| BAIC | 1 | 0 |
+| BMW | 0 | 0 |
+| Audi | 0 | 0 |
+| Mercedes | 0 | 0 |
+| Volkswagen | 0 | 0 |
+| Hozon Motor | 0 | 0 |
+</details>
+
+Source: CPCA, MS
+
+## Globalisation continues despite tariffs
+
+Switching from exports to localised production. Chinese OEMs are increasingly shifting from an export-led strategy to a localized manufacturing model, accelerating their ability to compete directly with incumbent European manufacturers. BYD is building European production hubs in Hungary and Turkey, with planned capacity of c.450,000 vehicles annually over time, producing compact hatchbacks and C-segment BEV SUVs such as the Dolphin and Atto 3. Chery has partnered with Ebro-EV Motors to restart production at the former Nissan plant in Barcelona, where the companies ultimately aim to produce up to 150,000 vehicles annually, focused primarily on SUV-oriented products under both the Ebro and Chery & Omoda brands. Meanwhile, Stellantis and Leapmotor are expanding their European partnership, with localized production of Leapmotor small EVs and future C-SUV BEV models in Spain and previously Poland, leveraging Chinese EV platforms and supply chains to reduce development costs and improve affordability. Localisation efforts are not just focused on Europe, with LatAm and Asia Pac also considered key markets. Critically, production is centred in regions with competitive costs (salaries, taxes, energy, subsidies) and access to large markets (Europe, Mercosur, South East Asia). Despite the higher cost base, these regions still present higher profitability for Chinese OEMs than their home markets, creating continued incentive to drive share gains.
+
+Exhibit 108: Global expansion plans are underway  
+![](images/2097ac0347e13deea82a3216e38c45bc97cd47344fd07d89486f9f6e0332ee79.jpg)
+
+<details>
+<summary>table</summary>
+
+| Country | Location | Launch | Planned Capacity (k units) |
+| --- | --- | --- | --- |
+| Thailand | 2024 | 150 | Uzbekistan |
+| Uzbekistan | 2024 | 50 | Brazil |
+| Hungary | 2025 | 150 | Hungary |
+| Hungary | 2026 | 150 | Indonesia |
+| Hungary | 2026 | 150 | Turkey |
+| Hungary | 2026 | 150 | Cambodia |
+| Hungary | 2026 | 150 | Cambodia |
+| Cambodia | 2026 | 10 | Russia |
+| Cambodia | 2026 | 10 | Brazil |
+| Cambodia | 2026 | 810 | Russia |
+| Cambodia | 2026 | 150 | GWM |
+| Cambodia | 2026 | 80-120 | Thailand |
+| Cambodia | 2026 | 100 | Brazil |
+| GWM total | 350 |  | Egypt |
+| GWM total | 350 |  | Belarus |
+| GWM total | 350 |  | Malaysia |
+| GWM total | 350 |  | Vietnam |
+| GWM total | 350 |  | Malaysia |
+| GWM total | 350 |  | India |
+| GWM total | 350 |  | Pakistan |
+| GWM total | 350 |  | Vietnam |
+| GWM total | 350 |  | Thailand |
+| GWM total | 350 |  | Malaysia |
+| GWM total | 350 |  | Argentina |
+| GWM total | 350 |  | Thailand |
+| Geely total | 340 |  | Indonesia |
+| Geely total | 340 |  | India |
+| Geely total | 340 |  | Pakistan |
+| Geely total | 340 |  | Vietnam |
+| Geely total | 340 |  | Thailand |
+| Geely total | 340 |  | Malaysia |
+| SAIC total | 440 |  | Brazil |
+| SAIC total | 440 |  | Indonesia |
+| SAIC total | 440 |  | Malaysia |
+| SAIC total | 440 |  | Argentina |
+| SAIC total | 440 |  | Thailand |
+| SAIC total | 440 |  | Malaysia |
+| SAIC total | 440 |  | Argentina |
+| SAIC total | 440 |  | Thailand |
+| SAIC total | 440 |  | Malaysia |
+| SAIC total | 440 |  | Argentina |
+| SAIC total | 440 |  | Thailand |
+| SAIC total | 440 |  | Malaysia |
+| SAIC total | 450 |  | Argentina |
+| SAIC total | 450 |  | Thailand |
+| SAIC total | 450 |  | Malaysia |
+| SAIC total | 450 |  | Argentina |
+| SAIC total | 450 |  | Thailand |
+| SAIC total | 450 |  | Malaysia |
+| SAIC total | 450 |  | Argentina |
+| SAIC total | 450 |  | Thailand |
+</details>
+
+Source: Company data, MS
+
+Exhibit 109: Asia and Europe accounted for >65% of China's vehicle exports in 2025  
+![](images/36d4238a02b5ec752cf3dfefb7b0f46c01d928c480a935285d55dadb8ccc8524.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+China – vehicle export units by region, 2025
+| Region | Export Units (%) |
+|---|---|
+| Asia | 28 |
+| ASEAN | 12 |
+| Africa | 10 |
+| Europe | 19 |
+| Russia | 7 |
+| Latin America | 11 |
+</details>
+
+Source: CAAM, China Customs, MS estimates
+
+## Protective market dynamics
+
+European OEMs benefit from inherent defensive features. Whilst we think price is ultimately king for many consumers, the very nature of the European automotive market creates some degree of protection for incumbents: 1) European BEV demand has been driven largely by regulation, subsidies, and emissions targets rather than fully organic consumer adoption. European OEMs have broad ICE and hybrid portfolios that could provide resilience if policy support weakens; 2) the European consumer is less tech-inclined than their Chinese counterparts, arguably diminishing one of Chinese OEMs' structural competitive advantages; 3) the EU appears to be open to further protectionist measures, including potential JV requirements for foreign entrants; 4) European consumers exhibit a degree of brand loyalty towards European brands; 5) financing arms, fleet relationships, and residual values are critical elements of the infrastructure of the market that legacy European OEMs know best.
+
+## European BEV demand is policy driven
+
+European BEV demand has grown inorganically. European battery electric vehicle (BEV) demand has grown significantly in recent years, driven largely by increasingly stringent emissions regulations, fleet CO2 targets, and government support measures across key markets. Countries such as Germany have played an important role through subsidy schemes, tax incentives, and corporate EV benefits that lowered the effective purchase price for consumers and accelerated adoption. However, underlying consumer demand remains relatively challenged, as a result of range anxiety, weak residual values and poor charging infrastructure. We think much of the recent growth has been policy-driven rather than organic, with EV penetration often weakening when incentives are reduced or removed, as seen following Germany's abrupt cancellation of purchase subsidies in late 2023.
+
+Powertrain flexibility supports legacy OEMs in case of policy changes. European OEMs have broader multi-energy portfolios and established ICE customer bases. Should European governments adjust subsidies, or make changes to the regulatory environment, then demand for ICE vehicles could remain at high levels, benefitting legacy European OEMs. Against this, Chinese OEMs are increasingly coming to market with hybrid models, a market that has grown substantially in recent years, with much less reliance on subsidies.
+
+## Policy support is emerging
+
+Supportive measures are being introduced. In March 2025 the European Commission published its EU Auto Action Plan, a set of policy changes addressing five key priorities: 1) incentivising the transition to connected and autonomous vehicles; 2) support in the shift to electrification; 3) ensuring competitiveness and supply chain resilience; 4) support for employees; 5) levelling the playing field and creating a competitive business environment on the continent.
+
+Local content rules could provide further support. Local content requirements could become an increasingly important tool in the EU's efforts to support domestic automotive competitiveness. Policymakers have already signalled a shift in this direction, with European Commission Executive Vice President Stéphane Séjourné recently stating that "Made in Europe' is making its way into European legislation". Reporting by the FT suggests that the EU is considering local-content thresholds for strategic industries, with requirements potentially calibrated according to Europe's dependence on external suppliers, particularly China. While any such measures would formally apply to all manufacturers, they would likely have a disproportionate impact on Chinese OEMs, whose supply chains remain more heavily concentrated outside Europe. The impact on European OEMs may not be all positive, with some OEMs labelling these as dangerous, according to the FT.
+
+## Could European consumers care less for Tech?
+
+Chinese OEM strength may not completely translate into Europe. On price, we think European OEMs have no choice but to compete, with cost reduction efforts underway at all players. On technology, we think Chinese OEMs' strengths in China may not completely translate to strengths in the European market. Chinese consumers have become highly receptive to smart EV features, digital cockpit innovation, autonomous driving functions and rapid product iteration. McKinsey's 2025 China auto consumer survey argues that the Chinese market is increasingly shifting from pure price competition toward innovation, with consumers embracing new models and cutting-edge technologies. This has allowed Chinese OEMs to convert technology leadership into brand recognition and pricing power, particularly in EVs and PHEVs.
+
+Some European consumers are less focused on in-car technology. S&P Global's connected-car study says consumer reactions to connected services remain complex, with concerns around value, data privacy, subscription fatigue and willingness to pay. Strategy's Digital Auto report includes a survey of Germany, the US and China, which found that consumers prioritise basic connected services such as safety and navigation, while experts overestimate the importance of infotainment and lifestyle functions. More importantly, the same report indicated that willingness to pay for a full set of connected services was around €20/month in Germany and the US, versus roughly €40/month in China. It also found that German and US consumers were much more uneasy about Level 4 autonomous driving than Chinese consumers.
+
+## Brand loyalty still matters
+
+Brand loyalty should support legacy players, but price is ultimately king. Legacy European OEMs enter this competitive transition with one important structural advantage: they remain the incumbent domestic players in many of their core markets. Brands such as Volkswagen, Porsche, Audi, BMW and Mercedes-Benz in Germany, Seat in Spain, Renault, Citroen and Peugeot in France, and Fiat in Italy benefit from decades of established customer relationships, broad dealer and service networks, strong fleet and financing relationships, and deep-rooted national brand recognition. This home market positioning has historically translated into higher brand loyalty, stronger residual values, and greater consumer trust relative to new entrants, particularly in premium segments. These advantages should provide some degree of resilience as Chinese OEMs expand into
+
+Europe, especially in markets where domestic brands remain closely associated with quality, engineering, and long-term ownership confidence. However, while local incumbency may slow the pace of disruption, we do not believe it fully insulates European OEMs from sustained pressure as Chinese manufacturers continue to compete aggressively on price, technology content, and product refresh speed.
+
+Exhibit 110: German OEMs in Germany  
+![](images/bb98baee3b472b286fc525a42862f5c5afbadfbd305b3596d49164b77d4ca55b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | German OEMs | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs |
+|--------|-------------|---------|---------|---------|------------|------------|
+| Jan-05 | ~58%        | ~18%    | ~12%    | ~8%     | ~3%        | ~2%        |
+| Jan-06 | ~59%        | ~19%    | ~13%    | ~9%     | ~3%        | ~2%        |
+| Jan-07 | ~58%        | ~18%    | ~12%    | ~8%     | ~3%        | ~2%        |
+| Jan-08 | ~57%        | ~17%    | ~11%    | ~7%     | ~3%        | ~2%        |
+| Jan-09 | ~45%        | ~16%    | ~10%    | ~6%     | ~3%        | ~2%        |
+| Jan-10 | ~55%        | ~17%    | ~11%    | ~7%     | ~3%        | ~2%        |
+| Jan-11 | ~56%        | ~18%    | ~12%    | ~8%     | ~3%        | ~2%        |
+| Jan-12 | ~57%        | ~19%    | ~13%    | ~9%     | ~3%        | ~2%        |
+| Jan-13 | ~58%        | ~20%    | ~14%    | ~10%    | ~3%        | ~2%        |
+| Jan-14 | ~59%        | ~21%    | ~15%    | ~11%    | ~3%        | ~2%        |
+| Jan-15 | ~58%        | ~20%    | ~14%    | ~10%    | ~3%        | ~2%        |
+| Jan-16 | ~57%        | ~19%    | ~13%    | ~9%     | ~3%        | ~2%        |
+| Jan-17 | ~56%        | ~18%    | ~12%    | ~8%     | ~3%        | ~2%        |
+| Jan-18 | ~55%        | ~17%    | ~11%    | ~7%     | ~3%        | ~2%        |
+| Jan-19 | ~54%        | ~16%    | ~10%    | ~6%     | ~3%        | ~2%        |
+| Jan-20 | ~53%        | ~15%    | ~9%     | ~5%     | ~3%        | ~2%        |
+| Jan-21 | ~52%        | ~14%    | ~8%     | ~4%     | ~3%        | ~2%        |
+| Jan-22 | ~51%        | ~13%    | ~7%     | ~3%     | ~3%        | ~2%        |
+| Jan-23 | ~50%        | ~12%    | ~6%     | ~2%     | ~3%        | ~2%        |
+| Jan-24 | ~49%        | ~11%    | ~5%     | ~1%     | ~3%        | ~2%        |
+| Jan-25 | ~48%        | ~10%    | ~4%     | ~0.5%   | ~3%        | ~2%        |
+| Jan-26 | ~47%        | ~9%     | ~3%     | ~0.3%   | ~3%        | ~2%        |
+</details>
+
+Source: German Auto Association, MS. German OEMs include: VW brand, Audi, Porsche, BMW brand, Mercedes-Benz, Smart and Opel
+
+Exhibit 111: French OEMs in France  
+![](images/99daa3c6a2cc92a0697a0c7293675a4d0989ffc62b926354c901501b1b5e20b8.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date | French OEMs | US OEMs | JP OEMs | SK OEMs | China OEMs | Other OEMs | EU OEMs - ex. French |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Jun-02 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-03 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-04 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-05 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-06 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-07 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-08 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-09 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-10 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-11 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-12 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-13 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-14 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-15 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-16 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-17 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-18 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-19 | ~60% | ~5% | ~5% | ~1% | ~1% | ~1% | ~30% |
+| Jun-20 | 70% | 5 | 5 | 5 | 5 | 5 | 20 |
+| Jun-21 | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jun-22 | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jun-23 | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jun-24 | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jun-25 | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jun-26e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jun-27e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jun-28e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jun-29e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jun-30e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jun-31e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-01e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-02e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-03e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-04e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-05e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-06e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-07e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-08e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-09e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-10e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-11e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-12e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-13e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-14e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-15e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-16e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-17e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-18e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+| Jul-19e | 40% | 5 | 5 | 5 | 5 | 5 | 30 |
+</details>
+
+Source: French Auto Association, MS. French OEMs include: Renault, Alpine, Peugeot and Citroen
+
+Chinese EVs are testing European brand loyalty. Examining market share trends in Germany and France highlights that brand loyalty towards incumbent OEMs appears to be meaningful. However, studies from BCG show that brand loyalty is weakening, especially among younger buyers and EV customers. Nearly two-thirds of European consumers are now open to switching brands, while 10–20% of European respondents said they would consider purchasing a Chinese vehicle, above Chinese OEMs' current market share.
+
+Exhibit 112: Premium OEMs see slightly higher loyalty rates in Europe, whereas brand loyalty is rare in China  
+![](images/1873ee4bee4e60828934fd714e12f9ddda21eef2561f194c1462c59e64a2f40c.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+% would purchase brand currently owned as next car
+| Region | Mass market (%) | Premium (%) |
+| :--- | :--- | :--- |
+| Europe | 36 | 38 |
+| US | 43 | 33 |
+| China | 9 | 14 |
+</details>
+
+Source: NielsenIQ-Gfk and Boston Consulting Group, Worldwide Automotive and Mobility Barometer 2025, S&P Global
+
+Exhibit 113: Globally, brand loyalty is much higher amongst older customers than younger customers  
+![](images/502e34a05b3d9473ec66cc07f1e90ecebe315f0f421af932dd60cda9f4853306.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+% would purchase brand currently owned as next car
+| Region | 18-30 yo (%) | 31-45 yo (%) | 46-60 yo (%) | 61+ yo (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| Europe | 21 | 27 | 38 | 50 |
+| US | 21 | 29 | 38 | 59 |
+| China | 10 | 11 | 10 | 28 |
+</details>
+
+Source: NielsenIQ-Gfk and Boston Consulting Group, Worldwide Automotive and Mobility Barometer 2025, S&P Global
+
+Exhibit 114: Outside China, Brazil and Europe appear to be the next major markets for Chinese OEMs  
+![](images/764ddd3c280dc56e0884963b097fd1e7b8e6cb233c63f7beb695e46c7608af4b.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+% would purchase vehicle made in China
+| Country | % would purchase vehicle made in China (%) |
+| :--- | :--- |
+| US | 7 |
+| France | 8 |
+| Netherlands | 11 |
+| Italy | 14 |
+| UK | 15 |
+| Germany | 16 |
+| Norway | 18 |
+| Spain | 19 |
+| Brazil | 36 |
+| China | 85 |
+</details>
+
+Source: NielsenIQ-Gfk and Boston Consulting Group, Worldwide Automotive and Mobility Barometer 2025, S&P Global
+
+Exhibit 115: Chinese OEMs now dominate the Chinese market, whilst market share is low and growing in other markets  
+![](images/716eb371d6dd08768b8c6d4bf028bf705cf71fcfbd64d85f161645f215f1cbaa.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+Chinese OEM FY25 market share
+| Country | Market Share (%) |
+| :--- | :--- |
+| US | 0 |
+| France | 3 |
+| Netherlands | 5 |
+| Italy | 6 |
+| UK | 7 |
+| Germany | 2 |
+| Norway | 10 |
+| Spain | 8 |
+| Brazil | 9 |
+| China | 69 |
+</details>
+
+Source: NielsenIQ-Gfk and Boston Consulting Group, Worldwide Automotive and Mobility Barometer 2025, S&P Global
+
+## Residual values, fincos, and fleets provide structural support
+
+Residual values matter in Europe. Chinese OEMs are moving from a domestic market where residual-value discipline has not been in focus, to Western markets where it is fundamental to the purchase equation. In China, the prolonged price war has normalised aggressive price cuts as a tool to defend volume, even though this damages used car values and creates uncertainty for existing owners. In Europe that playbook is much harder to replicate. A sharp new car price cut reduces transaction prices but also immediately weakens residual value assumptions, raises lease costs, and impacts customers who expect to sell or trade in their vehicle at the end of ownership. In Europe, a high proportion ( $>80\%$ ) of new cars are financed, making residual values important.
+
+Finco's reinforce the incumbent advantage. EU OEMs can defend volumes through subsidised financing, deposit contributions, guaranteed future values, maintenance bundles, insurance packages and fleet finance. This allows incumbents to defend the customer's monthly payment without necessarily cutting headline list prices. Of course, Chinese OEMs offer third party financing agreements, but without directly controlling these entities, they are not able to impact demand to the same degree.
+
+Fleet sales are the third pillar of the defence. Europe is structurally fleet-heavy, and this strongly favours incumbents with proven service networks, parts availability, maintenance contracts, leasing relationships, pan-European account management and predictable used-car outcomes. ICCT reported that in October and November 2025, company fleets accounted for 37% of European new registrations, dealer/manufacturer registrations for 15%, and short-term rentals for 6%, together, corporate fleets represented 58% of the market, versus 42% for private cars. That fleet structure makes Chinese adoption more difficult than a simple retail price comparison implies. Fleet managers focus on predictable downtime, pan-European service support, driver acceptance, insurance availability, parts supply, residual values, tax efficiency and whole-life cost. Legacy European OEMs have long standing fleet relationships and established procurement credibility. Whilst this provides support for European OEMs today, we think it would be naive to expect Chinese OEMs not to make progress with fleets over time.
+
+## Improving competitiveness
+
+## European OEMs are doing everything in their power to improve
+
+competitiveness. Legacy players are engaging in a broad overhaul of fixed and variable cost structures, software capability, and overall product competitiveness. Across the industry, new architectures and platforms such as BMW's Neue Klasse, Mercedes' MMA and MB.OS, Volkswagen's SSP, Stellantis' STLA One family, and Renault's AmpR platforms are designed to simplify engineering, increase commonality, reduce battery and manufacturing costs, and improve ADAS functionality. A major focus is battery cost reduction through LFP adoption, localised sourcing, cell standardisation, and partnerships with CATL and LGES, while software-defined vehicle capabilities, 800V charging systems, advanced ADAS, AI-enabled cockpits, and OTA functionality are increasingly being integrated to close the technology gap with Chinese OEMs.
+
+European OEMs are not standing still. Across the sector, the next product cycle is being repositioned around the areas where Chinese OEMs have been most disruptive: lower-cost BEV architectures, faster charging, longer range, higher standard technology content, improved digital user experience, and faster product refresh cycles. BMW's Neue Klasse, Mercedes' electric GLC and MMA architecture, Volkswagen's ID.2/ID.EVERY1 family, Renault's affordable EV roadmap, Stellantis' STLA One platforms, and Porsche's PPE-based Macan all represent different versions of the same strategic response: simplify platforms, reduce cost, improve technology-per-euro, and defend brand relevance in an increasingly price-competitive EV market. The question is whether these product responses arrive quickly enough, scale broadly enough, and deliver sufficient cost reduction to offset the momentum of Chinese OEMs already entering Europe with high-spec, aggressively priced vehicles.
+
+Cost reduction efforts should become evident over the next two years. European OEMs share a common objective: lowering EV unit costs fast enough to sustain pricing and remain competitive on monthly affordability versus Chinese competitors. The most important variable cost levers are battery cost, platform commonality, simplified architectures, localised sourcing, supplier savings and design-to-cost discipline.
+
+## Battery cost reduction
+
+Battery cost is the largest single lever in EV variable cost. VW's PowerCo unified cell is moving toward series production and is intended to reduce cell complexity across the group, targeting 50% battery cost reduction. These cells will be used first in VW Group's Electric Urban Car Family across Volkswagen, Škoda and Cupra, directly competing against Chinese OEMs in the small mass market segment. BMW's equivalent lever is Neue Klasse and sixth-generation eDrive, which aim reduce the cost of the whole high-voltage battery by up to 50% versus the current generation, while improving energy density, charging speed and range. Renault is on track with a 40% cost-reduction roadmap between first- and second-generation C-segment EVs by 2028, with LFP and cell-to-pack technology reducing battery costs by around 20% from the beginning of 2026. Stellantis similarly
+
+targets 20% cost efficiency measures, again using cell-to-body battery packs with LFP chemistry.
+
+Partnership and LFP focus supports cost reduction efforts. European OEMs are increasingly adopting LFP battery chemistry as a direct variable cost lever. LFP has been one of the core cost tools used by Chinese EV players: it is generally cheaper, avoids nickel and cobalt, and is well suited to entry and mid-range EVs where range requirements are lower and price sensitivity is higher. The trade-off is lower energy density versus NMC, which means LFP is most relevant for affordable EVs, entry level models and high-volume compact models rather than top-end premium variants. Stellantis has a CATL JV in Zaragoza, designed to give the group local access to LFP battery production in Europe. Renault is also moving into LFP and cell-to-pack with partners CATL and LGES. VW's PowerCo supports multiple chemistries within its standardised cell architecture. Mercedes-Benz is using CATL's Hungary supply to support European production, with entry level models such as the new CLA now featuring LFP batteries, whilst higher mix models use more expensive chemistries. BMW's Neue Klasse features improvement in competitiveness via energy density, range and cost. The Gen6 cell architecture allows for use of LFP, alongside other battery chemistries.
+
+## Platforms and commonality
+
+European OEMs are addressing product complexity. Beyond batteries, another major variable cost lever is reducing product complexity. European OEMs have historically carried too many platforms, regional variants, powertrain combinations, software stacks and brand-specific components. That creates high engineering cost, slower development cycles and less purchasing leverage. Chinese OEMs often have an advantage because they are building newer EV-native architectures with shorter product cycles and fewer legacy constraints. European OEMs are now trying to close that gap through fewer platforms, greater parts commonality, more scalable software-defined vehicle architectures and more repeatable manufacturing processes.
+
+Progress underway at mass market players. VW Group is using MEB and MEB+ as the near-term volume architecture, PPE for premium EVs, and SSP as the longer-term convergence platform. The key near-term step is the 2026 Electric Urban Car Family across VW, Cupra and Škoda, which should help VW address affordable EV segments with more shared components and lower development cost. Stellantis is moving towards STLA One, using common architectures to spread engineering and sourcing costs across all its brands. Renault is more focused: AmpR Small and AmpR Medium support passenger EVs such as Renault 5, Renault 4, Megane and Scenic, while a separate SDV LCV architecture supports Trafic, Estafette and Goelette.
+
+Radical overhaul at Mercedes-Benz and BMW. Mercedes-Benz is separating its future architectures by segment: MMA for entry luxury, MB.EA for core premium EVs, AMG.EA for performance EVs and VAN.EA for vans. It is also using MB.OS to unify software and protect premium margins as EV and software content rises. BMW is using Neue Klasse as a full architecture reset, combining cost reduction, design, powertrain, manufacturing and software architecture improvements. Critically, the Neue Klasse architecture is used across several platforms.
+
+Exhibit 116: European OEMs' platform / architecture development
+
+<table><tr><td>OEM</td><td>Platform / Architecture</td><td>Key models</td><td>Impact</td></tr><tr><td>Volkswagen</td><td>MEBMEB+PPESSP</td><td>MEB: VW ID.3, ID.4, ID.5, ID.7, ID. Buzz, Škoda Enyaq, Cupra Born/Tavascan, Audi Q4 e-tron.MEB+ Urban Car Family: VW, Cupra, Škoda.PPE: Porsche Macan Electric, Audi Q6 e-tron.</td><td>2026-2030</td></tr><tr><td>Stellantis</td><td>STLA One</td><td>STLA Small/Smart Car: Fiat, Citroën, Peugeot, Opel/Vauxhall EVs.STLA Medium: Peugeot E-3008, E-5008, Opel/Vauxhall Grandland.STLA Large: Dodge, Jeep, Alfa Romeo, Chrysler, Maserati.STLA Frame: RAM, JeepSmart Car: Fiat, Opel, Citroen C3/C3A</td><td>2025-2028</td></tr><tr><td>Renault</td><td>AmpR SmallAmpR MediumSDV LCV</td><td>AmpR Small: Renault 5, Renault 4, Twingo E-Tech.AmpR Medium: Megane E-Tech, Scenic E-Tech.SDV LCV: Trafic E-Tech, Estafette E-Tech, Goelette E-Tech</td><td>2025-2029</td></tr><tr><td>Mercedes-Benz</td><td>MMAMB.EAAMG.EAVAN.EA</td><td>MMA: CLA, entry models.MB.EA: GLC, midsize/luxury EVs.AMG.EA: AMG GT, high-performance EVs.VAN.EA: VLE, electric vans</td><td>2026-2029</td></tr><tr><td>BMW</td><td>Neue Klasse</td><td>iX3, 40+ new models by 2027</td><td>2027-2028</td></tr><tr><td>Porsche</td><td>PPE</td><td>PPE: Porsche Macan Electric, Audi Q6 e-tron, Audi A6 e-tron.</td><td>2025-2028</td></tr></table>
+
+Source: Company data, MS
+
+## Product pipeline
+
+Nearly every OEM is entering a major launch cycle between 2026 and 2028. New products are considered to be one of the primary drivers of volume recovery, market share stabilization, and earnings growth. Mercedes-Benz, BMW, Volkswagen, Renault, and Stellantis are all planning dozens of new or refreshed models over the coming years, while Porsche and Ferrari are pursuing more concentrated but still strategically significant launch programs. Across the industry, management teams increasingly view product renewal as the key lever for improving financial performance after a period marked by slowing EV demand, macroeconomic pressure, and intensifying competition.
+
+Exhibit 117: FY26 will be the year with the highest new model releases (since 2000)...  
+![](images/bdddfc4b47be819fb384a4b3ebe1ff19e895c38bf6bc3823ecafb8907f9abab0.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Value |
+| ---- | ----- |
+| 2000 | 145   |
+| 2002 | 160   |
+| 2004 | 175   |
+| 2006 | 180   |
+| 2008 | 185   |
+| 2010 | 180   |
+| 2012 | 195   |
+| 2014 | 240   |
+| 2016 | 230   |
+| 2018 | 260   |
+| 2020 | 240   |
+| 2022 | 250   |
+| 2024 | 290   |
+| 2026 | 375   |
+| 2028 | 250   |
+| 2030 | 310   |
+| 2032 | 290   |
+</details>
+
+Source: S&P Global estimates, MS. Note: Annual estimated number of models that are either absolutely new, or have undergone substantial changes.
+
+Exhibit 118: ...Chinese OEMs still lead the charge globally (number of new launches)  
+![](images/cbdd7e27f28a61c0170cf13f89274c1ec517f34811c469f66700c3cf0489fcc3.jpg)
+
+<details>
+<summary>area chart</summary>
+
+| Year | S. Korea | Japan | US | EU | Other |
+| --- | --- | --- | --- | --- | --- |
+| 2000 | 15 | 80 | 40 | 30 | 10 |
+| 2001 | 16 | 75 | 45 | 35 | 12 |
+| 2002 | 17 | 70 | 50 | 40 | 15 |
+| 2003 | 18 | 65 | 55 | 45 | 18 |
+| 2004 | 19 | 60 | 60 | 50 | 20 |
+| 2005 | 20 | 55 | 65 | 55 | 22 |
+| 2006 | 21 | 50 | 70 | 60 | 25 |
+| 2007 | 22 | 45 | 75 | 65 | 28 |
+| 2008 | 23 | 40 | 80 | 70 | 30 |
+| 2009 | 24 | 35 | 85 | 75 | 32 |
+| 2010 | 25 | 30 | 90 | 80 | 35 |
+| 2011 | 26 | 25 | 95 | 85 | 38 |
+| 2012 | 27 | 20 | 100 | 90 | 40 |
+| 2013 | 28 | 15 | 105 | 95 | 42 |
+| 2014 | 29 | 10 | 110 | 100 | 45 |
+| 2015 | 30 | 5 | 115 | 105 | 48 |
+| 2016 | 31 | 0 | 120 | 110 | 50 |
+| 2017 | 32 | -5 | 125 | 115 | 52 |
+| 2018 | 33 | -10 | 130 | 120 | 55 |
+| 2019 | 34 | -15 | 135 | 125 | 58 |
+| 2020 | 35 | -20 | 140 | 130 | 60 |
+| 2021 | 36 | -25 | 145 | 135 | 62 |
+| 2022 | 37 | -30 | 150 | 140 | 65 |
+| 2023 | 38 | -35 | 155 | 145 | 68 |
+</details>
+
+Source: S&P Global estimates, MS. Note: Annual estimated number of models that are either absolutely new, or have undergone substantial changes. Cohort displays selected OEMs by region. Europe includes BMW, MBG, VW, Renault, Stellantis, Ferrari. US OEMs include Ford, GM, Tesla. China includes BYD, Changan, GAC, FAW, Geely, GWM, Li Auto, NIO, SAIC, Xpeng as well as non-covered players. Japan includes Toyota, Mitsubishi, Nissan, Honda, Mazda, Subaru, Suzuki. South Korea includes Hyundai, Kia.
+
+China continues to focus on the C-SUV segment. Nearly every company references China as a major driver of change, whether through direct market share losses, pricing pressure, or the need to accelerate innovation. Volkswagen is localizing development specifically for the Chinese market, Renault is redesigning its operating model to compete with faster-moving Chinese manufacturers, and both Porsche and Stellantis cite Chinese competition as a significant challenge. BMW and Mercedes' new models represent legacy OEMs stepping into the next generation of models, i.e. the software-defined vehicle. Examining market segments, we note that locally produced Chinese vehicles continue to target the C-segment, in particular with SUVs, whereas European OEMs are releasing models across B, C and D segments. Our segment analysis shows that Volkswagen and BMW are most exposed to the C-SUV segment, though considering pricing categories, Volkswagen is much more exposed than BMW.
+
+Exhibit 119: European OEMs' new model production is spread across B, C, and D segments  
+![](images/8cf563a45d64d3cdfba77da4eef084e8ba6974eaec1e0ac643900bdbcfd75f29.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Segment | 2026 (Units Produced (000's)) | 2027 (Units Produced (000's)) | 2028 (Units Produced (000's)) |
+| :--- | :--- | :--- | :--- |
+| D-Segment | 140 | 53 | 48 |
+| E-Segment | 43 | 26 | 12 |
+| C-Segment | 183 | 61 | 146 |
+| A-Segment | 51 | 10 | - |
+| B-Segment | 131 | 30 | 67 |
+</details>
+
+Source: S&P Global estimates, MS. Note: Chart displays European production only, exports excluded.
+
+Exhibit 121: Chinese OEMs are significantly focused on the C-SUV, D-SUV and B-SUV sub-segments
+
+<table><tr><td>Segment/Type</td><td>2025</td><td>% of total sales</td></tr><tr><td>C-SUV</td><td>372,096</td><td>32%</td></tr><tr><td>D-SUV</td><td>276,874</td><td>24%</td></tr><tr><td>B-SUV</td><td>200,479</td><td>17%</td></tr><tr><td>B-Hatchback</td><td>100,443</td><td>9%</td></tr><tr><td>E-SUV</td><td>53,005</td><td>5%</td></tr><tr><td>C-Hatchback</td><td>26,915</td><td>2%</td></tr><tr><td>Other</td><td>122,892</td><td>11%</td></tr></table>
+
+Source: S&P Global, MS. Note: West and Central Europe only
+
+Exhibit 120: Whereas Chinese OEMs' new model production is much more focused on the C-segment  
+![](images/a9caa66e7ea6d31f9dcfbeb6a788c8790eda35c7ef939129951c618e558141eb.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Segment | 2026 (Units Produced) | 2027 (Units Produced) | 2028 (Units Produced) |
+| :--- | :--- | :--- | :--- |
+| D-Segment | 12 | 73 | 48 |
+| E-Segment | 3 | 3 | 3 |
+| C-Segment | 50 | 41 | 200 |
+| A-Segment | 14 | 0 | 0 |
+| B-Segment | 0 | 24 | 0 |
+</details>
+
+Source: S&P Global estimates, MS. Note: Chart displays European production only, exports excluded.
+
+Exhibit 122: Volkswagen is much more exposed to C-SUV than the other mass market legacy European OEMs
+
+<table><tr><td></td><td>C-SUV</td><td>D-SUV</td><td>B-SUV</td><td>B-Hatchback</td><td>C-Hatchback</td><td>E-SUV</td><td>Other</td></tr><tr><td>European market</td><td>23%</td><td>9%</td><td>16%</td><td>14%</td><td>7%</td><td>2%</td><td>29%</td></tr><tr><td>Chinese OEMs</td><td>30%</td><td>24%</td><td>17%</td><td>8%</td><td>4%</td><td>4%</td><td>14%</td></tr><tr><td>BMW</td><td>29%</td><td>12%</td><td>3%</td><td>10%</td><td>8%</td><td>7%</td><td>31%</td></tr><tr><td>Mercedes-Benz</td><td>17%</td><td>14%</td><td>1%</td><td>0%</td><td>7%</td><td>7%</td><td>54%</td></tr><tr><td>Renault</td><td>13%</td><td>2%</td><td>25%</td><td>33%</td><td>2%</td><td>0%</td><td>25%</td></tr><tr><td>Stellantis</td><td>14%</td><td>1%</td><td>22%</td><td>23%</td><td>6%</td><td>0%</td><td>34%</td></tr><tr><td>Volkswagen</td><td>29%</td><td>8%</td><td>10%</td><td>10%</td><td>14%</td><td>2%</td><td>27%</td></tr></table>
+
+Source: S&P Global, MS. Note: West and Central Europe only
+
+## Valuation
+
+## Valuation multiples reflecting an improving outlook despite potential earnings
+
+risk. Cyclical sectors tend to trade at low multiples at cycle peaks (exit points), on concerns that OEMs will eventually see a margin reset, and at high multiples at the bottom (entry points). Examining current valuation multiplies implies that the market already expects a good part of earnings cuts to be priced in, with OEM P/E multiples above recent averages. As indicated below, in Autos, share price performance is driven by earnings expectations, rather than valuations. However, we see valuation multiples as indicative of investor confidence in earnings growth from here, and we think the current multiples suggest a degree of earnings growth is ahead, despite the risk of Chinese OEMs continuing to gain share.
+
+Exhibit 123: Benchmarking European OEMs
+
+<table><tr><td></td><td></td><td>BMW</td><td>Mercedes</td><td>Porsche</td><td>Volkswagen</td><td>Renault</td><td>Stellantis</td><td>OEMs</td></tr><tr><td>Mkt Cap</td><td>EUR Bn</td><td>42</td><td>45</td><td>46</td><td>46</td><td>8</td><td>18</td><td>205</td></tr><tr><td>Units (Wholesale)</td><td>26-28e</td><td>1.5%</td><td>2.7%</td><td>-1.6%</td><td>-1.3%</td><td>0.3%</td><td>1.0%</td><td>0.3%</td></tr><tr><td>Avg Rev / Unit</td><td>26-28e</td><td>-0.3%</td><td>-1.0%</td><td>2.0%</td><td>-0.8%</td><td>-1.5%</td><td>-0.6%</td><td>-0.7%</td></tr><tr><td rowspan="2">Revenue Growth</td><td>2026e</td><td>-0.3%</td><td>0.8%</td><td>-3.2%</td><td>1.5%</td><td>-0.7%</td><td>2.2%</td><td>0.9%</td></tr><tr><td>26-28e</td><td>1.6%</td><td>3.1%</td><td>0.7%</td><td>-0.1%</td><td>-0.8%</td><td>0.4%</td><td>0.7%</td></tr><tr><td>EBIT margin (Co)</td><td>2026e</td><td>6.1%</td><td>5.6%</td><td>6.6%</td><td>4.4%</td><td>4.1%</td><td>1.1%</td><td>4.3%</td></tr><tr><td>Industrial EBITDA mg (Co)</td><td>2026e</td><td>14.3%</td><td>11.8%</td><td>16.5%</td><td>12.5%</td><td>7.9%</td><td>6.0%</td><td>11.3%</td></tr><tr><td rowspan="2">Industrial EBIT mg (Co)</td><td>2026e</td><td>6.2%</td><td>5.8%</td><td>6.5%</td><td>4.2%</td><td>2.2%</td><td>1.1%</td><td>4.1%</td></tr><tr><td>26-28e</td><td>+39 bps</td><td>+66 bps</td><td>+63 bps</td><td>+30 bps</td><td>+1 bps</td><td>+63 bps</td><td>+42 bps</td></tr><tr><td>EBIT Growth</td><td>26-28e</td><td>11%</td><td>19%</td><td>16%</td><td>11%</td><td>-2%</td><td>83%</td><td>25%</td></tr><tr><td>Diluted EPS growth</td><td>26-28e</td><td>11%</td><td>0%</td><td>21%</td><td>12%</td><td>-1%</td><td>NA</td><td>7%</td></tr><tr><td>Ind. N. Debt (Cash) / EBIT</td><td>2026e</td><td>-7.4x</td><td>-4.8x</td><td>-3.9x</td><td>-3.2x</td><td>-6.2x</td><td>-4.1x</td><td>-4.5x</td></tr><tr><td>Ind. N. Debt (Cash) / EBITDA</td><td>2026e</td><td>-3.2x</td><td>-2.4x</td><td>-1.6x</td><td>-1.1x</td><td>-1.8x</td><td>-0.7x</td><td>-1.6x</td></tr><tr><td>Ind. WC / Revenue</td><td>2026e</td><td>12%</td><td>17%</td><td>13%</td><td>19%</td><td>-7%</td><td>-3%</td><td>11%</td></tr><tr><td>Ind Capex + R&amp;D / Rev.</td><td>2026e</td><td>15%</td><td>13%</td><td>17%</td><td>12%</td><td>9%</td><td>8%</td><td>12%</td></tr><tr><td>Ind. Capex + Cap. R&amp;D / Rev.</td><td>2026e</td><td>10.5%</td><td>7.9%</td><td>11.1%</td><td>8.2%</td><td>6.1%</td><td>6.3%</td><td>8.1%</td></tr><tr><td>Ind. Cash Conversion</td><td>2026e</td><td>96%</td><td>86%</td><td>90%</td><td>87%</td><td>86%</td><td>90%</td><td>89%</td></tr><tr><td>Group ROA</td><td>2026e</td><td>2%</td><td>2%</td><td>7%</td><td>1%</td><td>1%</td><td>-1%</td><td>1%</td></tr><tr><td>Group ROE</td><td>2026e</td><td>6%</td><td>6%</td><td>90%</td><td>5%</td><td>8%</td><td>-3%</td><td>8%</td></tr><tr><td>Ind. ROA</td><td>2026e</td><td>3%</td><td>5%</td><td>7%</td><td>3%</td><td>1%</td><td>-1%</td><td>2%</td></tr><tr><td>Ind. ROIC</td><td>2026e</td><td>6%</td><td>7%</td><td>7%</td><td>4%</td><td>7%</td><td>3%</td><td>5%</td></tr><tr><td>Current Price</td><td></td><td>74.0</td><td>49.7</td><td>50.3</td><td>91.5</td><td>29.6</td><td>6.2</td><td></td></tr><tr><td>Ind. EV / EBIT (MS)</td><td>2026e</td><td>-1.4x</td><td>3.3x</td><td>22.0x</td><td>4.6x</td><td>-5.0x</td><td>25.8x</td><td>8.5x</td></tr><tr><td>Ind EV / EBITDA (MS)</td><td>2026e</td><td>-0.6x</td><td>1.5x</td><td>8.0x</td><td>1.5x</td><td>-1.4x</td><td>4.1x</td><td>2.6x</td></tr><tr><td rowspan="2">PE</td><td>2026e</td><td>7.4x</td><td>8.6x</td><td>29.9x</td><td>4.8x</td><td>4.9x</td><td>-13.4x</td><td>10.2x</td></tr><tr><td>2027e</td><td>6.9x</td><td>6.7x</td><td>24.2x</td><td>4.1x</td><td>4.9x</td><td>77.2x</td><td>16.2x</td></tr><tr><td>Div Yield</td><td>2026e</td><td>5%</td><td>7%</td><td>2%</td><td>7%</td><td>5%</td><td>0%</td><td>5%</td></tr><tr><td>Div Yield + Share Buybacks</td><td>2026e</td><td>7%</td><td>10%</td><td>2%</td><td>7%</td><td>5%</td><td>0%</td><td>6%</td></tr><tr><td>Price Target</td><td></td><td>91.0</td><td>65.0</td><td>42.0</td><td>100.0</td><td>29.0</td><td>7.1</td><td></td></tr><tr><td>Ind. EV / EBIT (MS)</td><td>2026e</td><td>-0.1x</td><td>5.9x</td><td>18.8x</td><td>5.4x</td><td>-5.1x</td><td>27.3x</td><td>8.9x</td></tr><tr><td>Ind EV / EBITDA (MS)</td><td>2026e</td><td>0.0x</td><td>2.6x</td><td>6.8x</td><td>1.8x</td><td>-1.5x</td><td>4.3x</td><td>2.8x</td></tr><tr><td rowspan="2">PE</td><td>2026e</td><td>9.2x</td><td>11.2x</td><td>24.9x</td><td>5.2x</td><td>4.8x</td><td>-15.3x</td><td>9.9x</td></tr><tr><td>2027e</td><td>8.5x</td><td>8.7x</td><td>20.2x</td><td>4.5x</td><td>4.8x</td><td>87.8x</td><td>17.1x</td></tr><tr><td>Div Yield</td><td>2026e</td><td>4%</td><td>5%</td><td>2%</td><td>6%</td><td>6%</td><td>0%</td><td>4%</td></tr><tr><td>Div Yield + Share Buybacks</td><td>2026e</td><td>6%</td><td>8%</td><td>2%</td><td>6%</td><td>6%</td><td>0%</td><td>5%</td></tr><tr><td>Upside</td><td></td><td>23%</td><td>31%</td><td>-17%</td><td>9%</td><td>-2%</td><td>14%</td><td>11%</td></tr><tr><td>Rating</td><td></td><td>OW</td><td>OW</td><td>UW</td><td>EW</td><td>UW</td><td>EW</td><td>In-Line</td></tr></table>
+
+Source: Companies, MS estimates
+
+Exhibit 124: European Autos P/E  
+![](images/954e7130b616d7b9c54492f21edacbecdbd4d99e7d6ef7f06409d3b16947ff8f.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | EU OEMs | Sub-Sector PT |
+|--------|---------|---------------|
+| Jun-11 | 8       | -             |
+| Jun-12 | 6       | -             |
+| Jun-13 | 9       | -             |
+| Jun-14 | 10      | -             |
+| Jun-15 | 8       | -             |
+| Jun-16 | 7       | -             |
+| Jun-17 | 6       | -             |
+| Jun-18 | 5       | -             |
+| Jun-19 | 6       | -             |
+| Jun-20 | 14      | -             |
+| Jun-21 | 8       | -             |
+| Jun-22 | 3       | -             |
+| Jun-23 | 8       | -             |
+| Jun-24 | 6       | -             |
+| Jun-25 | 10      | -             |
+| Jun-26 | 8       | -             |
+</details>
+
+Source: Datastream, MS estimates. Note: P/E and sub-sector PT refer to European OEMs (sector PT is implied by our underlying price targets).
+
+Exhibit 125: OEM share price performance is closely tied to earnings expectations  
+![](images/3cfd52ca370617a8a870385a90c9b3abf5864a17a9b0eec030c3639be90aedfc.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | EBIT mg | Price |
+|--------|---------|-------|
+| May-11 | 3.5%    | 75    |
+| May-12 | 4.0%    | 100   |
+| May-13 | 4.5%    | 125   |
+| May-14 | 5.0%    | 150   |
+| May-15 | 5.5%    | 175   |
+| May-16 | 6.0%    | 200   |
+| May-17 | 6.5%    | 225   |
+| May-18 | 7.0%    | 250   |
+| May-19 | 6.0%    | 200   |
+| May-20 | 2.0%    | 50    |
+| May-21 | 7.0%    | 150   |
+| May-22 | 9.0%    | 200   |
+| May-23 | 10.0%   | 250   |
+| May-24 | 9.5%    | 225   |
+| May-25 | 6.0%    | 150   |
+| May-26 | 3.0%    | 75    |
+</details>
+
+Source: Datastream, MS. French OEMs includes Stellantis and Renault.
+
+Exhibit 126: NTM P/E: BMW  
+![](images/6529d399923e6139e73f7428535c47ad4d41b77941256273c6084097805773bb.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | BMW  | Average (-2Y) |
+|--------|------|---------------|
+| Jun-26 | 8.5  | 7.0           |
+</details>
+
+Source: Datastream, MS estimates
+
+Exhibit 127: NTM P/E: Mercedes  
+![](images/4d971b4e50b182cae2eb5dd8f840b251d1e47f1e3a45d386aa5e0496b86d8f20.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Price Target |
+|---------|--------------|
+| Jun-26  | 9            |
+</details>
+
+Source: Datastream, MS estimates
+
+Exhibit 128: NTM P/E: Porsche  
+![](images/82eff26e66b9f56016c3d8f11ca440d377e4ad3377e50fbaaada686ecce672c7.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Price Target |
+|---------|--------------|
+| Oct-26  | 21           |
+</details>
+
+Source: Datastream, MS estimates
+
+Exhibit 129: NTM P/E: Volkswagen  
+![](images/26008cb08be1c7eabfa55ca7c4c146ce7a135f538446a7f51a52d2fd45436569.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | Price Target |
+|--------|--------------|
+| Jun-26 | 4.5          |
+</details>
+
+Source: Datastream, MS estimates
+
+Exhibit 130: NTM P/E: Stellantis  
+![](images/e289ddebb2d599ba90fee64d927db394a39e19a0cad7ddec4b8f6d858c0402d3.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | Stellantis | Average (-2Y) |
+|--------|------------|---------------|
+| Jun-11 | 8.5        | 5.0           |
+| Jun-12 | 3.0        | 5.0           |
+| Jun-13 | 7.5        | 5.0           |
+| Jun-14 | 8.0        | 5.0           |
+| Jun-15 | 7.5        | 5.0           |
+| Jun-16 | 3.0        | 5.0           |
+| Jun-17 | 4.5        | 5.0           |
+| Jun-18 | 5.0        | 5.0           |
+| Jun-19 | 4.0        | 5.0           |
+| Jun-20 | 10.0       | 5.0           |
+| Jun-21 | 6.5        | 5.0           |
+| Jun-22 | 3.0        | 5.0           |
+| Jun-23 | 4.5        | 5.0           |
+| Jun-24 | 3.0        | 5.0           |
+| Jun-25 | 7.5        | 5.0           |
+| Jun-26 | 6.0        | 5.0           |
+</details>
+
+Source: Datastream, MS estimates
+
+Exhibit 131: NTM P/E: Renault  
+![](images/9a138f709f95d6ea781403bd769eb64145b461ec190c098833e4effe9fe10a96.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Renault | Price Target |
+|---------|---------|--------------|
+| Jun-26  |         | 5            |
+</details>
+
+Source: Datastream, MS estimates
+
+## Exhibit 132:
+
+Global OEMs comps
+
+<table><tr><td rowspan="2">Prices date:June 15, 2026</td><td rowspan="2">Crrc.</td><td rowspan="2">Mkt CapUS$ mn</td><td colspan="2">Price</td><td rowspan="2">MSRating</td><td colspan="3">EPS</td><td rowspan="2">RevenueCAGR 25-27E</td><td colspan="2">EBIT margin</td><td colspan="2">EV/EBIT</td><td colspan="2">EV/EBITDA</td><td colspan="2">P/E</td><td colspan="2">Dividend Yield</td><td colspan="2">EV/Revenue</td></tr><tr><td>Last</td><td>Target</td><td>2025</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td></tr><tr><td>OEMs</td><td></td><td>2,878,050</td><td></td><td></td><td></td><td></td><td></td><td></td><td>8%</td><td>5%</td><td>6%</td><td>305.7x</td><td>175.1x</td><td>57.6x</td><td>48.1x</td><td>340.4x</td><td>197.1x</td><td>3.1%</td><td>3.5%</td><td>8.9x</td><td>7.5x</td></tr><tr><td>Europe</td><td></td><td>233,853</td><td></td><td></td><td></td><td></td><td></td><td></td><td>0%</td><td>5%</td><td>6%</td><td>7.4x</td><td>5.5x</td><td>2.5x</td><td>2.4x</td><td>11.8x</td><td>14.8x</td><td>4.6%</td><td>5.2%</td><td>0.4x</td><td>0.4x</td></tr><tr><td>BMW</td><td>EUR</td><td>46,278</td><td>66.5</td><td>91.0</td><td>OW</td><td>12.4</td><td>9.9</td><td>11.2</td><td>1%</td><td>6%</td><td>7%</td><td>1.8x</td><td>1.7x</td><td>0.9x</td><td>0.9x</td><td>6.7x</td><td>6.1x</td><td>5.4%</td><td>6.1%</td><td>0.1x</td><td>0.1x</td></tr><tr><td>Mercedes</td><td>EUR</td><td>52,304</td><td>47.4</td><td>65.0</td><td>OW</td><td>5.3</td><td>5.8</td><td>7.9</td><td>2%</td><td>6%</td><td>7%</td><td>2.8x</td><td>2.1x</td><td>1.4x</td><td>1.2x</td><td>8.2x</td><td>6.2x</td><td>6.3%</td><td>7.4%</td><td>0.2x</td><td>0.2x</td></tr><tr><td>Stellantis</td><td>EUR</td><td>19,285</td><td>5.8</td><td>7.1</td><td>EW</td><td>(7.7)</td><td>(0.5)</td><td>0.1</td><td>2%</td><td>1%</td><td>2%</td><td>19.4x</td><td>8.4x</td><td>3.5x</td><td>2.7x</td><td>n.m.</td><td>71.4x</td><td>0.0%</td><td>0.5%</td><td>0.2x</td><td>0.2x</td></tr><tr><td>Renault</td><td>EUR</td><td>8,957</td><td>26.8</td><td>29.0</td><td>UW</td><td>(40.0)</td><td>6.0</td><td>6.0</td><td>0%</td><td>4%</td><td>4%</td><td>1.1x</td><td>1.2x</td><td>0.4x</td><td>0.5x</td><td>4.7x</td><td>4.7x</td><td>5.8%</td><td>6.9%</td><td>0.0x</td><td>0.0x</td></tr><tr><td>Volkswagen</td><td>EUR</td><td>49,321</td><td>85.4</td><td>100.0</td><td>EW</td><td>13.3</td><td>19.2</td><td>22.1</td><td>1%</td><td>4%</td><td>5%</td><td>0.3x</td><td>0.2x</td><td>0.1x</td><td>0.0x</td><td>4.5x</td><td>3.9x</td><td>6.9%</td><td>7.9%</td><td>0.0x</td><td>0.0x</td></tr><tr><td>Porsche</td><td>EUR</td><td>50,649</td><td>48.5</td><td>42.0</td><td>UW</td><td>0.5</td><td>1.7</td><td>2.1</td><td>-2%</td><td>7%</td><td>8%</td><td>21.2x</td><td>17.4x</td><td>7.7x</td><td>7.7x</td><td>29.0x</td><td>23.5x</td><td>2.0%</td><td>1.7%</td><td>1.4x</td><td>1.4x</td></tr><tr><td>Aston Martin</td><td>GBP</td><td>561</td><td>0.4</td><td>NA</td><td>N.C.</td><td>(0.4)</td><td>(0.2)</td><td>(0.1)</td><td>11%</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>6.1x</td><td>5.0x</td><td>n.m.</td><td>n.m.</td><td>0.0%</td><td>0.0%</td><td>1.2x</td><td>1.1x</td></tr><tr><td>Volvo Car</td><td>SEK</td><td>6,498</td><td>20.9</td><td>NA</td><td>N.C.</td><td>0.1</td><td>2.9</td><td>4.4</td><td>-2%</td><td>3%</td><td>5%</td><td>4.5x</td><td>3.1x</td><td>1.5x</td><td>1.3x</td><td>7.5x</td><td>5.2x</td><td>0.0%</td><td>0.5%</td><td>0.2x</td><td>0.1x</td></tr><tr><td>North America</td><td></td><td>1,697,857</td><td></td><td></td><td></td><td></td><td></td><td></td><td>9%</td><td>4%</td><td>5%</td><td>496.4x</td><td>282.6x</td><td>90.6x</td><td>75.7x</td><td>556.7x</td><td>322.1x</td><td>2.6%</td><td>2.7%</td><td>14.1x</td><td>11.8x</td></tr><tr><td>Ford Motor</td><td>USD</td><td>58,615</td><td>14.7</td><td>14.0</td><td>EW</td><td>(3.2)</td><td>1.6</td><td>1.8</td><td>3%</td><td>5%</td><td>5%</td><td>16.8x</td><td>15.1x</td><td>10.6x</td><td>9.6x</td><td>9.0x</td><td>8.1x</td><td>4.1%</td><td>4.1%</td><td>0.8x</td><td>0.8x</td></tr><tr><td>General Motors</td><td>USD</td><td>72,900</td><td>80.9</td><td>100.0</td><td>OW</td><td>2.1</td><td>13.0</td><td>14.8</td><td>1%</td><td>7%</td><td>8%</td><td>5.4x</td><td>4.4x</td><td>3.2x</td><td>2.9x</td><td>6.2x</td><td>5.5x</td><td>n.a.</td><td>n.a.</td><td>0.4x</td><td>0.4x</td></tr><tr><td>Tesla Motors</td><td>USD</td><td>1,499,096</td><td>399.2</td><td>415.0</td><td>EW</td><td>1.1</td><td>0.7</td><td>1.2</td><td>10%</td><td>3%</td><td>4%</td><td>559.3x</td><td>318.2x</td><td>101.2x</td><td>84.4x</td><td>628.2x</td><td>362.9x</td><td>n.a.</td><td>n.a.</td><td>15.6x</td><td>13.0x</td></tr><tr><td>Harley-Davidson</td><td>USD</td><td>2,710</td><td>25.7</td><td>15.0</td><td>UW</td><td>2.7</td><td>0.2</td><td>1.0</td><td>-3%</td><td>n.m.</td><td>3%</td><td>n.m.</td><td>38.1x</td><td>23.3x</td><td>15.5x</td><td>126.8x</td><td>25.7x</td><td>2.9%</td><td>2.6%</td><td>0.9x</td><td>1.1x</td></tr><tr><td>Ferrari</td><td>USD</td><td>64,537</td><td>365.6</td><td>388.0</td><td>EW</td><td>9.0</td><td>9.5</td><td>10.7</td><td>7%</td><td>29%</td><td>30%</td><td>25.9x</td><td>23.4x</td><td>19.6x</td><td>17.7x</td><td>33.4x</td><td>30.2x</td><td>1.2%</td><td>1.3%</td><td>7.6x</td><td>7.0x</td></tr><tr><td>Japan</td><td></td><td>292,933</td><td></td><td></td><td></td><td></td><td></td><td></td><td>4%</td><td>7%</td><td>8%</td><td>18.5x</td><td>12.5x</td><td>8.9x</td><td>7.8x</td><td>9.0x</td><td>7.7x</td><td>3.8%</td><td>4.2%</td><td>1.0x</td><td>0.9x</td></tr><tr><td>Subaru</td><td>JPY</td><td>11,054</td><td>2,480</td><td>2,500</td><td>EW</td><td>125</td><td>234</td><td>272</td><td>6%</td><td>3%</td><td>4%</td><td>3.7x</td><td>2.3x</td><td>1.4x</td><td>1.0x</td><td>10.9x</td><td>9.9x</td><td>4.8%</td><td>5.0%</td><td>0.1x</td><td>0.1x</td></tr><tr><td>Honda Motor</td><td>JPY</td><td>34,619</td><td>1,428</td><td>1,600</td><td>EW</td><td>(106)</td><td>163</td><td>280</td><td>5%</td><td>3%</td><td>5%</td><td>22.8x</td><td>12.2x</td><td>7.8x</td><td>5.8x</td><td>8.8x</td><td>5.2x</td><td>5.0%</td><td>5.2%</td><td>0.6x</td><td>0.6x</td></tr><tr><td>Isuzu Motors</td><td>JPY</td><td>8,919</td><td>2,083</td><td>1,900</td><td>UW</td><td>193</td><td>220</td><td>250</td><td>4%</td><td>6%</td><td>6%</td><td>8.0x</td><td>7.3x</td><td>5.1x</td><td>4.7x</td><td>9.6x</td><td>8.9x</td><td>4.4%</td><td>4.7%</td><td>0.5x</td><td>0.5x</td></tr><tr><td>Mazda Motor</td><td>JPY</td><td>4,309</td><td>1,097</td><td>1,200</td><td>EW</td><td>170</td><td>172</td><td>222</td><td>7%</td><td>2%</td><td>3%</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>6.4x</td><td>4.9x</td><td>4.9%</td><td>4.9%</td><td>n.m.</td><td>n.m.</td></tr><tr><td>Mitsubishi Motors</td><td>JPY</td><td>2,710</td><td>325</td><td>400</td><td>EW</td><td>24</td><td>36</td><td>35</td><td>5%</td><td>3%</td><td>2%</td><td>3.6x</td><td>3.7x</td><td>1.7x</td><td>1.7x</td><td>9.1x</td><td>9.5x</td><td>3.1%</td><td>3.1%</td><td>0.1x</td><td>0.1x</td></tr><tr><td>Nissan Motor</td><td>JPY</td><td>7,162</td><td>329</td><td>400</td><td>EW</td><td>(26)</td><td>23</td><td>38</td><td>3%</td><td>0%</td><td>1%</td><td>157.5x</td><td>34.8x</td><td>11.7x</td><td>9.1x</td><td>14.1x</td><td>7.6x</td><td>0.0%</td><td>0.0%</td><td>0.5x</td><td>0.5x</td></tr><tr><td>Suzuki Motor</td><td>JPY</td><td>21,473</td><td>1,787</td><td>2,600</td><td>OW</td><td>228</td><td>190</td><td>200</td><td>9%</td><td>8%</td><td>8%</td><td>2.4x</td><td>1.7x</td><td>1.7x</td><td>1.2x</td><td>9.4x</td><td>8.9x</td><td>2.7%</td><td>2.8%</td><td>0.2x</td><td>0.1x</td></tr><tr><td>China</td><td></td><td>330,005</td><td></td><td></td><td></td><td></td><td></td><td></td><td>13%</td><td>6%</td><td>7%</td><td>13.8x</td><td>9.5x</td><td>7.4x</td><td>4.9x</td><td>18.2x</td><td>17.2x</td><td>2.6%</td><td>3.4%</td><td>0.7x</td><td>0.6x</td></tr><tr><td>Anhui Jianghuai</td><td>CNY</td><td>10,404</td><td>31.3</td><td>NA</td><td>N.C.</td><td>(0.8)</td><td>0.8</td><td>2.4</td><td>53%</td><td>2%</td><td>6%</td><td>43.8x</td><td>11.9x</td><td>23.3x</td><td>10.3x</td><td>40.0x</td><td>12.8x</td><td>0.1%</td><td>0.3%</td><td>1.0x</td><td>0.7x</td></tr><tr><td>BAIC Motor</td><td>HKD</td><td>1,023</td><td>1.0</td><td>2.2</td><td>EW</td><td>0.1</td><td>0.2</td><td>0.3</td><td>5%</td><td>9%</td><td>9%</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>3.8x</td><td>2.5x</td><td>0.0%</td><td>0.0%</td><td>n.m.</td><td>n.m.</td></tr><tr><td>BAIC BluePark</td><td>CNY</td><td>5,355</td><td>5.7</td><td>5.5</td><td>UW</td><td>(0.8)</td><td>(0.1)</td><td>(0.1)</td><td>8%</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>16.2x</td><td>12.4x</td><td>n.m.</td><td>n.m.</td><td>0.0%</td><td>0.0%</td><td>1.1x</td><td>1.0x</td></tr><tr><td>Brilliance</td><td>HKD</td><td>1,693</td><td>2.6</td><td>2.9</td><td>EW</td><td>0.4</td><td>0.3</td><td>0.3</td><td>12%</td><td>116%</td><td>102%</td><td>4.1x</td><td>3.7x</td><td>3.8x</td><td>3.4x</td><td>6.8x</td><td>6.8x</td><td>8%</td><td>7.2%</td><td>4.8x</td><td>3.8x</td></tr><tr><td>Chongqing Changan</td><td>CNY</td><td>10,881</td><td>7.4</td><td>NA</td><td>N.C.</td><td>NA</td><td>NA</td><td>NA</td><td>n.m.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td><td>n.a.</td></tr><tr><td>FAW Car Company</td><td>CNY</td><td>4,371</td><td>6.0</td><td>NA</td><td>N.C.</td><td>0.2</td><td>0.3</td><td>0.5</td><td>15%</td><td>2%</td><td>3%</td><td>27.2x</td><td>14.4x</td><td>12.1x</td><td>10.6x</td><td>22.5x</td><td>12.6x</td><td>1.3%</td><td>2.4%</td><td>0.4x</td><td>0.4x</td></tr><tr><td>Geely Automobile</td><td>HKD</td><td>26,839</td><td>19.4</td><td>28.0</td><td>OW</td><td>1.7</td><td>2.3</td><td>2.6</td><td>16%</td><td>6%</td><td>6%</td><td>3.8x</td><td>2.2x</td><td>2.7x</td><td>1.7x</td><td>8.0x</td><td>7.0x</td><td>2.5%</td><td>2.9%</td><td>0.2x</td><td>0.1x</td></tr><tr><td>Great Wall</td><td>HKD</td><td>11,187</td><td>10.3</td><td>12.0</td><td>EW</td><td>1.1</td><td>1.1</td><td>1.2</td><td>2%</td><td>3%</td><td>4%</td><td>2.6x</td><td>0.8x</td><td>1.0x</td><td>0.3x</td><td>7.4x</td><td>6.6x</td><td>3.6%</td><td>4.0%</td><td>0.1x</td><td>0.0x</td></tr><tr><td>Great Wall</td><td>CNY</td><td>22,111</td><td>17.5</td><td>14.0</td><td>UW</td><td>1.1</td><td>1.1</td><td>1.2</td><td>2%</td><td>3%</td><td>4%</td><td>12.6x</td><td>9.3x</td><td>4.7x</td><td>3.6x</td><td>14.6x</td><td>13.1x</td><td>1.9%</td><td>2.1%</td><td>0.4x</td><td>0.3x</td></tr><tr><td>Guangzhou Automobile</td><td>HKD</td><td>3,092</td><td>2.4</td><td>3.9</td><td>OW</td><td>(0.2)</td><td>0.1</td><td>0.4</td><td>16%</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>1.8x</td><td>0.2x</td><td>17.7x</td><td>5.2x</td><td>0.0%</td><td>1.9%</td><td>0.1x</td><td>0.0x</td></tr><tr><td>Guangzhou Automobile</td><td>CNY</td><td>8,639</td><td>5.8</td><td>4.0</td><td>UW</td><td>(0.2)</td><td>0.1</td><td>0.4</td><td>16%</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>10.0x</td><td>5.8x</td><td>49.4x</td><td>14.6x</td><td>0.0%</td><td>0.7%</td><td>0.4x</td><td>0.3x</td></tr><tr><td>Jiangling Motors Company</td><td>HKD</td><td>1,054</td><td>9.7</td><td>NA</td><td>N.C.</td><td>1.6</td><td>NA</td><td>NA</td><td>10%</td><td>4%</td><td>4%</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>4.7x</td><td>4.1x</td><td>7.2%</td><td>7.9%</td><td>n.m.</td><td>n.m.</td></tr><tr><td>SAIC Motor Corp</td><td>CNY</td><td>18,324</td><td>10.9</td><td>22.9</td><td>OW</td><td>0.9</td><td>1.5</td><td>1.9</td><td>5%</td><td>1%</td><td>2%</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>7.4x</td><td>5.6x</td><td>4.0%</td><td>7.1%</td><td>n.m.</td><td>n.m.</td></tr><tr><td>BYD Company</td><td>CNY</td><td>120,666</td><td>89.8</td><td>120.0</td><td>OW</td><td>3.6</td><td>4.2</td><td>5.4</td><td>12%</td><td>5%</td><td>6%</td><td>17.3x</td><td>13.4x</td><td>6.2x</td><td>5.0x</td><td>21.5x</td><td>16.7x</td><td>2.0%</td><td>2.6%</td><td>0.9x</td><td>0.8x</td></tr><tr><td>Nio Inc.</td><td>HKD</td><td>13,191</td><td>41.8</td><td>7.4</td><td>OW</td><td>(6.9)</td><td>(1.5)</td><td>0.4</td><td>34%</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>27.2x</td><td>9.6x</td><td>n.m.</td><td>112.2x</td><td>0.0%</td><td>0.0%</td><td>0.6x</td><td>0.4x</td></tr><tr><td>Sinotruk</td><td>HKD</td><td>14,278</td><td>40.9</td><td>36.0</td><td>EW</td><td>2.5</td><td>2.9</td><td>3.4</td><td>11%</td><td>8%</td><td>8%</td><td>6.6x</td><td>4.9x</td><td>5.4x</td><td>4.0x</td><td>12.0x</td><td>10.3x</td><td>4.6%</td><td>5.4%</td><td>0.5x</td><td>0.4x</td></tr><tr><td>Yutong Bus</td><td>CNY</td><td>9,636</td><td>29.5</td><td>40.2</td><td>EW</td><td>2.5</td><td>2.8</td><td>3.2</td><td>11%</td><td>15%</td><td>15%</td><td>7.6x</td><td>6.6x</td><td>6.9x</td><td>6.1x</td><td>10.4x</td><td>9.2x</td><td>8.7%</td><td>10.4%</td><td>1.1x</td><td>1.0x</td></tr><tr><td>Weichai Power</td><td>HKD</td><td>37,626</td><td>34.2</td><td>47.0</td><td>OW</td><td>1.3</td><td>1.5</td><td>2.0</td><td>11%</td><td>8%</td><td>9%</td><td>10.3x</td><td>7.0x</td><td>5.9x</td><td>4.3x</td><td>19.1x</td><td>14.8x</td><td>2.9%</td><td>3.9%</td><td>0.8x</td><td>0.6x</td></tr><tr><td>Zhengzhou Yutong Bus Co</td><td>CNY</td><td>9,636</td><td>29.5</td><td>40.2</td><td>EW</td><td>2.5</td><td>2.8</td><td>3.2</td><td>11%</td><td>15%</td><td>15%</td><td>7.6x</td><td>6.6x</td><td>6.9x</td><td>6.1x</td><td>10.4x</td><td>9.2x</td><td>8.7%</td><td>10.4%</td><td>1.1x</td><td>1.0x</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="22"></td></tr><tr><td colspan="22"></td></tr><tr><td colspan="22"></td></tr><tr><td colspan="22"></td></tr><tr><td colspan="22"></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="22"></td></tr><tr><td colspan="22"></td></tr><tr><td colspan="22"></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="22"></td></tr><tr><td colspan="22"></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="22"></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="22"></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="22"></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="22"></td></tr><tr><td colspan="22"></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="22"></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: FactSet (inc consensus estimates), MS estimates (e). Note: Share prices as of 15 June 2026. ++ Stock Rating, Price Target, or Estimates for this company have been removed from consideration in this report because, under applicable law and/or MS policy, MS may be precluded from issuing such information with respect to this company at this time. NA = not applicable, NC = not covered, nm = not meaningful.
+
+## Risk Reward – Mercedes-Benz Group AG (MBGn.DE)
+
+Top Pick
+
+Premium OEM with improving product pipeline
+
+## PRICE TARGET €65.00
+
+We apply 11.2x FY26e P/E multiple, just below the long-term average, but above recent historical averages, reflecting Mercedes' strategic approach to shareholder returns through paying out 100% of FCF. We remain concerned about price/mix normalisation and China margins, but think the company's cash return strategy continues to drive outperformance. Our PT is based off FY26e EPS of \~€5.8, a decline from recent years but closer to pre-Covid levels.
+
+![](images/4bcbfe1684dec692f767bad11873314df6f6c1aae0411df5c1c25548c86fda16.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Category | Value   |
+| -------- | ------- |
+| Mean     | €59.00  |
+| MS Estimates | €74.90  |
+| Consensus Price Target Distribution | €37.00  |
+</details>
+
+RISK REWARD CHART AND OPTIONS IMPLIED PROBABILITIES (12M)  
+![](images/95259cd282e373db9f2c91b65c874f16a0b1cfc0425f3d90afc699f480f7da27.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date | Historical Stock Performance | Current Stock Price | Price Target |
+| --- | --- | --- | --- |
+| JUN '25 | ~50 | - | - |
+| DEC '25 | ~60 | - | - |
+| JUN '26 | €49.38 | €49.38 | - |
+| JUN '27 | - | - | €76.00 |
+|  | - | - | €65.00 |
+|  | - | - | €44.00 |
+|  | - | - | €44.00 |
+|  | - | - | €44.00 |
+|  | - | - | €44.00 |
+|  | - | - | €44.00 |
+|  | - | - | €44.00 |
+|  | - | - | $76.00 |
+|  | - | - | $65.00 |
+|  | - | - | $44.00 |
+|  | - | - | $44.00 |
+|  | - | - | $44.00 |
+|  | - | - | $44.00 |
+|  | - | - | $44.00 |
+|  | - | - | $44.00 |
+|  | - | - | €76.00 |
+|  | - | - | €65.00 |
+|  | - | - | €44.00 |
+|  | - | - | €44.00 |
+|  | - | - | €44.00 |
+|  | - | - | €44.00 |
+</details>
+
+Source: Refinitiv, MS, MS Institutional Equities Division. The probabilities of our Bull, Base, and Bear case scenarios playing out were estimated with implied volatility data from the options market as of 15 Jun 2026. All figures are approximate risk-neutral probabilities of the stock reaching beyond the scenario price in either three-months' or one-years' time. View explanation of Options Probabilities methodology here
+
+## OVERWEIGHT THESIS
+
+■ We think Mercedes' positioning and luxury strategy stand out among European peers, allowing for higher margins and FCF.  
+■ The poor product pipeline in 2023-24 should continue to reduce share during 1H26, but we expect the qualitative data on 2Q26 GLC launch to bring comfort on
+
+an inflection point in global market share and mix, even slowing down the fall in China once it is produced and launched locally.
+
+■ FCF should remain under pressure in 2026, but with still relatively healthy operating cash generation, cost-cutting delivery and consistent commitment to shareholder return (dividend + share buyback programmes), that could benefit from a potential recovery in the truck cycle.
+
+Consensus Rating Distribution  
+![](images/13dfba39d806d380ca215efdcd1cd878443c83293bb112a672f084a0876c0539.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category      | Value |
+| ------------- | ----- |
+| Overweight    | 44%   |
+| Equal-weight  | 44%   |
+| Underweight   | 11%   |
+</details>
+
+Source: Refinitiv, MS
+
+Risk Reward Themes
+
+<table><tr><td>Disruption:</td><td>Positive</td></tr><tr><td>Electric Vehicles:</td><td>Negative</td></tr><tr><td>Self-help:</td><td>Positive</td></tr></table>
+
+View descriptions of Risk Rewards Themes here
+
+## BULL CASE
+
+## €76.00
+
+## BASE CASE
+
+## €65.00
+
+## BEAR CASE
+
+## €44.00
+
+## 11.2x bull case FY26e EPS of \~€6.8
+
+Assumes that better sustained global growth supports strong net pricing, taking the group adj. EBIT margin to 6.4%. Mercedes is able to sustain strong ASP growth, and with a supportive cost backdrop, margins return to normalised levels. Management continues to execute well and rewards the market with greater shareholder returns. In this scenario, we see the shares trading on \~11.2x P/E (higher than the 10-year average), on our bull case EPS of \~€6.8.
+
+## 11.2x base case FY26e EPS of \~€5.8
+
+We value Mercedes on 11.2x estimated FY26 EPS, above the long-term average of \~9x. Whilst price/mix normalisation will impact the company to an extent, we think Mercedes' shareholder return strategy creates opportunity for greater dividends and share buybacks, thus continuing to drive outperformance.
+
+## 10.9x bear case FY26e EPS of \~€4.1
+
+Assumes that weak global markets and high rates cause group unit sales to fall, whilst pricing pressure persists, leading to a drop in group revenues. Mercedes' group adj. EBIT margin falls back to \~4.2%. Through subsidies, BEV demand returns, leaving the product offering out of position. This pushes EPS back towards €4.1. In this scenario, we assume the market values the shares on 10.9x P/E, given concerns about demand, pricing and product line-up.
+
+## Risk Reward – Mercedes-Benz Group AG (MBGn.DE)
+
+KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>YoY Growth in Passenger Cars Unit Deliveries (%)</td><td>(6.5)</td><td>3.5</td><td>4.5</td><td>3.2</td></tr><tr><td>Industrial clean EBIT margin (%)</td><td>6.5</td><td>5.8</td><td>7.3</td><td>8.4</td></tr><tr><td>Group clean EBIT margin (%)</td><td>6.2</td><td>5.6</td><td>6.8</td><td>7.7</td></tr><tr><td>Capex as a % of industrial sales (%)</td><td>5.5</td><td>4.7</td><td>4.3</td><td>4.2</td></tr><tr><td>Industrial FCF</td><td>5,414</td><td>2,517</td><td>3,022</td><td>4,802</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+- Mercedes country sales figures, especially for China  
+• Quarterly earnings and FCF stabilisation and/or improvement  
+• European car sales recovery  
+• Changed cash allocation strategy  
+- Success of other luxury brands reads well for Mercedes
+
+GLOBAL REVENUE EXPOSURE  
+![](images/ba3d74a55ea60742c1c4b2322d38ee88f7fefd25402e3445a90341ad5584ddeb.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Region | Percentage (%) |
+| :--- | :--- |
+| APAC, ex Japan, Mainland China and India | 0-10 |
+| India | 0-10 |
+| Japan | 0-10 |
+| Latin America | 0-10 |
+| MEA | 0-10 |
+| UK | 0-10 |
+| North America | 10-20 |
+| Mainland China | 20-30 |
+| Europe ex UK | 30-40 |
+</details>
+
+Source: MS Estimate
+View explanation of regional hierarchies here
+
+## MS ALPHA MODELS
+
+2/5 MOST
+
+3 Month Horizon
+
+Source: Refinitiv, FactSet, MS; 1 is the highest favored Quintile and 5 is the least favored Quintile
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+- Higher valuation multiples for Mercedes Cars, with much higher EBIT margins / FCF  
+- Mercedes' BEV story changing the investment narrative  
+- Execution enabling EPS to stay higher and less cyclical than historically
+
+## RISKS TO DOWNSIDE
+
+- Global credit (and/or China) economic conditions and sentiment remaining weak  
+- Weaker pricing of Mercedes cars on tougher comps  
+- Consistently higher investment needs due to global competition
+
+## OWNERSHIP POSITIONING
+
+![](images/5ab8f9db26d0f20bc162349afb5bc3a9619a79f032336bfafbb87d483f96ba33.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Value |
+| -------- | ----- |
+| Inst. Owners, % Active | 58.5% |
+| HF Sector Long/Short Ratio | 1.6x |
+| HF Sector Net Exposure | 7.6% |
+</details>
+
+Refinitiv; MSPB Content. Includes certain hedge fund exposures held with MSPB. Information may be inconsistent with or may not reflect broader market trends. Long/Short Ratio = Long Exposure / Short exposure. Sector % of Total Net Exposure = (For a particular sector: Long Exposure - Short Exposure) / (Across all sectors: Long Exposure – Short Exposure).
+
+MS ESTIMATES VS. CONSENSUS
+
+<table><tr><td colspan="3">FY Dec 2027e</td></tr><tr><td>Sales / Revenue (€, mn)</td><td>128,795</td><td>136,477</td></tr><tr><td></td><td>137,038</td><td>141,194</td></tr><tr><td>EBIT (€, mn)</td><td>6,037</td><td>8,654</td></tr><tr><td></td><td>9,346</td><td>10,633</td></tr><tr><td>Net income (€, mn)</td><td>5,949</td><td>6,903</td></tr><tr><td></td><td>6,970</td><td>8,115</td></tr><tr><td>EPS (€)</td><td>6.18</td><td>7.43</td></tr><tr><td></td><td>7.62</td><td>8.60</td></tr></table>
+
+Source: Refinitiv, MS
+
+## Risk Reward – BMW (BMWG.DE)
+
+Should keep gaining share
+
+## PRICE TARGET €91.00
+
+We value BMW on \~9.2x estimated FY26 EPS of \~€9.9. This multiple reflects continued industry concern about price/mix normalisation and profitability of premium OEMs in China. It is above the stock's long-term average of \~9x, reflecting an improving risk/reward skew following a better geopolitical environment, as well as BMW's track record for margin stability, whilst taking into consideration market risks.
+
+![](images/d476e03b3ce57f708520ccd96423868df35b62f0c5e42e6ad93b06f44c58e3be.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Consensus Price Target Distribution | Value     |
+| ----------------------------------- | --------- |
+| €68.00                              | €68.00    |
+| €89.10                              | €89.10    |
+| €108.00                             | €108.00   |
+</details>
+
+RISK REWARD CHART AND OPTIONS IMPLIED PROBABILITIES (12M)  
+![](images/2fdda18aa4a73be0e7cb10fda03b236d0d857c49b442ce7c817ff37088e42a77.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Historical Stock Performance | Current Stock Price | Price Target |
+| -------- | ----------------------------- | ------------------- | ------------ |
+| JUN '25  | ~90                           | -                   | -            |
+| DEC '25  | ~95                           | -                   | -            |
+| JUN '26  | €68.34                        | €68.34              | -            |
+| JUN '27  | -                             | -                   | €107.00      |
+| Prob (>107.00)~2.7%   | -                             | -                   | €91.00       |
+| Prob (>91.00)~10.4%   | -                             | -                   | €64.00       |
+| Prob (<64.00)~44.8%   | -                             | -                   | -            |
+</details>
+
+Source: Refinitiv, MS, MS Institutional Equities Division. The probabilities of our Bull, Base, and Bear case scenarios playing out were estimated with implied volatility data from the options market as of 15 Jun 2026. All figures are approximate risk-neutral probabilities of the stock reaching beyond the scenario price in either three-months' or one-years' time. View explanation of Options Probabilities methodology here
+
+## OVERWEIGHT THESIS
+
+■ BMW should continue to gain share in most markets, benefiting from 2023-24 launches, until the Neue Klasse gets traction.  
+In China, BMW seems to be investing on prices to slow down market share losses until Neue Klasse is launched locally, positive for volume but dilutive for margins, which we expect will lag behind Mercedes-Benz in the recovery.
+
+■ BMW's investments will continue reducing and the large net cash balance could be considered as a potential source for further shareholder returns.
+
+Consensus Rating Distribution  
+![](images/69ed4cd972108f71cbe8f9641564ade18a864a2daa4fdb75591a35f2ecc5c2d6.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category      | Value |
+| ------------- | ----- |
+| Overweight    | 42%   |
+| Equal-weight  | 35%   |
+| Underweight   | 23%   |
+</details>
+
+Source: Refinitiv, MS
+
+## Risk Reward Themes
+
+Disruption: Negative
+
+Electric Vehicles: Negative
+
+View descriptions of Risk Rewards Themes here
+
+## BULL CASE
+
+## €107.00
+
+## BASE CASE
+
+## €91.00
+
+## BEAR CASE
+
+## €64.00
+
+## \~8.7x bull case FY26e EPS of \~€12.4
+
+Assumes that better sustained global growth pushes up unit sales and sustains strong pricing, boosting revenues and taking the group adj. EBIT margin to \~7.7%. With consolidation in Chinese BEVs, BMW maintains share without significant ASP reductions. In such a scenario, we think investors may extrapolate peak BMW EPS, and could pay a \~8.7x P/E multiple for this more resilient EPS profile vs peers.
+
+## \~9.2x base case FY26e EPS of \~€9.9
+
+We value BMW on \~9.2x estimated FY26 EPS, above its long-term average of \~9x. We believe FY26 EPS of \~€9.9, a significant reduction vs \~€18 in FY23, is much closer to a sustainable level for the company. Whilst price/mix normalisation will impact BMW too, we think its margin stabilisation mechanisms should reduce the downside risk. The company has taken a leadership position with its BEV penetration rate, and may compete well within the Chinese BEV segment.
+
+## \~7.4x bear case FY25e EPS of \~€8.6
+
+Assumes that weak global markets and high rates cause group unit sales to fall LSD%, whilst pricing pressure persists, especially in the Chinese BEV segment, leading to a reduction in group revenues and BMW group adj. EBIT margin falling back to just 5.7%. This pushes EPS back towards \~€8.7, levels not seen in recent years. We assume the market values the shares at a multiple of \~7.4x, in line with recent averages, on short-term concerns about demand, pricing and exposure to Chinese BEVs.
+
+## Risk Reward – BMW (BMWG.DE)
+
+KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>YoY Growth in Passenger Cars Unit Deliveries (%)</td><td>5.0</td><td>(0.5)</td><td>4.2</td><td>1.0</td></tr><tr><td>Industrial clean EBIT margin (%)</td><td>8.3</td><td>6.2</td><td>7.0</td><td>7.8</td></tr><tr><td>Group clean EBIT margin (%)</td><td>7.6</td><td>6.1</td><td>6.7</td><td>7.4</td></tr><tr><td>Capex as a % of industrial sales (%)</td><td>7.9</td><td>7.4</td><td>6.9</td><td>6.6</td></tr><tr><td>Industrial FCF</td><td>3,240</td><td>3,021</td><td>2,791</td><td>3,329</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+• Monthly sales and market share results, especially in China  
+• Success (or not) of BEV launch  
+• Supply-chain disruption news
+
+## GLOBAL REVENUE EXPOSURE
+
+![](images/50b69b4166e0e644da7270070c204184ba7f4c3ec78a7b28899c4c13bfa1948f.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Region | Percentage (%) |
+| :--- | :--- |
+| 0-10% | 0-10 |
+| APAC, ex Japan, Mainland China and India | 0-10 |
+| India | 0-10 |
+| Japan | 0-10 |
+| Latin America | 0-10 |
+| MEA | 0-10 |
+| UK | 0-10 |
+| 10-20% | 10-20 |
+| North America | 20-30 |
+| Mainland China | 30-40 |
+| Europe ex UK | 30-40 |
+</details>
+
+Source: MS Estimate View explanation of regional hierarchies here
+
+## MS ALPHA MODELS
+
+4/5
+
+MOST
+
+3 Month
+
+Horizon
+
+Source: Refinitiv, FactSet, MS; 1 is the highest favored Quintile and 5 is the least favored Quintile
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+- EBIT margins remaining elevated for longer than expected  
+- Shares' multiples rising as economic expectations improve  
+- BMW proving less vulnerable to BEV competition/price cuts than many expect  
+- Auto demand growth slowing again as economic growth fails to pick up  
+- BEV competition impacting China / global market share / margins  
+• BMW accelerating investment to meet future BEV plans
+
+## RISKS TO DOWNSIDE
+
+## OWNERSHIP POSITIONING
+
+![](images/9a38e56398a084594a3681cd9a30a418a52b971c351b650535c597e69443dd1c.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Value |
+| -------- | ----- |
+| Inst. Owners, % Active | 69.7% |
+| HF Sector Long/Short Ratio | 1.6x |
+| HF Sector Net Exposure | 7.6% |
+</details>
+
+Refinitiv; MSPB Content. Includes certain hedge fund exposures held with MSPB. Information may be inconsistent with or may not reflect broader market trends. Long/Short Ratio = Long Exposure / Short exposure. Sector % of Total Net Exposure = (For a particular sector: Long Exposure - Short Exposure) / (Across all sectors: Long Exposure – Short Exposure).
+
+## MS ESTIMATES VS. CONSENSUS
+
+![](images/091108d60ff9ee85e71bbe77d7e9e31b5c5201d1cb0e05669b4ff48f4e990969.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+FY Dec 2026e
+| Metric | FY Dec 2026e (€ mn) | Mean | MS Estimates |
+| :--- | :--- | :--- | :--- |
+| Sales / Revenue | 128,391 | 134,953 | 133,046 |
+| EBITDA (€, mn) | 13,919 | 19,320 | 16,452 |
+| Net income (€, mn) | 4,466 | 6,262 | 5,714 |
+| EPS (€) | 7.75 | 10.32 | 9.94 |
+| FY Dec 2026e | 147,322 | | |
+| Median: | 134,953 | | |
+| Median: | 133,046 | | |
+| Median: | 147,322 | | |
+| Median: | 27,304 | | |
+| Median: | 7,429 | | |
+| Median: | 12.11 | | |
+| MS Estimates
+</details>
+
+Source: Refinitiv, MS
+
+## Risk Reward Reference links
+
+1. View explanation of Options Probabilities methodology -  
+Options\_Probabilities\_Exhibit\_Link.pdf  
+2. View descriptions of Risk Rewards Themes - RR\_Themes\_Exhibit\_Link.pdf  
+3. View explanation of regional hierarchies - GEG\_Exhibit\_Link.pdf  
+4. View explanation of Theme/Exposure methodology -  
+ESG\_Sustainable\_Solutions\_External\_Link.pdf  
+5. View explanation of HERS methodology - ESG\_HERS\_External\_Link.pdf
+
+## Disclosure Section
+
+The information and opinions in MS were prepared or are disseminated by MS & Co. LLC and/or MS C.T.V.M. S.A. and/or MS México, Casa de Bolsa, S.A. de C.V. and/or MS Canada Limited and/or MS & Co. International plc and/or MS Europe S.E. and/or RMB MS Proprietary Limited and/or MS MUFG Securities Co., Ltd. and/or MS Capital Group Japan Co., Ltd. and/or MS Asia Limited and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 24-0813, which accepts responsibility for its contents), and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105), Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS, and their affiliates (collectively, "MS"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+## Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Tim Hsiao; Shaqeal A Kirunda; Javier Martinez de Olcoz Cerdan; Shelley Wang, CFA; Joey Xu, CFA.
+
+## Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+## Important Regulatory Disclosures on Subject Companies
+
+As of May 29, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: AUTO1 Group SE, Autoliv, BMW, BYD Company Limited, Continental AG, Forvia, Geely Automobile Holdings, Mercedes-Benz Group AG, Michelin, Renault, Stellantis, Valeo SE.
+
+Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of Autoliv, BMW, Renault, Stellantis, Traton SE, Volkswagen.
+
+Within the last 12 months, MS has received compensation for investment banking services from Autoliv, BMW, Mercedes-Benz Group AG, Pirelli & C SpA, Renault, Stellantis, Traton SE, Volkswagen.
+
+In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from AUTO1 Group SE, Autoliv, BMW, BYD Company Limited, Continental AG, Daimler Truck Holding AG, Forvia, Geely Automobile Holdings, Iveco Group NV, Mercedes-Benz Group AG, Michelin, Opmobility SE, Pirelli & C SpA, Porsche AG, Renault, Stellantis, Traton SE, Valeo SE, Volkswagen, Volvo.
+
+Within the last 12 months, MS has received compensation for products and services other than investment banking services from Autoliv, BMW, BYD Company Limited, Continental AG, Daimler Truck Holding AG, Geely Automobile Holdings, Mercedes-Benz Group AG, Michelin, Opmobility SE, Pirelli & C SpA, Porsche AG, Renault, Stellantis, Traton SE, Volkswagen, Volvo. Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: AUTO1 Group SE, Autoliv, BMW, BYD Company Limited, Continental AG, Daimler Truck Holding AG, Forvia, Geely Automobile Holdings, Iveco Group NV, Mercedes-Benz Group AG, Michelin, Opmobility SE, Pirelli & C SpA, Porsche AG, Renault, Stellantis, Traton SE, Valeo SE, Volkswagen, Volvo.
+
+Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: Autoliv, BMW, BYD Company Limited, Continental AG, Daimler Truck Holding AG, Geely Automobile Holdings, Mercedes-Benz Group AG, Michelin, Opmobility SE, Pirelli & C SpA, Porsche AG, Renault, Stellantis, Traton SE, Volkswagen, Volvo.
+
+MS & Co. LLC makes a market in the securities of Autoliv.
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.
+
+Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+## STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy,
+
+Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+## Global Stock Ratings Distribution
+
+(as of May 31, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td></td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1542</td><td>42%</td><td>465</td><td>51%</td><td>30%</td><td>707</td><td>43%</td></tr><tr><td>Equal-weight/Hold</td><td>1571</td><td>43%</td><td>369</td><td>40%</td><td>23%</td><td>723</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>551</td><td>15%</td><td>86</td><td>9%</td><td>16%</td><td>201</td><td>12%</td></tr><tr><td>Total</td><td>3,667</td><td></td><td>920</td><td></td><td></td><td>1632</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+## Analyst Stock Ratings
+
+Overweight (O or Over) - The stock's total return is expected to exceed the total return of the relevant country MSCI Index or the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis over the next 12-18 months.
+
+Equal-weight (E or Equal) - The stock's total return is expected to be in line with the total return of the relevant country MSCI Index or the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis over the next 12-18 months.
+
+Not-Rated (NR) - Currently the analyst does not have adequate conviction about the stock's total return relative to the relevant country MSCI Index or the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U or Under) - The stock's total return is expected to be below the total return of the relevant country MSCI Index or the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+## Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+## Other Important Disclosures
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS produces an equity research product called a "Tactical Idea." Views contained in a "Tactical Idea" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact
+
+your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\_and\_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL\_Morgan\_Stanley\_Research\_Audit\_Report.pdf).
+
+If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+The "Important Regulatory Disclosures on Subject Companies" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+Certain information in MS was sourced by employees of the Shanghai Representative Office of MS Asia Limited for the use of MS Asia Limited. MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118J); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration
+
+No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+MS Hong Kong Securities Limited is the liquidity provider/market maker for securities of BYD Company Limited, Geely Automobile Holdings listed on the Stock Exchange of Hong Kong Limited. An updated list can be found on HKEx website: http://www.hkex.com.hk.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The following companies do business in countries which are generally subject to comprehensive sanctions programs administered or enforced by the U.S. Department of the Treasury's Office of Foreign Assets Control ("OFAC") and by other countries and multi-national bodies: Renault.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+INDUSTRY COVERAGE: Autos & Shared Mobility
+
+<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (06/15/2026)</td></tr><tr><td colspan="3">Javier Martinez de Olcoz Cerdan</td></tr><tr><td>Autoliv (ALV.N)</td><td>E (09/24/2021)</td><td>US$128.53</td></tr><tr><td>BMW (BMWG.DE)</td><td>O (11/12/2024)</td><td>€68.34</td></tr><tr><td>Continental AG (CONG.DE)</td><td>E (06/26/2025)</td><td>€73.54</td></tr><tr><td>Forvia (FRVIA.PA)</td><td>E (03/19/2024)</td><td>€10.19</td></tr><tr><td>Mercedes-Benz Group AG (MBGn.DE)</td><td>O (05/20/2024)</td><td>€49.38</td></tr><tr><td>Michelin (MICP.PA)</td><td>E (12/02/2025)</td><td>€33.58</td></tr><tr><td>Opmobility SE (OPM.PA)</td><td>++</td><td>€15.40</td></tr><tr><td>Pirelli &amp; C SpA (PIRC.MI)</td><td>E (09/28/2025)</td><td>€6.50</td></tr><tr><td>Porsche AG (P911_p.DE)</td><td>U (05/20/2024)</td><td>€49.81</td></tr><tr><td>Renault (RENA.PA)</td><td>U (02/03/2026)</td><td>€28.80</td></tr><tr><td>Stellantis (STLAM.MI)</td><td>E (02/03/2026)</td><td>€6.09</td></tr><tr><td>Stellantis (STLA.N)</td><td>E (02/03/2026)</td><td>US$6.87</td></tr><tr><td>Valeo SE (VLOF.PA)</td><td>O (06/26/2025)</td><td>€14.86</td></tr><tr><td>Volkswagen (VOWG_p.DE)</td><td>E (04/25/2025)</td><td>€90.42</td></tr><tr><td colspan="3">Shaqeal A Kirunda</td></tr><tr><td>Aramis Autos (ARAMI.PA)</td><td>O (02/19/2026)</td><td>€3.04</td></tr><tr><td>AUTO1 Group SE (AG1G.DE)</td><td>E (03/26/2024)</td><td>€24.84</td></tr><tr><td>Daimler Truck Holding AG (DTGGe.DE)</td><td>O (01/28/2022)</td><td>€42.70</td></tr><tr><td>Iveco Group NV (IVG.MI)</td><td>++</td><td>€13.90</td></tr><tr><td>Traton SE (8TRA.DE)</td><td>U (01/13/2026)</td><td>€34.48</td></tr><tr><td>Volvo (VOLVb.ST)</td><td>E (01/13/2026)</td><td>SKr 320.20</td></tr></table>
+
+Stock Ratings are subject to change. Please see latest research for each company.  
+\* Historical prices are not split adjusted.
+
+© 2026 MS
