@@ -1,0 +1,113 @@
+ZH_A: 最近大家都在讨论AI基础设施，但说实话，到底哪些公司在真正赚钱，哪些只是讲故事？
+
+ZH_B: 这个问题问得好。我们刚从丹佛调研回来，参观了数据中心，也跟两家核心公司做了深度交流。结论是：超大规模AI需求确实很强，但企业端的AI应用才刚刚起步。
+
+ZH_A: 等等，你说“超大规模”和“企业端”是两个不同的东西？
+
+ZH_B: 对。超大规模指的是像云计算巨头那种，他们建数据中心，一建就是几十甚至上百兆瓦。而企业端是普通公司用AI来跑业务，比如用AI做客服、做流程自动化。目前超大规模需求很旺，但企业端的AI基础设施需求还很早期。
+
+ZH_A: 所以你这次调研，主要看到了什么？
+
+ZH_B: 我们参观了Flexential的一个数据中心，在丹佛，18兆瓦的规模，差不多15万平方英尺。一个很关键的数字是，这个中心里AI工作负载和非AI工作负载的比例是60比40。这说明AI已经占了主流。
+
+ZH_A: 60%是AI，那定价权呢？是不是也涨了？
+
+ZH_B: 涨得非常明显。Flexential告诉我们，新签的租约，每千瓦的定价已经接近200美元，而且今年晚些时候会往250美元走。要知道，2021年的时候才70美元。这翻了三倍多。
+
+ZH_A: 所以是供给不足？
+
+ZH_B: 没错。供给端有两个大瓶颈：一个是电力，一个是设备。比如变电站要等4年，发电机要等2年。一个新数据中心从选址到建成，现在要3年左右，比2021年翻了一倍。
+
+ZH_A: 那Flexential怎么应对这个局面？
+
+ZH_B: 他们现在策略很聪明：尽量避免提前超过9个月就把新产能卖出去。因为他们知道，越靠近交付，价格可能越高。比如亚特兰大那个项目，2027年四季度才完工，现在已经预卖了85%。
+
+ZH_A: 那现有的租约续签呢？
+
+ZH_B: 续签也能涨价。批发客户每年涨3%到4%，多租户客户每年涨5%到6%。而且他们续约会提前6到8个月开始谈，所以价格谈判空间很大。
+
+ZH_A: 听起来Flexential活得不错。那另一家公司Lumen呢？
+
+ZH_B: Lumen做的是企业光纤网络。他们推出了一个叫“网络即服务”的产品，可以让企业直接连到云服务商，不用通过公共互联网。
+
+ZH_A: 这有什么好处？
+
+ZH_B: 主要是三点：延迟更低、安全性更高、不用给数据中心交额外的连接费。Lumen说，今年一季度超过60%的新增用户是扩大使用规模的，还有20%是全新客户。
+
+ZH_A: 所以Lumen这家公司现在怎么样？
+
+ZH_B: 他们有一个很大的机会，就是东西向流量市场。简单说，就是数据中心之间的数据交换。这个市场他们估算是580亿美元，每年增长13%左右。
+
+ZH_A: 那他们怎么竞争？
+
+ZH_B: 他们刚刚宣布要收购一家叫Alkira的公司，这个收购如果完成，可以让他们快速拥有一个软件定义网络的能力。而且他们最大的护城河是物理光纤网络，离超大规模数据中心很近，这是别人很难复制的。
+
+ZH_A: 但企业端的AI应用，你刚才说还很早期？
+
+ZH_B: 对。Lumen自己也承认，企业级AI应用还处于早期阶段。但他们认为，随着AI使用规模扩大，他们的产品会迎来增长。不过，这一点还需要继续验证。
+
+ZH_A: 所以整个报告看完，你觉得最大的悬念是什么？
+
+ZH_B: 最大的悬念是：企业端的AI基础设施需求，什么时候才能真正爆发？现在超大规模这边已经跑起来了，但企业端还在等。这个时间点，决定了Lumen这样的公司能不能真正翻身。
+
+ZH_A: 那完整报告里还有哪些没有展开的内容？
+
+ZH_B: 比如Lumen的成本削减计划到底能执行到什么程度？还有他们的资本结构会不会有重大变化？这些都是决定股价的关键变量，报告里给了框架，但没有给出最终答案。
+
+ZH_A: 好的，今天先聊到这里。如果你想拿到完整报告，或者加入我们的讨论社区，记得看shownotes。
+
+EN_A: So you just got back from a trip to Denver. What did you actually see on the ground?
+
+EN_B: We toured data centers, met with management from Flexential and Lumen. The big picture is that hyperscaler AI demand is still very strong. But enterprise AI infrastructure demand is still in its early days.
+
+EN_A: Wait, hyperscaler and enterprise are two different things?
+
+EN_B: Exactly. Hyperscalers are the cloud giants building massive data centers. Enterprise is regular companies using AI for their own business. Right now, hyperscalers are spending heavily. Enterprises are still figuring things out.
+
+EN_A: What was the most surprising thing you saw?
+
+EN_B: We toured Flexential's data center in Denver. It's 18 megawatts, about 150,000 square feet. The key number is that 60% of the workload was AI-related. Only 40% was traditional. That tells you how fast AI is taking over.
+
+EN_A: And pricing power? Is it real?
+
+EN_B: Very real. Flexential told us new leases are pricing at nearly 200 dollars per kilowatt. And they expect that to go to 250 later this year. Back in 2021, it was only 70 dollars. That's more than tripled.
+
+EN_A: So supply is tight?
+
+EN_B: Extremely tight. The bottlenecks are power and equipment. Substations take 4 years to build. Generators take 2 years. A new data center now takes about 3 years to complete. That's almost double what it was in 2021.
+
+EN_B: Flexential is being smart about it. They avoid pre-selling new capacity more than 9 months out. Because they know prices will go up closer to delivery. One of their sites in Atlanta is 85% pre-sold, and it won't be ready until late 2027.
+
+EN_A: What about renewals? Can they raise prices on existing customers?
+
+EN_B: Yes. Wholesale customers get 3 to 4% annual increases. Multi-tenant deals get 5 to 6%. They start negotiating 6 to 8 months before the lease ends, so they have room to push.
+
+EN_A: Sounds like Flexential is in a good spot. What about Lumen?
+
+EN_B: Lumen is a fiber network company. They launched a product called Network-as-a-Service. It lets enterprises connect directly to cloud providers without going through the public internet.
+
+EN_A: What's the benefit?
+
+EN_B: Lower latency, better security, and no extra fees to data centers. Lumen says more than 60% of their new customers in the first quarter were expanding their usage. And 20% were completely new.
+
+EN_A: So is Lumen a good investment right now?
+
+EN_B: They have a big opportunity in the East-West connectivity market. That's basically data traffic between data centers. They estimate that market at 58 billion dollars, growing 13% a year.
+
+EN_A: How do they compete?
+
+EN_B: They just announced an acquisition of a company called Alkira. That would give them a software-defined network capability. Their biggest moat is their physical fiber network. It's very close to the hyperscalers, which is hard to replicate.
+
+EN_A: But you said enterprise AI is still early. So what's the risk?
+
+EN_B: Lumen admits enterprise AI adoption is still nascent. They see huge potential as AI scales, but that hasn't happened yet. This is something the report doesn't fully answer yet.
+
+EN_A: So what's the biggest open question from this report?
+
+EN_B: When will enterprise AI infrastructure demand really take off? Hyperscaler demand is strong now. But for Lumen and similar companies, the real growth depends on when regular companies start spending on AI infrastructure at scale.
+
+EN_A: What else does the full report cover that we didn't get into?
+
+EN_B: Things like Lumen's cost-cutting plans and whether they can really execute. Also their capital structure could change significantly. The report gives a framework, but no final answers yet.
+
+EN_A: Great. If you want the full report or to join our discussion community, check the show notes. Thanks for the insights.
