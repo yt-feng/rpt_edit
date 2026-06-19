@@ -1,0 +1,478 @@
+This material is neither intended to be distributed to Mainland China investors nor to provide securities investment consultancy services within the territory of Mainland China. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM.
+
+## HK/China
+
+## Capital Flow Policy: Mixed impacts, clearer framework - gauging implications for CNY and Banks
+
+China's policymakers have introduced multiple regulatory updates affecting capital flows in recent months, including tighter outbound investment rules. Taken together, these measures reflect a mix of relaxation and tightening with differing implications for cross-border flows, and we view them as part of a broader effort to complete a comprehensive capital-flow regulatory framework rather than a move to restrict capital outflows. From an FX perspective, we expect the latest changes to provide a modest near-term tailwind for the CNY, although the medium-term implications are less clear. For the banking sector, we see BOC benefiting from a NIM tailwind as FX deposit spreads widen, while for Hong Kong banks, the potential headwind to wealth management tied to Mainland Chinese Visitor (MCV) business is well-flagged (link), but the tailwind from CIB activity appears underappreciated. In particular, we expect STAN and HSBC to benefit from the relaxation of multi-national company's cash management rules, greater flexibility around onshore corporates' overseas lending, expanded regulated channels for inbound/outbound financial investments, and continued progress in RMB internationalization.
+
+## A holistic view on regulatory changes regarding capital flows
+
+\- It is not a one-way street: The recently announced update to outbound investment regulations has raised concerns about tighter capital controls. However, over the past 12 months, Chinese policymakers have introduced multiple regulatory updates affecting capital flows. Reviewing these measures (Table 2-Table 3), we see a mix of relaxation and tightening, with differing policy directions and implications for cross-border flows. This reinforces our view that the latest developments are less about cracking down on capital outflows and more about building a comprehensive governance framework for managing capital flows.
+
+\- What's been relaxed? Key points include the following: 1) On cash management for multi-national companies operating in China, they have more flexibility in currency conversion and fund management for their RMB and FX liquidity onshore and offshore. 2) On onshore corporates extending loans overseas, regulators increased the quota, and require lender companies to make filing instead of getting approval from SAFE. 3) The PBOC and HKMA expanded the list of eligible institutions to participate in southbound Bond Connect and the PBOC resumed QDII quota approvals. 4) There is relaxation regarding onshore banks' indirect offshore lending. Previously, there were strict criteria regarding onshore banks making indirect lending to offshore corporates via offshore banks. Under the new regulation (Doc 72), the criteria have been removed. In our view, at times when asset returns offshore are higher than onshore, the above-mentioned regulatory changes may be accommodative towards outbound flows.
+
+\- What's been tightened? The following regulatory updates may be relatively more accommodative towards inflows and more restrictive towards outflows.
+
+## Banks & Financial Services
+
+## Katherine Lei AC
+
+(852) 2800-8552
+
+katherine.lei@JPM.com
+
+JPM Securities (Asia Pacific) Limited/
+
+JPM Broking (Hong Kong) Limited
+
+## Tiffany Wang AC
+
+(852) 2800-1726
+
+tiffany.r.wang@JPM.com
+
+JPM Securities (Asia Pacific) Limited/
+
+JPM Broking (Hong Kong) Limited
+
+## Tingting Ge
+
+(852) 2800-0143
+
+tingting.ge@JPM.com
+
+JPM Chase Bank, N.A., Hong Kong Branch
+
+## Peter Zhang
+
+(852) 2800-8557
+
+peter.zhang@JPM.com
+
+JPM Securities (Asia Pacific) Limited/
+
+JPM Broking (Hong Kong) Limited
+
+## Lincoln Yu
+
+(852) 2800 8523
+
+lincoln.yu@JPM.com
+
+JPM Securities (Asia Pacific) Limited/
+
+JPM Broking (Hong Kong) Limited
+
+## Haomin Chen
+
+(86-21) 6106 6347
+
+haomin.chen@JPM.com
+
+SAC Registration Number: S1730524080002
+
+JPM Securities (China) Company Limited
+
+1) Outbound investment rule announced on June 1 tightened corporate outbound investments and brought individual investors' outbound investments into regulatory scope, though details are yet to be released (link, link). 2) CSRC and seven other agencies jointly announced tightening enforcement regarding cross-border securities trading regulation (link). 3) Doc 252 requires China companies to timely repatriate their offshore IPO proceeds back to China, unless they obtain approval for eligible use of proceeds overseas. We do not expect this to have a material impact on existing business practices, following "Capital Account Foreign Exchange Business Guidelines (2024 Edition)" released by SAFE in 2024.
+
+## Macro & FX views
+
+\- We do not view the latest regulatory development as a broad-based move to restrict capital outflows. First, from a policy consistency perspective, China still needs to align implementation with its longer-term RMB internationalization agenda, which requires deeper and more accessible offshore RMB liquidity. Second, the current FX backdrop does not suggest an urgent macro need to tighten outflow controls, as the CNY is facing appreciation rather than depreciation pressure. Third, we noted easing outflow pressures. We estimate cumulative resident outflows over 2023-25 at around \$1.3tn, including roughly \$507bn (0.4% of GDP) via unofficial channels (Figure 1). Note that the cumulative resident outflow via unofficial channels has stabilized at \~\$500bn since mid-2025, implying easing outflow pressure. On an FX-adjusted basis, returns on Chinese equities now compare more favorably with US markets, marking a shift from the structural discount seen in prior years, which partly contributed to the easing outflow pressure.
+
+\- Macro implications: Recent cross-border tightening looks less like a crackdown on capital outflows and more like a comprehensive governance framework for managing cross-border flows across capital, technology, data and talent; key watchpoints are the follow-up implementation rules that define practical boundaries, and whether Beijing expands compliant channels, via more approved routes, higher quotas, or both, to keep the framework consistent with RMB internationalization initiatives.
+
+\- FX implications - tightening in outbound investment rules may provide a near-term tailwind for CNY strength, by reducing outflow pressure and supporting repatriation. However, Chinese investors remain structurally underexposed to global assets relative to regional peers, suggesting that underlying diversification demand will persist. Over the medium term, the bias likely remains toward continued outbound flows from residents. Against this backdrop, and with currency stability no longer a binding constraint, the policy makers in fact selectively eased formal outbound channels since last year, including relaxed investment rules for southbound Bond Connect and the resumption of QDII quota approvals by the PBOC (Figure 4). Therefore, the recent tightening should be viewed less as a shift towards broad capital control tightening, but more as an effort to improve the composition and transparency of flows. We expect policymakers to keep opening “front-door” channels for controlled overseas allocation, while maintaining pressure on informal or unregulated routes.
+
+## Banking sector and stock implications
+
+- Implications for the banking sector – on track for opening of financial markets: China’s top policy makers have reiterated their commitment to open up China’s financial market (link) and RMB internationalization (link). We view the recent regulatory changes as part of a broader effort to complete a comprehensive capital-flow regulatory framework, which involves enhancing information flows and government oversight, and minimizing potential friction as China accelerates financial-sector opening and RMB internationalization. While these changes may cause temporary disruption in offshore wealth management - particularly in Hong Kong SAR for Mainland Chinese Visitor (MCV) business (as highlighted here), the longer-term trajectory should be an expansion of CIB business opportunities for selected financial institutions. Overall, we expect the net impact to be positive for HK/China banks over the medium to long term.  
+- Improvement in FX deposits spread – BOC benefits the most: The removal of loan proceeds use restriction for onshore banks' overseas corporate loans, according to Doc 72, will improve related loan demand, in our view. This benefits banks with strong domestic FX deposits franchise, as banks can allocate the FX deposits to fund overseas corporate lending to improve deposits spread. Among China banks we cover, BOC's FX deposits account for 16% of Group liabilities, the highest among peers (peers' average 4%). This should become a tailwind for its NIM, all else equal.  
+- Rise in corporate & investment banking (CIB) business for selected banks – STAN and HSBC stand to benefit: The relaxation on cash management for multi-national companies operating in China will benefit banks with strong onshore and offshore cash management capacity in RMB and foreign currencies. Relaxation on onshore corporate's overseas lending will benefit banks with ability to advise and provide currency hedging services. And the acceleration in RMB internationalization, as evidenced by rise in Dim Sum bonds and expansion of southbound Bond Connect program, etc., may benefit banks with strong onshore and offshore CIB franchise. Among banks in our coverage, STAN and HSBC will benefit the most via their CIB business, followed by BOC.
+
+Figure 1: Resident outflows from China have picked up in recent years, with unrecorded flows accounting for a major share  
+![](images/0bbab823a5f309bf4eca0baab00de0d16ff9555a1d6346f9b800f9bda5f8427b.jpg)
+
+<details>
+<summary>area chart</summary>
+
+| Month    | Outflows via unofficial channels | outflows via regulated channels |
+| -------- | ------------------------------- | ------------------------------- |
+| Mar-23   | 0                               | 0                               |
+| Jun-23   | -100                            | -100                            |
+| Sep-23   | -200                            | -200                            |
+| Dec-23   | -300                            | -300                            |
+| Mar-24   | -400                            | -400                            |
+| Jun-24   | -500                            | -500                            |
+| Sep-24   | -600                            | -600                            |
+| Dec-24   | -700                            | -700                            |
+| Mar-25   | -800                            | -800                            |
+| Jun-25   | -900                            | -900                            |
+| Sep-25   | -1000                           | -1000                           |
+| Dec-25   | -1100                           | -1100                           |
+</details>
+
+Source: SAFE, JPM (see our FX team note here). Note: In \$bn, cumulative since 1Q23.
+
+Figure 2: The synchronized strength in CNY FX and Chinese equities has created return synergies for domestic investors  
+![](images/5938f6950edcd687669ea434ea966b2a77b813e0b9f4d36f55f74005bb956ccb.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | ChiNext vs SPX returns in CNY | CSI300 vs SPX returns in CNY |
+|--------|-------------------------------|------------------------------|
+| Jan-15 | ~50%                          | ~50%                         |
+| Jan-16 | ~-30%                         | ~-30%                        |
+| Jan-17 | ~-10%                         | ~-10%                        |
+| Jan-18 | ~-20%                         | ~-20%                        |
+| Jan-19 | ~-50%                         | ~-50%                        |
+| Jan-20 | ~30%                          | ~30%                         |
+| Jan-21 | ~20%                          | ~20%                         |
+| Jan-22 | ~-10%                         | ~-10%                        |
+| Jan-23 | ~-20%                         | ~-20%                        |
+| Jan-24 | ~-30%                         | ~-30%                        |
+| Jan-25 | ~-10%                         | ~-10%                        |
+| Jan-26 | ~50%                          | ~50%                         |
+</details>
+
+Source: Bloomberg Finance L.P., JPM (see our FX team note here). Note: Relative return of Chinese stocks vs SPX returns in CNY terms, 6m rolling.
+
+Figure 3: Resident outflows through southbound Bond Connect have picked up since last year's policy relaxation  
+![](images/22f26fee84d6c3afddac83cb165efff6dc1c3f9a4bb0fd0c067225e2cee81f9e.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | monthly southbound Bondconnect outflows ($bn) | cumulative since Sep 21 (rhs) |
+|---------|-----------------------------------------------|-------------------------------|
+| Sep-21  | 6.00                                          | 0                             |
+| Mar-22  | -12.00                                        | -40                           |
+| Sep-22  | -8.00                                         | -60                           |
+| Mar-23  | -4.00                                         | -80                           |
+| Sep-23  | 4.00                                          | -100                          |
+| Mar-24  | -2.00                                         | -120                          |
+| Sep-24  | -6.00                                         | -140                          |
+| Mar-25  | -8.00                                         | -140                          |
+| Sep-25  | -10.00                                        | -140                          |
+| Mar-26  | -12.00                                        | -140                          |
+</details>
+
+Source: SHCH, JPM (see our FX team note here).
+
+Figure 4: The PBOC has resumed the expansion of the QDII quota  
+![](images/bc4c534aba0328bcf27119c8a4606460fa1e3a62e806cab9809903eb81986e45.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date | Value |
+|---|---|
+| May-10 | 15 |
+| May-12 | 18 |
+| May-14 | 20 |
+| May-16 | 90 |
+| May-18 | 90 |
+| May-20 | 105 |
+| May-22 | 155 |
+| May-24 | 165 |
+| May-26 | 175 |
+</details>
+
+Source: PBOC, JPM (see our FX team note here).
+
+Figure 5: Dim Sum and Panda bond issuance is growing  
+![](images/073657e7c17b84ede8c424886a07f349a605beee5a09828fbe7bb92a33e3d941.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Year | Panda bond new issuance (Rmb bn) | Dim Sum bond new issuance (Rmb bn) |
+|---|---|---|
+| 2015 | 10 | 340 |
+| 2016 | 130 | 230 |
+| 2017 | 60 | 100 |
+| 2018 | 80 | 130 |
+| 2019 | 40 | 250 |
+| 2020 | 50 | 290 |
+| 2021 | 110 | 340 |
+| 2022 | 80 | 730 |
+| 2023 | 150 | 940 |
+| 2024 | 190 | 1250 |
+| 2025 | 170 | 1360 |
+| 5M26 | 130 | 710 |
+</details>
+
+Source: Wind, JPM. Note: Panda bonds are RMB-denominated bonds issued by foreign entities inside mainland China, while Dim Sum bonds are RMB-denominated bonds issued outside mainland China for international investors.
+
+Figure 6: FX deposits as % of total liabilities by bank  
+![](images/a653eed5c39094024b87328c6fed6cf24b891494569a436df32cc67a57e757ca.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Company | FX deposits as % of total liabilities - 2025 |
+|---|---|
+| BOC | 15.8 |
+| CMB | 7.3 |
+| Citic | 6.9 |
+| BoComm | 5.6 |
+| Pingan | 4.2 |
+| ICBC | 3.9 |
+| Minsheng | 3.8 |
+| SPDB | 3.7 |
+| Industrial | 3.5 |
+| Huaxia | 3.2 |
+| CCB | 3.0 |
+| Everbright | 3.0 |
+| ABC | 2.9 |
+| PSBC | 0.1 |
+</details>
+
+Source: Company data.
+
+Table 1: Summary of key regulated outbound investment channels
+
+<table><tr><td>Name</td><td>Qualified assets</td><td>Qualified investors</td><td>Cap/flow limits</td></tr><tr><td>Stock Connect (southbound)</td><td>HK equities</td><td>Individual and institutional investors</td><td>Daily flow cap of CNY42bn</td></tr><tr><td>SH-LN Stock Connect (eastbound)</td><td>Equity (CDR)</td><td>Individual and institutional investors</td><td>CNY250bn</td></tr><tr><td>QDII/RQDII</td><td>Overseas securities including bonds and equities</td><td>Institutional investors</td><td>HK$176bn</td></tr><tr><td>Mutual Recognition of Funds (southbound)</td><td>Public funds in HK</td><td>Individual and institutional investors</td><td>CNY300bn</td></tr><tr><td>WMP connect (southbound)</td><td>Wealth management products in HK</td><td>Qualified retail investors in the Greater Bay Area</td><td>CNY150bn</td></tr><tr><td>Payment connect (southbound)</td><td>Cash</td><td>NA</td><td>Subject to the $50k/year quota for cash service</td></tr><tr><td>Bond Connect (southbound)</td><td>Bonds in HK</td><td>Institutional investors</td><td>CNY500bn</td></tr><tr><td>QDLP (Qualified Domestic Limited Partner)/QDIE (Qualified Domestic Investment Enterprise)</td><td>Overseas securities in secondary and primary markets, HF, PE, REIT etc.</td><td>Institutional investors</td><td>Case by case on pilot</td></tr><tr><td>Cash</td><td>Cash</td><td>Individual investors</td><td>Annual limit of $50k/person</td></tr></table>
+
+Source: PBOC, HKEX, J.P Morgan (see our FX team note here).
+
+Table 2: Summary of recent regulatory changes on cross-border capital management
+
+<table><tr><td>Document</td><td>Target audience and topic</td><td>What's changed?</td><td>Notes</td></tr><tr><td>Relaxation</td><td></td><td></td><td></td></tr><tr><td>"Notice of PBOC and SAFE on Matters Related to Multinational Corporations' Integrated RMB and Foreign-currency Cash Pooling Business"(Doc 251) issued in Dec 2025"中国人民银行 国家外汇管理局关于跨国公司本外币一体化资金池业务有关事宜的通知"</td><td>Targeting multinational corporations on cash management</td><td>Advance from the pilot program first released in 2021 in 10 trial cities and provinces, and establish a country-level framework allowing multinational companies to centrally operate and manage onshore and offshore RMB and foreign currency funds. Some key points include:1) Set uniform standard for RMB and foreign currency cash management business. Companies can set up one cross-border cash pool to manage onshore and offshore RMB and FX, with SAFE being the direct regulator; while under previous practice, companies need to maintain two separate cross-border cash pools, with RMB cash pool regulated by the PBOC and FX cash pool regulated by SAFE.2) For cash-pool member companies (i.e. subsidiaries under the same corporate umbrella), centralize quotas for external debt and overseas leading and allow the member companies to flexibly allocate funds within the approved quota.3) Company can smoothly convert FX and transfer between onshore-offshore accounts within a quota approved by SAFE, while previously the FX conversion would require SAFE filing first.</td><td>JPM view: This improves flexibility for corporate cash management. As overseas asset yield is higher than that in onshore China, it is reasonable to expect corporates to allocate idle funds to higher yield investments, after satisfying liquidity requirements for daily operations. On the other hand, banks with both onshore and offshore cash management capacity are likely see a rise in CIB business opportunity.</td></tr><tr><td>"Notice on Issues Related to the Management of Funds for Domestic Enterprises Overseas Listings"(Doc 252) issued in Dec 2025"关于境内企业境外上市资金管理有关问题的通知"</td><td>Targeting enterprises on the management of funds from overseas listing</td><td>1) New regulation changes the registration authority from a government agency, the State Administration of Foreign Exchange ("SAFE") to "bank", and extends the registration deadline from 15 working days after listing to 30 working days.2) Issuers can repatriate funds back to China in either foreign currency or RMB. And the issuers can decide when to convert the FX into RMB.</td><td>JPM view: This improves efficiency for fund repatriation, and increase flexibility for issuers' FX management.</td></tr><tr><td>"Administrative Measures for Overseas Lending of Domestic Enterprises"(Doc 63) issued in Mar 2026"境内企业境外放款管理办法"</td><td>Targeting non-FI enterprises on overseas lending</td><td>1) The new regulation raised the macro-prudential coefficient from 0.5 to 0.6, therefore increases the cap for overseas lending capacity;2) Under the new regulation, enterprises no longer need SAFE approval for overseas lending quota as long as the balance is within the cap, and they only need to register with local SAFE branch before each lending;3) The new rule consolidates the macro-prudential management principal for both RMB and FX, including loan tenor, funding source, cap of loan balance, etc. While under previous practice, RMB lending is governed by Doc 306 released in 2016 and FX lending is governed by Doc 24 released in 2009.</td><td>JPM view: This increases efficiency and capacity for onshore companies in overseas lending. This is helpful for onshore corporates with sizable overseas subsidiaries.Banks which are strong in offering FX hedging services will see rise in business opportunity.</td></tr><tr><td>Notice on Adjustments to Matters Related to Overseas Loan Business of Banking Financial Institutions (Doc 72) issued in Apr 2026"中国人民银行 国家外汇管理局关于调整银行业金融机构境外贷款业务有关事宜的通知"</td><td>Targeting banks on the overseas loan business, particularly on the use of loan proceeds by overseas borrowers</td><td>This targets the use of overseas loan proceeds. The new regulation relaxed the restrictions on the use of loan proceeds, for offshore loans indirectly extended by onshore banks through overseas banks. Under the previous rule in Doc 27 released in 2022, such loans shall only be used for expenditures related to the offshore enterprise's business scope, and shall not be used for securities investment or for repaying offshore debts under onshore guarantees for offshore loans.</td><td>JPM view: This expands the usage of proceeds for onshore banks' overseas loans. For onshore banks with strong domestic FX deposits franchise will benefit via rise in FX deposits spread.</td></tr><tr><td>PBOC and SAFE eased formal outbound channels since 2025Tightening</td><td>NA</td><td>1) In Jun 2025, the PBOC and SAFE resumed approval of new QDII quotas (link), after one year of suspension.2) In July 2025, the PBOC and HKMA expanded the list of eligible institutions to participate in southbound Bond Connect to include non-bank financial institutions (brokers, mutual funds, insurers, and wealth management companies) (link).</td><td></td></tr><tr><td>"Notice on Issues Related to the Management of Funds for Domestic Enterprises Overseas Listings" (Doc 252) issued in Dec 2025
+"关于境内企业境外上市资金管理有关问题的通知"</td><td>Targeting enterprises on the management of funds from overseas listing</td><td>New regulation emphasizes that funds "should, in principle, be promptly repatriated to China", compared to old document (Doc 54 released in 2014) which mentioned that "Funds raised from overseas listing can be repatriated to China or kept overseas."</td><td>JPM view: According to Doc 54 in 2014, funds raised from overseas listing can be repatriated to China or kept overseas. While recent practice, guided by the "Capital Account Foreign Exchange Business Guidelines (2024 Edition)", has required prompt repatriation of such funds to China, the new regulation reinforces this principle, thus, we do not expect this to lead to tightening in practice.</td></tr><tr><td>"The Regulations on Outbound Investment" (Doc 837) issued in Jun 2026
+"国务院关于对外投资的规定"</td><td>Targeting both individuals and enterprises on overseas investment</td><td>1) The new regulation explicitly brings individual residents into the outbound investment framework for the first time.
+And Clause 33 in Doc 837 states that specific measures for the administration of outbound investment by individuals who are residents of Mainland China, etc. shall be formulated by respective authorities in charge of investment and commerce.
+2) Clause 15 newly establishes a national security review system, specifically targeting overseas mergers and acquisitions involving critical technologies, core data, strategic resources, and similar areas, thereby addressing the gaps in the enterprise outbound investment rules (Doc 3 released by Ministry of Commerce (MOCOM) in 2014 and Doc 11 released by National Development and Reform Commission (NDRC) in 2017. The new regulations also introduce a tiered penalty framework for enterprises that violate the rules, which was absent in the old rules.</td><td>JPM view: The introduction of national security review on corporate outbound investment should have significant impact on capital flow. The introduction of outbound investment regulation for individual investors may be viewed as restrictive to outflow, though we need to wait for detail announcement in order to assess the impact (link).</td></tr><tr><td>"Implementation Plan for the Comprehensive Rectification of Illegal Cross-Border Securities, Futures and Fund Business Activities" issued in May 2026
+"综合整治非法跨境证券期货基金经营活动实施方案"</td><td>Targeting overseas institutional offering cross-border investment services to mainland Chinese clients</td><td>The Plan focuses on shutting down illegal cross-border operations and guides investors to invest overseas through lawful channels. After a two-year transition period, overseas institutions must fully shut down their existing Mainland business. Please refer to our note for details (link).
+This compares to the CSRC's announcement in Feb 2023 (link) that existing Mainland clients were allowed to trade and deposit new funds into offshore brokers if the new funds are in compliance with the foreign exchange control regulation in China.</td><td>JPM view: This has negative implications for online brokers. Note that for Futu, Mainland Chinese Visitors make up 13% of paying clients, ~17% of AUM, 20% of revenue and 30% of profit. The impact for other HK financials (i.e.: banks and insurers) are more manageable. Please refer to our note for details (link)</td></tr></table>
+
+Source: State Council, SAFE, PBOC, JPM.
+
+Companies Discussed in This Report (all prices in this report as of market close on 16 June 2026, unless otherwise indicated)
+
+Bank of China - A(601988.SS/Rmb6.04/OW), Bank of China - H(3988.HK/HK\$5.47/OW), HSBC Holdings plc (0005)(0005.HK/HK\$146.00/OW), Standard Chartered Plc (HK) (2888)(2888.HK/HK\$208.20/OW)
+
+Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.
+
+All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.
+
+## Important Disclosures
+
+- Market Maker/ Liquidity Provider: JPM is a market maker and/or liquidity provider in the financial instruments of/related to HSBC Holdings plc (0005), Standard Chartered Plc (HK) (2888), Bank of China - H, Bank of China - A or related entities.  
+- Market Maker/ Liquidity Provider (Hong Kong): JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited and/or an affiliate is a market maker and/or liquidity provider in the securities of HSBC Holdings plc (0005), Standard Chartered Plc (HK) (2888), Bank of China - H, Bank of China - A or related entities and/or warrants or options thereon, which are listed or traded on The Stock Exchange of Hong Kong Limited.  
+- Manager or Co-manager: JPM acted as manager or co-manager in a public offering of securities or financial instruments (as such term is defined in Directive 2014/65/EU) of/for HSBC Holdings plc (0005), Standard Chartered Plc (HK) (2888), Bank of China - H, Bank of China - A or related entities within the past 12 months.  
+- Client: JPM currently has, or had within the past 12 months, the following entity(ies) as clients: HSBC Holdings plc (0005), Standard Chartered Plc (HK) (2888), Bank of China - H, Bank of China - A or related entities.  
+- Client/Investment Banking: JPM currently has, or had within the past 12 months, the following entity(ies) as investment banking clients: HSBC Holdings plc (0005), Standard Chartered Plc (HK) (2888), Bank of China - H, Bank of China - A or related entities.  
+- Client/Non-Investment Banking, Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-investment-banking, securities-related: HSBC Holdings plc (0005), Standard Chartered Plc (HK) (2888), Bank of China - H, Bank of China - A or related entities.  
+- Client/Non-Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-securities-related: HSBC Holdings plc (0005), Standard Chartered Plc (HK) (2888), Bank of China - H, Bank of China - A or related entities.  
+- Investment Banking Compensation Received: JPM has received in the past 12 months compensation for investment banking services from HSBC Holdings plc (0005), Standard Chartered Plc (HK) (2888), Bank of China - H, Bank of China - A or related entities.  
+- Potential Investment Banking Compensation: JPM expects to receive, or intends to seek, compensation for investment banking services in the next three months from HSBC Holdings plc (0005), Standard Chartered Plc (HK) (2888), Bank of China - H, Bank of China - A or related entities.  
+- Non-Investment Banking Compensation Received: JPM has received compensation in the past 12 months for products or services other than investment banking from HSBC Holdings plc (0005), Standard Chartered Plc (HK) (2888), Bank of China - H, Bank of China - A or related entities.  
+- Broker: JPM acts as Corporate Broker to Standard Chartered Plc (HK) (2888) or related entities.  
+- Debt Position: JPM may hold a position in the debt securities of HSBC Holdings plc (0005), Standard Chartered Plc (HK) (2888), Bank of China - H, Bank of China - A or related entities, if any.  
+- JPM Securities PLC and/or its affiliates is acting as a Financial Advisor to Standard Chartered Plc in connection with the company's intention to explore alternatives for the future ownership of its aviation finance business as announced on 11 January 2023.
+
+Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.
+
+HSBC Holdings plc (0005) (0005.HK, 5 HK) Price Chart  
+![](images/6a6766fb81f3a381b0df09b16cabc4f5eac7701b2bb362b528e55065868dd2f2.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date  | Price(HK$) |
+|-------|------------|
+| Sep 23 | N HK$66    |
+| Jan 24 | OW HK$80   |
+| May 24 | OW HK$78   |
+| Sep 24 | OW HK$86   |
+| Jan 25 | OW HK$90   |
+| May 25 | OW HK$115  |
+| Sep 25 | OW HK$122  |
+| Jan 26 | OW HK$132  |
+| May 26 | OW HK$165  |
+| Sep 26 | OW HK$180  |
+| Jan 27 | OW HK$138  |
+| May 27 | OW HK$182  |
+| Jan 28 | OW HK$108  |
+| May 28 | OW HK$95   |
+| Jan 29 | OW HK$118  |
+| May 29 | OW HK$122  |
+| Jan 30 | OW HK$132  |
+| May 30 | OW HK$165  |
+</details>
+
+Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Dec 31, 2000. All share prices are as of market close on the previous business day.
+
+<table><tr><td>Date</td><td>Rating</td><td>Price (HK$)</td><td>Price Target (HK$)</td></tr><tr><td>07-Jul-23</td><td>N</td><td>61.00</td><td>66</td></tr><tr><td>07-Aug-23</td><td>OW</td><td>63.85</td><td>80</td></tr><tr><td>16-Oct-23</td><td>OW</td><td>62.50</td><td>81</td></tr><tr><td>31-Oct-23</td><td>OW</td><td>57.20</td><td>83</td></tr><tr><td>17-Jan-24</td><td>OW</td><td>59.10</td><td>81</td></tr><tr><td>22-Feb-24</td><td>OW</td><td>60.25</td><td>74</td></tr><tr><td>10-Apr-24</td><td>OW</td><td>63.90</td><td>78</td></tr><tr><td>02-May-24</td><td>OW</td><td>67.00</td><td>83</td></tr><tr><td>06-Aug-24</td><td>OW</td><td>62.05</td><td>86</td></tr><tr><td>19-Nov-24</td><td>OW</td><td>70.55</td><td>90</td></tr><tr><td>17-Feb-25</td><td>OW</td><td>84.50</td><td>95</td></tr><tr><td>20-Feb-25</td><td>OW</td><td>88.40</td><td>108</td></tr><tr><td>20-Mar-25</td><td>OW</td><td>89.75</td><td>115</td></tr><tr><td>05-May-25</td><td>OW</td><td>86.20</td><td>108</td></tr><tr><td>22-Jul-25</td><td>OW</td><td>98.45</td><td>118</td></tr><tr><td>01-Aug-25</td><td>OW</td><td>96.15</td><td>122</td></tr><tr><td>30-Oct-25</td><td>OW</td><td>106.50</td><td>132</td></tr><tr><td>02-Dec-25</td><td>OW</td><td>110.50</td><td>138</td></tr><tr><td>05-Feb-26</td><td>OW</td><td>139.00</td><td>165</td></tr><tr><td>18-Mar-26</td><td>OW</td><td>124.80</td><td>180</td></tr><tr><td>07-May-26</td><td>OW</td><td>140.50</td><td>182</td></tr></table>
+
+Standard Chartered Plc (HK) (2888) (2888.HK, 2888 HK) Price Chart  
+![](images/5cd8493435bba37b5ded8873f8e5b83a558e282a1d35410ccb4e4e0df4663758.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date       | Price(HK$) |
+| ---------- | ---------- |
+| Sep 23     | 83         |
+| Jan 24     | 83         |
+| May 24     | 80         |
+| Sep 24     | 94         |
+| Jan 25     | 112        |
+| May 25     | 135        |
+| Sep 25     | 162        |
+| Jan 26     | 190        |
+| May 26     | 270        |
+</details>
+
+Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Sep 24, 2002. All share prices are as of market close on the previous business day.
+
+<table><tr><td>Date</td><td>Rating</td><td>Price (HK$)</td><td>Price Target (HK$)</td></tr><tr><td>07-Jul-23</td><td>OW</td><td>66.55</td><td>83</td></tr><tr><td>01-Aug-23</td><td>OW</td><td>74.25</td><td>90</td></tr><tr><td>07-Sep-23</td><td>OW</td><td>69.20</td><td>91</td></tr><tr><td>27-Oct-23</td><td>OW</td><td>59.75</td><td>83</td></tr><tr><td>16-Jan-24</td><td>OW</td><td>61.55</td><td>79</td></tr><tr><td>18-Jan-24</td><td>OW</td><td>57.35</td><td>78</td></tr><tr><td>28-Feb-24</td><td>OW</td><td>63.35</td><td>80</td></tr><tr><td>10-Apr-24</td><td>OW</td><td>68.25</td><td>82</td></tr><tr><td>03-May-24</td><td>OW</td><td>71.95</td><td>86</td></tr><tr><td>31-Jul-24</td><td>OW</td><td>76.90</td><td>94</td></tr><tr><td>04-Dec-24</td><td>OW</td><td>96.80</td><td>112</td></tr><tr><td>17-Feb-25</td><td>OW</td><td>108.20</td><td>120</td></tr><tr><td>24-Feb-25</td><td>OW</td><td>116.00</td><td>135</td></tr><tr><td>22-Jul-25</td><td>OW</td><td>141.30</td><td>148</td></tr><tr><td>04-Aug-25</td><td>OW</td><td>141.30</td><td>162</td></tr><tr><td>19-Oct-25</td><td>OW</td><td>142.00</td><td>168</td></tr><tr><td>03-Nov-25</td><td>OW</td><td>157.80</td><td>190</td></tr><tr><td>05-Feb-26</td><td>OW</td><td>203.40</td><td>265</td></tr><tr><td>01-Mar-26</td><td>OW</td><td>198.50</td><td>270</td></tr><tr><td>03-May-26</td><td>OW</td><td>190.80</td><td>275</td></tr></table>
+
+Bank of China - H (3988.HK, 3988 HK) Price Chart  
+![](images/88ff01dc7a6954fcc726ff109f302fe1638a3c57747bd14e018e63a2ef4a4d06.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date  | Label | Price(HK$) |
+|-------|-------|------------|
+| Sep 23 | N HK$3.15 | 3.15 |
+| Jan 24 | N HK$3.4 | 3.4 |
+| May 24 | OW HK$3.8 | 3.8 |
+| Sep 24 | OW HK$4.2 | 4.2 |
+| Jan 25 | N HK$3.7 | 3.7 |
+| May 25 | N HK$3.8 | 3.8 |
+| Sep 25 | OW HK$4.15 | 4.15 |
+| Jan 26 | OW HK$5.5 | 5.5 |
+| May 26 | OW HK$5.8 | 5.8 |
+</details>
+
+Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends.  
+Initiated coverage Jul 05, 2006. All share prices are as of market close on the previous business day.
+
+<table><tr><td>Date</td><td>Rating</td><td>Price (HK$)</td><td>Price Target (HK$)</td></tr><tr><td>06-Jul-23</td><td>N</td><td>3.10</td><td>3.1</td></tr><tr><td>26-Jul-23</td><td>N</td><td>2.82</td><td>3</td></tr><tr><td>28-Jul-23</td><td>N</td><td>2.83</td><td>3.1</td></tr><tr><td>17-Aug-23</td><td>N</td><td>2.66</td><td>2.95</td></tr><tr><td>12-Oct-23</td><td>N</td><td>2.74</td><td>2.9</td></tr><tr><td>01-Nov-23</td><td>OW</td><td>2.74</td><td>3.2</td></tr><tr><td>17-Jan-24</td><td>OW</td><td>2.91</td><td>3.4</td></tr><tr><td>07-Mar-24</td><td>OW</td><td>3.10</td><td>3.8</td></tr><tr><td>30-May-24</td><td>OW</td><td>3.78</td><td>4</td></tr><tr><td>01-Aug-24</td><td>OW</td><td>3.48</td><td>4.2</td></tr><tr><td>10-Sep-24</td><td>OW</td><td>3.34</td><td>4</td></tr><tr><td>13-Nov-24</td><td>N</td><td>3.64</td><td>3.7</td></tr><tr><td>08-Jan-25</td><td>N</td><td>3.92</td><td>3.8</td></tr><tr><td>13-Mar-25</td><td>N</td><td>4.51</td><td>4.15</td></tr><tr><td>31-Mar-25</td><td>OW</td><td>4.59</td><td>5.4</td></tr><tr><td>19-Aug-25</td><td>OW</td><td>4.39</td><td>5.5</td></tr><tr><td>15-Sep-25</td><td>OW</td><td>4.46</td><td>5.7</td></tr><tr><td>23-Oct-25</td><td>OW</td><td>4.36</td><td>5.5</td></tr><tr><td>22-Apr-26</td><td>OW</td><td>5.25</td><td>5.8</td></tr></table>
+
+Bank of China - A (601988.SS, 601988 CH) Price Chart  
+![](images/ea211390713db6df32f129fe8c7117d67e157d29878bb41b454ba6d30c5b4dbc.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date       | Label     | Price(Rmb) |
+| ---------- | --------- | ---------- |
+| Sep 23     | N Rmb3.55 | 3.55       |
+| Jan 24     | mb3.9     | 3.55       |
+| May 24     | N Rmb4.95 | 4.95       |
+| Sep 24     | N Rmb4.8  | 4.8        |
+| Jan 25     | N Rmb5    | 5.2        |
+| May 25     | N Rmb5.7  | 5.7        |
+| Sep 25     | N Rmb6    | 6.3        |
+| Jan 26     | OW Rmb6.6 | 6.6        |
+| May 26     | OW Rmb6.8 | 6.8        |
+</details>
+
+Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends.  
+Initiated coverage Jul 06, 2006. All share prices are as of market close on the previous business day.
+
+<table><tr><td>Date</td><td>Rating</td><td>Price (Rmb)</td><td>Price Target (Rmb)</td></tr><tr><td>17-Jul-23</td><td>N</td><td>3.99</td><td>2.75</td></tr><tr><td>26-Jul-23</td><td>N</td><td>3.81</td><td>3.25</td></tr><tr><td>28-Jul-23</td><td>N</td><td>3.82</td><td>3.55</td></tr><tr><td>17-Aug-23</td><td>N</td><td>3.81</td><td>3.6</td></tr><tr><td>12-Oct-23</td><td>N</td><td>3.77</td><td>3.55</td></tr><tr><td>01-Nov-23</td><td>N</td><td>3.90</td><td>3.9</td></tr><tr><td>17-Jan-24</td><td>N</td><td>4.07</td><td>4.15</td></tr><tr><td>07-Mar-24</td><td>N</td><td>4.55</td><td>4.95</td></tr><tr><td>30-May-24</td><td>N</td><td>4.45</td><td>4.8</td></tr><tr><td>01-Aug-24</td><td>N</td><td>4.66</td><td>5.1</td></tr><tr><td>10-Sep-24</td><td>N</td><td>4.68</td><td>5</td></tr><tr><td>08-Jan-25</td><td>N</td><td>5.46</td><td>5.2</td></tr><tr><td>13-Mar-25</td><td>N</td><td>5.33</td><td>5.6</td></tr><tr><td>31-Mar-25</td><td>N</td><td>5.50</td><td>5.7</td></tr><tr><td>19-Aug-25</td><td>N</td><td>5.45</td><td>6</td></tr><tr><td>15-Sep-25</td><td>OW</td><td>5.48</td><td>6.5</td></tr><tr><td>23-Oct-25</td><td>OW</td><td>5.46</td><td>6.3</td></tr><tr><td>19-Jan-26</td><td>OW</td><td>5.40</td><td>6.6</td></tr><tr><td>22-Apr-26</td><td>OW</td><td>5.93</td><td>6.8</td></tr></table>
+
+The chart(s) show JPM's continuing coverage of the stocks; the current analysts may or may not have covered it over the entire period.
+
+JPM ratings or designations: OW = Overweight, N = Neutral, UW = Underweight, NR = Not Rated
+
+## Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:
+
+JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's
+
+team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.
+
+Coverage Universe: Lei, Katherine : Agricultural Bank of China - A (601288.SS), Agricultural Bank of China - H (1288.HK), Bank of China - A (601988.SS), Bank of China - H (3988.HK), Bank of Communications - A (601328.SS), Bank of Communications - H (3328.HK), China Citic Bank - A (601998.SS), China Citic Bank - H (0998.HK), China Construction Bank - A (601939.SS), China Construction Bank - H (0939.HK), China Everbright Bank - A (601818.SS), China Everbright Bank - H (6818.HK), China Merchants Bank - A (600036.SS), China Merchants Bank - H (3968.HK), China Minsheng Banking - A (600016.SS), China Minsheng Banking - H (1988.HK), Futu Holdings (FUTU), HSBC Holdings plc (0005) (0005.HK), HashKey (3887.HK), Huaxia Bank - A (600015.SS), Industrial Bank - A (601166.SS), Industrial and Commercial Bank of China - A (601398.SS), Industrial and Commercial Bank of China - H (1398.HK), Ping An Bank - A (000001.SZ), Postal Savings Bank of China (1658) (1658.HK), Qfin Holdings (QFIN), Shanghai Pudong Development Bank - A (600000.SS), Standard Chartered Plc (HK) (2888) (2888.HK)
+
+JPM Equity Research Ratings Distribution, as of April 04, 2026
+
+<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>79%</td><td>74%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>49%</td><td>39%</td><td>13%</td></tr><tr><td>IB clients**</td><td>94%</td><td>93%</td><td>85%</td></tr></table>
+
+\*Please note that the percentages may not add to 100% because of rounding.  
+\*\*Percentage of subject companies within each of the "buy," "hold" and "sell" categories for which JPM has provided investment banking services within the previous 12 months.  
+For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter.
+
+Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.
+
+## History of Investment Recommendations:
+
+A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.
+
+Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.
+
+Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.
+
+## Other Disclosures
+
+JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.
+
+UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.
+
+All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.
+
+Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).
+
+JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.
+
+Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.
+
+The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.
+
+Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.
+
+Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or https://www.finra.org/sites/default/files/2020-08/Security\_Futures\_Risk\_Disclosure\_Statement\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.
+
+Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank\_offered\_rates
+
+Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.
+
+Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.
+
+## Legal Entities Disclosures and Country-/Region-Specific Disclosures:
+
+Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina ("BCRA"-Central Bank of Argentina) and Comisión Nacional de Valores ("CNV"-Argentinian Securities Commission - ALYC y AN Integral N°51).
+
+Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to "wholesale clients" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance
+
+with JPM Australia's Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.  
+Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.  
+Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.  
+Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.  
+China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.  
+Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.  
+Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.  
+European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.  
+Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.  
+India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a ‘Research Analyst’ having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/ Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.  
+Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).  
+Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.  
+Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.  
+Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.  
+Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).  
+New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to "wholesale clients" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.  
+Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.  
+Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.  
+South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).  
+Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.  
+Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.  
+UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as "UK relevant persons". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.  
+U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.  
+General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the
+
+contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.
+
+Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email
+
+MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer
+
+Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.
+
+"Other Disclosures" last revised May 16, 2026.
+
+Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.

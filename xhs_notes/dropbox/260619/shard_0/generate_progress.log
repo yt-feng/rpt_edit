@@ -1,0 +1,15 @@
+Found 35 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xxqdjg23/pdfs/0001-01-Goldman Sachs-GLOBAL FX TRADER-From Energy Relief to New Fed Chief-260618.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xxqdjg23/pdfs/0002-02-Goldman Sachs-China Economic Activity and Policy Tracker- June 18-260618.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xxqdjg23/pdfs/0003-03-Nomura-Economic Insights-Measuring central banks- bark versus their bite-260619.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xxqdjg23/pdfs/0004-04-Goldman Sachs-CHINA HEALTHCARE-Takeaways from our 47th Global Healthcare Conference and investor feedback from US marketing-260618.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_xxqdjg23/pdfs/0005-05-J.P. Morgan-HK China-Capital Flow Policy- Mixed impacts- clearer framework-gauging implications for CNY and Banks-260617.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=082bd847-d101-4e31-aed0-1b646292c876
+MinerU states: running, running, running, running, pending
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260619/shard_0; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

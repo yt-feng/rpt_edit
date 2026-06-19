@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_xxqdjg23/pdfs/0001-01-GS-GLOBAL FX TRADER-From Energy Relief to New Fed Chief-260618.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xxqdjg23/pdfs/0002-02-GS-China Economic Activity and Policy Tracker- June 18-260618.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xxqdjg23/pdfs/0003-03-NOM-Economic Insights-Measuring central banks- bark versus their bite-260619.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xxqdjg23/pdfs/0004-04-GS-CHINA HEALTHCARE-Takeaways from our 47th Global Healthcare Conference and investor feedback from US marketing-260618.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xxqdjg23/pdfs/0005-05-JPM-HK China-Capital Flow Policy- Mixed impacts- clearer framework-gauging implications for CNY and Banks-260617.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
