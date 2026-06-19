@@ -1,0 +1,2047 @@
+[
+    {
+        "type": "text",
+        "text": "US Economic Weekly",
+        "text_level": 2,
+        "bbox": [
+            68,
+            98,
+            458,
+            130
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Economics - North America",
+        "bbox": [
+            67,
+            139,
+            226,
+            151
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Force Multiplier",
+        "text_level": 2,
+        "bbox": [
+            67,
+            171,
+            260,
+            193
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- The FOMC kept rates on hold at their June meeting. The dot plot and economic projections were hawkish, while Chair Warsh's press conference signaled his dovish tilt. The risk of rate hikes has increased, but we continue to expect the Fed will remain on hold through the end of 2027.",
+            "- Warsh announced the creation of five new task forces to revamp the Fed, focusing on communication, data measurement, balance sheet policy, productivity, and inflation frameworks. He indicated that he will likely announce personnel in the next few weeks, with task force recommendations targeted for year-end.",
+            "- Incorporating CPI, PPI, and import prices, we expect core PCE inflation accelerated by $0.376\\%$ m-o-m in May. This translates into y-o-y core PCE inflation of $3.457\\%$ .",
+            "- The US and Iran have announced a preliminary agreement to end the war, during which negotiations are expected to continue on unresolved issues, including sanctions relief and the future of Iran's nuclear program."
+        ],
+        "bbox": [
+            75,
+            215,
+            675,
+            422
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The FOMC kept rates on hold at their June meeting (Fig. 1). The dot plot and economic projections were hawkish. Chair Warsh's press conference, however, signaled his dovish bias. Overall, we maintain our expectation of no changes to the policy rate through the end of 2027 (Fig. 2).",
+        "bbox": [
+            65,
+            432,
+            680,
+            492
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a89076857f74247bd892767245ee23229441f57fbfdd05d6434eb57507eefc86.jpg",
+        "content": "| Date   | June FOMC median forecast | OIS fwd rates (as of 17 Jun) | NOM's policy rate forecast |\n|--------|---------------------------|------------------------------|-------------------------------|\n| Mar 23 | 4.80                      | -                            | 4.90                          |\n| Dec 23 | 5.40                      | -                            | 5.40                          |\n| Sep 24 | 4.80                      | -                            | 4.90                          |\n| Jun 25 | 4.40                      | -                            | 4.40                          |\n| Mar 26 | 3.70                      | -                            | 3.70                          |\n| Dec 26 | 3.80                      | 4.00                         | 3.70                          |\n| Sep 27 | 3.70                      | 4.00                         | 3.70                          |",
+        "chart_caption": [
+            "Fig. 1: The FOMC kept rates on hold at their June meeting"
+        ],
+        "chart_footnote": [
+            "Source: FRB, Bloomberg, NOM"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            75,
+            547,
+            500,
+            799
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Research Analysts",
+        "text_level": 2,
+        "bbox": [
+            699,
+            165,
+            847,
+            180
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "North America Economics",
+        "text_level": 2,
+        "bbox": [
+            697,
+            185,
+            887,
+            197
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Aichi Amemiya - NSI",
+        "bbox": [
+            697,
+            200,
+            847,
+            213
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "aichi.amemiya@NOM.com",
+        "bbox": [
+            697,
+            214,
+            865,
+            226
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1 212 667 9347",
+        "bbox": [
+            700,
+            227,
+            798,
+            238
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jeremy Schwartz - NSI",
+        "bbox": [
+            697,
+            244,
+            860,
+            257
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "jeremy.schwartz@NOM.com",
+        "bbox": [
+            697,
+            257,
+            877,
+            269
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1 212 667 9637",
+        "bbox": [
+            700,
+            271,
+            798,
+            282
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ruchir Sharma - NSI",
+        "bbox": [
+            697,
+            288,
+            845,
+            301
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ruchir.sharma@NOM.com",
+        "bbox": [
+            697,
+            302,
+            863,
+            314
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1 212 667 9186",
+        "bbox": [
+            700,
+            315,
+            798,
+            326
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jacklyn Goloborodsky - NSI",
+        "bbox": [
+            697,
+            332,
+            897,
+            345
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "jacklyn.goloborodsky@NOM.com",
+        "bbox": [
+            697,
+            346,
+            902,
+            358
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1 212 298 4739",
+        "bbox": [
+            700,
+            359,
+            798,
+            370
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Global Economics",
+        "text_level": 2,
+        "bbox": [
+            699,
+            376,
+            831,
+            389
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "David Seif - NSI",
+        "bbox": [
+            699,
+            391,
+            813,
+            403
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "david.seif@NOM.com",
+        "bbox": [
+            699,
+            405,
+            838,
+            417
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1 212 667 9180",
+        "bbox": [
+            700,
+            418,
+            798,
+            429
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/70793929e793a8b338d7c780ff85c4cf4522bd8f341cbd89689532b8685957d8.jpg",
+        "table_caption": [
+            "Fig. 2: We maintain our expectation of no changes to the policy rate through the end of 2027"
+        ],
+        "table_footnote": [
+            "Source: FRB, NOM"
+        ],
+        "table_body": "<table><tr><td>Tool</td><td>Key assumptions</td></tr><tr><td colspan=\"2\">Policy rate</td></tr><tr><td>2026</td><td>No rate cuts, EOP 3.625%</td></tr><tr><td>2027</td><td>No rate cuts, EOP 3.625%</td></tr><tr><td>Terminal</td><td>3.50 - 3.75%</td></tr><tr><td colspan=\"2\">Balance sheet policy</td></tr><tr><td>Size</td><td>Reserve management purchases of $10bn/month. The NY Fed is actively managing reserve management purchases in response to seasonal liquidity demand and market conditions. We expect balance sheet growth to average $20bn per month in the medium term.</td></tr><tr><td>Composition</td><td>MBS rundown to continue, with proceeds reinvested into Treasuries. Both reinvestments and eventual reserve management purchases will be skewed towards Treasury bills.</td></tr></table>",
+        "bbox": [
+            526,
+            554,
+            951,
+            767
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The dot plot and economic projections became more hawkish",
+        "text_level": 2,
+        "bbox": [
+            67,
+            848,
+            515,
+            861
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The June dot plot was more hawkish than expected, as the median 2026 dot indicated half a rate hike (3.750%) from the current level of 3.625% (NOM and Consensus: 3.625%) (Fig. 3). Although Chair Warsh did not submit his own dots, nine out of a total 18 dots were consistent with at least one rate hike in 2026, and only one participant, likely Governor Bowman, believed a rate cut in 2026 was appropriate, with the rest expecting no changes.",
+        "bbox": [
+            65,
+            861,
+            680,
+            935
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Beyond 2026, the median 2027-2028 dots were in line with our expectations (3.625% for",
+        "bbox": [
+            67,
+            941,
+            665,
+            955
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Production Complete: 2026-06-18 19:13 UTC",
+        "bbox": [
+            747,
+            935,
+            954,
+            947
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "NOM",
+        "bbox": [
+            67,
+            3,
+            297,
+            38
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Research",
+        "bbox": [
+            741,
+            90,
+            954,
+            106
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "18 June 2026",
+        "bbox": [
+            838,
+            111,
+            954,
+            125
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See Appendix A-1 for analyst certification, important disclosures and the status of non-US analysts.",
+        "bbox": [
+            67,
+            973,
+            808,
+            989
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2027 and $3.375\\%$ for 2028), but higher than the consensus forecasts (Consensus: $3.375\\%$ for 2027 and $3.125\\%$ for 2028). In the medium term, most FOMC participants believed some policy easing would be appropriate, allowing the policy rate to converge toward neutral. One dovish surprise was a slight decline in the median longer-run dot, which unexpectedly fell to $3.063\\%$ from $3.125\\%$ previously. However, the mean of the longer-run dots moved higher to $3.208\\%$ from $3.164\\%$ previously. The dispersed distribution of longer-run dots indicates a wide range of views on the neutral rate.",
+        "bbox": [
+            70,
+            26,
+            675,
+            126
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Note that one unidentified participant (in addition to Warsh) did not submit a dot for 2028, leaving the total number of 2028 dots at 17. We think it could be former Chair Powell, whose term as a governor expires in January 2028.",
+        "bbox": [
+            70,
+            133,
+            667,
+            177
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The Summary of Economic Projections was also hawkish on net, as the median projections for core PCE inflation for 2026-2028 were revised up, which suggests many FOMC participants expected some lingering price pressures.",
+        "bbox": [
+            70,
+            183,
+            655,
+            227
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6d2ef918e4054828c0b4cbff53382fc078f2b2c7e4cfb397a4e88e9588d056ad.jpg",
+        "content": "| Date | Mar SEP | June SEP |\n| --- | --- | --- |\n| 2026-01 | 3.4 | 3.9 |\n| 2026-02 | 3.4 | 3.9 |\n| 2026-03 | 3.4 | 3.9 |\n| 2026-04 | 3.4 | 3.9 |\n| 2026-05 | 3.4 | 3.9 |\n| 2026-06 | 3.4 | 3.9 |\n| 2026-07 | 3.4 | 3.9 |\n| 2026-08 | 3.4 | 3.9 |\n| 2026-09 | 3.4 | 3.9 |\n| 2026-10 | 3.4 | 3.9 |\n| 2026-11 | 3.4 | 3.9 |\n| 2026-12 | 3.4 | 3.9 |\n| 2027-01 | 3.4 | 3.9 |\n| 2027-02 | 3.4 | 3.9 |\n| 2027-03 | 3.4 | 3.9 |\n| 2027-04 | 3.4 | 3.9 |\n| 2027-05 | 3.4 | 3.9 |\n| 2027-06 | 3.4 | 3.9 |\n| 2027-07 | 3.4 | 3.9 |\n| 2027-08 | 3.4 | 3.9 |\n| 2027-09 | 3.4 | 3.9 |\n| 2027-10 | 3.4 | 3.9 |\n| 2027-11 | 3.4 | 3.9 |\n| 2027-12 | 3.4 | 3.9 |\n| Longer run | Mar SEP | June SEP |\n| Longer run | Mar SEP | June SEP |\n| Longer run | Mar SEP | June SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |\n| Longer run | Mar SEP | Jun SEP |",
+        "chart_caption": [
+            "Fig. 3: The dot plot was more hawkish than expected",
+            "The December dot plot"
+        ],
+        "chart_footnote": [
+            "Source: FRB, NOM"
+        ],
+        "sub_type": "scatterplot",
+        "bbox": [
+            73,
+            278,
+            905,
+            532
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Simplified policy statement with assurance of continuing the ample-reserve system",
+        "text_level": 2,
+        "bbox": [
+            70,
+            575,
+            673,
+            588
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Chair Warsh successfully simplified the meeting statement, which was significantly shorter than previously. It mentioned the policy decision and the Fed's assessment on economic activity and inflation but omitted any forward-looking elements. Importantly, the statement explicitly noted the Fed's intention to maintain \"ample\" reserves, which confirmed no imminent changes to balance sheet policy.",
+        "bbox": [
+            70,
+            591,
+            675,
+            662
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Warsh's press conference hinted at dovishness",
+        "text_level": 2,
+        "bbox": [
+            70,
+            669,
+            415,
+            681
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "While economic and monetary policy projections were hawkish on net, Warsh's comments signaled his dovish tilt.",
+        "bbox": [
+            70,
+            684,
+            601,
+            711
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Despite the significant hawkish shift in the 2026 dot plot, he downplayed its importance. He said “all the submissions [of the dots] were coming in with pencils—those kinds with big erasers,” suggesting the dots could be revised drastically if the macroeconomic environment changes. Moreover, he suggested a false symmetry in the dot plot, saying “half of my colleagues thought the policy rate… should be at this level or lower between now and year-end,” although only one participant expected a rate cut this year.",
+        "bbox": [
+            70,
+            719,
+            657,
+            805
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Moreover, when asked about the Fed's $2\\%$ inflation target, he said, \"I tend to focus on the left of the decimal point,\" which suggests he might consider inflation of $2.0 - 2.9\\%$ as consistent with the Fed's $2\\%$ target.",
+        "bbox": [
+            70,
+            812,
+            670,
+            854
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In addition, Warsh described the restrictiveness of monetary policy as “uneven,” contrasting weak housing markets, whereby interest rates are suppressing growth, with financial markets, which have been strong despite relatively high interest rates. He attributed the unevenness to “whether monetary policy is coming from our interest rate tool or our balance sheet tool.” This suggests that he appears to see the policy rate as",
+        "bbox": [
+            70,
+            862,
+            678,
+            933
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "NOM | US Economic Weekly",
+        "bbox": [
+            55,
+            0,
+            221,
+            8
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "18 June 2026",
+        "bbox": [
+            847,
+            0,
+            921,
+            7
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            915,
+            954,
+            924,
+            964
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "restrictive, while balance sheet policy supports financial markets.",
+        "bbox": [
+            70,
+            27,
+            502,
+            39
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Another dovish element of his press conference was his comments on a conventional trade-off between the Fed's dual mandate – price stability and maximum employment. He said that he did not believe the existence of “a cruel choice” between the two, and “we can make strong growth, low prices, and strong employment mutually compatible.”",
+        "bbox": [
+            70,
+            48,
+            673,
+            103
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Focus is on the five task forces",
+        "text_level": 2,
+        "bbox": [
+            70,
+            111,
+            297,
+            123
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Warsh announced the establishment of task forces focusing on five areas: Fed communication, balance sheet policy, the use of and reliance on existing data sources, productivity and jobs, and inflation frameworks. Warsh avoided giving direct answers to many questions from reporters by deferring to future work by those task forces.",
+        "bbox": [
+            70,
+            126,
+            653,
+            182
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Warsh said that he is in the process of recruiting task force members and expects them to begin work “in the next couple of weeks,” provide some insights “starting in the fall,” and that “hopefully most, if not all,” conclude “by year-end.” Although inflation risks are at the center of discussion on the Committee, one of those task forces is aimed at reviewing how the Fed should gauge inflation, suggesting that the bar to a hike might be higher until those task forces provide policy proposals later this year.",
+        "bbox": [
+            70,
+            189,
+            675,
+            276
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Moreover, Warsh said that he is “enlisting” economists for the task forces, raising the possibility that the task forces will deliver dovish recommendations that may not have the support of a majority of the FOMC.",
+        "bbox": [
+            70,
+            282,
+            665,
+            325
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "For instance, at his press conference, Warsh criticized federal government statistics, saying most of them “come with old-fashioned survey methods.” Instead, he favored “real-time” data and was eager to incorporate new data collection techniques from the private sector. Although former Chair Powell previously highlighted some issues caused by low response rates for some key survey-based data, most policymakers have said that they consider statistics from federal statistical agencies as the “gold-standard” of economic data.",
+        "bbox": [
+            70,
+            332,
+            673,
+            432
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Some FOMC participants might not accept any task force recommendations that emphasize alternative inflation data because their recommendations could be considered as an opportunistic shift in the inflation target. Note that FOMC participants pushed back against Warsh's preference for the PCE trimmed-mean inflation measure recently.",
+        "bbox": [
+            70,
+            440,
+            668,
+            496
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ea7390c823136b4cc37bc9394cfdaa8227c2adcb748579d0a612064a69471ff2.jpg",
+        "content": "| Year | Bias-adjusted PCE trimmed-mean inflation | PCE trimmed-mean inflation | Core PCE inflation |\n|------|------------------------------------------|-----------------------------|--------------------|\n| 2006 | 2.5                                      | 2.8                         | 2.4                |\n| 2010 | 1.5                                      | 1.0                         | 0.7                |\n| 2014 | 1.2                                      | 1.8                         | 1.5                |\n| 2018 | 1.8                                      | 2.0                         | 1.9                |\n| 2022 | 5.5                                      | 5.0                         | 5.8                |\n| 2026 | 2.8                                      | 2.3                         | 3.2                |",
+        "chart_caption": [
+            "Fig. 4: PCE trimmed-mean inflation appears to understate the underlying inflation trend",
+            "PCE trimmed-mean inflation: official vs. bias-adjusted"
+        ],
+        "chart_footnote": [
+            "Source: BEA, Dallas Fed, Haver, NOM"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            80,
+            565,
+            497,
+            813
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Core PCE likely accelerated in May",
+        "text_level": 2,
+        "bbox": [
+            70,
+            863,
+            322,
+            876
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Incorporating relevant details from CPI, PPI, and import prices, we expect core PCE inflation accelerated to $0.376\\%$ m-o-m in May from a revised $0.230\\%$ in April. This forecast along with expected backward revisions translates into $3.457\\%$ y-o-y core PCE inflation in May from a revised $3.307\\%$ in April (Fig. 5).",
+        "bbox": [
+            70,
+            877,
+            677,
+            935
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "NOM | US Economic Weekly",
+        "bbox": [
+            55,
+            0,
+            221,
+            8
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "18 June 2026",
+        "bbox": [
+            847,
+            0,
+            921,
+            7
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            915,
+            954,
+            924,
+            964
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Core CPI inflation moderated and core CPI goods inflation turned negative in May for the first time since May 2025. We expect core PCE goods inflation also turned negative in May. The increase in core PCE inflation was likely driven by components derived from PPI data. In particular, PPI financial service prices rose strongly. Additionally, import prices for air passenger fares, an input into PCE's price index for passenger fares for foreign travel, jumped sharply and pushed up our estimate for core PCE inflation. As a result, we expect supercore PCE inflation accelerated strongly to $0.5\\%$ m-o-m in May, the highest since January (Fig. 6).",
+        "bbox": [
+            65,
+            26,
+            670,
+            142
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f91438700012d17172648e0912b2ac6cf64f59778f68e30561da8b2b3aec984f.jpg",
+        "content": "| Date   | 3-month annualized | 6-month annualized | y-o-y core PCE inflation |\n|--------|--------------------|--------------------|--------------------------|\n| Jan-23 | 4.8                | 5.1                | 5.0                      |\n| Jul-23 | 3.8                | 4.2                | 4.5                      |\n| Jan-24 | 1.8                | 2.0                | 3.0                      |\n| Jul-24 | 2.0                | 3.5                | 2.8                      |\n| Jan-25 | 3.9                | 3.0                | 2.9                      |\n| Jul-25 | 2.1                | 3.1                | 2.7                      |\n| Jan-26 | 4.9                | 3.8                | 3.3                      |\n| forecast | 3.5              | 4.1                | 3.4                      |",
+        "chart_caption": [
+            "Fig. 5: Y-o-y core PCE inflation likely rose to 3.457% in May"
+        ],
+        "chart_footnote": [
+            "Source: BEA, Haver, NOM"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            75,
+            195,
+            500,
+            441
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ca44c1786cd934ecc628503e35dc174cd0c77860807c37b7046381578c3f669d.jpg",
+        "content": "m-o-m supercore PCE inflation\n| Date | Airline fares (%) | Others (%) | Food services and accommodations (%) | Healthcare (%) | Financial services (%) | Supercore PCE inflation |\n|---|---|---|---|---|---|---|\n| Jan-24 | 0.05 | 0.15 | 0.08 | 0.12 | 0.25 | 0.75 |\n| Jul-24 | -0.05 | 0.10 | 0.05 | 0.08 | 0.15 | 0.35 |\n| Jan-25 | -0.08 | 0.12 | 0.06 | 0.10 | 0.20 | 0.50 |\n| Jul-25 | 0.02 | 0.18 | 0.07 | 0.11 | 0.18 | 0.32 |\n| Jan-26 | 0.03 | 0.25 | 0.10 | 0.13 | 0.15 | 0.55 |\n| forecast | -0.15 | -0.18 | -0.12 | -0.15 | -0.18 | -0.15 |",
+        "chart_caption": [
+            "Fig. 6: Supercore PCE inflation likely accelerated sharply in May, driven by a rebound in financial service prices"
+        ],
+        "chart_footnote": [
+            "Source: BEA, BLS, Haver, NOM"
+        ],
+        "sub_type": "stacked bar chart",
+        "bbox": [
+            519,
+            187,
+            949,
+            453
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Data next week will likely show the economy's resilience",
+        "text_level": 2,
+        "bbox": [
+            65,
+            501,
+            478,
+            516
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The data which are scheduled for release next week will likely show the economy's resilience. Excluding the volatile transportation equipment component, we expect durable goods orders to have continued to rise at a decent pace of $0.6\\%$ m-o-m in May, reflecting the positive impact from the AI investment boom. The S&P manufacturing PMI likely inched down in June, but remained at a healthy level. We expect personal income and spending increased robustly and inflation-adjusted personal spending growth was slightly positive in May. The third estimate of Q1 GDP will likely be revised higher from the second estimate due to an upward revision to net exports.",
+        "bbox": [
+            65,
+            517,
+            675,
+            632
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Q2 GDP tracking was revised up due to stronger-than-expected retail sales",
+        "text_level": 2,
+        "bbox": [
+            65,
+            639,
+            610,
+            652
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We have revised our Q2 GDP tracking estimate to 2.6% q-o-q ar from 2.4% last week. Our estimate for real final sales to private domestic purchasers now stands at 2.8% from 2.7% previously. Retail sales rose 0.9% m-o-m in May, and the \"control\" group of retail sales also continued to grow at a decent pace of 0.7% m-o-m. The broad strength in retail sales pushed up the contribution from the PCE component of GDP, offsetting the impact of weaker-than-expected housing starts in May.",
+        "bbox": [
+            65,
+            652,
+            670,
+            740
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Iran war update",
+        "text_level": 2,
+        "bbox": [
+            65,
+            747,
+            184,
+            759
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "President Trump signed the memorandum of understanding ending the war with Iran on 17 June. The MOU includes opening the Strait of Hormuz and extending the ceasefire for 60 days, during which the US and Iran plan to negotiate a finalized deal. Crude oil prices dropped sharply in reaction to the agreement. Retail gasoline prices have been declining recently, which will likely weigh on headline inflation in June.",
+        "bbox": [
+            65,
+            761,
+            668,
+            833
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "NOM | US Economic Weekly",
+        "bbox": [
+            55,
+            0,
+            221,
+            8
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "18 June 2026",
+        "bbox": [
+            847,
+            0,
+            921,
+            7
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            914,
+            954,
+            924,
+            964
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/c6482051c880ce4b1f567017e66e2f1b7378d2ae33985dda16d20ff0b5a1b8a3.jpg",
+        "table_caption": [
+            "Fig. 7: NOM's inflation forecasts"
+        ],
+        "table_footnote": [
+            "Note: Oct and Nov CPI refers to NOM's estimate.",
+            "Source: BLS, Haver, NOM"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"2\">Headline PCE</td><td colspan=\"3\">Core PCE</td><td colspan=\"2\">Headline CPI</td><td colspan=\"3\">Core CPI</td><td>CPI NSA</td></tr><tr><td>m/m %</td><td>y/y %</td><td>m/m %</td><td>y/y %</td><td>qtrly, y/y %</td><td>m/m %</td><td>y/y %</td><td>m/m %</td><td>y/y %</td><td>qtrly, y/y %</td><td>Index</td></tr><tr><td>Jan-25</td><td>0.35</td><td>2.61</td><td>0.31</td><td>2.78</td><td></td><td>0.43</td><td>3.00</td><td>0.43</td><td>3.26</td><td></td><td>317.671</td></tr><tr><td>Feb-25</td><td>0.40</td><td>2.71</td><td>0.45</td><td>2.97</td><td></td><td>0.23</td><td>2.82</td><td>0.25</td><td>3.12</td><td></td><td>319.082</td></tr><tr><td>Mar-25</td><td>0.02</td><td>2.36</td><td>0.10</td><td>2.67</td><td>2.81</td><td>0.03</td><td>2.39</td><td>0.07</td><td>2.79</td><td>3.08</td><td>319.799</td></tr><tr><td>Apr-25</td><td>0.17</td><td>2.28</td><td>0.19</td><td>2.61</td><td></td><td>0.16</td><td>2.31</td><td>0.24</td><td>2.78</td><td></td><td>320.795</td></tr><tr><td>May-25</td><td>0.18</td><td>2.46</td><td>0.23</td><td>2.78</td><td></td><td>0.10</td><td>2.35</td><td>0.13</td><td>2.79</td><td></td><td>321.465</td></tr><tr><td>Jun-25</td><td>0.29</td><td>2.59</td><td>0.26</td><td>2.81</td><td>2.74</td><td>0.25</td><td>2.67</td><td>0.23</td><td>2.93</td><td>2.82</td><td>322.561</td></tr><tr><td>Jul-25</td><td>0.17</td><td>2.61</td><td>0.25</td><td>2.86</td><td></td><td>0.23</td><td>2.70</td><td>0.31</td><td>3.06</td><td></td><td>323.048</td></tr><tr><td>Aug-25</td><td>0.26</td><td>2.75</td><td>0.22</td><td>2.91</td><td></td><td>0.35</td><td>2.92</td><td>0.31</td><td>3.11</td><td></td><td>323.976</td></tr><tr><td>Sep-25</td><td>0.26</td><td>2.79</td><td>0.19</td><td>2.83</td><td>2.87</td><td>0.30</td><td>3.01</td><td>0.22</td><td>3.02</td><td>3.06</td><td>324.800</td></tr><tr><td>Oct-25</td><td>0.19</td><td>2.71</td><td>0.23</td><td>2.75</td><td></td><td>0.03</td><td>2.76</td><td>0.11</td><td>2.81</td><td></td><td>324.372</td></tr><tr><td>Nov-25</td><td>0.22</td><td>2.82</td><td>0.18</td><td>2.83</td><td></td><td>0.22</td><td>2.74</td><td>0.08</td><td>2.63</td><td></td><td>324.122</td></tr><tr><td>Dec-25</td><td>0.33</td><td>2.88</td><td>0.33</td><td>2.97</td><td>2.85</td><td>0.30</td><td>2.68</td><td>0.23</td><td>2.64</td><td>2.69</td><td>324.054</td></tr><tr><td>Jan-26</td><td>0.36</td><td>2.89</td><td>0.46</td><td>3.12</td><td></td><td>0.17</td><td>2.39</td><td>0.30</td><td>2.50</td><td></td><td>325.252</td></tr><tr><td>Feb-26</td><td>0.40</td><td>2.88</td><td>0.40</td><td>3.06</td><td></td><td>0.27</td><td>2.41</td><td>0.22</td><td>2.46</td><td></td><td>326.785</td></tr><tr><td>Mar-26</td><td>0.70</td><td>3.59</td><td>0.29</td><td>3.26</td><td>3.15</td><td>0.87</td><td>3.26</td><td>0.20</td><td>2.60</td><td>2.53</td><td>330.213</td></tr><tr><td>Apr-26</td><td>0.40</td><td>3.83</td><td>0.23</td><td>3.31</td><td></td><td>0.64</td><td>3.81</td><td>0.38</td><td>2.75</td><td></td><td>333.020</td></tr><tr><td>May-26</td><td>0.503</td><td>4.159</td><td>0.376</td><td>3.457</td><td></td><td>0.47</td><td>4.25</td><td>0.21</td><td>2.85</td><td></td><td>335.123</td></tr><tr><td>Jun-26</td><td>0.06</td><td>3.93</td><td>0.25</td><td>3.44</td><td>3.40</td><td>-0.08</td><td>3.88</td><td>0.26</td><td>2.85</td><td>2.81</td><td>335.065</td></tr><tr><td>Jul-26</td><td>0.11</td><td>3.86</td><td>0.21</td><td>3.40</td><td></td><td>0.05</td><td>3.70</td><td>0.22</td><td>2.75</td><td></td><td>335.015</td></tr><tr><td>Aug-26</td><td>0.19</td><td>3.79</td><td>0.20</td><td>3.38</td><td></td><td>0.20</td><td>3.54</td><td>0.22</td><td>2.66</td><td></td><td>335.439</td></tr><tr><td>Sep-26</td><td>0.22</td><td>3.75</td><td>0.20</td><td>3.40</td><td>3.39</td><td>0.24</td><td>3.46</td><td>0.22</td><td>2.66</td><td>2.69</td><td>336.041</td></tr><tr><td>Oct-26</td><td>0.16</td><td>3.71</td><td>0.22</td><td>3.38</td><td></td><td>0.12</td><td>3.54</td><td>0.22</td><td>2.77</td><td></td><td>335.861</td></tr><tr><td>Nov-26</td><td>0.22</td><td>3.71</td><td>0.21</td><td>3.41</td><td></td><td>0.24</td><td>3.54</td><td>0.22</td><td>2.91</td><td></td><td>335.600</td></tr><tr><td>Dec-26</td><td>0.26</td><td>3.63</td><td>0.21</td><td>3.29</td><td>3.36</td><td>0.30</td><td>3.51</td><td>0.22</td><td>2.90</td><td>2.86</td><td>335.430</td></tr><tr><td>Jan-27</td><td>0.21</td><td>3.47</td><td>0.25</td><td>3.08</td><td></td><td>0.19</td><td>3.54</td><td>0.27</td><td>2.87</td><td></td><td>336.765</td></tr><tr><td>Feb-27</td><td>0.12</td><td>3.18</td><td>0.20</td><td>2.89</td><td></td><td>0.06</td><td>3.34</td><td>0.20</td><td>2.85</td><td></td><td>337.696</td></tr><tr><td>Mar-27</td><td>0.21</td><td>2.68</td><td>0.20</td><td>2.80</td><td>2.92</td><td>0.21</td><td>2.70</td><td>0.20</td><td>2.85</td><td>2.86</td><td>339.123</td></tr><tr><td>Apr-27</td><td>0.16</td><td>2.44</td><td>0.20</td><td>2.77</td><td></td><td>0.14</td><td>2.17</td><td>0.19</td><td>2.66</td><td></td><td>340.258</td></tr><tr><td>May-27</td><td>0.17</td><td>2.10</td><td>0.20</td><td>2.59</td><td></td><td>0.14</td><td>1.82</td><td>0.19</td><td>2.65</td><td></td><td>341.230</td></tr><tr><td>Jun-27</td><td>0.16</td><td>2.20</td><td>0.20</td><td>2.53</td><td>2.63</td><td>0.13</td><td>2.05</td><td>0.19</td><td>2.57</td><td>2.63</td><td>341.918</td></tr><tr><td>Jul-27</td><td>0.19</td><td>2.28</td><td>0.19</td><td>2.52</td><td></td><td>0.19</td><td>2.18</td><td>0.19</td><td>2.54</td><td></td><td>342.316</td></tr><tr><td>Aug-27</td><td>0.20</td><td>2.28</td><td>0.19</td><td>2.50</td><td></td><td>0.20</td><td>2.19</td><td>0.18</td><td>2.50</td><td></td><td>342.779</td></tr><tr><td>Sep-27</td><td>0.21</td><td>2.28</td><td>0.19</td><td>2.48</td><td>2.50</td><td>0.23</td><td>2.19</td><td>0.18</td><td>2.47</td><td>2.50</td><td>343.388</td></tr><tr><td>Oct-27</td><td>0.15</td><td>2.27</td><td>0.19</td><td>2.45</td><td></td><td>0.12</td><td>2.19</td><td>0.18</td><td>2.43</td><td></td><td>343.211</td></tr><tr><td>Nov-27</td><td>0.21</td><td>2.27</td><td>0.18</td><td>2.43</td><td></td><td>0.23</td><td>2.18</td><td>0.18</td><td>2.38</td><td></td><td>342.932</td></tr><tr><td>Dec-27</td><td>0.25</td><td>2.26</td><td>0.18</td><td>2.40</td><td>2.43</td><td>0.29</td><td>2.18</td><td>0.18</td><td>2.34</td><td>2.38</td><td>342.758</td></tr></table>",
+        "bbox": [
+            77,
+            65,
+            931,
+            534
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "NOM | US Economic Weekly",
+        "bbox": [
+            55,
+            0,
+            221,
+            8
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "18 June 2026",
+        "bbox": [
+            847,
+            0,
+            921,
+            7
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            915,
+            954,
+            924,
+            964
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Data Preview",
+        "text_level": 2,
+        "bbox": [
+            70,
+            29,
+            250,
+            50
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The week ahead",
+        "text_level": 2,
+        "bbox": [
+            70,
+            59,
+            226,
+            74
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We expect core PCE inflation accelerated to 0.376% m-o-m in May.",
+        "bbox": [
+            70,
+            82,
+            524,
+            96
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "S&P PMIs (Tuesday): We expect the preliminary print of the S&P manufacturing PMI tick down in June after having improved over the past three months. Output and new orders likely fell, and price indices remained elevated.",
+        "bbox": [
+            70,
+            102,
+            673,
+            145
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The preliminary print of the S&P services PMI likely remained subdued in June, as uncertainty regarding the Iran war and higher prices continued to weigh on demand. However, we expect the employment index rebounded following a sharp drop in the previous month, in line with employment indices in regional surveys released thus far and other labor market indicators.",
+        "bbox": [
+            70,
+            152,
+            668,
+            223
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "New home sales (Wednesday): We expect the pace of new home sales increased to an annual rate of 655k in May from 622k in April. Lead indicators (e.g., the NAHB survey and single family permits) suggest sales likely rebounded in the month. However, headwinds from elevated mortgage rates and Iran war-related uncertainty likely kept the pace of sales below the H2 2025 pace.",
+        "bbox": [
+            70,
+            230,
+            670,
+            303
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Jobless claims (Thursday): Initial claims inched down this week following three consecutive weeks of increases. Continuing claims rose, but remained at a healthy level. The continuing claims release scheduled for release next week corresponds to the NFP survey reference week, an important input into our June NFP forecast.",
+        "bbox": [
+            70,
+            309,
+            663,
+            366
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Personal income and spending (Thursday): We expect personal income growth rebounded to $0.5\\%$ m-o-m in May after being roughly unchanged in April. Compensation of employees likely picked up due to strong job gains and a tick up in average hourly earnings growth. In addition, the April drag from farm proprietors' income, partly related to lower payments from the Farmer Bridge Assistance Program, likely waned in May.",
+        "bbox": [
+            70,
+            373,
+            670,
+            444
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We expect personal spending growth increased to $0.6\\%$ m-o-m in May. Retail sales remained strong in May, suggesting continued strength in goods spending. Energy related spending likely remained elevated, while services spending rose modestly. Based on our PCE inflation estimates, we expect real spending grew at a modest pace of $0.1\\%$ m-o-m.",
+        "bbox": [
+            70,
+            452,
+            673,
+            509
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "PCE deflator (Thursday): Incorporating relevant details from CPI, PPI, and import prices, we expect core PCE inflation accelerated to $0.376\\%$ m-o-m in May from a revised $0.230\\%$ in April. With expected backward revisions, our forecast translates into $3.5\\%$ $(3.457\\%)$ y-o-y core PCE inflation in May from $3.3\\%$ in April.",
+        "bbox": [
+            70,
+            515,
+            665,
+            573
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Core CPI inflation moderated and core CPI goods inflation turned negative for the first time since May 2025. We expect core PCE goods inflation also turned negative in May. The increase in core PCE inflation was likely driven by components derived from PPI data. PPI financial service prices rose strongly. In addition, import prices for air passenger fares, an input into PCE's price index for passenger fares for foreign travel, jumped sharply and pushed up our estimate for core PCE inflation.",
+        "bbox": [
+            70,
+            580,
+            673,
+            666
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "GDP Q1 third estimate (Thursday): We expect the third estimate of Q1 GDP growth will likely be 2.1%, five-tenths higher than the second estimate of 1.6%. Annual revisions to international trade data suggest that the growth of both exports and imports are likely to be revised down in Q1, but the magnitude of downward revision to imports appears to outweigh the downward revision to exports. As a result, net exports of GDP for Q1 will likely be revised up, which pushes up real GDP growth in the quarter.",
+        "bbox": [
+            70,
+            672,
+            670,
+            759
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Durable goods orders (Thursday): We expect durable goods orders fell $5.2\\%$ m-o-m in May following a sharp increase in April. Nondefense aircraft orders likely declined sharply, as Boeing net orders fell to 11 in May from 135 in April. Motor vehicles and parts orders likely remained strong in the month, supported by firmer production and prices.",
+        "bbox": [
+            70,
+            766,
+            673,
+            824
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Excluding volatile transportation equipment, we expect durable goods orders rose $0.6\\%$ m-o-m in May. New order indices in various manufacturing surveys strengthened and aggregate employment in the sector picked up. Recent strength in PPI data also suggest continued strength in nominal orders. We expect core capital goods shipments (nondefense capital goods excluding aircraft), an input into GDP's equipment investment, rose $0.6\\%$ m-o-m in May. Core capital goods orders also likely rebounded in the month.",
+        "bbox": [
+            70,
+            830,
+            667,
+            916
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Advance goods trade balance (Friday): We expect the advance goods trade deficit widened to \\$86.5bn in May from \\$82.4bn in April. Data from major trading partners suggest imports remained firm in the month driven by continued strength in AI-related goods. Goods exports also likely increased modestly, primarily due to energy-related exports, offsetting some of the increase in imports.",
+        "bbox": [
+            70,
+            923,
+            643,
+            937
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "NOM | US Economic Weekly",
+        "bbox": [
+            55,
+            0,
+            221,
+            8
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "18 June 2026",
+        "bbox": [
+            847,
+            0,
+            921,
+            7
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            915,
+            954,
+            924,
+            963
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            70,
+            25,
+            642,
+            82
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "University of Michigan consumer sentiment (Friday): We expect the final print of the University of Michigan consumer sentiment index ticked up from its preliminary print of 48.9. Survey responses were collected from 8 June to 22 June, during which President Trump announced a deal to end the war with Iran, likely boosting sentiment. High frequency data from the SF Fed Daily News Sentiment Index and Morning Consult also suggest a slight pickup in sentiment.",
+        "bbox": [
+            70,
+            89,
+            662,
+            175
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/e0e3ac60f8efba506b538d324db0e8094dc5170d01f67aebc8485f8b6c69c814.jpg",
+        "table_caption": [
+            "Fig. 8: Forecasts for economic indicators released during the week of 22 June"
+        ],
+        "table_footnote": [
+            "Note: Eastern Daylight Time (EDT). All NOM forecasts are modal.",
+            "Source: Haver, Bloomberg, NOM"
+        ],
+        "table_body": "<table><tr><td colspan=\"2\">Monday 22 June</td><td>Units</td><td>Period</td><td>Prev 2</td><td>Prev 1</td><td>Last</td><td>NOM</td><td>Consensus</td></tr><tr><td></td><td>No key indicators will be released</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"9\">Tuesday 23 June</td></tr><tr><td>9.45</td><td>S&amp;P manufacturing PMI</td><td>Index</td><td>Jun-Pre</td><td>52.3</td><td>54.5</td><td>55.1</td><td>n.a.</td><td>54.8</td></tr><tr><td>9.45</td><td>S&amp;P services PMI</td><td>Index</td><td>Jun-Pre</td><td>49.8</td><td>51.0</td><td>50.7</td><td>n.a.</td><td>51.2</td></tr><tr><td>13.00</td><td>2-yr note auction</td><td>$bn</td><td></td><td></td><td></td><td></td><td>69</td><td></td></tr><tr><td colspan=\"9\">Wednesday 24 June</td></tr><tr><td>7.00</td><td>Mortgage applications</td><td>% w-o-w</td><td>22-May</td><td>-4.4</td><td>1.7</td><td>-2.3</td><td>n.a.</td><td>n.a.</td></tr><tr><td>10.00</td><td>New home sales</td><td>000s saar</td><td>May</td><td>641</td><td>663</td><td>622</td><td>655</td><td>640</td></tr><tr><td>10.00</td><td>New home sales</td><td>% m-o-m</td><td>May</td><td>11.3</td><td>3.4</td><td>-6.2</td><td>5.3</td><td>2.9</td></tr><tr><td>11.30</td><td>2-yr FRN auction</td><td>$bn</td><td></td><td></td><td></td><td></td><td>28</td><td></td></tr><tr><td>13.00</td><td>5-yr note auction</td><td>$bn</td><td></td><td></td><td></td><td></td><td>70</td><td></td></tr><tr><td colspan=\"9\">Thursday 25 June</td></tr><tr><td>8.30</td><td>Initial jobless claims</td><td>000s</td><td>20-Jun</td><td>225</td><td>230</td><td>226</td><td>n.a.</td><td>n.a.</td></tr><tr><td>8.30</td><td>Continuing jobless claims</td><td>000s</td><td>13-Jun</td><td>1771</td><td>1786</td><td>1810</td><td>n.a.</td><td>n.a.</td></tr><tr><td>8.30</td><td>Personal income</td><td>% m-o-m</td><td>May</td><td>0.0</td><td>0.5</td><td>0.0</td><td>0.5</td><td>0.4</td></tr><tr><td>8.30</td><td>Personal spending</td><td>% m-o-m</td><td>May</td><td>0.7</td><td>1.0</td><td>0.5</td><td>0.6</td><td>0.5</td></tr><tr><td>8.30</td><td>PCE deflator</td><td>% m-o-m</td><td>May</td><td>0.4</td><td>0.7</td><td>0.4</td><td>0.503</td><td>0.5</td></tr><tr><td>8.30</td><td>PCE deflator</td><td>% y-o-y</td><td>May</td><td>2.9</td><td>3.5</td><td>3.8</td><td>4.159</td><td>4.1</td></tr><tr><td>8.30</td><td>Core PCE deflator</td><td>% m-o-m</td><td>May</td><td>0.4</td><td>0.3</td><td>0.2</td><td>0.376</td><td>0.3</td></tr><tr><td>8.30</td><td>Core PCE deflator</td><td>% y-o-y</td><td>May</td><td>3.0</td><td>3.2</td><td>3.3</td><td>3.457</td><td>3.4</td></tr><tr><td>8.30</td><td>GDP</td><td>%q-o-q ar</td><td>Q1-3rd</td><td>4.4</td><td>0.5</td><td>1.6</td><td>2.1</td><td>1.6</td></tr><tr><td>8.30</td><td>Core PCE deflator</td><td>%q-o-q ar</td><td>Q1-3rd</td><td>2.9</td><td>2.7</td><td>4.4</td><td>4.5</td><td>4.4</td></tr><tr><td>8.30</td><td>Durable goods orders</td><td>% m-o-m</td><td>May-Pre</td><td>-1.2</td><td>1.3</td><td>8.0</td><td>-5.2</td><td>-5.0</td></tr><tr><td>8.30</td><td>Durable goods orders ex-trans</td><td>% m-o-m</td><td>May-Pre</td><td>1.2</td><td>1.1</td><td>1.1</td><td>0.6</td><td>0.2</td></tr><tr><td>13.00</td><td>7-yr note auction</td><td></td><td></td><td></td><td></td><td></td><td>44</td><td></td></tr><tr><td colspan=\"9\">Friday 26 June</td></tr><tr><td>8.30</td><td>Advance goods trade balance</td><td>$bn</td><td>May</td><td>-81.7</td><td>-85.1</td><td>-83.0</td><td>-86.5</td><td>-84.5</td></tr><tr><td>8.30</td><td>Wholesale inventories</td><td>% m-o-m</td><td>May-Pre</td><td>0.9</td><td>1.5</td><td>0.6</td><td>n.a.</td><td>n.a.</td></tr><tr><td>10.00</td><td>U of M consumer sentiment</td><td>Index</td><td>Jun-Fin</td><td>49.8</td><td>44.8</td><td>48.9</td><td>n.a.</td><td>n.a.</td></tr><tr><td>10.00</td><td>U of M 5-10yr inflation expectations</td><td>%</td><td>Jun-Fin</td><td>3.5</td><td>3.9</td><td>3.4</td><td>n.a.</td><td>n.a.</td></tr></table>",
+        "bbox": [
+            75,
+            204,
+            932,
+            615
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "NOM | US Economic Weekly",
+        "bbox": [
+            55,
+            0,
+            221,
+            8
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "18 June 2026",
+        "bbox": [
+            847,
+            0,
+            921,
+            7
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            915,
+            954,
+            924,
+            963
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "US Economic Outlook",
+        "text_level": 2,
+        "bbox": [
+            70,
+            45,
+            366,
+            66
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "We expect the Fed to stay on hold indefinitely due to diminished political pressure, elevated inflation, and hawkish Fedspeak.",
+        "bbox": [
+            70,
+            77,
+            621,
+            105
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Economic activity: Growth momentum has accelerated, supported by easing tariff uncertainty, fiscal stimulus from the One Big Beautiful Bill Act, and the lagged impact of Fed rate cuts amid easy financial conditions. Business investment appears to be broadening beyond the AI sector. Higher tax refunds and strong payroll income growth have supported consumer spending thus far, despite headwinds from the Iran war. A broad range of indicators point to resilience and tentative signs of reacceleration in the labor market. We expect the unemployment rate will decline, reaching $4.1\\%$ by year-end. We think that the US economy remains relatively insulated from the crude oil price shock due to the Iran war given the small share of energy-goods consumption in household spending, as well as domestic energy production.",
+        "bbox": [
+            70,
+            112,
+            668,
+            257
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Inflation: Core inflation remains well above the Fed's $2\\%$ target, and we believe risks are skewed to the upside. We forecast Q4 2026 core PCE inflation of $3.3\\%$ y-o-y. We expect tariff price pressures will diminish in the coming quarters. However, this will likely be offset by new price pressures driven by supply shortages caused by AI (memory chips, electricity, etc.) along with spillovers from higher energy prices. Wage growth seems to have moderated gradually, but remains higher than the level consistent with the Fed's $2\\%$ inflation goal, which is likely to lead to stickiness in supercore service inflation. We expect rent disinflation to continue, but at a very gradual pace.",
+        "bbox": [
+            70,
+            263,
+            673,
+            379
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Policy: We expect the Fed to remain on hold indefinitely. Fed Chair Warsh likely remains motivated to ease policy, but recent elevated inflation readings and hawkish Fedspeak suggest he may not be able to convince the majority of the Fed to support rate cuts. Moreover, support among Fed officials for an easing bias has begun to wane. While hikes appear unlikely in the near term, the Fed's hesitance to respond to tentative signs of inflation pressure raises the risk that they may end up \"behind the curve,\" needing to hike quickly to re-establish credibility. The balance of risks is tilted towards tightening at this moment. On tariffs, wider Section 122 exemptions, lower tariff rates, and a greater focus on affordability suggest limited further escalation in US trade policy.",
+        "bbox": [
+            70,
+            385,
+            673,
+            515
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Risks: Further escalation of geopolitical risks could lead to a tightening of financial conditions and worsening of the fiscal outlook. Increased political pressures on individual FOMC participants could undermine the Fed's credibility, soliciting sharp market reactions. A bust of the AI boom could lead to material corrections in asset valuations. A continued shortage of memory chips and supply chain disruption due to a protracted Iran war could lead to a second round of goods price increases.",
+        "bbox": [
+            70,
+            521,
+            665,
+            608
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/319ce64f56aed767a63dc907863acf0eb5a586ab22a292d3ac02ff077adbd5e3.jpg",
+        "table_caption": [
+            "Fig. 9: United States: Details of the forecast"
+        ],
+        "table_footnote": [
+            "Note: The unemployment rate is a quarterly average as a percentage of the labor force. Nonfarm payrolls are average monthly changes during the period. Inflation measures and calendar year GDP are year-over-year percent changes. The Fed securities portfolio is end-of-period. The annual interest rate forecasts are end-of-period. Housing starts are period averages. Numbers in bold are actual values. Table reflects data available as of 18 June 2026. All NOM forecasts are modal Source: BEA, BLS, Census Bureau, FRB, Haver, NOM"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">%</td><td rowspan=\"2\"></td><td rowspan=\"2\">1Q25</td><td rowspan=\"2\">2Q25</td><td rowspan=\"2\">3Q25</td><td rowspan=\"2\">4Q25</td><td rowspan=\"2\">1Q26</td><td rowspan=\"2\">2Q26</td><td rowspan=\"2\">3Q26</td><td rowspan=\"2\">4Q26</td><td rowspan=\"2\">1Q27</td><td rowspan=\"2\">2Q27</td><td rowspan=\"2\">3Q27</td><td rowspan=\"2\">4Q27</td><td colspan=\"3\">% y-o-y</td><td colspan=\"3\">% Q4/Q4</td></tr><tr><td>2025</td><td>2026</td><td>2027</td><td>2025</td><td>2026</td><td>2027</td></tr><tr><td></td><td>q-o-q</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"2\">Real GDP</td><td>(%, a.r.)</td><td>-0.6</td><td>3.8</td><td>4.4</td><td>0.5</td><td>1.6</td><td>2.7</td><td>2.1</td><td>1.9</td><td>1.9</td><td>1.9</td><td>1.6</td><td>1.6</td><td>2.1</td><td>2.2</td><td>1.9</td><td>2.0</td><td>2.1</td><td>1.8</td></tr><tr><td>(%)</td><td>-0.2</td><td>0.9</td><td>1.1</td><td>0.1</td><td>0.4</td><td>0.7</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.4</td><td>0.4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Personal consumption</td><td>(%, a.r.)</td><td>0.6</td><td>2.5</td><td>3.5</td><td>1.9</td><td>1.4</td><td>1.7</td><td>1.9</td><td>1.8</td><td>1.7</td><td>1.7</td><td>1.5</td><td>1.5</td><td>2.6</td><td>2.0</td><td>1.7</td><td>2.1</td><td>1.7</td><td>1.8</td></tr><tr><td>Nonresidential fixed invest</td><td>(%, a.r.)</td><td>9.5</td><td>7.3</td><td>3.2</td><td>2.4</td><td>10.1</td><td>9.9</td><td>4.5</td><td>3.6</td><td>3.4</td><td>3.1</td><td>2.5</td><td>2.5</td><td>4.1</td><td>6.4</td><td>3.7</td><td>5.6</td><td>7.0</td><td>5.3</td></tr><tr><td>Residential fixed invest</td><td>(%, a.r.)</td><td>-1.0</td><td>-5.1</td><td>-7.1</td><td>-1.7</td><td>-6.3</td><td>2.5</td><td>3.2</td><td>3.0</td><td>2.8</td><td>2.8</td><td>2.5</td><td>2.5</td><td>-2.2</td><td>-2.1</td><td>2.8</td><td>-3.8</td><td>0.5</td><td>2.9</td></tr><tr><td>Government expenditure</td><td>(%, a.r.)</td><td>-1.0</td><td>-0.1</td><td>2.2</td><td>-5.6</td><td>4.4</td><td>3.2</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>1.1</td><td>1.0</td><td>1.1</td><td>-1.2</td><td>2.4</td><td>1.5</td></tr><tr><td>Exports</td><td>(%, a.r.)</td><td>0.2</td><td>-1.8</td><td>9.6</td><td>-3.2</td><td>13.1</td><td>6.3</td><td>2.3</td><td>2.3</td><td>2.3</td><td>2.3</td><td>2.2</td><td>2.1</td><td>1.6</td><td>5.2</td><td>2.5</td><td>1.1</td><td>5.9</td><td>3.3</td></tr><tr><td>Imports</td><td>(%, a.r.)</td><td>38.0</td><td>-29.3</td><td>-4.4</td><td>-1.0</td><td>21.1</td><td>15.2</td><td>3.5</td><td>3.3</td><td>2.8</td><td>2.5</td><td>2.3</td><td>2.0</td><td>2.7</td><td>5.2</td><td>3.5</td><td>-1.9</td><td>10.5</td><td>6.1</td></tr><tr><td>Contributions to GDP:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Final sales</td><td>(pp., a.r.)</td><td>-3.2</td><td>7.3</td><td>4.5</td><td>0.3</td><td>1.5</td><td>1.9</td><td>2.0</td><td>1.8</td><td>1.8</td><td>1.8</td><td>1.6</td><td>1.6</td><td>2.2</td><td>2.2</td><td>1.8</td><td>2.1</td><td>1.9</td><td>1.7</td></tr><tr><td>Net trade</td><td>(pp., a.r.)</td><td>-4.7</td><td>4.8</td><td>1.6</td><td>-0.2</td><td>-1.3</td><td>-1.3</td><td>-0.2</td><td>-0.2</td><td>-0.1</td><td>-0.1</td><td>-0.1</td><td>0.0</td><td>-0.2</td><td>-0.2</td><td>-0.2</td><td>0.4</td><td>-0.7</td><td>-0.1</td></tr><tr><td>Inventories</td><td>(pp., a.r.)</td><td>2.6</td><td>-3.4</td><td>-0.1</td><td>0.1</td><td>0.1</td><td>0.8</td><td>0.2</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.0</td><td>-0.1</td><td>0.0</td><td>0.2</td><td>-0.1</td><td>0.2</td><td>0.1</td></tr><tr><td></td><td>As noted</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Unemployment rate</td><td>(%)</td><td>4.1</td><td>4.2</td><td>4.3</td><td>4.5</td><td>4.3</td><td>4.3</td><td>4.2</td><td>4.1</td><td>4.0</td><td>3.9</td><td>3.9</td><td>3.9</td><td>4.3</td><td>4.2</td><td>3.9</td><td></td><td></td><td></td></tr><tr><td>Nonfarm payrolls</td><td>(000s)</td><td>20</td><td>34</td><td>23</td><td>-39</td><td>68</td><td>75</td><td>90</td><td>120</td><td>100</td><td>90</td><td>90</td><td>90</td><td>10</td><td>88</td><td>90</td><td></td><td></td><td></td></tr><tr><td>Housing starts</td><td>(000s, a.r.)</td><td>1401</td><td>1354</td><td>1346</td><td>1323</td><td>1419</td><td>1410</td><td>1430</td><td>1420</td><td>1400</td><td>1390</td><td>1390</td><td>1380</td><td>1356</td><td>1420</td><td>1390</td><td></td><td></td><td></td></tr><tr><td>Consumer prices</td><td>(%, y-o-y)</td><td>2.7</td><td>2.5</td><td>2.9</td><td>2.7</td><td>2.7</td><td>3.9</td><td>3.5</td><td>3.5</td><td>3.2</td><td>2.0</td><td>2.2</td><td>2.2</td><td>2.7</td><td>3.4</td><td>2.4</td><td></td><td></td><td></td></tr><tr><td>Core CPI</td><td>(%, y-o-y)</td><td>3.1</td><td>2.8</td><td>3.1</td><td>2.7</td><td>2.5</td><td>2.8</td><td>2.7</td><td>2.9</td><td>2.9</td><td>2.6</td><td>2.5</td><td>2.4</td><td>2.9</td><td>2.7</td><td>2.6</td><td></td><td></td><td></td></tr><tr><td>PCE Deflator</td><td>(%, y-o-y)</td><td>2.6</td><td>2.4</td><td>2.7</td><td>2.8</td><td>3.1</td><td>4.0</td><td>3.8</td><td>3.7</td><td>3.1</td><td>2.2</td><td>2.3</td><td>2.3</td><td>2.6</td><td>3.6</td><td>2.5</td><td></td><td></td><td></td></tr><tr><td>Core PCE</td><td>(%, y-o-y)</td><td>2.8</td><td>2.7</td><td>2.9</td><td>2.9</td><td>3.1</td><td>3.4</td><td>3.4</td><td>3.4</td><td>2.9</td><td>2.6</td><td>2.5</td><td>2.4</td><td>2.8</td><td>3.3</td><td>2.6</td><td></td><td></td><td></td></tr><tr><td>Federal budget</td><td>(% GDP)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-5.8</td><td>-6.4</td><td>-6.4</td><td></td><td></td><td></td></tr><tr><td>Current account balance</td><td>(% GDP)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-3.7</td><td>-3.7</td><td>-3.4</td><td></td><td></td><td></td></tr><tr><td>Fed securities portfolio</td><td>($trn)</td><td>6.32</td><td>6.24</td><td>6.19</td><td>6.15</td><td>6.27</td><td>6.36</td><td>6.42</td><td>6.48</td><td>6.54</td><td>6.60</td><td>6.66</td><td>6.72</td><td>6.15</td><td>6.48</td><td>6.72</td><td></td><td></td><td></td></tr><tr><td>Fed funds target midpoint</td><td>(%)</td><td>4.375</td><td>4.375</td><td>4.125</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td></td><td></td><td></td></tr><tr><td>TSY 2-year note</td><td>(%)</td><td>3.89</td><td>3.72</td><td>3.60</td><td>3.47</td><td>3.79</td><td>4.15</td><td>4.15</td><td>4.10</td><td>4.10</td><td>4.05</td><td>4.00</td><td>3.95</td><td>3.47</td><td>4.10</td><td>3.95</td><td></td><td></td><td></td></tr><tr><td>TSY 5-year note</td><td>(%)</td><td>3.96</td><td>3.79</td><td>3.74</td><td>3.73</td><td>3.92</td><td>4.30</td><td>4.30</td><td>4.25</td><td>4.25</td><td>4.25</td><td>4.20</td><td>4.20</td><td>3.73</td><td>4.25</td><td>4.20</td><td></td><td></td><td></td></tr><tr><td>TSY 10-year note</td><td>(%)</td><td>4.23</td><td>4.24</td><td>4.16</td><td>4.18</td><td>4.30</td><td>4.60</td><td>4.60</td><td>4.60</td><td>4.60</td><td>4.60</td><td>4.55</td><td>4.50</td><td>4.18</td><td>4.60</td><td>4.50</td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            75,
+            640,
+            934,
+            875
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "NOM | US Economic Weekly",
+        "bbox": [
+            57,
+            0,
+            221,
+            8
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "18 June 2026",
+        "bbox": [
+            847,
+            0,
+            921,
+            7
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            915,
+            954,
+            924,
+            964
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Week in Review",
+        "text_level": 2,
+        "bbox": [
+            67,
+            30,
+            289,
+            51
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d0f5aafbeffe472fe4265ebcaa3204b1bcffd14f281a1bb74aa3606f523c4ae8.jpg",
+        "content": "| Month    | Oil and gas rig counts | Ex-agriculture railroad traffic | Initial unemployment claims | Jet fuel supplied to end users | Electrical utility output | Intermodal railroad traffic | SF Fed news sentiment index | Distillate fuel supplied to end users | Steel production | Redbook same store sales | Economic policy uncertainty index | Gasoline product supplied to users |\n|----------|------------------------|----------------------------------|------------------------------|-------------------------------|---------------------------|----------------------------|-----------------------------|--------------------------------------|------------------|-------------------------|----------------------------------|------------------------------------|\n| Jan-24   | ~3.5                   | ~1.5                             | ~1.0                         | ~0.5                          | ~2.0                      | ~0.5                       | ~0.5                        | ~0.5                                 | ~1.0             | ~0.5                    | ~0.5                             | ~0.5                               |\n| Mar-24   | ~3.0                   | ~1.0                             | ~0.5                         | ~0.5                          | ~1.5                      | ~0.5                       | ~0.5                        | ~0.5                                 | ~0.5             | ~0.5                    | ~0.5                             | ~0.5                               |\n| May-24   | ~3.0                   | ~1.0                             | ~0.5                         | ~0.5                          | ~1.5                      | ~0.5                       | ~0.5                        | ~0.5                                 | ~0.5             | ~0.5                    | ~0.5                             | ~0.5                               |\n| Aug-24   | ~3.0                   | ~1.0                             | ~0.5                         | ~0.5                          | ~1.5                      | ~0.5                       | ~0.5                        | ~0.5                                 | ~0.5             | ~0.5                    | ~0.5                             | ~0.5                               |\n| Oct-24   | ~3.0                   | ~1.0                             | ~0.5                         | ~0.5                          | ~1.5                      | ~0.5                       | ~0.5                        | ~0.5                                 | ~0.5             | ~0.5                    | ~0.5                             | ~0.5                               |\n| Dec-24   | ~3.5                   | ~1.5                             | ~1.0                         | ~0.5                          | ~2.0                      | ~1.0                       | ~0.5                        | ~0.5                                 | ~1.0             | ~0.5                    | ~0.5                             | ~0.5                               |\n| Feb-25   | ~3.0                   | ~1.0                             | ~0.5                         | ~0.5                          | ~1.5                      | ~0.5                       | ~0.5                        | ~0.5                                 | ~0.5             | ~0.5                    | ~0.5                             | ~0.5                               |\n| May-25   | ~3.0                   | ~1.0                             | ~0.5                         | ~0.5                          | ~1.5                      | ~0.5                       | ~0.5                        | ~0.5                                 | ~0.5             | ~0.5                    | ~0.5                             | ~0.5                               |\n| Jul-25   | ~3.0                   | ~1.0                             | ~0.5                         | ~0.5                          | ~1.5                      | ~0.5                       | ~0.5                        | ~0.5                                 | ~0.5             | ~0.5                    | ~0.5                             | ~0.5                               |\n| Sep-25   | ~3.0                   | ~1.0                             | ~0.5                         | ~0.5                          | ~1.5                      | ~0.5                       | ~0.5                        | ~0.5                                 | ~0.5             | ~0.5                    | ~0.5                             | ~0.5                               |\n| Dec-25   | ~3.0                   | ~1.0                             | ~0.5                         | ~0.5                          | ~1.5                      | ~0.5                       | ~0.5                        | ~0.5                                 | ~0.5             | ~0.5                    | ~0.5                             | ~0.5                               |\n| Feb-26   | ~3.5                   | ~1.5                             | ~1.0                         | ~0.5                          | ~2.0                      | ~1.0                       | ~0.5                        | ~0.5                                 | ~1.0             | ~0.5                    | ~0.5                             | ~0.5                               |\n| Apr-26   | ~3.5                   | ~1.5                             | ~1.0                         | ~0.5                          | ~2.0                      | ~1.0                       | ~0.5                        | ~0.5                                 | ~1.0             | ~0.5                    | ~0.5                             | ~0.5                               |",
+        "chart_caption": [
+            "Fig. 10: Weekly data tracker and its decomposition"
+        ],
+        "chart_footnote": [
+            "Note: We estimate a latent factor that contributes the most to the total variance of 13 daily and weekly US indicators covering industrial and consumer sectors via principal component analysis (i.e., the first principal component). We calibrate this factor to track four-quarter changes in real GDP. Source: AAR, Baker Hughes, DOL, EIA, EEI, MBA, PolicyUncertainty, Redbook Research, SF Fed, Haver Analytics, NOM"
+        ],
+        "sub_type": "bar-line hybrid",
+        "bbox": [
+            82,
+            105,
+            910,
+            333
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Policy Watch - June FOMC Recap",
+        "bbox": [
+            68,
+            373,
+            304,
+            386
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "NOM | US Economic Weekly",
+        "bbox": [
+            55,
+            0,
+            221,
+            8
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "18 June 2026",
+        "bbox": [
+            847,
+            0,
+            921,
+            7
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            914,
+            954,
+            924,
+            964
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Appendix A-1",
+        "text_level": 2,
+        "bbox": [
+            67,
+            38,
+            263,
+            61
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "This report has been produced by NOM Securities International, Inc.(NSI), US.",
+        "bbox": [
+            65,
+            74,
+            554,
+            87
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "See Disclaimers for NOM Group entity details.",
+        "bbox": [
+            65,
+            89,
+            361,
+            102
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification",
+        "text_level": 2,
+        "bbox": [
+            67,
+            117,
+            267,
+            134
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We, Aichi Amemiya, Jeremy Schwartz, Ruchir Sharma, Jacklyn Goloborodsky and David Seif, hereby certify (1) that the views expressed in this Research report accurately reflect our personal views about any or all of the subject securities or issuers referred to in this Research report, (2) no part of our compensation was, is or will be directly or indirectly related to the specific recommendations or views expressed in this Research report and (3) no part of our compensation is tied to any specific investment banking transactions performed by NOM Securities International, Inc., NOM International plc or any other NOM Group company.",
+        "bbox": [
+            65,
+            149,
+            926,
+            220
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            67,
+            234,
+            265,
+            249
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Online availability of research and conflict-of-interest disclosures",
+        "text_level": 2,
+        "bbox": [
+            67,
+            261,
+            542,
+            274
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "NOM Group research is available on www.NOMnow.com/research, Bloomberg, Capital IQ, Factset, LSEG.",
+        "bbox": [
+            65,
+            285,
+            734,
+            298
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Important disclosures may be read at http://go.NOMnow.com/research/m/Disclosures or requested from NOM Securities International, Inc. If you have any difficulties with the website, please email grpsupport@NOM.com for help.",
+        "bbox": [
+            65,
+            299,
+            922,
+            327
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The analysts responsible for preparing this report have received compensation based upon various factors including the firm's total revenues, a portion of which is generated by Investment Banking activities. Unless otherwise noted, the non-US analysts listed at the front of this report are not registered/qualified as research analysts under FINRA rules, may not be associated persons of NSI, and may not be subject to FINRA Rule 2241 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.",
+        "bbox": [
+            65,
+            343,
+            922,
+            400
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "NOM Global Financial Products Inc. (NGFP) NOM Derivative Products Inc. (NDP) and NOM International plc. (NIplc) are registered with the Commodities Futures Trading Commission and the National Futures Association (NFA) as swap dealers. NGFP, NDPI, and NIplc are generally engaged in the trading of swaps and other derivative products, any of which may be the subject of this report.",
+        "bbox": [
+            65,
+            415,
+            927,
+            458
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Disclaimers",
+        "text_level": 2,
+        "bbox": [
+            67,
+            472,
+            166,
+            486
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "This publication contains material that has been prepared by the NOM Group entity identified on page 1 and, if applicable, with the contributions of one or more NOM Group entities whose employees and their respective affiliations are specified on page 1 or identified elsewhere in this publication. The term \"NOM Group\" used herein refers to NOM Holdings, Inc. and its affiliates and subsidiaries including: (a) NOM Securities Co., Ltd. ('NSC') Tokyo, Japan, (b) NOM Financial Products Europe GmbH ('NFPE'), Germany, (c) NOM International plc ('NIplc'), UK, (d) NOM Securities International, Inc. ('NSI'), New York, US, (e) NOM International (Hong Kong) Ltd. ('NIHK'), Hong Kong, (f) NOM Financial Investment (Korea) Co., Ltd. ('NFIK'), Korea (Information on NOM analysts registered with the Korea Financial Investment Association ('KOFIA') can be found on the KOFIA Intranet at http://dis.kofia.or.kr, (g) NOM Singapore Ltd. ('NSL'), Singapore (Registration number 197201440E, regulated by the Monetary Authority of Singapore) (h) NOM Australia Ltd. ('NAL'), Australia (ABN 48 003 032 513), regulated by the Australian Securities and Investment Commission ('ASIC') and holder of an Australian financial services licence number 246412, (i) NOM Securities Malaysia Sdn. Bhd. ('NSM'), Malaysia, (j) NIHK, Taipei Branch ('NITB'), Taiwan, (k) NOM Financial Advisory and Securities (India) Private Limited ('NFASL'), Mumbai, India (Registered Address: Ceejay House, Level 11, Plot F, Shivsagar Estate, Dr. Annie Besant Road, Worli, Mumbai- 400 018, India; Tel: 91 22 4037 4037, Fax: 91 22 4037 4111; CIN No: U74140MH2007PTC169116, SEBI Registration No. for Stock Broking activities : INZ000255633; SEBI Registration No. for Merchant Banking : INM000011419; SEBI Registration No. for Research: INH000001014 - Compliance Officer: Ms. Pratiksha Tondwalkar, 91 22 40374904, grievance email: investorgrievancesra@NOM.com Webpage: LINK",
+        "bbox": [
+            65,
+            498,
+            929,
+            714
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "For reports with respect to Indian public companies or authored by India-based NFASL research analysts: (i) Investment in securities markets is subject to market risks. Read all the related documents carefully before investing. (ii) Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. (iii) NFASL terms and conditions for availing research services is disclosed on NFASL webpage.",
+        "bbox": [
+            65,
+            717,
+            900,
+            804
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "(I) NOM Fiduciary Research & Consulting Co., Ltd. ('NFRC') Tokyo, Japan. (m) NOM Orient International Securities Co., Ltd (\"NOI\"), is a majority owned joint venture amongst NOM Group, Orient International (Holding) Co., Ltd, and Shanghai Huangpu Investment Holding (Group) Co., Ltd. In accordance with the laws of the People's Republic of China (\"PRC\", excluding Hong Kong, Macau and Taiwan, for the purpose of this document), NOI is licensed in the PRC to provide securities research and investment recommendations and it operates independently from the other members of the NOM Group; in particular, NOI's interests in PRC securities are not disclosed to, or aggregated with the holdings of, any other NOM Group entities and the interests in PRC securities of other NOM Group entities are not disclosed to, or aggregated with the holdings of, NOI. An individual name printed next to NOI on the front page of a research report indicates that individual is employed by NOI to provide research assistance to NIHK under a research partnership agreement. 'NSFSPL' next to an employee's name on the front page of a research report indicates that the individual is employed by NOM Structured Finance Services Private Limited to provide assistance to certain NOM entities under inter-company agreements. 'Verdhana' next to an individual's name on the front page of a research report indicates that the individual is employed by PT Verdhana Sekuritas Indonesia ('Verdhana') to provide research assistance to NIHK under a research partnership agreement and neither Verdhana nor such individual is licensed outside of Indonesia.",
+        "bbox": [
+            65,
+            806,
+            927,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "NOM | US Economic Weekly",
+        "bbox": [
+            55,
+            0,
+            221,
+            8
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "18 June 2026",
+        "bbox": [
+            847,
+            0,
+            921,
+            7
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            915,
+            954,
+            932,
+            964
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            65,
+            24,
+            924,
+            51
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "THIS MATERIAL IS: (I) FOR YOUR PRIVATE INFORMATION, AND WE ARE NOT SOLICITING ANY ACTION BASED UPON IT; (II) NOT TO BE CONSTRUED AS AN OFFER TO SELL OR A SOLICITATION OF AN OFFER TO BUY ANY SECURITIES IN ANY JURISDICTION WHERE SUCH OFFER OR SOLICITATION WOULD BE ILLEGAL; AND (III) OTHER THAN DISCLOSURES RELATING TO THE NOM GROUP, BASED UPON INFORMATION FROM SOURCES THAT WE CONSIDER RELIABLE, BUT HAS NOT BEEN INDEPENDENTLY VERIFIED BY NOM GROUP.",
+        "bbox": [
+            65,
+            51,
+            927,
+            124
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Other than disclosures relating to the NOM Group, the NOM Group does not warrant, represent or undertake, express or implied, that the document is fair, accurate, complete, correct, reliable or fit for any particular purpose or merchantable, and to the maximum extent permissible by law and/or regulation, does not accept liability (in negligence or otherwise, and in whole or in part) for any act (or decision not to act) resulting from use of this document and related data. To the maximum extent permissible by law and/or regulation, all warranties and other assurances by the NOM Group are hereby excluded and the NOM Group shall have no liability (in negligence or otherwise, and in whole or in part) for any loss howsoever arising from the use, misuse, or distribution of this material or the information contained in this material or otherwise arising in connection therewith.",
+        "bbox": [
+            65,
+            125,
+            927,
+            224
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Opinions or estimates expressed are current opinions as of the original publication date appearing on this material and the information, including the opinions and estimates contained herein, are subject to change without notice. The NOM Group, however, expressly disclaims any obligation, and therefore is under no duty, to update or revise this document. Any comments or statements made herein are those of the author(s) and may differ from views held by other parties within NOM Group. Clients should consider whether any advice or recommendation in this report is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The NOM Group does not provide tax advice.",
+        "bbox": [
+            65,
+            227,
+            929,
+            311
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The NOM Group, and/or its officers, directors, employees and affiliates, may, to the extent permitted by applicable law and/or regulation, deal as principal, agent, or otherwise, or have long or short positions in, or buy or sell, the securities, commodities or instruments, or options or other derivative instruments based thereon, of issuers or securities mentioned herein. The NOM Group companies may also act as market maker or liquidity provider (within the meaning of applicable regulations in the UK) in the financial instruments of the issuer. Where the activity of market maker is carried out in accordance with the definition given to it by specific laws and regulations of the US or other jurisdictions, this will be separately disclosed within the specific issuer disclosures.",
+        "bbox": [
+            65,
+            314,
+            924,
+            399
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This document may contain information obtained from third parties, including, but not limited to, ratings from credit ratings agencies such as Standard & Poor's. The NOM Group hereby expressly disclaims all representations, warranties or undertakings of originality, fairness, accuracy, completeness, correctness, merchantability or fitness for a particular purpose with respect to any of the information obtained from third parties contained in this material or otherwise arising in connection therewith, and shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of any of the information obtained from third parties contained in this material or otherwise arising in connection therewith. Reproduction and distribution of third-party content in any form is prohibited except with the prior written permission of the related third-party. Third-party content providers do not, express or implied, guarantee the fairness, accuracy, completeness, correctness, timeliness or availability of any information, including ratings, and are not in any way responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use or misuse of such content. Third-party content providers give no express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Third-party content providers shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Any MSCI sourced information in this document is the exclusive property of MSCI Inc. ('MSCI'). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be duplicated, reproduced, re-disseminated, redistributed or used, in whole or in part, for any purpose whatsoever, including creating any financial products and any indices. This information is provided on an \"as is\" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all representations, warranties or undertakings of originality, fairness, accuracy,",
+        "bbox": [
+            65,
+            401,
+            929,
+            704
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "completeness, correctness, merchantability or fitness for a particular purpose with respect to any of this material or the information contained in this material or otherwise arising in connection therewith. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability (in negligence or otherwise, and in whole or in part) for any damages of any kind. MSCI and the MSCI indexes are services marks of MSCI and its affiliates.",
+        "bbox": [
+            65,
+            706,
+            927,
+            762
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The intellectual property rights and any other rights, in Russell/NOM Japan Equity Index belong to NOM Fiduciary Research & Consulting Co., Ltd. (\"NFRC\") and FTSE Russell (\"Russell\"). NFRC and Russell do not guarantee fairness, accuracy, completeness, correctness, reliability, usefulness, marketability, merchantability or fitness of the Index, and do not account for business activities or services that any index user and/or its affiliates undertakes with the use of the Index.",
+        "bbox": [
+            65,
+            764,
+            927,
+            819
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Investors should consider this document as only a single factor in making their investment decision and, as such, the report should not be viewed as identifying or suggesting all risks, direct or indirect, that may be associated with any investment decision. NOM Group produces a number of different types of research product including, among others, fundamental analysis and quantitative analysis; recommendations contained in one type of research product may differ from recommendations contained in other types of research product, whether as a result of differing time horizons, methodologies or otherwise. The NOM Group publishes research product in a number of different ways including the posting of product on the NOM Group portals and/or distribution directly to clients. Different groups of clients may receive different products and services from the research department depending on their individual requirements.",
+        "bbox": [
+            65,
+            822,
+            927,
+            921
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Figures presented herein may refer to past performance or simulations based on past performance which are not reliable indicators of future or likely performance. Where the information contains an expectation, projection or indication of future performance and business prospects, such forecasts may not be a reliable indicator of future or likely performance. Moreover, simulations are based on models and simplifying assumptions which may oversimplify and not reflect the future distribution of returns. Any figure, strategy or index created and published for illustrative purposes within this document is not intended for “use” as a “benchmark” as defined by the European Benchmark Regulation.",
+        "bbox": [
+            65,
+            923,
+            921,
+            951
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "NOM | US Economic Weekly",
+        "bbox": [
+            55,
+            0,
+            221,
+            8
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "18 June 2026",
+        "bbox": [
+            847,
+            0,
+            921,
+            7
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            915,
+            954,
+            932,
+            964
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            65,
+            24,
+            899,
+            66
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Certain securities are subject to fluctuations in exchange rates that could have an adverse effect on the value or price of, or income derived from, the investment.",
+        "bbox": [
+            65,
+            68,
+            899,
+            94
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "With respect to Fixed Income Research: Recommendations fall into two categories: tactical, which typically last up to three months; or strategic, which typically last from 6-12 months. However, trade recommendations may be reviewed at any time as circumstances change. 'Stop loss' levels for trades are also provided; which, if hit, closes the trade recommendation automatically. Prices and yields shown in recommendations are taken at the time of submission for publication and are based on either indicative Bloomberg, LSEG or NOM prices and yields at that time. The prices and yields shown are not necessarily those at which the trade recommendation can be implemented.",
+        "bbox": [
+            65,
+            97,
+            924,
+            166
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not have been registered under the US Securities Act of 1933 (the '1933 Act'), and, in such case, may not be offered or sold in the US or to US persons unless they have been registered under the 1933 Act, or except in compliance with an exemption from the registration requirements of the 1933 Act. Unless governing law permits otherwise, any transaction should be executed via a NOM entity in your home jurisdiction.",
+        "bbox": [
+            65,
+            170,
+            921,
+            224
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This document has been approved for distribution in the UK as investment research by NIplc. NIplc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. NIplc is a member of the London Stock Exchange. This document does not constitute a personal recommendation within the meaning of applicable regulations in the UK, or take into account the particular investment objectives, financial situations, or needs of individual investors. This document is intended only for investors who are 'eligible counterparties' or 'professional clients' for the purposes of applicable regulations in the UK, and may not, therefore, be redistributed to persons who are 'retail clients' for such purposes.",
+        "bbox": [
+            65,
+            227,
+            914,
+            311
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This document has been approved for distribution in the European Economic Area as investment research by NOM Financial Products Europe GmbH (\"NFPE\"). NFPE is a company organized as a limited liability company under German law registered in the Commercial Register of the Court of Frankfurt/Main under HRB 110223. NFPE is authorized and regulated by the German Federal Financial Supervisory Authority (BaFin).",
+        "bbox": [
+            65,
+            314,
+            922,
+            370
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This document has been approved by NIHK, which is regulated by the Hong Kong Securities and Futures Commission, for distribution in Hong Kong by NIHK. This document is intended only for investors who are 'professional investors' for the purposes of applicable regulations in Hong Kong and may not, therefore, be redistributed to persons who are not 'professional investors' for such purposes.",
+        "bbox": [
+            65,
+            372,
+            917,
+            414
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This document has been approved for distribution in Australia by NAL, which is authorized and regulated in Australia by the ASIC. This document has also been approved for distribution in Malaysia by NSM.",
+        "bbox": [
+            65,
+            415,
+            840,
+            443
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "In Singapore, this document has been distributed by NSL, an exempt financial adviser as defined under the Financial Advisers Act (Chapter 110), among other things, and regulated by the Monetary Authority of Singapore. NSL may distribute this document produced by its foreign affiliates pursuant to an arrangement under Regulation 32C of the Financial Advisers Regulations. This document is intended for accredited, expert or institutional investors as defined by the Securities and Futures Act (Chapter 289). Where the recipient of this document is not an accredited, expert or institutional investor, NSL accepts legal responsibility for the contents of this document in respect of such recipient only to the extent required by law. Recipients of this document in Singapore should contact NSL in respect of matters arising from, or in connection with, this document. THIS DOCUMENT IS INTENDED FOR GENERAL CIRCULATION. IT DOES NOT TAKE INTO ACCOUNT THE SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS OF ANY PARTICULAR PERSON. RECIPIENTS SHOULD TAKE INTO ACCOUNT THEIR SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS BEFORE MAKING A COMMITMENT TO PURCHASE ANY SECURITIES, INCLUDING SEEKING ADVICE FROM AN INDEPENDENT FINANCIAL ADVISER REGARDING THE SUITABILITY OF THE INVESTMENT, UNDER A SEPARATE ENGAGEMENT, AS THE RECIPIENT DEEMS FIT. Unless prohibited by the provisions of Regulation S of the 1933 Act, this material is distributed in the US, by NSI, a US-registered broker-dealer, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6, under the US Securities Exchange Act of 1934. The entity that prepared this document permits its separately operated affiliates within the NOM Group to make copies of such documents available to their clients.",
+        "bbox": [
+            65,
+            444,
+            926,
+            660
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This document has not been approved for distribution to persons other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ (as defined by the Capital Markets Authority) in the Kingdom of Saudi Arabia (‘Saudi Arabia’) or a ‘Market Counterparty’ or a ‘Professional Client’ (as defined by the Dubai Financial Services Authority) in the United Arab Emirates (‘UAE’) or a ‘Market Counterparty’ or a ‘Business Customer’ (as defined by the Qatar Financial Centre Regulatory Authority) in the State of Qatar (‘Qatar’) by NOM Saudi Arabia, NIplc or any other member of the NOM Group, as the case may be. Neither this document nor any copy thereof may be taken or transmitted or distributed, directly or indirectly, by any person other than those authorised to do so into Saudi Arabia or in the UAE or in Qatar or to any person other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ located in Saudi Arabia or a ‘Market Counterparty’ or a ‘Professional Client’ in the UAE or a ‘Market Counterparty’ or a ‘Business Customer’ in Qatar. Any failure to comply with these restrictions may constitute a violation of the laws of the UAE or Saudi Arabia or Qatar.",
+        "bbox": [
+            65,
+            662,
+            929,
+            790
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "For report with reference of TAIWAN public companies or authored by Taiwan based research analyst:",
+        "bbox": [
+            65,
+            793,
+            680,
+            805
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "THIS DOCUMENT IS SOLELY FOR REFERENCE ONLY. You should independently evaluate the investment risks and are solely responsible for your investment decisions. NO PORTION OF THE REPORT MAY BE REPRODUCED OR QUOTED BY THE PRESS OR ANY OTHER PERSON WITHOUT WRITTEN AUTHORIZATION FROM NOM GROUP. Pursuant to Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers and/or other applicable laws or regulations in Taiwan, you are prohibited to provide the reports to others (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities in connection with the reports which may involve conflicts of interests. INFORMATION ON SECURITIES / INSTRUMENTS NOT EXECUTABLE BY NOM INTERNATIONAL (HONG KONG) LTD., TAIPEI BRANCH IS FOR INFORMATIONAL PURPOSES ONLY AND IS NOT BE CONSTRUED AS A RECOMMENDATION OR A SOLICITATION TO TRADE IN SUCH SECURITIES / INSTRUMENTS.",
+        "bbox": [
+            65,
+            807,
+            924,
+            921
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This material may not be distributed in Indonesia or passed on within the territory of the Republic of Indonesia or to persons who are Indonesian citizens (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia. The securities mentioned in this document may not be offered or sold in Indonesia or to persons who are citizens of Indonesia (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia.",
+        "bbox": [
+            65,
+            923,
+            926,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "NOM | US Economic Weekly",
+        "bbox": [
+            55,
+            0,
+            221,
+            8
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "18 June 2026",
+        "bbox": [
+            847,
+            0,
+            921,
+            7
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            915,
+            954,
+            932,
+            964
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            65,
+            24,
+            899,
+            66
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "An individual name printed next to NOI on the front page of a research report indicates that this document is a translation of a research report issued by NOI in the PRC. In all other cases, this document is prepared by NOM Group or its subsidiary or affiliate (collectively, “Offshore Issuers”) that is not licensed in the PRC to provide securities research. This research report is not approved or intended to be circulated in the PRC. The A-share related analysis (if any) is not produced for any persons located or incorporated in the PRC. The recipients should not rely on any information contained in this research report in making investment decisions and Offshore Issuers take no responsibility in this regard. NO PART OF THIS MATERIAL MAY BE (I) COPIED, PHOTOCOPIED, REPRODUCED OR DUPLICATED IN ANY FORM, BY ANY MEANS; OR (II) REDISSEMINATED, REPUBLISHED OR REDISTRIBUTED WITHOUT THE PRIOR WRITTEN CONSENT OF A MEMBER OF THE NOM GROUP. If this document has been distributed by electronic transmission, such as e-mail, then such transmission cannot be guaranteed to be secure or error-free as information could be intercepted, corrupted, lost, destroyed, arrive late or incomplete, or contain viruses. The sender therefore does not accept liability (in negligence or otherwise, and in whole or in part) for any errors or omissions in the contents of this document, which may arise as a result of electronic transmission. If verification is required, please request a hard-copy version.",
+        "bbox": [
+            65,
+            68,
+            927,
+            224
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "NOM Securities Co., Ltd.",
+        "text_level": 2,
+        "bbox": [
+            67,
+            240,
+            268,
+            253
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Financial instruments firm registered with the Kanto Local Finance Bureau (registration No. 142)",
+        "bbox": [
+            65,
+            264,
+            643,
+            276
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Member associations: Japan Securities Dealers Association; Investment Management Association of Japan; The Financial Futures Association of Japan; Type II Financial Instruments Firms Association; and Japan Security Token Offering Association.",
+        "bbox": [
+            65,
+            278,
+            921,
+            305
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The NOM Group manages conflicts with respect to the production of research through its compliance policies and procedures (including, but not limited to, Conflicts of Interest, Chinese Wall and Confidentiality policies) as well as through the maintenance of Chinese Walls and employee training.",
+        "bbox": [
+            65,
+            322,
+            921,
+            363
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Additional information regarding the methodologies or models used in the production of any investment recommendations contained within this document is available upon request by contacting the Research Analysts of NOM listed on the front page. Disclosures information is available upon request and disclosure information is available at the NOM Disclosure web page:",
+        "bbox": [
+            65,
+            365,
+            924,
+            406
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "http://go.NOMnow.com/research/m/Disclosures",
+        "bbox": [
+            67,
+            409,
+            369,
+            420
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Copyright © 2026 NOM Securities International, Inc., US. All rights reserved.",
+        "bbox": [
+            67,
+            423,
+            542,
+            435
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "NOM | US Economic Weekly",
+        "bbox": [
+            55,
+            0,
+            221,
+            8
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "18 June 2026",
+        "bbox": [
+            847,
+            0,
+            921,
+            7
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            915,
+            954,
+            932,
+            964
+        ],
+        "page_idx": 12
+    }
+]

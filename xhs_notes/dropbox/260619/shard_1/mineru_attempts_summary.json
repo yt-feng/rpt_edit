@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_nh3js9fy/pdfs/0001-06-NOM-US Economic Weekly-Force Multiplier-260618.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_nh3js9fy/pdfs/0002-07-JPM-China Consumer Strategy-May retail sales down 0.6- YoY- a consecutive miss-260617.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_nh3js9fy/pdfs/0003-08-JPM-Japan Equity Strategy-Ongoing stock rally driven by earnings- Raising price targets to 75-000 for Nikkei 225 and 4-400 for TOPIX-260618.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_nh3js9fy/pdfs/0004-09-JPM-Post-FOMC rates update-You-ll get nothing and like it-260617.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_nh3js9fy/pdfs/0005-10-Bernstein-Global Luxury Goods- May Swiss watch exports - Base effects drive rebound- underlying recovery remains gradual and fragile-260618.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

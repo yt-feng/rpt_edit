@@ -1,0 +1,3282 @@
+[
+    {
+        "type": "text",
+        "text": "Post-FOMC rates update",
+        "text_level": 2,
+        "bbox": [
+            133,
+            109,
+            511,
+            137
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "You'll get nothing and like it",
+        "bbox": [
+            133,
+            143,
+            395,
+            165
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Front-end yields rose 11bp, and the broad curve flattened by a similar amount, as markets interpreted Chair Warsh's maiden voyage as FOMC chair in a hawkish fashion...",
+            "- ...As a result, OIS forwards are now pricing in a full hike by the October FOMC meeting and in excess of 45bp of hikes by next spring. The implied distribution from options on Dec'26 SOFR futures shifted hawkishly and became more symmetric, with both tails strengthening, indicating elevated policy uncertainty.",
+            "- Despite energy prices providing the opportunity to turn more dovish, the hawkish comments should continue to bias real yields higher and breakevens lower, in line with today's moves.",
+            "- We think yields are biased higher over the near term, especially if those FOMC members who have forecast hikes this year take the opportunity to elaborate on their projections in the coming weeks...",
+            "...Moreover, Warsh is more clearly putting his imprimatur on the Committee's communications, and reduced forward guidance risks volatility rising over time, which would also increase term premium and nominal yields. Even after today's move, curves still appear too steep, and we recommend maintaining 10s/30s flatteners.",
+            "- We continue to expect no material near-term change to the Fed's balance sheet, particularly as Warsh indicated that the balance sheet task force's assessments would occur in 2H26—suggesting any resulting balance sheet changes could come in 2027.",
+            "- A reduction in forward guidance could result in greater weights being placed on event days, which would help keep vols supported across the surface, especially in the upper left.",
+            "- Treasury will auction \\$24bn reopened 5-year TIPS at 1pm, unchanged in size from the last reopening in December. Against the backdrop of lower real yields, mixed valuations, and increased uncertainty, we think tomorrow's auction likely requires more of a concession in order to be digested smoothly.",
+            "- Treasury will announce end-of-month supply at 11pm tomorrow. We think the 2-, 5-, and 7-year rolls should open at 0.75bp, 0.125bp, and 0.5bp, respectively.",
+            "- The 2s/5s curve flattens into the lower end of its 2025-2026 trading range, now well below the 12-13bp mid-range technical inflection. Next support rests at 6bp and then the key 0bp range lows. We believe the curve will hold that support into the early summer period."
+        ],
+        "bbox": [
+            130,
+            200,
+            666,
+            782
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Fixed Income Strategy",
+        "text_level": 2,
+        "bbox": [
+            689,
+            205,
+            852,
+            220
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jay Barry AC",
+        "bbox": [
+            689,
+            224,
+            772,
+            238
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 834-4951",
+        "bbox": [
+            691,
+            238,
+            782,
+            250
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            691,
+            251,
+            834,
+            262
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jason Hunter AC",
+        "bbox": [
+            691,
+            265,
+            797,
+            277
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 270-0034",
+        "bbox": [
+            691,
+            279,
+            782,
+            290
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "jason.x.hunter@JPM.com",
+        "bbox": [
+            691,
+            292,
+            849,
+            303
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Teresa Ho AC",
+        "bbox": [
+            691,
+            306,
+            776,
+            318
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 834-5087",
+        "bbox": [
+            691,
+            320,
+            782,
+            330
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "teresa.c.ho@JPM.com",
+        "bbox": [
+            691,
+            333,
+            834,
+            344
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ipek Ozil AC",
+        "bbox": [
+            691,
+            347,
+            766,
+            359
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 834-2305",
+        "bbox": [
+            691,
+            361,
+            782,
+            372
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ipek.ozil@JPM.com",
+        "bbox": [
+            691,
+            375,
+            818,
+            386
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Pankaj Vohra",
+        "bbox": [
+            691,
+            388,
+            781,
+            402
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 834 5292",
+        "bbox": [
+            691,
+            402,
+            782,
+            414
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "pankaj.x.vohra@jpmchase.com",
+        "bbox": [
+            691,
+            415,
+            852,
+            426
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Harry Downie",
+        "bbox": [
+            691,
+            430,
+            782,
+            443
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 270-9500",
+        "bbox": [
+            691,
+            444,
+            782,
+            455
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "harry.j.downie@JPM.com",
+        "bbox": [
+            691,
+            455,
+            848,
+            467
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Chris Hayward",
+        "bbox": [
+            691,
+            470,
+            790,
+            484
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 622-6152",
+        "bbox": [
+            691,
+            484,
+            782,
+            496
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "chris.hayward@jpmchase.com",
+        "bbox": [
+            691,
+            497,
+            849,
+            508
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Liam L Wash",
+        "bbox": [
+            691,
+            512,
+            777,
+            523
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 834-5230",
+        "bbox": [
+            691,
+            526,
+            782,
+            537
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "liam.wash@jpmchase.com",
+        "bbox": [
+            691,
+            537,
+            830,
+            550
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Amanda Berke",
+        "bbox": [
+            691,
+            553,
+            790,
+            565
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 834-5739",
+        "bbox": [
+            691,
+            566,
+            782,
+            578
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "amanda.berke@JPM.com",
+        "bbox": [
+            691,
+            579,
+            851,
+            590
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Molly Herckis",
+        "bbox": [
+            691,
+            594,
+            782,
+            607
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 622-0899",
+        "bbox": [
+            691,
+            608,
+            782,
+            619
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "molly.herckis@jpmchase.com",
+        "bbox": [
+            691,
+            619,
+            844,
+            632
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Emre Alptuna",
+        "bbox": [
+            691,
+            635,
+            782,
+            648
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 270-4843",
+        "bbox": [
+            691,
+            648,
+            782,
+            660
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "emre.alptuna@JPM.com",
+        "bbox": [
+            691,
+            661,
+            844,
+            672
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "JPM Securities LLC",
+        "bbox": [
+            691,
+            672,
+            831,
+            684
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "Washon N.",
+        "bbox": [
+            0,
+            566,
+            102,
+            878
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            133,
+            23,
+            346,
+            61
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            691,
+            27,
+            862,
+            41
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            692,
+            41,
+            772,
+            53
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See page 9 for analyst certification and important disclosures.",
+        "bbox": [
+            133,
+            934,
+            578,
+            950
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Market views",
+        "text_level": 2,
+        "bbox": [
+            341,
+            152,
+            517,
+            176
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Front-end yields rose 11bp, and the broad curve flattened by a similar amount, as markets interpreted Chair Warsh's maiden voyage as FOMC chair in a hawkish fashion. We tend to agree with the market's assessment and think this supports a continued bearish stance for a few reasons. First, the policy statement, projections, and prepared remarks were quite hawkish. The statement was completely overhauled and more closely resembled a statement from the Greenspan era, offering no forward guidance, but offering, “The Committee will deliver price stability” (see We don't need no stinking guidance, Michael Feroli, 6/17/2026). Second, the SEP was more hawkish than we had expected, as the 2026 dots show 12.5bp of rate hikes, and 6 of the 18 dots projected two or more hikes (Figure 1). Finally, the press conference read hawkishly as well, as Warsh led with the Committee’s commitment to price stability. Warsh was evasive when asked about the Fed’s current policy stance, but he offered, “The best way I can describe it is uneven. I see some restrictiveness in things like housing. It's hard to use those same words anywhere else.” Implicitly, he argued that policy is not restrictive now.",
+        "bbox": [
+            339,
+            188,
+            926,
+            402
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/92a249bc929c91062af967744b4e483a171d3301d3f8ad892240e500016e43b5.jpg",
+        "content": "| X-Axis | Mar-26 | Jun-26 |\n|---|---|---|\n| 2.625 | 1 | 0 |\n| 2.875 | 2 | 0 |\n| 3.125 | 2 | 0 |\n| 3.375 | 7 | 1 |\n| 3.625 | 7 | 8 |\n| 3.875 | 0 | 3 |\n| 4.125 | 0 | 5 |\n| 4.375 | 0 | 1 |",
+        "chart_caption": [
+            "Figure 1: The 2026 dots show 12.5bp of rate hikes, and 6 of the 18 dots projected two or more hikes",
+            "Distribution of projected midpoint of fed funds target range for 2026, March 2026 vs. June 2026; number of participants"
+        ],
+        "chart_footnote": [
+            "Source: Federal Reserve"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            73,
+            473,
+            488,
+            642
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3c7a87d99a557b1e370571dbc262ebdb785296bf2942f8bc3eca68e53870a925.jpg",
+        "content": "| Date   | Statement | Prepared remarks |\n|--------|-----------|-----------------|\n| Jun 21 | -45       | -15             |\n| Jun 22 | 50        | 60              |\n| Jun 23 | 45        | 40              |\n| Jun 24 | 20        | 10              |\n| Jun 25 | -20       | -10             |\n| Jun 26 | 20        | 25              |",
+        "chart_caption": [
+            "Figure 2: Both the statement and the press conference were scored hawkishly",
+            "Fed Hawk-Dove Score\\* of FOMC statements and prepared press conference remarks; Index"
+        ],
+        "chart_footnote": [
+            "\\*For methodology, see Listen up: Upgrading JPM's central bank NLP machine, Joseph Lupton and Dan Weitzenfeld, 7/2/2024\nSource: JPM"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            514,
+            474,
+            916,
+            642
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Our NLP model agrees: it scored the statement as the most hawkish in a year, and the press conference was scored as the most hawkish since May 2024 (Figure 2). As a result, OIS forwards are now pricing in a full hike by the October FOMC meeting and in excess of 45bp of hikes by next spring. The implied distribution inferred from options on Dec'26 SOFR futures (Figure 3) changed substantially post-FOMC: the distribution shifted hawkishly, with the mean and mode both moving to the right. Interestingly, both tails strengthened, and the distribution now appears more symmetric, which indicates higher policy uncertainty post-FOMC.",
+        "bbox": [
+            339,
+            690,
+            926,
+            813
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Turning to inflation, markets reacted hawkishly, in line with nominals, with 5-,10-, and 30-year breakevens falling 3bp, 2bp, and 1bp, respectively. However, these changes were smaller in magnitude than the upward shifts in real yields, which rose by 10bp, 5bp, and 1bp in the 5-,10-, and 30-year tenors, respectively (Figure 4). When evaluating the impact on inflation going forward, we would highlight the following: First, the price goal for the Committee will, at least for now, be close to the one they have today. When asked whether he would review the 2% target, Warsh first stated that the Committee",
+        "bbox": [
+            339,
+            819,
+            926,
+            926
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Jay Barry AC (1-212) 834-4951",
+        "bbox": [
+            68,
+            42,
+            225,
+            55
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            68,
+            56,
+            212,
+            66
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "JPM Securities LLC",
+        "bbox": [
+            68,
+            66,
+            209,
+            78
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Jason Hunter AC (1-212) 270-0034",
+        "bbox": [
+            68,
+            80,
+            243,
+            92
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "jason.x.hunter@JPM.com",
+        "bbox": [
+            68,
+            93,
+            228,
+            104
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Teresa Ho AC (1-212) 834-5087",
+        "bbox": [
+            289,
+            42,
+            449,
+            55
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "teresa.c.ho@JPM.com",
+        "bbox": [
+            290,
+            56,
+            431,
+            66
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Ipek Ozil AC (1-212) 834-2305",
+        "bbox": [
+            289,
+            80,
+            441,
+            92
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "ipek.ozil@JPM.com",
+        "bbox": [
+            290,
+            93,
+            418,
+            104
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            516,
+            42,
+            660,
+            56
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Post-FOMC rates update",
+        "bbox": [
+            517,
+            58,
+            661,
+            69
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            517,
+            70,
+            593,
+            80
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            39,
+            926,
+            64
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            70,
+            952,
+            80,
+            962
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "needed to meet the 2% target, which they have not done over the last 5 years. In the last 5 years, alternative measures of inflation such as Truflation reached below 2%, whereas the traditional Fed gauge of core PCE reached a low of 2.61% in 2024, still 61bps above the 2% target, in line with Warsh's comments on missing the target. Second, Warsh downplayed the impact of the US-Iran conflict on inflation, given that half his colleagues believe that economic impacts of the conflict justify higher policy rates and half lower. Now that Brent crude oil has fallen from highs of 118 to below 80, the Fed Chair has the opportunity to lean on the impact of energy prices driving disinflation over the near term. As such, this impact risks lower breakevens than we previously assumed, in line with today's pricing (see TIPS Strategy: 2026 Mid-Year Outlook, 6/12/2026). The ultimate impact on inflation markets over the medium term will depend on the outcome of the task force on inflation and data gathering, which Warsh expects to be completed before year end.",
+        "bbox": [
+            339,
+            148,
+            926,
+            345
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/75c9349557ae48d76447d800919d7bd2e94dd1052fda39e2579f6d7d8d6fa1d1.jpg",
+        "content": "| Range | 6/16/2026 (%) | 6/17/2026 (%) |\n| :--- | :--- | :--- |\n| <3 | 2.0 | 2.5 |\n| 3-3.25 | 0.5 | 5.0 |\n| 3.25-3.5 | 5.0 | 9.5 |\n| 3.5-3.75 | 31.0 | 14.5 |\n| 3.75-4 | 24.0 | 17.0 |\n| 4-4.25 | 16.0 | 16.0 |\n| 4.25-4.5 | 9.5 | 13.0 |\n| 4.5-4.75 | 4.0 | 9.5 |\n| 4.75-5 | 1.0 | 6.0 |\n| 5+ | 1.0 | 4.0 |",
+        "chart_caption": [
+            "Figure 3: Post-FOMC, the implied distribution for Dec '26 shifted hawkishly, and both tails strengthened, indicating higher policy uncertainty",
+            "Probabilities of different fed funds outcomes for Dec '26 calculated from the risk-neutral probability density function\\* inferred from Z6 3M SOFR futures options, 6/16 and 6/17",
+            "\\* We compute call premiums for a broad range of strikes and apply the Breeden-Litzenberger method to infer the risk-neutral probability density function. We then use this to compute the market-implied probabilities of different Fed outcomes. See Interest Rate Derivatives 2026 Outlook, 11/25/2025 for full details. Implied distributions computed daily are included in the US Interest Rate Derivatives Package, available via JPM Markets\nSource: JPM"
+        ],
+        "chart_footnote": [],
+        "sub_type": "bar chart",
+        "bbox": [
+            68,
+            438,
+            488,
+            593
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8533c95397ea7b98dd584a7a27d667933446c8dfe3243e4570faaeae2abf8e82.jpg",
+        "content": "| Category | Breakeven | Real yield |\n|---|---|---|\n| 5Yr | -2.6 | 10.4 |\n| 10Yr | -1.7 | 5.3 |\n| 30Yr | -1.4 | 1.1 |",
+        "chart_caption": [
+            "Figure 4: Inflation markets shifted hawkishly with rising real yields and falling breakevens",
+            "Daily change from 6/16 to 6/17 in 5-, 10-, and 30-year breakevens and real yields, bps",
+            "Source: JPM"
+        ],
+        "chart_footnote": [],
+        "sub_type": "bar chart",
+        "bbox": [
+            508,
+            441,
+            929,
+            598
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Looking ahead, with markets pricing in a significantly more hawkish path for Fed policy than the single hike we have forecast in 3Q27, it's tempting to think that yields should find some stability around current levels. However, we think there is a risk of further bearish follow-through, especially if those FOMC members who have forecast hikes this year take the opportunity to elaborate on their projections in the coming weeks. Moreover, Warsh is clearly putting his imprimatur on the Committee's communications more quickly than we had expected, as both the statement and prepared remarks had the lowest relevance scores in decades. As we have previously argued, improvements in the transparency of Fed communications to the public since the GFC likely supported moderating term premium in the decade leading up to the onset of the COVID-19 pandemic, and this is a significant independent variable in our term premium model. Reduced forward guidance risks volatility rising over time, which would also increase term premium and nominal yields (see In the eye of the beholder, 9/17/2023). Finally, we added 10s/30s flatteners as an expression of this view, because they expressed a bearish view with some relative value. Even with today's moves, the 10s/30s curve remains 12bp too steep after controlling for its fundamental drivers, nearly two standard deviations above our model-implied fair value. Net of these factors, we recommend",
+        "bbox": [
+            339,
+            678,
+            926,
+            936
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Jay Barry AC (1-212) 834-4951",
+        "bbox": [
+            68,
+            42,
+            225,
+            55
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            68,
+            56,
+            212,
+            66
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "JPM Securities LLC",
+        "bbox": [
+            68,
+            66,
+            209,
+            78
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Jason Hunter AC (1-212) 270-0034",
+        "bbox": [
+            68,
+            80,
+            243,
+            92
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "jason.x.hunter@JPM.com",
+        "bbox": [
+            68,
+            93,
+            228,
+            104
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Teresa Ho AC (1-212) 834-5087",
+        "bbox": [
+            289,
+            42,
+            449,
+            55
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "teresa.c.ho@JPM.com",
+        "bbox": [
+            290,
+            56,
+            431,
+            66
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Ipek Ozil AC (1-212) 834-2305",
+        "bbox": [
+            289,
+            80,
+            441,
+            92
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "ipek.ozil@JPM.com",
+        "bbox": [
+            290,
+            93,
+            418,
+            104
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            516,
+            42,
+            660,
+            56
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            517,
+            69,
+            594,
+            80
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            39,
+            926,
+            64
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            916,
+            952,
+            926,
+            962
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "maintaining 10s/30s flatteners.",
+        "text_level": 2,
+        "bbox": [
+            341,
+            148,
+            558,
+            165
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Meanwhile, today's FOMC meeting did not provide any materially new details on balance sheet policy. However, one of the five task forces announced by Chair Warsh will focus on the balance sheet. We continue to expect no material near-term change to the Fed's balance sheet, particularly as Warsh indicated that the task force's assessments would occur in 2H—suggesting any resulting balance sheet changes could come in 2027. Additionally, any meaningful reduction in the size of the balance sheet would likely need to be accompanied by changes to liquidity regulation and further efforts to de-stigmatize the Fed's liquidity backstops in order to preserve the smooth functioning of funding markets.",
+        "bbox": [
+            339,
+            171,
+            924,
+            308
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "On balance sheet composition, Warsh indicated that the task force will assess “the benefits and risks of the current ample-reserves regime as well as the composition of the balance sheet.” As we have discussed previously, roughly \\$1.9tn of coupon-bearing Treasuries held in SOMA will mature between 2026 and 2030. While we think it is unlikely that the Fed would reinvest all of these maturities into T-bills, a more plausible approach would be to direct a portion—perhaps half—of these proceeds into bills",
+        "bbox": [
+            339,
+            315,
+            924,
+            407
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "(Figure 5). Under such a scenario, the WAM of the SOMA portfolio would converge toward the maturity profile of outstanding Treasury debt by mid-2029, leaving reserves as the primary means to facilitate a smaller balance sheet (see The name on the front, 2/11/2026).",
+        "bbox": [
+            339,
+            407,
+            916,
+            467
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Figure 5: The WAM of the Fed's SOMA remains significantly longer than that of the overall Treasury market",
+        "bbox": [
+            339,
+            473,
+            921,
+            501
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Weighted average maturity of marketable Treasury debt outstanding and SOMA Treasury holdings, with JPM forecasts assuming baseline assumptions\\* and alternate scenario\\*\\*; months",
+        "bbox": [
+            339,
+            503,
+            906,
+            530
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f86d126f54eeff8d84ee0bded049644695d7c7f7a0b2cb73a38a8a116b5fb74f.jpg",
+        "content": "| Date   | Overall WAM | SOMA WAM | Current add-on schedule | 50% reinvestment in bills |\n|--------|-------------|----------|--------------------------|---------------------------|\n| Dec 05 | 50          | 35       | 35                       | 35                        |\n| Dec 10 | 60          | 80       | 80                       | 80                        |\n| Dec 15 | 65          | 100      | 100                      | 100                       |\n| Dec 20 | 70          | 90       | 90                       | 90                        |\n| Dec 25 | 70          | 105      | 105                      | 105                       |\n| Dec 30 | 65          | 65       | 65                       | 65                        |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "\\*See see The name on the front, 2/11/2026 for more details  \nSource: Federal Reserve, US Treasury, JPM"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            344,
+            535,
+            916,
+            708
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Swap yields spiked \\~12bp in the front end, in excess of our estimate of the delivered move that markets were pricing in, thanks to an SEP and press conference that read more hawkish than expected (Interest Rate Derivatives, US Fixed Income Markets Weekly, 6/5/2026). Looking ahead, a reduction in forward guidance could result in greater weight being placed on event days, which should help keep vols supported across the surface, especially in the upper left.",
+        "bbox": [
+            339,
+            736,
+            916,
+            828
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "5-year TIPS auction preview",
+        "text_level": 2,
+        "bbox": [
+            341,
+            835,
+            607,
+            853
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Treasury will auction \\$24bn reopened 5-year TIPS at 1pm, unchanged in size from the last reopening in December. The last auction cleared 0.3bp cheap to pre-auction levels as the end-user share fell 3.1%-pts to 91.5%, roughly in line with its 6-month average. Auction allotment data shows foreign investor takedown fell 11.5%-pts to 10.5%, below the 6-month average, while investment manager demand rose 2.6%-pts to 74.6%",
+        "bbox": [
+            339,
+            853,
+            924,
+            930
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Jay Barry AC (1-212) 834-4951",
+        "bbox": [
+            68,
+            42,
+            225,
+            55
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            68,
+            56,
+            212,
+            66
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "JPM Securities LLC",
+        "bbox": [
+            68,
+            66,
+            209,
+            78
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Jason Hunter AC (1-212) 270-0034",
+        "bbox": [
+            68,
+            80,
+            243,
+            92
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "jason.x.hunter@JPM.com",
+        "bbox": [
+            68,
+            93,
+            228,
+            104
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Teresa Ho AC (1-212) 834-5087",
+        "bbox": [
+            289,
+            42,
+            449,
+            55
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "teresa.c.ho@JPM.com",
+        "bbox": [
+            290,
+            56,
+            431,
+            66
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Ipek Ozil AC (1-212) 834-2305",
+        "bbox": [
+            289,
+            80,
+            441,
+            92
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "ipek.ozil@JPM.com",
+        "bbox": [
+            290,
+            93,
+            418,
+            104
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            516,
+            42,
+            660,
+            56
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Post-FOMC rates update",
+        "bbox": [
+            517,
+            58,
+            661,
+            69
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            517,
+            70,
+            593,
+            80
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            39,
+            926,
+            64
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            70,
+            952,
+            80,
+            962
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "(Figure 6).",
+        "text_level": 2,
+        "bbox": [
+            341,
+            148,
+            419,
+            165
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/b38caa13f259a8dae6c6958f4854d8caf603b5979bd80366394ba69f91b6f47c.jpg",
+        "table_caption": [
+            "Figure 6: The April 5-year TIPS auction cleared 0.5bp cheap to pre-auction levels as end-user demand rose to 91.5%",
+            "Statistics for 5-year TIPS auctions; units as indicated"
+        ],
+        "table_footnote": [
+            "Source: US Treasury, JPM"
+        ],
+        "table_body": "<table><tr><td>Date</td><td>Yield (%)</td><td>Size ($bn)</td><td>Tail (bp)</td><td>Bid/ cover</td><td>Direct (%)</td><td>Indirect (%)</td><td>End user (%)</td><td>Foreign (%)</td><td>Inv. mgr (%)</td></tr><tr><td>12/19/24</td><td>2.121</td><td>22</td><td>7.4</td><td>2.10</td><td>23.1</td><td>51.4</td><td>74.6</td><td>14.2</td><td>59.4</td></tr><tr><td>4/17/25</td><td>1.702</td><td>25</td><td>1.8</td><td>2.28</td><td>17.8</td><td>64.2</td><td>81.9</td><td>5.1</td><td>75.4</td></tr><tr><td>6/17/25</td><td>1.650</td><td>23</td><td>-1.6</td><td>2.53</td><td>18.8</td><td>74.6</td><td>93.4</td><td>4.4</td><td>87.8</td></tr><tr><td>10/23/25</td><td>1.182</td><td>26</td><td>1.1</td><td>2.51</td><td>24.4</td><td>62.1</td><td>86.5</td><td>9.9</td><td>75.5</td></tr><tr><td>12/18/25</td><td>1.433</td><td>24</td><td>-0.8</td><td>2.62</td><td>21.9</td><td>72.6</td><td>94.6</td><td>22.0</td><td>72.0</td></tr><tr><td>4/23/26</td><td>1.367</td><td>26</td><td>0.3</td><td>2.57</td><td>26.9</td><td>64.6</td><td>91.5</td><td>10.5</td><td>74.6</td></tr><tr><td>3-aucn avg</td><td>1.327</td><td>25</td><td>0.2</td><td>2.57</td><td>24.4</td><td>66.5</td><td>90.9</td><td>14.1</td><td>74.0</td></tr><tr><td>6-aucn avg</td><td>1.576</td><td>24</td><td>1.4</td><td>2.44</td><td>22.2</td><td>64.9</td><td>87.1</td><td>11.0</td><td>74.1</td></tr></table>",
+        "bbox": [
+            344,
+            215,
+            926,
+            335
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Five-year real yields have risen 52bp since their last auction (26bp net of carry) and are now trading at their highest levels in over a year. Moreover, since the last auction, the 5s/10s real yield curve has flattened by 24bps over the period and is at its flattest level since January 2025. Additionally, Brent oil prices are down 25% over this time period, and we currently believe the stance of Fed policy is more restrictive than is necessary given the underlying economic backdrop (see U.S. Fixed Income Market Weekly, 06/12/2026). Meanwhile, 5-year breakevens have narrowed 21bp and are now in-line with their 3-year average. Breakevens have largely underperformed fundamentals in recent weeks and now appear roughly 44bp cheap to our fair value model, almost 3 standard deviations cheap (Figure 7).",
+        "bbox": [
+            339,
+            354,
+            916,
+            507
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Meanwhile, technicals appear supportive, with inflows into inflation-focused ETFs have remained largely positive since the last auction, suggesting increased focus on inflation protection and supporting asset manager demand. However, clients have become more neutral since March, with the active clients survey showing the most neutrals since March 30th, 2026. Additionally, the FOMC today added to uncertainty over the medium-term outlook for real yields and breakevens. Against the backdrop of higher real yields but increased uncertainty, we think tomorrow's auction will likely require more of a concession in order to be digested smoothly.",
+        "bbox": [
+            339,
+            513,
+            924,
+            635
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/76dfbd959967bd9fcc2491755096dab823be168454567c0a033a279a1ca52087.jpg",
+        "content": "| Date   | Value |\n|--------|-------|\n| Jun 19 | -10   |\n| Jun 20 | 35    |\n| Jun 21 | 40    |\n| Jun 22 | 55    |\n| Jun 23 | 30    |\n| Jun 24 | -20   |\n| Jun 25 | -40   |\n| Jun 26 | -50   |",
+        "chart_caption": [
+            "Figure 7: 5-year breakevens have underperformed fundamentals since May and no longer appear fairly valued to our framework",
+            "5-year TIPS breakeven fair value model $^{*}$ ; bp"
+        ],
+        "chart_footnote": [
+            "\\*Breakevens (bp) regressed against JPMCCI, JPMCCI-squared, 3mx3m/15mx3m OIS curve (bp), and VIX Index; model uses daily data over the past seven years; R^2 = 92.5%, SE=14.94bp Source: JPM"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            78,
+            696,
+            478,
+            861
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/404fc6a763957179ce7de723051001cbfb1d07264fdfc5bccd36e969be76c558.jpg",
+        "content": "| Category | On-the-run | Off-the-run |\n| :--- | :--- | :--- |\n| Dec-24 | 13 | 5 |\n| Apr-25 | 9 | 2 |\n| Jun-25 | 12 | 3 |\n| Oct-25 | 16 | 7 |\n| Dec-25 | 12 | 28 |\n| Apr-26 | 21 | 5 |\n| Other days | 7 | 6 |",
+        "chart_caption": [
+            "Figure 8: On-the-run volumes in the 5-year TIPS sector usually see a large spike on auction days",
+            "Daily Treasury volumes of 5-year on-the-run TIPS versus 0- to 5-year TIPS off-the runs in auction days versus other days\\*; \\$bn"
+        ],
+        "chart_footnote": [
+            "\\*12-month moving average",
+            "Dashed lines represent auction day averages",
+            "Source: TRACE"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            508,
+            699,
+            926,
+            861
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Jay Barry AC (1-212) 834-4951",
+        "bbox": [
+            68,
+            42,
+            225,
+            55
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            68,
+            56,
+            212,
+            66
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "JPM Securities LLC",
+        "bbox": [
+            68,
+            66,
+            209,
+            78
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Jason Hunter AC (1-212) 270-0034",
+        "bbox": [
+            68,
+            80,
+            243,
+            92
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "jason.x.hunter@JPM.com",
+        "bbox": [
+            68,
+            93,
+            227,
+            104
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Teresa Ho AC (1-212) 834-5087",
+        "bbox": [
+            289,
+            42,
+            447,
+            55
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "teresa.c.ho@JPM.com",
+        "bbox": [
+            290,
+            56,
+            431,
+            66
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Ipek Ozil AC (1-212) 834-2305",
+        "bbox": [
+            289,
+            80,
+            441,
+            92
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "ipek.ozil@JPM.com",
+        "bbox": [
+            290,
+            93,
+            418,
+            104
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            516,
+            42,
+            660,
+            56
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            517,
+            69,
+            593,
+            80
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            39,
+            924,
+            64
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            916,
+            952,
+            926,
+            962
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Turning to average daily trading volumes, Figure 8 shows that 5-year TIPS trading volumes tend to spike on auction days versus non-auction days. Indeed, over the past year, 10-year TIPS on-the-run volumes have increased by roughly 100% on auction days relative to non-auction days, while off-the-run volumes are roughly 40% higher on auction days than non-auction days. Meanwhile, 5-year nominal Treasury on-the-run volumes increased by 35% and off-the-run volumes declined by 15% on auction days compared to non-auction days over the same one-year period.",
+        "bbox": [
+            339,
+            148,
+            921,
+            256
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Treasury roll estimates",
+        "text_level": 2,
+        "bbox": [
+            341,
+            263,
+            560,
+            280
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Tomorrow at 11am, Treasury will announce end-of-month supply for the auction next week. We expect Treasury to announce \\$69bn 2-year notes, \\$70bn 5-year notes, and \\$44bn 7-year notes, which would all be unchanged in size from last month. We think the 2-, 5-, and 7-year rolls should open at 0.75bp, 0.125bp, and 0.5bp, respectively (Figure 9).",
+        "bbox": [
+            339,
+            281,
+            926,
+            356
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/2ed392786080bdeb4287da02c582b9e26179431c585474c1c34a456a8ec0e40a.jpg",
+        "table_caption": [
+            "Figure 9: We expect Treasury to announce \\$211bn in supply tomorrow",
+            "Fair value projections for WI 2-, 5-, and 7-year Treasury rolls $^{*}$ ; units as indicated"
+        ],
+        "table_footnote": [
+            "Source: US Treasury, JPM",
+            "\\*Repo rates subject to change"
+        ],
+        "table_body": "<table><tr><td></td><td>2-year</td><td>5-year</td><td>7-year</td></tr><tr><td>Current Note</td><td>4.00% May-28</td><td>4.125% May-31</td><td>4.25% May-33</td></tr><tr><td>Yield of Current Issue</td><td>4.160%</td><td>4.228%</td><td>4.336%</td></tr><tr><td>Expected Amount</td><td>$69bn</td><td>$70bn</td><td>$44bn</td></tr><tr><td>SOMA Add-ons</td><td>$9.7bn</td><td>$9.9bn</td><td>$6.2bn</td></tr><tr><td>WI Maturity</td><td>Jun 30, 2028</td><td>Jun 30, 2031</td><td>Jun 30, 2033</td></tr><tr><td>WI Settle Date</td><td>Jun 30, 2026</td><td>Jun 30, 2026</td><td>Jun 30, 2026</td></tr><tr><td>Term Repo (%)*</td><td>3.43</td><td>3.46</td><td>3.62</td></tr><tr><td>Financing Cost (bp)</td><td>1.0</td><td>0.5</td><td>0.3</td></tr><tr><td>Curve/liquidity (bp)</td><td>-0.3</td><td>0.1</td><td>0.2</td></tr><tr><td>Bad Days (current)</td><td>0</td><td>2</td><td>0</td></tr><tr><td>Bad Days (WI)</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Bad Day Adjustment (bp)</td><td>0.0</td><td>-0.4</td><td>0.0</td></tr><tr><td>Estimated Roll (bp)</td><td>0.750</td><td>0.125</td><td>0.500</td></tr><tr><td>Expected Range (bp)</td><td>0.500 to 1.000</td><td>-0.125 to 0.375</td><td>0.250 to 0.750</td></tr></table>",
+        "bbox": [
+            344,
+            395,
+            919,
+            645
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Technical analysis",
+        "text_level": 2,
+        "bbox": [
+            341,
+            683,
+            517,
+            700
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The yield curve saw a dramatic twist flattening after the FOMC meeting, taking the 2s/10s curve through its 36.5-40bp recent and multi-quarter range lows and the 2s/5s curve into the lower end of its broad trading range (Figure 10). As the curve tends to start cycles from the outside in, and belly-to-back-end curves have already broken down from their multi-month/multi-quarter patterns. Now, all but the 2s/5s curve has broken down from its 2025-2026 price pattern. That keeps our attention fixed on the 0bp threshold. The 2.5bp March low held above that support, which includes the March 2025 and July 2025 lows, as well as the June 2024 $38.2\\%$ retracement. We suspect that the support will hold into the early-summer period. Over that time, look to the 12-14bp area to act as major short-term resistance. This zone includes the April-June range lows, 50-day moving average, and 200-day moving average. On the downside, a break below 0bp would confirm a shift into a flattening regime and initially target the -4.5bp Feb-May equal swings objective, -12bp March 2023 $38.2\\%$ retracement, and eventually, the -20bp 2023-2024 base pattern highs.",
+        "bbox": [
+            339,
+            705,
+            924,
+            919
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Jay Barry AC (1-212) 834-4951",
+        "bbox": [
+            68,
+            42,
+            225,
+            55
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            68,
+            56,
+            212,
+            66
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "JPM Securities LLC",
+        "bbox": [
+            68,
+            66,
+            209,
+            78
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Jason Hunter AC (1-212) 270-0034",
+        "bbox": [
+            68,
+            80,
+            243,
+            92
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "jason.x.hunter@JPM.com",
+        "bbox": [
+            68,
+            93,
+            228,
+            104
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Teresa Ho AC (1-212) 834-5087",
+        "bbox": [
+            289,
+            42,
+            449,
+            55
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "teresa.c.ho@JPM.com",
+        "bbox": [
+            290,
+            56,
+            431,
+            66
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Ipek Ozil AC (1-212) 834-2305",
+        "bbox": [
+            289,
+            80,
+            441,
+            92
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "ipek.ozil@JPM.com",
+        "bbox": [
+            290,
+            93,
+            418,
+            104
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            516,
+            42,
+            660,
+            56
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Post-FOMC rates update",
+        "bbox": [
+            517,
+            58,
+            661,
+            69
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            517,
+            70,
+            593,
+            80
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            39,
+            926,
+            64
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            70,
+            952,
+            80,
+            962
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0de32f96f977122e4e655ea5a9ac6285a4405fb9b71bcf248c456e8d925dbcf7.jpg",
+        "content": "| Date       | Value     |\n| ---------- | --------- |\n| Mar        | -50       |\n| Jun        | -30       |\n| Sep        | -10       |\n| Dec        | 0         |\n| Mar        | 10        |\n| Jun        | 20        |\n| Sep        | 30        |\n| Dec        | 28        |\n| Mar        | 14.638    |\n| Jun        | 13.278    |\n| Sep        | 6.371     |",
+        "chart_caption": [
+            "Figure 10: The 2s/5s curve flattens into the lower end of its 2025-2026 trading range, now well below the 12-13bp mid-range technical inflection. Nearby support rests at 6bp and then the key 0bp range lows. We believe the curve will hold that support into the early summer period"
+        ],
+        "chart_footnote": [
+            "Source: JPM, Bloomberg Finance L.P."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            341,
+            191,
+            928,
+            479
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Jay Barry AC (1-212) 834-4951",
+        "bbox": [
+            68,
+            42,
+            223,
+            55
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            68,
+            56,
+            210,
+            66
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "JPM Securities LLC",
+        "bbox": [
+            68,
+            66,
+            207,
+            78
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Jason Hunter AC (1-212) 270-0034",
+        "bbox": [
+            68,
+            80,
+            243,
+            92
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "jason.x.hunter@JPM.com",
+        "bbox": [
+            68,
+            93,
+            227,
+            104
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Teresa Ho AC (1-212) 834-5087",
+        "bbox": [
+            289,
+            42,
+            447,
+            55
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "teresa.c.ho@JPM.com",
+        "bbox": [
+            290,
+            56,
+            431,
+            66
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Ipek Ozil AC (1-212) 834-2305",
+        "bbox": [
+            289,
+            80,
+            441,
+            92
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "ipek.ozil@JPM.com",
+        "bbox": [
+            290,
+            93,
+            418,
+            104
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            516,
+            42,
+            658,
+            56
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            517,
+            69,
+            591,
+            80
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            40,
+            924,
+            63
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            916,
+            952,
+            926,
+            962
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Appendix: Position technicals overview",
+        "text_level": 2,
+        "bbox": [
+            59,
+            200,
+            347,
+            223
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/469ce49b090bbb9a75c54f64bb18f71fb84bb9e17f22f0be8a42d21933c95e3f.jpg",
+        "content": "| Date   | Value |\n|--------|-------|\n| Jun 25 | 1.3   |\n| Aug 25 | 1.25  |\n| Oct 25 | 1.15  |\n| Dec 25 | 1.5   |\n| Feb 26 | 1.05  |\n| Apr 26 | 1.3   |\n| Jun 26 | 1.25  |",
+        "chart_caption": [
+            "Figure 11: JPM Treasury Client Survey",
+            "Treasury Client Survey Index\\*; %"
+        ],
+        "chart_footnote": [
+            "Source: JPM",
+            "\\*1yr z-score shown for both the Treasury Client Survey Net Longs as well as the 4 week moving average of the Treasury Client Survey Index. See Survey Says: Using the Treasury Client Survey to predict rates moves, 7/21/23"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            61,
+            282,
+            328,
+            423
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/28db38dabc77264b434735fabc2df9315600ad105d3a583303b0fd6534f86a96.jpg",
+        "content": "| Date   | Value |\n|--------|-------|\n| Jun 25 | -0.3  |\n| Aug 25 | 0.1   |\n| Oct 25 | 0.0   |\n| Dec 25 | -0.4  |\n| Feb 26 | -0.3  |\n| Apr 26 | 0.1   |\n| Jun 26 | -0.35 |",
+        "chart_caption": [
+            "Figure 14: Active Core Bond Fund\\* Managers' exposure to 10-year Treasuries",
+            "Partial beta with respect to 10-year US Treasury yields in our model for active bond fund excess returns\\*\\*"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg Finance L.P., JPM",
+            "\\* The core bond fund index is comprised of the 25 largest (by assets under management) actively-managed US core bond funds \\*\\* Model is a 3-month regression of daily excess returns on the bond fund index versus daily changes in 1) 10-year US Treasury yields, 2) 5s/30s Treasury curve, 3) JULI spread to Treasury, 4) MBS current coupon Treasury OAS, and 5) 3Mx10Y swaption volatility"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            61,
+            581,
+            330,
+            720
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/38b4d49c9fb784653175272b16131525648efae8942ce9646058d8d3fbe480af.jpg",
+        "content": "| Date   | Value  |\n|--------|--------|\n| Jun 25 | -4500  |\n| Aug 25 | -4000  |\n| Oct 25 | -4500  |\n| Dec 25 | -4000  |\n| Feb 26 | -3500  |\n| Apr 26 | -4000  |\n| Jun 26 | -5000  |",
+        "chart_caption": [
+            "Figure 12: CFTC non-commercial positions",
+            "Net longs in SOFR and Treasury futures; 000s of TY equivalents"
+        ],
+        "chart_footnote": [
+            "Source: CFTC, JPM"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            353,
+            281,
+            621,
+            423
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5c2d8310b67583fdf900cb4af4f00c00f5d94d6e14b02ef341516981390ca994.jpg",
+        "content": "| Date   | Value |\n|--------|-------|\n| Jun 25 | 0.0   |\n| Aug 25 | -0.4  |\n| Oct 25 | -0.8  |\n| Dec 25 | 0.0   |\n| Feb 26 | -0.4  |\n| Apr 26 | 0.0   |\n| Jun 26 | 0.4   |",
+        "chart_caption": [
+            "Figure 15: Macro Hedge Fund exposure to 10-year Treasuries",
+            "Partial beta with respect to the JPM US 7-10Y bond index in our model for macro hedge fund returns\\*"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg Finance L.P., HFR, JPM",
+            "\\* Model is a six-week regression of daily excess returns on the HFRX Macro/CTA index versus daily excess returns on 1) JPM US 7-10Y bond index, 2) JPM ex-US Global Bond Index, 3) S&P 500 equity index, 4) MSCI G7 ex-US equity index, 5) JPM global cash index, and 6) GS Commodities Index"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            353,
+            578,
+            622,
+            720
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4b9d4121a399acab30e1bab0a5259076208fa9264915927bd4eb86b86caa3eda.jpg",
+        "content": "| Date   | Value |\n|--------|-------|\n| Jun 25 | 0.0   |\n| Aug 25 | 1.2   |\n| Oct 25 | 0.5   |\n| Dec 25 | -0.5  |\n| Feb 26 | 1.5   |\n| Apr 26 | 0.8   |\n| Jun 26 | -0.3  |",
+        "chart_caption": [
+            "Figure 13: CTA exposure to 10-year Treasuries",
+            "Partial beta with respect to the JPM US 7-10Y bond index in our model for CTA returns\\*"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg Finance L.P., SG, JPM",
+            "\\* Model is a 1-month regression of daily excess returns on the CTA index versus daily excess returns on 1) JPM US 7-10Y bond index, 2) JPM ex-US Global Bond Index, 3) S&P 500 index, 4) JPM global cash index, and 5) GS Commodities Index"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            647,
+            282,
+            915,
+            423
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fbcf4158d81a43ef29c4a73a229e626815164d39076873e3d1a4f7b93c3cb87d.jpg",
+        "content": "| Date   | Value |\n|--------|-------|\n| Jun 25 | 0     |\n| Aug 25 | -5    |\n| Oct 25 | -10   |\n| Dec 25 | 0     |\n| Feb 26 | 5     |\n| Apr 26 | 10    |\n| Jun 26 | 0     |",
+        "chart_caption": [
+            "Figure 16: T-note dollar weighed Put/Call ratio",
+            "The total (OI \\* settlement prices) of the individual T-note future Puts divided by the same calculation for Calls"
+        ],
+        "chart_footnote": [
+            "Source: CFTC, Bloomberg Finance L.P., CQG, CME, JPM"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            647,
+            578,
+            915,
+            720
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Jay Barry AC (1-212) 834-4951",
+        "bbox": [
+            59,
+            78,
+            179,
+            94
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            60,
+            96,
+            171,
+            109
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "JPM Securities LLC",
+        "bbox": [
+            61,
+            109,
+            167,
+            125
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Jason Hunter AC (1-212) 270-0034",
+        "bbox": [
+            60,
+            127,
+            194,
+            143
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "jason.x.hunter@JPM.com",
+        "bbox": [
+            60,
+            143,
+            181,
+            158
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Teresa Ho AC (1-212) 834-5087",
+        "bbox": [
+            315,
+            78,
+            438,
+            94
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "teresa.c.ho@JPM.com",
+        "bbox": [
+            316,
+            96,
+            426,
+            111
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Ipek Ozil AC (1-212) 834-2305",
+        "bbox": [
+            315,
+            127,
+            433,
+            143
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "ipek.ozil@JPM.com",
+        "bbox": [
+            316,
+            143,
+            414,
+            158
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            532,
+            78,
+            643,
+            96
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Post-FOMC rates update",
+        "bbox": [
+            534,
+            98,
+            646,
+            112
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            535,
+            114,
+            593,
+            127
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            837,
+            73,
+            936,
+            106
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            61,
+            926,
+            68,
+            937
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.",
+        "bbox": [
+            66,
+            167,
+            924,
+            270
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.",
+        "bbox": [
+            66,
+            276,
+            898,
+            303
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            68,
+            309,
+            228,
+            323
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Company-Specific Disclosures: Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.",
+        "bbox": [
+            66,
+            334,
+            916,
+            387
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.",
+        "bbox": [
+            66,
+            393,
+            926,
+            470
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:",
+        "text_level": 2,
+        "bbox": [
+            66,
+            477,
+            635,
+            489
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.",
+        "bbox": [
+            66,
+            489,
+            926,
+            655
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/1f21787ed15246d35ebcbad7dced3774b416f1ede94eb59033842f0f28d84263.jpg",
+        "table_caption": [
+            "JPM Equity Research Ratings Distribution, as of April 04, 2026"
+        ],
+        "table_footnote": [
+            "\\*Please note that the percentages may not add to 100% because of rounding.",
+            "\\*\\*Percentage of subject companies within each of the \"buy,\" \"hold\" and \"sell\" categories for which JPM has provided investment banking services within the previous 12 months.",
+            "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter."
+        ],
+        "table_body": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>79%</td><td>74%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>49%</td><td>39%</td><td>13%</td></tr><tr><td>IB clients**</td><td>94%</td><td>93%</td><td>85%</td></tr></table>",
+        "bbox": [
+            68,
+            683,
+            645,
+            760
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.",
+        "bbox": [
+            66,
+            854,
+            913,
+            931
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Jay Barry AC",
+        "bbox": [
+            68,
+            55,
+            137,
+            66
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "(1-212) 834-4951",
+        "bbox": [
+            68,
+            66,
+            161,
+            77
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            68,
+            77,
+            214,
+            88
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            343,
+            55,
+            477,
+            66
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            344,
+            66,
+            415,
+            75
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            924,
+            77
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            916,
+            952,
+            926,
+            962
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "History of Investment Recommendations:",
+        "text_level": 2,
+        "bbox": [
+            68,
+            147,
+            334,
+            160
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.",
+        "bbox": [
+            66,
+            160,
+            875,
+            186
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.",
+        "bbox": [
+            66,
+            191,
+            916,
+            220
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Technical Research: Due to the nature of technical analysis, any securities mentioned in this publication may not be continuously followed by our technical analyst and may or may not be covered by our fundamental analysts. Accordingly, any analysis should be regarded as stand-alone analysis.",
+        "bbox": [
+            66,
+            224,
+            916,
+            265
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Other Disclosures",
+        "text_level": 2,
+        "bbox": [
+            68,
+            271,
+            199,
+            285
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.",
+        "bbox": [
+            66,
+            316,
+            895,
+            330
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.",
+        "bbox": [
+            66,
+            337,
+            919,
+            364
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.",
+        "bbox": [
+            66,
+            369,
+            888,
+            409
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).",
+        "bbox": [
+            66,
+            415,
+            916,
+            443
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.",
+        "bbox": [
+            66,
+            449,
+            924,
+            501
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.",
+        "bbox": [
+            66,
+            506,
+            890,
+            534
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.",
+        "bbox": [
+            66,
+            539,
+            895,
+            566
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.",
+        "bbox": [
+            66,
+            571,
+            926,
+            648
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or https://www.finra.org/sites/default/files/2020-08/Security\\_Futures\\_Risk\\_Disclosure\\_Statement\\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.",
+        "bbox": [
+            66,
+            655,
+            913,
+            732
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank\\_offered\\_rates",
+        "bbox": [
+            66,
+            738,
+            924,
+            779
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.",
+        "bbox": [
+            66,
+            784,
+            926,
+            823
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.",
+        "bbox": [
+            66,
+            829,
+            926,
+            933
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Jay Barry AC",
+        "bbox": [
+            68,
+            55,
+            137,
+            66
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "(1-212) 834-4951",
+        "bbox": [
+            68,
+            66,
+            161,
+            77
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            68,
+            77,
+            214,
+            88
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            343,
+            55,
+            477,
+            66
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            344,
+            66,
+            415,
+            75
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            924,
+            77
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            71,
+            952,
+            86,
+            963
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            66,
+            147,
+            784,
+            161
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:",
+        "text_level": 2,
+        "bbox": [
+            66,
+            167,
+            506,
+            181
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51).",
+        "bbox": [
+            66,
+            181,
+            895,
+            207
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.",
+        "bbox": [
+            66,
+            212,
+            926,
+            340
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.",
+        "bbox": [
+            66,
+            345,
+            903,
+            375
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.",
+        "bbox": [
+            66,
+            378,
+            919,
+            419
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.",
+        "bbox": [
+            66,
+            424,
+            586,
+            439
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.",
+        "bbox": [
+            66,
+            445,
+            874,
+            470
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.",
+        "bbox": [
+            66,
+            478,
+            915,
+            530
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.",
+        "bbox": [
+            66,
+            536,
+            908,
+            588
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.",
+        "bbox": [
+            66,
+            594,
+            923,
+            696
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.",
+        "bbox": [
+            66,
+            702,
+            926,
+            781
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a 'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.",
+        "bbox": [
+            66,
+            786,
+            926,
+            928
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Jay Barry AC",
+        "bbox": [
+            68,
+            55,
+            137,
+            66
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "(1-212) 834-4951",
+        "bbox": [
+            68,
+            66,
+            161,
+            77
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            68,
+            77,
+            214,
+            88
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            343,
+            55,
+            477,
+            66
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            344,
+            66,
+            415,
+            75
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            911,
+            952,
+            926,
+            963
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            66,
+            147,
+            919,
+            175
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).",
+        "bbox": [
+            66,
+            180,
+            908,
+            208
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.",
+        "bbox": [
+            66,
+            212,
+            924,
+            266
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.",
+        "bbox": [
+            66,
+            271,
+            921,
+            297
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.",
+        "bbox": [
+            66,
+            303,
+            913,
+            330
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).",
+        "bbox": [
+            66,
+            335,
+            916,
+            377
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.",
+        "bbox": [
+            66,
+            382,
+            892,
+            422
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.",
+        "bbox": [
+            66,
+            428,
+            921,
+            455
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.",
+        "bbox": [
+            66,
+            460,
+            924,
+            563
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).",
+        "bbox": [
+            66,
+            569,
+            913,
+            597
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.",
+        "bbox": [
+            66,
+            602,
+            924,
+            729
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.",
+        "bbox": [
+            66,
+            734,
+            926,
+            776
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.",
+        "bbox": [
+            66,
+            781,
+            929,
+            922
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Jay Barry AC",
+        "bbox": [
+            68,
+            55,
+            137,
+            66
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "(1-212) 834-4951",
+        "bbox": [
+            68,
+            66,
+            161,
+            77
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            68,
+            77,
+            214,
+            88
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            343,
+            55,
+            477,
+            66
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            344,
+            66,
+            415,
+            75
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            924,
+            77
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            71,
+            952,
+            86,
+            963
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.",
+        "bbox": [
+            66,
+            147,
+            913,
+            174
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.",
+        "bbox": [
+            66,
+            180,
+            926,
+            611
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email",
+        "bbox": [
+            66,
+            617,
+            923,
+            720
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer",
+        "bbox": [
+            66,
+            724,
+            924,
+            790
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.",
+        "bbox": [
+            66,
+            796,
+            916,
+            873
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\"Other Disclosures\" last revised May 16, 2026.",
+        "bbox": [
+            68,
+            878,
+            351,
+            893
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from J.P.",
+        "bbox": [
+            66,
+            905,
+            921,
+            931
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Jay Barry AC",
+        "bbox": [
+            68,
+            55,
+            137,
+            66
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "(1-212) 834-4951",
+        "bbox": [
+            68,
+            66,
+            161,
+            77
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            68,
+            77,
+            214,
+            88
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            343,
+            55,
+            477,
+            66
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            344,
+            66,
+            415,
+            75
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            924,
+            77
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            911,
+            952,
+            926,
+            962
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Morgan any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.",
+        "bbox": [
+            66,
+            147,
+            875,
+            174
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Completed 17 Jun 2026 07:20 PM EDT",
+        "bbox": [
+            68,
+            180,
+            308,
+            194
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Disseminated 17 Jun 2026 07:20 PM EDT",
+        "bbox": [
+            673,
+            180,
+            926,
+            193
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Jay Barry AC",
+        "bbox": [
+            68,
+            55,
+            135,
+            66
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "(1-212) 834-4951",
+        "bbox": [
+            68,
+            66,
+            161,
+            77
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "john.f.barry@JPM.com",
+        "bbox": [
+            68,
+            77,
+            214,
+            88
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Strategy",
+        "bbox": [
+            343,
+            55,
+            477,
+            66
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "17 June 2026",
+        "bbox": [
+            344,
+            66,
+            415,
+            75
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            51,
+            926,
+            77
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            71,
+            952,
+            86,
+            962
+        ],
+        "page_idx": 13
+    }
+]
