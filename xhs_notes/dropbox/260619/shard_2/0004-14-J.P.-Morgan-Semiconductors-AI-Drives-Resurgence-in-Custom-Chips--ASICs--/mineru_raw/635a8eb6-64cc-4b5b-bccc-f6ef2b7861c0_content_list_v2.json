@@ -1,0 +1,3929 @@
+[
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/192fc9cb5eb29430afa4a96d2f3de235bf109a247a4dbcd1c65351538c92b95c.jpg"
+                },
+                "content": "JPM",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "sub_type": "text_image",
+            "bbox": [
+                0,
+                0,
+                73,
+                998
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Semiconductors"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                378,
+                200,
+                661,
+                245
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "AI Drives Resurgence in Custom Chips (ASICs) - ASIC Market Overview/Update"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                103,
+                281,
+                936,
+                388
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Harlan Sur AC"
+                    }
+                ]
+            },
+            "bbox": [
+                405,
+                480,
+                553,
+                514
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "415-315-6700"
+                    }
+                ]
+            },
+            "bbox": [
+                405,
+                524,
+                551,
+                555
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "harlan.sur@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                405,
+                566,
+                678,
+                602
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM Securities LLC"
+                    }
+                ]
+            },
+            "bbox": [
+                405,
+                609,
+                684,
+                643
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mayur Ramdhani"
+                    }
+                ]
+            },
+            "bbox": [
+                405,
+                697,
+                553,
+                723
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "212-622-1664"
+                    }
+                ]
+            },
+            "bbox": [
+                405,
+                730,
+                520,
+                754
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "mayur.ramdhani@JPM.com"
+                    }
+                ]
+            },
+            "bbox": [
+                405,
+                764,
+                667,
+                790
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM Securities LLC"
+                    }
+                ]
+            },
+            "bbox": [
+                405,
+                795,
+                623,
+                821
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See the end pages of this presentation for analyst certification and important disclosures."
+                    }
+                ]
+            },
+            "bbox": [
+                94,
+                846,
+                640,
+                869
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                94,
+                42,
+                280,
+                99
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "North America Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                712,
+                40,
+                925,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                857,
+                66,
+                925,
+                86
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                516,
+                933,
+                526,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                834,
+                921,
+                925,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ASIC – Application Specific Integrated Circuit:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                29,
+                143,
+                534,
+                179
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- A chip that is designed for a specific CUSTOMER for a specific application or platform:"
+                    }
+                ]
+            },
+            "bbox": [
+                29,
+                192,
+                898,
+                264
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Example: Apple iPhone A19 processor chip (Apple does complete design)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Example: Nokia Reef Shark BTS processor chip (Nokia, Marvell, Broadcom)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Example: Google TPU AI processor (Google, Broadcom)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Example: Amazon Trainium 3 AI processor (AWS, Marvell, Alchip)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                279,
+                883,
+                462
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ASSP - Application Specific Standard Product (sometimes called “merchant”)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                29,
+                473,
+                880,
+                509
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• A chip that is designed for multiple customers for a specific application:"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                524,
+                844,
+                560
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Example: Qualcomm snap-dragon mobile processor family"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Example: NVIDIA AI GPU, AMD AI GPU"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                571,
+                707,
+                656
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "GP - General Purpose products – multiple customers/multiple applications"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                29,
+                669,
+                847,
+                705
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• A chip that is designed for multiple customers for multiple applications"
+                    }
+                ]
+            },
+            "bbox": [
+                30,
+                718,
+                765,
+                754
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Example: Intel/AMD PC or server CPU"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Example: Infineon, STMicro, Onsemi – power semiconductors/Microcontrollers"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Example: Samsung, Hynix, Micron – memory/storage"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                766,
+                906,
+                900
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "What Is An ASIC??"
+                    }
+                ]
+            },
+            "bbox": [
+                23,
+                47,
+                266,
+                84
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                933,
+                527,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                834,
+                921,
+                925,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/60db2429403424455be923caba00e209cbd9fe43e0be0b71f5259bb8f992330d.jpg"
+                },
+                "content": "| Category | Sub-category | Amount |\n| -------- | ----------- | ------ |\n| Total Semi Industry Revenues CY25 | $805B | $805B |\n| Application Specific | $351B | $351B |\n| General Purpose | $454B | $454B |\n| Application Specific Standard Products (ASSPs) | $282B | $282B |\n| Application Specific Integrated Circuits (ASICs) | $68B | $68B |\n| Memory | - | - |\n| Microprocessor | - | - |\n| Analog | - | - |\n| Power | - | - |\n| AI GPUs (NVDA, AMD) | - | - |\n| Qualcomm Snapdragon | - | - |\n| In vehicle SDV Processor | - | - |\n| Networking switch IC | - | - |\n| Optical DSP IC | - | - |\n| Google TPU AI Processor | - | - |\n| Nokia Reef Shark 5G RAN | - | - |\n| Amazon Trainium XPU | - | - |\n| Apple A19 iPhone CPU | - | - |\n| Apple iPhone wireless charging | - | - |\n| Microsoft Maia AI processor | - | - |",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "sub_type": "sankey diagram",
+            "bbox": [
+                8,
+                156,
+                963,
+                875
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Market Sizing (2025)"
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                47,
+                287,
+                91
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                516,
+                934,
+                526,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                921,
+                925,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Value proposition of doing your own custom chip or ASIC:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                143,
+                680,
+                179
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Customer OWNS the software stack"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- If you own the software stack, can custom tune the silicon to the specific software stack and driver better system level performance (compute performance/power)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- The economics (high volume applications and /or high ASP infrastructure platforms lend themselves well to ASICs) – need to drive ROI/Justification of customer silicon chip design team:"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Apple is the poster child for custom ASICs – they create/own the entire software stack/applications layer, they own the entire system design, they can differentiate on platform performance/low power and they ship 250M units per year (strong ROI on internal chip design R&D) – leverage investments into PC CPUs, watch CPUs, etc..."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Game consoles (Sony/Microsoft) – same value prop as Apple – relative high volumes"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Base station RAN processor ASICs – small volumes, but VERY HIGH ASPs, leverage across entire network/subscriber base drives ROI"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Google TPU AI processor, Amazon Trainium AI processor, Meta MTIA processor, Microsoft Maia AI processor – low volumes, but VERY VERY HIGH ASPs – token generation/AI monetization will drive strong ROI"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                192,
+                922,
+                908
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Why Design Your Own ASIC or Custom Chip?"
+                    }
+                ]
+            },
+            "bbox": [
+                23,
+                47,
+                594,
+                91
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                516,
+                934,
+                526,
+                949
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                834,
+                921,
+                924,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Example: AI GPU Versus AI Custom ASIC Processor"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                27,
+                32,
+                750,
+                75
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/f77728d50a447d46bcc8e289e3fb22e9545e52fda8aaa50ff47bb927ce922ace.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "AI ASICs/XPUs Offer Competitive Performance, Economics and Power Efficiency"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td>NVIDIA B200 Blackwell</td><td>NVIDIA B300 Blackwell Ultra</td><td>Google/ Broadcom TPU7x Ironwood</td></tr><tr><td>Compute performance (FP8 TFLOPS)</td><td>4500</td><td>5000</td><td>4614</td></tr><tr><td>Memory capacity per chip (HBM3E)</td><td>192</td><td>288</td><td>192</td></tr><tr><td>HBM bandwidth per chip (TBps)</td><td>7.7</td><td>8.0</td><td>7.4</td></tr><tr><td>TDP (Watts)</td><td>1000</td><td>1200</td><td>1000</td></tr><tr><td>ASP</td><td>$35,000</td><td>$40,000</td><td>$13,000</td></tr><tr><td>TFLOPS per $</td><td>0.13</td><td>0.13</td><td>0.35</td></tr><tr><td>TFLOPS per Wattt</td><td>4.50</td><td>4.17</td><td>4.61</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                71,
+                202,
+                876,
+                563
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/ed632a9f79dc21c9ef5d23b1c8dbbfc2f8a7d28639630240b2802011c4c222d9.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company reports, JPM"
+                    }
+                ],
+                "html": "<table><tr><td>Compute Platform Partner</td><td>Scenario</td><td>DC Capex per GW</td><td>Compute Partner Revenue per GW</td><td>Compute Capex</td><td>Networking Capex</td></tr><tr><td rowspan=\"2\">NVIDIA</td><td>Low case</td><td>$45</td><td>$20</td><td>$16</td><td>$4</td></tr><tr><td>High case</td><td>$55</td><td>$30</td><td>$24</td><td>$6</td></tr><tr><td rowspan=\"2\">AMD</td><td>Low case</td><td>$35</td><td>$15</td><td>$14</td><td>$2</td></tr><tr><td>High case</td><td>$40</td><td>$20</td><td>$18</td><td>$2</td></tr><tr><td rowspan=\"2\">Broadcom</td><td>Low case</td><td>$30</td><td>$10</td><td>$7</td><td>$3</td></tr><tr><td>High case</td><td>$40</td><td>$15</td><td>$11</td><td>$5</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                71,
+                604,
+                876,
+                875
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                517,
+                934,
+                526,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                923,
+                925,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Chip and Rack Architectures – TPU7x Ironwood ASIC vs. Nvidia Blackwell GPU"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                27,
+                39,
+                921,
+                76
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2d1efea17d4f65cce4ce3bca1aa2385da1dea85518034a16406744c10bde51e7.jpg"
+                },
+                "content": "```mermaid\ngraph TD\n  A[\"Host\"] --> B[\"TPU7x Ironwood\"]\n  C[\"gBMC\"] --> D[\"PCIe Gen5 x16\"]\n  C --> E[\"PCIe Gen2 x1\"]\n  D --> F[\"Memory and DMA Interconnect\"]\n  E --> F\n  F --> G[\"Chip Manager\"]\n  F --> H[\"HBM3 Ctrl\"]\n  F --> I[\"HBM3 Ctrl\"]\n  F --> J[\"HBM3 Ctrl\"]\n  F --> K[\"HBM3 Ctrl\"]\n  F --> L[\"Sparse Core\"]\n  F --> M[\"Sparse Core\"]\n  F --> N[\"HBM3 Stack\"]\n  F --> O[\"HBM3 Stack\"]\n  F --> P[\"HBM3 Stack\"]\n  F --> Q[\"HBM3 Stack\"]\n  F --> R[\"HBM3 Stack\"]\n  F --> S[\"HBM3 Stack\"]\n  F --> T[\"8-hi\"]\n    \n  U[\"TensorCore\"] --> V[\"VPU + Vmem\"]\n  V --> W[\"XLU\"]\n  V --> X[\"XLU\"]\n  V --> Y[\"MXU\"]\n  V --> Z[\"TCS\"]\n  Z --> AA[\"XLU\"]\n  Z --> AB[\"XLU\"]\n    \n  AC[\"TensorCore\"] --> AD[\"VPU + Vmem\"]\n  AD --> AE[\"XLU\"]\n  AD --> AF[\"MXU\"]\n  AD --> AG[\"TCS\"]\n  AG --> AH[\"XLU\"]\n  AG --> AI[\"MXU\"]\n    \n  J --> AJ[\"Memory and DMA Interconnect\"]\n  AJ --> AK[\"Sparse Core\"]\n  AJ --> AL[\"Sparse Core\"]\n  AJ --> AM[\"HBM3 Ctrl\"]\n  AJ --> AN[\"HBM3 Ctrl\"]\n  AJ --> AO[\"HBM3 Ctrl\"]\n  AJ --> AP[\"HBM3 Ctrl\"]\n    \n  AJ --> AQ[\"8-hi\"]\n    \n  AR[\"ICR Router\"] --> AS[\"6× Link stack\"]\n  AR --> AT[\"6×112G SerDes octals + PCS\"]\n    \n  AU[\"CPU Host\"] --> AV[\"Data Center Networking (DCN) Uplinks\"]\n  AV --> AW[\"Power In\"]\n    \n  AX[\"Copper Intra-rack ICI Interconnects\"] --> AY[\"Optical inter-rack ICI (Interchip Interconnect)\"]\n  AY --> AZ[\"Heat Out (Air & Liquid)\"]\n    \n    style A fill:#f9f,stroke:#333\n    style B fill:#ccf,stroke:#333\n    style C fill:#cfc,stroke:#333\n    style D fill:#fcc,stroke:#333\n    style E fill:#fcc,stroke:#333\n    style F fill:#cff,stroke:#333\n    style AG fill:#fcc,stroke:#333\n    style AH fill:#fcc,stroke:#333\n    style AI fill:#fcc,stroke:#333\n    style AJ fill:#fcc,stroke:#333\n    style AK fill:#fcc,stroke:#333\n    style AL fill:#fcc,stroke:#333\n    style AM fill:#fcc,stroke:#333\n    style AN fill:#fcc,stroke:#333\n    style AO fill:#fcc,stroke:#333\n    style AP fill:#fcc,stroke:#333\n    style AQ fill:#fcc,stroke:#333\n    style AR fill:#fcc,stroke:#333\n```",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Chip Architecture"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Rack Architecture"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                35,
+                163,
+                963,
+                524
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d400064e39afd134176fba32b4e99fe657d62ed3312f0f291cb01f2bc559a079.jpg"
+                },
+                "content": "```mermaid\ngraph LR\n  A[\"Nvidia Blackwell\"] --> B[\"NVSwitch\"]\n  B --> C[\"SHARP In Network Compute\"]\n  C --> D[\"NVLink 5 1,800 GB/s\"]\n  D --> E[\"NVLink-C2C Up to 900GB/s Coherent CPU-GPU Interface\"]\n  E --> F[\"Grace CPU\"]\n  F --> G[\"JPM\"]\n    \n    subgraph NVP\n        H[\"Compute Density 4x more TFLOPs/mm² vs Hopper\"]\n        I[\"NVFP4 Tensor cores 15 PetaFLOPS Dense NVFP4\"]\n        J[\"288GB HBM3E Memory (8 Stacks, Up to 8 TB/s)\"]\n    end\n    \n    subgraph NVP_CPU\n        K[\"GPC\"]\n        L[\"GPC\"]\n        M[\"GPC\"]\n        N[\"GPC\"]\n        O[\"GPC\"]\n        P[\"GPC\"]\n        Q[\"GPC\"]\n        R[\"GPC\"]\n        S[\"GPC\"]\n        T[\"GPC\"]\n        U[\"GPC\"]\n        V[\"GPC\"]\n        W[\"GPC\"]\n        X[\"GPC\"]\n        Y[\"GPC\"]\n        Z[\"GPC\"]\n        AA[\"GPC\"]\n        AB[\"GPC\"]\n    end\n    \n    subgraph JPM\n        AC[\"Power shelves\"]\n        AD[\"8x Dual GH200 Compute Trays\"]\n        AE[\"9x NVLink Switch Trays\"]\n        AF[\"8x Dual GH200 Compute Trays\"]\n        AG[\"Power shelves\"]\n    end\n```",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                37,
+                537,
+                963,
+                955
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "S"
+                    }
+                ]
+            },
+            "bbox": [
+                34,
+                965,
+                44,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/7852441a8a42e9684e5316cc4a7fd79bcd64552c1a772a15086c89948d4d742e.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>AI accelerators units (MM)</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td></tr><tr><td>NVIDIA GPUs</td><td>1.7</td><td>4.5</td><td>6.2</td><td>8.9</td><td>9.9</td></tr><tr><td>AMD GPUs</td><td>0.1</td><td>0.5</td><td>0.7</td><td>0.6</td><td>1.0</td></tr><tr><td>Google TPUs</td><td>1.2</td><td>1.7</td><td>1.8</td><td>4.5</td><td>8.0</td></tr><tr><td>AWS Inferenta + Trainium</td><td>0.3</td><td>0.8</td><td>1.5</td><td>1.9</td><td>3.3</td></tr><tr><td>Meta MTIA</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.3</td><td>0.5</td></tr><tr><td>Microsoft MAIA</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.2</td><td>0.7</td></tr><tr><td>Total</td><td>3.3</td><td>7.4</td><td>10.1</td><td>16.3</td><td>23.3</td></tr><tr><td>Growth Y/Y%</td><td></td><td>128%</td><td>36%</td><td>62%</td><td>43%</td></tr><tr><td>GPU % total units</td><td>55%</td><td>67%</td><td>68%</td><td>58%</td><td>47%</td></tr><tr><td>ASIC/XPU % total units</td><td>45%</td><td>33%</td><td>32%</td><td>42%</td><td>53%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                210,
+                156,
+                827,
+                447
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/10013a6e85d28069e63cf1852b8fa0bfd3e1039ad12a59e474778c77658dbb4f.jpg"
+                },
+                "content": "| Year | GPU Units | ASIC/XPU Units |\n| :--- | :--- | :--- |\n| 2023 | 1.8 | 1.5 |\n| 2024 | 5.0 | 2.5 |\n| 2025 | 6.8 | 3.3 |\n| 2026E | 9.5 | 6.8 |\n| 2027E | 10.9 | 12.5 |",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company reports, JPM"
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                268,
+                501,
+                755,
+                890
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "AI ASIC Unit Shipments Forecast to Exceed GPU Units by 2027"
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                39,
+                753,
+                76
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                516,
+                934,
+                526,
+                949
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                923,
+                925,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Demand is rising for custom ASICs because many of the large OEMs/CSPs/Hyperscalers are looking for more differentiation, better performance, lower power consumption, and overall lower cost of ownership versus off-the-shelf chip solutions (or ASSPs) – Broadcom (#1 80-85% share high-end ASIC mkt) and Marvell (#2 10-12% share high-end ASIC mkt) should continue to dominate this opportunity."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "These same customers do not have the capabilities to do large, complex system-on-a-chip (SOC) designs, nor do they have the broad IP portfolio of on-chip design blocks, like high-speed SERDES capabilities or high-speed memory interface technology. They need to engage with semiconductor companies that have the IP and chip design expertise."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "The digital custom AI ASIC market is a ~60-$70B market opportunity in CY26 growing at a 40-50%+ CAGR over the next few years :"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                49,
+                184,
+                939,
+                527
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Cloud/Hyperscale ASICS (AI processors, SmartNICs, Security/Video processors, Networking/Storage acceleration)"
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                537,
+                797,
+                601
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "We estimate Broadcom will drive $60B+ in total AI revenue in FY26 (up significantly from ~$20B in FY25) as new products/programs ramp (Meta MTIA 3nm ASIC programs, Google TPUv7/V8 3nm, Anthropic (TPU), OpenAI, and Softbank/ARM)....tracking $150B+ AI revs in FY27"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "We expect Marvell to drive ~$9.3B of data center revenue in CY26 (up from ~$6.1B in CY25), and ~$14.6B in CY27 – strong optical DSP shipments (800G/1.6T, coherent lite, initial CPO ramp) and continued Amazon Trainium 3 and 4 ASIC engagement and start of Microsoft 3nm Maia ASIC ramp....overall 25+ XPU/XPU attach ASIC wins."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                612,
+                941,
+                846
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Custom Chip (ASIC) Market Experiencing a Resurgence in Activity as Large OEMs, Cloud, and Hyperscalers Look to Differentiate at the Silicon Level: $60-70B Opportunity in CY26"
+                    }
+                ]
+            },
+            "bbox": [
+                23,
+                32,
+                992,
+                116
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                516,
+                933,
+                525,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                834,
+                921,
+                924,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/8bacba2eb2a1efd3720e4aae26c7ef19252d89ecf331fd9c77a2420e10dbd46a.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: JPM Research"
+                    }
+                ],
+                "html": "<table><tr><td>ASIC Customers</td><td>Programs</td><td>Technology</td><td>Status</td></tr><tr><td>Cloud Titan A</td><td>AI Chip</td><td>28nm Technology</td><td>Deployed</td></tr><tr><td>Cloud Titan A</td><td>AI Chip</td><td>16nm Technology</td><td>Deployed</td></tr><tr><td>Cloud Titan A</td><td>AI Chip</td><td>16nm Technology</td><td>Deployed</td></tr><tr><td>Cloud Titan A</td><td>AI Chip</td><td>7nm Technology</td><td>Deployed</td></tr><tr><td>Cloud Titan A</td><td>AI Chip</td><td>5nm Technology</td><td>Deployed</td></tr><tr><td>Cloud Titan A</td><td>AI Chip</td><td>3nm Technology v6</td><td>Ramping Now</td></tr><tr><td>Cloud Titan A</td><td>AI Chip</td><td>3nm/2nm Next Gen v7</td><td>Tape Out 1H25, Ramp 2H26</td></tr><tr><td>Cloud Titan A</td><td>AI Chip</td><td>2nm/sub-2nm Next Gen v8</td><td>CY27/CY28</td></tr><tr><td>Cloud Titan A</td><td>VCU Chip</td><td>12nm/5nm Technology</td><td>Deployed/In Design</td></tr><tr><td>Cloud Titan A</td><td>Switching</td><td>7nm technology</td><td>Deployed</td></tr><tr><td>Cloud Titan A</td><td>ARM CPU</td><td>5nm Technology</td><td>2024</td></tr><tr><td colspan=\"4\"></td></tr><tr><td>Cloud Titan B</td><td>DPU</td><td>7nm/5nm/3nm</td><td>2021/2022/2023</td></tr><tr><td>Cloud Titan B</td><td>Video Trans</td><td>7nm technology</td><td>2021/2022</td></tr><tr><td>Cloud Titan B</td><td>Storage</td><td>5nm</td><td>2023</td></tr><tr><td>Cloud Titan B</td><td>Security</td><td>7nm technology</td><td>2021</td></tr><tr><td>Cloud Titan B</td><td>AI Chip</td><td>7nm and 5nm</td><td>Deploying</td></tr><tr><td>Cloud Titan B</td><td>AI Chip</td><td>3nm Technology</td><td>End CY25 ramp</td></tr><tr><td>Cloud Titan B</td><td>AI Chip</td><td>3nm Technology</td><td>Mid CY26 ramp</td></tr><tr><td>Cloud Titan B</td><td>AI Chip</td><td>2nm Technology</td><td>CY27 ramp</td></tr><tr><td colspan=\"4\"></td></tr><tr><td>Cloud Titan C</td><td>Security</td><td>7nm technology</td><td>2020/2021</td></tr><tr><td>Cloud Titan C</td><td>DPU</td><td>7nm/5nm technology</td><td>2022/2024</td></tr><tr><td>Cloud Titan C</td><td>Storage</td><td>5nm technology</td><td>2023</td></tr><tr><td>Cloud Titan C</td><td>AI Chip</td><td>3nm Technology</td><td>CY26 ramp</td></tr><tr><td>Cloud Titan C</td><td>AI Chip</td><td>2nm Technology</td><td>CY27 ramp</td></tr><tr><td colspan=\"4\"></td></tr><tr><td>Cloud Titan D</td><td>AI Chip</td><td>5nm technology</td><td>2024/2025</td></tr><tr><td>Cloud Titan D</td><td>AI Chip</td><td>3nm Technology</td><td>CY26 ramp</td></tr><tr><td>Cloud Titan D</td><td>AI Chip</td><td>2nm Technology</td><td>CY27 ramp</td></tr><tr><td>Cloud Titan D</td><td>Storage</td><td>5nm technology</td><td>2023/2024</td></tr><tr><td colspan=\"4\"></td></tr><tr><td>AI Compute OEM (OpenAI)</td><td>AI Chip</td><td>3nm/2nm 3DSOIC</td><td>2026</td></tr><tr><td>SoftBank/Arm</td><td>AI Chip</td><td>3nm/2nm 3DSOIC</td><td>2026</td></tr><tr><td>Asia Hyperscaler#2</td><td>AI Chip</td><td>3nm</td><td>CY26 ramp</td></tr><tr><td>Asia Hyperscaler#3</td><td>AI Chip</td><td>3nm</td><td>CY27 ramp</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                29,
+                151,
+                566,
+                890
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Broadcom ASIC Pipeline:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                579,
+                161,
+                824,
+                192
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "100+ Cumulative 7nm/5nm/3nm/2nm Designs"
+                    }
+                ]
+            },
+            "bbox": [
+                578,
+                205,
+                941,
+                233
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Powerful 2nm/3nm ASIC platform (faster time to market):"
+                    }
+                ]
+            },
+            "bbox": [
+                577,
+                246,
+                955,
+                302
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "* 50-120B+ transistors per chip"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "* 2nm/3nm/5nm chiplet architecture"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "* 50/100/200G Proven SERDES I/O"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "* Broadest IP Portfolio"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "* Adv Pkg (HBM 3/4, 2.5/3D SOIC)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "* Co-pkg Electro/Optical (CPO)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                623,
+                315,
+                909,
+                550
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Marvell ASIC Pipeline:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                579,
+                593,
+                794,
+                622
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "70+ Cumulative 12nm/5nm/3nm/2m Designs\nStarting to Engage on <2nm"
+                    }
+                ]
+            },
+            "bbox": [
+                578,
+                637,
+                931,
+                705
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "* 50-120B+ transistors per chip"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "* 50/100G Proven SERDES I/O"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "* SRAM memory IP (LPU)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "* Broad IP Portfolio"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "* Adv Pkg"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                623,
+                718,
+                875,
+                911
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Snapshot of High-Profile Custom ASIC Programs: AVGO and MRVL"
+                    }
+                ]
+            },
+            "bbox": [
+                29,
+                52,
+                792,
+                89
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                516,
+                934,
+                525,
+                949
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "J.E.Morgan"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                923,
+                924,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/8b1a31349fd0c5304e7252cf52a153a90095f72646bea53263b02dd35374970d.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Broadcom AI ASIC Pipeline"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td>ASIC Supplier</td><td>Generations Won</td><td>Ramp Timing/Duration</td></tr><tr><td>Google TPU AI ASIC processor family</td><td>Broadcom 7nm, 5nm, 3nm, 2nm</td><td>V1, V2, V3, V4, V5, V6, V7, V8</td><td>Ramping now through CY28</td></tr><tr><td>Meta MTIA AI ASIC processor family</td><td>Broadcom 7nm, 5nm, 3nm, 2nm</td><td>Gen 1, Gen2, Gen 3 and follow-ons</td><td>Ramping now through CY28</td></tr><tr><td>Bytedance AI Video/AI Networking</td><td>Broadcom 5nm, 3nm</td><td>Gen 1, Gen2 and follow-ons</td><td>Ramping now through CY28</td></tr><tr><td>OpenAI XPU AI ASIC processor family</td><td>Broadcom 2nm and 3nm</td><td>Gen1 and Gen 2 on 3DSOIC pkging</td><td>Ramping CY26-CY29</td></tr><tr><td>SoftBank/Arm XPU AI ASIC processor family</td><td>Broadcom 2nm and 3nm</td><td>Gen 1 and Gen 2 on 3DSOIC pkging</td><td>Ramping CY26-CY29</td></tr><tr><td>Anthropic/TPU Rackscale</td><td>Broadcom 3nm</td><td>TPUv6p - Ironwood</td><td>Ramp 2H CY26</td></tr><tr><td>Customer #7 AI ASIC XPU (Asia Hyperscale Customer)</td><td>Broadcom 3nm, 2nm</td><td>Gen 1, Gen 2</td><td>Ramping End 26</td></tr><tr><td>Customer #8 AI ASIC XPU (Asia Hyperscale Customer)</td><td>Broadcom 3nm, 2nm</td><td>Gen 1, Gen2</td><td>Ramping CY27</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                73,
+                202,
+                922,
+                576
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/03e3cdb6a8e7085c4ed9d305c82a3c780d16b9c179db214a40c49a341cb48332.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Marvell AI ASIC Pipeline"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: JPM Research"
+                    }
+                ],
+                "html": "<table><tr><td>Amazon AI ASIC processor family</td><td>Marvell 5nm/3nm/2nm</td><td>Gen 2, Gen 3, Gen 4 and follow-ons</td><td>Ramping Now</td></tr><tr><td>Microsoft Maia AI ASIC processor family</td><td>Marvell 3nm/2nm</td><td>Gen 2 and follow-ons</td><td>Ramping End CY26</td></tr><tr><td>Google AI ARM CPU processor family</td><td>Marvell 5nm/3nm</td><td>Gen 1 and follow-ons</td><td>Ramping Now</td></tr><tr><td>Cloud/Hyperscale FBNIC (SmartNic)</td><td>Marvell 5nm/3nm</td><td>Gen 1 and follow-ons</td><td>Ramp 2H25</td></tr><tr><td>Other XPU Attach (SmartNIC, Fabric, Memory)</td><td>Marvell 3nm/2nm</td><td>Gen 1 and follow-ons</td><td>Ramping CY26</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                73,
+                679,
+                922,
+                903
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "AI Custom Chip (ASIC) Beneficiaries: Broadcom and Marvell"
+                    }
+                ]
+            },
+            "bbox": [
+                27,
+                52,
+                710,
+                86
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                934,
+                527,
+                949
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                923,
+                922,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/00b8e79b10a787e85af5a537094302d18f9ba453cb9af07c7d8c563c676c8695.jpg"
+                },
+                "content": "200 GE I/F\nMAX\nMAX\nHBM\nMAX\nMAX\nCompute Die\nMAX\nMAX\nHBM\nMAX\nMAX\nDDR\nMAX\nMAX\nMAX\nCompute Die\nMAX\nMAX\nMAX\nSRAM Die\nMAX\nMAX\nPCIe I/F\nHBM\nMAX\nMAX\nHBM\nMAX\nCXL",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Source: Broadcom and JPM"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "sub_type": "text_image",
+            "bbox": [
+                36,
+                143,
+                446,
+                532
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Broadcom Has Developed a 2nm/3nm AI ASIC Reference Platform to Enable Customers Fast Time to Market:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                488,
+                135,
+                948,
+                218
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• 2nm/3nm/5nm compute die"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• 100/200Gbps I/O die"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• 2.5D/3D SOIC (chip stacking)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                488,
+                232,
+                756,
+                344
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• 2nm/3nm chip stacking"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Advanced substrate manuf capability in CY26"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                535,
+                356,
+                952,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Chip-to-Chip I/O connectivity"
+                    }
+                ]
+            },
+            "bbox": [
+                489,
+                437,
+                750,
+                467
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• AI/Compute/IO/Memory/Interface IP"
+                    }
+                ]
+            },
+            "bbox": [
+                489,
+                478,
+                804,
+                506
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Rackscale system expertise ramping CY26"
+                    }
+                ]
+            },
+            "bbox": [
+                489,
+                521,
+                881,
+                549
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Broadcom is working with 3 of its 5 AI ASIC customers on next-gen 3D SOIC chip stacking ASIC programs"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                37,
+                562,
+                933,
+                591
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/5697dcbcf1cb9039b41ab69257c4edf0ab749bf70685b06c84390d0469847e29.jpg"
+                },
+                "content": "Enhancing XPUs with custom HBM architecture\nStandard HBM\nXPU\nHBM\nHBM\nCustom HBM\nXPU\ncHBM\ncHBM\ncHBM\nCustom vs. standard HBM\nHigher performance D2D I/O\n70% lower interface power\n25% more XPU silicon area\n33% more HBM stacks\nSuperior TOO",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Source: Marvell and JPM"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "sub_type": "text_image",
+            "bbox": [
+                39,
+                604,
+                446,
+                924
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Marvell has a strong IP portfolio of 5nm, 3nm, and 2nm"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                489,
+                599,
+                916,
+                653
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Recently unveiled HBM memory IP differentiation that drives:"
+                    }
+                ]
+            },
+            "bbox": [
+                489,
+                668,
+                916,
+                722
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• 33% more HBM stacks per package"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• 70% lower interface power"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• 25% more XPU silicon area"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Marvell has won numerous HBM4 ASIC logic base die programs with DRAM suppliers"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                489,
+                736,
+                944,
+                916
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Broadcom's Powerful 3D SOIC ASIC Reference Platform / Marvell Custom HBM Designs"
+                    }
+                ]
+            },
+            "bbox": [
+                29,
+                53,
+                928,
+                91
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                933,
+                529,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                923,
+                925,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/ee65c994990bb6a18e03ec96d098a632e2a73c0870119eefe436eac253998a27.jpg"
+                },
+                "content": "```mermaid\ngraph TD\n  A[\"SoftBank Group\"] --> B[\"Project &quot;Izanagi&quot; AI XPU (CPU/GPU) ASIC Chip\"]\n  B --> C[\"Functional Specification\"]\n  C --> D[\"Broadcom ASIC Partner\"]\n  D --> E[\"ARM CPU IP\"]\n  D --> F[\"Graphcore AI Accelerator IP\"]\n  E --> G[\"Al Accelerator IP\"]\n  F --> H[\"Al Accelerator IP\"]\n  G --> I[\"PCI Block\"]\n  H --> I\n  I --> J[\"PCI Block\"]\n    style I fill:#f9f,stroke:#333\n    style J fill:#ccf,stroke:#333\n```",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Source: JPM"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                70,
+                183,
+                944,
+                795
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Meta/ARM CPU Announcement Is NOT the Broadcom ASIC – Meta Project Is CPU-only....The Broadcom ASIC Is a Full-Blown AI XPU (CPU+AI Accelerator)"
+                    }
+                ]
+            },
+            "bbox": [
+                23,
+                831,
+                912,
+                911
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Broadcom AI ASIC Customer SoftBank/Arm AI XPU"
+                    }
+                ]
+            },
+            "bbox": [
+                44,
+                68,
+                684,
+                104
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                933,
+                530,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "J.E.Morgan"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                923,
+                924,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/e6397fe66d9d4dd0b38e82df5bc5834bd61d6759b38e3419b414d42cd3188c39.jpg"
+                },
+                "content": "```mermaid\ngraph TD\n  A[\"Behavioral/Functional Model (RTL)\"] --> B[\"RTL Simulation\"]\n  B --> C[\"Logic Synthesis (RTL to Logic Gate)\"]\n  C --> D[\"Floor Planning\"]\n  D --> E[\"Place and Route\"]\n  E --> F[\"Parasitic Extraction\"]\n  F --> G[\"Static Timing Analysis\"]\n  G --> H[\"GDSII Tape-Out\"]\n  H --> I[\"To Mask Shop/Foundry\"]\n    \n    B <--> J[\"Functional Verification\"]\n    C <--> K[\"Verification\\nPhysical Timing\\nFunctional Simulation\\nHW Verific\"]\n    E <--> L[\"IP Blocks\\nI/O\\nCPU\\nRAM\\nLogic Cells\"]\n```",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Merchant (Semi Co.) Chip Design Flow"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                13,
+                227,
+                465,
+                931
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/adcadd0d06ef7cddeb9bd89c538dbdf84dea85124b19a581845da0f03a6b30ed.jpg"
+                },
+                "content": "```mermaid\ngraph TD\n  A[\"Behavioral/Functional Model (RTL)\"] --> B[\"RTL Simulation\"]\n    B <--> C[\"Functional Verification\"]\n  D[\"Logic Synthesis (RTL to Logic Gate)\"] --> E[\"Floor Planning\"]\n    E <--> F[\"Verification\"]\n  G[\"Static Timing Analysis\"] --> H[\"GDSII Tape-Out\"]\n  I[\"Parasitic Extraction\"] --> H\n  J[\"Place and Route\"] --> E\n  K[\"IP Blocks\"] --> L[\"I/O\"]\n  K --> M[\"CPU\"]\n  K --> N[\"RAM\"]\n  K --> O[\"Logic Cells\"]\n  K --> P[\"Custom\"]\n  Q[\"ASIC Chip Design Partner *AVGO *MRVL\"] --> R[\"Static Timing Analysis\"]\n  S[\"IP Blocks\"] --> T[\"I/O\"]\n  S --> U[\"CPU\"]\n  S --> V[\"RAM\"]\n  S --> W[\"Logic Cells\"]\n  S --> X[\"Custom\"]\n  Y[\"Verification\"] --> Z[\"Physical Timing\"]\n  Y --> AA[\"Functional Simulation\"]\n  Y --> AB[\"HW Verific\"]\n  AC[\"To Mask Shop/Foundry\"] --> AD[\"Static Timing Analysis\"]\n```",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "ASIC Chip Design Flow"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                502,
+                215,
+                965,
+                924
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Merchant Chip Design vs. ASIC Chip Design vs. COT Chip Design"
+                    }
+                ]
+            },
+            "bbox": [
+                25,
+                76,
+                772,
+                117
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                933,
+                529,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                924,
+                924,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/0c6453e3ffde270a80dbfca3d97783a000dab0ef865be2ecab17bfb6ba81a066.jpg"
+                },
+                "content": "```mermaid\ngraph TD\n  A[\"Behavioral/Functional Model (RTL)\"] --> B[\"RTL Simulation\"]\n  B --> C[\"Logic Synthesis (RTL to Logic Gate)\"]\n  C --> D[\"Floor Planning\"]\n  D --> E[\"Place and Route\"]\n  E --> F[\"Parasitic Extraction\"]\n  F --> G[\"Static Timing Analysis\"]\n  G --> H[\"GDSII Tape-Out\"]\n  H --> I[\"To Mask Shop/Foundry\"]\n    \n    subgraph OEM\n  J[\"Cloud Titan\"] --> B\n  K[\"In-House\"] --> C\n  L[\"Design Team\"] --> C\n    end\n    \n    subgraph IP Blocks\n  M[\"I/O\"] --> N[\"Logic Cells Custom\"]\n  O[\"CPU\"] --> N\n  P[\"RAM\"] --> N\n    end\n    \n    subgraph Verification\n  Q[\"Physical Timing\"] --> R[\"Functional Simulation\"]\n  S[\"HW Verific\"] --> T[\"Verification\"]\n    end\n    \n    style A fill:#f9f,stroke:#333\n    style I fill:#f9f,stroke:#333\n```",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "COT Chip Design Flow (System OEM/Cloud Titan Does 85-100% of Design And IP)"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                10,
+                245,
+                640,
+                931
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Example ASIC Designs:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                654,
+                248,
+                892,
+                279
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1) Google TPU (AVGO ASIC)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2) Google VCU (MRVL ASIC)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3) Meta TPU (AVGO ASIC)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4) AMZN 3  "
+                            },
+                            {
+                                "type": "equation_inline",
+                                "content": "^{rd}"
+                            },
+                            {
+                                "type": "text",
+                                "content": " Gen (MRVL ASIC)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "5) Google CPU (MRVL ASIC)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6) Cisco Switching (AVGO/MRVL)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "7) Nokia 5G BTS (AVGO/MRVL)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "8) Samsung 5G BTS (MRVL ASIC)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                652,
+                287,
+                973,
+                660
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Example COT Designs:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                657,
+                694,
+                883,
+                725
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1) Apple A and M series CPU"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2) AMZN 1  "
+                            },
+                            {
+                                "type": "equation_inline",
+                                "content": "^{st}"
+                            },
+                            {
+                                "type": "text",
+                                "content": " /2  "
+                            },
+                            {
+                                "type": "equation_inline",
+                                "content": "^{nd}"
+                            },
+                            {
+                                "type": "text",
+                                "content": "  Generation SoC"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3) Tesla DOJO AI SoC"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4) Cisco - Cloud Scale SoC"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                657,
+                740,
+                952,
+                913
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Merchant Chip Design vs. ASIC Chip Design vs. COT Chip Design"
+                    }
+                ]
+            },
+            "bbox": [
+                25,
+                80,
+                772,
+                122
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                934,
+                530,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "J.E.Morgan"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                923,
+                924,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Broadcom Update On ASIC Pipeline"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                42,
+                135,
+                392,
+                166
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Google TPU orders continue to add to the CY27 backlog - currently around 6.5M+ V7/V8 shipments....~$100B in revenues"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Google Near-term – 3K wafer starts per week TPUv7 (Ironwood) – sets up for strong 2H26 (along with initial V8 ramp)...support Google Internal and Anthropic."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Meta ramping first 3nm program (Athena) NOW, “Iris” 3nm Mid-CY26, “Arke” End CY26, “Astrid” 1H27 - added new 2nm program for 2H27 ramp.....total five programs – 1GW CY27"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "OpenAI (2nm/3nm) and Softbank/ARM XPU first silicon both out of fab – functionality looks good....on track for end of year/CY27 ramp – OpenAI 1GW in CY27"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Google/AVGO assessing v8i “next-gen” – 4 compute die, 12 HBM stacks- extend life of TPUv8i for 6 more months....then ramp next gen v9/v10 2nm TPU (4 compute, 16 HBM)...either strategy will NOT result in revenue “air-pocket” in CY28 (70%+ growth CY28)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                82,
+                171,
+                960,
+                550
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Marvell Update on ASIC Pipeline"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                42,
+                560,
+                359,
+                591
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "XPU ASIC Trainium 3 (3nm) production commenced last quarter – on track to ramp mid-CY26.....Trainium 4 (2nm) on track to ramp 2H CY27"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Celestial CPO solution (Tied to Trainium 4) have seen upside to 2H27 orders"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "XPU ASIC Microsoft Maia 3nm – taping out soon – program set to ramp beginning CY27 (full ASIC engagement - FE/BE design)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "XPU attach: multi-billion dollar /multi-year win for Google SmartNIC/DPU ASIC – ramp CY27 - CXL controller ASIC – ramp 2H26"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "XPU attach: early engagement on “LPU” offload inference engine (recall MRVL did 1  "
+                            },
+                            {
+                                "type": "equation_inline",
+                                "content": "^{st}"
+                            },
+                            {
+                                "type": "text",
+                                "content": " gen Groq LPU ASIC due to strong SRAM memory IP) – No wins yet, but expected"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                596,
+                960,
+                915
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Near-Term Update on AVGO/MRVL ASIC Pipelines"
+                    }
+                ]
+            },
+            "bbox": [
+                29,
+                37,
+                660,
+                78
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                933,
+                530,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                834,
+                923,
+                925,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                71,
+                107,
+                219,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Gartner: All statements in this report attributable to Gartner represent JPM's interpretation of data opinion or viewpoints published as part of a syndicated subscription service by Gartner, Inc., and have not been reviewed by Gartner. Each Gartner publication speaks as of its original publication date (and not as of the date of this report). The opinions expressed in Gartner publications are not representations of fact, and are subject to change without notice."
+                    }
+                ]
+            },
+            "bbox": [
+                126,
+                196,
+                926,
+                282
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                934,
+                529,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "J.E.Morgan"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                923,
+                924,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                107,
+                219,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                171,
+                940,
+                282
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                290,
+                914,
+                328
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                90,
+                356,
+                215,
+                377
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables, are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                385,
+                940,
+                462
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                89,
+                468,
+                529,
+                486
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                488,
+                946,
+                697
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17"
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                933,
+                529,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                923,
+                925,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                71,
+                107,
+                219,
+                142
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/4bb136fa8323434776059d21c8e4f4ac662f7b19c0ab930ed333571c8190663d.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "JPM Equity Research Ratings Distribution, as of April 04, 2026"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "*Please note that the percentages may not add to 100% because of rounding."
+                    },
+                    {
+                        "type": "text",
+                        "content": "**Percentage of subject companies within each of the \"buy,\" \"hold\" and \"sell\" categories for which JPM has provided investment banking services within the previous 12 months."
+                    },
+                    {
+                        "type": "text",
+                        "content": "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter."
+                    }
+                ],
+                "html": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>79%</td><td>74%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>49%</td><td>39%</td><td>13%</td></tr><tr><td>IB clients**</td><td>94%</td><td>93%</td><td>85%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                93,
+                199,
+                553,
+                318
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                406,
+                934,
+                480
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "History of Investment Recommendations:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                90,
+                488,
+                297,
+                506
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                506,
+                816,
+                542
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                565,
+                924,
+                602
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                90,
+                612,
+                191,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide."
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                648,
+                732,
+                668
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                679,
+                926,
+                715
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                725,
+                926,
+                761
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China)."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                772,
+                936,
+                808
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                820,
+                934,
+                874
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                890,
+                934,
+                928
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "18"
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                934,
+                529,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                924,
+                924,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                107,
+                219,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so."
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                192,
+                902,
+                210
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                220,
+                904,
+                310
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or https://www.finra.org/sites/default/files/2020-08/Security_Futures_Risk_Disclosure_Statement_2020.pdf for a copy of the Security Futures Risk Disclosure Statement."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                323,
+                909,
+                401
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult:\nhttps://www.JPM.com/global/disclosures/interbank_offered_rates"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                411,
+                906,
+                465
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                475,
+                906,
+                529
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                542,
+                900,
+                697
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                85,
+                707,
+                426,
+                725
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51)."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                725,
+                887,
+                759
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                761,
+                904,
+                903
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "19"
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                934,
+                529,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "JPM"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                923,
+                925,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                71,
+                78,
+                219,
+                112
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a ‘Research Analyst’ having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/ Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK)."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Mexico: JPM Casa de Bolsa, S.A. de C.V. and JPM Grupo Financiero are members of the Mexican Stock Exchange and are authorized to act as a broker dealer by the National Banking and Securities Exchange Commission. (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”)."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                127,
+                911,
+                929
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "20"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                934,
+                529,
+                949
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "J.E.Morgan"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                923,
+                924,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                71,
+                107,
+                219,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                161,
+                914,
+                196
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                196,
+                941,
+                232
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                232,
+                941,
+                336
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA)."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                338,
+                941,
+                372
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                372,
+                941,
+                496
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                496,
+                916,
+                549
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                550,
+                939,
+                723
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content."
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                723,
+                934,
+                761
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities"
+                    }
+                ]
+            },
+            "bbox": [
+                88,
+                777,
+                941,
+                936
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "21"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                936,
+                527,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "J.E. Morgan"
+                    }
+                ]
+            },
+            "bbox": [
+                833,
+                929,
+                924,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                71,
+                107,
+                219,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                171,
+                917,
+                277
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                277,
+                917,
+                490
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                506,
+                919,
+                612
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                624,
+                911,
+                697
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                705,
+                915,
+                779
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "\"Other Disclosures\" last revised May 16, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                787,
+                281,
+                805
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                821,
+                917,
+                877
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "22"
+                    }
+                ]
+            },
+            "bbox": [
+                513,
+                934,
+                529,
+                950
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "J.E.Morgan"
+                    }
+                ]
+            },
+            "bbox": [
+                835,
+                923,
+                924,
+                952
+            ]
+        }
+    ]
+]

@@ -1,0 +1,91 @@
+ZH_A: 最近半导体圈子里有个话题特别热，就是定制芯片，也就是ASIC，好像突然成了AI的新宠。这份JPM的报告说，未来几年这个市场会爆发式增长，是真的吗？
+
+ZH_B: 确实如此。报告的核心判断是，到2026年，全球AI定制芯片市场规模会达到600到700亿美元，未来几年的年复合增长率高达40%到50%以上。这不是小打小闹，而是整个AI芯片格局正在发生根本性转变。
+
+ZH_A: 等等，我们以前不是都说英伟达的GPU是AI计算的王者吗？为什么现在这些大公司要花大价钱自己搞定制芯片？
+
+ZH_B: 好问题。报告里其实给出了很清晰的逻辑。这些大客户，像谷歌、亚马逊、微软，他们做定制芯片的核心原因有三个。
+
+ZH_A: 哪三个？
+
+ZH_B: 第一是差异化。你买英伟达的GPU，你的竞争对手也能买到。但如果你自己设计芯片，就能和你的软件、算法深度绑定，做出别人没有的性能优势。
+
+ZH_A: 这就像苹果做自己的A系列芯片一样，对吧？报告里也提到了苹果。
+
+ZH_B: 没错。苹果是定制芯片的教科书级案例。第二是性价比。报告里做了一个非常直接的对比。
+
+ZH_A: 什么对比？
+
+ZH_B: 他们拿英伟达的B200 Blackwell和谷歌的TPU v7做比较。虽然两者算力接近，但谷歌的TPU单价只有13000美元，而英伟达的B200要35000美元。换算下来，每美元能买到的算力，谷歌的TPU是英伟达的近三倍。
+
+ZH_A: 也就是说，对于谷歌这种需要部署几百万颗芯片的公司，省下的钱是天文数字。
+
+ZH_B: 对，这就是第三点，总拥有成本。再加上功耗和散热上的优化，定制芯片在大型数据中心里越来越有吸引力。
+
+ZH_A: 那现在这个市场里，谁是最大的赢家？报告里好像重点提了两家公司。
+
+ZH_B: 是的。博通是目前毫无争议的老大，占据了高端定制芯片市场80%到85%的份额。他们的客户名单非常豪华，包括谷歌的TPU、Meta的MTIA，甚至还有OpenAI和软银。
+
+ZH_A: 博通这么强，那第二名是谁？
+
+ZH_B: 第二名是美满电子，市场份额大约10%到12%。他们的核心客户是亚马逊的Trainium芯片和微软的Maia芯片。报告预测，美满电子的数据中心收入在2026年会达到93亿美元，比2025年增长超过50%。
+
+ZH_A: 看起来这个趋势已经非常明确了。但报告里有没有提到什么风险或者还没完全展开的问题？
+
+ZH_B: 有。一个关键悬念是，定制芯片的渗透率到底能走多远。报告预测到2027年，定制芯片的出货量会首次超过通用GPU，占总量的53%。
+
+ZH_A: 这是一个历史性的转折点。
+
+ZH_B: 没错。但报告没有完全回答的是，如果英伟达大幅降价，或者推出更激进的捆绑方案，这个趋势会不会被逆转？另外，这些定制芯片的设计和制造极其复杂，博通和美满的产能扩张是否能跟上客户的需求，也是一个需要持续观察的问题。
+
+ZH_A: 所以，这份报告真正的价值，不只是告诉我们定制芯片在增长，而是帮我们理清了这场芯片战争背后的逻辑和赢家。
+
+ZH_B: 完全正确。如果你想深入了解博通和美满的具体客户项目、技术路线图，以及这些定制芯片的具体性能参数，这份完整的报告里都有更详细的展开。
+
+ZH_A: 好的，感谢你的分享。想要获取完整报告的朋友，可以关注我们的公众号或加入社群，后台回复“定制芯片”即可。
+
+EN_A: There's a lot of buzz in the semiconductor world right now about custom chips, or ASICs, suddenly becoming the new darling of AI. This report from a global investment bank claims the market is about to explode. Is that really the case?
+
+EN_B: It absolutely is. The core judgment of the report is that by 2026, the global AI custom chip market will reach 60 to 70 billion dollars, with a compound annual growth rate of over 40 to 50 percent for the next few years. This isn't a small trend; it's a fundamental shift in the entire AI chip landscape.
+
+EN_A: Wait a minute. We've always heard that Nvidia's GPUs are the kings of AI computing. Why are these big companies now spending a fortune to build their own custom chips?
+
+EN_B: Great question. The report lays out a very clear logic. These big customers, like Google, Amazon, and Microsoft, have three core reasons for going custom.
+
+EN_A: What are they?
+
+EN_B: First, differentiation. If you buy an Nvidia GPU, your competitors can buy the exact same one. But if you design your own chip, you can deeply integrate it with your software and algorithms, creating a performance advantage no one else can match.
+
+EN_A: That sounds a lot like what Apple does with its A-series chips. The report mentioned Apple too.
+
+EN_B: Exactly. Apple is the textbook case for custom chips. Second, it's about cost performance. The report makes a very direct comparison.
+
+EN_A: What kind of comparison?
+
+EN_B: They compared Nvidia's B200 Blackwell with Google's TPU v7. While the raw computing power is similar, Google's TPU costs only 13,000 dollars per unit, while Nvidia's B200 costs 35,000 dollars. That means for every dollar spent, Google's TPU delivers nearly three times the performance.
+
+EN_A: So for a company like Google that needs to deploy millions of chips, the savings would be astronomical.
+
+EN_B: Exactly. That leads to the third point: total cost of ownership. When you add in power and cooling optimization, custom chips become far more attractive for large-scale data centers.
+
+EN_A: So who are the biggest winners in this market right now? The report seems to focus on two companies.
+
+EN_B: Yes. Broadcom is the undisputed leader, holding 80 to 85 percent of the high-end custom chip market. Their customer list is impressive, including Google's TPU, Meta's MTIA, and even OpenAI and SoftBank.
+
+EN_A: Broadcom is that strong. Who's number two?
+
+EN_B: The second is Marvell, with about 10 to 12 percent market share. Their core customers are Amazon's Trainium chip and Microsoft's Maia chip. The report predicts Marvell's data center revenue will reach 9.3 billion dollars in 2026, up over 50 percent from 2025.
+
+EN_A: So this trend seems very clear. But did the report mention any risks or questions that are still unanswered?
+
+EN_B: Yes. One key悬念 is how far this penetration rate can really go. The report predicts that by 2027, custom chip shipments will surpass general-purpose GPUs for the first time, accounting for 53 percent of the total.
+
+EN_A: That would be a historic turning point.
+
+EN_B: Exactly. But what the report doesn't fully answer is, what if Nvidia cuts prices aggressively or launches more aggressive bundled deals? Could that reverse the trend? Also, designing and manufacturing these custom chips is incredibly complex. Whether Broadcom and Marvell can scale their production fast enough to meet customer demand is another question that needs ongoing observation.
+
+EN_A: So the real value of this report isn't just telling us that custom chips are growing. It's helping us understand the logic and the winners behind this chip war.
+
+EN_B: Absolutely. If you want to dive into the specific customer projects, technology roadmaps for Broadcom and Marvell, and the detailed performance specs of these custom chips, the full report has much more to offer.
+
+EN_A: Great. Thanks for the insights. For those who want the full report, you can follow our channel or join our community and reply with the keyword "custom chips".
