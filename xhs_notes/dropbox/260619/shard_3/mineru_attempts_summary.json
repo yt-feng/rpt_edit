@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_lvdk8usx/pdfs/0001-16-MS-China Autos - Shared Mobility-How Market Share Reshuffled in May-260617.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lvdk8usx/pdfs/0002-17-MS-Greater China Semiconductors-Power Semis - Supply Driven Upcycle-260618.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lvdk8usx/pdfs/0003-18-JPM-China Food Delivery-Not Just a Soft Draft- Disclosure Rules Could Cool the Food Delivery Subsidy War-260618.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lvdk8usx/pdfs/0004-19-MS-Lujiazui Forum- Opening up- high-quality growth- risk control- and proper regulation remain key focus areas-260617.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_lvdk8usx/pdfs/0005-20-NOM-USD CNY fix model-Projection-6.7745-260619.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
