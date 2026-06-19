@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_whu7sa9f/pdfs/0001-26-JPM-U.S. Energy Drinks-Numerator Energy Drinks Monitor-260617.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_whu7sa9f/pdfs/0002-27-MS-Asia Summer School 2026- ASEAN Telecoms - Data Centers-260618.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_whu7sa9f/pdfs/0003-28-NOM-China advanced manufacturing tour-Takeaways from DEEP Robotics visit-260618.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_whu7sa9f/pdfs/0004-29-NOM-China advanced manufacturing tour-Takeaways from Unitree visit ahead of its listing-260618.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_whu7sa9f/pdfs/0005-30-NOM-China advanced manufacturing tour-Takeaways from Mech-Mind Robotics visit-260618.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

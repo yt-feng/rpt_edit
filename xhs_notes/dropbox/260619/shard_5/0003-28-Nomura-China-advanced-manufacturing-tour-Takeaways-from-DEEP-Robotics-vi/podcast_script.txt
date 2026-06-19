@@ -1,0 +1,63 @@
+ZH_A: 最近有一份关于中国先进制造业的实地调研报告，特别关注了一家杭州的四足机器人公司。这家公司刚刚递交了科创板上市申请，而且去年首次实现年度盈利。你觉得这个信号意味着什么？
+
+ZH_B: 这其实是一个很关键的节点。这家公司叫DEEP Robotics，是四足机器人领域的专家。它2025年营收同比增长了227%，达到3.37亿元人民币，而且首次实现年度盈利，净利润2900万元。这标志着这个细分赛道开始从烧钱研发转向商业化落地。
+
+ZH_A: 227%的增速确实惊人。那这份报告主要想回答什么问题呢？是告诉我们这个行业已经成熟了吗？
+
+ZH_B: 不完全是。报告的核心问题是：四足机器人在哪些领域真正找到了应用场景，以及物理AI这个更大的蓝图什么时候能兑现。它给出了两个很清晰的判断：电力巡检和消防这两个垂直领域已经看到实际需求，但大规模的工业通用化应用还需要时间。
+
+ZH_A: 所以电力巡检和消防是现在最靠谱的方向。那具体怎么靠谱法呢？
+
+ZH_B: 报告里有一个很具体的案例：东莞的一个变电站部署了他们的机器人，每天进行大约8.5小时的巡检，识别准确率超过95%。而且用的是双目摄像头加上声学和温度传感。同时，消防和巡逻机器人已经在湖南、山西、河南等省份推广，甚至还有新加坡和北美的海外项目。
+
+ZH_A: 这意味着什么？是不是说这些场景已经可以大规模复制了？
+
+ZH_B: 报告指出，虽然有了初步的牵引力，但价格和性能仍然是主要约束。比如续航能力、重复定位精度、多层楼导航、以及在灰尘、潮湿或极端温度下的稳定性，这些问题都只是部分解决。而且报告还提到一个外部调查的发现：随着变电站数字化，未来智能仪表方案可能会逐渐侵蚀这个巡检机会。所以短期看是有锚点的，但长期工业化的路径还不完全清晰。
+
+ZH_A: 那物理AI这个更大的概念呢？报告中是怎么看的？
+
+ZH_B: 管理层自己也很坦诚。他们认为物理AI作为通用技术，至少还需要8到10年甚至更长时间才能成熟。现在连技术路线都没有收敛——学术界正在从VLA模式转向世界模型，但大家对“世界”的定义和理解都还不一致。相比之下，他们觉得“小脑”部分，也就是基于强化学习模型的部分，已经基本定义清楚了。
+
+ZH_A: 所以大脑还在摸索，小脑已经相对成熟。那在应用层面，还有什么值得关注的潜在方向吗？
+
+ZH_B: 管理层特别提到了一个更大的机会：防爆机器人，用于化工、石化和矿业。他们认为这个市场更大、更可防御。但挑战也很明显——认证、负载、续航，还有四足底盘本身的形态限制，都让这个目标很难实现。报告里没有完全展开的是，这些防爆应用的具体时间表和认证路径。
+
+ZH_A: 听起来，这份报告给了我们一个很清晰的现状图，但也留下了很多悬念。比如，四足机器人未来会不会被轮式或人形机器人取代？物理AI的路线之争最终会怎么收场？
+
+ZH_B: 没错，这也是为什么我建议你读一下完整报告。里面还涉及了供应链的评级，比如对拓普集团的中性看法，以及他们对人形机器人贡献的谨慎态度。这些细节我们在今天的对话里都没有展开。
+
+ZH_A: 好的，那如果你对我们的完整报告感兴趣，可以加入我们的社群，或者直接获取全文。感谢收听，我们下期再见。
+
+ZH_B: 下期见。
+
+EN_A: So there is this new research report from a global investment bank about a field trip to a Chinese quadruped robot company that just filed for an IPO. And here is the headline: they posted their first annual profit last year. Is that a big deal?
+
+EN_B: It is a pretty big deal. The company is called DEEP Robotics and they specialize in quadruped and wheeled-leg robots. Their revenue jumped 227 percent year on year to about 337 million Chinese yuan in 2025. And yes, they turned a net profit of 29 million yuan. That is a milestone for this niche in robotics.
+
+EN_A: 227 percent growth is wild. So what is the main question this report is trying to answer? Is it saying this industry is finally ready for prime time?
+
+EN_B: Not exactly. The report is really trying to figure out where these robots actually work today and when the bigger vision of physical AI will become real. It gives two clear takeaways. One is that power inspection and firefighting are real, growing verticals. The other is that broad industrial adoption is still a ways off.
+
+EN_A: So power and firefighting are the low-hanging fruit. How real are they?
+
+EN_B: There is a concrete example in the report. A substation in Dongguan runs about eight and a half hours of inspection every day using these robots, with over 95 percent recognition accuracy. They use binocular cameras plus acoustic and temperature sensors. And firefighting units are being deployed across several Chinese provinces and even overseas in Singapore and North America.
+
+EN_A: So what does that mean? Can we just scale this up everywhere?
+
+EN_B: The report says price and performance are still the main constraints. Things like battery life, positioning accuracy, multi-floor navigation, and stability in dust or extreme temperatures are only partly solved. And there is an interesting finding from an external survey: as substations become more digital, smart instrument solutions could eventually eat into this inspection opportunity. So it is a credible near-term anchor, but not a guaranteed long-term monopoly.
+
+EN_A: And what about the bigger picture, physical AI? What does the report say about that?
+
+EN_B: Management was pretty honest. They think physical AI as a general purpose technology will take at least eight to ten years or more. And the technology roadmap is not settled yet. Academia is moving from VLA style models toward world models, but nobody agrees on what the world model should look like. The cerebellum part, based on reinforcement learning, is more defined. But the brain is still up for grabs.
+
+EN_A: So the brain is still a mystery, but the cerebellum is ready. Are there any other application areas that look promising beyond power and firefighting?
+
+EN_B: Yes, management highlighted explosion-proof robots for chemicals, petrochemicals, and mining. They see that as a bigger and more defensible market. But the challenges are serious: certification, payload, endurance, and the inherent limits of a quadruped chassis. The report does not fully answer when or how those certifications will happen.
+
+EN_A: So this report gives a great snapshot but leaves a lot of open questions. Like, will quadruped robots be replaced by wheeled or humanoid robots? And how will the physical AI roadmap debate play out?
+
+EN_B: Exactly. And that is why I would say read the full report. It also covers the supply chain, including a neutral rating on a company called Tuopu, and why the analysts are cautious about its humanoid robot contributions. We did not get into any of that today.
+
+EN_A: Fair enough. If you want the full report, join our community or grab the PDF. Thanks for listening and see you next time.
+
+EN_B: See you.
