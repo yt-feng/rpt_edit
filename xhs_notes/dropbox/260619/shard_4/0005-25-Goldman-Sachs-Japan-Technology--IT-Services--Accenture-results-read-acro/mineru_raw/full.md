@@ -1,0 +1,464 @@
+# Japan Technology: IT Services: Accenture results read-across: Orders soften amid geopolitical headwinds; AI business expands
+
+IT services major Accenture (Buy, covered by US Telecom/IT Services analyst James Schneider) announced 3Q8/26 (March-May) results at 20:00 JST (07:00 US local time) on June 18, followed by a conference call at 21:00 JST. 3Q sales were mostly in line with consensus, but 3Q orders turned down amid effects from the Middle East situation, and the company noted the potential for the negative impact from the Middle East could worsen in 4Q compared with 3Q. Based on its progress to date and other factors, management made slight revisions to its full-year sales guidance, lowering the upper end and midpoint of its forecast range. Although the situation is driven by impacts stemming from geopolitics rather than AI disruption, it could prolong weak investor sentiment toward system integrators. At the same time, corporate appetite for AI investment is robust, and AI-related business is expanding, centered on support for AI implementation, consulting on AI-led business transformation, data infrastructure, and security. In terms of read-across for the Japanese IT Services sector, based on our industry research, while the Middle East situation has had a limited impact on IT services demand in Japan, we see this as a slight headwind for NTT (Buy), given its subsidiary NTT Data's high overseas revenue exposure (60% overseas sales ratio in FY3/26). Meanwhile, Japan is starting to see a similar trend in terms of expansion in AI-related business, and we see NOM Institute (Buy) and Trend Micro (Neutral) as well-placed to benefit. Below, we outline our key takeaways from the call (growth rates are all on a local-currency, or LC, basis).
+
+3Q8/26 earnings: 3Q8/26 sales of US\$18.72 bn (+3% yoy; 2Q growth was +4% yoy) landed at the midpoint of the guidance range (+1% to +5% yoy) and in line with the Bloomberg consensus (US\$18.76 bn). By region, sales growth was +1% yoy in the Americas (2Q: +3% yoy), +4% in EMEA (+2%), and +8% in Asia (+10%; Exhibit 1). The Americas was challenged from an ongoing impact of restrained investment by the US government (-2 pp), while growth improved in EMEA, mainly driven by the UK and Italy, and growth in Asia was led by Japan, Australia, and Singapore. By client industry, communications, media, and technology (+9% yoy) was strong, while demand was sluggish in healthcare & public services (flat yoy), mainly centered on US government business. Operating profits came in at US\$3.17 bn (+6% yoy), the operating margin rose +0.1 pp yoy (Exhibit 2), headcount increased +1.6% qoq, and the attrition rate was 14% (-2 pp yoy/+1 pp qoq; Exhibit 3).
+
+■ Orders environment: Turning to orders, 3Q new bookings swung to negative
+
+Chikai Tanaka, CFA
+
++81(3)4587-9840
+
+chikai.tanaka@gs.com
+
+GS Japan Co., Ltd.
+
+Yuki Sato
+
++81(3)4587-8536 | yuki.z.sato@gs.com
+
+GS Japan Co., Ltd.
+
+GS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S.
+
+growth for the first time in four quarters at -3% yoy (LC basis; 2Q: +1% yoy; Exhibit 4). By service type, consulting orders, a leading indicator for system integration and development demand, accelerated to +13% yoy (vs. +8% in 2Q; USD basis, no disclosure on LC basis), but managed services turned negative at -15% yoy (vs. +3% in 2Q). The number of clients with bookings of over US\$100 mn was flat at 30 (versus 30 in 2Q). Amid impacts from the Middle East situation, decision-making by some clients was delayed, resulting in negative impacts of c.US\$100 mn in sales and c.US\$400 mn in orders, primarily in consulting. The impact was particularly severe in the manufacturing and automotive industries, and Accenture noted the potential for this impact to rise further in 4Q. Client-specific factors also led to large managed service projects being pushed back to FY8/27 (delayed rather than lost). Meanwhile, corporate appetite for AI investment remains robust, as the focus shifts from proof of concept (PoC) to commercial deployment, fueling demand for AI implementation support and AI-driven business transformation consulting.
+
+Guidance: FY8/26 sales guidance (LC) was lowered to +3% to +4% yoy (from +3% to +5% yoy), or to +4% to +5% yoy (from +4% to +6% yoy) excluding US government business (which is expected to have a -1 pp impact on growth). This downward revision to both the upper end and midpoint of the range leaves the new midpoint below the Bloomberg consensus. By quarter, 4Q sales guidance (LC) calls for +1% to +5% yoy growth (+2% to +6% yoy excluding US government business). Management noted that negative effects from the Middle East situation could be greater than in 3Q.
+
+Exhibit 1: North America slows, Europe accelerates, and Asia remains solid  
+Accenture sales growth by region (local-currency basis)  
+![](images/9a31766ecc3f79ec72252f21458eabb2706ba1c1ee25f4064b824330d17fa8f7.jpg)  
+Regional definitions changed in 1Q8/24, reclassifying Latin America sales from Growth to North America, and with this North America was changed to Americas, while Growth was changed to Asia Pacific; EMEA unchanged.
+
+Exhibit 2: Both sales and profit growth rates slow slightly
+Accenture sales growth (LC basis) and operating profits/adjusted operating profits  
+![](images/d207898ea17f1beb71656d879382364fd573fbb061eb482b0ba51af4c08fbc5d.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Period | Revenue (y-y) (%) | Operating Income (y-y) (%) | Adjusted Operating Income (y-y) (%) |
+|---|---|---|---|
+| 9-11 19/8 | 9.5 | 8.5 | 9.0 |
+| 12-2 3-5 | 8.0 | 6.0 | 7.5 |
+| 6-8 | 8.5 | 7.0 | 8.0 |
+| 9-11 12-2 | 8.0 | 8.5 | 8.0 |
+| 12-2 3-5 | 0.0 | -1.0 | -0.5 |
+| 6-8 | -1.0 | -2.0 | -1.5 |
+| 9-11 12-2 | 4.0 | 10.0 | 3.0 |
+| 12-2 3-5 | 15.0 | 25.0 | 20.0 |
+| 21/8 | 17.0 | 28.0 | 25.0 |
+| 6-8 | 28.0 | 30.0 | 30.0 |
+| 9-11 12-2 | 27.0 | 25.0 | 23.0 |
+| 12-2 3-5 | 22.0 | 23.0 | 21.0 |
+| 6-8 | 15.0 | 15.0 | 13.0 |
+| 9-11 23/8 | 5.0 | -5.0 | -4.0 |
+| 12-2 3-5 | -5.0 | -15.0 | -13.0 |
+| 6-8 | -3.0 | -5.0 | -4.0 |
+| 9-11 12-2 | -1.0 | -10.0 | -8.0 |
+| 12-2 3-5 | -2.0 | -5.0 | -4.0 |
+| 6-8 | -1.0 | -3.0 | -2.0 |
+| 9-11 24/8 | -1.0 | -1.0 | -1.0 |
+| 12-2 3-5 | -3.0 | -5.0 | -4.0 |
+| 6-8 | -1.0 | -3.0 | -2.0 |
+| 9-11 25/8 | -3.0 | -15.0 | -13.0 |
+| 12-2 3-5 | -5.0 | -10.0 | -8.0 |
+| 6-8 | -7.0 | -5.0 | -4.0 |
+| 9-11 26/8 | -3.0 | -3.0 | -2.0 |
+| 12-2 3-5 | -4.0 | -5.0 | -4.0 |
+| 6-8 | -6.0 | -7.0 | -6.0 |
+The chart displays the percentage values for Revenue (y-y), Operating Income (y-y), and Adjusted Operating Income (y-y) over time, with each data point labeled by its respective date and value in parentheses. The x-axis represents the fiscal years from September to March of each year.
+</details>
+
+Adjusted operating profits = operating profits + business optimization costs.  
+Source: Company data, Data compiled by GS Global Investment Research  
+Source: Company data, Data compiled by GS Global Investment Research
+
+Exhibit 3: Headcount rises slightly qoq Accenture headcount and attrition rate  
+![](images/c92b5d1c85dbec7a79f3b5a4070c5c6f28ba529ff46a7ae56f09836fdef65ff3.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date | Employees | Attrition rate (hrs) |
+| --- | --- | --- |
+| 9-11 | 200 | 600 |
+| 12-2 | 200 | 700 |
+| 3-5 | 200 | 750 |
+| 6-8 | 200 | 700 |
+| 9-11 | 200 | 550 |
+| 12-2 | 200 | 450 |
+| 3-5 | 200 | 500 |
+| 6-8 | 200 | 350 |
+| 9-11 | 200 | 400 |
+| 12-2 | 200 | 500 |
+| 3-5 | 200 | 650 |
+| 6-8 | 200 | 750 |
+| 9-11 | 200 | 700 |
+| 12-2 | 200 | 650 |
+| 3-5 | 200 | 750 |
+| 6-8 | 200 | 750 |
+| 9-11 | 200 | 550 |
+| 12-2 | 200 | 550 |
+| 3-5 | 200 | 550 |
+| 6-8 | 200 | 550 |
+| 9-11 | 200 | 550 |
+| 12-2 | 200 | 550 |
+| 3-5 | 200 | 550 |
+| 6-8 | 200 | 550 |
+| 9-11 | 200 | 55 |
+| 12-2 | 200 | -10 |
+| 3-5 | 200 | -15 |
+| 6-8 | 200 | -15 |
+| 9-11 | 200 | -15 |
+| 12-2 | 200 | -15 |
+| 3-5 | 200 | -15 |
+| 6-8 | 200 | -15 |
+| 9-11 | 200 | -15 |
+| 12-2 | 200 | -15 |
+| 3-5 | 200 | -15 |
+| 6-8* | 200 | -15 |
+| 9-11 | 200 | -15 |
+| 12-2 | 200 | -15 |
+| 3-5 | 200 | -15 |
+| 6-8* | 200 | -15 |
+| 9-11 | 200+ | -15% |
+| 12-2 | 20 | -15% |
+| 3-5 | 2 | -15% |
+| 6-8* | -1 | -15% |
+| 9-11 | -1 | -15% |
+| 12-2 | -1 | -15% |
+| 3-5 | -1 | -15% |
+| 6-8* | -1 | -15% |
+| 9-11 | -1 | -15% |
+| 12-2 | -1 | -15% |
+| 3-5 | -1 | -15% |
+| 6-8* | -1 | -15% |
+| 9+ | -1 | -15% |
+| 12+ | -1 | -15% |
+| 3+ | -1 | -15% |
+| + | -1 | -15% |
+| + | -1 | -15% |
+| + | -1 | -15% |
+| + | -1 | -15% |
+| + | -1 | -15% |
+| + | -1 | -15% |
+| + | -1 | -15% |
+</details>
+
+Source: Company data, Data compiled by GS Global Investment Research
+
+Exhibit 4: 3Q order growth turns negative at $-3\%$ yoy Accenture orders (USD basis)  
+![](images/80135865ce2e55937ed3ab5f8c6d61bdf8c8fce72c8e5db60ac3392d6f0fe0c3.jpg)
+
+<details>
+<summary>bar-line hybrid</summary>
+
+| Date | New Booking (Consulting) (bn $) | Outsourcing (bn $) | New Bookings (y-y)(rhs) (%) |
+|---|---|---|---|
+| 9-11 | 5.0 | 4.0 | 8.0 |
+| 12-2 | 6.0 | 5.0 | 13.0 |
+| 3-5 | 7.0 | 6.0 | -10.0 |
+| 6-8 | 6.0 | 5.0 | 14.0 |
+| 9-11 | 6.0 | 6.0 | 8.0 |
+| 12-2 | 7.0 | 7.0 | 14.0 |
+| 3-5 | 6.0 | 6.0 | 9.0 |
+| 6-8 | 6.0 | 8.0 | 10.0 |
+| 9-11 | 7.0 | 9.0 | 16.0 |
+| 12-2 | 8.0 | 10.0 | 12.0 |
+| 3-5 | 8.0 | 12.0 | 42.0 |
+| 6-8 | 9.0 | 13.0 | 10.0 |
+| 9-11 | 10.0 | 14.0 | 18.0 |
+| 12-2 | 11.0 | 15.0 | 22.0 |
+| 3-5 | 12.0 | 16.0 | 24.0 |
+| 6-8 | 13.0 | 17.0 | 26.0 |
+| 9-11 | 14.0 | 18.0 | 28.0 |
+| 12-2 | 15.0 | 20.0 | 32.0 |
+| 3-5 | 16.0 | 22.0 | 34.0 |
+| 6-8 | 17.0 | 24.0 | 36.0 |
+| 9-11 | 18.0 | 26.0 | 38.0 |
+| 12-2 | 19.0 | 28.0 | 40.0 |
+| 3-5 | 20.0 | 30.0 | 42.0 |
+| 6-8 | 21.0 | 32.0 | 44.0 |
+| 9-11 | 22.0 | 34.0 | 46.0 |
+| 12-2 | 23.0 | 36.0 | 48.0 |
+| 3-5 | 24.0 | 38.0 | 50.0 |
+| 6-8 | 25.0 | 40.0 | 52.0 |
+| 9-11 | 26.0 | 42.0 | 54.0 |
+| 12-2 | 27.0 | 44.0 | 56.0 |
+| 3-5 | 28.0 | 46.0 | 58.0 |
+| 6-8 | 29.0 | 48.0 | 60.0 |
+| 9-11 | 30.0 | 50.0 | 62.0 |
+| 12-2 | 31.0 | 52.0 | 64.0 |
+| 3-5 | 32.0 | 54.0 | 66.0 |
+| 6-8 | 33.0 | 56.0 | 68.0 |
+| 9-11 | 34.0 | 58.0 | 70.0 |
+| 12-2 | 35.0 | 60.0 | 72.0 |
+| 3-5 | 36.0 | 62.0 | 74.0 |
+| 6-8 | 37.0 | 64.0 | 76.0 |
+| 9-11 | 38.0 | 66.0 | 78.0 |
+| 12-2 | 39.0 | 68.0 | 80.0 |
+| 3-5 | 40.0 | 70.0 | 82.0 |
+| 6-8 | 41.0 | 72.0 | 84.0 |
+| 9-11 | 42.0 | 74.0 | 86.0 |
+| 12-2 | 43.0 | 76.0 | 88.0 |
+| 3-5 | 44.0 | 78.0 | 90.0 |
+| 6-8 | 45.0 | 80.0 | 92.0 |
+| 9-11 | 46.0 | 82.0 | 94.0 |
+| 12-2 | 47.0 | 84.0 | 96.0 |
+| 3-5 | 48.0 | 86.0 | 98.0 |
+| ... (repeated values) are possible to be extracted from the provided image as they are not explicitly labeled in the chart.
+</details>
+
+Source: Company data, Data compiled by GS Global Investment Research
+
+Exhibit 5: 3Q8/26 sales mostly in line with consensus, but negative order growth of $-3\%$ yoy missed consensus  
+Accenture: Earnings statement
+
+<table><tr><td>Accenture (ACN)(mn $)</td><td>24/89-11</td><td>12-2</td><td>3-5</td><td>6-8</td><td>25/89-11</td><td>12-2</td><td>3-5</td><td>6-8</td><td>26/89-11</td><td>12-2</td><td>3-5</td></tr><tr><td>New Bookings(y-y)(y-y: LC)(BB ratio)Consulting(y-y)(BB ratio)Managed Services(y-y)(BB ratio)</td><td>18,45013.7%1.148,6206.3%1.029,83021.2%1.27</td><td>21,580-2.3%-2.0%1.311,060-3.2%1.42</td><td>21,06022.1%26.0%1.289,2803.9%1.1011,78041.6%1.47</td><td>20,15021.1%24.0%1.238,5901.4%1.0411,55041.4%1.42</td><td>18,7001.4%1.0%1.069,2207.0%1.029,480-3.6%1.10</td><td>20,910-3.1%0.0%1.2610,470-0.5%1.2610,440-5.6%1.25</td><td>19,700-6.5%-7.0%1.119,080-2.2%1.0110,620-9.8%1.22</td><td>21,3105.8%3.0%1.218,8703.3%1.011,2407.7%1.41</td><td>20,94012.0%10.0%1.109,8807.2%1.0511,06016.7%1.19</td><td>22,1105.7%1.0%1.2011,3308.2%1.2810,7803.3%1.17</td><td>19,320-1.9%-3.0%1.0010,26013.0%1.109,060-14.7%0.96</td></tr><tr><td colspan="12">P/L</td></tr><tr><td>Revenues(y-y)(y-y: LC)</td><td>16,2243.0%1.0%</td><td>15,800-0.1%0.0%</td><td>16,467-0.6%1.4%</td><td>16,4062.6%5.0%</td><td>17,6909.0%8.0%</td><td>16,6595.4%8.5%</td><td>17,7287.7%7.0%</td><td>17,5967.3%4.5%</td><td>18,7426.0%5.0%</td><td>18,0448.3%4.0%</td><td>18,7185.6%3.0%</td></tr><tr><td>Operating Income(y-y)(OPM)</td><td>2,565-1.1%15.8%</td><td>2,0465.2%13.0%</td><td>2,63111.5%16.0%</td><td>2,35423.0%14.3%</td><td>2,94815.0%16.7%</td><td>2,2459.7%13.5%</td><td>2,98313.4%16.8%</td><td>2,050-12.9%11.6%</td><td>2,874-2.5%15.3%</td><td>2,49411.1%13.8%</td><td>3,1756.5%17.0%</td></tr><tr><td>Business Optimization Cost (SGA)AmericasEMEAAsia PacificAdjusted Operating Income(y-y)(OPM)</td><td>1405071192,7054.3%16.7%</td><td>11512862,162-1.2%13.7%</td><td>77-47562,7080.1%16.4%</td><td>1062517642,4603.1%15.0%</td><td>615420132632,9489.0%16.7%</td><td>3086710.1%13.5%</td><td>420132632,98310.1%16.8%</td><td>615420132632,98310.1%15.1%</td><td>3086710.1%13.8%</td><td>420132632,98310.1%17.0%</td><td>3,1756.5%17.0%</td></tr><tr><td colspan="12">Revenues &amp; Operating Income by Geographic Markets</td></tr><tr><td>Americas(y-y)(y-y: LC)(% of sales)EMEA(y-y)(y-y: LC)(% of sales)Asia Pacific(y-y)(y-y: LC)(% of sales)</td><td>8,027---49.5%5,8049.2%2,394---14.8%</td><td>7,816---49.5%5,5990.8%2,385---15.1%</td><td>8,28750.3%5,777-1.6%35.1%2,404---14.6%</td><td>8,423---51.3%5,6391.5%34.4%2,344---4.3%</td><td>8,7338.8%11.0%49.4%6,41210.5%36.2%2,5446.3%4.0%14.4%</td><td>8,5539.4%11.0%51.3%5,8043.7%34.8%2,302-3.5%1.0%13.8%</td><td>8,9668.2%9.0%50.6%6,2327.9%6.0%35.2%5.2%4.0%14.3%</td><td>8,8044.5%5.0%50.0%6,1969.9%3.0%35.2%2,59610.7%6.0%14.8%</td><td>9,0804.0%4.0%4.0%48.4%6,9358.2%4.0%37.0%2,7277.2%9.0%14.6%</td><td>8,8964.0%3.0%49.3%6,5692.0%36.4%2,57812.0%10.0%14.3%</td><td>9,1381.9%1.0%48.8%6,87310.3%4.0%36.7%2,7077.0%8.0%14.5%</td></tr><tr><td>Americas(y-y)(OPM)EMEA(y-y)(OPM)Asia Pacific(y-y)(OPM)</td><td>1,293---16.1%82413.3%14.2448---18.7%</td><td>1,083---13.9%529-14.0%9.4%434---18.2%</td><td>1,408---17.0%75011.9%13.0%473---19.7%</td><td>1,296---15.4%70148.9%12.4%357---21.2%</td><td>1,3776.5%15.8%1,03625.8%16.2%53519.4%21.0%</td><td>1,24014.5%14.5%63920.8%11.0%365-15.9%15.9%</td><td>1,72022.2%19.2%7530.4%12.1%5107.8%20.2%</td><td>987-23.8%11.2%663-5.5%10.7%40012.1%15.4%</td><td>1,52710.9%16.8%900-13.1%13.0%446-16.7%16.4%</td><td>1,39312.3%15.7%6775.9%10.3%42416.1%16.4%</td><td>1,708-0.7%18.7%99432.0%14.5%473-7.2%17.5%</td></tr><tr><td colspan="12">Revenues by Industry Groups</td></tr><tr><td>Comm. Media &amp; Tech(y-y)(y-y: LC)(% of sales)Financial Services(y-y)(y-y: LC)(% of sales)Health &amp; Public Service(y-y)(y-y: LC)(% of sales)Products(y-y)(y-y: LC)(% of sales)Resources(y-y)(y-y: LC)(% of sales)</td><td>2,669-10.4%-11.0%16.5%3,0342.4%0.0%18.7%3,37712.6%12.0%20.8%4,8608.5%1.0%30.0%2,2846.8%0.0%8.5%1.0%52.1%7,7686.4%5.0%47.9%</td><td>2,654-8.0%-7.0%16.8%2,809-6.5%-6.0%17.8%3,33410.3%10.0%4,7620.9%0.0%30.1%2,2412.6%4.0%49.8%0.3%30.3%2,310-0.1%3.0%48.6%0.3%2.0%30.3%2,220-0.4%3.0%48.6%</td><td>2,763-4.1%-1.0%16.8%2,895-7.8%-5.0%17.6%3,5157.6%9.0%21.3%4,9830.3%2,310-0.1%3.0%48.6%</td><td>2,7511.6%5.0%16.8%2,873-5.1%-2.0%17.5%3,61410.5%22.0%4,9494.2%6.0%30.2%2,220-0.4%3.0%13.5%</td><td>2,8587.1%7.0%16.2%3,1694.5%4.0%17.9%3,81312.9%21.6%5,42511.6%10.0%30.7%6.2%6.0%13.7%</td><td>2,7302.8%5.4%6.0%16.4%3,0107.2%11.0%18.1%3,6097.5%30.3%2,2584.5%4.0%13.6%</td><td>2,9125.4%5.0%16.4%3,27913.3%13.0%18.5%3,778-1.4%7.0%21.3%5,3447.2%7.0%30.6%2,3874.5%5.0%4.0%13.6%</td><td>2,9547.4%5.0%16.8%3,31615.4%12.0%18.8%3,564-1.4%-3.0%20.3%5,3768.6%5.0%30.6%2,3877.5%-3.0%20.3%5,7415.8%4.0%30.6%2,3877.5%-3.0%20.3%</td><td>3,1028.5%10.0%16.6%3,60213.7%12.0%19.2%3,797-0.4%-1.0%20.3%5,4778.4%3.0%30.4%2,4996.8%2.0%13.4%</td><td>3,09113.2%10.0%17.1%3,39512.8%7.0%18.8%3,670-1.0%20.3%5,4778.4%3.0%30.4%2,4996.8%2.0%13.4%</td><td>3,21810.5%9.0%17.2%3,4896.4%3.0%30.3%2,4983.4%1.0%13.3%</td></tr><tr><td colspan="12">Revenues by Type of Work</td></tr><tr><td>Consulting(y-y)(y-y: LC)(% of sales)Managed Services(y-y)(y-y: LC)(% of sales)</td><td>8,4570.1%-2.0%52.1%7,7686.4%5.0%47.9%</td><td>8,021-3.1%-3.2%50.8%7,7783.0%3.0%49.2%</td><td>8,457-2.7%-1.0%51.4%8,0101.8%4.0%48.6%</td><td>8,2600.8%3.0%50.4%8,1454.6%7.0%49.6%</td><td>9,0457.0%6.0%51.1%8,6446.2%6.0%48.9%</td><td>8,2823.3%6.0%49.7%8,3777.7%5.0%50.3%</td><td>9,0076.5%6.0%6.0%50.8%8,7218.9%9.0%49.2%</td><td>8,7726.2%3.0%3.0%49.9%8,8248.3%6.0%50.1%</td><td>9,4154.1%3.0%50.2%9,3289.6%3.0%49.8%</td><td>8,8607.0%3.0%49.1%9,1849.6%5.0%50.9%</td><td>9,3283.6%1.0%49.8%9,3907.7%5.0%50.2%</td></tr></table>
+
+LC denotes local currency basis; regional definitions changed in 1Q8/25, reclassifying Latin America sales from Growth to North America, and with this North America was changed to Americas, while Growth was changed to Asia Pacific; EMEA unchanged.
+
+## Disclosure Appendix
+
+## Reg AC
+
+We, Chikai Tanaka, CFA and Yuki Sato, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Chikai Tanaka, CFA GS Japan Co., Ltd., Yuki Sato GS Japan Co., Ltd..
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+## GS Factor Profile
+
+The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:
+
+Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).
+
+Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).
+
+For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.
+
+## M&A Rank
+
+Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.
+
+## Quantum
+
+Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.
+
+## Disclosures
+
+## Rating and pricing information
+
+Accenture Plc (Buy, \$156.01), NTT (Buy, ¥148), NOM Institute (Buy, ¥4,655) and Trend Micro Inc. (Neutral, ¥5,909)
+
+The rating(s) for Accenture Plc is/are relative to the other companies in its/their coverage universe: ARM Holdings, Accenture Plc, Advanced Micro Devices Inc., American Tower Corp., Amkor Technology Inc., Analog Devices Inc., Applied Materials Inc., Broadcom Inc., Cadence Design Systems Inc., Camtek, Cognizant Technology Solutions, Credo Technology Group, Crown Castle Inc., EPAM Systems Inc., Entegris Inc., GlobalFoundries Inc., Globant SA, International Business Machines Corp., KLA Corp., Lam Research Corp., MKS Instruments Inc., Marvell Technology Inc., Microchip Technology Inc., Micron Technology Inc., NXP Semiconductors NV, Nvidia Corp., ON Semiconductor Corp., Qnity, Qualcomm Inc., SBA Communications Corp., SanDisk Corp., Seagate Technology, SiTime Corp., Synopsys Inc., TaskUs Inc., Teradyne Inc., Texas Instruments Inc., Western Digital Corp.
+
+## Company-specific regulatory disclosures
+
+The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.
+
+GS has received compensation for investment banking services in the past 12 months: Accenture Plc (\$156.01)
+
+GS expects to receive or intends to seek compensation for investment banking services in the next 3 months: Accenture Plc (\$156.01)
+
+GS had an investment banking services client relationship during the past 12 months with: Accenture Plc (\$156.01)
+
+GS had a non-investment banking securities-related services client relationship during the past 12 months with: Accenture Plc (\$156.01)
+
+GS had a non-securities services client relationship during the past 12 months with: Accenture Plc (\$156.01)
+
+GS makes a market in the securities or derivatives thereof: Accenture Plc (\$156.01)
+
+## Distribution of ratings/investment banking relationships
+
+GS Investment Research global Equity coverage universe
+
+<table><tr><td rowspan="2"></td><td colspan="3">Rating Distribution</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td></tr></table>
+
+<table><tr><td colspan="3">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>65%</td><td>60%</td><td>45%</td></tr></table>
+
+As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.
+
+Price target and rating history chart(s)  
+![](images/8b053e47b709a324ef3131a9e0a7d0f2bbdac0a1633e147301d54ca4c14fd0b3.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date | Stock Price | Index Price | Rating | Price target |
+| --- | --- | --- | --- | --- |
+| Jun 24 | 335 | 420 |  |  |
+| Dec 6 | 370 | 430 |  |  |
+| Feb 2024 | 415 | 390 |  |  |
+| May 2024 | 370 | 370 |  |  |
+| Aug 2024 | 330 | 330 |  |  |
+| Nov 2024 |  |  |  |  |
+| Dec 2024 |  |  |  |  |
+| Mar 2025 |  |  |  |  |
+| Jun 2025 |  |  |  |  |
+| Sep 2025 |  |  |  |  |
+| Dec 2025 |  |  |  |  |
+| Mar 2026 |  |  |  |  |
+| Jun 2026 |  |  |  |  |
+| Sep 2026 |  |  |  |  |
+| Dec 2026 |  |  |  |  |
+| Mar 2027 |  |  |  |  |
+| Jun 2027 |  |  |  |  |
+| Sep 2027 |  |  |  |  |
+| Dec 2027 |  |  |  |  |
+| Mar 2028 |  |  |  |  |
+| Jun 2028 |  |  |  |  |
+| Sep 2028 |  |  |  |  |
+| Dec 2028 |  |  |  |  |
+| Mar 2029 |  |  |  |  |
+| Jun 2029 |  |  |  |  |
+| Sep 2029 |  |  |  |  |
+| Dec 2029 |  |  |  |  |
+| Mar 2030 |  |  |  |  |
+| Jun 2030 |  |  |  |  |
+| Sep 2030 |  |  |  |  |
+| Dec 2030 |  |  |  |  |
+| Mar 2031 |  |  |  |  |
+| Jun 2031 |  |  |  |  |
+| Sep 2031 |  |  |  |  |
+| Dec 2031 |  |  |  |  |
+| Mar 2032 |  |  |  |  |
+| Jun 2032 |  |  |  |  |
+| Sep 2032 |  |  |  |  |
+| Dec 2032 |  |  |  |  |
+| Mar 2033 |  |  |  |  |
+| Jun 2033 |  |  |  |  |
+| Sep 2033 |  |  |  |  |
+| Dec 2033 |  |  |  |  |
+| Mar 2034 |  |  |  |  |
+| Jun 2034 |  |  |  |  |
+| Sep 2034 |  |  |  |  |
+| Dec 2034 |  |  |  |  |
+| Mar 2035 |  |  |  |  |
+| Jun 2035 |  |  |  |  |
+| Sep 2035 |  |  |  |  |
+| Dec 2035 |  |  |  |  |
+| Mar 2036 |  |  |  |  |
+| Jun 2036 |  |  |  |  |
+| Sep 2036 |  |  |  |  |
+| Dec 2036 |  |  |  |  |
+| Mar 2037 |  |  |  |  |
+| Jun 2037 |  |  |  |  |
+| Sep 2037 |  |  |  |  |
+| Dec 2037 |  |  |  |  |
+| Mar 2038 |  |  |  |  |
+| Jun 2038 |  |  |  |  |
+| Sep 2038 |  |  |  |  |
+| Dec 2038 |  |  |  |  |
+| Mar 2039 |  |  |  |  |
+| Jun 2039 |  |  |  |  |
+| Sep 2039 |  |  |  |  |
+| Dec 2039 |  |  |  |  |
+| Mar 2040 |  |  |  |  |
+| Jun 2040 |  |  |  |  |
+| Sep 2040 |  |  |  |  |
+| Dec 2040 |  |  |  |  |
+| Mar 2041 |  |  |  |  |
+| Jun 2041 |  |  |  |  |
+| Sep 2041 |  |  |  |  |
+| Dec 2041 |  |  |  |  |
+| Mar 2042 |  |  |  |  |
+| Jun 2042 |  |  |  |  |
+| Sep 2042 |  |  |  |  |
+| Dec 2042 |  |  |  |  |
+| Mar 2043 |  |  |  |  |
+| Jun 2043 |  |  |  |  |
+| Sep 2043 |  |  |  |  |
+| Dec 2043 |  |  |  |  |
+| Mar 2044 |  |  |  |  |
+| Jun 2044 |  |  |  |  |
+| Sep 2044 |  |  |  |  |
+| Dec 2044 |  |  |  |  |
+| Mar 2045 |  |  |  |  |
+| Jun 2045 |  |  |  |  |
+| Sep 2045 |  |  |  |  |
+| Dec 2045 |  |  |  |  |
+| Mar 2046 |  |  |  |  |
+| Jun 2046 |  |  |  |  |
+</details>
+
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+Target price history table(s) Accenture Plc (ACN)
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>18-Jun-26</td><td>230.00</td><td>156.01</td></tr><tr><td>03-Jun-26</td><td>270.00</td><td>177.43</td></tr><tr><td>19-Mar-26</td><td>300.00</td><td>203.55</td></tr><tr><td>25-Sep-25</td><td>330.00</td><td>232.56</td></tr><tr><td>20-Jun-25</td><td>370.00</td><td>285.37</td></tr><tr><td>03-Jun-25</td><td>390.00</td><td>312.90</td></tr><tr><td>20-Mar-25</td><td>415.00</td><td>300.91</td></tr><tr><td>19-Dec-24</td><td>430.00</td><td>372.16</td></tr><tr><td>06-Dec-24</td><td>420.00</td><td>362.70</td></tr><tr><td>26-Sep-24</td><td>370.00</td><td>355.81</td></tr><tr><td>24-Jun-24</td><td>335.00</td><td>307.21</td></tr></table>
+
+Price targets shown in table(s) are unadjusted for corporate actions.
+
+## Regulatory disclosures
+
+## Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website at https://www.gs.com/research/hedge.html.
+
+## Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+## Ratings, coverage universe and related definitions
+
+Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.
+
+Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.
+
+Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.
+
+Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when
+
+GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.
+
+## Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+## General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.

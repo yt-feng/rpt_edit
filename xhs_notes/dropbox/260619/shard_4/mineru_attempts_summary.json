@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_xl7_cegd/pdfs/0001-21-NOM-Asia Chart Alert-NOM-s leading index of Asian exports-260619.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xl7_cegd/pdfs/0002-22-JPM-China Consumer-Cheap but unloved - stay selective while waiting for the earnings floor-260618.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xl7_cegd/pdfs/0003-23-MS-Greater China Materials-China Steel and Iron Ore Weekly Update-260618.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xl7_cegd/pdfs/0004-24-BARC-IT Hardware and Communications Equipment-Updated Optical Model-260617.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_xl7_cegd/pdfs/0005-25-GS-Japan Technology- IT Services- Accenture results read-across- Orders soften amid geopolitical headwinds- AI business expands-260619.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
