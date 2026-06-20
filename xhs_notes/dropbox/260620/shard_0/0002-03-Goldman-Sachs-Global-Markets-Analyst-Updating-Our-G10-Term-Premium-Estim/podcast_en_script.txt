@@ -1,0 +1,18 @@
+EN_A: So, term premium is back in the spotlight. This report introduces two new models to track it. What’s the big idea?
+EN_B: The big idea is that they’ve added a survey-based model alongside the traditional yield curve-only model. And the survey-based one shows term premium is lower and more stable than what we see from the yield curve alone.
+EN_A: Wait, why do we need a second model? What’s wrong with the old one?
+EN_B: The old model, which only uses yield curve data, can misinterpret big structural shifts. For example, in Japan, when the yield curve steepened, the yield curve-only model attributed almost all of that to a rise in term premium. But the survey-based model shows that a big chunk of that move is actually due to higher policy rate expectations, not just risk premium.
+EN_A: So how does this survey-based model work exactly?
+EN_B: It uses survey data on short-term rate expectations from economists or market participants. This directly anchors the expected path for future short rates. When surveys point to rates staying higher for longer, the model assigns more of the long-end yield rise to those expectations, and less to term premium. The yield curve-only model, on the other hand, relies more on the historical long-run mean, so it’s more volatile.
+EN_A: Does that mean the survey-based model is always better?
+EN_B: Not necessarily. The report says the survey-based model is better at capturing structural shifts, like the German debt brake reform or Japan’s policy pivot. But the yield curve-only model is more responsive to daily market moves and is actually a better predictor of future excess returns on holding duration. So both have their uses.
+EN_A: Give me some numbers. How different are the two models?
+EN_B: For the US 10-year, the survey-based estimate is 70 basis points, which is 40 basis points lower than the yield curve-only model. In the UK, the gap is even more striking: the yield curve-only model shows the UK having the highest term premium among the G4, but the survey-based model shows it as the lowest. Japan is another great example, where the survey model reveals that the JGB yield rise is more about rate expectations than term premium.
+EN_A: So, despite the differences, do they agree on the big picture?
+EN_A: Yes. All models show term premium has risen significantly in recent years and is near local highs across G10 markets. That means the market is demanding more compensation for holding long-term bonds, even though rate expectations have only risen modestly.
+EN_A: What’s driving that? The report mentions some factors.
+EN_B: Macro risks, inflation risk, higher interest rate volatility, massive bond supply, and central bank balance sheet reduction. But here’s the interesting part: term premium has stayed high even as rate volatility has declined. That suggests there might be a structural rise in duration risk premium, not just a cyclical one. The report hints that this puzzle will be explored further in upcoming research.
+EN_A: So, what questions does the report leave unanswered? What should listeners look for in the full version?
+EN_B: The big one is this high-premium, low-volatility combination. Why is it persisting? The report doesn’t fully unpack that. Also, they promise a deeper dive into the valuation frameworks for G10 term premium. So if you want to understand where bond risk is really priced, the full report has those critical, unanswered pieces.
+EN_A: Sounds like this report isn’t just an update, it’s a new lens for looking at bond markets. For the full picture, check out the complete research.
+EN_B: And if you want to discuss it with other analysts, join our community. We break it all down.

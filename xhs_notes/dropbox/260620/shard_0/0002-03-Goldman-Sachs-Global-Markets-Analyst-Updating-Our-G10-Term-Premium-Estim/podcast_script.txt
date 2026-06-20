@@ -1,0 +1,71 @@
+ZH_A: 最近大家都在聊债券期限溢价，但到底该怎么看？这份报告给了两个新模型，你给我们拆解一下。
+
+ZH_B: 好问题。这份报告的核心是，他们引入了一个基于调查的期限溢价模型，和传统的基于收益率曲线的模型做对比，发现调查模型给出的溢价更低、更稳定。
+
+ZH_A: 所以这意味着什么？为什么突然要搞一个新模型？
+
+ZH_B: 因为传统的收益率曲线模型，在面对结构性变化时，比如日本央行政策转向，会把整个收益率曲线陡峭化几乎全归因于期限溢价上升。但调查模型发现，其实很大一部分是市场对政策利率预期的结构性抬升。
+
+ZH_A: 那这个调查模型怎么工作的？它和传统模型的核心区别在哪里？
+
+ZH_B: 简单说，传统模型只靠收益率曲线本身的形状来推断市场对未来利率的预期。而调查模型直接引入经济学家或市场参与者的短期利率预测数据，来约束这个预期路径。当调查显示利率会长期维持高位，模型就会把更多收益率上升归到利率预期上，而不是期限溢价。
+
+ZH_A: 所以，调查模型更准确吗？
+
+ZH_B: 报告认为，调查模型更能捕捉结构性转变，比如日本或德国债务刹车改革后的情况。但传统模型也有优势，它对每日市场变化更敏感，而且在预测未来持有债券的超额回报方面表现更好。所以两者都有价值。
+
+ZH_A: 具体到数据，两个模型给出的结论差异有多大？
+
+ZH_B: 以美国10年期为例，调查模型估计的期限溢价是70个基点，比传统模型低了40个基点。英国差距更大，传统模型下英国是G4里溢价最高的，但调查模型下反而变成了最低。日本也是个典型案例，调查模型显示，日本国债收益率上升更多是利率预期推动，而非单纯的风险溢价。
+
+ZH_A: 那现在所有模型都指向期限溢价处于高位，对吗？
+
+ZH_B: 是的，这是共识。尽管绝对水平不同，但几乎所有模型都显示，G10国家的期限溢价在近几年显著上升，并接近局部高点。这意味着市场对利率的预期只有温和上升，但投资者要求的持有长期债券的风险补偿确实提高了。
+
+ZH_A: 为什么会这样？驱动因素是什么？
+
+ZH_B: 报告提到几个关键因素：宏观经济风险、通胀风险、利率水平及其波动性上升、高额的债券供给，以及央行缩表。有趣的是，即使利率波动率下降，期限溢价依然高企，这暗示可能存在结构性的期限风险溢价，而不仅仅是周期性波动。
+
+ZH_A: 那这份报告有没有完全解答的问题？哪些地方还值得深入阅读？
+
+ZH_B: 当然有。报告提到，尽管分析了驱动因素，但为什么在高溢价、低波动率组合下，期限溢价仍能维持？这个问题没有完全展开。另外，报告说后续研究将深入探讨G10期限溢价的估值框架。所以，如果你想理解未来债券市场的风险定价逻辑，完整报告里这些未解答的部分非常关键。
+
+ZH_A: 听起来，这份报告不仅是更新了数据，更是提供了一个新的分析框架。想深入了解的朋友，可以去阅读完整报告。
+
+ZH_B: 对，我们社群里有完整的报告摘要和讨论，欢迎加入。
+
+EN_A: So, term premium is back in the spotlight. This report introduces two new models to track it. What’s the big idea?
+
+EN_B: The big idea is that they’ve added a survey-based model alongside the traditional yield curve-only model. And the survey-based one shows term premium is lower and more stable than what we see from the yield curve alone.
+
+EN_A: Wait, why do we need a second model? What’s wrong with the old one?
+
+EN_B: The old model, which only uses yield curve data, can misinterpret big structural shifts. For example, in Japan, when the yield curve steepened, the yield curve-only model attributed almost all of that to a rise in term premium. But the survey-based model shows that a big chunk of that move is actually due to higher policy rate expectations, not just risk premium.
+
+EN_A: So how does this survey-based model work exactly?
+
+EN_B: It uses survey data on short-term rate expectations from economists or market participants. This directly anchors the expected path for future short rates. When surveys point to rates staying higher for longer, the model assigns more of the long-end yield rise to those expectations, and less to term premium. The yield curve-only model, on the other hand, relies more on the historical long-run mean, so it’s more volatile.
+
+EN_A: Does that mean the survey-based model is always better?
+
+EN_B: Not necessarily. The report says the survey-based model is better at capturing structural shifts, like the German debt brake reform or Japan’s policy pivot. But the yield curve-only model is more responsive to daily market moves and is actually a better predictor of future excess returns on holding duration. So both have their uses.
+
+EN_A: Give me some numbers. How different are the two models?
+
+EN_B: For the US 10-year, the survey-based estimate is 70 basis points, which is 40 basis points lower than the yield curve-only model. In the UK, the gap is even more striking: the yield curve-only model shows the UK having the highest term premium among the G4, but the survey-based model shows it as the lowest. Japan is another great example, where the survey model reveals that the JGB yield rise is more about rate expectations than term premium.
+
+EN_A: So, despite the differences, do they agree on the big picture?
+
+EN_A: Yes. All models show term premium has risen significantly in recent years and is near local highs across G10 markets. That means the market is demanding more compensation for holding long-term bonds, even though rate expectations have only risen modestly.
+
+EN_A: What’s driving that? The report mentions some factors.
+
+EN_B: Macro risks, inflation risk, higher interest rate volatility, massive bond supply, and central bank balance sheet reduction. But here’s the interesting part: term premium has stayed high even as rate volatility has declined. That suggests there might be a structural rise in duration risk premium, not just a cyclical one. The report hints that this puzzle will be explored further in upcoming research.
+
+EN_A: So, what questions does the report leave unanswered? What should listeners look for in the full version?
+
+EN_B: The big one is this high-premium, low-volatility combination. Why is it persisting? The report doesn’t fully unpack that. Also, they promise a deeper dive into the valuation frameworks for G10 term premium. So if you want to understand where bond risk is really priced, the full report has those critical, unanswered pieces.
+
+EN_A: Sounds like this report isn’t just an update, it’s a new lens for looking at bond markets. For the full picture, check out the complete research.
+
+EN_B: And if you want to discuss it with other analysts, join our community. We break it all down.

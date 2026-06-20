@@ -1,0 +1,2973 @@
+[
+    {
+        "type": "text",
+        "text": "CONNECTING THE DOTS",
+        "text_level": 2,
+        "bbox": [
+            109,
+            64,
+            292,
+            80
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Capex Boom, Frontier exploration, AI orchestration, Halma, BSTL and Banks plus key research",
+        "text_level": 1,
+        "bbox": [
+            107,
+            90,
+            836,
+            142
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Navigating the Capex Boom. Peter Oppenheimer's must read on Capex here, including why he expects more scope for alpha generation. We are hosting a call with him on Monday (sign up) along with some of the analysts from sectors which benefit from the investment (e.g., Hardware, Utilities, Cap Goods). One of these sectors — Utilities — looks very different to history given this growth, so we are also doing a Back to Basics with Alberto Gandolfi to understand his new framework within which we should view the sector (as well as covering some of the basics which haven't changed) – on Monday (sign up).",
+        "bbox": [
+            78,
+            209,
+            697,
+            352
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Frontier exploration is back even with a lower oil price. Amidst Iran and US MoU headlines, oil has eased off to c\\$80/bbl, and despite feedback in the past few weeks that clients were looking to buy the dip, energy equities have been weak. We would revisit oil services names as a play on oil capex picking up. This week we saw more evidence of this return to exploration and particularly frontier exploration, with the list of areas IOCs and NOCs are willing to go growing according to feedback from the EAGE seismic industry conference last week (via Viridien ex CGG) and Equinor increasing capex by \\$1bn for 2027 and enhancing its focus on frontier exploration at its CMD. We sat down with Michele Della Vigna and Anastasia Shalaeva to discuss these takeaways in a c10 min episode of On the Road, listen here. The biggest pushback to buying oil services is the aforementioned Brent weakness, and Michele makes the point that these projects make sense in an oil price world of \\$60/bbl (vs. current c\\$80 spot) so you need to be a lot more bearish on oil to de-rail this. Buy TGS in seismic.",
+        "bbox": [
+            78,
+            365,
+            699,
+            616
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "As a reminder, this isn't just because of recent Middle East events, it's more",
+        "text_level": 2,
+        "bbox": [
+            78,
+            629,
+            619,
+            645
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "sustainable. The focus on oil capex from majors was starting to come back before the recent conflict as investors started to reward spending on exploration rather than just buybacks given reserve life is down 60% over the last 10 years and the source of that underinvestment (US Shale creating an overhang on the oil price) is finally maturing. Energy security only adds to this pressure.",
+        "bbox": [
+            78,
+            648,
+            697,
+            736
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "AI and orchestration. One snippet from an expert call hosted in the US by Matthew Martino: “autonomous software development creates a new operational requirement around validating, diagnosing, and responding to changes in production with far less human intervention than before. Management described a potential “dark factory” model in which coding agents ship code, SRE agents evaluate production behavior, diagnose",
+        "bbox": [
+            78,
+            749,
+            691,
+            838
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sahar Islam",
+        "text_level": 2,
+        "bbox": [
+            720,
+            211,
+            802,
+            223
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+44(20)7051-4935",
+        "bbox": [
+            720,
+            223,
+            820,
+            232
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "sahar.islam@gs.com",
+        "bbox": [
+            720,
+            232,
+            818,
+            241
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS International",
+        "bbox": [
+            720,
+            241,
+            857,
+            250
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs",
+        "bbox": [
+            78,
+            2,
+            297,
+            41
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Equity Research",
+        "bbox": [
+            795,
+            3,
+            918,
+            21
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "19 June 2026 | 2:28PM BST",
+        "bbox": [
+            715,
+            25,
+            916,
+            41
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "GS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S.",
+        "bbox": [
+            76,
+            878,
+            915,
+            972
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "issues, and feed that information back into the development loop, creating a tighter connection between software creation and software operation.\"",
+        "bbox": [
+            274,
+            38,
+            916,
+            72
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Baskets vs. bottom up stories: Halma. Halma is a high quality name which has very high growth, but saw a c15% sell off last week post results as it was viewed as a play on one ‘theme’ where the market found Photonics guidance disappointing vs. elevated expectations. The name has historically been a compounder with a well proven growth algorithm, including M&A, where the pushback has typically been a lack of upside / valuation. Christian Hinderaker is Buy rated and now has 25%+ PT upside given the Photonics pull back, so we sat down with him on our Going Against the Grain episode, listen here as this is a name worth coming back to on weakness. We do discuss Photonics to address the obvious points (he thinks guidance is conservative and is ahead of it) but listen from 10 minutes onwards to refresh views beyond Photonics for the part where there is less focus but where growth trends are healthy and in defensive end markets.",
+        "bbox": [
+            274,
+            86,
+            913,
+            299
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "BSTL conference feedback – positive for both DSV (positive on cyclical backdrop and structural AI benefits) and IHG (NUG momentum building, US RevPAR strong), which are both on the CL.",
+        "bbox": [
+            274,
+            313,
+            911,
+            365
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Bank themes for generalists. Post a week of strength across banks, we are revisiting our recent On the Road episode with feedback from our Financials Conference to refresh the key themes we should be focused on from macro and regulation to AI and more, listen here. Chris Hallam gives an overview (1.54 to 7:29) if you want the highlights.",
+        "bbox": [
+            274,
+            379,
+            916,
+            449
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "GS Research from the week",
+        "text_level": 2,
+        "bbox": [
+            81,
+            481,
+            307,
+            500
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We filter this week's research through the merchandising lens to highlight actionable ideas and pull out some themes / key messages which we think are important - click into the reports for more!",
+        "bbox": [
+            274,
+            528,
+            908,
+            580
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "AI, Data Centres and CAPEX",
+        "bbox": [
+            274,
+            594,
+            488,
+            609
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "On the need to spend",
+        "bbox": [
+            274,
+            622,
+            419,
+            638
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Global Strategy Paper: The Post Modern Cycle – Navigating the Capex Boom – Peter Oppenheimer looks at this phase of capital intensive growth with drivers of returns more likely from EPS than valuation resulting in cross-sectional dispersion, increasing scope for alpha generation.",
+        "bbox": [
+            274,
+            652,
+            916,
+            720
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Multi-Industry Capex Tracker: Medium-term capex expectations continue to improve - Daniela Costa highlights Capex continues to improve with 2026E capex up 2pp since March largely by Tech (Data Centers) and Utilities. Buy: Schneider on CL, VAT for Semis and Prysmian and Nexans for Power Grids",
+        "bbox": [
+            274,
+            735,
+            908,
+            804
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Powering up Europe: Booming Datacenter pipeline and AI spending boom - the pivotal role of energy - Alberto Gandolfi estimates the data center pipeline is now nearly 500GW (1.5x current EU power demand) which is a $70 \\%$ increase since his last update 6 months ago. Alberto and our US Utilities team discuss the impact of rising power demand on the Renewables outlook in a recent podcast, listen here.",
+        "bbox": [
+            274,
+            817,
+            908,
+            906
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Connecting the Dots",
+        "bbox": [
+            779,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "19 June 2026",
+        "bbox": [
+            84,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "US Strategy: The impact of the AI capex boom on S&P 500 return on equity – Ben Snider notes the AI capex boom has lifted semiconductor profitability but will be an increasing headwind to mega-cap tech ROE going forward.",
+        "bbox": [
+            274,
+            38,
+            913,
+            90
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Digital Infrastructure: AI Infrastructure from the Field: Takeaways from 2nd Annual Denver trip - Michael Ng notes hyperscaler AI infrastructure demand remains strong, with continued strengthening of data center pricing power.",
+        "bbox": [
+            274,
+            104,
+            885,
+            156
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Supply chain",
+        "bbox": [
+            274,
+            170,
+            361,
+            184
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Taiwan Technology: US marketing feedback: AI ASIC remains the preferred theme with focus on CPU and next supply chain bottlenecks",
+        "bbox": [
+            274,
+            198,
+            908,
+            231
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "BE Semiconductor Industries (BESI.AS): Investor Day highlights expanding AI-driven packaging opportunity and HB adoption; Buy - Alex Duval highlights expanding AI-driven packaging opportunity and HB adoption.",
+        "bbox": [
+            274,
+            246,
+            895,
+            297
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Nexans (NEXS.PA): Electra visit and CEO/CFO takeaways, reiterate Buy - Daniela Costa came away more constructive on the stock, noting high renewables, T&D exposure and a potential increase in exposure to data centers, especially given home market (France) builds more.",
+        "bbox": [
+            274,
+            311,
+            911,
+            379
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "IT impact",
+        "bbox": [
+            274,
+            395,
+            339,
+            410
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Americas Technology: Software: Expert Network Series: Dash0 on Observability in the Agentic Age - Expert call highlights “autonomous software development creates a new operational requirement around validating, diagnosing, and responding to changes in production with far less human intervention than before. Management described a potential “dark factory” model in which coding agents ship code, SRE agents evaluate production behavior, diagnose issues, and feed that information back into the development loop, creating a tighter connection between software creation and software operation.”",
+        "bbox": [
+            274,
+            423,
+            906,
+            547
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Americas Technology: IT Spending Survey: AI momentum continues to build against a more muted broader outlook - Gabriela Borges highlights $88\\%$ of CIOs (vs $93\\%$ prior) expect AI to account for $< 10\\%$ of IT budgets, reflecting an ongoing testing and refinement phase (weighted average of $5\\%$ ). Over 3 years, $42\\%$ (vs $35\\%$ prior) anticipate GenAI to exceed $10\\%$ of their IT budgets, with a weighted average of $10\\%$ .",
+        "bbox": [
+            274,
+            560,
+            903,
+            648
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Accenture Plc (ACN): Tepid quarter and outlook reflects near-term macro headwinds - The stock was down significantly on results which James Schneider notes reflects AI concerns and outlook reflecting broader macro headwinds.",
+        "bbox": [
+            274,
+            662,
+            906,
+            713
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Jobs impact",
+        "bbox": [
+            274,
+            728,
+            356,
+            742
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "GS SUSTAIN Insights: The Future of Work - Labor Shortages, Automation & AI - Evan Tylenda's feedback from the expert call with Randstad includes manufacturing labour shortages in Europe and the US have resulted in a $400 \\%$ increase in electrical trade enrolments, however it can take 8 years to develop a worker.",
+        "bbox": [
+            274,
+            757,
+            893,
+            826
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Strait of Hormuz Re-Opening",
+        "text_level": 2,
+        "bbox": [
+            274,
+            839,
+            496,
+            856
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Oil Analyst: Reducing Our Price Forecast on Deal to Reopen Hormuz - Dan Struyven reduces his price forecasts on a deal to reopen Hormuz to \\$80 by 4Q26 (from \\$90) and to \\$75 (vs \\$80) for '27.",
+        "bbox": [
+            274,
+            869,
+            901,
+            919
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Connecting the Dots",
+        "bbox": [
+            779,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "19 June 2026",
+        "bbox": [
+            84,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            906,
+            954,
+            915,
+            963
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Natural Gas Analyst: US-Iran Agreement Paves Way For European Storage Refill - Samantha Dart leaves her forecasts largely unchanged on the back of SoH normalization, higher ex Qatar supply and lower market target for European storage. She sees long-term oversupply with risk that a pick-up in coal and renewables adds pressure.",
+        "bbox": [
+            274,
+            38,
+            887,
+            127
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Oil Tracker: 70% of Pre-War Hormuz Flows Might Become the New 100% - Yulia Zhestkova Grigsby notes 70% of SoH flows might become the new 100% and her tracker shows the redirections number is high with some constraint in shipowners unclear on guidelines.",
+        "bbox": [
+            274,
+            140,
+            911,
+            210
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Big Oils: Oil price implied in EU Big Oils and sensitivities on a potential Hormuz re-opening",
+        "bbox": [
+            274,
+            223,
+            846,
+            257
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Europe Transportation: Airports: What to do in the sector & who would benefit most from geopolitical “Reopening”",
+        "bbox": [
+            274,
+            270,
+            898,
+            304
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "China Transportation: Assessing a Hormuz reopening scenario; Prefer Tankers, Airlines and Shipbuilders",
+        "bbox": [
+            274,
+            317,
+            911,
+            352
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We have two replays on Strait of Hormuz reopening 1) on Iran Markets Post Hormuz Reopening hosted by Adam Crook including Jan Hatzius, listen here and 2) discussing our updated energy outlook with our commodities team research and trading (GBM), listen here.",
+        "bbox": [
+            274,
+            365,
+            900,
+            434
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Oil Capex",
+        "text_level": 2,
+        "bbox": [
+            274,
+            448,
+            352,
+            463
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Equinor (EQNR.OL): CMD: \\$1bn capex step-up to accelerate prod gr, and Buyback upgrade. Remains Sell on negative long-term TTF view, Sell",
+        "bbox": [
+            274,
+            476,
+            875,
+            511
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Energy: Oil Services: Key takeaways from call with Viridien post EAGE conference: \"Frontier Exploration is back\" – Michele Della Vigna highlights the Viridien CFO was bullish on the EAGE conference last week, noting \"frontier exploration is back\" with record EAGE attendance (proxy for interest in exploration) screening positive for TGS.",
+        "bbox": [
+            274,
+            524,
+            890,
+            594
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We have a new edition of our European On the Road with GS podcast including Michele discussing what we learned on oil capex and why frontier exploration is back, listen here.",
+        "bbox": [
+            274,
+            596,
+            883,
+            649
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Rates",
+        "text_level": 2,
+        "bbox": [
+            274,
+            662,
+            320,
+            678
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "USA: June FOMC Recap: Hikes Look More Likely but Are Still Not Our Base Case – David Mericle notes a hawkish surprise and raises risk of interest rate hikes later this year but his base case is still unchanged for this year. If SoH trade resumes, he notes some of the views might be stale; Fed noted that 5 taskforces are to be created to rethink communications.",
+        "bbox": [
+            274,
+            691,
+            905,
+            777
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "European Daily: BoE Recap—Content with Holding - James Moberly notes the MPC held rates at the recent meeting and continues to expect the BoE to remain on hold through the year and then lowering rates in 2027.",
+        "bbox": [
+            274,
+            791,
+            916,
+            844
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Moderating Near-Term Gold Price Upside on No Fed Cuts This Year - Lina Thomas highlights moderating near-term price upside on no Fed cuts this year, and cuts her forecast to \\$4,900/toz by Dec (vs \\$5,400 prior), remaining tactically cautious.",
+        "bbox": [
+            274,
+            857,
+            883,
+            909
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Connecting the Dots",
+        "bbox": [
+            779,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "19 June 2026",
+        "bbox": [
+            83,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "UK Home Builders: Post deep-dive feedback: Investors on Sidelines, Focus Shifts to Execution - Rebecca Parker highlights low interest with the sector treated as homogenous but affordability differences mean divergence should occur. Rebecca would avoid southern market exposure (Sell Berkeley) and Buy Persimmon and Barratt Redrow.",
+        "bbox": [
+            274,
+            38,
+            916,
+            108
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Aluminium (Norsk Hydro is on the CL)",
+        "text_level": 2,
+        "bbox": [
+            274,
+            122,
+            562,
+            136
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "China Base Metals: China aluminum sector – accelerating pace of supply additions; downgrade Chalco-H/A to Sell/Sell, maintain Hongqiao at Neutral – Trina Chen’s recent discussions suggest acceleration in aluminum supply additions in both China and ex-China, prompted by strong industry profits",
+        "bbox": [
+            274,
+            151,
+            903,
+            220
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Base Metals Analyst: Aluminium: A Tale of Two Supply Shocks - Lavinia Forcellese sees Middle East outages as keeping the aluminum market tighter for longer, even if the strait re-opens. She nudges her Q3 2026/average 2027 LME aluminium price forecasts to \\$3,300/\\$2,950/t from \\$3,200/\\$2,750/t previously.",
+        "bbox": [
+            274,
+            233,
+            911,
+            304
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Capital Markets Activity",
+        "text_level": 2,
+        "bbox": [
+            274,
+            317,
+            462,
+            333
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Three notes from Oliver Carruthers:",
+        "bbox": [
+            274,
+            347,
+            532,
+            361
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "European Capital Markets: Key themes shaping Capital Markets; downgrading AJ Bell and DWS to Sell, Aberdeen to Neutral - Oliver sees an improving market backdrop for private markets, highlighting Buy-rated CL CVC as a name with attractive risk-reward and flatexDEGIRO with continued growth and efficiency. However, he downgrades DWS and AJ Bell to Sell, as while both have done well, DWS is showing early moderation of core drivers and AJ Bell is likely to face more competition.",
+            "CVC Capital Partners (CVC.AS): Secondaries deep-dive session key takeaways; Buy (on CL) - Emphasises structural tailwinds and differentiated offering.",
+            "- Partners Group (PGHN.S): FAQs on the Evergreen Business Part II; Neutral - Discusses the key questions surrounding the weak flows, drivers of performance and implications on consensus estimates, including the potential for lower performance fees in FY26 which he expects may impact dividend coverage and therefore cuts his estimates."
+        ],
+        "bbox": [
+            272,
+            377,
+            911,
+            653
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Global Markets Daily: US Credit Card and Auto Delinquency Rates: Less Bad Than They Look - Arun Monohar notes the share of credit card and auto loans that are 90 days or more past due on their payments has reached $13.1\\%$ and $5.6\\%$ , respectively, as of Q1 2026, back in line with the Global Financial Crisis peak. This is a widely followed indicator for evaluating the health of the US consumer.",
+        "bbox": [
+            274,
+            670,
+            916,
+            758
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Global Credit Trader: Credit Spread Dispersion: A Tale of Two Markets - Amanda Lynam highlights that beneath the surface there is divergence with IG dispersion unusually low, while HY dispersion is elevated.",
+        "bbox": [
+            274,
+            772,
+            911,
+            822
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Americas Brokers & Asset Managers: Solid May monthly metrics include robust engagement, cash, and NNA",
+        "bbox": [
+            274,
+            837,
+            859,
+            870
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Business Services, Transport, Leisure, Infra & Building Materials Conference",
+        "bbox": [
+            274,
+            883,
+            849,
+            899
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Business Services, Transport, Leisure, Infra & Building Materials Conference hosted by Patrick Creuset and his team in London with 40+ companies. See all takeaway notes here some highlights:",
+        "bbox": [
+            274,
+            913,
+            903,
+            928
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Connecting the Dots",
+        "bbox": [
+            779,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "19 June 2026",
+        "bbox": [
+            83,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            906,
+            954,
+            915,
+            963
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            269,
+            38,
+            908,
+            73
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Transportrest t and Logistics - Still expects a stronger 2Q for DSV (Buy, on CL), with the DBS integration on track and the ability to restart the buyback before reaching 2x leverage (Patrick expects it to restart from Q3). As well as DSV, K+N (Buy) is also well placed within freight and on AI-related productivity benefits.",
+            "- Europe Leisure Day 1 and 2 - IHG'S NUG momentum is building, US RevPAR is strong and World Cup tailwinds are on track."
+        ],
+        "bbox": [
+            271,
+            87,
+            908,
+            204
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Ratings Changes & Initiations",
+        "text_level": 2,
+        "bbox": [
+            271,
+            220,
+            501,
+            236
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "AJ Bell (AJBA.L) and DWS (DWSG.DE) Down to Sell - See details in Capital Markets Activity bucket above.",
+        "bbox": [
+            269,
+            249,
+            866,
+            282
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Public Power Corp. (DEHr.AT): Reinstate at Buy - Mafalfa Pombeiro reinstates PPC at Buy given the equity raise completion allowing investment ramp. Even assuming partial delivery relative to guidance gives 18% upside to her PT and her full execution scenario implies c30%+ upside to the share price (with more upside from rerating).",
+        "bbox": [
+            269,
+            295,
+            903,
+            366
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "GEA Group (G1AG.DE): Initiate at Neutral - Daniela Costa believes GEA is high quality but valuation is fair.",
+        "bbox": [
+            269,
+            379,
+            893,
+            413
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Zegna (ZGN): Down to Neutral - Adrien Duverger downgrades Zegna following strong share performance. Illustrative SOTP analysis is new.",
+        "bbox": [
+            269,
+            427,
+            893,
+            461
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Reiterate Buy",
+        "text_level": 2,
+        "bbox": [
+            271,
+            474,
+            380,
+            490
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Siemens Energy (ENR1n.DE): Restructuring to bring greater focus & higher margins?; Buy (on CL) - Ajay Patel notes Siemens Energy is considering spinning off Transformation & Industry segment. A disposal, if confirmed, would focus the portfolio and improve margins. The stock is on CL and Ajay expects consensus upgrades with MT guidance at FY.",
+        "bbox": [
+            269,
+            503,
+            911,
+            589
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Vonovia (VNAn.DE): Supportive underlying data points, rates correlation broken; reiterate Buy (on CL) – Jonathan Kownator highlights supportive operating trends and is c4% ahead of consensus on 2027 earnings driven by non-rental growth and deleveraging. The stock is currently down YTD but in his view this creates a good entry point. See also: Debate about Berlin housing nationalisation now rising to the Federal level",
+        "bbox": [
+            269,
+            604,
+            906,
+            710
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "SEGRO Plc (SGRO.L): Reiterate Buy on stronger demand led by Amazon & Asian retailers - Jonathan also reiterates his Buy rating on Segro given Chinese ecommerce is driving rising UK logistics demand complementing Amazon's existing strength, as well as data centre exposure.",
+        "bbox": [
+            269,
+            724,
+            913,
+            793
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Halma Plc (HLMA.L): CFO & Safety CEO webcast takeaways and Sell-Side Management Lunch Takeaways - Christian Hinderaker notes investors are still focused on Photonics guidance but continues to believe the guide was conservative. Listen to Christian in our Going Against the Grain podcast here.",
+        "bbox": [
+            269,
+            807,
+            913,
+            878
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Sector Updates",
+        "text_level": 2,
+        "bbox": [
+            271,
+            891,
+            393,
+            906
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Connecting the Dots",
+        "bbox": [
+            779,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "19 June 2026",
+        "bbox": [
+            83,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Europe Consumer Products: Fragrance's next growth wave: back to blockbusters - Aron Adamski and Olivier Nicolai highlight demand is shaped by new offers and blockblusters with Puig and Interparfums having good runways on launches with durable growth. They reiterate their Buy ratings on L'Oreal, Interparfumes and Puig (CMD 28 Oct).",
+        "bbox": [
+            274,
+            38,
+            913,
+            108
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "European Pulp & Paper: Shutdowns and the impact for EU pulp players – Gabriel Simoes highlights the announced shut downs are a step in right direction for the weak pulp market, especially softwood, but more is needed. Gabriel prefers downstream to upstream (Buy SW and SIG) and will discuss the broader market at Global Pulp & Paper week on 23-25th June, more here.",
+        "bbox": [
+            274,
+            122,
+            913,
+            209
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Europe: Construction: Heavyside Materials: CO2 costs aren't passing through to European Cement prices (yet) - Ben Rada Martin notes Europe cement has become a profit engine but not because of CO2 pass through, more about market consolidation, supply, demand and CBAM. He sees +LSD pricing increases and still likes Buy-rated Heidelberg and Holcim.",
+        "bbox": [
+            274,
+            223,
+            897,
+            311
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Tracking the data",
+        "text_level": 2,
+        "bbox": [
+            274,
+            325,
+            408,
+            341
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Europe Retail: Retail Matters: On and Adidas maintain their outperformance in sportswear; in apparel Chinese Aggregator growth turns negative in Europe while Vinted continues to outperform",
+        "bbox": [
+            274,
+            354,
+            913,
+            405
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Europe Branded Consumer Goods: Luxury Goods: Watches round-up May 2026: Swiss Watch Exports +0.4% y/y; latest industry news wrap",
+        "bbox": [
+            274,
+            419,
+            908,
+            452
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Europe Multi-Industry: What US and EU PPI tell us about Multi-Industry – Daniela Costa notes given the Middle East conflict, in May Capital Goods PPI in the US accelerated sequentially and remains well above median levels (+3.0 pp) and European PPI for April shows a sequential acceleration and is above the median (+1.3 pp). See also: Datamap in Pictures: June 2026 [Presentation]",
+        "bbox": [
+            274,
+            466,
+            913,
+            552
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Europe Food: EU Nielsen: Broad-based volume improvement at Nestlé and Danone, while Lindt volumes continue to lag the market",
+        "bbox": [
+            274,
+            567,
+            883,
+            600
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Europe Beverages: CCH and Carlsberg outperform subdued soft drinks market in May",
+        "bbox": [
+            274,
+            614,
+            900,
+            630
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Europe Beverages: Europe Nielsen: Soft European beer off-trade in April/May, Heineken outperforms",
+        "bbox": [
+            274,
+            644,
+            913,
+            677
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Europe Tissue: Prices continued to ease in May; Essity outperforms strong incontinence market",
+        "bbox": [
+            274,
+            691,
+            911,
+            724
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Previews",
+        "text_level": 2,
+        "bbox": [
+            274,
+            737,
+            344,
+            753
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Knorr Bremse (KBX.DE): 2Q26 Barometer and mid-term targets preview; Reiterate Buy - At 2Q results on 30 July, Daniela Costa expects new mid-term targets, positive truck data and increased CVS order intake. She is c7% ahead of consensus on FY29E EBIT.",
+        "bbox": [
+            274,
+            767,
+            908,
+            817
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Adyen NV (ADYEN.AS): 1H26 Preview: 2Q Acceleration Expected on Easier Comps; Modest Margin Refinement; Reiterate Buy - Mo Moawalla expects acceleration at 2Q and continues to forecast growth of $21.5\\%$ yoy ex FX as APAC headwinds annualise.",
+        "bbox": [
+            274,
+            832,
+            913,
+            883
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Argenx SE (ARGX.BR): Myositis preview ahead of R&D event and ALKIVIA readout, Buy (on CL) – Rajan Sharma previews the R&D day on 23 June and the upcoming catalysts",
+        "bbox": [
+            274,
+            897,
+            908,
+            931
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Connecting the Dots",
+        "bbox": [
+            779,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "19 June 2026",
+        "bbox": [
+            83,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "including Ph3 ALKIVIA readout (Vyvgart in 3 subtypes). He also increases his revenue estimates by c2% for myositis which looks credible but need to watch efficacy.",
+        "bbox": [
+            274,
+            38,
+            885,
+            72
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Events including M&A",
+        "text_level": 2,
+        "bbox": [
+            274,
+            86,
+            442,
+            100
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Siemens Energy (ENR1n.DE): Restructuring to bring greater focus & higher margins?; Buy (on CL) - Ajay Patel notes Siemens Energy is considering spinning off Transformation & Industry segment. If the disposal is confirmed would focus portfolio and be +ve margins, on CL and expect cons upgrades with MT guidance at FY.",
+        "bbox": [
+            274,
+            114,
+            908,
+            184
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "BARC Plc (BARC.L): Announces acquisition of GoHenry; Buy",
+        "bbox": [
+            274,
+            198,
+            732,
+            214
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Bankinter (BKT.MC): Announces acquisition of 100% of Tulp Hypotheken; Sell",
+        "bbox": [
+            274,
+            227,
+            841,
+            242
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Birkenstock (BIRK): Further \\$500mn share buyback announced; remain Buy",
+        "bbox": [
+            274,
+            257,
+            828,
+            271
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Galderma (GALD.S): Nemluvio Navigator: Prescription trends continue to look encouraging; Buy",
+        "bbox": [
+            274,
+            286,
+            844,
+            319
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Earnings & CMDs",
+        "text_level": 2,
+        "bbox": [
+            274,
+            333,
+            403,
+            348
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Commodities & Industrials",
+        "text_level": 2,
+        "bbox": [
+            274,
+            361,
+            467,
+            375
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "BMW (BMWG.DE): BMW materially lowers FY26 guidance on China weakness and Europe restructuring; capital return policy unchanged - Christian Frenes notes BMW profit warned overnight, given an acceleration China/APAC deterioration, cost inflation related to Middle East events and one offs from efficiency measures. This is a material downgrade to consensus and Christian lowers his numbers.",
+        "bbox": [
+            274,
+            391,
+            901,
+            478
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Equinor (EQNR.OL): CMD: \\$1bn capex step-up to accelerate prod gr, and Buyback upgrade. Remains Sell on negative long-term TTF view, Sell - Michele Della Vigna highlights incremental capex on acceleration of projects on the back of discoveries since '23, fast tracking major developments and a focus on frontier exploration.",
+        "bbox": [
+            274,
+            492,
+            911,
+            560
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Lundin Mining Corp. (LUN.TO): 2026 CMD: Sustaining Operational Consistency to Underpin Growth Execution; Buy",
+        "bbox": [
+            274,
+            576,
+            870,
+            608
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "TMT",
+        "text_level": 2,
+        "bbox": [
+            274,
+            622,
+            308,
+            636
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Auto1 Group (AG1G.DE): CMD First Take: Long-term units growth targets well ahead of consensus with greater disclosure on segment EBITDA; Buy",
+        "bbox": [
+            274,
+            652,
+            911,
+            684
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Informa (INF.L): 5M trading update broadly in line with our expectations; 2026 guidance reiterated; Buy",
+        "bbox": [
+            274,
+            698,
+            849,
+            732
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Healthcare",
+        "text_level": 2,
+        "bbox": [
+            274,
+            746,
+            356,
+            760
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Elekta AB (EKTAb.ST): FY27 guidance detail and new mid-term targets imply consensus EBIT upside in FY29; Sell",
+        "bbox": [
+            274,
+            775,
+            913,
+            808
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Straumann AG (STMN.S): Raising FY26 profitability guidance implies +MSD consensus EBIT upgrades; Neutral",
+        "bbox": [
+            274,
+            822,
+            901,
+            855
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "BSTL",
+        "text_level": 2,
+        "bbox": [
+            274,
+            870,
+            308,
+            883
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Securitas AB (SECUb.ST): CMD '26: New strategy and financial targets announced; Sell",
+        "bbox": [
+            274,
+            897,
+            901,
+            913
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Connecting the Dots",
+        "bbox": [
+            779,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "19 June 2026",
+        "bbox": [
+            83,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Saint-Gobain (SGOB.PA): First Take: Announced divestment of Nordic Distribution business for €1.2bn proceeds",
+        "bbox": [
+            269,
+            38,
+            879,
+            73
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Whitbread (WTB.L): 1Q27: Slightly stronger growth relative to prior current trading commentary; Neutral",
+        "bbox": [
+            269,
+            85,
+            887,
+            120
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Consumer",
+        "text_level": 2,
+        "bbox": [
+            272,
+            133,
+            351,
+            148
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Tesco (TSCO.L): EBIT growth expectation unchanged despite a slower start to the year (demanding 1Q comparative); PT to 515p, Buy",
+        "bbox": [
+            269,
+            162,
+            903,
+            196
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Douglas AG (DOUn.DE): First Take: 3Q-to-date underperformance leads to updated FY26 adj. EBITDA guidance 7% below consensus; Neutral",
+        "bbox": [
+            269,
+            209,
+            890,
+            242
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Other Macro",
+        "text_level": 2,
+        "bbox": [
+            272,
+            257,
+            374,
+            272
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Global Economics: Spending Headwinds Still to Come on Both Sides of the Pond - Megan Peters estimates that each $1\\%$ pullback in real cash flow from an energy shock results in a $0.6\\%$ decline in consumer spending after two quarters.",
+        "bbox": [
+            269,
+            285,
+            890,
+            338
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "GOAL: Risk Appetite Reversal - dissecting cross-asset moves in the June roundtrip",
+        "bbox": [
+            269,
+            351,
+            870,
+            366
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Global Rates Trader: Leadership Transitions",
+        "bbox": [
+            269,
+            379,
+            596,
+            395
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Global FX Trader: Dollar in a Collar",
+        "bbox": [
+            269,
+            409,
+            531,
+            423
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Other Global",
+        "text_level": 2,
+        "bbox": [
+            272,
+            437,
+            375,
+            454
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Americas Utilities: Initiate on PJM IPPs: Structural supply/demand tightness favors Talen; Buy TLN, Neutral on CEG",
+        "bbox": [
+            269,
+            467,
+            879,
+            501
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Americas Chemicals: OLN and HUN announce all-stock merger of equals creating a leading North American chemical company, OlinHuntsman",
+        "bbox": [
+            269,
+            514,
+            885,
+            547
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Tesla Inc. (TSLA): 2Q26 deliveries likely tracking ahead of consensus - raising our estimate",
+        "bbox": [
+            269,
+            560,
+            864,
+            595
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Fujikura (5803.T): Guidance raise: Return to high growth as impacts from hydrogen/fiber sourcing fade; positive on optical products exposure, investment strength; raise TP, Buy",
+        "bbox": [
+            269,
+            608,
+            861,
+            660
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Americas Retail: Specialty Hardlines: Analyzing the impact of Best Buy and Meta's partnership on eyewear retailers",
+        "bbox": [
+            269,
+            674,
+            874,
+            708
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "China Industrial Indicators: Partial recovery amid still-weak macro, divergence remains",
+        "bbox": [
+            269,
+            720,
+            913,
+            737
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Americas Technology: Software: Expert Network Series: Dash0 on Observability in the Agentic Age",
+        "bbox": [
+            269,
+            750,
+            906,
+            784
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "China Consumer Connection: Online Brand Tracker: May-26: Divergent 618 performance across most sectors; Cosmetics led, IMF/White Goods lag",
+        "bbox": [
+            269,
+            797,
+            833,
+            830
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Navigating China Internet: eCommerce tracker: May industry online retail GMV +3%; 618 trends; Alibaba debates",
+        "bbox": [
+            269,
+            844,
+            898,
+            878
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Connecting the Dots",
+        "bbox": [
+            779,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "19 June 2026",
+        "bbox": [
+            83,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix",
+        "text_level": 2,
+        "bbox": [
+            80,
+            38,
+            251,
+            59
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Reg AC",
+        "text_level": 2,
+        "bbox": [
+            80,
+            80,
+            135,
+            95
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "I, Sahar Islam, hereby certify that all of the views expressed in this report accurately reflect my personal views about the subject company or companies and its or their securities. I also certify that no part of my compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.",
+        "bbox": [
+            81,
+            103,
+            915,
+            136
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            81,
+            143,
+            883,
+            156
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Sahar Islam GS International.",
+        "bbox": [
+            81,
+            162,
+            442,
+            174
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            81,
+            180,
+            893,
+            202
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "GS Factor Profile",
+        "text_level": 2,
+        "bbox": [
+            81,
+            215,
+            207,
+            229
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:",
+        "bbox": [
+            81,
+            229,
+            915,
+            286
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).",
+        "bbox": [
+            81,
+            291,
+            906,
+            360
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).",
+        "bbox": [
+            81,
+            366,
+            908,
+            390
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.",
+        "bbox": [
+            81,
+            395,
+            700,
+            408
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "M&A Rank",
+        "text_level": 2,
+        "bbox": [
+            81,
+            419,
+            161,
+            432
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.",
+        "bbox": [
+            81,
+            434,
+            910,
+            501
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Quantum",
+        "text_level": 2,
+        "bbox": [
+            81,
+            514,
+            153,
+            527
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.",
+        "bbox": [
+            81,
+            527,
+            887,
+            550
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            81,
+            562,
+            166,
+            576
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Pricing Information",
+        "text_level": 2,
+        "bbox": [
+            81,
+            582,
+            227,
+            596
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "AJ Bell (609.5p), Aberdeen Group (232.4p), Accenture Plc (\\$127.98), Adyen NV (€903.80), Aluminum Corp. of China (A) (Rmb9.38), Aluminum Corp. of China (H) (HK\\$8.55), Argenx SE (€762.80), Argenx SE (\\$877.72), Auto1 Group (€25.74), BE Semiconductor Industries (€317.80), BMW (€59.74), Bankinter (€14.99), BARC Plc (500.6p), Barratt Redrow (263.8p), Berkeley Group (3,542p), Birkenstock (\\$46.11), CVC Capital Partners (€13.04), China Hongqiao Group (HK\\$22.74), Constellation Energy Corp. (\\$274.06), DSV A/S (Dkr1,525.00), DWS Group (€61.50), Elekta AB (Skr48.54), Equinor (Nkr312.20), Fujikura (¥4,461), GEA Group (€59.55), Galderma (SFr172.60), Halma Plc (3,958p), Heidelberg Materials (€186.65), Holcim (SFr77.44), Informa (863.6p), InterContinental Hotels Group (\\$171.20), Interparfums Inc (\\$99.09), Interparfums SA (€26.16), Knorr Bremse (€104.40), Kuehne & Nagel (SFr182.70), L'Oreal (€387.50), Lundin Mining Corp. (C\\$37.49), Lundin Mining Corp. (Skr258.30), Nexans (€154.40), Partners Group (SFr699.60), Persimmon (1,050p), Prysmian (€147.75), Public Power Corp. (€22.88), Puig Brands S.A. (€16.08), SEGRO Plc (744.2p), SIG Group (SFr12.36), Saint-Gobain (€79.76), Schneider Electric (€291.00), Securitas AB (Skr151.80), Siemens Energy (€169.34), Smurfit Westrock (\\$44.20), Straumann AG (SFr106.05), TGS ASA (Nkr135.50), Talen Energy Corp. (\\$436.29), Tesco (452.4p), Tesla Inc. (\\$400.49), UCB (€249.20), VAT Group (SFr687.80), Vonovia (€20.53), Whitbread (2,412p), Zegna (\\$13.87) and flatexDEGIRO SE (€37.86)",
+        "bbox": [
+            81,
+            596,
+            915,
+            719
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The rating(s) for Equinor and TGS ASA is/are relative to the other companies in its/their coverage universe: Aker BP ASA, BP Plc, Ceres Power, ENI, Equinor, GTT, Galp, Harbour Energy, HelleniQ Energy, ITM Power, Industrie De Nora SpA, Ithaca Energy, Motor Oil, Nel, Neste OYJ, OMV, Repsol, Saudi Aramco, Shell Plc, TGS ASA, Technip Energies, Tenaris, Thyssenkrupp Nucera, TotalEnergies SE, Vallourec, Var Energi ASA",
+        "bbox": [
+            81,
+            724,
+            911,
+            759
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The rating(s) for Halma Plc is/are relative to the other companies in its/their coverage universe: ABB Ltd., Accelleron Industries Ltd., Addtech AB, Alfa Laval, Alstom, Ariston Holding, Assa Abloy B, Atlas Copco, CNH Industrial, Carel Industries SpA, Daimler Truck Holding, Electrolux AB, Epiroc, FLSmidth & Co., GEA Group, GVS, Geberit Holding, Halma Plc, IMI Plc, Indutrade AB, Knorr Bremse, Konecranes, Legrand, Lifco AB, Metso, NIBE Industrier AB, NKT A/S, Nexans, Prysmian, Rational AG, Rexel S.A., SEB SA, SKF, Sandvik, Schindler Holding, Schneider Electric, Siemens AG, Signify NV, Traton, Trelleborg AB, VAT Group, Volvo Group, Wartsila, Weir Group",
+        "bbox": [
+            81,
+            764,
+            903,
+            822
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Company-specific regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            81,
+            834,
+            383,
+            848
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.",
+        "bbox": [
+            81,
+            848,
+            901,
+            870
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "GS beneficially owned $1\\%$ or more of common equity (excluding positions managed by affiliates and business units not required to be aggregated under US securities law) as of the month end preceding this report: TGS ASA (Nkr135.50)",
+        "bbox": [
+            81,
+            877,
+            883,
+            901
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "GS has received compensation for investment banking services in the past 12 months: Equinor (Nkr312.20) and Equinor ASA (ADR) (\\$32.38)",
+        "bbox": [
+            81,
+            906,
+            867,
+            930
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Connecting the Dots",
+        "bbox": [
+            779,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "19 June 2026",
+        "bbox": [
+            83,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            901,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "GS expects to receive or intends to seek compensation for investment banking services in the next 3 months: Equinor (Nkr312.20), Equinor ASA (ADR) (\\$32.38) and Halma Plc (3,958p)",
+        "bbox": [
+            78,
+            38,
+            915,
+            63
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS has received compensation for non-investment banking services during the past 12 months: Equinor (Nkr312.20) and Equinor ASA (ADR) (\\$32.38)",
+        "bbox": [
+            78,
+            69,
+            887,
+            91
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS had an investment banking services client relationship during the past 12 months with: Equinor (Nkr312.20), Equinor ASA (ADR) (\\$32.38) and Halma Plc (3,958p)",
+        "bbox": [
+            78,
+            98,
+            872,
+            122
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS had a non-investment banking securities-related services client relationship during the past 12 months with: Equinor (Nkr312.20) and Equinor ASA (ADR) (\\$32.38)",
+        "bbox": [
+            78,
+            127,
+            903,
+            152
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS had a non-securities services client relationship during the past 12 months with: Equinor (Nkr312.20) and Equinor ASA (ADR) (\\$32.38)",
+        "bbox": [
+            78,
+            157,
+            903,
+            170
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS makes a market in the securities or derivatives thereof: Equinor (Nkr312.20) and Equinor ASA (ADR) (\\$32.38)",
+        "bbox": [
+            78,
+            175,
+            767,
+            189
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS holds a position greater than U.S. \\$15 million (or equivalent) in the debt or debt instruments of: Equinor (Nkr312.20) and Equinor ASA (ADR) (\\$32.38)",
+        "bbox": [
+            78,
+            193,
+            903,
+            218
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings/investment banking relationships",
+        "text_level": 2,
+        "bbox": [
+            78,
+            229,
+            501,
+            245
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS Investment Research global Equity coverage universe",
+        "bbox": [
+            78,
+            245,
+            462,
+            255
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/571c869fd8f4c5ef184c714edc8e34738c145e9ce516346d1f57b20facec8f7a.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Rating Distribution</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td></tr></table>",
+        "bbox": [
+            78,
+            262,
+            455,
+            315
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/ffa2b8e82d80630d7b2b1848e87ef2174a19d5a899c9bd365b228cbf86ecf2b9.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>65%</td><td>60%</td><td>45%</td></tr></table>",
+        "bbox": [
+            513,
+            263,
+            759,
+            315
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.",
+        "bbox": [
+            78,
+            326,
+            905,
+            383
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/86ca5b2b0f7df1f2b037e82c6553714f5b8f1cd386bd6601d2ec978f29d5f1c5.jpg",
+        "image_caption": [
+            "Price target and rating history chart(s)"
+        ],
+        "image_footnote": [
+            "Source: GS Investment Research for ratings and price targets; FactSet closing prices as of 3/31/2026.",
+            "◆ Jun 6, 2025 to NA from CS\nRating\n■ Price target\n\\* Price target at removal\nFTSE World Europe (GBP)\nCovered by Christian Hinderaker, CFA, as of Aug 6, 2025\nNot covered by current analyst",
+            "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        ],
+        "content": "",
+        "bbox": [
+            81,
+            423,
+            480,
+            618
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/630b75700480e0145835432418b12129fc8de9526a544a9b931684121c1efab3.jpg",
+        "content": "| Date | Rating | Price target | Price target at removal | FTSE World Europe (GBP) |\n| --- | --- | --- | --- | --- |\n| Oct 5 | N |  |  |  |\n| 2023 |  | 400 |  |  |\n| 2023 |  | 390 |  |  |\n| 2023 |  | 340 |  |  |\n| 2023 |  | 320 |  |  |\n| 2023 |  | 290 |  |  |\n| 2023 |  | 300 |  |  |\n| 2023 |  | 290 |  |  |\n| 2023 |  | 270 |  |  |\n| 2023 |  | 250 |  |  |\n| 2023 |  | 230 |  |  |\n| 2023 |  | 250 |  |  |\n| 2023 |  | 220 |  |  |\n| 2023 |  | 210 |  |  |\n| 2023 |  | 210 |  |  |\n| 2023 |  | 210 |  |  |\n| 2023 |  | 210 |  |  |\n| 2023 |  | 210 |  |  |\n| 2023 |  | 260 |  |  |\n| 2023 |  | 260 |  |  |\n| 2023 |  | 260 |  |  |\n| 2023 |  | 260 |  |  |\n| 2023 |  | 260 |  |  |\n| 2023 |  | 270 |  |  |\n| 2023 |  | 280 |  |  |\n| 2023 |  | 270 |  |  |\n| 2023 |  | 260 |  |  |\n| Oct 5 |  |  |  |  |\n| Oct 5 |  |  |  |  |\n| Oct 5 |  |  |  |  |\n| Oct 5 |  |  |  |  |\n| Oct 5 |  |  |  |  |\n| Oct 5 |  |  |  |  |\n| Oct 5 |  |  |  |  |\n| Oct 5 |  |  | nan |  |\n| Oct 5 |  |  | nan |  |\n| Oct 5 |  |  | nan |  |\n| Oct 5 |  |  | nan |  |\n| Oct 5 |  |  | nan |  |\n| Oct 5 |  |  | nan |  |\n| Oct 5 |  |  | nan |  |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            514,
+            425,
+            906,
+            618
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/09cb7fc21f226175d40272120039099187e0dfe5cd606976aec8fcbc5643dd10.jpg",
+        "content": "| Date | Stock Price | Index Price |\n| --- | --- | --- |\n| 2023 M | ~190 | ~90 |\n| 2023 J | ~170 | ~85 |\n| 2023 J | ~150 | ~80 |\n| 2023 A | ~130 | ~75 |\n| 2023 S | ~110 | ~70 |\n| 2023 O | ~90 | ~65 |\n| 2023 N | ~70 | ~60 |\n| 2023 D | ~50 | ~55 |\n| 2024 M | ~70 | ~60 |\n| 2024 J | ~90 | ~65 |\n| 2024 A | ~110 | ~70 |\n| 2024 S | ~130 | ~75 |\n| 2024 O | ~150 | ~80 |\n| 2024 N | ~170 | ~85 |\n| 2024 D | ~190 | ~90 |\n| 2025 F | ~170 | ~85 |\n| 2025 M | ~150 | ~80 |\n| 2025 J | ~130 | ~75 |\n| 2025 J | ~110 | ~70 |\n| 2025 A | ~90 | ~65 |\n| 2025 S | ~70 | ~60 |\n| 2025 O | ~50 | ~55 |\n| 2025 N | ~70 | ~60 |\n| 2025 D | ~90 | ~65 |\n| 2026 F | ~110 | ~70 |\n| 2026 M | ~130 | ~75 |\n| 2026 J | ~150 | ~80 |\n| 2026 J | ~170 | ~85 |\n| 2026 S | ~190 | ~90 |\n| 2026 O | ~170 | ~85 |\n| 2026 N | ~150 | ~80 |\n| 2026 D | ~130 | ~75 |\n| 2026 M | ~110 | ~70 |\n| 2026 J | ~90 | ~65 |\n| 2026 J | ~70 | ~60 |\n| 2026 A | ~50 | ~55 |\n| 2026 S | ~70 | ~60 |\n| 2026 O | ~90 | ~65 |\n| 2026 N | ~110 | ~70 |\n| 2026 D | ~130 | ~75 |\n| 2026 M | ~150 | ~80 |\n| 2026 J | ~170 | ~85 |\n| 2026 J | ~190 | ~90 |\n| 2026 S | ~170 | ~85 |\n| 2026 O | ~150 | ~80 |\n| 2026 N | ~130 | ~75 |\n| 2026 D | ~110 | ~70 |\n| 2026 M | ~90 | ~65 |\n| 2026 J | ~70 | ~60 |\n| 2026 J | ~50 | ~55 |\n| 2026 S | ~70 | ~60 |\n| 2026 O | ~90 | ~65 |\n| 2026 N | ~110 | ~70 |\n| 2026 D | ~130 | ~75 |\n| 2026 M | (~150) | ~80 |\n| 2026 J | (~170) | ~85 |\n| 2026 J | (~190) | ~90 |\n| 2026 S | (~170) | ~85 |\n| 2026 O | (~150) | ~80 |\n| 2026 N | (~130) | ~75 |\n| 2026 D | (~110) | ~70 |\n| 2026 M | (~90) | ~65 |\n| 2026 J | (~70) | ~60 |\n| 2026 J | (~50) | ~55 |\n| 2026 S | (~70) | ~60 |\n| 2026 O | (~90) | ~65 |\n| 2026 N | (~110) | ~70 |\n| 2026 D | (~130) | ~75 |\n| 2026 M | (~150) | ~80 |\n| 2026 J | (~170) | ~85 |\n| 2026 J | (~190) | ~90 |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: GS Investment Research for ratings and price targets; FactSet closing prices as of 3/31/2026.\n◆ Mar 24, 2026 to NA from CS\n□ Rating\n■ Price target\n× Price target at removal\nFTSE World Europe (USD)\nCovered by current analyst\nNot covered by current analyst",
+            "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            667,
+            488,
+            812
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Connecting the Dots",
+        "bbox": [
+            779,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "19 June 2026",
+        "bbox": [
+            83,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            900,
+            954,
+            915,
+            965
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/5016f3d679b377e449581a9c545d835535900d8dc4dd565906c6575d124d7d56.jpg",
+        "table_caption": [
+            "Target price history table(s)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">TGS ASA (TGS.OL)</td><td colspan=\"3\">Halma Plc (HLMA.L)</td></tr><tr><td>Date of report</td><td>Target price (Nkr)</td><td>Closing price (Nkr)</td><td>Date of report</td><td>Target price (£)</td><td>Closing price (£)</td></tr><tr><td>01-May-26</td><td>180.00</td><td>150.50</td><td>11-Jun-26</td><td>5,010</td><td>3,928</td></tr><tr><td>20-Apr-26</td><td>170.00</td><td>137.80</td><td>01-Jun-26</td><td>5,060</td><td>4,732</td></tr><tr><td></td><td></td><td></td><td>13-Mar-26</td><td>4,290</td><td>3,878</td></tr><tr><td></td><td></td><td></td><td>12-Feb-26</td><td>4,280</td><td>3,742</td></tr><tr><td></td><td></td><td></td><td>21-Jan-26</td><td>4,250</td><td>3,710</td></tr><tr><td></td><td></td><td></td><td>08-Dec-25</td><td>4,120</td><td>3,652</td></tr><tr><td></td><td></td><td></td><td>21-Nov-25</td><td>4,080</td><td>3,540</td></tr><tr><td></td><td></td><td></td><td>25-Sep-25</td><td>3,850</td><td>3,372</td></tr><tr><td></td><td></td><td></td><td>06-Aug-25</td><td>3,740</td><td>3,232</td></tr></table>",
+        "bbox": [
+            80,
+            56,
+            712,
+            218
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/847ebf3f40235c2f0b853848f3cc9aaa3e4b28b6ad725507fbdb2db79acebd77.jpg",
+        "table_caption": [
+            "Equinor (EQNR.OL)"
+        ],
+        "table_footnote": [
+            "Price targets shown in table(s) are unadjusted for corporate actions."
+        ],
+        "table_body": "<table><tr><td>Date of report</td><td>Target price (Nkr)</td><td>Closing price (Nkr)</td></tr><tr><td>06-May-26</td><td>300.00</td><td>349.90</td></tr><tr><td>26-Mar-26</td><td>280.00</td><td>397.50</td></tr><tr><td>19-Mar-26</td><td>270.00</td><td>398.60</td></tr><tr><td>12-Mar-26</td><td>260.00</td><td>332.50</td></tr><tr><td>09-Mar-26</td><td>240.00</td><td>325.40</td></tr><tr><td>12-Dec-25</td><td>210.00</td><td>232.70</td></tr><tr><td>23-Jul-25</td><td>220.00</td><td>256.10</td></tr><tr><td>07-May-25</td><td>230.00</td><td>236.40</td></tr><tr><td>30-Apr-25</td><td>250.00</td><td>237.90</td></tr><tr><td>25-Sep-24</td><td>270.00</td><td>262.50</td></tr><tr><td>05-Aug-24</td><td>290.00</td><td>276.95</td></tr><tr><td>25-Apr-24</td><td>300.00</td><td>305.00</td></tr><tr><td>07-Feb-24</td><td>290.00</td><td>284.60</td></tr><tr><td>15-Jan-24</td><td>320.00</td><td>306.25</td></tr><tr><td>05-Oct-23</td><td>340.00</td><td>341.00</td></tr><tr><td>30-Jun-23</td><td>390.00</td><td>312.10</td></tr></table>",
+        "bbox": [
+            80,
+            250,
+            372,
+            497
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            536,
+            251,
+            551
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations",
+        "text_level": 2,
+        "bbox": [
+            78,
+            556,
+            514,
+            569
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+        "bbox": [
+            81,
+            569,
+            906,
+            614
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+        "bbox": [
+            81,
+            620,
+            911,
+            698
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website at https://www.gs.com/research/hedge.html.",
+        "bbox": [
+            81,
+            705,
+            916,
+            740
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States",
+        "text_level": 2,
+        "bbox": [
+            81,
+            751,
+            872,
+            766
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.",
+        "bbox": [
+            81,
+            767,
+            911,
+            923
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Connecting the Dots",
+        "bbox": [
+            779,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "19 June 2026",
+        "bbox": [
+            83,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            901,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            80,
+            38,
+            916,
+            419
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+        "bbox": [
+            81,
+            423,
+            906,
+            503
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+        "bbox": [
+            81,
+            509,
+            913,
+            565
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Ratings, coverage universe and related definitions",
+        "text_level": 2,
+        "bbox": [
+            81,
+            578,
+            450,
+            591
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.",
+        "bbox": [
+            81,
+            591,
+            916,
+            670
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.",
+        "bbox": [
+            81,
+            677,
+            890,
+            711
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.",
+        "bbox": [
+            81,
+            717,
+            777,
+            741
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.",
+        "bbox": [
+            81,
+            746,
+            911,
+            848
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities",
+        "text_level": 2,
+        "bbox": [
+            81,
+            860,
+            349,
+            874
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil:",
+        "bbox": [
+            81,
+            874,
+            908,
+            928
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Connecting the Dots",
+        "bbox": [
+            779,
+            7,
+            916,
+            20
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "19 June 2026",
+        "bbox": [
+            83,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            901,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            80,
+            38,
+            916,
+            107
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            81,
+            113,
+            879,
+            136
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+        "bbox": [
+            81,
+            143,
+            903,
+            188
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "General disclosures",
+        "text_level": 2,
+        "bbox": [
+            81,
+            201,
+            228,
+            214
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+        "bbox": [
+            81,
+            214,
+            913,
+            271
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+        "bbox": [
+            81,
+            277,
+            913,
+            312
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+        "bbox": [
+            81,
+            317,
+            916,
+            352
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.",
+        "bbox": [
+            81,
+            357,
+            916,
+            414
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+        "bbox": [
+            81,
+            421,
+            890,
+            445
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+        "bbox": [
+            81,
+            450,
+            916,
+            472
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+        "bbox": [
+            81,
+            480,
+            911,
+            503
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            81,
+            509,
+            916,
+            577
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+        "bbox": [
+            81,
+            583,
+            906,
+            640
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+        "bbox": [
+            81,
+            645,
+            903,
+            748
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+        "bbox": [
+            81,
+            753,
+            898,
+            799
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+        "bbox": [
+            81,
+            804,
+            888,
+            828
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS.",
+        "text_level": 2,
+        "bbox": [
+            81,
+            835,
+            220,
+            847
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+        "bbox": [
+            81,
+            852,
+            911,
+            932
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Connecting the Dots",
+        "bbox": [
+            779,
+            7,
+            916,
+            20
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "19 June 2026",
+        "bbox": [
+            83,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            901,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 13
+    }
+]
