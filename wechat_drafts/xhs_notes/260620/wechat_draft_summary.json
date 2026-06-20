@@ -1,0 +1,112 @@
+{
+  "date_folder": "260620",
+  "source": "xhs_notes/dropbox",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 5,
+  "selected_count": 5,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多完整报告和后续精译，扫文末图片进群交流。",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit88mjA8HYPKLIiKOwuFqc-RVI3wwI8GxBDCxAKm0tlMUP",
+      "publish_id": "",
+      "published": false,
+      "article_count": 5,
+      "payload_bytes": 49685,
+      "payload": "wechat_drafts/xhs_notes/260620/draft_payload_01.json",
+      "titles": [
+        "高盛：GS：市场低估的不是通胀本身，而是通胀预期的再定价机制",
+        "高盛：GS：市场真正低估的不是期限溢价的水平，而是它为何不再回落",
+        "高盛：GS：韩国市场上涨背后的结构性分歧，比指数本身更值得关注",
+        "高盛：GS：资金流向正在重塑全球资产定价的底层逻辑",
+        "高盛：GS：市场低估的不是资本开支本身，而是资本开支正在重塑行业竞争格局"
+      ],
+      "wechat_titles": [
+        "高盛：GS：市场低估的不是通胀本身，而是通胀预期的再定价机制",
+        "高盛：GS：市场真正低估的不是期限溢价的水平，而是它为何不再回落",
+        "高盛：GS：韩国市场上涨背后的结构性分歧，比指数本身更值得关注",
+        "高盛：GS：资金流向正在重塑全球资产定价的底层逻辑",
+        "高盛：GS：市场低估的不是资本开支本身，而是资本开支正在重塑行业竞争格局"
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "高盛：GS：市场低估的不是通胀本身，而是通胀预期的再定价机制",
+      "wechat_title": "高盛：GS：市场低估的不是通胀本身，而是通胀预期的再定价机制",
+      "institution_name": "高盛",
+      "source_report_name": "01-GS-Global Rates Trader-Dealing With Inflation-260619",
+      "report_dir": "xhs_notes/dropbox/260620/shard_0/0001-01-Goldman-Sachs-Global-Rates-Trader-Dealing-With-Inflation-260619",
+      "content_chars": 5452,
+      "content_bytes": 9282,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260620/shard_0/0001-01-Goldman-Sachs-Global-Rates-Trader-Dealing-With-Inflation-260619/assets/cover.png"
+    },
+    {
+      "title": "高盛：GS：市场真正低估的不是期限溢价的水平，而是它为何不再回落",
+      "wechat_title": "高盛：GS：市场真正低估的不是期限溢价的水平，而是它为何不再回落",
+      "institution_name": "高盛",
+      "source_report_name": "03-GS-Global Markets Analyst-Updating Our G10 Term Premium Estimates - Still High-260619",
+      "report_dir": "xhs_notes/dropbox/260620/shard_0/0002-03-Goldman-Sachs-Global-Markets-Analyst-Updating-Our-G10-Term-Premium-Estim",
+      "content_chars": 5674,
+      "content_bytes": 9636,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260620/shard_0/0002-03-Goldman-Sachs-Global-Markets-Analyst-Updating-Our-G10-Term-Premium-Estim/assets/cover.png"
+    },
+    {
+      "title": "高盛：GS：韩国市场上涨背后的结构性分歧，比指数本身更值得关注",
+      "wechat_title": "高盛：GS：韩国市场上涨背后的结构性分歧，比指数本身更值得关注",
+      "institution_name": "高盛",
+      "source_report_name": "04-GS-Korea Weekly Kickstart-KOSPI surged by 11-- breaking above the KOSPI 9-000 as tech continues to lead the rally amid US-Iran deal and hawkish FOMC-260619",
+      "report_dir": "xhs_notes/dropbox/260620/shard_0/0003-04-Goldman-Sachs-Korea-Weekly-Kickstart-KOSPI-surged-by-11---breaking-above",
+      "content_chars": 5691,
+      "content_bytes": 9465,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260620/shard_0/0003-04-Goldman-Sachs-Korea-Weekly-Kickstart-KOSPI-surged-by-11---breaking-above/assets/cover.png"
+    },
+    {
+      "title": "高盛：GS：资金流向正在重塑全球资产定价的底层逻辑",
+      "wechat_title": "高盛：GS：资金流向正在重塑全球资产定价的底层逻辑",
+      "institution_name": "高盛",
+      "source_report_name": "05-GS-Weekly Fund Flows-Tech Boost-260619",
+      "report_dir": "xhs_notes/dropbox/260620/shard_0/0004-05-Goldman-Sachs-Weekly-Fund-Flows-Tech-Boost-260619",
+      "content_chars": 5892,
+      "content_bytes": 9862,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260620/shard_0/0004-05-Goldman-Sachs-Weekly-Fund-Flows-Tech-Boost-260619/assets/cover.png"
+    },
+    {
+      "title": "高盛：GS：市场低估的不是资本开支本身，而是资本开支正在重塑行业竞争格局",
+      "wechat_title": "高盛：GS：市场低估的不是资本开支本身，而是资本开支正在重塑行业竞争格局",
+      "institution_name": "高盛",
+      "source_report_name": "06-GS-Connecting the Dots-Capex Boom- Frontier exploration- AI orchestration- Halma- BSTL and Banks plus key research-260619",
+      "report_dir": "xhs_notes/dropbox/260620/shard_0/0005-06-Goldman-Sachs-Connecting-the-Dots-Capex-Boom--Frontier-exploration--AI-o",
+      "content_chars": 5590,
+      "content_bytes": 9366,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260620/shard_0/0005-06-Goldman-Sachs-Connecting-the-Dots-Capex-Boom--Frontier-exploration--AI-o/assets/cover.png"
+    }
+  ]
+}
