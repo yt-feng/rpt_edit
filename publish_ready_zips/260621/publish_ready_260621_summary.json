@@ -1,0 +1,44 @@
+{
+  "created_at_utc": "2026-06-21T22:32:21.809922+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260621",
+  "output_dir": "publish_ready_zips/260621",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 1,
+  "skipped_shards": [],
+  "total_files": 101,
+  "total_renamed_markdown_count": 25,
+  "total_raw_file_bytes": 14184147,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260621/publish_ready_260621.zip",
+      "size_bytes": 13025231,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14184147,
+      "shards": [
+        "shard_0"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14184147,
+      "reports": [
+        "0001-01-Goldman-Sachs-Asia-Pacific-Inflation-Monitor--Oil-Past-the-Peak-260621",
+        "0002-02-Morgan-Stanley-Commodity-Matters-Gold-on-Hold-260619",
+        "0003-03-J.P.-Morgan-Cosmetics---Personal-Care-Paper---Packaging-Sector--Japan--E",
+        "0004-04-J.P.-Morgan-Pharmaceutical-Sector-Weekly-June-15-19--Sector-likely-to-re",
+        "0005-05-Goldman-Sachs-China-Cosmetics--618-pulse-check--performance-in-Douyin--M"
+      ]
+    }
+  ]
+}
