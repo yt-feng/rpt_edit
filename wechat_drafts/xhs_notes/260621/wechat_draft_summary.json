@@ -1,0 +1,112 @@
+{
+  "date_folder": "260621",
+  "source": "xhs_notes/dropbox",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 5,
+  "selected_count": 5,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多完整报告和后续精译，扫文末图片进群交流。",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit805TaRYL9swBRqcQrxrTWnHG9z5UowIuSu1QPf5weXHG",
+      "publish_id": "",
+      "published": false,
+      "article_count": 5,
+      "payload_bytes": 48396,
+      "payload": "wechat_drafts/xhs_notes/260621/draft_payload_01.json",
+      "titles": [
+        "高盛：GS：亚洲通胀最猛烈的阶段已经过去，但结构性分化才刚刚开始",
+        "摩根斯坦利：黄金的下一段行情，关键不在央行，而在ETF能否重新入场",
+        "摩根大通：JPM：中东局势缓和，日本日化与造纸股迎来结构性成本重估",
+        "摩根大通：JPM：日本制药板块正在经历的不是回调，而是结构性出清",
+        "高盛：GS：618大促揭示中国美妆市场真正的分水岭，不是国货与外资，而是高端与大众"
+      ],
+      "wechat_titles": [
+        "高盛：GS：亚洲通胀最猛烈的阶段已经过去，但结构性分化才刚刚开始",
+        "摩根斯坦利：黄金的下一段行情，关键不在央行，而在ETF能否重新入场",
+        "摩根大通：JPM：中东局势缓和，日本日化与造纸股迎来结构性成本重估",
+        "摩根大通：JPM：日本制药板块正在经历的不是回调，而是结构性出清",
+        "高盛：GS：618大促揭示中国美妆市场真正的分水岭，不是国货与外资，而是高端与大众"
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "高盛：GS：亚洲通胀最猛烈的阶段已经过去，但结构性分化才刚刚开始",
+      "wechat_title": "高盛：GS：亚洲通胀最猛烈的阶段已经过去，但结构性分化才刚刚开始",
+      "institution_name": "高盛",
+      "source_report_name": "01-GS-Asia-Pacific Inflation Monitor- Oil Past the Peak-260621",
+      "report_dir": "xhs_notes/dropbox/260621/shard_0/0001-01-Goldman-Sachs-Asia-Pacific-Inflation-Monitor--Oil-Past-the-Peak-260621",
+      "content_chars": 5456,
+      "content_bytes": 9312,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260621/shard_0/0001-01-Goldman-Sachs-Asia-Pacific-Inflation-Monitor--Oil-Past-the-Peak-260621/assets/cover.png"
+    },
+    {
+      "title": "摩根斯坦利：黄金的下一段行情，关键不在央行，而在ETF能否重新入场",
+      "wechat_title": "摩根斯坦利：黄金的下一段行情，关键不在央行，而在ETF能否重新入场",
+      "institution_name": "摩根斯坦利",
+      "source_report_name": "02-MS-Commodity Matters-Gold on Hold-260619",
+      "report_dir": "xhs_notes/dropbox/260621/shard_0/0002-02-Morgan-Stanley-Commodity-Matters-Gold-on-Hold-260619",
+      "content_chars": 5668,
+      "content_bytes": 9574,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260621/shard_0/0002-02-Morgan-Stanley-Commodity-Matters-Gold-on-Hold-260619/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：JPM：中东局势缓和，日本日化与造纸股迎来结构性成本重估",
+      "wechat_title": "摩根大通：JPM：中东局势缓和，日本日化与造纸股迎来结构性成本重估",
+      "institution_name": "摩根大通",
+      "source_report_name": "03-JPM-Cosmetics - Personal Care Paper - Packaging Sector -Japan- Examination of impact of improving situation in Middle East-260620",
+      "report_dir": "xhs_notes/dropbox/260621/shard_0/0003-03-J.P.-Morgan-Cosmetics---Personal-Care-Paper---Packaging-Sector--Japan--E",
+      "content_chars": 5627,
+      "content_bytes": 9511,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260621/shard_0/0003-03-J.P.-Morgan-Cosmetics---Personal-Care-Paper---Packaging-Sector--Japan--E/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：JPM：日本制药板块正在经历的不是回调，而是结构性出清",
+      "wechat_title": "摩根大通：JPM：日本制药板块正在经历的不是回调，而是结构性出清",
+      "institution_name": "摩根大通",
+      "source_report_name": "04-JPM-Pharmaceutical Sector Weekly-June 15-19- Sector likely to remain weak- but look for share prices to rise in 2H 2026-260620",
+      "report_dir": "xhs_notes/dropbox/260621/shard_0/0004-04-J.P.-Morgan-Pharmaceutical-Sector-Weekly-June-15-19--Sector-likely-to-re",
+      "content_chars": 5653,
+      "content_bytes": 8951,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260621/shard_0/0004-04-J.P.-Morgan-Pharmaceutical-Sector-Weekly-June-15-19--Sector-likely-to-re/assets/cover.png"
+    },
+    {
+      "title": "高盛：GS：618大促揭示中国美妆市场真正的分水岭，不是国货与外资，而是高端与大众",
+      "wechat_title": "高盛：GS：618大促揭示中国美妆市场真正的分水岭，不是国货与外资，而是高端与大众",
+      "institution_name": "高盛",
+      "source_report_name": "05-GS-China Cosmetics- 618 pulse check- performance in Douyin- MNCs higher-end led- MGP rebound to 50-- yoy-260620",
+      "report_dir": "xhs_notes/dropbox/260621/shard_0/0005-05-Goldman-Sachs-China-Cosmetics--618-pulse-check--performance-in-Douyin--M",
+      "content_chars": 5434,
+      "content_bytes": 8956,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260621/shard_0/0005-05-Goldman-Sachs-China-Cosmetics--618-pulse-check--performance-in-Douyin--M/assets/cover.png"
+    }
+  ]
+}
