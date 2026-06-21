@@ -1,0 +1,59 @@
+{
+  "date_folder": "260621",
+  "max_reports": "all",
+  "selected_count": 5,
+  "successful_count": 5,
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/dropbox/260621/shard_0/0001-01-Goldman-Sachs-Asia-Pacific-Inflation-Monitor--Oil-Past-the-Peak-260621",
+      "title": "GS：亚洲通胀最猛烈的阶段已经过去，但结构性分化才刚刚开始",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260621/01-0001-01-Goldman-Sachs-Asia-Pacific-Inflation-Monitor--Oil-Past-the-Peak-260621",
+      "pdf_path": "kc_translated_reports/260621/01-0001-01-Goldman-Sachs-Asia-Pacific-Inflation-Monitor--Oil-Past-the-Peak-260621/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260621/shard_0/0002-02-Morgan-Stanley-Commodity-Matters-Gold-on-Hold-260619",
+      "title": "摩根斯坦利：黄金的下一段行情，关键不在央行，而在ETF能否重新入场",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 12,
+      "output_dir": "kc_translated_reports/260621/02-0002-02-Morgan-Stanley-Commodity-Matters-Gold-on-Hold-260619",
+      "pdf_path": "kc_translated_reports/260621/02-0002-02-Morgan-Stanley-Commodity-Matters-Gold-on-Hold-260619/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260621/shard_0/0003-03-J.P.-Morgan-Cosmetics---Personal-Care-Paper---Packaging-Sector--Japan--E",
+      "title": "JPM：中东局势缓和，日本日化与造纸股迎来结构性成本重估",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260621/03-0003-03-J.P",
+      "pdf_path": "kc_translated_reports/260621/03-0003-03-J.P/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260621/shard_0/0004-04-J.P.-Morgan-Pharmaceutical-Sector-Weekly-June-15-19--Sector-likely-to-re",
+      "title": "JPM：日本制药板块正在经历的不是回调，而是结构性出清",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260621/04-0004-04-J.P",
+      "pdf_path": "kc_translated_reports/260621/04-0004-04-J.P/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260621/shard_0/0005-05-Goldman-Sachs-China-Cosmetics--618-pulse-check--performance-in-Douyin--M",
+      "title": "GS：618大促揭示中国美妆市场真正的分水岭，不是国货与外资，而是高端与大众",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 4,
+      "output_dir": "kc_translated_reports/260621/05-0005-05-Goldman-Sachs-China-Cosmetics--618-pulse-check--performance-in-Douyin--M",
+      "pdf_path": "kc_translated_reports/260621/05-0005-05-Goldman-Sachs-China-Cosmetics--618-pulse-check--performance-in-Douyin--M/kc_translated_report_05.pdf"
+    }
+  ]
+}
