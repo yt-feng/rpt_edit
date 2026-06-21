@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_doz1rud7/pdfs/0001-01-GS-Asia-Pacific Inflation Monitor- Oil Past the Peak-260621.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_doz1rud7/pdfs/0002-02-MS-Commodity Matters-Gold on Hold-260619.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_doz1rud7/pdfs/0003-03-JPM-Cosmetics - Personal Care Paper - Packaging Sector -Japan- Examination of impact of improving situation in Middle East-260620.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_doz1rud7/pdfs/0004-04-JPM-Pharmaceutical Sector Weekly-June 15-19- Sector likely to remain weak- but look for share prices to rise in 2H 2026-260620.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_doz1rud7/pdfs/0005-05-GS-China Cosmetics- 618 pulse check- performance in Douyin- MNCs higher-end led- MGP rebound to 50-- yoy-260620.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

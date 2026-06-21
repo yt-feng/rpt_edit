@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "GS-Asia~Pacific Inflation Monitor： Oil Past the Peak-260621.pdf",
+    "dropbox_path": "/zip_backup/260621/GS-asia~pacific inflation monitor： oil past the peak-260621.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-asia~pacific inflation monitor： oil past the peak-260621.pdf",
+    "category": "macro_trend",
+    "score": 0.99,
+    "reason": "亚太通胀监测，宏观主题；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 2,
+    "macro_priority_score": 2,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 6,
+    "name": "MS-Commodity Matters：Gold on Hold-260619.pdf",
+    "dropbox_path": "/zip_backup/260621/MS-commodity matters：gold on hold-260619.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-commodity matters：gold on hold-260619.pdf",
+    "category": "macro_trend",
+    "score": 0.98,
+    "reason": "大宗商品报告，黄金主题；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 1,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 4,
+    "name": "JPM-Cosmetics & Personal Care   Paper & Packaging Sector （Japan） Examination of impact of improving situation in Middle East-260620.pdf",
+    "dropbox_path": "/zip_backup/260621/JPM-cosmetics & personal care   paper & packaging sector （japan） examination of impact of improving situation in middle east-260620.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-cosmetics & personal care   paper & packaging sector （japan） examination of impact of improving situation in middle east-260620.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "日本行业板块分析，涉及地缘影响",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 3,
+    "name": "JPM-Pharmaceutical Sector Weekly：June 15~19： Sector likely to remain weak， but look for share prices to rise in 2H 2026-260620.pdf",
+    "dropbox_path": "/zip_backup/260621/JPM-pharmaceutical sector weekly：june 15~19： sector likely to remain weak， but look for share prices to rise in 2h 2026-260620.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-pharmaceutical sector weekly：june 15~19： sector likely to remain weak， but look for share prices to rise in 2h 2026-260620.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "医药行业周报，行业整体分析",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 5,
+    "name": "GS-China Cosmetics： 618 pulse check： performance in Douyin： MNCs higher~end led； MGP rebound to 50%+ yoy-260620.pdf",
+    "dropbox_path": "/zip_backup/260621/GS-china cosmetics： 618 pulse check： performance in douyin： mncs higher~end led； mgp rebound to 50%+ yoy-260620.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china cosmetics： 618 pulse check： performance in douyin： mncs higher~end led； mgp rebound to 50%+ yoy-260620.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国化妆品行业618表现，行业趋势",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  }
+]
