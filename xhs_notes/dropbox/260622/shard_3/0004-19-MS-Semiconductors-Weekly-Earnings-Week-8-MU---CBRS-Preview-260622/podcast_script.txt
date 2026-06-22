@@ -1,0 +1,123 @@
+ZH_A: 最近你注意到没有，半导体行业好像又热起来了，特别是有两家公司马上要发财报，感觉市场关注度很高。
+
+ZH_B: 没错，一家是存储芯片巨头美光，另一家是AI芯片新秀Cerebras。一份外资投行的最新报告，把这两家公司放在一起做了深度预览，挺有意思的。
+
+ZH_A: 那我先问，这份报告真正想回答的核心问题是什么？
+
+ZH_B: 其实就一个：这轮半导体景气周期到底能持续多久。尤其是美光，业绩很好，但大家担心的不是现在，而是明年、后年会不会突然掉头。
+
+ZH_A: 那我们先聊美光。报告里说他们又上调了盈利预测，这已经是连续好几次了吧？
+
+ZH_B: 对，已经连续上调了。美光5月季度的营收指引是环比增长40%，但报告认为实际数字会更好。他们预计DRAM价格环比涨45%，NAND涨50%，都比公司原本的指引要高。
+
+ZH_A: 所以业绩超预期几乎是板上钉钉。但报告好像更关心别的东西？
+
+ZH_B: 没错。报告说，比业绩更重要的，是“周期的耐久性”。也就是说，这次涨价到底是因为真缺货，还是只是短期囤货。
+
+ZH_A: 那他们怎么看？缺货是真的吗？
+
+ZH_B: 报告认为，是真缺货。而且他们提供了一个非常关键的观察角度：客户正在被迫做出艰难的决定，比如削减某些产品的内存容量。这恰恰说明供应太紧张了，客户不得不妥协。
+
+ZH_A: 这个角度挺有意思。那供应端呢？美光不是刚收购了一个晶圆厂吗？
+
+ZH_B: 对，铜锣厂。报告认为这个收购可能会让设备交付比预期更快，所以上调了全年资本开支预测，从250亿美元提高到270亿。但有趣的是，报告同时也说，即便资本开支增加了，真正的有效产能增长仍然很有限。
+
+ZH_A: 为什么？钱花出去了，产能不应该上来吗？
+
+ZH_B: 因为有三个瓶颈：建设周期长、HBM芯片消耗大量晶圆、以及先进制程迁移的效率在下降。所以总的来看，供给增长的速度还是追不上需求。
+
+ZH_A: 那长期协议呢？上次美光签了一个5年的大单，这次财报会不会披露更多细节？
+
+ZH_B: 报告认为，美光可能会宣布又签了几个新协议，但恐怕不会透露具体的条款和金额。因为公司还在跟多个客户谈判，不想暴露底牌。
+
+ZH_A: 那如果市场期待落空，股价会不会跌？
+
+ZH_B: 报告说，如果信息有限，股价短期可能承压。但他们反而认为，如果跌了，是加仓的机会。因为客户对DRAM未来几年的紧缺预期，目前还没有完全反映在股价里。
+
+ZH_A: 好，那我们再聊聊Cerebras。这家公司刚上市不久，市场对它最大的疑问是什么？
+
+ZH_B: 最大的疑问是：它的晶圆级芯片到底是不是一个可持续的竞争优势。但报告认为，现在讨论这个还为时过早。当前的核心问题不是需求，而是执行。
+
+ZH_A: 执行是什么意思？
+
+ZH_B: 就是能不能按时把产能建起来。报告特别关注他们第一个250兆瓦的算力集群，预计要到2027年中才能上线。在此之前，收入和毛利率都会受到一些拖累。
+
+ZH_A: 比如什么拖累？
+
+ZH_B: 比如他们跟G42的一个回租安排，会导致云业务毛利率从44%降到24%左右。而且还有一些认股权证相关的会计调整，会让GAAP收入低于核心收入。
+
+ZH_A: 听起来短期挺乱的。那报告为什么还看好它？
+
+ZH_B: 因为他们认为，一旦执行到位，Cerebras的架构在AI基础设施里是一个非常差异化的存在。而且他们已经签了一些“照付不议”的大合同，需求是有保障的。
+
+ZH_A: 所以你刚才说的“执行”，其实就是能不能把产能按时交付？
+
+ZH_B: 对。报告说得很清楚，未来几个季度，Cerebras的故事就是执行。需求不是问题，产能才是。
+
+ZH_A: 那这份报告有没有留下一些没有完全展开的问题？
+
+ZH_B: 有两个。第一，美光的长期协议到底签了多大金额？这个悬念可能要到下次财报才能部分揭晓。第二，Cerebras的晶圆级芯片，到底能不能在成本上跟英伟达竞争？这个可能需要等到2027年产能上线后才能验证。
+
+ZH_A: 听起来这两个悬念，也正是决定这两家公司未来股价空间的关键变量。
+
+ZH_B: 完全正确。如果你想知道更详细的财务模型和估值假设，可以去看看这份完整报告。
+
+EN_A: So we have two big earnings coming up in the semiconductor space this week. What’s the one big question this report is trying to answer?
+
+EN_B: It’s really about the durability of this cycle. Everyone knows the numbers are good right now. The real question is whether this strength can last.
+
+EN_A: Let’s start with Micron. The report says they’re raising estimates again. How aggressive are they being?
+
+EN_B: Pretty aggressive. They now expect DRAM prices to be up 45 percent quarter over quarter, and NAND up 50 percent. That’s well above what the company initially guided.
+
+EN_A: So the earnings beat seems almost guaranteed. But the report seems more focused on something else.
+
+EN_B: Exactly. They say the more important thing is proof points on cycle durability. And they look at two things: demand and supply.
+
+EN_A: What’s the demand side telling us?
+
+EN_B: The report makes a really interesting point. They say customers across all markets are being forced to make difficult decisions about their volumes and content. That’s actually a sign of an enduring shortage. If demand were weak, customers wouldn’t have to compromise.
+
+EN_A: That’s a great insight. What about supply? Micron just bought a fab, right?
+
+EN_B: Yes, the Tongluo acquisition. The report thinks equipment deliveries could come faster than expected, so they raised their capex forecast from 25 billion to 27 billion dollars. But here’s the twist: even with more spending, effective supply growth is still limited.
+
+EN_A: Why is that?
+
+EN_B: Three reasons. Construction timelines are long. HBM chips consume a lot of wafer capacity. And node migration efficiency is declining. So supply just can’t catch up with demand.
+
+EN_A: What about the long-term agreements? Last quarter Micron signed a five-year deal. Will we get more details this time?
+
+EN_B: The report thinks they might announce new deals, but probably won’t disclose terms. They’re still negotiating with multiple customers and don’t want to tip their hand.
+
+EN_A: So if the market is disappointed by the lack of detail, the stock could sell off?
+
+EN_B: The report says that’s possible. But they would actually look to add positions on any weakness. Because the multi-year tightness in DRAM isn’t fully priced in yet.
+
+EN_A: Let’s move to Cerebras. This is their first quarter as a public company. What’s the big question here?
+
+EN_B: The big question is whether their wafer-scale engine is a durable competitive advantage. But the report says it’s too early to answer that. Right now, the story is all about execution, not demand.
+
+EN_A: What does execution mean in this context?
+
+EN_B: It means能不能按时把产能建起来。他们有一个250兆瓦的算力集群，预计要到2027年中才上线。在那之前，收入和毛利率都会受到一些短期拖累。
+
+EN_A: Can you give an example of those headwinds?
+
+EN_B: Sure. They have a rent-back arrangement with G42 that will drag cloud margins from 44 percent down to about 24 percent. And there are warrant-related accounting adjustments that make GAAP revenue lower than core revenue.
+
+EN_A: So near term looks messy. Why is the report still constructive?
+
+EN_B: Because once execution is proven, Cerebras has a truly differentiated architecture in one of the fastest growing segments of AI infrastructure. And they already have large take-or-pay agreements in place, so demand is locked in.
+
+EN_A: So the whole story for the next few quarters is just about delivering capacity?
+
+EN_B: Exactly. The report says it very clearly: the near-term debate is about execution, not demand. Capacity deployment is the key driver of revenue and margin upside.
+
+EN_A: Are there any open questions the report doesn’t fully answer?
+
+EN_B: Two big ones. First, how large are Micron’s new long-term agreements? That might only become clear at the next earnings call. Second, can Cerebras’ wafer-scale engine compete with Nvidia on cost? That won’t be known until the 250-megawatt cluster goes live in mid-2027.
+
+EN_A: So those two questions are really what will determine the upside for both stocks.
+
+EN_B: That’s right. If you want to see the detailed financial models and valuation assumptions, the full report has all of that.

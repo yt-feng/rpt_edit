@@ -1,0 +1,5106 @@
+[
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/75e83fd9ab08f9f1e4acef04163ac45fc9b47fb64b1e4ad0e7112bbc8e0b96a5.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td colspan=\"2\">MS &amp; CO. LLC</td></tr><tr><td colspan=\"2\">Joseph Moore</td></tr><tr><td colspan=\"2\">Equity Analyst</td></tr><tr><td>Joseph.Moore@morganstanley.com</td><td>+1 212 761-7516</td></tr><tr><td colspan=\"2\">Ella Tulchinsky</td></tr><tr><td colspan=\"2\">Research Associate</td></tr><tr><td>Ella.Tulchinsky@morganstanley.com</td><td>+1 212 761-2222</td></tr><tr><td colspan=\"2\">Nicole Kozhukhov</td></tr><tr><td colspan=\"2\">Research Associate</td></tr><tr><td>Nicole.Kozhukhov@morganstanley.com</td><td>+1 212 761-1636</td></tr><tr><td colspan=\"2\">Mason Wayne</td></tr><tr><td colspan=\"2\">Research Associate</td></tr><tr><td>Mason.Wayne@morganstanley.com</td><td>+1 212 761-6012</td></tr><tr><td colspan=\"2\">Shane Brett</td></tr><tr><td colspan=\"2\">Equity Analyst</td></tr><tr><td>Shane.Brett@morganstanley.com</td><td>+1 212 761-1022</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                620,
+                75,
+                934,
+                285
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Weekly: Earnings Week 8 MU & CBRS Preview"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                109,
+                584,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Raising Micron numbers again as shortages continue to intensify; higher capex and limited LTA disclosure shouldn't hold the story back. Separately we see CBRS posting in line #s for its first public qtr, with visibility into the coming ramp."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                201,
+                594,
+                285
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CBRS (OW, reporting after the market close on Tuesday, June 23rd): CBRS will report its first quarter as a public company, and while we are not expecting a major surprise, we remain constructive on what we view as a differentiated architecture with significant upside. With large take or pay agreements already in place, the near term story remains centered on execution rather than demand. We continue to view the pace of capacity deployment as the key driver of revenue and gross margin upside, and remain focused on management's progress toward bringing the initial 250MW tranche online, which we currently expect by mid 2027. Longer term, the more important question is whether the Wafer Scale Engine proves to be a durable competitive advantage. The company will need to demonstrate that the technology delivers meaningful value to customers and can scale economically. For now, however, we believe the investment debate is primarily about execution, and we remain constructive."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                294,
+                596,
+                530
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We model core revenue of $180 million and core gross margin of 44% for the March quarter, in line with consensus expectations. Looking ahead, we expect core revenue to remain roughly flat in the June quarter while core gross margin declines to 24%, driven by G42 rent back arrangements that support the initial capacity ramp. We expect these arrangements to remain a drag on cloud margins until roughly mid 2027. On a GAAP basis, we forecast revenue of $182 million in March and $153 million in June, with the difference between GAAP versus core revenue reflecting mostly warrant related contra revenue. While we think the compute ramp may be somewhat messy near term, with pressure on margins and warrant related costs, we believe these headwinds are well understood by investors. Ultimately, what we are playing for is a differentiated architecture with leadership in one of the fastest growing segments of AI infrastructure, where successful execution could unlock significant upside beyond current expectations."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                539,
+                598,
+                774
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MU (OW, reporting after market closes on Wednesday, June 24th): Raising numbers again as demand continues to outstrip supply in memory and especially in DRAM, incremental commentary on SCAs (strategic customer agreements) a key focus. Micron's initial guidance for May was revenue growth of 40% q/q, implying ASP increases in both DRAM/NAND of 30-35% or so q/q. Micron has since said conditions are trending better but has not provided a numerical update for investors. We model DRAM ASP's up 45% vs 40% prior, and NAND up 50% vs 35% prior, with third party forecasts calling for ~60% increases in C2Q for DRAM and ~75% for NAND; we don't expect that to come as a surprise to investors. Our"
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                782,
+                594,
+                946
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "SEMICONDUCTORS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                625,
+                294,
+                736,
+                309
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "North America\nIndustry View\nAttractive"
+                    }
+                ]
+            },
+            "bbox": [
+                622,
+                310,
+                897,
+                336
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                622,
+                902,
+                918,
+                941
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH\nJune 22, 2026 04:09 AM GMT\nSemiconductors | North America"
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                21,
+                408,
+                98
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                883,
+                25,
+                933,
+                46
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision."
+                    }
+                ]
+            },
+            "bbox": [
+                622,
+                818,
+                929,
+                902
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "resulting EPS of $21.31 compares to consensus at $20.57. For August we expect pricing up in the 20% range for both DRAM and NAND, with an upward bias to that number as our checks continue to point to very strong market conditions, although negotiations have not yet concluded and but we would expect Micron to remain conservative at the outset."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                86,
+                589,
+                174
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "More important than strong results will be proofpoints on the durability of the current cycle, especially in light of downward LPDDR content adjustments for Rubin. To us that comes back to what are always the two key memory variables, demand and supply. On the demand side the company is unlikely to comment specifically on Rubin, but will likely emphasize that customers in all markets are being forced to make difficult decisions with regards to their volumes and content; to us that's a sign of an enduring shortage and think management at MU will make a similar case. As far as supply, the Tongluo acquisition from PSMC (covered by Daniel Yen) may start to see WFE deliveries quicker than initial expectations, putting an upward bias on current FY capex vs guidance for \"above $25bn\" - we raise Aug quarter from $8bn to $10bn (FY from $25bn to $27bn). Supply growth in DRAM overall continues to come in above out expectations, and will accelerate next year given capital spending this year. But the levels are still much lower than headline WFE would suggest, with construction timelines, HBM trade ratio inputs, and lower node migration efficiency continuing to limit the speed of the supply response and we continue to see q/q bit shipment increases still in the mid single digits vs demand that seems to grow much faster."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                186,
+                598,
+                492
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "What about LTAs? A quarter ago Micron disclosed signing a five year SCA (strategic customer agreement), but with limited information on the terms and sizing of relevant financial commitments. We think Micron may announce the closing of additional deals, but wouldn't necessarily expect more clarity on the terms - as they are likely in conversations with multiple customers and don't want to tip their hand. We think these deals are important for market sentiment around the case for further multiple expansion, and the stock may go down if there's limited new information. But in that we would be looking to add to positions as new disclosures don't change what we know - which is that customers see DRAM as increasingly tight over a multiyear time horizon – something not priced in at 9.3x our new FY27 EPS, in our view."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                501,
+                593,
+                699
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                903,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                967,
+                76,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Preview to earnings"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                80,
+                215,
+                95
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/12cba08b7d61a53e8ffab6f33307e5400e7317ed5c9e386757d8b9d4e71dcfdb.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Focus KPI</td><td>Focus KPI Surprise</td><td>Likely impact to consensus EPS*</td></tr><tr><td colspan=\"3\">Cerebras Systems CBRS.O</td></tr><tr><td>Core Revenue</td><td>— In-line</td><td>— Largely unchanged</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                63,
+                99,
+                630,
+                155
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- While we are not expecting significant upside, we remain constructive on what we view as a differentiated architecture with significant upside."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                157,
+                611,
+                186
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "*Likely impact to consensus EPS is for the next 12 months"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                199,
+                344,
+                210
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                210,
+                303,
+                223
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                921,
+                967,
+                931,
+                978
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                241,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Cerebras Earnings Preview"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                91,
+                450,
+                122
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The company is scheduled to report after the market close on Tuesday, June 23rd."
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                139,
+                877,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CBRS will report its first quarter as a public company, and while we are not expecting a major surprise, we remain constructive on what we view as a differentiated architecture with significant upside. With large take or pay agreements already in place, the near term story remains centered on execution rather than demand. We continue to view the pace of capacity deployment as the key driver of revenue and gross margin upside, and remain focused on management's progress toward bringing the initial 250MW tranche online, which we currently expect by mid 2027. Longer term, the more important question is whether the Wafer Scale Engine proves to be a durable competitive advantage. The company will need to demonstrate that the technology delivers meaningful value to customers and can scale economically. For now, however, we believe the investment debate is primarily about execution, and we remain constructive."
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                166,
+                929,
+                366
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We model core revenue of $180 million and core gross margin of 44% for the March quarter, in line with consensus expectations. Looking ahead, we expect core revenue to remain roughly flat in the June quarter while core gross margin declines to 24%, driven by G42 rent back arrangements that support the initial capacity ramp. We expect these arrangements to remain a drag on cloud margins until roughly mid 2027. On a GAAP basis, we forecast revenue of $182 million in March and $153 million in June, with the difference between GAAP versus core revenue reflecting mostly warrant related contra revenue. While we think the compute ramp may be somewhat messy near term, with pressure on margins and warrant related costs, we believe these headwinds are well understood by investors. Ultimately, what we are playing for is a differentiated architecture with leadership in one of the fastest growing segments of AI infrastructure, where successful execution could unlock significant upside beyond current expectations."
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                373,
+                928,
+                592
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/691800c49ca8415a9b4231f44c860ab1f187ec9f9b91e4747b5865dd2778e373.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 1: CBRS: MS estimates"
+                    },
+                    {
+                        "type": "text",
+                        "content": "MS Estimates"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: MS"
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"5\">Figures in $ MMs</td></tr><tr><td></td><td>F1Q26E</td><td>F2Q26E</td><td>FY26E</td><td>FY27E</td></tr><tr><td>Core Rev</td><td>180.4</td><td>180.2</td><td>831.4</td><td>2,694.8</td></tr><tr><td>Q/Q Change</td><td>5.2%</td><td>-0.2%</td><td></td><td></td></tr><tr><td>GAAP Rev</td><td>182.8</td><td>153.0</td><td>792.4</td><td>3,174.3</td></tr><tr><td>Q/Q Change</td><td>6.6%</td><td>-16.3%</td><td></td><td></td></tr><tr><td>Core GM</td><td>43.8%</td><td>24.2%</td><td>29.5%</td><td>51.1%</td></tr><tr><td>Non-GAAP EPS</td><td>$ (0.21)</td><td>$ (0.40)</td><td>$ (1.22)</td><td>$ 0.88</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                364,
+                633,
+                898,
+                813
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                21,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                967,
+                76,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Micron Earnings Preview"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                91,
+                421,
+                122
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The company is scheduled to report after the market close on Wednesday, June 24th."
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                139,
+                898,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Raising numbers again as demand continues to outstrip supply in memory and especially in DRAM, incremental commentary on SCAs (strategic customer agreements) a key focus. Micron's initial guidance for May was revenue growth of 40% q/q, implying ASP increases in both DRAM/NAND of 30-35% or so q/q. Micron has since said conditions are trending better but has not provided a numerical update for investors. We model DRAM ASP's up 45% vs 40% prior, and NAND up 50% vs 35% prior, with third party forecasts calling for ~60% increases in C2Q for DRAM and ~75% for NAND for we don't expect that to come as a surprise for investors. Our resulting EPS of $21.31 compares to consensus at $20.57. For August we expect pricing up in the 20% range for both DRAM and NAND, with an upward bias to that number as our checks continue to point to very strong market conditions, although negotiations have not yet concluded and but we would expect Micron to remain conservative at the outset."
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                166,
+                934,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "More important than strong results will be proofpoints on the durability of the current cycle, especially in light of downward LPDDR content adjustments for Rubin. To us that comes back to what are always the two key memory variables, demand and supply. On the demand side, the company is unlikely to comment specifically on Rubin, but will likely emphasize that customers in all markets are being forced to make difficult decisions with regards to their volumes and content; to us that's a sign of an enduring shortage and think management at MU will make a similar case. As far as supply, the Tongluo acquisition from PSMC (covered by Daniel Yen) may start to see WFE deliveries quicker than initial expectations, putting an upward bias on current FY capex vs guidance for \"above $25bn\" - we raise Aug quarter from $8bn to $10bn (FY from $25bn to $27bn). Supply growth in DRAM overall continues to come in above our expectations, and will accelerate next year given capital spending this year. But the levels are still much lower than headline WFE would suggest, with construction timelines, HBM trade ratio inputs, and lower node migration efficiency continuing to limit the speed of the supply response and we continue to see q/q bit shipment increases still in the mid single digits vs demand that seems to grow much faster."
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                393,
+                933,
+                681
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "What about LTAs? A quarter ago Micron disclosed signing a five year SCA (strategic customer agreement), but with limited information on the terms and sizing of relevant financial commitments. We think Micron may announce the closing of additional deals, but wouldn't necessarily expect more clarity on the terms - as they are likely in conversations with multiple customers and don't want to tip their hand. We think these deals are important for market sentiment around the case for further multiple expansion, and the stock may go down if there's limited new information. But in that we would be looking to add to positions as new disclosures don't change what we know – which is that customers see DRAM as increasingly tight over a multiyear time horizon – something not priced in at 9.3x our new FY27 EPS, in our view."
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                692,
+                934,
+                871
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Details on the May quarter: We model revenue of $36.454bn (up 52.8% q/q and 291.9% y/y), above the Street at $35.555bn. By segment, we model DRAM sequential bit shipments to increase 5.0% q/q and average selling prices to increase 45.0%; and NAND sequential bit shipments to rise 4.0%, with prices up 50.0%. Our gross margin estimate of"
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                880,
+                929,
+                953
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                21,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                921,
+                966,
+                933,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "83.1% is above the Street at 81.7%, and our EPS estimate of $21.31 is above the Street at $20.57."
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                86,
+                916,
+                119
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Outlook on August quarter: We model revenue of $43.328bn (up 18.9% q/q and 282.9% y/y), ahead of the Street at $42.688bn. By segment, we forecast DRAM sequential bit shipments to increase by 2.0%, and prices up 15.0%; and NAND bit shipments to increase 4.0%, with prices increasing by 20.0%. We forecast gross margin to come in at 85.1%, ahead of the street at 82.3%, and our EPS estimate of $26.01 is also ahead of the Street at $25.00."
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                131,
+                933,
+                236
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/84450d541e460d7d660728ad7c50bcc58daa16918ef038fa83aeba44ad58a695.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 2: MU: MS vs. Cons"
+                    },
+                    {
+                        "type": "text",
+                        "content": "MS vs. Consensus"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, MS estimates"
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"9\">Figures in $ MMs</td></tr><tr><td rowspan=\"2\"></td><td colspan=\"2\">F3Q26E</td><td colspan=\"2\">F4Q26E</td><td colspan=\"2\">CY2026E</td><td colspan=\"2\">CY2027E</td></tr><tr><td>MS</td><td>Cons.</td><td>MS</td><td>Cons.</td><td>MS</td><td>Cons.</td><td>MS</td><td>Cons.</td></tr><tr><td>Revenues</td><td>36,454</td><td>35,555</td><td>43,328</td><td>42,688</td><td>151,954</td><td>141,640</td><td>220,827</td><td>202,654</td></tr><tr><td>Q/Q Change</td><td>52.8%</td><td>49.0%</td><td>18.9%</td><td>20.1%</td><td></td><td></td><td></td><td></td></tr><tr><td>GMs</td><td>83.1%</td><td>81.7%</td><td>85.1%</td><td>82.3%</td><td>83.3%</td><td>79.5%</td><td>86.4%</td><td>78.3%</td></tr><tr><td>EPS</td><td>$ 21.31</td><td>$ 20.57</td><td>$ 26.01</td><td>$ 25.00</td><td>$ 86.99</td><td>$ 80.46</td><td>$ 128.04</td><td>$ 116.57</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                364,
+                279,
+                929,
+                359
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                903,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                967,
+                76,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risk Reward – Micron Technology Inc. (MU.O)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                103,
+                470,
+                124
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See multiple quarters of upward revisions, with AI driving a higher multiple"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                135,
+                611,
+                156
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "PRICE TARGET $1,050.00"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                175,
+                256,
+                192
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "~29.5x through-cycle earnings of US $35.00, a premium to history reflecting new opportunities in AI, in-line with broader semis."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                196,
+                537,
+                223
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Consensus Price Target Distribution"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                236,
+                245,
+                253
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: Refinitiv, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                258,
+                261,
+                272
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d5e5ada9df81ab6e5bb44bdaad7a8acaa54a11c4f25d7eca7c01701c5dff42ae.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                310,
+                225,
+                609,
+                279
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "RISK REWARD CHART AND OPTIONS IMPLIED PROBABILITIES (12M)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                300,
+                521,
+                316
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/23ddd70a2f3c6574ab39d2b052685e332e337b57f1918dca571a496df0fb6198.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Key: — Historical Stock Performance ● Current Stock Price ◆ Price Target"
+                    }
+                ]
+            },
+            "bbox": [
+                71,
+                332,
+                609,
+                532
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: Refinitiv, MS, MS Institutional Equities Division. The probabilities of our Bull, Base, and Bear case scenarios playing out were estimated with implied volatility data from the options market as of 18 Jun 2026. All figures are approximate risk-neutral probabilities of the stock reaching beyond the scenario price in either three-months' or one-years' time. View explanation of Options Probabilities methodology here"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                553,
+                604,
+                601
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "OVERWEIGHT THESIS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                625,
+                173,
+                777,
+                188
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- DRAM fundamentals are in uncharted territory, and should continue to improve as datacenter/AI markets continue their upward trajectory\n- Execution on AI is underappreciated, and we expect Micron to maintain HBM share in CY26 vs the competition. Supporting margins and driving a higher multiple than prior cycles\n- Cycle longevity will be key, and S/D may stay tight for 2-3 more years"
+                    }
+                ]
+            },
+            "bbox": [
+                625,
+                192,
+                885,
+                332
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/040e21ef14ce902249ba05d643171b7ec5c9f87f476e862fa829aa6d1c7f63cd.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Refinitiv, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                625,
+                347,
+                888,
+                425
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risk Reward Themes"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                625,
+                460,
+                733,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "New Data Era: Positive\nSecular Growth: Positive\nView descriptions of Risk Rewards Themes here"
+                    }
+                ]
+            },
+            "bbox": [
+                625,
+                474,
+                846,
+                517
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BULL CASE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                619,
+                145,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "$1,650.00"
+                    }
+                ]
+            },
+            "bbox": [
+                245,
+                618,
+                328,
+                635
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "33x through-cycle earnings of US$50"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                639,
+                287,
+                654
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Gross margin improvement continues, driven by scale, AI mix, and cost improvements in new products. Pricing pressure alleviates as demand sustainably moves above supply driven by HBM's wafer intensity, a product category where MU cements performance leadership on future products."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                658,
+                328,
+                745
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BASE CASE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                344,
+                619,
+                426,
+                633
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "$1,050.00 BEAR CASE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                524,
+                618,
+                707,
+                635
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "~29.5x through-cycle earnings of US$35"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                344,
+                639,
+                586,
+                654
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our through-cycle earnings estimate of US\\$35.00 is a small premium to our new FY21-FY28 average (\\$34) as we continue to assume peaks and valleys in earnings over time. Our 29.5x multiple reflects the market's enthusiasm for the AI opportunity, and at the midpoint of the semis group"
+                    }
+                ]
+            },
+            "bbox": [
+                344,
+                658,
+                604,
+                745
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "$675.00"
+                    }
+                ]
+            },
+            "bbox": [
+                821,
+                617,
+                890,
+                633
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "27x through-cycle earnings of US$25.00"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                625,
+                639,
+                870,
+                654
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Memory begins to enter a downturn in early 2027. As the strength attributed to demand in the early part of the year ended up being inventory build at customers. Multiple compresses severely after an underwhelming peak"
+                    }
+                ]
+            },
+            "bbox": [
+                625,
+                658,
+                887,
+                733
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                21,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                921,
+                966,
+                931,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risk Reward – Micron Technology Inc. (MU.O)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                104,
+                470,
+                124
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "KEY EARNINGS INPUTS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                138,
+                223,
+                153
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/697188691866d095446b6f54e8038401faaeda8902c2031c101ef6711c95281d.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Drivers</td><td>Oct 2025</td><td>Oct 2026e</td><td>Oct 2027e</td><td>Oct 2028e</td></tr><tr><td>GAAP Revenue ($, mm)</td><td>37,378</td><td>117,286</td><td>211,737</td><td>191,967</td></tr><tr><td>Non Gaap Gross Margin (%)</td><td>40.9</td><td>79.1</td><td>86.3</td><td>81.8</td></tr><tr><td>Non-GAAP EPS ($)</td><td>8.29</td><td>64.37</td><td>122.05</td><td>105.91</td></tr><tr><td>Inventory ($, mm)</td><td>8,355</td><td>8,564</td><td>10,152</td><td>12,393</td></tr><tr><td>DOI</td><td>133.7</td><td>123.5</td><td>124.2</td><td>126.2</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                66,
+                159,
+                460,
+                293
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "INVESTMENT DRIVERS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                310,
+                222,
+                326
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Improved pricing and demand strength drive earnings growth"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                329,
+                310,
+                355
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "GLOBAL REVENUE EXPOSURE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                369,
+                272,
+                385
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d98cd6c8c254fb896c87bfcad127189e862b6d3c04a68a60d26324ad230907d9.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: MS Estimate View explanation of regional hierarchies here"
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"8\"></td><td>0-10%</td><td>APAC, ex Japan, Mainland China and India</td></tr><tr><td>0-10%</td><td>India</td></tr><tr><td>0-10%</td><td>Japan</td></tr><tr><td>0-10%</td><td>MEA</td></tr><tr><td>0-10%</td><td>Mainland China</td></tr><tr><td>0-10%</td><td>UK</td></tr><tr><td>10-20%</td><td>Europe ex UK</td></tr><tr><td>40-50%</td><td>North America</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                63,
+                389,
+                308,
+                496
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "MS ALPHA MODELS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                536,
+                204,
+                551
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/af530eb1c66188c78497be0eb52729e8af193a31701addd3eefd0e72e88e11e7.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "- Customers continue to demonstrate an appetite to take on inventory around macroeconomic uncertainty"
+                    },
+                    {
+                        "type": "text",
+                        "content": "• Additional wafer intensity of HBM further improves overall supply and demand"
+                    },
+                    {
+                        "type": "text",
+                        "content": "- Mlcron's HBM share surpasses expectations"
+                    },
+                    {
+                        "type": "text",
+                        "content": "- Pricing can turn quickly; a falter in end demand with inventories elevated could lead to a swift price reduction"
+                    },
+                    {
+                        "type": "text",
+                        "content": "• HBM demand falters and competition intensifies, pressuring pricing"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Refinitiv, FactSet, MS; 1 is the highest favored Quintile and 5 is the least favored Quintile"
+                    }
+                ],
+                "html": "<table><tr><td>5/5BEST</td><td>24 MonthHorizon</td><td>4/5MOST</td><td>3 MonthHorizon</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                63,
+                556,
+                331,
+                591
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "RISKS TO PT/RATING"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                343,
+                310,
+                486,
+                326
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "RISKS TO UPSIDE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                343,
+                329,
+                434,
+                342
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "RISKS TO DOWNSIDE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                343,
+                421,
+                450,
+                435
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "OWNERSHIP POSITIONING"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                343,
+                510,
+                524,
+                526
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/df15006d837259d0cc0a4889c9252978af53e2c27fc10a311dee94118c2b8c69.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Inst. Owners, % Active</td><td>46.5%</td><td></td><td></td><td></td></tr><tr><td>HF Sector Long/Short Ratio</td><td>2.1x</td><td></td><td></td><td></td></tr><tr><td>HF Sector Net Exposure</td><td>29.5%</td><td></td><td></td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                341,
+                531,
+                598,
+                582
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Refinitiv; MSPB Content. Includes certain hedge fund exposures held with MSPB. Information may be inconsistent with or may not reflect broader market trends. Long/Short Ratio = Long Exposure / Short exposure. Sector % of Total Net Exposure = (For a particular sector: Long Exposure - Short Exposure) / (Across all sectors: Long Exposure – Short Exposure)."
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                587,
+                588,
+                664
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/cd200ac270e0cfa73a18e2372e96c59213416cbec7c5c1aa27d9343f7a06c6e2.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "MS ESTIMATES VS. CONSENSUS\nFY Oct 2026e"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Refinitiv, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                611,
+                347,
+                882,
+                566
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                76,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Semiconductor Coverage – Valuation / Stock Performance"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                91,
+                895,
+                121
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6b2cb2b8ab6db4af010c1c6a31a7ed9ef0576f00df2999d05bf274a968e13d60.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 3: Weekly stock performance"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                369,
+                165,
+                924,
+                326
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/cba3df06d34e0fc75a6abd7381e798301d1bd911b929bd56970d0fafb7b5ec4a.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 4: Monthly stock performance"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                385,
+                924,
+                544
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c0a70efcbda1a7e88cf69680805613bd15d250ab8fa1b556284628d396ceff6d.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 5: YTD stock performance"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                367,
+                600,
+                924,
+                752
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                921,
+                967,
+                933,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Semis Week Ahead"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                91,
+                343,
+                120
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 6: June 22nd - June 26th, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                139,
+                627,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Monday, June 15th"
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                159,
+                460,
+                173
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tuesday, June 16th"
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                182,
+                462,
+                196
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Wednesday, June 17th"
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                205,
+                477,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Thursday, June 18th"
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                227,
+                467,
+                240
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Friday, June 19th"
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                250,
+                452,
+                263
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "LOOKING AHEAD\nWednesday, June 24th\nQCOM Investor Day\nMU Earnings\n4:30pm ET"
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                272,
+                475,
+                331
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Thursday, June 25th\nRenesas Capital Markets Day"
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                340,
+                501,
+                364
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Thursday, July 23rd  \nAMD Advancing AI  \nhttps://www.youtube.com/@AMD/streams"
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                373,
+                568,
+                410
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Wednesday, September 16th ON Financial Analyst Day 2:00pm ET"
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                419,
+                504,
+                455
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Refinitiv, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                457,
+                584,
+                470
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                21,
+                250,
+                41
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                967,
+                83,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Semiconductor Coverage"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                91,
+                429,
+                122
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/585162740c347640635b7cfb67c63f05e8620f0ddae9cf9b0f8e5cd2ac7017ee.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 7: Semiconductors - Risk Reward"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, MS estimates"
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\">Ticker</td><td rowspan=\"2\">Rating</td><td rowspan=\"2\">Price</td><td colspan=\"3\">Risk-Reward</td><td rowspan=\"2\">% Upside / Downside Base</td></tr><tr><td>Bear</td><td>Base</td><td>Bull</td></tr><tr><td colspan=\"7\">Computing</td></tr><tr><td>AMD</td><td>EW</td><td>$547.3</td><td>$210</td><td>$410</td><td>$570</td><td>-25%</td></tr><tr><td>INTC</td><td>EW</td><td>$127.9</td><td>$43</td><td>$73</td><td>$110</td><td>-43%</td></tr><tr><td>NVDA</td><td>OW</td><td>$212.5</td><td>$160</td><td>$288</td><td>$330</td><td>36%</td></tr><tr><td colspan=\"7\">Memory</td></tr><tr><td>MU</td><td>OW</td><td>$1,088.0</td><td>$675</td><td>$1,050</td><td>$1,650</td><td>-3%</td></tr><tr><td>SNDK</td><td>OW</td><td>$2,107.9</td><td>$1,100</td><td>$1,750</td><td>$2,635</td><td>-17%</td></tr><tr><td colspan=\"7\">Capital Equipment</td></tr><tr><td>AMAT</td><td>EW</td><td>$585.8</td><td>$330</td><td>$502</td><td>$693</td><td>-14%</td></tr><tr><td>CAMT</td><td>EW</td><td>$197.8</td><td>$118</td><td>$163</td><td>$214</td><td>-18%</td></tr><tr><td>KLAC</td><td>OW</td><td>$256.4</td><td>$136</td><td>$190</td><td>$233</td><td>-26%</td></tr><tr><td>LRCX</td><td>OW</td><td>$388.9</td><td>$219</td><td>$331</td><td>$436</td><td>-15%</td></tr><tr><td>MKSI</td><td>OW</td><td>$375.3</td><td>$234</td><td>$374</td><td>$506</td><td>0%</td></tr><tr><td>NVMI</td><td>EW</td><td>$605.7</td><td>$366</td><td>$494</td><td>$643</td><td>-18%</td></tr><tr><td>TER</td><td>EW</td><td>$432.4</td><td>$267</td><td>$387</td><td>$512</td><td>-11%</td></tr><tr><td colspan=\"7\">Comm-IC / Multi-Market</td></tr><tr><td>ALAB</td><td>OW</td><td>$389.2</td><td>$121</td><td>$240</td><td>$332</td><td>-38%</td></tr><tr><td>AMBA</td><td>OW</td><td>$70.1</td><td>$34</td><td>$96</td><td>$136</td><td>37%</td></tr><tr><td>AVGO</td><td>OW</td><td>$393.9</td><td>$308</td><td>$502</td><td>$637</td><td>27%</td></tr><tr><td>MRVL</td><td>EW</td><td>$308.9</td><td>$130</td><td>$195</td><td>$286</td><td>-37%</td></tr><tr><td>QCOM</td><td>UW</td><td>$220.8</td><td>$94</td><td>$146</td><td>$199</td><td>-34%</td></tr><tr><td>QRVO</td><td>EW</td><td>$101.3</td><td>$40</td><td>$84</td><td>$110</td><td>-17%</td></tr><tr><td>SMTC</td><td>EW</td><td>$174.3</td><td>$95</td><td>$175</td><td>$230</td><td>0%</td></tr><tr><td>SWKS</td><td>EW</td><td>$76.3</td><td>$43</td><td>$76</td><td>$105</td><td>0%</td></tr><tr><td colspan=\"7\">Analog / MCUs</td></tr><tr><td>ADI</td><td>OW</td><td>$427.6</td><td>$342</td><td>$428</td><td>$517</td><td>0%</td></tr><tr><td>ALGM</td><td>OW</td><td>$55.0</td><td>$43</td><td>$51</td><td>$70</td><td>-7%</td></tr><tr><td>MCHP</td><td>EW</td><td>$100.3</td><td>$69</td><td>$94</td><td>$118</td><td>-6%</td></tr><tr><td>NVTS</td><td>UW</td><td>$23.7</td><td>$4.9</td><td>$13.7</td><td>$22.7</td><td>-42%</td></tr><tr><td>NXPI</td><td>OW</td><td>$315.9</td><td>$268</td><td>$335</td><td>$400</td><td>6%</td></tr><tr><td>ON</td><td>EW</td><td>$125.9</td><td>$62</td><td>$87</td><td>$115</td><td>-31%</td></tr><tr><td>SLAB</td><td>EW</td><td>$220.3</td><td>$83</td><td>$231</td><td>$265</td><td>5%</td></tr><tr><td>TXN</td><td>UW</td><td>$313.3</td><td>$184</td><td>$221</td><td>$263</td><td>-29%</td></tr><tr><td colspan=\"7\">Components</td></tr><tr><td>AEVA</td><td>EW</td><td>$26.9</td><td>$4.5</td><td>$18.5</td><td>$52.0</td><td>-31%</td></tr><tr><td colspan=\"7\">Foundry</td></tr><tr><td>GFS</td><td>EW</td><td>$84.0</td><td>$34</td><td>$58</td><td>$96</td><td>-31%</td></tr><tr><td>AMKR</td><td>EW</td><td>$85.4</td><td>$49</td><td>$69</td><td>$88</td><td>-19%</td></tr><tr><td colspan=\"7\">Quantum Computing</td></tr><tr><td>IONQ</td><td>EW</td><td>$61.2</td><td>$6</td><td>$48.5</td><td>$110</td><td>-21%</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                364,
+                160,
+                924,
+                853
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                21,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                967,
+                931,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/0c29128021980accbef0e3a9f2d97786847609bbdbbd9f3ba639e2d0c829d0ef.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 8: MS vs. Street"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, MS estimates"
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\" colspan=\"2\"></td><td colspan=\"3\">CY2026e EPS</td><td rowspan=\"2\"></td><td colspan=\"3\">CY2026e Revenue</td></tr><tr><td>MS</td><td>Consensus</td><td>% Diff</td><td>MS</td><td>Consensus</td><td>% Diff</td></tr><tr><td rowspan=\"12\">OW</td><td>ADI</td><td>$13.21</td><td>$12.69</td><td>(4%)</td><td>ADI</td><td>$15,499</td><td>$15,069</td><td>(3%)</td></tr><tr><td>ALAB</td><td>$2.88</td><td>$2.97</td><td>(8%)</td><td>ALAB</td><td>$1,532</td><td>$1,547</td><td>(1%)</td></tr><tr><td>ALGM</td><td>$0.93</td><td>$0.87</td><td>10%</td><td>ALGM</td><td>$1,048</td><td>$1,017</td><td>2%</td></tr><tr><td>AMBA</td><td>$0.74</td><td>$0.76</td><td>3%</td><td>AMBA</td><td>$443</td><td>$437</td><td>0%</td></tr><tr><td>AVGO</td><td>$13.68</td><td>$12.88</td><td>(3%)</td><td>AVGO</td><td>$123,943</td><td>$116,422</td><td>0%</td></tr><tr><td>KLAC</td><td>$4.38</td><td>$4.41</td><td>(1%)</td><td>KLAC</td><td>$15,335</td><td>$15,318</td><td>(0%)</td></tr><tr><td>LRCX</td><td>$7.00</td><td>$6.86</td><td>(0%)</td><td>LRCX</td><td>$27,067</td><td>$26,945</td><td>(0%)</td></tr><tr><td>MKSI</td><td>$11.70</td><td>$11.70</td><td>4%</td><td>MKSI</td><td>$4,793</td><td>$4,805</td><td>1%</td></tr><tr><td>MU</td><td>$81.93</td><td>$77.74</td><td>45%</td><td>MU</td><td>$144,942</td><td>$137,846</td><td>18%</td></tr><tr><td>NVDA</td><td>$4.77</td><td>$8.57</td><td>6%</td><td>NVDA</td><td>$215,938</td><td>$375,432</td><td>5%</td></tr><tr><td>NXPI</td><td>$14.96</td><td>$14.71</td><td>4%</td><td>NXPI</td><td>$14,138</td><td>$14,042</td><td>1%</td></tr><tr><td>SNDK</td><td>$161.07</td><td>$127.28</td><td>43%</td><td>SNDK</td><td>$38,078</td><td>$32,445</td><td>7%</td></tr><tr><td rowspan=\"17\">EW</td><td>AEVA</td><td>-$1.80</td><td>-$1.69</td><td>2%</td><td>AEVA</td><td>$33</td><td>$32</td><td>(19%)</td></tr><tr><td>AMAT</td><td>$13.75</td><td>$12.93</td><td>2%</td><td>AMAT</td><td>$36,416</td><td>$34,815</td><td>3%</td></tr><tr><td>AMD</td><td>$7.22</td><td>$7.47</td><td>1%</td><td>AMD</td><td>$48,807</td><td>$49,876</td><td>(5%)</td></tr><tr><td>AMKR</td><td>$2.07</td><td>$2.08</td><td>(8%)</td><td>AMKR</td><td>$7,570</td><td>$7,610</td><td>(4%)</td></tr><tr><td>CAMT</td><td>$3.56</td><td>$3.50</td><td>10%</td><td>CAMT</td><td>$577</td><td>$571</td><td>5%</td></tr><tr><td>GFS</td><td>$1.94</td><td>$1.89</td><td>(4%)</td><td>GFS</td><td>$7,250</td><td>$7,240</td><td>(1%)</td></tr><tr><td>INTC</td><td>$1.12</td><td>$1.08</td><td>21%</td><td>INTC</td><td>$58,131</td><td>$58,498</td><td>0%</td></tr><tr><td>IONQ</td><td>-$0.54</td><td>-$0.35</td><td>(109%)</td><td>IONQ</td><td>$266</td><td>$263</td><td>3%</td></tr><tr><td>MCHP</td><td>$2.71</td><td>$2.78</td><td>(1%)</td><td>MCHP</td><td>$5,769</td><td>$5,811</td><td>2%</td></tr><tr><td>MRVL</td><td>$3.98</td><td>$3.93</td><td>3%</td><td>MRVL</td><td>$11,498</td><td>$11,188</td><td>2%</td></tr><tr><td>NVMI</td><td>$10.12</td><td>$10.47</td><td>1%</td><td>NVMI</td><td>$1,057</td><td>$1,064</td><td>4%</td></tr><tr><td>ON</td><td>$3.12</td><td>$3.09</td><td>8%</td><td>ON</td><td>$6,472</td><td>$6,466</td><td>(0%)</td></tr><tr><td>QRVO</td><td>$6.31</td><td>$6.89</td><td>(3%)</td><td>QRVO</td><td>$3,346</td><td>$3,503</td><td>(7%)</td></tr><tr><td>SLAB</td><td>$3.00</td><td>$2.77</td><td>9%</td><td>SLAB</td><td>$934</td><td>$922</td><td>1%</td></tr><tr><td>SMTC</td><td>$2.72</td><td>$2.58</td><td>(2%)</td><td>SMTC</td><td>$1,375</td><td>$1,331</td><td>0%</td></tr><tr><td>SWKS</td><td>$4.68</td><td>$5.04</td><td>(4%)</td><td>SWKS</td><td>$3,750</td><td>$3,947</td><td>(3%)</td></tr><tr><td>TER</td><td>$8.03</td><td>$7.37</td><td>0%</td><td>TER</td><td>$4,748</td><td>$4,518</td><td>2%</td></tr><tr><td rowspan=\"3\">UW</td><td>NVTS</td><td>-$0.17</td><td>-$0.17</td><td>13%</td><td>NVTS</td><td>$43</td><td>$42</td><td>15%</td></tr><tr><td>QCOM</td><td>$9.39</td><td>$10.69</td><td>(100%)</td><td>QCOM</td><td>$40,152</td><td>$42,599</td><td>(100%)</td></tr><tr><td>TXN</td><td>$7.82</td><td>$7.71</td><td>(1%)</td><td>TXN</td><td>$21,035</td><td>$21,015</td><td>(1%)</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                364,
+                103,
+                931,
+                573
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                966,
+                83,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/624014933e31de4b5bffed2261c60f949fea1d1d37c36b7dfb3944fea759440e.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Revenue and EPS Growth"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Exhibit 9: 2025-27e Revenue CAGR"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, MS estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                367,
+                143,
+                913,
+                280
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e66d49cb34d692d4b68b3e17df0ba43dd507f5e9830873fc2f906ec830005aed.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 10: 2025-27e EPS CAGR"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, MS estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                345,
+                926,
+                492
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                967,
+                933,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Inventory"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                362,
+                82,
+                457,
+                102
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 11: Semiconductor Company inventory is at 111 days, up 3 days q/q which is 4 days behind of the seasonal decrease of 1 days. DOI is 22 days above the historical median and trailing 4-quarters slightly increased.."
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                121,
+                924,
+                174
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ccbae5243d433e792f65827edc5de36c5c478b15b745845529b76e256fa04a16.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Semiconductor Company (DOI)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                372,
+                200,
+                924,
+                398
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 12: Semi Customer DOI decreased 6 days sequentially to 52 days, below the seasonal decrease of 3 days. DOI is below the historical median and trailing 4 quarters increased from last quarter."
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                429,
+                921,
+                482
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c32d98884bf2246a3ece5284adc27f096b1fc9dbaf12c830be62804b6ce105ba.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Semi Customers (DOI)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                370,
+                512,
+                934,
+                706
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                84,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/71ac0b663cd77dbf2a82027385d3cb2276dcddf37c459609e44423f99b001a0e.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 13: Distributor inventory is at 63 days, down 2 days q/q, below the seasonal decline of 0 days. DOI is 9 days above the historical median while trailing 4-quarters decreased sequentially."
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, MS"
+                    }
+                ]
+            },
+            "bbox": [
+                369,
+                148,
+                924,
+                360
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                966,
+                933,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Short Interest"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                362,
+                82,
+                496,
+                100
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/aaf4fd65a0ae22d8aff4b49d4204a6b9cf43578a5b42ac2c51b07d23a034419e.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 14: Short Interest as % of Float"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, MS"
+                    }
+                ],
+                "html": "<table><tr><td></td><td>15/Jun/25</td><td>16/Mar/26</td><td>15/Apr/26</td><td>16/May/26</td><td>15/Jun/26</td></tr><tr><td>ADI</td><td>1.5%</td><td>1.7%</td><td>2.0%</td><td>2.2%</td><td>1.9%</td></tr><tr><td>AEVA</td><td>5.8%</td><td>15.0%</td><td>13.3%</td><td>12.7%</td><td>11.5%</td></tr><tr><td>ALAB</td><td>6.2%</td><td>6.3%</td><td>9.0%</td><td>7.7%</td><td>6.9%</td></tr><tr><td>ALGM</td><td>7.0%</td><td>5.5%</td><td>6.4%</td><td>5.9%</td><td>6.4%</td></tr><tr><td>AMAT</td><td>2.1%</td><td>1.7%</td><td>1.6%</td><td>2.0%</td><td>2.5%</td></tr><tr><td>AMBA</td><td>3.4%</td><td>4.5%</td><td>4.8%</td><td>6.0%</td><td>5.1%</td></tr><tr><td>AMD</td><td>2.4%</td><td>2.1%</td><td>2.2%</td><td>2.2%</td><td>2.7%</td></tr><tr><td>AMKR</td><td>2.7%</td><td>3.4%</td><td>3.5%</td><td>3.0%</td><td>3.4%</td></tr><tr><td>AVGO</td><td>1.0%</td><td>1.0%</td><td>1.1%</td><td>1.1%</td><td>1.2%</td></tr><tr><td>CAMT</td><td>6.8%</td><td>6.8%</td><td>7.6%</td><td>6.6%</td><td>6.6%</td></tr><tr><td>GFS</td><td>1.7%</td><td>1.9%</td><td>3.1%</td><td>1.8%</td><td>1.4%</td></tr><tr><td>INTC</td><td>2.1%</td><td>2.4%</td><td>2.4%</td><td>2.8%</td><td>2.7%</td></tr><tr><td>IONQ</td><td>9.6%</td><td>23.0%</td><td>21.7%</td><td>22.4%</td><td>15.5%</td></tr><tr><td>KLAC</td><td>2.7%</td><td>2.3%</td><td>2.4%</td><td>2.4%</td><td>2.7%</td></tr><tr><td>LRCX</td><td>2.0%</td><td>2.1%</td><td>2.2%</td><td>2.3%</td><td>2.6%</td></tr><tr><td>MCHP</td><td>5.6%</td><td>4.0%</td><td>5.1%</td><td>5.5%</td><td>6.0%</td></tr><tr><td>MKSI</td><td>5.7%</td><td>5.7%</td><td>5.5%</td><td>5.3%</td><td>6.6%</td></tr><tr><td>MRVL</td><td>2.7%</td><td>3.7%</td><td>3.2%</td><td>3.2%</td><td>4.0%</td></tr><tr><td>MU</td><td>2.8%</td><td>2.6%</td><td>2.8%</td><td>3.3%</td><td>3.3%</td></tr><tr><td>NVDA</td><td>0.9%</td><td>1.0%</td><td>1.2%</td><td>1.2%</td><td>1.2%</td></tr><tr><td>NVMI</td><td>5.0%</td><td>4.2%</td><td>5.2%</td><td>4.8%</td><td>5.6%</td></tr><tr><td>NVTS</td><td>12.2%</td><td>18.8%</td><td>18.6%</td><td>17.9%</td><td>15.4%</td></tr><tr><td>NXPI</td><td>2.3%</td><td>3.6%</td><td>3.2%</td><td>2.6%</td><td>3.3%</td></tr><tr><td>ON</td><td>9.4%</td><td>8.2%</td><td>7.8%</td><td>7.4%</td><td>8.0%</td></tr><tr><td>QCOM</td><td>2.0%</td><td>3.6%</td><td>4.1%</td><td>4.7%</td><td>4.3%</td></tr><tr><td>QRVO</td><td>6.7%</td><td>7.6%</td><td>7.1%</td><td>6.7%</td><td>7.9%</td></tr><tr><td>SLAB</td><td>5.6%</td><td>5.1%</td><td>4.6%</td><td>5.7%</td><td>7.2%</td></tr><tr><td>SMTC</td><td>7.7%</td><td>5.0%</td><td>5.8%</td><td>6.7%</td><td>6.8%</td></tr><tr><td>SNDK</td><td>4.3%</td><td>5.8%</td><td>5.4%</td><td>7.3%</td><td>6.2%</td></tr><tr><td>SWKS</td><td>9.3%</td><td>14.3%</td><td>13.3%</td><td>15.1%</td><td>18.7%</td></tr><tr><td>TER</td><td>4.1%</td><td>2.9%</td><td>3.1%</td><td>3.5%</td><td>4.4%</td></tr><tr><td>TXN</td><td>2.1%</td><td>2.1%</td><td>2.0%</td><td>1.7%</td><td>2.1%</td></tr><tr><td>AVERAGE</td><td>4.6%</td><td>5.6%</td><td>5.7%</td><td>5.8%</td><td>5.8%</td></tr><tr><td>MEDIAN</td><td>4.1%</td><td>4.0%</td><td>4.6%</td><td>4.8%</td><td>5.1%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                364,
+                141,
+                929,
+                648
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                967,
+                84,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation Methodology and Risks"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                81,
+                454,
+                104
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Cerebras Systems (CBRS.O)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                362,
+                139,
+                550,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "12x multiple on our 2028 adjusted revenue of $6bn. We comp Cerebras to AI semis cohort and 12x is in-line with with smid cap AI names with near 100% AI exposure that are outgrowing the overall market."
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                168,
+                933,
+                219
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risks to Upside"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                362,
+                232,
+                470,
+                249
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Contract Extension"
+                    }
+                ]
+            },
+            "bbox": [
+                380,
+                262,
+                526,
+                276
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Additional customer"
+                    }
+                ]
+            },
+            "bbox": [
+                380,
+                280,
+                534,
+                294
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Capacity deployment"
+                    }
+                ]
+            },
+            "bbox": [
+                380,
+                298,
+                537,
+                313
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risks to Downside"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                362,
+                326,
+                490,
+                341
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Capacity deployment/infrastructure risk"
+                    }
+                ]
+            },
+            "bbox": [
+                380,
+                350,
+                655,
+                364
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Customer concentration risk"
+                    }
+                ]
+            },
+            "bbox": [
+                380,
+                368,
+                584,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "■ Competitive risk"
+                    }
+                ]
+            },
+            "bbox": [
+                380,
+                386,
+                508,
+                399
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17"
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                966,
+                931,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risk Reward Reference links"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                91,
+                467,
+                120
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. View explanation of Options Probabilities methodology -"
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                166,
+                736,
+                184
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Options_Probabilities_Exhibit_Link.pdf"
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                184,
+                612,
+                201
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. View descriptions of Risk Rewards Themes - RR_Themes_Exhibit_Link.pdf"
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                210,
+                841,
+                228
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. View explanation of regional hierarchies - GEG_Exhibit_Link.pdf"
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                238,
+                781,
+                254
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4. View explanation of Theme/Exposure methodology -"
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                266,
+                712,
+                283
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ESG_Sustainable_Solutions_External_Link.pdf"
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                284,
+                658,
+                301
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5. View explanation of HERS methodology - ESG_HERS_External_Link.pdf"
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                311,
+                828,
+                328
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "18"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                84,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure Section"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                76,
+                284,
+                95
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information and opinions in MS were prepared by MS & Co. LLC, and/or MS C.T.V.M. S.A., and/or MS Mexico, Casa de Bolsa, S.A. de C.V., and/or MS Canada Limited. As used in this disclosure section, \"MS\" includes MS & Co. LLC, MS C.T.V.M. S.A., MS Mexico, Casa de Bolsa, S.A. de C.V., MS Canada Limited and their affiliates as necessary."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                98,
+                934,
+                139
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                139,
+                934,
+                182
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                182,
+                934,
+                226
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                232,
+                215,
+                248
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Shane Brett; Nicole Kozhukhov; Joseph Moore; Ella Tulchinsky; Mason Wayne."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                249,
+                933,
+                279
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Research Conflict Management Policy"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                298,
+                387,
+                313
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                315,
+                934,
+                342
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Regulatory Disclosures on Subject Companies"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                350,
+                470,
+                364
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As of May 29, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: Advanced Micro Devices, Aeva Technologies Inc, Ambarella Inc, Amkor Technology Inc, Analog Devices Inc., Arm Holdings plc, Astera Labs Inc, Broadcom Inc., Cadence Design Systems Inc, Cerebras Systems, Intel Corporation, IonQ Inc, Marvell Technology Group Ltd, Microchip Technology Inc., Micron Technology Inc., NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., Qorvo Inc, Qualcomm Inc., SanDisk Corporation., Semtech Corp., Silicon Laboratories Inc., Skyworks Solutions Inc, Synopsys Inc., Texas Instruments, Wolfspeed, INC."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                366,
+                934,
+                423
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of Aeva Technologies Inc, Broadcom Inc., Cerebras Systems, GlobalFoundries Inc, Intel Corporation, NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., Semtech Corp.."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                424,
+                933,
+                451
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Within the last 12 months, MS has received compensation for investment banking services from Advanced Micro Devices, Aeva Technologies Inc, Allegro Microsystems Inc, Amkor Technology Inc, Broadcom Inc., Cerebras Systems, Intel Corporation, IonQ Inc, Micron Technology Inc., NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., Semtech Corp., Texas Instruments."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                452,
+                934,
+                492
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from Advanced Micro Devices, Aeva Technologies Inc, Allegro Microsystems Inc, Ambarella Inc, Amkor Technology Inc, Analog Devices Inc., Arm Holdings plc, Astera Labs Inc, Broadcom Inc., Cadence Design Systems Inc, Cerebras Systems, GlobalFoundries Inc, Intel Corporation, IonQ Inc, Marvell Technology Group Ltd, Microchip Technology Inc., Micron Technology Inc., Navitas Semiconductor Corp, NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., Qualcomm Inc., SanDisk Corporation., Semtech Corp., Silicon Laboratories Inc., Skyworks Solutions Inc, Synopsys Inc., Texas Instruments, Wolfspeed, INC."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                494,
+                934,
+                551
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Within the last 12 months, MS has received compensation for products and services other than investment banking services from Advanced Micro Devices, Ambarella Inc, Amkor Technology Inc, Analog Devices Inc., Broadcom Inc., Cadence Design Systems Inc, GlobalFoundries Inc, Intel Corporation, Marvell Technology Group Ltd, Microchip Technology Inc., Micron Technology Inc., NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., Qualcomm Inc., Silicon Laboratories Inc., Synopsys Inc., Texas Instruments."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                552,
+                934,
+                593
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: Advanced Micro Devices, Aeva Technologies Inc, Allegro Microsystems Inc, Ambarella Inc, Amkor Technology Inc, Analog Devices Inc., Arm Holdings plc, Astera Labs Inc, Broadcom Inc., Cadence Design Systems Inc, Cerebras Systems, GlobalFoundries Inc, Intel Corporation, IonQ Inc, Marvell Technology Group Ltd, Microchip Technology Inc., Micron Technology Inc., Navitas Semiconductor Corp, NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., Qualcomm Inc., SanDisk Corporation., Semtech Corp., Silicon Laboratories Inc., Skyworks Solutions Inc, Synopsys Inc., Texas Instruments, Wolfspeed, INC."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                593,
+                934,
+                664
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: Advanced Micro Devices, Ambarella Inc, Amkor Technology Inc, Analog Devices Inc., Broadcom Inc., Cadence Design Systems Inc, GlobalFoundries Inc, Intel Corporation, IonQ Inc, Marvell Technology Group Ltd, Microchip Technology Inc., Micron Technology Inc., NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., Qualcomm Inc., Semtech Corp., Silicon Laboratories Inc., Synopsys Inc., Texas Instruments, Wolfspeed, INC."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                664,
+                934,
+                720
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS & Co. LLC makes a market in the securities of Aeva Technologies Inc, Ambarella Inc, Cerebras Systems, Silicon Laboratories Inc.."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                721,
+                733,
+                734
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                736,
+                934,
+                778
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                778,
+                934,
+                839
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                836,
+                563,
+                849
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "STOCK RATINGS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                856,
+                187,
+                871
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                873,
+                934,
+                944
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                966,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "19"
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                967,
+                933,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Stock Ratings Distribution"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                81,
+                305,
+                97
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(as of May 31, 2026)"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                98,
+                165,
+                111
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                112,
+                764,
+                126
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                125,
+                934,
+                184
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/4a423a4de2c4f2faef88c04bc26bdc9097479ae4dc74475bb7173a0cb1033978.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the \"% of total\" column may not add up to exactly 100 percent."
+                    }
+                ],
+                "html": "<table><tr><td></td><td colspan=\"2\">Coverage Universe</td><td colspan=\"3\">Investment Banking Clients (IBC)</td><td colspan=\"2\">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1542</td><td>42%</td><td>465</td><td>51%</td><td>30%</td><td>707</td><td>43%</td></tr><tr><td>Equal-weight/Hold</td><td>1571</td><td>43%</td><td>369</td><td>40%</td><td>23%</td><td>723</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>551</td><td>15%</td><td>86</td><td>9%</td><td>16%</td><td>201</td><td>12%</td></tr><tr><td>Total</td><td>3,667</td><td></td><td>920</td><td></td><td></td><td>1632</td><td></td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                106,
+                201,
+                875,
+                351
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Stock Ratings"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                391,
+                225,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                407,
+                933,
+                434
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                435,
+                933,
+                463
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                464,
+                933,
+                492
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                492,
+                933,
+                520
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                521,
+                607,
+                536
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Industry Views"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                542,
+                233,
+                558
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                558,
+                933,
+                586
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                586,
+                934,
+                644
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Stock Price, Price Target and Rating History (See Rating Definitions)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                650,
+                547,
+                668
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                903,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "20"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                83,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cerebras Systems (CBRS.O) - As of 06/22/26 GMT in USD\nIndustry : Semiconductors"
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                78,
+                697,
+                102
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/151608a81bca21626fed3f0afd1c775574fda54a3301490769d93a0981c65b35.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Stock Rating History: 6/8/26 : 0/A"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Price Target History: 6/8/26 : 250"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: MS Date Format : MM/DD/YY Price Target = No Price Target Assigned (NA)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Stock Price (Not Covered by Current Analyst) — Stock Price (Covered by Current Analyst)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Stock and Industry Ratings (abbreviations below) appear as ♦ Stock Rating/Industry View"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Stock Ratings: Overweight (O) Equal-weight (E) Underweight (U) Not-Rated (NR) No Rating Available (NA)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Industry View: Attractive (A) In-line (I) Cautious (C) No Rating (NR)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Effective January 13, 2014, the stocks covered by MS Asia Pacific will be rated relative to the analyst's industry (or industry team's) coverage."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Effective January 13, 2014, the industry view benchmarks for MS Asia Pacific are as follows: relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                100,
+                913,
+                316
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/497f4390b813b93a447b7fd2eed09f8f15944e628994eaf6bfef0ff3f381be56.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Micron Technology Inc. (MU.O) - As of 06/22/26 GMT in USD\nIndustry : Semiconductors"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Stock Rating History: 6/1/21 : 0/I; 8/12/21 : E/I; 7/21/22 : U/I; 12/7/23 : U/A; 5/20/24 : E/A; 10/6/25 : 0/A"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Price Target History: 3/1/21 : 105; 8/12/21 : 75; 12/20/21 : 77; 3/29/22 : 83; 6/21/22 : 56; 9/30/22 : 49; 12/21/22 : 46;"
+                    },
+                    {
+                        "type": "text",
+                        "content": "9/24/23 : 58.5; 11/27/23 : 71.5; 12/20/23 : 74.75; 3/18/24 : 78; 3/21/24 : 98; 5/20/24 : 130; 6/23/24 : 140; 9/15/24 : 100;"
+                    },
+                    {
+                        "type": "text",
+                        "content": "9/26/24 : 114; 12/19/24 : 98; 1/27/25 : 91; 3/21/25 : 112; 5/7/25 : 98; 6/26/25 : 135; 9/22/25 : 160; 10/6/25 : 220; 11/12/25 : 325; 11/23/25 : 338; 12/17/25 : 350; 2/10/26 : 450; 3/18/26 : 520; 6/2/26 : 1050"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: MS Date Format : MM/DD/YY Price Target = No Price Target Assigned (NA)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Stock Price (Not Covered by Current Analyst) — Stock Price (Covered by Current Analyst)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Stock and Industry Ratings (abbreviations below) appear as ♦ Stock Rating/Industry View"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Stock Ratings: Overweight (O) Equal-weight (E) Underweight (U) Not-Rated (NR) No Rating Available (NA)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Industry View: Attractive (A) In-line (I) Cautious (C) No Rating (NR)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Effective January 13, 2014, the stocks covered by MS Asia Pacific will be rated relative to the analyst's industry (or industry team's) coverage."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Effective January 13, 2014, the industry view benchmarks for MS Asia Pacific are as follows: relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                514,
+                908,
+                729
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                934,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                966,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "21"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                967,
+                931,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Disclosures for MS Smith Barney LLC Customers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                81,
+                578,
+                97
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                98,
+                933,
+                139
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                139,
+                933,
+                168
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Important Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                175,
+                274,
+                190
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A member of Research who had or could have had access to the research prior to completion owns securities (or related derivatives) in the Micron Technology Inc., NVIDIA Corp.. This person is not a research analyst or a member of research analyst's household."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                192,
+                933,
+                219
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                219,
+                934,
+                276
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                276,
+                934,
+                304
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS produces an equity research product called a \"Tactical Idea.\" Views contained in a \"Tactical Idea\" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                306,
+                934,
+                347
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                349,
+                934,
+                390
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms_and_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL_Morgan_Stanley_Research_Audit_Report.pdf)."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                391,
+                934,
+                504
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                505,
+                934,
+                646
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                646,
+                934,
+                703
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The \"Important Regulatory Disclosures on Subject Companies\" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                703,
+                934,
+                774
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                774,
+                934,
+                831
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                831,
+                933,
+                858
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS may make investment decisions that are inconsistent with the recommendations or views in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                860,
+                625,
+                873
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited (\"MSTL\"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                874,
+                934,
+                946
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "22"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                967,
+                83,
+                976
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                63,
+                84,
+                933,
+                111
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                112,
+                933,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to \"wholesale clients\" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to \"wholesale clients\" and \"retail clients\" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                169,
+                934,
+                523
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                523,
+                934,
+                593
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                595,
+                933,
+                623
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                624,
+                933,
+                679
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                680,
+                933,
+                721
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                723,
+                720,
+                736
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                737,
+                874,
+                750
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                751,
+                933,
+                794
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                796,
+                933,
+                848
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "INDUSTRY COVERAGE: Semiconductors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                116,
+                862,
+                413,
+                878
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/2629d1e80f70c0bbeb8a5e034263cd5194c0dd1d9c34301a67b8e62941ff1b68.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Stock Ratings are subject to change. Please see latest research for each company."
+                    },
+                    {
+                        "type": "text",
+                        "content": "* Historical prices are not split adjusted."
+                    }
+                ],
+                "html": "<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (06/18/2026)</td></tr><tr><td>Joseph Moore</td><td></td><td></td></tr><tr><td>Advanced Micro Devices (AMD.O)</td><td>E (06/09/2024)</td><td>$537.37</td></tr><tr><td>Aeva Technologies Inc (AEVA.O)</td><td>E (07/19/2021)</td><td>$24.39</td></tr><tr><td>Allegro Microsystems Inc (ALGM.O)</td><td>O (02/13/2026)</td><td>$59.00</td></tr><tr><td>Ambarella Inc (AMBA.O)</td><td>O (03/29/2016)</td><td>$69.97</td></tr><tr><td>Amkor Technology Inc (AMKR.O)</td><td>E (11/08/2023)</td><td>$90.46</td></tr><tr><td>Analog Devices Inc. (ADI.O)</td><td>O (11/16/2023)</td><td>$434.46</td></tr><tr><td>Astera Labs Inc (ALAB.O)</td><td>O (05/11/2025)</td><td>$417.07</td></tr><tr><td>Broadcom Inc. (AVGO.O)</td><td>O (06/09/2024)</td><td>$411.35</td></tr><tr><td>Cerebras Systems (CBRS.O)</td><td>O (06/08/2026)</td><td>$234.71</td></tr><tr><td>GlobalFoundries Inc (GFS.O)</td><td>E (10/28/2024)</td><td>$85.83</td></tr><tr><td>Intel Corporation (INTC.O)</td><td>E (02/22/2023)</td><td>$133.99</td></tr><tr><td>IonQ Inc (IONQ.N)</td><td>E (04/25/2023)</td><td>$56.55</td></tr><tr><td>Marvell Technology Group Ltd (MRVL.O)</td><td>E (09/14/2015)</td><td>$310.58</td></tr><tr><td>Microchip Technology Inc. (MCHP.O)</td><td>E (07/10/2024)</td><td>$99.77</td></tr><tr><td>Micron Technology Inc. (MU.O)</td><td>O (10/06/2025)</td><td>$1,133.99</td></tr><tr><td>Navitas Semiconductor Corp (NVTS.O)</td><td>U (04/06/2025)</td><td>$24.02</td></tr><tr><td>NVIDIA Corp. (NVDA.O)</td><td>O (03/16/2023)</td><td>$210.69</td></tr><tr><td>NXP Semiconductor NV (NXPI.O)</td><td>O (02/11/2025)</td><td>$313.27</td></tr><tr><td>ON Semiconductor Corp. (ON.O)</td><td>E (05/11/2025)</td><td>$121.62</td></tr><tr><td>Qorvo Inc (QRVO.O)</td><td>E (10/28/2025)</td><td>$98.42</td></tr><tr><td>Qualcomm Inc. (QCOM.O)</td><td>U (02/10/2026)</td><td>$226.11</td></tr><tr><td>SanDisk Corporation. (SNDK.O)</td><td>O (03/03/2025)</td><td>$2,184.75</td></tr><tr><td>Semtech Corp. (SMTC.O)</td><td>E (04/06/2025)</td><td>$158.23</td></tr><tr><td>Silicon Laboratories Inc. (SLAB.O)</td><td>E (01/19/2021)</td><td>$219.75</td></tr><tr><td>Skyworks Solutions Inc (SWKS.O)</td><td>E (11/28/2018)</td><td>$72.45</td></tr><tr><td>Texas Instruments (TXN.O)</td><td>U (04/13/2020)</td><td>$322.86</td></tr><tr><td>Wolfspeed, INC (WOLF.N)</td><td>NR (04/06/2025)</td><td>$57.41</td></tr><tr><td colspan=\"3\">Lee Simpson</td></tr><tr><td>Arm Holdings plc (ARM.O)</td><td>E (04/07/2026)</td><td>$439.46</td></tr><tr><td>Cadence Design Systems Inc (CDNS.O)</td><td>O (02/14/2024)</td><td>$387.39</td></tr><tr><td>Synopsys Inc. (SNPS.O)</td><td>E (02/27/2026)</td><td>$455.51</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                114,
+                884,
+                880,
+                943
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "23"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                966,
+                933,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                120,
+                76,
+                883,
+                549
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 MS"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                610,
+                235,
+                628
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                23,
+                250,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA"
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                25,
+                933,
+                38
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "24"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                966,
+                84,
+                978
+            ]
+        }
+    ]
+]
