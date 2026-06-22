@@ -1,0 +1,99 @@
+{
+  "created_at_utc": "2026-06-22T23:06:31.779646+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260622",
+  "output_dir": "publish_ready_zips/260622",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 5,
+  "skipped_shards": [],
+  "total_files": 408,
+  "total_renamed_markdown_count": 100,
+  "total_raw_file_bytes": 66047984,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260622/publish_ready_260622.zip",
+      "size_bytes": 61153816,
+      "file_count": 408,
+      "renamed_markdown_count": 100,
+      "raw_file_bytes": 66047984,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18345816,
+      "reports": [
+        "0001-01-Goldman-Sachs-Oil-Analyst-EV-Sales-Acceleration-Poses-Downside-Risk-to-G",
+        "0002-02-Bernstein-Global-Video-Gaming--The-State-of-Play--2026-a-deep-dive-on-gl",
+        "0003-03-Bernstein-Global-Software--US-and-China-Internet----US-Communications-In",
+        "0004-04-Goldman-Sachs-Europe-Energy-Oil-Services-The-AI-and-Digital-transformati",
+        "0005-05-Bernstein-Global-Energy-Storage-Battery-Weekly-22-June-260622"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18044056,
+      "reports": [
+        "0001-06-MS-Semiconductor-Capital-Equipment---Global-Raising-our-memory-WFE-forec",
+        "0002-07-Bernstein-Global-Digital-Assets-The-Tokenization-Memo--The-battle-for-eq",
+        "0003-08-Bernstein-Global-Memory--Memory-becoming-a-burden-of-AI-too--260622",
+        "0004-09-Bernstein-India-Strategy-Why-India-needs-its-own-DeepSeek-260622",
+        "0005-10-J.P.-Morgan-Japan-Quant-Strategy-MLCCs-and-supply-bottleneck-effect--Nex"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 3,
+      "file_count": 69,
+      "renamed_markdown_count": 15,
+      "raw_file_bytes": 13027196,
+      "reports": [
+        "0001-11-Goldman-Sachs-CHINA-CONSUMER-DURABLES--APPLIANCE-TRACKER-May-2026--Still",
+        "0002-12-Goldman-Sachs-CHINA-MUSINGS-1Q26-Earnings-Brochure--A-share-tech-in-the-",
+        "0003-13-Bernstein-Americas-Power-and-Energy-Transition--Behind-the-Backlog-insig"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 83,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 10918648,
+      "reports": [
+        "0001-16-Goldman-Sachs-China-Consumer-Durables--EU-anti-dumping-investigation-on-",
+        "0002-17-Goldman-Sachs-China--Three-things-in-China-260621",
+        "0003-18-Goldman-Sachs-European-Chemicals-Key-Takeaways-from-ICIS-European-Associ",
+        "0004-19-MS-Semiconductors-Weekly-Earnings-Week-8-MU---CBRS-Preview-260622",
+        "0005-20-Nomura-USD-CNY-fix-model-Projection--6.7787-260622"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 2,
+      "file_count": 34,
+      "renamed_markdown_count": 10,
+      "raw_file_bytes": 5712268,
+      "reports": [
+        "0001-21-Bernstein-Japan-Consumer-Japan-Retail--1---After-the-Long-Winter--Japan-",
+        "0002-22-Goldman-Sachs-Americas-Technology-Software-Thoughts-on-the-Software-Ecos"
+      ]
+    }
+  ]
+}
