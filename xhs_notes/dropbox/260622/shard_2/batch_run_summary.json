@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 22,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 3,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/11-GS-CHINA CONSUMER DURABLES： APPLIANCE TRACKER，May 2026： Still weak domestic demand yet base will ease into June， 618 in focus； exports sequentially improved-260622.pdf",
+          "batch_file": "/tmp/pdf_batch_001__wp8rir3/pdfs/0001-11-GS-CHINA CONSUMER DURABLES- APPLIANCE TRACKER-May 2026- Still weak domestic demand yet base will ease into June- 618 in focus- exports sequentially improved-260622.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/12-GS-CHINA MUSINGS：1Q26 Earnings Brochure： A~share tech in the driver’s seat-260621.pdf",
+          "batch_file": "/tmp/pdf_batch_001__wp8rir3/pdfs/0002-12-GS-CHINA MUSINGS-1Q26 Earnings Brochure- A-share tech in the driver-s seat-260621.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/13-Bernstein-Americas Power and Energy Transition： Behind the Backlog~insights from our data center survey-260622.pdf",
+          "batch_file": "/tmp/pdf_batch_001__wp8rir3/pdfs/0003-13-Bernstein-Americas Power and Energy Transition- Behind the Backlog-insights from our data center survey-260622.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/14-Bernstein-Japan and EU Semiconductors：Infineon Renesas： CPU renaissance emerges as a second engine for power semi demand， set to outstrip supply-260621.pdf",
+          "batch_file": "/tmp/pdf_batch_001__wp8rir3/pdfs/0004-14-Bernstein-Japan and EU Semiconductors-Infineon Renesas- CPU renaissance emerges as a second engine for power semi demand- set to outstrip supply-260621.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/15-Bernstein-Property Real Estate：Real Estate Summer Guide 2026-260622.pdf",
+          "batch_file": "/tmp/pdf_batch_001__wp8rir3/pdfs/0005-15-Bernstein-Property Real Estate-Real Estate Summer Guide 2026-260622.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
