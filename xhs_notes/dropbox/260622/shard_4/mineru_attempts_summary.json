@@ -1,0 +1,24 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 2,
+    "successful_pdf_count": 2,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_h99rnpdv/pdfs/0001-21-Bernstein-Japan Consumer-Japan Retail -1-- After the Long Winter- Japan Domestic Retail at an Inflection Point-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_h99rnpdv/pdfs/0002-22-GS-Americas Technology-Software-Thoughts on the Software Ecosystem post Databricks DAIS -SNOW- PLTR- MSFT- Apps--260621.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

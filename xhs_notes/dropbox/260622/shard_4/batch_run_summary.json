@@ -1,0 +1,36 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 22,
+  "pdf_count_before_skip": 2,
+  "pdf_count": 2,
+  "generated_report_count": 2,
+  "batch_size": 5,
+  "shard_index": 4,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 2,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/21-Bernstein-Japan Consumer：Japan Retail （1）： After the Long Winter， Japan Domestic Retail at an Inflection Point-260622.pdf",
+          "batch_file": "/tmp/pdf_batch_001_h99rnpdv/pdfs/0001-21-Bernstein-Japan Consumer-Japan Retail -1-- After the Long Winter- Japan Domestic Retail at an Inflection Point-260622.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/22-GS-Americas Technology：Software，Thoughts on the Software Ecosystem post Databricks DAIS （SNOW， PLTR， MSFT， Apps）-260621.pdf",
+          "batch_file": "/tmp/pdf_batch_001_h99rnpdv/pdfs/0002-22-GS-Americas Technology-Software-Thoughts on the Software Ecosystem post Databricks DAIS -SNOW- PLTR- MSFT- Apps--260621.pdf",
+          "stable_index": "2"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
