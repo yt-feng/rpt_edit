@@ -1,0 +1,3324 @@
+[
+    {
+        "type": "image",
+        "img_path": "images/6e461d2f331ca628b46445d72dc859db7a9ce4f959360ee2115b2b8ff05ab2ea.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            26,
+            1000,
+            251
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "EUROPE ENERGY: OIL SERVICES",
+        "bbox": [
+            53,
+            258,
+            377,
+            281
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The AI and Digital transformation in Oil & Gas: time to market, cost curve and oil service beneficiaries",
+        "text_level": 2,
+        "bbox": [
+            50,
+            282,
+            821,
+            345
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In this report, we assess how AI, high-performance computing and digitalisation are reshaping the economics and time to market of global oil & gas projects, drawing on discussions with 15+ digital departments of integrated majors, upstream independents, oilfield services, seismic providers and digital vendors as well as our proprietary Top Projects analysis. We focus on two main questions about long-term offshore projects — by how much could AI/digitalisation compress project timelines and how materially could it shift the economics of new oil developments — at a time when the industry is facing falling reserve life and increasingly complex geology. We draw five key conclusions:",
+        "bbox": [
+            58,
+            349,
+            939,
+            438
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1. AI/digitalisation together with simplification and standardisation offers the potential to compress the full greenfield deepwater cycle from 12 years to 7 years (-c.38%) on average. The gains are heavily front-loaded, with 90% of the time saving captured before FID: exploration -55%, appraisal -40/50% and FEED 40-50%.",
+        "bbox": [
+            84,
+            446,
+            936,
+            493
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2. Post-FID, the benefits become less obvious, as the bottleneck moves to physical fabrication. Construction time could compress by 5-10% and FPSO fabrication remains at c.4 years, governed by yard capacity, steel and long-lead equipment, with limited flexibility.",
+        "bbox": [
+            86,
+            502,
+            934,
+            547
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "3. Post start-up, we see material benefits from digital twins and predictive maintenance, as well as improved drilling efficiency, with scope to reduce opex by 10% and improve uptime by 200-300 bp. We also see the benefit of improved near-field exploration success prolonging the life of existing infrastructure, with Norway as a leading example.",
+        "bbox": [
+            86,
+            558,
+            949,
+            606
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "4. AI is a meaningful driver of upstream economics. Our AI scenario implies an uplift in a typical greenfield IRR by 3.5pp (from 15.5% to 19.0%) and a cut in breakevens by c.15% through four levers: capex -10% (+1.9pp IRR), time to market -3 months (+0.8pp), production +3% (+0.5pp) and opex -10% (+0.3pp) relative to an average greenfield project in the previous capex cycle.",
+        "bbox": [
+            86,
+            613,
+            955,
+            661
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "5. Flowing these improvements into our 2026 Top Projects cost curve, the 75th percentile breakeven would move from \\$75/bbl to \\$64/bbl (at 13-18% WACC) — with capex and time to market, not opex, doing most of the work.",
+        "bbox": [
+            88,
+            669,
+            942,
+            700
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Michele Della Vigna, CFA\n+39(02)8022-2242\nmichele.dellavigna@gs.com\nGS Bank Europe\nSE - Milan branch",
+        "bbox": [
+            53,
+            714,
+            227,
+            777
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ati Modak",
+        "bbox": [
+            55,
+            782,
+            127,
+            797
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)902-9365",
+        "bbox": [
+            55,
+            796,
+            168,
+            809
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ati.modak@gs.com",
+        "bbox": [
+            55,
+            809,
+            174,
+            821
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS International",
+        "bbox": [
+            55,
+            820,
+            228,
+            834
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Anastasia Shalaeva\n+971(4)214-9908\nanastasia.shalaeva@gs.com\nGS International",
+        "bbox": [
+            295,
+            714,
+            472,
+            766
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Yulia Bocharnikova +44(20)7051-6299",
+        "bbox": [
+            297,
+            782,
+            421,
+            809
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "yulia.bocharnikova@gs.com\nGS International",
+        "bbox": [
+            297,
+            809,
+            470,
+            835
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Quentin Marbach\n+44(20)7774-7644\nquentin.marbach@gs.com\nGS International",
+        "bbox": [
+            529,
+            714,
+            707,
+            766
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Will Chen\n+971(4)214-9942\nwill.y.chen@gs.com\nGS International",
+        "bbox": [
+            540,
+            784,
+            715,
+            835
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Neil Mehta",
+        "bbox": [
+            745,
+            713,
+            821,
+            728
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)357-4042",
+        "bbox": [
+            746,
+            726,
+            859,
+            739
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "neil.mehta@gs.com",
+        "bbox": [
+            748,
+            739,
+            872,
+            753
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS & Co. LLC",
+        "bbox": [
+            746,
+            750,
+            901,
+            765
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S.",
+        "bbox": [
+            53,
+            875,
+            942,
+            948
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs",
+        "bbox": [
+            42,
+            26,
+            243,
+            61
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "EQUITY RESEARCH | June 22, 2026 | 5:26AM CEST",
+        "bbox": [
+            614,
+            29,
+            950,
+            46
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "The GS Group, Inc.",
+        "bbox": [
+            702,
+            955,
+            942,
+            972
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The bankability of these levers varies. We group them as proven (drilling efficiency, seismic processing, production uptime, topside debottlenecking, gas-lift optimisation), emerging (predictive maintenance, autonomous platforms) and aspirational (step-change in recovery factors, improved sub-surface) — and we include only the first two in our analysis.",
+        "bbox": [
+            267,
+            59,
+            911,
+            148
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We map these conclusions into subsector implications for the oil & gas value chain. The producers would benefit from shorter time to market and lower costs, while we see more differentiation in services, with the enablers and structural beneficiaries of AI adoption standing out — in this context, we highlight TGS (Buy) for its independent subsurface multi-client library, the critical input for AI-driven seismic and exploration workflows, Vallourec (Buy) for the OCTG intensity of a faster, higher-throughput drilling cycle and SLB (Buy) for its leading digital business.",
+        "bbox": [
+            267,
+            159,
+            913,
+            284
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We spoke with companies across the oil & gas value chain — spanning integrated majors, upstream producers, services, seismic providers and digital vendors — to assess where AI could have the most tangible impact. Two questions frame our analysis: how much could AI compress project timelines and how materially could it impact the economics of oil projects and the overall Top Projects cost curve.",
+        "bbox": [
+            267,
+            358,
+            916,
+            446
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "On time to market, AI is already delivering a clear step-change — but almost entirely pre-FID. In this report we model potential time savings enabled by AI/digitisation, estimating that AI and high-performance compute could compress the full greenfield deepwater cycle from c.12 years to c.7 years on average, a reduction of c.38%. The gains are heavily front-loaded, with 90% captured before final investment decision: exploration shortens by 55%, appraisal by 40-50% and FEED by a similar 40-50%, driven by faster seismic processing, automated interpretation and AI-enabled engineering workflows. By contrast, post-FID phases remain structurally constrained — construction compresses by only c.10% and FPSO fabrication remains effectively fixed at c.4 years, governed by yard capacity, steel fabrication and equipment lead times.",
+        "bbox": [
+            267,
+            457,
+            908,
+            651
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "On the economics of oil projects, AI is emerging as a meaningful driver of upstream economics through four core levers: capex reduction (\\~+1.9pp IRR), faster time-to-market (\\~+0.8pp IRR), production uplift (\\~+0.5pp IRR) and opex savings (\\~+0.3pp IRR) on our estimates. In aggregate, our assumptions (capex -10%, opex -10%, \\~3 months faster delivery, \\~3% higher lifetime production) imply an uplift in a typical greenfield IRR from 15.5% to 19.0% (+3.5pp) and 15% cut in breakevens. Translated to our Top Projects cost curve (Exhibit 2), the 75th percentile could move our long-term Brent forecast from \\$75/bl to \\$64/bl.",
+        "bbox": [
+            267,
+            662,
+            913,
+            804
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The IRR uplift decomposes into four drivers in order of contribution. 10% capex reduction is the largest, driven by faster well design and execution (operators are quoting 20-25% reductions in drilling time and engineering cycles compressed from months to weeks). Closely behind is time to market (-3 months), which comes from compressing the subsurface-to-FID phase where companies report that seismic interpretation is now 5-10x faster and prospect prediction success has moved from \\~50% to \\~75% in pilot basins. On the operating side, production uplift (+3%) stems from AI-enabled optimisation of field performance: real-time tuning (e.g. artificial gas lift), digital twins identifying bottlenecks and improved uptime through predictive analytics. This effectively increases output from the same asset base. Finally, the 10% opex reduction is the smallest contributor but the most visible operationally, with autonomous platform concepts targeting around -25% platform opex and predictive maintenance aiming at -20-30% maintenance cost and reducing unplanned downtime.",
+        "bbox": [
+            267,
+            814,
+            885,
+            921
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "aside_text",
+        "text": "PM Summary",
+        "bbox": [
+            78,
+            311,
+            194,
+            333
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            267,
+            59,
+            913,
+            184
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We group these drivers into three buckets to flag where the numbers are bankable today versus where they are still aspirational. Proven levers — faster drilling, seismic acceleration, production efficiency, topside debottlenecking, gas-lift optimisation — are already delivering measurable results across multiple operators and underpin the bulk of the IRR uplift. Emerging levers — predictive maintenance, autonomous platforms — have credible pilots and vendor evidence but limited at-scale track record. Aspirational levers — step-change recovery factor uplift — remain a 5-10 year story and we do not reflect these.",
+        "bbox": [
+            267,
+            194,
+            916,
+            335
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Stock implications. We see the most potential for companies that either enable AI adoption or structurally benefit from it.",
+        "text_level": 2,
+        "bbox": [
+            269,
+            359,
+            880,
+            393
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "On the enabler side, we highlight TGS (Buy), which in our view is well positioned to capture AI-driven upside in oil services through ownership of the largest global multi-client seismic library (controls \\~60% of global multi-client data acquired since 2018), with strong exposure to key basins, supported by extensive seismic, well log, production and geological datasets. As AI adoption accelerates, access to high quality proprietary subsurface data becomes a gating factor, creating recurring, high-margin monetisation opportunities.",
+        "bbox": [
+            269,
+            395,
+            906,
+            518
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In a structural beneficiary context, we note Vallourec (Buy) for the OCTG intensity of a faster, higher-throughput drilling cycle. As AI improves subsurface imaging and well placement, operators are unlocking deeper, higher pressure and more technically demanding reservoirs, structurally reinforcing demand for high-spec OCTG. In our view, Vallourec stands out in this respect: its premium connections, corrosion-resistant alloys and integrated tubular solutions are specifically engineered for harsh-environment and HP/HT applications — a differentiated offer mass-market mills cannot easily replicate. We see this as supportive of both volumes and pricing, positioning Vallourec as a leveraged beneficiary of upstream digitalisation.",
+        "bbox": [
+            267,
+            530,
+            910,
+            689
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We also highlight SLB (Buy) as a key beneficiary of accelerating digital spend in oil & gas. According to SLB, industry IT penetration remains underinvested at \\~4–6% of capex versus \\~10–12% in peer industries, a gap the company expects to narrow over time. The company estimates its addressable digital market at \\~\\$25bn today, expanding to \\~\\$35bn by 2030 (with upside to \\~\\$50bn driven by AI adoption), with SLB already exposed to about two-thirds of this opportunity. SLB's competitive edge is anchored in domain-specific AI. While generic LLMs are optimised for text, upstream workflows require processing complex subsurface and engineering data. SLB's combination of proprietary datasets, deep domain expertise in oil & gas data structures and understanding of cross-functional operator workflows positions it to design fit-for-purpose AI applications with higher utility and adoption versus generic models, which typically require significant modification and often struggle with technical data. We view this integration of data, domain knowledge and workflow-specific model",
+        "bbox": [
+            267,
+            699,
+            913,
+            930
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Changes to 2026 Top Projects cost curve under our AI scenario design as a significant moat that should benefit SLB and sustain its leadership in oilfield digital and software.",
+        "bbox": [
+            78,
+            684,
+            470,
+            699
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            269,
+            59,
+            885,
+            94
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We are more cautious on FPSO contractors and pure subsea construction where the bottleneck is physical fabrication rather than digital workflows.",
+        "bbox": [
+            269,
+            106,
+            882,
+            141
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 1: Time to market of a deepwater oil project: potential AI-enabled reduction vs baseline",
+        "bbox": [
+            78,
+            157,
+            740,
+            172
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Total project lifecycle — AI / LLM / compute compress time-to-first-oil by \\~38% (\\~11.6 yrs → \\~7.2 yrs)\nBaseline 11.6 yrs → AI-enabled 7.2 yrs | saving of 4.4 years (-38%)",
+        "bbox": [
+            130,
+            178,
+            746,
+            200
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6d2d0a46e83412b34c5a353d93ed0ed77745816ccafddb0fb8060d2b12175799.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            84,
+            208,
+            913,
+            359
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/130480097af19b675ab98f9ff882fd96d21f0dff796258339be397692da29ae0.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Block durations match the individual stage charts. Overlap between blocks: baseline 20% / 20% / 0%; AI scenario 30% / 40% / 0%.",
+            "The AI/LLM/Compute-enabled time frame range in the exhibits is based on aggregated feedback from our industry discussions, with the estimated time savings at the midpoint."
+        ],
+        "bbox": [
+            86,
+            395,
+            911,
+            550
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Source: Company data, GS Global Investment Research",
+        "bbox": [
+            78,
+            614,
+            426,
+            627
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 2: At 11-15% commercial WACC, the 75th percentile of the oil cost curve would move from \\$66/bbl to \\$57/bbl",
+        "text_level": 2,
+        "bbox": [
+            78,
+            643,
+            473,
+            684
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f1145eadcb5d4cf7ca163b4efd51f73b7ec71edc56ef9b9b7f7a986d806bdb34.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 3: We estimate AI could lift the IRR of an average greenfield field by 3.5pp, with capex and time-to-market driving most of the uplift"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research",
+            "IRR decomposition of our AI scenario on an average greenfield field"
+        ],
+        "bbox": [
+            91,
+            719,
+            434,
+            882
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/abb39d25defcf4cfb1d64f74eebe3b7c80a55e3af5fe823f0b4e54f2d282fdfc.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "bbox": [
+            519,
+            724,
+            859,
+            873
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            918,
+            44
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 4: Drivers of the improvement of oil field economics through AI",
+        "text_level": 2,
+        "bbox": [
+            78,
+            71,
+            570,
+            87
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "AI levers on a producing offshore field",
+        "text_level": 2,
+        "bbox": [
+            88,
+            99,
+            439,
+            116
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Productivity and cost levers — sized for a typical deepwater hub. Sourced from operator and vendor calls.",
+        "bbox": [
+            88,
+            118,
+            576,
+            130
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/290db643b6f7374fa7bcaa4a7b0bdd21e25de6e3d72e8cfbf5a2e12875c3d8aa.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td colspan=\"2\">Productivity levers</td><td>more barrels from the same hardware</td></tr><tr><td>LEVER</td><td>HOW IT WORKS</td><td>EXAMPLE OF WHAT IT CAN DELIVER</td></tr><tr><td>Higher exploration &amp; infill discovery ratePROVEN</td><td>AI-driven seismic processing and interpretation surface prospects a human eye misses, and reduces bias in well-targeting. Same seismic dataset, more (and better-ranked) drillable targets.</td><td>Seismic processing time 1-2 months vs 12-18 (5-10× speed-up, up to 50×)Prospect prediction rate 50% → 75% on difficult carbonates (blind tests)</td></tr><tr><td>Topside debottlenecking (digital twin)PROVEN</td><td>Live virtual copy of the FPSO topside, fed by real-time sensors. Spots the single weakest link capping throughput (separator, compressor, pump) and simulates the best operating settings before changing anything on the real plant. Best settings then replicated across sister vessels.</td><td>Guyana example: a digital twin was deployed across the 4-FPSO fleet, allowing engineers to compare vessel-to-vessel and re-tune topside operating settings live. Overall production increased by ~100 kboed (+12%) with no new wells and no new equipment — purely from replicating best-vessel parameters across sister hullsVendor framing: +2-4% production = the whole value of an AI exercise on a producing facility (equivalent to a 20-40% reduction in unplanned downtime)</td></tr><tr><td>Production efficiency / uptimePROVEN</td><td>AI ingests historical failures + live sensor data, predicts which piece of kit is about to trip the plant, and triggers intervention before it does. Higher availability = same nameplate runs closer to 100%.</td><td>Large producing hubs are pushing production efficiency into the 96-99% range, with 2-5 ppts attributable to AI. On equipped rigs, unplanned downtime is now &lt;1% vs 3-5% historically.</td></tr><tr><td>Real-time artificial gas-liftPROVEN</td><td>AI continuously adjusts the volume of gas injected into each producing well based on live downhole data, keeping every well at its individual sweet spot rather than a fleet-average setting.</td><td>+3-5% production per well in onshore tight-oil basins</td></tr><tr><td>Recovery-factor uplift (4D + reservoir AI)ASPIRATIONAL</td><td>Agentic AI ties seismic, flowlines, facilities and reservoir model into one live system, identifying bypassed oil and the best wells / EOR scheme to drain it. Needs operator subsurface data — still siloed.</td><td>Deepwater target: +2-5 ppts recovery factor</td></tr><tr><td colspan=\"2\">Cost levers</td><td>lower opex and maintenance capex</td></tr><tr><td>LEVER</td><td>HOW IT WORKS</td><td>EXAMPLE OF WHAT IT CAN DELIVER</td></tr><tr><td>Faster drilling timePROVEN</td><td>Real-time AI on rig sensor data (geosteering, drilling parameter optimisation, invisible-lost-time elimination) shortens days-per-well; AI-assisted well design shortens the planning cycle that precedes the rig. Fewer rig days = lower well capex.</td><td>Drilling time -20-25% on modern rigs; 10-20% efficiency gain in Permian shale (replicable in deepwater)Well design cycle 5-12 months → 50% quicker17-stage well planning process: 6 months → 1 month</td></tr><tr><td>Autonomous platforms (eliminate offshore human element)PROVEN</td><td>Topside operations run from an onshore control room using a digital twin + AI agents. Platform manned only periodically for physical maintenance; control-room operators replaced by chat-interface simulators. Enabled by drones and subsea robotics replacing divers and inspectors. Removes the bed-count, helicopter and catering bill.</td><td>Greenfield reference: opex -25% vs comparable field; 2 wk manned / 4 wk unmanned; 40 beds vs 3× usualBrownfield example: full platform operated from shore</td></tr><tr><td>Predictive / condition-based maintenanceEMERGING</td><td>Sensors on every piece of rotating equipment feed a time-series AI model that flags impending failures days/weeks ahead. Replaces calendar-based maintenance (&quot;service every 6 months&quot;) with condition-based intervention only when the kit actually needs it.</td><td>Operator target: maintenance cost -20-30%Unplanned downtime &lt;1% vs 3-5% baseline on equipped rigsRoot-cause analysis cycle 6 wk → 6 d</td></tr></table>",
+        "bbox": [
+            89,
+            141,
+            906,
+            824
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            906,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 5: Top Projects ecosystem through an AI lens",
+        "text_level": 2,
+        "bbox": [
+            61,
+            91,
+            344,
+            109
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Implications for subsectors in the oil & gas value chain (ecosystem companies listed are illustrative and non-exhaustive and taken from our Top Projects report)",
+        "bbox": [
+            60,
+            107,
+            819,
+            127
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Offshore services value chain",
+        "text_level": 2,
+        "bbox": [
+            66,
+            202,
+            219,
+            220
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Each column is a value-chain subsector; the coloured header shows the direction of AI impact at the subsector level. Companies listed are illustrative of the subsector — not all are covered and several are private; this is a sector view, not a stock view.",
+        "bbox": [
+            66,
+            223,
+            720,
+            236
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/5a8afa3056c98b758c0a8fc78b9e1deab81953b6d72fcb82d8a3328d83d6d81a.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>SeismicBEST PLACED ▲▲</td><td>ConstructionNEUTRAL •</td><td>FPSOsNEUTRAL •</td><td>Smart subsea equipmentBENEFICIARY ▲</td><td>Rotating / power equipmentNEUTRAL •</td><td>DrillingSTRUCTURAL HEADWIND ▼▼</td><td>Well completionBENEFICIARY ▲</td><td>OCTGBENEFICIARY ▲</td></tr><tr><td>Best placed. AI / MLreprocessing turns legacyseismic libraries into newrevenue — same data soldagain at higher prices. Tech-heavy, asset-light.</td><td>Neutral. AI lifts productivitybut contracts are lump-sumbid — savings getcompeted away tooperators.Technip EnergiesTechnipFMCSubsea 7Aker SolutionsSaipemFluorAecomTecnicas ReunidasBoskalis</td><td>Neutral. The two variablesthat drive FPSO economics— build time (~4 years, setby yard slots and steel-cutting capacity) and buildcost (lump-sum,competitively bid) — arelargely fixed and notmaterially changed by AI.FEED can shorten andoperations get smarter, butthe headline timeline andunit economics ofconstruction stay the same.SBM OffshoreMODECYinsonBW OffshoreBumi ArmadaMISC BhdAltera InfrastructureAker SolutionsFluorBoskalis</td><td>Beneficiary. Smarter wells= more sensors, fibre-opticstrands and ROV inspectionper platform. Content perFPSO / per umbilical rises;recurring service contractsgrow.TechnipFMCOceaneeringJDRNKTAlfa Laval</td><td>Neutral. This is themechanical and electricalhardware on the platform— pumps, compressors,turbines, switchgear, valves.AI helps operators run thiskit more efficiently, but thekit itself doesn&#x27;t change:same units sold, same priceper unit. Oil &amp; gas is alsoonly a small slice of revenuefor these names — thebigger AI story for them isdata centres, gridelectrification and factoryautomation, not offshore.NOV Inc.ABBSiemensSchneiderWartsilaPrysmianRotorkSmiths Group</td><td>Structural headwind.Drillers paid by the day. AI-optimised wells need fewerrig-days, and pre-drilled /suspended wells reducecampaign length.Productivity gains flowstraight to the operator, notthe contractor. Shale-styleproductivity revolutionapplied to offshore = sameoutput with materially fewerrigs.TransoceanSeadrillValarisNoble CorporationBorr DrillingADES HoldingADNOC DrillingChina Oilfield Services</td><td>Beneficiary. Higher techintensity per well —intelligent completions,downhole sensing, AI-optimised stimulation. Valueper well rises even as drill-time falls.SLBHalliburtonBaker HughesNOV Inc.WeatherfordHunting</td><td>Beneficiary. AI enableslonger laterals and morecomplex wells (multi-lateral,extended-reach, HPHT).Metres of pipe per well risematerially.TenarisVallourecHuntingNippon Steel</td></tr></table>",
+        "bbox": [
+            69,
+            240,
+            875,
+            679
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/1a8ca507ff4b646f372346b179138721466a719609a546f29495531c110d80b6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            73,
+            687,
+            90,
+            705
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Industrial / oilfield software BEST PLACED ▲▲",
+        "bbox": [
+            90,
+            689,
+            229,
+            704
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The cleanest AI subsector beneficiary. Across the majors, the software stack typically has three layers: SLB is used for subsurface and reservoir applications; Cognite and Palantir are used as the industrial data fabric and dynamic digital twin layer (operators typically use one or the other); AspenTech is used for industrial / process operations. Pure software economics, asset-light, recurring revenue, and content per asset rising as operators digitalise — AI is the product, not just a productivity tool.",
+        "bbox": [
+            73,
+            714,
+            830,
+            761
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "● Best placed ▲▲ ● Beneficiary ▲ ● Neutral ● ● At risk ▼ ● Structural headwind ▼▼\nBold = GS-covered Regular = Public, not covered Italic grey = Private\nSource: GS Top Projects 2026 services ecosystem; GS Global Investment Research. Peer lists per ecosystem mapping: not exhaustive.",
+        "bbox": [
+            66,
+            771,
+            332,
+            808
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            61,
+            32,
+            143,
+            50
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            794,
+            35,
+            936,
+            53
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "Source: Company data, GS Global Investment Research",
+        "bbox": [
+            61,
+            888,
+            330,
+            903
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            61,
+            941,
+            128,
+            955
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            926,
+            942,
+            936,
+            955
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "AI/Digitalisation offers scope to cut greenfield deepwater time-to-market by c.4 years",
+        "text_level": 2,
+        "bbox": [
+            78,
+            60,
+            782,
+            80
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "We estimate AI and advanced computing could compress the full greenfield deepwater cycle — from licence award to first oil — from c.12 years to c.7 years, a savings of c.4 years (-c.38%).",
+        "bbox": [
+            267,
+            106,
+            905,
+            157
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The gains are heavily front-loaded: roughly $90\\%$ of the time saving sits before FID in the subsurface and engineering phases where AI's leverage is highest:",
+        "bbox": [
+            269,
+            169,
+            911,
+            204
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Exploration (-c.55%, c.4.2 → c.1.9 years at the midpoint). The largest absolute savings. The gain is concentrated in the digital workstreams that sit between data acquisition and the drill bit: seismic processing and imaging (-c.61%) where ML-based velocity modelling, denoising and FWI compress what are typically 12-24 month cycles into a few months; interpretation and prospect ID (-c.67%) where deep-learning fault/horizon detection and automated prospect ranking could shorten this from 12-24 months to 3-9 months; well-log and reservoir characterisation (-c.78%) and well design / target selection (-c.71%) where AI co-pilots could collapse multi-quarter petrophysical and planning loops to weeks. By contrast, the physical bookends — seismic acquisition (-c.11%) and exploration well drilling (-c.33%) — barely move because vessel time and rig days are governed by physics and weather windows, not software.",
+        "bbox": [
+            271,
+            217,
+            916,
+            443
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "■ Appraisal (-c.39%, c.1.9 → c.1.2 years). The saving sits squarely in the post-well subsurface loop: subsurface modelling and resource estimation (-c.72%) drops from c.6-12 months to weeks as AI-assisted history matching, uncertainty quantification and automated model updates replace serial manual reruns; appraisal well drilling itself (-c.25%) also compresses, mainly because richer pre-drill models allow fewer, better placed wells rather than faster drilling, per se. Well testing / DST (-c.12%) is largely unchanged — flow periods are dictated by reservoir physics.",
+        "bbox": [
+            271,
+            450,
+            900,
+            599
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "■ Pre-FID / concept and FEED (-c.46%, c.2.2 → c.1.2 years). The biggest proportional savings and where AI is rewriting the front-end engineering playbook. Concept selection / pre-FEED (-c.56%) halves as gen-AI-assisted screening compares dozens of development options in days rather than quarters; according to our conversations, average FEED is shortening from c.12-18 months to c.6-12 months on more complex projects, a c.40-50% time compression, with simpler FEEDs running closer to c.6 months today. This sits within the broader “AI on time-to-market” framing, but the underlying drivers, in our view, are only partially AI: of the three levers we identify, only one — digital engineering tools — is genuinely AI-driven; the other two (standardisation, parallelisation) pre-date the current wave and are amplified rather than created by it.",
+        "bbox": [
+            269,
+            607,
+            908,
+            814
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Where AI helps least — and where the bottleneck now sits. Once a project crosses FID, the calendar is governed by physics and supply chains, not algorithms:",
+        "bbox": [
+            269,
+            825,
+            892,
+            861
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "■ Development / construction (-c.11%, c.4.5 → c.4.0 years). This is now the binding constraint on first oil. FPSO fabrication (-c.6%, c.4 years) is the gating sub-stage — steel cutting, module assembly, integration and sea trials are serial physical",
+        "bbox": [
+            271,
+            875,
+            913,
+            928
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Total project lifecycle — AI / LLM / compute compress time-to-first-oil by \\~38% (\\~11.6 yrs → \\~7.2 yrs)\nBaseline 11.6 yrs → AI-enabled 7.2 yrs | saving of 4.4 years (-38%)",
+        "bbox": [
+            130,
+            265,
+            748,
+            289
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "activities, with digital twins and modular design shaving only months on repeatable sister-units. Procurement and long-lead delivery (0%, 18-24 months) do not move at all, as OEM queues for subsea trees, umbilicals, turbines and compressors are set by vendor capacity rather than project workflow. Hook-up and commissioning (0% headline) sees no shorter bar but materially more overlap with the FPSO yard window under AI-led pre-commissioning (c.67% overlap vs c.33% baseline). The sub-stages that do compress well: development drilling (-c.25%) through AI-optimised well plans and real-time drilling guidance.",
+        "bbox": [
+            295,
+            59,
+            913,
+            210
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ce7f397eccd3d00a6867ec5b5d1a7e9b0fbebc22283b00e3e81dddd54fce5460.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 6: We estimate AI and advanced computing could compress the full greenfield deepwater cycle — from licence award to first oil — from c.12 years to c.7 years, a savings of c.4 years (-c.38%)."
+        ],
+        "chart_footnote": [
+            "Block durations match the individual stage charts. Overlap between blocks: baseline 20% / 20% / 0%; AI scenario 30% / 40% / 0%.",
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "bbox": [
+            83,
+            262,
+            913,
+            643
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "1) Exploration",
+        "text_level": 2,
+        "bbox": [
+            272,
+            700,
+            383,
+            718
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Exploration cycle compresses by \\~55% / \\~2.3 years at the midpoint, driven mostly by compute, with the gain unevenly distributed. Based on our recent conversations with operators and service providers, cross-checked against publicly disclosed company material, we estimate the exploration cycle — from licence award to a completed exploration well — has the potential to be shortened from \\~2.8-5.7 years to \\~1.0-2.8 years using the compute + AI toolkit being deployed today. At the midpoint, this represents a \\~28-month time savings (-55%), although we caution that the headline figure represents an achievable upper bound rather than a sector average. Importantly, much of the acceleration to date is driven by raw compute scaling (HPC, GPU) rather than AI per se; machine learning sits on top of that compute layer, amplifying productivity but is rarely the primary lever.",
+        "bbox": [
+            267,
+            719,
+            916,
+            914
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Around 80% of the calendar savings sits in three phases on the critical path: interpretation, well design and seismic processing. Other phases could see large gross duration cuts but contribute little to the cycle because they run in parallel to the bottleneck:",
+        "bbox": [
+            269,
+            59,
+            898,
+            128
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Interpretation & prospect ID (\\~33% of cycle savings, \\~9 months): the single biggest contributor, this 2-8x productivity gain compresses the phase from 12-24 months to 3-9 months. AI/ML plays a larger role here than in seismic processing — automated horizon picking, seismic facies classification — and is enabled by the ability to ingest \\~100% of the dataset on cloud/HPC compute (vs \\~2% manually).",
+        "bbox": [
+            271,
+            143,
+            906,
+            234
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "\\- Well design & target selection (\\~25%, \\~7 months): we estimate AI could accelerate this by 2-7x, from 5-12 months to 1-4 months, with documented field-level dollar savings already disclosed. LLM/ML genuinely drives this phase, not just compute scaling.",
+        "bbox": [
+            271,
+            243,
+            908,
+            316
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Seismic processing & imaging (\\~23%, \\~6.5 months): 2-10x acceleration in processing time, from 12-24 months to 2-12. The dominant driver is GPU-accelerated full-waveform inversion on dedicated HPC infrastructure; ML adds incremental denoising and velocity-model speed-up but is not the primary contributor.",
+        "bbox": [
+            271,
+            324,
+            903,
+            415
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "A further $\\sim 10\\%$ comes from acreage application via LLM-drafted submissions (3-6 months $\\rightarrow 1 - 3$ , 3 months saved). Drilling adds $\\sim 6\\%$ (2 months) from NPT reduction. Both are smaller contributors but on the critical path.",
+        "bbox": [
+            269,
+            429,
+            911,
+            481
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Hardware-bound or parallel-running phases see limited calendar benefit:",
+        "bbox": [
+            269,
+            494,
+            836,
+            510
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Seismic acquisition (\\~3%, <1 month): vessel-bound, governed by metocean and rig availability. This would become the new binding constraint on the AI-enabled cycle — further compression requires OBN/sparse nodes, not more compute.",
+        "bbox": [
+            271,
+            523,
+            916,
+            578
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Reservoir characterisation (\\~0%): here the distinction between gross and calendar impact is sharpest. Foundation models for well logs deliver a 3-6x productivity gain (6-12 months → 1-3 months per prospect) — a real and important productivity story for petrophysics teams. But because this phase runs \\~80% in parallel with interpretation, its standalone calendar contribution is near zero in the central case. The benefit is captured as a quality/coverage gain (more wells re-analysed per prospect, fuller subsurface picture) rather than as time-to-FID compression.",
+        "bbox": [
+            271,
+            585,
+            916,
+            717
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Implications. Two points stand out for company exposure and the broader exploration thesis:",
+        "text_level": 2,
+        "bbox": [
+            269,
+            729,
+            908,
+            762
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "(i) Value capture is concentrated in operators with proprietary data and the compute/partner stack to exploit it. The three biggest saving phases all rely on HPC and ML run against pre-existing digital data, in our view structurally favouring incumbents in mature basins with decades of well and seismic history (e.g. NCS, UKCS, GoM brownfield, Permian) — and those with hyperscaler/HPC partnerships (e.g. Equinor-Microsoft, bp-Palantir, Aramco-Google, ExxonMobil-Microsoft).",
+        "bbox": [
+            267,
+            775,
+            906,
+            880
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "(ii) Frontier exploration captures little of this benefit. Both compute scaling and model training require analogues / pre-existing data which by definition are absent in true frontier basins (Namibia, Suriname, Eastern Mediterranean). Consistent with this, no operator has to date publicly claimed a compute- or AI-originated frontier discovery, although first attempts are planned.",
+        "bbox": [
+            269,
+            891,
+            877,
+            926
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            40
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            905,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            269,
+            59,
+            890,
+            113
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 7: Exploration cycle compresses by \\~55% / \\~2.3 years at the midpoint, driven mostly by compute, with the gain unevenly distributed",
+        "bbox": [
+            76,
+            128,
+            895,
+            159
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1d48ff455cae4ebd8d16b192c16ca9e1c0acfc93caa125d1d5a7e5d3060cebd9.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Phase durations: operator-quoted ranges based on our interviews and other research.\nOverlap with previous phase: #3 vs #2 = 30%; #4 vs #3 = 50%; #5 vs #4 = 80%; #6 vs #5 = 30%. End of phase #7 = total elapsed cycle. Same x-scale on both panels for direct comparison."
+        ],
+        "bbox": [
+            81,
+            162,
+            913,
+            584
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "Source: Company data, GS Global Investment Research",
+        "bbox": [
+            78,
+            619,
+            426,
+            631
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            898,
+            955,
+            918,
+            965
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 8: Around 80% of the potential calendar savings sits in three phases on the critical path: interpretation, well design and seismic processing.",
+        "bbox": [
+            269,
+            71,
+            893,
+            102
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Total cycle saving: 28 months (51 → 23 mo, -56%). Marginal contribution per phase, normalised to 100%. Contribution to exploration cycle saving, by phase",
+        "bbox": [
+            287,
+            111,
+            769,
+            138
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7baecf83acb056a6e8a6fa84f23277b2e713fd016373f02f3e42b7e9733e5c31.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Method: marginal saving = baseline cycle minus cycle when only that phase is AI-enabled, normalised to 100% (absorbs overlap interactions). Phase 5 runs \\~80% parallel to #4, so its stand-alone contribution to the critical path is near zero despite a large gross duration cut."
+        ],
+        "bbox": [
+            374,
+            154,
+            893,
+            320
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Source: Company data, GS Global Investment Research",
+        "bbox": [
+            269,
+            398,
+            620,
+            412
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "2) Appraisal: \\~40-50% cycle compression, almost entirely from the subsurface workflow",
+        "text_level": 2,
+        "bbox": [
+            269,
+            431,
+            854,
+            465
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Once a discovery is made, operators move into appraisal — the phase that converts a hydrocarbon find into a bookable resource volume and a development-ready reservoir model. Relative to the historical 1-3-year appraisal cycle, we see AI / high-performance compute / LLM-driven workflows compressing it to c.0.5-1.5 years (-40 to -50%), with savings heavily skewed to the back-end subsurface workflow rather than the physical well operations.",
+        "bbox": [
+            267,
+            469,
+            908,
+            574
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "1. Appraisal well drilling (2-3 wells): 6-18 → 5-13 months (\\~20-25% faster)",
+        "text_level": 2,
+        "bbox": [
+            269,
+            585,
+            841,
+            603
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "AI-assisted drilling parameter optimisation, automated geosteering and real-time formation-evaluation feedback cut non-productive time and reduce stuck-pipe and sidetrack incidents. The lever is bounded — this remains a physical rock-breaking activity gated by rig mechanics, casing and cementing — so compression is meaningful but capped at roughly one-fifth to a quarter of cycle time.",
+        "bbox": [
+            267,
+            614,
+            903,
+            703
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "2. Well testing / DST: 2-6 → 2-5 months (broadly unchanged)",
+        "text_level": 2,
+        "bbox": [
+            269,
+            713,
+            733,
+            729
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Rate-limited by reservoir physics, not data processing — pressure build-ups and interference tests require real flow periods of days-to-weeks regardless of compute power available. AI accelerates interpretation of the resulting pressure-transient and PVT (Pressure-Volume-Temperature) data, but the acquisition window itself is dictated by reservoir response time.",
+        "bbox": [
+            267,
+            741,
+            903,
+            830
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "3. Subsurface model & resource estimation: 6-12 → 1-4 months (\\~70-80% faster) — the dominant lever",
+        "text_level": 2,
+        "bbox": [
+            269,
+            840,
+            910,
+            875
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This is where the bulk of total appraisal compression sits. The historical workflow — building a static earth model, running dynamic flow simulations, generating probabilistic resource ranges (1P/2P/3P) and feeding the FDP — is a serial, manually-intensive process measured in months. AI / high-performance compute reshapes it on four fronts:",
+        "bbox": [
+            269,
+            886,
+            915,
+            922
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            918,
+            44
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            898,
+            955,
+            916,
+            967
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            267,
+            59,
+            915,
+            95
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "■ GPU-accelerated seismic re-processing and AVO/inversion runs in hours rather than weeks, enabling iterative model refinement instead of one-shot interpretation;",
+        "bbox": [
+            269,
+            107,
+            910,
+            143
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "■ ML-based reservoir model rebuilds complete in days vs months, enabling multiple geological scenarios to be tested within a single FDP cycle;",
+        "bbox": [
+            271,
+            150,
+            908,
+            186
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "\\- Unified data architectures collapse the geoscientist “data-wrangling tax” from roughly two-thirds of working time to under a fifth; and",
+        "bbox": [
+            271,
+            193,
+            883,
+            229
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "■ LLM-assisted drafting of resource statements, peer-review packs and partner/regulator submissions compresses a historically multi-week back-end task to days.",
+        "bbox": [
+            271,
+            236,
+            903,
+            291
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/353967ab6d91cd91374802451d6b4f538578d4d3e738b34b2b97ed8fec25a1ab.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 9: Appraisal: potential \\~40-50% cycle compression, almost entirely from the subsurface workflow"
+        ],
+        "chart_footnote": [
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "bbox": [
+            84,
+            329,
+            908,
+            638
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "3) Pre-FID/Concept: FEED — c.40-50% time compression driven by three roughly equal levers",
+        "text_level": 2,
+        "bbox": [
+            269,
+            680,
+            875,
+            714
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Average FEED shortens from c.12-18 months to c.6-12 months on more complex projects, a c.40-50% time compression, with simpler FEEDs running closer to c.6 months today. This sits within the broader “AI on time-to-market” framing but the underlying drivers, in our view, are only partially AI: of the three levers we identify, only one — digital engineering tools — is genuinely AI-driven; the other two (standardisation, parallelisation) pre-date the current wave and are amplified rather than created by it.",
+        "bbox": [
+            267,
+            715,
+            916,
+            824
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "First, standardisation of topsides modules, subsea kit and FPSO hull design has been the largest single contributor over the last decade and pre-dates the current AI cycle.",
+        "bbox": [
+            271,
+            834,
+            916,
+            888
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "■ Second, parallelisation with exploration — running early-stage concept and FEED work concurrently with appraisal rather than sequentially, increasingly enabled by",
+        "bbox": [
+            269,
+            897,
+            900,
+            933
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            918,
+            44
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            898,
+            955,
+            916,
+            967
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "LLM-drafted development plans built before acreage award. Practically, this pulls FEED 2-6 months left in the calendar without compressing FEED itself.",
+        "bbox": [
+            297,
+            59,
+            893,
+            95
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Third, AI and digital engineering tools take repetitive desk work out of the FEED process. A modern FEED produces thousands of engineering documents — sizing each pump and compressor, drawing the plant flow diagrams (P&IDs), drafting the technical specs sent to suppliers for bidding (RFQs), and re-running fluid-flow and process simulations every time a design parameter changes. Historically each of these tasks needed engineering teams working in sequence. AI tools — unified data platforms (so engineers don’t redo work that already exists elsewhere in the company), automated process simulators, LLM that draft technical documents from templates and the high-performance compute that runs hundreds of simulation cases overnight — collapse the time on each of these steps from weeks to hours.",
+        "bbox": [
+            271,
+            103,
+            911,
+            292
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "4) Development / Construction — c.10% time compression, capped by FPSO build This phase compresses by only c.10% with AI / digital tools — from c.4.5 years to c.4 years on a typical deepwater project — making it the least AI-impacted block in the lifecycle. The reason is structural: FPSO fabrication, the longest single sub-stage at c.4 years, is essentially incompressible — both IOC operator and FPSO contractor contacts have been explicit on this. Other sub-stages compress more meaningfully but run in parallel with fabrication, so they create schedule slack rather than earlier first oil.",
+        "bbox": [
+            267,
+            315,
+            915,
+            439
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Where the gains are concentrated:",
+        "text_level": 2,
+        "bbox": [
+            269,
+            450,
+            540,
+            467
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "■ Development drilling (-25%) — the biggest absolute saver. AI compresses both engineering (well design from months to weeks via templates and LLM-drafted specs) and execution (real-time trajectory and parameter optimisation from downhole sensors, predictive maintenance on rig equipment, batch-drilling learnings re-used across wells). Operators report 20-30% per-well time reduction and unplanned downtime cut to <1% from 3-5%.",
+        "bbox": [
+            269,
+            479,
+            918,
+            590
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Subsea installation (-17%) — better planning and weather-window optimisation; capped by vessel and weather constraints.",
+        "bbox": [
+            271,
+            599,
+            903,
+            633
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Where AI does not move the needle:",
+        "text_level": 2,
+        "bbox": [
+            269,
+            647,
+            553,
+            662
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "■ FPSO fabrication (-5-6%) — steel availability, yard capacity and equipment lead times dominate. AI removes engineering hours, not yard hours.",
+        "bbox": [
+            271,
+            676,
+            890,
+            713
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "■ Procurement / long-lead items (0%) — 18-24 month vendor lead times set by supplier capacity.",
+        "bbox": [
+            271,
+            720,
+            882,
+            756
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "\\- Hook-up & commissioning (0% on calendar) — vessel / weather / safety-bound. Digital twins improve start-up reliability but not the calendar.",
+        "bbox": [
+            271,
+            763,
+            900,
+            799
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            898,
+            955,
+            916,
+            967
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 10: The phase compresses by only c.10% with AI / digital tools — from c.4.5 years to c.4 years on a typical deepwater project — making it the least AI-impacted block in the lifecycle",
+        "bbox": [
+            76,
+            71,
+            857,
+            101
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Development / Construction phase — staircase Gantt with overlap\nBaseline cycle \\~54 mo (\\~4.5 yrs) → AI-enabled \\~48 mo (\\~4.0 yrs) — compression of 6 months (-11%)",
+        "bbox": [
+            181,
+            106,
+            647,
+            127
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/44cbda96ee8468fecb6024845e24f7171cd788c5c71d8bdbaad75c01b1a4dd89.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            84,
+            136,
+            911,
+            294
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3ae2a6ea5276005b8fed7a26adcac9a77ff0312def2cc36b378d10624af6a94f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Detailed engineering is part of FEED (Pre-FID block). Hook-up overlaps with FPSO yard completion: $\\sim 33\\%$ baseline, $\\sim 67\\%$ AI-enabled. AI-enabled scenario assumes repeatable-design FPSO (sister-unit benefit) with full digital-twin pre-commissioning at yard; first-of-kind units would see less compression.",
+            "Source: Company data, GS Global Investment Research"
+        ],
+        "bbox": [
+            84,
+            314,
+            913,
+            477
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            898,
+            955,
+            918,
+            965
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "AI impact on the oil cost curve",
+        "text_level": 2,
+        "bbox": [
+            78,
+            60,
+            330,
+            80
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "AI is emerging as a meaningful efficiency lever for upstream - our central scenario implies a lift to greenfield IRRs by 3.5pp and cut in breakevens by 15%, supportive of long-term Brent moving from \\$75/bl to \\$64/bl",
+        "bbox": [
+            269,
+            106,
+            903,
+            159
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Our conversations with operators point to AI becoming a meaningful efficiency lever across the upstream value chain. Our AI adoption scenario with lower capex and opex, faster time-to-market and higher uptime implies an uplift to greenfield project IRRs by 3.5pp and a cut in breakevens by 15%. Translated to our Top Projects cost curve, the 75th percentile could move our long-term Brent from \\$75/bl to \\$64/bl, with time to market and capex the key drivers of the breakeven reduction.",
+        "bbox": [
+            269,
+            170,
+            903,
+            275
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Based on our recent conversations with operators, we anchor a central AI scenario on four levers: capex -10%, opex -10%, time-to-market -3 months and uptime/predictive maintenance lifting production by 3% over the life of the field. Applied to an average Top projects greenfield (opex: \\$9/bbl, capex: \\$14.2/bbl, c.4-year FID-to-first-oil schedule, IRR: 14.5% at \\$68/bbl Brent), project IRR rises from 15.5% to 19.0% (+3.5pp) and Brent breakeven drops from \\$60/bbl to \\$51/bbl (-15%), with the bulk of the uplift coming from the absolute capex savings and the rest from earlier and modestly higher operating cash flow. Read across the cost curve as an upper-bound illustration, the 75th percentile of the Top Projects breakeven curve would move from \\$66/bbl to \\$57/bbl (at 11-15% commercial WACC), which would shift our long-term Brent assumption from \\$75/bbl to \\$64/bbl (at 13-18% WACC). Within the bundle, capex (+1.9pp) is the dominant driver of the IRR uplift, with time-to-market (+0.8pp), the production uplift (+0.5pp) and opex (+0.3pp) playing supporting roles. These contributions come from a Shapley decomposition, running the model across all 16 combinations of the four levers and averaging each lever's marginal IRR contribution.",
+        "bbox": [
+            269,
+            287,
+            913,
+            551
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "We size each lever based on our operator feedback:",
+        "bbox": [
+            269,
+            563,
+            651,
+            579
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- Capex -10% reflects best-well drilling times being cut from c.6 months to c.1 month and 25-30% drilling efficiency gains on modern rigs and well design time being halved (from 5-12 months). With drilling and engineering usually accounting for c.30-40% of greenfield capex, and subsea, topsides and installation unchanged, 10% is conservative, in our view.",
+        "bbox": [
+            271,
+            592,
+            910,
+            684
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\- Opex -10% is mid-range based on the operators independently flagging 2-5pp of uptime as technology-driven in 2025 (anecdotally, unplanned downtime down from 3-5% to below 1% at one major), and the c.25% lower opex potentially thanks to autonomous greenfield vs a comparable manned platform - the 10% reflects that not every field will move to a fully autonomous configuration.",
+        "bbox": [
+            269,
+            691,
+            910,
+            785
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Time-to-market -3 months captures only the pre-FID work that AI can compress (seismic, FEED, well design), and is consistent with operator views that the FPSO build itself (c.4 years) only shrinks by a couple of months.",
+        "bbox": [
+            271,
+            792,
+            887,
+            847
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Production +3% over field life sits between the 2-4pp uptime contribution from technology flagged by majors, 3-5% production gains from AI-led artificial gas lift in the Permian, the 2-4% throughput framing that software vendors describe as the whole value of the digital transformation and digital-twin deployments at FPSO",
+        "bbox": [
+            269,
+            854,
+            913,
+            928
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            918,
+            44
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "operators contributing c.14% incremental production in Guyana.",
+        "bbox": [
+            297,
+            59,
+            772,
+            75
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 11: At 11-15% commercial WACC, the 75th percentile of the oil cost curve would move from \\$66/bbl to \\$57/bbl",
+        "bbox": [
+            78,
+            99,
+            475,
+            140
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ab726ba5f29e21e39e45165d57b4c944cde3d95c1c7e9c208a089b82ba188b82.jpg",
+        "content": "",
+        "chart_caption": [
+            "Changes to 2026 Top Projects cost curve under AI scenario"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "bbox": [
+            89,
+            162,
+            439,
+            325
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a917dc6cd9159b1fc0547ff4d5da529c242773eed70a9cf696d8c31492be9eba.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 12: Capex and OCF profile of an average greenfield field, base vs AI scenario (\\$bn)"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research",
+            "Exhibit 13: We estimate AI could lift the IRR of an average greenfield field by 3.5pp, with capex and time to market driving the majority",
+            "IRR decomposition of our AI scenario on an average greenfield field"
+        ],
+        "bbox": [
+            519,
+            165,
+            857,
+            316
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fee9b0a635d059961d5d784ca4d155cbb42d48a91f9a3b5535d615ac9c48292d.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "bbox": [
+            91,
+            430,
+            428,
+            577
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "This report draws on company discussions including with BP, Shell, TotalEnergies, ENI, Equinor, Repsol, Aker BP, Var Energi, Devon Energy, SLB, TGS, SBM Offshore, Technip Energies, Vallourec, Viridien and Cognite.",
+        "bbox": [
+            269,
+            613,
+            906,
+            665
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Digitalisation is not new to oil & gas — but the post-2022 AI wave is genuinely incremental",
+        "text_level": 2,
+        "bbox": [
+            78,
+            694,
+            816,
+            717
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Oil & gas has been a sector in which digitalisation and machine learning have been major factors historically — embedded in upstream workflows for the better part of thirty years. Cluster-based 3D seismic processing dates to the 1990s; neural-net log interpretation and rotary-steerable drilling were mainstream by the 2000s; digital twins and predictive-maintenance ML were standard by the mid-2010s. Much of the cycle-time and unit-cost compression already visible in the majors' F&D costs and sanction-to-first-oil timelines was earned through that earlier wave. What is genuinely new since 2022 is narrower but, in our view, material: (i) foundation models pre-trained on basin-scale seismic and well-log corpora that transfer across assets rather than being rebuilt per field; (ii) generative AI applied to engineering documents, well plans and FEED packages, collapsing design and procurement iteration time; and (iii)",
+        "bbox": [
+            267,
+            739,
+            915,
+            936
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            898,
+            955,
+            916,
+            967
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            918,
+            42
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "hyperscaler-grade GPU compute which makes full-physics inversion and Monte Carlo simulations across hundreds of subsurface realisations a routine, overnight job. These layer on top of the proven digital stack rather than replace it. The table below (Exhibit 14) sets out, for each lever, what was already in place before the current AI wave and what is incremental from it.",
+        "bbox": [
+            269,
+            59,
+            897,
+            148
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 14: Oil & gas has been a sector in which digitalisation and machine learning have been a major factor historically; what is genuinely new since 2022 is narrower but, in our view, material",
+        "bbox": [
+            78,
+            164,
+            906,
+            194
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Levers improving oil & gas project economics: pre-AI baseline vs post-2022 AI wave",
+        "bbox": [
+            89,
+            203,
+            576,
+            217
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Digitalisation is not new — the left column reflects what computerisation, standardisation and earlier ML have already delivered; the right column is what is genuinely incremental from the 2022+ AI wave.",
+        "bbox": [
+            89,
+            219,
+            895,
+            243
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "table",
+        "img_path": "images/28b1a06162b7f890dd7139d641af052c38648122cdccad0247f531a6cf80a4a2.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Company data, GS Global Investment Research."
+        ],
+        "table_body": "<table><tr><td>Lever</td><td>Already achieved pre-AI (digitalisation, standardisation)</td><td>Incremental from post-2022 AI wave</td></tr><tr><td>Seismic processing &amp; imaging</td><td>FWI and RTM on on-prem HPC clusters; basic ML denoising. Bespoke, capex-heavy.</td><td>Hyperscaler GPU makes iterative re-imaging routine; 100s of velocity scenarios replace one-shot runs.</td></tr><tr><td>Subsurface interpretation</td><td>Neural-net horizon/fault picking trained single-basin; non-transferable.</td><td>Foundation models on industry-scale corpora; transferable basin-to-basin; full-survey screening vs ~2% manual.</td></tr><tr><td>Reservoir &amp; resource modelling</td><td>Assisted history matching and ensemble Kalman since 2000s; serial manual reruns.</td><td>GPU-scale Monte Carlo in days vs months; LLM-drafted resource statements and submissions.</td></tr><tr><td>Well design &amp; FEED</td><td>Standardisation of topsides/hull; parallelisation with appraisal; CAD and process simulators — drove the bulk of historical FEED compression.</td><td>Generative AI drafts RFQs, P&amp;IDs and well specs; concept screening in days vs quarters; HPC runs 100s of sim cases overnight.</td></tr><tr><td>Drilling efficiency</td><td>Rotary steerable systems, MPD, real-time drilling advisors and rule-based parameter optimisation — the bulk of historical drilling gains.</td><td>Closed-loop AI drilling, LLM well plans, batch learnings re-used across wells. Unplanned downtime &lt;1% vs 3-5%.</td></tr><tr><td>Production &amp; uptime</td><td>Rule-based gas-lift controllers since 1980s; SCADA/DCS; site-level condition-based maintenance.</td><td>Cross-fleet predictive maintenance on cloud; RL artificial lift; dynamic digital twins. 2-4pp uptime called out as technology-driven in 2025.</td></tr><tr><td>Topside debottlenecking &amp; opex</td><td>Engineering studies, manual debottlenecking workshops, basic process simulators.</td><td>Autonomous platform concepts targeting c.-25% opex on greenfield; AI optimisers running continuously.</td></tr></table>",
+        "bbox": [
+            89,
+            246,
+            903,
+            505
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Source: Company data, GS Global Investment Research",
+        "bbox": [
+            78,
+            537,
+            426,
+            549
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            40
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            954,
+            163,
+            967
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix",
+        "text_level": 2,
+        "bbox": [
+            78,
+            60,
+            253,
+            80
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Reg AC",
+        "text_level": 2,
+        "bbox": [
+            78,
+            99,
+            138,
+            116
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "We, Michele Della Vigna, CFA, Anastasia Shalaeva, Quentin Marbach, Neil Mehta, Ati Modak, Yulia Bocharnikova and Will Chen, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.",
+        "bbox": [
+            76,
+            122,
+            913,
+            169
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            78,
+            172,
+            885,
+            186
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Michele Della Vigna, CFA GS Bank Europe SE - Milan branch, Anastasia Shalaeva GS International, Quentin Marbach GS International, Neil Mehta GS & Co. LLC, Ati Modak GS & Co. LLC, Yulia Bocharnikova GS International, Will Chen GS International.",
+        "bbox": [
+            76,
+            191,
+            885,
+            226
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            76,
+            229,
+            895,
+            255
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "GS Factor Profile",
+        "text_level": 2,
+        "bbox": [
+            78,
+            266,
+            207,
+            280
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:",
+        "bbox": [
+            76,
+            279,
+            916,
+            335
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).",
+        "bbox": [
+            76,
+            340,
+            908,
+            407
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).",
+        "bbox": [
+            76,
+            412,
+            911,
+            436
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.",
+        "bbox": [
+            78,
+            441,
+            704,
+            454
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "M&A Rank",
+        "text_level": 2,
+        "bbox": [
+            78,
+            465,
+            163,
+            479
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.",
+        "bbox": [
+            76,
+            479,
+            911,
+            547
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Quantum",
+        "text_level": 2,
+        "bbox": [
+            78,
+            558,
+            155,
+            571
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.",
+        "bbox": [
+            78,
+            569,
+            890,
+            594
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            80,
+            604,
+            169,
+            619
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Pricing information",
+        "text_level": 2,
+        "bbox": [
+            80,
+            623,
+            228,
+            637
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "SLB (\\$48.09), TGS ASA (Nkr135.50) and Vallourec (€22.16)",
+        "bbox": [
+            78,
+            636,
+            406,
+            648
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings/investment banking relationships",
+        "text_level": 2,
+        "bbox": [
+            78,
+            660,
+            501,
+            675
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "GS Investment Research global Equity coverage universe",
+        "bbox": [
+            78,
+            674,
+            464,
+            686
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "table",
+        "img_path": "images/d23a7b8394b96a8e65a5cbf73ccbe2bed570330b6fbf56fe56c2e772b14a9b89.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Rating Distribution</td><td colspan=\"3\">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>60%</td><td>45%</td></tr></table>",
+        "bbox": [
+            78,
+            693,
+            759,
+            742
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.",
+        "bbox": [
+            76,
+            753,
+            906,
+            811
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            821,
+            251,
+            837
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations",
+        "text_level": 2,
+        "bbox": [
+            78,
+            840,
+            516,
+            854
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+        "bbox": [
+            76,
+            854,
+            908,
+            898
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+        "bbox": [
+            76,
+            904,
+            913,
+            929
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            25,
+            184,
+            39
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            955,
+            163,
+            967
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            76,
+            60,
+            913,
+            118
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website at https://www.gs.com/research/hedge.html.",
+        "bbox": [
+            76,
+            121,
+            918,
+            157
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States\nThe following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html.\nRussia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.",
+        "bbox": [
+            76,
+            167,
+            918,
+            705
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+        "bbox": [
+            76,
+            709,
+            910,
+            787
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+        "bbox": [
+            76,
+            792,
+            916,
+            849
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Ratings, coverage universe and related definitions",
+        "text_level": 2,
+        "bbox": [
+            78,
+            859,
+            454,
+            875
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.",
+        "bbox": [
+            76,
+            872,
+            919,
+            929
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            29,
+            916,
+            42
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            955,
+            163,
+            967
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            76,
+            60,
+            906,
+            84
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.",
+        "bbox": [
+            76,
+            89,
+            893,
+            125
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.",
+        "bbox": [
+            76,
+            128,
+            779,
+            152
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.",
+        "bbox": [
+            76,
+            157,
+            913,
+            258
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities",
+        "text_level": 2,
+        "bbox": [
+            78,
+            268,
+            351,
+            282
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            76,
+            282,
+            916,
+            404
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            76,
+            407,
+            880,
+            433
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+        "bbox": [
+            76,
+            436,
+            903,
+            483
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "General disclosures",
+        "text_level": 2,
+        "bbox": [
+            78,
+            494,
+            228,
+            507
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+        "bbox": [
+            76,
+            507,
+            915,
+            564
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+        "bbox": [
+            76,
+            568,
+            915,
+            603
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+        "bbox": [
+            76,
+            608,
+            916,
+            643
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.",
+        "bbox": [
+            76,
+            648,
+            916,
+            704
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+        "bbox": [
+            76,
+            709,
+            890,
+            733
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+        "bbox": [
+            76,
+            738,
+            916,
+            761
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+        "bbox": [
+            76,
+            766,
+            913,
+            791
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            76,
+            796,
+            916,
+            863
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+        "bbox": [
+            76,
+            868,
+            906,
+            924
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            29,
+            916,
+            42
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            955,
+            163,
+            967
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+        "bbox": [
+            76,
+            60,
+            903,
+            161
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+        "bbox": [
+            76,
+            165,
+            897,
+            210
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+        "bbox": [
+            78,
+            215,
+            888,
+            239
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS.",
+        "text_level": 2,
+        "bbox": [
+            78,
+            244,
+            220,
+            257
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+        "bbox": [
+            76,
+            263,
+            911,
+            340
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            80,
+            26,
+            184,
+            39
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "Europe Energy: Oil Services",
+        "bbox": [
+            735,
+            29,
+            916,
+            42
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "22 June 2026",
+        "bbox": [
+            80,
+            955,
+            163,
+            965
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            898,
+            955,
+            916,
+            965
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "For more thematic and long-lived research, visit our Themes page >",
+        "bbox": [
+            114,
+            895,
+            704,
+            914
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "The image provided is a QR code. It does not contain any text, mathematical formulas, tables, or figures that can be processed according to the OCR instructions. Therefore, no textual content can be extracted from this image.",
+        "bbox": [
+            741,
+            862,
+            849,
+            946
+        ],
+        "page_idx": 21
+    }
+]
