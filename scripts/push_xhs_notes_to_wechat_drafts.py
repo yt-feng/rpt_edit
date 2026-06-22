@@ -52,6 +52,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     upload_article_image,
     upload_cover_material,
     utf8_byte_count,
+    verify_draft_get,
     wechat_title_policy_skip_reason,
     write_json,
 )
@@ -496,6 +497,14 @@ def main() -> int:
         if args.dry_run:
             media_id = f"DRY_RUN_DRAFT_{len(drafts) + 1:02d}"
             publish_id = f"DRY_RUN_PUBLISH_{len(drafts) + 1:02d}" if args.publish else ""
+            draft_get = {
+                "ok": True,
+                "dry_run": True,
+                "article_count": len(articles),
+                "expected_article_count": len(articles),
+                "matches_expected_article_count": True,
+                "titles": [item.get("title", "") for item in articles],
+            }
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
@@ -512,6 +521,7 @@ def main() -> int:
                     create_draft(group[split_at:])
                     return
                 raise
+            draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles))
             publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
         draft_index = len(drafts) + 1
@@ -528,6 +538,7 @@ def main() -> int:
                 "payload": str(payload_path),
                 "titles": [item["title"] for item in group],
                 "wechat_titles": [item["wechat_title"] for item in group],
+                "draft_get": draft_get,
             }
         )
         if publish_id:

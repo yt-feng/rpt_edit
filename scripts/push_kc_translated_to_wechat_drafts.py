@@ -1019,6 +1019,71 @@ def add_draft(session: requests.Session, access_token: str, articles: list[dict[
     return str(media_id)
 
 
+def get_draft(session: requests.Session, access_token: str, media_id: str, timeout: int) -> dict[str, Any]:
+    response = post_wechat_json(
+        session,
+        f"https://api.weixin.qq.com/cgi-bin/draft/get?access_token={access_token}",
+        {"media_id": media_id},
+        timeout,
+        max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
+    )
+    return parse_wechat_json(response, "draft/get")
+
+
+def summarize_draft_get_response(data: dict[str, Any], expected_article_count: int) -> dict[str, Any]:
+    news_items = data.get("news_item")
+    if not isinstance(news_items, list):
+        news_items = data.get("articles")
+    if not isinstance(news_items, list):
+        news_items = []
+
+    titles = [
+        normalize_space(str(item.get("title") or ""))
+        for item in news_items
+        if isinstance(item, dict)
+    ]
+    article_count = len(news_items)
+    return {
+        "ok": True,
+        "article_count": article_count,
+        "expected_article_count": expected_article_count,
+        "matches_expected_article_count": article_count == expected_article_count,
+        "titles": titles,
+        "create_time": data.get("create_time"),
+        "update_time": data.get("update_time"),
+    }
+
+
+def verify_draft_get(
+    session: requests.Session,
+    access_token: str,
+    media_id: str,
+    timeout: int,
+    expected_article_count: int,
+) -> dict[str, Any]:
+    try:
+        summary = summarize_draft_get_response(
+            get_draft(session, access_token, media_id, timeout),
+            expected_article_count,
+        )
+    except WeChatError as exc:
+        summary = {
+            "ok": False,
+            "expected_article_count": expected_article_count,
+            "errcode": exc.errcode,
+            "errmsg": exc.errmsg,
+            "error": str(exc),
+        }
+        log(f"Draft get verification failed for media_id={media_id}: {exc}")
+        return summary
+
+    log(
+        "Verified draft/get: "
+        f"media_id={media_id} articles={summary['article_count']}/{expected_article_count}"
+    )
+    return summary
+
+
 def submit_publish(session: requests.Session, access_token: str, media_id: str, timeout: int) -> str:
     response = post_wechat_json(
         session,
@@ -1368,6 +1433,14 @@ def main() -> int:
         if args.dry_run:
             media_id = f"DRY_RUN_DRAFT_{len(drafts) + 1:02d}"
             publish_id = f"DRY_RUN_PUBLISH_{len(drafts) + 1:02d}" if args.publish else ""
+            draft_get = {
+                "ok": True,
+                "dry_run": True,
+                "article_count": len(articles),
+                "expected_article_count": len(articles),
+                "matches_expected_article_count": True,
+                "titles": [item.get("title", "") for item in articles],
+            }
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
@@ -1384,6 +1457,7 @@ def main() -> int:
                     create_draft(group[split_at:])
                     return
                 raise
+            draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles))
             publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
         draft_index = len(drafts) + 1
@@ -1400,6 +1474,7 @@ def main() -> int:
                 "payload": str(payload_path),
                 "titles": [item["title"] for item in group],
                 "wechat_titles": [item["wechat_title"] for item in group],
+                "draft_get": draft_get,
             }
         )
         if publish_id:
