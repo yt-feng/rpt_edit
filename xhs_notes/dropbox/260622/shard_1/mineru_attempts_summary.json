@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_vw6y0rm9/pdfs/0001-06-MS-Semiconductor Capital Equipment - Global Raising our memory WFE forecasts (mainly DRAM)-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vw6y0rm9/pdfs/0002-07-Bernstein-Global Digital Assets-The Tokenization Memo- The battle for equity tokenization -2 n--260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vw6y0rm9/pdfs/0003-08-Bernstein-Global Memory- Memory becoming a burden of AI too--260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vw6y0rm9/pdfs/0004-09-Bernstein-India Strategy-Why India needs its own DeepSeek-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vw6y0rm9/pdfs/0005-10-JPM-Japan Quant Strategy-MLCCs and supply bottleneck effect- Next candidates- momentum positions- and tailwind from long-term investors- shift to Japan-260619.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
