@@ -38,9 +38,11 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     digest_from_markdown,
     fake_static_image_url,
     get_stable_access_token,
+    find_recent_draft_by_titles,
     is_article_size_error,
     log,
     parse_selection_limit,
+    payload_article_titles,
     prepare_article_upload_image,
     render_fitted_wechat_html,
     resolve_asset_path,
@@ -498,6 +500,7 @@ def main() -> int:
         if args.dry_run:
             media_id = f"DRY_RUN_DRAFT_{len(drafts) + 1:02d}"
             publish_id = f"DRY_RUN_PUBLISH_{len(drafts) + 1:02d}" if args.publish else ""
+            reused_existing = False
             draft_get = {
                 "ok": True,
                 "dry_run": True,
@@ -509,19 +512,31 @@ def main() -> int:
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
-            try:
-                media_id = add_draft(session, access_token, articles, args.timeout)
-            except WeChatError as exc:
-                if is_article_size_error(exc) and len(group) > 1:
-                    split_at = max(1, len(group) // 2)
-                    log(
-                        "WeChat rejected draft group as too large; "
-                        f"splitting {len(group)} articles into {split_at}+{len(group) - split_at} and retrying."
-                    )
-                    create_draft(group[:split_at])
-                    create_draft(group[split_at:])
-                    return
-                raise
+            existing_media_id = find_recent_draft_by_titles(
+                session,
+                access_token,
+                payload_article_titles(articles),
+                args.timeout,
+            )
+            if existing_media_id:
+                media_id = existing_media_id
+                reused_existing = True
+                log(f"Reusing existing WeChat draft with the same article titles: media_id={media_id}")
+            else:
+                reused_existing = False
+                try:
+                    media_id = add_draft(session, access_token, articles, args.timeout)
+                except WeChatError as exc:
+                    if is_article_size_error(exc) and len(group) > 1:
+                        split_at = max(1, len(group) // 2)
+                        log(
+                            "WeChat rejected draft group as too large; "
+                            f"splitting {len(group)} articles into {split_at}+{len(group) - split_at} and retrying."
+                        )
+                        create_draft(group[:split_at])
+                        create_draft(group[split_at:])
+                        return
+                    raise
             draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles))
             publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
@@ -534,6 +549,7 @@ def main() -> int:
                 "media_id": media_id,
                 "publish_id": publish_id,
                 "published": bool(publish_id),
+                "reused_existing": reused_existing,
                 "article_count": len(articles),
                 "payload_bytes": payload_bytes,
                 "payload": str(payload_path),

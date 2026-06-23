@@ -212,6 +212,13 @@ def remove_redundant_title_aliases(title: str) -> str:
     return normalize_space(cleaned).strip("：: -—")
 
 
+def draft_title_key(title: str) -> str:
+    key = remove_redundant_title_aliases(title)
+    key = re.sub(r"\s+", "", key)
+    key = key.replace(":", "：")
+    return key
+
+
 def sharpen_wechat_title(title: str, institution_name: str = "") -> str:
     cleaned = remove_redundant_title_aliases(strip_markdown_markup(title))
     cleaned = re.sub(r"^(?:标题|微信标题)\s*[：:]\s*", "", cleaned)
@@ -1094,6 +1101,10 @@ def payload_article_titles(articles: list[dict[str, Any]]) -> list[str]:
     return [normalize_space(str(item.get("title") or "")) for item in articles if item.get("title")]
 
 
+def payload_article_title_keys(articles: list[dict[str, Any]]) -> list[str]:
+    return [draft_title_key(title) for title in payload_article_titles(articles)]
+
+
 def draft_news_items(container: dict[str, Any]) -> list[dict[str, Any]]:
     candidates: list[Any] = []
     content = container.get("content")
@@ -1106,17 +1117,28 @@ def draft_news_items(container: dict[str, Any]) -> list[dict[str, Any]]:
     return []
 
 
-def batchget_recent_drafts(session: requests.Session, access_token: str, timeout: int, count: int = 20) -> list[dict[str, Any]]:
-    response = post_wechat_json(
-        session,
-        f"https://api.weixin.qq.com/cgi-bin/draft/batchget?access_token={access_token}",
-        {"offset": 0, "count": count, "no_content": 0},
-        timeout,
-        max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
-    )
-    data = parse_wechat_json(response, "draft/batchget")
-    items = data.get("item")
-    return items if isinstance(items, list) else []
+def batchget_recent_drafts(session: requests.Session, access_token: str, timeout: int, limit: int = 100) -> list[dict[str, Any]]:
+    drafts: list[dict[str, Any]] = []
+    page_size = 20
+    for offset in range(0, max(1, limit), page_size):
+        response = post_wechat_json(
+            session,
+            f"https://api.weixin.qq.com/cgi-bin/draft/batchget?access_token={access_token}",
+            {"offset": offset, "count": min(page_size, limit - offset), "no_content": 0},
+            timeout,
+            max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
+        )
+        data = parse_wechat_json(response, "draft/batchget")
+        items = data.get("item")
+        if not isinstance(items, list) or not items:
+            break
+        drafts.extend(item for item in items if isinstance(item, dict))
+        total_count = data.get("total_count")
+        if isinstance(total_count, int) and offset + len(items) >= total_count:
+            break
+        if len(drafts) >= limit:
+            break
+    return drafts[:limit]
 
 
 def find_recent_draft_by_titles(
@@ -1124,11 +1146,13 @@ def find_recent_draft_by_titles(
     access_token: str,
     expected_titles: list[str],
     timeout: int,
+    limit: int = 100,
 ) -> str:
     if not expected_titles:
         return ""
+    expected_keys = [draft_title_key(title) for title in expected_titles]
     try:
-        recent_items = batchget_recent_drafts(session, access_token, timeout)
+        recent_items = batchget_recent_drafts(session, access_token, timeout, limit=limit)
     except WeChatError as exc:
         log(f"Could not batchget recent drafts while recovering draft/add: {exc}")
         return ""
@@ -1138,7 +1162,8 @@ def find_recent_draft_by_titles(
         media_id = str(item.get("media_id") or "")
         news_items = draft_news_items(item)
         titles = [normalize_space(str(news.get("title") or "")) for news in news_items]
-        if media_id and titles == expected_titles:
+        title_keys = [draft_title_key(title) for title in titles]
+        if media_id and title_keys == expected_keys:
             return media_id
     return ""
 
@@ -1601,6 +1626,7 @@ def main() -> int:
         if args.dry_run:
             media_id = f"DRY_RUN_DRAFT_{len(drafts) + 1:02d}"
             publish_id = f"DRY_RUN_PUBLISH_{len(drafts) + 1:02d}" if args.publish else ""
+            reused_existing = False
             draft_get = {
                 "ok": True,
                 "dry_run": True,
@@ -1612,19 +1638,31 @@ def main() -> int:
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
-            try:
-                media_id = add_draft(session, access_token, articles, args.timeout)
-            except WeChatError as exc:
-                if is_article_size_error(exc) and len(group) > 1:
-                    split_at = max(1, len(group) // 2)
-                    log(
-                        "WeChat rejected draft group as too large; "
-                        f"splitting {len(group)} articles into {split_at}+{len(group) - split_at} and retrying."
-                    )
-                    create_draft(group[:split_at])
-                    create_draft(group[split_at:])
-                    return
-                raise
+            existing_media_id = find_recent_draft_by_titles(
+                session,
+                access_token,
+                payload_article_titles(articles),
+                args.timeout,
+            )
+            if existing_media_id:
+                media_id = existing_media_id
+                reused_existing = True
+                log(f"Reusing existing WeChat draft with the same article titles: media_id={media_id}")
+            else:
+                reused_existing = False
+                try:
+                    media_id = add_draft(session, access_token, articles, args.timeout)
+                except WeChatError as exc:
+                    if is_article_size_error(exc) and len(group) > 1:
+                        split_at = max(1, len(group) // 2)
+                        log(
+                            "WeChat rejected draft group as too large; "
+                            f"splitting {len(group)} articles into {split_at}+{len(group) - split_at} and retrying."
+                        )
+                        create_draft(group[:split_at])
+                        create_draft(group[split_at:])
+                        return
+                    raise
             draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles))
             publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
@@ -1637,6 +1675,7 @@ def main() -> int:
                 "media_id": media_id,
                 "publish_id": publish_id,
                 "published": bool(publish_id),
+                "reused_existing": reused_existing,
                 "article_count": len(articles),
                 "payload_bytes": payload_bytes,
                 "payload": str(payload_path),
