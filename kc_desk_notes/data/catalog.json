@@ -1,17 +1,743 @@
 {
   "schema_version": 1,
-  "updated_at_bjt": "2026-06-22 14:57:31 +0800",
+  "updated_at_bjt": "2026-06-23 13:39:45 +0800",
   "dropbox_root": "/zip_backup",
-  "item_count": 1786,
-  "total_size_bytes": 6568598295,
+  "item_count": 1819,
+  "total_size_bytes": 6644002315,
   "storage": {
     "limit_bytes": 8589934592,
-    "total_size_bytes": 6568598295,
+    "total_size_bytes": 6644002315,
     "pruned_this_run_count": 0,
     "pruned_this_run_size_bytes": 0,
     "pruned_this_run_dates": []
   },
   "items": [
+    {
+      "id": "43a3789d3a7761e82784ebbc",
+      "title": "NOM-USD CNY fix model：Projection： 6.7787-260622",
+      "filename": "NOM-USD CNY fix model：Projection： 6.7787-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "NOM",
+      "bank_name": "野村",
+      "password_group": "default",
+      "size_bytes": 4607386,
+      "client_modified": "2026-06-22T18:20:48Z",
+      "server_modified": "2026-06-22T18:20:48Z",
+      "source_hash": "43a3789d3a7761e82784ebbc8b1f2978cf2048effaebc38a58fcd75950bade81",
+      "r2_key": "reports/43a3789d3a7761e82784ebbc.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "213f688307875cfb4e385680",
+      "title": "MS-Semiconductors Weekly Earnings Week 8 MU & CBRS Preview-260622",
+      "filename": "MS-Semiconductors Weekly Earnings Week 8 MU & CBRS Preview-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "MS",
+      "bank_name": "摩根士丹利",
+      "password_group": "default",
+      "size_bytes": 1045809,
+      "client_modified": "2026-06-22T18:20:47Z",
+      "server_modified": "2026-06-22T18:20:48Z",
+      "source_hash": "213f688307875cfb4e385680eb37a0d4e000ddc77764077b5fdcc1f69e309aef",
+      "r2_key": "reports/213f688307875cfb4e385680.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "22e4540997d2fe4aa74d89bb",
+      "title": "MS-Semiconductor Capital Equipment - Global Raising our memory WFE forecasts (mainly DRAM)-260622",
+      "filename": "MS-Semiconductor Capital Equipment - Global Raising our memory WFE forecasts (mainly DRAM)-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "MS",
+      "bank_name": "摩根士丹利",
+      "password_group": "default",
+      "size_bytes": 402734,
+      "client_modified": "2026-06-22T18:20:46Z",
+      "server_modified": "2026-06-22T18:20:46Z",
+      "source_hash": "22e4540997d2fe4aa74d89bb334e8055542c594c4ae0db478f795c6744346a9e",
+      "r2_key": "reports/22e4540997d2fe4aa74d89bb.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "a33ca714ab710ee597a6f0c2",
+      "title": "MS-SanDisk Corporation. Sandisk NDR with head of investor relations emphasizes AI demand drivers and enhanced margin durability-260622",
+      "filename": "MS-SanDisk Corporation. Sandisk NDR with head of investor relations emphasizes AI demand drivers and enhanced margin durability-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "MS",
+      "bank_name": "摩根士丹利",
+      "password_group": "default",
+      "size_bytes": 507866,
+      "client_modified": "2026-06-22T18:20:46Z",
+      "server_modified": "2026-06-22T18:20:47Z",
+      "source_hash": "a33ca714ab710ee597a6f0c294ef207c19faafcf0828ad8e7a6cdfdfe166f784",
+      "r2_key": "reports/a33ca714ab710ee597a6f0c2.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "ad21199217ee4919be6eb755",
+      "title": "MS-Investor Presentation：Electronic Components： Demand Expansion for High Value~Added AI Data Center Products， Valuation Discipline-260618",
+      "filename": "MS-Investor Presentation：Electronic Components： Demand Expansion for High Value~Added AI Data Center Products， Valuation Discipline-260618.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "MS",
+      "bank_name": "摩根士丹利",
+      "password_group": "default",
+      "size_bytes": 1030282,
+      "client_modified": "2026-06-22T18:20:48Z",
+      "server_modified": "2026-06-22T18:20:48Z",
+      "source_hash": "ad21199217ee4919be6eb755ac00f00a06117bd1bc3a206a7181784fabd27c2c",
+      "r2_key": "reports/ad21199217ee4919be6eb755.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "858d77232a1c3e42362bb736",
+      "title": "JPM-LVMH（LVMH.PA）Q2 H1 26 results preview-260622",
+      "filename": "JPM-LVMH（LVMH.PA）Q2 H1 26 results preview-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "JPM",
+      "bank_name": "摩根大通",
+      "password_group": "default",
+      "size_bytes": 955252,
+      "client_modified": "2026-06-22T18:20:47Z",
+      "server_modified": "2026-06-22T18:20:47Z",
+      "source_hash": "858d77232a1c3e42362bb7365f480e0b8e97d8eb0f03e44ddff5227dfe9d871c",
+      "r2_key": "reports/858d77232a1c3e42362bb736.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "b0a33ecbca8882104f9bad6b",
+      "title": "JPM-Japan Quant Strategy：MLCCs and supply bottleneck effect： Next candidates， momentum positions， and tailwind from long~term investors’ shift to Japan-260619",
+      "filename": "JPM-Japan Quant Strategy：MLCCs and supply bottleneck effect： Next candidates， momentum positions， and tailwind from long~term investors’ shift to Japan-260619.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "JPM",
+      "bank_name": "摩根大通",
+      "password_group": "default",
+      "size_bytes": 947163,
+      "client_modified": "2026-06-22T18:20:45Z",
+      "server_modified": "2026-06-22T18:20:45Z",
+      "source_hash": "b0a33ecbca8882104f9bad6bd88cbb7fa53ddd6b6b3af620fa1b2dbfc53d018f",
+      "r2_key": "reports/b0a33ecbca8882104f9bad6b.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "dd130a2c05ae1252702dfad8",
+      "title": "GS-Transsion （688036）Foldable phone with Edge AI functions in 2H26；High memory costs to continue to weigh on consumption；Sell-260622",
+      "filename": "GS-Transsion （688036）Foldable phone with Edge AI functions in 2H26；High memory costs to continue to weigh on consumption；Sell-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 5838694,
+      "client_modified": "2026-06-22T18:20:45Z",
+      "server_modified": "2026-06-22T18:20:46Z",
+      "source_hash": "dd130a2c05ae1252702dfad8a17c3b973acaa1daede11b5c00ce2711c227910b",
+      "r2_key": "reports/dd130a2c05ae1252702dfad8.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "47e57605c7e15b0e350a1711",
+      "title": "GS-SCREEN Holdings （7735.T）： Conference call： Some upside potential for 2H guidance， but low margin growth phase-260622",
+      "filename": "GS-SCREEN Holdings （7735.T）： Conference call： Some upside potential for 2H guidance， but low margin growth phase-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 5331352,
+      "client_modified": "2026-06-22T18:20:44Z",
+      "server_modified": "2026-06-22T18:20:44Z",
+      "source_hash": "47e57605c7e15b0e350a1711bbbecfdc2ab5099f7a8548a29004633aaa65ee02",
+      "r2_key": "reports/47e57605c7e15b0e350a1711.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "991641de743156fad0a76f1d",
+      "title": "GS-Sanofi （SASY.PA）： R&D Leadership transition-260622",
+      "filename": "GS-Sanofi （SASY.PA）： R&D Leadership transition-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 292722,
+      "client_modified": "2026-06-22T18:20:45Z",
+      "server_modified": "2026-06-22T18:20:45Z",
+      "source_hash": "991641de743156fad0a76f1d8a945b89fa41ef61a45c30332588368f468b16d6",
+      "r2_key": "reports/991641de743156fad0a76f1d.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "46ed13a1508cd5d225b6713a",
+      "title": "GS-Oil Analyst：EV Sales Acceleration Poses Downside Risk to Global Oil Demand-260621",
+      "filename": "GS-Oil Analyst：EV Sales Acceleration Poses Downside Risk to Global Oil Demand-260621.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 5345679,
+      "client_modified": "2026-06-22T18:20:43Z",
+      "server_modified": "2026-06-22T18:20:44Z",
+      "source_hash": "46ed13a1508cd5d225b6713a4060b098e9234ce72f70443ada2c3db32294198c",
+      "r2_key": "reports/46ed13a1508cd5d225b6713a.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "f6a63758b892abae0c6903a2",
+      "title": "GS-Luckin Coffee Inc. （LKNCY.US） Clear growth path in ML China with 55k stores attainable； upside from margins and shareholder returns； Initiate at Buy-260621",
+      "filename": "GS-Luckin Coffee Inc. （LKNCY.US） Clear growth path in ML China with 55k stores attainable； upside from margins and shareholder returns； Initiate at Buy-260621.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 1344841,
+      "client_modified": "2026-06-22T18:20:43Z",
+      "server_modified": "2026-06-22T18:20:43Z",
+      "source_hash": "f6a63758b892abae0c6903a20cf12da7b8f6ec4aaf892bae13301ea1f9c5c20d",
+      "r2_key": "reports/f6a63758b892abae0c6903a2.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "4827ee4bd4b98ba24a9addbc",
+      "title": "GS-European Chemicals：Key Takeaways from ICIS European Association of Chemical Distributors Virtual Roundtable-260622",
+      "filename": "GS-European Chemicals：Key Takeaways from ICIS European Association of Chemical Distributors Virtual Roundtable-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 205172,
+      "client_modified": "2026-06-22T18:20:42Z",
+      "server_modified": "2026-06-22T18:20:42Z",
+      "source_hash": "4827ee4bd4b98ba24a9addbc649f7efa7fcc4d8c8c7766c53cffa47f5477a81e",
+      "r2_key": "reports/4827ee4bd4b98ba24a9addbc.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "ad8e312db638e045a1ced314",
+      "title": "GS-Europe Energy：Oil Services，The AI and Digital transformation in Oil & Gas： time to market， cost curve and oil service beneficiaries-260622",
+      "filename": "GS-Europe Energy：Oil Services，The AI and Digital transformation in Oil & Gas： time to market， cost curve and oil service beneficiaries-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 6127632,
+      "client_modified": "2026-06-22T18:20:42Z",
+      "server_modified": "2026-06-22T18:20:42Z",
+      "source_hash": "ad8e312db638e045a1ced314b701d968c4ca7f928fcf6cfbfc9cb651edc4e73c",
+      "r2_key": "reports/ad8e312db638e045a1ced314.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "23ea5675cddefcf1112790e4",
+      "title": "GS-Estee Lauder Co. （EL.US） Reinstate at Buy as underlying improvements drive top~and bottom~line growth momentum ahead-260622",
+      "filename": "GS-Estee Lauder Co. （EL.US） Reinstate at Buy as underlying improvements drive top~and bottom~line growth momentum ahead-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 1162218,
+      "client_modified": "2026-06-22T18:20:42Z",
+      "server_modified": "2026-06-22T18:20:42Z",
+      "source_hash": "23ea5675cddefcf1112790e4d06e72a8134ddfa8574babd83bb3e5250dcf1c51",
+      "r2_key": "reports/23ea5675cddefcf1112790e4.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "cf203236d8d7f64310b5ca13",
+      "title": "GS-China： Three things in China-260621",
+      "filename": "GS-China： Three things in China-260621.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 3671425,
+      "client_modified": "2026-06-22T18:20:40Z",
+      "server_modified": "2026-06-22T18:20:41Z",
+      "source_hash": "cf203236d8d7f64310b5ca132bd925e6b268db03dbb78c456d15ca135add31d6",
+      "r2_key": "reports/cf203236d8d7f64310b5ca13.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "718f4b40d26c389d6845a53e",
+      "title": "GS-CHINA MUSINGS：1Q26 Earnings Brochure： A~share tech in the driver’s seat-260621",
+      "filename": "GS-CHINA MUSINGS：1Q26 Earnings Brochure： A~share tech in the driver’s seat-260621.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 2003014,
+      "client_modified": "2026-06-22T18:20:39Z",
+      "server_modified": "2026-06-22T18:20:39Z",
+      "source_hash": "718f4b40d26c389d6845a53e0bbe8f2415e49dda52c8f272fa2e0b3b737b44ac",
+      "r2_key": "reports/718f4b40d26c389d6845a53e.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "e8026f437fc3777abe36bad4",
+      "title": "GS-China Consumer Durables： EU anti~dumping investigation on Chinese RLMs to continue but not imposing provisional duties at this time-260622",
+      "filename": "GS-China Consumer Durables： EU anti~dumping investigation on Chinese RLMs to continue but not imposing provisional duties at this time-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 252759,
+      "client_modified": "2026-06-22T18:20:40Z",
+      "server_modified": "2026-06-22T18:20:40Z",
+      "source_hash": "e8026f437fc3777abe36bad4deafbd6693aee8f25668af18fd75998f4143dea9",
+      "r2_key": "reports/e8026f437fc3777abe36bad4.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "faba45a8caac3684ad148f15",
+      "title": "GS-CHINA CONSUMER DURABLES： APPLIANCE TRACKER，May 2026： Still weak domestic demand yet base will ease into June， 618 in focus； exports sequentially improved-260622",
+      "filename": "GS-CHINA CONSUMER DURABLES： APPLIANCE TRACKER，May 2026： Still weak domestic demand yet base will ease into June， 618 in focus； exports sequentially improved-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 2128081,
+      "client_modified": "2026-06-22T18:20:38Z",
+      "server_modified": "2026-06-22T18:20:39Z",
+      "source_hash": "faba45a8caac3684ad148f15a83ebc2afeb02375b67b95809ac0072171326836",
+      "r2_key": "reports/faba45a8caac3684ad148f15.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "2e76f032f19fe9d388198434",
+      "title": "GS-Chagee Holdings （CHA.US） Searching for the next growth engine after China momentum peaked； overseas execution new products key to watch； initiate at Neutral-260621",
+      "filename": "GS-Chagee Holdings （CHA.US） Searching for the next growth engine after China momentum peaked； overseas execution new products key to watch； initiate at Neutral-260621.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 1505386,
+      "client_modified": "2026-06-22T18:20:41Z",
+      "server_modified": "2026-06-22T18:20:41Z",
+      "source_hash": "2e76f032f19fe9d388198434b1a01d28ccb8fe3a66d48ee66525461bd74939a4",
+      "r2_key": "reports/2e76f032f19fe9d388198434.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "15247b1f2207b0a617b0cc1d",
+      "title": "GS-Americas Technology：Software，Thoughts on the Software Ecosystem post Databricks DAIS （SNOW， PLTR， MSFT， Apps）-260621",
+      "filename": "GS-Americas Technology：Software，Thoughts on the Software Ecosystem post Databricks DAIS （SNOW， PLTR， MSFT， Apps）-260621.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "GS",
+      "bank_name": "高盛",
+      "password_group": "default",
+      "size_bytes": 6884184,
+      "client_modified": "2026-06-22T18:20:39Z",
+      "server_modified": "2026-06-22T18:20:39Z",
+      "source_hash": "15247b1f2207b0a617b0cc1dd4df9bbbda2fb3a2f6abcbd9090fe554b2830dd3",
+      "r2_key": "reports/15247b1f2207b0a617b0cc1d.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "3135cc94ca3b7ea304771b0a",
+      "title": "Bernstein-Summit Therapeutics Inc.（SMMT.US）SMMT： Even the bull case for HARMONi~3 fails to justify the current valuation.-260621",
+      "filename": "Bernstein-Summit Therapeutics Inc.（SMMT.US）SMMT： Even the bull case for HARMONi~3 fails to justify the current valuation.-260621.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "Bernstein",
+      "bank_name": "伯恩斯坦",
+      "password_group": "default",
+      "size_bytes": 1599808,
+      "client_modified": "2026-06-22T18:20:36Z",
+      "server_modified": "2026-06-22T18:20:36Z",
+      "source_hash": "3135cc94ca3b7ea304771b0adb86be2c9ad2c851982ab26b200dd1c719ad2dbe",
+      "r2_key": "reports/3135cc94ca3b7ea304771b0a.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "1128eeceb29bb925e446eaf8",
+      "title": "Bernstein-Property Real Estate：Real Estate Summer Guide 2026-260622",
+      "filename": "Bernstein-Property Real Estate：Real Estate Summer Guide 2026-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "Bernstein",
+      "bank_name": "伯恩斯坦",
+      "password_group": "default",
+      "size_bytes": 1308903,
+      "client_modified": "2026-06-22T18:20:37Z",
+      "server_modified": "2026-06-22T18:20:37Z",
+      "source_hash": "1128eeceb29bb925e446eaf829de3b14be84dc7cd995f4fad48b0d8896800633",
+      "r2_key": "reports/1128eeceb29bb925e446eaf8.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "80b6219e8d0b640b81b72357",
+      "title": "Bernstein-McDonald's Corp（MCD.US）： Turning the corner？-260622",
+      "filename": "Bernstein-McDonald's Corp（MCD.US）： Turning the corner？-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "Bernstein",
+      "bank_name": "伯恩斯坦",
+      "password_group": "default",
+      "size_bytes": 2712744,
+      "client_modified": "2026-06-22T18:20:36Z",
+      "server_modified": "2026-06-22T18:20:36Z",
+      "source_hash": "80b6219e8d0b640b81b723579f293ea2043e83101f20cb85588959ababe300be",
+      "r2_key": "reports/80b6219e8d0b640b81b72357.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "9b12dca4521d07f4ce2a2599",
+      "title": "Bernstein-Japan Consumer：Japan Retail （1）： After the Long Winter， Japan Domestic Retail at an Inflection Point-260622",
+      "filename": "Bernstein-Japan Consumer：Japan Retail （1）： After the Long Winter， Japan Domestic Retail at an Inflection Point-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "Bernstein",
+      "bank_name": "伯恩斯坦",
+      "password_group": "default",
+      "size_bytes": 2035142,
+      "client_modified": "2026-06-22T18:20:34Z",
+      "server_modified": "2026-06-22T18:20:35Z",
+      "source_hash": "9b12dca4521d07f4ce2a25991accc91dc8340b7ffe27770cbc46713d97aee431",
+      "r2_key": "reports/9b12dca4521d07f4ce2a2599.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "54ebb3b6f03f719e55a5e1ec",
+      "title": "Bernstein-Japan and EU Semiconductors：Infineon Renesas： CPU renaissance emerges as a second engine for power semi demand， set to outstrip supply-260621",
+      "filename": "Bernstein-Japan and EU Semiconductors：Infineon Renesas： CPU renaissance emerges as a second engine for power semi demand， set to outstrip supply-260621.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "Bernstein",
+      "bank_name": "伯恩斯坦",
+      "password_group": "default",
+      "size_bytes": 1554569,
+      "client_modified": "2026-06-22T18:20:35Z",
+      "server_modified": "2026-06-22T18:20:35Z",
+      "source_hash": "54ebb3b6f03f719e55a5e1ecdd9450d11f08c9020696fab7857677bf39901a74",
+      "r2_key": "reports/54ebb3b6f03f719e55a5e1ec.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "f659b7b648c71effc590b6a6",
+      "title": "Bernstein-India Strategy：Why India needs its own DeepSeek-260622",
+      "filename": "Bernstein-India Strategy：Why India needs its own DeepSeek-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "Bernstein",
+      "bank_name": "伯恩斯坦",
+      "password_group": "default",
+      "size_bytes": 1092389,
+      "client_modified": "2026-06-22T18:20:34Z",
+      "server_modified": "2026-06-22T18:20:34Z",
+      "source_hash": "f659b7b648c71effc590b6a6de6ded25c4dae59717344badd4630a63c3aa92b5",
+      "r2_key": "reports/f659b7b648c71effc590b6a6.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "03381e884e7ae92a39231048",
+      "title": "Bernstein-Global Video Gaming： The State of Play， 2026~a deep dive on global industry trends-260622",
+      "filename": "Bernstein-Global Video Gaming： The State of Play， 2026~a deep dive on global industry trends-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "Bernstein",
+      "bank_name": "伯恩斯坦",
+      "password_group": "default",
+      "size_bytes": 3777449,
+      "client_modified": "2026-06-22T18:20:33Z",
+      "server_modified": "2026-06-22T18:20:34Z",
+      "source_hash": "03381e884e7ae92a39231048209bbded258f6c264f76caf9600d58512671afdf",
+      "r2_key": "reports/03381e884e7ae92a39231048.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "1cd86b45cd5098c621527e58",
+      "title": "Bernstein-Global Software, US and China Internet, & US Communications Infrastructure Cloud in the Quarter-How did the hyperscalers do in 1Q26--260622",
+      "filename": "Bernstein-Global Software, US and China Internet, & US Communications Infrastructure Cloud in the Quarter-How did the hyperscalers do in 1Q26--260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "Bernstein",
+      "bank_name": "伯恩斯坦",
+      "password_group": "default",
+      "size_bytes": 5175724,
+      "client_modified": "2026-06-22T18:20:33Z",
+      "server_modified": "2026-06-22T18:20:33Z",
+      "source_hash": "1cd86b45cd5098c621527e5841c03039a46d78ebc81ae679ab517e52e310ec24",
+      "r2_key": "reports/1cd86b45cd5098c621527e58.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "e76af8399a3207e47439f467",
+      "title": "Bernstein-Global Memory： Memory becoming a burden of AI too？-260622",
+      "filename": "Bernstein-Global Memory： Memory becoming a burden of AI too？-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "Bernstein",
+      "bank_name": "伯恩斯坦",
+      "password_group": "default",
+      "size_bytes": 2713144,
+      "client_modified": "2026-06-22T18:20:33Z",
+      "server_modified": "2026-06-22T18:20:33Z",
+      "source_hash": "e76af8399a3207e47439f46775d3c673130583278922003c98473005a22a164c",
+      "r2_key": "reports/e76af8399a3207e47439f467.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "9b4116e5f7e7364a6bb9cca9",
+      "title": "Bernstein-Global Energy Storage：Battery Weekly 22 June-260622",
+      "filename": "Bernstein-Global Energy Storage：Battery Weekly 22 June-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "Bernstein",
+      "bank_name": "伯恩斯坦",
+      "password_group": "default",
+      "size_bytes": 443807,
+      "client_modified": "2026-06-22T18:20:32Z",
+      "server_modified": "2026-06-22T18:20:32Z",
+      "source_hash": "9b4116e5f7e7364a6bb9cca9e95eaafba2046caf7fbc00637666d21ac191d1be",
+      "r2_key": "reports/9b4116e5f7e7364a6bb9cca9.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "f2799ea1f44f112fd5a46d06",
+      "title": "Bernstein-Global Digital Assets：The Tokenization Memo： The battle for equity tokenization （2 n）-260622",
+      "filename": "Bernstein-Global Digital Assets：The Tokenization Memo： The battle for equity tokenization （2 n）-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "Bernstein",
+      "bank_name": "伯恩斯坦",
+      "password_group": "default",
+      "size_bytes": 740622,
+      "client_modified": "2026-06-22T18:20:31Z",
+      "server_modified": "2026-06-22T18:20:31Z",
+      "source_hash": "f2799ea1f44f112fd5a46d068fe2bf64367ecc387c35fa84550471aa085c5fd7",
+      "r2_key": "reports/f2799ea1f44f112fd5a46d06.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
+    {
+      "id": "b6cdbe821603f5bace6d839f",
+      "title": "Bernstein-Americas Power and Energy Transition： Behind the Backlog~insights from our data center survey-260622",
+      "filename": "Bernstein-Americas Power and Energy Transition： Behind the Backlog~insights from our data center survey-260622.pdf",
+      "date_folder": "260622",
+      "date_folders": [
+        "260622"
+      ],
+      "bank_code": "Bernstein",
+      "bank_name": "伯恩斯坦",
+      "password_group": "default",
+      "size_bytes": 660068,
+      "client_modified": "2026-06-22T18:20:31Z",
+      "server_modified": "2026-06-22T18:20:32Z",
+      "source_hash": "b6cdbe821603f5bace6d839fffb328b0b983c717b0c3d408c52e55ad2a819908",
+      "r2_key": "reports/b6cdbe821603f5bace6d839f.pdf",
+      "r2_synced": true,
+      "available": true,
+      "present_in_latest_scan": true,
+      "first_seen_at_bjt": "2026-06-23 13:39:45 +0800",
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
+    },
     {
       "id": "05b589e2cc7bda416997e2c7",
       "title": "MS-Commodity Matters：Gold on Hold-260619",
@@ -32,7 +758,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-22 14:57:31 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0b89748dc15f5c0bd5c5b003",
@@ -54,7 +780,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-22 14:57:31 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "06c792cec331e1f04a043f8b",
@@ -76,7 +802,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-22 14:57:31 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0d888e53aa180d2005670bba",
@@ -98,7 +824,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-22 14:57:31 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f935b4f5359024895a0b1aaa",
@@ -120,7 +846,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-22 14:57:31 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ca437fd030bfaf60b7900472",
@@ -142,7 +868,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-22 14:57:31 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "53b8a8cff7ffd626e4c76e3d",
@@ -164,7 +890,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-22 14:57:31 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "57ab106ca7248a5e4579d289",
@@ -186,7 +912,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-22 14:57:31 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e1ff325c3624d150549dfb7a",
@@ -208,7 +934,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-21 14:26:28 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bc49aee7f06a6c7bbe03ae97",
@@ -230,7 +956,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-21 14:26:28 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bd3ac80c338f18c275e41165",
@@ -252,7 +978,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-21 14:26:28 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bee899a07a898a47f3613698",
@@ -274,7 +1000,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-21 14:26:28 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "62031849311f7e6fe99e912f",
@@ -296,7 +1022,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-21 14:26:28 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "81cc9ad0211e0696b3811a22",
@@ -318,7 +1044,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-21 14:26:28 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d0069ad2f34fa70ff969b98c",
@@ -340,7 +1066,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-21 14:26:28 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7c2c836943426a9dd97e6beb",
@@ -362,7 +1088,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-21 14:26:28 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "02579cf62d79a608a01f13bd",
@@ -384,7 +1110,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-21 14:26:28 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "68a6f2b8722a77ea7478b7d5",
@@ -406,7 +1132,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-21 14:26:28 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a6f8181b8e11b774c45b064b",
@@ -428,7 +1154,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-21 14:26:28 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7cdc2bac8cb2d7b576655ab2",
@@ -450,7 +1176,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0c0e8268effc345e1bc2280e",
@@ -472,7 +1198,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "11e18ef8501e86cf14076e04",
@@ -494,7 +1220,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b9706d5fce5dceade8d94457",
@@ -516,7 +1242,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "763d872f72cc0fc0c8e1b68b",
@@ -538,7 +1264,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "726026976ab30bd28dd6194c",
@@ -560,7 +1286,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ed73144e512e347e818d29cf",
@@ -582,7 +1308,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "71937c45db4a8e055a6598c9",
@@ -604,7 +1330,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "5f9d190199fb857b14e4b5c7",
@@ -626,7 +1352,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "1db6c51176003a27d2778d2d",
@@ -648,7 +1374,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "950c2f051a1a7aafb8c37942",
@@ -670,7 +1396,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "36b3d38fb131c4bd5a16c9c5",
@@ -692,7 +1418,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2cba7adbeb2c67c0b3432ee4",
@@ -714,7 +1440,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "6b9d3f68d59996cd020afd27",
@@ -736,7 +1462,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "cd8edc65a4d4058b4fe8fe27",
@@ -758,7 +1484,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "520b66c76e82a96091b8e6fd",
@@ -780,7 +1506,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d9e1fb41b69cc1be34b53346",
@@ -802,7 +1528,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a58abc15baf4d467594b173b",
@@ -824,7 +1550,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "50e4d0d1e179ae19260c69ae",
@@ -846,7 +1572,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "6b75b8d31d12d705290ba33e",
@@ -868,7 +1594,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "561ae3067ff6b158bcd04e06",
@@ -890,7 +1616,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c1b73f512f0ad4628198f30e",
@@ -912,7 +1638,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3210fba7065a49527a353f64",
@@ -934,7 +1660,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "57588953086db2de74c3f60d",
@@ -956,7 +1682,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b38984c2eb3c95b9806ad583",
@@ -978,7 +1704,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "13c0e10b9195878406c48ac6",
@@ -1000,7 +1726,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "793ad222523bb8c9d6e7ab63",
@@ -1022,7 +1748,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "6738d54e494916bc23bd9af1",
@@ -1044,7 +1770,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "46ef3e65d4815ae469c06128",
@@ -1066,7 +1792,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "cf618658ad72edd92a8090e2",
@@ -1088,7 +1814,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7a19811598ec77c5c4c18387",
@@ -1110,7 +1836,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e2671cd4f29207edacc2facf",
@@ -1132,7 +1858,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f2ca201284615e4cd558c3c4",
@@ -1154,7 +1880,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b0366952a0a13bcdd21f6329",
@@ -1176,7 +1902,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c445c0d518005e8a96e5c080",
@@ -1198,7 +1924,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c15e5fa95918c6baffda311b",
@@ -1220,7 +1946,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f6d45293d6e34ee9f261c442",
@@ -1242,7 +1968,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a55eafe70be93bfc6c8b7003",
@@ -1264,7 +1990,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "601805a01150483c862a6d7b",
@@ -1286,7 +2012,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c0cc366c5ef9a83f96a52d9a",
@@ -1308,7 +2034,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "8d234bc949e37a368c0e02d1",
@@ -1330,7 +2056,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "803c0f330c00dd1dfbc90c8b",
@@ -1352,7 +2078,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3144bb69f47740d571ce4a4f",
@@ -1374,7 +2100,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bc616a6dd508392d04c6f8ea",
@@ -1396,7 +2122,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "48239674ac2631b97d8f30c4",
@@ -1418,7 +2144,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4b38d5e3f5a1c1cef83b2faf",
@@ -1440,7 +2166,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "6512246f982ab48f7cd11ba1",
@@ -1462,7 +2188,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "25d1c2d12104b552f147ea19",
@@ -1484,7 +2210,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "48821f41584a002370b454d6",
@@ -1506,7 +2232,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f00c403c36b2b8507e25a406",
@@ -1528,7 +2254,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c31bc149274cb325a850b59f",
@@ -1550,7 +2276,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e6dfbbe74091898d87698173",
@@ -1572,7 +2298,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0e37b4f0757593e86bb53bf8",
@@ -1594,7 +2320,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bfee7e9ba77b3ccf6997fae3",
@@ -1616,7 +2342,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "54cad4dd93432f976dc0daac",
@@ -1638,7 +2364,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "48a2655fb2d887cce7a3fbc4",
@@ -1660,7 +2386,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "54e7043e520943ef15ae2e20",
@@ -1682,7 +2408,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "5454cb6284817fc06eeac414",
@@ -1704,7 +2430,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "27f5e5a8b449ec2e460db318",
@@ -1726,7 +2452,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bf7ebdf9deeb98fc8518c0fa",
@@ -1748,7 +2474,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3fb2efe814003360644a9c92",
@@ -1770,7 +2496,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e4e8a144dbc814d56484bce9",
@@ -1792,7 +2518,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "105207920903ccec70f33546",
@@ -1814,7 +2540,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-20 13:53:18 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "1966a6455256c70a5cc3cc39",
@@ -1836,7 +2562,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0d6d09fb0d0b2eec0e269dab",
@@ -1858,7 +2584,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2f348a451150d128497d0587",
@@ -1880,7 +2606,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "98f3b0f67c2f15831d6ac9d7",
@@ -1902,7 +2628,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "124e8ce4272db4460000a679",
@@ -1924,7 +2650,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3882a8f4506d8a80b41a0241",
@@ -1946,7 +2672,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "95458cf927a385ad9bd889bb",
@@ -1968,7 +2694,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "334b4f68a00325125389f6fe",
@@ -1990,7 +2716,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "197518e91d617c16f6007af6",
@@ -2012,7 +2738,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bcb3d815ac9554317cd6ceb1",
@@ -2034,7 +2760,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4c61ad3634edb8c57b83ad4e",
@@ -2056,7 +2782,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "fefb001d65ffdf2e65240d4b",
@@ -2078,7 +2804,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7f98a46df99c75a2a7b6390c",
@@ -2100,7 +2826,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d986f7e385c2583bd2ee95fc",
@@ -2122,7 +2848,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d628e649811f5e61292d47f6",
@@ -2144,7 +2870,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "27198465c760959e75f2e3ac",
@@ -2166,7 +2892,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "98f429f2caf91c645e7a00df",
@@ -2188,7 +2914,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a4f2483dc770624b3667e744",
@@ -2210,7 +2936,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b25a164483d80b5c9270cb0e",
@@ -2232,7 +2958,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "fdca64f48e2c1cd439126e3b",
@@ -2254,7 +2980,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "6d0f9d8c7a568722ab6664be",
@@ -2276,7 +3002,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "826868577e70f274830eedd1",
@@ -2298,7 +3024,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "57f4b39197e5bbf12fbf71ed",
@@ -2320,7 +3046,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bb3a6208bef9cb4522d56825",
@@ -2342,7 +3068,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "1a3c160e7469402900942f4e",
@@ -2364,7 +3090,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d4656528777f8de140000c7f",
@@ -2386,7 +3112,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "65e869ebe3941690d0f1e24f",
@@ -2408,7 +3134,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "eebba2fcbbbd5f66aafcfab6",
@@ -2430,7 +3156,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b5a7236f95403b66c58f10bb",
@@ -2452,7 +3178,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9c67e2e85efb2dbef0c663bc",
@@ -2474,7 +3200,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "fd9c207a13a9e520e56dc84b",
@@ -2496,7 +3222,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "8cdd0145925e3078b7354b8d",
@@ -2518,7 +3244,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b551640df298162246f8bc00",
@@ -2540,7 +3266,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e05e6f3417278950ede775d8",
@@ -2562,7 +3288,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "5bb1771ca42c8536ecd9f86b",
@@ -2584,7 +3310,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "8fa1832b65a0068490e20818",
@@ -2606,7 +3332,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c8372c99ccb36caff73555a3",
@@ -2628,7 +3354,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c67d399bb82fd4fb402d6920",
@@ -2650,7 +3376,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "cc1363ab1d07d60120d2e00f",
@@ -2672,7 +3398,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c253e0ce65793338448dd51e",
@@ -2694,7 +3420,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b7eed574af6917dbfbc1a68e",
@@ -2716,7 +3442,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "cce74d961da8a3aaba771ba2",
@@ -2738,7 +3464,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f48c03f33e615acd555690ad",
@@ -2760,7 +3486,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bb5af1c448ef7e6ff56998ff",
@@ -2782,7 +3508,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9075b151c0fce25ff1580089",
@@ -2804,7 +3530,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "6748eeafb76ba5fc95f1a247",
@@ -2826,7 +3552,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d274f65de2e0423dd05c973d",
@@ -2848,7 +3574,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "10e0c9d165e2e82115350e0e",
@@ -2870,7 +3596,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "fa5eb14f1d96c9335a3dfdbd",
@@ -2892,7 +3618,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "edb844369ab6c12d4ca51957",
@@ -2914,7 +3640,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "96adbca187a7324ba26d62d7",
@@ -2936,7 +3662,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bcf29d6ed72004b368889065",
@@ -2958,7 +3684,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "376e72a377d89fb0cf66338f",
@@ -2980,7 +3706,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3b4bc22a62760d5536ce0476",
@@ -3002,7 +3728,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4f5d492818672e50bbc5507a",
@@ -3024,7 +3750,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "92d3998633fb89ebf2674ac2",
@@ -3046,7 +3772,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3107c962989dfa03052ebbe9",
@@ -3068,7 +3794,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e427e94f6be765ba5df62ac6",
@@ -3090,7 +3816,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-19 14:39:04 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "16a8a4724f3ce2c4702d201e",
@@ -3112,7 +3838,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "8d60c35de514d1182a16e552",
@@ -3134,7 +3860,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4c2e5ec28832988e673e195c",
@@ -3156,7 +3882,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "476b0f5a478770772c9ff335",
@@ -3178,7 +3904,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "57fa190d82f7ba0c9419f4a0",
@@ -3200,7 +3926,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e150ed10ba2e93f3c2869eb4",
@@ -3222,7 +3948,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f75c473cb7abc39061f82bcc",
@@ -3244,7 +3970,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f2f43114e827fb37f1501f3b",
@@ -3266,7 +3992,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c4424346d406a78d307849bb",
@@ -3288,7 +4014,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b3e365a08657b7a72231e8bc",
@@ -3310,7 +4036,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "6b084972527d9620862c7271",
@@ -3332,7 +4058,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "cbd3d3e7a74e01955253c22a",
@@ -3354,7 +4080,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "8c07df9e01c53d7f64b8c94d",
@@ -3376,7 +4102,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0926970ad619b09cdd229465",
@@ -3398,7 +4124,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7e15a2a83bb8edf6973fafcc",
@@ -3420,7 +4146,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "06a0963bb40b01b9fc9f3577",
@@ -3442,7 +4168,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "1e17fefcc6448bcb3ae4cc16",
@@ -3464,7 +4190,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7be279f216d2ec8b860debe9",
@@ -3486,7 +4212,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "02a2f01a5f98a93d1309cbc8",
@@ -3508,7 +4234,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "934937d91438f9d89a20aaed",
@@ -3530,7 +4256,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7f4de285a0dd30a9d9aef78d",
@@ -3552,7 +4278,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b0067ff40fcf696c2b1381fc",
@@ -3574,7 +4300,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "8dfb07f27b704b015aa4340d",
@@ -3596,7 +4322,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "24653e3c2acfb6eb00aa3876",
@@ -3618,7 +4344,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bae96fe0c1f21828219e963a",
@@ -3640,7 +4366,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f5e48bbe8ebeecb6d0580fc7",
@@ -3662,7 +4388,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f6956e779b4d9794502c0930",
@@ -3684,7 +4410,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "1b14d16012717bc425939927",
@@ -3706,7 +4432,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "956930ce3e16d79d8a216060",
@@ -3728,7 +4454,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7a5899578a62bb223cd83859",
@@ -3750,7 +4476,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9aae82b68a5902ec3be13f70",
@@ -3772,7 +4498,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "65df9fe028b6874e65ad6a7c",
@@ -3794,7 +4520,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b67a853c5a98879441b4d40f",
@@ -3816,7 +4542,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "056e11eee2f3850ccc50f869",
@@ -3838,7 +4564,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2f0caa657acebc755a0a7dd6",
@@ -3860,7 +4586,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3a7a4a1415e0bab0e1feba02",
@@ -3882,7 +4608,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f3a7f45e49e1aa8b10f7c9bc",
@@ -3904,7 +4630,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "eab59670410120cd9b08ea0f",
@@ -3926,7 +4652,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3153c59cad0624a0ef604b18",
@@ -3948,7 +4674,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ad1e62e8da472f88e5ca0a62",
@@ -3970,7 +4696,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "24fbb52127336b5f08648bec",
@@ -3992,7 +4718,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "1138c17ef43d15b72b0defd5",
@@ -4014,7 +4740,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "958fe56e15a80a58815d7edc",
@@ -4036,7 +4762,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0aef3b3537cf2c1052fc03a1",
@@ -4058,7 +4784,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7ec6b1905845e31dedd26d92",
@@ -4080,7 +4806,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "32bdf477c2821635c0efbf30",
@@ -4102,7 +4828,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "fbdc802d328c5bff3d324aee",
@@ -4124,7 +4850,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e82870ea8a6f5f09cbb30b3f",
@@ -4146,7 +4872,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "cc142dc864e57fe96538fe99",
@@ -4168,7 +4894,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "efd8ca8c5eb1ec2f267adbdf",
@@ -4190,7 +4916,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2eb65ed5b8553da223d2c456",
@@ -4212,7 +4938,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ab2ea627e48d70034ed7cf35",
@@ -4234,7 +4960,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2152c5685cd91c581441aedc",
@@ -4256,7 +4982,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "80f1585cfa45cb7417560f40",
@@ -4278,7 +5004,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7dadf4da1ebfc1a518326a8c",
@@ -4300,7 +5026,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "1ab9cf9ae0fbd06678c351d7",
@@ -4322,7 +5048,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ebf2e6de56e4cc9cad0f4279",
@@ -4344,7 +5070,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e2de2affe2b9513476d45dd7",
@@ -4366,7 +5092,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "5633549d4510999f7d747221",
@@ -4388,7 +5114,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ec7d6886b158cd86aff377f4",
@@ -4410,7 +5136,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d590dc134c78cfcbd1a59da6",
@@ -4432,7 +5158,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9826e0786f157f0231eb7b24",
@@ -4454,7 +5180,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3b85a042547b7e80352f746d",
@@ -4476,7 +5202,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-18 14:19:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "72501ef7f2a9b21bfa5b60e5",
@@ -4498,7 +5224,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "1859f472c535cf61b0a024a5",
@@ -4520,7 +5246,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ff33e36067fec932743490e8",
@@ -4542,7 +5268,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e12db19cc1ffbf0ab6c63492",
@@ -4564,7 +5290,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "65184ee533af69fdc9006fe2",
@@ -4586,7 +5312,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "810a2c6535ad2543182794fd",
@@ -4608,7 +5334,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9d9a9ad81e2b26de96019379",
@@ -4630,7 +5356,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b8d2fd0b266b36db119a350e",
@@ -4652,7 +5378,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "076d81873dfd86de13ac77ac",
@@ -4674,7 +5400,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bc6ba3fdd67e3e0f1f5f9b8a",
@@ -4696,7 +5422,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d83b8058cfca2b19db794af9",
@@ -4718,7 +5444,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e45e4201464810828481eacd",
@@ -4740,7 +5466,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "69650d403037e452953dbc90",
@@ -4762,7 +5488,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "41c0b457a77a17ad267f2602",
@@ -4784,7 +5510,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0bef9a9179f6075c421538a4",
@@ -4806,7 +5532,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ed3b9d9a9a44a88168a82ea5",
@@ -4828,7 +5554,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ba6819ae731ac07d28e95f50",
@@ -4850,7 +5576,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3354a255a5842280e0a2ce2c",
@@ -4872,7 +5598,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "da7b8b1c173062793517a4c7",
@@ -4894,7 +5620,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7c813cf2e403fb29a885e75f",
@@ -4916,7 +5642,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "db98422817bad79b7991c7ef",
@@ -4938,7 +5664,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0c2891ff51f8c9717c7fd2f2",
@@ -4960,7 +5686,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e92510fc1031e84436195e31",
@@ -4982,7 +5708,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d7c23b0148a1afe009602aa9",
@@ -5004,7 +5730,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a26db8f69979dcdea70b43da",
@@ -5026,7 +5752,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "632413ca049c1280621cccd9",
@@ -5048,7 +5774,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2ccecb896800ea763756213d",
@@ -5070,7 +5796,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "763d895615426969eafc30ab",
@@ -5092,7 +5818,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "efaf7f84434a262a7069dd81",
@@ -5114,7 +5840,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "72691c9855ed30e330d590f5",
@@ -5136,7 +5862,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "5446c31b7097a6eaa06237c6",
@@ -5158,7 +5884,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "30ea8b0e4a628ed4e831440c",
@@ -5180,7 +5906,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "57e8482566bf1c2d3c2c5f4e",
@@ -5202,7 +5928,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "febe223ce30c6cb6db359142",
@@ -5224,7 +5950,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "018c436cc142f95fec0e294b",
@@ -5246,7 +5972,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a9372a6a1cb4d877f79a4372",
@@ -5268,7 +5994,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7c97ebaac53f742019c8f6b1",
@@ -5290,7 +6016,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9a3fb8d6af20cfe16e05cd19",
@@ -5312,7 +6038,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e366f6d6d9fcfeae74906335",
@@ -5334,7 +6060,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a84bfe9dadd2e44053d6a97c",
@@ -5356,7 +6082,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ba514be4a9e6a8b6f0b81648",
@@ -5378,7 +6104,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3099ad3b87f35e70c3b5c93d",
@@ -5400,7 +6126,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "8cad0efbd2ab7d571622537f",
@@ -5422,7 +6148,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f249a806870895186a14c605",
@@ -5444,7 +6170,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2e5eecea929f397d16b843de",
@@ -5466,7 +6192,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "11574423565bd83ec3de7551",
@@ -5488,7 +6214,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "87ea63faa6dc1baf86faef2f",
@@ -5510,7 +6236,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bcab2dd0849f0b2439060df4",
@@ -5532,7 +6258,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "5046f26ce5a631106e7b5edf",
@@ -5554,7 +6280,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b9d58a23a2c09af144b37472",
@@ -5576,7 +6302,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4f76b07eaa7fcce18fbb0c17",
@@ -5598,7 +6324,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7724ca53c2018cc605858d01",
@@ -5620,7 +6346,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9e4a4b0b403576473c75e84c",
@@ -5642,7 +6368,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e4c881be885cad64fc9b73a3",
@@ -5664,7 +6390,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a9a8118fe745ac6971684d18",
@@ -5686,7 +6412,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "40d103f0fda36f1ada7f2715",
@@ -5708,7 +6434,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "370fd1835d418070b519ea09",
@@ -5730,7 +6456,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c479ac88d57d4d1584b4367e",
@@ -5752,7 +6478,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c32e0488a8ce2c68d01b85e2",
@@ -5774,7 +6500,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bf7174a422fc0422b49ad976",
@@ -5796,7 +6522,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d50677303b8eae4741de6fcb",
@@ -5818,7 +6544,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7274b6a450a81b431a53c7fd",
@@ -5840,7 +6566,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7b265632bbb9afd623242249",
@@ -5862,7 +6588,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bafcbbbaf24d1f36d0001501",
@@ -5884,7 +6610,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7d24792a8ff6394533489e28",
@@ -5906,7 +6632,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "42174b70d1d12e8f10ebac89",
@@ -5928,7 +6654,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bf374976edac241392b0b6fa",
@@ -5950,7 +6676,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0f12a59f49a65deafb0e2374",
@@ -5972,7 +6698,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "81a1413fb96701a5fc68a926",
@@ -5994,7 +6720,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-17 14:35:41 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "aeb22bea8b99e43c0db964b3",
@@ -6016,7 +6742,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "57e313875b916007e0047232",
@@ -6038,7 +6764,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2cf6242757143a8175aa4305",
@@ -6060,7 +6786,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "aa3de91c78ab04202522c1e5",
@@ -6082,7 +6808,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3af214854a8293760c724f8b",
@@ -6104,7 +6830,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f9a81575d5d877346eba20cf",
@@ -6126,7 +6852,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3149447a871303db2d92a21d",
@@ -6148,7 +6874,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "5affcfd505a4c0cb62e51396",
@@ -6170,7 +6896,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7ab20280fef0f53e40f4f4eb",
@@ -6192,7 +6918,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b295967d0e8f93d1b3a43bd4",
@@ -6214,7 +6940,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c068718970b7be7aebce87de",
@@ -6236,7 +6962,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b6726621626f4bbd0fcac243",
@@ -6258,7 +6984,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4636eceadf7e531ae96c7746",
@@ -6280,7 +7006,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "78d617bbaadf575a69f11a5d",
@@ -6302,7 +7028,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7e2039da638d4297432f3b0a",
@@ -6324,7 +7050,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e1ae4d4872b2a45ee8059411",
@@ -6346,7 +7072,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "846b6b5a07fdea2916732ef2",
@@ -6368,7 +7094,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ab3cf63a319f72841627edad",
@@ -6390,7 +7116,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a17915fd723f18528bff043a",
@@ -6412,7 +7138,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7bb3245dfc05130c0383e14f",
@@ -6434,7 +7160,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "5d0c82373f074e4edb126bbc",
@@ -6456,7 +7182,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2d127d0d52aeacca057f25de",
@@ -6478,7 +7204,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "1a2788891f255f28a66c842b",
@@ -6500,7 +7226,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "fbf69858b50b3714ed283728",
@@ -6522,7 +7248,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3f4c9ad0854fa6947cd32c89",
@@ -6544,7 +7270,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f34facadf18a34b3e62dd7a8",
@@ -6566,7 +7292,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "464a7345b1a0c4fe90514320",
@@ -6588,7 +7314,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "8678f35fc0f2dc81e9dfb75e",
@@ -6610,7 +7336,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-16 14:58:56 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2d48c24b9aba92599f77f2bb",
@@ -6632,7 +7358,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "5b84e5dd6de075f8e48285f5",
@@ -6654,7 +7380,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bf171013321fd4ca3c4c4bfb",
@@ -6676,7 +7402,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c7f4f3e76e208b205c1087fb",
@@ -6698,7 +7424,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3a75b45939c9b1dcf93297a5",
@@ -6720,7 +7446,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "19b7b63e6097c22fc3c8a007",
@@ -6742,7 +7468,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "26a78d62b4ef2812e07900ee",
@@ -6764,7 +7490,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d11e0cba0888d5d887294627",
@@ -6786,7 +7512,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "531beb49f500b6483215d14f",
@@ -6808,7 +7534,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "cd93f31481e1f1381ab570e9",
@@ -6830,7 +7556,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4d7391ccbcabf7f3b4a3f472",
@@ -6852,7 +7578,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ff0bcd556e3427a9ab0a64a4",
@@ -6874,7 +7600,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "6c2aad65c2d529eebeaa0f5a",
@@ -6896,7 +7622,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f4aba0b76cb3f8ff3988b3e6",
@@ -6918,7 +7644,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3797acb4b31b141c6e1e2ab7",
@@ -6940,7 +7666,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "02eeed8c4efc487bd2e0e75f",
@@ -6962,7 +7688,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "8670d886836785acd634b1be",
@@ -6984,7 +7710,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4e2b5fd050ad12f9f38cb1fc",
@@ -7006,7 +7732,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-15 14:45:48 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2f40617209cb020d28f305a9",
@@ -7028,7 +7754,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2a2e5197ccbdf9759901f594",
@@ -7050,7 +7776,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "204829d8b0c7efd4cdad143e",
@@ -7072,7 +7798,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "8b1622c70fee60ea32935682",
@@ -7094,7 +7820,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c87e76531533d627697e5ff0",
@@ -7116,7 +7842,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ef08f02eb1e56010e0345850",
@@ -7138,7 +7864,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c980748abf5f2a07f6a9706b",
@@ -7160,7 +7886,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c73f3e00866a7fe024a61777",
@@ -7182,7 +7908,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0aa2f9a0dcd1242b159efe52",
@@ -7204,7 +7930,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9c183c4adbc5492b21f325c7",
@@ -7226,7 +7952,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4ade2726c96b8bd087d0d8da",
@@ -7248,7 +7974,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "207430c6419c5414e432255f",
@@ -7270,7 +7996,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "63bede504a7d9f83cbfd6aee",
@@ -7292,7 +8018,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3d94e81b39e24aa30c6ac2be",
@@ -7314,7 +8040,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "676988023c6938b8e5e04144",
@@ -7336,7 +8062,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b3161828345de7c2100f3a37",
@@ -7358,7 +8084,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f5c7b381a94d83275a94e5be",
@@ -7380,7 +8106,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "95ff27e6917ea23f44874685",
@@ -7402,7 +8128,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4bb31c183e614ecc90fa688d",
@@ -7424,7 +8150,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7d79555a83ce27050d8f772b",
@@ -7446,7 +8172,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d72436cac9a5dbba793fa819",
@@ -7468,7 +8194,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "27a95570e7b9d4d8a95f414b",
@@ -7490,7 +8216,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "6f9d4df2ad21e474e393baa3",
@@ -7512,7 +8238,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "cdf6a70a92b9143609294113",
@@ -7534,7 +8260,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "33e7861c08184b8e4b61f514",
@@ -7556,7 +8282,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3e6fd72c9d9d18ae885c84fb",
@@ -7578,7 +8304,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0603ba7d319c5decf14d132f",
@@ -7600,7 +8326,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9553463a03e0adb54a6c5c24",
@@ -7622,7 +8348,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4fb49d2189aabcd4af8036cc",
@@ -7644,7 +8370,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ba7cdd1c3761df2093794d44",
@@ -7666,7 +8392,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d74f50a55f7a23083e3cd4dc",
@@ -7688,7 +8414,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4e613aa70558da0cdabd924b",
@@ -7710,7 +8436,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "95a16cf1d630c823ad382d49",
@@ -7732,7 +8458,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d3603c6d8de94a8ae1002c83",
@@ -7754,7 +8480,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "aee179f24e17ae371248d3d5",
@@ -7776,7 +8502,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a36305db0f8c3732929701c2",
@@ -7798,7 +8524,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "745e7c29aec35b1fba5ce23c",
@@ -7820,7 +8546,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d3c88e64e8a1760ae73d8785",
@@ -7842,7 +8568,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "72abb4a118b24b6689644b83",
@@ -7864,7 +8590,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0fa60de82ac1975b8ec53a14",
@@ -7886,7 +8612,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "97344f1262e49e524dc091b1",
@@ -7908,7 +8634,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f8a1f617cc5157ffa128487c",
@@ -7930,7 +8656,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ee8c7f95d7eb0b461b1b414a",
@@ -7952,7 +8678,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "dd37f027dab53decc009e064",
@@ -7974,7 +8700,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "bce4a1cb5601395e515edc8a",
@@ -7996,7 +8722,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f45ad476a4021235d5c5c972",
@@ -8018,7 +8744,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "5f7af5fad469316835157104",
@@ -8040,7 +8766,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9655ef4cb2ea64fd00e4730f",
@@ -8062,7 +8788,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "63e6288b86d508fca773bd4f",
@@ -8084,7 +8810,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c6ad134594d370a0e5b10163",
@@ -8106,7 +8832,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b9dc5ba2c5f5519a42a24fbf",
@@ -8128,7 +8854,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9351ce115b4d78f5eadb91c0",
@@ -8150,7 +8876,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "1885df11be047368380c272b",
@@ -8172,7 +8898,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "838172b8bbfaaeadbbfa0e3f",
@@ -8194,7 +8920,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2857774bc92ea29cdac1e107",
@@ -8216,7 +8942,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f70eccf4d8d3ec5d850a3399",
@@ -8238,7 +8964,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "863c725b40d0f482c96ef2c5",
@@ -8260,7 +8986,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4503216a9e2a479c8f9fc888",
@@ -8282,7 +9008,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "5df1cef90edb3df961a2a9bf",
@@ -8304,7 +9030,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0cd655751900d8b34eb9f125",
@@ -8326,7 +9052,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "48010d535ae0ef23c1a195f6",
@@ -8348,7 +9074,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7e640a9a2b6552e1af99212f",
@@ -8370,7 +9096,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-14 14:14:33 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0302b176946e5688ea590ea9",
@@ -8392,7 +9118,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "fdddad4b24fe4d2d2fdbb66b",
@@ -8414,7 +9140,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "99f37b73f6fbaa5310a9f01e",
@@ -8436,7 +9162,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f55e9511d184cdd5b2c491c2",
@@ -8458,7 +9184,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b8fb66347dbb557547553ec6",
@@ -8480,7 +9206,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "357e7a7f02932345813456e6",
@@ -8502,7 +9228,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3e1f6c43fe6e56a83562bacd",
@@ -8524,7 +9250,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "5805fe82be021ab4d964b034",
@@ -8546,7 +9272,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "692caf0b33c89180ed8e422e",
@@ -8568,7 +9294,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "52b8e7f3e8b0d367abedfd34",
@@ -8590,7 +9316,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d551a434a5aac1218a7da1d2",
@@ -8612,7 +9338,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "04b5b03b0ebe026245ce6046",
@@ -8634,7 +9360,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9ca235a93e2d723ded3fdc53",
@@ -8656,7 +9382,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "510ebcd0470e46dada0d43ac",
@@ -8678,7 +9404,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b0b2c7ce28c10c964f1f1a72",
@@ -8700,7 +9426,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "e9cfe080f171c263eb931148",
@@ -8722,7 +9448,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "de7f4dea31b664e44bee8d6f",
@@ -8744,7 +9470,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b241e7fdee553acc69c55a85",
@@ -8766,7 +9492,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f2785c2cc77903df8e1ae06d",
@@ -8788,7 +9514,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a3f0eb2ea528a6c1977547df",
@@ -8810,7 +9536,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a4c281f1cebd5b58e61993c0",
@@ -8832,7 +9558,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "390cd1ad2b82767eef0978c0",
@@ -8854,7 +9580,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "1d85cc35771615cd2aa92bb2",
@@ -8876,7 +9602,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "92d4c972e6f1571269b0edb1",
@@ -8898,7 +9624,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "fff7b7fcd7e5e86485ad68fc",
@@ -8920,7 +9646,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "2c06c510dd90d58349179984",
@@ -8942,7 +9668,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0a94f9c46d84c36c641fc865",
@@ -8964,7 +9690,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c8f8461bd1b099ec6991fac8",
@@ -8986,7 +9712,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0e19ab8e42430e50542848e1",
@@ -9008,7 +9734,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "828ab049912d878af85254f0",
@@ -9030,7 +9756,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4543728702d6f6c1f770b755",
@@ -9052,7 +9778,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "d0b7661cb86644c663613be7",
@@ -9074,7 +9800,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7c542ef9ac89ad439e46319f",
@@ -9096,7 +9822,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7968b3a8c12906ba11f1a240",
@@ -9118,7 +9844,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "02583ae7ddd3036f782a4d32",
@@ -9140,7 +9866,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4fe15148ff4972e9705e25fc",
@@ -9162,7 +9888,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "917ab18191250a0026e8f44c",
@@ -9184,7 +9910,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b6aeb1c5e5c0e23060b1eb9b",
@@ -9206,7 +9932,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7980b0662b282bad53931a8a",
@@ -9228,7 +9954,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "aa9ac2b17a3b767271aebc47",
@@ -9250,7 +9976,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ff2c04bf6b492585c713fa01",
@@ -9272,7 +9998,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "fc3c90dda05a42e9507f0f51",
@@ -9294,7 +10020,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7382039204bd4c651925d34a",
@@ -9316,7 +10042,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "6a3cfe5a3db18d690037e87b",
@@ -9338,7 +10064,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "f1a9ee14f9a8f6a59412e4db",
@@ -9360,7 +10086,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c10d3c924d10690bf5cf049e",
@@ -9382,7 +10108,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c2cb0e0c923a39a6e9219f91",
@@ -9404,7 +10130,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "c6c3a925db9bdf770b935703",
@@ -9426,7 +10152,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "0199b4c2ec27ac1b37928f45",
@@ -9448,7 +10174,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "77c2bf2f19ab83baa7d7f0a9",
@@ -9470,7 +10196,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "7da45a9ef9fc5441f1af9378",
@@ -9492,7 +10218,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "330b553537dc2ba2993f1d3b",
@@ -9514,7 +10240,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "fa9510a6af369632e21b429f",
@@ -9536,7 +10262,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "64ac45dc9c7e021ee0010731",
@@ -9558,7 +10284,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "db9f47083bbd7f2ae6920005",
@@ -9580,7 +10306,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "037d86629b4c03440b793e1f",
@@ -9602,7 +10328,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ae9a6c6628c38fb5390ac9ef",
@@ -9624,7 +10350,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "220311443ec43ccc7b3ebe3e",
@@ -9646,7 +10372,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "ee99b7b3d6b6f7685b381f3a",
@@ -9668,7 +10394,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "70617899e2708141407bd1f5",
@@ -9690,7 +10416,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4f87efae8ccb0f94268f3b01",
@@ -9712,7 +10438,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a99f5248f14a7c3c14b2f53f",
@@ -9734,7 +10460,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9b426d433916d2567504d4f5",
@@ -9756,7 +10482,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "881a9157950445fc6d2ae5e7",
@@ -9778,7 +10504,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "b586a39d6010d6ce4a59bff6",
@@ -9800,7 +10526,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "fdab226182f6d20363147dd3",
@@ -9822,7 +10548,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "873b8ba23989904e071d5fe7",
@@ -9844,7 +10570,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "83674fefca386d974f08d48f",
@@ -9866,7 +10592,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "085bf074d75328dedbd12a07",
@@ -9888,7 +10614,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "20abf5a74e32228cc5c509fb",
@@ -9910,7 +10636,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "3c6832b1c045d37b3442624e",
@@ -9932,7 +10658,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "a479af20b91a586ee2eb5fe9",
@@ -9954,7 +10680,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "1dc95870509b15cdc14b48c8",
@@ -9976,7 +10702,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "9be43902a0891cc63010fb81",
@@ -9998,7 +10724,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "34e7f0e080779aa8bf591827",
@@ -10020,7 +10746,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "202bfdf74147b450c9817898",
@@ -10042,7 +10768,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "4d3aed3402b8c73d03bb0bdb",
@@ -10064,7 +10790,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "8ffe227ca2401c336e7fb441",
@@ -10086,7 +10812,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "09de9a5dad8b6341081ae1a9",
@@ -10108,7 +10834,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "392c694e5e79c1830aab12d0",
@@ -10130,7 +10856,7 @@
       "available": true,
       "present_in_latest_scan": true,
       "first_seen_at_bjt": "2026-06-13 13:54:53 +0800",
-      "last_seen_at_bjt": "2026-06-22 14:57:31 +0800"
+      "last_seen_at_bjt": "2026-06-23 13:39:45 +0800"
     },
     {
       "id": "66a76d86c9e2db43212fabe8",
