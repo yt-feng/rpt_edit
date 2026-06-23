@@ -1,0 +1,327 @@
+# Weekly Warm-up: Mixed Messages as Warsh Pushes for Fed Credibility
+
+In February, we noted our view that Kevin Warsh was the right choice to fortify market credibility for the Fed, a critical element for the eventual success of the administration's plan to grow out of the debt problem. The rally in S&P/Gold is supportive of that view as is last Wednesday's FOMC meeting.
+
+\- Short-Term Pain for Long-Term Gain...We continue to view the Warsh nomination and subsequent appointment as a market-stabilizing event even if it leads to some short-term turbulence. Following on from a note we wrote in February, the roughly 40% rise in the S&P 500/Gold ratio since his nomination reinforces our view that markets are giving him the benefit of the doubt. Specifically, we think markets are signaling that Warsh can shake up the Fed, reduce reliance on the balance sheet as a policy tool, and help re-establish confidence in policy makers. Last Wednesday's price action suggests that transition is off to a good start, but could be a bit messy for stocks in the short term alongside the initial reaction of a sharp bear flattening of the yield curve, a stronger dollar and weak precious metal prices.
+
+\- Kevin Warsh's First Fed Meeting Marked an Important Step Toward Restoring Credibility...In our view, Warsh made it clear that the Fed's primary mandate is inflation, not labor markets or growth, and his willingness to call out the Fed's repeated misses on its inflation target suggests there is a new sheriff in town who intends to enforce that mandate. The stronger economy and jobs market provides the Fed with an opportunity to lean into the inflation mandate and that's what they appear to be doing. We do not think this means the Fed will raise rates immediately, or even this year, but markets don't like uncertainty and may struggle with the transition in the near term. We also applaud Warsh's move away from excessive forward guidance and toward greater reliance on market signals. We have long argued that the Fed has become too influential in shaping not only market behavior, but also how investors interpret the data. Letting markets react more freely to incoming information should give the Fed better signals and improve the quality and timing of its decision-making.
+
+\- We See Liquidity, Rather than Rate Hikes, As the More Important Near-Term Risk for Equities...Balance-sheet support has already begun to fade with the RMP down 75% from peak. Treasury buybacks have been reduced, while lending growth is accelerating to fund a strong economy and capital
+
+MS & CO. LLC
+Michael J Wilson
+Equity Strategist
+M.Wilson@morganstanley.com +1 212 761-2532
+
+Andrew B Pauker
+Equity Strategist
+Andrew.Pauker@morganstanley.com +1 212 761-1330
+
+Diane Ding, Ph.D.
+Quantitative Strategist
+Qian.Ding@morganstanley.com +1 212 761-6758
+
+Nicholas Lentini, CFA
+Equity Strategist
+Nick.Lentini@morganstanley.com +1 212 761-5863
+
+For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
+spending. Net-net, we think liquidity conditions are tightening and may remain a headwind for stocks into July, especially if markets test the Fed's newfound resolve. Peace negotiations with Iran are also likely to play a role in near-term price action, but longer term, we remain bearish on oil prices as this conflict likely drives new sources of supply out of a necessity for energy independence.
+
+\- Ultimately, Earnings Remain the Primary Driver of this Bull Market...Our out of consensus view on the earnings recovery at the beginning of the year is no longer unique, but it's still underappreciated in terms of the breadth and resilience of the data, and earnings are likely to exceed expectations for the full year. This growth has offset the multiple contraction YTD and will likely soften any further blows from tighter monetary policy or uncertainty due to less Fed guidance and/or market challenges of the new Chair.
+
+# Mixed Messages As Warsh Pushes for Fed Credibility
+
+Last week, Kevin Warsh presided over his first Fed meeting as Chairman. While there have been many hints as to how he might steer the Fed going forward, it was a good chance for him to tell the world how dynamics might change from how the Fed has operated in the past. We think there were several key takeaways that were very much in line with our views about how this Fed will be viewed by markets going forward, particularly in the context of current economic and market conditions.
+
+First, in order to set the table, we refer readers to a note we wrote the week after Kevin Warsh was nominated for the Chair position by President Trump back in early February ("Run It Hot" Takes a Detour to Ensure It Reaches Its Destination). We encourage readers to review that note for more details on our thinking. Below is the key message from that report:
+
+\- "The Warsh nomination should be viewed as a market stabilizing event with the recent parabolic rise in precious metals raising questions about the "run it hot" strategy. Friday's price action signals it was the right move as the S&P 500/Gold ratio had one of its best days in history."
+
+At the time, we viewed the selection of Warsh as the right choice to fortify market credibility for the Fed, a critical element for the eventual success of the administration's plan to grow out of the debt problem. The move in precious metals after the Fed began asset purchases again in December suggested markets were questioning the Fed and/or the government's ability to "run it hot" without creating a disorderly move lower in the US dollar or inflationary pressures more broadly. Since the nomination, S&P/Gold ratio is up close to 40 percent—in line with our thinking back in February that stocks were the better hedge against inflation given the outsized move in precious metals. Four weeks later, we suggested the war in Iran might further support that ratio, which was an out of consensus statement at the time. Since then, the S&P 500/Gold ratio is up close to 40 percent, the largest move in over 10 years.
+
+Exhibit 1: S&P 500/Gold Is Up 40% Since Warsh Was Nominated as Fed Chair; We Think This Is a Signal from the Market that Warsh Will Shake Up the Fed and Use Balance Sheet Less as a Policy Tool
+
+![](images/38709a445028b4438973e14f571ffc25e74c5f87fd352552b20af06051c78ff1.jpg)  
+Source: Bloomberg, MS
+
+In short, the Warsh nomination was the right choice if the goal is to fortify some questioned credibility for policy makers as evidenced by the moves in precious metals earlier this year and over the past decade. The improvement in the SPX/Gold ratio is a vote of confidence by markets, in our view. But now, the hard part begins—i.e., the new Chair must execute on that mission and deal with what is likely to be pressure from markets to test that resolve. Last week was a positive step in that direction, in our view. More specifically, Chair Warsh was crystal clear about the Fed's primary mandate—i.e., inflation, not labor markets/growth. Recent data on both employment and inflation support this position with private payrolls growing at their fastest pace in years due to the "rolling recovery" and policy changes (OBBBA, tax cuts, DOGE and immigration restrictions), and inflation still running well above target. He even called out the Fed for having missed its inflation target for the past 5 years, suggesting there is a new sheriff in town that will enforce that mandate.
+
+Exhibit 2: Private Payrolls Are Back on the Rise  
+![](images/e76d9b0f705aadbe1087a648c8a655ced75ecf06275444a37596555d0ccd98dc.jpg)  
+Source: Bloomberg, MS
+
+Exhibit 3: But So Is Inflation  
+![](images/7d50462a1d6b0f8171f8d0b906d37049fa46b45ec5a1184d3d63fc9ab5a4436b.jpg)  
+Source: Bloomberg, MS
+
+In addition to pivoting the Fed's main reaction function toward inflation, Chair Warsh also indicated that the Fed would no longer provide as much "hand holding" on its policy intentions going forward. More specifically, the Chair did not submit a dot plot projection and indicated the Fed's communication strategy is likely to change going forward. We applaud this move as a means to keep the market on its toes while providing the Fed a greater ability to have shock value, when necessary, in pursuit of its goals.
+
+As the same time, Warsh also indicated he is more focused on the left side of the decimal place when considering inflation. That suggests he might be ok with inflation between 2-3 percent rather than a hard target of 2 percent. While subtle, we think it indicates the Chair is fully aware of the need to run the economy hot to some extent if they have a real chance of managing the debt problem in the long term. In other words, this is going to be a balancing act of letting the economy boom (higher real and nominal GDP growth) while not losing control of the bond market, particularly the back end (both rate levels and volatility).
+
+As usual, we take our cues from the markets in how we interpret this new messaging. As an aside, we found the new Chair's comments about how he uses markets in his own decision making to be very encouraging:
+
+\- "We've dropped forward guidance."
+
+\- "Financial markets perform best when they react to incoming data."
+
+\- "Financial market prices are probably the most important source of information to guide central bankers. But when all the financial markets are doing is reflecting
+
+back what we've said, then we're taking the most important source of information and we're being blind to it."
+
+We could not agree more with these statements. We have been in the camp for years that the Fed has become too influential in how markets not only behave, but how they interpret the actual data because they are trying to also incorporate how the Fed will respond in that process. In short, the increasing use of forward guidance has altered many of the valuable market signals that we find to be more helpful than the Fed's interpretation of the data—i.e., the wisdom of crowd is superior. The Chair went on to say:
+
+\- "I'd like us to create a system where those blinders come off, where markets are following data that they efficiently think is reliable. And they'll be watching data, we'll be watching data. They'll come with better information through market prices to us, we can make more informed decisions."
+
+We agree it is time to rein in these often conflicting opinions designed to "manage" markets. Such efforts can be counterproductive and dilute the true message from markets that could be helpful to the Fed's actual decision making process, thereby increasing its longer term success in achieving its core mandates. While the new Chair did not talk about mission creep at the Fed over the past several decades, we suspect that could also come under review. For example, using balance sheet for economic goals rather than just emergencies and blurring of monetary and fiscal policy.
+
+Having said that, while the Fed may try to narrow its mission back to its statutory boundaries of full employment and more importantly price stability, it's unlikely they will abandon the third mandate of "financial stability" that was informally established in 2010 with the Dodd-Frank Act (more on that later).
+
+Initial market reactions to the Fed meeting were fairly clear last week with both stocks and bonds selling off—i.e., it was viewed as incrementally hawkish. Both front and back end rates rose but the curve bear flattened substantially as 2-year yields rose much more than 10-year yields. The reaction in stocks was risk-off alongside similar moves in gold, silver and bitcoin against a stronger USD. From our perspective, this is a win for the new Fed Chair as he tries to fortify the Fed's credibility around its commitment to price stability and hard money. As noted above, the messaging was somewhat mixed with Warsh talking tough on getting inflation back to target while at the same time acknowledging a "2 handle" is fine—perhaps implicitly signaling 2-2.9 percent is tolerable, if not preferential, given the need to "run it hot".
+
+This leads us to the final point around liquidity. Chair Warsh did not talk much about the Fed's balance sheet other than that there is task force being established to examine its use going forward. Here, we have a view that the balance sheet has been used aggressively this year to manage funding markets and provide liquidity for the increased T-Bill issuance from Treasury. This liquidity has played a positive role in financial markets YTD, in our view. However, as noted on our last two weeklies, the rate of change on these balance sheet provisions has rolled over since the Fed reduced the size of its Reserve Management Program (RMP) from \$40B per month to just \$10B today. Meanwhile, Treasury buybacks that have been funded through greater bill issuance have also been curtailed by about 50% with back-end purchases remaining about flat. Meanwhile, lending growth has accelerated this year thanks to a strong economy/demand for capital and less restrictive
+
+capital requirements on the banks. Net-net, we believe the path on liquidity is already tightening and think it is unlikely to reverse in the absence of funding market stress, higher bond volatility or credit market disruption. In other words, liquidity remains the greater risk to equity markets in the short-term rather than any fears about the Fed raising rates to fight inflation. Our latest proprietary liquidity measure shows this risk for equities is likely to persist into July before subsiding. We will have to see if markets challenge the Fed's current stance on the RMP or the Treasury's current level of buybacks.
+
+Bottom line, we believe last week's Fed meeting set the stage for a new regime under which the Fed may be willing to take some short term pain in markets to establish a higher chance of success in its longer term goals to support the administration's "Run it Hot" / rebalancing strategy. We commend this approach but wonder how it will react if markets test its resolve. It's possible such a test may be forthcoming over the next few weeks as the rate of change on liquidity interacts with the rate of change peak in earnings revisions as discussed in last week's note.
+
+Finally, we're not sure what to make of Thursday's very positive rebound in stocks on the back of the US/Iran deal being signed only to be challenged again based on new headlines over the weekend. As of this writing, the talks are back on which could lead to either a continuation of Thursday's rally or perhaps a sell the news on the premise this situation remains quite fluid. Longer term, we remain bearish on oil prices as this conflict simply highlighted how much excess oil and gas there is in the world and the resiliency of global energy markets. We also believe this conflict highlighted how unacceptable this choke point is going forward. We expect significant action to be taken by countries all over the world to ensure redundancies on oil supplies going forward which may include drilling activities in places thought to be off limits. We think this will keep the forward curve in check and could even act as a positive supply shock going forward that will help the Fed's increased focus on inflation. See the latest views and oil forecasts from our commodities team here.
+
+# Fresh Money Buy List
+
+Exhibit 4: Fresh Money Buy List - Stats & Performance
+
+<table><tr><td rowspan="2">Company Name</td><td rowspan="2">Ticker</td><td rowspan="2">MS Rating</td><td rowspan="2">Sector</td><td rowspan="2">Market Cap ($Bn)</td><td rowspan="2">Price</td><td rowspan="2">MS PT</td><td rowspan="2">% to MS PT</td><td rowspan="2">MS Analyst</td><td rowspan="2">Date Added</td><td colspan="2">Total Return Since Inclusion</td></tr><tr><td>Absolute</td><td>Rel. to S&amp;P</td></tr><tr><td>Abbvie Inc.</td><td>ABBV</td><td>Overweight</td><td>Health Care</td><td>$397.6</td><td>$225.02</td><td>278.00</td><td>23.5%</td><td>Flynn, Terence</td><td>8/12/2024</td><td>27.1%</td><td>(15.2%)</td></tr><tr><td>American Tower Corp.</td><td>AMT</td><td>Overweight</td><td>Real Estate</td><td>$89.7</td><td>$192.50</td><td>220.00</td><td>14.3%</td><td>McVeigh, Cameron</td><td>4/7/2025</td><td>(10.2%)</td><td>(58.7%)</td></tr><tr><td>CenterPoint Energy Inc</td><td>CNP</td><td>Equal-Weight</td><td>Utilities</td><td>$27.9</td><td>$42.73</td><td>39.00</td><td>(8.7%)</td><td>Arcaro, David</td><td>3/21/2022</td><td>64.3%</td><td>(12.6%)</td></tr><tr><td>Delta Airlines, Inc.</td><td>DAL</td><td>Overweight</td><td>Industrials</td><td>$50.3</td><td>$76.49</td><td>105.00</td><td>37.3%</td><td>Shanker, Ravi</td><td>11/17/2025</td><td>43.0%</td><td>31.8%</td></tr><tr><td>EQT Corp.</td><td>EQT</td><td>Overweight</td><td>Energy</td><td>$32.9</td><td>$52.62</td><td>74.00</td><td>40.6%</td><td>McDermott, Devin</td><td>11/17/2025</td><td>(12.8%)</td><td>(24.0%)</td></tr><tr><td>Knight-Swift Transportation Holdings Inc</td><td>KNX</td><td>Overweight</td><td>Industrials</td><td>$12.9</td><td>$79.27</td><td>70.00</td><td>(11.7%)</td><td>Shanker, Ravi</td><td>11/17/2025</td><td>91.5%</td><td>80.4%</td></tr><tr><td>Northrop Grumman Corp.</td><td>NOC</td><td>Overweight</td><td>Industrials</td><td>$77.0</td><td>$542.14</td><td>745.00</td><td>37.4%</td><td>Liwag, Kristine</td><td>8/12/2024</td><td>15.1%</td><td>(27.2%)</td></tr><tr><td>Atlassian Corporation PLC</td><td>TEAM</td><td>Overweight</td><td>Information Technology</td><td>$23.3</td><td>$91.54</td><td>120.00</td><td>31.1%</td><td>Singh, Sanjit</td><td>11/17/2025</td><td>(41.7%)</td><td>(52.9%)</td></tr><tr><td>Target Corp</td><td>TGT</td><td>Overweight</td><td>Consumer Staples</td><td>$58.1</td><td>$127.95</td><td>150.00</td><td>17.2%</td><td>Gutman, Simeon</td><td>11/17/2025</td><td>53.3%</td><td>42.2%</td></tr><tr><td>Walmart Inc.</td><td>WMT</td><td>Overweight</td><td>Consumer Staples</td><td>$959.7</td><td>$120.59</td><td>140.00</td><td>16.1%</td><td>Gutman, Simeon</td><td>3/27/2023</td><td>165.6%</td><td>70.1%</td></tr><tr><td colspan="12">Current List Performance</td></tr><tr><td>Average (Eq. Weight)</td><td></td><td></td><td></td><td>$172.9</td><td></td><td></td><td>19.7%</td><td></td><td></td><td>39.51%</td><td>3.39%</td></tr><tr><td>Median</td><td></td><td></td><td></td><td>$54.2</td><td></td><td></td><td>20.4%</td><td></td><td></td><td>35.0%</td><td>(13.9%)</td></tr><tr><td>% Positive Returns (Abs. / Rel.)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>70%</td><td>40%</td></tr><tr><td>% Negative Returns (Abs. / Rel.)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>30%</td><td>60%</td></tr><tr><td>Avg. Hold Period (Months)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>18.4</td></tr><tr><td colspan="12">All Time List Performance</td></tr><tr><td>Average (Eq. Weight)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>30.7%</td><td>5.2%</td></tr><tr><td>Median</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>20.6%</td><td>(3.4%)</td></tr><tr><td>% Positive Returns (Abs. / Rel.)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>75%</td><td>44%</td></tr><tr><td>% Negative Returns (Abs. / Rel.)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>25%</td><td>56%</td></tr></table>
+
+Performance returns shown above and below represent local currency total returns, including dividends and excluding brokerage commission. Returns are calculated using the closing price on the last trading day before the date shown in the "Date Added" column through close on the last trading day prior to publication of this report for stocks currently on the list and through close on the day of removal for stocks formerly on the list. These figures are not audited. Past performance is no guarantee of future results.  
+Source: Bloomberg, MS
+
+Exhibit 5: Fresh Money Buy List & S&P 500 Cumulative Total Return  
+![](images/5c5b10e8901428571d9c0419a45777117ea217fc6afa628c9fbbde03e78e399d.jpg)  
+Source: Bloomberg, MS
+
+Exhibit 6: Fresh Money Buy List / S&P 500 Cumulative Relative Return  
+![](images/72e4f329325616f0fafb2d1d614ee2cd5c499108d70ff5f2eb2b67fd88239778.jpg)  
+Source: Bloomberg, MS
+
+## Weekly Charts to Watch
+
+Exhibit 7: US Earnings Snapshot
+S&P 500 Y/Y EPS Growth  
+S&P 500 Consensus EPS  
+![](images/c5e8d49ece97319ae13efa8eebe20520bf3be9400f7cf0d48c62bde78dbbe7bb.jpg)  
+US Leading Earnings Indicator
+
+![](images/822b2b27b2e9f14b62e7c373fd7c9db1f1ed427b4599983c1916dff3af522356.jpg)
+
+![](images/3bc640ca549f67818bc49659a749c8e11b2122731a90f186aa8374819ff2070a.jpg)
+
+US Non-PMI Leading Earnings Indicator MS Non-PMI Leading Earnings Indicator (Leading 1-Yr.)  
+![](images/743803b928997c2dc53f5a8b979f5ade03b4cdddecc8b3bc3a5fff852a6b6f99.jpg)  
+Source: Refinitiv, FactSet, MS. Top: As of June 18, 2026. Bottom left as of May 31, 2026. Bottom right as of Apr. 30, 2026. Government data has delayed further updates. Actual S&P 500 LTM EPS as of 5/31/26. The LEI is a top down macro indicator consisting of the Inventory/Sales ratio, ISM Manufacturing PMI, ISM Manufacturing Employment PMI, Consumer Confidence and credit spreads. MS Non-PMI Leading Earnings Indicator inputs: Philadelphia Fed economic activity, Creighton U. business confidence, Chicago Fed supplier deliveries, Atlanta Fed wage tracker (inverse signal), NFIB small bus. most important problem inflation (inverse signal), and Brave-Butters-Kelley cycle component of monthly GDP. Weightings are fixed over time.
+
+Exhibit 8: MS US Equity Strategy Forecast Table
+
+<table><tr><td rowspan="2"></td><td rowspan="2">Current Price</td><td rowspan="2">MS Next 12M Price Target</td><td rowspan="2">MS Next 12M Price Target % to Current</td><td rowspan="2">Current P/E</td><td rowspan="2">MS Next 12M P/E Target</td><td colspan="4">MS Top Down EPS Estimates</td><td colspan="4">Bottom Up Consensus EPS Estimates</td></tr><tr><td>2026</td><td>2027</td><td>June 2028</td><td>2028</td><td>2026</td><td>2027</td><td>June 2028</td><td>2028</td></tr><tr><td rowspan="2">Bear Growth</td><td rowspan="2">7,474</td><td rowspan="2">5,900</td><td rowspan="2">-21%</td><td rowspan="2">21.4x</td><td rowspan="2">19.0x</td><td>$299</td><td>$300</td><td>$311</td><td>$322</td><td>$336</td><td>$388</td><td>$408</td><td>$435</td></tr><tr><td>9%</td><td>0%</td><td>4%</td><td>7%</td><td>22%</td><td>15%</td><td>13%</td><td>12%</td></tr><tr><td rowspan="2">Base Growth</td><td rowspan="2">7,474</td><td rowspan="2">8,300</td><td rowspan="2">11%</td><td rowspan="2">21.4x</td><td rowspan="2">20.5x</td><td>$339</td><td>$380</td><td>$404</td><td>$429</td><td>$336</td><td>$388</td><td>$408</td><td>$435</td></tr><tr><td>23%</td><td>12%</td><td>13%</td><td>13%</td><td>22%</td><td>15%</td><td>13%</td><td>12%</td></tr><tr><td rowspan="2">Bull Growth</td><td rowspan="2">7,474</td><td rowspan="2">9,400</td><td rowspan="2">26%</td><td rowspan="2">21.4x</td><td rowspan="2">21.0x</td><td>$352</td><td>$416</td><td>$448</td><td>$480</td><td>$336</td><td>$336</td><td>$336</td><td>$336</td></tr><tr><td>28%</td><td>18%</td><td>17%</td><td>16%</td><td>22%</td><td>15%</td><td>13%</td><td>12%</td></tr></table>
+
+Source: FactSet, MS.
+
+Exhibit 9: Sector Ratings
+
+<table><tr><td colspan="4">MS Sector Recommendations</td></tr><tr><td>Overweight</td><td>Financials</td><td>Industrials</td><td>Consumer Discretionary Goods</td></tr><tr><td rowspan="3">Equal Weight</td><td>Tech</td><td>Comm. Services</td><td>Health Care</td></tr><tr><td>Materials</td><td>Utilities</td><td>Consumer Services</td></tr><tr><td>Energy</td><td></td><td></td></tr><tr><td>Underweight</td><td>Staples</td><td>Real Estate</td><td></td></tr></table>
+
+Source: MS
+
+Exhibit 10: Equity Risk Premium  
+![](images/66c665228d6775d2edb72bb3bb5fe06967d88e79d22ae4e46f8aad69342a0cd4.jpg)  
+Note: Equity risk premium is calculated as the S&P 500 forward 12M earnings yield minus the nominal 10-Year Treasury. Source: As of June 18, 2026. Bloomberg, MS
+
+Exhibit 11: US Equity Market Technicals and Financial Conditions S&P 500 Advance/Decline Line  
+![](images/6c2198786e1e8d08fb16db7e8bde1e550ad03a6cff624bfa2e2e650d42d631a4.jpg)
+
+S&P 500 Percent Members Above 200-Day Moving Average  
+![](images/273abf6462acf971d80ed3b675d783bdd09c1b127d1f6359af00ad365812b0b6.jpg)
+
+S&P 500 with Moving Averages  
+![](images/91d5b60eca5429b7cd544b4c7542429986ec7a03e97c0a263d365f56e44d246f.jpg)  
+Source: Bloomberg, MS. As of June 18, 2026
+
+Chicago Fed National Financial Conditions Index  
+![](images/5fbf928bd980041379c4e3c85aa3e9dcec07e1823bafbcf951f62ba892566d75.jpg)
+
+Exhibit 12: US Small Cap Equities  
+![](images/0bbf6b9b09b5c9c4fd81758229b105f4f8bc18c208f2a7040f6f0a9b2dd97e9d.jpg)  
+Russell 2000 NTM P/B and Relative NTM P/B vs. S&P 500
+
+![](images/09f514cf0c192d0a74ba96fa170036110c810d1680b3f075451fa5e81219bf21.jpg)
+
+![](images/81d2af12aaf0ff4ffb2d269ec31390c7ea82ce3edf00e6dc6afec8464d20fca7.jpg)  
+NTM EPS by Cap Size  
+Source: FactSet, MS. As of June 18, 2026
+
+![](images/1335970a215896f97388504643434a0a6838a8bab9ab149fad33fdd1a6700eb2.jpg)
+
+Exhibit 13: Earnings Revisions Breadth
+US Earnings Revisions Breadth vs Price Y/Y  
+![](images/b84a735c017912283d3b9ed5a96cc564c487d8e8f434f8b5d9545f334b67b7a4.jpg)  
+Source: FactSet, MS  
+US Earnings Revisions Breadth (Adv. 25W) vs EPS Y/Y
+
+![](images/32ff5fda4f6a6f41bfaee81ce335c9e761f6783cad9c2b5a1c4b076e589a1c00.jpg)
+
+Exhibit 14: Earnings Revisions Breadth vs YoY Performance  
+![](images/7f77994f2f32d9fa9d63bad6086ad119bf6c9c13ae1b1b0919dce92192b9fd80.jpg)
+
+![](images/7a833cde3a0b2a773e39bcda763453e4409d1078bbe499f0cdfa8fbf92f326e5.jpg)
+
+![](images/3bf956edb1c050730d7c6cb8a85ac2566cad54eb784d2835edca3b520edb6da2.jpg)
+
+![](images/89fb0236ef18df2087a0f44d3f71edc88899883d9204f835947ff9fc45e5d16c.jpg)
+
+![](images/4b7aa6abec382be6f6666454480b815896e512228eb334aaa3f2907c0adb078a.jpg)
+
+![](images/4fa53041fed520c54613e8330e2539f196118b72d1211189f220bed23ef1bb66.jpg)
+
+![](images/e254dad1ef3050f5a6e0ce4d11560d4ed1c478cf1ea9c5e20806510675b5d337.jpg)
+
+![](images/4bb8c70b493fa6e90dd7267c0d634007e290351c5aab8181c073405fdad6890b.jpg)
+
+![](images/0e48b0f6d0623e966b2064b7a56b0b3e54b5deec301f037dd46e9931a377fa2e.jpg)
+
+![](images/ed9254e0f180b53d84dce9105c4d3ad0d5efa80f8d6683522e8866abde058eff.jpg)
+
+![](images/30ad03f4cc1bdcd60264e7e75400a0023c4c5fddcc70826ae388be3834041612.jpg)  
+Source: FactSet, MS. As of June 18, 2026
+
+Important note regarding economic sanctions. This report references jurisdictions which may be the subject of economic sanctions. Readers are solely responsible for ensuring that their investment activities are carried out in compliance with applicable laws.
+
+## Disclosure Section
+
+The information and opinions in MS were prepared by MS & Co. LLC, and/or MS C.T.V.M. S.A., and/or MS Mexico, Casa de Bolsa, S.A. de C.V., and/or MS Canada Limited. As used in this disclosure section, "MS" includes MS & Co. LLC, MS C.T.V.M. S.A., MS Mexico, Casa de Bolsa, S.A. de C.V., MS Canada Limited and their affiliates as necessary.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+## Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Diane Ding, Ph.D.; Nicholas Lentini, CFA; Andrew B Pauker; Michelle M. Weaver, CFA; Michael J Wilson.
+
+## Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+## Important Regulatory Disclosures on Subject Companies
+
+The analyst or strategist (or a household member) identified below owns the following securities (or related derivatives): Nicholas Lentini, CFA - Delta Airlines, Inc. (common or preferred stock). As of May 29, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: Abbvie Inc., American Tower Corp., Atlassian Corporation PLC, CenterPoint Energy Inc, Delta Airlines, Inc., EQT Corp., Knight-Swift Transportation Holdings Inc, Northrop Grumman Corp., Target Corp, Walmart Inc. Within the last 12 months, MS managed or co-managed a public offering (or 14+A offering) of securities of Abbvie Inc., American Tower Corp., CenterPoint Energy Inc, Delta Airlines, Inc., Walmart Inc.
+
+Within the last 12 months, MS has received compensation for investment banking services from Abbvie Inc., American Tower Corp., CenterPoint Energy Inc, Delta Airlines, Inc., Northrop Grumman Corp., Walmart Inc.
+
+In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from Abbvie Inc., American Tower Corp., Atlassian Corporation PLC, CenterPoint Energy Inc, Delta Airlines, Inc., EQT Corp., Northrop Grumman Corp., Target Corp, Walmart Inc.
+
+Within the last 12 months, MS has received compensation for products and services other than investment banking services from Abbvie Inc., American Tower Corp., Atlassian Corporation PLC, CenterPoint Energy Inc, Delta Airlines, Inc., EQT Corp., Northrop Grumman Corp., Walmart Inc.
+
+Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: Abbvie Inc., American Tower Corp., Atlassian Corporation PLC, CenterPoint Energy Inc, Delta Airlines, Inc., EQT Corp., Northrop Grumman Corp., Target Corp, Walmart Inc.
+
+Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: Abbvie Inc., American Tower Corp., Atlassian Corporation PLC, CenterPoint Energy Inc, Delta Airlines, Inc., EQT Corp., Northrop Grumman Corp., Walmart Inc.
+
+An employee, director or consultant of MS is a director of Walmart Inc. This person is not a research analyst or a member of a research analyst's household.
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.
+
+Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+## STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+## Global Stock Ratings Distribution
+
+## (as of May 31, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td></td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1542</td><td>42%</td><td>465</td><td>51%</td><td>30%</td><td>707</td><td>43%</td></tr><tr><td>Equal-weight/Hold</td><td>1571</td><td>43%</td><td>369</td><td>40%</td><td>23%</td><td>723</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>551</td><td>15%</td><td>86</td><td>9%</td><td>16%</td><td>201</td><td>12%</td></tr><tr><td>Total</td><td>3,667</td><td></td><td>920</td><td></td><td></td><td>1632</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+## Analyst Stock Ratings
+
+Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+## Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+## Other Important Disclosures
+
+A member of Research who had or could have had access to the research prior to completion owns securities (or related derivatives) in the Atlassian Corporation PLC. This person is not a research analyst or a member of research analyst's household.
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS produces an equity research product called a "Tactical Idea." Views contained in a "Tactical Idea" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\_and\_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/
+
+## MSICPL\_Morgan\_Stanley\_Research\_Audit\_Report.pdf).
+
+If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+The "Important Regulatory Disclosures on Subject Companies" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+## © 2026 MS
