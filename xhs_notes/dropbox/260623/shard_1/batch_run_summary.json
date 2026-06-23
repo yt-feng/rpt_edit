@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 51,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-MS-US Rates Strategy：Get Ready For the Noisiest US Front End In a Generation-260622.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9owag04u/pdfs/0001-06-MS-US Rates Strategy-Get Ready For the Noisiest US Front End In a Generation-260622.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/07-Bernstein-U.S. Multi Industry & Electrical Equipment：Data Center Chillers （1 3）： Primer and free cooling economics-260622.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9owag04u/pdfs/0002-07-Bernstein-U.S. Multi Industry - Electrical Equipment-Data Center Chillers -1 3-- Primer and free cooling economics-260622.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-GS-Global： GS Economic Indicators Update： Financial Conditions Continue to Ease in South Korea-260622.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9owag04u/pdfs/0003-08-GS-Global- GS Economic Indicators Update- Financial Conditions Continue to Ease in South Korea-260622.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-GS-Global Weekly Kickstart：Global equities extend gains as Middle East de~escalation continues-260622.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9owag04u/pdfs/0004-09-GS-Global Weekly Kickstart-Global equities extend gains as Middle East de-escalation continues-260622.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-CITI-Global Robot Vacuum：Near~term EU robot mower tariff risk deferred and strong 618 performance favor Ecovacs-260621.pdf",
+          "batch_file": "/tmp/pdf_batch_001_9owag04u/pdfs/0005-10-CITI-Global Robot Vacuum-Near-term EU robot mower tariff risk deferred and strong 618 performance favor Ecovacs-260621.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

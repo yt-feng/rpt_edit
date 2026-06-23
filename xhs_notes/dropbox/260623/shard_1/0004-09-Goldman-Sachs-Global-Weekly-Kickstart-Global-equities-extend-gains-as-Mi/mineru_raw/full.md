@@ -1,0 +1,456 @@
+GLOBAL WEEKLY KICKSTART
+
+# Global equities extend gains as Middle East de-escalation continues
+
+Global equities rose 1.2% last week, led by a rebound in Japan and APxJ, up 4.6% and 4.1% (Exhibit 1). AI-driven momentum continued to support Technology, up 4.3%, while Energy lagged, down 6.3% (Exhibit 3). Brent fell around 8% as the US and Iran headed into a prolonged period of talks. Cyclicals outperformed Defensives (Exhibit 30) as risk appetite strengthened (Exhibit 11). At the same time, monthly inflows from global investors remain strong, driven by passive funds and reaching an all-time high (Exhibit 44).
+
+## Macro data this week
+
+US: PCE inflation report, several speaking engagements with Fed officials, including events with Governor Waller and Presidents Williams, Goolsbee, and Kashkari.
+
+Europe: Euro area, Germany, France, UK flash PMIs; Euro area consumer confidence.
+
+Japan: “Summary of Opinions” from the June BOJ MPM, June Tokyo new core CPI.
+
+AEJ: Korea 20-day exports, Taiwan IP, CPI in Malaysia and Singapore, and Thailand central bank meeting.
+
+Pricing is as of the close of Friday, June 19.
+
+## The Post Modern Cycle – Navigating the Capex Boom
+
+The Post Modern cycle is reshaping equity returns. It marks a shift away from disinflation, deregulation, falling rates and globalisation toward higher macro volatility, higher real rates, greater state intervention and regionalisation. Returns are likely to rely less on valuation expansion and more on EPS growth.
+
+A capex supercycle is taking hold. The AI revolution is creating a new engine of private investment, while energy security and geopolitics are driving a synchronised rise in public spending. Supply chains are also being rebuilt for resilience, lifting capital intensity and structurally raising cost bases.
+
+■ Markets are broadening opportunity sets. Higher private capex and rising government borrowing are pushing up the cost of capital, supporting faster technology growth and stronger real asset values. The result is greater cross-sectional dispersion and more scope for alpha generation.
+
+See more: Global Strategy Paper: The Post Modern Cycle – Navigating the Capex Boom
+
+## Guillaume Jaisson
+
++44(20)7552-3000 | guillaume.jaisson@gs.com GS International
+
+Peter Oppenheimer
++44(20)7552-5782 |
+peter.oppenheimer@gs.com
+GS International
+
+## Sharon Bell
+
++44(20)7552-1341
+sharon.bell@gs.com
+GS International
+
+John Kwon
++65-6654-6337 |
+jongmin.kwon@gs.com
+GS (Singapore) Pte
+
+Giovanni Ferrannini
++44(20)7051-2589 |
+giovanni.ferrannini@gs.com
+GS International
+
+Elena Porfidia
++44(20)7051-5240 |
+elena.porfidia@gs.com
+GS International
+
+## The week at a glance — Global markets and indices
+
+Exhibit 1: Global market performance
+MSCI Indices, 1-week price return (USD, %)  
+![](images/9713d194499151a65158cbd8b955a6958cd80252c1f1aff3a9fabe196c0f3c60.jpg)  
+Source: Datastream, Bloomberg, GS Global Investment Research
+
+Exhibit 2: World equity indices USD, indexed price performance  
+![](images/7233b25f3876fdc291024d289425e6f2c66edc4b623ae97b85a760016654422d.jpg)  
+Source: Datastream, STOXX, GS Global Investment Research
+
+Exhibit 3: MSCI AC World sector performance  
+MSCI Indices, 1-week price return (USD, %)  
+![](images/9abe5850359bb60619aebd58a933d9de699da93df58b7c2ae991d53f9ef8f54d.jpg)  
+Source: Datastream, Bloomberg, GS Global Investment Research  
+Exhibit 4: Cross-asset performance
+MSCI Indices, 1-week price return (USD, %)
+
+![](images/777405a50174ee690e8ad1da340f632ad6c6b3485145c03e06b8b0ff39fbc2d5.jpg)  
+Source: Datastream, Bloomberg, GS Global Investment Research
+
+## Forecasts
+
+Exhibit 5: GDP growth, % yoy: GS vs. consensus
+
+<table><tr><td colspan="6">Real GDP Growth</td></tr><tr><td rowspan="2">Percent Change yoy</td><td>2025</td><td colspan="2">2026</td><td colspan="2">2027</td></tr><tr><td>GS</td><td>GS</td><td>Cons*</td><td>GS</td><td>Cons*</td></tr><tr><td>USA</td><td>2.1</td><td>2.1</td><td>2.1</td><td>2.1</td><td>2.0</td></tr><tr><td>Japan</td><td>1.1</td><td>0.5</td><td>0.6</td><td>1.0</td><td>0.8</td></tr><tr><td>Euro area</td><td>1.5</td><td>0.3</td><td>0.6</td><td>0.9</td><td>1.2</td></tr><tr><td>Germany</td><td>0.3</td><td>0.7</td><td>0.6</td><td>1.0</td><td>1.1</td></tr><tr><td>France</td><td>0.9</td><td>0.4</td><td>0.6</td><td>0.6</td><td>0.9</td></tr><tr><td>Italy</td><td>0.7</td><td>0.6</td><td>0.6</td><td>0.5</td><td>0.7</td></tr><tr><td>Spain</td><td>2.8</td><td>2.1</td><td>2.2</td><td>1.5</td><td>1.8</td></tr><tr><td>UK</td><td>1.4</td><td>1.2</td><td>1.0</td><td>1.3</td><td>1.1</td></tr><tr><td>China</td><td>5.0</td><td>4.7</td><td>4.6</td><td>4.7</td><td>4.5</td></tr><tr><td>Developed Markets</td><td>1.8</td><td>1.4</td><td>1.9</td><td>1.7</td><td>1.5</td></tr><tr><td>Emerging Markets</td><td>4.2</td><td>3.7</td><td>4.0</td><td>4.1</td><td>3.9</td></tr><tr><td>World</td><td>2.8</td><td>2.4</td><td>2.8</td><td>2.7</td><td>2.5</td></tr></table>
+
+\* Bloomberg country and GS aggregate consensus  
+Source: Bloomberg, GS Global Investment Research
+
+Exhibit 6: GS Macro 3-, 6- and 12-month forecasts
+
+<table><tr><td rowspan="2"></td><td rowspan="2">Current</td><td colspan="3">Forecast</td><td rowspan="2">Up/Downside to 12m TP (%)</td></tr><tr><td>3m</td><td>6m</td><td>12m</td></tr><tr><td colspan="6">Equities</td></tr><tr><td>S&amp;P 500</td><td>7501</td><td>7600</td><td>8000</td><td>8300</td><td>10.7</td></tr><tr><td>STOXX Europe 600</td><td>636</td><td>640</td><td>645</td><td>660</td><td>3.8</td></tr><tr><td>MSCI Asia-Pacific Ex-Japan</td><td>918</td><td>980</td><td>1030</td><td>1080</td><td>17.7</td></tr><tr><td>Topix</td><td>4045</td><td>4100</td><td>4200</td><td>4400</td><td>8.8</td></tr><tr><td colspan="6">10Y Rate (%)</td></tr><tr><td>US</td><td>4.5</td><td>4.5</td><td>4.4</td><td>4.3</td><td>-14 bp</td></tr><tr><td>Euro Area (Germany)</td><td>3.0</td><td>2.9</td><td>3.0</td><td>3.0</td><td>2 bp</td></tr><tr><td>Japan</td><td>2.6</td><td>2.5</td><td>2.5</td><td>2.4</td><td>-22 bp</td></tr><tr><td colspan="6">Currencies</td></tr><tr><td>€/$</td><td>1.15</td><td>1.14</td><td>1.18</td><td>1.20</td><td>4.7</td></tr><tr><td>£/$</td><td>1.32</td><td>1.33</td><td>1.34</td><td>1.33</td><td>0.9</td></tr><tr><td>$/¥</td><td>161</td><td>160</td><td>158</td><td>155</td><td>-3.9</td></tr><tr><td colspan="6">Commodities</td></tr><tr><td>Brent Crude Oil ($/bbl)</td><td>80.6</td><td>83</td><td>80</td><td>75</td><td>-6.9</td></tr><tr><td>NYMEX Nat. Gas ($/mmBtu)</td><td>3.2</td><td>3.50</td><td>3.50</td><td>3.50</td><td>8.3</td></tr><tr><td>Gold ($/troy oz)</td><td>4151</td><td>4690</td><td>4900</td><td>5115</td><td>23.2</td></tr><tr><td>LME Copper ($/mt)</td><td>13527</td><td>13620</td><td>13735</td><td>13800</td><td>2.0</td></tr></table>
+
+Source: Bloomberg, Datastream, STOXX, GS Global Investment Research
+
+Exhibit 7: GS top-down vs. consensus bottom-up estimates of 2026 EPS growth  
+![](images/1fce4051fc1bd868fb542bbdb5b5a137c0c6013a1672f7a3bb597394865166ab.jpg)  
+Source: I/B/E/S, Toyo Keizai, STOXX, MSCI, GS Global Investment Research
+
+Exhibit 8: GS top-down vs. consensus bottom-up estimates of 2027 EPS growth  
+![](images/317cee3cb709a20815bef65ad845c5bec15bced0a69bb09c71d0b94573c7c21d.jpg)  
+Source: I/B/E/S, Toyo Keizai, STOXX, MSCI, GS Global Investment Research
+
+## Risk and Sentiment indicators
+
+Exhibit 9: GS Bull/Bear Market Indicator (GSBLBR)  
+![](images/2f7943921edb536e99988a0043d036e723671b8232f4bfd1bf07075f0e400565.jpg)  
+Exhibit 10: Details of components of the GS Bull/Bear Market Indicator
+GS Bull/Bear Market Indicator = Average percentile
+
+<table><tr><td></td><td>Level</td><td>Percentile</td></tr><tr><td>Shiller PE</td><td>40.5</td><td>98%</td></tr><tr><td>Unemployment</td><td>4.3</td><td>77%</td></tr><tr><td>0-6 quarter yield curve</td><td>0.3</td><td>73%</td></tr><tr><td>Private sector Financial Balance</td><td>3.9</td><td>56%</td></tr><tr><td>ISM</td><td>54.0</td><td>55%</td></tr><tr><td>Core Inflation</td><td>2.9</td><td>53%</td></tr><tr><td>GS Bull/Bear Market Indicator</td><td></td><td>68%</td></tr></table>
+
+Note: 100 $^{th}$ percentile means these variables are at their highest level, except for Private sector Financial Balance, yield curve and unemployment where 100% means they are at their lowest.  
+Source: Shiller, Haver Analytics, Datastream, GS Global Investment Research  
+Source: Haver Analytics, Datastream, Robert Shiller, GS Global Investment Research
+
+## Exhibit 11: Risk Appetite Indicator (GSRAII)
+
+The RAI is based on 27 pair-trades across asset classes measured on z-scores rel. to last 2 years' performance, see July 2016 GOAL for details
+
+![](images/10529e92e7c99ddcc18f1637770aabb1974c58d3940adae865d5faab30881eb3.jpg)  
+Source: GS Global Investment Research
+
+Exhibit 12: Percentile of sentiment indicators
+Data since 2007  
+![](images/f10cd2ea994ccce533e7fb1a5155ee4908b63b799fc8fe686356e5b59e066b76.jpg)  
+Source: EPFR, Datastream, Haver Analytics, GS Global Investment Research
+
+## Performance - Local indices
+
+Exhibit 13: Global equity market performance (local indices)
+
+<table><tr><td rowspan="2">Market</td><td colspan="4">Price return (Local CCY, %)</td></tr><tr><td>Index</td><td>1-week (Local)</td><td>Ytd</td><td>1Yr</td></tr><tr><td>South Korea</td><td>KOSPI</td><td>11.4</td><td>114.8</td><td>204.0</td></tr><tr><td>Turkey</td><td>XU100</td><td>5.7</td><td>30.8</td><td>61.9</td></tr><tr><td>Taiwan</td><td>TWSE</td><td>5.2</td><td>60.4</td><td>111.2</td></tr><tr><td>Austria</td><td>ATX</td><td>4.3</td><td>22.6</td><td>51.5</td></tr><tr><td>Japan</td><td>TPX</td><td>4.2</td><td>18.7</td><td>44.9</td></tr><tr><td>Philippines</td><td>PCOMP</td><td>3.8</td><td>1.4</td><td>(3.5)</td></tr><tr><td>Egypt</td><td>EGX30</td><td>3.5</td><td>25.8</td><td>74.0</td></tr><tr><td>China (A)</td><td>SHSZ300</td><td>3.4</td><td>6.7</td><td>28.6</td></tr><tr><td>Singapore</td><td>FSSTI</td><td>3.3</td><td>11.8</td><td>33.3</td></tr><tr><td>Spain</td><td>IBEX</td><td>3.1</td><td>11.8</td><td>40.8</td></tr><tr><td>Indonesia</td><td>JCI</td><td>2.8</td><td>(28.6)</td><td>(11.4)</td></tr><tr><td>Italy</td><td>FTSEMIB</td><td>2.6</td><td>17.6</td><td>35.7</td></tr><tr><td>Greece</td><td>ASE</td><td>2.2</td><td>16.8</td><td>39.1</td></tr><tr><td>Sweden</td><td>OMX</td><td>2.1</td><td>10.3</td><td>29.9</td></tr><tr><td>EuroStoxx 50</td><td>SX5E</td><td>1.7</td><td>8.7</td><td>21.1</td></tr><tr><td>Malaysia</td><td>FBMKLCI</td><td>1.7</td><td>1.9</td><td>14.0</td></tr><tr><td>India</td><td>NIFTY EM</td><td>1.7</td><td>(8.1)</td><td>(3.1)</td></tr><tr><td>Germany</td><td>DAX DM</td><td>1.4</td><td>2.0</td><td>8.4</td></tr><tr><td>Hungary</td><td>HUX</td><td>1.4</td><td>24.0</td><td>41.2</td></tr><tr><td>US</td><td>SPX</td><td>0.9</td><td>9.6</td><td>25.4</td></tr><tr><td>France</td><td>CAC</td><td>0.8</td><td>3.3</td><td>11.5</td></tr><tr><td>New Zealand</td><td>NZX 50</td><td>0.8</td><td>(1.7)</td><td>4.2</td></tr><tr><td>Denmark</td><td>KFX</td><td>0.6</td><td>(4.3)</td><td>(16.9)</td></tr><tr><td>Switzerland</td><td>SMI</td><td>0.5</td><td>3.8</td><td>16.0</td></tr><tr><td>Stoxx 600</td><td>SXXP</td><td>0.4</td><td>7.3</td><td>18.6</td></tr><tr><td>Australia</td><td>AS51</td><td>0.3</td><td>1.3</td><td>3.6</td></tr><tr><td>Portugal</td><td>BVLX</td><td>0.2</td><td>13.5</td><td>26.2</td></tr><tr><td>Poland</td><td>WiG</td><td>0.1</td><td>18.4</td><td>38.9</td></tr><tr><td>Czech</td><td>PX</td><td>0.1</td><td>(4.5)</td><td>20.3</td></tr><tr><td>South Africa</td><td>JALSH</td><td>-0.1</td><td>(2.8)</td><td>18.6</td></tr><tr><td>Netherlands</td><td>AEX</td><td>-0.3</td><td>13.3</td><td>18.6</td></tr><tr><td>Canada</td><td>SPTSX60</td><td>-0.3</td><td>9.9</td><td>29.6</td></tr><tr><td>Mexico</td><td>MEXBOL</td><td>-0.4</td><td>5.3</td><td>20.8</td></tr><tr><td>UK</td><td>UKX</td><td>-1.0</td><td>4.3</td><td>17.9</td></tr><tr><td>Thailand</td><td>SET</td><td>-1.3</td><td>24.8</td><td>47.1</td></tr><tr><td>Belgium</td><td>BEL20</td><td>-1.6</td><td>11.2</td><td>28.0</td></tr><tr><td>Brazil</td><td>IBOV</td><td>-1.6</td><td>4.5</td><td>21.4</td></tr><tr><td>Norway</td><td>OSEAX</td><td>-2.9</td><td>17.1</td><td>19.6</td></tr><tr><td>HK</td><td>HSI</td><td>-3.2</td><td>(6.7)</td><td>3.0</td></tr><tr><td>China (H)</td><td>HSCEI</td><td>-4.8</td><td>(10.5)</td><td>(5.2)</td></tr></table>
+
+<table><tr><td rowspan="2">Market</td><td colspan="4">Relative Price return (vs MSCI AC World, USD, %)</td></tr><tr><td>Index</td><td>1-week (USD)</td><td>Ytd</td><td>1Yr</td></tr><tr><td>South Korea</td><td>KOSPI</td><td>9.6</td><td>91.6</td><td>147.6</td></tr><tr><td>Egypt</td><td>EGX30</td><td>6.6</td><td>9.2</td><td>49.3</td></tr><tr><td>Taiwan</td><td>TWSE</td><td>4.2</td><td>48.8</td><td>71.1</td></tr><tr><td>Turkey</td><td>XU100</td><td>4.1</td><td>10.1</td><td>10.8</td></tr><tr><td>Philippines</td><td>PCOMP</td><td>3.5</td><td>(12.9)</td><td>(35.9)</td></tr><tr><td>Japan</td><td>TPX</td><td>2.4</td><td>4.4</td><td>3.9</td></tr><tr><td>China (A)</td><td>SHSZ300</td><td>2.2</td><td>(0.7)</td><td>9.6</td></tr><tr><td>Austria</td><td>ATX</td><td>2.1</td><td>8.7</td><td>24.4</td></tr><tr><td>Indonesia</td><td>JCI</td><td>2.1</td><td>(44.0)</td><td>(45.4)</td></tr><tr><td>Singapore</td><td>FSSTI</td><td>1.4</td><td>0.3</td><td>5.9</td></tr><tr><td>India</td><td>NIFTY</td><td>1.3</td><td>(23.4)</td><td>(38.0)</td></tr><tr><td>Spain</td><td>IBEX</td><td>0.9</td><td>(1.8)</td><td>13.7</td></tr><tr><td>Italy</td><td>FTSEMIB</td><td>0.5</td><td>3.9</td><td>8.6</td></tr><tr><td>Greece</td><td>ASE</td><td>0.1</td><td>3.1</td><td>12.1</td></tr><tr><td>US</td><td>SPX</td><td>-0.3</td><td>(1.4)</td><td>(1.7)</td></tr><tr><td>EuroStoxx 50</td><td>SX5E</td><td>-0.4</td><td>(4.8)</td><td>(6.0)</td></tr><tr><td>Hungary</td><td>HUX</td><td>-0.6</td><td>21.2</td><td>34.9</td></tr><tr><td>Germany</td><td>DAX</td><td>-0.7</td><td>(11.3)</td><td>(18.7)</td></tr><tr><td>Sweden</td><td>OMX</td><td>-0.9</td><td>(4.8)</td><td>3.8</td></tr><tr><td>France</td><td>CAC</td><td>-1.3</td><td>(10.1)</td><td>(15.6)</td></tr><tr><td>Malaysia</td><td>FBMKLCI</td><td>-1.4</td><td>(10.8)</td><td>(9.5)</td></tr><tr><td>Denmark</td><td>KFX</td><td>-1.5</td><td>(17.5)</td><td>(44.2)</td></tr><tr><td>Australia</td><td>AS51</td><td>-1.5</td><td>(4.4)</td><td>(14.6)</td></tr><tr><td>Stoxx 600</td><td>SXXP</td><td>-1.8</td><td>(6.1)</td><td>(8.5)</td></tr><tr><td>Portugal</td><td>BVLX</td><td>-2.0</td><td>(0.2)</td><td>(0.9)</td></tr><tr><td>New Zealand</td><td>NZX 50</td><td>-2.1</td><td>(12.8)</td><td>(26.9)</td></tr><tr><td>Switzerland</td><td>SMI</td><td>-2.2</td><td>(9.1)</td><td>(9.4)</td></tr><tr><td>Czech</td><td>PX</td><td>-2.2</td><td>(17.8)</td><td>(3.7)</td></tr><tr><td>South Africa</td><td>JALSH</td><td>-2.3</td><td>(13.1)</td><td>3.7</td></tr><tr><td>Mexico</td><td>MEXBOL</td><td>-2.3</td><td>(1.7)</td><td>6.0</td></tr><tr><td>Poland</td><td>WiG</td><td>-2.4</td><td>3.8</td><td>12.5</td></tr><tr><td>Netherlands</td><td>AEX</td><td>-2.4</td><td>(0.3)</td><td>(8.5)</td></tr><tr><td>Thailand</td><td>SET</td><td>-3.0</td><td>8.8</td><td>19.7</td></tr><tr><td>Canada</td><td>SPTSX60</td><td>-3.0</td><td>(4.7)</td><td>(1.5)</td></tr><tr><td>UK</td><td>UKX</td><td>-3.6</td><td>(8.3)</td><td>(10.9)</td></tr><tr><td>Belgium</td><td>BEL20</td><td>-3.7</td><td>(2.4)</td><td>0.9</td></tr><tr><td>Brazil</td><td>IBOV</td><td>-4.0</td><td>0.5</td><td>2.7</td></tr><tr><td>HK</td><td>HSI</td><td>-4.4</td><td>(18.3)</td><td>(24.0)</td></tr><tr><td>Norway</td><td>OSEAX</td><td>-6.0</td><td>11.1</td><td>(2.7)</td></tr><tr><td>China (H)</td><td>HSCEI</td><td>-6.0</td><td>(22.1)</td><td>(32.1)</td></tr></table>
+
+Source: MSCI, STOXX, Local Index Compilers, FactSet, GS Global Investment Research
+
+## Sector performance across regions - Weekly
+
+Exhibit 14: 1-week sector performance across regions
+Light blue: below -1 standard dev. from the AC world market performance. Dark blue: above +1 standard dev. from the AC world market performance.
+
+<table><tr><td rowspan="2">MSCI Index</td><td colspan="18">Weekly Absolute Performance (%) in USD</td></tr><tr><td>US</td><td>Canada</td><td>UK</td><td>Germany</td><td>France</td><td>Swiss</td><td>Spain</td><td>Italy</td><td>Devd Euro</td><td>Japan</td><td>Korea</td><td>Brazil</td><td>India</td><td>China</td><td>Taiwan</td><td>AC APxJ</td><td>EM</td><td>AC World</td></tr><tr><td>Market</td><td>1.0</td><td>-1.8</td><td>-2.5</td><td>0.1</td><td>-0.1</td><td>-0.8</td><td>2.6</td><td>2.0</td><td>-0.4</td><td>4.7</td><td>13.1</td><td>-2.2</td><td>3.0</td><td>-2.9</td><td>5.2</td><td>4.1</td><td>4.1</td><td>1.2</td></tr><tr><td>Energy</td><td>-6.6</td><td>-5.4</td><td>-7.9</td><td>-</td><td>-7.6</td><td>-</td><td>-6.0</td><td>-7.7</td><td>-7.8</td><td>-0.9</td><td>-5.4</td><td>-7.2</td><td>2.1</td><td>-7.1</td><td>-</td><td>-3.5</td><td>-3.8</td><td>-6.3</td></tr><tr><td>Materials</td><td>-0.2</td><td>-1.4</td><td>-5.5</td><td>-0.4</td><td>-4.7</td><td>1.9</td><td>-</td><td>0.5</td><td>-2.8</td><td>4.2</td><td>-4.7</td><td>0.1</td><td>1.9</td><td>-0.5</td><td>16.6</td><td>-0.5</td><td>-0.3</td><td>-0.9</td></tr><tr><td>Industrials</td><td>2.9</td><td>-3.0</td><td>0.1</td><td>3.2</td><td>5.3</td><td>3.5</td><td>2.6</td><td>2.7</td><td>2.7</td><td>3.2</td><td>10.3</td><td>2.3</td><td>5.9</td><td>0.5</td><td>-4.0</td><td>5.0</td><td>5.9</td><td>2.9</td></tr><tr><td>Capital Goods</td><td>4.8</td><td>0.6</td><td>1.8</td><td>3.7</td><td>5.5</td><td>4.4</td><td>2.8</td><td>2.7</td><td>3.7</td><td>4.3</td><td>10.5</td><td>5.9</td><td>6.0</td><td>2.6</td><td>-2.4</td><td>6.8</td><td>7.3</td><td>4.5</td></tr><tr><td>Comm &amp; Profess. Srvcs</td><td>-3.2</td><td>0.7</td><td>-4.4</td><td>-</td><td>1.2</td><td>0.1</td><td>-</td><td>-</td><td>-3.6</td><td>0.1</td><td>-</td><td>-</td><td>-</td><td>0.0</td><td>-</td><td>-0.1</td><td>0.0</td><td>-2.5</td></tr><tr><td>Transportation</td><td>-3.6</td><td>-5.8</td><td>-</td><td>-0.9</td><td>0.3</td><td>-8.4</td><td>2.2</td><td>-</td><td>-2.9</td><td>-4.3</td><td>4.1</td><td>-4.1</td><td>4.9</td><td>-5.0</td><td>-6.3</td><td>-0.7</td><td>0.6</td><td>-3.2</td></tr><tr><td>Consumer Discretionary</td><td>0.8</td><td>-4.0</td><td>-3.5</td><td>-5.8</td><td>-1.6</td><td>1.1</td><td>-0.8</td><td>-2.2</td><td>-2.3</td><td>1.8</td><td>-2.3</td><td>-1.5</td><td>4.2</td><td>-5.1</td><td>4.8</td><td>-2.4</td><td>-2.8</td><td>0.1</td></tr><tr><td>Automobiles &amp; Comp.</td><td>-1.8</td><td>-2.8</td><td>-</td><td>-7.4</td><td>-0.2</td><td>-</td><td>-</td><td>-2.1</td><td>-4.7</td><td>3.2</td><td>-1.7</td><td>-</td><td>2.1</td><td>-5.8</td><td>-</td><td>-1.8</td><td>-1.8</td><td>-1.3</td></tr><tr><td>Cons Dur. &amp; Apparel</td><td>0.0</td><td>-15.7</td><td>-</td><td>-1.7</td><td>-1.9</td><td>1.1</td><td>-</td><td>-2.8</td><td>-0.9</td><td>0.7</td><td>-6.7</td><td>-</td><td>6.8</td><td>-6.8</td><td>-</td><td>-3.1</td><td>-3.6</td><td>-0.7</td></tr><tr><td>Consumer Srvcs</td><td>1.6</td><td>-0.9</td><td>-3.5</td><td>-3.3</td><td>0.6</td><td>-</td><td>0.3</td><td>-</td><td>-2.6</td><td>1.0</td><td>-</td><td>-</td><td>7.1</td><td>-5.4</td><td>-</td><td>-3.1</td><td>-3.6</td><td>0.5</td></tr><tr><td>Retailing</td><td>1.6</td><td>-3.3</td><td>-3.5</td><td>-2.4</td><td>-</td><td>0.5</td><td>-1.3</td><td>-</td><td>-2.5</td><td>0.4</td><td>-</td><td>-1.5</td><td>12.2</td><td>-4.5</td><td>4.8</td><td>-2.4</td><td>-3.2</td><td>0.9</td></tr><tr><td>Consumer Staples</td><td>-2.8</td><td>-3.2</td><td>-4.3</td><td>0.6</td><td>-3.6</td><td>-2.7</td><td>-</td><td>-0.5</td><td>-3.5</td><td>0.5</td><td>-4.3</td><td>-5.3</td><td>2.4</td><td>-6.3</td><td>-2.4</td><td>-1.7</td><td>-2.1</td><td>-2.8</td></tr><tr><td>Food &amp; Staples Retailing</td><td>-3.4</td><td>-3.2</td><td>-7.9</td><td>-</td><td>-7.9</td><td>-</td><td>-</td><td>-</td><td>-7.1</td><td>-3.3</td><td>-</td><td>-8.0</td><td>8.2</td><td>-6.6</td><td>-2.6</td><td>-0.8</td><td>-1.0</td><td>-3.5</td></tr><tr><td>Food Bev. &amp; Tobacco</td><td>-3.5</td><td>-3.1</td><td>-5.2</td><td>-</td><td>-3.1</td><td>-2.7</td><td>-</td><td>-0.5</td><td>-3.4</td><td>2.0</td><td>-4.5</td><td>-4.7</td><td>2.6</td><td>-6.3</td><td>-2.4</td><td>-2.4</td><td>-2.7</td><td>-3.2</td></tr><tr><td>Household &amp; Persnl Prod</td><td>0.0</td><td>-</td><td>-1.9</td><td>0.6</td><td>-3.5</td><td>-</td><td>-</td><td>-</td><td>-2.2</td><td>0.6</td><td>-3.8</td><td>-</td><td>0.6</td><td>-5.4</td><td>-</td><td>-1.0</td><td>-0.8</td><td>-0.8</td></tr><tr><td>Health Care</td><td>-2.9</td><td>-</td><td>-3.2</td><td>1.1</td><td>-4.5</td><td>-3.5</td><td>-</td><td>-0.9</td><td>-2.9</td><td>0.3</td><td>1.3</td><td>-2.6</td><td>1.7</td><td>-2.0</td><td>13.4</td><td>1.4</td><td>0.5</td><td>-2.7</td></tr><tr><td>Healthcare Equip &amp; Srvcs</td><td>-2.3</td><td>-</td><td>-2.1</td><td>1.6</td><td>-5.6</td><td>0.1</td><td>-</td><td>-</td><td>-1.5</td><td>1.2</td><td>3.8</td><td>-2.6</td><td>3.0</td><td>-5.1</td><td>-</td><td>1.4</td><td>1.0</td><td>-2.0</td></tr><tr><td>Pharma &amp; Biotech</td><td>-3.3</td><td>-</td><td>-3.3</td><td>0.8</td><td>-4.0</td><td>-3.8</td><td>-</td><td>-0.9</td><td>-3.1</td><td>-0.2</td><td>1.1</td><td>-</td><td>1.3</td><td>-1.7</td><td>13.4</td><td>1.4</td><td>0.3</td><td>-2.9</td></tr><tr><td>Financials</td><td>0.4</td><td>0.8</td><td>1.3</td><td>2.5</td><td>3.7</td><td>1.7</td><td>5.6</td><td>5.1</td><td>2.9</td><td>1.4</td><td>3.0</td><td>-1.0</td><td>3.0</td><td>-4.8</td><td>8.4</td><td>1.2</td><td>1.4</td><td>1.2</td></tr><tr><td>Banks</td><td>0.1</td><td>1.4</td><td>2.8</td><td>3.2</td><td>4.4</td><td>-3.9</td><td>5.6</td><td>5.7</td><td>4.1</td><td>2.1</td><td>-0.7</td><td>-0.4</td><td>1.7</td><td>-5.0</td><td>6.3</td><td>0.8</td><td>0.9</td><td>1.6</td></tr><tr><td>Diversified Financials</td><td>1.1</td><td>-2.2</td><td>-5.3</td><td>2.5</td><td>-1.2</td><td>2.8</td><td>-</td><td>2.8</td><td>0.7</td><td>1.9</td><td>-4.0</td><td>-4.2</td><td>5.0</td><td>0.0</td><td>4.0</td><td>2.0</td><td>1.9</td><td>1.0</td></tr><tr><td>Insurance</td><td>-1.5</td><td>0.2</td><td>-0.6</td><td>2.4</td><td>3.1</td><td>0.7</td><td>2.0</td><td>1.8</td><td>1.3</td><td>-0.5</td><td>17.4</td><td>2.5</td><td>7.6</td><td>-6.2</td><td>13.9</td><td>2.2</td><td>3.8</td><td>0.1</td></tr><tr><td>Real Estate</td><td>-</td><td>-5.1</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Information Technology</td><td>3.1</td><td>-3.5</td><td>-0.6</td><td>-2.5</td><td>-2.3</td><td>-2.8</td><td>-2.6</td><td>-</td><td>-0.1</td><td>15.1</td><td>16.8</td><td>-</td><td>-1.5</td><td>9.0</td><td>5.0</td><td>9.4</td><td>9.5</td><td>4.3</td></tr><tr><td>Software &amp; Services</td><td>-3.1</td><td>-2.9</td><td>-2.1</td><td>-5.3</td><td>-5.0</td><td>-</td><td>-2.6</td><td>-</td><td>-0.2</td><td>-3.0</td><td>-11.0</td><td>-</td><td>-1.6</td><td>-1.8</td><td>-</td><td>-2.2</td><td>-1.9</td><td>-2.9</td></tr><tr><td>Tech Hardware &amp; Equip</td><td>3.2</td><td>-5.9</td><td>0.2</td><td>-</td><td>-</td><td>-2.8</td><td>-</td><td>-</td><td>-6.2</td><td>15.5</td><td>10.0</td><td>-</td><td>-</td><td>7.7</td><td>5.4</td><td>8.0</td><td>8.0</td><td>4.5</td></tr><tr><td>Semiconductor &amp; Equip</td><td>5.9</td><td>-</td><td>-</td><td>1.5</td><td>-0.7</td><td>-</td><td>-</td><td>-</td><td>0.9</td><td>17.6</td><td>27.3</td><td>-</td><td>3.9</td><td>16.3</td><td>4.9</td><td>10.9</td><td>10.9</td><td>7.0</td></tr><tr><td>Communication Srvcs</td><td>1.2</td><td>-4.3</td><td>-5.2</td><td>-6.3</td><td>-3.4</td><td>-5.1</td><td>-4.9</td><td>-0.8</td><td>-4.5</td><td>2.6</td><td>-6.7</td><td>-5.7</td><td>4.5</td><td>-4.6</td><td>0.5</td><td>-3.2</td><td>-2.9</td><td>0.5</td></tr><tr><td>Telecom Srvcs</td><td>-6.0</td><td>-4.3</td><td>-8.4</td><td>-6.9</td><td>-5.1</td><td>-5.1</td><td>-4.9</td><td>-0.8</td><td>-6.2</td><td>4.2</td><td>-8.3</td><td>-5.7</td><td>4.6</td><td>-3.9</td><td>-0.4</td><td>0.4</td><td>0.4</td><td>-3.0</td></tr><tr><td>Media &amp; Entertainment</td><td>1.9</td><td>-</td><td>5.7</td><td>0.9</td><td>-0.7</td><td>-</td><td>-</td><td>-</td><td>-0.2</td><td>-2.6</td><td>-6.4</td><td>-</td><td>2.1</td><td>-4.6</td><td>5.3</td><td>-4.4</td><td>-4.5</td><td>1.3</td></tr><tr><td>Utilities</td><td>0.5</td><td>-2.1</td><td>-2.9</td><td>-3.9</td><td>-2.1</td><td>-4.0</td><td>1.1</td><td>0.2</td><td>-1.4</td><td>-1.7</td><td>0.1</td><td>-2.7</td><td>3.8</td><td>-6.7</td><td>-</td><td>-1.2</td><td>-1.0</td><td>-0.4</td></tr></table>
+
+Source: FactSet, MSCI, GS Global Investment Research
+
+Exhibit 15: YTD sector performance across regions
+
+## Sector performance across regions - YTD
+
+Light blue: below -1 standard dev. from the AC world market performance. Dark blue: above +1 standard dev. from the AC world market performance.
+
+<table><tr><td>MSCI Index</td><td>US</td><td>Canada</td><td>UK</td><td>Germany</td><td>France</td><td>Swiss</td><td>Spain</td><td>Italy</td><td>Devd Euro</td><td>Japan</td><td>Korea</td><td>Brazil</td><td>India</td><td>China</td><td>Taiwan</td><td>AC APxJ</td><td>EM</td><td>AC World</td></tr><tr><td>Market</td><td>9.4</td><td>6.3</td><td>2.7</td><td>-2.6</td><td>1.2</td><td>2.2</td><td>9.0</td><td>10.9</td><td>5.1</td><td>18.1</td><td>134.5</td><td>6.6</td><td>-9.3</td><td>-12.2</td><td>64.3</td><td>27.1</td><td>27.2</td><td>11.0</td></tr><tr><td>Energy</td><td>18.4</td><td>20.7</td><td>9.6</td><td>-</td><td>24.5</td><td>-</td><td>32.2</td><td>33.8</td><td>17.9</td><td>9.1</td><td>8.9</td><td>38.9</td><td>-17.5</td><td>8.2</td><td>-</td><td>-4.4</td><td>1.7</td><td>16.6</td></tr><tr><td>Materials</td><td>12.6</td><td>-2.6</td><td>22.5</td><td>-0.1</td><td>14.6</td><td>-0.1</td><td>-</td><td>-12.0</td><td>10.2</td><td>22.8</td><td>2.6</td><td>14.4</td><td>0.3</td><td>-8.9</td><td>51.7</td><td>11.2</td><td>0.2</td><td>9.1</td></tr><tr><td>Industrials</td><td>17.3</td><td>1.9</td><td>2.9</td><td>9.7</td><td>5.4</td><td>25.8</td><td>17.4</td><td>42.3</td><td>7.7</td><td>9.5</td><td>64.1</td><td>-3.0</td><td>8.5</td><td>4.5</td><td>12.0</td><td>24.5</td><td>25.6</td><td>14.0</td></tr><tr><td>Capital Goods</td><td>24.3</td><td>-5.5</td><td>14.1</td><td>10.0</td><td>5.5</td><td>29.8</td><td>21.9</td><td>42.3</td><td>10.8</td><td>11.5</td><td>67.0</td><td>-2.3</td><td>9.4</td><td>12.7</td><td>21.7</td><td>33.5</td><td>33.3</td><td>19.2</td></tr><tr><td>Comm &amp; Profess. Srvcs</td><td>-15.6</td><td>-18.4</td><td>-18.5</td><td>-</td><td>-6.5</td><td>-1.9</td><td>-</td><td>-</td><td>-17.4</td><td>15.6</td><td>-</td><td>-</td><td>-</td><td>-32.2</td><td>-</td><td>-9.9</td><td>-35.8</td><td>-12.7</td></tr><tr><td>Transportation</td><td>10.3</td><td>16.4</td><td>-</td><td>7.0</td><td>10.3</td><td>4.1</td><td>9.1</td><td>-</td><td>0.7</td><td>-13.0</td><td>9.1</td><td>-4.1</td><td>4.9</td><td>-7.4</td><td>-0.1</td><td>4.0</td><td>3.3</td><td>6.3</td></tr><tr><td>Consumer Discretionary</td><td>-1.7</td><td>-1.7</td><td>1.1</td><td>-17.6</td><td>-18.7</td><td>5.7</td><td>-8.5</td><td>-15.7</td><td>-12.4</td><td>-2.1</td><td>53.5</td><td>23.7</td><td>-9.6</td><td>-23.8</td><td>-14.5</td><td>-14.0</td><td>-14.9</td><td>-4.7</td></tr><tr><td>Automobiles &amp; Comp.</td><td>-9.8</td><td>21.5</td><td>-</td><td>-25.5</td><td>5.0</td><td>-</td><td>-</td><td>-17.8</td><td>-19.4</td><td>-7.7</td><td>53.0</td><td>-</td><td>-11.7</td><td>-17.3</td><td>-</td><td>0.6</td><td>0.5</td><td>-8.8</td></tr><tr><td>Cons Dur. &amp; Apparel</td><td>-7.6</td><td>-17.9</td><td>-</td><td>1.0</td><td>-22.3</td><td>5.6</td><td>-</td><td>-6.0</td><td>-12.9</td><td>-2.1</td><td>88.4</td><td>-</td><td>0.6</td><td>-15.5</td><td>-</td><td>-0.4</td><td>-1.3</td><td>-8.3</td></tr><tr><td>Consumer Srvcs</td><td>-4.1</td><td>8.9</td><td>3.5</td><td>57.8</td><td>3.1</td><td>-</td><td>-19.8</td><td>-</td><td>0.6</td><td>-20.7</td><td>-</td><td>-</td><td>-17.2</td><td>-27.4</td><td>-</td><td>-22.1</td><td>-25.4</td><td>-6.4</td></tr><tr><td>Retailing</td><td>3.0</td><td>-9.9</td><td>0.4</td><td>-6.5</td><td>-</td><td>6.9</td><td>-3.4</td><td>-</td><td>-13.0</td><td>20.7</td><td>-</td><td>23.7</td><td>2.1</td><td>-25.4</td><td>-12.7</td><td>-20.8</td><td>-22.3</td><td>-0.9</td></tr><tr><td>Consumer Staples</td><td>7.6</td><td>1.2</td><td>-7.8</td><td>-9.3</td><td>-5.6</td><td>-4.2</td><td>-</td><td>-3.8</td><td>-4.2</td><td>-4.5</td><td>14.8</td><td>-0.6</td><td>-11.1</td><td>-18.6</td><td>-2.7</td><td>-4.5</td><td>-6.1</td><td>2.9</td></tr><tr><td>Food &amp; Staples Retailing</td><td>7.7</td><td>1.5</td><td>-2.0</td><td>-</td><td>6.7</td><td>-</td><td>-</td><td>-</td><td>-2.3</td><td>-32.5</td><td>-</td><td>-26.1</td><td>8.0</td><td>-36.4</td><td>0.5</td><td>9.8</td><td>-8.6</td><td>3.9</td></tr><tr><td>Food Bev. &amp; Tobacco</td><td>8.8</td><td>-3.3</td><td>-2.2</td><td>-</td><td>-16.6</td><td>-4.2</td><td>-</td><td>-3.8</td><td>-2.1</td><td>15.5</td><td>9.8</td><td>6.8</td><td>-11.1</td><td>-15.5</td><td>-3.8</td><td>-9.3</td><td>-4.6</td><td>4.0</td></tr><tr><td>Household &amp; Persnl Prod</td><td>4.7</td><td>-</td><td>-16.0</td><td>-9.3</td><td>1.3</td><td>-</td><td>-</td><td>-</td><td>-9.7</td><td>-0.6</td><td>22.5</td><td>-</td><td>-15.0</td><td>-20.3</td><td>-</td><td>-9.3</td><td>-8.5</td><td>-1.5</td></tr><tr><td>Health Care</td><td>-4.4</td><td>-</td><td>-4.5</td><td>-9.1</td><td>-23.1</td><td>-0.3</td><td>-</td><td>2.2</td><td>-5.8</td><td>-4.6</td><td>-19.8</td><td>-11.7</td><td>2.0</td><td>-12.0</td><td>43.8</td><td>-11.3</td><td>-7.1</td><td>-5.0</td></tr><tr><td>Healthcare Equip &amp; Srvcs</td><td>-9.2</td><td>-</td><td>-10.7</td><td>-19.0</td><td>-37.3</td><td>-10.6</td><td>-</td><td>-</td><td>-22.1</td><td>-0.4</td><td>-10.7</td><td>-11.7</td><td>6.2</td><td>-22.4</td><td>-</td><td>-9.3</td><td>-5.4</td><td>-10.2</td></tr><tr><td>Pharma &amp; Biotech</td><td>-1.5</td><td>-</td><td>-4.3</td><td>-2.5</td><td>-12.0</td><td>0.7</td><td>-</td><td>2.2</td><td>-3.1</td><td>-6.5</td><td>-20.5</td><td>-</td><td>0.6</td><td>-11.0</td><td>43.8</td><td>-11.9</td><td>-7.5</td><td>-2.6</td></tr><tr><td>Financials</td><td>-2.8</td><td>16.0</td><td>5.2</td><td>-4.6</td><td>11.1</td><td>-2.1</td><td>10.4</td><td>9.7</td><td>4.4</td><td>25.7</td><td>32.2</td><td>-3.0</td><td>-11.2</td><td>-1.9</td><td>35.4</td><td>3.8</td><td>4.0</td><td>2.6</td></tr><tr><td>Banks</td><td>2.6</td><td>22.6</td><td>11.3</td><td>3.8</td><td>15.7</td><td>13.2</td><td>10.6</td><td>8.0</td><td>10.5</td><td>29.8</td><td>17.8</td><td>-5.7</td><td>-12.2</td><td>4.9</td><td>24.9</td><td>3.1</td><td>3.3</td><td>8.4</td></tr><tr><td>Diversified Financials</td><td>-5.1</td><td>-4.5</td><td>-13.8</td><td>-2.1</td><td>11.2</td><td>2.5</td><td>-</td><td>22.0</td><td>-2.9</td><td>13.1</td><td>31.0</td><td>2.4</td><td>-6.7</td><td>-11.6</td><td>54.3</td><td>4.2</td><td>1.5</td><td>-3.8</td></tr><tr><td>Insurance</td><td>-4.3</td><td>6.5</td><td>-5.6</td><td>-6.6</td><td>1.3</td><td>-6.4</td><td>-3.3</td><td>16.1</td><td>-3.8</td><td>22.8</td><td>89.8</td><td>17.5</td><td>-17.7</td><td>-13.3</td><td>51.7</td><td>6.1</td><td>10.5</td><td>0.5</td></tr><tr><td>Real Estate</td><td>-</td><td>-12.7</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Information Technology</td><td>21.0</td><td>-24.5</td><td>-5.8</td><td>-10.2</td><td>30.8</td><td>4.9</td><td>-</td><td>-</td><td>42.9</td><td>77.8</td><td>221.4</td><td>-</td><td>-33.2</td><td>18.4</td><td>71.1</td><td>98.1</td><td>98.7</td><td>31.6</td></tr><tr><td>Software &amp; Services</td><td>-19.3</td><td>-30.6</td><td>-26.2</td><td>-37.3</td><td>-34.7</td><td>-</td><td>-</td><td>-</td><td>-22.1</td><td>-29.7</td><td>16.6</td><td>-</td><td>-33.8</td><td>-33.8</td><td>-</td><td>-34.0</td><td>-32.0</td><td>-20.4</td></tr><tr><td>Tech Hardware &amp; Equip</td><td>25.5</td><td>25.1</td><td>10.1</td><td>-</td><td>-</td><td>4.9</td><td>-</td><td>-</td><td>33.4</td><td>71.8</td><td>182.6</td><td>-</td><td>-</td><td>16.5</td><td>87.0</td><td>119.4</td><td>119.4</td><td>41.4</td></tr><tr><td>Semiconductor &amp; Equip</td><td>51.0</td><td>-</td><td>-</td><td>112.2</td><td>195.6</td><td>-</td><td>-</td><td>-</td><td>86.1</td><td>129.4</td><td>297.6</td><td>-</td><td>0.3</td><td>62.2</td><td>66.9</td><td>100.7</td><td>100.7</td><td>62.8</td></tr><tr><td>Communication Srvcs</td><td>3.4</td><td>-5.8</td><td>0.5</td><td>-7.8</td><td>9.5</td><td>7.7</td><td>2.3</td><td>42.0</td><td>-3.3</td><td>4.9</td><td>-14.5</td><td>7.2</td><td>-11.5</td><td>-25.6</td><td>11.7</td><td>-20.2</td><td>-17.3</td><td>0.6</td></tr><tr><td>Telecom Srvcs</td><td>-5.4</td><td>-5.8</td><td>6.5</td><td>-6.1</td><td>17.5</td><td>7.7</td><td>2.3</td><td>42.0</td><td>4.1</td><td>23.7</td><td>45.9</td><td>7.2</td><td>-10.2</td><td>-18.9</td><td>12.1</td><td>-2.8</td><td>4.2</td><td>3.1</td></tr><tr><td>Media &amp; Entertainment</td><td>4.3</td><td>-</td><td>-8.0</td><td>-23.4</td><td>-1.0</td><td>-</td><td>-</td><td>-</td><td>-15.7</td><td>-30.9</td><td>-21.6</td><td>-</td><td>-29.7</td><td>-25.7</td><td>9.5</td><td>-25.0</td><td>-25.2</td><td>0.1</td></tr><tr><td>Utilities</td><td>4.1</td><td>7.3</td><td>4.1</td><td>13.4</td><td>17.4</td><td>-21.1</td><td>12.6</td><td>9.9</td><td>10.3</td><td>-1.0</td><td>-24.3</td><td>9.0</td><td>7.9</td><td>-6.7</td><td>-</td><td>0.6</td><td>3.4</td><td>5.4</td></tr></table>
+
+Source: FactSet, MSCI, GS Global Investment Research
+
+## Earnings & Contribution
+
+Exhibit 16: 12m trailing return contribution
+12m trailing return in local currency
+
+![](images/e24076ebc4cbf65d6732169078dca47a3ede64688bd5b12fac60832e500d9a20.jpg)  
+Source: FactSet, Datastream, STOXX, GS Global Investment Research
+
+Exhibit 17: MSCI AC World 12m trailing return contribution by sector/style  
+12m trailing return in USD  
+![](images/802ec248c724c868cba11f65afdc1172fb75759346f8c520c278242a9add08ae.jpg)  
+Source: FactSet, STOXX, GS Global Investment Research
+
+Exhibit 18: Sales growth, EPS growth and net margins
+Consensus estimates
+
+<table><tr><td rowspan="2"></td><td colspan="2">Sales Growth (%)</td><td colspan="2">EPS Growth (%)</td><td colspan="2">Net Margin (%)</td></tr><tr><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td></tr><tr><td>S&amp;P 500</td><td>10.5</td><td>7.1</td><td>22.9</td><td>15.5</td><td>15.2</td><td>16.3</td></tr><tr><td>STOXX 600</td><td>5.8</td><td>3.2</td><td>15.0</td><td>9.9</td><td>11.0</td><td>11.6</td></tr><tr><td>TOPIX (FY basis)</td><td>4.2</td><td>3.6</td><td>12.7</td><td>11.6</td><td>7.3</td><td>7.8</td></tr><tr><td>MSCI AP ex Japan</td><td>19.0</td><td>12.0</td><td>57.7</td><td>22.5</td><td>16.1</td><td>17.7</td></tr><tr><td>MSCI EM</td><td>19.7</td><td>11.6</td><td>58.5</td><td>22.0</td><td>16.0</td><td>17.5</td></tr><tr><td>MSCI AC World</td><td>10.3</td><td>6.8</td><td>26.0</td><td>15.1</td><td>14.1</td><td>15.2</td></tr><tr><td>Energy</td><td>16.0</td><td>-5.7</td><td>55.7</td><td>-6.8</td><td>10.0</td><td>9.6</td></tr><tr><td>Materials</td><td>12.1</td><td>3.1</td><td>53.6</td><td>9.5</td><td>11.6</td><td>12.3</td></tr><tr><td>Industrials</td><td>8.6</td><td>6.2</td><td>16.2</td><td>13.7</td><td>9.7</td><td>10.4</td></tr><tr><td>Cons. Discretionary</td><td>6.9</td><td>6.9</td><td>18.7</td><td>18.2</td><td>7.7</td><td>8.4</td></tr><tr><td>Cons. Staples</td><td>5.0</td><td>4.2</td><td>6.5</td><td>8.2</td><td>6.9</td><td>7.1</td></tr><tr><td>Health Care</td><td>5.1</td><td>5.2</td><td>3.6</td><td>16.8</td><td>9.3</td><td>10.3</td></tr><tr><td>Financials</td><td>3.9</td><td>5.5</td><td>9.4</td><td>10.5</td><td>21.9</td><td>22.5</td></tr><tr><td>IT</td><td>33.5</td><td>21.8</td><td>69.5</td><td>29.9</td><td>27.6</td><td>29.7</td></tr><tr><td>Communication Svs</td><td>10.1</td><td>8.8</td><td>18.4</td><td>6.5</td><td>19.2</td><td>18.7</td></tr><tr><td>Utilities</td><td>4.3</td><td>4.4</td><td>8.8</td><td>8.8</td><td>11.3</td><td>11.9</td></tr><tr><td>Real Estate</td><td>5.6</td><td>5.6</td><td>7.1</td><td>7.4</td><td>18.0</td><td>18.6</td></tr></table>
+
+Source: FactSet, STOXX, GS Global Investment Research  
+Exhibit 19: MSCI AC World EPS
+Consensus estimates in USD
+
+![](images/263488684296884c75e1852e42e568c4e85bb129ce1ac758815d332082e1c965.jpg)  
+Source: FactSet, Datastream, STOXX, GS Global Investment Research
+
+## Earnings revisions
+
+Exhibit 20: 2026 EPS revisions
+Indexed to 100. Local currency
+
+![](images/069293795654ae8b8dae6a0eb230a239b5f4be11b804a92ab5c239ddd5325f81.jpg)  
+Source: FactSet, STOXX, GS Global Investment Research  
+Exhibit 21: 2026 Earnings Sentiment
+(nb upgrades - nb downgrades) / nb estimates over the past month
+
+![](images/56d5ac691c517af6437e832c7b978b0ce966db121fdac94fc1589e797e9748a1.jpg)  
+Source: FactSet, STOXX, GS Global Investment Research
+
+Exhibit 22: 3-month EPS revision
+MSCI AC World sectors and Global Regions. Local currency  
+![](images/d491f3c54104486e9b46d3a0bd561987923e36c969291e479be6a5b97736c38e.jpg)  
+Source: Datastream, I/B/E/S, STOXX, FactSet, GS Global Investment Research  
+Exhibit 23: Year-to-date EPS revisions
+MSCI AC World sectors and Global Regions. Local currency
+
+![](images/b0a5b87cfe3e0d6537427e36dc6222831c54781e67d9755bafe359baf0229dcb.jpg)  
+Source: Datastream, I/B/E/S, STOXX, FactSet, GS Global Investment Research
+
+## Valuation
+
+Exhibit 24: 12m and 24m fwd MSCI AC World stock valuation  
+12m and 24m fwd P/E  
+![](images/56e6013c90ba468089f639257b06d00db53c010a62899bab40976c7f148ee7b6.jpg)  
+Source: Datastream, I/B/E/S, GS Global Investment Research
+
+Exhibit 25: Global market implied ERP (%)  
+![](images/98911629c5456ae8e15d3b32b442a7e8f6010e92291b2e1c1737c7c9c429b718.jpg)  
+Source: GS Global Investment Research
+
+Exhibit 26: MSCI Regions valuations
+12-month forward P/Es relative to the last 20 years - STOXX 600 P/E for Europe  
+![](images/39522b8b27cfe2193a6ec70bc6b6640096971fa9bbc4c36864fcd100d6bda2b6.jpg)  
+Source: FactSet, GS Global Investment Research
+
+Exhibit 27: MSCI World sector/style valuations
+12-month forward P/Es relative to the last 20 years  
+![](images/897a7d0dad7b2d5570ca327b0256b20687ea58896c7dbc5225e4d98366ebab8c.jpg)  
+Source: FactSet, Datastream, GS Global Investment Research
+
+## Style performance
+
+Exhibit 28: Value vs. Growth
+MSCI Indices relative price return (USD)
+
+![](images/53e8064788dc8733eb79b9a145c3bd76aeee0c0b3e23495b1f7605d1b7e866f2.jpg)  
+Source: Datastream, GS Global Investment Research  
+US: MSCI USA Small vs. MSCI USA Large; Europe: MSCI Europe Small vs. MSCI Europe Large; MSCI Japan Small vs. MSCI Japan Large; MSCI EM Small vs. MSCI EM Large
+
+![](images/88eb9896745b9032c79e7cac6350762b5c1dc4f36ea97e1a12dafc78c0c2e75a.jpg)  
+Source: Datastream, STOXX, GS Global Investment Research
+
+Exhibit 30: Cyclicals vs. Defensives
+MSCI Indices relative price return (USD)  
+![](images/0bb18b65b747f10e57cb394c7d5d01d7f39b504ea071eff8db9166e9d02d6c45.jpg)  
+For details on the construction of the indices, please see: Cyclicals vs. Defensives: A global implementation  
+Source: Datastream, Worldscope, GS Global Investment Research
+
+Exhibit 31: Momentum vs. Market
+MSCI Momentum Indices relative price return (USD)  
+![](images/f3870bbbda7e60c8195a56c2c7c5cd2022522f631012d0a31ab98044efdfdd30.jpg)  
+Source: Datastream, GS Global Investment Research
+
+## Style valuation
+
+Exhibit 32: Value vs. Growth
+12m fwd P/E Premium (or Discount)
+
+![](images/ccae32c3d767688384509143e192b4a7bfe3b7e9b59df0e1e67a59b0d9a16556.jpg)  
+Source: FactSet, GS Global Investment Research
+
+Exhibit 33: Small vs. Large
+12m fwd P/E Premium (or Discount)  
+![](images/d6f903a8260ca5b99d84fb2fe6e4ab601479196fc6106130eb3069b64cdd9776.jpg)  
+Source: FactSet, GS Global Investment Research
+
+Exhibit 34: Cyclicals vs. Defensives
+12m fwd P/E Premium (or Discount)  
+![](images/8fef9e8937064389a5e26c7fed59b85358b39c4f1dc1e119c5065236a153237f.jpg)  
+For details on the construction of the indices, please see: Cyclicals vs. Defensives: A global implementation
+
+Exhibit 35: Momentum vs. Market
+12m fwd P/E Premium (or Discount)  
+![](images/4f4a8bdc1b5874f2adede4360b1a02bad853e2df995b39a95309841b2afb3a47.jpg)  
+Source: FactSet, GS Global Investment Research  
+Source: FactSet, GS Global Investment Research
+
+## Sector weights, geographical exposure and concentration
+
+Exhibit 36: Index sector composition
+
+<table><tr><td>GICS Sector</td><td>U.S.</td><td>Europe</td><td>Japan</td><td>APxJ</td><td>AC World</td></tr><tr><td>Energy</td><td>3.3</td><td>4.3</td><td>0.8</td><td>3.2</td><td>3.8</td></tr><tr><td>Materials</td><td>2.1</td><td>5.7</td><td>3.5</td><td>5.7</td><td>3.6</td></tr><tr><td>Industrials</td><td>8.7</td><td>17.9</td><td>23.4</td><td>7.2</td><td>10.7</td></tr><tr><td>Consumer Discretionary</td><td>10.6</td><td>8.7</td><td>18.3</td><td>13.7</td><td>10.7</td></tr><tr><td>Consumer Staples</td><td>6.0</td><td>10.3</td><td>5.6</td><td>3.9</td><td>6.4</td></tr><tr><td>Health Care</td><td>10.8</td><td>14.0</td><td>7.6</td><td>4.5</td><td>9.9</td></tr><tr><td>Financials</td><td>14.0</td><td>22.7</td><td>15.8</td><td>25.4</td><td>18.0</td></tr><tr><td>Real Estate</td><td>2.3</td><td>0.8</td><td>2.5</td><td>2.8</td><td>2.1</td></tr><tr><td>Information Technology</td><td>30.2</td><td>7.0</td><td>13.2</td><td>21.1</td><td>23.7</td></tr><tr><td>Communication Services</td><td>9.4</td><td>4.2</td><td>8.2</td><td>9.9</td><td>8.3</td></tr><tr><td>Utilities</td><td>2.5</td><td>4.3</td><td>1.1</td><td>2.6</td><td>2.8</td></tr><tr><td>Total</td><td>100.0</td><td>100.0</td><td>100.0</td><td>100.0</td><td>100.0</td></tr></table>
+
+Source: MSCI, FactSet, GS Global Investment Research
+
+Exhibit 37: GS recommended sector weightings by region
+
+<table><tr><td>GICS Sector</td><td>U.S.</td><td>Europe</td><td>Japan</td><td>APxJ</td></tr><tr><td>Energy</td><td>N</td><td>N</td><td>N</td><td>OW</td></tr><tr><td>Materials</td><td>OW</td><td>N</td><td>N</td><td>N</td></tr><tr><td>Industrials</td><td>N</td><td>N</td><td>OW</td><td>OW</td></tr><tr><td>Consumer discretionary</td><td>OW</td><td>UW</td><td>N</td><td>N</td></tr><tr><td>Consumer staples</td><td>N</td><td>OW</td><td>UW</td><td>UW</td></tr><tr><td>Health care</td><td>OW</td><td>N</td><td>UW</td><td>OW</td></tr><tr><td>Financials</td><td>N</td><td>OW</td><td>OW</td><td>N</td></tr><tr><td>Real Estate</td><td>N</td><td>N</td><td>N</td><td>N</td></tr><tr><td>Information technology</td><td>OW*</td><td>OW</td><td>OW</td><td>OW</td></tr><tr><td>Communication services</td><td>N</td><td>OW</td><td>OW</td><td>OW</td></tr><tr><td>Utilities</td><td>N</td><td>N</td><td>UW</td><td>UW</td></tr></table>
+
+Source: GS Global Investment Research  
+Exhibit 38: Geographical Sales Exposure
+MSCI Indices. See our Portfolio Passport 2024.
+
+![](images/c6f7e02d2b354f04e933930d6ef56e3d448678574c51d2461437487de9bd06d3.jpg)  
+Source: MSCI, FactSet, GS Global Investment Research  
+Exhibit 39: Country Composition
+MSCI AC World Index
+
+![](images/1d63937fcb07341b0071e5ad40cebb6656f5818ef9ebed12408b93ba479071ba.jpg)  
+Source: FactSet, GS Global Investment Research
+
+## Cross-asset performance and correlation
+
+Exhibit 40: Performance of equities, bonds and commodities
+Indexed USD total returns, Equities refer to MSCI AC World, Commodities refer to S&P GSCI® & Bonds refer to US 10y Govt. bonds  
+![](images/8e59900288cbd0f1e20dfb1154f006b3c79eaaae981a87d107e650f402238b47.jpg)  
+Source: FactSet, GS Global Investment Research
+
+Exhibit 41: 3m rolling equity/bond correlation of weekly returns
+S&P 500 vs. US 10y Index; EURO STOXX 50 vs. Germany 10y Index; Topix vs. Japan 10y Index; MSCI EM vs. US 10y Index  
+![](images/d6e42eff3780fe4e73101aec3be289d4ae81499b57b0abf225fad8a169d6111e.jpg)  
+Source: Datastream, STOXX, GS Global Investment Research
+
+Exhibit 42: 3m correlation of weekly returns with GSCI Total Return Index
+Correlation vs. GSCI Commodities Total Return Index  
+![](images/a0561d311f0588f0dc02ccbb32b4da31fe1ef7a14831860c46d9aa910821433f.jpg)  
+Source: Datastream, GS Global Investment Research
+
+Exhibit 43: 3m rolling equity/FX correlation of weekly returns
+S&P 500 vs. GS USD TWI; EURO STOXX 50 vs. EUR/USD; Topix vs. JPY/USD; MSCI EM vs. GS USD TWI  
+![](images/cc31494a77a24df69c556709b8c847bf849f6caadb492df8bd99e9f12e09402f.jpg)  
+Source: Datastream, STOXX, GS Global Investment Research
+
+## Flows from Global investors into equity funds
+
+Exhibit 44: Monthly flows from Global investors into DM and EM equity funds In USD bn.  
+![](images/a3ca3e50ae9d0ef20677bcf26544f3049b16f282269ded72fb55a98c2f5f22e7.jpg)  
+Source: EPFR, GS Global Investment Research
+
+Exhibit 45: Cumulative flows into equity by regions
+Monthly flows, USD bn. EPFR Country Flows (weekly data for current month).  
+![](images/0754279244cd59d6a0fee3e507704e8f75b80429a72ae9432ceaa497b0f2e281.jpg)  
+Source: EPFR, Haver Analytics, GS Global Investment Research
+
+Exhibit 46: Calendarised flows from Global investors into DM and EM equity funds
+In USD bn  
+![](images/b386f5f5377cb9526164116f406e6413f502d09cae86ba53be9b2a496b5c0695.jpg)  
+Source: EPFR, GS Global Investment Research
+
+Exhibit 47: Cumulative flows from Global investors into DM and EM funds
+Active and Passive funds. Monthly flows, USD bn. EPFR Country Flows (weekly data for current month)  
+![](images/3cec8c0b61ae60d671fb0fa15fede98a6c038983ffe1099d25fa70a12ae0a12a.jpg)  
+Source: EPFR, GS Global Investment Research
+
+## Emerging Markets vs. Developed Markets
+
+![](images/7e9087cc1aa1b9511a4df0203dc737959de91783ae3fdd982ff362ae77604ac9.jpg)  
+Source: FactSet, GS Global Investment Research
+
+Exhibit 49: 2026 earnings sentiment % for MSCI The World and EM
+Earnings sentiment = (upgrades – downgrades) / total estimates on all stocks  
+![](images/97454de8a7fd7fcb02dcf76df36aeb493d5e31c1e58aec61648bed4a0d1598d7.jpg)  
+Source: FactSet, GS Global Investment Research
+
+Exhibit 50: EM vs. DM valuation
+12-month forward P/E Premium (Discount)  
+![](images/ebe9d122af38d429e2cbbca26bd9546709a10ee3aca5c33561ea6e56f2f8aa19.jpg)  
+Source: FactSet, GS Global Investment Research
+
+Exhibit 51: EM vs. DM Cumulative flows (% Total Net Assets)
+Monthly flows, EPFR Country Flows (weekly data for current month).  
+![](images/23ec62c916a5077d247b8af472d36afff70b804814083aa79d70587862376060.jpg)  
+Source: EPFR, Haver Analytics, GS Global Investment Research
+
+## Vol, skew and dividends
+
+Exhibit 52: Implied volatility of 3-month atms  
+![](images/b6652a4bcc015f973316c0a36b0f1070490f69dc5ffd06ce0d17bb30a1635d25.jpg)  
+Source: Bloomberg, STOXX, GS Global Investment Research
+
+Exhibit 53: 3-month normalised skew  
+![](images/56c70c301e4eb2a82b5d0ad0583e4c89f2aea2a7889be497346647f29c8bd3d6.jpg)  
+Source: Bloomberg, STOXX, GS Global Investment Research
+
+Exhibit 54: 2026 dividend markets, rebased to 100  
+![](images/652edd727d7e11f81c96457af63528a7aef3971ea7522df364b4e5c076bda0b7.jpg)  
+Source: Bloomberg, STOXX, GS Global Investment Research
+
+Exhibit 55: 2026 implied dividend yield  
+![](images/7cd48b1d092839bec49aadaf04f55aec61023424bcfaff7d7fae60c9d0048cb1.jpg)  
+Source: Bloomberg, STOXX, GS Global Investment Research
+
+## Disclosure Appendix
+
+## Reg AC
+
+We, Guillaume Jaisson, Peter Oppenheimer, Sharon Bell, John Kwon, Giovanni Ferrannini and Elena Porfidia, hereby certify that all of the views expressed in this report accurately reflect our personal views, which have not been influenced by considerations of the firm's business or client relationships.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Guillaume Jaisson GS International, Peter Oppenheimer GS International, Sharon Bell GS International, John Kwon GS (Singapore) Pte, Giovanni Ferrannini GS International, Elena Porfidia GS International.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+## Disclosures
+
+## MSCI disclosure
+
+All MSCI data used in this report is the exclusive property of MSCI, Inc. (MSCI). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be reproduced or redisseminated in any form and may not be used to create any financial instruments or products or any indices. This information is provided on an “as is” basis, and the user of this information assumes the entire risk of any use made of this information. Neither MSCI, any of its affiliates nor any third party involved in, or related to, computing or compiling the data makes any express or implied warranties or representations with respect to this information (or the results to be obtained by the use thereof), and MSCI, its affiliates and any such third party hereby expressly disclaim all warranties of originality, accuracy, completeness, merchantability or fitness for a particular purpose with respect to any of this information. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the data have any liability for any direct, indirect, special, punitive, consequential or any other damages (including lost profits) even if notified of the possibility of such damages. MSCI and the MSCI indexes are service marks of MSCI and its affiliates. The Global Industry Classification Standard (GICS) were developed by and is the exclusive property of MSCI and Standard & Poor’s. GICS is a service mark of MSCI and S&P and has been licensed for use by The GS Group, Inc.
+
+## Regulatory disclosures
+
+## Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+## Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst – SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities
+
+Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at:
+
+https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link:
+
+https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+## Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+## General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.
+
+Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.

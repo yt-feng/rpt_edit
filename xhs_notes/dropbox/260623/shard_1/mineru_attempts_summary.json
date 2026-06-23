@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_9owag04u/pdfs/0001-06-MS-US Rates Strategy-Get Ready For the Noisiest US Front End In a Generation-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_9owag04u/pdfs/0002-07-Bernstein-U.S. Multi Industry - Electrical Equipment-Data Center Chillers -1 3-- Primer and free cooling economics-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_9owag04u/pdfs/0003-08-GS-Global- GS Economic Indicators Update- Financial Conditions Continue to Ease in South Korea-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_9owag04u/pdfs/0004-09-GS-Global Weekly Kickstart-Global equities extend gains as Middle East de-escalation continues-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_9owag04u/pdfs/0005-10-CITI-Global Robot Vacuum-Near-term EU robot mower tariff risk deferred and strong 618 performance favor Ecovacs-260621.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
