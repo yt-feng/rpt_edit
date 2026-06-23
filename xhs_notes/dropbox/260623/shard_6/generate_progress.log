@@ -1,0 +1,14 @@
+Found 51 total PDFs; shard 6/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vlto1xgn/pdfs/0001-31-Deutsche Bank-Industrial Logic-Cyclicals- Back on the Menu--260622.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vlto1xgn/pdfs/0002-32-Deutsche Bank-Precious Special Report-Hawks drive out bulls-260622.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vlto1xgn/pdfs/0003-33-Goldman Sachs-China Matters-All About Tech-260622.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vlto1xgn/pdfs/0004-34-Goldman Sachs-TRACKING U.S. SUPPLY CHAIN CONGESTION GS Supply Chain Congestion Scale- June 22nd- Index Lower W W- Bottleneck Scale Unchanged at -2--260622.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vlto1xgn/pdfs/0005-35-J.P. Morgan-Asia Edge-The peace dividend is in the mail-260622.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=dd22c02c-7222-4ba7-ab75-84deddbdc5a8
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260623/shard_6; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
