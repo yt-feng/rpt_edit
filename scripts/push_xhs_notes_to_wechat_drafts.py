@@ -45,6 +45,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     render_fitted_wechat_html,
     resolve_asset_path,
     resolve_repo_asset_path,
+    sharpen_wechat_title,
     source_report_name_from_xhs_dir,
     submit_publish,
     truncate_chars,
@@ -132,8 +133,8 @@ def xhs_article_title(markdown: str, fallback: str, institution_name: str) -> st
         if line.startswith("#"):
             title = re.sub(r"^#{1,6}\s*", "", line).strip()
             if title:
-                return truncate_chars(ensure_title_has_institution(title, institution_name), WECHAT_TITLE_MAX_CHARS)
-    return truncate_chars(ensure_title_has_institution(fallback, institution_name), WECHAT_TITLE_MAX_CHARS)
+                return sharpen_wechat_title(ensure_title_has_institution(title, institution_name), institution_name)
+    return sharpen_wechat_title(ensure_title_has_institution(fallback, institution_name), institution_name)
 
 
 def xhs_article_title_metadata(report_dir: Path) -> dict[str, str]:

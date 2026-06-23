@@ -35,7 +35,11 @@ from institution_names import ensure_title_has_institution, infer_institution_na
 BRAND = "KC桌面——外资精译"
 AUTHOR = "KC桌面"
 BOTTOM_DISCLAIMER = "For informational purposes only. Not investment advice."
-DEFAULT_BODY_HOOK = "更多完整报告和后续精译，扫文末图片进群交流。"
+DEFAULT_BODY_HOOK = (
+    "更多完整报告和后续精译，扫文末图片进群交流。每天由 AI agent + 人工 review 生成国际投行"
+    "中文摘要与 KC评论，daily 更新约 10-40 页，并整理当天最新数据图表合集，方便喂给 AI，"
+    "也方便人工快速把握 market dynamics。"
+)
 DEFAULT_BODY_VISIBLE_CHARS = 2000
 DEFAULT_MIN_INLINE_IMAGES = 3
 DEFAULT_ARTICLES_PER_DRAFT = 8
@@ -101,6 +105,19 @@ USER_NOISE_LINE_RE = re.compile(
     r"相关报告[:：].*|Related report:.*)$",
     re.I,
 )
+INSTITUTION_TITLE_ALIASES: list[tuple[str, list[str]]] = [
+    ("高盛", ["GS", "Goldman Sachs"]),
+    ("摩根大通", ["JPM", "J.P. Morgan", "JP Morgan", "JPMorgan"]),
+    ("摩根士丹利", ["MS", "Morgan Stanley", "摩根斯坦利", "大摩"]),
+    ("美银", ["BofA", "Bank of America", "美国银行", "美银证券"]),
+    ("花旗", ["Citi", "Citigroup"]),
+    ("瑞银", ["UBS"]),
+    ("汇丰", ["HSBC"]),
+    ("巴克莱", ["Barclays"]),
+    ("德意志银行", ["DB", "Deutsche Bank", "德银"]),
+    ("野村", ["Nomura"]),
+    ("美联储", ["Fed", "Federal Reserve"]),
+]
 
 
 class WeChatError(RuntimeError):
@@ -159,6 +176,52 @@ def wechat_title_policy_skip_reason(title: str) -> str:
         )
 
     return ""
+
+
+def canonicalize_institution_title_name(title: str) -> str:
+    normalized = normalize_space(title)
+    normalized = normalized.replace("摩根斯坦利", "摩根士丹利")
+    normalized = normalized.replace("美国银行：", "美银：")
+    return normalized
+
+
+def alias_pattern(alias: str) -> str:
+    if re.fullmatch(r"[A-Za-z. ]+", alias):
+        return r"\b" + re.escape(alias).replace(r"\ ", r"\s+") + r"\b"
+    return re.escape(alias)
+
+
+def remove_redundant_title_aliases(title: str) -> str:
+    cleaned = canonicalize_institution_title_name(title)
+    for cn_name, aliases in INSTITUTION_TITLE_ALIASES:
+        alias_group = "|".join(alias_pattern(alias) for alias in aliases)
+        cleaned = re.sub(
+            rf"^({re.escape(cn_name)})[：:]\s*(?:{alias_group})\s*[：:：\-—]?\s*",
+            rf"\1：",
+            cleaned,
+            flags=re.I,
+        )
+        cleaned = re.sub(
+            rf"^({re.escape(cn_name)})\s*(?:\(|（)\s*(?:{alias_group})\s*(?:\)|）)\s*[：:：\-—]?\s*",
+            rf"\1：",
+            cleaned,
+            flags=re.I,
+        )
+    cleaned = re.sub(r"\s*[：:]\s*", "：", cleaned)
+    cleaned = re.sub(r"：{2,}", "：", cleaned)
+    return normalize_space(cleaned).strip("：: -—")
+
+
+def sharpen_wechat_title(title: str, institution_name: str = "") -> str:
+    cleaned = remove_redundant_title_aliases(strip_markdown_markup(title))
+    cleaned = re.sub(r"^(?:标题|微信标题)\s*[：:]\s*", "", cleaned)
+    cleaned = re.sub(r"真正的变量不是", "关键不是", cleaned)
+    cleaned = re.sub(r"而是企业能否", "而是能否", cleaned)
+    cleaned = re.sub(r"正在经历的不是", "不是", cleaned)
+    cleaned = re.sub(r"真正的分水岭", "分水岭", cleaned)
+    if institution_name:
+        cleaned = ensure_title_has_institution(cleaned, canonicalize_institution_title_name(institution_name))
+    return truncate_chars(remove_redundant_title_aliases(cleaned), WECHAT_TITLE_MAX_CHARS)
 
 
 def truncate_chars(text: str, max_chars: int) -> str:
@@ -358,6 +421,18 @@ def paragraph_html(text: str) -> str:
     if content.startswith("来源：") or content.lower().startswith("source:"):
         return f'<p style="margin:4px 0 16px;color:#7a8494;font-size:13px;">{content}</p>'
     return f'<p style="margin:10px 0;line-height:1.78;color:#202631;font-size:16px;">{content}</p>'
+
+
+def kc_comment_html(text: str) -> str:
+    content = inline_markdown(normalize_space(text))
+    if not content:
+        return ""
+    return (
+        '<section style="margin:18px 0;padding:13px 15px;background:#F3F6F8;'
+        'border-left:4px solid #4F6F8F;color:#223044;font-size:15px;line-height:1.75;">'
+        f"{content}"
+        "</section>"
+    )
 
 
 def is_figure_meta_line(text: str) -> bool:
@@ -594,6 +669,15 @@ def markdown_to_wechat_html(
         if not line:
             flush_paragraph()
             flush_list()
+            continue
+
+        if line.startswith(">"):
+            flush_paragraph()
+            flush_list()
+            quote = normalize_space(re.sub(r"^>\s?", "", line))
+            fitted = fit_text(quote)
+            if fitted:
+                parts.append(kc_comment_html(fitted))
             continue
 
         token_match = IMAGE_TOKEN_RE.fullmatch(line)
@@ -908,7 +992,9 @@ def parse_wechat_json(response: requests.Response, label: str) -> dict[str, Any]
     try:
         data = response.json()
     except Exception as exc:
-        raise WeChatError(f"{label} returned non-JSON response: HTTP {response.status_code}") from exc
+        snippet = normalize_space(response.text[:300])
+        detail = f": {snippet}" if snippet else ""
+        raise WeChatError(f"{label} returned non-JSON response: HTTP {response.status_code}{detail}") from exc
     errcode = data.get("errcode")
     if errcode not in (None, 0):
         raise WeChatError(
@@ -1004,19 +1090,98 @@ def upload_cover_material(session: requests.Session, access_token: str, path: Pa
     return str(media_id)
 
 
-def add_draft(session: requests.Session, access_token: str, articles: list[dict[str, Any]], timeout: int) -> str:
+def payload_article_titles(articles: list[dict[str, Any]]) -> list[str]:
+    return [normalize_space(str(item.get("title") or "")) for item in articles if item.get("title")]
+
+
+def draft_news_items(container: dict[str, Any]) -> list[dict[str, Any]]:
+    candidates: list[Any] = []
+    content = container.get("content")
+    if isinstance(content, dict):
+        candidates.extend([content.get("news_item"), content.get("articles")])
+    candidates.extend([container.get("news_item"), container.get("articles")])
+    for candidate in candidates:
+        if isinstance(candidate, list):
+            return [item for item in candidate if isinstance(item, dict)]
+    return []
+
+
+def batchget_recent_drafts(session: requests.Session, access_token: str, timeout: int, count: int = 20) -> list[dict[str, Any]]:
     response = post_wechat_json(
         session,
-        f"https://api.weixin.qq.com/cgi-bin/draft/add?access_token={access_token}",
-        {"articles": articles},
+        f"https://api.weixin.qq.com/cgi-bin/draft/batchget?access_token={access_token}",
+        {"offset": 0, "count": count, "no_content": 0},
         timeout,
         max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
     )
-    data = parse_wechat_json(response, "draft/add")
-    media_id = data.get("media_id")
-    if not media_id:
-        raise WeChatError(f"draft/add did not return media_id: {data}")
-    return str(media_id)
+    data = parse_wechat_json(response, "draft/batchget")
+    items = data.get("item")
+    return items if isinstance(items, list) else []
+
+
+def find_recent_draft_by_titles(
+    session: requests.Session,
+    access_token: str,
+    expected_titles: list[str],
+    timeout: int,
+) -> str:
+    if not expected_titles:
+        return ""
+    try:
+        recent_items = batchget_recent_drafts(session, access_token, timeout)
+    except WeChatError as exc:
+        log(f"Could not batchget recent drafts while recovering draft/add: {exc}")
+        return ""
+    for item in recent_items:
+        if not isinstance(item, dict):
+            continue
+        media_id = str(item.get("media_id") or "")
+        news_items = draft_news_items(item)
+        titles = [normalize_space(str(news.get("title") or "")) for news in news_items]
+        if media_id and titles == expected_titles:
+            return media_id
+    return ""
+
+
+def recover_draft_after_ambiguous_add(
+    session: requests.Session,
+    access_token: str,
+    articles: list[dict[str, Any]],
+    timeout: int,
+) -> str:
+    expected_titles = payload_article_titles(articles)
+    for attempt in range(1, 4):
+        time.sleep(min(2.0 * attempt, 5.0))
+        media_id = find_recent_draft_by_titles(session, access_token, expected_titles, timeout)
+        if media_id:
+            log(f"Recovered draft/add media_id from recent drafts after ambiguous response: {media_id}")
+            return media_id
+    return ""
+
+
+def add_draft(session: requests.Session, access_token: str, articles: list[dict[str, Any]], timeout: int) -> str:
+    url = f"https://api.weixin.qq.com/cgi-bin/draft/add?access_token={access_token}"
+    payload = {"articles": articles}
+    max_attempts = WECHAT_REQUEST_MAX_ATTEMPTS
+    for attempt in range(1, max_attempts + 1):
+        try:
+            response = post_wechat_json(session, url, payload, timeout, max_attempts=1)
+            data = parse_wechat_json(response, "draft/add")
+            media_id = data.get("media_id")
+            if not media_id:
+                raise WeChatError(f"draft/add did not return media_id: {data}")
+            return str(media_id)
+        except WeChatError as exc:
+            if "non-JSON response" in str(exc):
+                media_id = recover_draft_after_ambiguous_add(session, access_token, articles, timeout)
+                if media_id:
+                    return media_id
+            if is_article_size_error(exc) or attempt >= max_attempts:
+                raise
+            if exc.errcode not in WECHAT_RETRYABLE_ERRCODES and "request failed" not in str(exc) and "non-JSON response" not in str(exc):
+                raise
+            sleep_before_wechat_retry("draft/add", attempt, max_attempts, exc.errmsg or str(exc))
+    raise WeChatError(f"draft/add failed after {max_attempts} attempt(s)")
 
 
 def get_draft(session: requests.Session, access_token: str, media_id: str, timeout: int) -> dict[str, Any]:
@@ -1123,7 +1288,10 @@ def translated_article_title_metadata(
         fallback_title = str(status.get("title") or fallback_title)
     institution_name = infer_institution_name(report_dir.name, status, markdown[:1200])
     source_report_name = source_report_name_from_translated_dir(report_dir, status)
-    title = ensure_title_has_institution(title_from_markdown(markdown, fallback_title), institution_name)
+    title = sharpen_wechat_title(
+        ensure_title_has_institution(title_from_markdown(markdown, fallback_title), institution_name),
+        institution_name,
+    )
     wechat_title = truncate_chars(title, WECHAT_TITLE_MAX_CHARS)
     return {
         "report_dir": str(report_dir),
