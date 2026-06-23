@@ -1,0 +1,99 @@
+ZH_A: 最近有一份外资投行的研报，把中国AI芯片市场的规模预测大幅上调了36%。这背后到底发生了什么？
+
+ZH_B: 是的，核心原因是美国收紧了对中国海外实体的芯片出口管制。这反而创造了一个新的市场空间。
+
+ZH_A: 这个逻辑听起来有点反直觉。管制越严，市场反而越大？
+
+ZH_B: 对，因为以前中国企业可以通过海外子公司绕过限制。现在这条路被堵住了，短期他们只能转向租赁GPU，但中长期来看，中国自己的AI芯片可能会被海外采用。这就是所谓的“牛市情景”。
+
+ZH_A: 所以这份报告真正要回答的问题是什么？
+
+ZH_B: 它要回答的是：在越来越严格的管制下，中国AI芯片市场到底有多大，以及哪些公司能真正受益。报告把2030年的市场规模预测从670亿美元提高到910亿美元。
+
+ZH_A: 910亿美元，这个数字很大。主要增长来自哪里？
+
+ZH_B: 主要有四个驱动因素。第一是新增了“中国云厂商海外数据中心使用本土芯片”这个类别。第二是字节跳动计划大幅增加2026和2027年的资本开支。
+
+ZH_A: 字节跳动这个很重要。他们具体要投多少？
+
+ZH_B: 报告提到2027年可能高达1000亿美元，当然他们用了更保守的800亿美元。第三是金山云也被纳入统计，它的资本开支也在激增。第四是国企和地方政府相关的需求也在上调。
+
+ZH_A: 这意味着什么？是不是说中国AI芯片的自给率会快速提升？
+
+ZH_B: 没错。报告预计自给率会从2025年的42%上升到2030年的70%。但这里有个关键点：2026年将是国内供应商进入云厂商采购体系的“关键窗口”。
+
+ZH_A: 为什么2026年这么关键？
+
+ZH_B: 因为报告团队在中国实地调研发现，尽管产能持续扩张，但主要云厂商仍然面临算力短缺。供应商认证活动正在加速。竞争将越来越取决于生态成熟度、软件优化和集群部署能力。
+
+ZH_A: 那供给端有什么限制吗？
+
+ZH_B: 先进制程产能仍然是关键差异点。比如像Iluvatar这样的公司，能拿到台积电的7纳米或6纳米产能，就有更好的成本和功耗表现。而国产先进制程产能也在爬坡，但预计要到2027到2028年才能形成更稳定的本地供应链。
+
+ZH_A: 说到具体公司，报告看好哪些？
+
+ZH_B: 他们看好寒武纪和Iluvatar CoreX，都上调了目标价。同时也看好中芯国际和华虹作为国产化的关键推动者。在设备领域，北方华创、中微公司和ACM Research也受益于加速的国产化周期。
+
+ZH_A: 听起来整个产业链都在受益。但报告有没有提到哪些问题还没完全展开？
+
+ZH_B: 有的。比如关于字节跳动2027年1000亿美元资本开支的报道，报告说这只是新闻消息，还没有得到公司官方确认。另外，中国政府计划未来五年投入2万亿元建设数据中心，但报告指出目前还没有看到具体的政府指导文件。
+
+ZH_A: 所以这些仍然是需要继续验证的？
+
+ZH_B: 对，这正是完整报告里会继续展开的部分。包括海外数据中心采用本土芯片的时间点、国产先进制程产能的实际爬坡速度，这些都是值得深入研究的问题。
+
+ZH_A: 好的，那如果听众想了解更多细节，比如具体公司的目标价和风险提示，应该去哪里看？
+
+ZH_B: 可以关注我们的公众号，在后台回复“芯片报告”获取完整研报解读。我们也会在会员社群中做更深入的拆解。
+
+ZH_A: 太好了，感谢你的分享。今天的内容就到这里，我们下期再见。
+
+EN_A: So there's a new report from a global investment bank that just raised its China AI chip market forecast by 36 percent. What's driving that?
+
+EN_B: The main catalyst is the US tightening export controls on chips going to Chinese companies overseas. It actually opens up a new market opportunity for domestic Chinese AI chips.
+
+EN_A: That sounds counterintuitive. More restrictions equal a bigger market?
+
+EN_B: Exactly. Previously, Chinese firms could get around the rules through overseas subsidiaries. Now that loophole is being closed. In the short term, they'll rely more on GPU rentals. But over the medium to long term, Chinese AI chips could start being adopted overseas. That's the bull case.
+
+EN_A: So what's the core question this report is trying to answer?
+
+EN_B: It's asking: under tighter controls, how big can China's AI chip market actually get, and which companies will benefit? They've raised their 2030 forecast from 67 billion to 91 billion US dollars.
+
+EN_A: 91 billion is a huge number. Where's the growth coming from?
+
+EN_B: Four main drivers. First, they added a new category: Chinese cloud providers using local chips in their overseas data centers. Second, ByteDance is planning a massive increase in capital spending for 2026 and 2027.
+
+EN_A: ByteDance is key. How much are they planning to spend?
+
+EN_B: The report mentions a news report suggesting 2027 capex could hit 100 billion dollars. They used a more conservative 80 billion. Third, they added Kingsoft Cloud to the model, and its spending is surging. Fourth, state-owned enterprises and local government demand is also being revised up.
+
+EN_A: What does this mean for self-sufficiency? Are we seeing a big jump?
+
+EN_B: Yes. The report expects China's AI chip self-sufficiency to rise from 42 percent in 2025 to 70 percent by 2030. But here's the key point: 2026 is a critical window for domestic suppliers to get into the procurement systems of major cloud providers.
+
+EN_A: Why is 2026 so critical?
+
+EN_B: Because their field research in China shows that despite ongoing capacity expansion, major cloud providers are still facing compute shortages. Vendor qualification is accelerating fast. Competition will increasingly depend on ecosystem maturity, software optimization, and cluster deployment capabilities.
+
+EN_A: What about the supply side? Are there any bottlenecks?
+
+EN_B: Access to advanced foundry capacity is still a key differentiator. Companies like Iluvatar, which can get TSMC's 7nm or 6nm nodes, have better cost and power efficiency. Domestic advanced-node capacity is also ramping, but a stable local supply chain isn't expected until 2027 or 2028.
+
+EN_A: Which specific companies does the report like?
+
+EN_B: They're overweight on Cambricon and Iluvatar CoreX, both with raised price targets. They also like SMIC and Hua Hong as key enablers. On the equipment side, Naura, AMEC, and ACM Research are well positioned in the accelerating localization cycle.
+
+EN_A: So the whole chain benefits. But are there any open questions the report doesn't fully answer?
+
+EN_B: Definitely. The ByteDance 100 billion capex number is based on news reports, not official guidance. And the Chinese government's reported 2 trillion yuan plan for data centers over five years hasn't been backed by specific policy documents yet.
+
+EN_A: So those are still things to watch?
+
+EN_B: Exactly. That's what the full report dives deeper into. The timing of overseas data center adoption, the actual ramp of domestic advanced nodes, and the policy details. All worth exploring further.
+
+EN_A: Great. If our listeners want to get the full breakdown, where should they go?
+
+EN_B: You can follow our WeChat public account and reply with "chip report" for the full analysis. We also do deeper dives in our member community.
+
+EN_A: Thanks for the insights. That's all for today. See you next time.

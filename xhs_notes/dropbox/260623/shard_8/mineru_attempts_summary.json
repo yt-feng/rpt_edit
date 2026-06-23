@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_vilritoo/pdfs/0001-42-MS-Tracking China-s Semi Localization Raising China AI GPU TAM on recent geopolitical dynamics-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vilritoo/pdfs/0002-43-NOM-China healthcare-Jun 26 tour takeaways-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vilritoo/pdfs/0003-44-MS-A picture is worth a thousand words-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vilritoo/pdfs/0004-45-GS-Korea Views- Korea-Riding Stronger and Longer AI Tailwinds-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vilritoo/pdfs/0005-46-MS-Beijing Will Fine-tune- Not Pivot-260621.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

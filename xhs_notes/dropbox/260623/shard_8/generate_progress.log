@@ -1,0 +1,17 @@
+Found 51 total PDFs; shard 8/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vilritoo/pdfs/0001-42-MS-Tracking China-s Semi Localization Raising China AI GPU TAM on recent geopolitical dynamics-260622.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vilritoo/pdfs/0002-43-Nomura-China healthcare-Jun 26 tour takeaways-260622.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vilritoo/pdfs/0003-44-Morgan Stanley-A picture is worth a thousand words-260622.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vilritoo/pdfs/0004-45-Goldman Sachs-Korea Views- Korea-Riding Stronger and Longer AI Tailwinds-260622.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_vilritoo/pdfs/0005-46-Morgan Stanley-Beijing Will Fine-tune- Not Pivot-260621.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=799f1adb-dd49-47b2-a04c-4c78a951d4ff
+MinerU states: running, running, running, running, pending
+MinerU states: running, done, running, done, done
+MinerU states: done, done, running, done, done
+MinerU states: done, done, done, done, done
+MinerU result contained no standalone images; rendering PDF page fallback cards.
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260623/shard_8; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
