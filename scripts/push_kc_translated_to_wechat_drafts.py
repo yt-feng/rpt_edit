@@ -432,11 +432,176 @@ def clean_markdown(markdown: str) -> str:
     return "\n".join(cleaned).strip()
 
 
-def inline_markdown(text: str) -> str:
+def highlight_terms_pattern(terms: list[str]) -> re.Pattern[str]:
+    parts: list[str] = []
+    for term in sorted(terms, key=len, reverse=True):
+        escaped = re.escape(term).replace(r"\ ", r"\s+")
+        if re.fullmatch(r"[A-Za-z0-9. &+-]+", term):
+            parts.append(rf"(?<![A-Za-z]){escaped}(?![A-Za-z])")
+        else:
+            parts.append(escaped)
+    return re.compile("|".join(parts), re.I)
+
+
+HIGHLIGHT_BIG_NAME_RE = highlight_terms_pattern(
+    [
+        "Goldman Sachs",
+        "Morgan Stanley",
+        "J.P. Morgan",
+        "JP Morgan",
+        "JPMorgan",
+        "Federal Reserve",
+        "Bernstein",
+        "高盛",
+        "摩根大通",
+        "摩根士丹利",
+        "摩根斯坦利",
+        "美联储",
+        "伯恩斯坦",
+        "美银",
+        "花旗",
+        "瑞银",
+        "汇丰",
+        "巴克莱",
+        "德意志银行",
+        "德银",
+        "野村",
+        "洪灏",
+        "邢自强",
+        "辜朝明",
+        "特朗普",
+        "马斯克",
+        "Goldman",
+        "JPM",
+        "BofA",
+        "Citi",
+        "UBS",
+        "HSBC",
+        "Fed",
+        "Trump",
+        "Musk",
+    ]
+)
+HIGHLIGHT_UPSIDE_RE = highlight_terms_pattern(
+    [
+        "强于预期",
+        "高于预期",
+        "超预期",
+        "触底回升",
+        "预期差",
+        "上修",
+        "改善",
+        "回升",
+        "复苏",
+        "加速",
+        "韧性",
+        "拐点",
+        "催化",
+        "扩张",
+        "降息",
+        "宽松",
+        "买入",
+        "增持",
+    ]
+)
+HIGHLIGHT_RISK_RE = highlight_terms_pattern(
+    [
+        "低于预期",
+        "不及预期",
+        "下行风险",
+        "下修",
+        "放缓",
+        "承压",
+        "压力",
+        "风险",
+        "疲软",
+        "收缩",
+        "亏损",
+        "违约",
+        "衰退",
+        "通缩",
+    ]
+)
+HIGHLIGHT_INSIGHT_RE = highlight_terms_pattern(
+    [
+        "KC评论",
+        "换句话说",
+        "这意味着",
+        "核心是",
+        "关键是",
+        "重点是",
+        "更重要的是",
+        "注意",
+        "一句话",
+    ]
+)
+HIGHLIGHT_METRIC_RE = re.compile(
+    r"(?<![A-Za-z0-9])(?:\d+(?:\.\d+)?\s*(?:%|pct|bp|bps|万亿|亿元|亿美元|亿|万|倍|x|X)|"
+    r"20\d{2}年?|Q[1-4]|FY\d{2,4}|[一二三四五六七八九十]+季度)(?![A-Za-z0-9])",
+    re.I,
+)
+HIGHLIGHT_RULES: list[tuple[str, re.Pattern[str], str]] = [
+    ("insight", HIGHLIGHT_INSIGHT_RE, "color:#2F8F5B;font-weight:700;text-decoration:underline;"),
+    ("big_name", HIGHLIGHT_BIG_NAME_RE, "color:#2457A7;font-weight:700;"),
+    ("upside", HIGHLIGHT_UPSIDE_RE, "color:#2F8F5B;font-weight:700;"),
+    ("risk", HIGHLIGHT_RISK_RE, "color:#B26B00;font-weight:700;text-decoration:underline;"),
+    ("metric", HIGHLIGHT_METRIC_RE, "color:#2457A7;font-weight:700;text-decoration:underline;"),
+]
+
+
+def highlight_text_segment(segment: str, max_highlights: int) -> str:
+    output: list[str] = []
+    pos = 0
+    count = 0
+    while pos < len(segment):
+        best: tuple[int, int, str, re.Match[str]] | None = None
+        for _kind, pattern, style in HIGHLIGHT_RULES:
+            match = pattern.search(segment, pos)
+            if not match:
+                continue
+            candidate = (match.start(), -(match.end() - match.start()), style, match)
+            if best is None or candidate[:2] < best[:2]:
+                best = candidate
+        if best is None or count >= max_highlights:
+            output.append(segment[pos:])
+            break
+        _start, _length_key, style, match = best
+        if match.start() > pos:
+            output.append(segment[pos : match.start()])
+        matched_text = match.group(0)
+        output.append(f'<span style="{style}">{matched_text}</span>')
+        pos = match.end()
+        count += 1
+    return "".join(output)
+
+
+def apply_wechat_highlights(content: str, context: str = "body") -> str:
+    if not content:
+        return content
+    max_highlights = 5 if context == "comment" else 7
+    pieces = re.split(r"(<[^>]+>)", content)
+    highlighted: list[str] = []
+    in_code = False
+    for piece in pieces:
+        if not piece:
+            continue
+        if piece.startswith("<") and piece.endswith(">"):
+            tag = piece.lower()
+            if tag.startswith("<code"):
+                in_code = True
+            elif tag.startswith("</code"):
+                in_code = False
+            highlighted.append(piece)
+            continue
+        highlighted.append(piece if in_code else highlight_text_segment(piece, max_highlights))
+    return "".join(highlighted)
+
+
+def inline_markdown(text: str, context: str = "body") -> str:
     escaped = html.escape(text, quote=False)
     escaped = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", escaped)
     escaped = re.sub(r"`([^`]+)`", r"<code>\1</code>", escaped)
-    return escaped
+    return apply_wechat_highlights(escaped, context)
 
 
 def paragraph_html(text: str) -> str:
@@ -451,12 +616,12 @@ def paragraph_html(text: str) -> str:
 
 
 def kc_comment_html(text: str) -> str:
-    content = inline_markdown(normalize_space(text))
+    content = inline_markdown(normalize_space(text), context="comment")
     if not content:
         return ""
     return (
-        '<section style="margin:18px 0;padding:13px 15px;background:#F3F6F8;'
-        'border-left:4px solid #4F6F8F;color:#223044;font-size:15px;line-height:1.75;">'
+        '<section style="margin:18px 0;padding:13px 15px;background:#F1F8F4;'
+        'border-left:4px solid #2F8F5B;color:#223044;font-size:15px;line-height:1.75;">'
         f"{content}"
         "</section>"
     )
@@ -687,7 +852,7 @@ def markdown_to_wechat_html(
                 if text_used >= body_budget:
                     break
             if rendered_items:
-                body = "".join(f"<li>{inline_markdown(item)}</li>" for item in rendered_items)
+                body = "".join(f"<li>{inline_markdown(item, context='list')}</li>" for item in rendered_items)
                 parts.append(f'<ul style="margin:10px 0 12px;padding-left:22px;line-height:1.7;color:#202631;font-size:16px;">{body}</ul>')
             list_items = []
 
