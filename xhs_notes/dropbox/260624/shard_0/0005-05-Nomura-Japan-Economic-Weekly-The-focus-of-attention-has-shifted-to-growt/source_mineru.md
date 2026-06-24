@@ -1,0 +1,563 @@
+# Japan Economic Weekly
+
+Economics - Japan
+
+## The focus of attention has shifted to growth strategies and consumption tax cuts
+
+The economy, prices, and financial conditions favor more rate hikes
+
+1. Domestic policy (BOJ): The economy, prices, and financial conditions at the heart of monetary policy management (Kyohei Morita)
+
+\- The focus of the BOJ's monetary policy management is likely to be on the economy, prices, and financial conditions. It will take some time for an easing of the tensions in the Middle East to be reflected in an easing of quantitative and price-related supply constraints. Nevertheless, we think these three factors (the economy, prices, and financial conditions) favor more rate hikes.
+
+2. Domestic policy (government): Focus in late June likely to be on growth strategies and consumption tax cuts (Kengo Tanahashi, Masaki Kuwahara)
+
+\- Now that the monetary policy meeting is over, we expect the focus of attention to shift from monetary policy to fiscal policy. By the end of this month we expect the government to finalize its growth strategies for this year and Prime Minister Takaichi to make a final decision on the consumption tax cuts.
+
+\- The Growth Strategy Council is reportedly envisioning public-private investment of around ¥370trn by FY40. It will be interesting to see how much public-sector support is provided and how it is funded.
+
+\- We think the government's proposal is likely to be a combination of a cut to the consumption tax for food to 1% from 2027 and cash handouts in the autumn of 2027 and 2028. However, the opposition parties have strongly objected to such a proposal, and it remains to be seen how it would be funded.
+
+3. Japanese economy: Gradual easing of supply constraints stemming from Middle East, AI boom (Yuki Ito, Elias Liu)
+
+\- In this section, we identify key themes for the outlook for the economy. We focus on: (1) supply constraints stemming from the Middle East; (2) automobile exports; and (3) the AI boom.
+
+\- A number of statistics already show signs of an AI boom. Orders for computers and Chinese orders for machine tools have started to rise. The recent strength of orders may point to signs of growth in exports and capex in the near term.
+
+4. Digest of recent reports
+
+5. The week ahead
+
+6. Japanese macroeconomic indicators
+
+7. Calendar of world events in 2026
+
+8. Economic forecasts for Japan
+
+9. Policy stance of BOJ Policy Board
+
+## Research Analysts
+
+## Japan Economics
+
+Kyohei Morita - NSC
+kyohei.morita@NOM.com
++81 3 6703 1395
+
+## Masaki Kuwahara - NSC
+
+masaki.kuwahara@NOM.com
++81 3 6703 3876
+
+Kengo Tanahashi - NSC
+kengo.tanahashi@NOM.com
++81 3 6703 1295
+
+Uichiro Nozaki - NSC
+uichiro.nozaki@NOM.com
++81 3 6703 1284
+
+Yuki Ito - NSC
+yuki.ito@NOM.com
++81 3 6703 3867
+
+## Yuna Minegishi - NSC
+
+yuna.minegishi@NOM.com
++81 3 6703 1287
+
+## Global Economics
+
+Elias Liu - NSC
+elias.liu@NOM.com
++81 3 6703 3844
+
+## Key points for monetary policy
+
+Our main scenario is that the BOJ hikes rates in June and December 2026 and June 2027. Since its April monetary policy meeting the BOJ's stance has been to "continue to raise the policy interest rate and adjust the degree of monetary accommodation, in accordance with economic activity, prices, and financial conditions." Looking ahead, we will keep a close eye on the BOJ's policy stance, focusing on: (1) the impact of the Middle East situation on the economy and prices; and (2) the Takaichi administration's management of fiscal policy.
+
+Japanese report published on 19 June 2026
+
+# 1. Domestic policy (BOJ): The economy, prices, and financial conditions at the heart of monetary policy management
+
+Monetary policy meeting: (1) three points to note; (2) we retain our main scenario
+
+The BOJ raised its policy rate from "around 0.75%" to "around 1.0%" on 16 June. The rate hike itself came as no surprise as it had been sufficiently priced in by the market (see our 16 June 2026 report BOJ Watch).
+
+However, there were a number of noteworthy developments related to the rate hike decision. We see three main takeaways.
+
+First, Policy Board member Toichiro Asada voted against a rate hike. Ayano Sato, who, like Mr Asada, was appointed to the Board by the Takaichi Cabinet, will take up office on 30 June as the successor to Policy Board member Junko Nakagawa. Given that Mr Asada voted against the rate hike, Ms Sato may also oppose rate hikes any time soon. The market is also interested in how the end of the terms of office for hawkish Policy Board members Hajime Takata and Naoki Tamura in July 2027 will affect the BOJ's policy stance. However, from a fundamental point of view, we think the current rate-hiking cycle is likely to end in mid- to late 2027, anyway.
+
+Second, there were changes in the BOJ's assessment of the risks to the economy and prices. With respect to the economy, it said that "the risk of a significant slowdown in the economy appears to have decreased compared with a while ago," while, with respect to prices, it warned that "there is a risk of underlying CPI inflation deviating upward to a level above the price stability target of 2 percent." Such a risk assessment provides justification for ongoing rate hikes.
+
+Third, there were also changes to the wording on the future conduct of monetary policy. Whereas the BOJ had previously given "real interest rates are at significantly low levels" as a reason for continuing to raise the policy interest rate, this was replaced by "financial conditions have been accommodative." At the press conference that followed the meeting, BOJ Deputy Governor Shinichi Uchida positioned this as a change not in the BOJ's assessment but in how it explains it. However, we think it would make more sense to see the removal of the phrase "significantly low" as an indication that the BOJ has lowered its assessment of the degree of monetary easing by one notch.
+
+In view of the above three points, we think the BOJ may have passed the halfway mark of this rate-hiking cycle. Accordingly, our views on the outlook for monetary policy are as follows.
+
+• Main scenario: a total of two rate hikes in December 2026 and June 2027
+
+\- Risk scenario: a total of three rate hikes in October 2026, Mar–Apr 2027, and Sep–Oct 2027
+
+Economy: Crude oil import volumes and the degree of shipment delays in the manufacturing sector will be key points to watch as tensions in the Middle East ease
+
+We identify two main takeaways from the BOJ's monetary policy stance.
+
+(1) In view of the current accommodative monetary conditions, the BOJ will continue to raise its policy rate and adjust the degree of monetary easing in accordance with the economy, prices, and financial conditions.
+
+(2) The BOJ will consider the timing and pace of any adjustments to the degree of monetary easing while keeping a close eye on the situation in the Middle East as well as on the likelihood of its median forecasts for the economy and prices proving to be accurate.
+
+In view of these two points, we think that careful monitoring of (a) the economy, (b) prices, and (c) financial conditions will be key to assessing the outlook for BOJ policy management.
+
+(a) With regard to the economy, the latest important development is that tensions in the Middle East have started to ease, with the US and Iran signing a memorandum of understanding on 18 June (US time).
+
+However, in order for global economic activity to normalize, the Strait of Hormuz will need to be reopened and crude oil prices will need to stabilize. The number of tankers transiting the Strait of Hormuz has dwindled to more or less zero from 60–70 per day before the situation in the Middle East deteriorated (Figure 1). While the number of tankers transiting the nearby Bab-el-Mandeb has risen slightly since the second half of March, we can by no means say that alternative routes to the Strait of Hormuz have been established, even if we include the Suez Canal.
+
+This suggests that it will take time for quantitative supply constraints, which have a direct bearing on the economy, to ease even as the situation in the Middle East eases. Looking ahead, we will need to keep a close eye on the extent of the recovery in petroleum and petroleum product import volumes (Figure 2) and on the extent of any delays to the procurement of raw materials faced by manufacturers in the major economies (Figure 3).
+
+Fig. 1: Number of tanker transits in the Middle East still a long way from returning to normal  
+![](images/b71a098ce34a6791105484fb89be260be45174f646932e2319a5bea4dd6df7c7.jpg)  
+Note: Shows number of tanker transits per day. Latest data as of 18 June 2026.
+Source: NOM, based on Bloomberg data
+
+![](images/cfe970d33bac784a904510cdee52759dd8097cb4f27ad0223662afdc77103a19.jpg)
+
+![](images/8e101536af597340348d3dc0c47929bdd9f3630d0cc5220adda99d2f0b61eff3.jpg)
+
+Fig. 2: Sharp decline in imports of oil and petroleum products  
+![](images/5610240befa484f9294496d7f7ad6b7b2c95411d36d61cdb1f965879a4de83bd.jpg)  
+Source: NOM, based on MOF
+
+Fig. 3: Delays in delivery of raw materials and parts  
+![](images/b1d22679e0b5b8c143063a266fe52cdc459086ca2c18d183b55befd2d5c97100.jpg)  
+Source: NOM, based on S&P Global data
+
+## Prices: We expect CPI inflation to peak in 2027 Q1
+
+The second factor that will need to be monitored to see whether the BOJ is likely to continue to hike interest rates is (b) prices.
+
+prices of the three main crudes (Dubai, WTI, and Brent) have been edging lower in anticipation of an easing of tensions in the Middle East (Figure 4). This suggests to us that, while quantitative supply constraints are likely to persist for a while longer, price-related supply constraints may ease first.
+
+Fig. 4: Crude oil prices edging lower  
+![](images/6868ffd0bf18302a28946579d80a26a2db858334a1bf8ab1ac1b3a21d34a7d7f.jpg)  
+Source: NOM, based on Bloomberg data
+
+![](images/2cd9227de427076244a02820382d40911c3823cca3cd6373b1d490bc2c76b6a4.jpg)
+
+Even if they do, we think it may take until around mid-2027 for price-related supply constraints to spread downstream. This is because of the time it takes for upward pressure on prices to work its way from upstream in the supply chain to downstream.
+
+Looking at goods prices, we see that yen-denominated import prices have risen sharply. This will now work its way down the supply chain from (B2B) producer prices (PPI) to (B2C) consumer prices (CPI) (Figure 5). We think it will take until Jan–Mar 2027 for downstream (y-y) consumer price (CPI) inflation to peak (Figure 6).
+
+In the meantime, we expect the BOJ to remain on the lookout for upside risks to prices, a concern it expressed in its June monetary policy statement.
+
+Fig. 5: Upward pressure on prices mounts upstream  
+![](images/467f6b02a8777482fde7bc81f58fcf4db8993c0533310f00b753eb70c618252b.jpg)  
+Note: Data cover only goods.  
+Source: NOM, based on Ministry of Internal Affairs and Communications and BOJ data
+
+Fig. 6: Core CPI inflation expected to peak in 2027 Q1  
+![](images/7052f443b1e44866738bc0ba0d0bd225b6e1a3c93ccf7ce682e4c01cdbc78aad.jpg)  
+Note: (1) The core CPI excludes fresh food. The core-core CPI excludes energy and core food (food less fresh food and alcoholic beverages). (2) We assume that the consumption tax rate on food and beverages will be reduced to zero in April 2027.
+Source: Actual figures from Ministry of Internal Affairs and Communications, forecasts by NOM
+
+## Financial conditions: Growth in lending justifies additional rate hikes
+
+The third factor that will need to be monitored to see whether the BOJ is likely to continue to hike interest rates is (c) financial conditions.
+
+Financial conditions can include a wide range of factors, including lending, exchange rates, and asset (eg, share) prices. Lending is of particular interest when it comes to gauging the size of any gap between the policy interest rate and the neutral rate of interest. This is because sustained growth in lending can be seen as evidence that the policy rate is lower than the neutral rate.
+
+Loans outstanding at banks and shinkin banks are up 6% y-y, outpacing CPI inflation (Figure 7). Growth in lending by city banks is particularly marked.
+
+Home loans have also been rising steadily. As the BOJ raises its policy interest rate, much is often made of the impact on home loan interest rates. However, home loans outstanding at private-sector financial institutions have continued to rise by 3-4% y-y, partly as a result of rising house prices (Figure 8). Moreover, the BOJ's housing loan demand DI (stronger - weaker) has turned positive. This shows that lenders are aware of the growing demand for home loans.
+
+We have looked at the main aspects of the economy, prices, and financial conditions that will need to be monitored. It will take some time for an easing of the tensions in the Middle East to be reflected in an easing of quantitative and price-related supply constraints. Nevertheless, we think these three factors (the economy, prices, and financial conditions) currently favor more rate hikes.
+
+(Kyohei Morita)
+
+Fig. 7: Rate of increase in loans outstanding rises, particularly at city banks  
+![](images/c37989aee03d50b3245bd450dd7e15343feb931531b657bf2e5c82ee28599e2d.jpg)  
+Note: City banks, etc. includes city banks and trust banks.
+Source: NOM, based on BOJ data
+
+Fig. 8: Home loan demand on the rise  
+![](images/ca9f3841827f02ce40f8bca5ab63a11a5770d64b7c570624e3259ac9c7524fb8.jpg)  
+Source: NOM, based on BOJ data
+
+# 2. Domestic policy (government): Focus in late June likely to be on growth strategies and consumption tax cuts
+
+Key points to watch in macroeconomic policy: Following BOJ meeting, focus likely to shift to fiscal policy management under Takaichi administration
+
+Now that the June monetary policy meeting is over, we expect the focus of attention to shift from monetary policy to fiscal policy. We await the interim report on growth strategies, consumption tax cuts, and refundable tax credits later this month, while the Cabinet is expected to approve this year's Basic Policy in July. Both of these are important for gauging the outlook for the Japanese economy. It will also be interesting to see how "responsible" the Takaichi administration's fiscal management is.
+
+Growth strategies: Media reports suggest public-private investment of around ¥370trn by FY40
+
+NHK reported on 18 June that the Japan Growth Strategy Council is considering a total of around ¥370trn in public and private-sector investment in 17 strategic areas by FY40 (see our 19 June 2026 report Fiscal Insight).
+
+By way of comparison, the government's green transformation (GX) policy, which started in 2023, called for public-private investment of around ¥150trn over 10 years. On an annual basis, this translates to ¥15trn in public-private investment and ¥2trn in support through GX economy transition bonds.
+
+Assuming public-private investment of ¥370trn over the 14 years from FY27 to FY40, this growth strategy works out at around ¥26trn a year, around 1.8x the level of public-private investment envisioned in the GX policy. Assuming a 1.8x increase in public support per year, we estimate annual public-sector support of ¥3.5trn, for a total of ¥49trn over 14 years.
+
+Of course, the ratio of public-sector support to required public-private investment will not necessarily be the same as for the GX policy. It will be interesting to see how much public-sector support is provided relative to public-private investment and how it is funded.
+
+Consumption tax cuts: Opposition parties oppose LDP proposal, question mark against agreement by end-June
+
+LDP Research Commission Chairman Itsunori Onodera submitted a draft proposal to the National Council on Social Security on 17 November as an indication of what to expect in the forthcoming interim report. Under the proposal, refundable tax credits will be fully introduced around autumn 2029, and in the meantime the government will: (1) lower the consumption tax rate on food and beverages to 1% from April 2027; and (2) provide cash handouts closely linked to income and worth in total the equivalent of 1% of consumption tax (around ¥600.0bn) in the autumn of 2027 and 2028. The ruling coalition pledged to lower the consumption tax rate to 0% in the February Lower House election and is now aiming to achieve the same effect by combining (1) and (2).
+
+While discussions are likely to be based on the above proposal, final agreement has yet to be reached. The Sankei Shimbun reported on 17 June that opposition parties had expressed strong dissatisfaction at the National Council meeting. At present, the LDP has a two-thirds majority in the Lower House on its own, so even if all the opposition parties were to oppose the ruling coalition's tax cut bill in the Upper House, it would still be able to get the bill through the Lower House by putting it to a second vote. However, if the ruling coalition's bill does not adequately reflect discussions at the National Council, which is supposed to be a nonpartisan forum, forcing a bill through the Lower House in this way would create a bad impression.
+
+The DPP, which has a relatively similar economic policy stance to the ruling coalition, has proposed the introduction of refundable (income/residents') tax and social insurance premium credits by FY27. In the meantime it is also calling for cash handouts of ¥50,000 each for around 10mn middle- and low-income workers. While the total amount of around ¥500.0bn is broadly in line with the ruling coalition's proposal, the DPP is calling for the handouts to be made before the end of this year, which is different from the ruling coalition's proposal that they be made in the autumn of 2027. It will be interesting to see whether the ruling coalition and the DPP can reconcile their differences from next week onwards.
+
+## Still not clear how consumption tax cuts will be funded, focus now on what proposals will be considered
+
+The total cost of the consumption tax cuts, comprising a cut in the rate on food to 1% and handouts to households, will be about ¥5trn. While the ruling and opposition parties have indicated that they will not rely on deficit-financing bonds to fund such a move, they have not presented any definite proposals at the National Council.
+
+One possibility would be to use surplus funds from the Foreign Exchange Fund Special Account (FEFSA). Around ¥5.4trn in surplus funds were generated in FY24, of which around ¥3.2trn was allocated to the general account for FY25. Of the remaining ¥2.2trn, ¥1.4trn is earmarked as foreign exchange funds and ¥800.0bn as FEFSA revenue for the following fiscal year. Every year the Ministry of Finance (MOF) earmarks a portion of the surplus as foreign exchange funds. In FY22, however, the amount normally earmarked for that purpose was instead allocated to the general account. If a similar approach is taken this time, around ¥1trn of surplus FEFSA funds could be used as an additional source of funding.
+
+Another way to generate some of the necessary funds would be to overhaul the government's special taxation measures, subsidies, and funds. The government established an office for that purpose in the Cabinet Secretariat in November 2025. The Sankei Shimbun also reported on 17 June that the LDP is likely to recommend that the government review its subsidies and funds, including solar power subsidies and the use of the Children and Families Agency's budget. However, the amount that such a review might be able to generate might be quite small.
+
+While we think it would be difficult to generate ¥5trn of funding simply by allocating funds from FEFSA or overhauling the government's special taxation measures, subsidies, and funds, the Nikkei reported on 2 June that the government has a proposal that would achieve this without having to increase new JGB issuance y-y.
+
+When the FY25 supplementary budget was drafted, Prime Minister Takaichi claimed that her administration had observed fiscal discipline given that post-supplementary budget new JGB issuance under the general account was only ¥40.3trn, down from the FY24 post-supplementary budget figure of ¥42.1trn. In view of this, we think ¥40trn is likely to be seen as an acceptable amount for new JGB issuance (see our 2 June 2026 report Fiscal Insight). Based on MOF's fiscal impact assessment for the next few fiscal years, there could be roughly ¥6-7trn of headroom in FY27 before new JGB issuance reaches ¥40trn (Figure 9). However, even if there is enough headroom to cover the amount needed to fund the consumption tax cuts, new issuance will be higher than if there were no cuts. Therefore, if the ruling coalition's proposal is adopted, it will be seen as a tax cut funded by deficit-financing bonds.
+
+Fig. 9: The government expects the gap between expenditure and tax revenue in FY27 to be around ¥33trn (giving ¥7trn of headroom for new JGB issuance)  
+(¥trn)
+
+<table><tr><td rowspan="2">(FY)</td><td colspan="3">(a) Expenditure</td><td colspan="3">(b) Tax revenue, etc</td><td colspan="3">(a - b) Difference</td></tr><tr><td></td><td>3.0% growth scenario</td><td>1.5% growth scenario</td><td></td><td>3.0% growth scenario</td><td>1.5% growth scenario</td><td></td><td>3.0% growth scenario</td><td>1.5% growth scenario</td></tr><tr><td>2016</td><td>97</td><td></td><td></td><td>62</td><td></td><td></td><td>34</td><td></td><td></td></tr><tr><td>2017</td><td>97</td><td></td><td></td><td>63</td><td></td><td></td><td>34</td><td></td><td></td></tr><tr><td>2018</td><td>98</td><td></td><td></td><td>64</td><td></td><td></td><td>34</td><td></td><td></td></tr><tr><td>2019</td><td>101</td><td></td><td></td><td>69</td><td></td><td></td><td>33</td><td></td><td></td></tr><tr><td>2020</td><td>103</td><td></td><td></td><td>70</td><td></td><td></td><td>33</td><td></td><td></td></tr><tr><td>2021</td><td>107</td><td></td><td></td><td>63</td><td></td><td></td><td>44</td><td></td><td></td></tr><tr><td>2022</td><td>108</td><td></td><td></td><td>71</td><td></td><td></td><td>37</td><td></td><td></td></tr><tr><td>2023</td><td>114</td><td></td><td></td><td>79</td><td></td><td></td><td>36</td><td></td><td></td></tr><tr><td>2024</td><td>113</td><td></td><td></td><td>77</td><td></td><td></td><td>35</td><td></td><td></td></tr><tr><td>2025</td><td>115</td><td></td><td></td><td>87</td><td></td><td></td><td>29</td><td></td><td></td></tr><tr><td>2026</td><td>122</td><td></td><td></td><td>93</td><td></td><td></td><td>30</td><td></td><td></td></tr><tr><td>2027</td><td></td><td>129</td><td>128</td><td></td><td>96</td><td>94</td><td></td><td>33</td><td>34</td></tr><tr><td>2028</td><td></td><td>135</td><td>133</td><td></td><td>100</td><td>97</td><td></td><td>34</td><td>36</td></tr><tr><td>2029</td><td></td><td>140</td><td>137</td><td></td><td>103</td><td>99</td><td></td><td>36</td><td>38</td></tr></table>
+
+Note: Based on general account initial budget.  
+Source: NOM, based on MOF  
+(Kengo Tanahashi, Masaki Kuwahara)
+
+# 3. Japanese economy: Gradual easing of supply constraints stemming from Middle East, AI boom
+
+This week (15–19 June) saw the release of a number of statistics related to external demand (net exports = exports - imports) and capex. According to MOF's (preliminary) trade statistics, real exports rose 2.2% m-m and imports 2.4% in May (see our 17 June 2026 report Japan trade statistics: May 2026; Figure 22). The number of visitors to Japan, which comes under service exports (seasonally adjusted by NOM), was broadly flat at -0.5%. When also taking into account service trade data for April, we estimate that external demand is trending in line with our forecast (as of 8 June) of a 0.5ppt q-q increase.
+
+The April machinery order statistics also provided evidence of solid private-sector demand (+5.8% m-m), a leading indicator of machinery-related capex (Figure 21). In view of the above, we now look at a number of key themes for the economic outlook.
+
+Supply constraints: Signs of easing in both prices and volumes
+
+Tensions in the Middle East have started to ease, as evidenced by the 17 June announcement of a memorandum of understanding between the US and Iran about a ceasefire agreement. As of the time of writing, Brent futures had declined to around \$75/bbl, approaching the level seen before the US and Israel attacked Iran at end-February (\$60–70/bbl).
+
+However, we still expect the rise in crude oil prices that gained momentum through late March to push up the CPI through 2027 Q1 via higher producer prices (Figure 31). Even so, we think the recent decline in crude oil prices has made it easier to gauge when price-related supply constraints will settle down.
+
+Not only price-related supply constraints but also quantitative ones appear to have eased. Real imports of crude oil and unrefined petroleum in April were down to around 30% of their 2025 average but recovered to just over 40% in May. According to materials published by the Agency for Natural Resources and Energy, alternative crude oil procurement is expected to reach 10% of total crude procurement in July, which suggests that crude oil imports will continue to recover in June and beyond. In order to gauge whether quantitative supply constraints have eased for other items besides crude oil, we will have to wait for the confirmed trade statistics for May (scheduled for release on 26 June), which will provide a more detailed picture of imports of items such as naphtha.
+
+## Automobile exports: Bottleneck shifting from the Middle East to China
+
+Automobiles accounted for around 12% of Japanese exports (total of goods and services) in 2025, with a higher weighting than for other items. Automobile exports are at the top of any watch list for gauging the outlook for the economy as a whole as they have a major impact on production activity in other industries.
+
+Real goods exports in May were driven by a rebound in automobile exports to the Middle East. The rebound was particularly strong for exports to Saudi Arabia and the United Arab Emirates, suggesting that progress may have been made with transport via alternative routes that bypass the Strait of Hormuz. With an agreement between the US and Iran in place to end the conflict, we now see prospects for exports to the region, especially of automobiles, to normalize further.
+
+Automobile exports to the US and EU have also picked up. However, automobile exports to China remain lackluster (Figure 10).
+
+Fig. 10: Auto exports by region  
+![](images/28a2c92fd2202ab571a9c68f42404651bc75945aab4528684292e04ddf87b118.jpg)  
+Note: Adjusted for inflation and seasonal variation by NOM.
+Source: NOM, based on MOF and BOJ data
+
+Fig. 11: Auto sales volume in China  
+![](images/5dd3b59881986e35ae7ce88827b953405648de5e706eefa69d3564575cec0ff8.jpg)  
+Note: Data cover passenger vehicles only. New energy vehicles include electric vehicles and plug-in hybrids.  
+Source: NOM, based on China Passenger Cars Association (CPCA) data
+
+We expect automobile exports to China to remain sluggish for the time being. Auto sales in China as a whole have been cooling as a result of reduced subsidies by the Chinese authorities (Figure 11). Moreover, the decline in sales of gasoline-powered vehicles, weighed down by high crude oil prices, has been more pronounced recently than the decline in electric vehicles. Both of these factors are likely to be negative for Japanese companies, which are strong in gasoline-powered vehicles.
+
+## AI boom: Providing scope for growth in exports and capex in related industries
+
+Outside of Japan, momentum behind the AI boom has been building, particularly in the US and China. The Japanese economy also stands to benefit not only from AI investment itself but also from: (1) increased exports of semiconductor-related products (such as semiconductors and other electronic parts and SPE); and (2) moves to encourage capex to increase production capacity for these products.
+
+A number of statistics already show signs of an AI boom, including in Japan. A breakdown of machinery orders by category shows that orders for computers, etc have started to rise (Figure 12). These are indispensable for data centers that handle data processing and analysis for AI.
+
+Moreover, machine tool orders from users in mainland China have continued to rise (Figure 12). In China, investment in related areas such as semiconductors, ICT, and IT services has been growing strongly since the start of this year as a result of rising AI demand (Figure 13). The demand for Japanese-made equipment and machinery has also been strong in these industries. We surmise that increased investment demand in China is linked to the boost to Japanese machinery orders.
+
+There is a certain time lag between machinery orders, production, and shipments. The recent strength of orders may point to signs of growth in exports and capex in the near term.
+
+(Yuki Ito, Elias Liu)
+
+Fig. 12: Machinery orders  
+![](images/6bec349b459c01c3567716f4f6b87d25562037f5b3e8abdc8dceac65ff936a97.jpg)  
+Note: Seasonally adjusted by NOM.  
+Source: NOM, based on Japan Machine Tool Builders' Association data
+
+Fig. 13: Fixed asset investment in China by sector  
+![](images/1578d77635b74ac1f90b0d3b383006ba03ce242f42f3e635fe8c661fdca6cef6.jpg)  
+Note: Based on actual data for Jan–May 2026.  
+Source: NOM, based on National Bureau of Statistics of China data
+
+## 4. Digest of recent reports
+
+BOJ Watch - Outcome of the BOJ's June Monetary Policy Meeting
+
+(issued 16 June 2026)
+
+Japan trade statistics: May 2026 - Hints of easing of supply constraints from the volume side
+
+(issued 17 June 2026)
+
+Japan: June 2026 BOJ Tankan preview - We forecast deterioration in corporate sentiment, particularly at materials-related manufacturing sectors
+
+(issued 17 June 2026)
+
+ESG: EU ETS review underway - Efforts being made to reduce costs, such as by enhancing free allocations
+
+(issued 17 June 2026)
+
+All-Japan CPI: May 2026 - Flat m-m; impact of higher crude oil prices still limited (issued 19 June 2026)
+
+Japan Inflation Monitor (June) – CPI inflation flat m-m in May, impact of higher crude oil prices still limited
+
+(issued 22 June 2026)
+
+## 5. The week ahead
+
+26 June (Friday): June Tokyo ku-area CPI (all items less fresh food) (previous actual: +1.3% y-y; NOM forecast: +1.7%)
+
+We estimate June 2026 Tokyo ku-area all-item CPI inflation of +1.7%, which would be up from +1.4% in May 2026. We expect core CPI (all items less fresh food) inflation of +1.7%, up from +1.3% the previous month. We forecast the BOJ's version of core-core CPI inflation (all items, less energy and fresh food) at +1.9%, accelerating from the previous month (+1.6%).
+
+We think policy factors will significantly push up CPI inflation in June. The Tokyo Metropolitan Government's scrapping of basic water charges for a limited time will likely dent CPI levels in May–Aug 2026. However, as these measures were implemented in June 2025 as well, the dent to y-y inflation will drop from the picture in June 2026. We also expect inflation figures to reflect hikes to medical fees from June 2026. We estimate that these factors will boost core CPI inflation by around 0.3ppt in total.
+
+We estimate that inflation for core foods (food excluding fresh food and alcoholic beverages) came in at +4.1%, down from +4.4% in May. We estimate energy inflation at -2.3%, versus -3.7% a month earlier. Prices of energy-related items were broadly flat between May and June 2026, but we take into account price movements between May and June 2025. As a result, we estimate the MIC's measure of core-core CPI (all items less food (ex alcoholic beverages) and energy) at +1.1%, up from +0.7% in May. We take into account the impact of scrapping basic water charges and hiking medical fees, as noted above. However, we think price hikes in response to rising tensions in the Middle East remained limited. (Uichiro Nozaki)
+
+24 June (Wednesday): Speech by BOJ Governor Ueda (read on his behalf by Deputy Governor Himino) at Shinkin Bank Annual Meeting (Wednesday)
+
+Although the speech is to be read by a deputy, this will be BOJ Governor Kazuo Ueda's first public statement since the June monetary policy meeting. However, this speech is conducted every year and is short. While he will give a simple explanation of the decision at the June monetary policy meeting (MPM) and the views on the economy and prices that underpin it, we think he is unlikely to say anything new. (Uichiro Nozaki)
+
+25 June (Thursday): Speech by Policy Board member Naoki Tamura at a meeting with business leaders in Hyogo Prefecture
+
+At the June MPM Mr Tamura: (1) said that underlying inflation was already nearing levels consistent with the price stability target, and (2) voted against ending tapering of JGB purchases. We take this to mean that he is more hawkish than the Policy Board's consensus view and favors early normalization from large-scale monetary easing. We expect Mr Tamura to not only give a speech about the decision at the June monetary policy meeting, but also express his own views. We view this is important material for gauging the extent to which hawkish opinions are being expressed at the MPM. (Uichiro Nozaki)
+
+Fig. 14: Economic data and events in the week ahead
+
+<table><tr><td colspan="2">Monday 22 June</td><td>Period</td><td>Units</td><td>Prev</td><td>Last</td><td>NOM</td></tr><tr><td></td><td>No indicators</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="7">Tuesday 23 June</td></tr><tr><td>9:30</td><td>PMI Manufacturing</td><td>Jun</td><td>Index</td><td>55.1</td><td>54.5</td><td>n.a.</td></tr><tr><td colspan="7">Wednesday 24 June</td></tr><tr><td>8:50</td><td>Summary of Opinions at the MPM (15-16 Jun)</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>8:50</td><td>SPPI</td><td>May</td><td>% y-y</td><td>3.3</td><td>3.0</td><td>n.a.</td></tr><tr><td>15:40</td><td>Speech by Governor UEDA at a National Association of Shinkin Banks Meeting (reading by BOJ Deputy Governor Himino)</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="7">Thursday 25 June</td></tr><tr><td>10:00</td><td>Speech by Board Member TAMURA at a meeting with local leaders in Hyogo</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="7">Friday 26 June</td></tr><tr><td>8:30</td><td>Ku-area of Tokyo Core CPI</td><td>Jun</td><td>% y-y</td><td>1.5</td><td>1.3</td><td>1.7</td></tr></table>
+
+Source: NOM, based on various materials
+
+## 6. Japanese macroeconomic indicators
+
+Fig. 15: Economy-related indicators  
+![](images/d226a976edecf2e9c922632b8a2e0ce7e4e5ce49c7e2a0f7c87cfc1d2490c9dd.jpg)  
+Source: NOM, based on Cabinet Office data
+
+Fig. 16: Indicators of business sentiment at SMEs  
+![](images/87f0c4b83897380d9e59d6bdaa7be442047c2e505f399e01240d9677ccd1341d.jpg)  
+Source: NOM, based on Japan Finance Corporation, Japan Chamber of Commerce and Industry data
+
+Fig. 17: Industrial production by sector  
+![](images/b693eb25242f77c448e74be3c30c70580e8ec5b17bbd644a7e3e68e59bebc252.jpg)  
+Note: May and June data within 2026 Q2 are based on production plans adjusted using average realization and amendment rates over past three months.
+Source: NOM, based on METI data
+
+Fig. 18: Consumption Activity Index  
+![](images/e7f0a8200a6e1d319795ca4b058f1efef23c826e8afacf66a968af609e834b1e.jpg)  
+Note: In order to align this with the definition of private consumption in the GDP statistics, we use figures adjusted for the travel account balance, which subtract inbound consumption.
+Source: NOM, based on BOJ data
+
+Fig. 19: Consumption-related industry statistics  
+![](images/ed3463d65724effa4393842f29df052e8850d03e3369cc8aaed2f1f729824d94.jpg)  
+Source: NOM, based on Japan Department Stores Association, Japan Automobile Dealers Association (JADA), Japan Light Motor Vehicle and Motorcycle Association data
+
+Fig. 20: Floor area of housing starts by use  
+![](images/5b76465df5aec389298e872b5215f028ae8866a26a640bcf62e4d0ec9a09baeb.jpg)  
+Source: NOM, based on Ministry of Land, Infrastructure, Transport and Tourism data
+
+Fig. 21: Leading indicators of capex  
+![](images/99a0d9b679bc0f4210edc8538c6299ec8c0e1bb5e9cc2d0a00104f3a8a254c85.jpg)  
+Source: NOM, based on Cabinet Office, Ministry of Land, Infrastructure, Transport and Tourism data
+
+Fig. 22: Real exports by region  
+![](images/6296ff73721840180e98e73ecbf9868f8ded71c93a1cda4e4d2145f9632b3ebd.jpg)  
+Note: (1) EU exports are on a 27-country basis (28-country basis including the UK through February 2020). (2) Asian NIEs include Taiwan, Hong Kong, South Korea and Singapore. (3) Adjustments for seasonal factors and inflation are by NOM. Price series for exports and imports are indexed to 2020.
+Source: NOM, based on MOF and BOJ data
+
+Fig. 23: Employment-related indicators  
+![](images/9b91a58f71cdfe5bf50230050ff2f66a2388b07ca7290d5495ce4e1682408dd2.jpg)  
+Source: NOM, based on Ministry of Internal Affairs and Communications data
+
+Fig. 24: Per-capita wage increases  
+![](images/8ee7149dfa4e38fa67121a46ec0c6015458632005aad5db5b3d4797e30e8559f.jpg)  
+Note: Data for establishments with five or more employees.
+Source: NOM, based on Ministry of Health, Labour, and Welfare data
+
+Fig. 25: Services Producer Price Index by personnel cost ratio  
+![](images/988db3742a5bc9ae4dd935ef5e4388752600dc2b21ece52746bbdc83e866280f.jpg)
+
+Fig. 26: Items included in CPI  
+![](images/a6106192490976d6100b1b54b49f338df1cdec3c75f28c3cd74c00e2d496b000.jpg)  
+Note: Core CPI = CPI for all items, excluding fresh food. Goods in figure include alcoholic beverages. Services exclude imputed rents and restaurants.
+Source: NOM, based on Ministry of Internal Affairs and Communications data
+
+## 7. Calendar of world events in 2026
+
+Fig. 27: Calendar of world events in 2026 (1)
+
+<table><tr><td colspan="4">Japan</td><td colspan="2">International organizations in US, Europe, China, etc</td></tr><tr><td rowspan="29">2026</td><td rowspan="13">Apr</td><td>1</td><td>Scrapping of provisional surcharge on diesel delivery tax</td><td>3</td><td>US: FY27 President&#x27;s Budget announced</td></tr><tr><td>1</td><td>Threshold for cutting pension benefits to workers aged over 65 to be increased to ¥620,000/month</td><td>13</td><td>IMF and World Bank spring meetings (Washington, through 18 Apr)</td></tr><tr><td>1</td><td>Companies above a certain size to be required to publish gender pay gap data and percentage of female managers</td><td>16</td><td>G20 meeting of finance ministers and central bank governors</td></tr><tr><td>1</td><td>Start of Child and Childcare Support Contribution System</td><td>20</td><td>Hannover Messe (through 24 Apr)</td></tr><tr><td>1</td><td>Revised GX Promotion Act comes into force</td><td>29</td><td>US: FOMC Meeting (from 28th)</td></tr><tr><td>1</td><td>Start of special defense corporation tax</td><td>30</td><td>Eurozone: ECB Governing Council meeting (29 Apr)</td></tr><tr><td>1</td><td>High school tuition to become effectively free</td><td>30</td><td>UK: BoE Monetary Policy Committee meeting</td></tr><tr><td>3</td><td>Rengo publishes third set of results of 2026 spring wage negotiations</td><td>30</td><td>US and Eurozone: 2026 Q1 preliminary GDP data</td></tr><tr><td>6</td><td>BOJ branch manager meeting</td><td></td><td></td></tr><tr><td>7</td><td>Government passes FY26 budget</td><td></td><td></td></tr><tr><td>13</td><td>Speech by BOJ Governor Kazuo Ueda at Trust and Banking Conference (read by Deputy Governor Ryozo Himino)</td><td></td><td></td></tr><tr><td>27</td><td>Government&#x27;s council of experts scheduled to meet to discuss revisions to three key national security policy documents</td><td></td><td></td></tr><tr><td>28</td><td>BOJ Monetary Policy Meeting (from 27 Apr, Outlook Report)</td><td></td><td></td></tr><tr><td rowspan="7">May</td><td>11</td><td>US Treasury Secretary Scott Bessent visits Japan (through 13 May)</td><td>3</td><td>Asian Development Bank Annual Meeting (Uzbekistan, through 6 May)</td></tr><tr><td>14</td><td>Speech by BOJ Policy Board member Kazuyuki Masu at Kagoshima Keizai Doyukai</td><td>14</td><td>US President Trump visits China</td></tr><tr><td>16</td><td>Speech by BOJ Deputy Governor Ryozo Himino at meeting of Japan Society of Monetary Economics</td><td>15</td><td>US Fed Chair Jerome Powell&#x27;s term ends</td></tr><tr><td>19</td><td>Cabinet Office: 2026 Q1 first preliminary GDP estimates</td><td>18</td><td>Meeting of G7 finance ministers and central bank governors (France, through 19 May)</td></tr><tr><td>19</td><td>Prime Minister Takaichi to visit South Korea (through 20 May)</td><td></td><td></td></tr><tr><td>21</td><td>Speech by BOJ Policy Board member Junko Koeda at a meeting with business leaders in Fukuoka Prefecture</td><td></td><td></td></tr><tr><td>29</td><td>METI to publish results of Basic Survey on Overseas Business Activities</td><td></td><td></td></tr><tr><td rowspan="9">Jun</td><td>3</td><td>Speech by BOJ Governor Ueda at Kisaragi-kai meeting</td><td>7</td><td>OPEC Plus ministerial meeting</td></tr><tr><td>3</td><td>Submission of FY26 supplementary budget to Diet</td><td>11</td><td>Eurozone: ECB Governing Council meeting</td></tr><tr><td>13</td><td>Prime Minister Takaichi due to visit the UK, Italy, and France (through 18 June)</td><td>15</td><td>G7 Summit (France, through 17 Jan)</td></tr><tr><td>16</td><td>BOJ Monetary Policy Meeting (from 15th)</td><td>17</td><td>US: FOMC meeting (through 16 Jun, release of Summary of Economic Projections)</td></tr><tr><td>24</td><td>Speech by BOJ Governor Kazuo Ueda at a National Association of Shinkin Banks meeting (reading by BOJ Deputy Governor Ryozo Himino)</td><td>18</td><td>UK: BoE Monetary Policy Committee meeting</td></tr><tr><td>25</td><td>Speech by BOJ Policy Board member Naoki Tamura at a meeting with business leaders in Hyogo Prefecture</td><td></td><td></td></tr><tr><td>29</td><td>BOJ Policy Board member Junko Nakagawa&#x27;s term ends</td><td></td><td></td></tr><tr><td>Within month</td><td>Cabinet expected to approve growth strategy, basic policy, and regulatory reform plans</td><td></td><td></td></tr><tr><td>Within month</td><td>Government: Interim report on consumption tax cuts (expected)</td><td></td><td></td></tr></table>
+
+Source: NOM, based on various sources and news reports
+
+Fig. 28: Calendar of world events in 2026 (2)
+
+<table><tr><td colspan="4">Japan</td><td colspan="2">International organizations in US, Europe, China, etc</td></tr><tr><td rowspan="37">2026</td><td rowspan="8">Jul</td><td>1</td><td>National Tax Agency announces roadside land prices as of 1 January</td><td>4</td><td>US: 250th anniversary of Declaration of Independence</td></tr><tr><td>3</td><td>Rengo publishes final set of results of 2026 spring wage negotiations</td><td>7</td><td>NATO Summit (Turkey, through 8 Jul)</td></tr><tr><td>17</td><td>Special session of the Diet expected to end</td><td>23</td><td>Eurozone: ECB Governing Council meeting</td></tr><tr><td>31</td><td>BOJ monetary policy meeting (Outlook Report publication, from 30th)</td><td>29</td><td>US: FOMC Meeting (from 28th)</td></tr><tr><td>Within month</td><td>MOF: Overview of FY25 results (expected)</td><td>30</td><td>US and Eurozone: 2026 Q1 preliminary GDP data</td></tr><tr><td>Within month</td><td>Cabinet Office releases Economic and Fiscal Projections for Medium to Long Term Analysis</td><td>30</td><td>UK: BoE Monetary Policy Committee meeting</td></tr><tr><td>Within month</td><td>Cabinet Office releases Mid-Year Economic Projection</td><td>Within month</td><td>IMF: Global Economic Outlook update</td></tr><tr><td>Within month</td><td>Cabinet approves budget request guidelines</td><td></td><td></td></tr><tr><td rowspan="4">Aug</td><td>17</td><td>Cabinet Office: 2026 Q2 first preliminary GDP estimates</td><td>27</td><td>Jackson Hole symposium (US, through 29 Jun)</td></tr><tr><td>Within month</td><td>MHLW to set minimum wage yardstick for FY26</td><td>Within month</td><td>China: Beidaihe meeting</td></tr><tr><td>Within month</td><td>Ministries and agencies to submit tax reform requests</td><td></td><td></td></tr><tr><td>Within month</td><td>Government budget request deadline</td><td></td><td></td></tr><tr><td rowspan="6">Sep</td><td>18</td><td>BOJ Monetary Policy Meeting (from 17 Sep)</td><td>8</td><td>General Debate of the 81st session of the UN General Assembly (US, through 22 Jun)</td></tr><tr><td>19</td><td>Silver Week (through 23 Sep)</td><td>10</td><td>Eurozone: ECB Governing Council meeting</td></tr><tr><td></td><td></td><td>12</td><td>BRICs Summit (India, through 13 June)</td></tr><tr><td></td><td></td><td>16</td><td>US: FOMC meeting (through 16 Sep, release of Summary of Economic Projections)</td></tr><tr><td></td><td></td><td>17</td><td>UK: BoE Monetary Policy Committee meeting</td></tr><tr><td></td><td></td><td>23</td><td>Asian Infrastructure Investment Bank annual meeting (Qatar, through 24 Sep)</td></tr><tr><td rowspan="6">Oct</td><td>1</td><td>New minimum wage levels come into force</td><td>1</td><td>China: National Day holidays (through 7 Oct)</td></tr><tr><td>30</td><td>BOJ monetary policy meeting (publication of Outlook Report, meeting to start on 29 October)</td><td>12</td><td>IMF and World Bank annual meetings (Bangkok, through 18 Oct)</td></tr><tr><td>Late or beyond</td><td>Major companies to announce wage hike policies ahead of spring 2027 wage negotiations</td><td>28</td><td>US: FOMC Meeting (from 27th)</td></tr><tr><td>Within month</td><td>Rengo to publishes basic concept for spring 2027 wage negotiations</td><td>29</td><td>Eurozone: ECB Governing Council meeting</td></tr><tr><td>Within month</td><td>MHLW to publishes results of 2026 Survey on Wage Increase</td><td>29</td><td>US: 2026 Q3 preliminary GDP data</td></tr><tr><td></td><td></td><td>30</td><td>Eurozone: 2026 Q3 preliminary GDP data</td></tr><tr><td rowspan="5">Nov</td><td>16</td><td>Cabinet Office: 2026 Q3 first preliminary GDP estimates</td><td>3</td><td>US midterm elections</td></tr><tr><td>Within month</td><td>Rengo to publish policy for spring 2027 wage negotiations</td><td>5</td><td>UK: BoE Monetary Policy Committee meeting</td></tr><tr><td>Within month</td><td>Changes to tax-free shopping system for overseas visitors to Japan</td><td>9</td><td>COP31 (Turkey, through 20 Nov)</td></tr><tr><td></td><td></td><td>18</td><td>APEC summit (China) (through 19 Nov)</td></tr><tr><td></td><td></td><td>27</td><td>Black Friday</td></tr><tr><td rowspan="8">Dec</td><td>18</td><td>BOJ Monetary Policy Meeting (from 17th)</td><td>9</td><td>US: FOMC meeting (through 8 Dec, release of Summary of Economic Projections)</td></tr><tr><td>Within month</td><td>Speech by BOJ Governor Kazuo Ueda at Keidanren</td><td>14</td><td>G20 Summit (US, through 25 Dec)</td></tr><tr><td>Within month</td><td>Cabinet Office: Basic policy for drafting FY27 budget</td><td>17</td><td>Eurozone: ECB Governing Council meeting</td></tr><tr><td>Within month</td><td>Government: Supplementary budget bill (expected)</td><td>17</td><td>UK: BoE Monetary Policy Committee meeting</td></tr><tr><td>Within month</td><td>Cabinet expected to approve FY27 tax reform bill and tax reform proposals</td><td>Within month</td><td>China: Central Economic Working Conference (CEWC)</td></tr><tr><td>Within month</td><td>Cabinet expected to approve FY27 budget</td><td></td><td></td></tr><tr><td>Within month</td><td>Cabinet Office to disclose economic outlook and basic stance towards management of economy and public finances</td><td></td><td></td></tr><tr><td>Within month</td><td>Review of three key defense policy documents</td><td></td><td></td></tr></table>
+
+Source: NOM, based on various sources and news reports
+
+## 8. Economic forecasts for Japan
+
+## Fig. 29: Key points of our economic outlook
+
+We retain our main scenario of interest rate hikes in December 2026 and June 2027 amid the BOJ voicing concerns about upside risks to prices.
+
+We assess the risks posed by the BOJ's scenarios while keeping a close eye on: (1) an easing of tensions in the Middle East; and (2) fiscal-related events in Jun–Jul.
+
+In terms of fiscal policy, our focus is on Jun–Jul, including: (1) the Basic Policy; (2) the interim report on consumption tax cuts at the National Council; and (3) growth strategies.
+
+We assess the impact of the situation in the Middle East on the economy and inflation while keeping a close eye on the extent to which operations return to normal in the Strait of Hormuz and the stability of crude oil prices.
+
+Source: NOM
+
+## Fig. 30: Key points for monetary policy
+
+```txt
+We expect BOJ rate hikes in December 2026 and June 2027
+Dec 2026
+Increase in policy rate (from 1.00% to 1.25%)
+Apr 2027
+End of JGB purchase reductions
+Jun 2027
+Increase in policy rate (from 1.25% to 1.50%)
+```
+
+Fig. 31: Summary of our forecasts for the Japanese economy (1)
+
+<table><tr><td rowspan="2"></td><td>25Q1</td><td>25Q2</td><td>25Q3</td><td>25Q4</td><td>26Q1</td><td>26Q2</td><td>26Q3</td><td>26Q4</td><td>27Q1</td><td>27Q2</td><td>27Q3</td><td>27Q4</td><td>CY25</td><td>CY26</td><td>CY27</td></tr><tr><td colspan="12">(seas adj, annualized, % q-q)</td><td colspan="3"></td></tr><tr><td rowspan="2">Real GDP</td><td>2.0</td><td>1.1</td><td>-2.3</td><td>0.7</td><td>1.8</td><td>2.0</td><td>-1.4</td><td>0.8</td><td>0.7</td><td>2.0</td><td>0.6</td><td>0.5</td><td colspan="3"></td></tr><tr><td colspan="12">(seas adj, % q-q)</td><td colspan="3"></td></tr><tr><td>Real GDP</td><td>0.5</td><td>0.3</td><td>-0.6</td><td>0.2</td><td>0.5</td><td>0.5</td><td>-0.4</td><td>0.2</td><td>0.2</td><td>0.5</td><td>0.2</td><td>0.1</td><td>1.1</td><td>0.6</td><td>0.7</td></tr><tr><td>Private consumption</td><td>0.6</td><td>0.2</td><td>0.5</td><td>0.1</td><td>0.3</td><td>0.3</td><td>0.1</td><td>0.0</td><td>0.0</td><td>0.7</td><td>0.0</td><td>0.2</td><td>1.3</td><td>1.0</td><td>0.8</td></tr><tr><td>Private-sector capex</td><td>1.2</td><td>1.0</td><td>-0.1</td><td>1.2</td><td>-0.7</td><td>0.3</td><td>0.3</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td><td>2.1</td><td>0.7</td><td>1.8</td></tr><tr><td>Residential fixed investment</td><td>-0.5</td><td>0.0</td><td>-8.0</td><td>5.0</td><td>0.9</td><td>-0.5</td><td>-0.7</td><td>-0.1</td><td>-0.4</td><td>-0.5</td><td>-0.5</td><td>-0.5</td><td>-2.5</td><td>-0.5</td><td>-1.7</td></tr><tr><td>Government expenditure</td><td>-0.3</td><td>0.6</td><td>0.1</td><td>0.4</td><td>0.3</td><td>0.0</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.9</td><td>0.9</td><td>0.4</td></tr><tr><td>Public investment</td><td>-0.8</td><td>0.4</td><td>-1.0</td><td>-0.1</td><td>1.5</td><td>-0.8</td><td>-0.8</td><td>-0.8</td><td>-0.6</td><td>0.8</td><td>0.6</td><td>-0.6</td><td>-0.4</td><td>-0.2</td><td>-1.1</td></tr><tr><td>Exports of goods &amp; services</td><td>-0.6</td><td>1.6</td><td>-1.6</td><td>0.2</td><td>1.8</td><td>0.3</td><td>-1.8</td><td>1.3</td><td>1.1</td><td>1.0</td><td>1.0</td><td>0.5</td><td>2.5</td><td>1.2</td><td>2.7</td></tr><tr><td rowspan="2">Imports of goods &amp; services</td><td>2.2</td><td>1.1</td><td>-0.2</td><td>0.0</td><td>0.4</td><td>-2.4</td><td>1.2</td><td>0.9</td><td>1.3</td><td>1.2</td><td>0.9</td><td>0.7</td><td>3.8</td><td>-0.4</td><td>3.6</td></tr><tr><td colspan="12">(seas adj, ppt q-q)</td><td colspan="3"></td></tr><tr><td>Contributions to GDP</td><td colspan="12"></td><td colspan="3"></td></tr><tr><td>Domestic final sales</td><td>0.4</td><td>0.5</td><td>-0.1</td><td>0.6</td><td>0.3</td><td>-0.1</td><td>0.2</td><td>0.1</td><td>0.2</td><td>0.5</td><td>0.1</td><td>0.2</td><td>1.1</td><td>0.6</td><td>0.8</td></tr><tr><td>Inventories</td><td>0.7</td><td>-0.3</td><td>-0.2</td><td>-0.4</td><td>-0.1</td><td>0.1</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.3</td><td>-0.3</td><td>0.0</td></tr><tr><td rowspan="2">Net trade</td><td>-0.6</td><td>0.1</td><td>-0.3</td><td>0.0</td><td>0.3</td><td>0.5</td><td>-0.5</td><td>0.1</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>-0.3</td><td>0.3</td><td>-0.1</td></tr><tr><td colspan="12">(% q-q)</td><td colspan="3"></td></tr><tr><td>Industrial production</td><td>0.0</td><td>-0.5</td><td>-1.1</td><td>0.3</td><td>2.5</td><td>0.7</td><td>0.2</td><td>0.5</td><td>0.4</td><td>0.7</td><td>0.3</td><td>0.2</td><td>-0.3</td><td>2.8</td><td>1.9</td></tr><tr><td rowspan="2">Unemployment rate</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.6</td><td>2.7</td><td>2.6</td><td>2.6</td><td>2.6</td><td>2.5</td><td>2.5</td><td>2.4</td><td>2.4</td><td>2.5</td><td>2.6</td><td>2.5</td></tr><tr><td colspan="12">(% y-y)</td><td colspan="3"></td></tr><tr><td>Consumer prices</td><td>3.8</td><td>3.4</td><td>2.9</td><td>2.7</td><td>1.4</td><td>1.6</td><td>1.8</td><td>2.6</td><td>3.4</td><td>1.2</td><td>1.1</td><td>0.3</td><td>3.2</td><td>1.9</td><td>1.5</td></tr><tr><td>CPI (excl fresh foods)</td><td>3.1</td><td>3.5</td><td>2.9</td><td>2.8</td><td>1.8</td><td>1.6</td><td>1.8</td><td>2.7</td><td>3.4</td><td>1.5</td><td>1.3</td><td>0.5</td><td>3.1</td><td>1.9</td><td>1.6</td></tr><tr><td>CPI (excl fresh foods and energy)</td><td>2.7</td><td>3.2</td><td>3.2</td><td>3.0</td><td>2.5</td><td>1.9</td><td>2.0</td><td>2.3</td><td>2.5</td><td>1.2</td><td>1.0</td><td>0.8</td><td>3.0</td><td>2.2</td><td>1.3</td></tr><tr><td>CPI (excl foods (ex alcoholic beverages) and energy)</td><td>1.5</td><td>1.6</td><td>1.5</td><td>1.5</td><td>1.4</td><td>1.2</td><td>1.7</td><td>2.0</td><td>2.0</td><td>2.3</td><td>2.1</td><td>2.1</td><td>1.6</td><td>1.6</td><td>2.1</td></tr><tr><td>Fiscal balance (% of GDP)</td><td colspan="12"></td><td>-3.3</td><td>-3.3</td><td>-3.3</td></tr><tr><td>Current account balance (% of GDP)</td><td>4.4</td><td>4.3</td><td>6.6</td><td>4.2</td><td>5.6</td><td>4.8</td><td>3.9</td><td>2.7</td><td>3.5</td><td>4.0</td><td>5.4</td><td>3.6</td><td>4.9</td><td>4.2</td><td>4.1</td></tr><tr><td>Policy rate (%)</td><td>0.50</td><td>0.50</td><td>0.50</td><td>0.75</td><td>0.75</td><td>1.00</td><td>1.00</td><td>1.25</td><td>1.25</td><td>1.50</td><td>1.50</td><td>1.50</td><td>0.75</td><td>1.25</td><td>1.50</td></tr><tr><td>5-year JGB yield (%)</td><td>1.10</td><td>0.98</td><td>1.23</td><td>1.55</td><td>1.77</td><td>1.95</td><td>1.95</td><td>2.00</td><td>2.00</td><td>2.05</td><td>2.05</td><td>2.05</td><td>1.55</td><td>2.00</td><td>2.05</td></tr><tr><td>10-year JGB yield (%)</td><td>1.49</td><td>1.42</td><td>1.65</td><td>2.06</td><td>2.35</td><td>2.70</td><td>2.75</td><td>2.70</td><td>2.70</td><td>2.70</td><td>2.70</td><td>2.70</td><td>2.06</td><td>2.70</td><td>2.70</td></tr><tr><td>USD/JPY</td><td>150.0</td><td>144.0</td><td>147.9</td><td>156.7</td><td>158.7</td><td>157.5</td><td>155.0</td><td>152.5</td><td>150.0</td><td>147.5</td><td>145.0</td><td>145.0</td><td>156.7</td><td>152.5</td><td>145.0</td></tr></table>
+
+Note: (1) Interest rates and currencies are end-of-period levels. (2) Actual values shown in bold; others are NOM forecasts. (3) Unemployment rate is percentage of labor force. (4) Fiscal balance is FY basis (April through March of following year), general account basis. (5) Economic forecasts as of 8 June 2026 and interest rate forecasts as of 19 June 2026. (6) We assume that the consumption tax rate for food (excluding alcoholic beverages and restaurants) will be lowered from 8% at present to 0% in April 2027. We estimate the impact on the all-Japan CPI, the all-Japan CPI excluding fresh food, and the all-Japan CPI excluding fresh food and energy at -1.8ppt, -1.5ppt, and 1.7ppt respectively.
+
+Source: Cabinet Office, MIC, MOF, BOJ, and NOM
+
+[As of 8 June 2026]
+
+Fig. 32: Summary of our forecasts for the Japanese economy (2)
+
+<table><tr><td rowspan="2"></td><td rowspan="2"></td><td>FY25</td><td>FY26</td><td>FY27</td><td>CY25</td><td>CY26</td><td>CY27</td></tr><tr><td></td><td>E</td><td>E</td><td></td><td>E</td><td>E</td></tr><tr><td rowspan="15">Gross domestic product</td><td>Real GDP growth</td><td>0.8</td><td>0.6</td><td>0.8</td><td>1.1</td><td>0.6</td><td>0.7</td></tr><tr><td>Contribution of domestic demand (ppt)</td><td>0.9</td><td>0.4</td><td>1.0</td><td>1.4</td><td>0.3</td><td>0.9</td></tr><tr><td>Private-sector demand (ppt)</td><td>0.8</td><td>0.3</td><td>0.9</td><td>1.2</td><td>0.1</td><td>0.8</td></tr><tr><td>Public-sector demand (ppt)</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.2</td><td>0.2</td><td>0.0</td></tr><tr><td>Contribution of external demand (ppt)</td><td>-0.1</td><td>0.2</td><td>-0.1</td><td>-0.3</td><td>0.3</td><td>-0.1</td></tr><tr><td>Private final consumption</td><td>1.3</td><td>0.8</td><td>0.9</td><td>1.3</td><td>1.0</td><td>0.8</td></tr><tr><td>Private housing investment</td><td>-3.4</td><td>-0.2</td><td>-1.7</td><td>-2.5</td><td>-0.5</td><td>-1.7</td></tr><tr><td>Private-sector capital expenditure</td><td>2.0</td><td>0.9</td><td>1.9</td><td>2.1</td><td>0.7</td><td>1.8</td></tr><tr><td>Private-sector inventories (contribution)</td><td>-0.1</td><td>-0.1</td><td>0.0</td><td>0.3</td><td>-0.3</td><td>0.0</td></tr><tr><td>Government consumption</td><td>0.8</td><td>0.6</td><td>0.4</td><td>0.9</td><td>0.9</td><td>0.4</td></tr><tr><td>Public fixed capital formation</td><td>-0.5</td><td>-1.3</td><td>-0.3</td><td>-0.4</td><td>-0.2</td><td>-1.1</td></tr><tr><td>Goods/services exports</td><td>2.0</td><td>0.9</td><td>3.2</td><td>2.5</td><td>1.2</td><td>2.7</td></tr><tr><td>Goods/services imports</td><td>2.5</td><td>-0.5</td><td>4.2</td><td>3.8</td><td>-0.4</td><td>3.6</td></tr><tr><td>Nominal GDP growth</td><td>4.1</td><td>2.2</td><td>2.6</td><td>4.5</td><td>2.3</td><td>2.9</td></tr><tr><td>GDP deflator</td><td>3.3</td><td>1.6</td><td>1.8</td><td>3.4</td><td>1.7</td><td>2.2</td></tr><tr><td rowspan="7">Production/prices</td><td>Industrial production</td><td>-0.2</td><td>3.0</td><td>1.8</td><td>-0.3</td><td>2.8</td><td>1.9</td></tr><tr><td>Domestic corporate goods prices</td><td>2.8</td><td>5.7</td><td>1.6</td><td>3.2</td><td>4.8</td><td>3.0</td></tr><tr><td>Consumer price index</td><td>2.6</td><td>2.3</td><td>0.6</td><td>3.2</td><td>1.9</td><td>1.5</td></tr><tr><td>Excluding fresh foods</td><td>2.7</td><td>2.4</td><td>0.8</td><td>3.1</td><td>1.9</td><td>1.6</td></tr><tr><td>Excluding fresh foods and energy</td><td>3.0</td><td>2.2</td><td>0.9</td><td>3.0</td><td>2.2</td><td>1.3</td></tr><tr><td>Excluding foods (ex alcoholic beverages) and energy</td><td>1.5</td><td>1.7</td><td>2.1</td><td>1.6</td><td>1.6</td><td>2.1</td></tr><tr><td>Unemployment rate (%)</td><td>2.6</td><td>2.6</td><td>2.4</td><td>2.5</td><td>2.6</td><td>2.5</td></tr><tr><td rowspan="3">External balances</td><td>Trade balance (¥trn)</td><td>1.4</td><td>-6.7</td><td>-5.0</td><td>-0.6</td><td>-4.0</td><td>-5.4</td></tr><tr><td>Trade/services balance (¥trn)</td><td>-2.5</td><td>-10.3</td><td>-9.1</td><td>-4.0</td><td>-7.8</td><td>-9.6</td></tr><tr><td>Current account balance (¥trn)</td><td>34.5</td><td>25.4</td><td>30.2</td><td>32.2</td><td>28.8</td><td>28.8</td></tr></table>
+
+Note: (1) % y-y unless otherwise noted. Where value = -0.0, this is shown as 0.0. (2) We assume that the consumption tax rate for food (excluding alcoholic beverages and restaurants) will be lowered from 8% at present to 0% in April 2027. We estimate the impact on the all-Japan CPI, the all-Japan CPI excluding fresh food, and the all-Japan CPI excluding fresh food and energy at -1.8ppt, -1.5ppt, and -1.7ppt respectively.  
+Source: NOM, based on Cabinet Office, Ministry of Internal Affairs and Communications (MIC), Ministry of Economy, Trade & Industry (METI), MOF, and BOJ data
+
+Fig. 33: Assumptions on which our economic forecasts are based
+
+<table><tr><td></td><td>FY26</td><td>FY27</td></tr><tr><td>$/¥ rate (FY-end)</td><td>150.0</td><td>145.0</td></tr><tr><td>Consumption tax rate (at FY-end, %)</td><td>10</td><td>10</td></tr><tr><td>of which, lower consumption tax rate on food</td><td>8</td><td>0</td></tr><tr><td>Crude oil price (North Sea Brent, FY-end, $/bbl)</td><td>82.8</td><td>76.6</td></tr></table>
+
+Source: NOM
+
+Fig. 34: Our assessment of key Japanese economic data (updated weekly)
+
+<table><tr><td rowspan="2">Item</td><td colspan="2">2026 Apr–Jun</td><td rowspan="2">Details</td></tr><tr><td>NOM forecast</td><td>Current assessment</td></tr><tr><td>Consumer spending</td><td>0.3</td><td>In line</td><td>The April real CTI macro (Total Consumption Trend Index) rose 0.3% versus Jan–Mar.</td></tr><tr><td>Private housing investment</td><td>-0.5</td><td>In line</td><td>Housing starts in April were down 3.2% from the Jan–Mar average.</td></tr><tr><td>Capex</td><td>0.3</td><td>In line</td><td>Private-sector machinery orders in April showed a solid +5.8% m-m increase.</td></tr><tr><td>Public investment</td><td>-0.8</td><td>In line</td><td>Construction orders (central and regional total) fell 11.6% q-q in 2026 Q1.</td></tr><tr><td>Exports</td><td>0.3</td><td>In line</td><td>Real goods exports in April 2026 were down 5.1% versus the Jan–Mar 2026 average. By contrast, nominal service receipts rose sharply (+21.4%).</td></tr><tr><td>Imports</td><td>-2.4</td><td>In line</td><td>Real goods imports in April 2026 were down 8.2% versus the Jan–Mar 2026 average. Nominal service payments were also down (1.1%).</td></tr><tr><td>Prices</td><td>1.6</td><td>In line</td><td>All-Japan core inflation came in at +1.4% in May, unchanged from April.</td></tr><tr><td>Wages</td><td>3.2</td><td>In line</td><td>Per-capita total cash earnings (preliminary) increased by 3.5% y-y in April, up from a 3.1% rise in March.</td></tr><tr><td>Summary</td><td colspan="3">We expect real GDP to continue to rise q-q in Apr–Jun on: (1) a sharp rise in service exports in April; (2) solid domestic demand, particularly for consumer spending and capex; and (3) a decline in real imports, particularly crude oil.</td></tr></table>
+
+Note: (1) "NOM forecast" refers to our economic forecasts as of 8 June. Items of demand are expressed on a q-q basis and prices and wages on a y-y basis. (2) "Current assessment" is our assessment of risk that takes into account general view of "NOM forecast" or details of latest economic data based on that. Our assessment is based on five categories: "upside," "slight upside," "in line," "slight downside," and "downside". (3) If relevant indicators for the given quarter have not yet been released, we give an overview of our current-FY forecasts. (4) Red font indicates change from previous report. For prices, we use core CPI (all items less fresh food).
+Source: NOM
+
+## 9. Policy stance of BOJ Policy Board
+
+## Fig. 35: Policy stance of the members of the BOJ's Policy Board
+
+<table><tr><td>Dovish</td><td>Slightly dovish</td><td>Neutral</td><td>Slightly hawkish</td><td>Hawkish</td></tr><tr><td></td><td>Toichiro Asada</td><td>Kazuo UedaShinichi UchidaRyozo HiminoJunko NakagawaKazuyuki Masu</td><td>Junko Koeda</td><td>Naoki TamuraHajime Takata</td></tr></table>
+
+Note: Our assessment of each member's stance is an overall assessment based on how he/she has voted at past MPMs, and what he/she has said in speeches, at press conferences or in interviews, including during period before he/she became a member of the Policy Board. We have rated members as either "hawkish," "slightly hawkish," "moderate," "slightly dovish," or "dovish."
+
+Fig. 36: Policy stance and main comments of members of the BOJ's Policy Board
+
+<table><tr><td>Name(position, present position to)</td><td>Stance</td><td></td></tr><tr><td rowspan="2">Toichiro Asada(Member of the Policy Board,–March 2031)</td><td rowspan="2">Slightly dovish</td><td>Normally, lowering interest rates is considered easing and raising interest rates is not considered easing - this is tautological reasoning. The Bank has raised the policy interest rate several times, albeit very slowly, so according to the general definition raising interest rates is not considered easing. I set aside any value judgments about whether this is good or bad. (press conference, 1 April 2026, translation by NOM)</td></tr><tr><td>When a deflationary recession continues for a long time, this is a policy of aiming for slightly positive inflation such as a 2% inflation target in order to ultimately escape from the recession, which I believe is what the Bank of Japan implemented during Governor Kuroda&#x27;s era. I have supported and evaluated that policy from the beginning, so I don&#x27;t feel any discomfort about being called a reflationist in that sense. (press conference, 1 April 2026, translation by NOM)</td></tr><tr><td rowspan="2">Kazuyuki Masu(Member of the Policy Board,–June 2030)</td><td rowspan="2">Neutral</td><td>In our country&#x27;s case, we are in an even more complicated position in that, even if a rapid response to inflation becomes necessary, monetary policy is still accommodative. By firmly bringing the policy interest rate within the estimated range of the neutral rate, we can establish a system that allows for flexible policy measures in either direction. I believe that further rate hikes are therefore required in order to fully complete the process of normalizing monetary policy. (speech, 14 May 2026, translation by NOM)</td></tr><tr><td>I myself judged at the April MPM that the situation did not warrant a hasty policy rate hike. That said, if statistical data do not indicate clear signs of an economic downturn, I believe it is desirable to raise the policy rate at the earliest stage possible. (speech, 14 May 2026, translation by NOM)</td></tr><tr><td rowspan="2">Shinichi Uchida(Deputy Governor,–March 2028)</td><td rowspan="2">Neutral</td><td>We decided at today&#x27;s MPM that it would be appropriate to raise the policy rate and adjust the degree of monetary accommodation in line with the Conduct of Monetary Policy section of the April Outlook Report, because although the risk of a significant economic downturn has decreased and the economy has been progressing roughly in line with our baseline outlook since the previous MPM, we have taken into account factors such as the risk that price increases could spread to a wide range of items and that underlying CPI inflation could trend upward (press conference, 17 June, translation by NOM).</td></tr><tr><td>Regarding the continuation of 2 trillion yen of JGB purchases, there is no predetermined timeline for how long this will continue or when we will review it. However, if circumstances change, I believe the Policy Board will be able to modify this approach while giving due consideration to predictability (press conference, 17 June, translation by NOM).</td></tr><tr><td rowspan="3">Ryozo Himino(Deputy Governor,–March 2028)</td><td rowspan="3">Neutral</td><td>As I mentioned earlier, the inflation gap remains slightly negative at present but is expected to approach zero in the future. This would suggest that, while the Bank&#x27;s policy remains somewhat accommodative, it should gradually shift to a more neutral stance through moderate policy rate hikes. (speech, 2 March 2026)</td></tr><tr><td>As to whether underlying inflation has reached the price stability target of 2 percent, however, while one might broadly assess that it is already close to 2 percent, I feel that asserting that the rate has reached 2 percent for certain may still be premature. (speech, 2 March 2026).</td></tr><tr><td>I do not rule out the possibility that the BOJ might change its monetary policy during periods of high market volatility, and it is not necessarily the case that it would never change its policy in response to high market volatility (press conference, March 2 2026, translation by NOM)</td></tr><tr><td rowspan="2">Junko Nakagawa(Member of the Policy Board,–June 2026)</td><td rowspan="2">Neutral</td><td>The year-on-year rate of increase in the CPI is likely to decelerate temporarily as inflationary pressures wane over time. However, it is likely that the mechanism by which wages and prices rise moderately in interaction with each other will be maintained. Thereafter, the rate of increase in the CPI is expected to accelerate gradually, alongside the rise in medium- to long-term inflation expectations, since it is projected that a sense of labor shortage will grow more acute as the economic growth rate rises. (speech, 10 November 2025, translation by NOM).</td></tr><tr><td>With regard to the future conduct of monetary policy, given the current level of real interest rates shown in Chart 9, if its outlook for economic activity and prices is realized, the Bank will continue to raise the policy interest rate and adjust the degree of monetary accommodation in response to improvement in economic and price developments. (speech, 10 November 2025, translation by NOM)</td></tr><tr><td rowspan="2">Kazuo Ueda(Governor,–April 2028)</td><td rowspan="2">Neutral</td><td>I think that, while the Bank should be attentive to downside risks to economic activity, it should be more vigilant about the risk of a significant upward deviation in inflation materializing, which could exert an adverse impact on the economy afterward.(speech, 3 June 2026)</td></tr><tr><td>Meanwhile, even if the situation remains unclear, should it be judged that upside risks to prices outweigh downside risks to economic activity, it will be necessary to thoroughly discuss the pros and cons of raising the policy interest rate, from the perspective of preventing adverse effects on the economy and financial markets and achieving the price stability target of 2 percent in a sustainable and stable manner.(speech, 3 June 2026)</td></tr><tr><td rowspan="3">Junko Koeda(Member of the Policy Board,–March 2020)</td><td rowspan="3">Slightly hawkish</td><td>We think there is a possibility that the underlying inflation rate will exceed 2% going forward in response to the situation in the Middle East. In fact, long-term inflation expectations have recently risen slightly, in both survey-based indicators and market-based indicators, and we are monitoring this closely. We believe it remains necessary to continue assessing the degree to which the underlying inflation rate is becoming entrenched. (speech, 21 May 2026, translation by NOM)</td></tr><tr><td>I therefore believe it is reasonable for the Bank to raise the policy interest rate at an appropriate pace to address high inflation while also considering the trade-offs for the economy. (speech, 21 May 2026)</td></tr><tr><td>When inflation and inflation expectations rise going forward, real interest rates could diverge further in the negative direction relative to the natural rate of interest. I therefore believe it will become more important to proceed with interest rate normalization through rate hikes. (speech, 21 May 2026, translation by NOM)</td></tr><tr><td rowspan="3">Hajime Takata(Member of the Policy Board,–July 2027)</td><td rowspan="3">Hawkish</td><td>I believe that... Japan&#x27;s economy is at a stage where the price stability target is almost achieved. (speech, 20 October 2025, translation by NOM)</td></tr><tr><td>Given that some participants in foreign exchange markets have recently paid attention to not only nominal but also real interest rate differentials, it is necessary to monitor price developments transmitted through exchange rates. (speech, 26 February 2026)</td></tr><tr><td>I believe it is necessary to closely examine developments in the JGB market, as the annual change in the outstanding amount of JGBs for fiscal 2025 is estimated to exceed the record high level in the early 2000s. (speech, 26 February 2026)</td></tr><tr><td rowspan="2">Naoki Tamura(Member of the Policy Board,–July 2027)</td><td rowspan="2">Hawkish</td><td>Underlying CPI inflation has recently reached approximately 2 percent, and I believe it is quite possible that, as early as this spring, the price stability target of 2 percent can be judged to have been achieved if it is confirmed with a high degree of certainty that wage growth in 2026 will be in line with the price stability target for the third consecutive year. (speech, 13 February 2026)</td></tr><tr><td>This is a simple representation of my understanding, based on my perceptions as a financial practitioner before becoming a member of the Bank&#x27;s Policy Board and on my experience over the past few years. When the policy interest rate is below 1 percent, a rate hike will only very marginally affect the waning of the economic stimulus effect of monetary easing. As the policy interest rate exceeds around 1 percent, the stimulus effect begins to gradually weaken, and once it exceeds the neutral interest rate, the restraining effect on economic activity gradually gains strength. (speech, 13 February 2026)</td></tr></table>
+
+Note: Our assessment of each member's stance is an overall assessment based on how he/she has voted at past MPMs, and what he/she has said in speeches, at press conferences or in interviews, including during period before he/she became a member of the Policy Board. We have rated members as either "hawkish," "slightly hawkish," "moderate," "slightly dovish," or "dovish." . Main comments in red font indicate change from previous report, while any underlining indicates our emphasis.
+Source: NOM, based on BOJ, various materials
+
+## Appendix A-1
+
+This report has been produced by NOM Securities Co., Ltd. (NSC), Japan.
+
+See Disclaimers for NOM Group entity details.
+
+## Analyst Certification
+
+Each research analyst identified herein certifies that all of the views expressed in this report by such analyst accurately reflect his or her personal views about the subject securities and issuers. In addition, each research analyst identified in this report hereby certifies that no part of his or her compensation was, is, or will be, directly or indirectly related to the specific recommendations or views that he or she has expressed in this research report, nor is it tied to any specific investment banking transactions performed by NOM Securities International, Inc., NOM International plc or any other NOM Group company.
+
+## Important Disclosures
+
+## Online availability of research and conflict-of-interest disclosures
+
+NOM Group research is available on www.NOMnow.com/research, Bloomberg, Capital IQ, Factset, LSEG.
+
+Important disclosures may be read at http://go.NOMnow.com/research/m/Disclosures or requested from NOM Securities International, Inc. If you have any difficulties with the website, please email grpsupport@NOM.com for help.
+
+The analysts responsible for preparing this report have received compensation based upon various factors including the firm's total revenues, a portion of which is generated by Investment Banking activities. Unless otherwise noted, the non-US analysts listed at the front of this report are not registered/qualified as research analysts under FINRA rules, may not be associated persons of NSI, and may not be subject to FINRA Rule 2241 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.
+
+NOM Global Financial Products Inc. (NGFP) NOM Derivative Products Inc. (NDP) and NOM International plc. (NIplc) are registered with the Commodities Futures Trading Commission and the National Futures Association (NFA) as swap dealers. NGFP, NDPI, and NIplc are generally engaged in the trading of swaps and other derivative products, any of which may be the subject of this report.
+
+## Disclaimers
+
+This publication contains material that has been prepared by the NOM Group entity identified on page 1 and, if applicable, with the contributions of one or more NOM Group entities whose employees and their respective affiliations are specified on page 1 or identified elsewhere in this publication. The term "NOM Group" used herein refers to NOM Holdings, Inc. and its affiliates and subsidiaries including: (a) NOM Securities Co., Ltd. ('NSC') Tokyo, Japan, (b) NOM Financial Products Europe GmbH ('NFPE'), Germany, (c) NOM International plc ('NIplc'), UK, (d) NOM Securities International, Inc. ('NSI'), New York, US, (e) NOM International (Hong Kong) Ltd. ('NIHK'), Hong Kong, (f) NOM Financial Investment (Korea) Co., Ltd. ('NFIK'), Korea (Information on NOM analysts registered with the Korea Financial Investment Association ('KOFIA') can be found on the KOFIA Intranet at http://dis.kofia.or.kr, (g) NOM Singapore Ltd. ('NSL'), Singapore (Registration number 197201440E, regulated by the Monetary Authority of Singapore) (h) NOM Australia Ltd. ('NAL'), Australia (ABN 48 003 032 513), regulated by the Australian Securities and Investment Commission ('ASIC') and holder of an Australian financial services licence number 246412, (i) NOM Securities Malaysia Sdn. Bhd. ('NSM'), Malaysia, (j) NIHK, Taipei Branch ('NITB'), Taiwan, (k) NOM Financial Advisory and Securities (India) Private Limited ('NFASL'), Mumbai, India (Registered Address: Ceejay House, Level 11, Plot F, Shivsagar Estate, Dr. Annie Besant Road, Worli, Mumbai- 400 018, India; Tel: 91 22 4037 4037, Fax: 91 22 4037 4111; CIN No: U74140MH2007PTC169116, SEBI Registration No. for Stock Broking activities : INZ000255633; SEBI Registration No. for Merchant Banking : INM000011419; SEBI Registration No. for Research: INH000001014 - Compliance Officer: Ms. Pratiksha Tondwalkar, 91 22 40374904, grievance email: investorgrievancesra@NOM.com Webpage: LINK
+
+For reports with respect to Indian public companies or authored by India-based NFASL research analysts: (i) Investment in securities markets is subject to market risks. Read all the related documents carefully before investing. (ii) Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. (iii) NFASL terms and conditions for availing research services is disclosed on NFASL webpage.
+
+(I) NOM Fiduciary Research & Consulting Co., Ltd. ('NFRC') Tokyo, Japan. (m) NOM Orient International Securities Co., Ltd ("NOI"), is a majority owned joint venture amongst NOM Group, Orient International (Holding) Co., Ltd, and Shanghai Huangpu Investment Holding (Group) Co., Ltd. In accordance with the laws of the People's Republic of China ("PRC", excluding Hong Kong, Macau and Taiwan, for the purpose of this document), NOI is licensed in the PRC to provide securities research and investment recommendations and it operates independently from the other members of the NOM Group; in particular, NOI's interests in PRC securities are not disclosed to, or aggregated with the holdings of, any other NOM Group entities and the interests in PRC securities of other NOM Group entities are not disclosed to, or aggregated with the holdings of, NOI. An individual name printed next to NOI on the front page of a research report indicates that individual is employed by NOI to provide research assistance to NIHK under a research partnership agreement. 'NSFSPL' next to an employee's name on the front page of a research report indicates that the individual is employed by NOM Structured Finance Services Private Limited to provide assistance to certain NOM entities under inter-company agreements. 'Verdhana' next to an individual's name on the front page of a research report indicates that the individual is employed by PT Verdhana Sekuritas Indonesia ('Verdhana') to provide research assistance to NIHK under a research partnership agreement and neither Verdhana nor such individual is licensed outside of Indonesia.
+
+THIS MATERIAL IS: (I) FOR YOUR PRIVATE INFORMATION, AND WE ARE NOT SOLICITING ANY ACTION BASED UPON IT; (II) NOT TO BE CONSTRUED AS AN OFFER TO SELL OR A SOLICITATION OF AN OFFER TO BUY ANY SECURITIES IN ANY JURISDICTION WHERE SUCH OFFER OR SOLICITATION WOULD BE ILLEGAL; AND (III) OTHER THAN DISCLOSURES RELATING TO THE NOM GROUP, BASED UPON INFORMATION FROM SOURCES THAT WE CONSIDER RELIABLE, BUT HAS NOT BEEN INDEPENDENTLY VERIFIED BY NOM GROUP.
+
+Other than disclosures relating to the NOM Group, the NOM Group does not warrant, represent or undertake, express or implied, that the document is fair, accurate, complete, correct, reliable or fit for any particular purpose or merchantable, and to the maximum extent permissible by law and/or regulation, does not accept liability (in negligence or otherwise, and in whole or in part) for any act (or decision not to act) resulting from use of this document and related data. To the maximum extent permissible by law and/or regulation, all warranties and other assurances by the NOM Group are hereby excluded and the NOM Group shall have no liability (in negligence or otherwise, and in whole or in part) for any loss howsoever arising from the use, misuse, or distribution of this material or the information contained in this material or otherwise arising in connection therewith.
+
+Opinions or estimates expressed are current opinions as of the original publication date appearing on this material and the information, including the opinions and estimates contained herein, are subject to change without notice. The NOM Group, however, expressly disclaims any obligation, and therefore is under no duty, to update or revise this document. Any comments or statements made herein are those of the author(s) and may differ from views held by other parties within NOM Group. Clients should consider whether any advice or recommendation in this report is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The NOM Group does not provide tax advice.
+
+The NOM Group, and/or its officers, directors, employees and affiliates, may, to the extent permitted by applicable law and/or regulation, deal as principal, agent, or otherwise, or have long or short positions in, or buy or sell, the securities, commodities or instruments, or options or other derivative instruments based thereon, of issuers or securities mentioned herein. The NOM Group companies may also act as market maker or liquidity provider (within the meaning of applicable regulations in the UK) in the financial instruments of the issuer. Where the activity of market maker is carried out in accordance with the definition given to it by specific laws and regulations of the US or other jurisdictions, this will be separately disclosed within the specific issuer disclosures.
+
+This document may contain information obtained from third parties, including, but not limited to, ratings from credit ratings agencies such as Standard & Poor's. The NOM Group hereby expressly disclaims all representations, warranties or undertakings of originality, fairness, accuracy, completeness, correctness, merchantability or fitness for a particular purpose with respect to any of the information obtained from third parties contained in this material or otherwise arising in connection therewith, and shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of any of the information obtained from third parties contained in this material or otherwise arising in connection therewith. Reproduction and distribution of third-party content in any form is prohibited except with the prior written permission of the related third-party. Third-party content providers do not, express or implied, guarantee the fairness, accuracy, completeness, correctness, timeliness or availability of any information, including ratings, and are not in any way responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use or misuse of such content. Third-party content providers give no express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Third-party content providers shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Any MSCI sourced information in this document is the exclusive property of MSCI Inc. ('MSCI'). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be duplicated, reproduced, re-disseminated, redistributed or used, in whole or in part, for any purpose whatsoever, including creating any financial products and any indices. This information is provided on an "as is" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all representations, warranties or undertakings of originality, fairness, accuracy,
+
+completeness, correctness, merchantability or fitness for a particular purpose with respect to any of this material or the information contained in this material or otherwise arising in connection therewith. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability (in negligence or otherwise, and in whole or in part) for any damages of any kind. MSCI and the MSCI indexes are services marks of MSCI and its affiliates.
+
+The intellectual property rights and any other rights, in Russell/NOM Japan Equity Index belong to NOM Fiduciary Research & Consulting Co., Ltd. ("NFRC") and FTSE Russell ("Russell"). NFRC and Russell do not guarantee fairness, accuracy, completeness, correctness, reliability, usefulness, marketability, merchantability or fitness of the Index, and do not account for business activities or services that any index user and/or its affiliates undertakes with the use of the Index.
+
+Investors should consider this document as only a single factor in making their investment decision and, as such, the report should not be viewed as identifying or suggesting all risks, direct or indirect, that may be associated with any investment decision. NOM Group produces a number of different types of research product including, among others, fundamental analysis and quantitative analysis; recommendations contained in one type of research product may differ from recommendations contained in other types of research product, whether as a result of differing time horizons, methodologies or otherwise. The NOM Group publishes research product in a number of different ways including the posting of product on the NOM Group portals and/or distribution directly to clients. Different groups of clients may receive different products and services from the research department depending on their individual requirements.
+
+Figures presented herein may refer to past performance or simulations based on past performance which are not reliable indicators of future or likely performance. Where the information contains an expectation, projection or indication of future performance and business prospects, such forecasts may not be a reliable indicator of future or likely performance. Moreover, simulations are based on models and simplifying assumptions which may oversimplify and not reflect the future distribution of returns. Any figure, strategy or index created and published for illustrative purposes within this document is not intended for “use” as a “benchmark” as defined by the European Benchmark Regulation. Certain securities are subject to fluctuations in exchange rates that could have an adverse effect on the value or price of, or income derived from, the investment.
+
+With respect to Fixed Income Research: Recommendations fall into two categories: tactical, which typically last up to three months; or strategic, which typically last from 6-12 months. However, trade recommendations may be reviewed at any time as circumstances change. 'Stop loss' levels for trades are also provided; which, if hit, closes the trade recommendation automatically. Prices and yields shown in recommendations are taken at the time of submission for publication and are based on either indicative Bloomberg, LSEG or NOM prices and yields at that time. The prices and yields shown are not necessarily those at which the trade recommendation can be implemented.
+
+The securities described herein may not have been registered under the US Securities Act of 1933 (the ‘1933 Act’), and, in such case, may not be offered or sold in the US or to US persons unless they have been registered under the 1933 Act, or except in compliance with an exemption from the registration requirements of the 1933 Act. Unless governing law permits otherwise, any transaction should be executed via a NOM entity in your home jurisdiction.
+
+This document has been approved for distribution in the UK as investment research by NIplc. NIplc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. NIplc is a member of the London Stock Exchange. This document does not constitute a personal recommendation within the meaning of applicable regulations in the UK, or take into account the particular investment objectives, financial situations, or needs of individual investors. This document is intended only for investors who are 'eligible counterparties' or 'professional clients' for the purposes of applicable regulations in the UK, and may not, therefore, be redistributed to persons who are 'retail clients' for such purposes.
+
+This document has been approved for distribution in the European Economic Area as investment research by NOM Financial Products Europe GmbH (“NFPE”). NFPE is a company organized as a limited liability company under German law registered in the Commercial Register of the Court of Frankfurt/Main under HRB 110223. NFPE is authorized and regulated by the German Federal Financial Supervisory Authority (BaFin).
+
+This document has been approved by NIHK, which is regulated by the Hong Kong Securities and Futures Commission, for distribution in Hong Kong by NIHK. This document is intended only for investors who are 'professional investors' for the purposes of applicable regulations in Hong Kong and may not, therefore, be redistributed to persons who are not 'professional investors' for such purposes.
+
+This document has been approved for distribution in Australia by NAL, which is authorized and regulated in Australia by the ASIC. This document has also been approved for distribution in Malaysia by NSM.
+
+In Singapore, this document has been distributed by NSL, an exempt financial adviser as defined under the Financial Advisers Act (Chapter 110), among other things, and regulated by the Monetary Authority of Singapore. NSL may distribute this document produced by its foreign affiliates pursuant to an arrangement under Regulation 32C of the Financial Advisers Regulations. This document is intended for accredited, expert or institutional investors as defined by the Securities and Futures Act (Chapter 289). Where the recipient of this document is not an accredited, expert or institutional investor, NSL accepts legal responsibility for the contents of this document in respect of such recipient only to the extent required by law. Recipients of this document in Singapore should contact NSL in respect of matters arising from, or in connection with, this document. THIS DOCUMENT IS INTENDED FOR GENERAL CIRCULATION. IT DOES NOT TAKE INTO ACCOUNT THE SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS OF ANY PARTICULAR PERSON. RECIPIENTS SHOULD TAKE INTO ACCOUNT THEIR SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS BEFORE MAKING A COMMITMENT TO PURCHASE ANY SECURITIES, INCLUDING SEEKING ADVICE FROM AN INDEPENDENT FINANCIAL ADVISER REGARDING THE SUITABILITY OF THE INVESTMENT, UNDER A SEPARATE ENGAGEMENT, AS THE RECIPIENT DEEMS FIT. Unless prohibited by the provisions of Regulation S of the 1933 Act, this material is distributed in the US, by NSI, a US-registered broker-dealer, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6, under the US Securities Exchange Act of 1934. The entity that prepared this document permits its separately operated affiliates within the NOM Group to make copies of such documents available to their clients.
+
+This document has not been approved for distribution to persons other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ (as defined by the Capital Markets Authority) in the Kingdom of Saudi Arabia (‘Saudi Arabia’) or a ‘Market Counterparty’ or a ‘Professional Client’ (as defined by the Dubai Financial Services Authority) in the United Arab Emirates (‘UAE’) or a ‘Market Counterparty’ or a ‘Business Customer’ (as defined by the Qatar Financial Centre Regulatory Authority) in the State of Qatar (‘Qatar’) by NOM Saudi Arabia, NIplc or any other member of the NOM Group, as the case may be. Neither this document nor any copy thereof may be taken or transmitted or distributed, directly or indirectly, by any person other than those authorised to do so into Saudi Arabia or in the UAE or in Qatar or to any person other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ located in Saudi Arabia or a ‘Market Counterparty’ or a ‘Professional Client’ in the UAE or a ‘Market Counterparty’ or a ‘Business Customer’ in Qatar. Any failure to comply with these restrictions may constitute a violation of the laws of the UAE or Saudi Arabia or Qatar.
+
+For report with reference of TAIWAN public companies or authored by Taiwan based research analyst:
+
+THIS DOCUMENT IS SOLELY FOR REFERENCE ONLY. You should independently evaluate the investment risks and are solely responsible for your investment decisions. NO PORTION OF THE REPORT MAY BE REPRODUCED OR QUOTED BY THE PRESS OR ANY OTHER PERSON WITHOUT WRITTEN AUTHORIZATION FROM NOM GROUP. Pursuant to Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers and/or other applicable laws or regulations in Taiwan, you are prohibited to provide the reports to others (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities in connection with the reports which may involve conflicts of interests. INFORMATION ON SECURITIES / INSTRUMENTS NOT EXECUTABLE BY NOM INTERNATIONAL (HONG KONG) LTD., TAIPEI BRANCH IS FOR INFORMATIONAL PURPOSES ONLY AND IS NOT BE CONSTRUED AS A RECOMMENDATION OR A SOLICITATION TO TRADE IN SUCH SECURITIES / INSTRUMENTS.
+
+This material may not be distributed in Indonesia or passed on within the territory of the Republic of Indonesia or to persons who are Indonesian citizens (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia. The securities mentioned in this document may not be offered or sold in Indonesia or to persons who are citizens of Indonesia (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia.
+
+An individual name printed next to NOI on the front page of a research report indicates that this document is a translation of a research report issued by NOI in the PRC. In all other cases, this document is prepared by NOM Group or its subsidiary or affiliate (collectively, “Offshore Issuers”) that is not licensed in the PRC to provide securities research. This research report is not approved or intended to be circulated in the PRC. The A-share related analysis (if any) is not produced for any persons located or incorporated in the PRC. The recipients should not rely on any information contained in this research report in making investment decisions and Offshore Issuers take no responsibility in this regard. NO PART OF THIS MATERIAL MAY BE (I) COPIED, PHOTOCOPIED, REPRODUCED OR DUPLICATED IN ANY FORM, BY ANY MEANS; OR (II) REDISSEMINATED, REPUBLISHED OR REDISTRIBUTED WITHOUT THE PRIOR WRITTEN CONSENT OF A MEMBER OF THE NOM GROUP. If this document has been distributed by electronic transmission, such as e-mail, then such transmission cannot be guaranteed to be secure or error-free as information could be intercepted, corrupted, lost, destroyed, arrive late or incomplete, or contain viruses. The sender therefore does not accept liability (in negligence or otherwise, and in whole or in part) for any errors or omissions in the contents of this document, which may arise as a result of electronic transmission. If verification is required, please request a hard-copy version.
+
+## Disclaimers required in Japan
+
+Credit ratings in the text that are marked with an asterisk (\*) are issued by a rating agency not registered under Japan's Financial Instruments and Exchange Act (“Unregistered Ratings”). For details on Unregistered Ratings, please contact the Research Production Operation Dept. of NOM Securities Co., Ltd.
+
+Investors in the financial products offered by NOM Securities may incur fees and commissions specific to those products (for example, transactions involving Japanese equities are subject to a sales commission (all figures on a tax-inclusive basis) of up to 1.43% of the transaction amount or a commission of ¥2,860 for transactions of ¥200,000 or less, while transactions involving investment trusts are subject to various fees, such as commissions at the time of purchase and asset management fees, such as commissions at the time of purchase and asset management fees (trust fees), specific to each investment trust).
+
+In addition, all products carry the risk of losses owing to price fluctuations or other factors. Fees and risks vary by product. Please thoroughly read the written materials provided, such as documents delivered before making a contract, listed securities documents, or prospectuses.
+
+## NOM Securities Co., Ltd.
+
+Financial instruments firm registered with the Kanto Local Finance Bureau (registration No. 142)
+
+Member associations: Japan Securities Dealers Association; Investment Management Association of Japan; The Financial Futures Association of Japan; Type II Financial Instruments Firms Association; and Japan Security Token Offering Association.
+
+The NOM Group manages conflicts with respect to the production of research through its compliance policies and procedures (including, but not limited to, Conflicts of Interest, Chinese Wall and Confidentiality policies) as well as through the maintenance of Chinese Walls and employee training.
+
+Additional information regarding the methodologies or models used in the production of any investment recommendations contained within this document is available upon request by contacting the Research Analysts of NOM listed on the front page. Disclosures information is available upon request and disclosure information is available at the NOM Disclosure web page:
+
+Copyright © 2026 NOM Securities Co., Ltd., Japan. All rights reserved.

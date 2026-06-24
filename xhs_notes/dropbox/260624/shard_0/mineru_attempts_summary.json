@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_u_smsmof/pdfs/0001-01-MS-MS Global Macro Forum Decoding the New Fed- What the Fed Said- What Markets Heard-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_u_smsmof/pdfs/0002-02-GS-ASIA STRATEGY BASKET Built for Orbit- Introducing Asia Space Economy Basket -GSSZSPCE--260623.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_u_smsmof/pdfs/0003-03-MS-Japan Summer School- Japan Equity Strategy- Structural Tailwinds and Investment Themes Behind Japan-s Secular Bull Market-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_u_smsmof/pdfs/0004-04-UBS-China Industrials Shipping supply chain weekly- trade flows- freight and Hormuz updates -week 25--260623.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_u_smsmof/pdfs/0005-05-NOM-Japan Economic Weekly-The focus of attention has shifted to growth strategies and consumption tax cuts-260623.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

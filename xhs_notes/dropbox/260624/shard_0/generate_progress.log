@@ -1,0 +1,15 @@
+Found 44 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u_smsmof/pdfs/0001-01-Morgan Stanley-Morgan Stanley Global Macro Forum Decoding the New Fed- What the Fed Said- What Markets Heard-260622.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u_smsmof/pdfs/0002-02-Goldman Sachs-ASIA STRATEGY BASKET Built for Orbit- Introducing Asia Space Economy Basket -GSSZSPCE--260623.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u_smsmof/pdfs/0003-03-Morgan Stanley-Japan Summer School- Japan Equity Strategy- Structural Tailwinds and Investment Themes Behind Japan-s Secular Bull Market-260622.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u_smsmof/pdfs/0004-04-UBS-China Industrials Shipping supply chain weekly- trade flows- freight and Hormuz updates -week 25--260623.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u_smsmof/pdfs/0005-05-Nomura-Japan Economic Weekly-The focus of attention has shifted to growth strategies and consumption tax cuts-260623.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=bd611145-b0bc-4760-9884-28ab3a397eb7
+MinerU states: running, running, pending, pending, waiting-file
+MinerU states: done, done, running, running, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260624/shard_0; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
