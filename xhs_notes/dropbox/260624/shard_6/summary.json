@@ -1,0 +1,95 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_3kyi6irk/pdfs/0001-31-MS-China Autos - Shared Mobility-PHEV Duty Concerns-260622.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "摩根斯坦利",
+    "cover_short_title": "欧盟可能对PHEV加",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_3kyi6irk/pdfs/0002-32-MS-China Healthcare-Takeaways from Inaugural MS China Biopharma Symposium-260623.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "摩根斯坦利",
+    "cover_short_title": "中国biotech，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_3kyi6irk/pdfs/0003-33-MS-China EV Weekly Orders- New models drive conversions- quarter-end promotions pull demand forward before July lull-260623.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "摩根斯坦利",
+    "cover_short_title": "6月第三周新能源订单",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_3kyi6irk/pdfs/0004-34-MS-Semiconductor Production Equipment- Tech Monthly Jun 2026-260622.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "摩根斯坦利",
+    "cover_short_title": "日本半导体设备：AI",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_3kyi6irk/pdfs/0005-35-NOM-China consumer-Dragon Boat holiday saw lukewarm sentiment-260622.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "端午出行数据：平淡但",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
