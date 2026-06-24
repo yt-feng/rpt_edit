@@ -114,6 +114,7 @@ INSTITUTION_TITLE_ALIASES: list[tuple[str, list[str]]] = [
     ("瑞银", ["UBS"]),
     ("汇丰", ["HSBC"]),
     ("巴克莱", ["Barclays"]),
+    ("伯恩斯坦", ["Bernstein", "Sanford C. Bernstein", "Sanford Bernstein"]),
     ("德意志银行", ["DB", "Deutsche Bank", "德银"]),
     ("野村", ["Nomura"]),
     ("美联储", ["Fed", "Federal Reserve"]),
@@ -186,9 +187,22 @@ def canonicalize_institution_title_name(title: str) -> str:
 
 
 def alias_pattern(alias: str) -> str:
+    if re.fullmatch(r"[A-Z]{2,5}", alias):
+        return rf"(?<![A-Za-z]){re.escape(alias)}(?![A-Za-z])"
     if re.fullmatch(r"[A-Za-z. ]+", alias):
         return r"\b" + re.escape(alias).replace(r"\ ", r"\s+") + r"\b"
     return re.escape(alias)
+
+
+def limit_title_colons(title: str) -> str:
+    cleaned = normalize_space(title).replace(":", "：")
+    if "：" not in cleaned:
+        return cleaned
+    head, tail = cleaned.split("：", 1)
+    tail = re.sub(r"\s*：\s*", "，", tail).strip(" ，")
+    if not tail:
+        return head.strip()
+    return f"{head.strip()}：{tail}"
 
 
 def remove_redundant_title_aliases(title: str) -> str:
@@ -202,6 +216,12 @@ def remove_redundant_title_aliases(title: str) -> str:
             flags=re.I,
         )
         cleaned = re.sub(
+            rf"^(?:{alias_group})\s*[：:]\s*({re.escape(cn_name)})\s*[：:：\-—]?\s*",
+            rf"\1：",
+            cleaned,
+            flags=re.I,
+        )
+        cleaned = re.sub(
             rf"^({re.escape(cn_name)})\s*(?:\(|（)\s*(?:{alias_group})\s*(?:\)|）)\s*[：:：\-—]?\s*",
             rf"\1：",
             cleaned,
@@ -209,7 +229,7 @@ def remove_redundant_title_aliases(title: str) -> str:
         )
     cleaned = re.sub(r"\s*[：:]\s*", "：", cleaned)
     cleaned = re.sub(r"：{2,}", "：", cleaned)
-    return normalize_space(cleaned).strip("：: -—")
+    return limit_title_colons(cleaned).strip("：: -—")
 
 
 def draft_title_key(title: str) -> str:

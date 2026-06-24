@@ -36,6 +36,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     chunked,
     content_within_limits,
     digest_from_markdown,
+    download_pollinations_image,
     fake_static_image_url,
     get_stable_access_token,
     find_recent_draft_by_titles,
@@ -43,6 +44,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     log,
     parse_selection_limit,
     payload_article_titles,
+    pollinations_prompt,
     prepare_article_upload_image,
     render_fitted_wechat_html,
     resolve_asset_path,
@@ -171,15 +173,25 @@ def markdown_local_image_refs(markdown: str) -> list[str]:
     return refs
 
 
+def image_stem(value: str | Path) -> str:
+    return Path(str(value).split("#", 1)[0].split("?", 1)[0]).stem.lower()
+
+
+def is_xhs_cover_or_card(path: str | Path) -> bool:
+    stem = image_stem(path)
+    return stem == "cover" or re.fullmatch(r"xhs_card_\d+", stem) is not None
+
+
+def xhs_card_number(path: Path) -> int:
+    match = re.search(r"xhs_card_(\d+)", path.stem.lower())
+    return int(match.group(1)) if match else 10**9
+
+
 def extra_asset_images(report_dir: Path, already: set[Path]) -> list[tuple[str, Path]]:
     assets_dir = report_dir / "assets"
     if not assets_dir.exists():
         return []
-    candidates = [
-        *sorted(assets_dir.glob("source_image_*")),
-        *sorted(assets_dir.glob("cover.*")),
-        *sorted(assets_dir.glob("xhs_card_*")),
-    ]
+    candidates = sorted(assets_dir.glob("source_image_*"))
     extras: list[tuple[str, Path]] = []
     for path in candidates:
         if path.suffix.lower() not in IMAGE_SUFFIXES or not path.is_file():
@@ -191,6 +203,26 @@ def extra_asset_images(report_dir: Path, already: set[Path]) -> list[tuple[str, 
         ref = path.relative_to(report_dir).as_posix()
         extras.append((ref, path))
     return extras
+
+
+def xhs_card_fallback_images(report_dir: Path, already: set[Path]) -> list[tuple[str, Path]]:
+    assets_dir = report_dir / "assets"
+    if not assets_dir.exists():
+        return []
+    cards = sorted(assets_dir.glob("xhs_card_*"), key=lambda p: (xhs_card_number(p), p.name))
+    fallbacks: list[tuple[str, Path]] = []
+    for path in cards:
+        if path.suffix.lower() not in IMAGE_SUFFIXES or not path.is_file():
+            continue
+        if xhs_card_number(path) < 2:
+            continue
+        resolved = path.resolve()
+        if resolved in already:
+            continue
+        already.add(resolved)
+        ref = path.relative_to(report_dir).as_posix()
+        fallbacks.append((ref, path))
+    return fallbacks
 
 
 def choose_cover_image(report_dir: Path, uploaded_paths: list[Path]) -> Path:
@@ -254,13 +286,16 @@ def build_article(
     uploaded_images: list[dict[str, str]] = []
     uploaded_paths: list[Path] = []
     seen_paths: set[Path] = set()
+    image_metadata: dict[str, dict[str, str]] = {}
 
-    refs = markdown_local_image_refs(markdown)
+    refs = [ref for ref in markdown_local_image_refs(markdown) if not is_xhs_cover_or_card(ref)]
     target_image_count = min(max(args.min_inline_images, len(refs)), args.max_inline_images)
     image_items: list[tuple[str, Path]] = []
     for ref in refs:
         path = resolve_asset_path(report_dir, ref)
         if not path or path.suffix.lower() not in IMAGE_SUFFIXES:
+            continue
+        if is_xhs_cover_or_card(path):
             continue
         resolved = path.resolve()
         if resolved in seen_paths:
@@ -273,15 +308,67 @@ def build_article(
     if len(image_items) < target_image_count:
         image_items.extend(extra_asset_images(report_dir, seen_paths)[: target_image_count - len(image_items)])
 
+    ai_image_index = 1
+    while len(image_items) < target_image_count and len(image_items) < args.max_inline_images:
+        ai_token = f"KC_AI_IMAGE_{ai_image_index:03d}"
+        prompt = pollinations_prompt(title, ai_image_index)
+        if args.dry_run:
+            ai_path_obj = output_dir / "_assets" / f"article_{index:02d}_{ai_token.lower()}.jpg"
+            image_items.append((ai_token, ai_path_obj))
+            image_metadata[ai_token] = {"source": "pollinations_dry_run", "prompt": prompt}
+        else:
+            if session is None or access_token is None:
+                raise RuntimeError("session and access_token are required outside dry-run")
+            ai_path_obj, source_url, status_name, reason = download_pollinations_image(
+                session,
+                prompt,
+                output_dir / "_assets" / f"article_{index:02d}_{ai_token.lower()}.jpg",
+                min(args.timeout, 45),
+                title,
+            )
+            if status_name != "pollinations":
+                log(
+                    f"Pollinations image fill failed for {report_dir.name}: {reason or status_name}; "
+                    "falling back to xhs_card_02+."
+                )
+                break
+            image_items.append((ai_token, ai_path_obj))
+            image_metadata[ai_token] = {
+                "source": status_name,
+                "prompt": prompt,
+                "pollinations_url": source_url,
+                "reason": reason,
+            }
+        ai_image_index += 1
+
+    if len(image_items) < target_image_count:
+        image_items.extend(xhs_card_fallback_images(report_dir, seen_paths)[: target_image_count - len(image_items)])
+        for ref, _path in image_items:
+            if image_stem(ref).startswith("xhs_card_"):
+                image_metadata.setdefault(ref, {"source": "xhs_card_fallback"})
+
     for ref, path in image_items[: args.max_inline_images]:
         upload_path, image_url = upload_or_fake_article_image(
             report_dir, ref, path, index, args, session, access_token, output_dir
         )
         image_urls[ref] = image_url
         image_urls[path.name] = image_url
-        image_urls[path.relative_to(report_dir).as_posix()] = image_url
+        try:
+            image_urls[path.relative_to(report_dir).as_posix()] = image_url
+        except ValueError:
+            image_urls[path.as_posix()] = image_url
         uploaded_paths.append(Path(upload_path))
-        uploaded_images.append({"token": ref, "path": upload_path, "url": image_url, "source": "xhs_notes"})
+        metadata = image_metadata.get(ref, {})
+        image_record = {
+            "token": ref,
+            "path": upload_path,
+            "url": image_url,
+            "source": metadata.get("source", "xhs_notes"),
+        }
+        for key in ["prompt", "pollinations_url", "reason"]:
+            if metadata.get(key):
+                image_record[key] = metadata[key]
+        uploaded_images.append(image_record)
 
     cover_image = choose_cover_image(report_dir, [p for p in uploaded_paths if p.exists()])
     if args.dry_run:
