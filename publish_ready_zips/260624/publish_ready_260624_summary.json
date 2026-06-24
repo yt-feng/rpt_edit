@@ -1,0 +1,173 @@
+{
+  "created_at_utc": "2026-06-24T22:58:50.559686+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260624",
+  "output_dir": "publish_ready_zips/260624",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 9,
+  "skipped_shards": [],
+  "total_files": 940,
+  "total_renamed_markdown_count": 220,
+  "total_raw_file_bytes": 175525244,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260624/publish_ready_260624_part001.zip",
+      "size_bytes": 88017119,
+      "file_count": 541,
+      "renamed_markdown_count": 120,
+      "raw_file_bytes": 94294398,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260624/publish_ready_260624_part002.zip",
+      "size_bytes": 75818733,
+      "file_count": 399,
+      "renamed_markdown_count": 100,
+      "raw_file_bytes": 81230846,
+      "shards": [
+        "shard_4",
+        "shard_5",
+        "shard_6",
+        "shard_7",
+        "shard_8"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 20757887,
+      "reports": [
+        "0001-01-Morgan-Stanley-Morgan-Stanley-Global-Macro-Forum-Decoding-the-New-Fed--W",
+        "0002-02-Goldman-Sachs-ASIA-STRATEGY-BASKET-Built-for-Orbit--Introducing-Asia-Spa",
+        "0003-03-Morgan-Stanley-Japan-Summer-School--Japan-Equity-Strategy--Structural-Ta",
+        "0004-04-UBS-China-Industrials-Shipping-supply-chain-weekly--trade-flows--freight",
+        "0005-05-Nomura-Japan-Economic-Weekly-The-focus-of-attention-has-shifted-to-growt"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17840307,
+      "reports": [
+        "0001-06-UBS-Global-Precious-Metals-Comment-Precious-metals-navigate-no-man-s-lan",
+        "0002-07-Bernstein-US-Communications-Infrastructure---Global-Digital-Assets-Data-",
+        "0003-08-UBS-China-Oil--Gas-and-Chemical-Sector-Weekly-tracker--Refinery-utilisat",
+        "0004-09-Goldman-Sachs-INDIA-CABLES---WIRES-EMS-Input-inflation-to-drive-improved",
+        "0005-10-Goldman-Sachs-CHINA-MOBILITY-TECH-Revisiting-cyclical-framework--industr"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 28955061,
+      "reports": [
+        "0001-11-J.P.-Morgan-Sustainable-Investing-2026-mid-year-Outlook-Catching-our-bre",
+        "0002-12-Bofa-US-Semiconductors-State-of-the-Union-raising-estimates-as-AI-extend",
+        "0003-13-Goldman-Sachs-CHINA-NEW-ENERGY-VEHICLE-WEEKLY-CHARTBOOK-2026-Week-25--We",
+        "0004-14-J.P.-Morgan-China-Property-Why-the-recent-share-price-weakness--260623",
+        "0005-15-MS-China-Industrials-Humanoids-The-Tide-is-Rising--Lifting-2026-Forecast"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 105,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14564775,
+      "reports": [
+        "0001-16-Morgan-Stanley-China-Property-Weekly-Database-Tracker--25-260622",
+        "0002-17-UBS-China-Brokers-Sector-Sector-catchup-on-multiple-tailwinds-260622",
+        "0003-18-UBS-China-Chemical-Sector-Fluorochemicals--Beneficiary-of-AI-driven-new-",
+        "0004-19-Goldman-Sachs-GS-China-Econ-Proprietary-Indicators--June-260624",
+        "0005-20-J.P.-Morgan-China--Fiscal-deployment-still-slow-in-May-Expect-a-two-stag"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14186298,
+      "reports": [
+        "0001-21-Nomura-USD-CNY-fix-model-Projection--6.791-260624",
+        "0002-22-J.P.-Morgan-MDI-China-Exports-and-Prices-in-May-Lift-Y-Y-260622",
+        "0003-23-J.P.-Morgan-Lithium-May-China-Export-Import-Data-260622",
+        "0004-24-J.P.-Morgan-Titanium-Dioxide-China-May-Exports-Still-Higher-Y-Y-260622",
+        "0005-25-Barclays-IT-Hardware-and-Communications-Equipment-Implied-AI-Multiples--"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 27155579,
+      "reports": [
+        "0001-26-CITI-China-Consumer-Tourism--Still-Resilient-Leisure-Travel-Demand-Durin",
+        "0002-27-CITI-China-OTAs-Resilient-Domestic-Travel-Data-and-Cross-border-Visitor-",
+        "0003-28-J.P.-Morgan-Hong-Kong-Residential-Property-Home-prices-already-hit-our-f",
+        "0004-29-Jefferies-Internet-AI-Series--51-Trend-in-Cost-Performance-vs-Token-Cons",
+        "0005-30-Morgan-Stanley-China-Consumer--Risk-Reward-Update--HPC-and-Beauty-260623"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13068193,
+      "reports": [
+        "0001-31-Morgan-Stanley-China-Autos---Shared-Mobility-PHEV-Duty-Concerns-260622",
+        "0002-32-Morgan-Stanley-China-Healthcare-Takeaways-from-Inaugural-Morgan-Stanley-",
+        "0003-33-Morgan-Stanley-China-EV-Weekly-Orders--New-models-drive-conversions--qua",
+        "0004-34-Morgan-Stanley-Semiconductor-Production-Equipment--Tech-Monthly-Jun-2026",
+        "0005-35-Nomura-China-consumer-Dragon-Boat-holiday-saw-lukewarm-sentiment-260622"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 21882594,
+      "reports": [
+        "0001-36-CITI-China-Aluminum-Addressing-Investor-Concerns--Reiterate-Buy-on-Hongq",
+        "0002-37-Goldman-Sachs-Japan--BOJ-Summary-of-Opinions-from-June-MPM--Two-Members-",
+        "0003-38-Bernstein-Semi-Cycle-Tearsheet-The-only-game-in-town-260623",
+        "0004-39-Bernstein-Chinese-Autos--Why-Automakers-are-entering-Humanoid-Robotics--",
+        "0005-40-Jefferies-PCB-CCL-Update--Estimated-Impact-from-Potential-Kyber-Backplan"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 4,
+      "file_count": 84,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 17114550,
+      "reports": [
+        "0001-41-Morgan-Stanley-Electronic-Chemicals--Tech-Monthly-June-2026-260622",
+        "0002-42-Morgan-Stanley-Telecom---Networking-Equipment-Feedback-on-Our-Networking",
+        "0003-43-J.P.-Morgan-Digital-Banking-AI-Defensibility-Underappreciated--QTWO-Top-",
+        "0004-44-Morgan-Stanley-Plot-Twist--But-No-Change-In-View-260622"
+      ]
+    }
+  ]
+}
