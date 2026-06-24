@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_mgohhceu/pdfs/0001-06-UBS-Global Precious Metals Comment-Precious metals navigate no-man-s land for now-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mgohhceu/pdfs/0002-07-Bernstein-US Communications Infrastructure - Global Digital Assets-Data Centers - Neoclouds- How much is a megawatt worth--260623.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mgohhceu/pdfs/0003-08-UBS-China Oil- Gas and Chemical Sector Weekly tracker- Refinery utilisation and crude inventory still declining- eyes on fluorochemicals-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mgohhceu/pdfs/0004-09-GS-INDIA CABLES - WIRES EMS-Input inflation to drive improved revenue growth in Q1 for C-W and EMS-260622.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_mgohhceu/pdfs/0005-10-GS-CHINA MOBILITY TECH Revisiting cyclical framework- industry consolidation unlikely in near term- momentum of earnings cuts accelerating-260624.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
