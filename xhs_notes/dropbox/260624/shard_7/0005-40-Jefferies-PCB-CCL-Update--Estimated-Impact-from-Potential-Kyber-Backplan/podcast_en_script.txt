@@ -1,0 +1,24 @@
+EN_A: So there’s been some chatter in the AI hardware space recently. What’s the big story?
+EN_B: It’s about a potential delay in the Kyber backplane PCB for Rubin Ultra. A global investment bank just put out a report on it.
+EN_A: And what’s the main takeaway?
+EN_B: If Kyber is pushed back to 2028, the AI PCB and CCL total addressable market in 2027 could be 5% and 8% lower than originally expected.
+EN_A: That doesn’t sound catastrophic, but what’s actually going on here?
+EN_B: Kyber was supposed to be a brand new backplane design for Rubin Ultra, launching in 2027. But the intra-rack connectivity challenges are just too complex.
+EN_A: So what happens to Rubin Ultra in 2027?
+EN_B: It sticks with the Oberon structure, which is basically the NVL72 design. The supply chain has been seeing this possibility since May, and now it’s looking very likely.
+EN_A: And what if Kyber gets delayed beyond 2028, or even canceled?
+EN_B: That’s the worst case. The report says 2028 TAM could take another 11% and 16% hit. That would really change the growth narrative for the whole PCB supply chain.
+EN_A: So everyone in the chain is hurt?
+EN_B: Not exactly. The report argues that upstream material vendors might actually keep outperforming downstream PCB makers. Why? Because they’re in a better position to pass on price hikes.
+EN_A: So fiberglass cloth and CCL suppliers could benefit from the tight supply.
+EN_B: Exactly. And here’s the twist—copper cable makers could also benefit. Because the Oberon structure still uses copper for intra-rack connections, the threat of being replaced by PCB is pushed out.
+EN_A: So the near-term winners are materials and cables, while PCB assemblers face headwinds.
+EN_B: That’s the gist. But the report also notes that the long-term trend of higher-dollar-content PCBs in AI infrastructure hasn’t changed. R&D on M9, M10, PTFE, and CoWoP is still ongoing.
+EN_A: So it’s more about timing than a structural shift.
+EN_B: Right. But there’s one big question the report doesn’t fully answer yet.
+EN_A: What’s that?
+EN_B: Whether the simplified 2-canister design for Kyber in 2028 can actually solve the technical issues. The report says visibility is low.
+EN_A: That’s a real cliffhanger. If our listeners want to dig into the full analysis, what should they do?
+EN_B: The full report has detailed charts comparing TAM scenarios with and without Kyber. Join our community or reach out to our research team to get the complete picture.
+EN_A: Thanks for breaking it down. We’ll catch you next time.
+EN_B: See you then.

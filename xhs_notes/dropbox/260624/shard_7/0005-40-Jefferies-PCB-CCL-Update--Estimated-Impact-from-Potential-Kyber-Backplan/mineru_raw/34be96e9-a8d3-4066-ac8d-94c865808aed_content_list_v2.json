@@ -1,0 +1,2112 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "PCB/CCL Update: Estimated Impact from Potential Kyber/Backplane Delay"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                158,
+                568,
+                203
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The potential delay of Kyber/backplane PCB for Rubin Ultra may create 5%/8% downside on AI PCB/CCL TAM in 2027 vs our original forecasts and may lead to another 11%/16% downside in 2028 if Kyber is further delayed or canceled. R&D on spec/materials upgrade is ongoing (M9/10/PTFE/CoWoP). -ve for overall PCB supply chain, though we expect upstream to keep outperforming downstream, driven by ongoing near-term price hike, while +ve for copper cable makers."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                212,
+                628,
+                335
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Potential delay on Kyber/backplane PCB structure due to intra-rack connectivity challenges. Our recent channel checks suggest that, due to the sophistication of orthogonal backplane PCB as a replacement of cable cartridge for intra-rack connectivity, which was originally targeted to be adopted on Rubin Ultra in 2027, Kyber structure will likely to be pushed out to at least 2028. The supply chain began to witness such possibility since May, and in recent few weeks, the absence of Kyber in 2027 has become a highly likely event, which means Rubin Ultra in 2027 will stick to Oberon structure (i.e., NVL72). The supply chain is striving for realizing the Kyber on the new variant of Rubin Ultra in 2028, but the challenges are still outstanding even for 2-canister design within a rack (each canister contains 18 trays) as a simplified solution of original 4-canister, meaning low visibility on crystallization. The worst-case scenario here would be the cancellation of the Kyber in the end."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                349,
+                626,
+                506
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5%/8% downside for AI PCB/CCL TAM in 2027 vs our original forecasts; Another 11%/16% downside in 2028 if no Kyber eventually. Previously, we estimated AI PCB/CCL TAM (including AI server, high-speed switch and high-speed optical transceiver) at US$6-7/2-3bn in 2025, and forecast it to reach US$12/5bn in 2026, US$25/12bn in 2027, and US$41/21bn in 2028, driven by both spec (higher-layer and more sophisticated design) and materials (from M8 to M9/10/PTFE) upgrade. If the delay of Kyber/backplane PCB is confirmed, we expect AI PCB/CCL TAM to be reduced by 5%/8% in 2027 compared to our original forecasts. Though the impact seems limited, if it goes beyond 2028 or even gets canceled, we expect a further downside of 11%/16% in 2028. Such change will inevitably bring about less growth upside for the entire PCB supply chain in coming years and negative market sentiment. Despite this, we see the R&D on spec/materials upgrade is still going on, e.g., switch board/midplane may migrate to M9/10/PTFE in 2027, CoWoP is still targeted to penetrate earliest in 2027, etc. Thus, the trend of ongoing dollar content increase on PCB as a core scale-up interconnection solution in AI infrastructure has not seen structural hamper."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                513,
+                628,
+                713
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Implication on AI supply chain: -ve for PCB supply chain while upstream may continue to outperform downstream; +ve for copper cable players, thanks to extended lifecycle of Oberon. The potentially lowered TAM may result in certain EPS revision on PCB players, bringing headwinds in stock price performance at any time. But within PCB supply chain, we see ongoing price hike on upstream materials, esp fiberglass cloth and CCL, driven by industrywide supply tightness, and most of those materials vendors are easier to transfer the rising cost and earn extra profits from each price hike compared to PCB makers at this stage. Thus, while it is difficult to predict absolute stock price movement, we think it likely for upstream names to keep outperforming downstream PCB names in near term. On the other hand, the extended adoption of Oberon structure will likely benefit copper cable vendors, in our view, as the threat of being replaced by PCB for intra-rack interconnection could be mitigated, creating more upside for earnings in next few years."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                721,
+                628,
+                892
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a1424c0851e1fd3120f9c4426426bf67bbff4c08f4e6c59ba68012286847788d.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Chart 1 - Global AI PCB TAM Forecast (without Kyber)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Prismark, JEF estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                658,
+                187,
+                905,
+                291
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e4f15200a5bcc88be8b0a9db0d4ebe52686c2dd7f12e0ea8bc5ab45075ce8775.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Chart 2 - Global AI PCB TAM Forecast (Original)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Prismark, JEF estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                660,
+                336,
+                900,
+                439
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/31c9f74ef560fe7af8afe4532cd12c7f0ac2f054b1512b1d269344e9d8db1faf.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Chart 3 - Global AI CCL TAM Forecast (without Kyber)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Prismark, JEF estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                660,
+                483,
+                902,
+                586
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e99bdee1a5a8b2e83e711ca319c6e3b461265c803ba0cccff3b5069674aa2cf5.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Chart 4 - Global AI CCL TAM Forecast (Original)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Prismark, JEF estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                660,
+                631,
+                900,
+                734
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jacky He * | Equity Analyst\n+852 3743 8084 | jacky.he@JEF.com"
+                    }
+                ]
+            },
+            "bbox": [
+                657,
+                787,
+                845,
+                812
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Edison Lee, CFA * | Equity Analyst\n852 3743 8009 | edison.lee@JEF.com"
+                    }
+                ]
+            },
+            "bbox": [
+                657,
+                816,
+                848,
+                840
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Nick Cheng * | Equity Analyst"
+                    }
+                ]
+            },
+            "bbox": [
+                657,
+                844,
+                821,
+                857
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852 3743 8750 | nick.cheng@JEF.com"
+                    }
+                ]
+            },
+            "bbox": [
+                657,
+                857,
+                858,
+                869
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Matt Ma * | Equity Analyst"
+                    }
+                ]
+            },
+            "bbox": [
+                657,
+                873,
+                805,
+                885
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "852 3767 1109 | matt.ma@JEF.com"
+                    }
+                ]
+            },
+            "bbox": [
+                657,
+                885,
+                842,
+                898
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Annie Ping, CFA, FRM * | Equity Associate +852 3767 1273 | annie.ping@JEF.com"
+                    }
+                ]
+            },
+            "bbox": [
+                657,
+                902,
+                887,
+                926
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                57,
+                282,
+                96
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China (PRC) | Technology"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                116,
+                381,
+                141
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research\nJune 22, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                112,
+                919,
+                139
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see analyst certifications, important disclosure information, and information regarding the status of non-US analysts on pages 2 - 7 of this report. * JEF Hong Kong Limited"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                940,
+                751,
+                961
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We would like to thank Connie Yan, employee of Evalueserve Inc., for providing research support services to our preparation of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                139,
+                858,
+                153
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Company Valuation/Risks"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                162,
+                312,
+                180
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NVIDIA Corporation"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                181,
+                194,
+                195
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Price Target: $300 implies 21x our CY28E EPS of $14.14."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                193,
+                413,
+                208
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Risks:"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                218,
+                117,
+                231
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Emerging competitive threats from INTC, AMD, and internally designed ASICs from Hyperscalers take share and pressure ASPs."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                242,
+                840,
+                256
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Slowing datacenter capital spending from Enterprises and Hyperscalers."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                266,
+                519,
+                281
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Slower-than-expected ramp of Automotive platform."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                290,
+                401,
+                304
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                335,
+                263,
+                351
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I, Jacky He, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                351,
+                922,
+                388
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I, Edison Lee, CFA, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                388,
+                921,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I, Nick Cheng, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                426,
+                922,
+                464
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I, Matt Ma, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                464,
+                921,
+                501
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I, Annie Ping, CFA, FRM, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                501,
+                921,
+                539
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Registration of non-US analysts: Jacky He is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst. Registration of non-US analysts: Edison Lee, CFA is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                539,
+                922,
+                626
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Registration of non-US analysts: Nick Cheng is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst. Registration of non-US analysts: Matt Ma is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst. Registration of non-US analysts: Annie Ping, CFA, FRM is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                626,
+                922,
+                752
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As is the case with all JEF employees, the analyst(s) responsible for the coverage of the financial instruments discussed in this report receives compensation based in part on the overall performance of the firm, including investment banking income. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Aside from certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgement."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                751,
+                922,
+                803
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Investment Recommendation Record"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                819,
+                411,
+                835
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(Article 3(1)e and Article 7 of MAR)"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                835,
+                280,
+                848
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Recommendation Published"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                848,
+                240,
+                860
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "June 22, 2026 12:33 P.M."
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                847,
+                505,
+                860
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Recommendation Distributed"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                860,
+                243,
+                873
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "June 22, 2026 12:33 P.M."
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                860,
+                507,
+                873
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Company Specific Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                890,
+                349,
+                908
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                215,
+                65
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Technology\nEquity Research\nJune 22, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                921,
+                80
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                909,
+                947,
+                919,
+                958
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 2 - 7 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                947,
+                411,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Explanation of JEF Ratings"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                149,
+                361,
+                167
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Buy - Describes securities that we expect to provide a total return (price appreciation plus yield) of 15% or more within a 12-month period."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                167,
+                833,
+                179
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hold - Describes securities that we expect to provide a total return (price appreciation plus yield) of plus 15% or minus 10% within a 12-month period."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                179,
+                895,
+                192
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Underperform - Describes securities that we expect to provide a total return (price appreciation plus yield) of minus 10% or less within a 12-month period. The expected total return (price appreciation plus yield) for Buy rated securities with an average security price consistently below $10 is 20% or more within a 12-month period as these companies are typically more volatile than the overall stock market. For Hold rated securities with an average security price consistently below $10, the expected total return (price appreciation plus yield) is plus or minus 20% within a 12-month period. For Underperform rated securities with an average security price consistently below $10, the expected total return (price appreciation plus yield) is minus 20% or less within a 12-month period."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                191,
+                921,
+                267
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NR - The investment rating and price target have been temporarily suspended. Such suspensions are in compliance with applicable regulations and/or JEF policies."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                267,
+                919,
+                291
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CS - Coverage Suspended. JEF has suspended coverage of this company."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                291,
+                512,
+                304
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NC - Not covered. JEF does not cover this company."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                304,
+                394,
+                316
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Restricted - Describes issuers where, in conjunction with JEF engagement in certain transactions, company policy or applicable securities regulations prohibit certain types of communications, including investment recommendations."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                316,
+                919,
+                341
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Monitor - Describes securities whose company fundamentals and financials are being monitored, and for which no financial projections or opinions on the investment merits of the company are provided."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                341,
+                921,
+                367
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation Methodology"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                378,
+                285,
+                393
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF' methodology for assigning ratings may include the following: market capitalization, maturity, growth/value, volatility and expected total return over the next 12 months. The price targets are based on several methodologies, which may include, but are not restricted to, analyses of market risk, growth rate, revenue stream, discounted cash flow (DCF), EBITDA, EPS, cash flow (CF), free cash flow (FCF), EV/EBITDA, P/E, PE/growth, P/CF, P/FCF, premium (discount)/average group EV/EBITDA, premium (discount)/average group P/E, sum of the parts, net asset value, dividend returns, and return on equity (ROE) over the next 12 months."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                393,
+                922,
+                456
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF Franchise Picks"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                456,
+                226,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF Franchise Picks include stock selections from among the best stock ideas from our equity analysts over a 12 month period. Stock selection is based on fundamental analysis and may take into account other factors such as analyst conviction, differentiated analysis, a favorable risk/reward ratio and investment themes that JEF analysts are recommending. JEF Franchise Picks will include only Buy rated stocks and the number can vary depending on analyst recommendations for inclusion. Stocks will be added as new opportunities arise and removed when the reason for inclusion changes, the stock has met its desired return, if it is no longer rated Buy and/or if it triggers a stop loss. Stocks having 120 day volatility in the bottom quartile of S&P stocks will continue to have a 15% stop loss, and the remainder will have a 20% stop. Franchise Picks are not intended to represent a recommended portfolio of stocks and is not sector based, but we may note where we believe a Pick falls within an investment style such as growth or value."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                468,
+                922,
+                557
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risks which may impede the achievement of our Price Target"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                567,
+                621,
+                583
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report was prepared for general circulation and does not provide investment recommendations specific to individual investors. As such, the financial instruments discussed in this report may not be suitable for all investors and investors must make their own investment decisions based upon their specific investment objectives and financial situation utilizing their own financial advisors as they deem necessary. Past performance of the financial instruments recommended in this report should not be taken as an indication or guarantee of future results. The price, value of, and income from, any of the financial instruments mentioned in this report can rise as well as fall and may be affected by changes in economic, financial and political factors. If a financial instrument is denominated in a currency other than the investor's home currency, a change in exchange rates may adversely affect the price of, value of, or income derived from the financial instrument described in this report. To the extent prices are shown in non-US currency, please note that our local currency price targets are based on a currency conversion using an exchange rate as of the prior trading day (unless otherwise noted). Should there be fluctuations in the exchange rate after this date, that will affect the non-US target prices and should no longer be relied upon. In addition, investors in securities such as ADRs, whose values are affected by the currency of the underlying security, effectively assume currency risk."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                583,
+                922,
+                709
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Companies Mentioned in This Report\n• NVIDIA Corporation (NVDA: $210.69, BUY)"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                719,
+                462,
+                747
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                215,
+                65
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Technology\nEquity Research\nJune 22, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                921,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 2 - 7 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                947,
+                411,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                909,
+                948,
+                919,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/48ace323294657472b6f13fd6da8e1884ce5ba62536a8c272d1c46c4596e8e7b.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                85,
+                145,
+                872,
+                326
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Notes: Each box in the Rating and Price Target History chart above represents actions over the past three years in which an analyst initiated on a company, made a change to a rating or price target of a company or discontinued coverage of a company.\nLegend:"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                355,
+                919,
+                393
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I: Initiating Coverage"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                405,
+                194,
+                418
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "D: Dropped Coverage"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                430,
+                200,
+                443
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "B: Buy"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                455,
+                117,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "H: Hold"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                479,
+                124,
+                492
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UP: Underperform"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                504,
+                181,
+                518
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/782e6e37e79f503dbc8eaf71ab0a891be24131bdcce19b9d2fffb84d94dac7ab.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Distribution of Ratings"
+                    },
+                    {
+                        "type": "text",
+                        "content": "IB Serv./Past12 Mos."
+                    },
+                    {
+                        "type": "text",
+                        "content": "JIL Mkt Serv./Past12 Mos."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td></tr><tr><td>BUY</td><td>2215</td><td>62.32%</td><td>381</td><td>17.20%</td><td>110</td><td>4.97%</td></tr><tr><td>HOLD</td><td>1178</td><td>33.15%</td><td>107</td><td>9.08%</td><td>20</td><td>1.70%</td></tr><tr><td>UNDERPERFORM</td><td>161</td><td>4.53%</td><td>1</td><td>0.62%</td><td>1</td><td>0.62%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                78,
+                557,
+                917,
+                644
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                216,
+                65
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Technology\nEquity Research\nJune 22, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                922,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 2 - 7 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                947,
+                411,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                948,
+                919,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Important Disclosure"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                159,
+                319,
+                175
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Important Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                186,
+                243,
+                198
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF does business and seeks to do business with companies covered in its research reports, and expects to receive or intends to seek compensation for investment banking services among other activities from such companies. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. JEF Equity Research refers to research reports produced by analysts employed by one of the following JEF Financial Group Inc. (\"JEF\") companies:"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                198,
+                922,
+                260
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "United States: JEF LLC which is an SEC registered broker-dealer and a member of FINRA (and distributed by JEF Services, LLC, an SEC registered Investment Adviser, to clients paying separately for such research)."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                261,
+                921,
+                285
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Canada: JEF Securities Inc., which is an investment dealer registered in each of the thirteen Canadian jurisdictions and a dealer member of the Canadian Investment Regulatory Organization, including research reports produced jointly by JEF Securities Inc. and another JEF entity (and distributed by JEF Securities Inc.)."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                286,
+                922,
+                323
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Where JEF Securities Inc. distributes research reports produced by JEF LLC, JEF International Limited, JEF Japan Company Limited, or JEF India Private Limited, you are advised that each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited operates as a dealer in your jurisdiction under an exemption from the dealer registration requirements contained in National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations and, as such, each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited is not required to be and is not a registered dealer or adviser in your jurisdiction. You are advised that where JEF LLC or JEF International Limited prepared this research report, it was not prepared in accordance with Canadian disclosure requirements relating to research reports in Canada."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                323,
+                921,
+                410
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "United Kingdom: JEF International Limited, which is authorized and regulated by the Financial Conduct Authority; registered in England and Wales No. 1978621; registered office: 100 Bishopsgate, London EC2N 4JL; telephone +44 (0)20 7029 8000; facsimile +44 (0)20 7029 8010."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                411,
+                919,
+                436
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Germany: JEF GmbH, which is authorized and regulated by the Bundesanstalt fuer Finanzdienstleistungsaufsicht, BaFin-ID: 10150151; registered office: Bockenheimer Landstr. 24, 60323 Frankfurt a.M., Germany; telephone: +49 (0) 69 719 1870"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                436,
+                919,
+                460
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hong Kong: JEF Hong Kong Limited, which is licensed by the Securities and Futures Commission of Hong Kong with CE number ATS546; located at Level 26, Two International Finance Center, 8 Finance Street, Central, Hong Kong; telephone: +852 3743 8000."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                461,
+                921,
+                485
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Singapore: JEF Singapore Limited, which is licensed by the Monetary Authority of Singapore; located at 10 Collyer Quay #41-01, Ocean Financial Centre, Singapore 049315, telephone: +65 6551 3950."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                486,
+                919,
+                511
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan: JEF Japan Company Limited, which is a securities company registered by the Financial Services Agency of Japan and is a member of the Japan Securities Dealers Association; located at Tokyo Midtown Hibiya 30F Hibiya Mitsui Tower, 1-1-2 Yuraku-cho, Chiyoda-ku, Tokyo 100-0006; telephone +813 5251 6100; facsimile +813 5251 6101."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                511,
+                921,
+                548
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "India: JEF India Private Limited (CIN - U74140MH2007PTC200509), licensed by the Securities and Exchange Board of India for: Stock Broker (NSE & BSE) INZ000243033, Research Analyst INH000000701 and Merchant Banker INM000011443, located at Level 16, Express Towers, Nariman Point, Mumbai 400 021, India; Tel +91 22 4356 6000. Compliance Officer name: Sanjay Pai, Tel No: +91 22 42246150, Email: spai@JEF.com, Grievance officer name: Sanjay Pai, Tel no. +91 22 42246150, Email: compliance_india@JEF.com. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                548,
+                922,
+                611
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Australia: JEF (Australia) Pty Limited (ACN 623 059 898), which holds an Australian financial services license (AFSL 504712) and is located at Level 20, 60 Martin Place, Sydney NSW 2000; telephone +61 2 9364 2800."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                611,
+                921,
+                634
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Dubai: JEF International Limited, Dubai branch, which is licensed by the Dubai Financial Services Authority (DFSA Reference Number F007325); registered office Unit L31-06, L31-07, Level 31, ICD Brookfield Pace, DIFC, PO Box 121208, Dubai, UAE."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                636,
+                921,
+                659
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report was prepared by personnel who are associated with JEF (JEF Securities Inc., JEF International Limited, JEF GmbH, JEF Hong Kong Limited, JEF Singapore Limited, JEF Japan Company Limited, JEF India Private Limited), and JEF (Australia) Pty Ltd; or by personnel who are associated with both JEF LLC and JEF Services LLC (\"JRS\"). JEF LLC is a US registered broker-dealer and is affiliated with JRS, which is a US registered investment adviser. JRS does not create tailored or personalized research and all research provided by JRS is impersonal. If you are paying separately for this research, it is being provided to you by JRS. Otherwise, it is being provided by JEF LLC. JEF LLC, JRS, and their affiliates are collectively referred to below as \"JEF\". JEF may seek to do business with companies covered in this research report. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only one of many factors in making their investment decisions. Specific conflict of interest and other disclosures that are required by FINRA, the Canadian Investment Regulatory Organization and other rules are set forth in this disclosure section."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                661,
+                922,
+                776
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If you are receiving this report from a non-US JEF entity, please note the following: Unless prohibited by the provisions of Regulation S of the U.S. Securities Act of 1933, as amended, this material is distributed in the United States by JEF LLC, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6 under the US Securities Exchange Act of 1934, as amended. Transactions by or on behalf of any US person may only be effected through JEF LLC. In the United Kingdom and European Economic Area this report is issued and/or approved for distribution by JEF International Limited (\"JIL\") and/or JEF GmbH and is intended for use only by persons who have, or have been assessed as having, suitable professional experience and expertise, or by persons to whom it can be otherwise lawfully distributed. JEF LLC, JIL, JEF GmbH and their affiliates, may make a market or provide liquidity in the financial instruments referred to in this report; and where they do make a market, such activity is disclosed specifically in this report under \"company specific disclosures\"."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                785,
+                922,
+                885
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For Canadian investors, this material is intended for use only by professional or institutional investors. None of the investments or investment services mentioned or described herein is available to other persons or to anyone in Canada who is not a \"permitted client\" as defined by National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations, as applicable. This research report is a general discussion of the merits and risks of a security or securities only, and is not in any way meant to be tailored to the needs and circumstances of any recipient. The information contained herein is not, and under no circumstances is to be construed as, an offer to sell securities described herein, or solicitation of an offer to buy securities described herein, in Canada or any province or territory thereof. Any offer or sale of the securities described herein in Canada will be made only under an exemption from the requirements to file a prospectus with the relevant Canadian securities regulators, if applicable, and only by a dealer properly registered under applicable securities laws or, alternatively, pursuant to an exemption from the dealer registration requirement in the relevant province or territory of Canada in which such offer or sale is made. The information contained herein is under no circumstances to be construed as investment advice in any province or territory of Canada and is not tailored to the needs of the recipient. To the extent that the information contained herein references securities of an issuer incorporated, formed or created under the laws of Canada or a province or territory of Canada, any trades in such securities must be conducted through a dealer registered in Canada. No securities commission or similar regulatory authority in Canada has reviewed or in any way passed judgment upon this research report, the information contained herein or the merits of the securities described herein, and any representation to the contrary is an offence. In Singapore, JEF Singapore Limited (\"JSL\") is regulated by the Monetary Authority of Singapore. For investors in the Republic of Singapore, where this material is prepared and issued by a JEF affiliate outside of Singapore, it is distributed by JSL pursuant to Regulation 32C of the Financial Advisers Regulations. The material contained in this document is intended solely for accredited, expert or institutional investors, as defined under the Securities and Futures Act 2001 (Singapore). If there are any matters arising from, or in connection with this material, please contact JSL, located at 80 Raffles Place #15-20, UOB Plaza 2, Singapore 048624, telephone: +65 6551 3950. In Dubai, this material is issued and distributed by JEF International Limited, Dubai branch, and is intended solely for Professional Clients and should not be distributed to, or relied upon by, Retail Clients (as defined by DFSA). A distribution of ratings in percentage terms in each sector covered is available upon request from your sales representative. In Japan, this material is issued and distributed by JEF Japan Company Limited to institutional investors only. In Hong Kong, this report is issued and approved by JEF Hong Kong Limited and is intended for use only by professional investors as defined in the Hong Kong Securities and Futures Ordinance and its subsidiary legislation. In the Republic of China (Taiwan), this report should not be distributed. The research in relation to this report is conducted outside the People's Republic of China (\"PRC\"). This report does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. In India, this report is made available by JEF India Private Limited. In Australia, this report is issued and/or approved for distribution by, or on behalf of, JEF (Australia) Securities Pty Ltd (ACN 610 977 074), which holds an Australian financial services license (AFSL 487263). It is directed solely at wholesale clients within the meaning of the Corporations Act 2001 (Cth) of Australia (the \"Corporations Act\"), in connection with their consideration of any investment or investment service that is the subject of this report. This report may contain general financial product advice. Where this report refers to a particular financial product, you should obtain a copy of the relevant product disclosure statement or offer document before making any decision in relation to the product. Recipients of this document in any other jurisdictions should inform themselves about and observe any applicable legal requirements in relation to the receipt of this document."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                885,
+                922,
+                936
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                215,
+                65
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Technology\nEquity Research\nJune 22, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                921,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 2 - 7 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                947,
+                411,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                948,
+                919,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                73,
+                140,
+                922,
+                489
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report is not an offer or solicitation of an offer to buy or sell any security or derivative instrument, or to make any investment. Any opinion or estimate constitutes the preparer's best judgment as of the date of preparation, and is subject to change without notice. JEF assumes no obligation to maintain or update this report based on subsequent information and events. JEF, and their respective officers, directors, and employees, may have long or short positions in, or may buy or sell any of the securities, derivative instruments or other investments mentioned or described herein, either as agent or as principal for their own account. This material is provided solely for informational purposes and is not tailored to any recipient, and is not based on, and does not take into account, the particular investment objectives, portfolio holdings, strategy, financial situation, or needs of any recipient. As such, any advice or recommendation in this report may not be suitable for a particular recipient. JEF assumes recipients of this report are capable of evaluating the information contained herein and of exercising independent judgment. A recipient of this report should not make any investment decision without first considering whether any advice or recommendation in this report is suitable for the recipient based on the recipient's particular circumstances and, if appropriate or otherwise needed, seeking professional advice, including tax advice. JEF does not perform any suitability or other analysis to check whether an investment decision made by the recipient based on this report is consistent with a recipient's investment objectives, portfolio holdings, strategy, financial situation, or needs."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                489,
+                922,
+                639
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By providing this report, neither JRS nor any other JEF entity accepts any authority, discretion, or control over the management of the recipient's assets. Any action taken by the recipient of this report, based on the information in the report, is at the recipient's sole judgment and risk. The recipient must perform his or her own independent review of any prospective investment. If the recipient uses the services of JEF LLC (or other affiliated broker-dealers), in connection with a purchase or sale of a security that is a subject of these materials, such broker-dealer may act as principal for its own accounts or as agent for another person. Only JRS is registered with the SEC as an investment adviser; and therefore neither JEF LLC nor any other JEF affiliate has any fiduciary duty in connection with distribution of these reports."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                638,
+                922,
+                713
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The price and value of the investments referred to herein and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                713,
+                922,
+                751
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report may contain forward looking statements that may be affected by inaccurate assumptions or by known or unknown risks, uncertainties, and other important factors. As a result, the actual results, events, performance or achievements of the financial product may be materially different from those expressed or implied in such statements."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                751,
+                922,
+                788
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report has been prepared independently of any issuer of securities mentioned herein and not as agent of any issuer of securities. No Equity Research personnel have authority whatsoever to make any representations or warranty on behalf of the issuer(s). Any comments or statements made herein are those of the JEF entity producing this report and may differ from the views of other JEF entities."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                788,
+                922,
+                826
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report may contain information obtained from third parties, including ratings from credit ratings agencies such as Standard & Poor's, and information derived from third-party or proprietary generative artificial intelligence (Gen AI) models. JEF does not guarantee the accuracy, completeness, timeliness or availability of this information, and is not responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use of such content. Neither JEF nor any third-party content providers, including providers of Gen AI models, give any express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Neither JEF nor any third-party content provider shall be liable for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase, hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Reproduction and distribution of third party content in any form is prohibited except with the prior written permission of the related third party."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                825,
+                922,
+                914
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                38,
+                215,
+                65
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Technology\nEquity Research\nJune 22, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                922,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 2 - 7 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                947,
+                411,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                948,
+                919,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                75,
+                140,
+                921,
+                177
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF reports are disseminated and available electronically, and, in some cases, also in printed form. Electronic research is simultaneously made available to all clients. This report or any portion hereof may not be copied, reprinted, sold, or redistributed or disclosed by the recipient or any third party, by content scraping or extraction, automated processing, or any other form or means, without the prior written consent of JEF. Any unauthorized use is prohibited. Neither JEF nor any of its respective directors, officers or employees, is responsible for guaranteeing the financial success of any investment, or accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this report or its contents. Nothing herein shall be construed to waive any liability JEF has under applicable U.S. federal or state securities laws."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                177,
+                922,
+                253
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For Important Disclosure information relating to JRS, please see https://adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=483878 and https://adviserinfo.sec.gov/Firm/292142 or visit our website at https://javatar.bluematrix.com/sellside/Disclosures.action, or www.JEF.com, or call 1.888.JEF."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                252,
+                922,
+                288
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                288,
+                176,
+                302
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                38,
+                216,
+                65
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Technology\nEquity Research\nJune 22, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                921,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 2 - 7 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                947,
+                411,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                948,
+                919,
+                958
+            ]
+        }
+    ]
+]

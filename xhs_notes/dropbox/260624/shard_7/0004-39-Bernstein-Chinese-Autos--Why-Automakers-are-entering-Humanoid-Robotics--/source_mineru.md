@@ -1,0 +1,544 @@
+Asian Autos
+
+# Chinese Autos: Why Automakers are entering Humanoid Robotics – and their competitive edge
+
+![](images/35cbf05e8237d996e2a158865927fb0958353cd7475a5b042d55272cf3ecf0d4.jpg)
+
+Eunice Lee, CFA
+
++852 2123 2606
+
+eunice.lee@bernsteinsg.com
+
+![](images/252709e4c672f6d03d5d4829017cb81796261cbe9f80aae451467713c7e97558.jpg)
+
+Jay Huang, Ph.D.
+
++852 2123 2631
+
+jay.huang@bernsteinsg.com
+
+![](images/7f63c09b04fe567d4d780aac324d7a8ad07edd76bc23d641057418b9d730ded3.jpg)
+
+Dien Wang, Ph.D.
+
++852 2123 2622
+
+dien.wang@bernsteinsg.com
+
+![](images/8171016b92d9240994c83a786da30674ba5cd4c285c1bb849006e5d21878a777.jpg)
+
+Ethan Xu
+
++852 2123 2634
+
+ethan.xu@bernsteinsg.com
+
+![](images/6d7960ee48137e650c82c2e0bc2494d8929d5d077465695dec786f7405dabac0.jpg)
+
+Weibin Liang, Ph.D.
+
++852 2123 2666
+
+weibin.liang@bernsteinsg.com
+
+From Tesla and Hyundai, to XPeng and Xiaomi, an increasing number of automotive OEMs are entering the humanoid robotics space. In this report, we explore the strategic rationale, assess their competitive advantages, and highlight key investment implications.
+
+Auto OEMs' push into humanoid robotics is recent but accelerating. Auto OEMs began moving into humanoid robotics from 2020. Hyundai announced its acquisition of $80\%$ stake in Boston Dynamics in Dec 2020. Tesla then unveiled its "Tesla Bot" concept in August 2021. Since then, a growing number of Chinese OEMs have entered the field through: in-house development (e.g. XPeng and Xiaomi), subsidiary stakes (e.g. BYD's investments in PaXini and Zhiyuan), and strategic partnerships (e.g. Geely with UBTech). At the 2026 Beijing Auto Show, multiple OEMs (e.g. XPeng, Chery, BYD, etc.) showcased their humanoids, highlighting growing momentum in their broader tech strategies.
+
+OEMs are entering humanoid robotics to boost productivity and unlock new revenue streams. Humanoids can further increase factory automation and drive structural cost reductions amid rising labor costs and workforce constraints. Applications may expand to consumer and service use cases (e.g., security, retail, home assistance), with some OEMs (e.g., Tesla, XPeng) viewing the TAM as comparable to or larger than autos over time.
+
+Automakers have several advantages across hardware, software, and scale. There is significant overlap between vehicle and humanoid components—motors, reducers, sensors—as well as manufacturing. On the software side, there is partial overlap across robotics and autonomous driving in the development of VLA models and world models. With factory automation likely the first deployment wave, OEMs can pilot humanoids in-house, iterate rapidly, and scale deployments, accelerating learning while driving down unit costs. Strong balance sheets and R&D budgets further support long development cycles and talent attraction, positioning OEMs competitively in humanoid robotics.
+
+Investment implications. Investors can gain exposure to humanoids 1) via OEMs or integrators through dedicated players (e.g. UBTech, Unitree), automakers, or tech firms. Within Chinese autos, XPeng (Market-Perform) and Xiaomi (Outperform) stand out. XPeng's humanoid features a highly human-like design and explicitly targets consumer and household uses, potentially enabling higher margins if the company successfully addresses emotional companionship. XPeng's leadership in autonomous driving and broader physical AI reinforces its credentials in this space. We maintain our Market-Perform rating given the long timeline, but see strong optionality. Xiaomi is another notable player, and we see humanoid as a natural extension of its "Human × Car × Home" ecosystem as AI agents evolve. Another approach is 2) via the supply chain. We prefer upstream components companies with exposure to broad robotics (not limited to the humanoid), broad customer base, proven success in expertise expansion, and high-quality core businesses, e.g. Shuanghuan, Hesai, and Tuopu (here). We view ROI for humanoid robots in auto manufacturing as compelling once payback falls below five years, vs. our current estimate of 7-8 years. Adoption should accelerate over the next 3-5 years, driven by advances in robotic intelligence, declining robot costs, and rising labor expenses.
+
+BERNSTEIN TICKER TABLE
+
+<table><tr><td rowspan="2">Ticker</td><td rowspan="2">Rating</td><td colspan="3">22 Jun 2026</td><td rowspan="2">TTMRel.</td><td colspan="4">Reported EPS</td><td colspan="3">Reported P/E (x)</td></tr><tr><td>Cur</td><td>Closing Price</td><td>Price Target</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>1211.HK (BYD)</td><td>O</td><td>HKD</td><td>78.35</td><td>136.00</td><td>(84.8)%</td><td>CNY</td><td>3.58</td><td>4.90</td><td>6.90</td><td>18.9</td><td>13.8</td><td>9.8</td></tr><tr><td>002594.CH (BYD)</td><td>O</td><td>CNY</td><td>87.59</td><td>124.00</td><td>(69.8)%</td><td>CNY</td><td>3.58</td><td>4.90</td><td>6.90</td><td>24.5</td><td>17.9</td><td>12.7</td></tr><tr><td>175.HK (Geely)</td><td>O</td><td>HKD</td><td>17.45</td><td>25.00</td><td>(39.2)%</td><td>CNY</td><td>1.67</td><td>1.82</td><td>2.26</td><td>9.0</td><td>8.3</td><td>6.7</td></tr><tr><td>2333.HK (Great Wall-H)</td><td>M</td><td>HKD</td><td>9.76</td><td>13.00</td><td>(63.5)%</td><td>CNY</td><td>1.16</td><td>1.21</td><td>1.40</td><td>7.3</td><td>7.0</td><td>6.0</td></tr><tr><td>2238.HK (GAC)</td><td>M</td><td>HKD</td><td>2.24</td><td>3.00</td><td>(66.2)%</td><td>CNY</td><td>(0.85)</td><td>(0.13)</td><td>(0.01)</td><td>(2.3)</td><td>(14.9)</td><td>(304.0)</td></tr><tr><td>LI (Li Auto)</td><td>M</td><td>USD</td><td>13.21</td><td>15.50</td><td>(74.9)%</td><td>CNY</td><td>1.13</td><td>(4.88)</td><td>2.27</td><td>79.1</td><td>(18.3)</td><td>39.4</td></tr><tr><td>2015.HK (Li Auto)</td><td>M</td><td>HKD</td><td>50.50</td><td>61.00</td><td>(97.5)%</td><td>CNY</td><td>0.57</td><td>(2.44)</td><td>1.13</td><td>77.1</td><td>(17.9)</td><td>38.4</td></tr><tr><td>9866.HK (NIO)</td><td>M</td><td>HKD</td><td>39.22</td><td>47.00</td><td>(0.4)%</td><td>CNY</td><td>(6.85)</td><td>(1.62)</td><td>(0.49)</td><td>(4.9)</td><td>(20.9)</td><td>(68.9)</td></tr><tr><td>NIO (NIO)</td><td>M</td><td>USD</td><td>5.02</td><td>6.00</td><td>21.5%</td><td>CNY</td><td>(6.85)</td><td>(1.62)</td><td>(0.49)</td><td>(5.0)</td><td>(21.0)</td><td>(69.1)</td></tr><tr><td>600104.CH (SAIC)</td><td>M</td><td>CNY</td><td>10.50</td><td>15.00</td><td>(79.4)%</td><td>CNY</td><td>0.89</td><td>0.97</td><td>1.05</td><td>11.9</td><td>10.8</td><td>10.0</td></tr><tr><td>1810.HK (Xiaomi)</td><td>O</td><td>HKD</td><td>23.72</td><td>43.00</td><td>(81.8)%</td><td>CNY</td><td>1.62</td><td>1.02</td><td>1.77</td><td>12.6</td><td>20.1</td><td>11.6</td></tr><tr><td>9868.HK (XPeng)</td><td>M</td><td>HKD</td><td>51.55</td><td>78.00</td><td>(75.9)%</td><td>CNY</td><td>(0.60)</td><td>(1.02)</td><td>0.23</td><td>(74.4)</td><td>(43.8)</td><td>197.2</td></tr><tr><td>XPEV (XPeng)</td><td>M</td><td>USD</td><td>13.21</td><td>20.00</td><td>(53.5)%</td><td>CNY</td><td>(1.20)</td><td>(2.03)</td><td>0.45</td><td>(74.7)</td><td>(44.0)</td><td>198.0</td></tr><tr><td>601689.CH (Tuopu)</td><td>O</td><td>CNY</td><td>60.19</td><td>75.00</td><td>(14.3)%</td><td>CNY</td><td>1.61</td><td>1.81</td><td>2.36</td><td>37.4</td><td>33.3</td><td>25.6</td></tr><tr><td>2050.HK (Sanhua)</td><td>M</td><td>HKD</td><td>26.70</td><td>27.00</td><td>(28.5)%</td><td>CNY</td><td>1.03</td><td>0.97</td><td>1.11</td><td>22.4</td><td>23.7</td><td>20.8</td></tr><tr><td>002050.CH (Sanhua)</td><td>M</td><td>CNY</td><td>45.23</td><td>39.00</td><td>34.3%</td><td>CNY</td><td>1.03</td><td>0.97</td><td>1.11</td><td>43.9</td><td>46.5</td><td>40.9</td></tr><tr><td>002472.CH (Shuanghuan)</td><td>O</td><td>CNY</td><td>42.11</td><td>60.00</td><td>(7.9)%</td><td>CNY</td><td>1.50</td><td>1.70</td><td>2.00</td><td>28.1</td><td>24.8</td><td>21.1</td></tr><tr><td>HSAI.US (Hesai)</td><td>O</td><td>USD</td><td>16.89</td><td>30.00</td><td>(53.8)%</td><td>CNY</td><td>2.92</td><td>3.31</td><td>5.27</td><td>39.1</td><td>34.5</td><td>21.7</td></tr><tr><td>2525.HK (Hesai)</td><td>O</td><td>HKD</td><td>129.90</td><td>238.00</td><td>NA</td><td>CNY</td><td>2.92</td><td>3.31</td><td>5.27</td><td>38.4</td><td>33.9</td><td>21.3</td></tr><tr><td>688017.CH (Leader Drive)</td><td>U</td><td>CNY</td><td>393.31</td><td>115.00</td><td>191.1%</td><td>CNY</td><td>0.69</td><td>0.83</td><td>0.96</td><td>568.0</td><td>471.5</td><td>409.0</td></tr><tr><td>300124.CH (Inovance)</td><td>O</td><td>CNY</td><td>68.95</td><td>82.00</td><td>(35.6)%</td><td>CNY</td><td>1.87</td><td>2.19</td><td>2.65</td><td>36.9</td><td>31.4</td><td>26.1</td></tr><tr><td>6324.JP (HDSI)</td><td>O</td><td>JPY</td><td>8,710.00</td><td>7,800.00</td><td>164.3%</td><td>JPY</td><td>16.99</td><td>57.37</td><td>79.51</td><td>512.7</td><td>151.8</td><td>109.5</td></tr><tr><td>ASIAX</td><td></td><td></td><td>2,048.07</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>SPX</td><td></td><td></td><td>7,500.58</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>JPL</td><td></td><td></td><td>2,676.74</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended
+
+Source: Bloomberg, Bernstein estimates and analysis.
+
+## INVESTMENT IMPLICATIONS
+
+Chinese Autos: For our EV names, we rate BYD and Xiaomi Outperform, and XPeng, Li Auto, and NIO Market-Perform. Within our traditional Chinese OEMs coverage, we rate Geely Outperform and Great Wall, GAC, and SAIC Market-Perform.
+
+Asian Industrial Technology: We rate Inovance and Harmonic Drive Outperform.
+
+Asia Emerging Robotics: We rate Shuanghuan, Hesai and Tuopu Outperform, Sanhua Market-Perform and Leader Drive Underperform
+
+## DETAILS
+
+## RELATED RESEARCH REPORTS
+
+12 Jun 2026 - Humanoid Robotics: A scientist, an inventor, an engineer, and a gardener walk into a room ...
+
+26 May 2026 - Humanoid robots: The road toward attractive ROI in warehouses
+
+27 Apr 2026 - Xiaomi: 2026 Investor Day takeaways — AI, Overseas, Memory, and Humanoid robotics
+
+26 Apr 2026 - Chinese Autos: 2026 Beijing Auto Show takeaways — China as Battlefield or Launchpad?
+
+27 Mar 2026 - Future of Tech: Physical AI -- Bridging industrial and humanoid robotics
+
+26 Feb 2026 - Humanoid Robotics: The path to 1 million annual shipment
+
+14 Jan 2026 - Asia Emerging Robotics: How can we view Tesla Optimus more positively?
+
+12 Jan 2026 - Humanoid Robotics: Who plays where
+
+12 Nov 2025 - Asia Emerging Robotics: Embrace the Humanoid Era - Initiating Coverage of Shuanghuan, Hesai, Tuopu, Sanhua and Leader Drive
+
+6 Nov 2025 - Robotics Chips: Short primer on the 'brains' for industrial and humanoid robots
+
+5 Mar 2025 - Future of Tech: The hierarchy of infinities -- comparing Humanoid/Industrial Robot and Autonomous Driving technologies
+
+3 Mar 2025 - Future of Tech: The Humanoid Robot industry, 2025-2050
+
+## AUTO OEM'S HUMANOID INITIATIVES AND PROGRESS
+
+## AUTO OEMS' PUSH INTO HUMANOID ROBOTICS IS RECENT BUT ACCELERATING
+
+Auto OEMs began moving into humanoid robotics from 2020. Hyundai announced its acquisition of an approximately 80% stake in Boston Dynamics in December 2020, signaling its intent to build a broader robotics platform beyond vehicles. Tesla then unveiled its “Tesla Bot” concept (later named Optimus) at its AI Day in August 2021, putting general-purpose humanoids firmly on the automotive agenda.
+
+Since then, a growing number of Chinese OEMs have entered the field through different routes: 1) in-house development (for example XPeng's IRON robot and Xiaomi's humanoid projects), 2) subsidiary stakes (such as BYD's investments in PaXini and Zhiyuan), and 3) strategic partnerships (for instance Geely–Zeekr's collaboration with UBTech). This momentum has become increasingly visible at major industry events. At the 2026 Beijing Auto Show, multiple OEM-linked humanoids, including XPeng's IRON, Chery's AiMOGA, and BYD-related Zhiyuan AgiBot, were showcased publicly, underscoring how rapidly humanoid robotics is being woven into Chinese automakers' broader technology narratives.
+
+## INDUSTRY FRONTRUNNER WITH PLANS FOR NEARER-TERM COMMERCIALIZATION
+
+\- Tesla is developing its humanoid robot Optimus, progressing from Gen 1 (2022) to Gen 2 and Gen 2.5 prototypes by 2025, reflecting rapid iteration in hardware and software. Its strategy starts with manufacturing applications, with a long-term ambition to expand into consumer and household scenarios. Tesla targets limited commercialization in 2026 and volume shipments in 2027. A key constraint is that dexterous hand capability remains a major bottleneck, limiting real-world deployment readiness despite strong system-level progress.
+
+\- Hyundai, the parent company of Boston Dynamics, is pursuing an aggressive humanoid roadmap, transitioning Atlas from R&D to industrial deployment. Production-ready Atlas robots are being introduced into real factory environments, with initial applications in parts sequencing and heavy-duty manufacturing tasks. The group is targeting annual production capacity of up to 30,000 units by 2028, alongside internal rollout of over 25,000 robots across Hyundai facilities. This combination of fullstack control, large-scale manufacturing plans, and clear volume targets positions Hyundai as the leading OEM in humanoid robot industrialization.
+
+\- XPeng is one of the more ambitious OEMs in humanoid robotics, with its IRON robot evolving through multiple generations during 2024-2025. A key milestone was its 2025 AI Day debut, where IRON's natural, catwalk-like walk went viral—so lifelike that audience questioned whether a human was inside. This showcased a major breakthrough in human-like locomotion and established XPeng as a frontrunner in embodied intelligence. The company targets mass production by end-2026 and global deliveries in 2027, focusing on both industrial and retail/service use cases such as showroom assistants and patrol robots, aiming for near-term commercialization.
+
+\- Chery is currently one of the more advanced OEMs in China on commercialization, with its humanoid robot “Moyin” achieving global delivery of 220 units in 2025 and further deployments across public service scenarios such as policing and medical guidance. Chery’s humanoid robot are available for purchase for RMB 285.8k (US\$41k) through e-commerce channels like JD.com (LINK). Chery stands out for having the first meaningful batch delivery among OEMs, a diversified product ecosystem (including robot dogs and service robots), and a clear three-stage roadmap from companion robots to public service and eventually household applications.
+
+\- GAC has developed the GoMate humanoid series (now at the 4th-generation GoMate Mini), targeting applications in elderly care, security, and industrial environments, with pilot production planned for 2026 and mass production in 2027. Incrementally, GAC differentiates itself through innovations such as a wheel-legged hybrid mobility structure and by spinning off a dedicated robotics subsidiary to accelerate commercialization in a more market-oriented structure.
+
+## EARLY INDUSTRIAL DEPLOYER WITH REAL FACTORY VALIDATION
+
+\- BMW has rapidly progressed humanoid robotics from pilot testing to real production environments, building on early collaborations with Figure's robots in 2025. At its Spartanburg plant, humanoids supported the production of over 30k vehicles through tasks such as sheet-metal handling, demonstrating reliability in high-throughput settings. The company is now expanding pilots to Europe, with deployments in Leipzig targeting battery assembly, intralogistics, and component production from summer 2026. BMW's strategy emphasizes iterative scaling through live manufacturing validation, positioning humanoids as flexible co-workers rather than committing to immediate mass production
+
+\- Toyota is among the first OEMs to convert humanoid pilots into commercial deployment through a Robots-as-a-Service (RaaS) model with Agility Robotics. Following a successful pilot, Toyota signed a 2026 agreement to deploy Digit humanoids in production, focusing on logistics tasks such as parts handling and line feeding. Initial deployments remain small-scale, but Toyota's asset-light RaaS approach enables flexible scaling while reducing upfront costs and technology risk.
+
+## EMERGING PLAYERS WITH STRONG POTENTIAL IN THE LONG TERM
+
+\- Xiaomi has been developing humanoid robots since 2020, launching CyberOne in 2022 and more recently open-sourcing its Xiaomi-Robotics-0 embodied AI model in 2026. Its current focus is on manufacturing scenarios such as inspection and assembly, though no clear mass production timeline has been announced. Xiaomi has demonstrated strong technical progress, including achieving over 90% success rates in real factory tasks and advancing high-precision dexterous hand capabilities, supported by its strength in AI foundation models and embodied intelligence.
+
+\- BYD is advancing an internally developed humanoid robot project (codename “Yao Shun Yu”), initiated in 2022 and supported by partnerships such as its embodied intelligence lab with HKUST. BYD stands out for its deep vertical integration across batteries, motors, semiconductors, and precision manufacturing, as well as its potential to leverage its global dealership network for future commercialization.
+
+\- Li Auto is taking a differentiated approach by framing robotics under a broader “space robot” concept, incorporating wheeled robots for manufacturing and future humanoids potentially for household use. While mass production plans are not disclosed, the company has established dedicated robotics business units. Li Auto is notable for its emphasis on AI, including heavy investment in large models such as Mind GPT, and its vision of integrating robots into a wider in-car, wearable, and intelligent ecosystem.
+
+EXHIBIT 1: Overview of Auto OEMs progresses in humanoid robots
+
+<table><tr><td rowspan="2">OEM</td><td rowspan="2">Platform</td><td rowspan="2">Timeline</td><td colspan="2">Progress &amp; Goals</td></tr><tr><td>Application</td><td>Shipment</td></tr><tr><td>Tesla</td><td>Optimus(In-house)</td><td>Aug 2021: Unveiled conceptual design at AI DaySep 2022: Gen 1 prototype was shownSep 2023: Video showing Optimus sorting coloured blocksDec 2023: Gen 2 was showcasedMay 2024: Footage of Optimus performing tasks in a Tesla factory</td><td>- Deploy Optimus inside Tesla factories for &quot;boring, repetitive and dangerous&quot; tasks- Longer term, commercialize for industrial and domestic use</td><td>- Targeting &quot;thousands of bots&quot; in Tesla factories and initial external shipment from 2026; Gen 3 production will start around summer 2026, with high-volume ramp targeted for 2027- Fremont production line is designed for 1mn robots/year and Giga Texas planned for 10m/year from 2027</td></tr><tr><td>BMW</td><td>Figure AI- Figure 02/03(Partnership)</td><td>Jan 2024: BMW announced collaboration with Figure AI</td><td>- Integrate humanoids into body shop at Leipzig /Spartanburg plants for &quot;monotonous, ergonomically demanding, or safety-critical tasks&quot;</td><td>Figure AI&#x27;s Gen-2 humanoid robot has participated in the production of 30,000 BMW cars</td></tr><tr><td>Hyundai</td><td>Boston Dynamics - Atlas/ Spot(Subsidiary, 80% stake)</td><td>- 2021: Acquisition of Boston Dynamics- 2026: Launch of new Altas ready for volume shipment</td><td>- Internal use first; start with parts sequencing tasks and expand to component assembly later</td><td>- By YE 2025: 2k units of Spot deployed- By 2028: Aim to build manufacturing capacity for 30,000 Atlas units annually</td></tr><tr><td>Toyota</td><td>Agility Robotics - Digit (Partnership)</td><td>Oct 2024: Announced research partnership with Boston DynamicsFeb 2026: Deploy Agility Robotics&#x27; robots in Canada factory</td><td>- Use Agility Robotics&#x27; Digit to build newest RAV4 in Toyota Canada</td><td>N.A.</td></tr><tr><td>BYD</td><td>Yao Shun Yu(In-house) / AgiBot(Minority stake)</td><td>2023: Invesed in AgiBot (Zhiyuan)2025: Confirmed they are developing humanoid robotics</td><td>Focus is on deployment in factories to increase automation</td><td>N.A.</td></tr><tr><td>XPeng</td><td>IRON(In-house)</td><td>Nov 2024: Unveiled IRON robot;Nov 2025: Released Gen 2 IRON</td><td>- Prioritizing commercial retail / sales scenarios i.e. showroom guidance, retail assistance, patrol services; also exploring industrial applications and domestic use case</td><td>- Began construction of a mass production facility in Guangzhou in Q1 2026, and targeting mass production (c.1k units) by year-end 2026- Plan for the humanoid robots to station at XPeng retail stores as shopping guides</td></tr><tr><td>Xiaomi</td><td>CyberOne(In-house)</td><td>Aug 2022: Debuted CyberOneFeb 2026: Open-sourced Xiaomi-Robotics-0(4.7B-parameter embodied VLA model);Continued R&amp;D and demonstration</td><td>- Initially in Xiaomi&#x27;s own manufacturing plants, tasked with repetitive assembly line duties- Longer term, it will be commercialized for domestic use case, and be integrated into the smartphone, AIOT, and EV ecosystem</td><td>- Began pilot deployment of humanoid robots in its EV manufacturing plant in Beijing- Expect humanoid robots will operate on a &quot;large-scale&quot; in Xiaomi&#x27;s factories within 5 years</td></tr><tr><td>GAC</td><td>GoMate(In-house)</td><td>2022: Began R&amp;DDec 2024: Released Gen 3 humanoid GoMateFeb 2026: Launched Gen 4 GoMate Mini</td><td>Pilot deployments in elderly care and security</td><td>Targeting small-scale pilot production in 2026 and mass production in 2027</td></tr><tr><td>Geely</td><td>UBTech - Walker SLite(Partnership)</td><td>Jul 2024: Deployed at Zeekr factory</td><td>- Primarily in auto manufacturing scenarios, including material handling and logistics, assembling, sorting and line-side tasks, as well as quality inspection</td><td>Still in early pilot stage till now</td></tr><tr><td>Chery</td><td>Aimoga(In-house)</td><td>Established robotics company in Jan 2025</td><td>- Robots: currently for smart policing and medical guidance; plan to expand to household scenarios in longer term- Robotic dogs: home companionship, community patrol, and industrial site security</td><td>Have delivered hundreds of robots with 1k+ order in hand</td></tr><tr><td>Li Auto</td><td>N.A.</td><td>Established robotics team in 2025</td><td>Two-wheeled robots are primarily used in factory manufacturing, while bipedal robots are developed for household scenarios</td><td>N.A.</td></tr></table>
+
+Source: Company websites, Forbes, 36Kr and Bernstein Analysis
+
+EXHIBIT 2: Overview of Auto OEMs' humanoid robot products  
+Tesla Optimus v2.5  
+![](images/0a539814e7cbbbd7259c0c24fbcaee7087f7259c0dacac3ae7f76f576fa23546.jpg)
+
+XPeng IRON  
+![](images/1e0b0182eddc4e33f2cff9c6f8f41d9677a4a6744cbcf0c54905b33ff08a9d57.jpg)
+
+Xiaomi CyberOne  
+![](images/7cbd8b35121b459a7738931ca8249b6d48f902b253e7c341e0120131d2cb6e6c.jpg)
+
+GAC GoMate  
+![](images/eaaecea4e9a2db66cfe7855184c0b541289a0fb7a1650d40577e68289a6d0b94.jpg)
+
+Source: Company websites and Bernstein analysis  
+EXHIBIT 3: Chery's Aimoga  
+![](images/0c094aaadbf05bac46066501da1a7e044c8934695ae225e6302bfa5407bb2476.jpg)  
+Source: Bernstein photo
+
+EXHIBIT 4: AgiBot was showcased at BYD's exhibition  
+![](images/b29622a41aaaba922d5b3ee5b0ce534ecf48604f3ac42f3fbe56d050f58f5f07.jpg)  
+Source: Bernstein photo
+
+## WHY AUTO OEMS ARE EXPANDING INTO HUMANOID ROBOTS?
+
+Auto OEMs are expanding into humanoid robotics for two main reasons: to raise internal productivity and to open up new revenue pools beyond the core vehicle business. They also believe they possess structural advantages in manufacturing, supply chains, and embodied AI that position them well in this emerging category.
+
+On raising internal productivity: Humanoid robots offer a logical next step in factory and warehouse automation, especially as manufacturers face rising labour costs, an aging workforce, and persistent shortages in repetitive, physically demanding, or harsh-environment roles. While stamping, welding, and painting are already highly automated, final assembly and intralogistics remain comparatively labour-intensive. This leaves a meaningful automation gap in tasks such as material handling, precision assembly, inspection, and testing. Humanoid robots could help narrow that gap by operating in tighter spaces and more complex shop-floor environments than traditional fixed automation. Material handling is a particularly relevant use case, given its high injury incidence and recurring labour shortages during peak production periods. If execution improves and costs fall, humanoids could support both labour substitution and structurally lower manufacturing costs over time.
+
+Opening up new external revenue streams: Some OEMs, including Tesla and XPeng, have framed the long-term total addressable market for humanoid robots as comparable to, or potentially larger than, the automotive market. In addition to manufacturing and warehouse settings, humanoids could eventually address a broad range of consumer and service applications, including patrol and security, retail guide and store operations, and, over the longer term, household assistance. For OEMs, the appeal is not only participation in a potentially large new market, but also the opportunity to extend their capabilities in high-volume manufacturing, supply chain know how, software, sensing, and control systems into a new product category.
+
+EXHIBIT 5: Why Auto OEMs are investing in humanoid robots
+
+<table><tr><td>Rationale</td><td>Applications</td><td>Details</td></tr><tr><td>Internal productivity boost</td><td>Factory and warehouse automation, including material handling, assembly, quality inspection, etc.</td><td>Humanoids can further increase factory automation and drive structural cost reductions. They help address rising labor costs, aging workforces, and shortages in repetitive, physically demanding, or harsh-environment roles.</td></tr><tr><td>External revenue streams</td><td>Range of consumer and service applications, including patrol &amp; guard, retail guide, household helper, etc.</td><td>OEMs believe they have an advantage in humanoids, and want to take part in the potential multi-trillion-dollar market opportunity over the long term (2040+).</td></tr></table>
+
+Source: Bernstein analysis
+
+## APPLICATION SCENARIOS
+
+Manufacturing is one of the most clearly defined application for humanoid robots by automotive OEMs at this stage, given the potential ROI from replacing human labor. Auto OEMs are using their own factories for initial pilot and deployment, to validate technology and drive down costs. BYD confirmed their expansion into humanoid robotics in June 2026. Xiaomi's humanoid pilot achieved over 90% success rates in assembly tasks. (Link to video: Inside Xiaomi's EV Factory : Xiaomi's Robot Breakthrough Revealed.) GAC and Seres are moving from pilot to early scaling. Overall, manufacturing serves as the foundation, with a clearer path from trial deployment to large-scale rollout.
+
+Consumer-facing and service applications, such as retail and showroom guide, patrol & security are emerging as the next phase, focused on customer-facing roles such as in-store assistants, brand interaction, and public services. This scenario places higher demands on perception, interaction, and mobility, making it less mature than manufacturing but critical for commercialization and brand differentiation. XPeng is leading this push, planning to deploy humanoid robots as in-store sales assistants from late 2026 and expand commercially by 2027. Chery has deployed over 200 robots in events and exhibitions for entertainment, and public service use cases. GAC and Changan are also exploring security and service applications, though still at early stages. To summarize, this segment is transitioning from pilot deployments to initial commercialization.
+
+Household applications represent a longer-term opportunity for humanoids—still at an early stage, but with the largest potential market. Use cases such as home cleaning, elderly care, and butler or companionship services will require significant breakthroughs in general intelligence, safety, and cost. As a result, most OEMs view this as an endgame objective. Chery has outlined one of the clearest roadmaps, progressing from companion robots to service applications and eventually to in-home use, with early consumer-channel experiments already underway. Changan plans to enter the household segment after achieving mass production around 2028. Xiaomi, meanwhile, positions humanoids as a natural extension of its “Human × Car × Home” ecosystem in the next stage of embodied AI development.
+
+EXHIBIT 6: Humanoid robots: Technically feasible applications across the near-, mid-, and long-term future
+Humanoid robots: Technically feasible applications  
+![](images/9866a6994f0e44231321982aef1ae2bef823bf6e7485bb37cfbff3652466016c.jpg)  
+Source: Bernstein analysis and estimates
+
+EXHIBIT 7: Where and in what applications can humanoid robots be used  
+Source: Bernstein analysis and estimates
+
+EXHIBIT 8: Geely began using humanoid robots in the production of Zeekr electric vehicles  
+![](images/24ca07e257153ede31bfc8a371630edce2c19c48345bf97d1c99804be4f091ae.jpg)  
+Source: Shenzhen Daily
+
+EXHIBIT 9: XPeng plans to deploy 1,000 robots at its showrooms by year-end 2026  
+![](images/6c01871bf5c43e1b52fba7ce2cf9e5764948e44c5b25b276e57fc71a269998f7.jpg)  
+EXHIBIT 10: Chery's Aimoga is used in public security scenarios  
+Source: XPeng
+
+![](images/2c99b347e6837f16d318acf8022137839fc2bbf607244bef995396335f2b4739.jpg)  
+Source: Bernstein pictures  
+EXHIBIT 11: Hexagon's humanoid robot AEON at BMW's Leipzig plant
+
+![](images/4454a1a0bf704479093073af49aa7ae5e0827c66cd23c263b15a849ec238b218.jpg)  
+Source: BMW
+
+## AUTO OEMS' RIGHT TO WIN IN HUMANOID ROBOTICS
+
+Automakers have several advantages that make them well positioned in humanoid robotics, given the significant overlap between the automotive and humanoid robotics hardware and software ecosystems, access to resource, and scale and cost
+
+advantages.
+
+\- Manufacturing and supply chain know-how. On the hardware side, auto and humanoid manufacturing share substantial similarities, including component overlap in motors, batteries, reducers, and sensors such as LiDAR and cameras. Auto OEMs' expertise in highly automated, large-volume production helps them tackle key challenges in yield, consistency, quality, and reliability in humanoid manufacturing.
+
+\- Physical AI leadership. From a software perspective, we view that there is partial overlap across robotics and autonomous driving in the development of VLA models and world models. Humanoid robots rely on many of the same foundational technologies as autonomous vehicles, including end-to-end learning algorithms, world models, simulation systems, and multi-modal sensing fusion. A decade of investment in autonomous driving has given leading OEMs deep engineering expertise, strong R&D teams, large datasets, and robust compute infrastructure. Many OEMs therefore view humanoids as a natural next step in ‘physical AI’, where they can leverage their existing AV technology stack for humanoid development.
+
+\- Scale and cost advantages. With factory and warehouse automation as the first wave of humanoid deployment, auto plants provide an ideal testbed. OEMs can pilot humanoids in their own facilities, iterate quickly, and then scale deployments across global plant networks. Automakers' scale in procurement and their established supplier relationships enable them to source humanoid components at competitive costs. This ability to deploy at scale early should help drive down unit costs, improve reliability, and accelerate learning relative to many other industries.
+
+\- Resources and talent access. Compared with most humanoid start-ups, established auto OEMs benefit from stronger balance sheets, larger R&D budgets, and existing global brands. This gives them more capacity to fund long development cycles and makes them more attractive to top talent in AI and robotics.
+
+While not guaranteeing success, these advantages in manufacturing, supply chains, and embodied AI position OEMs competitively in the emerging humanoid robotics market. Humanoid start-ups often bring innovation, while automotive OEMs are typically stronger at large-scale industrialization and commercialization. Although many start-ups are led by leading scientists who can define new technological directions, bringing humanoid robots to market is fundamentally an engineering and integration challenge. It requires solving practical issues such as reducing the gap between model-predicted actions and real-world behaviour, selecting materials that balance low weight with structural strength, designing joints with high torque density, and meeting stringent cost and energy-efficient constraints. These problems call for coordinated, cross-functional execution rather than isolated technical breakthroughs. In China's highly competitive environment, early laboratory-level leadership tends to be short-lived, whereas robust engineering capabilities and scalable manufacturing know-how are more likely to support durable competitive advantages.
+
+EXHIBIT 12: Auto OEMs have several structural advantages in humanoid robotics
+
+<table><tr><td>Advantages</td><td>Details</td></tr><tr><td>Manufacturing and supply chain know-how</td><td>- Auto and humanoid manufacturing share substantial similarities, including component overlap with EVs (e.g. motors, batteries, reducers, sensors, etc.)- Proven expertise in highly automated, large-volume production helps them tackle key challenges in yield, consistency, quality, and reliability in humanoid manufacturing</td></tr><tr><td>Physical AI leadership</td><td>- Leverage autonomous driving tech stack: end-to-end learning, world models, simulation, sensor fusion, etc.- Years of autonomous vehicle investment provide large datasets, robust computing infrastructure, sophisticated models, and experienced engineering teams</td></tr><tr><td>Scale and cost advantages</td><td>- Own factories provide ideal testbeds for pilots, iteration, and deployment- The ability to deploy at scale early should help drive down unit costs, improve reliability, and accelerate learning relative to many other industries- Automakers&#x27; scale in procurement and their established supplier relationships enable them to source humanoid components at competitive costs</td></tr><tr><td>Resources and talent access</td><td>- Strong balance sheets and R&amp;D budgets to fund long development cycles- Access to resource and brand recognition helps attract top talent in AI and robotics</td></tr></table>
+
+Source: Bernstein analysis
+
+## INVESTMENT IMPLICATIONS
+
+For investors, we think there are two primary approaches to gaining exposure to humanoid development. The first is investing at the OEM or robot integrator level—whether dedicated humanoid players (e.g. UBTech, Unitree, etc.), automotive OEMs, or technology companies with humanoid ambitions. This route ultimately hinges on optionality versus capital intensity (capex and opex), with a risk-reward profile that can be relatively binary depending on execution and the broader competitive landscape.
+
+Within our coverage, XPeng and Xiaomi stand out as relatively compelling among automotive OEMs. XPeng's humanoid robot, IRON, features a highly human-like design and is explicitly targeting consumer-facing and household use cases. In our view, this positioning could enable structurally higher margins if the company successfully addresses emotional companionship, leveraging both form factor and AI capabilities. XPeng's leadership in autonomous driving and broader physical AI further reinforces its credentials in this space. While we maintain a Market Perform rating given the long commercialization horizon, we recognize the company's strong optionality in humanoids.
+
+Xiaomi is another notable player. The company has made rapid progress in AI, with developments such as the MiMo model and the MiClaw agent. We see humanoids as a natural extension of Xiaomi's “Human × Car × Home” ecosystem as the industry transitions toward AI agents. In this framework, humanoids could serve as the physical embodiment of AI—integrating smartphones, AIoT devices, and mobility. Xiaomi’s extensive installed base of connected devices provides a potentially unparalleled distribution and data advantage. We rate Xiaomi Outperform. Xiaomi’s stock price is currently depressed by high memory costs, but the company continues to progress in smartphone premiumization, has significant overseas potential in IoT and EVs, and made notable inroads in AI development.
+
+The second investment approach is via the supply chain, including key components such as motors, harmonic reducers, vision products, sensors, and power and AI semiconductors. This pathway may offer more diversified exposure with potentially less binary outcomes, as adoption unfolds across multiple OEMs. We prefer upstream components companies with exposure to broad robotics (not limited to the humanoid), broad customer base, proven success in expertise expansion, and high-quality core businesses, e.g. Shuanghuan (Outperform), Hesai (Outperform), and Tuopu (Outperform) (here).
+
+## HUMANOID ROBOTS IN AUTO MANUFACTURING: WHEN DOES ROI BECOME COMPELLING?
+
+In assessing the ROI implications of using humanoid robots to replace labor in automotive manufacturing, we believe the discussion becomes more compelling when the payback period falls below five years. Based on current assumptions, i.e., a humanoid robot cost of approximately US\$50,000 and an entry-level auto manufacturing worker in China earning around US \$13,000 annually, we estimate a payback period of roughly 7-8 years. We expect adoption to accelerate over the next 3-5 years however, driven by advances in robotic intelligence that improve task-specific capabilities. At the same time, we anticipate humanoid robot costs to decline below US\$40,000, while labor costs rise above US\$14,000, making the ROI dynamics increasingly attractive. (Exhibit 13 - Exhibit 15)
+
+EXHIBIT 13: Payback analysis of humanoid robots in China's auto manufacturing plants
+
+<table><tr><td colspan="5">Estimated payback period of humanoid robots in China&#x27;s auto manufacturing- Assume 1 humanoid robot to replace 0.75 entry-level manufacturing worker (i.e. 75% human worker efficiency)- Assume 1 human operator to look after 3 humanoid robots</td></tr><tr><td colspan="5">Illustration of economics (in USD)</td></tr><tr><td colspan="5">Upfront investment in humanoid robot solutions</td></tr><tr><td>Upfront investment</td><td># of humanoid robots</td><td>Robot unit price</td><td>Integration cost (% of robot price)</td><td>Sub-total</td></tr><tr><td>Procurement and system integration of humanoid robots</td><td>2</td><td>50,000</td><td>30%</td><td>130,000</td></tr><tr><td colspan="5">Before replacement (entry-level manufacturing workers)</td></tr><tr><td>Annual labor cost</td><td># of workers</td><td>Unit labor cost</td><td>Implied shifts (relative to robot)</td><td>Sub-total</td></tr><tr><td>Manufacturing labor</td><td>1.5</td><td>12,857</td><td>2.6</td><td>69,796</td></tr><tr><td colspan="5">After replacement (humanoid robots + human operator/ supervisor)</td></tr><tr><td>Annual robot operating and maintenance cost</td><td># of humanoid robots</td><td>Annual cost (% of robot price)</td><td>Unit cost</td><td>Sub-total</td></tr><tr><td>Humanoid robots</td><td>2</td><td>15%</td><td>7,500</td><td>15,000</td></tr><tr><td>Annual labor cost</td><td># of operators</td><td>Unit labor cost</td><td>Implied shifts (relative to robot)</td><td>Sub-total</td></tr><tr><td>Operators</td><td>0.7</td><td>15,429</td><td>2.6</td><td>37,844</td></tr><tr><td>Annual cost saved</td><td></td><td></td><td></td><td>16,951</td></tr><tr><td>Payback period (years)</td><td></td><td></td><td></td><td>7.7</td></tr><tr><td colspan="5">Assumptions</td></tr><tr><td colspan="5">Unit labor cost</td></tr><tr><td colspan="4">Basic annual wage (RMB 5k/ month for entry-level manufacturing labor; calculation in USD)</td><td>8,571</td></tr><tr><td colspan="4">Plus: Housing, meals, welfare, and miscellaneous (% of basic annual wage)</td><td>50%</td></tr><tr><td colspan="4">Total annual labor cost (entry-level manufacturing labor, in USD)</td><td>12,857</td></tr><tr><td colspan="4">Assume human operator / robot supervisor costs 20% more (in USD)</td><td>15,429</td></tr><tr><td colspan="5">Working time &amp; shifts</td></tr><tr><td colspan="4">Working hours per day - human</td><td>10</td></tr><tr><td colspan="4">Working hours per day - robots</td><td>22</td></tr><tr><td colspan="4">Implied shifts per day</td><td>2.2</td></tr><tr><td colspan="4">Working days per year - human (i.e. 49 weeks * 6 days per week)</td><td>294</td></tr><tr><td colspan="4">Working days per year - robot (assume 15 days of maintenance per year)</td><td>350</td></tr><tr><td colspan="4">Implied shifts per year (human relative to robot)</td><td>2.6</td></tr></table>
+
+Source: Bernstein estimates and analysis
+
+Adoption curve: Automobile vs. Humanoid robot  
+EXHIBIT 14: Sensitivity analysis of the payback period to humanoid robot prices and labor cost
+
+<table><tr><td rowspan="2" colspan="2">Payback period (years)</td><td colspan="10">Humanoid robot unit price (USD)</td></tr><tr><td>100,000</td><td>90,000</td><td>80,000</td><td>70,000</td><td>60,000</td><td>50,000</td><td>40,000</td><td>30,000</td><td>20,000</td><td>10,000</td></tr><tr><td rowspan="11">Unit labor cost (USD)</td><td>10,000</td><td>180.4</td><td>162.4</td><td>144.3</td><td>126.3</td><td>108.2</td><td>90.2</td><td>72.2</td><td>54.1</td><td>36.1</td><td>18.0</td></tr><tr><td>11,000</td><td>37.8</td><td>34.1</td><td>30.3</td><td>26.5</td><td>22.7</td><td>18.9</td><td>15.1</td><td>11.4</td><td>7.6</td><td>3.8</td></tr><tr><td>12,000</td><td>21.1</td><td>19.0</td><td>16.9</td><td>14.8</td><td>12.7</td><td>10.6</td><td>8.5</td><td>6.3</td><td>4.2</td><td>2.1</td></tr><tr><td>13,000</td><td>14.7</td><td>13.2</td><td>11.7</td><td>10.3</td><td>8.8</td><td>7.3</td><td>5.9</td><td>4.4</td><td>2.9</td><td>1.5</td></tr><tr><td>14,000</td><td>11.2</td><td>10.1</td><td>9.0</td><td>7.9</td><td>6.7</td><td>5.6</td><td>4.5</td><td>3.4</td><td>2.2</td><td>1.1</td></tr><tr><td>15,000</td><td>9.1</td><td>8.2</td><td>7.3</td><td>6.4</td><td>5.5</td><td>4.5</td><td>3.6</td><td>2.7</td><td>1.8</td><td>0.9</td></tr><tr><td>20,000</td><td>4.7</td><td>4.2</td><td>3.7</td><td>3.3</td><td>2.8</td><td>2.3</td><td>1.9</td><td>1.4</td><td>0.9</td><td>0.5</td></tr><tr><td>25,000</td><td>3.1</td><td>2.8</td><td>2.5</td><td>2.2</td><td>1.9</td><td>1.6</td><td>1.3</td><td>0.9</td><td>0.6</td><td>0.3</td></tr><tr><td>30,000</td><td>2.4</td><td>2.1</td><td>1.9</td><td>1.7</td><td>1.4</td><td>1.2</td><td>0.9</td><td>0.7</td><td>0.5</td><td>0.2</td></tr><tr><td>40,000</td><td>1.6</td><td>1.4</td><td>1.3</td><td>1.1</td><td>0.9</td><td>0.8</td><td>0.6</td><td>0.5</td><td>0.3</td><td>0.2</td></tr><tr><td>50,000</td><td>1.2</td><td>1.1</td><td>1.0</td><td>0.8</td><td>0.7</td><td>0.6</td><td>0.5</td><td>0.4</td><td>0.2</td><td>0.1</td></tr></table>
+
+Source: Bernstein estimates and analysis
+
+EXHIBIT 15: Adoption speed of automobiles in the early years can be regarded as a reference  
+![](images/e415a2ccc3dc7def4d13df849ceac52bd56af2e40fe8e7131817b0689010c771.jpg)  
+Note: Registration is more like a concept of "install base", instead of "annual shipment".  
+Source: "Facts and Figures of the Automobile Industry 1920-1930", Bernstein analysis and estimates
+
+## I. REQUIRED DISCLOSURES
+
+References to "Bernstein" or the "Firm" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.
+
+Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.
+
+## VALUATION METHODOLOGY
+
+This research publication covers six or more companies. For valuation methodology and other company disclosures: Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action.
+
+Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+## RISKS
+
+This research publication covers six or more companies. For risks and other company disclosures:
+
+Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action.
+
+Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION
+
+## EQUITY RATINGS DEFINITIONS
+
+## Bernstein brand
+
+The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.
+
+The Bernstein brand has three categories of ratings:
+
+\- Outperform: Stock will outpace the market index by more than 15 pp
+
+• Market-Perform: Stock will perform in line with the market index to within +/-15 pp
+
+• Underperform: Stock will trail the performance of the market index by more than 15 pp
+
+Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Bernstein brand stock ratings are based on a 12-month time horizon.
+
+Autonomous brand – common stocks
+
+The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).
+
+The Autonomous brand has three categories of common stock ratings:
+
+\- Outperform (OP): Stock will outpace the relevant index by more than 10 pp
+
+\- Neutral (N): Stock will perform in line with the market index to within +/-10 pp
+
+\- Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp
+
+Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Autonomous brand common stock ratings are based on a 12-month time horizon.
+
+## Autonomous brand – preferred stocks
+
+The Autonomous brand has three categories of preferred stock ratings:
+
+\- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous preferred stock ratings are based on a 6-month time horizon.
+
+## AUTONOMOUS CREDIT RESEARCH
+
+Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.
+
+The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.
+
+## CREDIT RATINGS DEFINITIONS
+
+The Autonomous brand has three categories of credit ratings:
+
+\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous credit ratings are based on a 6-month time horizon.
+
+A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm
+
+DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES
+
+<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.1%</td><td>16.5%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>36.3%</td><td>17.8%</td></tr><tr><td>Underperform</td><td>SELL</td><td>12.6%</td><td>14.9%</td></tr></table>
+
+\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.
+As of March 31, 2026. All figures are updated quarterly.
+
+## PRICE CHARTS/ RATINGS AND PRICE TARGET HISTORY
+
+This research publication covers six or more companies. For price chart and other company disclosures, please visit https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action or you can write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+## CONFLICTS OF INTEREST
+
+SG and/or its affiliates beneficially own 1% or more of a class of common equity securities of the following company: Great Wall Motor Co Ltd.
+
+Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: BYD Co Ltd, Geely Automobile Holdings Ltd and SAIC Motor Corp Ltd.
+
+An affiliate of Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Li Auto Inc.
+
+Certain affiliates of Bernstein act as market maker or liquidity provider in the debt securities of: Geely Automobile Holdings Ltd.
+
+Ethan Xu has a financial interest in the equity or debt securities of XPeng Inc (9868.HK and XPEV).
+
+## OTHER MATTERS
+
+The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:
+
++1 Bernstein Institutional Services LLC; New York, New York, USA
+
++44 Bernstein Autonomous LLP; London UK
+
++212 SG Africa Technologies & Services; Casablanca, Morocco
+
++33 BSG France S.A.; Paris, France
+
++34 BSG France S.A.; Madrid, Spain
+
++41 Bernstein Autonomous LLP; Geneva, Switzerland
+
++49 BSG France S.A.; Frankfurt, Germany
+
++91 Bernstein (India) Private Limited; Mumbai, India
+
++852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China
+
++65 Bernstein (Singapore) Private Limited; Singapore
+
++81 Bernstein Japan KK; Tokyo, Japan
+
+Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.
+
+Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.
+
+## CERTIFICATION
+
+Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.
+
+## II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.
+
+## III. OTHER IMPORTANT INFORMATION AND DISCLOSURES
+
+Separate branding is maintained for “Bernstein” and “Autonomous” research products.
+
+\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.
+
+\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.
+
+Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to,
+
+generating investment banking revenues.
+
+This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.
+
+To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.
+
+Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.
+
+To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.
+
+This document may not be passed onto any person in Canada unless that person qualifies as "permitted client" as defined in Section 1.1 of NI 31-103.
+
+To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. ("BTG") is responsible for the distribution of this report in Brazil.
+
+To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.
+
+This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.
+
+To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).
+
+To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.
+
+To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore ("SFA"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000.
+
+To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the "PRC") in contravention of any applicable laws of the PRC.
+
+This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.
+
+We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.
+
+To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.
+
+For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. ("Daiwa"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.
+
+To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:
+
+• providing financial product advice;
+
+• dealing in a financial product;
+
+\- making a market for a financial product; and
+
+• providing a custodial or depository service.
+
+To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India ("SEBI") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.
+
+\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).
+
+\- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.
+
+• SCB India does not have any disciplinary history as on the date of this report.
+
+\- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives
+
+• do not have any financial interest in the subject company
+
+• do not have actual/beneficial ownership of one percent or more in securities of the subject company;
+
+\- is not engaged in any investment banking activities for Indian companies, as such;
+
+• have not managed or co-managed a public offering in the past twelve months for any Indian companies;
+
+\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;
+
+• have not received compensation for brokerage services from the subject company in the past twelve months;
+
+\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and
+
+\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.
+
+\- do not have any conflict of interest in the subject company as of the date of this report.
+
+\- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.
+
+\- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.
+
+\- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUMBERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com
+
+\- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.
+
+\- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.
+
+To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.
+
+## LEGAL
+
+All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.
+
+This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.
+
+This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.
+
+The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.
+
+Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.
+
+This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.
+
+Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.
+
+This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.
+
+The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.
+
+Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.
+
+No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.
