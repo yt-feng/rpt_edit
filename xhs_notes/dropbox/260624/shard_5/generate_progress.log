@@ -1,0 +1,15 @@
+Found 44 total PDFs; shard 5/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_g94jj0we/pdfs/0001-26-CITI-China Consumer-Tourism- Still-Resilient Leisure Travel Demand During Dragon Boat Festival-260622.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_g94jj0we/pdfs/0002-27-CITI-China OTAs-Resilient Domestic Travel Data and Cross-border Visitor Volume During Dragon Boat Festival-260622.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_g94jj0we/pdfs/0003-28-J.P. Morgan-Hong Kong Residential Property-Home prices already hit our full-year target- momentum may slow in 2H-260623.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_g94jj0we/pdfs/0004-29-Jefferies-Internet-AI Series -51-Trend in Cost Performance vs Token Consumption vs Intelligence-260622.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_g94jj0we/pdfs/0005-30-Morgan Stanley-China Consumer -Risk Reward Update- HPC and Beauty-260623.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=8901c575-c1c8-4cca-a834-ff3499e18137
+MinerU states: done, running, running, running, waiting-file
+MinerU states: done, done, running, done, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260624/shard_5; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

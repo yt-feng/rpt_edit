@@ -1,0 +1,18 @@
+EN_A: So there is this global investment bank report that tracks something called a token expenditure index. What exactly is that?
+EN_B: It measures where users are actually spending their money on large language models. When demand shifts toward more premium models, the index goes up.
+EN_A: And where is it right now?
+EN_B: Between June 14 and 19, it was around 1.64 to 1.68. Back on May 31, it was 2.04. So it has softened, meaning users are not rushing to the most expensive models.
+EN_A: What does that tell us?
+EN_B: The market is shifting from "best performance at any cost" to "best value for money." Chinese models are extremely cost efficient. Their API prices are just a fraction of US models, thanks to architectures like MoE and linear attention.
+EN_A: But are Chinese models catching up in intelligence too?
+EN_B: Yes, the gap is narrowing. The Stanford AI Index report says the top US model leads Chinese models by only 2.7 percent. And companies like Alibaba and DeepSeek are already in the top tier of Arena Elo ratings.
+EN_A: What is driving the actual usage volume for Chinese models?
+EN_B: A big factor is coding and agent applications. People are moving from chatting with AI to working with AI. DeepSeek V4 Flash consumed 4.94 trillion tokens last week on OpenRouter, ranking number one.
+EN_A: What about the big players like Tencent and ByteDance?
+EN_B: Tencent is testing Weixin AI, called Xiao Wei, inside the WeChat app. ByteDance's Volcano Engine has a major conference coming up. We are watching their daily token consumption for Doubao, which was already at 120 trillion in March.
+EN_A: So the ecosystem is accelerating. But are there questions the report does not fully answer?
+EN_B: Definitely. For example, how exactly will these companies monetize? Volcano Engine's MaaS revenue target is ambitious, but the path is not fully clear. And when Weixin AI officially launches, how will users pay for it? The report flags these questions but does not settle them.
+EN_A: So to get the full picture, you need to read the original report.
+EN_B: Absolutely. It has over 50 data points on pricing, agentic index, coding benchmarks, and more. We have just scratched the surface here.
+EN_A: If listeners want the full report or to join the discussion, where can they find it?
+EN_B: You can reach out to us directly or check our official channels. There is still a lot more to unpack, especially around when Chinese models might fully surpass US models in agentic capabilities. We will save that for next time.

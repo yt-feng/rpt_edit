@@ -1,0 +1,71 @@
+ZH_A: 最近有一份外资投行的AI系列报告，提到了一个很有意思的指数叫“Token支出指数”，这个指数到底在衡量什么？
+
+ZH_B: 这个指数其实是在追踪用户到底愿意为哪些大模型花钱。如果大家都往贵的、更强的模型上迁移，指数就会上升。
+
+ZH_A: 那最近这个指数表现怎么样？
+
+ZH_B: 六月中旬的数据是1.64到1.68之间，而五月底是2.04。所以整体是偏软的，说明用户并没有大规模转向最贵的模型。
+
+ZH_A: 这意味着什么？大家开始用更便宜的模型了吗？
+
+ZH_B: 对，这正是关键。市场正在从“追求最强”转向“追求性价比”。中国模型在成本上优势非常大，比如DeepSeek、Qwen、Kimi这些，API价格只有美国模型的几分之一。
+
+ZH_A: 那是不是说中国模型在智能水平上也在追上来？
+
+ZH_B: 是的，差距在缩小。根据斯坦福AI指数报告，美国顶级模型只领先中国模型约2.7%。而像阿里、DeepSeek这些在Elo评分上也已经进入第一梯队。
+
+ZH_A: 除了成本，还有什么因素在推动中国模型的使用量？
+
+ZH_B: 一个很大的驱动力是编码和智能体应用。人们从“用AI聊天”转向“用AI工作”。比如DeepSeek V4 Flash在OpenRouter上周消耗了4.94万亿个token，排名第一。
+
+ZH_A: 那腾讯和字节跳动最近有什么动作吗？
+
+ZH_B: 腾讯正在小范围测试微信AI，叫“小微”，放在微信主页面左上角。字节跳动的火山引擎马上要开FORCE大会，我们很关注豆包大模型的日消耗量，三月份已经到120万亿了。
+
+ZH_A: 听起来中国大模型生态正在加速。但报告里有没有一些还没有完全展开的问题？
+
+ZH_B: 有的。比如虽然token消耗在涨，但企业的商业化变现路径还不清晰。火山引擎的MaaS收入目标到底能不能兑现，微信AI正式上线后用户怎么买单，这些在报告里只是提了方向，没有给具体答案。
+
+ZH_A: 所以如果想了解更完整的判断，还是得看原报告？
+
+ZH_B: 对。报告里还有超过50个数据点，包括不同模型的定价、智能体指数、编码能力对比等等。我们只是聊了最核心的几个趋势。
+
+ZH_A: 如果听众想获取完整报告，或者加入讨论社群，可以在哪里找到？
+
+ZH_B: 可以关注我们的公众号，或者直接联系我们获取PDF版本。报告里还有更多悬念，比如中国模型什么时候能在智能体能力上全面超越美国，我们下次再聊。
+
+EN_A: So there is this global investment bank report that tracks something called a token expenditure index. What exactly is that?
+
+EN_B: It measures where users are actually spending their money on large language models. When demand shifts toward more premium models, the index goes up.
+
+EN_A: And where is it right now?
+
+EN_B: Between June 14 and 19, it was around 1.64 to 1.68. Back on May 31, it was 2.04. So it has softened, meaning users are not rushing to the most expensive models.
+
+EN_A: What does that tell us?
+
+EN_B: The market is shifting from "best performance at any cost" to "best value for money." Chinese models are extremely cost efficient. Their API prices are just a fraction of US models, thanks to architectures like MoE and linear attention.
+
+EN_A: But are Chinese models catching up in intelligence too?
+
+EN_B: Yes, the gap is narrowing. The Stanford AI Index report says the top US model leads Chinese models by only 2.7 percent. And companies like Alibaba and DeepSeek are already in the top tier of Arena Elo ratings.
+
+EN_A: What is driving the actual usage volume for Chinese models?
+
+EN_B: A big factor is coding and agent applications. People are moving from chatting with AI to working with AI. DeepSeek V4 Flash consumed 4.94 trillion tokens last week on OpenRouter, ranking number one.
+
+EN_A: What about the big players like Tencent and ByteDance?
+
+EN_B: Tencent is testing Weixin AI, called Xiao Wei, inside the WeChat app. ByteDance's Volcano Engine has a major conference coming up. We are watching their daily token consumption for Doubao, which was already at 120 trillion in March.
+
+EN_A: So the ecosystem is accelerating. But are there questions the report does not fully answer?
+
+EN_B: Definitely. For example, how exactly will these companies monetize? Volcano Engine's MaaS revenue target is ambitious, but the path is not fully clear. And when Weixin AI officially launches, how will users pay for it? The report flags these questions but does not settle them.
+
+EN_A: So to get the full picture, you need to read the original report.
+
+EN_B: Absolutely. It has over 50 data points on pricing, agentic index, coding benchmarks, and more. We have just scratched the surface here.
+
+EN_A: If listeners want the full report or to join the discussion, where can they find it?
+
+EN_B: You can reach out to us directly or check our official channels. There is still a lot more to unpack, especially around when Chinese models might fully surpass US models in agentic capabilities. We will save that for next time.
