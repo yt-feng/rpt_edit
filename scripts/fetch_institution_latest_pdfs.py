@@ -225,12 +225,17 @@ def is_pdf_bytes(data: bytes) -> bool:
 def _sanitize_xml_entities(content: bytes) -> bytes:
     """Neutralize undefined named HTML entities so strict XML parsing succeeds.
 
-    Some feeds (notably the Brookings WordPress feed) embed HTML named entities
-    such as ``&nbsp;`` that are not declared in XML, which makes ElementTree raise
-    "undefined entity". Convert known names to numeric refs, drop unknown ones, and
-    leave the five XML built-ins untouched.
+    Real-world feeds (notably the Brookings WordPress feed) break strict XML in a
+    few ways: undefined named entities like ``&nbsp;``, bare ``&`` that do not start
+    a valid entity, and stray control characters. Fix all three: strip illegal
+    control chars, escape bare ampersands, then convert known named entities to
+    numeric refs (dropping unknown ones) while leaving the five XML built-ins alone.
     """
     text = content.decode("utf-8", errors="replace")
+    # Drop control characters that are illegal in XML 1.0 (keep tab/newline/CR).
+    text = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", "", text)
+    # Escape bare ampersands that do not begin a valid entity reference.
+    text = re.sub(r"&(?!#[0-9]+;|#x[0-9a-fA-F]+;|[A-Za-z][A-Za-z0-9]*;)", "&amp;", text)
 
     def repl(match: "re.Match[str]") -> str:
         name = match.group(1)
