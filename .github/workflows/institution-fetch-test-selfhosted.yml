@@ -1,0 +1,77 @@
+name: Institution fetch test (self-hosted)
+
+# Same fetch-only test as institution-fetch-test.yml, but runs on the self-hosted
+# wechat-draft runner (residential / fixed IP). Used to check whether IMF (which
+# returns 403 to GitHub's datacenter IPs) is reachable from that IP.
+
+on:
+  workflow_dispatch:
+    inputs:
+      institutions:
+        description: "Comma list or all"
+        required: true
+        default: "imf"
+      since_days:
+        description: "Lookback window"
+        required: true
+        default: "14"
+      max_per_institution:
+        description: "Cap PDFs per institution"
+        required: true
+        default: "2"
+
+permissions:
+  contents: read
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  fetch-test-selfhosted:
+    runs-on: [self-hosted, linux, x64, wechat-draft]
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch (test, no commit)
+        run: |
+          set -o pipefail
+          python scripts/fetch_institution_latest_pdfs.py \
+            --output-dir _fetch_test \
+            --date "$(TZ=Asia/Shanghai date +%y%m%d)" \
+            --institutions "${{ github.event.inputs.institutions || 'imf' }}" \
+            --since-days "${{ github.event.inputs.since_days || '14' }}" \
+            --max-per-institution "${{ github.event.inputs.max_per_institution || '2' }}" \
+            --archive-path "_fetch_test/test_archive.jsonl" \
+            --seen-state-path "_fetch_test/test_seen.json" \
+            2>&1 | tee fetch_test.log
+
+      - name: Show what was fetched
+        run: |
+          echo "===== downloaded PDFs ====="
+          ls -lh _fetch_test/*.pdf 2>/dev/null || echo "(no PDFs downloaded)"
+          echo "===== manifest ====="
+          cat _fetch_test/institution_run_manifest.json || true
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: institution-fetch-test-selfhosted-${{ github.run_id }}
+          path: |
+            fetch_test.log
+            _fetch_test/institution_run_manifest.json
+            _fetch_test/test_archive.jsonl
+          if-no-files-found: warn
