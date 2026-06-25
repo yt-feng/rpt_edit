@@ -1,0 +1,36 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 32,
+  "pdf_count_before_skip": 2,
+  "pdf_count": 2,
+  "generated_report_count": 2,
+  "batch_size": 5,
+  "shard_index": 6,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 2,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/31-GS-China Consumer Staples：Nielsen China infant formula （Mar~Apr '26）：Offline contracted by 8% yoy； Online sales down 19% yoy in May dragged by JD-260624.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rhjee82x/pdfs/0001-31-GS-China Consumer Staples-Nielsen China infant formula -Mar-Apr -26--Offline contracted by 8- yoy- Online sales down 19- yoy in May dragged by JD-260624.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/32-DB-Germany Blog：The next key piece of the German pension reform puzzle-260623.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rhjee82x/pdfs/0002-32-DB-Germany Blog-The next key piece of the German pension reform puzzle-260623.pdf",
+          "stable_index": "2"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

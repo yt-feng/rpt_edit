@@ -1,0 +1,11 @@
+Found 32 total PDFs; shard 6/40 has 2 PDFs, skips 0 already converted, will process 2 PDFs with batch_size=5.
+Running batch 1: 2 PDFs
+Found 2 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 2 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rhjee82x/pdfs/0001-31-Goldman Sachs-China Consumer Staples-Nielsen China infant formula -Mar-Apr -26--Offline contracted by 8- yoy- Online sales down 19- yoy in May dragged by JD-260624.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rhjee82x/pdfs/0002-32-Deutsche Bank-Germany Blog-The next key piece of the German pension reform puzzle-260623.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=f24b0fba-0b8a-4d3d-ae0a-7b9f00d2178d
+MinerU states: pending, waiting-file
+MinerU states: done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260625/shard_6; successful_reports=2; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 2 report directories.
