@@ -1,7 +1,7 @@
 name: IMF probe (temporary)
 
-# Temporary diagnostic: confirm that headless Chromium (Playwright) can render the
-# JS-built IMF publications list and reach a PDF. Delete once IMF is wired up.
+# Temporary diagnostic: intercept the XHR/fetch API calls the IMF publications search
+# page makes, so we can call that data API directly. Delete once IMF is wired up.
 
 on:
   workflow_dispatch: {}
@@ -23,45 +23,60 @@ jobs:
       - run: |
           pip install playwright
           python -m playwright install --with-deps chromium
-      - name: Playwright IMF probe
+      - name: Intercept IMF search API
         run: |
           python - <<'PY'
           import re
           from playwright.sync_api import sync_playwright
 
-          urls = [
-              "https://www.imf.org/en/publications/wp",
-              "https://www.imf.org/en/publications",
-          ]
-          with sync_playwright() as p:
-              browser = p.chromium.launch(headless=True)
-              ctx = browser.new_context(user_agent=(
-                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                  "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"))
-              page = ctx.new_page()
-              for url in urls:
-                  print("=" * 80, "\n", url)
-                  try:
-                      page.goto(url, wait_until="domcontentloaded", timeout=60000)
-                      page.wait_for_timeout(6000)
-                  except Exception as e:
-                      print("  goto error", e); continue
-                  anchors = page.eval_on_selector_all(
-                      "a", "els => els.map(e => e.href)")
-                  issues = sorted(set(a for a in anchors if re.search(r"/Issues/", a)))
-                  print("  total anchors:", len(anchors), "issue-links:", len(issues))
-                  for a in issues[:8]:
-                      print("    ", a)
-                  if issues:
+          seen = []
+          bodies = {}
+
+          STATIC = (".js", ".css", ".png", ".jpg", ".jpeg", ".svg", ".woff", ".woff2", ".ico", ".gif", ".webp")
+
+          def on_response(resp):
+              try:
+                  url = resp.url
+                  ct = resp.headers.get("content-type", "")
+              except Exception:
+                  return
+              if url.lower().split("?")[0].endswith(STATIC):
+                  return
+              looks_api = bool(re.search(r"search|api|content|coveo|query|publication|elastic|azure", url, re.I))
+              if "json" in ct.lower() or looks_api:
+                  seen.append((resp.status, ct[:30], url))
+                  if looks_api:
                       try:
-                          page.goto(issues[0], wait_until="domcontentloaded", timeout=60000)
-                          page.wait_for_timeout(4000)
-                          land_anchors = page.eval_on_selector_all("a", "els => els.map(e=>e.href)")
-                          pdfs = sorted(set(a for a in land_anchors if re.search(r"\.(ashx|pdf)(\?|$)", a, re.I)))
-                          title = page.title()
-                          print("  LANDING title:", title[:80])
-                          print("  LANDING pdf/ashx:", len(pdfs), pdfs[:4])
-                      except Exception as e:
-                          print("  landing error", e)
-              browser.close()
+                          t = resp.text()
+                          if any(k in t.lower() for k in ("title", "/issues/", "publication", "docnumber", "seriestype", "results")):
+                              bodies[url] = t[:1500]
+                      except Exception:
+                          pass
+
+          with sync_playwright() as p:
+              b = p.chromium.launch(headless=True)
+              ctx = b.new_context(
+                  user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                              "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"),
+                  locale="en-US")
+              page = ctx.new_page()
+              page.on("response", on_response)
+              try:
+                  page.goto("https://www.imf.org/en/publications/search", wait_until="networkidle", timeout=90000)
+              except Exception as e:
+                  print("goto:", e)
+              page.wait_for_timeout(9000)
+              try:
+                  page.mouse.wheel(0, 5000); page.wait_for_timeout(5000)
+              except Exception:
+                  pass
+              print("=== candidate JSON/api responses (%d) ===" % len(seen))
+              for st, ct, url in seen[:50]:
+                  print(st, ct, url[:180])
+              print("=== response bodies that look like results ===")
+              for url, snip in list(bodies.items())[:6]:
+                  print("URL:", url)
+                  print("SNIPPET:", snip.replace("\n", " ")[:800])
+                  print("-" * 70)
+              b.close()
           PY
