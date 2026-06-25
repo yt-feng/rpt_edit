@@ -360,11 +360,13 @@ MinerU → KC 中文精译 → 微信公众号草稿 链路，把它们也加工
 
 | 机构 | 来源 | PDF 定位方式 |
 | --- | --- | --- |
-| IMF 国际货币基金组织 | publications RSS（Working Papers / Staff Discussion Notes / Departmental Papers） | 打开落地页，提取 `.pdf` / `.ashx` 下载链接 |
+| IMF 国际货币基金组织 | Coveo 搜索 API（`imfproduction561s308u.org.coveo.com`，按 `@imfdate` 倒序、筛 English PUBS）。IMF 官网是 JS+Akamai，RSS 已废，但搜索后端 Coveo 不在 WAF 后 | 用 `curl_cffi`（Chrome 指纹）打开 imf.org 落地页，提取 `.pdf` / `.ashx`（含 JSON 内嵌链接） |
 | BIS 国际清算银行 | `doclist/wppubls.rss` 工作论文 | 把 `.htm` 落地页直接换成 `.pdf` |
 | World Bank 世界银行 | `search.worldbank.org/api/v2/wds` JSON API，默认只取 Policy Research Working Paper | API 直接返回 `pdfurl` |
 | RAND 兰德公司 | `pubs/new.xml` 最新发布 Atom feed | 打开落地页，提取 PDF 链接 |
-| Brookings 布鲁金斯学会 | `feed/` WordPress feed | 打开落地页，提取 PDF；纯网页评论无 PDF 时自动跳过 |
+| Brookings 布鲁金斯学会 | RSS 已下线，改抓 `brookings.edu/research/` 列表页 HTML 取文章链接 | 打开文章页，提取 PDF；纯网页评论无 PDF 时自动跳过 |
+
+5 个来源均已云端实测可抓到真实 PDF。每个来源相互隔离，单个失败不影响其它。
 
 触发方式：
 
@@ -405,6 +407,9 @@ institution_feeds/seen_state.json                 # 去重状态，标记 downlo
 - 复用的 secret 和主流程一致：`MINER_U`、`DEEPSEEK_API_KEY`、`WECHAT_MP_APPID`、`WECHAT_MP_APPSECRET`。微信上传仍走带 `wechat-draft` label 的固定 IP self-hosted runner。
 - 机构中文名通过 `scripts/institution_names.py` 推断（已新增 IMF / BIS / 世界银行 / 兰德 / 布鲁金斯），公众号标题会自动带上机构名。
 - 调整抓取来源 / feed / 文档类型：编辑 `scripts/fetch_institution_latest_pdfs.py` 顶部的 `INSTITUTIONS` 配置。
+- IMF 走 Coveo 搜索 API，用的是公网浏览器可见的 search key（写在 `INSTITUTIONS["imf"]["coveo_token"]`）。如 IMF 轮换该 key，可用 `IMF_COVEO_TOKEN` 环境变量覆盖，无需改代码。`--imf-rows` 控制每次扫描的 Coveo 结果数（默认 60）。IMF PUBS 每天发很多（工作论文、国别报告、Selected Issues、FSAP、Article IV 等）；如只想要部分，收紧 `coveo_aq` 的 `@imfcontenttype` 过滤即可。
+- World Bank 的 WDS `docdt` 比实际发布滞后数月，因此该来源不按日期过滤（`recency_filter=False`），只按 `docdt` 倒序取最新若干篇并靠 seen 去重；其余来源按 `since_days` 过滤。
+- 依赖 `curl_cffi`（已加入 `requirements.txt`），用 Chrome TLS 指纹绕过 IMF 的 Akamai WAF；未安装时对 IMF 以外来源无影响。整条链路不需要无头浏览器。
 
 ## 4. 主要脚本
 
