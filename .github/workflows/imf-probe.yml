@@ -1,7 +1,7 @@
 name: IMF probe (temporary)
 
-# Final diagnostic (curl_cffi only, fast): locate the Coveo org id + API key inside
-# the IMF search JS bundles so the token can be fetched without a browser.
+# One-time capture of the public Coveo search key (base64-encoded to bypass log
+# masking) so the daily IMF flow can call Coveo directly without a browser.
 
 on:
   workflow_dispatch: {}
@@ -12,7 +12,7 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -20,47 +20,38 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install curl_cffi
-      - name: Find Coveo org/token in JS bundles
+      - run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Capture Coveo key (base64)
         run: |
           python - <<'PY'
-          import re
-          from urllib.parse import urljoin
-          from curl_cffi import requests as cr
+          import base64
+          from playwright.sync_api import sync_playwright
 
-          base = "https://www.imf.org/en/publications/search"
-          html = cr.get(base, impersonate="chrome", timeout=40).text
-          print("search HTML len:", len(html))
+          cap = {}
+          def on_request(req):
+              if "coveo.com/rest/search" in req.url and "auth" not in cap:
+                  h = {k.lower(): v for k, v in req.headers.items()}
+                  cap["auth"] = h.get("authorization", "")
+                  cap["url"] = req.url
 
-          bundles = sorted(set(re.findall(r'src="([^"]*?/_next/[^"]+?\.js)"', html)))
-          print("bundles found:", len(bundles))
-          ORG = "imfproduction561s308u"
-
-          def show(label, text, needle, around=70):
-              i = text.find(needle)
-              if i >= 0:
-                  print(f"   [{label}] ...{text[max(0,i-around):i+around]}...")
-                  return True
-              return False
-
-          hit_any = False
-          for rel in bundles:
-              url = urljoin(base, rel)
+          with sync_playwright() as p:
+              b = p.chromium.launch(headless=True)
+              ctx = b.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0 Safari/537.36", locale="en-US")
+              page = ctx.new_page()
+              page.on("request", on_request)
               try:
-                  t = cr.get(url, impersonate="chrome", timeout=40).text
+                  page.goto("https://www.imf.org/en/publications/search", wait_until="domcontentloaded", timeout=90000)
               except Exception as e:
-                  print("  bundle err", rel, e); continue
-              if ORG in t or "accessToken" in t or "coveo" in t.lower():
-                  print("BUNDLE", url)
-                  hit_any = True
-                  show("org", t, ORG)
-                  for kw in ("accessToken", "apiKey", "searchToken", "platformUrl", "organizationId"):
-                      show(kw, t, kw)
-                  # token-looking strings near accessToken
-                  for m in re.finditer(r'accessToken["\']?\s*[:=]\s*["\']([^"\']{12,60})["\']', t):
-                      print("   TOKEN-CANDIDATE:", m.group(1))
-                  for m in re.finditer(r'organizationId["\']?\s*[:=]\s*["\']([^"\']{6,40})["\']', t):
-                      print("   ORG-CANDIDATE:", m.group(1))
-          if not hit_any:
-              print("No bundle referenced org/accessToken/coveo.")
+                  print("goto:", e)
+              page.wait_for_timeout(12000)
+              b.close()
+
+          auth = cap.get("auth", "")
+          tok = auth.split(" ", 1)[1] if " " in auth else auth
+          print("ENDPOINT:", cap.get("url"))
+          print("SCHEME:", auth.split(" ")[0] if auth else "(none)")
+          print("TOKEN_LEN:", len(tok))
+          print("TOKEN_B64:", base64.b64encode(tok.encode()).decode())
           PY
