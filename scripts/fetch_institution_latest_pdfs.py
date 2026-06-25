@@ -381,6 +381,13 @@ def collect_rss_items(cfg: dict[str, Any], session: requests.Session, timeout: i
             warn(f"feed failed: {feed_url}: {exc}")
             continue
         log(f"  feed {feed_url} -> {len(parsed)} items")
+        if not parsed:
+            try:
+                content_type = resp.headers.get("content-type", "")
+            except Exception:  # noqa: BLE001
+                content_type = ""
+            snippet = resp.content[:200].decode("utf-8", "replace").replace("\n", " ").strip()
+            log(f"    [debug] 0 items; content-type={content_type!r}; starts: {snippet!r}")
         for entry in parsed:
             link = entry["link"]
             if not link:
