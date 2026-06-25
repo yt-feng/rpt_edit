@@ -1,0 +1,85 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_a67rlo63/pdfs/0001-11-NOM-Global Memory-Slightly diversified earnings in 2Q26- likely better pricing in 3Q-260624.pdf",
+    "mineru_state": "failed",
+    "mineru_error": "parsing failed, please try again later",
+    "error": "MinerU did not finish successfully after 4 attempt(s)."
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_a67rlo63/pdfs/0002-12-GS-OIL ANALYST-High Product Margins for Longer- Smaller Downside Risks Than for Crude Prices-260623.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "炼厂利润还能撑多久",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_a67rlo63/pdfs/0003-13-NOM-Asia Insights-How is China-s AI sector financed--260624.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "NOM",
+    "cover_short_title": "中国AI的钱从哪来",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_a67rlo63/pdfs/0004-14-HSBC-China AIDCs and Supply Chain-Riding on robust demand for AI compute-260623.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "HSBC",
+    "cover_short_title": "AI算力爆发，谁是赢",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_a67rlo63/pdfs/0005-15-MS-Technology - European Semiconductors-AI GPU ASIC Tracker- China LLMs- Advanced Packaging and MLCC - The Next AI Bottleneck-260623.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "摩根斯坦利",
+    "cover_short_title": "AI芯片的下一个瓶颈",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

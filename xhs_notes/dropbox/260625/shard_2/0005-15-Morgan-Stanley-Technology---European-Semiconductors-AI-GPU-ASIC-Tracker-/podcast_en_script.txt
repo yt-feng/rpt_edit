@@ -1,0 +1,20 @@
+EN_A: Welcome back to the show. We just got our hands on a major report about the next bottlenecks in the AI semiconductor supply chain. What is the big takeaway?
+EN_B: The report covers a lot, from AI chips to passive components. But the core question is this: while everyone is focused on Nvidia GPUs, what other parts of the infrastructure are becoming critical choke points? Think of something like MLCCs, those tiny ceramic capacitors. They are suddenly a big deal for AI servers.
+EN_A: MLCCs? Those are basic components. Why are they suddenly a bottleneck?
+EN_B: AI servers demand much more stable power delivery, which requires more and better MLCCs. The report estimates that AI server demand for MLCCs could approach one billion dollars by 2027. The industry is also highly concentrated, with the top five players controlling about 87% of the market.
+EN_A: That is a pretty big number. So the fundamentals are shifting?
+EN_B: Exactly. And the report also highlights another key trend: custom chips, or ASICs. Companies like Amazon and Google are ramping up their own designs, like Trainium and TPU, with massive volume forecasts. For example, Google's TPU v8 series is planned out to 2028.
+EN_A: So the hyperscalers are not fully dependent on Nvidia?
+EN_B: That is right. They need custom silicon for specific workloads like inference. The report provides detailed shipment forecasts, showing a clear shift away from a one-size-fits-all approach.
+EN_A: And what about China? The report seems to have a special focus there.
+EN_B: Yes, it covers the "10 Dragons" of Chinese AI chip makers, like Cambricon. Due to export controls, they have to develop their own solutions. The report makes a fascinating comparison: while individual chips may lag Nvidia in raw performance, Chinese chips offer better performance per dollar because they are priced much lower.
+EN_A: So what does that mean for the market?
+EN_B: It suggests a decoupling of AI computing between the US and China. The report highlights that Chinese companies are using system-level strengths, like advanced packaging and large clusters, to compensate for chip-level weaknesses. It even predicts a 90% revenue CAGR for a company like Cambricon from 2025 to 2028.
+EN_A: 90%? That is a bold forecast. But are there any questions the report leaves open?
+EN_B: Definitely. For example, while MLCC demand is growing, capacity expansion is slowing. Global power semi companies have cut capex for two years straight. So how supply and demand will balance out is still an open question.
+EN_A: That is a good cliffhanger. Anything else?
+EN_B: Yes, the Chinese inference chip market. The report notes surging token demand from companies like ByteDance, but it does not fully answer who will win in the long run. The full report has more detailed competitive analysis.
+EN_A: Got it. So if our listeners want to dive deeper, where should they go?
+EN_B: We recommend reading the full report. It has the detailed financial models and risk assessments. You can find a link in our community resources.
+EN_A: Great. Thanks for breaking it down. That is all for today. See you next time.
+EN_B: See you.
