@@ -1,7 +1,7 @@
 name: IMF probe (temporary)
 
-# Temporary diagnostic: decode the Coveo token lifetime, dump result shape, and test
-# a direct (browser-less) replay of the IMF Coveo search. Delete once wired up.
+# Final diagnostic: find the result URL field and where the Coveo token can be
+# fetched without a browser. Delete once IMF is wired up.
 
 on:
   workflow_dispatch: {}
@@ -21,89 +21,71 @@ jobs:
         with:
           python-version: "3.11"
       - run: |
-          pip install playwright requests
+          pip install playwright requests curl_cffi
           python -m playwright install --with-deps chromium
-      - name: Inspect Coveo token + result shape + direct replay
+      - name: Find URL field + token source
         run: |
           python - <<'PY'
-          import base64, json, datetime
-          import requests
+          import re, json
           from playwright.sync_api import sync_playwright
+          from curl_cffi import requests as cr
 
           reqs, resps = [], []
-
           def on_request(req):
               if "coveo.com/rest/search" in req.url:
-                  reqs.append({"url": req.url, "headers": dict(req.headers), "post": req.post_data})
-
+                  reqs.append({"url": req.url, "headers": dict(req.headers)})
           def on_response(resp):
               if "coveo.com/rest/search" in resp.url:
-                  try:
-                      resps.append(resp.json())
-                  except Exception as e:
-                      resps.append({"_err": str(e)})
+                  try: resps.append(resp.json())
+                  except Exception as e: resps.append({"_err": str(e)})
 
           with sync_playwright() as p:
               b = p.chromium.launch(headless=True)
-              ctx = b.new_context(user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                                              "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"), locale="en-US")
+              ctx = b.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0 Safari/537.36", locale="en-US")
               page = ctx.new_page()
-              page.on("request", on_request)
-              page.on("response", on_response)
-              try:
-                  page.goto("https://www.imf.org/en/publications/search", wait_until="networkidle", timeout=90000)
-              except Exception as e:
-                  print("goto:", e)
+              page.on("request", on_request); page.on("response", on_response)
+              try: page.goto("https://www.imf.org/en/publications/search", wait_until="networkidle", timeout=90000)
+              except Exception as e: print("goto:", e)
               page.wait_for_timeout(9000)
               b.close()
 
-          print("captured requests:", len(reqs), "responses:", len(resps))
-          if not reqs:
-              raise SystemExit("no coveo request captured")
-
-          r = reqs[0]
-          headers = {k.lower(): v for k, v in r["headers"].items()}
-          auth = headers.get("authorization", "")
-          print("auth scheme:", auth.split(" ")[0] if auth else "(none)", "len:", len(auth))
-          tok = auth.split(" ", 1)[1] if " " in auth else auth
-          parts = tok.split(".")
-          if len(parts) == 3:  # JWT
-              try:
-                  pad = parts[1] + "=" * (-len(parts[1]) % 4)
-                  payload = json.loads(base64.urlsafe_b64decode(pad))
-                  exp = payload.get("exp")
-                  print("JWT exp:", exp, datetime.datetime.utcfromtimestamp(exp).isoformat() if exp else "n/a")
-                  print("JWT keys:", list(payload.keys()))
-              except Exception as e:
-                  print("jwt decode err:", e)
-          else:
-              print("token is not a 3-part JWT (maybe a plain API key)")
-
-          # Result shape from the browser-captured response
+          # 1) URL field in results
           for resp in resps:
               if isinstance(resp, dict) and resp.get("results"):
-                  print("totalCount:", resp.get("totalCount"))
-                  for it in resp["results"][:3]:
-                      raw = it.get("raw", {})
-                      print("  TITLE:", str(it.get("title"))[:70])
-                      print("    clickableuri:", it.get("clickableUri") or it.get("clickableuri"))
-                      print("    imfdate:", raw.get("imfdate"), "imfcontenttype:", raw.get("imfcontenttype"))
+                  it = resp["results"][0]
+                  print("result top-level keys:", list(it.keys()))
+                  for k in ("uri", "clickableUri", "printableUri"):
+                      print("  ", k, "=", it.get(k))
+                  raw = it.get("raw", {})
+                  uri_like = {k: raw[k] for k in raw if "uri" in k.lower() or k.lower() in ("sysuri",)}
+                  print("  raw uri-like fields:", uri_like)
                   break
 
-          # Direct browser-less replay (curl/requests) using captured token + body
-          print("=== direct replay via requests ===")
-          try:
-              rr = requests.post(
-                  r["url"],
-                  headers={"authorization": auth, "content-type": "application/json",
-                           "origin": "https://www.imf.org", "referer": "https://www.imf.org/"},
-                  data=r["post"], timeout=40)
-              print("status:", rr.status_code, "len:", len(rr.text))
-              try:
-                  jj = rr.json()
-                  print("replay totalCount:", jj.get("totalCount"), "results:", len(jj.get("results", [])))
-              except Exception as e:
-                  print("replay json err:", e, rr.text[:200])
-          except Exception as e:
-              print("replay error:", e)
+          # 2) Where does the 45-char token live? Search page HTML + its JS bundles.
+          auth = ""
+          if reqs:
+              h = {k.lower(): v for k, v in reqs[0]["headers"].items()}
+              auth = h.get("authorization", "")
+          tok = auth.split(" ", 1)[1] if " " in auth else auth
+          print("token captured len:", len(tok))
+          if tok:
+              base = "https://www.imf.org/en/publications/search"
+              html = cr.get(base, impersonate="chrome", timeout=40).text
+              print("token in search HTML:", tok in html)
+              # find referenced JS bundles and search them
+              js = sorted(set(re.findall(r'src="(/_next/[^"]+\.js)"', html)))[:12]
+              print("js bundles found:", len(js))
+              found_in = []
+              for rel in js:
+                  try:
+                      t = cr.get("https://www.imf.org" + rel, impersonate="chrome", timeout=40).text
+                      if tok in t:
+                          found_in.append(rel)
+                  except Exception:
+                      pass
+              print("token found in JS bundles:", found_in[:5])
+              # also: is there an org id + 'accessToken'/'apiKey' pattern in HTML?
+              for kw in ("accessToken", "apiKey", "searchKey", "imfproduction561s308u", "xx"):
+                  i = html.find(kw)
+                  print("  HTML kw", kw, "->", repr(html[max(0,i-20):i+60]) if i >= 0 else "no")
           PY
