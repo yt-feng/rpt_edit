@@ -1,0 +1,35 @@
+Found 32 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v4bo4ry4/pdfs/0001-01-Goldman Sachs-Global Markets Daily-Tech Support-The AI Boom and The Dollar-260624.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v4bo4ry4/pdfs/0002-02-Bernstein-Global Logistics-Supply Chain Pulse Check- High rates- unshaken demand-260625.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v4bo4ry4/pdfs/0003-03-Goldman Sachs-Global PMI Monitor- DM Price Pressures Past the Peak-260623.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v4bo4ry4/pdfs/0004-04-Goldman Sachs-Global Copper- Key Debates for GS 2026 Copper Week-260624.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v4bo4ry4/pdfs/0005-05-Deutsche Bank-Focus Europe-Playing by the -policy- rules- Why ECB tightening is warranted-260623.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=2c7f73e7-72b4-4a56-ba11-a31a1edc4d84
+MinerU states: running, running, failed, running, waiting-file
+MinerU states: done, running, failed, done, done
+MinerU states: done, done, failed, done, done
+1 PDF(s) remain incomplete after attempt 1.
+MinerU attempt 2/4 using MINER_U: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v4bo4ry4/pdfs/0003-03-Goldman Sachs-Global PMI Monitor- DM Price Pressures Past the Peak-260623.pdf
+MinerU attempt 2 using MINER_U batch_id=8b71c3f1-d72b-4dfb-96c9-92d6cee7dd7c
+MinerU states: pending
+MinerU states: failed
+1 PDF(s) remain incomplete after attempt 2.
+MinerU attempt 3/4 using MINER_U_2: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v4bo4ry4/pdfs/0003-03-Goldman Sachs-Global PMI Monitor- DM Price Pressures Past the Peak-260623.pdf
+MinerU attempt 3 using MINER_U_2 batch_id=b5353263-2d83-4d45-8801-10cd2e325433
+MinerU states: waiting-file
+MinerU states: failed
+1 PDF(s) remain incomplete after attempt 3.
+MinerU attempt 4/4 using MINER_U: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v4bo4ry4/pdfs/0003-03-Goldman Sachs-Global PMI Monitor- DM Price Pressures Past the Peak-260623.pdf
+MinerU attempt 4 using MINER_U batch_id=986b2cb7-5b47-4bb6-afc0-ed343d93a0e6
+MinerU states: waiting-file
+MinerU states: failed
+1 PDF(s) remain incomplete after attempt 4.
+Skipping PDF after MinerU retry exhaustion: 0003-03-Goldman Sachs-Global PMI Monitor- DM Price Pressures Past the Peak-260623.pdf
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260625/shard_0; successful_reports=4; mineru_timed_out=False; mineru_attempts=4
+All batches completed successfully. Generated 4 report directories.

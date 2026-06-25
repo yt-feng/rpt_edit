@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 32,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 4,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-GS-Global Markets Daily：Tech Support—The AI Boom and The Dollar-260624.pdf",
+          "batch_file": "/tmp/pdf_batch_001_v4bo4ry4/pdfs/0001-01-GS-Global Markets Daily-Tech Support-The AI Boom and The Dollar-260624.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-Bernstein-Global Logistics：Supply Chain Pulse Check： High rates， unshaken demand-260625.pdf",
+          "batch_file": "/tmp/pdf_batch_001_v4bo4ry4/pdfs/0002-02-Bernstein-Global Logistics-Supply Chain Pulse Check- High rates- unshaken demand-260625.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-GS-Global PMI Monitor： DM Price Pressures Past the Peak-260623.pdf",
+          "batch_file": "/tmp/pdf_batch_001_v4bo4ry4/pdfs/0003-03-GS-Global PMI Monitor- DM Price Pressures Past the Peak-260623.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-GS-Global Copper： Key Debates for GS 2026 Copper Week-260624.pdf",
+          "batch_file": "/tmp/pdf_batch_001_v4bo4ry4/pdfs/0004-04-GS-Global Copper- Key Debates for GS 2026 Copper Week-260624.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-DB-Focus Europe：Playing by the （policy） rules` Why ECB tightening is warranted-260623.pdf",
+          "batch_file": "/tmp/pdf_batch_001_v4bo4ry4/pdfs/0005-05-DB-Focus Europe-Playing by the -policy- rules- Why ECB tightening is warranted-260623.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
