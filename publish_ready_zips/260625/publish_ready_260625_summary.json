@@ -1,0 +1,128 @@
+{
+  "created_at_utc": "2026-06-25T22:52:36.172365+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260625",
+  "output_dir": "publish_ready_zips/260625",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 7,
+  "skipped_shards": [],
+  "total_files": 585,
+  "total_renamed_markdown_count": 145,
+  "total_raw_file_bytes": 93664219,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260625/publish_ready_260625.zip",
+      "size_bytes": 87736117,
+      "file_count": 585,
+      "renamed_markdown_count": 145,
+      "raw_file_bytes": 93664219,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5",
+        "shard_6"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 4,
+      "file_count": 92,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 14929764,
+      "reports": [
+        "0001-01-Goldman-Sachs-Global-Markets-Daily-Tech-Support-The-AI-Boom-and-The-Doll",
+        "0002-02-Bernstein-Global-Logistics-Supply-Chain-Pulse-Check--High-rates--unshake",
+        "0004-04-Goldman-Sachs-Global-Copper--Key-Debates-for-GS-2026-Copper-Week-260624",
+        "0005-05-Deutsche-Bank-Focus-Europe-Playing-by-the--policy--rules--Why-ECB-tighte"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18746648,
+      "reports": [
+        "0001-06-Goldman-Sachs-Global-Metals---Mining-Met-Coal-Singapore-Conference-China",
+        "0002-07-Morgan-Stanley-China-Energy---Chemicals-China-NOW-Oil-Consumption-260624",
+        "0003-08-Barclays-U.S.-Equity-Strategy-Upgrading-Into-Uncertainty--Raise-S-P-500-",
+        "0004-09-Deutsche-Bank-FX-Blog-Currency-Risk-Management--From-Theory-to-Practice-",
+        "0005-10-Nomura-ANCHOR-REPORT-Global-Batteries---ESS--robot-batteries-to-drive-va"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 4,
+      "file_count": 78,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 13139437,
+      "reports": [
+        "0002-12-Goldman-Sachs-OIL-ANALYST-High-Product-Margins-for-Longer--Smaller-Downs",
+        "0003-13-Nomura-Asia-Insights-How-is-China-s-AI-sector-financed--260624",
+        "0004-14-HSBC-China-AIDCs-and-Supply-Chain-Riding-on-robust-demand-for-AI-compute",
+        "0005-15-Morgan-Stanley-Technology---European-Semiconductors-AI-GPU-ASIC-Tracker-"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 4,
+      "file_count": 92,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 15208235,
+      "reports": [
+        "0002-17-Goldman-Sachs-China-Grid-Tech--Power-Transformer-Export-Tracker--May-Chi",
+        "0003-18-J.P.-Morgan-Property-Data-Monitor-Mainland-China--weekly-sales-turn-wors",
+        "0004-19-JPM-Memory-Market-Update-In-between-volatility-and-fundamentals-What-to-",
+        "0005-20-Morgan-Stanley-AI-Supply-Chain--Preliminary-2027-TSMC-CoWoS-Allocation-2"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 85,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14890824,
+      "reports": [
+        "0001-21-Morgan-Stanley-Takeaways-from-Rare-Earth-Permanent-Magnet-Industry-Discu",
+        "0002-22-Goldman-Sachs-Europe-Technology--Hardware--Read-across-from-Micron-s-3QF",
+        "0003-23-Goldman-Sachs-Japan-Shipbuilding-Abundant-catalysts-to-buoy-the-medium-t",
+        "0004-24-Goldman-Sachs-Multi-Industry--3rd-Industrials-trip-to-HVAC-InstallerSHOW",
+        "0005-25-Nomura-China-Internet---New-Media-Takeaways-from-Soda-Music-expert-call-"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 97,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12307178,
+      "reports": [
+        "0001-26-Morgan-Stanley-The-Viewpoint--China---Tracking-Progress-on-Reflation-260",
+        "0002-27-Nomura-USD-CNY-fix-model-Projection--6.8043-260625",
+        "0003-28-Deutsche-Bank-China-NEV-Weekly-New-Orders-Monitor-China-NEV-demand-leadi",
+        "0004-29-Morgan-Stanley-China-Five-factor-Consumer-Activity-Z-Score-vs.-MSCI-Chin",
+        "0005-30-Deutsche-Bank-China-luxury-import--Slower-April-May-vs.-months-of-1Q-260"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 2,
+      "file_count": 34,
+      "renamed_markdown_count": 10,
+      "raw_file_bytes": 4442133,
+      "reports": [
+        "0001-31-Goldman-Sachs-China-Consumer-Staples-Nielsen-China-infant-formula--Mar-A",
+        "0002-32-Deutsche-Bank-Germany-Blog-The-next-key-piece-of-the-German-pension-refo"
+      ]
+    }
+  ]
+}
