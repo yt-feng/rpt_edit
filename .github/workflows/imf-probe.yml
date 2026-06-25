@@ -1,7 +1,7 @@
 name: IMF probe (temporary)
 
-# Temporary diagnostic: inspect what IMF listing pages return via curl_cffi so we
-# can build the right IMF adapter. Delete this workflow once IMF is wired up.
+# Temporary diagnostic: confirm that headless Chromium (Playwright) can render the
+# JS-built IMF publications list and reach a PDF. Delete once IMF is wired up.
 
 on:
   workflow_dispatch: {}
@@ -12,7 +12,7 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -20,46 +20,48 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install -r requirements.txt
-      - name: Probe IMF data sources
+      - run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Playwright IMF probe
         run: |
           python - <<'PY'
           import re
-          import requests as rq
-          from curl_cffi import requests as cr
+          from playwright.sync_api import sync_playwright
 
-          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0 Safari/537.36"}
-
-          print("##### A) IDEAS/RePEc IMF Working Papers: real link format #####")
-          for ideas in ["https://ideas.repec.org/s/imf/imfwpa.html"]:
-              try:
-                  r = rq.get(ideas, headers=UA, timeout=40)
-                  print("IDEAS", ideas, "status", r.status_code, "len", len(r.text))
-                  all_imf = sorted(set(re.findall(r'href="([^"]*imf[^"]*)"', r.text)))
-                  print("  hrefs containing 'imf':", len(all_imf))
-                  for h in all_imf[:25]:
-                      print("    ", h)
-                  ab_rel = next((h for h in all_imf if re.search(r"/imfwpa/", h)), None)
-                  if ab_rel:
-                      ab = ab_rel if ab_rel.startswith("http") else "https://ideas.repec.org" + ab_rel
-                      ra = rq.get(ab, headers=UA, timeout=40)
-                      imf_links = sorted(set(re.findall(r'href="(https?://[^"]*imf\.org[^"]*)"', ra.text)))
-                      anyfile = sorted(set(re.findall(r'href="(https?://[^"]+\.(?:ashx|pdf)[^"]*)"', ra.text)))
-                      print("  ABSTRACT", ab, "status", ra.status_code)
-                      print("    imf.org links:", imf_links[:6])
-                      print("    .ashx/.pdf links:", anyfile[:6])
-              except Exception as e:
-                  print("IDEAS error", e)
-
-          print("##### B) IMF Next.js search page: look for the data API in __NEXT_DATA__ #####")
-          sr = cr.get("https://www.imf.org/en/publications/search?series=IMF%20Working%20Papers",
-                      impersonate="chrome", timeout=40, allow_redirects=True)
-          nd = re.search(r'id="__NEXT_DATA__"[^>]*>(.*?)</script>', sr.text, re.S)
-          if nd:
-              j = nd.group(1)
-              for kw in ["coveo", "organizationId", "accessToken", "apiKey", "searchHub", "/api/", "endpoint", "platform.cloud", "buildId"]:
-                  i = j.lower().find(kw.lower())
-                  print("KW", kw, "->", repr(j[max(0,i-30):i+90]) if i >= 0 else "not found")
-              apis = sorted(set(re.findall(r'https?://[a-z0-9.\-]+/[^"\\ ]*(?:api|search|coveo)[^"\\ ]*', j, re.I)))
-              print("api-ish urls:", apis[:10])
+          urls = [
+              "https://www.imf.org/en/publications/wp",
+              "https://www.imf.org/en/publications",
+          ]
+          with sync_playwright() as p:
+              browser = p.chromium.launch(headless=True)
+              ctx = browser.new_context(user_agent=(
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"))
+              page = ctx.new_page()
+              for url in urls:
+                  print("=" * 80, "\n", url)
+                  try:
+                      page.goto(url, wait_until="domcontentloaded", timeout=60000)
+                      page.wait_for_timeout(6000)
+                  except Exception as e:
+                      print("  goto error", e); continue
+                  anchors = page.eval_on_selector_all(
+                      "a", "els => els.map(e => e.href)")
+                  issues = sorted(set(a for a in anchors if re.search(r"/Issues/", a)))
+                  print("  total anchors:", len(anchors), "issue-links:", len(issues))
+                  for a in issues[:8]:
+                      print("    ", a)
+                  if issues:
+                      try:
+                          page.goto(issues[0], wait_until="domcontentloaded", timeout=60000)
+                          page.wait_for_timeout(4000)
+                          land_anchors = page.eval_on_selector_all("a", "els => els.map(e=>e.href)")
+                          pdfs = sorted(set(a for a in land_anchors if re.search(r"\.(ashx|pdf)(\?|$)", a, re.I)))
+                          title = page.title()
+                          print("  LANDING title:", title[:80])
+                          print("  LANDING pdf/ashx:", len(pdfs), pdfs[:4])
+                      except Exception as e:
+                          print("  landing error", e)
+              browser.close()
           PY
