@@ -1,0 +1,16 @@
+Found 32 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v8zpg_6p/pdfs/0001-21-Morgan Stanley-Takeaways from Rare Earth Permanent Magnet Industry Discussion-260623.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v8zpg_6p/pdfs/0002-22-Goldman Sachs-Europe Technology- Hardware- Read-across from Micron-s 3QFY26 results for European semicap and AI Infrastructure players-260625.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v8zpg_6p/pdfs/0003-23-Goldman Sachs-Japan Shipbuilding-Abundant catalysts to buoy the medium-term earnings outlook- we remain bullish on sector stocks-260623.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v8zpg_6p/pdfs/0004-24-Goldman Sachs-Multi-Industry- 3rd Industrials trip to HVAC InstallerSHOW- Key takeaways-260625.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_v8zpg_6p/pdfs/0005-25-Nomura-China Internet - New Media-Takeaways from Soda Music expert call-260624.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=220313c7-d083-4f53-9eee-8117f727a222
+MinerU states: done, running, running, running, pending
+MinerU states: done, done, running, done, done
+MinerU states: done, done, done, done, done
+MinerU result contained no standalone images; rendering PDF page fallback cards.
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260625/shard_4; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
