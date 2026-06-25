@@ -1,0 +1,92 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_juboa7bw/pdfs/0001-16-BARC-Cross-Asset Research A tale of two markets- Treasury and equity financing-260623.pdf",
+    "mineru_state": "failed",
+    "mineru_error": "parsing failed, please try again later",
+    "error": "MinerU did not finish successfully after 4 attempt(s)."
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_juboa7bw/pdfs/0002-17-GS-China Grid Tech- Power Transformer Export Tracker- May China transformer total exports picked up to 72- yoy- with exports to US at-260625.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "5月变压器出口数据大",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_juboa7bw/pdfs/0003-18-JPM-Property Data Monitor Mainland China- weekly sales turn worse due to holidays- HK- home prices up another 0.6- W W-260624.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "端午假期影响，楼市数",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_juboa7bw/pdfs/0004-19-JPM-Memory Market Update-In-between volatility and fundamentals What to focus on heading into CY2Q26 earnings result season-260624.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "存储芯片的“高价时代",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_juboa7bw/pdfs/0005-20-MS-AI Supply Chain- Preliminary 2027 TSMC CoWoS Allocation-260623.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "摩根斯坦利",
+    "cover_short_title": "2027 年台积电 ",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

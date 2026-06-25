@@ -1,0 +1,391 @@
+# Asia-Pacific Technology | Asia Pacific
+
+# AI Supply Chain: Preliminary 2027 TSMC CoWoS Allocation
+
+Nvidia's GPU and CPU remain the key drivers of TSMC's 2027 CoWoS demand. With improved ABF substrate supply sourcing, MediaTek's 2027 and 2028 TPU shipments could show upside.
+
+Into 2027, Nvidia likely remains the major user of TSMC's CoWoS capacity: At Computex in early June, in response to our question about TSMC's capacity allocation, Nvidia's CEO indicated that it has secured sufficient TSMC capacity to support robust growth in 2027. In our previous episode, we had raised our 2027 TSMC CoWoS capacity assumption to 200kwpm by year-end (from 170kwpm), implying \~60% Y/Y growth for the global AI XPU industry. Based on our industry checks, we break down TSMC's customer mix. Nvidia uses TSMC's CoWoS-L as the single source for its AI GPU products (e.g., Blackwell and Rubin). Its 2027 CoWoS-L consumption could reach \~910k, up \~40% Y/Y. Strong CoWoS-R bookings by Nvidia aslo suggest very strong Vera CPU shipments (almost doubling). Taken together, this is consistent with Joe Moore's forecast for Nvidia's data center revenue to rise 52% Y/Y over a similar period.
+
+Google's TPU ASIC is the second-largest user of TSMC CoWoS: MediaTek's booking for 180k CoWoS-S implies \~3.6mn units of TPU v8t (ZebraFish), above our 2.5mn shipment assumption, where we incorporate potential ABF substrate shortages. However, if MediaTek can help Google source more T-Glass, there may be upside to our shipment assumption. Our checks suggest that the new 2nm TPU codename TriggerFish is the inferencing-focused version of HumuFish, in line with our previous understanding that all TPUs are capable of both training and inferencing. We believe TriggerFish may also support TPU leasing services. Meanwhile, we believe Broadcom bookings of 365k CoWoS-S likely include Google TPU v7 (Ironwood), v8i (SunFish), Tomahawk 5/6, and other smaller ASICs. If we assume 330k of Broadcom's CoWoS-S is allocated to TPU v8i (SunFish), this would imply \~3.9mn units, with larger die size and higher chip value vs. MediaTek's TPU v8t (ZebraFish). Overall, both design service partners appear positioned to benefit from growth in the TPU TAM in 2027.
+
+CPU starting to consume significant 2.5D advanced packaging capacity: This echoes Joe Moore's recent Taiwan field trip observations: growing CPU demand for agentic AI (link). In addition, based on our CoWoS consumption forecasts, Nvidia's 3nm Vera CPU could grow to 5.75mn units in 2027, while AMD's 2nm Venice CPU may reach 6.75mn units in 2027 vs. \~1.25mn in 2026. For Taiwan AI semi supply chain stocks: 1) MediaTek (Google TPU) is our Top Pick; 2) Aspeed remains the best proxy for CPU server BMC; and 3) we reiterate OW on TSMC, ASE (AMD Venice CPU), KYEC (Nvidia GPU and Google TPU supply chain), Winway, MPI, and Hon Precision in chip manufacturing.
+
+MS TAIWAN LIMITED+
+
+Charlie Chan
+Equity Analyst
+Charlie.Chan@morganstanley.com +886 2 2730-1725
+
+Daniel Yen, CFA
+Equity Analyst
+Daniel.Yen@morganstanley.com +886 2 2730-2863
+
+MS ASIA LIMITED+
+Daisy Dai, CFA
+Equity Analyst
+Daisy.Dai@morganstanley.com +852 2848-7310
+
+MS TAIWAN LIMITED+
+Tiffany Yeh
+Equity Analyst
+Tiffany.Yeh@morganstanley.com +886 2 7712-3032
+
+Lucas Wang
+Research Associate
+Lucas.Wang@morganstanley.com +886 2 2730-2875
+
+Ethan Jia
+Research Associate
+Ethan.Jia@morganstanley.com +852 3963-2287
+
+Henry Zhao
+Research Associate
+Henry.Zhao@morganstanley.com +852 2239-7731
+
+![](images/d4f637f945185b202e2acdeebd809407a4c828947ef60add24c33fc5a8aedab0.jpg)  
+Asia Summer School 2026
+
+MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.
+
+For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
++= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.
+
+## Introducing Our 2027 Global CoWoS Capacity Update
+
+In our previous report (see Asia-Pacific Technology: Taiwan Computex preview: NVIDIA's Vera CPU and Rubin GPU seen as the main show (27 May 2026)), we lifted our TSMC 2027 CoWoS capacity assumption to 200kwpm from 170kwpm and trimmed our SolC capacity build forecasts. Strong AI GPU and CPU demand has led TSMC to further expand CoWoS capacity at its AP7 fab. Our checks suggest that TSMC is converting its Fab 15A 28nm/22nm space into 55nm interposer production.
+
+On the other hand, we expect the non-TSMC camp to expand CoWoS capacity to 80kwpm by end-2027e. For ASE/SPIL, we expect FoCoS+CoWoS capacity to rise from 30kwpm at 2026-end to 50kwpm at 2027-end, with expansion focused on CoWoS-L and CoWoS-R. For Amkor, we expect CoWoS capacity to increase from 20kwpm at 2026-end to 30kwpm at 2027-end, also focused on CoWoS-L and CoWoS-R.
+
+Exhibit 1: Global CoWoS demand breakdown: 2026e vs. 2027e  
+Global CoWoS capacity demand by key customer  
+![](images/c7ab7703a695302d108474c3b57b27314189ce8e2b7722eab2ff3e866c640337.jpg)  
+Source: Company data, MS (e) estimates; note: estimates are complied using our supply chain checks
+
+Exhibit 2: Global CoWoS demand Y/Y growth profile
+
+<table><tr><td>Y/Y</td><td>2023</td><td>2024</td><td>2025</td><td>2026e</td><td>2027e</td></tr><tr><td>NVIDIA</td><td>119%</td><td>280%</td><td>113%</td><td>84%</td><td>57%</td></tr><tr><td>Broadcom</td><td>56%</td><td>191%</td><td>25%</td><td>253%</td><td>61%</td></tr><tr><td>AMD</td><td>485%</td><td>470%</td><td>50%</td><td>117%</td><td>308%</td></tr><tr><td>Xilinx</td><td>63%</td><td>242%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>AWS/Annapurna</td><td></td><td></td><td></td><td>3%</td><td>45%</td></tr><tr><td>AWS/Alchip</td><td></td><td>71%</td><td>(69%)</td><td>420%</td><td>38%</td></tr><tr><td>Marvell</td><td>(22%)</td><td>1438%</td><td>(17%)</td><td>13%</td><td>276%</td></tr><tr><td>GUC</td><td></td><td>(15%)</td><td>300%</td><td>600%</td><td>329%</td></tr><tr><td>Cisco</td><td></td><td></td><td>36%</td><td>67%</td><td>10%</td></tr><tr><td>Others</td><td>23%</td><td>(49%)</td><td>50%</td><td>(33%)</td><td>20%</td></tr><tr><td>Total demand</td><td>95%</td><td>218%</td><td>85%</td><td>102%</td><td>93%</td></tr></table>
+
+Source: Company data, MS (e) estimates; note: estimates are complied using our supply chain checks
+
+## 2027 CoWoS allocation assumptions
+
+## CoWoS update (Exhibit 3):
+
+\- Nvidia's total CoWoS consumption increases 57% Y/Y, to 1,222k:
+
+• CoWoS-L consumption increases 40% Y/Y, to 910k, with production focusing on Rubin and Blackwell in 1H27, followed by Rubin Ultra in 2H27.
+
+• For CoWoS-R, we see TSMC and Amkor production focused on Vera CPU, which implies production of 5.75mn. We see this coming from both Vera Rubin/Vera Rubin Ultra racks and standalone Vera CPU rack demand.
+
+• CoWoS-S production includes both Quantum and Spectrum switch IC, with production across TSMC, SPIL, and Amkor.
+
+• AMD's total CoWoS consumption increases 308% Y/Y to 530k:
+
+• We see TSMC mainly in charge of GPU-related production. We see MI455 as the key focus for 2027, with minor production for MI500 series (chip code name Arcadia) in late 2027. Total TSMC CoWoS-L booking increases 200% Y/Y in 2027e, to 240k.
+
+• We see the non-TSMC camp, including ASE/SPIL, Amkor, and Powertech, being mainly in charge of Venice CPU, high-end PC CPU, and gaming GPU production. We see Venice CPU's CoWoS booking increasing from 50k in 2026 to 270k in 2027, implying 6.75mn units of CPU production, supporting strong demand from agentic AI.
+
+• We see Xilinx's demand remaining flat Y/Y at 10k of CoWoS bookings.
+
+\- Broadcom's total CoWoS consumption rises 61% Y/Y, to 484k:
+
+• We see CoWoS-L booking increasing from 15k in 2026 to 55k in 2027, mainly for Meta's MTIAv3 ASIC Iris.
+
+• For Google TPU, we see Ironwood and Sunfish together accounting for 343k of CoWoS-S bookings, implying 4,168k of TPU chips. We also see a slight increase in Broadcom's smaller AI ASIC customers in 2027.
+
+• MediaTek's total CoWoS consumption increases from 40k in 2026 to 180k in 2027:
+
+• This is mainly for TSMC's CoWoS-S capacity for TPU v8t ZebraFish.
+
+• We also see around 400k units of chip production from Intel EMIB-T for the 2nm TPU v9 (HumuFish) TPU in 2027.
+
+\- Separately, our checks suggest the new 2nm TPU codename TriggerFish is the inferencing-focused version of HumuFish, in line with our previous understanding that all TPUs are capable of both training and inferencing, and we believe TriggerFish may also support TPU leasing services.
+
+\- AWS/Annapurna's CoWoS-R booking increases from 62k in 2026e to 90k in 2027e:
+    • Although Annapurna is still in charge of the front-end booking for Trainium 3, we see it placing 54k of CoWoS-R at TSMC and 36k at ASE.
+
+\- Alchip increases CoWoS-R booking 38% Y/Y, to 36k, with all of its bookings at TSMC.
+
+• Marvell's total booking increases from 17k in 2026e to 64k in 2027e:
+
+• Microsoft Maia 300 consumes around 50k of CoWoS-L booking at TSMC.
+
+• For Trainium 3, we see it having 14k of CoWoS-R booking at ASE.
+
+\- GUC's total CoWoS booking increases from 14k in 2026e to 60k in 2027e:
+    - We believe demand is mainly driven by multiple customers.
+
+Exhibit 3: Global CoWoS demand breakdown with newly introduced 2027e numbers
+
+<table><tr><td>(k wafer)</td><td>2023</td><td>2024</td><td>2025</td><td>2026e</td><td>2027e</td><td>2023</td><td>2024</td><td>2025e</td><td>2026e</td><td>2027e</td></tr><tr><td>NVIDIA</td><td>53</td><td>200</td><td>425</td><td>780</td><td>1,222</td><td>45%</td><td>54%</td><td>62%</td><td>56%</td><td>45%</td></tr><tr><td>TSMC</td><td></td><td></td><td>390</td><td>680</td><td>1,090</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-L</td><td></td><td></td><td>390</td><td>650</td><td>910</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-S</td><td></td><td></td><td>0</td><td>20</td><td>50</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-R</td><td></td><td></td><td>0</td><td>10</td><td>130</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Non-TSMC</td><td></td><td></td><td>35</td><td>100</td><td>132</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Amkor</td><td></td><td></td><td>35</td><td>100</td><td>132</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-S</td><td></td><td></td><td>20</td><td>20</td><td>12</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-R</td><td></td><td></td><td>15</td><td>80</td><td>120</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>ASE/SPIL</td><td></td><td></td><td>0</td><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-S</td><td></td><td></td><td>0</td><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-R</td><td></td><td></td><td>0</td><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Broadcom</td><td>23</td><td>68</td><td>85</td><td>300</td><td>484</td><td>20%</td><td>18%</td><td>12%</td><td>22%</td><td>18%</td></tr><tr><td>TSMC</td><td></td><td></td><td>83</td><td>260</td><td>420</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-L</td><td></td><td></td><td>0</td><td>15</td><td>55</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-S</td><td></td><td></td><td>83</td><td>245</td><td>365</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>ASE/SPIL</td><td></td><td></td><td>2</td><td>30</td><td>40</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-L</td><td></td><td></td><td>0</td><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-S</td><td></td><td></td><td>2</td><td>30</td><td>40</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Amkor</td><td></td><td></td><td></td><td>10</td><td>24</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-S</td><td></td><td></td><td></td><td>10</td><td>24</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>AMD</td><td>7</td><td>40</td><td>60</td><td>130</td><td>530</td><td>6%</td><td>11%</td><td>9%</td><td>9%</td><td>20%</td></tr><tr><td>TSMC</td><td></td><td></td><td>60</td><td>80</td><td>240</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-L</td><td></td><td></td><td>0</td><td>70</td><td>230</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-S</td><td></td><td></td><td>60</td><td>10</td><td>10</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>ASE/SPIL</td><td></td><td></td><td>0</td><td>50</td><td>170</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-L</td><td></td><td></td><td>0</td><td>50</td><td>170</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Amkor</td><td></td><td></td><td></td><td>0</td><td>120</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-S</td><td></td><td></td><td></td><td>0</td><td>120</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Xilinx</td><td>3</td><td>10</td><td>10</td><td>10</td><td>10</td><td>3%</td><td>3%</td><td>1%</td><td>1%</td><td>0%</td></tr><tr><td>MediaTek</td><td></td><td></td><td></td><td>40</td><td>180</td><td></td><td></td><td></td><td>3%</td><td>7%</td></tr><tr><td>TSMC</td><td></td><td></td><td></td><td>40</td><td>180</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-S</td><td></td><td></td><td></td><td>40</td><td>180</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>AWS/Annapurna</td><td></td><td></td><td>60</td><td>62</td><td>90</td><td></td><td></td><td></td><td>4%</td><td>3%</td></tr><tr><td>TSMC</td><td></td><td></td><td>60</td><td>32</td><td>54</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-R</td><td></td><td></td><td>60</td><td>32</td><td>54</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>ASE/SPIL</td><td></td><td></td><td></td><td>30</td><td>36</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-R</td><td></td><td></td><td></td><td>30</td><td>36</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>AWS/Alchip</td><td>9</td><td>16</td><td>5</td><td>26</td><td>36</td><td>8%</td><td>4%</td><td>1%</td><td>2%</td><td>1%</td></tr><tr><td>Intel Habana</td><td>0</td><td>7</td><td>9</td><td>0</td><td>0</td><td>0%</td><td>2%</td><td>1%</td><td>0%</td><td>0%</td></tr><tr><td>Marvell</td><td>1</td><td>18</td><td>15</td><td>17</td><td>64</td><td>1%</td><td>5%</td><td>2%</td><td>1%</td><td>2%</td></tr><tr><td>TSMC</td><td></td><td></td><td></td><td>5</td><td>50</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-L</td><td></td><td></td><td></td><td>5</td><td>50</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-R</td><td></td><td></td><td>15</td><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>ASE/SPIL</td><td></td><td></td><td></td><td>12</td><td>14</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CoWoS-R</td><td></td><td></td><td></td><td>12</td><td>14</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>GUC</td><td>1</td><td>1</td><td>2</td><td>14</td><td>60</td><td>1%</td><td>0%</td><td>0%</td><td>1%</td><td>2%</td></tr><tr><td>Cisco</td><td></td><td>2</td><td>3</td><td>5</td><td>6</td><td></td><td>1%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>Others</td><td>20</td><td>10</td><td>15</td><td>10</td><td>12</td><td>17%</td><td>3%</td><td>2%</td><td>1%</td><td>0%</td></tr><tr><td>Total demand</td><td>117</td><td>372</td><td>689</td><td>1,394</td><td>2,694</td><td>100%</td><td>100%</td><td>100%</td><td>100%</td><td>100%</td></tr></table>
+
+Source: Company data, MS (e) estimates; note: estimates are complied using our supply chain checks
+
+Exhibit 4: Global CoWoS capacity expansion by year end and by vendor  
+![](images/a7084417499473a11f75642d394a074ecb8bc291be9e9ef74ff61566afa94ac5.jpg)  
+Source: Company data, MS (e) estimates
+
+Exhibit 5: Global CoWoS consumption, by customer  
+![](images/87865b1d53d80130ac9b5e59615a0a76b3b1234b264b9045a6b8e8a48c5a7e84.jpg)  
+NVIDIA Broadcom AMD Xilinx AWS/Annapurna AWS/Alchip Marvell GUC MediaTek Intel Habana Others  
+Source: Company data, MS (e) estimates; note: estimates are compiled using our supply chain checks
+
+## Exhibit 6:
+
+AI HBM consumption: up to 51bn Gb in 2027
+
+<table><tr><td>AI chip vendor</td><td>Product name</td><td>CoWoS capacity allocation (k wafers)</td><td>Chips per CoWoS wafer</td><td>Implied shipments (k)</td><td>HBM chip density (GB)</td><td>HBM chip units</td><td>Total HBM size (GB)</td><td>HBM generation</td><td>HBM vendor</td><td>Total HBM demand (k GB)</td></tr><tr><td colspan="11">AI GPU (2027e)</td></tr><tr><td rowspan="4">NVIDIA</td><td>B300</td><td>40</td><td>14</td><td>560</td><td>36</td><td>8</td><td>288</td><td>HBM3e 12hi</td><td>Hynix/Micron</td><td>161,280</td></tr><tr><td>Vera CPU</td><td>250</td><td>23</td><td>5,750</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Rubin R200</td><td>740</td><td>8</td><td>5,920</td><td>36</td><td>8</td><td>288</td><td>HBM4 12hi</td><td>Hynix/Micron/Samsung</td><td>1,704,960</td></tr><tr><td>Rubin Ultra</td><td>130</td><td>8</td><td>1,040</td><td>48</td><td>8</td><td>384</td><td>HBM4e 12hi</td><td>Hynix/Micron/Samsung</td><td>399,360</td></tr><tr><td rowspan="4">AMD</td><td>MI350 series</td><td>24</td><td>12</td><td>288</td><td>36</td><td>8</td><td>288</td><td>HBM3e 12hi</td><td>Samsung/Micron</td><td>82,944</td></tr><tr><td>MI400 series</td><td>192</td><td>10</td><td>1,920</td><td>36</td><td>12</td><td>432</td><td>HBM4 12hi</td><td>Samsung/Micron</td><td>829,440</td></tr><tr><td>MI500 (Arcadia)</td><td>24</td><td>4</td><td>96</td><td>48</td><td>16</td><td>768</td><td>HBM4e 12hi</td><td>Samsung/Micron</td><td>73,728</td></tr><tr><td>Venice CPU</td><td>270</td><td>25</td><td>6,750</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="11">AI ASIC (2027e)</td></tr><tr><td rowspan="4">Google</td><td>TPU v7p (Ironwood; AVGO)</td><td>13</td><td>16</td><td>208</td><td>24</td><td>8</td><td>192</td><td>HBM3e 8hi</td><td>Hynix/Samsung</td><td>39,936</td></tr><tr><td>TPU v8i (Sunfish; AVGO)</td><td>330</td><td>12</td><td>3,960</td><td>36</td><td>8</td><td>288</td><td>HBM3e 12hi</td><td>Samsung/Hynix/Micron</td><td>1,140,480</td></tr><tr><td>TPU v8t (Zebrafish; MediaTek)</td><td>180</td><td>20</td><td>3,600</td><td>36</td><td>6</td><td>216</td><td>HBM3e 12hi</td><td>Samsung/Hynix/Micron</td><td>777,600</td></tr><tr><td>TPU v9 (Humufish; MediaTek)</td><td></td><td></td><td>400</td><td>48</td><td>12</td><td>576</td><td>HBM4e 12hi</td><td>Samsung/Hynix/Micron</td><td>230,400</td></tr><tr><td>AWS</td><td>Trainium 3</td><td>140</td><td>17</td><td>2,380</td><td>36</td><td>4</td><td>144</td><td>HBM3e 12hi</td><td>Hynix/Samsung/Micron</td><td>342,720</td></tr><tr><td>GUC&#x27;s customers</td><td></td><td>60</td><td>20</td><td>1,200</td><td>24</td><td>6</td><td>144</td><td>HBM3e 8hi</td><td>Samsung?</td><td>172,800</td></tr><tr><td>Microsoft</td><td>Maia 300</td><td>50</td><td>11</td><td>550</td><td>36</td><td>8</td><td>288</td><td>HBM4 12hi</td><td>Samsung</td><td>158,400</td></tr><tr><td>Meta</td><td>MTIA 3 (Iris)</td><td>55</td><td>10</td><td>550</td><td>36</td><td>8</td><td>288</td><td>HBM3e 12hi</td><td>Samsung/Hynix/Micron</td><td>158,400</td></tr><tr><td>Others</td><td></td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Total</td><td></td><td>2,664</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>6,326,088</td></tr></table>
+
+Source: Company data, MS (e) estimates. Note: Estimates are compiled using our Asian supply chain checks.
+
+Exhibit 7: AI wafer consumption: at least US\$47bn in 2027
+
+<table><tr><td>AI chip vendor</td><td>Product name</td><td>CoWoS capacity allocation (k wafers)</td><td>Chips per CoWoS wafer</td><td>Implied shipments (k)</td><td>Compute die size</td><td>Geometry</td><td>Compute die units</td><td>Wafer consumption (k wafers)</td><td>Wafer price (US$)</td><td>Wafer revenue TAM (US$ mn)</td></tr><tr><td colspan="11">AI GPU (2027e)</td></tr><tr><td rowspan="4">NVIDIA</td><td>B300</td><td>40</td><td>14</td><td>560</td><td>850</td><td>4nm</td><td>2</td><td>44</td><td>23,042</td><td>1,024</td></tr><tr><td>Vera CPU</td><td>250</td><td>23</td><td>5,750</td><td>850</td><td>3nm</td><td>1</td><td>228</td><td>27,300</td><td>6,229</td></tr><tr><td>Rubin R200</td><td>740</td><td>8</td><td>5,920</td><td>850</td><td>3nm</td><td>2</td><td>470</td><td>27,300</td><td>12,827</td></tr><tr><td>Rubin Ultra</td><td>130</td><td>8</td><td>1,040</td><td>850</td><td>3nm</td><td>2</td><td>58</td><td>27,300</td><td>1,588</td></tr><tr><td rowspan="4">AMD</td><td>MI350 series</td><td>24</td><td>12</td><td>288</td><td>110</td><td>3nm</td><td>8</td><td>8</td><td>27,300</td><td>229</td></tr><tr><td>MI400 series</td><td>192</td><td>10</td><td>1,920</td><td>850</td><td>2nm</td><td>2</td><td>23</td><td>30,000</td><td>698</td></tr><tr><td>MI500 (Arcadia)</td><td>24</td><td>4</td><td>96</td><td></td><td>2nm</td><td></td><td></td><td>30,000</td><td></td></tr><tr><td>Venice CPU</td><td>270</td><td>25</td><td>6,750</td><td></td><td>2nm</td><td></td><td></td><td></td><td></td></tr><tr><td colspan="11">AI ASIC (2027e)</td></tr><tr><td rowspan="4">Google</td><td>TPU v7p (Ironwood; AVGO)</td><td>13</td><td>16</td><td>208</td><td>700</td><td>3nm</td><td>2</td><td>14</td><td>27,300</td><td>371</td></tr><tr><td>TPU v8i (Sunfish; AVGO)</td><td>330</td><td>12</td><td>3,960</td><td>800</td><td>3nm</td><td>2</td><td>296</td><td>27,300</td><td>8,075</td></tr><tr><td>TPU v8t (Zebrafish; MediaTek)</td><td>180</td><td>20</td><td>3,600</td><td>800</td><td>3nm</td><td>2</td><td>269</td><td>27,300</td><td>7,341</td></tr><tr><td>TPU v9 (Humufish; MediaTek)</td><td></td><td></td><td>400</td><td>850</td><td>2nm</td><td>2</td><td>32</td><td>27,300</td><td>867</td></tr><tr><td>AWS</td><td>Trainium 3</td><td>140</td><td>17</td><td>2,380</td><td>700</td><td>3nm</td><td>2</td><td>127</td><td>27,300</td><td>3,465</td></tr><tr><td>GUC&#x27;s customers</td><td></td><td>60</td><td>20</td><td>1,200</td><td>645</td><td>4nm</td><td>1</td><td>29</td><td>23,042</td><td>674</td></tr><tr><td>Microsoft</td><td>Maia 300</td><td>50</td><td>11</td><td>550</td><td>850</td><td>2nm</td><td>1</td><td>29.1</td><td>30,000</td><td>873</td></tr><tr><td>Meta</td><td>MTIA 3 (Iris)</td><td>55</td><td>10</td><td>550</td><td>850</td><td>3nm</td><td>2</td><td>44</td><td>27,300</td><td>1,192</td></tr><tr><td>Others</td><td></td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Total</td><td></td><td>2,664</td><td></td><td></td><td></td><td></td><td></td><td>1,707</td><td></td><td>46,418</td></tr></table>
+
+Source: Company data, MS (e) estimates. Note: Estimates are compiled using our Asian supply chain checks.
+
+Total HBM demand (mn Gb)
+
+Exhibit 8: AI HBM consumption: up to 31bn Gb in 2026
+
+<table><tr><td>AI chip vendor</td><td>Product name</td><td>CoWoS capacity allocation (k wafers)</td><td>Chips per CoWoS wafer</td><td>Implied shipments (k)</td><td>HBM chip density (GB)</td><td>HBM chip units</td><td>Total HBM size (GB)</td><td>HBM generation</td><td>HBM vendor</td><td>Total HBM demand (k GB)</td></tr><tr><td colspan="11">AI GPU (2026e)</td></tr><tr><td rowspan="5">NVIDIA</td><td>B300</td><td>390</td><td>14</td><td>5,460</td><td>36</td><td>8</td><td>288</td><td>HBM3e 12hi</td><td>Hynix/Micron/Samsung</td><td>1,572,480</td></tr><tr><td>Vera CPU</td><td>90</td><td>23</td><td>2,070</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Spectrum/CPX</td><td>60</td><td></td><td>-</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Rubin R200</td><td>260</td><td>8</td><td>2,080</td><td>36</td><td>8</td><td>288</td><td>HBM4 12hi</td><td>Hynix/Micron/Samsung?</td><td>599,040</td></tr><tr><td>H200</td><td>20</td><td>27</td><td>540</td><td>24</td><td>6</td><td>141</td><td>HBM3e 8hi</td><td>Hynix</td><td>76,140</td></tr><tr><td rowspan="4">AMD</td><td>MI300</td><td>3</td><td>12</td><td>36</td><td>24</td><td>8</td><td>192</td><td>HBM3e 12hi</td><td>Samsung</td><td>6,912</td></tr><tr><td>MI350/375</td><td>7</td><td>12</td><td>84</td><td>36</td><td>8</td><td>288</td><td>HBM3e 12hi</td><td>Samsung/Micron</td><td>24,192</td></tr><tr><td>MI400</td><td>65</td><td>10</td><td>650</td><td>36</td><td>12</td><td>432</td><td>HBM4 12hi</td><td>Samsung/Micron</td><td>280,800</td></tr><tr><td>Venice</td><td>50</td><td>25</td><td>1,250</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="11">AI ASIC (2026e)</td></tr><tr><td rowspan="3">Google</td><td>TPU v7p (Ironwood; AVGO)</td><td>145</td><td>16</td><td>2,320</td><td>24</td><td>8</td><td>192</td><td>HBM3e 8hi</td><td>Hynix/Samsung</td><td>445,440</td></tr><tr><td>TPU v8i (Sunfish; AVGO)</td><td>80</td><td>12</td><td>960</td><td>36</td><td>8</td><td>288</td><td>HBM3e 12hi</td><td>Hynix/Samsung/Micron</td><td>276,480</td></tr><tr><td>TPU v8t (Zebrafish; MediaTek)</td><td>40</td><td>20</td><td>800</td><td>36</td><td>6</td><td>216</td><td>HBM3e 12hi</td><td>Hynix/Micron</td><td>172,800</td></tr><tr><td>AWS</td><td>Trainium 3</td><td>100</td><td>17</td><td>1,700</td><td>36</td><td>4</td><td>144</td><td>HBM3e 12hi</td><td>Hynix/Samsung/Micron</td><td>244,800</td></tr><tr><td>GUC&#x27;s customers</td><td></td><td>10</td><td>20</td><td>200</td><td>24</td><td>6</td><td>144</td><td>HBM3e 8hi</td><td>Samsung?</td><td>1,152</td></tr><tr><td rowspan="2">Microsoft</td><td>Maia 200</td><td>4</td><td>29</td><td>116</td><td>16</td><td>4</td><td>64</td><td>HBM3</td><td>Samsung</td><td>7,424</td></tr><tr><td>Maia 300</td><td>5</td><td>11</td><td>55</td><td>36</td><td>8</td><td>288</td><td>HBM4 12hi</td><td>Samsung</td><td>15,840</td></tr><tr><td>Meta</td><td>MTIA 3 (Iris)</td><td>15</td><td>10</td><td>150</td><td>36</td><td>8</td><td>288</td><td>HBM3e 12hi</td><td>Hynix/Samsung</td><td>43,200</td></tr><tr><td>Total</td><td></td><td>1,424</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3,825,500</td></tr></table>
+
+Source: Company data, MS (e) estimates. Note: Estimates are compiled using our Asian supply chain checks.
+
+Exhibit 9: AI wafer consumption: at least US\$27bn in 2026
+
+<table><tr><td>AI chip vendor</td><td>Product name</td><td>CoWoS capacity allocation (k wafers)</td><td>Chips per CoWoS wafer</td><td>Implied shipments (k)</td><td>Compute die size</td><td>Geometry</td><td>Compute die units</td><td>Wafer consumption (k wafers)</td><td>Wafer price (US$)</td><td>Wafer revenue TAM (US$ mn)</td></tr><tr><td colspan="11">AI GPU (2026e)</td></tr><tr><td rowspan="5">NVIDIA</td><td>B300</td><td>390</td><td>14</td><td>5,460</td><td>850</td><td>4nm</td><td>2</td><td>433</td><td>21,945</td><td>9,510</td></tr><tr><td>Vera CPU</td><td>90</td><td>23</td><td>2,070</td><td></td><td>3nm</td><td></td><td></td><td></td><td></td></tr><tr><td>Spectrum/CPX</td><td>60</td><td></td><td>-</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Rubin R200</td><td>260</td><td>8</td><td>2,080</td><td>850</td><td>3nm</td><td>2</td><td>165</td><td>26,000</td><td>4,292</td></tr><tr><td>H200</td><td>20</td><td>27</td><td>540</td><td>814</td><td>4nm</td><td>1</td><td>15</td><td>21,945</td><td>331</td></tr><tr><td rowspan="4">AMD</td><td>MI300</td><td>3</td><td>12</td><td>36</td><td>110</td><td>5nm</td><td>8</td><td>1</td><td>18,000</td><td>19</td></tr><tr><td>MI350/375</td><td>7</td><td>12</td><td>84</td><td>110</td><td>3nm</td><td>8</td><td>2</td><td>26,000</td><td>64</td></tr><tr><td>MI400</td><td>65</td><td>10</td><td>650</td><td>110</td><td>2nm</td><td>8</td><td>32</td><td>28,125</td><td>886</td></tr><tr><td>Venice</td><td>50</td><td>25</td><td>1,250</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan="11">AI ASIC (2026e)</td></tr><tr><td rowspan="3">Google</td><td>TPU v7p (Ironwood; AVGO)</td><td>145</td><td>16</td><td>2,320</td><td>700</td><td>3nm</td><td>2</td><td>152</td><td>26,000</td><td>3,942</td></tr><tr><td>TPU v8i (Sunfish; AVGO)</td><td>80</td><td>12</td><td>960</td><td>800</td><td>3nm</td><td>2</td><td>72</td><td>26,000</td><td>1,864</td></tr><tr><td>TPU v8t (Zebrafish; MediaTek)</td><td>40</td><td>20</td><td>800</td><td>800</td><td>3nm</td><td>2</td><td>60</td><td>26,000</td><td>1,554</td></tr><tr><td>AWS</td><td>Trainium 3</td><td>100</td><td>17</td><td>1,700</td><td>700</td><td>3nm</td><td>2</td><td>91</td><td>26,000</td><td>2,357</td></tr><tr><td>GUC&#x27;s customers</td><td></td><td>10</td><td>20</td><td>200</td><td>645</td><td>4nm</td><td>1</td><td>5</td><td>21,945</td><td>107</td></tr><tr><td rowspan="2">Microsoft</td><td>Maia 200</td><td>4</td><td>29</td><td>116</td><td>700</td><td>3nm</td><td>1</td><td>3.0</td><td>26,000</td><td>79</td></tr><tr><td>Maia 300</td><td>5</td><td>11</td><td>55</td><td>850</td><td>2nm</td><td>1</td><td>2.9</td><td>28,125</td><td>82</td></tr><tr><td>Meta</td><td>MTIA 3 (Iris)</td><td>15</td><td>10</td><td>150</td><td>850</td><td>3nm</td><td>2</td><td>11.9</td><td>26,000</td><td>310</td></tr><tr><td>Total</td><td></td><td>1,424</td><td></td><td></td><td></td><td></td><td></td><td>1,075</td><td></td><td>26,107</td></tr></table>
+
+Source: Company data, MS (e) estimates. Note: Estimates are compiled using our Asian supply chain checks.
+
+## AI semis – stock implications, P/E multiples, revenue exposure
+
+Exhibit 10: P/E multiple trend of AI semis  
+![](images/3d441bcc03e067d65aa593cd5106f3e06c30cf2cd9a82d989c5babea021097bb.jpg)  
+Note: Alternative AI semis group: AMD, Alchip, Andes, Marvell, Broadcom. AI semi enablers group: TSMC, Synopsys, Cadence, ASML, BESI, Ibiden, KYEC, Advantest. Source: Company data, MS.
+
+Exhibit 11: We still expect AI chip revenue to rise QoQ  
+Data center/HPC semi revenue: NVIDIA + AMD  
+![](images/bfa70c14ddc48925316dcd47207cfcce6350699101c3361af2dcd125c37dd9c3.jpg)  
+Source: Company data, Refinitiv, MS US Research (e) estimates.
+
+Exhibit 12: TSMC's AI-related revenue 2024-29e CAGR could reach 60%  
+![](images/b94f0aeea5d5a49695131fbebf1e17dfaef5c1a6a715f98752fe2fc60d159198.jpg)  
+■ General-purpose AI ■ Custom AI chips (ASICs) ■ CoWoS/wafer test ■ AI server CPU  
+Source: Company data, MS (e) estimates
+
+## AI GPU and ASIC rental price tracker
+
+Exhibit 13: AI GPU H100 per GPU per hour as of end-March  
+![](images/fb1aee8d255ec660ee373e280857951f37cc7e0fc01cc22e3e215e98246fd2aa.jpg)  
+Source: Company data, MS
+
+Exhibit 14: AI ASIC equivalent computing power – 16x Inferentia 2 per hour  
+![](images/46611b5e5aae86844fdf3d58452fd87555342e45dae7a9d9ec08e9bb0c40ff20.jpg)  
+Source: Company data, MS
+
+Exhibit 15: NVIDIA 5090 graphic cards pricing has rebounded recently, mainly in response to market expectations for price hikes and strong AI inference demand from China
+
+NVIDIA gaming graphic card price in China
+
+![](images/4557635048627ba1142e7bc1df51c562771e59589b09c7433a93700c23afc7da.jpg)  
+Source: TaoBao, MS, various media (e.g., Vice, Jan. 3, 2026)
+
+## Key Featured Reports on the AI Supply Chain
+
+Asia-Pacific Technology: AI Supply Chain: Cloud Capex Strength; More CoWoS Allocation for TPU (7 May 2026)
+
+Asia-Pacific Technology: AI Supply Chain: Addressing Questions on Nvidia GPU/LPU and Google TPU (9 Apr 2026)
+
+Greater China Semiconductors: AI Supply Chain Tracker: Key Investor Feedback from GTC/OFC (23 Mar 2026)
+
+Asia Technology: AI Supply Chain: CPO and ASIC Dynamic Update (3 Mar 2026)
+
+Asia-Pacific Technology: AI Supply Chain: CES implications, ASIC production, China AI chips (6 Jan 2026)
+
+Asia-Pacific Technology: AI Supply Chain: TSMC CoWoS Expansion; ASIC Dynamics; Asia Field Trip (1 Dec 2025)
+
+## Foundation
+
+Technology: Rise of the AI Agent – Global Implications (19 Apr 2026)
+
+Global Technology: Supply-chain Reorientation (24 Jul 2025)
+
+Global Technology: China – AI: The Sleeping Giant Awakens (13 May 2025)
+
+Global Technology: AI Cloud Capex in the Spotlight (26 Feb 2025)
+
+Global Semiconductors: AI ASIC 2.0: Potential winners (15 Dec 2024)
+
+Global Technology: Global Technology – Dawn of the AI Smartphone Era: Edge AI – Apple Intelligence Fuels Innovation – More Charts, Fewer Words (17 Jul 2024)
+
+Global Technology: AI PCs To Usher In The Next Leg Of PC Market Growth (21 May, 2024)
+
+Key upstream AI supply chain companies
+
+Tracking China's Semi Localization: Raising China AI GPU TAM on recent geopolitical dynamics (22 Jun 2026)
+
+Greater China Technology Semiconductors: MCU: Supply tightness may drive prices up further (21 Jun 2026)
+
+Greater China Semiconductors: Power Semis – Supply Driven Upcycle (18 Jun 2026)
+
+Greater China Technology Semiconductors: Thoughts on Investor Concerns Regarding CPO (10 Jun 2026)
+
+WinWay Technology Co Ltd: May sales came in better than feared; OW (9 Jun 2026)
+
+MPI Corporation: Strong ASIC Ramp-up Drives May Sales; OW (9 Jun 2026)
+
+This report references U.S. Executive Order 14032 and/or entities or securities that are designated thereunder. U.S. persons may be prohibited from buying certain securities of entities named in this report. Readers are solely responsible for ensuring that their investment activities are carried out in compliance with applicable laws.
+
+This report references export controls and/or entities that may be subject to export control restrictions. Readers are solely responsible for ensuring that their investment or trade activities are carried out in compliance with applicable laws.
+
+This report references U.S. Executive Order 14105 and/or entities that may be in scope of such order. U.S. persons may be prohibited from engaging in certain transactions or otherwise require certain other transactions be notified to the U.S. Department of Treasury. Readers are solely responsible for ensuring that their investment or trade activities are carried out in compliance with applicable laws.
+
+## Disclosure Section
+
+The information and opinions in MS were prepared or are disseminated by MS Asia Limited (which accepts the responsibility for its contents) and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents), and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS, and their affiliates (collectively, "MS"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+## Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Charlie Chan; Daisy Dai, CFA; Tiffany Yeh; Daniel Yen, CFA.
+
+## Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+## Important Regulatory Disclosures on Subject Companies
+
+The analyst or strategist (or a household member) identified below owns the following securities (or related derivatives): Ethan Jia - Samsung Electronics(common or preferred stock).
+
+As of May 29, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: ACM Research Inc, Advanced Micro-Fabrication Equipment Inc, Advanced Wireless Semiconductor Co, Alchip Technologies Ltd, AllRing Tech Co., AP Memory Technology Corp, ASE Technology Holding Co. Ltd., ASMPT Ltd, Aspeed Technology, Cambricon Technology Corporation, Dosilicon Co Ltd, Fadu Inc, FOCI Fiber Optic Communications Inc, GigaDevice Semiconductor Beijing Inc, Global Unichip Corp, GlobalWafers Co Ltd, Gudeng Precision, Hon Precision, Hua Hong Semiconductor Ltd, Isu Petasys Co. Ltd., King Yuan Electronics Co Ltd, L&F Co Ltd, Leeno Industrial Inc., LG Display, LG Innotek, Macronix International Co Ltd, MediaTek, Montage Technology Co Ltd, Nanya Technology Corp., NAURA Technology Group Co Ltd, Nuvoton Technology Corporation, Parade Technologies Ltd, Phison Electronics Corp, Realtek Semiconductor, Samsung Electro-Mechanics, Shanghai Fudan Microelectronics, Silergy Corp., Silicon Motion, SK hynix, SK Square Co Ltd., TSMC, UMC, Vanguard International Semiconductor, WIN Semiconductors Corp, Winbond Electronics Corp, WinWay Technology Co Ltd, WPG Holdings, WT Microelectronics Co. Ltd..
+
+Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of LG Electronics, Montage Technology Co Ltd, Powerchip Semiconductor Manufacturing Co, Samsung Electronics, SK hynix, SK Square Co Ltd..
+
+Within the last 12 months, MS has received compensation for investment banking services from ASMPT Ltd, LG Electronics, Montage Technology Co Ltd, Powerchip Semiconductor Manufacturing Co, Samsung Electronics, SK hynix.
+
+In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from Advanced Micro-Fabrication Equipment Inc, Alchip Technologies Ltd, AP Memory Technology Corp, ASE Technology Holding Co. Ltd., ASMedia Technology Inc, ASMPT Ltd, Aspeed Technology, Ecopro BM, Espressif Systems, GigaDevice Semiconductor Beijing Inc, GlobalWafers Co Ltd, Gudeng Precision, HD Hyundai Electric Co Ltd, Himax Technologies Inc, Hua Hong Semiconductor Ltd, Iluvatar CoreX Semiconductor Co., Ltd., Innoscience, King Yuan Electronics Co Ltd, L&F Co Ltd, LG Display, LG Electronics, Macronix International Co Ltd, MediaTek, Montage Technology Co Ltd, Novatek, Phison Electronics Corp, Powerchip Semiconductor Manufacturing Co, Realtek Semiconductor, Samsung Electronics, Shenzhen Longsys Electronics Co Ltd, Silergy Corp., Silicon Motion, SK hynix, SK Square Co Ltd., TSMC, UMC, Vanguard International Semiconductor, Winbond Electronics Corp, WinWay Technology Co Ltd, WPG Holdings, WT Microelectronics Co. Ltd..
+
+Within the last 12 months, MS has received compensation for products and services other than investment banking services from ASE Technology Holding Co. Ltd., King Yuan Electronics Co Ltd, MediaTek, Nanya Technology Corp., Novatek, Nuvoton Technology Corporation, Realtek Semiconductor, Samsung Electronics, Silicon Motion, SMIC, TSMC, UMC, Universal Scientific Ind. (Shanghai), Winbond Electronics Corp, WT Microelectronics Co. Ltd..
+
+Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: Advanced Micro-Fabrication Equipment Inc, Alchip Technologies Ltd, AP Memory Technology Corp, ASE Technology Holding Co. Ltd., ASMedia Technology Inc, ASMPT Ltd, Aspeed Technology, Ecopro BM, Espressif Systems, GigaDevice Semiconductor Beijing Inc, GlobalWafers Co Ltd, Gudeng Precision, HD Hyundai Electric Co Ltd, Himax Technologies Inc, Hua Hong Semiconductor Ltd, Iluvatar CoreX Semiconductor Co., Ltd., Innoscience, King Yuan Electronics Co Ltd, L&F Co Ltd, LG Display, LG Electronics, Macronix International Co Ltd, MediaTek, Montage Technology Co Ltd, Novatek, Phison Electronics Corp, Powerchip Semiconductor Manufacturing Co, Realtek Semiconductor, Samsung Electronics, Shenzhen Longsys Electronics Co Ltd, Silergy Corp., Silicon Motion, SK hynix, SK Square Co Ltd., TSMC, UMC, Vanguard International Semiconductor, Winbond Electronics Corp, WinWay Technology Co Ltd, WPG Holdings, WT Microelectronics Co. Ltd..
+
+Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: ASE Technology Holding Co. Ltd., King Yuan Electronics Co Ltd, MediaTek, Montage Technology Co Ltd, Nanya Technology Corp., Novatek, Nuvoton Technology Corporation, Realtek Semiconductor, Samsung Electronics, Silicon Motion, SMIC, TSMC, UMC, Universal Scientific Ind. (Shanghai), Winbond Electronics Corp, WT Microelectronics Co. Ltd..
+
+MS & Co. LLC makes a market in the securities of ACM Research Inc, Himax Technologies Inc, Silicon Motion.
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.
+
+Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+## STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+## Global Stock Ratings Distribution
+
+## (as of May 31, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td></td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1542</td><td>42%</td><td>465</td><td>51%</td><td>30%</td><td>707</td><td>43%</td></tr><tr><td>Equal-weight/Hold</td><td>1571</td><td>43%</td><td>369</td><td>40%</td><td>23%</td><td>723</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>551</td><td>15%</td><td>86</td><td>9%</td><td>16%</td><td>201</td><td>12%</td></tr><tr><td>Total</td><td>3,667</td><td></td><td>920</td><td></td><td></td><td>1632</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+## Analyst Stock Ratings
+
+Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+## Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+## Other Important Disclosures
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS produces an equity research product called a "Tactical Idea." Views contained in a "Tactical Idea" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\_and\_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL\_Morgan\_Stanley\_Research\_Audit\_Report.pdf).
+
+If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+The "Important Regulatory Disclosures on Subject Companies" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+Certain information in MS was sourced by employees of the Shanghai Representative Office of MS Asia Limited for the use of MS Asia Limited. MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118J); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+MS Hong Kong Securities Limited is the liquidity provider/market maker for securities of ASMPT Ltd, Hua Hong Semiconductor Ltd listed on the Stock Exchange of Hong Kong Limited. An updated list can be found on HKEx website: http://www.hkex.com.hk.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The following companies do business in countries which are generally subject to comprehensive sanctions programs administered or enforced by the U.S. Department of the Treasury's Office of Foreign Assets Control ("OFAC") and by other countries and multi-national bodies: Samsung Electronics.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+## INDUSTRY COVERAGE: S. Korea Technology
+
+<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (06/23/2026)</td></tr><tr><td>Ryan Kim</td><td></td><td></td></tr><tr><td>Ecopro BM (247540.KQ)</td><td>U (03/20/2023)</td><td>W150,900</td></tr><tr><td>Fadu Inc (440110.KQ)</td><td>O (09/21/2025)</td><td>W89,800</td></tr><tr><td>Hanmi Semiconductor Co. Ltd. (042700.KS)</td><td>O (08/16/2024)</td><td>W258,000</td></tr><tr><td>HD Hyundai Electric Co Ltd (267260.KS)</td><td>O (03/25/2025)</td><td>W949,000</td></tr><tr><td>Isu Petasys Co. Ltd. (007660.KS)</td><td>O (02/03/2025)</td><td>W108,100</td></tr><tr><td>L&amp;F Co Ltd (066970.KS)</td><td>E (04/03/2025)</td><td>W112,700</td></tr><tr><td>Leeno Industrial Inc. (058470.KQ)</td><td>O (04/03/2025)</td><td>W84,900</td></tr><tr><td>Lotte Energy Materials Corp (020150.KS)</td><td>U (04/03/2025)</td><td>W45,000</td></tr><tr><td>LS Electric (010120.KS)</td><td>O (01/22/2026)</td><td>W232,500</td></tr><tr><td>POSCO FUTURE M (003670.KS)</td><td>U (04/03/2025)</td><td>W172,900</td></tr><tr><td>SK IE Technology (361610.KS)</td><td>U (04/03/2025)</td><td>W16,670</td></tr><tr><td>SK Square Co Ltd. (402340.KS)</td><td>O (05/06/2026)</td><td>W1,832,000</td></tr><tr><td>Wonik IPS Co Ltd (240810.KQ)</td><td>O (08/08/2025)</td><td>W150,100</td></tr><tr><td colspan="3">Shawn Kim</td></tr><tr><td>LG Display (034220.KS)</td><td>E (06/11/2025)</td><td>W12,180</td></tr><tr><td>LG Electronics (066570.KS)</td><td>E (04/07/2025)</td><td>W202,000</td></tr><tr><td>LG Innotek (011070.KS)</td><td>E (03/12/2025)</td><td>W991,000</td></tr><tr><td>Samsung Electro-Mechanics (009150.KS)</td><td>O (07/31/2025)</td><td>W1,990,000</td></tr><tr><td>Samsung Electronics (005935.KS)</td><td>O (11/18/2019)</td><td>W202,500</td></tr><tr><td>Samsung Electronics (005930.KS)</td><td>O (11/18/2019)</td><td>W310,000</td></tr><tr><td>SK hynix (000660.KS)</td><td>O (09/21/2025)</td><td>W2,555,000</td></tr></table>
+
+Stock Ratings are subject to change. Please see latest research for each company.  
+\* Historical prices are not split adjusted.
+
+INDUSTRY COVERAGE: Greater China Technology Semiconductors
+
+<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (06/23/2026)</td></tr><tr><td colspan="3">Charlie Chan</td></tr><tr><td>ACM Research Inc (ACMR.O)</td><td>O (03/07/2023)</td><td>US$103.17</td></tr><tr><td>Advanced Micro-Fabrication Equipment Inc (688012.SS)</td><td>O (11/06/2023)</td><td>Rmb371.72</td></tr><tr><td>Advanced Wireless Semiconductor Co (8086.TWO)</td><td>U (07/14/2025)</td><td>NT$159.50</td></tr><tr><td>Alchip Technologies Ltd (3661.TW)</td><td>O (05/14/2021)</td><td>NT$4,375.00</td></tr><tr><td>ASE Technology Holding Co. Ltd. (3711.TW)</td><td>O (09/15/2024)</td><td>NT$662.00</td></tr><tr><td>Cambricon Technology Corporation (688256.SS)</td><td>O (04/27/2026)</td><td>Rmb1,413.00</td></tr><tr><td>Global Unichip Corp (3443.TW)</td><td>E (05/28/2026)</td><td>NT$4,725.00</td></tr><tr><td>GlobalWafers Co Ltd (6488.TWO)</td><td>E (05/19/2026)</td><td>NT$1,010.00</td></tr><tr><td>Gudeng Precision (3680.TWO)</td><td>O (11/25/2025)</td><td>NT$537.00</td></tr><tr><td>Hua Hong Semiconductor Ltd (1347.HK)</td><td>E (03/12/2026)</td><td>HK$166.30</td></tr><tr><td>Iluvatar CoreX Semiconductor Co., Ltd. (9903.HK)</td><td>O (04/27/2026)</td><td>HK$735.50</td></tr><tr><td>King Yuan Electronics Co Ltd (2449.TW)</td><td>O (03/03/2023)</td><td>NT$329.50</td></tr><tr><td>Maxscend Microelectronics Co Ltd (300782.SZ)</td><td>U (01/11/2021)</td><td>Rmb113.92</td></tr><tr><td>MediaTek (2454.TW)</td><td>O (11/28/2025)</td><td>NT$4,535.00</td></tr><tr><td>MetaX Integrated Circuits (688802.SS)</td><td>E (04/27/2026)</td><td>Rmb768.98</td></tr><tr><td>Nanya Technology Corp. (2408.TW)</td><td>O (05/28/2026)</td><td>NT$454.50</td></tr><tr><td>NAURA Technology Group Co Ltd (002371.SZ)</td><td>O (11/06/2023)</td><td>Rmb747.49</td></tr><tr><td>OmniVision Integrated Circuits Group Inc (603501.SS)</td><td>E (11/17/2025)</td><td>Rmb87.70</td></tr><tr><td>Phison Electronics Corp (8299.TWO)</td><td>E (02/25/2026)</td><td>NT$2,430.00</td></tr><tr><td>SG Micro Corp. (300661.SZ)</td><td>E (11/03/2025)</td><td>Rmb137.16</td></tr><tr><td>Silergy Corp. (6415.TW)</td><td>U (05/19/2026)</td><td>NT$645.00</td></tr><tr><td>SMIC (0981.HK)</td><td>O (10/21/2025)</td><td>HK$77.85</td></tr><tr><td>TSMC (2330.TW)</td><td>O (02/07/2022)</td><td>NT$2,490.00</td></tr><tr><td>UMC (2303.TW)</td><td>O (05/19/2026)</td><td>NT$170.00</td></tr><tr><td>Vanguard International Semiconductor (5347.TWO)</td><td>E (01/14/2026)</td><td>NT$186.50</td></tr><tr><td>WIN Semiconductors Corp (3105.TWO)</td><td>U (07/14/2025)</td><td>NT$522.00</td></tr><tr><td colspan="3">Daisy Dai, CFA</td></tr><tr><td>ASMPT Ltd (0522.HK)</td><td>O (07/24/2025)</td><td>HK$194.70</td></tr><tr><td>China Resources Microelectronics Limited (688396.SS)</td><td>U (03/02/2026)</td><td>Rmb80.80</td></tr><tr><td>Elan Microelectronics Corp (2458.TW)</td><td>O (10/03/2025)</td><td>NT$166.00</td></tr><tr><td>Empyrean Technology Co Ltd (301269.SZ)</td><td>E (01/17/2025)</td><td>Rmb101.30</td></tr><tr><td>Hangzhou Silan Microelectronics Co. Ltd. (600460.SS)</td><td>U (08/25/2025)</td><td>Rmb47.04</td></tr><tr><td>Innoscience (2577.HK)</td><td>E (10/13/2025)</td><td>HK$72.10</td></tr><tr><td>JCET Group Co Ltd (600584.SS)</td><td>E (01/16/2026)</td><td>Rmb86.09</td></tr><tr><td>Shanghai Fudan Microelectronics (1385.HK)</td><td>O (03/07/2025)</td><td>HK$27.88</td></tr><tr><td>SICC Co Ltd (688234.SS)</td><td>O (03/20/2026)</td><td>Rmb163.37</td></tr><tr><td>StarPower Semiconductor Ltd (603290.SS)</td><td>E (05/14/2026)</td><td>Rmb138.80</td></tr><tr><td>Unigroup Guoxin Microelectronics Co Ltd (002049.SZ)</td><td>U (01/10/2023)</td><td>Rmb81.91</td></tr><tr><td>Universal Scientific Ind. (Shanghai) (601231.SS)</td><td>O (11/05/2025)</td><td>Rmb35.38</td></tr><tr><td>Yangjie Technology (300373.SZ)</td><td>O (06/10/2022)</td><td>Rmb132.96</td></tr><tr><td colspan="3">Daniel Yen, CFA</td></tr><tr><td>AP Memory Technology Corp (6531.TW)</td><td>O (07/11/2025)</td><td>NT$1,050.00</td></tr><tr><td>ASMedia Technology Inc (5269.TW)</td><td>U (10/03/2025)</td><td>NT$1,425.00</td></tr><tr><td>Aspeed Technology (5274.TWO)</td><td>O (06/09/2025)</td><td>NT$18,505.00</td></tr><tr><td>Egis Technology Inc (6462.TWO)</td><td>E (01/28/2026)</td><td>NT$122.00</td></tr><tr><td>Espressif Systems (688018.SS)</td><td>O (05/15/2023)</td><td>Rmb122.50</td></tr><tr><td>GigaDevice Semiconductor Beijing Inc (603986.SS)</td><td>O (05/15/2025)</td><td>Rmb640.99</td></tr><tr><td>Macronix International Co Ltd (2337.TW)</td><td>O (09/18/2025)</td><td>NT$172.00</td></tr><tr><td>Montage Technology Co Ltd (6809.HK)</td><td>O (03/18/2026)</td><td>HK$408.20</td></tr><tr><td>Montage Technology Co Ltd (688008.SS)</td><td>O (03/18/2026)</td><td>Rmb258.00</td></tr><tr><td>Novatek (3034.TW)</td><td>U (02/04/2026)</td><td>NT$544.00</td></tr><tr><td>Nuvoton Technology Corporation (4919.TW)</td><td>U (11/10/2025)</td><td>NT$194.50</td></tr><tr><td>Parade Technologies Ltd (4966.TWO)</td><td>O (05/27/2026)</td><td>NT$661.00</td></tr><tr><td>Powerchip Semiconductor Manufacturing Co (6770.TW)</td><td>O (10/27/2025)</td><td>NT$78.60</td></tr><tr><td>Realtek Semiconductor (2379.TW)</td><td>E (01/30/2026)</td><td>NT$863.00</td></tr><tr><td>Shenzhen Goodix Technology Co Ltd (603160.SS)</td><td>U (07/14/2025)</td><td>Rmb59.06</td></tr><tr><td>Winbond Electronics Corp (2344.TW)</td><td>O (05/28/2026)</td><td>NT$211.50</td></tr><tr><td>WPG Holdings (3702.TW)</td><td>O (03/16/2026)</td><td>NT$108.00</td></tr><tr><td>WT Microelectronics Co. Ltd. (3036.TW)</td><td>O (01/27/2026)</td><td>NT$220.50</td></tr><tr><td colspan="3">Duan Liu</td></tr><tr><td>Dosilicon Co Ltd (688110.SS)</td><td>U (09/06/2024)</td><td>Rmb161.79</td></tr><tr><td>Shenzhen Longsys Electronics Co Ltd (301308.SZ)</td><td>E (02/25/2026)</td><td>Rmb596.01</td></tr><tr><td colspan="3">Tiffany Yeh</td></tr><tr><td>AllRing Tech Co. (6187.TWO)</td><td>O (09/23/2025)</td><td>NT$1,170.00</td></tr><tr><td>FOCI Fiber Optic Communications Inc (3363.TWO)</td><td>O (01/15/2025)</td><td>NT$685.00</td></tr><tr><td>Himax Technologies Inc (HIMX.O)</td><td>E (02/04/2026)</td><td>US$18.54</td></tr><tr><td>Hon Precision (7769.TW)</td><td>O (04/17/2026)</td><td>NT$6,810.00</td></tr><tr><td>MPI Corporation (6223.TWO)</td><td>O (04/17/2026)</td><td>NT$6,680.00</td></tr><tr><td>Silicon Motion (SIMO.O)</td><td>O (05/06/2024)</td><td>US$336.90</td></tr><tr><td>WinWay Technology Co Ltd (6515.TW)</td><td>O (04/17/2026)</td><td>NT$9,450.00</td></tr></table>
+
+Stock Ratings are subject to change. Please see latest research for each company.  
+\* Historical prices are not split adjusted.
+
+## © 2026 MS

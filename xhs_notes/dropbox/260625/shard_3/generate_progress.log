@@ -1,0 +1,34 @@
+Found 32 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_juboa7bw/pdfs/0001-16-Barclays-Cross-Asset Research A tale of two markets- Treasury and equity financing-260623.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_juboa7bw/pdfs/0002-17-Goldman Sachs-China Grid Tech- Power Transformer Export Tracker- May China transformer total exports picked up to 72- yoy- with exports to US at-260625.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_juboa7bw/pdfs/0003-18-J.P. Morgan-Property Data Monitor Mainland China- weekly sales turn worse due to holidays- HK- home prices up another 0.6- W W-260624.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_juboa7bw/pdfs/0004-19-JPM-Memory Market Update-In-between volatility and fundamentals What to focus on heading into CY2Q26 earnings result season-260624.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_juboa7bw/pdfs/0005-20-Morgan Stanley-AI Supply Chain- Preliminary 2027 TSMC CoWoS Allocation-260623.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=00587870-859c-4188-bc07-e832b3081077
+MinerU states: failed, done, done, pending, waiting-file
+MinerU states: failed, done, done, done, done
+1 PDF(s) remain incomplete after attempt 1.
+MinerU attempt 2/4 using MINER_U: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_juboa7bw/pdfs/0001-16-Barclays-Cross-Asset Research A tale of two markets- Treasury and equity financing-260623.pdf
+MinerU attempt 2 using MINER_U batch_id=d11126db-109c-479d-96f0-ecad900e696c
+MinerU states: waiting-file
+MinerU states: failed
+1 PDF(s) remain incomplete after attempt 2.
+MinerU attempt 3/4 using MINER_U_2: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_juboa7bw/pdfs/0001-16-Barclays-Cross-Asset Research A tale of two markets- Treasury and equity financing-260623.pdf
+MinerU attempt 3 using MINER_U_2 batch_id=c230b81a-719b-4341-b66b-77abc538f9f8
+MinerU states: waiting-file
+MinerU states: failed
+1 PDF(s) remain incomplete after attempt 3.
+MinerU attempt 4/4 using MINER_U: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_juboa7bw/pdfs/0001-16-Barclays-Cross-Asset Research A tale of two markets- Treasury and equity financing-260623.pdf
+MinerU attempt 4 using MINER_U batch_id=3e079e6b-aa5a-4f34-93c8-a8adfd0e7015
+MinerU states: waiting-file
+MinerU states: failed
+1 PDF(s) remain incomplete after attempt 4.
+Skipping PDF after MinerU retry exhaustion: 0001-16-Barclays-Cross-Asset Research A tale of two markets- Treasury and equity financing-260623.pdf
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260625/shard_3; successful_reports=4; mineru_timed_out=False; mineru_attempts=4
+All batches completed successfully. Generated 4 report directories.
