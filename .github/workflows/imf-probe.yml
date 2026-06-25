@@ -1,7 +1,7 @@
 name: IMF probe (temporary)
 
-# Temporary diagnostic: capture the exact Coveo search request (auth token + POST
-# body) and response shape used by the IMF publications search. Delete once wired up.
+# Temporary diagnostic: decode the Coveo token lifetime, dump result shape, and test
+# a direct (browser-less) replay of the IMF Coveo search. Delete once wired up.
 
 on:
   workflow_dispatch: {}
@@ -21,34 +21,32 @@ jobs:
         with:
           python-version: "3.11"
       - run: |
-          pip install playwright
+          pip install playwright requests
           python -m playwright install --with-deps chromium
-      - name: Capture Coveo request/response
+      - name: Inspect Coveo token + result shape + direct replay
         run: |
           python - <<'PY'
+          import base64, json, datetime
+          import requests
           from playwright.sync_api import sync_playwright
 
           reqs, resps = [], []
 
           def on_request(req):
               if "coveo.com/rest/search" in req.url:
-                  reqs.append({"method": req.method, "url": req.url,
-                               "headers": dict(req.headers), "post": req.post_data})
+                  reqs.append({"url": req.url, "headers": dict(req.headers), "post": req.post_data})
 
           def on_response(resp):
               if "coveo.com/rest/search" in resp.url:
                   try:
-                      body = resp.text()
+                      resps.append(resp.json())
                   except Exception as e:
-                      body = f"<err {e}>"
-                  resps.append((resp.status, resp.url, body))
+                      resps.append({"_err": str(e)})
 
           with sync_playwright() as p:
               b = p.chromium.launch(headless=True)
-              ctx = b.new_context(
-                  user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                              "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"),
-                  locale="en-US")
+              ctx = b.new_context(user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                                              "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"), locale="en-US")
               page = ctx.new_page()
               page.on("request", on_request)
               page.on("response", on_response)
@@ -57,21 +55,55 @@ jobs:
               except Exception as e:
                   print("goto:", e)
               page.wait_for_timeout(9000)
-
-              print("=== COVEO REQUESTS (%d) ===" % len(reqs))
-              for r in reqs:
-                  print("METHOD", r["method"], r["url"])
-                  h = {k.lower(): v for k, v in r["headers"].items()}
-                  for k in ("authorization", "content-type", "origin", "referer"):
-                      if k in h:
-                          print("  H", k, ":", str(h[k])[:160])
-                  print("  POST:", (r["post"] or "")[:1800])
-                  print("-" * 70)
-
-              print("=== COVEO RESPONSES (%d) ===" % len(resps))
-              for st, url, body in resps:
-                  print("STATUS", st)
-                  print("  BODY:", body[:1500].replace("\n", " "))
-                  print("-" * 70)
               b.close()
+
+          print("captured requests:", len(reqs), "responses:", len(resps))
+          if not reqs:
+              raise SystemExit("no coveo request captured")
+
+          r = reqs[0]
+          headers = {k.lower(): v for k, v in r["headers"].items()}
+          auth = headers.get("authorization", "")
+          print("auth scheme:", auth.split(" ")[0] if auth else "(none)", "len:", len(auth))
+          tok = auth.split(" ", 1)[1] if " " in auth else auth
+          parts = tok.split(".")
+          if len(parts) == 3:  # JWT
+              try:
+                  pad = parts[1] + "=" * (-len(parts[1]) % 4)
+                  payload = json.loads(base64.urlsafe_b64decode(pad))
+                  exp = payload.get("exp")
+                  print("JWT exp:", exp, datetime.datetime.utcfromtimestamp(exp).isoformat() if exp else "n/a")
+                  print("JWT keys:", list(payload.keys()))
+              except Exception as e:
+                  print("jwt decode err:", e)
+          else:
+              print("token is not a 3-part JWT (maybe a plain API key)")
+
+          # Result shape from the browser-captured response
+          for resp in resps:
+              if isinstance(resp, dict) and resp.get("results"):
+                  print("totalCount:", resp.get("totalCount"))
+                  for it in resp["results"][:3]:
+                      raw = it.get("raw", {})
+                      print("  TITLE:", str(it.get("title"))[:70])
+                      print("    clickableuri:", it.get("clickableUri") or it.get("clickableuri"))
+                      print("    imfdate:", raw.get("imfdate"), "imfcontenttype:", raw.get("imfcontenttype"))
+                  break
+
+          # Direct browser-less replay (curl/requests) using captured token + body
+          print("=== direct replay via requests ===")
+          try:
+              rr = requests.post(
+                  r["url"],
+                  headers={"authorization": auth, "content-type": "application/json",
+                           "origin": "https://www.imf.org", "referer": "https://www.imf.org/"},
+                  data=r["post"], timeout=40)
+              print("status:", rr.status_code, "len:", len(rr.text))
+              try:
+                  jj = rr.json()
+                  print("replay totalCount:", jj.get("totalCount"), "results:", len(jj.get("results", [])))
+              except Exception as e:
+                  print("replay json err:", e, rr.text[:200])
+          except Exception as e:
+              print("replay error:", e)
           PY
