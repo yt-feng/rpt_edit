@@ -30,22 +30,24 @@ jobs:
 
           UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0 Safari/537.36"}
 
-          print("##### A) IDEAS/RePEc IMF Working Papers (bot-friendly listing) #####")
+          print("##### A) IDEAS/RePEc IMF Working Papers: real link format #####")
           for ideas in ["https://ideas.repec.org/s/imf/imfwpa.html"]:
               try:
                   r = rq.get(ideas, headers=UA, timeout=40)
-                  papers = sorted(set(re.findall(r'href="(/[ap]/imf/imfwpa/[^"]+\.html)"', r.text)))
-                  print("IDEAS", ideas, "status", r.status_code, "paper-links", len(papers))
-                  for p in papers[:5]:
-                      print("   ", p)
-                  if papers:
-                      ab = "https://ideas.repec.org" + papers[0]
+                  print("IDEAS", ideas, "status", r.status_code, "len", len(r.text))
+                  all_imf = sorted(set(re.findall(r'href="([^"]*imf[^"]*)"', r.text)))
+                  print("  hrefs containing 'imf':", len(all_imf))
+                  for h in all_imf[:25]:
+                      print("    ", h)
+                  ab_rel = next((h for h in all_imf if re.search(r"/imfwpa/", h)), None)
+                  if ab_rel:
+                      ab = ab_rel if ab_rel.startswith("http") else "https://ideas.repec.org" + ab_rel
                       ra = rq.get(ab, headers=UA, timeout=40)
                       imf_links = sorted(set(re.findall(r'href="(https?://[^"]*imf\.org[^"]*)"', ra.text)))
                       anyfile = sorted(set(re.findall(r'href="(https?://[^"]+\.(?:ashx|pdf)[^"]*)"', ra.text)))
-                      print("   ABSTRACT", ab, "status", ra.status_code)
-                      print("     imf.org links:", imf_links[:6])
-                      print("     .ashx/.pdf links:", anyfile[:6])
+                      print("  ABSTRACT", ab, "status", ra.status_code)
+                      print("    imf.org links:", imf_links[:6])
+                      print("    .ashx/.pdf links:", anyfile[:6])
               except Exception as e:
                   print("IDEAS error", e)
 
