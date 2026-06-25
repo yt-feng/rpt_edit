@@ -1,7 +1,7 @@
 name: IMF probe (temporary)
 
-# Temporary diagnostic: intercept the XHR/fetch API calls the IMF publications search
-# page makes, so we can call that data API directly. Delete once IMF is wired up.
+# Temporary diagnostic: capture the exact Coveo search request (auth token + POST
+# body) and response shape used by the IMF publications search. Delete once wired up.
 
 on:
   workflow_dispatch: {}
@@ -23,35 +23,25 @@ jobs:
       - run: |
           pip install playwright
           python -m playwright install --with-deps chromium
-      - name: Intercept IMF search API
+      - name: Capture Coveo request/response
         run: |
           python - <<'PY'
-          import re
           from playwright.sync_api import sync_playwright
 
-          seen = []
-          bodies = {}
+          reqs, resps = [], []
 
-          STATIC = (".js", ".css", ".png", ".jpg", ".jpeg", ".svg", ".woff", ".woff2", ".ico", ".gif", ".webp")
+          def on_request(req):
+              if "coveo.com/rest/search" in req.url:
+                  reqs.append({"method": req.method, "url": req.url,
+                               "headers": dict(req.headers), "post": req.post_data})
 
           def on_response(resp):
-              try:
-                  url = resp.url
-                  ct = resp.headers.get("content-type", "")
-              except Exception:
-                  return
-              if url.lower().split("?")[0].endswith(STATIC):
-                  return
-              looks_api = bool(re.search(r"search|api|content|coveo|query|publication|elastic|azure", url, re.I))
-              if "json" in ct.lower() or looks_api:
-                  seen.append((resp.status, ct[:30], url))
-                  if looks_api:
-                      try:
-                          t = resp.text()
-                          if any(k in t.lower() for k in ("title", "/issues/", "publication", "docnumber", "seriestype", "results")):
-                              bodies[url] = t[:1500]
-                      except Exception:
-                          pass
+              if "coveo.com/rest/search" in resp.url:
+                  try:
+                      body = resp.text()
+                  except Exception as e:
+                      body = f"<err {e}>"
+                  resps.append((resp.status, resp.url, body))
 
           with sync_playwright() as p:
               b = p.chromium.launch(headless=True)
@@ -60,23 +50,28 @@ jobs:
                               "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"),
                   locale="en-US")
               page = ctx.new_page()
+              page.on("request", on_request)
               page.on("response", on_response)
               try:
                   page.goto("https://www.imf.org/en/publications/search", wait_until="networkidle", timeout=90000)
               except Exception as e:
                   print("goto:", e)
               page.wait_for_timeout(9000)
-              try:
-                  page.mouse.wheel(0, 5000); page.wait_for_timeout(5000)
-              except Exception:
-                  pass
-              print("=== candidate JSON/api responses (%d) ===" % len(seen))
-              for st, ct, url in seen[:50]:
-                  print(st, ct, url[:180])
-              print("=== response bodies that look like results ===")
-              for url, snip in list(bodies.items())[:6]:
-                  print("URL:", url)
-                  print("SNIPPET:", snip.replace("\n", " ")[:800])
+
+              print("=== COVEO REQUESTS (%d) ===" % len(reqs))
+              for r in reqs:
+                  print("METHOD", r["method"], r["url"])
+                  h = {k.lower(): v for k, v in r["headers"].items()}
+                  for k in ("authorization", "content-type", "origin", "referer"):
+                      if k in h:
+                          print("  H", k, ":", str(h[k])[:160])
+                  print("  POST:", (r["post"] or "")[:1800])
+                  print("-" * 70)
+
+              print("=== COVEO RESPONSES (%d) ===" % len(resps))
+              for st, url, body in resps:
+                  print("STATUS", st)
+                  print("  BODY:", body[:1500].replace("\n", " "))
                   print("-" * 70)
               b.close()
           PY
