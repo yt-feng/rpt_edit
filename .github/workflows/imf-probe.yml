@@ -1,0 +1,62 @@
+name: IMF probe (temporary)
+
+# Temporary diagnostic: inspect what IMF listing pages return via curl_cffi so we
+# can build the right IMF adapter. Delete this workflow once IMF is wired up.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Probe IMF listing pages
+        run: |
+          python - <<'PY'
+          import re
+          from curl_cffi import requests as cr
+
+          urls = [
+              "https://www.imf.org/en/publications/wp",
+              "https://www.imf.org/en/publications",
+              "https://www.imf.org/en/publications/search?when=After&series=IMF%20Working%20Papers",
+          ]
+          for u in urls:
+              print("=" * 80)
+              try:
+                  r = cr.get(u, impersonate="chrome", timeout=40, allow_redirects=True)
+              except Exception as e:
+                  print("URL", u, "ERROR", e); continue
+              html = r.text
+              print("URL", u, "status", r.status_code, "ctype", r.headers.get("content-type"), "len", len(html))
+              issue = sorted(set(re.findall(r'href="(/en/[Pp]ublications/[^"]+/Issues/[^"]+?)"', html)))
+              print("  issue-links in HTML:", len(issue), issue[:5])
+              pdfs = sorted(set(re.findall(r'(?:href|content)="([^"]+\.(?:ashx|pdf)[^"]*)"', html)))
+              print("  pdf/ashx in HTML:", len(pdfs), pdfs[:3])
+              nd = re.search(r'id="__NEXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
+              print("  __NEXT_DATA__ present:", bool(nd), "len", len(nd.group(1)) if nd else 0)
+              if nd:
+                  jl = sorted(set(re.findall(r'/en/[Pp]ublications/[^"\\]+/Issues/[^"\\]+', nd.group(1))))
+                  print("  issue-links in NEXT_DATA:", len(jl), jl[:5])
+              # Follow the first issue link to see the PDF link format
+              first = (issue or [])[:1]
+              if first:
+                  land = "https://www.imf.org" + first[0]
+                  try:
+                      rr = cr.get(land, impersonate="chrome", timeout=40, allow_redirects=True)
+                      lp = sorted(set(re.findall(r'(?:href|content)="([^"]+\.(?:ashx|pdf)[^"]*)"', rr.text)))
+                      print("  LANDING", land, "status", rr.status_code, "pdf/ashx:", len(lp), lp[:4])
+                  except Exception as e:
+                      print("  LANDING error", e)
+          PY
