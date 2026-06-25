@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_y7zo1rpr/pdfs/0001-06-GS-Global Metals - Mining-Met Coal Singapore Conference-China mine disruption impact 15-20Mt- prices could test US-280 t in 2H-260624.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_y7zo1rpr/pdfs/0002-07-MS-China Energy - Chemicals-China NOW-Oil Consumption-260624.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_y7zo1rpr/pdfs/0003-08-BARC-U.S. Equity Strategy Upgrading Into Uncertainty- Raise S-P 500 PT to 7800- FY26 EPS to -337-260623.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_y7zo1rpr/pdfs/0004-09-DB-FX Blog-Currency Risk Management- From Theory to Practice-260623.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_y7zo1rpr/pdfs/0005-10-NOM-ANCHOR REPORT-Global Batteries - ESS- robot batteries to drive value-260624.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
