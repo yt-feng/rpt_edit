@@ -247,12 +247,55 @@ def _sanitize_xml_entities(content: bytes) -> bytes:
     return re.sub(r"&([A-Za-z][A-Za-z0-9]*);", repl, text).encode("utf-8")
 
 
+def _first_tag_text(body: str, tag: str) -> str:
+    """Pull the inner text of the first <tag>...</tag> (any namespace) from a blob."""
+    match = re.search(rf"<(?:\w+:)?{tag}\b[^>]*>(.*?)</(?:\w+:)?{tag}>", body, re.I | re.S)
+    if not match:
+        return ""
+    value = re.sub(r"<!\[CDATA\[(.*?)\]\]>", r"\1", match.group(1), flags=re.S)
+    value = re.sub(r"<[^>]+>", " ", value)  # strip any nested HTML tags
+    return html.unescape(value).strip()
+
+
+def _regex_extract_items(content: bytes) -> list[dict[str, str]]:
+    """Last-resort parser for feeds that are not well-formed XML at all.
+
+    Some feeds embed raw, unbalanced HTML (mismatched tags) that no amount of
+    entity fixing will make XML-valid. We do not need the full document tree, only
+    each item's title/link/guid/date, so extract those by pattern from each
+    <item>/<entry> block. This is lenient by design.
+    """
+    text = content.decode("utf-8", errors="replace")
+    results: list[dict[str, str]] = []
+    for tag, body in re.findall(r"<(item|entry)\b[^>]*>(.*?)</\1>", text, re.I | re.S):
+        link = _first_tag_text(body, "link")
+        if not link:
+            href = re.search(r"<link\b[^>]*\bhref=[\"']([^\"']+)[\"']", body, re.I)
+            link = html.unescape(href.group(1)) if href else ""
+        date = (
+            _first_tag_text(body, "pubDate")
+            or _first_tag_text(body, "date")
+            or _first_tag_text(body, "published")
+            or _first_tag_text(body, "updated")
+        )
+        results.append({
+            "title": _first_tag_text(body, "title"),
+            "link": link,
+            "guid": _first_tag_text(body, "guid") or _first_tag_text(body, "id") or link,
+            "date": date,
+        })
+    return results
+
+
 def parse_feed(content: bytes) -> list[dict[str, str]]:
     """Return a list of {title, link, guid, date} from any RSS/RDF/Atom feed."""
     try:
         root = ET.fromstring(content)
     except ET.ParseError:
-        root = ET.fromstring(_sanitize_xml_entities(content))
+        try:
+            root = ET.fromstring(_sanitize_xml_entities(content))
+        except ET.ParseError:
+            return _regex_extract_items(content)
     entries = [el for el in root.iter() if local_tag(el.tag) in {"item", "entry"}]
     results: list[dict[str, str]] = []
     for entry in entries:
