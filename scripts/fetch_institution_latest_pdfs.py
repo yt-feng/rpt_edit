@@ -144,11 +144,18 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "name_en": "Brookings",
         "name_cn": "布鲁金斯学会",
         "token": "Brookings",
-        "kind": "rss",
+        # Brookings has disabled its RSS feed (/feed/ returns the HTML homepage), so
+        # scrape the research listing page for article links, then resolve each PDF.
+        # Most articles are web-only commentary; those without a PDF are skipped, so
+        # this naturally keeps only the report-style posts.
+        "kind": "html_listing",
         "pdf": "scrape",
-        "feeds": [
-            "https://www.brookings.edu/feed/",
+        # Listing pages carry no reliable per-item dates; rely on seen-dedup instead.
+        "recency_filter": False,
+        "listing_urls": [
+            "https://www.brookings.edu/research/",
         ],
+        "item_link_pattern": r"https://www\.brookings\.edu/articles/[a-z0-9-]+/",
     },
 }
 
@@ -406,6 +413,51 @@ def collect_worldbank_items(cfg: dict[str, Any], session: requests.Session, time
 # PDF resolution + download
 # ------------------------------------------------------------------
 
+def _extract_html_title(html_text: str) -> str:
+    """Best-effort article title from an HTML page (og:title, then <title>)."""
+    match = re.search(
+        r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\']+)["\']',
+        html_text, re.I,
+    )
+    if not match:
+        match = re.search(r"<title>(.*?)</title>", html_text, re.I | re.S)
+    if not match:
+        return ""
+    title = html.unescape(re.sub(r"\s+", " ", match.group(1))).strip()
+    return re.sub(r"\s*[|–-]\s*Brookings.*$", "", title).strip()
+
+
+def collect_html_listing_items(cfg: dict[str, Any], session: requests.Session, timeout: int) -> list[dict[str, Any]]:
+    """Scrape a listing page for article links; each is resolved to a PDF later."""
+    pattern = re.compile(cfg["item_link_pattern"], re.I)
+    items: list[dict[str, Any]] = []
+    seen_links: set[str] = set()
+    for url in cfg["listing_urls"]:
+        try:
+            resp = session.get(url, timeout=timeout)
+            resp.raise_for_status()
+        except Exception as exc:  # noqa: BLE001 - isolate listing failures
+            warn(f"listing failed: {url}: {exc}")
+            continue
+        links: list[str] = []
+        for match in re.finditer(r'href=["\']([^"\']+)["\']', resp.text):
+            full = urljoin(url, html.unescape(match.group(1))).split("#")[0]
+            if pattern.search(full) and full not in seen_links:
+                seen_links.add(full)
+                links.append(full)
+        log(f"  listing {url} -> {len(links)} article links")
+        for link in links:
+            items.append({
+                "title": "",
+                "source_url": link,
+                "guid": link,
+                "date": "",
+                "pdf_candidates": [],
+                "scrape_url": link,
+            })
+    return items
+
+
 def scrape_pdf_candidates(html_text: str, base_url: str) -> list[str]:
     host = urlsplit(base_url).netloc
     candidates: list[str] = []
@@ -556,6 +608,8 @@ def main() -> int:
         try:
             if cfg["kind"] == "worldbank_api":
                 items = collect_worldbank_items(cfg, session, args.request_timeout, args.worldbank_rows)
+            elif cfg["kind"] == "html_listing":
+                items = collect_html_listing_items(cfg, session, args.request_timeout)
             else:
                 items = collect_rss_items(cfg, session, args.request_timeout)
         except Exception as exc:  # noqa: BLE001 - never let one source kill the run
@@ -584,6 +638,8 @@ def main() -> int:
                     page = session.get(item["scrape_url"], timeout=args.request_timeout)
                     page.raise_for_status()
                     candidates = scrape_pdf_candidates(page.text, item["scrape_url"])
+                    if not item["title"]:
+                        item["title"] = _extract_html_title(page.text)
                 except Exception as exc:  # noqa: BLE001 - network error: retry next run
                     warn(f"  landing fetch failed, will retry next run: {item['source_url']}: {exc}")
                     continue
