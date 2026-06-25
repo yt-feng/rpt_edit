@@ -21,42 +21,43 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
-      - name: Probe IMF listing pages
+      - name: Probe IMF data sources
         run: |
           python - <<'PY'
           import re
+          import requests as rq
           from curl_cffi import requests as cr
 
-          urls = [
-              "https://www.imf.org/en/publications/wp",
-              "https://www.imf.org/en/publications",
-              "https://www.imf.org/en/publications/search?when=After&series=IMF%20Working%20Papers",
-          ]
-          for u in urls:
-              print("=" * 80)
+          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0 Safari/537.36"}
+
+          print("##### A) IDEAS/RePEc IMF Working Papers (bot-friendly listing) #####")
+          for ideas in ["https://ideas.repec.org/s/imf/imfwpa.html"]:
               try:
-                  r = cr.get(u, impersonate="chrome", timeout=40, allow_redirects=True)
+                  r = rq.get(ideas, headers=UA, timeout=40)
+                  papers = sorted(set(re.findall(r'href="(/[ap]/imf/imfwpa/[^"]+\.html)"', r.text)))
+                  print("IDEAS", ideas, "status", r.status_code, "paper-links", len(papers))
+                  for p in papers[:5]:
+                      print("   ", p)
+                  if papers:
+                      ab = "https://ideas.repec.org" + papers[0]
+                      ra = rq.get(ab, headers=UA, timeout=40)
+                      imf_links = sorted(set(re.findall(r'href="(https?://[^"]*imf\.org[^"]*)"', ra.text)))
+                      anyfile = sorted(set(re.findall(r'href="(https?://[^"]+\.(?:ashx|pdf)[^"]*)"', ra.text)))
+                      print("   ABSTRACT", ab, "status", ra.status_code)
+                      print("     imf.org links:", imf_links[:6])
+                      print("     .ashx/.pdf links:", anyfile[:6])
               except Exception as e:
-                  print("URL", u, "ERROR", e); continue
-              html = r.text
-              print("URL", u, "status", r.status_code, "ctype", r.headers.get("content-type"), "len", len(html))
-              issue = sorted(set(re.findall(r'href="(/en/[Pp]ublications/[^"]+/Issues/[^"]+?)"', html)))
-              print("  issue-links in HTML:", len(issue), issue[:5])
-              pdfs = sorted(set(re.findall(r'(?:href|content)="([^"]+\.(?:ashx|pdf)[^"]*)"', html)))
-              print("  pdf/ashx in HTML:", len(pdfs), pdfs[:3])
-              nd = re.search(r'id="__NEXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
-              print("  __NEXT_DATA__ present:", bool(nd), "len", len(nd.group(1)) if nd else 0)
-              if nd:
-                  jl = sorted(set(re.findall(r'/en/[Pp]ublications/[^"\\]+/Issues/[^"\\]+', nd.group(1))))
-                  print("  issue-links in NEXT_DATA:", len(jl), jl[:5])
-              # Follow the first issue link to see the PDF link format
-              first = (issue or [])[:1]
-              if first:
-                  land = "https://www.imf.org" + first[0]
-                  try:
-                      rr = cr.get(land, impersonate="chrome", timeout=40, allow_redirects=True)
-                      lp = sorted(set(re.findall(r'(?:href|content)="([^"]+\.(?:ashx|pdf)[^"]*)"', rr.text)))
-                      print("  LANDING", land, "status", rr.status_code, "pdf/ashx:", len(lp), lp[:4])
-                  except Exception as e:
-                      print("  LANDING error", e)
+                  print("IDEAS error", e)
+
+          print("##### B) IMF Next.js search page: look for the data API in __NEXT_DATA__ #####")
+          sr = cr.get("https://www.imf.org/en/publications/search?series=IMF%20Working%20Papers",
+                      impersonate="chrome", timeout=40, allow_redirects=True)
+          nd = re.search(r'id="__NEXT_DATA__"[^>]*>(.*?)</script>', sr.text, re.S)
+          if nd:
+              j = nd.group(1)
+              for kw in ["coveo", "organizationId", "accessToken", "apiKey", "searchHub", "/api/", "endpoint", "platform.cloud", "buildId"]:
+                  i = j.lower().find(kw.lower())
+                  print("KW", kw, "->", repr(j[max(0,i-30):i+90]) if i >= 0 else "not found")
+              apis = sorted(set(re.findall(r'https?://[a-z0-9.\-]+/[^"\\ ]*(?:api|search|coveo)[^"\\ ]*', j, re.I)))
+              print("api-ish urls:", apis[:10])
           PY
