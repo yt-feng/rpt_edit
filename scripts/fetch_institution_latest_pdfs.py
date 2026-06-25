@@ -58,6 +58,16 @@ from urllib.parse import urljoin, urlsplit
 
 import requests
 
+try:  # Optional: impersonate a real Chrome TLS/HTTP2 fingerprint to pass WAFs (IMF).
+    from curl_cffi import requests as cffi_requests  # type: ignore
+    _HAS_CFFI = True
+except Exception:  # noqa: BLE001
+    cffi_requests = None  # type: ignore
+    _HAS_CFFI = False
+
+# curl_cffi impersonation target; "chrome" maps to a recent Chrome fingerprint.
+CFFI_IMPERSONATE = "chrome"
+
 # A browser-like User-Agent. Several of these sites (notably RAND and Brookings)
 # reject the default python-requests UA with HTTP 403.
 DEFAULT_USER_AGENT = (
@@ -88,6 +98,9 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "name_en": "IMF",
         "name_cn": "国际货币基金组织",
         "token": "IMF",
+        # IMF's WAF blocks the python-requests TLS fingerprint (403 from any IP), so
+        # fetch this source through curl_cffi's Chrome impersonation when available.
+        "impersonate": True,
         "kind": "rss",
         "pdf": "scrape",
         "feeds": [
@@ -346,12 +359,22 @@ def parse_feed(content: bytes) -> list[dict[str, str]]:
 # Item collection per institution
 # ------------------------------------------------------------------
 
+def http_get(session: requests.Session, url: str, timeout: int, impersonate: bool = False, stream: bool = False):
+    """GET via curl_cffi (Chrome fingerprint) when impersonate is requested and the
+    library is installed; otherwise via the shared requests session. The returned
+    object exposes .status_code/.headers/.content/.text/.raise_for_status like requests.
+    """
+    if impersonate and _HAS_CFFI:
+        return cffi_requests.get(url, timeout=timeout, impersonate=CFFI_IMPERSONATE, allow_redirects=True, stream=stream)
+    return session.get(url, timeout=timeout, allow_redirects=True, stream=stream)
+
+
 def collect_rss_items(cfg: dict[str, Any], session: requests.Session, timeout: int) -> list[dict[str, Any]]:
     include = re.compile(cfg["include"], re.I) if cfg.get("include") else None
     items: list[dict[str, Any]] = []
     for feed_url in cfg["feeds"]:
         try:
-            resp = session.get(feed_url, timeout=timeout)
+            resp = http_get(session, feed_url, timeout, cfg.get("impersonate", False))
             resp.raise_for_status()
             parsed = parse_feed(resp.content)
         except Exception as exc:  # noqa: BLE001 - isolate feed failures
@@ -486,30 +509,41 @@ def scrape_pdf_candidates(html_text: str, base_url: str) -> list[str]:
     return sorted(candidates, key=score, reverse=True)
 
 
-def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, timeout: int, max_bytes: int) -> tuple[str | None, str]:
+def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, timeout: int, max_bytes: int, impersonate: bool = False) -> tuple[str | None, str]:
     """Try each candidate URL; save the first that is a real PDF. Returns (used_url, status)."""
     last_status = "no_candidate"
     for url in urls:
         if not url:
             continue
         try:
-            with session.get(url, stream=True, timeout=timeout, allow_redirects=True) as resp:
+            if impersonate and _HAS_CFFI:
+                # curl_cffi: read fully (bounded below), no chunked streaming API needed.
+                resp = cffi_requests.get(url, timeout=timeout, impersonate=CFFI_IMPERSONATE, allow_redirects=True)
                 if resp.status_code >= 400:
                     last_status = f"http_{resp.status_code}"
                     continue
-                buffer = bytearray()
-                too_large = False
-                for chunk in resp.iter_content(8192):
-                    if not chunk:
+                data = resp.content
+                if len(data) > max_bytes:
+                    last_status = "too_large"
+                    continue
+            else:
+                with session.get(url, stream=True, timeout=timeout, allow_redirects=True) as resp:
+                    if resp.status_code >= 400:
+                        last_status = f"http_{resp.status_code}"
                         continue
-                    buffer.extend(chunk)
-                    if len(buffer) > max_bytes:
-                        too_large = True
-                        break
-            if too_large:
-                last_status = "too_large"
-                continue
-            data = bytes(buffer)
+                    buffer = bytearray()
+                    too_large = False
+                    for chunk in resp.iter_content(8192):
+                        if not chunk:
+                            continue
+                        buffer.extend(chunk)
+                        if len(buffer) > max_bytes:
+                            too_large = True
+                            break
+                if too_large:
+                    last_status = "too_large"
+                    continue
+                data = bytes(buffer)
             # Require the %PDF signature even when the server claims a PDF content-type,
             # so we never save an HTML error / login page that lies about its type.
             if not is_pdf_bytes(data):
@@ -635,7 +669,7 @@ def main() -> int:
             candidates = list(item["pdf_candidates"])
             if not candidates and item.get("scrape_url"):
                 try:
-                    page = session.get(item["scrape_url"], timeout=args.request_timeout)
+                    page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False))
                     page.raise_for_status()
                     candidates = scrape_pdf_candidates(page.text, item["scrape_url"])
                     if not item["title"]:
@@ -653,7 +687,7 @@ def main() -> int:
             title = item["title"] or item["guid"] or item["source_url"]
             filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
             dest = output_dir / filename
-            used_url, status = download_pdf(session, candidates[:3], dest, args.request_timeout, max_bytes)
+            used_url, status = download_pdf(session, candidates[:3], dest, args.request_timeout, max_bytes, impersonate=cfg.get("impersonate", False))
             if status != "ok" or used_url is None:
                 # Could not download; do NOT mark seen so a transient failure is retried.
                 warn(f"  download failed ({status}): {title[:80]}")
