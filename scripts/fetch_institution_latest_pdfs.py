@@ -51,6 +51,7 @@ import sys
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
+from html.entities import name2codepoint
 from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import urljoin, urlsplit
@@ -114,6 +115,9 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "kind": "worldbank_api",
         "pdf": "direct",
         "api_base": "https://search.worldbank.org/api/v2/wds",
+        # WDS docdt lags real publication by many months, so a recency window would
+        # always be empty. Take the newest available by docdt and rely on seen-dedup.
+        "recency_filter": False,
         "params": {
             "format": "json",
             "srt": "docdt",
@@ -218,9 +222,32 @@ def is_pdf_bytes(data: bytes) -> bool:
 # Feed parsing (RSS 2.0, RSS 1.0/RDF, Atom)
 # ------------------------------------------------------------------
 
+def _sanitize_xml_entities(content: bytes) -> bytes:
+    """Neutralize undefined named HTML entities so strict XML parsing succeeds.
+
+    Some feeds (notably the Brookings WordPress feed) embed HTML named entities
+    such as ``&nbsp;`` that are not declared in XML, which makes ElementTree raise
+    "undefined entity". Convert known names to numeric refs, drop unknown ones, and
+    leave the five XML built-ins untouched.
+    """
+    text = content.decode("utf-8", errors="replace")
+
+    def repl(match: "re.Match[str]") -> str:
+        name = match.group(1)
+        if name in ("amp", "lt", "gt", "quot", "apos"):
+            return match.group(0)
+        codepoint = name2codepoint.get(name)
+        return f"&#{codepoint};" if codepoint is not None else ""
+
+    return re.sub(r"&([A-Za-z][A-Za-z0-9]*);", repl, text).encode("utf-8")
+
+
 def parse_feed(content: bytes) -> list[dict[str, str]]:
     """Return a list of {title, link, guid, date} from any RSS/RDF/Atom feed."""
-    root = ET.fromstring(content)
+    try:
+        root = ET.fromstring(content)
+    except ET.ParseError:
+        root = ET.fromstring(_sanitize_xml_entities(content))
     entries = [el for el in root.iter() if local_tag(el.tag) in {"item", "entry"}]
     results: list[dict[str, str]] = []
     for entry in entries:
@@ -301,10 +328,9 @@ def _derive_pdf_candidates(cfg: dict[str, Any], link: str) -> list[str]:
     return []
 
 
-def collect_worldbank_items(cfg: dict[str, Any], session: requests.Session, timeout: int, rows: int, start_date: str) -> list[dict[str, Any]]:
+def collect_worldbank_items(cfg: dict[str, Any], session: requests.Session, timeout: int, rows: int) -> list[dict[str, Any]]:
     params = dict(cfg["params"])
     params["rows"] = rows
-    params["strdate"] = start_date
     resp = session.get(cfg["api_base"], params=params, timeout=timeout)
     resp.raise_for_status()
     data = resp.json()
@@ -462,12 +488,15 @@ def main() -> int:
             raise SystemExit(f"Unknown institution keys: {unknown}. Known: {list(INSTITUTIONS)}")
 
     session = requests.Session()
-    session.headers.update({"User-Agent": args.user_agent, "Accept": "*/*"})
+    session.headers.update({
+        "User-Agent": args.user_agent,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+    })
 
     state = load_seen_state(seen_path)
     seen_items = state["items"]
     cutoff = datetime.now(timezone.utc) - timedelta(days=args.since_days)
-    start_date = (datetime.now(timezone.utc) - timedelta(days=args.since_days)).date().isoformat()
     today = datetime.now(timezone.utc).date().isoformat()
 
     downloaded: list[dict[str, Any]] = []
@@ -478,7 +507,7 @@ def main() -> int:
         log(f"== {cfg['name_en']} ({cfg['name_cn']}) ==")
         try:
             if cfg["kind"] == "worldbank_api":
-                items = collect_worldbank_items(cfg, session, args.request_timeout, args.worldbank_rows, start_date)
+                items = collect_worldbank_items(cfg, session, args.request_timeout, args.worldbank_rows)
             else:
                 items = collect_rss_items(cfg, session, args.request_timeout)
         except Exception as exc:  # noqa: BLE001 - never let one source kill the run
@@ -495,7 +524,7 @@ def main() -> int:
                 continue
 
             published = parse_date(item["date"])
-            if published is not None and published < cutoff:
+            if cfg.get("recency_filter", True) and published is not None and published < cutoff:
                 # Old item we have simply never recorded; mark it so we do not keep
                 # re-checking it every day, but do not download it.
                 seen_items[dedup_key] = {"first_seen": today, "status": "too_old"}
