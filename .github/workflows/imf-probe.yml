@@ -1,7 +1,7 @@
 name: IMF probe (temporary)
 
-# Final diagnostic: find the result URL field and where the Coveo token can be
-# fetched without a browser. Delete once IMF is wired up.
+# Final diagnostic (curl_cffi only, fast): locate the Coveo org id + API key inside
+# the IMF search JS bundles so the token can be fetched without a browser.
 
 on:
   workflow_dispatch: {}
@@ -12,7 +12,7 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
@@ -20,72 +20,47 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: |
-          pip install playwright requests curl_cffi
-          python -m playwright install --with-deps chromium
-      - name: Find URL field + token source
+      - run: pip install curl_cffi
+      - name: Find Coveo org/token in JS bundles
         run: |
           python - <<'PY'
-          import re, json
-          from playwright.sync_api import sync_playwright
+          import re
+          from urllib.parse import urljoin
           from curl_cffi import requests as cr
 
-          reqs, resps = [], []
-          def on_request(req):
-              if "coveo.com/rest/search" in req.url:
-                  reqs.append({"url": req.url, "headers": dict(req.headers)})
-          def on_response(resp):
-              if "coveo.com/rest/search" in resp.url:
-                  try: resps.append(resp.json())
-                  except Exception as e: resps.append({"_err": str(e)})
+          base = "https://www.imf.org/en/publications/search"
+          html = cr.get(base, impersonate="chrome", timeout=40).text
+          print("search HTML len:", len(html))
 
-          with sync_playwright() as p:
-              b = p.chromium.launch(headless=True)
-              ctx = b.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0 Safari/537.36", locale="en-US")
-              page = ctx.new_page()
-              page.on("request", on_request); page.on("response", on_response)
-              try: page.goto("https://www.imf.org/en/publications/search", wait_until="networkidle", timeout=90000)
-              except Exception as e: print("goto:", e)
-              page.wait_for_timeout(9000)
-              b.close()
+          bundles = sorted(set(re.findall(r'src="([^"]*?/_next/[^"]+?\.js)"', html)))
+          print("bundles found:", len(bundles))
+          ORG = "imfproduction561s308u"
 
-          # 1) URL field in results
-          for resp in resps:
-              if isinstance(resp, dict) and resp.get("results"):
-                  it = resp["results"][0]
-                  print("result top-level keys:", list(it.keys()))
-                  for k in ("uri", "clickableUri", "printableUri"):
-                      print("  ", k, "=", it.get(k))
-                  raw = it.get("raw", {})
-                  uri_like = {k: raw[k] for k in raw if "uri" in k.lower() or k.lower() in ("sysuri",)}
-                  print("  raw uri-like fields:", uri_like)
-                  break
+          def show(label, text, needle, around=70):
+              i = text.find(needle)
+              if i >= 0:
+                  print(f"   [{label}] ...{text[max(0,i-around):i+around]}...")
+                  return True
+              return False
 
-          # 2) Where does the 45-char token live? Search page HTML + its JS bundles.
-          auth = ""
-          if reqs:
-              h = {k.lower(): v for k, v in reqs[0]["headers"].items()}
-              auth = h.get("authorization", "")
-          tok = auth.split(" ", 1)[1] if " " in auth else auth
-          print("token captured len:", len(tok))
-          if tok:
-              base = "https://www.imf.org/en/publications/search"
-              html = cr.get(base, impersonate="chrome", timeout=40).text
-              print("token in search HTML:", tok in html)
-              # find referenced JS bundles and search them
-              js = sorted(set(re.findall(r'src="(/_next/[^"]+\.js)"', html)))[:12]
-              print("js bundles found:", len(js))
-              found_in = []
-              for rel in js:
-                  try:
-                      t = cr.get("https://www.imf.org" + rel, impersonate="chrome", timeout=40).text
-                      if tok in t:
-                          found_in.append(rel)
-                  except Exception:
-                      pass
-              print("token found in JS bundles:", found_in[:5])
-              # also: is there an org id + 'accessToken'/'apiKey' pattern in HTML?
-              for kw in ("accessToken", "apiKey", "searchKey", "imfproduction561s308u", "xx"):
-                  i = html.find(kw)
-                  print("  HTML kw", kw, "->", repr(html[max(0,i-20):i+60]) if i >= 0 else "no")
+          hit_any = False
+          for rel in bundles:
+              url = urljoin(base, rel)
+              try:
+                  t = cr.get(url, impersonate="chrome", timeout=40).text
+              except Exception as e:
+                  print("  bundle err", rel, e); continue
+              if ORG in t or "accessToken" in t or "coveo" in t.lower():
+                  print("BUNDLE", url)
+                  hit_any = True
+                  show("org", t, ORG)
+                  for kw in ("accessToken", "apiKey", "searchToken", "platformUrl", "organizationId"):
+                      show(kw, t, kw)
+                  # token-looking strings near accessToken
+                  for m in re.finditer(r'accessToken["\']?\s*[:=]\s*["\']([^"\']{12,60})["\']', t):
+                      print("   TOKEN-CANDIDATE:", m.group(1))
+                  for m in re.finditer(r'organizationId["\']?\s*[:=]\s*["\']([^"\']{6,40})["\']', t):
+                      print("   ORG-CANDIDATE:", m.group(1))
+          if not hit_any:
+              print("No bundle referenced org/accessToken/coveo.")
           PY
