@@ -113,12 +113,14 @@ INSTITUTION_TITLE_ALIASES: list[tuple[str, list[str]]] = [
     ("花旗", ["Citi", "Citigroup"]),
     ("瑞银", ["UBS"]),
     ("汇丰", ["HSBC"]),
-    ("巴克莱", ["Barclays"]),
+    ("巴克莱", ["BARC", "Barclays"]),
     ("伯恩斯坦", ["Bernstein", "Sanford C. Bernstein", "Sanford Bernstein"]),
+    ("杰富瑞", ["JEF", "Jefferies"]),
     ("德意志银行", ["DB", "Deutsche Bank", "德银"]),
-    ("野村", ["Nomura"]),
+    ("野村", ["NOM", "Nomura"]),
     ("美联储", ["Fed", "Federal Reserve"]),
 ]
+TITLE_ALIAS_SEPARATOR_RE = r"(?:[：:，,、;；\-—]\s*)?"
 
 
 class WeChatError(RuntimeError):
@@ -210,19 +212,19 @@ def remove_redundant_title_aliases(title: str) -> str:
     for cn_name, aliases in INSTITUTION_TITLE_ALIASES:
         alias_group = "|".join(alias_pattern(alias) for alias in aliases)
         cleaned = re.sub(
-            rf"^({re.escape(cn_name)})[：:]\s*(?:{alias_group})\s*[：:：\-—]?\s*",
+            rf"^({re.escape(cn_name)})[：:]\s*(?:{alias_group})\s*{TITLE_ALIAS_SEPARATOR_RE}",
             rf"\1：",
             cleaned,
             flags=re.I,
         )
         cleaned = re.sub(
-            rf"^(?:{alias_group})\s*[：:]\s*({re.escape(cn_name)})\s*[：:：\-—]?\s*",
+            rf"^(?:{alias_group})\s*[：:]\s*({re.escape(cn_name)})\s*{TITLE_ALIAS_SEPARATOR_RE}",
             rf"\1：",
             cleaned,
             flags=re.I,
         )
         cleaned = re.sub(
-            rf"^({re.escape(cn_name)})\s*(?:\(|（)\s*(?:{alias_group})\s*(?:\)|）)\s*[：:：\-—]?\s*",
+            rf"^({re.escape(cn_name)})\s*(?:\(|（)\s*(?:{alias_group})\s*(?:\)|）)\s*{TITLE_ALIAS_SEPARATOR_RE}",
             rf"\1：",
             cleaned,
             flags=re.I,
