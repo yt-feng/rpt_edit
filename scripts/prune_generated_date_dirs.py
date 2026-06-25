@@ -11,12 +11,15 @@ from pathlib import Path
 
 DEFAULT_ROOTS = [
     "xhs_notes/dropbox",
+    "xhs_notes/institutions",
     "publish_ready_zips",
     "bank_report_catalogs",
     "market_view_summaries",
     "bilingual_podcast_videos",
     "kc_translated_reports",
+    "kc_translated_reports/institutions",
     "wechat_drafts",
+    "wechat_drafts/institutions",
 ]
 
 

@@ -26,6 +26,12 @@ INSTITUTION_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bCredit\s+Suisse\b", re.I), "瑞信"),
     (re.compile(r"\bMizuho\b", re.I), "瑞穗"),
     (re.compile(r"\bDaiwa\b", re.I), "大和"),
+    # Public economic / policy institutions (see scripts/fetch_institution_latest_pdfs.py).
+    (re.compile(r"\bWorld\s*Bank\b|\bWorldBank\b", re.I), "世界银行"),
+    (re.compile(r"\bIMF\b|International\s+Monetary\s+Fund", re.I), "国际货币基金组织"),
+    (re.compile(r"\bBIS\b|Bank\s+for\s+International\s+Settlements", re.I), "国际清算银行"),
+    (re.compile(r"\bRAND\b", re.I), "兰德公司"),
+    (re.compile(r"\bBrookings\b", re.I), "布鲁金斯学会"),
 )
 
 

@@ -343,11 +343,75 @@ pdfs/
 xhs_notes/<报告文件夹>/
 ```
 
+### 3.8 Institution latest PDF to WeChat（IMF / BIS / 世界银行 / 兰德 / 布鲁金斯）
+
+相关文件：
+
+```text
+.github/workflows/institution-latest-pdf-to-wechat.yml
+scripts/fetch_institution_latest_pdfs.py
+```
+
+用途：在 Dropbox 主流程之外，每天额外抓取以下机构最新公开 PDF 报告，复用现有
+MinerU → KC 中文精译 → 微信公众号草稿 链路，把它们也加工成公众号图文。原始 PDF
+只是中转输入，不留存；只把原始 PDF 链接长期归档。
+
+抓取来源：
+
+| 机构 | 来源 | PDF 定位方式 |
+| --- | --- | --- |
+| IMF 国际货币基金组织 | publications RSS（Working Papers / Staff Discussion Notes / Departmental Papers） | 打开落地页，提取 `.pdf` / `.ashx` 下载链接 |
+| BIS 国际清算银行 | `doclist/wppubls.rss` 工作论文 | 把 `.htm` 落地页直接换成 `.pdf` |
+| World Bank 世界银行 | `search.worldbank.org/api/v2/wds` JSON API，默认只取 Policy Research Working Paper | API 直接返回 `pdfurl` |
+| RAND 兰德公司 | `pubs/new.xml` 最新发布 Atom feed | 打开落地页，提取 PDF 链接 |
+| Brookings 布鲁金斯学会 | `feed/` WordPress feed | 打开落地页，提取 PDF；纯网页评论无 PDF 时自动跳过 |
+
+触发方式：
+
+- 手动运行：Actions → **Institution latest PDF to WeChat**
+- 定时运行：北京时间 06:00，cron 为 `0 22 * * *`，排在 Dropbox 主流程（05:00）之后
+
+主要参数（手动运行）：
+
+- `institutions`：默认 `all`，可填 `imf,bis,worldbank,rand,brookings` 的子集。
+- `since_days`：默认 `1`，只抓最近 N 天内发布的报告。**去重靠 seen 状态文件，不靠日期**，所以把它调大到 3~7 也不会重复处理旧报告，反而能兜住 World Bank / IMF 这类不是每天都发的来源。
+- `max_per_institution`：默认 `0`（不限量）。
+- `max_translated`：默认 `all`，翻译并生成公众号草稿的报告数量。
+- `dry_run`：默认 `false`，真正写公众号草稿箱；测试时设 `true` 只产出 payload。
+- `publish`：默认 `false`，公众号发布接口开通前保持 false。
+
+数据流（与 Dropbox 主流程并行、互不干扰）：
+
+```text
+IMF/BIS/WB/RAND/Brookings feeds
+  -> _institution_latest_pdfs/            # 中转 PDF，已 gitignore，不入库
+  -> xhs_notes/institutions/<日期>/<报告>/source_mineru.md ...
+  -> kc_translated_reports/institutions/<日期>/<报告>/kc_translated_report_XX.pdf
+  -> wechat_drafts/institutions/<日期>/draft_payload_*.json
+```
+
+链接归档与去重：
+
+```text
+institution_feeds/institution_pdf_archive.jsonl   # 每条记录：机构 / 标题 / 发布日期 / 原始 PDF 链接 / 来源页 / 本地文件名
+institution_feeds/seen_state.json                 # 去重状态，标记 downloaded / no_pdf / too_old，默认保留 120 天
+```
+
+说明：
+
+- 原始下载的 PDF 落在 `_institution_latest_pdfs/`，已加入 `.gitignore`，处理完即可丢弃；仓库里只保留 `institution_pdf_archive.jsonl` 中的原始链接和精译后产物。
+- 每个来源相互隔离：某个机构 feed 失败不会影响其它机构。
+- 网络错误（feed / 落地页拉取失败）不会写入 seen，下次运行会重试；只有“已下载”和“确认无 PDF”才会标记 seen。
+- 复用的 secret 和主流程一致：`MINER_U`、`DEEPSEEK_API_KEY`、`WECHAT_MP_APPID`、`WECHAT_MP_APPSECRET`。微信上传仍走带 `wechat-draft` label 的固定 IP self-hosted runner。
+- 机构中文名通过 `scripts/institution_names.py` 推断（已新增 IMF / BIS / 世界银行 / 兰德 / 布鲁金斯），公众号标题会自动带上机构名。
+- 调整抓取来源 / feed / 文档类型：编辑 `scripts/fetch_institution_latest_pdfs.py` 顶部的 `INSTITUTIONS` 配置。
+
 ## 4. 主要脚本
 
 | 脚本 | 用途 |
 | --- | --- |
 | `scripts/download_dropbox_latest_pdfs.py` | 读取 Dropbox `/zip_backup` 最新日期文件夹，并下载 PDF |
+| `scripts/fetch_institution_latest_pdfs.py` | 抓取 IMF/BIS/世界银行/兰德/布鲁金斯 最新 PDF 报告到中转目录，归档原始链接并按 seen 状态去重 |
 | `scripts/select_macro_trend_pdfs.py` | 使用 DeepSeek 判断报告是否为宏观/趋势类，过滤个股报告 |
 | `scripts/run_pdf_to_xhs_in_batches.py` | 分批、分 shard 调用 PDF 生成链路 |
 | `scripts/pdf_to_xhs_batch.py` | 核心 PDF → MinerU → 小红书/微信/图表卡片生成脚本 |
@@ -446,13 +510,18 @@ podcast_en_script.txt
 
 ```text
 xhs_notes/dropbox/
+xhs_notes/institutions/
 publish_ready_zips/
 bank_report_catalogs/
 market_view_summaries/
 bilingual_podcast_videos/
 kc_translated_reports/
+kc_translated_reports/institutions/
 wechat_drafts/
+wechat_drafts/institutions/
 ```
+
+`institution_feeds/`（原始 PDF 链接长期归档 + seen 去重状态）也由 Actions 维护并提交，但它不是按日期分目录、不参与按最近 3 天的清理，应长期保留。机构来源的原始下载 PDF 落在 `_institution_latest_pdfs/`，已 gitignore，不入库。
 
 本地修代码时不要用旧的本地生成目录覆盖远端。合并或 rebase 时的默认策略：
 
@@ -548,7 +617,8 @@ sensitive_content_guard_summary.json
 3. 如果要看市场观点总览，跑：**Market views daily PDF**。
 4. 如果要生成每日中英双语视频，跑：**Daily bilingual podcast videos**。
 5. 如果要更新 PDF 搜索站点，跑：**KC Desk Notes Pages**。
-6. 如果只是手动上传 repo 内 PDF，参考旧版 `docs/pdf-to-xhs-workflow.md`。
+6. 如果要额外把 IMF/BIS/世界银行/兰德/布鲁金斯 当天报告转成公众号草稿，跑：**Institution latest PDF to WeChat**（默认每天 06:00 自动跑）。
+7. 如果只是手动上传 repo 内 PDF，参考旧版 `docs/pdf-to-xhs-workflow.md`。
 
 ## 13. 常见问题
 

@@ -5,3 +5,6 @@ mineru_result.zip
 .DS_Store
 _kc_desk_notes_pages/
 workers/kc-desk-notes-worker/wrangler.toml
+# Transient institution-source PDFs: only an input for the WeChat pipeline.
+# We keep the original PDF link in institution_feeds/, never the PDF itself.
+_institution_latest_pdfs/
