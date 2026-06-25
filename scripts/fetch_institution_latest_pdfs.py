@@ -98,16 +98,21 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "name_en": "IMF",
         "name_cn": "国际货币基金组织",
         "token": "IMF",
-        # IMF's WAF blocks the python-requests TLS fingerprint (403 from any IP), so
-        # fetch this source through curl_cffi's Chrome impersonation when available.
+        # IMF's site is a JS app behind Akamai (RSS is gone; the WAF blocks plain
+        # requests by TLS fingerprint). Its publications search is powered by Coveo,
+        # which is a separate, non-WAF host we can query directly. Then we fetch each
+        # landing page's PDF on imf.org via curl_cffi Chrome impersonation.
         "impersonate": True,
-        "kind": "rss",
+        "kind": "coveo_api",
         "pdf": "scrape",
-        "feeds": [
-            "https://www.imf.org/en/publications/rss?language=eng&series=IMF+Working+Papers",
-            "https://www.imf.org/en/publications/rss?language=eng&series=Staff+Discussion+Notes",
-            "https://www.imf.org/en/publications/rss?language=eng&series=Departmental+Papers",
-        ],
+        "coveo_url": "https://imfproduction561s308u.org.coveo.com/rest/search/v2?organizationId=imfproduction561s308u",
+        # Public, browser-exposed Coveo search key. Static/long-lived; if IMF ever
+        # rotates it, override via the IMF_COVEO_TOKEN env var (no code change needed).
+        "coveo_token": "xx742a6c66-f427-4f5a-ae1e-770dc7264e8a",
+        # Advanced query: English publications only. "PUBS" covers working papers,
+        # country reports, selected issues, FSAPs, Article IV, etc. To narrow (e.g.
+        # only working papers) tighten this @imfcontenttype filter.
+        "coveo_aq": '(@imflanguage=="ENG") AND (@syslanguage=="ENGLISH") AND (@imfcontenttype=="PUBS")',
     },
     "bis": {
         "name_en": "BIS",
@@ -488,6 +493,63 @@ def collect_html_listing_items(cfg: dict[str, Any], session: requests.Session, t
     return items
 
 
+def _normalize_imf_host(url: str) -> str:
+    """Rewrite IMF origin/staging hosts to the public www host."""
+    return re.sub(r"https?://(?:origin-www|prd-sitecore[\w.-]*|stg-www)\.imf\.org",
+                  "https://www.imf.org", url, flags=re.I)
+
+
+def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout: int, rows: int) -> list[dict[str, Any]]:
+    """Query the IMF Coveo search API for the latest publications (newest first)."""
+    token = os.getenv("IMF_COVEO_TOKEN") or cfg["coveo_token"]
+    body = {
+        "aq": cfg["coveo_aq"],
+        "q": "",
+        "searchHub": "Search",
+        "enableQuerySyntax": False,
+        "sortCriteria": "@imfdate descending",
+        "numberOfResults": rows,
+        "fieldsToInclude": ["title", "clickableuri", "imfdate", "imfcontenttype", "permanentid", "urihash"],
+    }
+    resp = session.post(
+        cfg["coveo_url"],
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+            "Origin": "https://www.imf.org",
+            "Referer": "https://www.imf.org/",
+        },
+        json=body, timeout=timeout,
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    items: list[dict[str, Any]] = []
+    for result in data.get("results", []):
+        raw = result.get("raw", {})
+        landing = raw.get("clickableuri") or result.get("clickUri") or result.get("uri") or ""
+        if not landing:
+            continue
+        landing = _normalize_imf_host(landing)
+        epoch_ms = raw.get("imfdate")
+        date_iso = ""
+        if isinstance(epoch_ms, (int, float)):
+            try:
+                date_iso = datetime.fromtimestamp(epoch_ms / 1000, tz=timezone.utc).isoformat()
+            except (ValueError, OSError):
+                date_iso = ""
+        is_file = bool(re.search(r"\.(pdf|ashx)(\?|$)", landing, re.I))
+        items.append({
+            "title": result.get("title") or raw.get("title") or landing,
+            "source_url": landing,
+            "guid": raw.get("permanentid") or raw.get("urihash") or landing,
+            "date": date_iso,
+            "pdf_candidates": [landing] if is_file else [],
+            "scrape_url": "" if is_file else landing,
+        })
+    log(f"  coveo -> {len(items)} publications (total {data.get('totalCount')})")
+    return items
+
+
 def scrape_pdf_candidates(html_text: str, base_url: str) -> list[str]:
     host = urlsplit(base_url).netloc
     candidates: list[str] = []
@@ -499,6 +561,14 @@ def scrape_pdf_candidates(html_text: str, base_url: str) -> list[str]:
             continue
         seen.add(full)
         candidates.append(full)
+
+    # Also catch bare PDF/.ashx URLs embedded in JSON/JS (e.g. IMF Next.js props),
+    # not just href/data-href/content attributes.
+    for match in re.finditer(r'https?://[^\s"\'<>()\\]+?\.(?:pdf|ashx)(?:\?[^\s"\'<>()\\]*)?', html_text, re.I):
+        full = html.unescape(match.group(0))
+        if full not in seen:
+            seen.add(full)
+            candidates.append(full)
 
     def score(url: str) -> int:
         low = url.lower()
@@ -610,6 +680,7 @@ def main() -> int:
     parser.add_argument("--seen-retention-days", type=int, default=120)
     parser.add_argument("--max-pdf-mb", type=float, default=60.0)
     parser.add_argument("--worldbank-rows", type=int, default=30)
+    parser.add_argument("--imf-rows", type=int, default=60, help="Coveo results to scan for IMF (newest first).")
     parser.add_argument("--request-timeout", type=int, default=60)
     parser.add_argument("--user-agent", default=DEFAULT_USER_AGENT)
     args = parser.parse_args()
@@ -649,6 +720,8 @@ def main() -> int:
         try:
             if cfg["kind"] == "worldbank_api":
                 items = collect_worldbank_items(cfg, session, args.request_timeout, args.worldbank_rows)
+            elif cfg["kind"] == "coveo_api":
+                items = collect_coveo_items(cfg, session, args.request_timeout, args.imf_rows)
             elif cfg["kind"] == "html_listing":
                 items = collect_html_listing_items(cfg, session, args.request_timeout)
             else:
