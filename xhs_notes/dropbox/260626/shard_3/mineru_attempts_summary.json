@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_bpbatqc6/pdfs/0001-16-Bernstein-Japan Autos - Auto Parts-Best of Times- Worst of Times- How K-shaped polarization is reshaping Japan-s auto market-260625.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_bpbatqc6/pdfs/0002-17-GS-CHINA SOLAR- TRACKING PROFITABILITY INFLECTION-Jun-26- Persistent upstream pricing softness against worsening inventory expectations-260626.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_bpbatqc6/pdfs/0003-18-GS-China Banks-Questions Arising from Strengthened Tax Supervision on BOC-Effective Tax Rate and Liquidity-260626.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_bpbatqc6/pdfs/0004-19-JPM-China Beauty-Takeaways from expert call after 6.18 events- Local leaders hold ground- international players maintain momentum-260625.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_bpbatqc6/pdfs/0005-20-JEF-China - Technology-China WFE- Fast-Growing Semi Deficit to Drive Strong WFE Capex-260624.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

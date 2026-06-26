@@ -1,0 +1,4813 @@
+[
+    {
+        "type": "text",
+        "text": "Japan Autos & Auto Parts",
+        "bbox": [
+            63,
+            130,
+            352,
+            152
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Best of Times, Worst of Times: How K-shaped polarization is reshaping Japan's auto market",
+        "text_level": 1,
+        "bbox": [
+            65,
+            160,
+            861,
+            218
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/f45d3e17966c2941a02ced4e29091d75de64d4829fd8ccf8459767b8338e0c09.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Masahiro Akita",
+            "+81 3 6777 6998"
+        ],
+        "content": "",
+        "bbox": [
+            66,
+            271,
+            122,
+            313
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            138,
+            300,
+            307,
+            313
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/691d44a0d3dfa78270052df3fe5b881414124011006e6c740d3ae42ccd88eee6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            68,
+            321,
+            122,
+            364
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Seunghyeok Kim",
+        "bbox": [
+            138,
+            327,
+            240,
+            339
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+81 3 6777 6974",
+        "bbox": [
+            138,
+            339,
+            238,
+            351
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "seunghyeok.kim@bernsteinsg.com",
+        "bbox": [
+            138,
+            349,
+            313,
+            363
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/0bf9bf2f0987b582277e202090c692ec22577b7b3cee4083fe13e9db982bcd44.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            371,
+            122,
+            414
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Tomohiro Kashimoto",
+        "bbox": [
+            138,
+            377,
+            261,
+            388
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+81 3 6777 6975",
+        "bbox": [
+            140,
+            388,
+            236,
+            401
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "tomohiro.kashimoto@bernsteinsg.com",
+        "bbox": [
+            138,
+            398,
+            331,
+            412
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\"It was the best of times, it was the worst of times\". The famous opening line of Charles Dickens' 'A Tale of Two Cities' captures a period of contradiction: the French aristocracy indulging in opulence and privilege, the peasantry experiencing poverty and oppression. While 2026 is thankfully not 18th century France, shifting class dynamics remain more topical than ever, from the US K-shaped economy to the squeezed Chinese middle class. In this note, we examine how K-shaped polarization is reshaping Japan's auto market, weakening affordability, and changing automakers' competitive positioning.",
+        "bbox": [
+            354,
+            268,
+            895,
+            376
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "K-shaped polarization is reshaping Japan's auto market: Demand in Japan's auto market is becoming polarized between low-end and high-end vehicles. Between 2015 and 2025, monthly new car purchase spending per household declined as much as $22\\%$ among lower-income households, while increasing as much as $32\\%$ among higher-income households. Car ownership also became more polarized, with the ownership rate gap between lower-income and higher-income households widening from $27\\%$ to $30\\%$ p. Polarization is also visible in currently owned vehicle prices. The share of low-end vehicles priced below JPY 1 mn increased from $1\\%$ in 2017 to $6\\%$ in 2025, while the share of high-end vehicles priced above JPY 5 mn rose from $6\\%$ to $15\\%$ . In contrast, the share of vehicles priced at JPY 1-2 mn, the largest volume segment, declined from $46\\%$ to $19\\%$ .",
+        "bbox": [
+            354,
+            387,
+            923,
+            539
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Affordability pressure is weakening car ownership among lower-income",
+        "text_level": 2,
+        "bbox": [
+            357,
+            550,
+            844,
+            564
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "households: Rising financial burdens from car ownership are affecting demand. Japan's real monthly disposable income declined 5% from its 2020 peak of JPY 499 thousand to JPY 476 thousand in 2025, reflecting inflation. The impact of weaker real purchasing power was more pronounced among lower-income households. In 2025, the proportion of households describing car ownership costs as a financial burden reached 44% among lower-income households, compared with 29% among higher-income households.",
+        "bbox": [
+            356,
+            564,
+            908,
+            657
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Automakers with exposure to both low-end and high-end demand are better",
+        "text_level": 2,
+        "bbox": [
+            357,
+            667,
+            870,
+            681
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "positioned: K-shaped polarization in Japan's auto market could increasingly affect automakers' sales mix and profitability. In 2025, the combined domestic sales mix of the lowest-priced segment below JPY 2 mn and the highest-priced segment above JPY 5 mn was highest for Suzuki at $74\\%$ and Toyota at $43\\%$ , followed by Honda at $38\\%$ , Mazda at $37\\%$ , Nissan at $29\\%$ , and Subaru at $10\\%$ . Meanwhile, operating margins in Japan were also highest for Toyota at $11\\%$ and Suzuki at $9\\%$ , followed by Nissan at $0\\%$ , Mazda at $-5\\%$ , Subaru at $-11\\%$ , and Honda at $-14\\%$ . This suggests that automakers with exposure to both low-end and high-end segments tend to maintain higher profitability under a K-shaped demand environment, with Toyota and Suzuki appearing relatively well positioned.",
+        "bbox": [
+            354,
+            681,
+            921,
+            819
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Shared mobility benefits as car ownership becomes less affordable: Japan's shared mobility market, including car sharing and ride sharing, is expanding alongside K-shaped polarization. As the economic rationality of car ownership declines, some ownership demand could shift toward shared mobility. As the market expands, automakers may increasingly need to focus not only on manufacturing and sales, but also on recurring revenue generation across the vehicle lifecycle and downstream service capabilities.",
+        "bbox": [
+            354,
+            829,
+            911,
+            921
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BERNSTEIN\nSG GROUP",
+        "bbox": [
+            63,
+            32,
+            294,
+            80
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            723,
+            54,
+            831,
+            71
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See the Disclosure Appendix of this report for required disclosures, analyst certifications and other important information. Alternatively, visit our Global Research Disclosure Website.\nFirst Published: 24 Jun 2026 20:30 UTC Completion Date: 24 Jun 2026 14:42 UTC",
+        "bbox": [
+            65,
+            935,
+            700,
+            978
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "www.bernsteinresearch.com",
+        "bbox": [
+            774,
+            935,
+            919,
+            946
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN TICKER TABLE",
+        "text_level": 2,
+        "bbox": [
+            104,
+            69,
+            313,
+            85
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/6401b863ea3598c234c76ddd799b5d351063468aeb9a1902a485316922d0e4a7.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended"
+        ],
+        "table_body": "<table><tr><td rowspan=\"3\">Ticker</td><td rowspan=\"3\">Rating</td><td colspan=\"4\">24 Jun 2026</td><td rowspan=\"2\">TTMRel.</td><td colspan=\"4\">Reported EPS</td><td colspan=\"3\">Reported P/E (x)</td></tr><tr><td></td><td>ClosingPrice</td><td>PriceTarget</td><td>PriceTarget</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Cur</td><td>Price</td><td>Target</td><td>Perf.</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td><td></td></tr><tr><td>7203.JP (Toyota)</td><td>O</td><td>JPY</td><td>2,686.00</td><td>4,200.00</td><td>(39.2)%</td><td>JPY</td><td>295.25</td><td>308.93</td><td>367.29</td><td>9.1</td><td>8.7</td><td>7.3</td><td></td></tr><tr><td>7269.JP (Suzuki)</td><td>O</td><td>JPY</td><td>1,883.50</td><td>2,550.00</td><td>(36.4)%</td><td>JPY</td><td>227.69</td><td>234.71</td><td>255.99</td><td>8.3</td><td>8.0</td><td>7.4</td><td></td></tr><tr><td>7267.JP (Honda)</td><td>M</td><td>JPY</td><td>1,391.50</td><td>1,300.00</td><td>(47.0)%</td><td>JPY</td><td>(106.06)</td><td>161.84</td><td>147.24</td><td>(13.1)</td><td>8.6</td><td>9.5</td><td></td></tr><tr><td>7201.JP (Nissan)</td><td>U</td><td>JPY</td><td>301.00</td><td>350.00</td><td>(57.7)%</td><td>JPY</td><td>(152.58)</td><td>4.78</td><td>53.06</td><td>(2.0)</td><td>62.9</td><td>5.7</td><td></td></tr><tr><td>7261.JP (Mazda)</td><td>U</td><td>JPY</td><td>1,072.00</td><td>1,000.00</td><td>(18.1)%</td><td>JPY</td><td>55.64</td><td>116.61</td><td>142.17</td><td>19.3</td><td>9.2</td><td>7.5</td><td></td></tr><tr><td>7270.JP (Subaru)</td><td>U</td><td>JPY</td><td>2,375.00</td><td>2,350.00</td><td>(50.4)%</td><td>JPY</td><td>125.50</td><td>222.96</td><td>249.75</td><td>18.9</td><td>10.7</td><td>9.5</td><td></td></tr><tr><td>JPL</td><td></td><td></td><td>2,627.28</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            107,
+            99,
+            890,
+            250
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg, Bernstein estimates and analysis.",
+        "bbox": [
+            104,
+            268,
+            383,
+            281
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "INVESTMENT IMPLICATIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            295,
+            328,
+            310
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We rate Toyota Outperform with an updated price target of JPY 4,200.00.",
+        "bbox": [
+            104,
+            325,
+            558,
+            339
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We rate Suzuki Outperform with a price target of JPY 2,550.00.",
+        "bbox": [
+            104,
+            352,
+            496,
+            366
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We rate Honda Market-Perform with a price target of JPY 1,300.00.",
+        "bbox": [
+            104,
+            380,
+            522,
+            393
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We rate Nissan Underperform with a price target of JPY 350.00.",
+        "bbox": [
+            104,
+            407,
+            501,
+            422
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We rate Subaru Underperform with an price target of JPY 2,350.00.",
+        "bbox": [
+            104,
+            435,
+            522,
+            449
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We rate Mazda Underperform with a price target of JPY 1,000.00.",
+        "bbox": [
+            104,
+            463,
+            511,
+            477
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            880,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            444,
+            50
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            940,
+            220,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "K-SHAPED POLARIZATION IS RESHAPING JAPAN'S AUTO MARKET",
+        "text_level": 2,
+        "bbox": [
+            104,
+            114,
+            570,
+            130
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Higher-income households are spending more while lower-income households are spending less",
+        "text_level": 2,
+        "bbox": [
+            102,
+            147,
+            766,
+            162
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "From 2015 to 2025, monthly new car purchase spending per household in Japan increased only marginally from JPY 10.3 thousand to JPY 10.5 thousand, up 2%, suggesting limited change at the aggregate level. However, a clear divergence emerged between lower-income and higher-income households when viewed by income bracket (Exhibit 1). In this part, households with annual income below JPY 4 mn are classified as lower-income households, while households with annual income above JPY 12.5 mn are classified as higher-income households, based on the income categories defined by Japan's Ministry of Internal Affairs and Communications.",
+        "bbox": [
+            102,
+            166,
+            890,
+            257
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Among lower-income households with annual income below JPY 4 mn, monthly new car purchase spending declined across all income brackets. More specifically, spending among households earning below JPY 2 mn declined 22%, from JPY 2.9 thousand to JPY 2.3 thousand. Households earning JPY 2-3 mn also declined 6%, from JPY 5.2 thousand to JPY 4.9 thousand, while households earning JPY 3-4 mn declined 16%, from JPY 7.6 thousand to JPY 6.4 thousand.",
+        "bbox": [
+            102,
+            268,
+            888,
+            329
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Meanwhile, among higher-income households with annual income above JPY 12.5 mn, monthly new car purchase spending increased across all income brackets. More specifically, spending among households earning JPY 12.5-15 mn increased 6%, from JPY 24.4 thousand to JPY 25.8 thousand. Households earning JPY 15-20 mn also increased 3%, from JPY 29.4 thousand to JPY 30.4 thousand, while households earning above JPY 20 mn increased 32%, from JPY 24.3 thousand to JPY 32.0 thousand.",
+        "bbox": [
+            102,
+            340,
+            866,
+            417
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 1: Among lower-income households with annual income below JPY 4 mn, new car purchase spending declined across all income brackets, while among higher-income households with annual income above JPY 12.5 mn, new car purchase spending increased across all income brackets",
+        "bbox": [
+            102,
+            426,
+            877,
+            474
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Monthly Spending per Household by Income Bracket (New Car Purchase)",
+        "bbox": [
+            330,
+            484,
+            687,
+            498
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cb0ed6a23cfaf3894d4455e40735e3d4ffa026cc10f4b3cc7f0cd0404a77db45.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Ministry of Internal Affairs and Communications, Bernstein analysis"
+        ],
+        "bbox": [
+            122,
+            496,
+            874,
+            709
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "K-shaped polarization is likely to progress not only in current car ownership, but also in future new car demand in Japan's auto market",
+        "bbox": [
+            102,
+            772,
+            880,
+            805
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "From here onward, households with annual income below JPY 3.6 mn are classified as lower-income households, while households with annual income above JPY 7.8 mn are classified as higher-income households, based on the income categories defined by JAMA (Japan Automobile Manufacturers Association). Against the backdrop of Japan's broader trend of declining interest in car ownership, the overall car ownership rate in Japan declined from $80\\%$ in 2019 to $72\\%$ in 2025, down $8\\%$ p (Exhibit 2).",
+        "bbox": [
+            102,
+            809,
+            885,
+            883
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            882,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "DETAILS",
+        "bbox": [
+            104,
+            69,
+            174,
+            85
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            220,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Meanwhile, by income bracket, lower-income households saw a larger decline in car ownership rates. Among lower-income households earning below JPY 2.2 mn, car ownership declined from 61% to 54%, down 7%p. Households earning JPY 2.2-3.6 mn also saw a 6%p decline, from 77% to 71%. In contrast, among higher-income households earning above JPY 7.8 mn, car ownership declined only 5%p, from 88% to 83%. The ownership gap between households earning below JPY 2.2 mn and those earning above JPY 7.8 mn also widened from 27%p in 2019 to 30%p in 2025, suggesting increasing polarization in car ownership (Exhibit 3).",
+        "bbox": [
+            102,
+            71,
+            885,
+            162
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cf28191bec2103b17bc8c875fe8e303a3eb11f70f7f9a4d1d9392167a7149969.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 2: Car ownership rates declined more sharply among lower-income households, with the gap between households earning below JPY 2.2 mn and above JPY 7.8 mn widening from 27%p in 2019 to 30%p in 2025",
+            "Source: JAMA, Bernstein analysis"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            109,
+            243,
+            460,
+            473
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/175b3c49b44d6d858aecab1fccdea58a8d2625c6ea0483186f52020c9ed54a52.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 3: The gap in car ownership rates between households earning below JPY 2.2 mn and those earning above JPY 7.8 mn also widened from 27%p in 2019 to 30%p in 2025"
+        ],
+        "chart_footnote": [
+            "Source: JAMA, Bernstein analysis"
+        ],
+        "bbox": [
+            513,
+            242,
+            880,
+            474
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Car purchase intention among non-owner households also shows weaker demand among lower-income households and stronger demand among higher-income households. As of 2025, the combined purchase intention ratio for ‘planning to purchase within the next three years’, ‘planning to purchase within four to five years’, and ‘planning to purchase after five years’ was 7% across all households. Among households earning above JPY 7.8 mn, the ratio was 9%, exceeding the 7% average for all households. In contrast, the ratio remained at 6% among households earning JPY 2.2-3.6 mn and 4% among households earning below JPY 2.2 mn, both below the all-household average (Exhibit 4).",
+        "bbox": [
+            102,
+            518,
+            883,
+            609
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The survey on latent car ownership intention, assuming no constraints such as financial limitations or driver's license ownership, also suggests stronger ownership intention among higher-income households. As of 2025, the combined ratio of households answering ‘want to own’ and ‘somewhat want to own’ reached 23% among households earning above JPY 7.8 mn. In contrast, the ratio remained at 19% among households earning below JPY 2.2 mn and 21% among households earning JPY 2.2-3.6 mn (Exhibit 5).",
+        "bbox": [
+            102,
+            619,
+            887,
+            696
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Another notable point is that the trend of declining interest in car ownership itself is becoming increasingly polarized by income bracket. In the same survey, 67% of non-owner households across all households answered that they did not intend to own a car, combining responses of ‘do not want to own’ and ‘do not really want to own’. By income bracket, the ratio reached 70% among lower-income households earning below JPY 2.2 mn and 69% among households earning JPY 2.2-3.6 mn. In contrast, the ratio remained at 64% among higher-income households earning above JPY 7.8 mn.",
+        "bbox": [
+            102,
+            708,
+            883,
+            784
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            880,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            37,
+            446,
+            51
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            222,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/200ca019dbb1e245de6859232af514cec50aaf26c7b10e31209878d445a2c692.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 4: Lower-income households tend to show weaker vehicle purchase demand"
+        ],
+        "chart_footnote": [
+            "Source: JAMA, Bernstein analysis"
+        ],
+        "bbox": [
+            125,
+            108,
+            485,
+            345
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d8f6d6ab1d1b173c48c8ac4ad6e9b33834895532335585cb6eead831f3869e40.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 5: Higher-income households tend to show stronger vehicle ownership intention"
+        ],
+        "chart_footnote": [
+            "Source: JAMA, Bernstein analysis"
+        ],
+        "bbox": [
+            519,
+            109,
+            880,
+            345
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Some lower-income households are showing signs not only of weaker car replacement demand, but also of stopping car ownership altogether",
+        "text_level": 2,
+        "bbox": [
+            104,
+            398,
+            836,
+            431
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "K-shaped polarization is also becoming increasingly visible in replacement demand among car-owning households. As of 2025, the car replacement intention ratio across all households stood at 26%. By income bracket, the ratio reached 34% among higher-income households earning above JPY 7.8 mn, exceeding the all-household average. In contrast, the ratio remained at 22% among lower-income households earning JPY 2.2-3.6 mn and 20% among households earning below JPY 2.2 mn, both below the all-household average (Exhibit 6)",
+        "bbox": [
+            102,
+            435,
+            888,
+            511
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Meanwhile, some lower-income households are also showing signs of suspending car ownership altogether. As of 2025, the car ownership discontinuation intention ratio across all households stood at 9%. However, the ratio reached 19% among lower-income households earning below JPY 2.2 mn and 15% among households earning JPY 2.2-3.6 mn, both materially above the all-household average. In contrast, among households earning above JPY 7.8 mn, both below the all-household average (Exhibit 7).",
+        "bbox": [
+            102,
+            523,
+            890,
+            599
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            882,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            220,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/bf4f8adf871ab11e7c4c7771ce5d219366884c877e0a88ea97ccdcaf04bd35b0.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 6: K-shaped polarization is also emerging in replacement demand among car-owning households"
+        ],
+        "chart_footnote": [
+            "Source: JAMA, Bernstein analysis",
+            "EXHIBIT 7: Some lower-income households are also showing signs of suspending car ownership altogether"
+        ],
+        "bbox": [
+            109,
+            109,
+            482,
+            340
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/33011515147e03612042e393cba979828c8cb1f1d73c9dff0920006a13e2e860.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: JAMA, Bernstein analysis"
+        ],
+        "bbox": [
+            506,
+            109,
+            893,
+            325
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "K-shaped polarization is also progressing across the price ranges of currently owned cars",
+        "text_level": 2,
+        "bbox": [
+            104,
+            400,
+            712,
+            416
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "From 2017 to 2025, changes also emerged in the purchase price of new and used cars currently owned. While the share of low-end and high-end vehicles increased, the share of mid-priced vehicles declined. More specifically, the share of low-end vehicles priced below JPY 1 mn increased from 1% in 2017 to 6% in 2025, while the share of high-end vehicles priced above JPY 5 mn also increased from 6% to 15%. In contrast, the share of cars priced between JPY 1-2 mn, previously the largest volume segment, declined from 46% to 19%. Japan's auto market is seeing K-shaped polarization, with demand shifting away from the traditional mid-priced mass market toward both low-end and high-end vehicle segments (Exhibit 8).",
+        "bbox": [
+            102,
+            419,
+            880,
+            511
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 8: The share of low-end vehicles priced below JPY 1 mn increased from 1% in 2017 to 6% in 2025, while the share of high-end vehicles priced above JPY 5 mn also increased from 6% to 15%",
+        "bbox": [
+            102,
+            521,
+            495,
+            582
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2e6ec37208496c8f3dc43c1cbd5eb575d96931d55fea8a9ee139377dd6d42bd4.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: Cars counted were purchased within the past two years  \nSource: JAMA, Bernstein analysis"
+        ],
+        "bbox": [
+            114,
+            590,
+            485,
+            821
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            880,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            220,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "AFFORDABILITY PRESSURE IS WEAKENING CAR OWNERSHIP AMONG LOWER-INCOME HOUSEHOLDS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            85,
+            820,
+            101
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Japan's real purchasing power and real disposable income per capita have been trending downward amid prolonged low growth and inflation",
+        "text_level": 2,
+        "bbox": [
+            102,
+            117,
+            890,
+            150
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Rising financial burdens associated with car ownership are increasingly affecting individual car demand. Since the collapse of Japan's bubble economy in the 1990s, the country has experienced a prolonged period of low economic growth. Real GDP growth gradually declined from $4.8\\%$ in 1990, reaching $-5.6\\%$ during the global financial crisis and $-4.1\\%$ in 2020 amid the COVID-19 pandemic. Growth has since remained largely in the $0 - 1\\%$ range, suggesting that Japan's economy has remained in a long-term low-growth environment. Real wages, adjusted for inflation, have also remained sluggish and have been declining since 2021 (Exhibit 9).",
+        "bbox": [
+            102,
+            154,
+            883,
+            244
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "In terms of nominal monthly disposable income over the past decade, household income appears to have improved at first glance, increasing 24% from JPY 429 thousand in 2016 to JPY 532 thousand in 2025. However, CPI has continued to rise since 2022 and reached 12p as of 2025. Reflecting the impact of inflation, real monthly disposable income declined 5% from its 2020 peak of JPY 499 thousand to JPY 476 thousand in 2025 (Exhibit 10).",
+        "bbox": [
+            102,
+            256,
+            892,
+            316
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 9: As a result of prolonged stagnation in real GDP growth and real wages, real purchasing power per capita has been trending downward",
+        "bbox": [
+            104,
+            328,
+            495,
+            375
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/39896a200ad4331158313fc1e51e7bad07bfadb0cb04d8ae8ac3c9646379bd8c.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Ministry of Health, Labour and Welfare, IMF, Bernstein analysis",
+            "EXHIBIT 10: Real monthly disposable income declined 5% from its 2020 peak of JPY 499 thousand to JPY 476 thousand in 2025"
+        ],
+        "bbox": [
+            111,
+            383,
+            491,
+            614
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9b4b9913db7f3090e29fe424b5903e8b0e9fd51b6ed7c38576ebb1f7ef20b4f5.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Ministry of Internal Affairs and Communications, Bernstein analysis"
+        ],
+        "bbox": [
+            514,
+            383,
+            885,
+            614
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Lower purchasing power is leading to diverging ownership behavior",
+        "text_level": 2,
+        "bbox": [
+            104,
+            674,
+            568,
+            689
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Japanese automakers' ASPs have generally trended upward since 2015, although the degree of increase has varied by company. Average ASP increased $32\\%$ , from JPY 2.9 mn in 2015 to JPY 3.8 mn in 2025. By automaker, Honda's ASP increased $50\\%$ , from JPY 2.3 mn to JPY 3.5 mn, while Mazda's ASP also increased $49\\%$ , from JPY 2.9 mn to JPY 4.3 mn. Suzuki, despite maintaining a sales mix centered on lower-priced cars, saw ASP increase $39\\%$ , from JPY 1.4 mn to JPY 2.0 mn. Subaru's ASP increased $33\\%$ , from JPY 4.2 mn to JPY 5.5 mn, while Toyota's ASP increased $13\\%$ , from JPY 2.9 mn to JPY 3.3 mn (Exhibit 11).",
+        "bbox": [
+            102,
+            693,
+            887,
+            768
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            882,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            222,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/27b88be270de151da75ef2f8db6399bf20dfff642d45ab9eb7fb82e02186f84c.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 11: Industry average ASP increased 32%, from JPY 2.9 mn in 2015 to JPY 3.8 mn in 2025"
+        ],
+        "chart_footnote": [
+            "Source: IHS, Company websites, Bernstein analysis"
+        ],
+        "bbox": [
+            120,
+            109,
+            483,
+            340
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Inflation is having a larger impact on car usage and ownership among lower-income households. As of 2025, the ratio of households answering that inflation had an impact on car usage, including ‘reduced frequency of car use’, reached 37% among lower-income households earning below JPY 2.2 mn and 34% among households earning JPY 2.2-3.6 mn, the highest levels across all income brackets (Exhibit 12).",
+        "bbox": [
+            102,
+            383,
+            885,
+            446
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "In contrast, the ratio declined as household income increased, falling to 25% among households earning above JPY 7.8 mn. Meanwhile, the ratio of households answering that there was ‘no impact’ stood at 50% among households earning below JPY 2.2 mn and 52% among households earning JPY 2.2-3.6 mn, while rising to 59% among households earning above JPY 7.8 mn.",
+        "bbox": [
+            102,
+            457,
+            888,
+            503
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The financial burden associated with car ownership is structurally heavier for lower-income households and relatively lighter for higher-income households. As of 2025, the combined ratio of households answering ‘high financial burden’ and ‘somewhat high financial burden’ reached 44% among lower-income households earning below JPY 2.2 mn and 40% among households earning JPY 2.2-3.6 mn, the highest levels across all income brackets. In contrast, the ratio remained at 29% among higher-income households earning above JPY 7.8 mn (Exhibit 13).",
+        "bbox": [
+            102,
+            515,
+            883,
+            590
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 12: Inflation is having a larger impact on car usage and ownership among lower-income households",
+        "bbox": [
+            104,
+            602,
+            486,
+            633
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/06f890711b7f16fb18f6edb621097af0f056b77ba358f314e7983d6afb5ace2b.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: JAMA, Bernstein analysis",
+            "EXHIBIT 13: The financial burden is heavier for lower-income households"
+        ],
+        "bbox": [
+            112,
+            642,
+            483,
+            878
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d57df3c82969e02b3cd7779a4345ffa7a3beb4a9e03c0f7896f00c1dfbb58f9c.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: JAMA, Bernstein analysis"
+        ],
+        "bbox": [
+            511,
+            641,
+            875,
+            876
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            880,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            220,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Younger consumers are becoming less interested not only in car ownership itself, but also in obtaining a driver's license",
+        "text_level": 2,
+        "bbox": [
+            102,
+            85,
+            870,
+            117
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "In Japan, driver's license ownership itself, a prerequisite for car ownership, is declining particularly among younger generations, potentially weakening the foundation for future car ownership demand. As of 2025, a survey targeting young working adults showed that the ratio of respondents answering that they ‘hold a driver’s license’ stood at 67%, down 20%p from 87% in 2017 (Exhibit 14). Surveys targeting non-license holders also suggest that intention to obtain a driver’s license has been declining in recent years. The ratio of respondents answering that they ‘want to obtain a driver’s license’ declined 17%p, from 32% in 2017 to 15% in 2025 (Exhibit 15).",
+        "bbox": [
+            102,
+            122,
+            888,
+            212
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 14: Driver's license ownership rates among young working adults declined from $87\\%$ in 2017 to $67\\%$ in 2025",
+        "bbox": [
+            104,
+            224,
+            495,
+            268
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2b8c3dfb6033213e2d7da68b6786e63afa5095d0786b7709c02b376abb892e5c.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: JAMA, Bernstein analysis"
+        ],
+        "bbox": [
+            112,
+            277,
+            485,
+            508
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f91d9df0469bf681b9aec7c0326f384e44436c27759a1ecf16e817c29d59ce6a.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 15: Intention to obtain a driver's license among young working adults declined from $32\\%$ in 2017 to $15\\%$ in 2025"
+        ],
+        "chart_footnote": [
+            "Source: JAMA, Bernstein analysis"
+        ],
+        "bbox": [
+            509,
+            277,
+            880,
+            508
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The majority of new car sales in Japan have been replacement demand for existing car rather than new ownership demand",
+        "text_level": 2,
+        "bbox": [
+            104,
+            569,
+            879,
+            599
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Japan's passenger car ownership has continued to trend upward since the 2000s, although the growth rate has gradually slowed. Passenger car ownership increased from 57.7 mn units in 2008 to 62.3 mn units in 2025, while CAGR during the same period remained limited at $0.44\\%$ , with recent growth trending close to $0\\%$ (Exhibit 16). This suggests that most new vehicle sales in Japan in recent years may have been supported by replacement demand rather than incremental new demand.",
+        "bbox": [
+            102,
+            604,
+            888,
+            666
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Growth in the number of driver's license holders has also slowed. The number of licensed drivers in Japan increased from 74.7 mn people in 2000 to 82.3 mn people in 2018, but growth has since stagnated, turning into a declining trend after 2019. In addition, the number of newly licensed drivers has also continued to decline, falling from 2.1 mn people in 2000 to 1.1 mn people in 2024 (Exhibit 17).",
+        "bbox": [
+            102,
+            676,
+            880,
+            738
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "There is an extremely strong correlation between the number of driver's license holders and car ownership, with the correlation coefficient reaching $R^2 = 0.9966$ from 1970 to 2024. In addition, a strong correlation is also observed between the number of newly licensed drivers and the increase in passenger car registrations, with the correlation coefficient reaching $R^2 = 0.7446$ from 2000 to 2024 (Exhibit 18, Exhibit 19). These trends suggest that declines in the number of licensed drivers and newly licensed drivers could lead to slower growth in vehicle ownership and new vehicle demand over the medium to long term.",
+        "bbox": [
+            102,
+            750,
+            885,
+            825
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            880,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            37,
+            446,
+            51
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            220,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9615d60e5f18f65d465ebb94b74449292bcd8e38301ec4b1509534e662669422.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 16: Growth in Japan's passenger car ownership has gradually slowed since the collapse of the bubble economy, with recent growth trending close to $0\\%$",
+            "Source: Automobile Inspection & Registration Information Association, Bernstein analysis"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            119,
+            125,
+            488,
+            354
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3440e87bdbfbe831987384f463e9cd91b1d18bd50b5342e2ae897b5c566a805d.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 17: The number of licensed drivers in Japan increased from 74.7 mn people in 2000 to 82.3 mn people in 2018, but has been declining since 2019"
+        ],
+        "chart_footnote": [
+            "Source: National Police Agency, Bernstein analysis"
+        ],
+        "bbox": [
+            514,
+            125,
+            877,
+            354
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/19f701329e09fd651b9651616c1d5e1596dab690786062ab3eb9490ec03c18e1.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 18: Historically, growth in the number of licensed drivers generally coincided with growth in passenger car ownership"
+        ],
+        "chart_footnote": [
+            "Source: Automobile Inspection & Registration Information Association, National Police Agency, Bernstein analysis"
+        ],
+        "bbox": [
+            117,
+            465,
+            468,
+            691
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/50eacc5462c3e8ed084a5d020beeb2227ca696a1e1dd7cc875f767ca8935523b.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 19: If the decline in newly licensed drivers continues, growth in new vehicle demand for individual ownership could also slow"
+        ],
+        "chart_footnote": [
+            "Source: Automobile Inspection & Registration Information Association, National Police Agency, Bernstein analysis"
+        ],
+        "bbox": [
+            514,
+            465,
+            875,
+            693
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            222,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "AUTOMAKERS WITH EXPOSURE TO BOTH LOW-END AND HIGH-END DEMAND ARE BETTER POSITIONED",
+        "text_level": 2,
+        "bbox": [
+            104,
+            85,
+            834,
+            101
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Toyota and Suzuki appear best positioned for a K-shaped market",
+        "text_level": 2,
+        "bbox": [
+            104,
+            117,
+            552,
+            133
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "K-shaped polarization in Japan's auto market could increasingly affect automakers' sales mix and profitability. Toyota's major sales models are distributed across a broad price range, from lower-priced to higher-priced segments. In addition to mass-market models such as Corolla and Yaris, higher-priced models above JPY 5 mn, including Alphard and Land Cruiser, also account for a certain portion of sales. Toyota is also characterized by relatively low dependence on any single model, with Yaris accounting for $9\\%$ of domestic sales, Corolla $6\\%$ , and Alphard $6\\%$ , suggesting a well-balanced sales mix across a broad product lineup (Exhibit 20).",
+        "bbox": [
+            102,
+            137,
+            877,
+            228
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "In contrast, some automakers show a higher concentration in specific models. At Suzuki, Spacia accounts for 23% of domestic sales, while Forester accounts for 28% at Subaru and N BOX accounts for 27% at Honda, indicating that a single model represents more than 20% of domestic sales in some cases. Suzuki maintains a sales mix centered on lower-priced vehicles, with high dependence on Kei-cars priced below JPY 2 mn, including Spacia and Hustler. Meanwhile, Mazda has relatively high exposure to mid-to-high-priced models, with CX-5 accounting for 16%, CX-60 7%, and Roadster 7% of domestic sales. Honda maintains relatively balanced exposure from lower-priced to mid-priced segments, supported by models such as N BOX, Freed at 15%, Step WGN at 9%, and ZR-V at 3%.",
+        "bbox": [
+            102,
+            239,
+            888,
+            345
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "In terms of the combined sales mix of the low-end segment below JPY 2 mn and the high-end segment above JPY 5 mn, Suzuki ranked highest at 74%, reflecting particularly strong exposure to the low-end segment. Meanwhile, Toyota recorded the second-highest ratio at 43%, consisting of 26% exposure to the low-end segment and 17% exposure to the high-end segment. In addition to the Toyota brand, the company benefits from Daihatsu, which has strength in lower-priced vehicles, and Lexus, its luxury brand, enabling balanced exposure to both lower-priced and higher-priced segments (Exhibit 21).",
+        "bbox": [
+            102,
+            357,
+            890,
+            434
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Honda also recorded relatively high exposure to the low-end segment at 37%, although exposure to the high-end segment remained limited at 1%, resulting in combined low-end and high-end segment exposure of 38%. Mazda recorded relatively high exposure to the mid-priced segment between JPY 2-5 mn, which accounted for 63% of sales mix, while combined low-end and high-end segment exposure stood at 37%. Subaru's sales mix was heavily concentrated in the JPY 3-5 mn price range, accounting for approximately 90% of total sales. While Subaru maintains high exposure to upper-mid-priced vehicles, combined low-end and high-end segment exposure remained limited at 10%.",
+        "bbox": [
+            102,
+            444,
+            893,
+            535
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/45c1e82ffe9f33776a01d8e7d1a680d0407220c29e11f520b9edbaf9bb0a6503.jpg",
+        "table_caption": [
+            "EXHIBIT 20: K-shaped polarization in Japan's auto market could increasingly affect automakers' sales mix"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"4\">Nissan</td><td colspan=\"3\">Toyota</td><td colspan=\"3\">Mazda</td></tr><tr><td></td><td>Car Name</td><td>Mix</td><td>MSRP</td><td>Car Name</td><td>Mix</td><td>MSRP</td><td>Car Name</td><td>Mix</td><td>MSRP</td></tr><tr><td>1</td><td>Note</td><td>19%</td><td>2,719</td><td>Voxy</td><td>8%</td><td>4,066</td><td>CX-5</td><td>16%</td><td>3,804</td></tr><tr><td>2</td><td>Roox</td><td>18%</td><td>2,068</td><td>Hijet</td><td>7%</td><td>1,392</td><td>Mazda 2</td><td>16%</td><td>2,111</td></tr><tr><td>3</td><td>Serena</td><td>18%</td><td>3,943</td><td>Tanto</td><td>6%</td><td>1,653</td><td>Flair wagon</td><td>9%</td><td>1,689</td></tr><tr><td>4</td><td>Dayz</td><td>11%</td><td>1,798</td><td>Alphard</td><td>6%</td><td>10,225</td><td>CX-30</td><td>9%</td><td>3,360</td></tr><tr><td>5</td><td>NV100</td><td>5%</td><td>1,339</td><td>Sienta</td><td>5%</td><td>2,965</td><td>Mazda 3</td><td>8%</td><td>3,131</td></tr><tr><td>6</td><td>Caravan</td><td>5%</td><td>6,632</td><td>Raize</td><td>5%</td><td>2,003</td><td>CX-60</td><td>7%</td><td>4,766</td></tr><tr><td>7</td><td>X-Trail</td><td>5%</td><td>4,903</td><td>Roomy</td><td>5%</td><td>1,739</td><td>Roadster</td><td>7%</td><td>5,256</td></tr><tr><td>8</td><td>Sakura</td><td>4%</td><td>2,724</td><td>Yaris Cross</td><td>4%</td><td>2,555</td><td>CX-80</td><td>6%</td><td>5,964</td></tr><tr><td>9</td><td>NV200</td><td>3%</td><td>2,829</td><td>Hiace</td><td>4%</td><td>3,862</td><td>CX-3</td><td>5%</td><td>3,131</td></tr><tr><td>10</td><td>Kicks</td><td>2%</td><td>3,624</td><td>Yaris</td><td>4%</td><td>2,162</td><td>Flair Crossover</td><td>4%</td><td>1,782</td></tr></table>",
+        "bbox": [
+            107,
+            580,
+            495,
+            676
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/ab7766ddfc88e5d404ac6eebd52d72c6523a41d99931687f2a4b71afba26295a.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Note: MSRP unit is JPY thousand",
+            "Source: IHS, Company websites, Bernstein analysis"
+        ],
+        "table_body": "<table><tr><td colspan=\"4\">Honda</td><td colspan=\"3\">Suzuki</td><td colspan=\"3\">Subaru</td></tr><tr><td></td><td>Car Name</td><td>Mix</td><td>MSRP</td><td>Car Name</td><td>Mix</td><td>MSRP</td><td>Car Name</td><td>Mix</td><td>MSRP</td></tr><tr><td>1</td><td>N BOX</td><td>27%</td><td>1,886</td><td>Spacia</td><td>23%</td><td>1,678</td><td>Forester</td><td>28%</td><td>4,246</td></tr><tr><td>2</td><td>Freed</td><td>15%</td><td>2,914</td><td>Hustler</td><td>12%</td><td>1,824</td><td>Crosstrek</td><td>20%</td><td>3,534</td></tr><tr><td>3</td><td>Vezel</td><td>11%</td><td>3,360</td><td>Every</td><td>11%</td><td>1,738</td><td>Levorg</td><td>14%</td><td>4,499</td></tr><tr><td>4</td><td>Step WGN</td><td>9%</td><td>3,774</td><td>Solio</td><td>7%</td><td>2,288</td><td>Impreza</td><td>10%</td><td>3,330</td></tr><tr><td>5</td><td>Fit</td><td>8%</td><td>2,178</td><td>Jimny</td><td>12%</td><td>2,039</td><td>Outback</td><td>6%</td><td>4,325</td></tr><tr><td>6</td><td>N-Joy</td><td>5%</td><td>2,112</td><td>Carry Pickup</td><td>7%</td><td>1,378</td><td>Chiffon</td><td>4%</td><td>1,623</td></tr><tr><td>7</td><td>N-VAN</td><td>5%</td><td>1,884</td><td>Wagon R</td><td>5%</td><td>1,630</td><td>Rex</td><td>3%</td><td>2,260</td></tr><tr><td>8</td><td>N-WGN</td><td>4%</td><td>1,699</td><td>Smile</td><td>5%</td><td>1,551</td><td>Stella</td><td>3%</td><td>1,708</td></tr><tr><td>9</td><td>WR-V</td><td>4%</td><td>2,490</td><td>Alto</td><td>4%</td><td>1,236</td><td>Samber Van</td><td>3%</td><td>1,535</td></tr><tr><td>10</td><td>ZR-V</td><td>3%</td><td>4,218</td><td>Swift</td><td>4%</td><td>2,030</td><td>BRZ</td><td>3%</td><td>4,400</td></tr></table>",
+        "bbox": [
+            106,
+            680,
+            495,
+            775
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b6a5c3f93ac39741af5328174555baf6367e4ac297dd329db55b90a32fb301ab.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 21: Combined low-end and high-end segment exposure stands at 74% for Suzuki and 43% for Toyota"
+        ],
+        "chart_footnote": [
+            "Source: IHS, Company websites, Bernstein analysis"
+        ],
+        "bbox": [
+            509,
+            585,
+            880,
+            816
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Automakers with higher exposure to both low-end and high-end segments tend to maintain relatively higher operating profit margins in Japan. Toyota recorded 43% low-end and high-end exposure, while operating profit margin in Japan reached 11%, the highest level among Japanese automakers. Suzuki also recorded the highest exposure at 74%, while operating profit margin reached 9%, suggesting that the company is benefiting from K-shaped polarization (Exhibit 22).",
+        "bbox": [
+            102,
+            862,
+            892,
+            907
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            222,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            104,
+            71,
+            694,
+            85
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "In contrast, Nissan's exposure stood at 29%, while operating profit margin remained around 0%. Mazda and Subaru recorded exposure levels of 37% and 10%, respectively, while operating profit margins stood at -5% and -11%. Honda recorded 38% exposure, although operating profit margin remained at -14%. This suggests that automakers with exposure to both low-end and high-end segments tend to maintain higher profitability under a K-shaped demand environment, with Toyota and Suzuki appearing relatively well positioned.",
+        "bbox": [
+            102,
+            98,
+            875,
+            174
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 22: Automakers with exposure to both low-end and high-end segments tend to maintain higher profitability under a K-shaped demand environment",
+        "bbox": [
+            104,
+            185,
+            470,
+            231
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/aeb89ccb78bcf531ac425b6ae7d7cf63e64a204a6f5fc2eec5e0d1b382e7ef08.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: Low-end denotes <JPY 2 mn, while high-end denotes ≥JPY 5 mn; Bubble size is proportional to automotive sales in Japan  \nSource: IHS, Company websites, Bernstein analysis"
+        ],
+        "bbox": [
+            120,
+            241,
+            488,
+            465
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            220,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "SHARED MOBILITY BENEFITS AS CAR OWNERSHIP BECOMES LESS AFFORDABLE",
+        "text_level": 2,
+        "bbox": [
+            104,
+            85,
+            671,
+            101
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Shared mobility offers stronger economic rationality than car ownership",
+        "text_level": 2,
+        "bbox": [
+            104,
+            118,
+            602,
+            133
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Another factor supporting the adoption of shared mobility is its superior economic efficiency compared with individual car ownership. Car ownership involves substantial fixed costs, including parking fees, insurance premiums, and maintenance expenses. For users with limited annual driving distance, using car sharing or ride sharing only when necessary can be more cost-efficient than owning a car.",
+        "bbox": [
+            102,
+            137,
+            864,
+            198
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The assumptions used to compare annual usage costs among car ownership, car sharing, and ride sharing are as follows (Exhibit 23). Vehicle purchase cost is based on the average MSRP of the top 10 best-selling cars in Japan, assuming depreciation over eight years. Parking fees are based on the average monthly parking cost within Tokyo's 23 wards. Auto insurance premiums are calculated by dividing total voluntary insurance spending by the number of registered cars in Japan, resulting in annual voluntary insurance cost per car. Maintenance costs include mandatory inspections, compulsory automobile liability insurance, and parts replacement expenses.",
+        "bbox": [
+            102,
+            210,
+            885,
+            301
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "For car sharing, the pricing structure of Times Car Share, the largest operator in Japan, is used, assuming a pay-as-you-go model based on usage time and travel distance. For ride sharing, pricing equivalent to current taxi fares in Japan is applied. In addition, car sharing usage assumptions include seven minutes of usage time per 1 km traveled and four trips per week.",
+        "bbox": [
+            102,
+            311,
+            872,
+            359
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Based on these assumptions, ride sharing is more affordable than car ownership when annual travel distance is below 2,000 km, while car sharing becomes more economically rational when annual travel distance is below 7,000 km (Exhibit 24). This is particularly relevant in urban areas, where public transportation usage is high and privately owned car tend to be used infrequently and for shorter distances, increasing compatibility with shared mobility services.",
+        "bbox": [
+            102,
+            369,
+            870,
+            430
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/0d9fe9faccf0011450ed76ec0adafae8d2f1b6640dbe591b3cf69ad64bdd6ecb.jpg",
+        "table_caption": [
+            "EXHIBIT 23: To compare annual usage costs among car ownership, car sharing, and ride sharing, assumptions were primarily based on car users in Tokyo"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Assumptions</td><td>Period</td><td>Car Ownership</td><td>Car Sharing</td><td>Ride Sharing</td></tr><tr><td>Vehicle purchase cost</td><td>per 8 years</td><td>JPY 3,053,200</td><td>-</td><td>-</td></tr><tr><td>Parking fee</td><td>per 1 month</td><td>JPY 27,103</td><td>-</td><td>-</td></tr><tr><td>Auto insurance premium</td><td>per 1 year</td><td>JPY 25,008</td><td>-</td><td>-</td></tr><tr><td>Maintenance cost</td><td>per 1 year</td><td>JPY 60,000</td><td>-</td><td>-</td></tr><tr><td>Fuel cost</td><td>-</td><td>JPY 165 / liter</td><td>-</td><td>-</td></tr><tr><td>Base fare</td><td>-</td><td>-</td><td>-</td><td>JPY 500 (first 1km)</td></tr><tr><td>Time-based fee</td><td>-</td><td>-</td><td>JPY 220 / 15 minutes</td><td>-</td></tr><tr><td>Distance-based fee</td><td>-</td><td>-</td><td>JPY 20 / 1 km</td><td>JPY 100 / 232 m</td></tr></table>",
+        "bbox": [
+            104,
+            492,
+            495,
+            625
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Note: The purchased vehicle is depreciated over 8 years; Shared mobility assumes 4 trips per week; For car sharing, usage is assumed to be 7 minutes per 1 km; Maintenance cost includes periodic vehicle inspection costs, including compulsory automobile liability insurance, and associated parts replacement; Auto insurance premium refers to voluntary insurance.",
+        "bbox": [
+            102,
+            641,
+            493,
+            700
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Source: Ministry of Internal Affairs and Communications, Ministry of Land, Infrastructure, Transport and Tourism, Company websites, Bernstein analysis and estimates",
+        "bbox": [
+            104,
+            700,
+            495,
+            734
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/66ac34d092a69c8a53ab44cc5775f8f696ab93f71a8dbf853f471e5b0bb6819a.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 24: Ride sharing is more affordable below 2,000 km annually, while car sharing is more affordable below 7,000 km than car ownership"
+        ],
+        "chart_footnote": [
+            "Source: Ministry of Internal Affairs and Communications, Ministry of Land, Infrastructure, Transport and Tourism, Company websites, Bernstein analysis and estimates"
+        ],
+        "bbox": [
+            513,
+            496,
+            883,
+            723
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Shared mobility shifts value from car ownership to mobility ecosystems",
+        "text_level": 2,
+        "bbox": [
+            104,
+            806,
+            601,
+            821
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Value creation in the automotive industry is gradually shifting from the traditional car ownership-centered model toward a mobility platform-centered model. Under the traditional automotive industry structure, automakers primarily generated one-time revenue through vehicle sales. In contrast, within the shared mobility market, continuous monetization through mobility services, software, data, and applications is becoming increasingly important relative to the vehicle itself. In particular, connected services, fleet-based mobility solutions, sales finance, and subscription services could become increasingly",
+        "bbox": [
+            102,
+            825,
+            880,
+            902
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            222,
+            950
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "important monetization models going forward.",
+        "bbox": [
+            104,
+            71,
+            395,
+            85
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Shared mobility vehicles generally maintain higher utilization rates compared with privately owned vehicles, creating structures that are more conducive to continuous monetization opportunities through vehicle inspections and parts replacement, software maintenance, fleet management, insurance, and sales finance. For automakers, the key factor is no longer simply vehicle sales, but rather how much recurring revenue can be generated throughout the entire lifecycle of each vehicle. As a result, value creation is gradually shifting away from traditional midstream car manufacturing toward upstream technology domains and downstream recurring-service businesses (Exhibit 25).",
+        "bbox": [
+            102,
+            99,
+            888,
+            189
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/c4cedf5c1577ec1a3b58768a526da1f8ffccdb81135df8322f41eca288cf9218.jpg",
+        "image_caption": [
+            "EXHIBIT 25: Autonomy penetration will accelerate the shift of added value downstream in the car value chain"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            107,
+            222,
+            888,
+            405
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/4cf2cb91d4c6ecace2ec515d483a0d459d09829411a9cef3bd659da9a0c2e1e5.jpg",
+        "image_caption": [
+            "Source: The Ministry of Economy, Trade and Industry of Japan, Bernstein analysis"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            127,
+            409,
+            883,
+            500
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            222,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "I. REQUIRED DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            98,
+            297,
+            112
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "References to \"Bernstein\" or the \"Firm\" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            125,
+            893,
+            220
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.",
+        "bbox": [
+            102,
+            232,
+            893,
+            273
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "VALUATION METHODOLOGY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            286,
+            300,
+            300
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Toyota Motor Corporation",
+        "text_level": 2,
+        "bbox": [
+            104,
+            315,
+            282,
+            329
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "We set a price target of JPY 4,200 using reset PBR (P/B multiple) of 1.26x against our FY3/28 BPS estimate of JPY 3,357.",
+        "bbox": [
+            102,
+            342,
+            857,
+            357
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Suzuki Motor Corporation",
+        "text_level": 2,
+        "bbox": [
+            104,
+            369,
+            284,
+            383
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "We set price target of JPY 2,550 using SOTP valuation. Per business segment, EV/EBITDA 13.8x applied to FY3/28 EBITDA estimates of JPY 447 bn for India business, EV/EBITDA 3.1x applied to FY3/28 EBITDA estimates of JPY 566 bn for non-India business.",
+        "bbox": [
+            102,
+            397,
+            893,
+            441
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Honda Motor Co Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            455,
+            243,
+            469
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "We set price target of JPY 1,300 using PBR (P/B multiple) of 0.36x against our FY3/28 BPS estimate of JPY 3,664.",
+        "bbox": [
+            102,
+            482,
+            812,
+            497
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Nissan Motor Co Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            510,
+            245,
+            523
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "We set price target of JPY 350 using PBR (P/B multiple) of 0.24x against our FY3/28 BPS estimate of JPY 1,479.",
+        "bbox": [
+            102,
+            537,
+            800,
+            551
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Mazda Motor Corporation",
+        "text_level": 2,
+        "bbox": [
+            104,
+            565,
+            282,
+            579
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "We set price target of JPY 1,000 using PBR (P/B multiple) of 0.39x against our FY3/28 BPS estimate of JPY 2,489.",
+        "bbox": [
+            102,
+            593,
+            812,
+            608
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Subaru Corporation",
+        "text_level": 2,
+        "bbox": [
+            104,
+            621,
+            243,
+            635
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "We set price target of JPY 2,350 using PBR (P/B multiple) of 0.56x against our FY3/28 BPS estimate of JPY 4,251.",
+        "bbox": [
+            102,
+            648,
+            812,
+            662
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "RISKS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            676,
+            153,
+            689
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Toyota Motor Corporation",
+        "text_level": 2,
+        "bbox": [
+            104,
+            704,
+            282,
+            718
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Key downside risks would be 1) increase in US import tariffs, 2) slowdown in HEV demand, 3) delay of domestic production recovery.",
+        "bbox": [
+            102,
+            731,
+            892,
+            761
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Suzuki Motor Corporation",
+        "text_level": 2,
+        "bbox": [
+            104,
+            773,
+            284,
+            787
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Key downside risks to our Suzuki price target would be 1) weaker-than-expected demand in India, 2) delay of new model launches in India, 3) delay in further tightening relationship with Toyota.",
+        "bbox": [
+            102,
+            801,
+            893,
+            830
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Honda Motor Co Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            844,
+            243,
+            857
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Key upside risks to our Honda price target would be 1) announcement of further collaboration/consolidation with Sony, 2) reduction of future investment plans, 3) announcement of additional share buybacks. Key downside risks would be 1) increase in",
+        "bbox": [
+            102,
+            871,
+            893,
+            902
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "DISCLOSURE APPENDIX",
+        "bbox": [
+            727,
+            69,
+            893,
+            84
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            222,
+            950
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "US import tariffs, 2) announcement of merger with Nissan, 3) decline in motorcycle sales and profits.",
+        "bbox": [
+            102,
+            71,
+            723,
+            85
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Nissan Motor Co Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            99,
+            245,
+            112
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Key upside risks to our Nissan price target would be 1) announcement of merger with external partners, 2) earlier-than-expected achievement of turnaround plans, 3) deeper collaboration with Honda.",
+        "bbox": [
+            102,
+            126,
+            893,
+            156
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Mazda Motor Corporation",
+        "text_level": 2,
+        "bbox": [
+            104,
+            169,
+            282,
+            183
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Key upside risks to our Mazda price target would be 1) cancellation of additional US import tariffs, 2) JPY depreciation, 3) decrease in US incentives, 4) announcement of further collaboration/consolidation with Toyota.",
+        "bbox": [
+            102,
+            196,
+            892,
+            226
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Subaru Corporation",
+        "text_level": 2,
+        "bbox": [
+            104,
+            239,
+            243,
+            253
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Key upside risks to our Subaru price target would be 1) JPY depreciation, 2) 2) an earlier-than-expected ramp up at plants that resumed production, 3) announcement of further collaboration/consolidation with Toyota.",
+        "bbox": [
+            102,
+            266,
+            893,
+            297
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            308,
+            508,
+            321
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "EQUITY RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            334,
+            320,
+            348
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand",
+        "text_level": 2,
+        "bbox": [
+            104,
+            361,
+            218,
+            375
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.",
+        "bbox": [
+            102,
+            387,
+            893,
+            470
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand has three categories of ratings:",
+        "bbox": [
+            104,
+            483,
+            429,
+            497
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform: Stock will outpace the market index by more than 15 pp",
+        "bbox": [
+            104,
+            508,
+            547,
+            523
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "• Market-Perform: Stock will perform in line with the market index to within +/-15 pp",
+        "bbox": [
+            104,
+            537,
+            637,
+            551
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "• Underperform: Stock will trail the performance of the market index by more than 15 pp",
+        "bbox": [
+            104,
+            564,
+            658,
+            578
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            102,
+            590,
+            893,
+            619
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            631,
+            893,
+            672
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            684,
+            519,
+            699
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            710,
+            532,
+            724
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – common stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            738,
+            359,
+            751
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).",
+        "bbox": [
+            102,
+            763,
+            893,
+            859
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of common stock ratings:",
+        "bbox": [
+            104,
+            871,
+            540,
+            885
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            877,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            220,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform (OP): Stock will outpace the relevant index by more than 10 pp",
+        "bbox": [
+            104,
+            71,
+            584,
+            85
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Neutral (N): Stock will perform in line with the market index to within +/-10 pp",
+        "bbox": [
+            104,
+            99,
+            604,
+            113
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp",
+        "bbox": [
+            104,
+            126,
+            694,
+            140
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            102,
+            152,
+            893,
+            181
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            193,
+            893,
+            234
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.",
+        "bbox": [
+            104,
+            246,
+            784,
+            261
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            273,
+            519,
+            287
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand common stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            299,
+            607,
+            313
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – preferred stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            325,
+            364,
+            339
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of preferred stock ratings:",
+        "bbox": [
+            104,
+            352,
+            547,
+            366
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            378,
+            893,
+            407
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            421,
+            893,
+            450
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            464,
+            893,
+            494
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Autonomous preferred stock ratings are based on a 6-month time horizon.",
+        "bbox": [
+            102,
+            506,
+            563,
+            520
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "AUTONOMOUS CREDIT RESEARCH",
+        "text_level": 2,
+        "bbox": [
+            104,
+            532,
+            346,
+            546
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.",
+        "bbox": [
+            102,
+            559,
+            893,
+            587
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.",
+        "bbox": [
+            102,
+            598,
+            893,
+            654
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "CREDIT RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            664,
+            320,
+            679
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of credit ratings:",
+        "bbox": [
+            104,
+            691,
+            486,
+            705
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            719,
+            893,
+            748
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            761,
+            893,
+            791
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+        "bbox": [
+            104,
+            804,
+            893,
+            833
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Autonomous credit ratings are based on a 6-month time horizon.",
+        "bbox": [
+            102,
+            845,
+            504,
+            859
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.",
+        "bbox": [
+            102,
+            872,
+            893,
+            898
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            220,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm",
+        "bbox": [
+            102,
+            70,
+            893,
+            113
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            148,
+            591,
+            162
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "table",
+        "img_path": "images/0883e20e11ef931de7b6633b873a0e7d9d968126fe1067111a366d1a61a9d5e6.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "\\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.\nAs of March 31, 2026. All figures are updated quarterly."
+        ],
+        "table_body": "<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.1%</td><td>16.5%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>36.3%</td><td>17.8%</td></tr><tr><td>Underperform</td><td>SELL</td><td>12.6%</td><td>14.9%</td></tr></table>",
+        "bbox": [
+            107,
+            174,
+            890,
+            295
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            375,
+            490,
+            388
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1e7d6bacf960bb687fc0a0018dd8d0e896fc1eff62db683292d0ecc49604ca40.jpg",
+        "content": "",
+        "chart_caption": [
+            "Toyota Motor Corporation (7203.JP) Rating History for Bernstein as of 06/23/2026"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            120,
+            417,
+            867,
+            628
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "chart",
+        "img_path": "images/408b76dddd2b959bc418887848afaf83b51af6417b7037359e411231db4cd73c.jpg",
+        "content": "",
+        "chart_caption": [
+            "Suzuki Motor Corporation (7269.JP) Rating History for Bernstein as of 06/23/2026"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            122,
+            664,
+            867,
+            839
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            940,
+            220,
+            950
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0f6e85c84ade9d0c62dd012ccffc715579f58fe024aa477a1706e16cddf8e440.jpg",
+        "content": "",
+        "chart_caption": [
+            "Honda Motor Co Ltd (7267.JP) Rating History for Bernstein as of 06/23/2026",
+            "Outperform (O); Market-Perform (M); Underperform (U); Coverage Suspended (CS); Not Covered (NC)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            122,
+            88,
+            867,
+            258
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/07085f9db8dda3b908ff7d42303cacb27611bd2ed1c032ab5f2c095a1b33ff2c.jpg",
+        "content": "",
+        "chart_caption": [
+            "Nissan Motor Co Ltd (7201.JP) Rating History for Bernstein as of 06/23/2026",
+            "Outperform (O); Market-Perform (M); Underperform (U); Coverage Suspended (CS); Not Covered (NC)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            122,
+            313,
+            867,
+            482
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1b281f24b931b47a33fc0c33f032734efd08cd820aaae25751beffb5ac6690c6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Mazda Motor Corporation (7261.JP) Rating History for Bernstein as of 06/23/2026",
+            "Outperform (O); Market-Perform (M); Underperform (U); Coverage Suspended (CS); Not Covered (NC)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            122,
+            537,
+            869,
+            688
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            50
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            940,
+            222,
+            950
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/75f071c2c6b0d2740537ee75f5c9d236df1a80e54f6fab8ddd4c1bfae2788a7b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Subaru Corporation (7270.JP) Rating History for Bernstein as of 06/23/2026",
+            "All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            122,
+            88,
+            867,
+            277
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "CONFLICTS OF INTEREST",
+        "text_level": 2,
+        "bbox": [
+            104,
+            334,
+            282,
+            347
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates have received compensation for investment banking services in the past twelve months from Toyota Motor Corporation and Nissan Motor Co Ltd.",
+        "bbox": [
+            102,
+            359,
+            893,
+            388
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Toyota Motor Corporation, Suzuki Motor Corporation, Honda Motor Co Ltd and Mazda Motor Corporation.",
+        "bbox": [
+            102,
+            400,
+            893,
+            441
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates expect to receive or intend to seek compensation for investment banking services in the next three months from Toyota Motor Corporation and Nissan Motor Co Ltd.",
+        "bbox": [
+            102,
+            454,
+            893,
+            482
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates had an investment banking client relationship during the past twelve months with Toyota Motor Corporation and Nissan Motor Co Ltd.",
+        "bbox": [
+            102,
+            494,
+            892,
+            522
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Affiliates of Bernstein managed or co-managed in the past twelve months a public offering of securities of Toyota Motor Corporation and Nissan Motor Co Ltd.",
+        "bbox": [
+            102,
+            534,
+            892,
+            561
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Certain affiliates of Bernstein act as market maker or liquidity provider in the debt securities of: Toyota Motor Corporation and Honda Motor Co Ltd.",
+        "bbox": [
+            102,
+            574,
+            893,
+            601
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "OTHER MATTERS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            626,
+            228,
+            638
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:",
+        "bbox": [
+            102,
+            652,
+            893,
+            680
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "+1 Bernstein Institutional Services LLC; New York, New York, USA",
+        "bbox": [
+            104,
+            693,
+            514,
+            705
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "+44 Bernstein Autonomous LLP; London UK",
+        "bbox": [
+            104,
+            719,
+            385,
+            732
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "+212 SG Africa Technologies & Services; Casablanca, Morocco",
+        "bbox": [
+            104,
+            744,
+            584,
+            758
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "+33 BSG France S.A.; Paris, France",
+        "bbox": [
+            104,
+            771,
+            328,
+            784
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "+34 BSG France S.A.; Madrid, Spain",
+        "bbox": [
+            104,
+            797,
+            331,
+            810
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "+41 Bernstein Autonomous LLP; Geneva, Switzerland",
+        "bbox": [
+            104,
+            824,
+            441,
+            837
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "+49 BSG France S.A.; Frankfurt, Germany",
+        "bbox": [
+            104,
+            849,
+            367,
+            864
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "+91 Bernstein (India) Private Limited; Mumbai, India",
+        "bbox": [
+            104,
+            876,
+            495,
+            888
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            875,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            447,
+            50
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            220,
+            950
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "+852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China",
+        "bbox": [
+            104,
+            70,
+            645,
+            85
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "+65 Bernstein (Singapore) Private Limited; Singapore",
+        "bbox": [
+            104,
+            95,
+            506,
+            111
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "+81 Bernstein Japan KK; Tokyo, Japan",
+        "bbox": [
+            104,
+            123,
+            413,
+            137
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.",
+        "bbox": [
+            102,
+            148,
+            893,
+            246
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            257,
+            893,
+            299
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "CERTIFICATION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            310,
+            217,
+            324
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.",
+        "bbox": [
+            102,
+            337,
+            893,
+            393
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            402,
+            444,
+            417
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.",
+        "bbox": [
+            102,
+            430,
+            893,
+            473
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "III. OTHER IMPORTANT INFORMATION AND DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            483,
+            501,
+            498
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Separate branding is maintained for “Bernstein” and “Autonomous” research products.",
+        "bbox": [
+            104,
+            510,
+            638,
+            525
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.",
+        "bbox": [
+            104,
+            537,
+            893,
+            642
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.",
+        "bbox": [
+            104,
+            655,
+            893,
+            715
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.",
+        "bbox": [
+            102,
+            727,
+            893,
+            768
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.",
+        "bbox": [
+            102,
+            780,
+            893,
+            821
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.",
+        "bbox": [
+            102,
+            834,
+            893,
+            904
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            877,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            220,
+            950
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.",
+        "bbox": [
+            102,
+            70,
+            893,
+            113
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.",
+        "bbox": [
+            102,
+            125,
+            893,
+            180
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "This document may not be passed onto any person in Canada unless that person qualifies as \"permitted client\" as defined in Section 1.1 of NI 31-103.",
+        "bbox": [
+            102,
+            191,
+            893,
+            219
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. (\"BTG\") is responsible for the distribution of this report in Brazil.",
+        "bbox": [
+            102,
+            229,
+            893,
+            258
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.",
+        "bbox": [
+            102,
+            270,
+            893,
+            313
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.",
+        "bbox": [
+            102,
+            324,
+            895,
+            450
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).",
+        "bbox": [
+            102,
+            459,
+            893,
+            489
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.",
+        "bbox": [
+            102,
+            500,
+            893,
+            584
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore (\"SFA\"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000.",
+        "bbox": [
+            101,
+            594,
+            895,
+            705
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the \"PRC\") in contravention of any applicable laws of the PRC.",
+        "bbox": [
+            102,
+            715,
+            893,
+            758
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.",
+        "bbox": [
+            102,
+            768,
+            893,
+            797
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.",
+        "bbox": [
+            102,
+            809,
+            895,
+            907
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            875,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            447,
+            51
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            222,
+            950
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.",
+        "bbox": [
+            102,
+            70,
+            893,
+            152
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. (\"Daiwa\"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.",
+        "bbox": [
+            102,
+            165,
+            893,
+            220
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:",
+        "bbox": [
+            102,
+            232,
+            893,
+            301
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "• providing financial product advice;",
+        "bbox": [
+            104,
+            314,
+            339,
+            328
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "• dealing in a financial product;",
+        "bbox": [
+            104,
+            340,
+            308,
+            354
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- making a market for a financial product; and",
+        "bbox": [
+            104,
+            369,
+            398,
+            383
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "• providing a custodial or depository service.",
+        "bbox": [
+            104,
+            396,
+            390,
+            411
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India (\"SEBI\") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.",
+        "bbox": [
+            102,
+            422,
+            893,
+            492
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).",
+        "bbox": [
+            104,
+            503,
+            893,
+            564
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.",
+        "bbox": [
+            104,
+            577,
+            893,
+            607
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "• SCB India does not have any disciplinary history as on the date of this report.",
+        "bbox": [
+            104,
+            619,
+            594,
+            633
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives",
+        "bbox": [
+            104,
+            647,
+            893,
+            676
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "• do not have any financial interest in the subject company",
+        "bbox": [
+            122,
+            690,
+            493,
+            705
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "• do not have actual/beneficial ownership of one percent or more in securities of the subject company;",
+        "bbox": [
+            122,
+            718,
+            764,
+            733
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- is not engaged in any investment banking activities for Indian companies, as such;",
+        "bbox": [
+            122,
+            744,
+            647,
+            760
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "• have not managed or co-managed a public offering in the past twelve months for any Indian companies;",
+        "bbox": [
+            122,
+            773,
+            781,
+            787
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;",
+        "bbox": [
+            122,
+            801,
+            893,
+            830
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "• have not received compensation for brokerage services from the subject company in the past twelve months;",
+        "bbox": [
+            122,
+            844,
+            813,
+            858
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and",
+        "bbox": [
+            122,
+            871,
+            893,
+            900
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            875,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            222,
+            950
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.",
+        "bbox": [
+            122,
+            84,
+            893,
+            113
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- do not have any conflict of interest in the subject company as of the date of this report.",
+        "bbox": [
+            122,
+            126,
+            674,
+            141
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.",
+        "bbox": [
+            104,
+            154,
+            893,
+            214
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.",
+        "bbox": [
+            104,
+            226,
+            893,
+            257
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com",
+        "bbox": [
+            104,
+            268,
+            893,
+            299
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.",
+        "bbox": [
+            104,
+            311,
+            893,
+            342
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "\\- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.",
+        "bbox": [
+            104,
+            354,
+            893,
+            398
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.",
+        "bbox": [
+            102,
+            411,
+            893,
+            482
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.",
+        "bbox": [
+            102,
+            492,
+            893,
+            575
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "LEGAL",
+        "text_level": 2,
+        "bbox": [
+            104,
+            585,
+            155,
+            599
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.",
+        "bbox": [
+            102,
+            613,
+            893,
+            656
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.",
+        "bbox": [
+            102,
+            666,
+            893,
+            722
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.",
+        "bbox": [
+            101,
+            734,
+            895,
+            912
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            875,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            447,
+            51
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            222,
+            950
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            70,
+            584,
+            85
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.",
+        "bbox": [
+            102,
+            95,
+            895,
+            220
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.",
+        "bbox": [
+            102,
+            232,
+            893,
+            343
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.",
+        "bbox": [
+            102,
+            354,
+            893,
+            382
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.",
+        "bbox": [
+            102,
+            393,
+            893,
+            477
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.",
+        "bbox": [
+            102,
+            488,
+            893,
+            529
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.",
+        "bbox": [
+            101,
+            542,
+            895,
+            666
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.",
+        "bbox": [
+            101,
+            676,
+            895,
+            815
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.",
+        "bbox": [
+            102,
+            825,
+            895,
+            896
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            875,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            447,
+            51
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            893,
+            50
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            222,
+            950
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.",
+        "bbox": [
+            102,
+            70,
+            893,
+            140
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.",
+        "bbox": [
+            102,
+            151,
+            893,
+            262
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            875,
+            941,
+            892,
+            952
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "Masahiro Akita +81 3 6777 6998 masahiro.akita@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            446,
+            51
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026",
+        "bbox": [
+            820,
+            39,
+            892,
+            50
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "JAPAN AUTOS & AUTO PARTS",
+        "bbox": [
+            104,
+            939,
+            222,
+            950
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            952
+        ],
+        "page_idx": 25
+    }
+]
