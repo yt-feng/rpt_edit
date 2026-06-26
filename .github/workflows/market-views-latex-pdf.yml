@@ -91,6 +91,7 @@ jobs:
           echo "::notice::Building market views from xhs_notes/dropbox/$DATE_FOLDER. No report or figure limits are applied. Fast PDF renderer will run after this step."
           python scripts/build_market_views_pdf.py \
             --dropbox-output-root "xhs_notes/dropbox" \
+            --extra-roots "xhs_notes/institutions" \
             --date-folder "$DATE_FOLDER" \
             --output-root "market_view_summaries" \
             --model "$MODEL" \

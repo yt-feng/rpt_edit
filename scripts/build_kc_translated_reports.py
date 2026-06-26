@@ -30,6 +30,24 @@ except Exception:  # pragma: no cover
     def sanitize_text(text: str) -> str:
         return text
 
+try:
+    from institution_names import infer_institution_name
+except Exception:  # pragma: no cover
+    def infer_institution_name(*_values: Any) -> str:
+        return ""
+
+# Maps the institution keys used by fetch_institution_latest_pdfs.py to the Chinese
+# names institution_names.infer_institution_name returns, so --exclude-institutions
+# can drop whole sources (e.g. rand,brookings) before translating.
+INSTITUTION_KEY_TO_CN = {
+    "imf": "国际货币基金组织",
+    "bis": "国际清算银行",
+    "worldbank": "世界银行",
+    "world bank": "世界银行",
+    "rand": "兰德公司",
+    "brookings": "布鲁金斯学会",
+}
+
 try:  # Loaded lazily so --help and cleaning logic work without reportlab installed.
     from reportlab.lib import colors
     from reportlab.lib.enums import TA_CENTER
@@ -421,6 +439,35 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str, temperature
     return data["choices"][0]["message"]["content"].strip()
 
 
+def title_is_sensitive(title: str, args: argparse.Namespace) -> bool:
+    """Ask DeepSeek whether a report title is China-sensitive. Fails closed.
+
+    Used to gate the WeChat draft path: a title that disparages China / touches
+    sensitive political topics must not reach the 公众号 draft box. On any error or
+    unclear verdict we return True (skip the report) to stay on the safe side.
+    """
+    title = (title or "").strip()
+    if not title:
+        return False
+    prompt = (
+        "你是中国大陆微信公众号合规审核员。下面是一篇外文研究报告的标题。"
+        "判断该标题是否包含对中国不友好、负面唱衰、攻击中国制度或政策，"
+        "或涉及敏感政治议题（如台独、疆独、藏独、人权指控等）的内容。"
+        "只回答一个英文单词：SENSITIVE 或 SAFE。\n\n标题：" + title
+    )
+    try:
+        verdict = call_deepseek(prompt, args, f"title guard: {title[:40]}", temperature=0.0).upper()
+    except Exception as exc:  # noqa: BLE001 - fail closed
+        log(f"  [title-guard] DeepSeek error, skipping report to stay safe: {exc}")
+        return True
+    if "SENSITIVE" in verdict:
+        return True
+    if "SAFE" in verdict:
+        return False
+    log(f"  [title-guard] unclear verdict {verdict!r}; skipping to stay safe")
+    return True
+
+
 def translate_chunk(chunk: str, args: argparse.Namespace, chunk_index: int, chunk_total: int) -> str:
     prompt = f"""
 请把下面这段英文/混合语言研报正文精译成简体中文。
@@ -685,6 +732,10 @@ def main() -> int:
     parser.add_argument("--max-images-per-report", type=int, default=28)
     parser.add_argument("--deepseek-timeout", type=int, default=300)
     parser.add_argument("--deepseek-retries", type=int, default=3)
+    parser.add_argument("--exclude-institutions", default="",
+                        help="Comma list of institution keys to skip entirely, e.g. rand,brookings.")
+    parser.add_argument("--title-guard", action="store_true",
+                        help="Use DeepSeek to skip reports whose title is China-sensitive (keeps them out of WeChat).")
     args = parser.parse_args()
 
     max_reports = parse_selection_limit(args.max_reports, "--max-reports")
@@ -698,6 +749,23 @@ def main() -> int:
     all_reports = find_report_dirs(date_dir)
     if not all_reports:
         raise RuntimeError(f"No report outputs with source_mineru.md found under {date_dir}")
+
+    excluded_cn = {
+        INSTITUTION_KEY_TO_CN.get(key.strip().lower(), key.strip())
+        for key in (args.exclude_institutions or "").split(",") if key.strip()
+    }
+    if excluded_cn:
+        kept: list[Path] = []
+        for report_dir in all_reports:
+            institution = infer_institution_name(report_dir.name)
+            if institution and institution in excluded_cn:
+                log(f"Excluding institution report ({institution}): {report_dir.name}")
+            else:
+                kept.append(report_dir)
+        all_reports = kept
+        if not all_reports:
+            raise RuntimeError(f"All reports under {date_dir} were excluded by --exclude-institutions={args.exclude_institutions}")
+
     if max_reports is None:
         selected = all_reports[args.report_offset :]
     else:
@@ -711,7 +779,14 @@ def main() -> int:
 
     summary: list[dict[str, Any]] = []
     failures: list[dict[str, Any]] = []
+    sensitive_skipped: list[dict[str, Any]] = []
     for idx, report_dir in enumerate(selected, 1):
+        if args.title_guard:
+            title = report_title(report_dir)
+            if title_is_sensitive(title, args):
+                log(f"Skipping China-sensitive title, not sending to WeChat: {title}")
+                sensitive_skipped.append({"source_report_dir": str(report_dir), "title": title})
+                continue
         try:
             summary.append(process_report(report_dir, out_dir, idx, args))
         except Exception as exc:
@@ -725,13 +800,18 @@ def main() -> int:
         "max_reports": "all" if max_reports is None else max_reports,
         "selected_count": len(selected),
         "successful_count": len(summary),
+        "sensitive_skipped_count": len(sensitive_skipped),
+        "sensitive_skipped": sensitive_skipped,
         "failures": failures,
         "reports": summary,
     }
     (out_dir / "translation_summary.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     if not summary:
+        if sensitive_skipped:
+            log(f"No translated reports: all {len(sensitive_skipped)} selected title(s) were China-sensitive and skipped. Not an error.")
+            return 0
         return 2
-    log(f"Done. Generated {len(summary)} translated report PDF(s) under {out_dir}")
+    log(f"Done. Generated {len(summary)} translated report PDF(s) under {out_dir} (skipped {len(sensitive_skipped)} sensitive).")
     return 0
 
 

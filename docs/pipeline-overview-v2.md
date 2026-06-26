@@ -155,8 +155,11 @@ publish_ready_zips/<日期>/
 输入来源：
 
 ```text
-xhs_notes/dropbox/<最新日期>/
+xhs_notes/dropbox/<最新日期>/          # Dropbox 投行报告
+xhs_notes/institutions/<最新日期>/     # IMF/BIS/世界银行/兰德/布鲁金斯（经 --extra-roots 合并）
 ```
+
+通过 `--extra-roots "xhs_notes/institutions"` 把 §3.8 抓取的 5 家机构报告也并入市场观点 PDF。market views 不做敏感过滤，5 家全部纳入（含 RAND / Brookings）。
 
 输出目录：
 
@@ -410,6 +413,9 @@ institution_feeds/seen_state.json                 # 去重状态，标记 downlo
 - IMF 走 Coveo 搜索 API，用的是公网浏览器可见的 search key（写在 `INSTITUTIONS["imf"]["coveo_token"]`）。如 IMF 轮换该 key，可用 `IMF_COVEO_TOKEN` 环境变量覆盖，无需改代码。`--imf-rows` 控制每次扫描的 Coveo 结果数（默认 60）。IMF PUBS 每天发很多（工作论文、国别报告、Selected Issues、FSAP、Article IV 等）；如只想要部分，收紧 `coveo_aq` 的 `@imfcontenttype` 过滤即可。
 - World Bank 的 WDS `docdt` 比实际发布滞后数月，因此该来源不按日期过滤（`recency_filter=False`），只按 `docdt` 倒序取最新若干篇并靠 seen 去重；其余来源按 `since_days` 过滤。
 - 依赖 `curl_cffi`（已加入 `requirements.txt`），用 Chrome TLS 指纹绕过 IMF 的 Akamai WAF；未安装时对 IMF 以外来源无影响。整条链路不需要无头浏览器。
+- **微信公众号合规：5 家都会抓取并进 MinerU（供 market views 用），但只有 IMF / BIS / 世界银行 会进公众号草稿；RAND 兰德、Brookings 布鲁金斯 因内容偏敏感，已在精译步骤用 `--exclude-institutions "rand,brookings"` 整体排除，不翻译、不上公众号。**
+- **标题敏感性审核：精译步骤加了 `--title-guard`，对剩余 3 家逐篇用 DeepSeek 审核标题（是否唱衰中国 / 攻击中国制度 / 涉敏感政治议题）。判为 SENSITIVE 的不翻译、不进草稿箱；DeepSeek 报错或结论不明时按"宁可漏发"处理（跳过）。被跳过的记录在 `kc_translated_reports/institutions/<日期>/translation_summary.json` 的 `sensitive_skipped` 里。**
+- market views 汇总 PDF 不做敏感过滤，5 家（含 RAND / Brookings）全部纳入，见 §3.3。
 
 ## 4. 主要脚本
 

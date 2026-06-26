@@ -130,6 +130,8 @@ jobs:
             --date-folder "$DATE" \
             --output-root "kc_translated_reports/institutions" \
             --max-reports "${{ github.event.inputs.max_translated || 'all' }}" \
+            --exclude-institutions "rand,brookings" \
+            --title-guard \
             2>&1 | tee institution_translated_progress.log
 
       - name: Commit PDF link archive and seen state

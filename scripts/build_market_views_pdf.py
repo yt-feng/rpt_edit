@@ -476,6 +476,8 @@ def compile_pdf(tex_path: Path) -> bool:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dropbox-output-root", default="xhs_notes/dropbox")
+    parser.add_argument("--extra-roots", default="",
+                        help="Comma list of extra output roots to merge for the same date, e.g. xhs_notes/institutions.")
     parser.add_argument("--date-folder", default="latest")
     parser.add_argument("--output-root", default="market_view_summaries")
     parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
@@ -499,11 +501,21 @@ def main() -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     report_dirs = find_report_dirs(date_dir)
+    # Merge additional output roots (e.g. xhs_notes/institutions) for the same date so
+    # IMF/BIS/World Bank/RAND/Brookings reports are included in the market views PDF.
+    for extra in [r.strip() for r in (args.extra_roots or "").split(",") if r.strip()]:
+        extra_date_dir = Path(extra) / report_date
+        if extra_date_dir.exists():
+            extra_dirs = find_report_dirs(extra_date_dir)
+            log(f"Merging {len(extra_dirs)} report directories from {extra_date_dir}")
+            report_dirs.extend(extra_dirs)
+        else:
+            log(f"Extra root date folder not found, skipping: {extra_date_dir}")
     if args.max_reports > 0:
         report_dirs = report_dirs[: args.max_reports]
     if not report_dirs:
         raise RuntimeError(f"No report outputs found under {date_dir}")
-    log(f"Found {len(report_dirs)} report directories under {date_dir}")
+    log(f"Found {len(report_dirs)} report directories (incl. extra roots)")
 
     reports: list[dict[str, Any]] = []
     raw_figures: list[dict[str, Any]] = []
