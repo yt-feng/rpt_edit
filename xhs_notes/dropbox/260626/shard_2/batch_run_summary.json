@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 28,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/11-NOM-Asia Insights：China： PBoC is to add overnight OMO-260625.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rs3zowfy/pdfs/0001-11-NOM-Asia Insights-China- PBoC is to add overnight OMO-260625.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/12-GS-European Utilities：Hormuz re~opening：what to do with the sector-260625.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rs3zowfy/pdfs/0002-12-GS-European Utilities-Hormuz re-opening-what to do with the sector-260625.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/13-JPM-Cosmetics Sector： Earnings Outlook （Apr~Jun） Need strategies to grow core brands， lift margins-260625.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rs3zowfy/pdfs/0003-13-JPM-Cosmetics Sector- Earnings Outlook -Apr-Jun- Need strategies to grow core brands- lift margins-260625.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/14-NOM-USD CNY fix model：Projection： 6.8023-260626.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rs3zowfy/pdfs/0004-14-NOM-USD CNY fix model-Projection- 6.8023-260626.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/15-Bernstein-Bernstein Energy & Power： Taking it to the NaX. Are sodium~ion batteries the key to solar baseload power？-260626.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rs3zowfy/pdfs/0005-15-Bernstein-Bernstein Energy - Power- Taking it to the NaX. Are sodium-ion batteries the key to solar baseload power--260626.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

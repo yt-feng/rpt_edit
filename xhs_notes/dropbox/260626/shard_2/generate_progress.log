@@ -1,0 +1,14 @@
+Found 28 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rs3zowfy/pdfs/0001-11-Nomura-Asia Insights-China- PBoC is to add overnight OMO-260625.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rs3zowfy/pdfs/0002-12-Goldman Sachs-European Utilities-Hormuz re-opening-what to do with the sector-260625.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rs3zowfy/pdfs/0003-13-J.P. Morgan-Cosmetics Sector- Earnings Outlook -Apr-Jun- Need strategies to grow core brands- lift margins-260625.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rs3zowfy/pdfs/0004-14-Nomura-USD CNY fix model-Projection- 6.8023-260626.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rs3zowfy/pdfs/0005-15-Bernstein-Bernstein Energy - Power- Taking it to the NaX. Are sodium-ion batteries the key to solar baseload power--260626.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=b381bb5d-e484-46ce-98a5-045a4a18cdce
+MinerU states: running, running, running, pending, pending
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260626/shard_2; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

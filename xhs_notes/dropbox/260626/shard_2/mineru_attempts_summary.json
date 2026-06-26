@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_rs3zowfy/pdfs/0001-11-NOM-Asia Insights-China- PBoC is to add overnight OMO-260625.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rs3zowfy/pdfs/0002-12-GS-European Utilities-Hormuz re-opening-what to do with the sector-260625.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rs3zowfy/pdfs/0003-13-JPM-Cosmetics Sector- Earnings Outlook -Apr-Jun- Need strategies to grow core brands- lift margins-260625.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rs3zowfy/pdfs/0004-14-NOM-USD CNY fix model-Projection- 6.8023-260626.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rs3zowfy/pdfs/0005-15-Bernstein-Bernstein Energy - Power- Taking it to the NaX. Are sodium-ion batteries the key to solar baseload power--260626.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
