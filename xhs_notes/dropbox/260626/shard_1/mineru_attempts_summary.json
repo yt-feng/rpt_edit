@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_d6vpyj5b/pdfs/0001-06-BARC-Macro Outlook-Long the cycle- short the complacency-260625.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_d6vpyj5b/pdfs/0002-07-BARC-US Equity Strategy-Upgrading into uncertainty-260625.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_d6vpyj5b/pdfs/0003-08-GS-Oil Tracker- Gulf Flows Recover- Market Fast-Forwards to Future Surplus-260624.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_d6vpyj5b/pdfs/0004-09-HSBC-China Macro Tracker-Financial opening-up-260624.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_d6vpyj5b/pdfs/0005-10-JPM-Japan Rates Topics-Outline of Public-Private Investment across 17 Sectors Begins to Take Shape-260625.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

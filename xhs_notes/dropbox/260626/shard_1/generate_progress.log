@@ -1,0 +1,15 @@
+Found 28 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_d6vpyj5b/pdfs/0001-06-Barclays-Macro Outlook-Long the cycle- short the complacency-260625.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_d6vpyj5b/pdfs/0002-07-Barclays-US Equity Strategy-Upgrading into uncertainty-260625.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_d6vpyj5b/pdfs/0003-08-Goldman Sachs-Oil Tracker- Gulf Flows Recover- Market Fast-Forwards to Future Surplus-260624.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_d6vpyj5b/pdfs/0004-09-HSBC-China Macro Tracker-Financial opening-up-260624.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_d6vpyj5b/pdfs/0005-10-J.P. Morgan-Japan Rates Topics-Outline of Public-Private Investment across 17 Sectors Begins to Take Shape-260625.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=9b7057d0-e0be-4199-b8f1-9014c4b243c4
+MinerU states: done, running, running, running, waiting-file
+MinerU states: done, done, done, done, done
+MinerU result contained no standalone images; rendering PDF page fallback cards.
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260626/shard_1; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
