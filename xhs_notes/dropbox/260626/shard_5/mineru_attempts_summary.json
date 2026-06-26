@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_rvykyune/pdfs/0001-26-GS-Insurance- M-A and Reinsurance- Opportunities in a softer rate environment-260625.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rvykyune/pdfs/0002-27-JPM-Retail Radar Jun 24 - Retail Remembers the Dip- Memory (MU) Serves Right-260624.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_rvykyune/pdfs/0003-28-MS-How Much Will Vol Go Up Under Warsh--260624.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
