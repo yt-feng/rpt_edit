@@ -1,0 +1,389 @@
+{
+  "date_folder": "260626",
+  "max_reports": "all",
+  "selected_count": 38,
+  "successful_count": 38,
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0001-Brookings_Can-Turkey-s-defense-industry-deliver-strategic-autonomy-for_7430",
+      "title": "布鲁金斯学会：土耳其军工的“十字路口”是欧洲的机遇，也是北约的难题",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 13,
+      "output_dir": "kc_translated_reports/institutions/260626/01-0001-Brookings_Can-Turkey-s-defense-industry-deliver-strategic-autonomy-for_7430",
+      "pdf_path": "kc_translated_reports/institutions/260626/01-0001-Brookings_Can-Turkey-s-defense-industry-deliver-strategic-autonomy-for_7430/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0002-Brookings_The-spiking-threat-Mexican-cartels-in-Europe-Canada-Africa-t_6a5e",
+      "title": "布鲁金斯学会：墨西哥野生动物走私，正被贩毒集团“收编”为中墨地下贸易通道",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 11,
+      "output_dir": "kc_translated_reports/institutions/260626/02-0002-Brookings_The-spiking-threat-Mexican-cartels-in-Europe-Canada-Africa-t_6a5e",
+      "pdf_path": "kc_translated_reports/institutions/260626/02-0002-Brookings_The-spiking-threat-Mexican-cartels-in-Europe-Canada-Africa-t_6a5e/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0003-Brookings_Will-the-Strait-of-Hormuz-reopen-after-the-US-Iran-deal_cedc8e6c",
+      "title": "布鲁金斯学会：霍尔木兹海峡不会回到从前，伊朗已学会“政治定价”",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/institutions/260626/03-0003-Brookings_Will-the-Strait-of-Hormuz-reopen-after-the-US-Iran-deal_cedc8e6c",
+      "pdf_path": "kc_translated_reports/institutions/260626/03-0003-Brookings_Will-the-Strait-of-Hormuz-reopen-after-the-US-Iran-deal_cedc8e6c/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0004-IMF_Artificial-Intelligence-and-the-Economics-of-Adjustment_53371129",
+      "title": "国际货币基金组织：IMF：AI将冲击全球60%高薪岗位，但真正危险的只有一半",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/institutions/260626/04-0004-IMF_Artificial-Intelligence-and-the-Economics-of-Adjustment_53371129",
+      "pdf_path": "kc_translated_reports/institutions/260626/04-0004-IMF_Artificial-Intelligence-and-the-Economics-of-Adjustment_53371129/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0005-RAND_AI-agents-put-offensive-cyber-within-reach-of-novices_af805fba",
+      "title": "兰德公司：AI Agent已让网络攻击成本降至20美元，无技能门槛",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 17,
+      "output_dir": "kc_translated_reports/institutions/260626/05-0005-RAND_AI-agents-put-offensive-cyber-within-reach-of-novices_af805fba",
+      "pdf_path": "kc_translated_reports/institutions/260626/05-0005-RAND_AI-agents-put-offensive-cyber-within-reach-of-novices_af805fba/kc_translated_report_05.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0006-RAND_Can-LLM-Agents-Select-and-Engage-with-Biological-Tools_570d253a",
+      "title": "兰德公司：AI Agent正在降低生物武器设计的技术门槛，但可靠性仍是关键瓶颈",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_06.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/institutions/260626/06-0006-RAND_Can-LLM-Agents-Select-and-Engage-with-Biological-Tools_570d253a",
+      "pdf_path": "kc_translated_reports/institutions/260626/06-0006-RAND_Can-LLM-Agents-Select-and-Engage-with-Biological-Tools_570d253a/kc_translated_report_06.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0007-RAND_Strengthening-Young-People-s-Life-Skills_253c9212",
+      "title": "兰德公司：课外时间才是年轻人“软技能”的真正战场",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_07.pdf",
+      "figure_count": 20,
+      "output_dir": "kc_translated_reports/institutions/260626/07-0007-RAND_Strengthening-Young-People-s-Life-Skills_253c9212",
+      "pdf_path": "kc_translated_reports/institutions/260626/07-0007-RAND_Strengthening-Young-People-s-Life-Skills_253c9212/kc_translated_report_07.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0008-RAND_Supply-Chain-Energy-and-AI-Nexus_362642c0",
+      "title": "兰德公司：AI缺的不是芯片，是电网里的天然气轮机",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_08.pdf",
+      "figure_count": 11,
+      "output_dir": "kc_translated_reports/institutions/260626/08-0008-RAND_Supply-Chain-Energy-and-AI-Nexus_362642c0",
+      "pdf_path": "kc_translated_reports/institutions/260626/08-0008-RAND_Supply-Chain-Energy-and-AI-Nexus_362642c0/kc_translated_report_08.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0009-WorldBank_Beyond-the-AI-Divide-A-Simple-Approach-to-Identifying-Global_9170",
+      "title": "世界银行：AI准备度差距的真正分水岭，不在算力而在经济复杂度",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_09.pdf",
+      "figure_count": 10,
+      "output_dir": "kc_translated_reports/institutions/260626/09-0009-WorldBank_Beyond-the-AI-Divide-A-Simple-Approach-to-Identifying-Global_9170",
+      "pdf_path": "kc_translated_reports/institutions/260626/09-0009-WorldBank_Beyond-the-AI-Divide-A-Simple-Approach-to-Identifying-Global_9170/kc_translated_report_09.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0010-WorldBank_Boosting-Data-Transparency-A-Shared-Incentive-for-Borrowers-_d44b",
+      "title": "世界银行：高债务国家反而能从数据透明中获益——这对全球债券投资者意味着什么",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_10.pdf",
+      "figure_count": 5,
+      "output_dir": "kc_translated_reports/institutions/260626/10-0010-WorldBank_Boosting-Data-Transparency-A-Shared-Incentive-for-Borrowers-_d44b",
+      "pdf_path": "kc_translated_reports/institutions/260626/10-0010-WorldBank_Boosting-Data-Transparency-A-Shared-Incentive-for-Borrowers-_d44b/kc_translated_report_10.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0011-WorldBank_Bridging-Conflicts-and-Biodiversity-Protection-The-Critical-_a06c",
+      "title": "世界银行：冲突地带才是全球生物多样性保护的真正盲区",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_11.pdf",
+      "figure_count": 11,
+      "output_dir": "kc_translated_reports/institutions/260626/11-0011-WorldBank_Bridging-Conflicts-and-Biodiversity-Protection-The-Critical-_a06c",
+      "pdf_path": "kc_translated_reports/institutions/260626/11-0011-WorldBank_Bridging-Conflicts-and-Biodiversity-Protection-The-Critical-_a06c/kc_translated_report_11.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0012-WorldBank_Businesses-of-the-State-in-Brazil-The-Impact-on-Employment-a_7a29",
+      "title": "世界银行：国企不是铁饭碗，它真正改变的是市场生态",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_12.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/institutions/260626/12-0012-WorldBank_Businesses-of-the-State-in-Brazil-The-Impact-on-Employment-a_7a29",
+      "pdf_path": "kc_translated_reports/institutions/260626/12-0012-WorldBank_Businesses-of-the-State-in-Brazil-The-Impact-on-Employment-a_7a29/kc_translated_report_12.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0013-WorldBank_Collecting-Accurate-Data-on-Intimate-Partner-Violence-Learni_655b",
+      "title": "世界银行：亲密伴侣暴力数据采集，隐私先行不是可选项",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_13.pdf",
+      "figure_count": 3,
+      "output_dir": "kc_translated_reports/institutions/260626/13-0013-WorldBank_Collecting-Accurate-Data-on-Intimate-Partner-Violence-Learni_655b",
+      "pdf_path": "kc_translated_reports/institutions/260626/13-0013-WorldBank_Collecting-Accurate-Data-on-Intimate-Partner-Violence-Learni_655b/kc_translated_report_13.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0014-WorldBank_Community-Health-Workers-as-Key-Providers-of-Easy-to-Use-Con_42a2",
+      "title": "世界银行：避孕针到家，反而降低了避孕覆盖率？",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_14.pdf",
+      "figure_count": 5,
+      "output_dir": "kc_translated_reports/institutions/260626/14-0014-WorldBank_Community-Health-Workers-as-Key-Providers-of-Easy-to-Use-Con_42a2",
+      "pdf_path": "kc_translated_reports/institutions/260626/14-0014-WorldBank_Community-Health-Workers-as-Key-Providers-of-Easy-to-Use-Con_42a2/kc_translated_report_14.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0015-WorldBank_Decarbonization-in-MENA-Countries-An-Empirical-Analysis-of-P_67e6",
+      "title": "世界银行：中东产油国补贴越狠，碳排放越高，但经济并未受益",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_15.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/institutions/260626/15-0015-WorldBank_Decarbonization-in-MENA-Countries-An-Empirical-Analysis-of-P_67e6",
+      "pdf_path": "kc_translated_reports/institutions/260626/15-0015-WorldBank_Decarbonization-in-MENA-Countries-An-Empirical-Analysis-of-P_67e6/kc_translated_report_15.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0016-WorldBank_Deciding-Not-to-Decide-When-Is-There-Power-in-Not-Deciding_9a82d2",
+      "title": "世界银行：不决策，也是一种权力",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_16.pdf",
+      "figure_count": 2,
+      "output_dir": "kc_translated_reports/institutions/260626/16-0016-WorldBank_Deciding-Not-to-Decide-When-Is-There-Power-in-Not-Deciding_9a82d2",
+      "pdf_path": "kc_translated_reports/institutions/260626/16-0016-WorldBank_Deciding-Not-to-Decide-When-Is-There-Power-in-Not-Deciding_9a82d2/kc_translated_report_16.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0017-WorldBank_Design-of-Partial-Population-Experiments-with-an-Application_c329",
+      "title": "世界银行：你的实验可能被“忽视的集群异质性”悄悄削弱了",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_17.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/institutions/260626/17-0017-WorldBank_Design-of-Partial-Population-Experiments-with-an-Application_c329",
+      "pdf_path": "kc_translated_reports/institutions/260626/17-0017-WorldBank_Design-of-Partial-Population-Experiments-with-an-Application_c329/kc_translated_report_17.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0018-WorldBank_Displaced-Learners-Early-Integration-of-Ukrainian-Refugee-St_33e6",
+      "title": "世界银行：乌克兰难民学生在意大利的学业，比想象中更依赖语言之外的东西",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_18.pdf",
+      "figure_count": 9,
+      "output_dir": "kc_translated_reports/institutions/260626/18-0018-WorldBank_Displaced-Learners-Early-Integration-of-Ukrainian-Refugee-St_33e6",
+      "pdf_path": "kc_translated_reports/institutions/260626/18-0018-WorldBank_Displaced-Learners-Early-Integration-of-Ukrainian-Refugee-St_33e6/kc_translated_report_18.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0019-WorldBank_Does-Free-Sound-Too-Cheap-The-Adverse-Effect-of-a-Randomized_5a57",
+      "title": "世界银行：免费短信反而劝退了求职者",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_19.pdf",
+      "figure_count": 1,
+      "output_dir": "kc_translated_reports/institutions/260626/19-0019-WorldBank_Does-Free-Sound-Too-Cheap-The-Adverse-Effect-of-a-Randomized_5a57",
+      "pdf_path": "kc_translated_reports/institutions/260626/19-0019-WorldBank_Does-Free-Sound-Too-Cheap-The-Adverse-Effect-of-a-Randomized_5a57/kc_translated_report_19.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0020-WorldBank_Does-Social-Mobility-Affect-Economic-Development-Cross-Count_064f",
+      "title": "世界银行：社会流动性不能只看“相对”，真正拉动增长的只有一件事",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_20.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/institutions/260626/20-0020-WorldBank_Does-Social-Mobility-Affect-Economic-Development-Cross-Count_064f",
+      "pdf_path": "kc_translated_reports/institutions/260626/20-0020-WorldBank_Does-Social-Mobility-Affect-Economic-Development-Cross-Count_064f/kc_translated_report_20.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0021-WorldBank_Dynamic-Effects-of-Fiscal-Rules-Do-Initial-Conditions-Matter_4616",
+      "title": "世界银行：财政规则的效果，关键不在规则本身，而在引入时的条件",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_21.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/institutions/260626/21-0021-WorldBank_Dynamic-Effects-of-Fiscal-Rules-Do-Initial-Conditions-Matter_4616",
+      "pdf_path": "kc_translated_reports/institutions/260626/21-0021-WorldBank_Dynamic-Effects-of-Fiscal-Rules-Do-Initial-Conditions-Matter_4616/kc_translated_report_21.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0022-WorldBank_Dynamic-High-Resolution-Wealth-Measurement-in-Data-Scarce-En_9d60",
+      "title": "世界银行：卫星+AI正在重塑非洲财富测绘，10%样本量是关键拐点",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_22.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/institutions/260626/22-0022-WorldBank_Dynamic-High-Resolution-Wealth-Measurement-in-Data-Scarce-En_9d60",
+      "pdf_path": "kc_translated_reports/institutions/260626/22-0022-WorldBank_Dynamic-High-Resolution-Wealth-Measurement-in-Data-Scarce-En_9d60/kc_translated_report_22.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0023-WorldBank_Effects-of-a-Community-Driven-Water-Sanitation-and-Hygiene-I_d64d",
+      "title": "世界银行：刚果金国家WASH项目“有设施，无健康”，基础设施改善并未转化为腹泻与发育迟缓的下降",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_23.pdf",
+      "figure_count": 3,
+      "output_dir": "kc_translated_reports/institutions/260626/23-0023-WorldBank_Effects-of-a-Community-Driven-Water-Sanitation-and-Hygiene-I_d64d",
+      "pdf_path": "kc_translated_reports/institutions/260626/23-0023-WorldBank_Effects-of-a-Community-Driven-Water-Sanitation-and-Hygiene-I_d64d/kc_translated_report_23.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0024-WorldBank_Energy-Prices-Energy-Intensity-and-Firm-Performance_800b8fc5",
+      "title": "世界银行：电价上涨1%，高能耗低效企业裁员1.5%",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_24.pdf",
+      "figure_count": 4,
+      "output_dir": "kc_translated_reports/institutions/260626/24-0024-WorldBank_Energy-Prices-Energy-Intensity-and-Firm-Performance_800b8fc5",
+      "pdf_path": "kc_translated_reports/institutions/260626/24-0024-WorldBank_Energy-Prices-Energy-Intensity-and-Firm-Performance_800b8fc5/kc_translated_report_24.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0025-WorldBank_Exploring-the-Gender-Divide-in-Real-Estate-Ownership-and-Pro_781e",
+      "title": "世界银行：阿根廷房产税揭示的真正性别差距不在逃税，而在高价值资产所有权",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_25.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/institutions/260626/25-0025-WorldBank_Exploring-the-Gender-Divide-in-Real-Estate-Ownership-and-Pro_781e",
+      "pdf_path": "kc_translated_reports/institutions/260626/25-0025-WorldBank_Exploring-the-Gender-Divide-in-Real-Estate-Ownership-and-Pro_781e/kc_translated_report_25.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0026-WorldBank_Firm-Level-Climate-Change-Adaptation-Micro-Evidence-from-134_83e6",
+      "title": "世界银行：气温每升高0.5度，中小企营收下降12%",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_26.pdf",
+      "figure_count": 13,
+      "output_dir": "kc_translated_reports/institutions/260626/26-0026-WorldBank_Firm-Level-Climate-Change-Adaptation-Micro-Evidence-from-134_83e6",
+      "pdf_path": "kc_translated_reports/institutions/260626/26-0026-WorldBank_Firm-Level-Climate-Change-Adaptation-Micro-Evidence-from-134_83e6/kc_translated_report_26.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0027-WorldBank_From-Conflict-to-Compromise-Experimental-Evidence-on-Occupat_4728",
+      "title": "世界银行：冲突改变的不只是流亡路线，还有对职业尊严的定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_27.pdf",
+      "figure_count": 2,
+      "output_dir": "kc_translated_reports/institutions/260626/27-0027-WorldBank_From-Conflict-to-Compromise-Experimental-Evidence-on-Occupat_4728",
+      "pdf_path": "kc_translated_reports/institutions/260626/27-0027-WorldBank_From-Conflict-to-Compromise-Experimental-Evidence-on-Occupat_4728/kc_translated_report_27.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0028-WorldBank_Gender-Barriers-Structural-Transformation-and-Economic-Devel_8f9e",
+      "title": "世界银行：性别壁垒下降贡献了全球28%的人均GDP增长，但印度是例外",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_28.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/institutions/260626/28-0028-WorldBank_Gender-Barriers-Structural-Transformation-and-Economic-Devel_8f9e",
+      "pdf_path": "kc_translated_reports/institutions/260626/28-0028-WorldBank_Gender-Barriers-Structural-Transformation-and-Economic-Devel_8f9e/kc_translated_report_28.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0029-WorldBank_Lying-to-the-Taxman-or-Accepting-a-Helping-Hand-Evidence-fro_b85c",
+      "title": "世界银行：中小企业不是“怕”税务局，是“不信”税务局",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_29.pdf",
+      "figure_count": 1,
+      "output_dir": "kc_translated_reports/institutions/260626/29-0029-WorldBank_Lying-to-the-Taxman-or-Accepting-a-Helping-Hand-Evidence-fro_b85c",
+      "pdf_path": "kc_translated_reports/institutions/260626/29-0029-WorldBank_Lying-to-the-Taxman-or-Accepting-a-Helping-Hand-Evidence-fro_b85c/kc_translated_report_29.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0030-WorldBank_Rapid-Economic-Growth-but-Rising-Poverty-Segregation-Will-Vi_89aa",
+      "title": "世界银行：越南增长奇迹背后，穷人正在被“隔离”",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_30.pdf",
+      "figure_count": 6,
+      "output_dir": "kc_translated_reports/institutions/260626/30-0030-WorldBank_Rapid-Economic-Growth-but-Rising-Poverty-Segregation-Will-Vi_89aa",
+      "pdf_path": "kc_translated_reports/institutions/260626/30-0030-WorldBank_Rapid-Economic-Growth-but-Rising-Poverty-Segregation-Will-Vi_89aa/kc_translated_report_30.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0031-WorldBank_Revisiting-the-Gains-from-Trade-in-EMDEs-The-Case-of-Selecte_0cf5",
+      "title": "世界银行：小国正在从贸易中获得远超预期的隐性红利",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_31.pdf",
+      "figure_count": 1,
+      "output_dir": "kc_translated_reports/institutions/260626/31-0031-WorldBank_Revisiting-the-Gains-from-Trade-in-EMDEs-The-Case-of-Selecte_0cf5",
+      "pdf_path": "kc_translated_reports/institutions/260626/31-0031-WorldBank_Revisiting-the-Gains-from-Trade-in-EMDEs-The-Case-of-Selecte_0cf5/kc_translated_report_31.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0032-WorldBank_Road-Investment-and-Violence-in-DRC-Perishable-Peace-Dividen_51aa",
+      "title": "世界银行：刚果金的修路和平红利，三年就过期",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_32.pdf",
+      "figure_count": 24,
+      "output_dir": "kc_translated_reports/institutions/260626/32-0032-WorldBank_Road-Investment-and-Violence-in-DRC-Perishable-Peace-Dividen_51aa",
+      "pdf_path": "kc_translated_reports/institutions/260626/32-0032-WorldBank_Road-Investment-and-Violence-in-DRC-Perishable-Peace-Dividen_51aa/kc_translated_report_32.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0033-WorldBank_Rural-Non-Farm-Employment-in-Rajasthan-Determinants-Welfare-_8c8c",
+      "title": "世界银行：印度农村非农就业的真正瓶颈不是机会，是教育与社会身份",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_33.pdf",
+      "figure_count": 16,
+      "output_dir": "kc_translated_reports/institutions/260626/33-0033-WorldBank_Rural-Non-Farm-Employment-in-Rajasthan-Determinants-Welfare-_8c8c",
+      "pdf_path": "kc_translated_reports/institutions/260626/33-0033-WorldBank_Rural-Non-Farm-Employment-in-Rajasthan-Determinants-Welfare-_8c8c/kc_translated_report_33.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0034-WorldBank_Seeds-of-Change-The-Impact-of-Ethiopia-s-Direct-Seed-Marketi_68f4",
+      "title": "世界银行：埃塞俄比亚的种子革命，玉米赢了，小麦输了",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_34.pdf",
+      "figure_count": 11,
+      "output_dir": "kc_translated_reports/institutions/260626/34-0034-WorldBank_Seeds-of-Change-The-Impact-of-Ethiopia-s-Direct-Seed-Marketi_68f4",
+      "pdf_path": "kc_translated_reports/institutions/260626/34-0034-WorldBank_Seeds-of-Change-The-Impact-of-Ethiopia-s-Direct-Seed-Marketi_68f4/kc_translated_report_34.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0035-WorldBank_Technology-and-Corporate-Ethical-Standards_1ba34aa1",
+      "title": "世界银行：数字化企业更环保、更培训员工，但女性高管更少",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_35.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/institutions/260626/35-0035-WorldBank_Technology-and-Corporate-Ethical-Standards_1ba34aa1",
+      "pdf_path": "kc_translated_reports/institutions/260626/35-0035-WorldBank_Technology-and-Corporate-Ethical-Standards_1ba34aa1/kc_translated_report_35.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0036-WorldBank_The-Elusive-Impact-of-Corporate-Tax-Incentives_16f407a5",
+      "title": "世界银行：减税吸引不来投资，真正决定企业去留的是这些",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_36.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/institutions/260626/36-0036-WorldBank_The-Elusive-Impact-of-Corporate-Tax-Incentives_16f407a5",
+      "pdf_path": "kc_translated_reports/institutions/260626/36-0036-WorldBank_The-Elusive-Impact-of-Corporate-Tax-Incentives_16f407a5/kc_translated_report_36.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0037-WorldBank_The-Exposure-of-Workers-to-Artificial-Intelligence-in-Low--a_1d64",
+      "title": "世界银行：AI对低收入国家劳动力的冲击，远比你想象的有限",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_37.pdf",
+      "figure_count": 18,
+      "output_dir": "kc_translated_reports/institutions/260626/37-0037-WorldBank_The-Exposure-of-Workers-to-Artificial-Intelligence-in-Low--a_1d64",
+      "pdf_path": "kc_translated_reports/institutions/260626/37-0037-WorldBank_The-Exposure-of-Workers-to-Artificial-Intelligence-in-Low--a_1d64/kc_translated_report_37.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260626/0038-WorldBank_Weather-Shocks-and-Rural-Economic-Linkages-Evidence-from-Raj_405b",
+      "title": "世界银行：一场好雨，印度农村非农经济的“乘数”密码",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_38.pdf",
+      "figure_count": 7,
+      "output_dir": "kc_translated_reports/institutions/260626/38-0038-WorldBank_Weather-Shocks-and-Rural-Economic-Linkages-Evidence-from-Raj_405b",
+      "pdf_path": "kc_translated_reports/institutions/260626/38-0038-WorldBank_Weather-Shocks-and-Rural-Economic-Linkages-Evidence-from-Raj_405b/kc_translated_report_38.pdf"
+    }
+  ]
+}
