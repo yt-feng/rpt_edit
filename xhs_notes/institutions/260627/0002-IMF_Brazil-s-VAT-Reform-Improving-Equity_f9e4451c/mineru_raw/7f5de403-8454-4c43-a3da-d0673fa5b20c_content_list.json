@@ -1,0 +1,4803 @@
+[
+    {
+        "type": "text",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "text_level": 1,
+        "bbox": [
+            78,
+            198,
+            666,
+            306
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ana Cebreiro Gomez and Christina Kolerus",
+        "bbox": [
+            75,
+            342,
+            527,
+            364
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "WP/26/132",
+        "bbox": [
+            75,
+            383,
+            200,
+            405
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IMF Working Papers describe research in progress by the author(s) and are published to elicit comments and to encourage debate. The views expressed in IMF Working Papers are those of the author(s) and do not necessarily represent the views of the IMF, its Executive Board, or IMF management.",
+        "bbox": [
+            75,
+            594,
+            439,
+            718
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2026\nJUN",
+        "bbox": [
+            76,
+            820,
+            233,
+            922
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/f6dac0c44ccd859f192bf6bffe85e515a6c231bc9b0b66a81bed900ac65edf1f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            651,
+            809,
+            799,
+            926
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            76,
+            37,
+            830,
+            75
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "WORKING PAPER",
+        "bbox": [
+            919,
+            239,
+            985,
+            760
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IMF Working Paper WHD and FAD",
+        "text_level": 1,
+        "bbox": [
+            424,
+            194,
+            571,
+            228
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Brazil's VAT Reform: Improving Equity Prepared by Ana Cebreiro Gomez and Christina Kolerus\\*",
+        "bbox": [
+            285,
+            246,
+            712,
+            280
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Authorized for distribution by Daniel Leigh and Alexander Klemm\nJune 2026",
+        "bbox": [
+            272,
+            297,
+            723,
+            329
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "IMF Working Papers describe research in progress by the author(s) and are published to elicit comments and to encourage debate. The views expressed in IMF Working Papers are those of the author(s) and do not necessarily represent the views of the IMF, its Executive Board, or IMF management.",
+        "bbox": [
+            125,
+            364,
+            859,
+            419
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "ABSTRACT: After decades in the making, Brazil's landmark VAT reform was approved in 2023. The primary objective of the reform is to eliminate distortions and reduce the complexity of the current consumption tax system while maintaining revenue neutrality. In addition, specific design features were included to alleviate the VAT's inherent regressivity and improve the equity of the Brazilian tax system. This paper assesses the reform's expected equity print leveraging a microstatic model based on household data and simulates policy options to further improve distributional outcomes. While the new VAT achieves a fairly equal distribution of the tax burden across most income groups, the poorest still carry a heavier load in terms of their disposable income. Dissecting the impact by policy instrument, the reform's approved reduced rates aggravate regressivity, while zero rates and the new cashback lower the tax burden for poorer households, under the revenue neutrality assumption. Overall, the combined use of these measures dampens the reform's equity outcomes somewhat as a higher VAT reference rate is required on all other items to maintain revenue neutrality. The paper also shows that some equity improvements stem from the reform's implied pivot towards taxing services. Finally, simulations show that focusing on and expanding the cashback could amplify equity gains by raising the poorest disposable income by 25 percent via reductions in their tax liability.",
+        "bbox": [
+            111,
+            449,
+            877,
+            694
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "JEL Classification Numbers:",
+        "bbox": [
+            127,
+            753,
+            326,
+            768
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "H21, H22",
+        "bbox": [
+            383,
+            753,
+            455,
+            768
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Keywords:",
+        "bbox": [
+            125,
+            787,
+            205,
+            803
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "VAT reform; equity analysis; microstatic simulations",
+        "bbox": [
+            383,
+            786,
+            743,
+            804
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Author's E-Mail Address:",
+        "bbox": [
+            127,
+            819,
+            303,
+            835
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "acebreirogomez@imf.org; ckolerus@imf.org",
+        "bbox": [
+            383,
+            819,
+            694,
+            835
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "© 2026 International Monetary Fund",
+        "bbox": [
+            127,
+            126,
+            383,
+            142
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "WP/26/132",
+        "bbox": [
+            782,
+            126,
+            864,
+            140
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "\\* International Monetary Fund.",
+        "bbox": [
+            112,
+            958,
+            295,
+            973
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "WORKING PAPERS",
+        "bbox": [
+            111,
+            195,
+            393,
+            220
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "text_level": 1,
+        "bbox": [
+            112,
+            301,
+            805,
+            383
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Prepared by Ana Cebreiro Gomez and Christina Kolerus $^{1}$",
+        "bbox": [
+            111,
+            467,
+            697,
+            489
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            885,
+            75
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ “The author(s) would like to thank Gabriel Lara Ibarra and Kajetan Wladyslaw for their model guidance, and Vanessa Rahal Canada, Daniel Leigh and Alex Klemm for their useful comments.",
+        "bbox": [
+            112,
+            898,
+            841,
+            925
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            870,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Contents",
+        "text_level": 2,
+        "bbox": [
+            114,
+            128,
+            259,
+            154
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Contents 4",
+        "bbox": [
+            112,
+            174,
+            854,
+            193
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Introduction 5",
+        "bbox": [
+            112,
+            204,
+            856,
+            224
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Status quo and key reform features 7",
+        "bbox": [
+            171,
+            234,
+            857,
+            253
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Brazil's current tax system 7",
+        "bbox": [
+            171,
+            252,
+            854,
+            268
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The 2023 vat reform \\_\\_\\_\\_ 11",
+        "bbox": [
+            171,
+            267,
+            854,
+            284
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Equity analysis 14",
+        "bbox": [
+            169,
+            296,
+            854,
+            314
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Data and methodology 14",
+        "bbox": [
+            171,
+            314,
+            854,
+            329
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The distributional pattern of reform policies 15",
+        "bbox": [
+            171,
+            328,
+            854,
+            344
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Policy options to further improve equity 20",
+        "bbox": [
+            171,
+            343,
+            856,
+            359
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Robustness 23",
+        "bbox": [
+            171,
+            359,
+            856,
+            376
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Conclusion 25",
+        "bbox": [
+            112,
+            387,
+            856,
+            406
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "References 30",
+        "bbox": [
+            112,
+            417,
+            854,
+            436
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "BOXES",
+        "text_level": 2,
+        "bbox": [
+            112,
+            452,
+            169,
+            467
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1. Brazil’s Subnational Revenue Collection 10",
+        "bbox": [
+            112,
+            469,
+            854,
+            487
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2. Scenario Map 16",
+        "bbox": [
+            112,
+            488,
+            856,
+            505
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "FIGURES",
+        "text_level": 2,
+        "bbox": [
+            112,
+            523,
+            183,
+            539
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1. Tax Burden and Structure 8",
+        "bbox": [
+            112,
+            541,
+            856,
+            558
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2. Pre-reform Average Tax Liability by Income Decile 11",
+        "bbox": [
+            112,
+            559,
+            854,
+            575
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3. Old and New Consumption Taxes 12",
+        "bbox": [
+            112,
+            577,
+            856,
+            593
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4. Number of VAT Rates Across Countries 13",
+        "bbox": [
+            112,
+            594,
+            856,
+            609
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "5. Consumption per Decile 14",
+        "bbox": [
+            112,
+            612,
+            854,
+            628
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "6. Post-reform Average Tax Liability By Decile 18",
+        "bbox": [
+            112,
+            628,
+            854,
+            645
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "7. Equity Impact by Policy Instrument 19",
+        "bbox": [
+            112,
+            646,
+            856,
+            662
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "8. Services Shift 20",
+        "bbox": [
+            112,
+            664,
+            854,
+            679
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "9. Expanding the Cashback 22",
+        "bbox": [
+            112,
+            680,
+            854,
+            696
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "10. Relaxing Revenue Neutrality 23",
+        "bbox": [
+            114,
+            698,
+            854,
+            714
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "11. Robustness 24",
+        "bbox": [
+            114,
+            715,
+            854,
+            732
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "TABLE",
+        "text_level": 2,
+        "bbox": [
+            112,
+            751,
+            166,
+            766
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "1. Progressivity Indicators 21",
+        "bbox": [
+            112,
+            768,
+            854,
+            787
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ANNEXES",
+        "text_level": 2,
+        "bbox": [
+            114,
+            808,
+            189,
+            823
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "I. Existing Taxes on Goods and Services 26",
+        "bbox": [
+            112,
+            825,
+            854,
+            843
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "II. Reform Laws 27",
+        "bbox": [
+            112,
+            844,
+            854,
+            859
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "III. Reform Policy Settings 28",
+        "bbox": [
+            112,
+            861,
+            854,
+            877
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "IV. Supplementary Figures 29",
+        "bbox": [
+            112,
+            878,
+            854,
+            893
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            114,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            656,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            870,
+            936,
+            883,
+            948
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            114,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Introduction",
+        "text_level": 2,
+        "bbox": [
+            112,
+            128,
+            310,
+            154
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "After more than three decades in the making, Brazil's landmark VAT reform was approved in 2023. The reform merges five taxes on goods and services (PIS/COFINS, IPI, ICMS, ISS), $^{2}$ raised across three levels of government, into a dual value added tax and an excise. A constitutional amendment was approved at the end of 2023, followed by complementary legislation that defines rates and details on implementation in 2024 and 2025. Implementation will start in 2026 and be completed in 2033 while some compensation funds for Brazil's states will remain in place for almost 50 years. The current design foresees a general rate of 28 percent, $^{3}$ a zero rate for most basic goods of the so-called Cesta Basica, reduced rates on selected goods, and a cashback mechanism for the poorest, partially reimbursing VAT paid (with full reimbursement of water and sewage, cooking/natural gas, energy and telecommunications at the federal level). The new excise would be strictly limited to products harmful to health and environment, including alcohol, sweet beverages, combustion engines, cigarettes, and lottery.",
+        "bbox": [
+            109,
+            175,
+            874,
+            364
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The primary objective of the reform is to eliminate distortions and reduce complexity of the current consumption tax system while maintaining revenue neutrality. Taxation of goods and services in Brazil is one of the most complex worldwide giving rise to wide-spread and deep-rooted distortions. Cascading taxes, due to overlapping bases and incomplete credits for intermediate inputs, and tax competition among states have led to a profound misallocation of factors of production in the economy, with negative repercussions particularly for the manufacturing sector. High compliance costs and opportunities for tax avoidance have given rise to substantial legal uncertainty as well as significant compliance gaps translating into high statutory tax rates. By replacing the existing consumption taxes with a dual VAT (a full-fledged VAT with a two-tier structure), aligning tax bases across municipalities, states, and the federal level, and harmonizing the administration of the new tax, the reform would significantly reduce complexity and boost efficiency and transparency. Maintaining revenue neutrality $^{4}$ would require a relatively high statutory tax rate of 28 percent, but the tax burden would be distributed more evenly across states and sectors, accompanied by important improvements in revenue administration (Cebreiro et al. 2025). This, in turn, would facilitate compliance and reduce administrative costs, and diminish tax treatments' heterogeneity, which would unleash important productivity gains (Cavalcanti et al 2024). The reform would further boost output by eliminating consumption taxes on intermediate inputs, which would improve the allocation of production factors (Domingues and Freire Cardoso 2020 and Badel and Kolerus 2025).",
+        "bbox": [
+            109,
+            381,
+            879,
+            675
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "In addition, the new VAT has the potential to improve the equity of the Brazilian tax system and contribute to reducing Brazil's high levels of inequality. While revenue neutrality would imply a continued high burden from indirect taxation, which typically weighs more heavily on lower income households, several factors would mitigate the VAT's inherent regressivity. $^{5}$ First, at the business level, increased simplicity and",
+        "bbox": [
+            109,
+            691,
+            870,
+            761
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            885,
+            75
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ IPI: Tax on manufactured products (Imposto Sobre Produtos Industrializados), ICMS: Tax on the movement of goods and transportation services (Imposto Sobre Operações Relativas à Circulação de Mercadorias e Sobre Prestações de Serviços de Transporte Interestadual e Intermunicipal e de Comunicação), PIS: Contribution to financign social integration (Contribuição ao Programa de Integração Social), COFINS: Contribution to financing social security (Contribuição ao Financiamento da Seguridade Social), ISS: Municipal tax on services (Imposto Sobre Serviços).",
+        "bbox": [
+            111,
+            792,
+            874,
+            858
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{3}$ The general or reference rate was rounded up from 27.94 percent and taken from SERT (2024) who estimate the rate based on LC 214/2025. The exact mechanism to estimate the new reference rate is described on LC 214/2025 and is beyond the scope of this paper.",
+        "bbox": [
+            111,
+            857,
+            866,
+            896
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{4}$ Revenue neutrality is enshrined in the constitutional amendment EC 132/2023.",
+        "bbox": [
+            111,
+            896,
+            584,
+            911
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{5}$ As discussed below, the regressivity of VAT depends critically on measurement choices and key assumptions (IMF 2026).",
+        "bbox": [
+            111,
+            911,
+            833,
+            926
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            870,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "lower compliance costs would have a relatively stronger impact on smaller businesses, given the fixed-cost nature of these costs (IMF, 2023; Coolidge, 2012; Coolidge, 2010). Higher productivity and rising wages in formal firms would further improve incentives for formalization (De Paula and Scheinkman, 2010, Badel and Kolerus, 2025). In addition, the reform allows firms under the SIMPLES regime to opt into the dual VAT regime, i.e. claim input tax credits (ITC) and continue benefiting from SIMPLES for other (income and profits) tax purposes. $^{6}$ Second, the reform allows for zero (and reduced) rates for a number of goods and services more strongly represented in consumption baskets of lower income households. Third, the shift in the tax burden from goods to services, a consequence of harmonizing tax bases and eliminating cascading, would benefit lower income households more given their greater reliance on goods consumption. And finally, the introduction of the cashback mechanism grants a direct possibility to support vulnerable households.",
+        "bbox": [
+            114,
+            119,
+            887,
+            291
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "A broad-based literature evaluates equity considerations of the abovementioned tax design features. A first strand of literature assesses the regressivity of VAT. While indirect taxes are commonly known to exert a relatively higher burden on lower-income households, there are variations in terms of the underlying metric used. When the VAT burden is measured as percentage of income for a single year, several studies find that the VAT is highly regressive (e.g., Lustig, Pessino and Scott, 2014, Leahy et al., 2011; Ruiz and Trannoy, 2008; O'Donoghue et al., 2004). However, other studies show that VAT regressivity declines when taking into consideration savings, which increase with income and often materialize as deferred income that will be subject to taxation in the future (e.g., Swistak et al., 2015; IFS, 2011a; Creedy, 1998; Metcalf, 1994), and informality, which decreases as household expenditure increases (Bachas et al., 2023; Jenkins et al., 2006). Moreover, the VAT is found proportional, and even progressive, when the burden is measured relative to expenditure rather than income (e.g., Thomas, 2022a; Bird and Smart, 2016; IFS, 2011a; Metcalf, 1994). A second strand of literature looks into distributional aspects of VAT policy design. In most countries, VAT systems include exemptions and zero and reduced rates on certain products that are typically consumed disproportionately by poorer households to address regressivity concerns $^{7}$ . However, ample theoretical and empirical evidence find little support for these measures to address income redistribution. In particular, seminal theoretical literature shows a weak case for reduced VAT rates when other, more direct instruments are available such as personal income taxes (e.g., Atkinson and Stiglitz, 1976; Christiansen, 1984; Edwards et al., 1994). In addition to vertical equity concerns (redistribution), IFS (2011) note that multi-rate VAT systems could also raise horizontal equity concerns (different treatment for identical households) due to different consumption patterns (for reduced vs general-rated goods and services) in otherwise identical households. $^{8}$ On the other hand, targeted cash transfers have been proven as a more efficient policy instrument to deliver support to low-income households, including Corbacho et al. (2013) for Costa Rica, Mexico and Uruguay; Cseres-Gergely et al. (2017) for Hungary; Van Oordt (2018) for South Africa; Warwick et al. (2022) for Ethiopia, Ghana, Senegal, Sri Lanka, Uzbekistan and Zambia; and Thomas (2024) for OECD countries. Finally, combining targeted cash transfers with a broad based, single-rate VAT allows reaping the benefits from efficient taxation while compensating the most vulnerable (Warwick et al., 2022; de Mooij and Keen, 2013; Mirrlees, 2011). Moreover, when these compensations are received in real time at the moment of purchase (e.g. facilitated by a digital mechanism), a progressive VAT system can be achieved (Swistak and De la Feria, 2024).",
+        "bbox": [
+            114,
+            309,
+            890,
+            792
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            114,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{6}$ Firms with annual turnover of up to BRL 4.8 million per firm (about USD 950,000) are eligible for a special tax regime (SIMPLES), which replaces all consumption and income taxes with one single payment based on turnover. The rates have a progressive structure and vary by sector.",
+        "bbox": [
+            111,
+            832,
+            872,
+            872
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{7}$ Increasingly, a wider concept of inequality, including social and non-economic groups (gender, race and ethnicity, disability, age, etc.), is also affecting VAT design (Swistak et al., 2026).",
+        "bbox": [
+            111,
+            872,
+            870,
+            898
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{8}$ Moreover, conclusions regarding VAT regressivity typically assume that the tax is fully passed through to consumer prices; which is not fully supported by evidence (IMF, 2026).",
+        "bbox": [
+            111,
+            898,
+            872,
+            926
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            870,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "This paper assesses the 2023 reform's expected equity outcomes and simulates policy options to further improve distributional outcomes. Using the World Bank's SimVat tool calibrated with Brazilian data from the 2018 PNAD household survey and adjusted with the latest reform parameters for tax rates and cashback, the paper evaluates the impact of the reform's policies on household income and consumption. As the new VAT system combines exemptions, zero and reduced rates on certain goods and services and introduces a cashback system, the relative impact of each measure is being assessed. The paper builds on Lara Ibarra et al 2021 and Vale et al 2023, and applies the latest reform policies as approved by Parliament (including law LC 214/2025), notably on exemptions, zero and reduced rates, excises, and cashback. By means of microstatic simulations, the paper further assesses the equity implications of the shift from goods to services taxation, leveraging findings from Cebreiro et al 2025, and simulates alternative policy settings to improve equity considerations, including relaxing the revenue neutrality condition.",
+        "bbox": [
+            109,
+            126,
+            870,
+            316
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Findings. First, the new VAT would result in a relatively equitable distribution of the tax burden for lower- to middle-income households, albeit the poorest still carry the heaviest load in terms of disposable income. Second, dissecting the impact by policy instrument, the reform's policy settings for reduced rates worsen the VAT's regressivity, while zero rates, mainly applied to Cesta Basica products disproportionately consumed by lower-income households, reduce the tax burden of the bottom three deciles by 7 percent of their income compared with a full VAT without concessions. The introduction of the new cashback represents an important relief for poorer households lowering their tax liability by almost 10 percent of their income relative to a full VAT. Overall, the reform's equity gains remain somewhat moderate given the combined use of the various measures, as a higher VAT reference rate is needed to compensate for the associated revenue loss from VAT concessions to maintain revenue neutrality. Third, some equity gains from the reform are not directly linked to policy instruments but result from shifting the tax burden from manufactured goods to services, which, given consumption patterns, levies the richest households the most. Fourth, to further improve equity, simulations show that targeting the poorest with an expanded cashback, while removing other concessions, would improve their household income by 25 percent (via tax reduction) and allow for a lower reference rate. Fifth, relaxing revenue neutrality and aligning revenue collection closer with peers improves regressivity relative to income but not relative to consumption.",
+        "bbox": [
+            111,
+            333,
+            885,
+            609
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The paper is structured as follows. First, the design features of the reform are summarized, describing the status quo as well as the approved policy changes. Second, data and assumptions are presented. Third, the equity impact of the reform settings is analyzed. Fourth, simulations to further improve distributional outcomes with and without revenue neutrality are conducted. Section five concludes.",
+        "bbox": [
+            111,
+            626,
+            872,
+            694
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Status Quo and Key Reform Features",
+        "text_level": 2,
+        "bbox": [
+            112,
+            715,
+            699,
+            741
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Brazil's Current Tax System",
+        "text_level": 2,
+        "bbox": [
+            112,
+            770,
+            380,
+            789
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Brazil's tax system has historically heavily relied on the taxation of good and services. Total tax revenues to GDP in Brazil, at 32 percent in 2023, are among the highest in Latin America and the Caribbean (LAC), reaching levels close to the OECD average of 34 percent in 2023 (Figure 1). Moreover, Brazil raises most tax revenues from charges on consumption of goods and services (41 percent of total revenue and 13 percent of GDP in 2023). $^{9}$ The heavy reliance on indirect taxes, jointly with the relatively low contribution of personal income taxes to total tax revenues, reduces the potential progressivity of the overall tax system. $^{10}$ This is further aggravated by the significant weight of social security contributions and payroll taxes (8.6 percent of GDP, close to the OECD average 9.2 percent), which are typically applied in form of a flat rate on all formal incomes.",
+        "bbox": [
+            111,
+            809,
+            864,
+            878
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            114,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            114,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            870,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            126,
+            885,
+            210
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b7a15e73723eb6babb1b71f23774ebc366ce121e3ce6c4ca723070fb008dcf7e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 1. Tax Burden and Structure Tax-to-GDP Trend (1990-2023)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            125,
+            261,
+            464,
+            433
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Consumption Tax Revenues by Sector Percent of GDP",
+        "bbox": [
+            513,
+            244,
+            787,
+            276
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/80d8fb2a8e9a8a69124c61d51c843567e9cec3b7a0317772ef7de3e6be34446a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            513,
+            261,
+            848,
+            426
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/12ca9957068e0240f81159cefb081d43efd3ec9c761ee057750f8c658ce857dd.jpg",
+        "content": "",
+        "chart_caption": [
+            "Tax Structure: Comparing Brazil with Latin America and OECD Averages, 2023 (Percent of GDP)"
+        ],
+        "chart_footnote": [
+            "Notes: LAC includes Caribbean countries while LAT only Latin American countries.",
+            "Source: OECD Global Revenue Statistics 2025, Cebreiro et al, 2025."
+        ],
+        "bbox": [
+            215,
+            492,
+            771,
+            657
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "In addition, the consumption tax system is highly complex, giving rise to important distortions and a significant compliance gap, further pushing up tax rates to achieve the desired collection. With five",
+        "bbox": [
+            111,
+            722,
+            862,
+            756
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            870,
+            938,
+            883,
+            948
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{9}$ LAT averages: 46.9 percent of total revenues and 10.3 percent of GDP. OECD averages: 31.1 of total tax revenues and 10.6 percent of GDP.",
+        "bbox": [
+            111,
+            848,
+            849,
+            875
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{10}$ The redistributive capacity of the direct tax system (measured as the relative burden of those earning more than 30 times the minimum wage to that of those earning less than twice the minimum wage) has itself decreased since the mid-1990s, both due to low effective income tax rates paid by the richest families, but also to the low share of direct taxes in the overall tax burden (Coelho, 2021). The limited progressivity of the Brazilian tax system has been also highlighted in de la Feria (2025) and Palomo et al (2025).",
+        "bbox": [
+            111,
+            875,
+            880,
+            926
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "different taxes across three levels of Government (PIS/COFINS, IPI, ICMS, ISS $^{11}$ -- see Annex I for details), rates can vary among the federal government, 26 states, and 5,568 municipalities, reflecting approximately 10 general tax rates and more than 300 differentiated rates and exemptions. This complexity raises many efficiency concerns and, at the same time, undermines productivity, growth and revenue potential. It further acts as an obstacle for formalization and SME growth as fixed costs of filing taxes weigh more heavily on smaller firms. $^{12}$ In addition, cascading taxes due to overlapping bases (which lead to cumulative taxes, largely based on origin rather than destination principle) $^{13}$ and incomplete credits for intermediate inputs distort the allocation of factors of production in the economy. Taken together, these factors translate into high statutory tax rates, in particular on goods, which disproportionately affect poorer household's disposable income.",
+        "bbox": [
+            109,
+            126,
+            885,
+            281
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Brazil's federal system also plays a role in explaining the heavy tax burden on consumption. Brazil is highly decentralized, and important public goods are directly provided by its states and municipalities (Box 1). Consequently, Brazil's subnational governments dispose of wider revenue collection powers than most peers in other federal economies. Combined state and municipal total tax revenues (29.6 percent of total revenue in 2022) are close to Germany and significantly higher than in other countries in the region. However, while other federal countries rely on a broader mix of taxes (including labor income and profits), most of Brazil's subnational revenues (90 percent) are raised via taxes on goods and services. Raising revenues on sales is constitutionally protected and became a politically viable way to balance subnational budgets, given states' more limited access to income taxation, and higher administrative costs of other taxes (e.g. property) at given revenue collection capacity. With rising expenditures, subnational governments increased their sales tax collections in tandem.",
+        "bbox": [
+            109,
+            299,
+            882,
+            488
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The current system of indirect taxation is substantially regressive. This regressivity is driven by (i) high combined tax rates; (ii) a biased taxation of goods relative to services; and (iii) numerous concessions that disproportionately benefit middle- and upper-income households. A range of studies show that households in the poorest decile of the income distribution face a consumption tax liability of 20-45 percent of their monetary income, compared with around 10 percent for the richest decile. The estimated distributional tax burden varies with the definition of income; i.e., whether monetary income is adjusted to match monetary consumption when the latter is higher, and the coverage of household surveys. $^{14}$ In addition, poorer households are generally more likely to purchase from the informal sector and from businesses operating under SIMPLES, which could leave the system less regressive than typically suggested when using expenditure survey data and statutory tax rates.",
+        "bbox": [
+            109,
+            505,
+            883,
+            678
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{11}$ IPI: tax on industrial products (imposto sobre produtos industrializados), ICMS: tax on the sale of goods and on the provision of interstate and intermunicipal transportation services and communication services (imposto sobre operações relativas à circulação de mercadorias e sobre prestações de serviços de transporte interestadual e intermunicipal e de comunicação), PIS: Contribution to Social Integration Program (Contribuição ao Programa de Integração Social), COFINS: Contribution for financing social security (Contribuição ao Financiamento da Seguridade Social), ISS: municipal service tax (imposto sobre serviços).",
+        "bbox": [
+            111,
+            782,
+            883,
+            845
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{12}$ Sandford et al. (1981); Sandford et al. (1989) for the UK; Evans et al. (2013) for Australia; CFIB (1991) for Canada; Colmar Brunton (2005), Gupta & Sawyer (2014) for New Zealand; Skatterverket (2006) for Sweden. Coolidge (2010, 2012).",
+        "bbox": [
+            112,
+            845,
+            844,
+            873
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{13}$ Cumulativeness promotes the vertical integration of companies; harms investments; and distorts domestic competitiveness (Varsano 2001).",
+        "bbox": [
+            111,
+            872,
+            843,
+            898
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{14}$ Given data limitations, some studies use the state of São Paulo (Lara Ibarra et al. 2021) as a representative state, while others incorporate less urban areas (Silveira 2022).",
+        "bbox": [
+            112,
+            898,
+            864,
+            926
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            870,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Box 1. Brazil's Subnational Revenue Collection",
+        "text_level": 2,
+        "bbox": [
+            135,
+            138,
+            583,
+            157
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Brazil is a three-tiered federation of 26 states, a Federal District comprising the national capital of Brasilia, and around 5500 municipalities. It is strongly decentralized compared to other emerging economies and even compared to the OECD average. The Constitution of 1988 gave broad powers to states and municipalities in tax and expenditure functions. They have access to constitutionally",
+        "bbox": [
+            133,
+            162,
+            844,
+            233
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "guaranteed sub-national taxes on goods and services that provide 90 percent of subnational tax revenue (with the other 10 percent coming from property taxes). While municipal governments in other federations are usually subject of state governments, the Brazilian constitution recognizes their independent status. More",
+        "bbox": [
+            135,
+            234,
+            377,
+            411
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/bf89e89a07b104090a6989c361af2eaaa1c6c42178aeb96d540f276e5387f69e.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"9\">Attribution of tax revenue at the different government levels in selected countries(percentage total tax revenues)</td></tr><tr><td rowspan=\"2\"></td><td colspan=\"2\">Central government</td><td colspan=\"2\">State/Regional government</td><td colspan=\"2\">Local government</td><td colspan=\"2\">Social Security Funds</td></tr><tr><td>1995</td><td>2022</td><td>1995</td><td>2022</td><td>1995</td><td>2022</td><td>1995</td><td>2022</td></tr><tr><td colspan=\"9\">Federal countries</td></tr><tr><td>Australia</td><td>77.5</td><td>81.6</td><td>19</td><td>15.5</td><td>3.4</td><td>2.9</td><td>0</td><td>0</td></tr><tr><td>Argentina</td><td>59.0</td><td>65.1</td><td>17.5</td><td>17.1</td><td>-</td><td>-</td><td>23.4</td><td>17.7</td></tr><tr><td>Brazil</td><td>44.8</td><td>46.2</td><td>26.5</td><td>23.4</td><td>3.7</td><td>6.2</td><td>25</td><td>24.2</td></tr><tr><td>Canada</td><td>39.1</td><td>42.9</td><td>37.1</td><td>38.9</td><td>9.8</td><td>8.6</td><td>14</td><td>9.6</td></tr><tr><td> $Germany^*$ </td><td>33.4</td><td>28.9</td><td>21.6</td><td>24.7</td><td>7.4</td><td>8.9</td><td>39</td><td>36.9</td></tr><tr><td>Mexico</td><td>73.9</td><td>79.5</td><td>2.8</td><td>4.5</td><td>1.5</td><td>1.8</td><td>21.8</td><td>14.1</td></tr><tr><td colspan=\"9\">Regional countries</td></tr><tr><td>Colombia</td><td>63.2</td><td>75.2</td><td>5.5</td><td>4.8</td><td>8.6</td><td>11.7</td><td>22.7</td><td>8.3</td></tr><tr><td colspan=\"9\">Notes: * Supranational component not includedSource: OECD Global revenue statistics 2024</td></tr></table>",
+        "bbox": [
+            390,
+            244,
+            852,
+            407
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "generally, given the subnational governments' significance and power in the Brazilian federation, almost any fiscal policy issue – including macroeconomic management – is an issue of intergovernmental fiscal relations.",
+        "bbox": [
+            135,
+            412,
+            856,
+            465
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "In 2022, the combined shares of state and municipal tax revenues amount to 29.6 percent of total revenue, close to Germany (33.6), higher than Australia (18.4) and lower than Canada (47.5) – three other highly federalized countries. Especially the municipal sector, with guaranteed shares in some national and state taxes, has fiscal prerogatives paralleled in few federations only (OECD, 2024). In turn, states and municipalities are responsible for the provision of essential public goods, such as education, health, public security and basic sanitation (Giglio and Natale, 2020).",
+        "bbox": [
+            133,
+            484,
+            833,
+            592
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9f544cbdadf2a30267014ca363d089709da61273805e54b235d0d270067793ed.jpg",
+        "content": "",
+        "chart_caption": [
+            "In LAC, the taxes most frequently assigned to sub-national entities are property taxes, motor-vehicle"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            130,
+            626,
+            854,
+            840
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "licenses, taxes on specific services and municipal fees. In OECD countries, sub-national entities tend to have broader potential tax bases with a substantial proportion of revenue coming from taxes on income and profits. In contrast, consumption taxes constitute the main source of revenue at subnational level in Brazil. This high reliance on consumption taxes at the subnational level amplifies the multiple challenges the VAT reform faces.",
+        "bbox": [
+            578,
+            627,
+            857,
+            842
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Source: OECD Global Revenue Statistics 2025.",
+        "bbox": [
+            137,
+            847,
+            418,
+            861
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            114,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            656,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            862,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            114,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ff6b29f55f5a382de0afa4729e933a0c1de40667a195756dd1a504492545c873.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 2. Pre-reform Average Tax Liability by Income Decile (Percentage of income)",
+            "Notes: Adjusting monetary income includes aligning consumption and income when (mainly lower-income) households overstate their consumption relative to income, forcing budgets to equalize."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            200,
+            162,
+            772,
+            422
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The 2023 VAT Reform",
+        "text_level": 2,
+        "bbox": [
+            112,
+            484,
+            321,
+            501
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The reform will gradually replace the existing consumption taxes with a dual VAT by 2033. The dual VAT will feature a federal component covering about 1/3 of the reference rate (contribution on goods and services, CBS), and a subnational component, covering the remaining 2/3 (tax on goods and services, IBS). $^{15}$ With a reference rate around 28 percent, as currently assumed, the CBS and IBS would reach 19 and 9 percent respectively. A new excise (IS) with a maximum rate of 250 percent $^{16}$ would strictly focus on goods harmful to the environment and health. The reform's implementation plan foresees phasing out federal taxes on goods and services by end-2027 and the IS starting in January 2027. Taxes of states and municipalities will gradually merge into the IBS within a five-year span (from 2028 to 2033) with regional compensation funds staying in place for a transition period of almost 50 years. While a single-rate structure was originally considered (PEC 45/2019 $^{17}$ ), political economy considerations shaped the resulting compromises. And even though the combined rate of 28 percent will be one of the highest in the world, a subnational piggy-back VAT is a particularly efficient instrument to raise revenue – compared with practicable alternatives (de Mooji et al., 2025; Martinez-Vazquez 2025) politically feasible in Brazil.",
+        "bbox": [
+            109,
+            518,
+            883,
+            744
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            885,
+            75
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{15}$ Constitutional amendment EC 132/2023 (PEC 45/2019) was passed in 2023 to create the framework for the new VAT, followed by complementary laws PLP 68/2024, PLP 108/2024, and CL 214/2025 (Annex II).",
+        "bbox": [
+            112,
+            845,
+            867,
+            871
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{16}$ The excise rates for the different categories have not been approved yet.",
+        "bbox": [
+            112,
+            872,
+            555,
+            887
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{17}$ The Bill of Amendment 45 (PEC 45/2019) proposed the creation of IBS as a federal tax with a 10-year gradual abolition of IPI, PIS, COFINS, ICMS and ISS. The IBS was designed to follow the destination principle, and one single tax rate would apply for any type of good, service or supply. The bill also proposed the introduction of an excise to tackle negative externalities.",
+        "bbox": [
+            111,
+            887,
+            875,
+            926
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            862,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/6324b48c1960b2e7905906ac89139e3d301ea8127ebce2032e5b9707008d0ea1.jpg",
+        "image_caption": [
+            "Figure 3. Old and New Consumption Taxes"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            178,
+            160,
+            781,
+            414
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "One of the most important achievements of the reform is a harmonized tax base for both federal and subnational VAT components, anchored in the constitution since December 2023. This unified base, jointly with a full refund for VAT on intermediate goods and the move from origin to destination principle (which implies zero-rating for exports), will avoid double taxation of consumption at various levels of the supply chain and make the system more transparent. At the same time, the reform maintains certain tax sovereignty at the subnational level by granting states and municipalities some discretion in setting their IBS rate after an initial freeze period. To prevent the continuation of current tax wars under the new system, the legislation also explicitly establishes that IBS and CBS may not be subject to incentives and financial or tax benefits or specific, differentiated, or favored tax regimes, except as provided for in the Federal Constitution.",
+        "bbox": [
+            109,
+            431,
+            883,
+            589
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The reform allows for reduced (including zero) rates and exemptions and maintains certain well-established concessions and specific regimes (Annex III). In addition to the general or so-called reference rate of 28 percent, three additional applicable rates (zero, 40 and 70 percent of the reference rate) and exemptions have been approved: zero rates are applied to selected “essential foods” from the Cesta Basica, and reduced rates are levied on additional food items, goods and services related to public administration, local transportation, books/magazines/newspapers, and health and education services provided by non-profit organizations. Special and specific treatments (including rate reductions) for certain activities, sectors, and entities are maintained. $^{18}$ Special regimes, including the free trade zones (e.g. Manaus) and the tax regime for small enterprises (SIMPLES), will also remain in place. However, SIMPLES businesses can opt-in to VAT taxation benefiting from tax credits while maintaining their preferred rates for other taxes, preparing for a gradual adjustment of SIMPLES terms and conditions over the longer horizon. Most of these tax concessions reflect preferential treatments (at one or more government levels) inherited from the various taxes that the dual VAT is designed to replace. For example, tax reliefs for private health and education varied widely across jurisdictions differing by products and by state and covering zero-rates (PIS/Cofins), reduced rates (ICMS, IPI)",
+        "bbox": [
+            109,
+            604,
+            882,
+            849
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            885,
+            75
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{18}$ For fuels and lubricants, financial services, real estate transactions, healthcare plans and lotteries, cooperatives, hotel services, amusement/theme parks, bars, restaurants, tourism/travel agencies, football companies, regional aviation activities, transactions conducted due to international treaties or conventions, sanitation and highway concession services, and interstate and intercity road/rail/water public transport services.",
+        "bbox": [
+            111,
+            875,
+            867,
+            925
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            114,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            862,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "and exemptions (IPI). “Exporting” the existing concessions to the new regime, while not optimal, is mainly explained by political economy factors, in particular strong lobbying of beneficiaries and the challenge to eliminate acquired rights (current status quo) despite the change of regime. $^{19}$ The political economy challenges that a VAT reform faces broadly explain why, in practice, single-rate VAT systems are not widely spread (Cebreiro et al. 2026 and Figure 4), despite having being proved more efficient (de Mooij et al. 2025; IMF 2026). In 2022, about 40 percent of countries with a VAT in place had a single rate only (plus a zero rate in 90 percent of the cases).",
+        "bbox": [
+            109,
+            126,
+            880,
+            246
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/76c2a03bceb5458e8e03617ca8e179f35d7cf47ca23a310c3bf78dcb8515bae8.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 4. Number of VAT Rates Across Countries\nShare of countries with various VAT rates, 2022"
+        ],
+        "chart_footnote": [
+            "Source: IMF VAT Database"
+        ],
+        "bbox": [
+            184,
+            297,
+            416,
+            489
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8f1a44bc4ed1259516cdf3a4896968d0f18b59046f4c9a100c7032432f2a257c.jpg",
+        "content": "",
+        "chart_caption": [
+            "Share of countries introducing single VAT rates"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            519,
+            297,
+            857,
+            489
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "A digital cashback system will support lower-income households. The reform introduces a partial cashback system targeting vulnerable families. Eligibility is determined by registration in Brazil's Cadastro Unico, $^{20}$ a centralized registry for lower-income households used for existing cash transfers programs such as Bolsa Familia. Only households with income below half of the minimum wage per capita qualify. $^{21}$ The system will provide a 100 percent CBS and 20 percent IBS cashback (an overall 46.6 percent) on the acquisition of cooking gas (canisters weighing up to 13 kg), natural piped gas supplies, domestic electricity, telecommunications, water, and sewage bills; and a general 20 percent IBS and CBS cashback on other purchases. $^{22}$ The cashback will take the form of a (partial) refund (or welfare transfer) to low-income families (linked to e-invoices). $^{23}$ Compatibility checks with the available family income, in addition to other mechanisms, will help avoid fraud.",
+        "bbox": [
+            111,
+            530,
+            877,
+            704
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{19}$ Similar political economy constraints are observed in the European Union, where the VAT inherited concessions from previous turnover taxes of member states (de la Feria and Walpole, 2020).",
+        "bbox": [
+            111,
+            766,
+            864,
+            794
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{20}$ Cadastro Único para Programas Sociais do Governo Federal (CadÚnico) - art. 6º-F da Lei nº 8.742, de 7 de dezembro de 1993. $^{21}$ Complementary Law No. 214/2025, 16 January 2025.",
+        "bbox": [
+            111,
+            794,
+            870,
+            823
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{22}$ Complementary Law No. 214/2025 allows for all levels of government (federal, states, districts and municipalities) to establish (by law) higher refunds percentages (Art 118, II, § 1°), as well as simplified mechanisms for the refund's calculation (Art 119) in exceptional cases (based on operational capacity).",
+        "bbox": [
+            111,
+            823,
+            880,
+            863
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{23}$ The mechanism for the refund as well as the total amount is described in Capítulo I, Título III from Law 214/2025. The mechanisms that will be used to avoid frauds and errors are still to be determined at time of finalizing this paper, including rules to make consumption compatible to income, based on: 1) consumption of households derived from the POF survey, 2) VAT paid by households that is reflected in e-invoices, and 3) total disposable household income (as declared in CadUnico plus other conditional income transfers).",
+        "bbox": [
+            111,
+            862,
+            883,
+            925
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            862,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Equity Analysis",
+        "text_level": 2,
+        "bbox": [
+            112,
+            128,
+            361,
+            157
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "This section analyses the distributional patterns of reform policies, including zero rates (and exemptions), reduced rates, cashback, as well as the shift from goods to services taxation, and elaborates on options to further improve equity.",
+        "bbox": [
+            111,
+            174,
+            848,
+            227
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Data and Methodology",
+        "text_level": 2,
+        "bbox": [
+            112,
+            253,
+            330,
+            273
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "We estimate VAT liabilities by income and consumption deciles building on the World Bank's SimVAT model, adjusted with the most recent approved reform policies. $^{24}$ The model is calibrated with household data from the national budget survey (Pesquisa de Orçamentos Familiares, POF) from 2017/2018. The POF contains household expenditures on goods and services (about $3/4$ of total POF expenditure data) $^{25}$ across 185 categories, allowing for granular differentiation between basic (Cesta Basica) and non-basic items. Tax rates, exemptions, and cashback conditions are then applied to each of the goods and services categories. We extract the latest reform policies from approved legislation (including law LC214/2025) as well as auxiliary documentation published by the Ministry of Finance (Annex III). $^{26}$ For excises, we assume the following rates guided by law PLP68/2024: $^{27}$ 46 percent on wine and beer, 62 percent on other alcoholic drinks, 32 percent for sugar-based drinks, 0.25 percent on fuel for vehicles, and 250 percent on tobacco. Tax liabilities are calculated by decile in percentage of income and expenditure. For income, we use disposable, non-adjusted monetary income, which typically reflects some degree of",
+        "bbox": [
+            109,
+            292,
+            880,
+            498
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "underreporting notably in the lowest and highest income deciles. $^{28}$ Non-adjusted monetary income is defined",
+        "bbox": [
+            112,
+            500,
+            457,
+            550
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "as total cash income received by individuals or households over a given period, excluding non-monetary components like in-kind transfers or imputed rents but including government transfers, pensions, and wealth variations (e.g. asset sales and inheritances. Tax liabilities are also computed relative to monetary expenditures. As for income data, expenditures are non-adjusted and likely subject to some degree of common",
+        "bbox": [
+            111,
+            551,
+            457,
+            705
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0a5f2d7fe31f57089c1f589f238018768528ed7286ddc55d43a9920d2a2881b4.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 5. Consumption per Decile (percent of income)"
+        ],
+        "chart_footnote": [
+            "Source: POF"
+        ],
+        "bbox": [
+            486,
+            536,
+            830,
+            676
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "underreporting bias, for instance from informal transactions, luxury goods, and alcohol and tobacco, in addition to an under-representation of the wealthiest households. Total household consumption from the POF is about 80 percent of the national accounts' household consumption, which is broadly in line with macro validations in the literature (Figure 5). Data on macro variables are taken from the IMF's WEO database. Aggregate tax burden and effective tax rates by sectors pre- and post-reform are taken from Cebreiro et al (2025).",
+        "bbox": [
+            111,
+            707,
+            877,
+            758
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            885,
+            75
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{24}$ See https://datanalytics.worldbank.org/simvat/ and Lara Ibarra et al 2021.",
+        "bbox": [
+            111,
+            801,
+            557,
+            818
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{25}$ The remainder extends to non-monetary expenditures, including in-kind transfers, imputed rents, and own production.",
+        "bbox": [
+            111,
+            818,
+            813,
+            834
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "26 https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria",
+        "bbox": [
+            112,
+            833,
+            671,
+            848
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{27}$ Excise rates will be based on the alcohol content and sugar content (https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria/regulamentacao-da-reforma-tributaria/lei-geral-do-ibs-da-cbs-e-do-imposto-seletivo/resumos-tecnicos/plp-68-2024\\_resumo-imposto-seletivo.pdf).",
+        "bbox": [
+            111,
+            848,
+            846,
+            887
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{28}$ For the lowest deciles, this is reflected in a higher reported monetary consumption than reported monetary income, leading to persistent budgetary household deficits and likely indicating an underestimation of income (Silveira et al 2013). As a consequence, the tax burden for this group could be overestimated (Siqueira et al 2017).",
+        "bbox": [
+            111,
+            887,
+            874,
+            926
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            862,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            126,
+            843,
+            160
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Microstatic simulations of various policy options are performed to derive the distributional pattern by tax instrument. Operating in a partial equilibrium framework, the model assumes that final (pre-tax) consumer prices remain unchanged $^{29}$ abstracting from potential behavioral responses by households or firms. $^{30}$ This includes the assumption that any VAT concession is fully passed on to consumers, which is somewhat challenged by a set of empirical studies which find that pass-through is often incomplete and more likely to happen in more competitive markets (Swistak and de la Feria 2026). $^{31}$ The simulations therefore derive a mechanical, consumption-side incidence under fixed prices and do not presume to incorporate welfare, wage and employment effects. In addition, the model treats exemptions as zero rates, assuming, therefore, that any non-recoverable input VAT is fully borne by the producer with no impact in the final consumer price. VAT liabilities by decile are calibrated under various scenarios while maintaining the total revenue collection obtained under the baseline, which corresponds to a reference rate of 27.9 percent computed based on approved reform parameters (SERT 2024). A scenario map is provided in Box 2.",
+        "bbox": [
+            109,
+            176,
+            877,
+            385
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The Distributional Pattern of Reform Policies",
+        "text_level": 2,
+        "bbox": [
+            112,
+            412,
+            537,
+            430
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The new VAT would result in a relatively equitable distribution for lower- to middle-income households, albeit the poorest still carry a heavier load in terms of income. Under the approved reform policies, the tax liability as a share of income would be relatively similar for the second to seventh decile, with consumption taxes averaging around 14 percent of disposable income (Figure 6). Households in the lowest income decile, however, would face a higher liability amounting to 23 percent of their income, while the richest decile faces around 9 percent. Overall, the new VAT reflects some degree of regressivity but fares relatively well compared with other VAT systems despite its high reference rate. $^{32}$ Moreover, when measured as share of expenditure, the new VAT show a relatively progressive tax structure, in line with the literature, including, for example, Thomas (2022), Mirrlees (2011), and Caspersen and Metcalf (1994). The poorest households pay an average tax rate of 16 percent on their expenditure on goods and services, while middle to upper income households would face an average rate of 23 percent. While these remain among the highest average tax rates worldwide, the relative progressivity in expenditure achieved with the reform is commendable.",
+        "bbox": [
+            109,
+            450,
+            880,
+            659
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{29}$ Post-reform simulations assume a fix consumption price. For more details see Lara Ibarra et al 2021.",
+        "bbox": [
+            111,
+            768,
+            715,
+            784
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{30}$ The impact on inflation of VAT introduction or increasing VAT rates highly depends on producers' capacity to pass the tax burden to consumers, which varies significantly across different products due to elasticity variations (Benedek et al, 2015). Evidence suggests, however, that high and persistent inflation can double this pass-through capacity. From the experience of GST implementation in India, Kumar and Dash (2022) found that the 2017 reform that replaced distortive taxes with the GST positively impacted the inflation of the non-food sector and reduced the price levels of 25 food items (Mathew and Kumary, 2025).",
+        "bbox": [
+            111,
+            784,
+            879,
+            848
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{31}$ Benzarti et al. (2014) observe partial price reductions at chain retailers but not at independent stores where lower-income households are more likely to shop; and Brusco et al (2022) find that in India the pass-through effect in the informal sector is lower compared to the formal sector. Benedek et al. (2019) find roughly full pass-through of standard VAT rate changes, but only around 30 percent pass-through for changes in reduced VAT rates. Meanwhile, Gaarder (2018) finds that the introduction of a reduced VAT rate on food in Norway resulted in full pass-through to prices.",
+        "bbox": [
+            111,
+            848,
+            883,
+            911
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{32}$ Vale et al (2023) also estimate a moderately regressive distribution using older reform parameters.",
+        "bbox": [
+            111,
+            911,
+            700,
+            926
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            862,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Box 2. Scenario Map",
+        "text_level": 2,
+        "bbox": [
+            135,
+            151,
+            334,
+            170
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "1. Reform Scenario (Baseline)",
+        "text_level": 2,
+        "bbox": [
+            135,
+            184,
+            362,
+            199
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Description: The approved VAT reform merges five existing taxes into a dual VAT and an excise, with a VAT reference rate of 28 percent, zero rates for basic goods, reduced rates for selected items, and a cashback mechanism for the poorest households.",
+        "bbox": [
+            133,
+            200,
+            848,
+            253
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Equity Impact: The reform achieves a relatively equitable distribution of the tax burden for lower- to middle-income households, but the poorest still bear a heavier load relative to their disposable income. The combination of zero rates, reduced rates, and cashback mitigates regressivity but requires a higher VAT reference rate to maintain revenue neutrality.",
+        "bbox": [
+            133,
+            255,
+            852,
+            325
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "2. Disaggregated Policy Instruments",
+        "text_level": 2,
+        "bbox": [
+            135,
+            339,
+            411,
+            354
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The paper simulates the equity impact of each policy instrument introduced in the reform individually, compared to a hypothetical full VAT (single rate, no concessions):",
+        "bbox": [
+            135,
+            356,
+            834,
+            388
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Reduced Rates: worsen regressivity, as benefits are spread across all income groups, pushing up the VAT reference rate and increasing the tax burden on the poorest.",
+        "bbox": [
+            135,
+            391,
+            844,
+            425
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Zero Rates and Exemptions: focused on basic goods (Cesta Basica), reduce the tax burden for the bottom three deciles, but are costly as all households benefit, again requiring a higher VAT reference rate.",
+        "bbox": [
+            135,
+            426,
+            836,
+            477
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Partial Cashback: targeted at vulnerable households (those registered in Cadastro unico), is the most effective tool for improving equity, lowering the tax liability of the poorest by 5 percent of income compared to full VAT. However, as currently designed, it does not fully eliminate the VAT inherent regressivity.",
+        "bbox": [
+            133,
+            481,
+            846,
+            551
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "3. Pivot to Services Taxation",
+        "text_level": 2,
+        "bbox": [
+            135,
+            564,
+            354,
+            579
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Description: The reform shifts the tax burden from goods (specially manufactured goods) to services, aligning tax collection more closely with the actual contribution of services to GDP (60 percent vs 48 percent pre-reform).",
+        "bbox": [
+            135,
+            580,
+            841,
+            633
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Equity Impact: This shift benefits lower-income households, whose consumption baskets are more goods-heavy, while higher-income households pay more due to their greater consumption of services.",
+        "bbox": [
+            135,
+            635,
+            841,
+            670
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "4. Expanding the Cashback Mechanism",
+        "text_level": 2,
+        "bbox": [
+            135,
+            683,
+            434,
+            698
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Three alternative cashback designs are simulated, using Full VAT as the baseline:",
+        "bbox": [
+            135,
+            700,
+            707,
+            715
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Full Cashback: Eligible households receive a refund of the full VAT paid on all goods and services (except excise). This scenario delivers the greatest equity gains, raising the disposable income of the poorest by up to 25 percent.",
+        "bbox": [
+            135,
+            718,
+            834,
+            768
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Targeted Cashback: Full cashback for VAT paid on basic goods and services only. This improves equity but leaves the poorest with a substantial residual tax liability.",
+        "bbox": [
+            135,
+            771,
+            818,
+            805
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Reform Cashback (Current Design): Partial cashback on selected goods/services, as approved in the reform. Provides relief, but it is less effective than the full or targeted cashback options.",
+        "bbox": [
+            135,
+            806,
+            852,
+            840
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "5. Relaxing Revenue Neutrality",
+        "text_level": 2,
+        "bbox": [
+            135,
+            854,
+            370,
+            869
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Description: The paper simulates a scenario where the revenue neutrality constraint is relaxed, lowering the overall indirect tax burden to levels closer to Latin American and OECD averages.",
+        "bbox": [
+            135,
+            871,
+            800,
+            906
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            114,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            114,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            862,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Equity Impact: Lowering the VAT reference rate from 28 percent to around 21 percent reduces the tax burden on the poorest households and narrows the gap between the lowest and highest income deciles (when measured as a share of income). However, the equity improvement is less pronounced when measured as a share of expenditure, reflecting the lower VAT regressivity when using this measure.",
+        "bbox": [
+            133,
+            138,
+            854,
+            210
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "6. Robustness Checks",
+        "text_level": 2,
+        "bbox": [
+            135,
+            222,
+            308,
+            237
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Income Adjustment: Adjusting monetary income for the lowest decile (to account for underreporting) improves the equity pattern but does not eliminate the inherent VAT regressivity. The overall conclusions remain robust to these adjustments.",
+        "bbox": [
+            135,
+            239,
+            839,
+            292
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Cashback Limitations: Introducing access frictions to cashback reduces the equity gains of the lower three deciles compared to the reform outcome. The overall conclusions remain robust.",
+        "bbox": [
+            135,
+            299,
+            844,
+            329
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Source: OECD Global Revenue Statistics 2025.",
+        "bbox": [
+            135,
+            332,
+            419,
+            347
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Informality as well as the SIMPLES regime could lead to a de facto more progressive consumption tax structure than estimated, with the baseline scenario being an upper bound of tax liabilities.",
+        "bbox": [
+            112,
+            378,
+            872,
+            411
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Informality. With significant informality present in Brazil, $^{33}$ and since households' share of spending in the informal sector declines with income (Bachas and al., 2020; Brusco et al., 2022), our results could underestimate the progressivity of consumption taxes. Poor households consistently consume more informally as they rely on small, unregistered retailers, engage in home production, and often have more limited access to formal retail channels. In terms of products, food, low-value household goods and personal care, as well as small-scale retail goods (kiosk supply), and (labor-intensive) services provided by small informal suppliers tend to be consumed informally (Bachas et al 2020). However, even though the model does not capture informal consumption, Lara Ibara et al (2021) argue that informality would not materially change distributional results in Brazil given that food sales are highly concentrated in supermarkets, which are formal, and most retail food is taxed at zero or low rates.",
+        "bbox": [
+            140,
+            412,
+            877,
+            585
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\\- SIMPLES. Poorer households are more likely to buy from small retailers and service providers which are operating under SIMPLES and are subject to lower (fixed) taxation, which is not modeled here. However, taxes charged under SIMPLES do not take into account zero rates and other concessions.",
+        "bbox": [
+            142,
+            593,
+            870,
+            643
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The above distributional pattern under the new VAT would be achieved by combining several policy instruments to address regressivity concerns. The system's overall equity would be improved, relative to pre-reform patterns (see also Lara Ibara 2021 and Siqueira et al 2024 using older reform parameters) as well as relative to a full VAT without concessions (see Figure 7 and in line with findings by Vale et al 2023). However, some policy tools are more effective than others in mitigating regressivity, and their equity impact is disentangled in the following analysis. Precisely, the distributional outcome of each instrument is compared with the one of a hypothetical full VAT rate, i.e. a single-rate, broad-based VAT applied to all goods and services across categories without concessions, holding total nominal revenues constant, corresponding to a reference rate of 21.5 percent.",
+        "bbox": [
+            111,
+            652,
+            870,
+            806
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            114,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            656,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{33}$ In 2024, around 38 percent of total employment was in the informal sector (IBGE/PNAD, PNADC).",
+        "bbox": [
+            112,
+            911,
+            697,
+            926
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            862,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6be669019437de3b7a3ba042e343ae2535810bd21fbf339f7378a984263641a8.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 6. Post-Reform Average Tax Liability by Income Decile"
+        ],
+        "chart_footnote": [
+            "Source: PNAD, World Bank, staff calculations."
+        ],
+        "bbox": [
+            125,
+            178,
+            488,
+            383
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1562b46ea3841daaec092e9c391d93919c60c336e5cb74a049b5f9ca6a8d6823.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            514,
+            159,
+            867,
+            381
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Assessed individually, the reform's reduced rates feature a negative equity impact, while zero rates and partial cashback achieve a notable equity improvement. These results hold in both cases, when the tax liability is measured as share of income as well as expenditure (Figure 7 and Annex IV Figure 1). The estimations assume a single VAT reference rate applied to all goods and services, with the exception of the assessed instrument.",
+        "bbox": [
+            111,
+            417,
+            883,
+            503
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "\\- First, the reduced rates as per reform parameters worsen equity. This instrument allows households across the income distribution to benefit from lower taxes on goods and services such as non-basic food items, health and education, local transportation, and professional services. As a consequence, assuming revenue neutrality, this policy instrument is relatively expensive pushing up the reference rate on all other goods to 23.9 percent from 21.5 percent under the full VAT. This, in turn, penalizes lower income households more in relative terms and their overall tax liability increases.",
+        "bbox": [
+            140,
+            522,
+            870,
+            625
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Second, the reform's exemptions and zero rates on selected goods and services improve the VAT's equity print and reduce tax liabilities for all but the top 20 percent, and particularly so for the lowest three deciles. Zero rates are focused on Cesta Basica items which are relatively overrepresented in the consumption basket of poorer households. With this, the instrument achieves markedly better targeting than reduced rates, but equally suffers from being relatively expensive, as all households enjoy the concessions, requiring a higher reference rate – reaching 24.3 percent – under revenue neutrality.",
+        "bbox": [
+            140,
+            632,
+            875,
+            753
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Third, the partial cashback would reduce the tax liability on lower-income households noticeably but also falls short of restoring progressivity. The tax liability of the poorest would fall by 5 percent of income and 3 percent of expenditure (compared to full VAT), making this instrument the most effective tool in improving equity. The effect is due to tailoring VAT refunds to vulnerable households only, which keeps the instrument more affordable and the reference rate at 21.8 percent to keep revenue neutrality. However, given the partial nature of the cashback design, the new VAT would still inherit some degree of regressivity.",
+        "bbox": [
+            140,
+            761,
+            880,
+            882
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            114,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            114,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            862,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b9ef19559000ab6871e2f429c4dd3a42b482304399a7478c13fd13aa26a0ddef.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 7. Equity Impact by Policy Instrument: Change in Tax Liability by Income Decile\n(Percent of income, deviations to full VAT) (Percent of expenditure, deviations to full VAT)"
+        ],
+        "chart_footnote": [
+            "Source: PNAD, World Bank, staff calculations"
+        ],
+        "bbox": [
+            124,
+            178,
+            468,
+            375
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a31e05d8fc4aee0e857366e2222ec1a1728b917a5ff62ad1b9e67f24733f58bd.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            514,
+            174,
+            864,
+            377
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Overall, the intertwined use of exemptions, zero and reduced rates, and partial cashback effectively mitigates regressivity but comes at a relatively high cost, in terms of both revenue and efficiency. In addition to increasing the reference rate (to make up for associated forgone revenue in order to maintain revenue neutrality), concessions make the system more complex to comply with and administer, $^{34}$ increasing opportunities for VAT avoidance and fraud as well as the probability of litigations (de la Feria and Walpole, 2020). They also create incentives for rent-seeking behavior and increase the pressure for additional reliefs further narrowing the base (IMF 2026; de la Feria, 2020). Exemptions also create inefficiencies by breaking the VAT chain and reducing incentives for voluntary compliance.",
+        "bbox": [
+            109,
+            409,
+            880,
+            547
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "The Role of Services Taxation",
+        "text_level": 2,
+        "bbox": [
+            112,
+            575,
+            341,
+            592
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "The reform implies a notable pivot from taxing goods towards taxing services. The current system's overlapping tax bases and cascading effects lead to a relatively high taxation of goods, in particular of manufactured goods subject to a longer supply chain. 37 percent of all consumption taxes is collected from the manufacturing sector despite this sector's contribution to GDP of 12 percent. On the contrary, services, including utilities, make up only 48 percent of the collection, significantly below their share of GDP of around 60 percent. The reform, in particular the harmonization of bases and rates, full input tax crediting, and a cap of the reference rate at 28 (markedly below the combined rates observed on manufactured goods under the current system) would shift tax collection from manufacturing to services, broadly matching services' actual contribution to GDP. In parallel, the taxation of the manufacturing sector is expected to decline by 1.4 percent of GDP, or about 30 percent (Cebreiro et al, 2025).",
+        "bbox": [
+            109,
+            619,
+            883,
+            791
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Consumption microdata reflect a relatively strong representation of goods in lower income households' baskets, while services dominate for high-income households. Agricultural products, which include basic food items, mostly correspond to Cesta Basica, make up around one fifth of the consumption",
+        "bbox": [
+            111,
+            797,
+            874,
+            849
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            885,
+            75
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{34}$ It also can increase VAT refunds if intermediate inputs are predominantly taxed at the reference rate while more final sales are taxed at reduced rates. On the other hand, if inputs are mostly taxed at reduced rates, while final sales are taxed at higher rates, input credits can be so small that there is a large incentive for evasion.",
+        "bbox": [
+            111,
+            886,
+            862,
+            926
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            862,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Consumption by Decile (percent of total consumption)",
+        "bbox": [
+            124,
+            279,
+            334,
+            311
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "basket of the poorest two deciles. Consumption of manufactured goods, ranging from processed foods to furniture, electric goods, cars, and fuels, is relatively constant across income groups, with a somewhat lower relative share in richer households' expenditures. In contrast, consumption of services increases strongly with income, in particular professional services, finance, education, and hospitality, doubling their share in expenditures of the richest households compared with the poorest. Basic services, however, are consumed proportionally more in lower income households and include health, transportation, and electricity, water, and waste services (Figure 8).",
+        "bbox": [
+            111,
+            126,
+            870,
+            246
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/89d3f2e19ca98b2de56d00f7d09a585d8b59637123da270ab2a94390e40a8696.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 8. Services Shift"
+        ],
+        "chart_footnote": [
+            "Tax Liability by Income Decile (percent of income)"
+        ],
+        "bbox": [
+            125,
+            292,
+            488,
+            481
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/12f134c21cdd63671ded3ef72d277aa6a4bbd594dec29a144f472ec8e21979a7.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: PNAD, World Bank, staff calculations.",
+            "Note: Reform setting excludes cashback to allow for better comparison with pre-reform settings."
+        ],
+        "bbox": [
+            514,
+            311,
+            830,
+            494
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The distributional impact of the pivot towards services is concentrated in the poorest and the richest households. We simulate the distributional pattern of a VAT with reduced rates and exemptions akin to the settings approved under the reform (but excluding cashback), adjusted to match the consumption tax burden on services and non-services under the current, pre-reform system. Broadly mirroring Cebreiro et al (2025), we impose a services revenue contribution of 49.3 percent and a contribution by manufacturing, mining, and fuels of 50.7 percent, with 0.2 percent coming from agricultural (basic goods) under the pre-reform scenario. $^{35}$ Holding the share of revenue collection from basic services (health, transportation, and utilities) and agricultural goods constant and increasing the tax liability on non-basic services while lowering the one on manufactured goods, we find a significant equity improvement for the poorest households, fully paid for by higher collection on the top decile. A similar pattern emerges when assessing the tax liability relative to expenditure.",
+        "bbox": [
+            111,
+            556,
+            883,
+            729
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Policy Options to Further Improve Equity",
+        "text_level": 2,
+        "bbox": [
+            112,
+            757,
+            501,
+            776
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Two policy options are simulated to assess their equity enhancing potential: expanding the cashback and relaxing revenue neutrality. For the first option, we compare the reform's equity outcomes with several forms of cashback, altering the extent to which VAT is refunded while holding eligibility criteria, i.e. income threshold and thus number of households, constant. For the second option, we depart from the assumption of revenue neutrality and assume a revenue intake from indirect taxation more comparable with Latin American peers and OECD averages (see Figure 1).",
+        "bbox": [
+            111,
+            796,
+            872,
+            864
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            861,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{35}$ The simulation also holds informality fixed, which could be a challenging assumption given often higher informality and lower compliance in the services sectors (see also Cebreiro et al 2025).",
+        "bbox": [
+            111,
+            893,
+            849,
+            924
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            126,
+            864,
+            160
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Expanding the Cashback Mechanism",
+        "text_level": 2,
+        "bbox": [
+            112,
+            172,
+            393,
+            188
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Three forms of cashback are evaluated:",
+        "text_level": 2,
+        "bbox": [
+            112,
+            205,
+            411,
+            220
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Full cashback: A single reference rate applies to all goods and services. Households in the Cadastro Unico receive a refund of the full VAT paid on all goods and services, except for levies raised via the excise (IS). Under this scenario, the VAT neither features reduced rates nor zero rates nor exemptions.",
+        "bbox": [
+            140,
+            231,
+            542,
+            349
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "\\- Targeted cashback: A single reference rate applies to all goods and services. Eligible households receive full cashback for VAT paid on basic goods and services, including Cesta Basica items, water, energy, health, education, and transportation. As for the full cashback, no other concessions are applied.",
+        "bbox": [
+            140,
+            352,
+            544,
+            454
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "table",
+        "img_path": "images/bed8fb924c3acb03d2ec1829b8baac45c7791e3b0ecd04673a1d3e8dbb4b6d95.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">Table 1. Progressivity Indicators</td></tr><tr><td>Gini Before tax</td><td>0.529</td></tr><tr><td>Gini Full VAT</td><td>0.401</td></tr><tr><td>Gini Reform</td><td>0.443</td></tr><tr><td>Kakwani Reform vs Full VAT</td><td>0.042</td></tr><tr><td>Kakwani Full Cashback vs Full VAT</td><td>0.099</td></tr><tr><td>Kakwani Reduced rate vs Full VAT</td><td>0.018</td></tr><tr><td>Kakwani Exemption vs Full VAT</td><td>0.036</td></tr><tr><td>Kakwani Targeted Cashback vs Full VAT</td><td>0.042</td></tr><tr><td>Kakwani Full Cashback vs Reform</td><td>0.057</td></tr><tr><td>Kakwani Reduced rate vs Reform</td><td>-0.024</td></tr><tr><td>Kakwani Exemption vs Reform</td><td>-0.006</td></tr><tr><td>Kakwani Targeted Cashback vs Reform</td><td>0.001</td></tr><tr><td colspan=\"2\">Note: Indexes computed using income and shares aggregated by deciles and should be interpreted as an approximation. Source: PNAD, World Bank, staff calculations.</td></tr></table>",
+        "bbox": [
+            563,
+            233,
+            880,
+            494
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "■ Reform cashback: Partial cashback as described above.",
+        "bbox": [
+            143,
+            455,
+            527,
+            488
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The maximum benefit for the poor would be achieved under a full cashback system. The cashback mechanism that fully refunds VAT payments for the lower two (and a half) deciles (with the exception of excise taxes) has the most redistributive power (Error! Reference source not found. and Figure 9). The targeted cashback, while delivering important benefits for the poor, would nevertheless leave them with the highest tax liability of all deciles. Even though basic goods are predominantly consumed by poorer households (in relative terms), their other, non-basic consumption still reflects a significant share of their income and continues to be subject to a high tax liability. Finally, the partial cashback currently envisaged extends to a limited number of eligible goods and allows for partial refunds only, leaving a substantial residual tax liability with poorer households.",
+        "bbox": [
+            111,
+            507,
+            875,
+            661
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Depending on the design of the cashback transfers, the mechanism could also improve compliance and foster formalization. Incentives for compliance are strongest if compensation happens in real-time $^{36}$ relying on e-invoicing and digital payments. The real-time compensation could also help reduce individual stigma over asking for invoices, which – together with concerns over data cross-checks – has been highlighted as one of the main causes of the very limited impact of the ICMS’ targeted refund program introduced in São Paulo (Mattos and others, 2013). Moreover, refunds under the full cashback scheme would be predominantly related to manufactured goods and other services than utilities and telecommunications, which typically feature higher informality. The full cashback could thus improve incentives for formalization for both buyers as well as sellers. $^{37}$",
+        "bbox": [
+            109,
+            670,
+            880,
+            824
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            861,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{36}$ De la Feria and Swistak (2024).",
+        "bbox": [
+            112,
+            896,
+            315,
+            910
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{37}$ On the latter, see Cebreiro et al 2025.",
+        "bbox": [
+            112,
+            911,
+            349,
+            926
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Figure 9. Expanding the Cashback",
+        "bbox": [
+            122,
+            141,
+            383,
+            157
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "VAT reliefs – Reform vs cashback options (Full VAT as baseline, percent of income)",
+        "bbox": [
+            124,
+            166,
+            418,
+            199
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "chart",
+        "img_path": "images/75b97bdf6c622f1cdfd4b5436f73f94ec923c808314b138ea17414ff3504dfc7.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Full Cashback by Sector (percent of total cashback)"
+        ],
+        "bbox": [
+            127,
+            196,
+            491,
+            402
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "chart",
+        "img_path": "images/220389eff443bf7468d5215fcee6f1b71cf0823a178c41fcf603e6866552898b.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Tax Liability by Policy Instrument (percent of income)"
+        ],
+        "bbox": [
+            509,
+            209,
+            867,
+            386
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3cc389ad1bb11a0fa493c9ecfbaee100bb9599e7e1b4615d710aac89e03bf5ff.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Tax Liability by Policy Instrument (percent of expenditure)"
+        ],
+        "bbox": [
+            127,
+            440,
+            490,
+            647
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b23e8c7c46bce29949f7d7ff271802f86771d0723cbda1112735f4b1707f1245.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: PNAD, World Bank, Receita Federal, and staff calculations"
+        ],
+        "bbox": [
+            517,
+            440,
+            883,
+            648
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Relaxing the Assumption of Revenue Neutrality",
+        "text_level": 2,
+        "bbox": [
+            112,
+            699,
+            470,
+            715
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Reducing revenue collection via indirect taxes would align Brazil closer with peers. While revenue neutrality of the reform is enshrined in the reform law, this hypothetical exercise focuses on analyzing the distributional consequences of a possibly lower indirect tax burden. Indirect tax collection in Latin America and the OECD averages at 10 $\\frac{1}{2}$ percent of GDP, around 2 percent of GDP lower than Brazil's. Reducing the current targeted collection to a level closer to peers would shift the reference rate to around 21 percent at given reform policy settings – compared with 28 percent under the reform. This shift would leave a budgetary gap of around 1-2 percent of GDP which could be addressed via alternative, potentially more progressive fiscal policies. These could include a moderate rebalancing from indirect to direct taxation (e.g. personal income taxes and property taxes) as part of a broader tax reform in the medium term.",
+        "bbox": [
+            109,
+            734,
+            882,
+            890
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            114,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            656,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            114,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            861,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Figure 10. Relaxing Revenue Neutrality",
+        "bbox": [
+            122,
+            148,
+            415,
+            165
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "(Percent of income)",
+        "bbox": [
+            124,
+            174,
+            263,
+            189
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c2e392b2b3c5d8ffafc09cd4c14becd14bc87cba6c1e85af3c06a21b7216616e.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "(Percent of expenditure)"
+        ],
+        "bbox": [
+            124,
+            185,
+            478,
+            388
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "chart",
+        "img_path": "images/22855764a45d3519c0209d1e75bd7ff31ac408e253146f8dd5525cc7400069e3.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            514,
+            186,
+            864,
+            387
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Equity improves when measured relative to income, but not when measured relative to expenditure. Under reform policy settings, the wedge between the tax liability of the lowest and the highest decile corresponds to 14 percent of income. Lowering the overall collection target by around 20 percent reduces this wedge to 10 percent of income, implying a moderate improvement in equity, as broadly expected, in addition to the significantly lower tax burden of the poorest households which drops to 17 percent of disposable income. However, when measuring the distributional impact as a share of expenditure, the wedge between the lowest and the highest decile becomes smaller. This reflects a relatively weaker effect from cashback and zero rates on the lower income deciles compared to the positive effect of a lower statutory rate at the top of the income distribution.",
+        "bbox": [
+            111,
+            409,
+            880,
+            564
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Robustness",
+        "text_level": 2,
+        "bbox": [
+            112,
+            592,
+            232,
+            609
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Adjusting monetary income for the lowest decile yields an improved equity pattern but still displays regressivity. As discussed above, the measurement of income might be subject to underreporting of alternative income sources. This could be particularly pertinent for lower income households who report higher consumption than income levels. We adjust monetary income to equalize consumption whenever expenditure exceeds household resources. While the tax liability of the poorest drops by around 7 percent of adjusted income, displaying an important equity gain, the overall VAT pattern remains regressive and our above conclusions remain in place. Moreover, while this adjustment takes care of potential biases for lower deciles, income of upper deciles is likely underestimated as well, given the lack of information on savings to compute lifetime income. The depicted patterns could therefore provide an upper and lower bound of regressivity.",
+        "bbox": [
+            109,
+            627,
+            874,
+            784
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Lowering the take-up of cashback gradually increases regressivity with very little effect on middle to higher income households. The cashback mechanism is central to the improvement of equity. The baseline assumes that eligible households receive full benefits without take-up or access frictions. However, hurdles to (digital) access and challenges in invoice-linking can materially reduce realized benefits. This could be particularly strong in areas with lower administrative capacity, which are typically correlated with lower per capita incomes. Lowering the assumption of 100 percent take-up to 50 percent take-up – holding everything else constant under the reform scenario – increases the tax burden on the poorest by around 3 percentage",
+        "bbox": [
+            109,
+            799,
+            870,
+            921
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            114,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            114,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            861,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "points. Tax liabilities for the middle to upper deciles, however, remain broadly unaffected. Overall, there remains a strong incentive for companies to remain VAT (and thus refund) eligible and therefore process VAT electronically. This would, in turn, increase the likelihood that registered transfer recipients are correctly identified. Finally, experiences with incomplete cashback could increase households' incentives to purchase informally thereby lowering both their tax liability and the equity impact of the reform.",
+        "bbox": [
+            111,
+            126,
+            872,
+            213
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3029a4ec7ea8d06fcce6bfda582cdd246983131d283d9ee38341daa64f719fb7.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 11. Robustness",
+            "Tax Liability by Decile: Adjusted Income (percent of adjusted income)"
+        ],
+        "chart_footnote": [
+            "Tax Liability by Decile: Partial Cashback (percent of income)"
+        ],
+        "bbox": [
+            124,
+            301,
+            488,
+            507
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9579193d7c4eac65deb5adeedc06f2e4ad4eae507853853c3bec9c13ea870a53.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            504,
+            303,
+            867,
+            507
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            861,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            114,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Conclusion",
+        "text_level": 2,
+        "bbox": [
+            112,
+            128,
+            297,
+            154
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The approval of the dual VAT in Brazil is an impressive example of a growth-enhancing structural reform that successfully incorporates distributional consequences. The VAT reform is poised to not only materially enhance revenue collection and reduce compliance gaps by addressing longstanding inefficiencies, thereby boosting productivity and formal sector growth. The reform also tackles equity considerations by introducing mechanisms—such as a cashback system and zero rates—that help mitigate regressive impacts and reduce the disproportionate tax burden on lower-income households. As shown above, the new VAT’s distributional pattern is relatively equitable, and an important step forward in addressing regressivity in Brazil’s tax system and helping alleviate Brazil’s high inequality.",
+        "bbox": [
+            111,
+            174,
+            877,
+            314
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Nevertheless, while the VAT's distributional pattern is commendable, it does not achieve its full progressive potential. The proposed reduced rates, intended to support equity, inadvertently undermine it; the combination of instruments is relatively expensive, pushing up the reference rate levied on all other goods; and the cashback is partial in nature. To further strengthen equity gains, policy options include expanding the role of the cashback system, further limiting exemptions, zero and reduced rates, and, in the medium-term, considering a strategic shift away from the heavy reliance on indirect taxation. $^{38}$ This rebalancing would help align Brazil's tax system with international peers and reduce the overall burden on the most vulnerable populations. While broadening the scope of the reform beyond consumption taxation in 2024 would have been very challenging, this rebalancing could be feasible once the dual VAT is successfully under implementation. However, while full cashback is both desirable and technically feasible, it would require the removal of most of exemptions, zero and reduced rates to maintain revenue neutrality – which would be politically highly challenging.",
+        "bbox": [
+            111,
+            330,
+            883,
+            537
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "In addition, realizing the reform's full potential requires continued attention to governance and operational challenges. To ensure smooth implementation during the transition phase (2026-2033), governance and operational challenges would need to be addressed, including by integrating the management of the CBS/IBS, fully refunding input tax credits on a timely basis, and harmonizing revenue administrations to leverage synergies across levels of government and enable the implementation of a single, risk-based compliance strategy. Leveraging electronic systems for payments and beneficiary identification can further aid in targeting support and reducing fraud (Cebreiro et al. 2025).",
+        "bbox": [
+            109,
+            554,
+            880,
+            676
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Finally, equity outcomes could be further enhanced by complementary reforms that consider the tax system as a whole. Complementary reforms in income and capital gains taxation are essential to achieving lasting improvements in equity and a move toward a more progressive overall tax system. Revisiting SIMPLES and other special regimes could be perceived as regressive, but set the right incentives for smaller companies to grow, formalize, and become more productive, thereby lowering inequality. Overall, sustained progress will depend on a holistic approach that fully integrates tax policy with social assistance and broader economic reforms, ensuring that growth and equity objectives are realized for all segments of society.",
+        "bbox": [
+            109,
+            693,
+            877,
+            814
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{38}$ As discussed in IMF Article IV Consultations with Brazil 2024, 2025, and 2026.",
+        "bbox": [
+            112,
+            911,
+            584,
+            925
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            861,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Annex I. Existing Taxes on Goods and Services",
+        "text_level": 2,
+        "bbox": [
+            69,
+            122,
+            643,
+            156
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "table",
+        "img_path": "images/5711fdf4dbbcc0ee0e1b5f757543f55dac7e1ee3f64e6874b6d0f3b44278b015.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>TAX</td><td>TAX JURISDICTION</td><td>SCOPE</td><td>TAX BASE</td><td>METHOD</td><td>RATES</td><td>PREFERENTIAL TREATMENT</td></tr><tr><td>ISS</td><td>Municipalities</td><td>Municipal services</td><td>Municipal services</td><td>cumulative</td><td>2 - 5 %</td><td></td></tr><tr><td>ICMS</td><td>States</td><td>Sale of goods and provision of interstate and intermunicipal transportation services and communication services</td><td>Goods and transportation and communication services</td><td>non-cumulative (creditable)</td><td>minimum rate of 12%, but ad-hoc exceptions at each state (17, 18 or 20% general internal rates, which may vary for each state; and 4, 7 or 12% for interstate rates)</td><td>preferential rates and exemptions (including cesta basica and agricultural products)</td></tr><tr><td>IPI</td><td>Federal</td><td>Excise on manufacturers and importers</td><td>Industrialized goods</td><td>non-cumulative (creditable)</td><td>0 - 365 % (based on HS Code)higher rates for specific products (e.g., tobacco)</td><td>zero-rating on production of most of cesta basica items (and many others not considered of first necessity or nutritionally detrimental like sweets</td></tr><tr><td>PIS/PASEP</td><td>Federal</td><td>Contribution to Social Integration Program</td><td>Goods and services</td><td>Depending on whether paid by companies in the “presumed profit” simplified regime, or the “real profit” corporate income tax regime, respectively.</td><td>non-cumulative: 1.65%cumulative: 0.65 %</td><td>zero-rating over imports or domestic sales of various types of food considered to be of first necessity (known as desoneração da cesta básica).</td></tr><tr><td>COFINS</td><td>Federal</td><td>Contribution for financing social security</td><td>Goods and services</td><td>Depending on whether paid by companies in the “presumed profit” simplified regime, or the “real profit” corporate income tax regime, respectively.</td><td>non-cumulative: 7%cumulative: 3 %</td><td>zero-rating over imports or domestic sales of various types of food considered to be of first necessity (known as desoneração da cesta básica).</td></tr></table>",
+        "bbox": [
+            71,
+            181,
+            912,
+            787
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            71,
+            80,
+            190,
+            96
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            489,
+            80,
+            667,
+            99
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            71,
+            916,
+            260,
+            934
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            648,
+            918,
+            666,
+            934
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Annex II. Reform Laws",
+        "text_level": 2,
+        "bbox": [
+            120,
+            128,
+            478,
+            155
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "table",
+        "img_path": "images/c6224377020e86323d80cd550df2a9fc8221f8bedae25e8e366264cb905f613d.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td colspan=\"4\">SUBMITTED</td><td>APPROVED</td></tr><tr><td>VAT reform</td><td>PEC45/2019</td><td>4/3/2019</td><td>Constitutional amendment</td><td>Passed</td><td>11/14/2023EC132/2023</td></tr><tr><td rowspan=\"2\">IBS, CBS and IS</td><td rowspan=\"2\">PLP68/2024</td><td rowspan=\"2\">4/25/2024</td><td rowspan=\"2\">Complementary law</td><td>Approved in lower house.</td><td>7/10/2024</td></tr><tr><td>Approved by Senate.</td><td>12/17/2024</td></tr><tr><td>IBS&#x27;s administration</td><td>PLP108/2024</td><td>6/5/2024</td><td>Complementary law</td><td>Main text approved in lower house. Pending approval of &quot;highlights&quot; (destaques).</td><td>8/13/2024</td></tr><tr><td>IBS and CBS governance, Cashback</td><td>CL214/2025</td><td></td><td>Complementary law</td><td>President sanctioned: (i) general rules for the IBS and CBS (Book I); (ii) general rules for the IS (Book II); (iii) provisions on IPI offset (Book III); (iv) a five-year evaluation of aspects of the project that do not correspond to general rules for the levy of taxes (Book III); and (v) the Manaus Free Trade Zone and Free Trade Areas (Book III).</td><td>01/16/2025</td></tr></table>",
+        "bbox": [
+            122,
+            195,
+            874,
+            714
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            114,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            656,
+            61,
+            885,
+            75
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            114,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            861,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Annex III. Reform Policy Settings",
+        "text_level": 2,
+        "bbox": [
+            111,
+            128,
+            630,
+            157
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "table",
+        "img_path": "images/089f6780fc06e7e3f6ba0a108ebf0047752f3bb304a8fb741a09b1f4c047be71.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "(\\*) Items further adjusted with the approval of LC 214/2025. These adjustments are relatively small and are not considered in this paper. They would not change the results qualitatively."
+        ],
+        "table_body": "<table><tr><td>CATEGORY</td><td>APPLICABLE TREATMENT / RATE</td><td>SPECIFIC ITEMS/SECTORS</td></tr><tr><td>General (reference) rate</td><td>28 percent</td><td></td></tr><tr><td rowspan=\"4\">Differential rates</td><td rowspan=\"2\">Zero rate</td><td>Essential food basket (cesta básica): Meat, fish, sugar, rice, salt, flour, plain bread, cheese, milk, children food, oil, mate</td></tr><tr><td>Eggs, fruits and vegetables, books/newspapers/magazines, certain medicines, products for basic women&#x27;s health care, vehicles for disabled persons, taxis, higher education (PROUNI, only for CBS), certain medical equipment</td></tr><tr><td>40 percent of reference rate</td><td>Additional food products, education, health, sport, culture; agricultural inputs, cleaning and health care products, regional air passenger transport (*)</td></tr><tr><td>70 percent of reference rate</td><td>Professional services (intellectual professions, scientific, literary, or artistic nature)</td></tr><tr><td>Exemptions</td><td></td><td>Public AdministrationLocal passenger transportation servicesEmployers&#x27; organizations, trade unions and other membership servicesHealth and education provided by non-profit organizations</td></tr><tr><td>Special regimes</td><td></td><td>Free trade zones (e.g. Manaus) and SIMPLES (estimated average rate of 3.16 percent)</td></tr><tr><td>Special and specific treatments</td><td></td><td>Financial sector: reduced rate for financial services, reference rate for other servicesReal estate activities: family housing projects are exempt, some transactions are taxed at 60 percent of reference rate with additional tax base reduction, rentals are taxed at 40 percent of reference rate with additional tax base reduction (*)Fuels: levied on production only, credits not allowed in the trade sectorTourism sector (hotels, travel agencies, parks): fixed rate on current tax burden, no credits for purchasers (*)Food services: fixed rate on current tax burden, no input credits and no credits for purchasers (*)Regional/interstate passenger transport: rate fixed on current tax burden, no crediting for purchasers (*)</td></tr><tr><td rowspan=\"2\">Cashback</td><td>100 percent CBS and 20 percent IBS</td><td>Acquisition of cooking gas (canisters weighing up to 13 kg), natural piped gas supplies, domestic electricity, telecommunications, water, and sewage bills</td></tr><tr><td>20 percent IBS and CBS</td><td>All other purchases</td></tr></table>",
+        "bbox": [
+            114,
+            174,
+            903,
+            724
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            114,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            656,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            114,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            861,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Annex IV. Supplementary Figures",
+        "text_level": 2,
+        "bbox": [
+            111,
+            128,
+            637,
+            157
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "chart",
+        "img_path": "images/37266cb61d025e29bcca16ace1856afb3ae8453fb266e068b66775138b798862.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 1. Tax Liability by Policy Instrument by Income Decile",
+            "(Percent of income)"
+        ],
+        "chart_footnote": [
+            "Source: PNAD, World Bank, staff calculations"
+        ],
+        "bbox": [
+            125,
+            231,
+            470,
+            426
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0fbdcf2fee1491556a51fa18758b473b6733aef2dbbc57be63017c55741dc1af.jpg",
+        "content": "",
+        "chart_caption": [
+            "(Percent of expenditure)",
+            "Figure 2. Services Shift"
+        ],
+        "chart_footnote": [
+            "Tax Liability by Income Decile (percent of expenditure)"
+        ],
+        "bbox": [
+            516,
+            232,
+            859,
+            426
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "chart",
+        "img_path": "images/de0e4dba76f3406aa5bb3848f18e6a1fbf44467df7c396df187bde7b3569ec43.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: PNAD, World Bank, staff calculations.",
+            "Note: Reform setting excludes cashback to allow for better comparison with pre-reform settings."
+        ],
+        "bbox": [
+            323,
+            553,
+            674,
+            753
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "page_number",
+        "text": "29",
+        "bbox": [
+            861,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            114,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            656,
+            61,
+            883,
+            75
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            114,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            114,
+            128,
+            295,
+            154
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Afonso, J.R., J. Morais Soares, and K. Pacheco Castro, 2013. Evaluation of the Structure and Performance of the Brazilian Tax System: White Paper on Taxation in Brazil, Discussion paper No. IDB-DP-265. IDB",
+        "bbox": [
+            112,
+            174,
+            875,
+            209
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Atrey, S., 2019. Intersectional Discrimination. Oxford: Oxford University Press.",
+        "bbox": [
+            112,
+            217,
+            656,
+            234
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Bachas, P., L. Gadenne and A. Jensen, 2020. Informality, Consumption Taxes and Redistribution, NBER working paper 27429, June.",
+        "bbox": [
+            112,
+            242,
+            841,
+            275
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Badel, A. and C. Kolerus, 2025. Brazil's VAT reform: Macroeconomic impact and inequality implications. Forthcoming.",
+        "bbox": [
+            114,
+            284,
+            833,
+            316
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Barreix, A., Tostes, J., and Rocha, M., 2025. Three Innovations of Brazil's Value Added Tax Reform. CIAT Blog, July 28, 2025.",
+        "bbox": [
+            112,
+            325,
+            848,
+            356
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Benedek, D., R A de Mooij, and P Wingender (2015); Estimating VAT Pass Through, IMF Working Paper WP/15/214, International Monetary Fund.",
+        "bbox": [
+            112,
+            369,
+            839,
+            402
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Benzarti, Y., Garriga, S. Amd Tortarolo D, 2014. Can VAT Cuts and Anti-Profiteering Measures Dampen the Effect of Food Price Inflation? NBER Working Paper 32241.",
+        "bbox": [
+            112,
+            416,
+            859,
+            450
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Bezerra de Siqueira, R; Bezerra Nogueira, José Ricardo; Feitosa Luna, Carlos, 2024; Impacto distributivo potencial de reformas na tributação indireta no brasil: simulações baseadas na PEC 45/2019.",
+        "bbox": [
+            114,
+            458,
+            844,
+            493
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Brusco, Giacomo, and Tejaswi Velayudhan, 2022. Does the Informal Sector Escape the VAT?. Paper presented at the Centre for Business Taxation Research Seminar Series.",
+        "bbox": [
+            114,
+            500,
+            816,
+            535
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Cavalcanti Ferreira, P., B.R. Delalibera, D. B. P. Gomes, and J. Soares (2024). Tax Reforms and Network Effects. Journal of Economic Dynamics and Control, Volume 163, June 2024, 104862",
+        "bbox": [
+            114,
+            542,
+            846,
+            577
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Caspersen, E., and G. Metcalf, 1994. Is a value added tax regressive? Annual versus lifetime incidence measures. National Tax Journal, 47(4), 731-746",
+        "bbox": [
+            112,
+            584,
+            830,
+            619
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Canadian Federation of Independent Business (CFIB), 1991. The GST, a national tax tragedy. The Federation.",
+        "bbox": [
+            112,
+            626,
+            879,
+            643
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Cebreiro Gomez, A.; Gaafar, Y.; and Swistak A., 2026; Political Economy of a VAT, Chapter XIII in The Future of the VAT, IMF.",
+        "bbox": [
+            112,
+            651,
+            875,
+            685
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Cebreiro Gomez, A.; C. Kolerus; G. Dal Pizzol; P. Moreira; M. Pecho, 2025; Brazil's VAT Reform: Ensuring Revenue Neutrality, IMF Working Papers 2025, 266",
+        "bbox": [
+            112,
+            693,
+            852,
+            727
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Colmar Brunton, 2005. Measuring the tax compliance costs of small and medium-sized businesses—A benchmark survey. Inland Revenue.",
+        "bbox": [
+            112,
+            734,
+            825,
+            768
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Coolidge, Jacqueline. 2010. “Tax Compliance Cost Surveys: Using Data to Design Targeted Reforms. Investment Climate in Practice.” No. 8. World Bank, Washington, DC.",
+        "bbox": [
+            114,
+            777,
+            818,
+            811
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Coolidge, J., 2012. Findings of tax compliance cost surveys in developing countries, e-Journal of Tax Research, 10(2), 250–287.",
+        "bbox": [
+            114,
+            819,
+            813,
+            853
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Gupta, R. and A. Sawyer, 2014. Tax compliance costs for small businesses in New Zealand: Some recent findings (Conference presentation). Australasian Tax Teachers' Association, Griffith University, Brisbane.",
+        "bbox": [
+            114,
+            862,
+            867,
+            896
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            885,
+            75
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            935,
+            357,
+            949
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "30",
+        "bbox": [
+            861,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "Coelho, M.D., 2021. Brazil: Tax Expenditure Rationalization within Broader Tax Reform. IMF Working Paper No. 2021/240. Washington: International Monetary Fund.",
+        "bbox": [
+            114,
+            126,
+            859,
+            159
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Corbacho, A., V. Fretes Cibils, and E. Lora, 2013. Value Added Tax: Let It Be. Pp. 159-175. In Corbacho, A., V. Fretes Cibils, and E. Lora, eds. More Than Revenue: Taxation as a Development Tool. Development in the Americas, Inter-American Development Bank. New York: Palgrave Macmillan",
+        "bbox": [
+            114,
+            167,
+            883,
+            218
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "de la Feria, R. and M. Walpole, 2020. The Impact of Public Perceptions on General Consumption Taxes. British Tax Review 67/5, 637-669.",
+        "bbox": [
+            114,
+            227,
+            883,
+            260
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "de la Feria, Rita, 2025. Tax Fairness: reconceptualizing Taxation and Inequalities, in R. de la Feria (Ed.) Taxation and Inequalities, Amsterdam: IBFD.",
+        "bbox": [
+            114,
+            268,
+            834,
+            301
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "de la Feria, R. and A. Swistak, 2024. Designing a Progressive VAT. IMF Working Paper No. 2024/078, International Monetary Fund.",
+        "bbox": [
+            114,
+            311,
+            883,
+            347
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "de Mooij, R.; Hebous, S., and Keen, M., 2025. Efficiency Aspects of the Value Added Tax; IMF Working Papers WP/25/165, International Monetary Fund.",
+        "bbox": [
+            114,
+            352,
+            883,
+            385
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Domingues, E. P. and D. Freire Cardoso, 2020. Simulações dos impactos macroeconômicos, setoriais e distributivos da PEC 45/2019. Mimeo CciF",
+        "bbox": [
+            114,
+            393,
+            836,
+            428
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Ebrill, L., M. Keen, J.-P. Bodin and V. Summers, 2001. The Modern VAT. Washington, DC: International Monetary Fund.",
+        "bbox": [
+            114,
+            436,
+            833,
+            470
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Evans, C., P. Lignier, and B. Tran-Nam, B., 2013. Tax compliance costs for the small and medium enterprise business sector: Recent evidence from Australia [Discussion Paper: 003-13]. Tax Administration Research Centre Seminar, University of Exeter Business School.",
+        "bbox": [
+            114,
+            478,
+            880,
+            529
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Fenochietto, Ricardo and Juan Carlos Benítez, 2021. “Encouraging Formal Invoicing and Reducing the VAT Impact on Low-Income individuals”, IMF Working Paper No. 2021/040.",
+        "bbox": [
+            114,
+            537,
+            859,
+            571
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Guilherme Giglio, G. and Natale, M., 2020. The long expected Brazilian tax reform – objectives, challenges and pitfalls. International Tax Review, March 30, 2020.",
+        "bbox": [
+            114,
+            580,
+            883,
+            614
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Gupta, R., & Sawyer, A., 2014. Tax compliance costs for small businesses in New Zealand: Some recent findings [Conference presentation]. Australasian Tax Teachers' Association, Griffith University, Brisbane.",
+        "bbox": [
+            114,
+            622,
+            866,
+            656
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Hill Collins, P. and Bilge, S., 2020. Intersectionality. Polity Press.",
+        "bbox": [
+            112,
+            664,
+            562,
+            681
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "IFC, 2010. Tax Compliance Cost Surveys, Investment Climate in Practice, International Finance Corporation.",
+        "bbox": [
+            112,
+            689,
+            867,
+            705
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "IMF, 2023. How to Design a Presumptive Income Tax for Micro and Small Enterprises; How to Note 2023/002.",
+        "bbox": [
+            112,
+            713,
+            874,
+            729
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "IFS, 2011, “Assessing Existing Rate Structures” in IFS et al., A retrospective evaluation of elements of the EU VAT system, Report prepared for the European Commission, TAXUD/2010/DE/328.",
+        "bbox": [
+            114,
+            738,
+            872,
+            772
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Insper, 2020. “Contencioso tributário no Brasil, Relatório 2019 - Ano de referência 2018”, July.",
+        "bbox": [
+            114,
+            780,
+            764,
+            797
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Keen, Michael, and Ruud A. de Mooij, 2012. Fiscal Devaluation and Fiscal Consolidation: The VAT in Troubled Times. IMF Working Papers 12/85, International Monetary Fund.",
+        "bbox": [
+            114,
+            805,
+            880,
+            839
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Kumar, A.S., and Dash, S.K., 2022. Impact of GST on inflation: Evidence from Bayesian causal analysis, GIFT Discussion Paper 2022/03, GIFT, Thiruvananthapuram, India.",
+        "bbox": [
+            114,
+            847,
+            875,
+            880
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            885,
+            75
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "page_number",
+        "text": "31",
+        "bbox": [
+            861,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            114,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "ref_text",
+        "text": "Lara Ibarra, Gabriel & Rubião, Rafael Macedo & Simoes Fleury, Eduardo, 2021. Indirect Tax Incidence in Brazil: Assessing the Distributional Effects of Potential Tax Reforms, Policy Research Working Paper Series 9891, The World Bank.",
+        "bbox": [
+            114,
+            126,
+            880,
+            176
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Mathew, S. and Kumary, A., 2025. GST Implementation in India: some Unresolved Issues; GIFT Discussion Paper Series 1/2025; Gulati Institute of Finance and Taxation Thiruvananthapuram, Kerala, India.",
+        "bbox": [
+            114,
+            184,
+            859,
+            219
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Mattos, E., Rocha, F., and Toporcov, P., 2013. Programas de Incentivos Fiscais São Eficazes? Evidência a Partir da Avaliação do Impacto do Programa Nota Fiscal Paulista Sobre a 44 Arrecadação de ICMS Revista Brasileira de Economia, Rio de Janeiro v. 67 n. 1 / p. 97–120 Jan-Mar.",
+        "bbox": [
+            114,
+            227,
+            852,
+            277
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Mirrlees J. (Ed.), 2011. Tax by design: The Mirrlees review. Oxford: Oxford University Press.",
+        "bbox": [
+            112,
+            286,
+            753,
+            303
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Orair, R.O. and S. W. Gobetti, 2019. Reforma Tributária e Federalismo Fiscal: uma análise das propostas de crialão de um novo imposto sobre of valor adicionado para o Brasil. IPEA discussion text 2530. December",
+        "bbox": [
+            114,
+            311,
+            877,
+            344
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Paiva, L. H., L. Bartholo, P. Ferreira de Souza and R. O. Orair, 2021. A reformulação das transferências de renda no Brasil: simulações e desafios, IPEA preliminary publication.",
+        "bbox": [
+            114,
+            353,
+            854,
+            387
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Palomo, T., Bhering, D., Scot, T., Bachas, P., Barcarolo, L., Campos, C., Feinmann, J., Moreira, L. And Zucman, G., 2025. Tax Progressivity and Inequality in Brazil: Evidence from Integrated Administrative Data. EU Tax Observatory, Report No. 9, August 2025.",
+        "bbox": [
+            114,
+            395,
+            844,
+            445
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Sandford, C., Godwin, M., Hardwick, P., & Butterworth, M., 1981. Costs and benefits of VAT. Heinemann Educational Books.",
+        "bbox": [
+            114,
+            454,
+            838,
+            488
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Sandford, C., Godwin, M., & Hardwick, P., 1989. Administrative and compliance costs of taxation. Fiscal Publications.",
+        "bbox": [
+            114,
+            497,
+            833,
+            529
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "SERT, 2024. Estimativas atualizadas após o envio da proposta de regulamentação da Reforma Tributária - 1/7/2024. Secretaria Extraordinária da Reforma Tributária do Ministério da Fazenda (SERT/MF)",
+        "bbox": [
+            114,
+            539,
+            857,
+            571
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Skatterverket, 2006. Compliance costs of value-added tax in Sweden (Report No. 3B). Swedish Tax Agency, Ministry of Finance.",
+        "bbox": [
+            114,
+            580,
+            864,
+            614
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Swistak, A., S. Wawrzak and A. Alinska, 2015. In Pursuit of Tax Equity: Lessons from VAT Rate Structure Adjustment in Poland. Financial Theory and Practice 39 (2), 115-137.",
+        "bbox": [
+            114,
+            623,
+            844,
+            657
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Swistak, A., de la Feria, R., and Warwick, R., 2026. VAT Equity; Chapter V in The Future of the VAT, IMF.",
+        "bbox": [
+            114,
+            664,
+            844,
+            681
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Thomas, A., 2024. VAT Rate Structures in Theory and Practice. World Bank Policy Research Working Papers, No. 10677.",
+        "bbox": [
+            114,
+            689,
+            875,
+            722
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Thomas, A., 2022. Reassessing the regressivity of the VAT. Fiscal Studies, 43(1), 23-38.",
+        "bbox": [
+            114,
+            731,
+            728,
+            750
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Vale, R., G. Lara Ibarra, E. Fleury, and K. Trzcinski, 2023. Distributional Impacts of Brazil's Tax Reform: scenarios regarding Cesta Básica exemption. World Bank Poverty and Equity Notes, October 2023",
+        "bbox": [
+            114,
+            757,
+            831,
+            790
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Varsano, R., 2001. “Tributação Cumulativa, Distorção a Erradicar”. Boletim de Conjuntura n. 53. Rio de Janeiro: IPEA. April, pp. 57-59.",
+        "bbox": [
+            112,
+            797,
+            828,
+            830
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "ref_text",
+        "text": "Wei, F. and Wen, J-F., 2019. “The Optimal Turnover Threshold and Tax Rate for SMEs.” IMF Working Paper WP/19/98. Washington: International Monetary Fund.",
+        "bbox": [
+            112,
+            840,
+            864,
+            873
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "IMF WORKING PAPERS",
+        "bbox": [
+            112,
+            61,
+            267,
+            75
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "Brazil's VAT Reform: Improving Equity",
+        "bbox": [
+            655,
+            61,
+            885,
+            75
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "page_number",
+        "text": "32",
+        "bbox": [
+            861,
+            936,
+            883,
+            949
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            112,
+            936,
+            357,
+            949
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b6f58ec1fb82e8c1d4319a477653930b84a7e755fc9351821c3f6047ff93cb05.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            0,
+            0,
+            1000,
+            965
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "footer",
+        "text": "INTERNATIONAL MONETARY FUND",
+        "bbox": [
+            81,
+            766,
+            163,
+            830
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "footer",
+        "text": "Brazil's VAT Reform: Improving Equity Working Paper No. WP/2026/132",
+        "bbox": [
+            78,
+            891,
+            325,
+            921
+        ],
+        "page_idx": 32
+    }
+]

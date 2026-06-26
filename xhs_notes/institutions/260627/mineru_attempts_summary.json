@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_002_q4ece39r/pdfs/0006-IMF_How-to-Prepare-a-Gender-Budget-Statement_08dbfb5c.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_q4ece39r/pdfs/0007-IMF_Optimal-Currency-Basket-Estimation_5b718160.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_q4ece39r/pdfs/0008-IMF_Production-Networks-and-the-Asymmetric-Transmission-of-Monet_757bb53e.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_q4ece39r/pdfs/0009-IMF_Stablecoins-and-Macroeconomic-Stability-A-DSGE-Investigation_b818d0cc.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_q4ece39r/pdfs/0010-IMF_The-Political-Economy-of-Foreign-Exchange-Interventions_5be43043.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

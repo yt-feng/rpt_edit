@@ -1,0 +1,5503 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                76,
+                198,
+                787,
+                300
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prepared by Etienne Vaccaro-Grange"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                342,
+                468,
+                366
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "WP/26/131"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                405,
+                199,
+                429
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF Working Papers describe research in progress by the author(s) and are published to elicit comments and to encourage debate. The views expressed in IMF Working Papers are those of the author(s) and do not necessarily represent the views of the IMF, its Executive Board, or IMF management."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                588,
+                460,
+                710
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2026\nAPR"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                816,
+                233,
+                914
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/bc31b4f028ecf143731495989e480d51cab9659f69b05b4ea48b21b98d9da55e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                651,
+                804,
+                799,
+                922
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                37,
+                831,
+                75
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "WORKING PAPER"
+                    }
+                ]
+            },
+            "bbox": [
+                921,
+                241,
+                985,
+                758
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF Working Paper Monetary and Capital Markets"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                390,
+                155,
+                604,
+                189
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation\nPrepared by Etienne Vaccaro-Grange"
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                205,
+                638,
+                239
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Authorized for distribution by Romain Veyrune\nApril 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                336,
+                253,
+                660,
+                287
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF Working Papers describe research in progress by the author(s) and are published to elicit comments and to encourage debate. The views expressed in IMF Working Papers are those of the author(s) and do not necessarily represent the views of the IMF, its Executive Board, or IMF management."
+                    }
+                ]
+            },
+            "bbox": [
+                125,
+                313,
+                861,
+                364
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ABSTRACT: Small open economies often anchor their exchange rate to a basket of foreign currencies, with weights typically set from trade shares or financial exposure. Such schemes ignore the heterogeneity of pass-through across currencies and the covariance structure of bilateral rates, and therefore do not minimize the volatility of imported inflation, the central bank's mandate. This paper proposes a minimum-variance framework — formally analogous to a Markowitz portfolio problem in pass-through space — in which basket weights minimize the variance of exchange-rate-driven imported inflation, subject to a constraint that preserves the basket's cumulative pass-through. Applied to the case of Fiji, an import-intensive island economy with a five-currency basket, the optimization reduces the variance of imported inflation by close to twenty percent, with results robust across alternative specifications."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                386,
+                879,
+                537
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "RECOMMENDED CITATION: E. Vaccaro-Grange, “Optimal Currency Basket Estimation”, IMF Working Paper No. 26/131, International Monetary Fund, Washington DC."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                551,
+                864,
+                585
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/72ea5fc6a0893a8878ceca66e3162bdca41d705c3f6364e3fc35a5471dee4f5e.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>JEL Classification Numbers:</td><td>E31, E52, F31, F41</td></tr><tr><td>Keywords:</td><td>currency basket; exchange rate pass-through; minimum-variance portfolio; small open economies; monetary policy.</td></tr><tr><td>Authors&#x27; email addresses:</td><td>evaccaro-grange@IMF.org</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                117,
+                599,
+                880,
+                714
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 International Monetary Fund"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                89,
+                364,
+                104
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "WP/26/131"
+                    }
+                ]
+            },
+            "bbox": [
+                795,
+                89,
+                875,
+                104
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                112,
+                301,
+                666,
+                381
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prepared by Etienne Vaccaro-Grange  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                467,
+                511,
+                489
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                194,
+                393,
+                220
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  The author would like to thank Romain Veyrune and Yury Achkasov for useful comments."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                911,
+                645,
+                926
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Contents"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                128,
+                261,
+                155
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Acronyms....3   \nIntroduction....4   \nModel....5   \nApplication to a Small Open Economy....10   \nConclusion....16   \nAnnex I. Derivation....17   \nReferences....19"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                172,
+                885,
+                391
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "FIGURES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                425,
+                189,
+                441
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Historical Exchange Rates (Normalized January 1999=100)....11\n2. Inflation....11\n3. Inflation Pass-throughs....12\n4. Currency Return Correlations....13"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                441,
+                883,
+                516
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "TABLES\n1. Currency Basket Weights (percent)....14\n2. Robustness—Models Specification....14\n3. Currency Basket Weights (percent)....15"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                551,
+                883,
+                625
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                61,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                946
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Acronyms"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                128,
+                277,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AUD Australian Dollar"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                174,
+                294,
+                190
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CPI    Consumer Price Index"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                193,
+                333,
+                209
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EUR Euro"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                210,
+                212,
+                226
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "FC Foreign Currency"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                229,
+                300,
+                244
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "FX Foreign Exchange"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                247,
+                305,
+                263
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GBP British Pound"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                263,
+                272,
+                280
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JPY Japanese Yen"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                282,
+                279,
+                297
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "LC Local Currency"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                301,
+                284,
+                316
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MOM Month-On-Month"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                318,
+                297,
+                334
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NZD New Zealand Dollar"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                335,
+                316,
+                351
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "PPP Purchasing Power Parity"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                354,
+                349,
+                369
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "USD US Dollar"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                372,
+                246,
+                387
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                946
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "INTRODUCTION"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                128,
+                369,
+                154
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A currency basket peg is an exchange rate regime in which the domestic currency is anchored to a weighted average of several foreign currencies rather than to a single anchor. By spreading exchange rate risk across multiple partners, a basket peg offers intermediate flexibility between a hard peg and a managed float and provides a degree of insulation from volatility in any single cross-rate (Williamson, 1998). Such arrangements are often adopted by small open economies for which a freely floating regime is impractical—typically because of thin foreign exchange markets, underdeveloped financial systems, or the desire to import credibility from a more stable monetary jurisdiction (Imam, 2010; Yoshino, Helble, and Prasetyo, 2017). Pacific island economies such as Fiji, Samoa, Tonga, and the Solomon Islands, as well as other small open economies including Kuwait and Morocco, currently operate basket regimes of this kind."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                196,
+                883,
+                353
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The central design question for any basket peg is how to determine the weights assigned to its constituent currencies. The most widely used approach relies on trade shares, with weights reflecting the geographical distribution of exports and imports, sometimes supplemented by flows of services, remittances, or external debt service (Edison and Vårdal, 1990; Yoshino, Helble, and Prasetyo, 2017). While transparent and intuitive, trade-based weights describe only the structure of external transactions and do not, in general, coincide with the weights that best support a central bank's price-stability mandate. In particular, they exploit neither the heterogeneity of exchange rate pass-through across currencies nor the covariance structure of bilateral exchange rate movements—two features that are central to the behavior of imported inflation."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                364,
+                883,
+                503
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A substantial literature has sought to derive optimal basket weights under explicit macroeconomic objectives. Flanders and Helpman (1979) provided an early framework linking basket weights to balance-of-payments and real income stability, extended by Branson and Katseli (1981), Turnovsky (1982), and Bhandari (1985). Edison and Vårdal (1990) derived optimal weights that minimize the variance of tradable-goods production and applied them to the Nordic countries. Yoshino, Kaji, and Suzuki (2004) developed a three-country basket model, later extended by Yoshino, Helble, and Prasetyo (2017) to a four-country setting with tourism flows that minimized the volatility of the exchange rate and of output. They apply the model to Pacific Island economies. Ma and Cheng (2014) proposed a two-stage model in which the basket is chosen to minimize a weighted average of output and inflation volatility, taking into account ex-post fiscal adjustment, and applied it to Hong Kong SAR"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                516,
+                882,
+                670
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": ". A parallel strand of work by Slavov (2005), Teo (2009), Shioji (2006), Xu (2011), and Zhang, Shi, and Zhang (2011) embed basket choice in general-equilibrium settings that incorporate trade invoicing, net international investment position, and foreign-currency debt. A separate but closely related literature has documented that exchange rate pass-through into import prices is partial, heterogeneous across currencies and industries, and shaped by pricing-to-market, nominal rigidities, and strategic complementarities (Krugman, 1987; Knetter, 1989; Betts and Devereux, 2000; Campa and Goldberg, 2005; Gopinath and Itskhoki, 2010; Gopinath, Itskhoki, and Rigobon, 2010)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                671,
+                880,
+                792
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper contributes to the literature by bringing these two strands together. We propose a basket-weight optimization framework whose objective is to minimize the variance of the exchange-rate-driven component of imported inflation—he basket's inflation pass-through—rather than balance-of-payments or aggregate output volatility. In contrast to trade-weighted schemes, the procedure exploits both the currency-specific pass-through coefficients estimated from a standard import price equation and the covariance structure of bilateral exchange rate returns. The resulting problem is formally analogous to a Markowitz minimum-variance portfolio, with currencies as “assets”, pass-through-adjusted exchange rate changes as “returns”, and basket weights as"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                804,
+                885,
+                925
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "portfolio shares. A structural constraint preserves the cumulative pass-through implied by the current basket, so that the optimized weights reduce the volatility of imported inflation without altering the average sensitivity of domestic prices to basket movements. To the best of our knowledge, this is the first paper to cast optimal basket design explicitly as a minimum-variance pass-through problem subject to an invariant structural pass-through."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                126,
+                883,
+                210
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We illustrate the framework with an application to a small, import-intensive island economy that has operated a five-currency basket since the 1980s: Fiji. We show that the newly optimized weights would reduce variance of inflation by about 20 percent relative to the current weights, while preserving the basket's structural pass-through. A series of robustness exercises confirms the stability of the main results across alternative specifications of the pass-through equation."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                224,
+                879,
+                311
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Two additional determinants of optimal basket design deserve mention but lie outside the scope of this paper. First, the degree of business cycle synchronization between the home economy and each currency area provides a complementary argument for anchoring: a higher degree of co-movement strengthens the case for assigning greater weight to the corresponding currency. Second, financial dollarization — through foreign-currency-denominated deposits or external debt obligations — introduces balance-sheet stability constraints that neither trade- nor price-based schemes capture. We abstract from both dimensions and focus strictly on minimizing the variance of exchange-rate-driven imported inflation, in line with the central bank's price-stability mandate. Integrating cycle synchronization and balance-sheet considerations into the optimization problem is left for future work."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                324,
+                874,
+                478
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The rest of the paper is structured as follows: Section 1 presents the model, Section 2 its application to a small open economy, and Section 3 concludes."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                491,
+                877,
+                526
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "MODEL"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                568,
+                235,
+                592
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "From the law of one price, an imported good's domestic currency price is:"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                622,
+                622,
+                638
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "P _ {t} ^ {m} = E _ {t} P _ {t} ^ {x}\\tag{1}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/664a8b7b2ff4d2b2a08a3373088902935148df3a00ddec5ab0fd35c5c33408eb.jpg"
+                }
+            },
+            "bbox": [
+                447,
+                657,
+                526,
+                672
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "E_{t}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the nominal exchange rate (units of domestic currency per unit of foreign currency; up equals depreciation),   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{t}^{m}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the domestic currency-denominated import price, and   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P_{t}^{x}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the foreign currency-denominated export price. In log-differences, we obtain:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                694,
+                838,
+                746
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\Delta p _ {t} ^ {m} = \\Delta e _ {t} + \\Delta p _ {t} ^ {\\mathrm{x}}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/9e3a5bf0b4a35c6f569554ae29c639072d4d8749cfb3ff14d9fed15dfdfd0ee3.jpg"
+                }
+            },
+            "bbox": [
+                424,
+                766,
+                547,
+                782
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(2)"
+                    }
+                ]
+            },
+            "bbox": [
+                859,
+                766,
+                882,
+                782
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Or with usual notations  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\pi_t^m = \\Delta p_t^m"
+                    },
+                    {
+                        "type": "text",
+                        "content": ",  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\pi_t^x = \\Delta p_t^x"
+                    },
+                    {
+                        "type": "text",
+                        "content": ":"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                801,
+                424,
+                818
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\pi_ {t} ^ {m} = \\Delta e _ {t} + \\pi_ {t} ^ {\\mathrm{x}}\\tag{3}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/009148ae641107c82f6dcc7b985507bb5243a44714bfbf467109d20d41fe87e4.jpg"
+                }
+            },
+            "bbox": [
+                434,
+                838,
+                539,
+                853
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                946
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  In practice, one can also multiply by 100 on both sides of the equation to express inflation and exchange rate variation in percent."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                911,
+                874,
+                926
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This equation holds for a single trading partner j:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                126,
+                454,
+                142
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\pi_ {j, t} ^ {m} = \\Delta e _ {j, t} + \\pi_ {j, t} ^ {\\mathrm{x}}\\tag{4}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/cf541fb36bff8cc85db9b5ef30efaa4a4918cb6e98f8e55abad286ae6939cb6e.jpg"
+                }
+            },
+            "bbox": [
+                428,
+                162,
+                544,
+                179
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Aggregate imported inflation is the trade-weighted sum across all n partners:"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                200,
+                643,
+                215
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\pi_ {t} ^ {m} = \\sum_ {j = 1} ^ {n} w _ {j} \\pi_ {j, t} ^ {m}\\tag{5}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/1f1f5a7c9fee4c9b2003afed514950cea7377aa906c1638b547db3ad22168849.jpg"
+                }
+            },
+            "bbox": [
+                441,
+                217,
+                555,
+                260
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\pi_ {t} ^ {m} = \\sum_ {j = 1} ^ {n} w _ {j} \\Delta e _ {j, t} + \\sum_ {j = 1} ^ {n} w _ {j} \\pi_ {j, t} ^ {\\mathrm{x}}\\tag{6}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/2419f1c15b95d5908553e132238c27d03a52eca87fa5c8b70aaa7bc23ff239e5.jpg"
+                }
+            },
+            "bbox": [
+                393,
+                314,
+                599,
+                359
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "w_{j}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the import share of partner j and   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sum_{j=1}^{n} w_{j}=1"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                415,
+                500,
+                434
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In theory, the law of one price implies that exchange rate movements are fully and instantaneously reflected in domestic currency-denominated import prices. In practice, however, a well-documented set of microeconomic frictions attenuates this transmission. We say that the pass-through is incomplete."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                455,
+                874,
+                508
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Under local currency pricing (Betts and Devereux, 2000), exporters set prices in the destination currency, rendering import prices mechanically insensitive to exchange rate fluctuations between repricing episodes. Even upon repricing, firms operating in imperfectly competitive markets may optimally absorb part of the exchange rate change into their markups rather than pass it through to final prices, a behavior formalized in the pricing-to-market literature (Krugman, 1987; Knetter, 1989). This markup adjustment is reinforced by strategic complementarity in price setting: when importers' demand depends on their price relative to domestic competitors, optimal pricing tilts toward the domestic price level, dampening the response to exchange rate shocks (Gopinath and Itskhoki, 2010). Nominal rigidities in the form of menu costs or staggered price adjustment à la Calvo (1983) introduce additional delays in the transmission process. Collectively, these frictions imply that only a fraction of any given exchange rate movement is ultimately transmitted to import prices, a result consistently supported by the empirical evidence (Campa and Goldberg, 2005; Gopinath, Itskhoki, and Rigobon, 2010). This motivates an empirical specification in which the incomplete pass-through is freely estimated rather than imposed at unity."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                527,
+                882,
+                753
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In that framework, Equation (6) becomes:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                768,
+                403,
+                785
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\pi_ {t} ^ {m} = \\sum_ {j = 1} ^ {n} \\beta_ {j} \\Delta e _ {j, t} + \\sum_ {j = 1} ^ {n} \\delta_ {j} \\pi_ {j, t} ^ {\\mathrm{x}} + \\varepsilon_ {t}\\tag{7}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/1b43173eead46076fae489284ab14bd71fa6ad361d70bd4ca2f811992e5b4b27.jpg"
+                }
+            },
+            "bbox": [
+                382,
+                786,
+                614,
+                830
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where the   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\beta_{j}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  are no longer constrained to equal   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "w_{j}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " — they capture they capture the effective pass-through of each bilateral exchange rate into aggregate import prices, reflecting both trade shares and the degree of passthrough specific to each partner. Similarly,   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\delta_{j}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  may differ from   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "w_{j}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  since the same pricing frictions that attenuate exchange rate pass-through — markup absorption, nominal rigidities, and strategic complementarity — also apply to the transmission of foreign cost changes (though to a lesser extent as firms have stronger incentives to pass through increases in their own production costs). Both coefficients are expected to be lower than the trade weight   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "w_{j}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , so that   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sum_{j=1}^{n}\\beta_{j}<1"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  and   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sum_{j=1}^{n}\\delta_{j}<1"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                885,
+                877,
+                921
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                948
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                61,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                126,
+                885,
+                219
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The empirical specification includes several standard features motivated by theory. Lags of the bilateral exchange rate returns and exported price inflation capture the gradual adjustment of import prices under nominal rigidities. Indeed, as firms reprice at discrete intervals, the full pass-through of an exchange rate shock materializes over several periods rather than instantaneously, so that the sum of contemporaneous and lagged coefficients measures the cumulative long-run pass-through while individual coefficients trace the dynamic adjustment profile (Campa and Goldberg, 2005). Lags of imported inflation are included for the same reason — under staggered price-setting à la Calvo (1983), only a fraction of importers reprice each period, generating intrinsic persistence in the aggregate import price level that the autoregressive terms capture. The constant absorbs any secular trend in imported inflation unrelated to exchange rate movements, such as a persistent differential between domestic and foreign trend inflation or a systematic evolution in importers' markups over time."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                238,
+                882,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equation (7) becomes:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                445,
+                274,
+                460
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\pi_ {t} ^ {m} = \\mu + \\sum_ {k = 1} ^ {p} \\rho_ {k} \\pi_ {t - k} ^ {m} + \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {q} \\beta_ {j, k} \\Delta e _ {j, t - k} + \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {l} \\delta_ {j, k} \\pi_ {j, t - k} ^ {\\mathrm{x}} + \\varepsilon_ {t}\\tag{8}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/eb2de32fbf0ada90fabcb2e18b02bdcbdbf8caa5948245447b1741aaac5d5527.jpg"
+                }
+            },
+            "bbox": [
+                277,
+                462,
+                718,
+                507
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mu"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is a constant,   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\rho_{k}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  captures the persistence in imported inflation arising from staggered price-setting,   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\beta_{j,k}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the pass-through of currency j at lag k, and   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\delta_{j,k}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  captures the lagged transmission of partner j's export price inflation. Further, we assume that foreign exported inflation is approximately equal to foreign inflation for the tractability of the model:   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\pi_{j,t}^{x} \\approx \\pi_{j,t}^{*}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " .³"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                564,
+                880,
+                637
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equation (8) can be further simplified under relative PPP condition, since:   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\Delta e_{j,t} = \\pi_{t} - \\pi_{j,t}^{*} \\approx \\pi_{t}^{m} - \\pi_{j,t}^{x}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " . That is, the difference between domestic inflation and foreign inflation is roughly the difference between imported inflation and foreign exported inflation."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                657,
+                867,
+                712
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Therefore,"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                731,
+                189,
+                746
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\pi_ {t} ^ {m} = \\mu + \\sum_ {k = 1} ^ {p} \\rho_ {k} \\pi_ {t - k} ^ {m} + \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {q} \\beta_ {j, k} \\Delta e _ {j, t - k} + \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {l} \\delta_ {j, k} (\\pi_ {t - k} ^ {m} - \\Delta e _ {j, t - k}) + \\varepsilon_ {t}\\tag{9}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/216c13f8a9ebd66897d8aafda22c72279af9cb1c0219bdbf2e582e8e55892476.jpg"
+                }
+            },
+            "bbox": [
+                243,
+                765,
+                753,
+                811
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\pi_ {t} ^ {m} = \\mu + \\left(\\sum_ {k = 1} ^ {p} \\rho_ {k} + \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {l} \\delta_ {j, k}\\right) \\pi_ {t - k} ^ {m} + \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {q} \\beta_ {j, k} \\Delta e _ {j, t - k} - \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {l} \\delta_ {j, k} \\Delta e _ {j, t - k} + \\varepsilon_ {t}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/acfa5091266ee7e80aa0dd4c4b0c6c9cc42fb9965cf7c64a3c31eb3a04ff5b2b.jpg"
+                }
+            },
+            "bbox": [
+                218,
+                830,
+                777,
+                878
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                946
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{3}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Relaxing this assumption can be an object for future research."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                911,
+                485,
+                926
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(10)"
+                    }
+                ]
+            },
+            "bbox": [
+                851,
+                126,
+                882,
+                142
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\pi_ {t} ^ {m} = \\mu + \\left(\\sum_ {k = 1} ^ {p} \\rho_ {k} + \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {l} \\delta_ {j, k}\\right) \\pi_ {t - k} ^ {m} + \\sum_ {j = 1} ^ {n} \\left(\\sum_ {k = 1} ^ {q} \\beta_ {j, k} - \\sum_ {k = 1} ^ {l} \\delta_ {j, k}\\right) \\Delta e _ {j, t - k} + \\varepsilon_ {t}\\tag{11}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/b85e2e74f2ea65b140dc9087b67b23edf37cfae92efb09d84f8d8f08f6a44f28.jpg"
+                }
+            },
+            "bbox": [
+                245,
+                143,
+                751,
+                190
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\pi_ {t} ^ {m} = \\mu + \\sum_ {k = 1} ^ {\\tilde {p}} \\tilde {\\rho} _ {k} \\pi_ {t - k} ^ {m} + \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {\\tilde {q}} \\tilde {\\beta} _ {j, k} \\Delta e _ {j, t - k} + \\varepsilon_ {t}\\tag{12}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/fd2927645b8f0f83aa131383952166cc348b9b001bff065447a2e7f0b2977865.jpg"
+                }
+            },
+            "bbox": [
+                339,
+                210,
+                655,
+                258
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "with  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sum_{k=1}^{\\tilde{p}}\\tilde{\\rho}_k = \\sum_{k=1}^p\\rho_k + \\sum_{j=1}^n\\sum_{k=1}^l\\delta_{j,k}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sum_{k=1}^{\\tilde{q}}\\tilde{\\beta}_{j,k} = \\sum_{k=1}^q\\beta_{j,k} - \\sum_{k=1}^l\\delta_{j,k}"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". For simplicity, we will drop the  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sim"
+                    },
+                    {
+                        "type": "text",
+                        "content": " and retain the following pass-through equation:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                279,
+                854,
+                316
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\boxed {\\pi_ {t} ^ {m} = \\mu + \\sum_ {k = 1} ^ {p} \\rho_ {k} \\pi_ {t - k} ^ {m} + \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {q} \\beta_ {j, k} \\Delta e _ {j, t - k} + \\varepsilon_ {t}}\\tag{13}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/3e9d71e54556abc5c4301fe20d65a2372bf2f95df1ea6baa58a0fcb22e3e7ceb.jpg"
+                }
+            },
+            "bbox": [
+                339,
+                337,
+                656,
+                383
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Another less strict specification consists in assuming that foreign exported inflation is approximately equal to foreign inflation:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\pi_{j,t}^{\\mathrm{x}}\\approx \\pi_{j,t}^{*}"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". Equation (7) then becomes:"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                441,
+                859,
+                476
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\boxed {\\pi_ {t} ^ {m} = \\mu + \\sum_ {k = 1} ^ {p} \\rho_ {k}   \\pi_ {t - k} ^ {m} + \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {q} \\beta_ {j, k}   \\Delta e _ {j, t - k} + \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {l} \\delta_ {j, k}   \\pi_ {j, t - k} ^ {*} + \\varepsilon_ {t}}\\tag{14}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/e39911f7355f0d0aec9c0f2fd28cdae3378b92e6fb8573b39f48c634b447cbea.jpg"
+                }
+            },
+            "bbox": [
+                277,
+                498,
+                720,
+                544
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "An alternative modeling approach consists in defining the cumulative pass-through given by   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\bar{\\beta}_{j} = \\sum_{k=0}^{q} \\beta_{j,k}"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                603,
+                848,
+                622
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Assuming that   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\beta_{j,k}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is constant over time for country j, so that   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\beta_{j,1} = \\beta_{j,2} = \\ldots = \\beta_{j,q}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , we can then re-write Equation (13) as:"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                642,
+                821,
+                678
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\boxed {\\pi_ {t} ^ {m} = \\mu + \\sum_ {k = 1} ^ {p} \\rho_ {k} \\pi_ {t - k} ^ {m} + \\sum_ {j = 1} ^ {n} \\bar {\\beta} _ {j} \\sum_ {k = 1} ^ {q} \\Delta e _ {j, t - k} + \\varepsilon_ {t}}\\tag{15}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/ef0ea56f4d4b37316dd80a88dea1e840ee65a9872e074a1a110815dc0e1e813a.jpg"
+                }
+            },
+            "bbox": [
+                344,
+                699,
+                651,
+                744
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equation (13), (14), and (15) are three different versions of the pass-through regression equations. Let's now define,  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "z_{j,t}"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", the total pass-through contribution of currency  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "j"
+                    },
+                    {
+                        "type": "text",
+                        "content": ":"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                767,
+                794,
+                801
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "z _ {j, t} = \\sum_ {k = 1} ^ {q} \\beta_ {j, k} \\Delta e _ {j, t - k}\\tag{16}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/48ac87de4f325d67dc3844bb8e756de15b8815c7b4ad9b957273d8fa2a1725e8.jpg"
+                }
+            },
+            "bbox": [
+                431,
+                804,
+                565,
+                849
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Further, let's define the basket rate as the weighted geometric average of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "n"
+                    },
+                    {
+                        "type": "text",
+                        "content": " currencies:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                868,
+                715,
+                883
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                948
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "e _ {t} ^ {B} = \\prod_ {j = 1} ^ {n} e _ {j, t} ^ {\\theta_ {j}}\\tag{17}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/5f37347e21b0259fb9eb42507b6710d32f1e5c55567173ebbf9a39dd08689cdf.jpg"
+                }
+            },
+            "bbox": [
+                452,
+                125,
+                542,
+                167
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Where   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "e_{t}^{B}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the basket rate per unit of domestic currency,   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "e_{j,t}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the exchange rate of foreign currency j per unit of domestic currency, and   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta_{j}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  its weight in the basket. Besides, we have:   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta_{j} \\in [0, 1]"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  and   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sum_{j=1}^{n} \\theta_{j} = 1"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                189,
+                877,
+                224
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In that framework, the total inflation pass-through from the currency basket,   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "z_{t}^{B}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , is the weighted average of the total pass-through contributions of all currencies:"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                228,
+                870,
+                262
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "z _ {t} ^ {B} = \\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\tag{18}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/e707bebd314ff749388da66b0bb6f151146e9efda3082f57dc1b58e7846386a1.jpg"
+                }
+            },
+            "bbox": [
+                447,
+                281,
+                547,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Note that if the basket rate is calculated using the weighted arithmetic average:"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                345,
+                661,
+                361
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "e _ {t} ^ {B} = \\sum_ {j = 1} ^ {n} \\theta_ {j} e _ {j, t}\\tag{19}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/fd0add08767361225ac94211747a13f2f990d860893f1990ab8ec34f7b7478a9.jpg"
+                }
+            },
+            "bbox": [
+                447,
+                363,
+                547,
+                406
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Then,"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                426,
+                160,
+                441
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "z _ {t} ^ {B} \\approx \\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\tag{20}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/4906c40574c1a3edf5897d16ff5f54991afad4fa2a1f326e8b865f495cba3af2.jpg"
+                }
+            },
+            "bbox": [
+                447,
+                443,
+                547,
+                486
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equation (20) is only an approximation because of Jensen's inequality:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                506,
+                604,
+                522
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\Delta e _ {t} ^ {B} = e _ {t} ^ {B} - e _ {t - 1} ^ {B} = \\log \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} e _ {j, t}\\right) - \\log \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} e _ {j, t - 1}\\right) \\neq \\log \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} e _ {j, t} - \\sum_ {j = 1} ^ {n} \\theta_ {j} e _ {j, t - 1}\\right)\\tag{21}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/e98a6c38d53a303904757aab355b3814c544334cc2046c7cfa790c417ede5442.jpg"
+                }
+            },
+            "bbox": [
+                207,
+                523,
+                787,
+                571
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Now, we are looking for the weights   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta_{j}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  that minimize the variance of the inflation pass-through   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "z_{t}^{B}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " . That is, (see proof in Annex 1):"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                594,
+                879,
+                628
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "a r g m i n _ {\\theta} \\left[ V a r (z _ {t} ^ {B}) \\right] = a r g m i n _ {\\theta} \\left[ V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\right) \\right]\\tag{22}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/8a16ff7edd691f945ac5d64818d5646559f8379c9f8f163c0f3b7b39c02ca19f.jpg"
+                }
+            },
+            "bbox": [
+                326,
+                630,
+                669,
+                679
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "It can be expressed in matrix form as:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                699,
+                377,
+                714
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "a r g m i n _ {\\theta} [ V a r (z _ {t} ^ {B}) ] = a r g m i n _ {\\theta} [ \\theta^ {\\prime} B V a r (\\Delta E _ {t}) B \\theta ]\\tag{23}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/26baa6f8ba5512bcc497710207b7fa5a3006a731a1def1e6b2ca7bd85ba3044f.jpg"
+                }
+            },
+            "bbox": [
+                328,
+                717,
+                666,
+                734
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Where   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\Delta E_{t}=\\left\\{\\Delta e_{j,t}\\right\\}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  for   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "j\\in[1,n]"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the vector of log currency returns, B is diagonal matrix of cumulative currency-specific pass-throughs   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\bar{\\beta}_{j}=\\sum_{k=0}^{q}\\beta_{j,k}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  (one line per currency), and   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta=\\left\\{\\theta_{j}\\right\\}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  for   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "j\\in[1,n]"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the vector of basket weights."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                753,
+                883,
+                813
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Note that if all currencies have the same pass-through, so that   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "B = c * I_{n}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , then:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                833,
+                660,
+                848
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "a r g m i n _ {\\theta} [ \\theta^ {\\prime} B V a r (\\Delta E _ {t}) B \\theta ] = a r g m i n _ {\\theta} [ \\theta^ {\\prime} V a r (\\Delta E _ {t}) \\theta ]\\tag{24}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/86d4ec3c76d00c02b5a4c5afc690157b08a453cebd050e1cb38f33664441d74c.jpg"
+                }
+            },
+            "bbox": [
+                316,
+                869,
+                681,
+                885
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                946
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "That is, minimizing the variance of the pass-through weighted log change in exchange rates is equivalent to simply minimizing the variance of the log change in exchange rates. However, each   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "e_{j,t}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is expressed as the price of currency j in unit of domestic currency. So, all series share the domestic currency as a common numeraire. This creates a spurious covariance problem. Indeed, any movement in the domestic currency simultaneously shifts all bilateral rates in the same direction and by a common magnitude. This mechanical co-movement renders the pairwise covariance between exchange rates uninformative about the true cross-rate relationships between basket currencies. One therefore needs to rebase all currency pairs in units of a base currency, not present in the basket."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                126,
+                880,
+                270
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This adjustment introduces correction terms. It can be shown (see Annex I), that:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                289,
+                673,
+                305
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "a r g m i n _ {\\theta} \\left[ V a r (z _ {t} ^ {B}) \\right] = a r g m i n _ {\\theta} [ \\theta^ {\\prime} \\Sigma_ {\\overline {{Z}}} \\theta ]\\tag{25}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/dcb7b7188d00e06e54817c56ba46a739f17b2e27db5fd395d11d887317331587.jpg"
+                }
+            },
+            "bbox": [
+                364,
+                324,
+                630,
+                340
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\Sigma_{\\overline{Z}}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is a corrected covariance matrix of   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "z_{t}^{B}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                362,
+                444,
+                378
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In addition, as the total basket pass-through of the economy can be considered as a structural parameter (i.e., that is constant on the short-term), we look for optimal weights   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta^{opt}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  that preserve the pass-through. That is, we have the constraint:"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                398,
+                879,
+                450
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\theta^ {o p t} \\bar {\\beta} = \\theta^ {c u r r} \\bar {\\beta}\\tag{26}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/839ece918214f6be067004449e89d21b26097207fa3fcabb79208eb2bbbde5a1.jpg"
+                }
+            },
+            "bbox": [
+                442,
+                452,
+                553,
+                469
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta^{opt}=\\left\\{\\theta_{j}^{opt}\\right\\}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the vector of newly optimized basket weights,   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta^{curr}=\\left\\{\\theta_{j}^{curr}\\right\\}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the vector of current basket weights,  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{4}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  and   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\bar{\\beta}=\\left\\{\\beta_{j}^{cum}\\right\\}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the vector of cumulative pass-through for all currencies j:   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\bar{\\beta}_{j}=\\sum_{k=1}^{p}\\beta_{j,k}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  for   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "j\\in[1,n]"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                489,
+                870,
+                549
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The optimization exercise is therefore:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                551,
+                380,
+                566
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "a r g m i n _ {\\theta} [ \\theta^ {\\prime} \\Sigma_ {\\overline {{Z}}} \\theta ] \\text {   such   that   } \\left\\{ \\begin{array}{c} \\theta_ {j} ^ {o p t} \\in [ 0, 1 ] \\text {   with   } \\sum_ {j = 1} ^ {n} \\theta_ {j} ^ {o p t} = 1 \\\\ \\theta^ {o p t} \\bar {\\beta} = \\theta^ {c u r r} \\bar {\\beta} \\end{array} \\right.\\tag{27}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/0abb3645360613634102edf218422da8fd152165525f5ad5367adea7767e9c0e.jpg"
+                }
+            },
+            "bbox": [
+                307,
+                585,
+                718,
+                623
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This framework is formally analogous to a Markowitz portfolio problem: currencies are “assets”, pass-through-adjusted exchange rate changes are “returns”   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta^{curr}\\bar{\\beta}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , and the central bank’s objective is to choose weights that minimize variance   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\theta'\\Sigma_{\\overline{Z}}\\theta"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  rather than maximize expected return. In this sense, a price-stability-oriented basket corresponds to the minimum-variance portfolio in pass-through space."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                643,
+                877,
+                715
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "APPLICATION TO A SMALL OPEN ECONOMY"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                111,
+                739,
+                830,
+                763
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We apply the model to an import intensive small island open economy. The currency of this country is in a basket peg with five currencies: the USD, NZD, AUD, EUR, and JPY (Figure 1). The country has been managing a basket peg since the 80s. The basket has served the country development well, contributing to hedge the country's foreign currency exposure to exchanges rate fluctuations and improving external"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                792,
+                854,
+                861
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{4}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  This assumes that the current basket weights best reflect the current import-share weights per invoicing currency. If that is not the case, the constraint should set to the import-share weights."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                898,
+                877,
+                926
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "competitiveness stability. However, this has not been always translated into price stability. Year-on-year headline inflation is volatile and has swung a lot post-COVID-19, from 6.9 percent in April 2024 to -3.8 percent in September 2025. Similarly, headline and imported inflation Month-on-Month have shown a high volatility, swinging between plus and minus two over the past few years (Figure 2)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                126,
+                875,
+                195
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/006d025c8c06e318881a9f9d965ba4b124f7dc7a35f886a7075e645ece94cb06.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1. Historical Exchange Rates (Normalized January 1999=100)\nFJD/FC (LHS) vs FJD/BASKET (RHS)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Authorities' data and IMF staff calculations."
+                    }
+                ]
+            },
+            "bbox": [
+                183,
+                242,
+                844,
+                472
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7dd42246627d8a3c195b8b48d6a5658e5014f77557b2774398bcd65af5566d1f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2. Inflation"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Authorities' data."
+                    }
+                ]
+            },
+            "bbox": [
+                220,
+                551,
+                808,
+                753
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The central bank of the country is basing the weights of its basket on the overall currency balance of the economy. The authorities update the currency weights once a year, based on trade in goods, tourism, remittance-related flows, and debt service."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                791,
+                831,
+                842
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Aligning the weights of a currency basket with trade shares or financial exposure is a traditional and intuitive approach, as it mirrors the structure of the economy's external transactions. However, this method does not fully satisfy a central bank's mandate of price stability. Trade or financial exposure weights are not equivalent to the weights that minimize the variance of exchange-rate pass-through to domestic prices. Because imported inflation depends not only on exposure but also on the magnitude and covariance structure of currency-specific pass-through coefficients, a basket constructed solely on trade shares may generate avoidable volatility in imported inflation. Achieving price stability instead requires selecting weights that minimize the variance of pass-through-adjusted exchange rate movements—that is, the variance of imported inflation—which is not guaranteed under traditional exposure-based weighting schemes."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                859,
+                883,
+                912
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                882,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                126,
+                880,
+                229
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Minimizing the variance of imported inflation through the exchange rate pass-through presents several benefits. First, stabilizing imported inflation contributes to the mandate of general price stability, i.e. low variance of inflation. Second, reducing the unpredictability of imported inflation helps anchor domestic inflation expectations, especially in small open economies like small islands where most consumed goods are imported. That contributes to improving monetary policy transmission. Third, minimizing the variance of the exchange rate-driven imported inflation goes hand in hand with reducing the variance of the basket rate."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                246,
+                883,
+                349
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We apply the model to this small open economy. We run Equation (14) using cumulative currency returns over twelve months, to capture the gradual impact on import prices in an economy with import-heavy CPI baskets and high price rigidities. Besides, one lag of imported inflation (month-on-month) and one lag of foreign headline inflations are included in the regression, run over the period July 2013–December 2025.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{5}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Pass-through estimates are presented in Figure 3."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                367,
+                877,
+                453
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0d7f976743d0c8f23bc93869af6c815755c33b7f9c322afb560f5ad1b0cd0e4c.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3. Inflation Pass-throughs"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                204,
+                508,
+                820,
+                750
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{5}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Unfortunately, the imported inflation series only goes back to July 2013 at the time this paper is being written."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                911,
+                756,
+                926
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8ac2b294daf23e1a21ee3aa777d22d7ff04355fba5820e007ab5d3a433a42376.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                117,
+                125,
+                880,
+                449
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The pass-throughs are of expected sign for all the currencies. That is, a one percent depreciation of the Fijian Dollar vis-à-vis the USD leads to a 0.13 percentage point increase in imported inflation after 12 months. The pass-throughs estimates (in absolute values) are also sensible for the NZD, at 0.10 and AUD, at 0.08, the two other main trading partners. Pass-through estimates are the lowest for the EUR and JPY, at 0.02 and 0.01 respectively."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                464,
+                872,
+                550
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Overall, the pass-through coefficients estimated are much smaller than one but in line with the literature. Jayaraman and Choong (2011) find a total exchange rate pass-through of 0.183 over the period 1982-2009 using a cointegration regression with broad money and interest rates, while Paul, Tang, and Bhatt (2014) find a significant long-run pass-through of approximately 0.3 after a year, using a Vector Error Correction Model with Fijian CPI, the nominal exchange rate, domestic demand, and Australian prices over the period 1975 to 2010. Relatedly, Peiris and Ding (2012) estimate a panel-VAR model with six Pacific Islands and estimate the pass-through of oil prices and food prices to domestic inflation to be about 0.05 in 2012. Furthermore, the pass-through coefficients might be lower as foreign inflations are used in place of foreign export inflations."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                566,
+                880,
+                705
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We now run the optimization exercise of Equation (27), based on the currency return over the last three years of exchange rate series (2023-2025), to capture post-COVID-19 behaviors. Figure 4 shows that the AUD/FJD and NZD/FJD are strongly negatively correlated with the USD/FJD, while the historical basket rate is positively correlated with all currencies except the USD. The correlations of different signs will be exploited to minimize the variance of the pass-through weighted basket rate"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                722,
+                875,
+                809
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The total basket pass-through of the economy can be considered as a structural parameter (i.e., that is constant on the short-term). Using the current weights, it is estimated to be 0.10. That is, a one percent depreciation of the FJD vis-à-vis the basket leads to a 0.10 percentage point increase in imported inflation after 12 months. We now run the optimization algorithm targeting this structural pass-through level."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                825,
+                883,
+                895
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/557b60b79bbef870110b500f8cdec31e2e82db3d4c4887b8f6147b866174c0cf.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td colspan=\"6\">Table 1. Currency Basket Weights (percent)</td></tr><tr><td></td><td>USD</td><td>EUR</td><td>AUD</td><td>NZD</td><td>JPY</td></tr><tr><td>Average(1999-2025)</td><td>32.66</td><td>8.68</td><td>33.17</td><td>20.0</td><td>5.48</td></tr><tr><td>Average(2010-2025)</td><td>37.37</td><td>5.36</td><td>31.75</td><td>20.97</td><td>4.50</td></tr><tr><td>Current</td><td>42.41</td><td>3.56</td><td>30.75</td><td>19.72</td><td>3.05</td></tr><tr><td>Optimized</td><td>36.77</td><td>0.00</td><td>37.82</td><td>22.83</td><td>2.58</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                127,
+                125,
+                870,
+                273
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Newly optimized weights are in line with the current weights but suggest rebalancing some of the USD weight to the AUD, while removing the EUR from the basket (Table 1). The weight optimization leads to the following allocation for an optimal basket: 36.77 percent for USD (vs. 42.41 percent currently), 0 percent for EUR (vs. 3.56 percent), 37.82 percent for AUD (vs. 30.75 percent), 22.83 percent for NZD (vs. 19.72 percent), 2.58 percent for JPY (vs. 3.05 percent). These new weights preserve the structural pass-through of the current basket estimated at -0.10, while minimizing the variance of the inflation pass-through. The zero weight on the EUR reflects the little importance this currency has for domestic inflation as seen by its positive estimated pass-through and the little role it plays in trade, tourism and financial exposure. Besides, the optimized weights are also broadly in line with their historical averages."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                292,
+                883,
+                448
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The weight optimization enables to reduce the variance of the inflation pass-through by 44.7 percent. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{6}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " The variance of the pass-through normalized as an index decreased from a value of 100 with the current basket weights applied by the central bank, to a value 55.3 with the newly optimized weights, given the structural basket pass-through. As a comparison, optimizing the weights to minimize the variance of the basket rate only (i.e., assuming that all currencies have the same unit cumulative pass-through,  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\bar{\\beta} = -1"
+                    },
+                    {
+                        "type": "text",
+                        "content": "), only enables to decrease the variance of the total pass-through (and also the variance of the basket rate), by 28 percent. Furthermore, running the optimization with only the USD, AUD, and NZD as basket currencies enables to reduce the variance by 40.4 percent. There is therefore little gain in having the EUR and the JPY in the basket, as this gain needs to be put in the perspective of the additional complexity and transparency of the nominal anchor."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                464,
+                885,
+                622
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/42a0dc729180c0f19e2911e7ec7a886dbb3d8edd806bb2e1aeab1000adc72d09.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td colspan=\"7\">Table 2. Robustness—Models Specification</td></tr><tr><td>Model</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr><tr><td>Cumulative pass-through</td><td>YES</td><td>NO</td><td>YES</td><td>YES</td><td>YES</td><td>NO</td></tr><tr><td>Lag of domestic inflation</td><td>YES</td><td>YES</td><td>YES</td><td>NO</td><td>NO</td><td>NO</td></tr><tr><td>Lag of foreign inflations</td><td>YES</td><td>YES</td><td>NO</td><td>YES</td><td>NO</td><td>NO</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                150,
+                636,
+                848,
+                727
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We now run some robustness analysis to validate the stability of the results (Table 2). Aside from the previous optimization (let's call it Model 1), we also estimate the model with a non-cumulative pass-through with 12 lags of exchange rate returns this time (Model 2). A third exercise consists in not including a lag of foreign inflations on the right-hand-side of the equation (Model 3). A fourth specification consists in not including a lag of domestic inflation on the right-hand-side of the equation (Model 4), A fifth specification removed both the lags of domestic and of foreign inflations. Last, a sixth specification is estimated with a non-cumulative pass-through and no lags of domestic and foreign inflations. Results from the optimizations are presented on Table 3."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                746,
+                880,
+                867
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{6}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Of course, this result is purely counterfactual, as inflation would have been different had the basket weights been as per the current results."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                898,
+                841,
+                924
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                946
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/0669779868fcf623987bba86fe8f7dda0cea9b4021114acbc3e75d7fa78f9e71.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td colspan=\"7\">Table 3. Currency Basket Weights (percent)</td></tr><tr><td></td><td>USD</td><td>EUR</td><td>AUD</td><td>NZD</td><td>JPY</td><td>Normalized Variance</td></tr><tr><td>Current</td><td>42.91</td><td>3.56</td><td>30.75</td><td>19.72</td><td>3.05</td><td>100</td></tr><tr><td>Model 1</td><td>36.77</td><td>0.00</td><td>37.82</td><td>22.83</td><td>2.58</td><td>55.29</td></tr><tr><td>Model 2</td><td>40.77</td><td>5.03</td><td>28.52</td><td>25.68</td><td>0.00</td><td>89.27</td></tr><tr><td>Model 3</td><td>37.37</td><td>4.73</td><td>35.27</td><td>22.63</td><td>0.00</td><td>60.34</td></tr><tr><td>Model 4</td><td>36.66</td><td>0.00</td><td>37.77</td><td>23.06</td><td>2.51</td><td>54.39</td></tr><tr><td>Model 5</td><td>37.40</td><td>4.75</td><td>35.28</td><td>22.57</td><td>0.00</td><td>60.67</td></tr><tr><td>Model 6</td><td>39.83</td><td>4.87</td><td>31.62</td><td>23.68</td><td>0.00</td><td>86.52</td></tr><tr><td>Models Average</td><td>38.13</td><td>3.23</td><td>34.68</td><td>23.41</td><td>0.85</td><td>67.74</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                120,
+                125,
+                877,
+                330
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Across all six specifications, three robust patterns emerge relative to the current basket and its historical averages. First, USD is consistently overweighted in the current allocation: every model places the USD between 36.66 percent and 40.77 percent, systematically below the current 42.91% and closely aligned with the 2010–2025 historical average of 37.37 percent, indicating that the current basket has drifted toward USD beyond what inflation-variance minimization would justify. Second, the NZD is systematically underweighted: all specifications assign NZD a share above 22 percent, well above the current 19.72 percent as well as the historical averages of 20.00 percent (1999–2025) and 20.97 percent (2010–2025), which suggests that the stabilizing role of NZD is understated regardless of how the pass-through is specified. Third, the AUD allocations uniformly exceed the current 30.75 percent, though the magnitude is sensitive to specification: cumulative pass-through specifications cluster AUD between 35 percent and 38 percent, while non-cumulative specifications return AUD to roughly 28–32 percent, a range more consistent with historical trade weights. The EUR–JPY allocation displays a striking substitution pattern: EUR is excluded in Models 1 and 4 and allocated between 4.73 percent and 5.03 percent in the remaining four specifications, while JPY exhibits the mirror image, appearing only in Models 1 and 4 at 2.51–2.58 percent and being eliminated elsewhere. Notably, the EUR weights in the four specifications where it is retained hover close to the 2010–2025 historical average of 5.36 percent, suggesting that the historical trade-based treatment of EUR was broadly consistent with inflation stabilization, whereas the collapse of EUR to zero in two specifications reflects the model reallocating its role to JPY rather than a genuine redundancy. On balance, the robustness exercise strengthens the two central conclusions of the baseline—that USD is overweighted and NZD underweighted in the current basket—while pointing to the EUR–JPY split as the dimension most sensitive to the treatment of foreign inflation and the cumulative-versus-distributed-lag choice."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                349,
+                883,
+                710
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Given that EUR and JPY together never exceed roughly 8 percent of the basket in any specification and that the two currencies behave as near-perfect substitutes across models—with one being excluded whenever the other is retained — the authorities could consider simplifying the basket by removing both and reallocating their combined weight across USD, AUD, and NZD. This would yield a more parsimonious three-currency basket aligned with the country's dominant trade and invoicing partners, reduce the operational complexity of basket management, and sacrifice little in terms of inflation-variance minimization given the marginal and specification-sensitive role these two currencies play. The trade-off is a modest loss of diversification against euro- and yen-denominated import shocks, which the authorities should weigh against the transparency and simplicity gains of a streamlined basket."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                729,
+                883,
+                883
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Conclusion"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                128,
+                297,
+                154
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper proposes a framework for the design of an optimal currency basket aligned with a central bank's price-stability mandate. Rather than allocating weights according to trade shares or external financial exposure, we select the basket composition that minimizes the variance of the exchange-rate-driven component of imported inflation, subject to a constraint that preserves the basket's cumulative pass-through. The problem takes the form of a Markowitz minimum-variance portfolio in pass-through space, in which the variance-covariance structure of bilateral exchange rate returns and the heterogeneity of currency-specific pass-through coefficients jointly determine the optimal weights."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                179,
+                880,
+                300
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Applying the framework to a small, import-intensive island economy operating a five-currency basket, we find that re-weighting its composition reduces the variance of imported inflation by close to twenty percent relative to the current allocation, while leaving the structural pass-through unchanged. The optimized weights remain broadly consistent with the historical averages of the current scheme but reallocate exposure away from currencies whose estimated pass-through is economically small or statistically weak, and toward currencies whose combination of pass-through magnitude and covariance properties contributes more to stabilizing imported inflation."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                311,
+                867,
+                433
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Although transparent and intuitive, trade-share weights are not generally optimal for price stability. Non-negligible gains in the volatility of imported inflation can be obtained at little additional informational cost by tilting the trade-share weights according to estimated pass-through coefficients and exchange rate covariances. The approach is operationally simple, relies on data already available to most central banks, and yields weights that can be updated at the same annual frequency typically used for trade-based reviews. Two natural extensions are left for future work: incorporating business cycle synchronization between the home economy and each currency area, and accounting for balance-sheet effects arising from financial dollarization of deposits and external debt. Integrating these dimensions into the minimum-variance framework would deliver a more complete characterization of the optimal basket for small open economies."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                445,
+                885,
+                601
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ANNEX I. Derivation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                128,
+                429,
+                154
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We start from the definition of the inflation pass-through of the basket:"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                181,
+                598,
+                198
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "z _ {t} ^ {B} = \\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\tag{1}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/fabe3a18d3bf36e1b4f9765c158dd88f8c9d9e06f0a43945b462d3c4616ee1ec.jpg"
+                }
+            },
+            "bbox": [
+                447,
+                217,
+                549,
+                261
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our optimization exercise is:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                281,
+                315,
+                296
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\operatorname{argmin} _ {\\theta} \\left[ \\operatorname{Var} \\left(z _ {t} ^ {B}\\right) \\right] = \\operatorname{argmin} _ {\\theta} \\left[ \\operatorname{Var} \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\right) \\right]\\tag{2}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/c591768d066358e67057f6052de4e2759f39b23ee6e37b0492d1ba1c9def3afe.jpg"
+                }
+            },
+            "bbox": [
+                326,
+                299,
+                669,
+                345
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "z_{j,t} = \\sum_{k=1}^{q}\\beta_{j,k}\\Delta e_{j,t-k}"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                367,
+                303,
+                385
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Each  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "e_{j,t-k}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " is expressed as the price of currency  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "j"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in unit of domestic currency. Let's rebase all currency pairs in unit of a base currency, not present in the basket."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                406,
+                882,
+                440
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In particular, we have:"
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                444,
+                300,
+                459
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\Delta e _ {j, t} ^ {F C / L C} = \\Delta e _ {j, t} ^ {F C / F C _ {0}} + \\Delta e _ {t} ^ {F C _ {0} / L C}\\tag{3}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/f3688a5a2fe29eaa93c4b6819fdb598febacacb270842cb40f94e7793cb2b8df.jpg"
+                }
+            },
+            "bbox": [
+                395,
+                460,
+                601,
+                482
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Where FC stands for foreign currency within the basket (e.g.: {USD, AUD, NZD, EUR, JPY}), LC stands for local currency, and   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "FC_{0}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  stands for foreign currency base not in the basket (e.g.: GBP)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                502,
+                851,
+                537
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Therefore,"
+                    }
+                ]
+            },
+            "bbox": [
+                143,
+                539,
+                220,
+                554
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\right) = V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} \\sum_ {k = 1} ^ {q} \\beta_ {j, k} \\Delta e _ {j, t - k} ^ {F C / L C}\\right)\\tag{4}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/d246fdb2498120f1e65eacf16a439da681d0b3ccc8b1aa6326816aa23101ae86.jpg"
+                }
+            },
+            "bbox": [
+                338,
+                556,
+                656,
+                604
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\right) = V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} \\sum_ {k = 1} ^ {q} \\beta_ {j, k} \\left(\\Delta e _ {j, t - k} ^ {F C / F C _ {0}} + \\Delta e _ {t - k} ^ {F C _ {0} / L C}\\right)\\right)\\tag{5}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/f27fb6596475263f36b300c8bb00d17db6b48ad65ff9cf801780c2cf0dad75e3.jpg"
+                }
+            },
+            "bbox": [
+                290,
+                625,
+                705,
+                672
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\right) = V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} \\sum_ {k = 1} ^ {q} \\beta_ {j, k} \\Delta e _ {j, t - k} ^ {F C / F C _ {0}} + \\sum_ {j = 1} ^ {n} \\theta_ {j} \\sum_ {k = 1} ^ {q} \\beta_ {j, k} \\Delta e _ {t - k} ^ {F C _ {0} / L C}\\right)\\tag{6}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/13f550d5c6d3b52bb876df0f944eb42ce9af9a1591a43d0e15a30341a1c7dc9c.jpg"
+                }
+            },
+            "bbox": [
+                254,
+                693,
+                741,
+                741
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\right) = V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} \\sum_ {k = 1} ^ {q} \\beta_ {j, k} \\Delta e _ {j, t - k} ^ {F C / F C _ {0}} + \\sum_ {j = 1} ^ {n} \\theta_ {j} \\sum_ {k = 1} ^ {q} \\beta_ {j, k} \\Delta e _ {t - k} ^ {F C _ {0} / L C}\\right)\\tag{7}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/1cb28e21eaa6aec38ddf4b0000f2ee89755e94fe2ac9cff2812c9cd7523326d7.jpg"
+                }
+            },
+            "bbox": [
+                254,
+                762,
+                741,
+                809
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Define  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "c_{j,t} = \\sum_{k=1}^{p}\\beta_{j,k}\\Delta e_{t-k}^{FC_0/LC}"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", then:"
+                    }
+                ]
+            },
+            "bbox": [
+                142,
+                830,
+                395,
+                849
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\right) = V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t} ^ {F C / F C _ {0}} + \\sum_ {j = 1} ^ {n} \\theta_ {j} c _ {j, t}\\right)\\tag{8}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/301172baa3003d761a3e3f9b705885c587427062c5c7e070efe178347dd812c8.jpg"
+                }
+            },
+            "bbox": [
+                326,
+                853,
+                669,
+                900
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{l} V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\right) = V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t} ^ {\\mathrm{FC/FC} _ {0}}\\right) + V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} c _ {j, t}\\right) + \\operatorname{cov} \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t} ^ {\\mathrm{FC/FC} _ {0}}, \\sum_ {j = 1} ^ {n} \\theta_ {j} c _ {j, t}\\right) \\\\ + \\operatorname{cov} \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t} ^ {\\mathrm{FC/FC} _ {0}}, \\sum_ {j = 1} ^ {n} \\theta_ {j} c _ {j, t}\\right) ^ {T} \\end{array}\\tag{9}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/db17c714f69d79c55e4ee608208f66e3b9777e5ab9bccfdf6d8aa992706d2914.jpg"
+                }
+            },
+            "bbox": [
+                199,
+                125,
+                795,
+                224
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Let's define   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "Z_{t}^{FC/FC_{0}} = \\left\\{ z_{j,t}^{FC/FC_{0}} \\right\\}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ,   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\Sigma_{z}^{FC/FC_{0}} = \\text{Var}(Z^{FC/FC_{0}})"
+                    },
+                    {
+                        "type": "text",
+                        "content": " ,   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\Sigma_{c} = \\text{Var}(c_{t})"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , and   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\Gamma = \\text{Cov}(Z_{t}^{FC/FC_{0}}, c_{t})"
+                    },
+                    {
+                        "type": "text",
+                        "content": " . Then,"
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                247,
+                777,
+                287
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\operatorname{Var} \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\right) = \\theta^ {\\prime} \\Sigma_ {\\mathrm{z}} ^ {\\mathrm{FC/FC} _ {0}} \\theta + \\theta^ {\\prime} \\Sigma_ {\\mathrm{c}} \\theta + \\theta^ {\\prime} \\Gamma \\theta + \\theta^ {\\prime} \\Gamma^ {\\prime} \\theta\\tag{10}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/d8a6761cfc14d9e9de48e6b69414bc6c7da4e17e9732dd620a2d9c4ca0a1b213.jpg"
+                }
+            },
+            "bbox": [
+                315,
+                290,
+                681,
+                338
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\operatorname{Var} \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\right) = \\theta^ {\\prime} \\left(\\Sigma_ {\\mathrm{z}} ^ {\\mathrm{FC/FC} _ {0}} + \\Sigma_ {\\mathrm{c}} + \\Gamma + \\Gamma^ {\\prime}\\right) \\theta\\tag{11}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/0d368f67801b570eda2e747fad1c71efeb5a3bfac02ed1d0dd2e91a49aa3e035.jpg"
+                }
+            },
+            "bbox": [
+                344,
+                359,
+                651,
+                406
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Define,  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\Sigma_{\\overline{Z}} = \\Sigma_{z}^{\\mathrm{FC / FC_0}} + \\Sigma_c + \\Gamma +\\Gamma '"
+                    }
+                ]
+            },
+            "bbox": [
+                143,
+                428,
+                375,
+                446
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Therefore,"
+                    }
+                ]
+            },
+            "bbox": [
+                143,
+                450,
+                218,
+                464
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\boxed {a r g m i n _ {\\theta} \\left[ V a r (z _ {t} ^ {B}) \\right] = a r g m i n _ {\\theta} \\left[ V a r \\left(\\sum_ {j = 1} ^ {n} \\theta_ {j} z _ {j, t}\\right) \\right] = a r g m i n _ {\\theta} [ \\theta^ {\\prime} \\Sigma_ {\\overline {{Z}}} \\theta ]}\\tag{12}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/639bac3ff25eb7721dd04574b90071aae54775821990a75f566db85caade0b3a.jpg"
+                }
+            },
+            "bbox": [
+                259,
+                468,
+                736,
+                518
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "18"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                946
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "REFERENCES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                128,
+                343,
+                154
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Betts, Caroline, and Michael B. Devereux. 2000. “Exchange Rate Dynamics in a Model of Pricing-to-Market.” Journal of International Economics, 50(1): 215–244."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                200,
+                864,
+                234
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Bhandari, Jagdeep S. 1985. \"Experiments with the Optimal Currency Composite.\" Southern Economic Journal, 51(3): 711–730."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                244,
+                877,
+                279
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Branson, William H., and Louka T. Katseli, 1981. \"Currency Baskets and the Real Effective Exchange Rates.\" NBER Working Paper 0666, National Bureau of Economic Research, Inc."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                287,
+                870,
+                321
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Calvo, Guillermo A. 1983. “Staggered Prices in a Utility-Maximizing Framework.” Journal of Monetary Economics, 12(3): 383–398."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                330,
+                813,
+                364
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Campa, José Manuel, and Linda S. Goldberg. 2005. \"Exchange Rate Pass-Through into Import Prices.\" Review of Economics and Statistics, 87(4): 679–690."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                375,
+                830,
+                409
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Edison, Hali J., and Erling Vårdal. 1990. “Optimal Currency Baskets for Small, Developed Economies.” Scandinavian Journal of Economics, 92(4): 559–571."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                417,
+                823,
+                452
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Flanders, M. June, and Elhanan Helpman. 1979. “An Optimal Exchange Rate Peg in a World of General Floating.” Review of Economic Studies, 46(3): 533–542."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                460,
+                833,
+                496
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Gopinath, Gita, and Oleg Itskhoki. 2010. “Frequency of Price Adjustment and Pass-Through.” Quarterly Journal of Economics, 125(2): 675–727."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                503,
+                883,
+                539
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Gopinath, Gita, Oleg Itskhoki, and Roberto Rigobon. 2010. \"Currency Choice and Exchange Rate Pass-Through.\" American Economic Review, 100(1): 304–336."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                547,
+                833,
+                584
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Imam, Patrick A. 2010. “Exchange Rate Choices of Microstates.” IMF Working Paper No. 10/12. Washington, DC: International Monetary Fund."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                590,
+                867,
+                627
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Jayaraman, T. K., and C-K., Choong. 2011. \"Impact of Exchange Rate Changes on Domestic Inflation: A Study of a Small Pacific Island Economy.\" MPRA Paper No. 33719, University Library of Munich."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                635,
+                880,
+                670
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Knetter, Michael M. 1989. \"Price Discrimination by U.S. and German Exporters.\" American Economic Review, 79(1): 198–210."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                678,
+                870,
+                714
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Krugman, Paul. 1986. \"Pricing to Market When the Exchange Rate Changes.\", NBER Working Paper 1926, National Bureau of Economic Research, Inc."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                720,
+                854,
+                757
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Ma, Zihui, and Leonard K. Cheng. 2014. “An Optimal Currency Basket to Minimize Output and Inflation Volatility: Theory and an Application to Hong Kong.” Pacific Economic Review, 19(1): 90–111."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                765,
+                825,
+                801
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Peiris, S. J., and D. Ding. 2012. \"Global Commodity Prices, Monetary Transmission, and Exchange Rate Pass Through in the Pacific Islands.\""
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                809,
+                874,
+                844
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Shioji, Etsuro. 2006. “Invoicing Currency and the Optimal Basket Peg for East Asia: Analysis Using a New Open Economy Macroeconomic Model.” Journal of the Japanese and International Economies, 20(4):569–589."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                852,
+                846,
+                902
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                666,
+                61,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "19"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Slavov, Slavi T. 2005. “Should Small Open Economies in East Asia Keep All Their Eggs in One Basket? The Role of Balance Sheet Effects.” Journal of the Korean Economy, 9(1): 1–43."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                126,
+                862,
+                159
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Teo, Wing Leong. 2009. \"Should East Asia's Currencies Be Pegged to the Yen? The Role of Invoice Currency.\" Journal of the Japanese and International Economies, 23(3): 283–308."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                169,
+                883,
+                203
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Turnovsky, Stephen J. 1982. \"A Determination of the Optimal Currency Basket: A Macroeconomic Analysis.\" Journal of International Economics, 12(3–4): 333–354."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                212,
+                862,
+                246
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Williamson, John. 1998. “Crawling Bands or Monitoring Bands: How to Manage Exchange Rates in a World of Capital Mobility.” International Finance, 1(1): 59–79."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                256,
+                872,
+                290
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Xu, Juanyi. 2011. \"Optimal Currency Basket with Vertical Trade.\" Journal of International Money and Finance, 30(7): 1323–1340."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                299,
+                870,
+                333
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Yoshino, Naoyuki, Matthias Helble, and Ahmad Danu Prasetyo. 2017. “Exchange Rate Policy in the Pacific: An Evaluation of Currency Basket Regimes.” Asian-Pacific Economic Literature, 31(1): 3–20."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                342,
+                880,
+                377
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Yoshino, Naoyuki, Sahoko Kaji, and Ayako Suzuki. 2004. “The Basket-Peg, Dollar-Peg, and Floating: A Comparative Analysis.” Journal of the Japanese and International Economies, 18(2): 183–217."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                386,
+                830,
+                420
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Zhang, Zhichao, Nan Shi, and Xiaoli Zhang. 2011. “China’s New Exchange Rate Regime, Optimal Basket Currency and Currency Diversification.” MPRA Paper No. 32642. Munich: University Library of Munich."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                429,
+                852,
+                463
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                63,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                668,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "20"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                946
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0939fa876f8dec0794694b1ecf1e44ac6284d125164603b9cb6b9385faa22687.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                931
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                766,
+                163,
+                830
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Working Paper No. WP/2026/131"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                877,
+                300,
+                891
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Optimal Currency Basket Estimation"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                859,
+                338,
+                875
+            ]
+        }
+    ]
+]

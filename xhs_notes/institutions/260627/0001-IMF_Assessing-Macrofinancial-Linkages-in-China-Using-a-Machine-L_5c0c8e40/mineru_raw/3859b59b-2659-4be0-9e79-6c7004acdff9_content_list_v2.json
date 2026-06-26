@@ -1,0 +1,5135 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Assessing Macrofinancial Linkages in China Using a Machine-Learned Parsimonious VAR Model"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                75,
+                196,
+                815,
+                412
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prepared by Jin-Chuan Duan, Dimitrios Laliotis, and Wei Sun"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                450,
+                705,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "WP/26/134"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                492,
+                199,
+                515
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF Working Papers describe research in progress by the author(s) and are published to elicit comments and to encourage debate. The views expressed in IMF Working Papers are those of the author(s) and do not necessarily represent the views of the IMF, its Executive Board, or IMF management."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                589,
+                437,
+                705
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2026\nJUN"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                816,
+                233,
+                917
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c387ab467a48b01c7c180a84a6917040d6b6bcd2ee8ca8647793bc0fe387ffba.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                651,
+                804,
+                797,
+                921
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                37,
+                831,
+                75
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "WORKING PAPER"
+                    }
+                ]
+            },
+            "bbox": [
+                919,
+                241,
+                985,
+                758
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF Working Paper Monetary and Capital Markets Department"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                349,
+                155,
+                648,
+                189
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Assessing Macrofinancial Linkages in China Using a Machine-Learned Parsimonious VAR Model Prepared by Jin-Chuan Duan*, Dimitrios Laliotis**, and Wei Sun**,"
+                    }
+                ]
+            },
+            "bbox": [
+                138,
+                205,
+                857,
+                238
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Authorized for distribution by Hiroko Oura\nJune 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                352,
+                253,
+                643,
+                286
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF Working Papers describe research in progress by the author(s) and are published to elicit comments and to encourage debate. The views expressed in IMF Working Papers are those of the author(s) and do not necessarily represent the views of the IMF, its Executive Board, or IMF management."
+                    }
+                ]
+            },
+            "bbox": [
+                125,
+                313,
+                861,
+                364
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ABSTRACT: This paper examines macrofinancial linkages between property developers, financial institutions, and macroeconomic outcomes in China. Using a parsimonious vector autoregressive (VAR) model enabled by a machine learning algorithm, it quantifies how idiosyncratic shocks can propagate and be amplified across sectors, with potential implications for financial stability. Stress originating from privately owned developers and regionally focused financial institutions—though relatively limited in scale—can generate persistent spillovers through lending relationships, common exposures, shared markets, and changes in market sentiment. A decline in property prices may undermine investment, weaken consumer confidence, and adversely affect the health of both the property and financial sectors, thereby disrupting financial intermediation and weighing on broader economic growth. Policy considerations should take into account these feedback loops. Market- and exposure-based tools can be helpful for monitoring macrofinancial linkages and assessing the transmission of shocks."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                385,
+                877,
+                569
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d56d2b7e02425b397e1664503d489fab78a51f55aa2d9efc4c0afab0ec505b2a.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>JEL Classification Numbers:</td><td>C3, E44, G2, R3</td></tr><tr><td>Keywords:</td><td>Macrofinancial linkage; property development; financial system; machine learning; model selection</td></tr><tr><td>Authors&#x27; email addresses:</td><td>wsun@IMF.org</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                116,
+                601,
+                880,
+                714
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 International Monetary Fund"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                89,
+                364,
+                104
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "WP/26/134"
+                    }
+                ]
+            },
+            "bbox": [
+                797,
+                89,
+                880,
+                104
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "* National University of Singapore, National Chengchi University, Criat, and ADBIZA."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                856,
+                622,
+                872
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "The authors thank Jorge Chan-Lau, Jennifer Elliot, Hiroko Oura, Dora Xia, and participants at the IMF MCM Quantum Seminar and HKIMR International Conference on the Chinese Economy for their helpful comments. The views are of the authors' and do not necessarily represent the view of the IMF, its Executive Board, or IMF management."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                887,
+                880,
+                926
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "** Monetary and Capital Markets Department of the International Monetary Fund."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                872,
+                596,
+                887
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                194,
+                393,
+                220
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Assessing Macrofinancial Linkages in China Using a Machine-Learned Parsimonious VAR Model"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                109,
+                300,
+                810,
+                467
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prepared by Jin-Chuan Duan, Dimitrios Laliotis, and Wei Sun"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                592,
+                740,
+                614
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Contents"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                128,
+                261,
+                154
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I. Introduction .... 3\nII. Literature Review .... 5\nIII. Methodological Design.... 6\nData .... 7\nModel Selection .... 9\nIV. Empirical Results.... 10\nModel Estimation .... 10\nImpulse Response .... 13\nV. Conclusion .... 17\nReferences.... 18"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                172,
+                885,
+                434
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "FIGURES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                468,
+                187,
+                484
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Impulse Response: 1 Basis Point Shock to PD of Privately-owned Developers....14\n2. Impulse Response: 1 Basis Point Shock to PD of City Commercial Banks....15\n3. Impulse Response: 1 Percentage Point Shock to Property Prices....16\n4. Impulse Response: 1 Percentage Point Shock to Consumer Confidence Index....16"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                484,
+                883,
+                559
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "TABLES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                575,
+                183,
+                592
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Intertemporal Relationships: Regression Coefficients .... 12\n2. Contemporaneous Relationships: Covariance of Disturbance.... 13"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                594,
+                883,
+                630
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                946
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "I. Introduction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                111,
+                128,
+                367,
+                154
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial stability is a central objective of the global policy agenda. A succession of banking and financial crises since the 1980s has underscored that financial stability—alongside price stability—is essential for macroeconomic resilience. The global financial crisis of 2007-09 highlighted the profound impact of macrofinancial linkages, prompting a shift in global economic policy toward a more macroprudential direction (Claeseens, 2015; Adrian, 2017b; and IMF-FSB-BIS, 2016). These efforts aim to address propagation and amplification effects through complex linkages that traditional monetary and exchange rate tools cannot fully manage (Borio et al., 2022)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                174,
+                875,
+                300
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial linkages refer to the two-way interactions between the macroeconomy and the financial sector (Claessens and Kose, 2018). Economic shocks can impair the balance sheets of households, firms, and financial intermediaries. Amplified by financial market imperfections, such impairments can disrupt both the demand (e.g., financial accelerator effects) and supply (e.g., bank lending, capital, leverage, liquidity constraints) of financial intermediation, intensifying economic fluctuations. Financial imbalances—such as rapid credit growth and asset price swings—can distort macroeconomic equilibrium and often precede or deepen recessions if not addressed promptly (Claessens et al., 2012a)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                316,
+                883,
+                441
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "While research on macrofinancial linkages continues to advance, challenges persist due to data limitations and methodological constraints. Large gaps remain in balance sheet data, bilateral exposures, and high-frequency asset price series critical for systemic risk assessment (Brunnermeier and Krishnamurthy, 2014). Theoretical models, including dynamic stochastic general equilibrium (DSGE) frameworks, struggle to capture agent heterogeneity, demonstrate transmission channels, or yield robust predictions under different institutional setups (Blanchard, 2017a)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                455,
+                883,
+                564
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper contributes to the evolving literature by assessing macrofinancial linkages in China—now the world’s second-largest economy and home to the second-largest financial system. China’s growth model, heavily reliant on real estate investment until recently and supported by increasingly complex and interconnected financial intermediation that does not fully reflect risk-return relationships (IMF, 2025), has given rise to intricate macrofinancial linkages with potentially profound macroeconomic consequences."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                579,
+                883,
+                669
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Conjunctural shocks have made this analysis particularly timely. Since 2021, China's property market has experienced its most severe adjustment in decades. Sales and prices in the primary market have declined. Secondary market corrections have been more pronounced, despite a temporary rebound around early 2025. Defaults among property developers—varying in size and ownership structure—have increased. The accumulation of unused land, unfinished projects, and undelivered housing units has inflicted significant socioeconomic costs."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                684,
+                872,
+                791
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper uncovers the interconnectedness among key economic agents and activities influenced by and impactful for property market performance. A vector autoregressive (VAR) model is used to capture general equilibrium features and endogenous responses. Through identified transmission and amplification channels, we quantify the extent to which an idiosyncratic shock can generate far-reaching and long-lasting effects."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                806,
+                875,
+                878
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A key feature of the paper is to analyze macrofinancial linkages founded on microeconomic behaviors (Claessens and Kose, 2018). The model includes three property development and five financial sectors, each facing distinct constraints in responding to shocks. State-owned developers have easier access to bank financing, while privately owned developers often rely on costlier funding and lose market access during periods of stress. State-owned banks are relatively stably funded and serve safer borrowers, while smaller banks engage in riskier financial market transactions and lend to developers. Non-bank financial institutions support capital allocation to non-state-owned sectors, often offering implicit guarantees until recent regulatory tightening (Allen et al., 2023)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                126,
+                870,
+                268
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To address data limitations related to balance sheets and bilateral exposures, we use probability of defaults (PD) metrics from the Credit Research Initiative (CRI) of the National University of Singapore (NUS-CRI, 2023). The CRI database covers 92,000 companies globally, including all publicly listed property developers and financial institutions in China. As a composite index encompassing market indicators (e.g., stock returns and volatility) and fundamentals (e.g., liquidity, profitability, and leverage), PD co-movements imply bilateral exposures better than purely market-based metrics such as CDS spreads or stock prices (Craig et al., 2024). They also reflect interdependence through sentiment and market perceptions, beyond direct borrowing-lending relationships."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                285,
+                875,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Modeling eight sectoral and three macro variables in a VAR framework presents a high-dimensional challenge. To identify meaningful macrofinancial linkages, we apply a zero-norm penalty to regularize the number of non-zero coefficients (Duan, 2024). Operationally, a 10-fold cross-validated seemingly unrelated regression likelihood is solved using a sequential Monte Carlo (SMC) optimization technique. This novel machine learning approach offers several advantages. It yields a parsimonious model, retains only significant relationships, and does not require a priori specification of directional links. It is fully interpretable, avoiding the “black box” nature of many models and supporting transparent policy analysis (Duan, 2025)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                444,
+                877,
+                569
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our empirical analysis reveals critical linkages between macroeconomic performance, property developers, and financial institutions. Vicious cycles can emerge through these linkages, amplifying idiosyncratic shocks. Notably, stress among privately owned developers can affect state-owned developers and financial institutions in subsequent periods. Even smaller, regionally focused banks can have systemic implications. Property prices lie at the core of these linkages, with declines triggering adverse effects on investment, sentiment and financial sector health."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                584,
+                883,
+                690
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The empirical analysis suggests that a well-capitalized and stably funded financial system is associated with a greater capacity to sustain credit and liquidity provision. Potential trade-offs could arise between measures affecting property developers and broader considerations of financial sector resilience. Stabilizing property prices is more effective when aligned with broader efforts to restore business and consumer confidence durably. A sustainable recovery in the property market is typically characterized by organic transaction growth supported by the financial health of key market participants. Accounting for complex feedback effects helps characterize macrofinancial dynamics over the business cycle."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                707,
+                861,
+                832
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Market- and composite-index-based analyses offer timely insights into macrofinancial linkages and shock-induced outcomes. They also go beyond lending-borrowing relationships and incorporate business model similarities, common exposures, and market sentiment, increasingly important factors in modern contagion dynamics. Developing comprehensive toolkits to regularly monitor linkages and assess macrofinancial impacts can enhance risk management. Complementary efforts to collect granular cross-sectoral exposures could further deepen the understanding China's macrofinancial complexity."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                848,
+                879,
+                917
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                63,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                126,
+                844,
+                160
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The remainder of the paper is structured as follows. Section II provides a short survey of the related literature. Section III introduces the design of the methodology. Section IV discusses empirical results. Section V concludes."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                176,
+                875,
+                229
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "II. Literature Review"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                111,
+                294,
+                450,
+                319
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper builds on two strands of literature. First, it contributes to the study of macrofinancial linkages, which gained prominence following the global financial crisis. The two-way interactions between the financial sector and real economy can propagate and amplify shocks, leaving long-lasting economic scars. Policymakers have struggled to counteract these effects using conventional fiscal, monetary, and financial instruments (Claessens and Kose, 2018)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                340,
+                879,
+                429
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The literature on macrofinancial linkages highlights the central role of asset prices in driving economic outcomes. In frictionless Arrow-Debreu markets, asset prices provide signals to economic agents for optimal consumption and investment decisions (Geanakoplos, 2008). Asset price movements affect household wealth over the life cycle, therefore influencing consumption and saving patterns (Deaton, 1992; Guiso and Sodini, 2013). They also inform future corporate profitability (Allen, 1993) and influence investment plans. Recessions accompanied by asset price busts tend to be deeper and longer (Claessens et al., 2012a; Drehmann et al., 2012; and Muir, 2017). Among asset classes, house prices have a more pronounced impact on consumption than equity prices (Carroll et al., 2011; Case et al., 2005, 2013; Kim, 2004; Gan 2010)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                446,
+                875,
+                589
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Financial imperfections amplify the impact of shocks on real economy due to information asymmetry and enforcement difficulty. On the demand side, the financial accelerator theory explains how initial shocks affect credit demand and subsequent spending and investment decisions. Most notably, weakening balance sheets and cash flows disrupt access to finance or increase costs. The additional premiums reduce income and profitability, postpone consumption or productive activities, which in turn makes it even more challenging to secure future financing (Antony and Broer, 2010; BCBS, 2011; Coric, 2011; Quadrini, 2011)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                604,
+                867,
+                710
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "On the supply side, banks may curtail lending during distress due to uncertainty (e.g., Bernanke and Blinder, 1988; Stein, 1998). They may shun the risky borrowers for capital preservation motives (Bernanke and Lown, 1991; Holmström and Tirole, 1997; Repullo and Suarez, 2000; Van den Heuvel, 2006, 2008). Procyclical leverage (Adrian and Shin, 2008, 2011a; Geanakoplos, 2010) can constrain access to finance, affecting both banks and non-bank financial institutions. Interbank market freezes can induce credit crunches (Freixas and Jorge, 2008; Bruche and Suarez, 2010), and deleveraging and liquidity hoarding can exacerbate financial and economic stress."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                727,
+                882,
+                852
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In China, property market fluctuations significantly influence business cycles (Ge et al., 2022). Rising property prices in the past decades have supported fiscal spending via local governments land sales and off-balance sheet borrowing with land collaterals (Chen et al., 2020). Rising prices have also supported"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                868,
+                866,
+                921
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "consumption via wealth effects because households invest vast savings in this preferred vehicle yielding outstanding returns (Fang et al., 2015). The traditional banking sector supported property development until the contractionary monetary policies post-2009 (Chen, et al., 2018). Non-bank financial institutions later filled the gap, offering implicit guarantees until recent regulatory changes (Allen et al., 2023)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                126,
+                883,
+                198
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The second strand of literature focuses on model selection for high dimensional data. Regularization techniques address the challenge of too many regressors and too few observations. The Least Absolute Shrinkage and Selection Operator (LASSO) method (Tibshirani, 1996) introduces an   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "L^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " -norm penalty to the original optimization problem. It optimizes the target function by shrinking the sum of the absolute values of the coefficients, leaving many of them to zero."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                213,
+                880,
+                301
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Later efforts advanced the   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "L^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " -norm based methodology by achieving the oracle properties, meaning they perform as well as if the underlying model were known in advance (Fan and Li, 2001). Examples include the Smoothly Clipped Absolute Deviation (SCAD) method by Fan (1997). Fan and Li (2001) generalized the SCAD method to more parametric and nonparametric models and developed an algorithm to improve its computational efficiency. Different from applying fixed weights in the original LASSO method, the Adaptive Lasso of Zou (2006) used different weights to penalize the coefficients based on their relative importance, while also producing consistent model estimates."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                318,
+                883,
+                443
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Regressions with zero-norm penalty restrict directly the number of non-zero coefficients rather than the sum of the absolute values. These types of models are conceptually natural for tackling high dimensionality but are computationally demanding (Natarajan, 1995). With modern machine learning techniques, Duan (2024) introduced the Stable Combinatorially-optimized Feature Selector (SCOFS) suitable for various high-dimensional parametric models. SCOFS mitigates multilinearity and overfitting more effectively than LASSO-type methods."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                459,
+                880,
+                565
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper applies SCOFS to assess macrofinancial linkages in China. Empirical evidence suggests that property market shocks have persistent macroeconomic effects. At a micro level, financial and property sectors are interconnected in ways that amplify shocks."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                582,
+                880,
+                633
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "III. Methodological Design"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                698,
+                535,
+                726
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We designed a penalized VAR model to study the macrofinancial linkages in China. A reduced-form VAR model is not identified without specifying directional relationships a priori. To avoid over-simplified assumptions on a very complex system, we introduced a zero-norm penalty to regularize the number of non-zero coefficients. This approach enables a high-dimensional model with persistent lagged effects. Recent advances in machine learning make this regularization computationally feasible and fully interpretable, unlike “black box” alternatives."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                744,
+                880,
+                851
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "An impulse response exercise subsequently quantifies the impact of idiosyncratic shocks on interested variables over time. It differs from but complements forecast error variance decomposition, which measures volatility spillovers (Diebold and Yilmaz, 2012)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                869,
+                857,
+                921
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We select 11 macro and sectoral variables to underpin the VAR. They represent economic agents and activities that can be highly dependent on or impactful for the property market. Property prices, consumer sentiment, and real estate investment are proxies to capture the market and macroeconomic conditions. These monthly series are closely related to but are much more frequent and forward-looking than national account data. Prices reflect cash flow expectations and investment opportunities, while consumer sentiment reflects demand pressures and could shape future consumption behaviors."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                126,
+                880,
+                233
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The sectoral variables comprise probability of defaults (PD) metrics for eight groups of property developers and financial institutions. Unlike exposure or price-based metrics, the composite PD indices incorporate both market and fundamental information, reflecting sectoral health. Our PD-based interlinkage analysis does not aim to isolate a single shock transmission channel. Rather, it captures co-movements that could be driven by both common exposures, business model similarities, market sentiment and lending-borrowing relationships (Craig et al., 2024), revealing an intricate system of interconnected micro sectors."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                250,
+                880,
+                356
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The choice of 11 variables aims to focus on the basic feedback effects among critical sectors. Given that several variables are composite indices reflecting multiple underlying forces—e.g., policy shifts, common macro shocks, and sentiment—the impulse analysis does not aim to capture the effects of any specific structural disturbance. Instead, it relies on propagation dynamics implied by the reduced-form model.. That said, this high-dimensional VAR framework can accommodate additional policy indicators to support more nuanced discussions, including regime shifts, in future work."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                372,
+                883,
+                478
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Data"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                506,
+                163,
+                523
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We use monthly time series from 2011 to 2023. The rich time dimension allows up to 12 lags in the VAR model to capture persistent time effects."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                540,
+                880,
+                575
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Sectoral PDs"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                592,
+                215,
+                607
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We use eight PD series at the sectoral level to reflect the creditworthiness of selected property developers and financial institutions. PD measures the probability that an entity cannot fulfil its financial obligations over a future horizon. The PDs are generated based on the forward intensity model of Duan et al. (2012), published by the Credit Research Initiative of the National University Singapore (NUS-CRI, 2023). The model is calibrated against about 7,500 publicly listed Chinese companies, including those that have defaulted or exited the market due to reasons such as mergers and acquisitions."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                625,
+                885,
+                732
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the forward intensity model, events such as filing for bankruptcy and delay of principal or interest payment for more than 30 days are treated as defaults, while drastic drop in bond prices alone are not classified as such (NUS-CRI, 2023). The model uses two sets of explanatory variables: (i) financial conditions—interest rates, stock market returns, and credit cycle indicators; and (ii) entity-level fundamentals—leverage, liquidity, profitability, size, and stock market volatility. The PD metric has demonstrated strong predictive accuracy for Chinese entities (NUS-CRI, 2023). PDs correlations reflect direct and indirect exposures better than other popular price-based measures, such as equity returns and CDS spreads (Craig et al., 2024)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                748,
+                883,
+                873
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We classify 222 publicly listed property developers into three groups: private owned (110), state-owned (51), and property services companies (61). The three sectoral PDs are calculated as the median of constituent entities  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " . While not exhausting the universe of Chinese developers, the sample includes the biggest and major firms that influence market sentiment. This paper does not include household as a separate sector despite a large share of mortgage in the banking loans. The healthy loan-to-value ratios and low default rates have so far posted limited financial stability risks. We only consider the impact on household consumption via the macro consumer sentiment index discussed later."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                888,
+                885,
+                922
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                63,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                109,
+                126,
+                883,
+                214
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The distinction of ownership structures aims to capture any heterogeneous reaction to shocks. Privately owned property developers were first to experience sales declines and defaults. State-owned developers maintained sales initially, likely due to perceived state backing. Property services companies, e.g. property managers, may follow broader market trends or remain acyclical, depending on income from managed properties."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                231,
+                861,
+                319
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We group 119 listed financial institutions into five categories—state-owned commercial banks (6), joint stock banks (10), city commercial banks (30), rural commercial banks (13), and non-bank financial institutions (60). These segments may differ in sensitivity to shocks and systemic impact due to differences in business model and market perception. Median PDs are calculated similarly."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                335,
+                870,
+                406
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "State-owned and joint stock banks are national institutions, representing about 60 percent of China's total banking system assets. State-owned banks have relatively stable deposit bases and lend to safer households and corporates. Joint stock banks represent a higher share of private ownership, rely more on wholesale funding, e.g., corporate deposits and interbank borrowing, and lend to riskier corporates. City and rural commercial banks are regionally focused, smaller, and at least partially government-funded. Many joint stock and city commercial banks allocate sizable assets to high-return, low-capital-charge “other investment”, which comprises asset management products offered by non-bank financial institutions."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                422,
+                874,
+                547
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Non-bank financial institutions are relatively small but prevalent in China's bank-centric financial system. Our sample includes the exchange-listed asset management companies, trust companies, and securities firms (i.e., broker-dealers), thereafter “asset management companies” for simplicity. These entities borrow from banks, tap credit lines, and intermediate resources to riskier sectors, such as property development. They offer similar investment products under purview of different regulators. Implicit guarantees associated with these products serve as a second-best solution to supporting capital allocations to non-state-owned entities (Allen et al., 2023)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                564,
+                880,
+                686
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Macroeconomic indicators"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                704,
+                315,
+                719
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We used three variables—property price, consumer confidence, and real estate investment—to capture key macroeconomic outcomes. Property prices are at the core of macrofinancial linkages (Claessens and Kose, 2018) and play a central role in China’s business-cycle dynamics (Ge et al., 2022). Property prices influence consumption through wealth effects, because real estate assets remain the primary household savings vehicle (Fang et al., 2015). They also shape fiscal performance, as local governments heavily rely on land-sale revenues to supplement the budget (Chen et al., 2020). Developers and local government financing vehicles make pervasive use of land and property as collateral to borrow from financial intermediaries. Therefore, any shifts in collateral valuations directly affect leverage and investment decisions."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                738,
+                872,
+                844
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                63,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Analysis based on mean PDs yields qualitatively similar results. Authors chose the median PD-based analysis because it is less susceptible to extreme values and reflect better the overall creditworthiness of the sector."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                898,
+                866,
+                925
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                946
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                126,
+                818,
+                160
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We included the consumer sentiment index to capture demand pressures, which can generate self-reinforcing cycles through expectation channels (Chen and Wen, 2017). We also used real estate investment—which closely reflects developer activity—to track near-term economic momentum (Fang et al., 2015). These two monthly indicators move closely with consumption and growth patterns in the national accounts, while their frequency provides richer variation and facilitates model implementation by maintaining consistency with the PD dataset."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                176,
+                883,
+                282
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Model Selection"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                311,
+                267,
+                329
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We specify a standard VAR model in the following form:"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                345,
+                501,
+                362
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\boldsymbol {X} _ {t} = \\boldsymbol {A} + \\sum_ {j = 1} ^ {1 2} \\boldsymbol {B} _ {j} \\boldsymbol {X} _ {t - j} + \\boldsymbol {\\epsilon} _ {t}\\tag{1}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/8aebc653b0e09c4072b402c72a6a3d5e50304f5e36201eb363190f7c0fdd14b0.jpg"
+                }
+            },
+            "bbox": [
+                310,
+                378,
+                485,
+                422
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Here,   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "X_{t}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  represents a vector of 11 variables—sectoral PDs for three developer groups, five financial institution groups, and three macroeconomic indicators. Each of the variables is explained by its own lags and those of the other variables up to 12 months. A and   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "B_{j}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  are the intercept and slope coefficients.   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "B_{j}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , once identified, implies Granger causality. Disturbance terms   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\epsilon_{t}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  may be cross-sectionally correlated."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                440,
+                872,
+                513
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This system of 11 equations has 1,463 coefficients and 66 residual covariances to estimate and is not identified without regularization. To avoid arbitrary assumptions, we apply a zero-norm penalty, selecting the best combination of features under a fixed and also the best number of non-zero coefficients. The optimal solution will force the not-so-relevant coefficients to zero, leaving only the significant and meaningful ones. Although computationally more demanding, the zero-norm regularization is conceptually superior to the  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "L^1"
+                    },
+                    {
+                        "type": "text",
+                        "content": "-norm, which indirectly achieves this goal by shrinking the numerical sum of the non-zero coefficients as in LASSO and adaptive LASSO methods (Fan, 1997; Fan and Li, 2001; Zou, 2006)"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                529,
+                862,
+                655
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We use the Stable Combinatorially-optimized Feature Selector (SCOFS) method developed by Duan (2024) to solve the penalized VAR model. Specifically, SCOFS maximizes a k-fold cross-validated seemingly unrelated regression target function:"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                670,
+                867,
+                724
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "a r g m a x _ {\\{p _ {l} \\leq p _ {s} \\leq p _ {u}, \\mathbf {X} _ {t - 1} ^ {(p _ {s})} \\}} \\exp \\left\\{\\lambda \\sum_ {j = 1} ^ {k} L \\left(\\hat {\\theta} _ {j -}; [ \\mathbf {X} _ {t}, \\mathbf {X} _ {t - 1} ^ {(p _ {s})} ] _ {j -}, t \\in T\\right) \\right\\}\\tag{2}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/ea7d5333c08db8f04e3530d81b2dd69acfcdbb253a6559ed869b78cd9062c785.jpg"
+                }
+            },
+            "bbox": [
+                241,
+                739,
+                624,
+                784
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Here,   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathbf{X}_{t-1}^{(p_{s})}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  denotes a subset of   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p_{s}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  elements in   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\{1, X_{t-1}, X_{t-2}, ..., X_{t-l_{max}}\\}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " .   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\hat{\\theta}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the optimal set of parameters.   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "L(\\cdot; \\cdot)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is the log-likelihood function of the VAR model.   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\lambda"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  is a positive self-adaptive device for numerical accuracy which tunes the totally discrete target function. We set k=10, meaning dividing the observations into 10 subsamples for training and testing purchases. In each validation exercise, the cross-validation technique maximizes the out-of-sample fit for the jth fold (i.e., the testing data), while using the parameters trained by"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                803,
+                880,
+                896
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                946
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "everything but, i.e.,  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "j"
+                    },
+                    {
+                        "type": "text",
+                        "content": " -. The multiple validation exercises also enhance the robustness and stability of the estimation as shown in Duan (2024)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                126,
+                844,
+                160
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The SCOFS technique selects the optimal number of non-zero coefficients   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p_{s}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , and the optimal   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p_{s}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " -variable combination out of all permissible combinations of variables bounded by   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p_{l}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  and   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p_{u}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " . It addresses the potential over-fitting problem by allowing no insignificant regressors in the selected model. These features make SCOFS an ideal technique for selecting a parsimonious and stable VAR model amenable to typical operational needs. Its transparency and interpretability are conducive to supporting policy interpretation and deliberation."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                176,
+                880,
+                267
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Operationally, Duan (2024) applied a distribution-tempered Sequential Monte Carlo (SMC) sampling approach to machine learn the optimal parsimonious model set up by SCOFS. The SMC is a simulation-based algorithm by first converting the target function, either statistical or non-statistical, into a distribution/density function, which in turn enable Monte Carlo sampling in a sequential manner. In our context, the SMC algorithm initializes by assigning a probability, or importance weight, to each potential combination of   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p_{s}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  lagged regressors. Hence, a sampler with   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "p_{s}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  variables is associated with an initial probability distribution. These importance weights are naturally uneven and require resampling to level the weights. The algorithm thus boosts the empirical support by Metropolis-Hastings moves to remove duplicate particles arising from resampling. The three steps continue until the target function stabilizes and reaches its maximum value. A comprehensive review of SMC optimization on various familiar models is available in Duan et al. (2022)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                282,
+                877,
+                462
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The empirical design concludes with a suite of impulse response analyses once the optimal model is selected and coefficients estimated. These analyses quantify the impact over time of an idiosyncratic shock to the variable of interest, say property price, on macrofinancial outcomes through endogenous responses. The total impact combines the amplification effects through intertemporal (i.e., regression coefficients) and contemporaneous (i.e., correlation among disturbance terms) linkages."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                478,
+                872,
+                566
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "IV. Empirical Results"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                631,
+                450,
+                657
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This section presents the machine-learned model and several impulse response analyses. The selected model is sparse because it removes the minuscule and insignificant relationships and addresses any potential overfitting problem. The model is also optimal because it achieves a   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "R^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  close to the theoretical maximum among all possible permutations of variable selections. In each impulse response analysis, we prescribe one idiosyncratic shock at a time to the health of developers, financial institutions, property prices, or consumer sentiment, respectively. We subsequently quantify the combined impact over time on each other variable through their intertemporal and contemporaneous relationships."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                678,
+                880,
+                803
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Model Estimation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                830,
+                282,
+                849
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The machine learning algorithm reduces the 1,463-dimensional VAR to 32 significant relationships. They explain a substantial share of variation in the dependent variables, as indicated by the high  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "R^2"
+                    },
+                    {
+                        "type": "text",
+                        "content": " values (Table 1). Some key findings below will shape the system's responses to macrofinancial shocks of various natures:"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                864,
+                883,
+                917
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Persistent lagged effects dominate. Most variables are significantly explained by their own recent lags."
+                    }
+                ]
+            },
+            "bbox": [
+                142,
+                126,
+                880,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Privately owned property developers are highly sensitive to macro and financial conditions. A weak consumer sentiment increases their default risk, likely through waning demand and subsequently declining profitability. Deteriorating financial sector soundness also decreases their creditworthiness, likely through constrained credit supply. Significant influence comes not only from state-owned and joint stock banks, but also from asset management companies, which channel credits from the banking sector to riskier property sectors (Allen et al., 2023)."
+                    }
+                ]
+            },
+            "bbox": [
+                143,
+                143,
+                883,
+                250
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Private developer stress spills over to state-owned developers and financial institutions. State-owned developers may have benefited initially from favorable consumer sentiment due to perceived (implicit) state backing but eventually face similar market pressures. Once the prospect of future revenue and profitability dims and consumer sentiment sours, their access to finance could be interrupted (e.g., financial accelerator effect), making the business operations hard to sustain. Joint stock banks appear particularly vulnerable to the private developer stress, likely reflecting their disproportionate exposures to riskier sectors through loans and asset management products (IMF, 2025)."
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                252,
+                879,
+                375
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The property market condition is central to macro and financial outcomes. Rising property prices Granger cause the joint stock bank credit quality to improve, reflecting their disproportionate exposures to property development sectors. Rising property prices also suggest better market and economic prospects, boosting real estate investment and consumer sentiment via wealth effect (Fang et al., 2015)."
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                378,
+                883,
+                464
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Joint stock bank weakness spills over to city commercial banks. This intertemporal connection likely reflects their similar business models, lending-borrowing relationships, financial market transactions, synchronized sentiment toward them, and common exposure to risky sectors, including the property developers."
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                467,
+                864,
+                537
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/50f2cc3076f3ad0e6713e54bb482c028915c5e45029377c70945f547dbf6847e.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 1. Intertemporal Relationships: Regression Coefficients"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "SOURCE: Credit Research Initiative, National University of Singapore; BIS property price database; Haver Analytics."
+                    },
+                    {
+                        "type": "text",
+                        "content": "NOTE: AM=asset management companies, JS=joint stock banks, CC=city commercial banks, RC=rural commercial banks, RE=real estate investment, PP=property price."
+                    }
+                ],
+                "html": "<table><tr><td>Dependent Variable:</td><td>AM</td><td>JS</td><td>SOE Bank</td><td>CC</td><td>RC</td><td>Private developer</td><td>SOE Developer</td><td>RE Service</td><td>Consumer Confidence RE Investment</td><td>PP</td></tr><tr><td colspan=\"11\">Regressors:</td></tr><tr><td>AM_Lag1</td><td>0.91</td><td></td><td></td><td></td><td></td><td></td><td>0.75</td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td>0.02</td><td></td><td></td><td></td><td></td><td></td><td>0.05</td><td></td><td></td><td></td></tr><tr><td>AM_Lag4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td></td></tr><tr><td>AM_Lag6</td><td></td><td></td><td></td><td></td><td></td><td>0.7</td><td></td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td>0.07</td><td></td><td></td><td></td><td></td></tr><tr><td>JS_Lag1</td><td></td><td>0.95</td><td></td><td>0.22</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td>0.02</td><td></td><td>0.06</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>JS_Lag2</td><td></td><td></td><td></td><td></td><td></td><td>0.88</td><td></td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td>0.06</td><td></td><td></td><td></td><td></td></tr><tr><td>SOE Bank_Lag1</td><td></td><td></td><td>0.95</td><td></td><td></td><td>0.28</td><td></td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td>0.02</td><td></td><td></td><td>0.03</td><td></td><td></td><td></td><td></td></tr><tr><td>CC_Lag1</td><td></td><td></td><td></td><td>0.79</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td>0.06</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CC_Lag7</td><td></td><td></td><td></td><td></td><td></td><td>-0.19</td><td></td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td>0.05</td><td></td><td></td><td></td><td></td></tr><tr><td>RC_Lag1</td><td></td><td></td><td></td><td></td><td>0.99</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td>0.01</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>RC_Lag4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td></td></tr><tr><td>Private developer_Lag1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.21</td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.03</td><td></td><td></td><td></td></tr><tr><td>Private developer_Lag3</td><td>0.04</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td>0.02</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>SOE Developer_Lag3</td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.34</td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.04</td><td></td><td></td><td></td></tr><tr><td>RE Service_Lag1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.96</td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.02</td><td></td><td></td></tr><tr><td>RE Service_Lag2</td><td></td><td></td><td></td><td></td><td></td><td>0.15</td><td></td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td>0.04</td><td></td><td></td><td></td><td></td></tr><tr><td>Consumer Confidence_Lag1</td><td></td><td></td><td></td><td></td><td></td><td>-13.2</td><td>6.56</td><td></td><td>1.16</td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td>2.29</td><td>1.68</td><td></td><td>0.07</td><td></td></tr><tr><td>Consumer Confidence_Lag2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-0.51</td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.06</td><td></td></tr><tr><td>Consumer Confidence_Lag5</td><td></td><td></td><td>-13.94</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td>2.35</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Consumer Confidence_Lag12</td><td></td><td></td><td></td><td></td><td></td><td>-13.91</td><td></td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td>3.14</td><td></td><td></td><td></td><td></td></tr><tr><td>RE Investment_Lag8</td><td>5.23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>(std error)</td><td>1.13</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>RE Investment_Lag12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.89</td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.01</td><td></td></tr><tr><td>PP_Lag1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.08</td><td>0.77</td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.01</td><td>0.05</td></tr><tr><td>PP_Lag4</td><td></td><td>-4.8</td><td></td><td></td><td></td><td></td><td></td><td>0.24</td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td>1.44</td><td></td><td></td><td></td><td></td><td></td><td>0.06</td><td></td><td></td></tr><tr><td>PP_Lag9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.07</td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.01</td><td></td></tr><tr><td>PP_Lag10</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-0.18</td><td></td><td></td></tr><tr><td>(std error)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.05</td><td></td><td></td></tr><tr><td>R^2</td><td>0.98</td><td>0.99</td><td>0.95</td><td>0.98</td><td>0.99</td><td>0.99</td><td>0.99</td><td>0.97</td><td>0.83</td><td>1</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                117,
+                165,
+                880,
+                664
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In addition to the intertemporal relationships manifested by the regression coefficients (Table 1), the covariance matrix of the disturbance terms (Table 2) shows the contemporaneous connections. These contemporaneous correlations reveal strong connections among financial institutions and between developers and banks. They could reflect the financial accelerator effect, lending relationships, shared exposure, market conditions and sentiment."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                729,
+                875,
+                803
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                61,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d55799b28c498fc8b391fe3b28673fa75c53d43fe091779c76396bb737a3c07e.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 2. Contemporaneous Relationships: Covariance of Disturbance"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "SOURCE: Credit Research Initiative, National University of Singapore; BIS property price database; Haver Analytics.\nNOTE: AM=asset management companies, JS=joint stock banks, CC=city commercial banks, RC=rural commercial banks, RE=real estate investment, PP=property price."
+                    }
+                ],
+                "html": "<table><tr><td>Res Corr</td><td>AM</td><td>JS</td><td>SOE Bank</td><td>CC</td><td>RC</td><td>Private developer</td><td>SOE Developer</td><td>RE Service</td><td>Consumer Confidence</td><td>RE Investment</td><td>PP</td></tr><tr><td>AM</td><td></td><td>1.00</td><td>0.51</td><td>0.43</td><td>0.47</td><td>0.34</td><td>0.45</td><td>0.70</td><td>0.09</td><td>-0.31</td><td>0.09</td></tr><tr><td>JS</td><td></td><td>0.51</td><td>1.00</td><td>0.50</td><td>0.54</td><td>0.35</td><td>0.43</td><td>0.43</td><td>0.12</td><td>0.06</td><td>0.06</td></tr><tr><td>SOE Bank</td><td></td><td>0.43</td><td>0.50</td><td>1.00</td><td>0.52</td><td>0.50</td><td>0.41</td><td>0.42</td><td>0.07</td><td>-0.12</td><td>-0.02</td></tr><tr><td>CC</td><td></td><td>0.47</td><td>0.54</td><td>0.52</td><td>1.00</td><td>0.36</td><td>0.51</td><td>0.46</td><td>0.02</td><td>-0.10</td><td>-0.07</td></tr><tr><td>RC</td><td></td><td>0.34</td><td>0.35</td><td>0.50</td><td>0.36</td><td>1.00</td><td>0.27</td><td>0.35</td><td>0.05</td><td>-0.02</td><td>0.03</td></tr><tr><td>Private developer</td><td></td><td>0.45</td><td>0.43</td><td>0.41</td><td>0.51</td><td>0.27</td><td>1.00</td><td>0.55</td><td>0.23</td><td>-0.24</td><td>0.01</td></tr><tr><td>SOE Developer</td><td></td><td>0.70</td><td>0.43</td><td>0.42</td><td>0.46</td><td>0.35</td><td>0.55</td><td>1.00</td><td>0.10</td><td>0.02</td><td>0.20</td></tr><tr><td>RE Service</td><td></td><td>0.09</td><td>0.12</td><td>0.07</td><td>0.02</td><td>0.05</td><td>0.23</td><td>0.10</td><td>1.00</td><td>-0.12</td><td>-0.07</td></tr><tr><td>Consumer Confidenc</td><td></td><td>-0.31</td><td>0.06</td><td>-0.12</td><td>-0.10</td><td>-0.02</td><td>-0.24</td><td>0.02</td><td>-0.12</td><td>1.00</td><td>0.07</td></tr><tr><td>RE Investment</td><td></td><td>0.09</td><td>0.06</td><td>-0.02</td><td>-0.07</td><td>0.03</td><td>0.01</td><td>0.20</td><td>-0.07</td><td>0.07</td><td>1.00</td></tr><tr><td>PP</td><td></td><td>-0.05</td><td>0.04</td><td>0.11</td><td>-0.10</td><td>0.08</td><td>-0.31</td><td>-0.04</td><td>-0.17</td><td>0.05</td><td>0.23</td></tr><tr><td colspan=\"12\">Res Corr SE</td></tr><tr><td>AM</td><td></td><td>0.00</td><td>0.09</td><td>0.09</td><td>0.09</td><td>0.10</td><td>0.09</td><td>0.07</td><td>0.10</td><td>0.10</td><td>0.10</td></tr><tr><td>JS</td><td></td><td>0.09</td><td>0.00</td><td>0.09</td><td>0.09</td><td>0.10</td><td>0.09</td><td>0.09</td><td>0.10</td><td>0.10</td><td>0.10</td></tr><tr><td>SOE Bank</td><td></td><td>0.09</td><td>0.09</td><td>0.00</td><td>0.09</td><td>0.09</td><td>0.09</td><td>0.09</td><td>0.10</td><td>0.10</td><td>0.10</td></tr><tr><td>CC</td><td></td><td>0.09</td><td>0.09</td><td>0.09</td><td>0.00</td><td>0.10</td><td>0.09</td><td>0.09</td><td>0.10</td><td>0.10</td><td>0.10</td></tr><tr><td>RC</td><td></td><td>0.10</td><td>0.10</td><td>0.09</td><td>0.10</td><td>0.00</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td></tr><tr><td>Private developer</td><td></td><td>0.09</td><td>0.09</td><td>0.09</td><td>0.09</td><td>0.10</td><td>0.00</td><td>0.09</td><td>0.10</td><td>0.10</td><td>0.10</td></tr><tr><td>SOE Developer</td><td></td><td>0.07</td><td>0.09</td><td>0.09</td><td>0.09</td><td>0.10</td><td>0.09</td><td>0.00</td><td>0.10</td><td>0.10</td><td>0.10</td></tr><tr><td>RE Service</td><td></td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.00</td><td>0.10</td><td>0.10</td></tr><tr><td>Consumer Confidenc</td><td></td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.00</td><td>0.10</td></tr><tr><td>RE Investment</td><td></td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td></tr><tr><td>PP</td><td></td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.10</td><td>0.00</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                117,
+                142,
+                880,
+                349
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Impulse Response"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                430,
+                292,
+                449
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We simulate idiosyncratic shocks to individual variables and trace their amplification through the system over time. The impacts are driven by the contemporaneous correlations and endogenous responses implied by intertemporal relationships. In all exercises, a shock to PD-based variables is 1 basis point, meaning a deterioration in credit quality. A shock to macrofinancial variables is 1 percentage point, meaning improvement in property prices, consumer sentiment, or real estate investment. Perhaps not surprisingly, the 1-basis-point shock to the PD is proportionately smaller than the 1 percentage shock to the macro variables. As a result, the impact of shock to the financial and developer sectors on macro performance appears small in several exercises even though the macrofinancial linkages are strong."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                465,
+                877,
+                607
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Shock to Privately-owned Developers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                623,
+                397,
+                638
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the first exercise, we prescribe a one-time shock to the private developers to reflect a sudden shortfall in their sales and stock market performance. Balance sheet impairment could limit their access to finance, constrain business operations, and weaken future cash flows. The one-basis-point shock propagates through macrofinancial linkages and causes amplified and persistent damage, with effects roughly 10 times larger within a year (Figure 1)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                656,
+                880,
+                744
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "State-owned developers initially benefit from the weakening performance of their private competitors. However, as market sentiment, sales, and profitability decline, their creditworthiness also deteriorates, although the overall impact remains much milder."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                761,
+                883,
+                814
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The spillover effects on the financial system are sizable. State-owned banks are affected gradually. Given their business model—favoring state-owned borrowers—they tend to recognize losses only when state-owned developers begin to default several periods later. By contrast, joint stock banks experience immediate and pronounced impact. These banks have higher risk appetite and are disproportionately exposed to the property sector loans and investment assets that ultimately fund property development activities."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                829,
+                877,
+                919
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                63,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In theory, asset managers fully pass the developer credit risk to banks and other end investors through trust and investment products. However, in practice they historically absorbed partial losses through implicit guarantees, a practice curtailed by the 2018 New Asset Management Rules (Allen et al., 2023). The deterioration of their credit quality may also reflect the loss of viable real estate investment projects and income generating opportunities."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                126,
+                883,
+                215
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a9c5a75401dbae7f7c54a705dbd334cc7c89b894dfff6a7bce37eb9c70612e61.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1. Impulse Response: 1 Basis Point Shock to PD of Privately-owned Developers (Y axis: PD in basis point and macro in ppt; X axis: month)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "SOURCE: Credit Research Initiative, National University of Singapore; BIS property price database; Haver Analytics."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                114,
+                272,
+                676,
+                513
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Shock to City Commercial Banks"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                550,
+                362,
+                565
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A one-basis-point deterioration in city commercial bank PD mimics a temporary liquidity shock or capital shortfall. Despite their smaller size and regional orientation, stress at these banks could cause systemic impacts (Figure 2)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                583,
+                861,
+                635
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Joint stock banks and asset management companies appear particularly affected likely due to their balance sheet connections with city commercials and shared market sentiment dynamic. Joint stock and city commercial banks share a similar business model: they are dependent on wholesale funding, active in interbank transactions, and exposed to riskier borrowers (IMF, 2025). Temporary stress experienced at city commercial banks may weaken market sentiment and encourage liquidity hoarding by others, disrupting their access to funding markets. The resulting liquidity and credit contraction could also pass on to asset management companies, which channel bank resources to risky sectors."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                652,
+                870,
+                777
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By contrast, the state-owned banks perform better almost immediately after the initial shock. Positive sentiment toward a safer business model may divert liquidity from risker parts of the financial system and temporarily boost their performance, although some overshooting can occur and later reverse."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                792,
+                841,
+                845
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Both privately and state-owned developers become less creditworthy, although to different degrees. Private developers suffer prolonged and pronounced stress, likely due to interrupted funding flows—directly from city commercial banks and indirectly from broader liquidity contraction. State-owned developers are less affected, likely reflecting their more diverse funding sources."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                861,
+                857,
+                896
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                126,
+                867,
+                160
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1a940a457bb37cacb27e607a73d4e177c8f30af8fae445e7adc10b277541708f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2. Impulse Response: 1 Basis Point Shock to PD of City Commercial Banks"
+                    },
+                    {
+                        "type": "text",
+                        "content": "(Y axis: PD in basis point and macro in ppt; X axis: month)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "SOURCE: Credit Research Initiative, National University of Singapore; BIS property price database; Haver Analytics."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                114,
+                229,
+                656,
+                474
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Shock to Property Prices"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                510,
+                303,
+                527
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Property prices are at the core of the macrofinancial linkages in China (Ge et al., 2022). Rising prices directly improve private developer creditworthiness in subsequent periods (Figure 3). They support stronger sales and profitability, strengthening developers' balance sheets. In addition, they strengthen consumer sentiment, which encourages home purchase and investment (Figure 4, Table 1). They also contribute to more favorable financial conditions, sustaining funding flows to developers and home buyers."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                544,
+                879,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "At a macro level, favorable price dynamics encourage real estate investments in subsequent periods due to improved return prospects (Allen, 1993). Healthier balance sheets for developers and financial institutions further enable these entities to expand investment when price conditions remain supportive."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                648,
+                870,
+                700
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                61,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/bad41053ba562427a577c7d21946fd4447b131c1ff14808dfb2945716b5bff4c.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3. Impulse Response: 1 Percentage Point Shock to Property Prices (Y axis: PD in basis point and macro in ppt; X axis: month)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "SOURCE: Credit Research Initiative, National University of Singapore; BIS property price database; Haver Analytics."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                112,
+                154,
+                673,
+                412
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Shock to Consumer Sentiment"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                446,
+                346,
+                463
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A positive boost to consumer sentiment improves the performance of many other sectors (Figure 4). The improved willingness to purchase homes raises sales and strengthens financial positions of private developers, thereby improving their creditworthiness. Buoyant economic activity also bolsters the positions of several financial sectors, reflecting stronger credit demand, improved asset quality, and a more supportive operating environment."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                479,
+                880,
+                569
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/602bd4c0093dcabda7c265392da0e4499482f2b5208c71f9765ca3ec739462d2.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4. Impulse Response: 1 Percentage Point Shock to Consumer Confidence Index (Y axis: PD in basis point and macro in ppt; X axis: month)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "SOURCE: Credit Research Initiative, National University of Singapore; BIS property price database; Haver Analytics."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                112,
+                631,
+                671,
+                868
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                61,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "V. Conclusion"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                111,
+                128,
+                356,
+                154
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial stability remains a core objective for policymakers. Past crises have highlighted the importance of understanding macrofinancial linkages and their role in amplifying shocks. In response, the global policy agenda has increasingly embraced a macroprudential approach."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                175,
+                874,
+                229
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In China, a complex and interconnected financial system underpins a growth model reliant on real estate and infrastructure investment. Macrofinancial linkages are pronounced, and the ongoing property market adjustment raises significant concerns about broader macroeconomic implications."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                244,
+                864,
+                297
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper uses a machine-learned VAR model with granular and high-frequency time series to quantify the two-way interactions between real and financial sectors. By incorporating PD metrics for developers and financial institutions, the analysis reveals heterogeneous effects of macrofinancial shocks. A novel, fully interpretable machine learning methodology addresses high dimensionality and captures persistent time dynamics without relying on any opaque 'black box' models."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                314,
+                862,
+                402
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Findings show that even temporary shocks can trigger large and persistent macrofinancial consequences. Stress from privately owned developers and regionally focused banks can spill over to other sectors through lending relationships, common exposures, shared markets, and sentiment. Property prices lie at the heart of these linkages. Sharp corrections can undermine real estate investment, erode consumer confidence, and weaken both property and financial sectors—disrupting financial intermediation through demand and supply channels and dampening broader economic prospects."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                417,
+                872,
+                525
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The empirical analysis suggests that well-capitalized and stably funded financial institutions are associated with a greater capacity to sustain credit and liquidity provision. Stabilizing property prices tends to be more effective when aligned with broader efforts to restore durable business and consumer confidence. The results point to potential trade-offs between measures affecting property developers and broader considerations of financial sector resilience. A sustainable recovery in the property market is typically characterized by organic transaction growth supported by the financial health of key market participants. Accounting for complex feedback effects helps characterize macrofinancial dynamics over the business cycle."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                541,
+                880,
+                666
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A comprehensive toolkit to monitor macrofinancial linkages and regularly assess shock-induced outcomes can enhance risk management. Modern contagion dynamics are increasingly shaped by business model similarities, common exposures, and market sentiment, extending beyond bilateral exposures. High-frequency, publicly available market indicators—supported by modern technology—offer timely, forward-looking insights. Improved collection of cross-sectoral exposures could deepen the understanding of China’s macrofinancial complexity."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                681,
+                877,
+                787
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                671,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "References"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                128,
+                295,
+                154
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Adrian, T. (2017b), “Macroprudential Policy and Financial Vulnerabilities,” Speech at the European Systemic Risk Board Annual Conference, September 22, Frankfurt am Main."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                174,
+                861,
+                209
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Adrian, T., and H. S. Shin (2008), “Liquidity, Monetary Policy, and Financial Cycles”, Current Issues in Economics and Finance, Vol. 14, No. 1, Federal Reserve Bank of New York, New York."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                218,
+                818,
+                252
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Adrian, T., and H. S. Shin (2010a), “Liquidity and Leverage”, Journal of Financial Intermediation, Vol. 19, No. 3, pp. 418–37."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                262,
+                880,
+                295
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Allen, F. (1993), “Stock Markets and Resource Allocation,” in Capital Markets and Financial Intermediation, C. Mayer and X. Vives (eds), pp. 81–108, New York: Cambridge University Press."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                305,
+                870,
+                340
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Allen, F., X. Gu, C.W. Li, J. Qian, and Y. Qian (2023), “Implicit Guarantees and the Rise of Shadow Banking: The Case of Trust Products”, Journal of Financial Economics, 149(2), 115-141."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                348,
+                862,
+                383
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Antony, J., and P. Broer (2010), “Linkages between the Financial and the Real Sector of the Economy: A Literature Survey”, CPB Document, 216, CPB Netherlands Bureau for Economic Policy Analysis, Hague."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                392,
+                866,
+                426
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Basel Committee on Banking Supervision (BCBS, 2011), “The Transmission Channels between the Financial and Real Sectors: A Critical Survey of the Literature”, BCBS Working Paper 18, Bank for International Settlements, Basel."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                435,
+                867,
+                487
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Bernanke, B. S., and A. Blinder (1988), “Credit, Money, and Aggregate Demand”, American Economic Review, Vol. 78, No. 2, pp. 435–9."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                497,
+                877,
+                532
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Bernanke, B. S., and C. S. Lown (1991), “The Credit Crunch”, Brookings Papers on Economic Activity, Vol. 1991, No. 2, pp. 205–39."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                540,
+                852,
+                574
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Blanchard, O. (2017a), “Distortions in Macroeconomics”, Paper submitted to NBER Macroeconomics Annual, June 18, Peterson Institute for International Economics, Washington, DC."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                583,
+                867,
+                619
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Borio, C., I. Shim, and H.S. Shin (2022), “Macro-financial Stability Frameworks: Experience and Challenges”, BIS Working Papers No 1057."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                627,
+                864,
+                662
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Bruche, M., and J. Suarez (2010), “Deposit Insurance and Money Market Freezes”, Journal of Monetary Economics, Vol. 57, No. 1, pp. 45–61."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                670,
+                833,
+                705
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Brunnermeier, M., and A. Krishnamurthy (eds) (2014), “Risk Topography: Systemic Risk and Macro Modeling”, Chicago: University of Chicago Press."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                714,
+                877,
+                750
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Carroll, C. D., M. Otsuka, and J. Slacalek (2011), “How Large Are Housing and Financial Wealth Effects? A New Approach”, Journal of Money, Credit and Banking, Vol. 43, No. 1, pp. 55–79."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                758,
+                857,
+                792
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Case, K. E., J. M. Quigley, and R. J. Shiller (2005), “Comparing Wealth Effects: The Stock Market versus the Housing Market”, Advances on Macroeconomics, Vol. 5, No. 1, Article 1."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                800,
+                864,
+                835
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Case, K. E., J. M. Quigley, and R. J. Shiller (2013), “Wealth Effects Revisited 1975–2012”, Critical Finance Review, Vol. 2, No. 1, pp. 101–28."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                844,
+                849,
+                878
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Chen, K., J. Ren, and T. Zha (2018), “The Nexus of Monetary Policy and Shadow Banking in China”, American Economic Review, 108(12), 3891-3936."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                888,
+                879,
+                921
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                669,
+                61,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "18"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                948
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Chen, K. and Y. Wen (2017), \"The Great Housing Boom of China\", American Economic Journal: Macroeconomics, 9(2), 73-114."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                126,
+                779,
+                159
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Chen, Z., Z. He, and C. Liu (2020), “The Financing of Local Government in China: Stimulus Loan Wanes and Shadow Banking Waxes”, Journal of Financial Economics, 137(1), 42-71."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                169,
+                864,
+                203
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Claessens, S. (2015), “An Overview of Macroprudential Policy Tools”, Annual Review of Financial Economics, Vol. 7, pp. 397–422."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                212,
+                870,
+                246
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Claessens, S. and M.A., Kose (2018), “Frontiers of Macrofinancial Linkages”, BIS Papers, No. 95."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                255,
+                790,
+                272
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Claessens, S., M. A. Kose, and M. E. Terrones (2012a), “How do Business and Financial Cycles Interact?” Journal of International Economics, Vol. 87, No. 1, pp. 178–90."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                281,
+                851,
+                315
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Coric, B. (2011), “The Financial Accelerator Effect: Concept and Challenges”, Financial Theory and Practice, Vol. 35, No. 2, pp. 171–96."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                324,
+                862,
+                358
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Craig, B., M. Karamysheva, and D. Salakhova (2024), \"Do Market-based Networks Reflect True Exposures Between Banks?\" ECB Working Paper Series, No 2867."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                368,
+                854,
+                402
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Credit Research Initiative, National University of Singapore (NUS-CRI, 2023), “NUS Credit Research Initiative Technical Report, 2023 Update 1”."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                412,
+                870,
+                445
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Deaton, A. (1992), “Understanding Consumption”, Oxford: Clarendon Press."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                455,
+                640,
+                472
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Diebold, F. and K. Yilmaz (2012), “Better to Give Than to Receive: Predictive Directional Measurement of Volatility Spillover”, International Journal of Forecasting 28, 57-66."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                479,
+                841,
+                513
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Drehmann, M., C. Borio, and K. Tsatsaronis (2012), “Characterising the Financial Cycle: Don’t Lose Sight of the Medium Term!”, BIS Working Paper 380, Bank for International Settlements, Basel."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                523,
+                859,
+                559
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Duan, J-C. (2024), “Stable Combinatorially-Optimized Features Selection via Sequential Monte Carlo Optimization”, Working Paper. https://adbiza.com/static/docs/PublishFiles/VariableSelection-SMC_October-25-2024.pdf"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                566,
+                810,
+                619
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Duan, J-C. (2025), “Interpretable vs Black-box AI in Action”, ADBIZA Whitepaper.\nhttps://adbiza.com/static/docs/PublishFiles/Interpretable%20vs%20Black-box%20AI%20in%20Action.pdf"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                628,
+                867,
+                664
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Duan, J.-C., S. Li, and Y. Xu, 2022, Sequential Monte Carlo Optimization and Statistical Inference, Wiley Integrative Reviews: Computational Statistics, e1598. https://doi.org/10.1002/wics.1598"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                672,
+                836,
+                707
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Duan, J.C., J. Sun and T. Wang, 2012, Multiperiod Corporate Default Prediction – A Forward Intensity Approach, Journal of Econometrics 170, 191-209."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                715,
+                818,
+                750
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Fan, J. (1997), “Comments on “Wavelets in Statistics: a Review” by A. Antoniadis”, Journal of the Italian Statistical Society, 6(20), 131-138."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                758,
+                831,
+                792
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Fan, J. and R. Li (2001), “Variable Selection via Nonconcave Penalized Likelihood and its Oracle Properties”, Journal of the American Statistical Association, 96, 1348-1360."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                803,
+                862,
+                835
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Fang, H., Q. Gu, W. Xiong, and L. Zhou (2015), “Demystifying the Chinese Housing Boom”, NBER Macroeconomics Annual, Vol 30."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                845,
+                795,
+                880
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Freixas, X., and J. Jorge (2008), “The Role of Interbank Markets in Monetary Policy: A Model with Rationing”, Journal of Money, Credit and Banking, Vol. 40, No. 6, pp. 1151–76."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                888,
+                864,
+                922
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                669,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "19"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Gan, J. (2010), “Housing Wealth and Consumption Growth: Evidence from a Large Panel of Households”, Review of Financial Studies, Vol. 23, No. 6, pp. 2229–67."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                126,
+                843,
+                159
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Ge, X., X. Li, Y. Li, and Y. Liu (2022), “The Driving Forces of China’s Business Cycles: Evidence from an Estimated DSGE Model with Housing and Banking”, China Economic Review."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                169,
+                836,
+                203
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Geanakoplos, J. (2008), “Arrow Debreu Model of General Equilibrium,” in The New Palgrave Dictionary of Economics, 2nd edition, S. N. Durlauf and L. E. Blume (eds), Palgrave Macmillan."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                212,
+                844,
+                247
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Geanakoplos, J. (2010), “The Leverage Cycle” in NBER Macroeconomic Annual 2009, Vol. 24, D. Acemoglu, K. Rogoff, and M. Woodford (eds), pp. 1–65, Chicago: University of Chicago Press."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                256,
+                864,
+                290
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Guiso, L., and P. Sodini (2013), “Household Finance: An Emerging Field,” in Handbook of the Economics of Finance, Vol. 2, G. M. Constantinides, M. Harris, and R. M. Stulz (eds), pp. 1397–532, Amsterdam: North-Holland."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                299,
+                875,
+                349
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Holmström, B., and J. Tirole (1997), “Financial Intermediation, Loanable Funds, and the Real Sector”, Quarterly Journal of Economics, Vol. 112, No. 3, pp. 663–91."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                361,
+                883,
+                393
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "IMF (2025), “Financial System Stability Assessment”, People’s Republic of China."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                404,
+                679,
+                421
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "IMF-FSB-BIS (2016), “Elements of Effective Macroprudential Policies: Lessons from International Experience”, Report to the G-20, August 31."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                429,
+                875,
+                464
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Kim, K. H. (2004), “Housing and the Korean Economy”, Journal of Housing Economics, Vol. 13, pp. 321–41."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                473,
+                859,
+                489
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Muir, T. (2017), “Financial Crises and Risk Premia”, Quarterly Journal of Economics, Vol. 132, No. 2, pp. 765–809."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                498,
+                875,
+                532
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Natarajan, B.K. (1995), “Sparse Approximate Solutions to Linear Systems”, SIAM Journal on Computing, 24(2), 227-234."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                542,
+                880,
+                575
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Quadrini, V. (2011), “Financial Frictions in Macroeconomic Fluctuations”, Economic Quarterly, Vol. 97, No. 3, pp. 209–54, Federal Reserve Bank of Richmond, Richmond."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                585,
+                864,
+                619
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Repullo, R., and J. Suarez (2000), “Entrepreneurial Moral Hazard and Bank Monitoring: A Model of the Credit Channel”, European Economic Review, Vol. 44, No. 10, pp. 1931–50."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                628,
+                869,
+                664
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Stein, J. C. (1998), “An Adverse-Selection Model of Bank Asset and Liability Management with Implications for the Transmission of Monetary Policy”, RAND Journal of Economics, Vol. 29, No. 3, pp. 466–86."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                672,
+                875,
+                707
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Tibshirani, R. (1996), “Regression Shrinkage and Selection via the Lasso”, Journal of the Royal Statistical Society, Ser. B, 58(1), 267-288."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                715,
+                844,
+                750
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Van den Heuvel, S. J. (2006), “The Bank Capital Channel of Monetary Policy”, Society for Economic Dynamics, Meeting Paper 512."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                758,
+                880,
+                792
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Van den Heuvel, S. J. (2008), “The Welfare Cost of Bank Capital Requirements”, Journal of Monetary Economics, Vol. 55, No. 2, pp. 298–320."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                803,
+                815,
+                835
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Zou, H. (2006), “The Adaptive Lasso and Its Oracle Properties”, Journal of the American Statistical Association, 101(476), 1418-1429."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                845,
+                880,
+                878
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF WORKING PAPERS"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                61,
+                267,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Macrofinancial Linkages in China"
+                    }
+                ]
+            },
+            "bbox": [
+                669,
+                63,
+                883,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                936,
+                357,
+                950
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "20"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                936,
+                883,
+                946
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d4b8a1b010a95febf540ebf94da51f185830cab5acb4a8a6b5178316da0c5ae0.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                839
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "PUBLICATIONS"
+                    }
+                ]
+            },
+            "bbox": [
+                184,
+                787,
+                410,
+                811
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Assessing Macrofinancial Linkages in China Using A Machine-Learned Parsimonious VAR Model"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                857,
+                761,
+                871
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Working Paper No. WP/2026/134"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                875,
+                302,
+                888
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL\nMONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                767,
+                163,
+                830
+            ]
+        }
+    ]
+]
