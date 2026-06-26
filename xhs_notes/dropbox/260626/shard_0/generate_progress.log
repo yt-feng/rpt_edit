@@ -1,0 +1,15 @@
+Found 28 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001__rdarm5j/pdfs/0001-01-Citi-China Economics 26H2 Outlook-AI Supercycle Cuts into the K-shaped Economy-260625.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001__rdarm5j/pdfs/0002-02-Barclays-Rates Strategy-A global bond glut-260625.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001__rdarm5j/pdfs/0003-03-J.P. Morgan-A cyclical state of mind-2026 Mid-Year Global Economic Outlook-260625.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001__rdarm5j/pdfs/0004-04-Goldman Sachs-Japan Shipbuilding- Japan Growth Strategy Council- Reaffirms shipbuilding importance from an economic security perspective-260626.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001__rdarm5j/pdfs/0005-05-Goldman Sachs-AUSTRALIA TECHNOLOGY-Takeaways from expert call on global data centre industry-260625.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=ddd6cf4d-bf42-4320-a623-48d6d4373e94
+MinerU states: running, running, running, pending, pending
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260626/shard_0; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
