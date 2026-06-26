@@ -1,0 +1,272 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs",
+  "total_pdf_count_before_shard": 38,
+  "pdf_count_before_skip": 38,
+  "pdf_count": 38,
+  "generated_report_count": 38,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Brookings_Can-Turkey-s-defense-industry-deliver-strategic-autonomy-for_743063c3.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ioorw05t/pdfs/0001-Brookings_Can-Turkey-s-defense-industry-deliver-strategic-autonomy-for_743063c3.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Brookings_The-spiking-threat-Mexican-cartels-in-Europe-Canada-Africa-t_6a5eb982.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ioorw05t/pdfs/0002-Brookings_The-spiking-threat-Mexican-cartels-in-Europe-Canada-Africa-t_6a5eb982.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/Brookings_Will-the-Strait-of-Hormuz-reopen-after-the-US-Iran-deal_cedc8e6c.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ioorw05t/pdfs/0003-Brookings_Will-the-Strait-of-Hormuz-reopen-after-the-US-Iran-deal_cedc8e6c.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Artificial-Intelligence-and-the-Economics-of-Adjustment_53371129.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ioorw05t/pdfs/0004-IMF_Artificial-Intelligence-and-the-Economics-of-Adjustment_53371129.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/RAND_AI-agents-put-offensive-cyber-within-reach-of-novices_af805fba.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ioorw05t/pdfs/0005-RAND_AI-agents-put-offensive-cyber-within-reach-of-novices_af805fba.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/RAND_Can-LLM-Agents-Select-and-Engage-with-Biological-Tools_570d253a.pdf",
+          "batch_file": "/tmp/pdf_batch_002_zjejlscu/pdfs/0006-RAND_Can-LLM-Agents-Select-and-Engage-with-Biological-Tools_570d253a.pdf",
+          "stable_index": "6"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/RAND_Strengthening-Young-People-s-Life-Skills_253c9212.pdf",
+          "batch_file": "/tmp/pdf_batch_002_zjejlscu/pdfs/0007-RAND_Strengthening-Young-People-s-Life-Skills_253c9212.pdf",
+          "stable_index": "7"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/RAND_Supply-Chain-Energy-and-AI-Nexus_362642c0.pdf",
+          "batch_file": "/tmp/pdf_batch_002_zjejlscu/pdfs/0008-RAND_Supply-Chain-Energy-and-AI-Nexus_362642c0.pdf",
+          "stable_index": "8"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Beyond-the-AI-Divide-A-Simple-Approach-to-Identifying-Global_917027c1.pdf",
+          "batch_file": "/tmp/pdf_batch_002_zjejlscu/pdfs/0009-WorldBank_Beyond-the-AI-Divide-A-Simple-Approach-to-Identifying-Global_917027c1.pdf",
+          "stable_index": "9"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Boosting-Data-Transparency-A-Shared-Incentive-for-Borrowers-_d44bc085.pdf",
+          "batch_file": "/tmp/pdf_batch_002_zjejlscu/pdfs/0010-WorldBank_Boosting-Data-Transparency-A-Shared-Incentive-for-Borrowers-_d44bc085.pdf",
+          "stable_index": "10"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 3,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Bridging-Conflicts-and-Biodiversity-Protection-The-Critical-_a06ce589.pdf",
+          "batch_file": "/tmp/pdf_batch_003_u7vopdlt/pdfs/0011-WorldBank_Bridging-Conflicts-and-Biodiversity-Protection-The-Critical-_a06ce589.pdf",
+          "stable_index": "11"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Businesses-of-the-State-in-Brazil-The-Impact-on-Employment-a_7a293f8c.pdf",
+          "batch_file": "/tmp/pdf_batch_003_u7vopdlt/pdfs/0012-WorldBank_Businesses-of-the-State-in-Brazil-The-Impact-on-Employment-a_7a293f8c.pdf",
+          "stable_index": "12"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Collecting-Accurate-Data-on-Intimate-Partner-Violence-Learni_655bc448.pdf",
+          "batch_file": "/tmp/pdf_batch_003_u7vopdlt/pdfs/0013-WorldBank_Collecting-Accurate-Data-on-Intimate-Partner-Violence-Learni_655bc448.pdf",
+          "stable_index": "13"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Community-Health-Workers-as-Key-Providers-of-Easy-to-Use-Con_42a25d35.pdf",
+          "batch_file": "/tmp/pdf_batch_003_u7vopdlt/pdfs/0014-WorldBank_Community-Health-Workers-as-Key-Providers-of-Easy-to-Use-Con_42a25d35.pdf",
+          "stable_index": "14"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Decarbonization-in-MENA-Countries-An-Empirical-Analysis-of-P_67e6279d.pdf",
+          "batch_file": "/tmp/pdf_batch_003_u7vopdlt/pdfs/0015-WorldBank_Decarbonization-in-MENA-Countries-An-Empirical-Analysis-of-P_67e6279d.pdf",
+          "stable_index": "15"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 4,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Deciding-Not-to-Decide-When-Is-There-Power-in-Not-Deciding_9a82d292.pdf",
+          "batch_file": "/tmp/pdf_batch_004_w1d2v2yu/pdfs/0016-WorldBank_Deciding-Not-to-Decide-When-Is-There-Power-in-Not-Deciding_9a82d292.pdf",
+          "stable_index": "16"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Design-of-Partial-Population-Experiments-with-an-Application_c329785a.pdf",
+          "batch_file": "/tmp/pdf_batch_004_w1d2v2yu/pdfs/0017-WorldBank_Design-of-Partial-Population-Experiments-with-an-Application_c329785a.pdf",
+          "stable_index": "17"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Displaced-Learners-Early-Integration-of-Ukrainian-Refugee-St_33e60d1f.pdf",
+          "batch_file": "/tmp/pdf_batch_004_w1d2v2yu/pdfs/0018-WorldBank_Displaced-Learners-Early-Integration-of-Ukrainian-Refugee-St_33e60d1f.pdf",
+          "stable_index": "18"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Does-Free-Sound-Too-Cheap-The-Adverse-Effect-of-a-Randomized_5a572e63.pdf",
+          "batch_file": "/tmp/pdf_batch_004_w1d2v2yu/pdfs/0019-WorldBank_Does-Free-Sound-Too-Cheap-The-Adverse-Effect-of-a-Randomized_5a572e63.pdf",
+          "stable_index": "19"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Does-Social-Mobility-Affect-Economic-Development-Cross-Count_064f90c9.pdf",
+          "batch_file": "/tmp/pdf_batch_004_w1d2v2yu/pdfs/0020-WorldBank_Does-Social-Mobility-Affect-Economic-Development-Cross-Count_064f90c9.pdf",
+          "stable_index": "20"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 5,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Dynamic-Effects-of-Fiscal-Rules-Do-Initial-Conditions-Matter_4616a072.pdf",
+          "batch_file": "/tmp/pdf_batch_005_bpvrxgyc/pdfs/0021-WorldBank_Dynamic-Effects-of-Fiscal-Rules-Do-Initial-Conditions-Matter_4616a072.pdf",
+          "stable_index": "21"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Dynamic-High-Resolution-Wealth-Measurement-in-Data-Scarce-En_9d601dab.pdf",
+          "batch_file": "/tmp/pdf_batch_005_bpvrxgyc/pdfs/0022-WorldBank_Dynamic-High-Resolution-Wealth-Measurement-in-Data-Scarce-En_9d601dab.pdf",
+          "stable_index": "22"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Effects-of-a-Community-Driven-Water-Sanitation-and-Hygiene-I_d64d1188.pdf",
+          "batch_file": "/tmp/pdf_batch_005_bpvrxgyc/pdfs/0023-WorldBank_Effects-of-a-Community-Driven-Water-Sanitation-and-Hygiene-I_d64d1188.pdf",
+          "stable_index": "23"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Energy-Prices-Energy-Intensity-and-Firm-Performance_800b8fc5.pdf",
+          "batch_file": "/tmp/pdf_batch_005_bpvrxgyc/pdfs/0024-WorldBank_Energy-Prices-Energy-Intensity-and-Firm-Performance_800b8fc5.pdf",
+          "stable_index": "24"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Exploring-the-Gender-Divide-in-Real-Estate-Ownership-and-Pro_781ea396.pdf",
+          "batch_file": "/tmp/pdf_batch_005_bpvrxgyc/pdfs/0025-WorldBank_Exploring-the-Gender-Divide-in-Real-Estate-Ownership-and-Pro_781ea396.pdf",
+          "stable_index": "25"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 6,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Firm-Level-Climate-Change-Adaptation-Micro-Evidence-from-134_83e6c087.pdf",
+          "batch_file": "/tmp/pdf_batch_006_vub8ynuz/pdfs/0026-WorldBank_Firm-Level-Climate-Change-Adaptation-Micro-Evidence-from-134_83e6c087.pdf",
+          "stable_index": "26"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_From-Conflict-to-Compromise-Experimental-Evidence-on-Occupat_4728fef3.pdf",
+          "batch_file": "/tmp/pdf_batch_006_vub8ynuz/pdfs/0027-WorldBank_From-Conflict-to-Compromise-Experimental-Evidence-on-Occupat_4728fef3.pdf",
+          "stable_index": "27"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Gender-Barriers-Structural-Transformation-and-Economic-Devel_8f9ed928.pdf",
+          "batch_file": "/tmp/pdf_batch_006_vub8ynuz/pdfs/0028-WorldBank_Gender-Barriers-Structural-Transformation-and-Economic-Devel_8f9ed928.pdf",
+          "stable_index": "28"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Lying-to-the-Taxman-or-Accepting-a-Helping-Hand-Evidence-fro_b85cbae7.pdf",
+          "batch_file": "/tmp/pdf_batch_006_vub8ynuz/pdfs/0029-WorldBank_Lying-to-the-Taxman-or-Accepting-a-Helping-Hand-Evidence-fro_b85cbae7.pdf",
+          "stable_index": "29"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Rapid-Economic-Growth-but-Rising-Poverty-Segregation-Will-Vi_89aaf44f.pdf",
+          "batch_file": "/tmp/pdf_batch_006_vub8ynuz/pdfs/0030-WorldBank_Rapid-Economic-Growth-but-Rising-Poverty-Segregation-Will-Vi_89aaf44f.pdf",
+          "stable_index": "30"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 7,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Revisiting-the-Gains-from-Trade-in-EMDEs-The-Case-of-Selecte_0cf54dd6.pdf",
+          "batch_file": "/tmp/pdf_batch_007_9emu6458/pdfs/0031-WorldBank_Revisiting-the-Gains-from-Trade-in-EMDEs-The-Case-of-Selecte_0cf54dd6.pdf",
+          "stable_index": "31"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Road-Investment-and-Violence-in-DRC-Perishable-Peace-Dividen_51aa8a18.pdf",
+          "batch_file": "/tmp/pdf_batch_007_9emu6458/pdfs/0032-WorldBank_Road-Investment-and-Violence-in-DRC-Perishable-Peace-Dividen_51aa8a18.pdf",
+          "stable_index": "32"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Rural-Non-Farm-Employment-in-Rajasthan-Determinants-Welfare-_8c8cc3e7.pdf",
+          "batch_file": "/tmp/pdf_batch_007_9emu6458/pdfs/0033-WorldBank_Rural-Non-Farm-Employment-in-Rajasthan-Determinants-Welfare-_8c8cc3e7.pdf",
+          "stable_index": "33"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Seeds-of-Change-The-Impact-of-Ethiopia-s-Direct-Seed-Marketi_68f455b1.pdf",
+          "batch_file": "/tmp/pdf_batch_007_9emu6458/pdfs/0034-WorldBank_Seeds-of-Change-The-Impact-of-Ethiopia-s-Direct-Seed-Marketi_68f455b1.pdf",
+          "stable_index": "34"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Technology-and-Corporate-Ethical-Standards_1ba34aa1.pdf",
+          "batch_file": "/tmp/pdf_batch_007_9emu6458/pdfs/0035-WorldBank_Technology-and-Corporate-Ethical-Standards_1ba34aa1.pdf",
+          "stable_index": "35"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 8,
+      "pdf_count": 3,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_The-Elusive-Impact-of-Corporate-Tax-Incentives_16f407a5.pdf",
+          "batch_file": "/tmp/pdf_batch_008_ai03vkus/pdfs/0036-WorldBank_The-Elusive-Impact-of-Corporate-Tax-Incentives_16f407a5.pdf",
+          "stable_index": "36"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_The-Exposure-of-Workers-to-Artificial-Intelligence-in-Low--a_1d64539f.pdf",
+          "batch_file": "/tmp/pdf_batch_008_ai03vkus/pdfs/0037-WorldBank_The-Exposure-of-Workers-to-Artificial-Intelligence-in-Low--a_1d64539f.pdf",
+          "stable_index": "37"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/WorldBank_Weather-Shocks-and-Rural-Economic-Linkages-Evidence-from-Raj_405b317a.pdf",
+          "batch_file": "/tmp/pdf_batch_008_ai03vkus/pdfs/0038-WorldBank_Weather-Shocks-and-Rural-Economic-Linkages-Evidence-from-Raj_405b317a.pdf",
+          "stable_index": "38"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

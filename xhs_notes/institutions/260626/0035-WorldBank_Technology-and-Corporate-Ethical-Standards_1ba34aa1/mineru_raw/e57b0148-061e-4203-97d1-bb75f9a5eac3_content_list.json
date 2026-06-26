@@ -1,0 +1,2764 @@
+[
+    {
+        "type": "text",
+        "text": "Technology and Corporate Ethical Standards",
+        "text_level": 1,
+        "bbox": [
+            127,
+            296,
+            872,
+            335
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Marika Carboni",
+        "bbox": [
+            424,
+            359,
+            578,
+            381
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Marta Degl'Innocenti",
+        "bbox": [
+            403,
+            383,
+            598,
+            405
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Franco Fiordelisi",
+        "bbox": [
+            424,
+            406,
+            578,
+            426
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Davide Salvatore Mare",
+        "bbox": [
+            397,
+            428,
+            604,
+            450
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "Public Disclosure Authorized",
+        "bbox": [
+            8,
+            23,
+            29,
+            190
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "Public Disclosure Authorized",
+        "bbox": [
+            6,
+            440,
+            29,
+            606
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Policy Research Working Paper",
+        "bbox": [
+            111,
+            85,
+            611,
+            114
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "11068",
+        "bbox": [
+            707,
+            85,
+            802,
+            113
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            50,
+            821,
+            109,
+            872
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "WORLD BANK GROUP",
+        "bbox": [
+            114,
+            835,
+            354,
+            858
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Development Economics\nGlobal Indicators Group\nFebruary 2025",
+        "bbox": [
+            112,
+            861,
+            343,
+            926
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "POLICY RESEARCH WORKING PAPER 11068",
+        "bbox": [
+            65,
+            64,
+            374,
+            83
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Abstract",
+        "text_level": 2,
+        "bbox": [
+            83,
+            104,
+            176,
+            127
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Using data from the World Bank Enterprise Surveys from 2006 to 2023, this paper studies the corporate ethical standards of technological digital oriented firms. The findings indicate that technology and digitalization positively impact the adoption of environmental and social standards. However, digital oriented technological firms show lower governance standards. These results are influenced by country culture, the burden of business regulation, and the perception of the courts as an obstacle to business activity. This underscores the importance of the broader society and the quality of the business environment in shaping how digital oriented technological firms adopt ethical standards.",
+        "bbox": [
+            81,
+            133,
+            477,
+            238
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            493,
+            135,
+            887,
+            238
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "This paper is a product of the Global Indicators Group, Development Economics. It is part of a larger effort by the World Bank to provide open access to its research and make a contribution to development policy discussions around the world. Policy Research Working Papers are also posted on the Web at http://www.worldbank.org/prwp. The authors may be contacted at dmare@worldbank.org.",
+        "bbox": [
+            81,
+            354,
+            885,
+            424
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "The Policy Research Working Paper Series disseminates the findings of work in progress to encourage the exchange of ideas about development issues. An objective of the series is to get the findings out quickly, even if the presentations are less than fully polished. The papers carry the names of the authors and should be cited accordingly. The findings, interpretations, and conclusions expressed in this paper are entirely those of the authors. They do not necessarily represent the views of the International Bank for Reconstruction and Development/World Bank and its affiliated organizations, or those of the Executive Directors of the World Bank or the governments they represent.",
+        "bbox": [
+            133,
+            852,
+            843,
+            925
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "Produced by the Research Support Team",
+        "bbox": [
+            354,
+            941,
+            617,
+            958
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Technology and Corporate Ethical Standards",
+        "text_level": 1,
+        "bbox": [
+            205,
+            80,
+            790,
+            106
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Marika Carboni\nRoma Tre University, Italy",
+        "bbox": [
+            372,
+            171,
+            625,
+            212
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Marta Degl'Innocenti\nUniversità degli Studi di Milano, Italy",
+        "bbox": [
+            321,
+            227,
+            678,
+            268
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Franco Fiordelisi\nUniversity of Essex, United Kingdom",
+        "bbox": [
+            328,
+            284,
+            669,
+            327
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Davide Salvatore Mare\\*\nWorld Bank, United States; University of Edinburgh, United Kingdom",
+        "bbox": [
+            184,
+            340,
+            823,
+            383
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "JEL Classification: Q56, G30, O14",
+        "bbox": [
+            111,
+            671,
+            452,
+            691
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Keywords: Technology, Ethics, ESG, Sustainability, Culture, Corporate Governance",
+        "bbox": [
+            112,
+            714,
+            885,
+            734
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "\\* Corresponding author at the World Bank, 2121 Pennsylvania Avenue, N.W. Washington, D.C. 20433 U.S.A. email: dmare@worldbank.org. This paper's findings, interpretations and conclusions are entirely those of the authors and do not necessarily represent the views of the World Bank Group, their Executive Directors, or the countries they represent. All errors and omissions rest with the authors.",
+        "bbox": [
+            109,
+            801,
+            895,
+            866
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "1 Introduction",
+        "text_level": 2,
+        "bbox": [
+            114,
+            83,
+            285,
+            99
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Interest in ethics and sustainability in firm management has grown globally in recent decades, with the concepts of ethics and sustainability being intrinsically linked (Crane et al., 2019; Torelli, 2021). A prime example is the United Nations' 17 Sustainable Development Goals (SDGs), which underscore the importance of addressing a broad set of issues such as environmental, social, and governance concerns to eradicate poverty and preserve the environment. These goals have become central to political agendas worldwide.",
+        "bbox": [
+            111,
+            118,
+            885,
+            356
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The relationship between technology and sustainability has been increasingly examined in recent years, with technological progress playing a key role in sustainable development (United Nations, 2019). Technological change can accelerate achievement of the SDGs by replacing environmentally damaging modes of production with more sustainable ones, improving incomes through higher productivity and lower costs of goods and services, and supporting more inclusive forms of participation in social and economic life. However, while technology can create opportunities that enable innovative solutions, it also poses health and environmental risks, such as pollution from electronic waste containing non-biodegradable materials and toxic substances. Technology may also have negative social impacts by increasing unemployment and exacerbating economic inequality. Therefore, the relationship between technology and ethical practices is complex, as technological development accelerates sustainable development but can also create environmental and social problems.",
+        "bbox": [
+            111,
+            372,
+            887,
+            866
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            870,
+            922,
+            883,
+            935
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "In this paper, we study the propensity of digital-oriented technological firms to adopt ethical practices. Our analysis is particularly relevant in today's digital age, where having an online presence is crucial for firms to increase their competitive advantage. For example, a website enhances a company's reputation by effectively sharing and communicating its mission and values to the public. Websites also significantly increase sales opportunities by reaching a broader audience and improving customer engagement and experience (Dolan et al., 2015; Chaffey, 2015). Similarly, the use of social media, a digital technology that enables the sharing of ideas and information, allows companies to communicate their Corporate Social Responsibility (CSR) to the public without having to go through the gatekeeping function of the news media (Vogler et al., 2021). We combine the concepts of technology and online presence to define these firms as digital-tech-oriented firms. We then assess the ethical behavior of such firms by examining their monitoring of $\\mathrm{CO}_{2}$ emissions, provision of employee training, and employment of female top managers. Our research focuses on the adoption of ethical practices as it signals that companies are concerned about the environment and the social consequences of their activities.",
+        "bbox": [
+            111,
+            83,
+            887,
+            686
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "For our analyses, we gather firm-level data from the World Bank Enterprise Surveys (ES). Our sample encompasses up to 192,132 observations across 158 countries from 2006 to 2023. We consider three main dimensions of firms' ethical behavior capturing environmental, social, and governance (ESG) standards: monitoring of $\\mathrm{CO}_{2}$ emissions (environmental dimension, or E), formal training programs for employees (social dimension, or S), and the presence of female top managers (governance dimension, or G). The selection of these ESG dimensions is motivated by past papers that emphasize the importance of technology in reducing $CO_{2}$ emissions (Jaffe, Newell, and Stavins, 2003) and highlight how technological advancements enhance the effectiveness of training programs and employee performance (Bhattacherjee and Premkumar, 2004). Moreover, the appointment of women directors to corporate boards has been a longstanding and widely debated topic in corporate governance research. The extant literature provides evidence of a potential association between diverse boards and innovation (see, for example, the literature review in Kirsch, 2018). We extend this literature by investigating whether digital-tech-oriented firms hire women in managerial roles.",
+        "bbox": [
+            111,
+            700,
+            885,
+            904
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            870,
+            922,
+            883,
+            935
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            83,
+            887,
+            431
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Our findings show that digital-tech-oriented firms are more likely to engage in monitoring $CO_{2}$ emissions and providing formal training programs for employees. This suggests that technology can help to achieve sustainability goals. However, we find that these firms are less likely to employ female top managers. Women are underrepresented in managerial roles, as is the case in many other sectors, potentially due to stereotypes against women or other barriers to entering the labor market. This may be more pronounced in technological firms due to the historical gender gap in STEM (Science, Technology, Engineering, and Mathematics) education and career paths that have restricted the number of qualified female candidates for managerial positions within digital-tech-oriented firms.",
+        "bbox": [
+            111,
+            446,
+            887,
+            795
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Country-specific traits can significantly influence corporate practices, including ethical practices (Kostova and Roth, 2002). To account for this heterogeneity, we consider both cultural factors and the quality of the business environment. We capture cultural influences using five dimensions of national culture, proposed by Hofstede et al. (2010). Our findings highlight that national culture may be a critical factor, particularly in the context of hiring female top managers. Specifically, we observe that digital-tech-oriented firms exhibit a stronger negative relationship with employing female top managers in countries characterized by strong masculine preferences and short-term orientation.",
+        "bbox": [
+            111,
+            811,
+            885,
+            902
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            870,
+            922,
+            883,
+            935
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            83,
+            885,
+            285
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "To investigate the role of the quality of critical public services, we introduce regulatory burden and businesses' perception of the courts. Both factors can be seen as related to the literature that focuses on the need for and impact of regulation on sustainability (Behera and Sethi, 2022; Li et al., 2021). It may be that regulatory and bureaucratic burdens challenge the flexibility and adaptability needed for proactive ethical strategies. In support of this view, we find that digital-tech-oriented firms are positively associated with monitoring $\\mathrm{CO}_{2}$ emissions and with offering training programs when the regulatory burden is low. However, we also observe that reducing the regulatory burden widens the gender gap. This phenomenon may be due to the fact that women tend to spend more time navigating regulatory requirements. Hence, a reduction in regulatory burden has a negative impact on the presence of female top managers. The gender gap instead narrows as bureaucracy intensifies (Baron et al., 2007).",
+        "bbox": [
+            111,
+            300,
+            887,
+            758
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Finally, we consider how the justice courts are perceived as a relevant obstacle to business activity. In this regard, we find that digital-tech-oriented firms hire fewer female top managers when courts are not perceived as a significant obstacle to doing business. This finding calls for a deeper scrutiny of the mechanisms through which the quality of the business environment influences the gender gap in digital-tech-oriented firms.",
+        "bbox": [
+            109,
+            773,
+            887,
+            904
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            870,
+            924,
+            883,
+            935
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            82,
+            883,
+            137
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Our paper relates to various literature strands. First, it contributes to the extant knowledge of the relationship between technology and sustainability (e.g., Bekhet and Latif, 2018; Omri, 2020; Sharif et al., 2022; Zhang et al., 2022; Higón et al., 2017; Zakari et al., 2022; Sun et al., 2019; de Vries et al., 2020; Tyrowicz et al., 2020; Yang et al., 2022), confirming that such a relationship is ambiguous. On the one hand, we show a positive relationship between digital-tech-oriented firms and the monitoring of CO₂ emissions, as well as the provision of employee training programs, suggesting virtuous behavior by digital-tech-oriented firms. On the other hand, we find a negative relationship between digital-tech-oriented firms and the employment of female top managers, suggesting that technology may promote the widening of the gender gap in top management positions.",
+        "bbox": [
+            111,
+            156,
+            887,
+            540
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Our study provides nuanced evidence to papers examining the impact of technology firms' ethical behavior (Okafor et al., 2021; Boulouta and Pitelis, 2014; Bernal-Conesa et al., 2017; Lin et al., 2020). Unlike these papers, we focus on the impact of technology on firms' ESG practices while accounting for country and heterogeneity in the business environment. As such, our findings may have important implications for policies aiming at simultaneously advancing technological progress and sustainability goals.",
+        "bbox": [
+            111,
+            556,
+            885,
+            794
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "In addition, we contribute to the corporate social responsibility (CSR) literature (e.g., Angelidis and Ibrahim, 2004; Arnold and Valentin, 2013; Mahoney et al., 2013; Ferrell et al., 2019; Chantziaras et al., 2020), by differentiating the findings on the relationship between digital-tech-oriented firms and ethical practices across cultural dimensions. Therefore, we also add to the strand of literature examining the link between cultural dimensions and sustainability (Sedita et al., 2022; Kucharska and Kowalczyk, 2019; Lahuerta-Otero and González-Bravo, 2018; Parboteeah et al., 2012; Onel and Mukherjee, 2014; Husted, 2005; Vachon, 2010; Gallego-Álvarez and Ortas, 2017), as well as to studies focusing on the issue of regulation in sustainability (Behera and Sethi, 2022; Li et al., 2021), since we examine how regulatory burdens and perceptions of courts as an obstacle to business activity are related to firms' ethical behavior.",
+        "bbox": [
+            111,
+            811,
+            885,
+            902
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            870,
+            922,
+            883,
+            935
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            83,
+            887,
+            393
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The remainder of the paper is organized as follows. In section 2, we describe the data and variables; in section 3 we present our empirical approach; in section 4 we discuss our results. Finally, section 5 concludes the paper.",
+        "bbox": [
+            111,
+            410,
+            885,
+            503
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "2 Data and Variables",
+        "text_level": 2,
+        "bbox": [
+            112,
+            563,
+            351,
+            580
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "We collected data from various sources to analyze the correlation between firms' technology and ethical practices. First, we gathered firm-level data from the World Bank Enterprise Surveys (ES), covering 158 countries from 2006 to 2023, for a total of 192,132 observations. $^{1}$ We consider firms in the manufacturing and non-manufacturing industries as per the ISIC Code Revision 4 classification. $^{2}$ In addition, we obtained GDP per capita from the World Bank's World Development Indicators, $^{3}$ and cultural dimensions data from Geert Hofstede's website. $^{4}$",
+        "bbox": [
+            111,
+            598,
+            887,
+            765
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ The Enterprise Surveys are firm-level surveys of representative samples of the private sector around the world. Data is publicly available and can be retrieved at the following web-link: https://www.enterprisesurveys.org (last accessed: November 2024).",
+        "bbox": [
+            111,
+            859,
+            885,
+            890
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{2}$ The United Nations Statistical Commission produces a standard classification of economic activities: the International Standard Industrial Classification of all economic activities (ISIC).",
+        "bbox": [
+            111,
+            888,
+            883,
+            917
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            870,
+            922,
+            883,
+            935
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            82,
+            885,
+            138
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We capture the environmental, social, and governance dimensions that represent ethical practices by constructing three binary variables from the ES. Specifically, the environmental dimension is captured by a binary variable that takes the value of one if the firm has monitored its $CO_{2}$ emissions over the past three years (“mon\\_emi”), and zero otherwise. $^{5}$ The social dimension is captured by a binary variable that takes the value of one if the firm offered formal training programs for permanent, full-time employees (“training”) in the last fiscal year, and zero otherwise. The governance dimension, related to the employment of female top managers (a gender issue) is captured by a binary variable that takes the value of one if a company employs female top managers (“top\\_man\\_fem”), and zero otherwise.",
+        "bbox": [
+            111,
+            155,
+            887,
+            505
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "To identify digital-tech-oriented firms, we build two binary variables. First, we exploit the R&D intensity classification at the two-digit level by Galindo-Rueda and Verger (2016). We construct a first binary variable that takes the value of one for firms in sectors with at least medium technology orientation as implied by their R&D intensity classification, and zero otherwise (“tech orientation”). $^{6}$ Second, we compute a binary variable that takes the value of one if the establishment has its own website or a social media page, and zero otherwise (“digital orientation”). The product of tech orientation and digital orientation defines digital-tech companies (“digital-tech orientation”).",
+        "bbox": [
+            109,
+            518,
+            887,
+            758
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{3}$ Data can be retrieved from the following web-link: https://databank.worldbank.org/source/world-development-indicators (last accessed: November 2024).",
+        "bbox": [
+            111,
+            833,
+            885,
+            861
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{4}$ See: Dimension data matrix, version 2015 12 08 0-100, available at the following link: https://geerthofstede.com/research-and-vsm/dimension-data-matrix/ (last accessed: June 2024). In our database, cultural data begin in 2015.",
+        "bbox": [
+            111,
+            861,
+            883,
+            888
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{5}$ CO $_{2}$ emissions monitoring data is available for the years 2020-2023 for 49 countries.",
+        "bbox": [
+            111,
+            888,
+            637,
+            904
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{6}$ See: Galindo-Rueda and Verger (2016).",
+        "bbox": [
+            111,
+            902,
+            364,
+            917
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            870,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            82,
+            883,
+            138
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We also consider various factors that could impact the relationship between the adoption of ethical practices and digital-tech-oriented firms, such as the firm size (“large”), the presence of a line of credit or loan from a financial institution (“fin\\_ins”), the real annual sales growth in percent (“sal\\_gro”), the logarithm of GDP per capita (“log (GDPpercapita)”) $^{7}$ and the “age” of the firm, given by the difference between the year of the survey and the year in which a firm began operations (“age”).",
+        "bbox": [
+            109,
+            155,
+            885,
+            358
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We obtained data for cultural dimensions from Geert Hofstede's website, which includes six dimensions: long-term orientation, individualism, power distance, uncertainty avoidance, masculinity, and indulgence. We focus on five dimensions to explore their influence on the relationship between technology and ethical practices. Specifically, we examine whether: (i) long-term orientation and individualism affect the relationship between digital-tech-oriented firms and emissions monitoring; (ii) power distance and uncertainty avoidance modify the relationship between digital-tech-oriented firms and training; and (iii) masculinity and long-term orientation influence the relationship between digital-tech-oriented firms and the presence of female top managers.",
+        "bbox": [
+            109,
+            375,
+            887,
+            722
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "While indulgence may be related to environmental issues (Gallego-Álvarez and Ortas, 2017), we believe that long-term orientation (“ltowvs”) and individualism (“idv”) are more appropriate to influence the relationship between digitally oriented firms and emissions monitoring. According to Geert Hofstede's website, long-term orientation (\"ltowvs\"), expressed on a scale from 0 (least long-term oriented) to 100 (most long-term oriented), pertains to change. In a long-term oriented culture, there is a fundamental belief that the world is changing, necessitating preparation for the future. Conversely, in a short-term oriented culture, the world is perceived as static, with the past providing a moral compass that should be followed.",
+        "bbox": [
+            111,
+            737,
+            885,
+            830
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{7}$ For GDP per capita, we used the following data adjustments: for Bhutan, we input the data for 2022 as a proxy for 2023; for Djibouti, we complemented the data for 2012 with data for 2023; and for Kosovo, we replaced the unavailable data for 2007 with the value from 2008. These adjustments concerned a total of 667 observations.",
+        "bbox": [
+            111,
+            875,
+            885,
+            917
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            870,
+            922,
+            883,
+            935
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            83,
+            885,
+            284
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The second dimension we consider is individualism (“idv”), where 100 represents the most individualistic country and 0 the least. Individualism measures the degree to which people feel independent, as opposed to interdependent as members of a larger whole.",
+        "bbox": [
+            111,
+            300,
+            885,
+            429
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "For the social dimension, we use power distance (“pdi”), which ranges from 0 (lowest) to 100 (highest). Power distance measures the degree to which the less powerful members of organizations and institutions accept and expect power to be distributed unequally. Additionally, we use uncertainty avoidance (“uai”), which addresses a society’s tolerance for uncertainty and ambiguity, also ranging from 0 (lowest) to 100 (highest).",
+        "bbox": [
+            111,
+            446,
+            885,
+            648
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "For the governance dimension, we use long-term orientation (“ltowvs”) and masculinity (“mas”). Masculinity measures the extent to which the use of force is socially endorsed, with higher scores (closer to 100) indicating more masculine societies.",
+        "bbox": [
+            111,
+            666,
+            885,
+            792
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Table 1 shows the list of countries in our sample, covering different world regions: Africa (AFR), East Asia and Pacific (EAP), Europe and Central Asia (ECA), Latin America and the Caribbean (LAC), Middle East and North Africa (MNA) and",
+        "bbox": [
+            111,
+            811,
+            885,
+            902
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            870,
+            922,
+            883,
+            935
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "South Asia (SAR). Table 2 shows the summary statistics, reporting the number of observations, the mean, the standard deviation, minimum and maximum for the variables we used.",
+        "bbox": [
+            111,
+            82,
+            885,
+            172
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "[Insert Tables 1-2 about here]",
+        "bbox": [
+            359,
+            191,
+            635,
+            209
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The mean value of “top\\_man\\_fem” is low (0.1548), indicating a low number of female top managers for the firms in the sample. Also the mean of the variable “tim\\_spe” is relatively low (0.0640), indicating that the time spent by senior management in dealing with regulations is generally less than 50%.",
+        "bbox": [
+            111,
+            238,
+            883,
+            367
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Table 3 shows the correlation matrix. Pairwise correlation coefficients are relatively low, reducing concerns about multicollinearity in the estimates.",
+        "bbox": [
+            111,
+            383,
+            883,
+            439
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "[Insert Table 3 about here]",
+        "bbox": [
+            372,
+            455,
+            622,
+            474
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "3 Empirical Approach",
+        "text_level": 2,
+        "bbox": [
+            112,
+            536,
+            361,
+            556
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "For our analysis, we employ a conditional model in which a variable capturing firms' digital orientation interacts with a variable measuring firms' technological orientation. This approach allows us to investigate the combined effect of these two dimensions, providing a more nuanced understanding of their influence on the outcomes of interest. Our model takes the following form:",
+        "bbox": [
+            111,
+            571,
+            885,
+            737
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{r l} \\text {ethical\\_orientation} _ {\\mathrm{ict}} & = \\beta_ {0} + \\beta_ {1} \\text {digital orientation} _ {\\mathrm{ict}} + \\beta_ {2} \\text {tech orientation} _ {\\mathrm{ict}} \\\\ & + \\beta_ {3} \\text {digital orientation} _ {\\mathrm{ict}} * \\text {tech orientation} _ {\\mathrm{ict}} + \\beta_ {4} X _ {\\mathrm{ict}} \\\\ & + \\alpha_ {\\mathrm{c}} + \\alpha_ {\\mathrm{t}} + \\varepsilon_ {\\mathrm{ict}} \\end{array}\\tag{1}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            120,
+            763,
+            702,
+            864
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            861,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The dependent variable (ethical\\_orientation) is a binary variable that we define in different ways to capture each ESG ethical dimension (mon\\_emi, training, and top\\_man\\_fem, respectively). Specifically, we capture the environmental dimension with a binary variable that takes the value of one if the firm has monitored its CO₂ emissions over the past three years (“mon\\_emi”), and zero otherwise.⁸ The social dimension is captured by a binary variable that takes the value of one if the firm offered formal training programs for permanent, full-time employees (“training”) in the last fiscal year, and zero otherwise. The governance dimension is captured by a binary variable that takes the value of one if the firm has female top managers (“top\\_man\\_fem”), and zero otherwise. The main variable of interest is the interaction between digital orientation and technological orientation (digital orientation $_{ict}$ \\* tech orientation $_{ict}$ ).",
+        "bbox": [
+            109,
+            82,
+            887,
+            503
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "X is a vector of control variables including firm size (“large”), the presence of a line of credit or loan from a financial institution (“fin\\_ins”), the real annual sales growth in percent (“sal\\_gro”), the age of a firm (“age”) and the logarithm of GDP per capita (“log (GDPpercapita)”). We use median sampling weights in all estimates to allow inference to the entire population. $^{9}$ The model is saturated by adding country- and year-fixed effects to capture country- and time-invariant unobservable factors. Industry fixed effects alone are not included because the variable capturing technology intensity is computed at the industry level. However, in some specifications, we do include industry\\*country fixed effects to control for country and industry time-invariant specific features. All the variables are defined in the Appendix (Table A1).",
+        "bbox": [
+            109,
+            520,
+            888,
+            796
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{8}$ CO $_{2}$ emissions monitoring data is only available for the years 2020-2023 for 49 countries.",
+        "bbox": [
+            111,
+            859,
+            666,
+            875
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{9}$ For an in-depth explanation, see the ES sampling note available at the following link: https://www.enterprisesurveys.org/en/methodology (last accessed: July 2024). In line with the note recommendation, we use median weights in all estimates, that is weights that account for eligibility of inclusion in the survey.",
+        "bbox": [
+            111,
+            875,
+            885,
+            917
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            859,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            82,
+            885,
+            174
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "In additional analyses, we examine whether cross-country differences affect the relationship between technology and ethical behavior by controlling for various cultural dimensions. Long-term orientation is concerned with change and may, therefore, influence attention to climate change, which in turn may affect the monitoring of $CO_{2}$ emissions (environmental dimension). However, countries that are more focused on the short term also value their current quality of life and should, therefore, strive to minimize environmental harm through pollution and air pollution (Lahuerta-Otero and González-Bravo, 2018).",
+        "bbox": [
+            111,
+            191,
+            885,
+            465
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Long-term orientation is generally associated with sustainable development (Barbier and Burgess, 2020) and the achievement of sustainable goals, including gender equality. For this reason, we also relate long-term orientation to the employment of female top managers in a company (governance dimension).",
+        "bbox": [
+            111,
+            483,
+            885,
+            612
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Collectivism – the opposite of individualism – should be inherently positively related to attention to climate change. Collectivist societies prioritize the goals and well-being of the group, with individuals viewing themselves in terms of “we” rather than “I.” However, previous research has found a positive relationship between levels of individualism, green corporatism, and environmental innovation (Vachon, 2010), so we have no expectations about the direction of the relationship between technology firms and emissions control in collectivist societies.",
+        "bbox": [
+            109,
+            628,
+            887,
+            867
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            861,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Next, we relate power distance to training program offerings. In high power distance societies, individuals accept hierarchies without question. According to this view, the higher the power distance, the lower the level of training programs offered within an organization. However, because employees with a high power distance orientation accept hierarchical relationships and find them acceptable, people at lower levels may defer to those in more powerful positions and readily accept any offer of training programs. Thus, the higher the power distance, the higher the level of training programs offered in an organization.",
+        "bbox": [
+            111,
+            80,
+            885,
+            358
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "In addition, the incentive to train should increase as uncertainty avoidance increases. A high uncertainty avoidance score indicates a low tolerance for uncertainty, ambiguity, and risk-taking, which is linked to increased anxiety. Thus, the higher the uncertainty avoidance, the greater the incentive to train employees for the organization's benefit (social dimension). However, high uncertainty avoidance and low risk tolerance may also lead employees to avoid risking their reputation and credibility by participating in training programs. This lower level of participation should, in turn, reduce the level of training offered within an organization.",
+        "bbox": [
+            111,
+            372,
+            885,
+            650
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Finally, we posit that masculinity scores may explain the employment of a female top manager in a firm (governance dimension).",
+        "bbox": [
+            111,
+            665,
+            885,
+            720
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "In further analyses, we examine whether the regulatory burden and the perception of courts as barriers to business influence the relationship between technology and the adoption of ethical practices. Digital-tech-oriented firms are expected to monitor $CO_{2}$ emissions when the regulatory burden is low, i.e., when they are not concerned about the possible legal consequences of the measured amount of emissions, e.g., in terms of methodology and level. Additionally, digital technology-oriented firms are expected to be more likely to offer training programs when the regulatory burden is low. Essentially, a higher regulatory burden tends to increase the cost of training, leading to decreased training offerings. Furthermore, a lower regulatory burden should positively correlate with widening the gender gap. Less time spent on regulatory compliance should be negatively associated with the presence of female top managers in firms, as women tend to spend more time on regulatory matters. This is consistent with past research showing a negative relationship between a firm's regulatory burden and its productivity (Tu, 2020).",
+        "bbox": [
+            112,
+            736,
+            885,
+            904
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            861,
+            922,
+            883,
+            935
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            83,
+            885,
+            393
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Finally, we consider whether courts are perceived as a relevant barrier to business activity by investigating whether they play a role in shaping the relationship between digital-tech-oriented firms and the adoption of ethical practices. Digital-tech-oriented firms may be less concerned about gender diversity in top management if they do not perceive courts as a significant obstacle to their operations, despite global recommendations advocating diversity.",
+        "bbox": [
+            111,
+            410,
+            885,
+            612
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "4 Baseline Results",
+        "text_level": 2,
+        "bbox": [
+            112,
+            672,
+            323,
+            690
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "This section reports the baseline results showing the link between digital-tech-oriented firms and ethical practices. Table 4 focuses on whether the company has monitored its $\\mathrm{CO}_{2}$ emissions in the last three years (mon\\_emi). Table 4 shows that the variable digital-tech orientation is positively and significantly correlated with monitoring $\\mathrm{CO}_{2}$ emissions (mon\\_emi), suggesting a virtuous behavior of digital-tech-oriented firms regarding environmental attention. In the most conservative estimation (Table 4, column 4), the likelihood of monitoring $CO_{2}$ emissions increases by approximately 9 percentage points compared to non-tech firms without a digital presence. In addition, digital orientation, large firm size, and sales growth are all positively and statistically significantly (at least at the 10 percent level) related to monitoring $CO_{2}$ emissions.",
+        "bbox": [
+            111,
+            708,
+            885,
+            907
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            861,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            83,
+            885,
+            247
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "[Insert Tables 4-6 about here]",
+        "text_level": 2,
+        "bbox": [
+            359,
+            263,
+            635,
+            282
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Table 5 shows that digital-tech-oriented firms provide more formal training programs to employees than other firms. The likelihood of providing training increases by around 20 percentage points if a firm is digital-tech-oriented (Table 5, column 4). Similarly, digital orientation (approximately 13 percentage points) and tech orientation (approximately 9 percentage points) make firms more likely to offer training. Large, access to credit with a financial institution and sales growth are positively and statistically significantly (at the 5 percent level) correlated with the provision of training.",
+        "bbox": [
+            111,
+            311,
+            885,
+            585
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Table 6 indicates a negative relationship between digital-tech orientation and the presence of women in top managerial positions within firms. The negative coefficient for the tech orientation variable suggests that the historical gender gap in STEM (Science, Technology, Engineering, and Mathematics) education and career trajectories has limited the pool of qualified female candidates for managerial roles in these firms.",
+        "bbox": [
+            111,
+            602,
+            885,
+            804
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            861,
+            922,
+            883,
+            935
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "4.1 Heterogeneity Effect",
+        "text_level": 2,
+        "bbox": [
+            112,
+            83,
+            379,
+            99
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "We explore here whether country heterogeneity affects our results by focusing on national cultures (Section 4.1.1), regulatory burden (Section 4.1.2), and perceptions of courts as barriers to business (Section 4.1.3).",
+        "bbox": [
+            111,
+            117,
+            885,
+            209
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "4.1.1 National Culture",
+        "text_level": 2,
+        "bbox": [
+            112,
+            270,
+            352,
+            287
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "We use Hofstede's national culture measures to test whether national culture influences the corporate ethical behaviors of digital-tech-oriented firms. For each cultural dimension, we split the sample above and below the median value to examine whether: (i) long-term orientation (“ltowvs”) and individualism (“idv”) affect the relationship between digital-tech-oriented firms and emissions monitoring; (ii) power distance (“pdi”) and uncertainty avoidance (“uai”) affect the relationship between digital-tech-oriented firms and training; and (iii) masculinity (“mas”) and long-term orientation (“ltowvs”) affect the relationship between digital-tech-oriented firms and the presence of a female top manager.",
+        "bbox": [
+            111,
+            306,
+            887,
+            616
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Our analysis includes specifications with year\\*country fixed effects. Tables 7 and 8 show that, although cultural factors are positively associated with monitoring emissions and training, the intensity of these factors does not appear to be a determinant. Specifically, the digital-tech orientation variable is always positively and significantly correlated with the monitoring of $\\mathrm{CO}_{2}$ emissions (mon\\_emi) and the training variable, regardless of whether we are considering countries above or below the median value of the cultural trait. Conversely, national culture influences our results when we focus on governance on the employment of female top managers.",
+        "bbox": [
+            111,
+            633,
+            887,
+            907
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            861,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Table 9 reports a negative and statistically significant relationship between the digital-tech orientation variable and top\\_man\\_fem variable only in countries characterized by high masculinity scores and short-term orientation. This finding highlights the role of cultural dimensions in shaping gender diversity policies within digital-tech-oriented firms across different global contexts.",
+        "bbox": [
+            111,
+            83,
+            885,
+            248
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "[Insert Tables 7-9 about here]",
+        "bbox": [
+            359,
+            263,
+            635,
+            282
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "4.1.2 Regulatory burden (heterogeneity in the business environment)",
+        "text_level": 2,
+        "bbox": [
+            112,
+            345,
+            830,
+            363
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This section explores the impact of regulatory burden on the relationship between technology and sustainability. We hypothesize that digital-tech-oriented firms are more likely to monitor $CO_{2}$ emissions when the regulatory burden is low, as they are less concerned about potential legal repercussions related to the measurement methodology used and the emission levels. Additionally, these firms may offer more training programs under low regulatory burden conditions, as higher regulatory burdens increase the cost of providing training, potentially leading to a reduction in such programs. Lastly, a lower regulatory burden may be associated with an increase in the gender gap. Reduced time spent on regulatory compliance may negatively correlate with the presence of female top managers, as women typically spend more time managing regulatory issues.",
+        "bbox": [
+            111,
+            375,
+            885,
+            762
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The results for monitoring $CO_{2}$ emissions, providing training, and hiring female top managers are shown in Table 10. The digital-tech orientation variable is positively and significantly related to the variable indicating the monitoring of $CO_{2}$ emissions (mon\\_emi) and to the variable training when the regulatory burden is low.",
+        "bbox": [
+            111,
+            780,
+            885,
+            909
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            861,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "In other words, our results suggest that a reduced regulatory burden has a positive impact on the monitoring of $CO_{2}$ emissions and on the implementation of training programs for digital-tech-oriented firms. The positive impact of a reduced regulatory burden on emissions monitoring may be motivated by the increased freedom of digital-tech-oriented firms to measure emissions levels, both in terms of methodology and level. The positive impact of a reduced regulatory burden on training may be related to the fact that higher regulatory burdens increase the cost of providing training, potentially reducing the likelihood of offering such programs. Finally, Table 10, columns 5 and 6, shows that the variable digital-tech orientation is negatively and significantly related to the variable top\\_man\\_fem when the regulatory burden is low, suggesting that a lower regulatory burden increases the gender gap for digital-tech-oriented firms. This may be because women often spend more time navigating regulatory requirements, so a lower regulatory burden negatively affects the presence of female top managers.",
+        "bbox": [
+            111,
+            82,
+            887,
+            577
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "In conclusion, our results suggest that a lower regulatory burden positively impacts the adoption of ethical practices by digital-tech-oriented firms, including social and governance dimensions. However, a lower regulatory burden hurts the presence of women in top management positions, widening the gender gap.",
+        "bbox": [
+            111,
+            590,
+            885,
+            722
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "[Insert Table 10 here]",
+        "bbox": [
+            395,
+            737,
+            599,
+            755
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "4.1.3 Courts (heterogeneity in the business environment)",
+        "text_level": 2,
+        "bbox": [
+            112,
+            818,
+            705,
+            835
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "This section considers whether courts are perceived as a relevant barrier to business activity. Businesses' perception of the work of the court may affect the way digitaltech-oriented firms adopt ESG standards. Table 11 shows the results related to the relationship between our variable of interest, digital-tech orientation, and the three dependent variables indicating ethical orientation. We split the sample according to whether the variable “courts” takes the value 1 (indicating “Courts are a major/very severe obstacle”) or zero (indicating “Courts are not an obstacle; are a minor/moderate obstacle”).",
+        "bbox": [
+            112,
+            853,
+            883,
+            909
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            861,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            82,
+            885,
+            284
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Table 11 shows that the variable digital-tech orientation is positively and significantly related to the variable mon\\_emi (columns 1 and 2) and to the variable training (columns 3 and 4), suggesting that the functioning of courts is not a crucial factor in shaping the relationship between digital-tech-oriented firms, the monitoring of emissions and the provision of training. Conversely, the result on the employment of female top managers (Table 11, column 6) appears to suggest that digital-tech-oriented firms that are less constrained by the functioning of courts employ fewer women top managers. This may indicate a potential mechanism through which fewer constraints could reinforce the existing gender gap.",
+        "bbox": [
+            111,
+            301,
+            887,
+            612
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "[Insert Tables 11]",
+        "bbox": [
+            415,
+            628,
+            581,
+            647
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "5 Conclusions",
+        "text_level": 2,
+        "bbox": [
+            112,
+            709,
+            279,
+            726
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "The relationship between technology and firms' ethical behavior is multifaceted and complex. On the one hand, the widespread use of technology can have a negative impact on ethical practices, contributing to increased pollution and potential unemployment. On the other hand, technology can enable firms to better monitor their $CO_{2}$ emissions, improve management systems, and foster collaboration, potentially strengthening their ethical orientation.",
+        "bbox": [
+            111,
+            744,
+            885,
+            873
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            861,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            82,
+            883,
+            138
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "To address this ambiguity, this paper examines the ethical behavior of digital-tech-oriented firms. Our baseline empirical findings reflect this dual nature of the relationship between technology and ethics. Specifically, digital-tech-oriented firms show a significant and positive association with monitoring $CO_{2}$ emissions and providing employee training programs. However, we also find a significant negative relationship between these firms and the employment of female top managers, perhaps because men still dominate top positions in tech-oriented firms. This suggests that the gender gap in top management positions may be widening as technology-oriented sectors develop.",
+        "bbox": [
+            111,
+            155,
+            885,
+            467
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "We also examine how country culture influences these dynamics using Hofstede's cultural dimensions. The degree of strength in national cultures does not significantly explain the results of emissions monitoring and employee training programs. Conversely, in countries characterized by high levels of masculinity and short-termism, there is a negative relationship between digital-tech oriented firms and the employment of female top managers. This highlights the challenges women face in reaching top management positions in countries with less favorable cultural environments.",
+        "bbox": [
+            111,
+            482,
+            885,
+            757
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Further tests examine the heterogeneity in the business environment by considering whether regulatory burden and perceptions of the courts are relevant factors for digital-tech-oriented firms in monitoring $CO_{2}$ emissions, providing training, and hiring female top managers. We find contrasting results associated with low regulatory burden. On the one hand, we confirm the existence of a positive relationship between digital-tech-oriented firms and both the monitoring of emissions and providing training when the regulatory burden is low, perhaps suggesting that other factors are more effective in pushing the adoption of these standards. On the other hand, we find that a lower regulatory burden increases the gender gap possibly as women are most needed when the regulatory burden is heavy. Again, our findings reflect the dual nature of the relationship between technology firms and the adoption of ethical practices.",
+        "bbox": [
+            111,
+            773,
+            885,
+            904
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            861,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            82,
+            885,
+            358
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Finally, we examine whether the courts are perceived as a relevant barrier to doing business. In this case, we find that digital-tech-oriented firms are negatively associated with hiring a female top manager when the courts are not perceived as a relevant barrier. Similar to the results considering different cultural dimensions, this finding highlights the challenges women face in reaching top management positions when the courts are not perceived as an obstacle to doing business, and there may be greater perceived degrees of freedom in choosing who fills management positions.",
+        "bbox": [
+            112,
+            373,
+            885,
+            614
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "This paper presents some limitations that could be addressed in future research. One such limitation is the reliance on cross-sectional data, which restricts the ability to observe changes over time. Incorporating panel data in future studies could enable the analysis of time variation and provide a better understanding of dynamic relationships. Additionally, the study does not fully examine expanded metrics for digitalization, such as digital transaction volumes, effective R&D expenditures, and patent activity. Including these metrics in future research could offer deeper insights into the role of technology in shaping ethical practices within firms.",
+        "bbox": [
+            111,
+            628,
+            887,
+            868
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            859,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            111,
+            82,
+            883,
+            137
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Overall, the study highlights the importance of accounting for firm- and country-specific factors in designing policies to foster ethical business practices. Persistent challenges, such as gender inequality in leadership, require targeted efforts to address both organizational and societal barriers. Country-level determinants, including cultural norms and regulatory environments, significantly shape firms' adoption of ethical behaviors, underscoring the broader societal role in encouraging multi-stakeholder perspectives.",
+        "bbox": [
+            111,
+            155,
+            885,
+            393
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            861,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            112,
+            80,
+            233,
+            101
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Angelidis, J. and Ibrahim, N. 2004. An exploratory study of the impact of degree of religiousness upon an individual's corporate social responsiveness orientation. Journal of Business Ethics, 51:119-128. https://doi.org/10.1023/B:BUSI.0000033606.27489.bf",
+        "bbox": [
+            111,
+            116,
+            887,
+            219
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Arnold, D. G. and Valentin, A. 2013. Corporate social responsibility at the base of the pyramid. Journal of Business Research, 66:1904-1914. https://doi.org/10.1016/j.jbusres.2013.02.012",
+        "bbox": [
+            111,
+            234,
+            885,
+            311
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Baron, J. N., Hannan, M. T., Hsu, G. and Koçak, Ö. 2007. In the company of women: gender inequality and the logic of bureaucracy in start-up firms. Work and Occupations, 34:35-66. https://doi.org/10.1177/0730888406296945",
+        "bbox": [
+            112,
+            327,
+            885,
+            402
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Behera, P. and Sethi, N. 2022. Nexus between environment regulation, FDI, and green technology innovation in OECD countries. Environmental Science and Pollution Research, 29:52940-52953. https://doi.org/10.1007/s11356-022-19458-7",
+        "bbox": [
+            112,
+            417,
+            885,
+            522
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Bekhet, H.A. and Latif, N.W.A. 2018. The impact of technological innovation and governance institution quality on Malaysia’s sustainable growth: evidence from a dynamic relationship. Technology in Society, 54:27-40. https://doi.org/10.1016/j.techsoc.2018.01.014",
+        "bbox": [
+            112,
+            537,
+            885,
+            642
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Bernal-Conesa, J. A., de Nieves Nieto, C. and Briones-Peñalver, A. J. 2017. CSR strategy in technology companies: its influence on performance, competitiveness and sustainability. Corporate Social Responsibility and Environmental Management, 24:96-107. https://doi.org/10.1002/csr.1393",
+        "bbox": [
+            112,
+            657,
+            885,
+            762
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Bhattacherjee, A. and G. Premkumar. 2004. Understanding changes in belief and attitude toward information technology usage: a theoretical model and longitudinal test. MIS Quarterly, 28:229-254. https://doi.org/10.2307/25148634",
+        "bbox": [
+            112,
+            777,
+            887,
+            853
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            859,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Boulouta, I. and Pitelis, C. N. 2014. Who needs CSR? The impact of corporate social responsibility on national competitiveness, Journal of Business Ethics, 119:349-364. https://doi.org/10.1007/s10551-013-1633-2",
+        "bbox": [
+            112,
+            80,
+            885,
+            156
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Barbier, E. B. and Burgess, J. C. 2020. Sustainability and development after COVID-19, World Development, 135:105082. https://doi.org/10.1016/j.worlddev.2020.105082",
+        "bbox": [
+            112,
+            172,
+            885,
+            250
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Chaffey, D. 2015. Digital business and e-commerce management: strategy, implementation and practice 6 $^{th}$ ed. (Harlow: Pearson Education Limited)",
+        "bbox": [
+            112,
+            263,
+            883,
+            314
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Chantziaras, A., Dedoulis, E., Grougiou, V. and Leventis, S. 2020. The impact of religiosity and corruption on CSR reporting: the case of U.S. banks, Journal of Business Research, 109:362-374. https://doi.org/10.1016/j.jbusres.2019.12.025",
+        "bbox": [
+            112,
+            329,
+            887,
+            406
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Crane, A., Matten, D., Glozer, S. and Spence, L. 2019. Business ethics. Managing corporate citizenship and sustainability in the age of globalization, Oxford University Press.",
+        "bbox": [
+            112,
+            421,
+            885,
+            498
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "de Vries, G. J., Gentile, E., Miroudot, S. and Wacker, K. M. 2020. The rise of robots and the fall of routine jobs. Labour Economics, 66:101885. https://doi.org/10.1016/j.labeco.2020.101885",
+        "bbox": [
+            111,
+            513,
+            885,
+            590
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Dolan, R., Conduit, J., Fahy, J., and Goodman, S. 2015. Social media engagement behaviour: a uses and gratifications perspective. Journal of Strategic Marketing, 24:261-277. https://doi.org/10.1080/0965254X.2015.1095222",
+        "bbox": [
+            112,
+            604,
+            887,
+            681
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Ferrell, O.C., Harrison, D.E., Ferrell, L. and Hair, J.F. 2019. Business ethics, corporate social responsibility, and brand attitudes: an exploratory study. Journal of Business Research, 95:491-501. https://doi.org/10.1016/j.jbusres.2018.07.039",
+        "bbox": [
+            112,
+            696,
+            885,
+            801
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Galindo-Rueda, F. and Verger, F. 2016. OECD taxonomy of economic activities based on R&D intensity. OECD science, technology and industry working papers 2016/04. https://doi.org/10.1787/5jlv73sqqp8r-en",
+        "bbox": [
+            111,
+            816,
+            887,
+            893
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            859,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Gallego-Álvarez, I. and Ortas, E. 2017. Corporate environmental sustainability reporting in the context of national cultures: a quantile regression approach. International Business Review, 26:337-353. https://doi.org/10.1016/j.ibusrev.2016.09.003",
+        "bbox": [
+            111,
+            80,
+            885,
+            184
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Higón, D.A., Gholami, R. and Shirazi, F. 2017. ICT and environmental sustainability: A global perspective. Telematics and Informatics, 34:85-95. https://doi.org/10.1016/j.tele.2017.01.001",
+        "bbox": [
+            111,
+            199,
+            885,
+            276
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Hofstede, G., Hofstede, G. J. and Minkov, M. 2010. Cultures and organizations: software of the mind. Third Edition. McGraw-Hill.",
+        "bbox": [
+            111,
+            292,
+            885,
+            342
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Husted, B. W. 2005. Culture and ecology: a cross-national study of the determinants of environmental sustainability. MIR: Management International Review, 45:349-371. https://www.jstor.org/stable/40836056",
+        "bbox": [
+            112,
+            357,
+            885,
+            433
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Jaffe A. B., Newell R. G., Stavins R. N. 2003. Technological change and the environment, in Handbook of environmental economics, vol. 1, edited by Mäler, K-G. and Vincent, J. R. 1:461-516. Amsterdam and Boston: Elsevier Science B.V. 2003.",
+        "bbox": [
+            111,
+            448,
+            887,
+            551
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Kirsch, A. 2018. The gender composition of corporate boards: a review and research agenda. The Leadership Quarterly, 29:346-364. https://doi.org/10.1016/j.leaqua.2017.06.001",
+        "bbox": [
+            112,
+            566,
+            885,
+            645
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Kostova, T. and Roth, K. 2002. Adoption of an organizational practice by subsidiaries of multinational corporations: institutional and relational effects. The Academy Management Journal, 45:215-233.",
+        "bbox": [
+            111,
+            660,
+            885,
+            737
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Kucharska, W. and Kowalczyk, R. 2019. How to achieve sustainability? – Employee’s point of view on company’s culture and CSR practice. Corporate Social Responsibility and Environmental Management, 26:453-467. https://doi.org/10.1002/csr.1696",
+        "bbox": [
+            111,
+            752,
+            887,
+            856
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            859,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Lahuerta-Otero, E. and González-Bravo, M. I. 2018. Can national culture affect the implementation of common sustainable policies? A European response. Cross-Cultural Research, 52:468-495. https://doi.org/10.1177/1069397117739849",
+        "bbox": [
+            109,
+            80,
+            887,
+            157
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Li, X., Hu, Z. and Zhang, Q. 2021. Environmental regulation, economic policy uncertainty, and green technology innovation. Clean Technologies and Environmental Policy, 23: 2975-2988. https://doi.org/10.1007/s10098-021-02219-4",
+        "bbox": [
+            109,
+            172,
+            887,
+            276
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Lin, W.L., Yip, N., Ho, J.A. and Sambasivan, M. 2020. The adoption of technological innovations in a B2B context and its impact on firm performance: an ethical leadership perspective. Industrial Marketing Management, 89:61-71. https://doi.org/10.1016/j.indmarman.2019.12.009",
+        "bbox": [
+            109,
+            292,
+            887,
+            396
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Mahoney L.S., Thorne, L., Cecil, L. and LaGore, W. 2013. A research note on standalone corporate social responsibility reports: signaling or greenwashing? Critical Perspectives on Accounting, 24:350-359. https://doi.org/10.1016/j.cpa.2012.09.008",
+        "bbox": [
+            111,
+            411,
+            887,
+            516
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Okafor, A., Adeleye, B.N. and Adusei, M. 2021. Corporate social responsibility and financial performance: Evidence from U.S tech firms. Journal of Cleaner Production, 292:126078. https://doi.org/10.1016/j.jclepro.2021.126078",
+        "bbox": [
+            111,
+            530,
+            887,
+            607
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Omri, A. 2020. Technological innovation and sustainable development: does the stage of development matter? Environmental Impact Assessment Review, 83:106398. https://doi.org/10.1016/j.eiar.2020.106398",
+        "bbox": [
+            111,
+            622,
+            885,
+            699
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Onel, N. and Mukherjee, A. 2014. The effects of national culture and human development on environmental health. Environment, Development and Sustainability, 16:79-101. https://doi.org/10.1007/s10668-013-9464-y",
+        "bbox": [
+            111,
+            714,
+            887,
+            792
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Parboteeah, K. P., Addae, H. M. and Cullen, J. B. 2012. Propensity to support sustainability initiatives: a cross-national model. Journal of Business Ethics 105:403-413. https://doi.org/10.1007/s10551-011-0979-6",
+        "bbox": [
+            111,
+            806,
+            887,
+            883
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            859,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Sedita, S. R., Blasi, S. and Yang, J. 2022. The cultural dimensions of sustainable development: a cross-country configurational analysis. Sustainable development, 30:1838-1849. https://doi.org/10.1002/sd.2351",
+        "bbox": [
+            111,
+            80,
+            885,
+            157
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Sharif, A., Saqib, N., Dong, K., Khan, S.A.R. 2022. Nexus between green technology innovation, green financing, and CO₂ emissions in the G7 countries: The moderating role of social globalisation. Sustainable Development, 30:1934-1946. https://doi.org/10.1002/sd.2360",
+        "bbox": [
+            111,
+            172,
+            887,
+            276
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Sun, H., Edziah, B.K., Sun, C. and Kporsu, A.K. 2019. Institutional quality, green innovation, and energy efficiency. Energy Policy, 135:111002. https://doi.org/10.1016/j.enpol.2019.111002",
+        "bbox": [
+            111,
+            292,
+            885,
+            368
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Torelli, R. 2021. Sustainability, responsibility and ethics: different concepts for a single path. Social Responsibility Journal, 17:719-739. https://doi.org/10.1108/SRJ-03-2020-0081",
+        "bbox": [
+            111,
+            383,
+            885,
+            460
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Tu, J. 2020. The impact of regulatory compliance costs on business performance. Innovation, Science and Economic Development Canada",
+        "bbox": [
+            111,
+            476,
+            883,
+            526
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Tyrowicz, J., Terjesen, S. and Mazurek, J. 2020. All on board? New evidence on board gender diversity from a large panel of European firms. European Management Journal, 38:634-645. https://doi.org/10.1016/j.emj.2020.01.001",
+        "bbox": [
+            111,
+            540,
+            887,
+            617
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "United Nations, Economic and Social Council, The impact of rapid technological change on sustainable development. Report of the Secretary-General, Commission on Science and Technology for Development Twenty-second session Geneva, 13-17 May 2019.",
+        "bbox": [
+            112,
+            633,
+            885,
+            737
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Vachon, S. 2010. International operations and sustainable development: should national culture matter? Sustainable Development, 18:350-361. https://doi.org/10.1002/sd.398",
+        "bbox": [
+            111,
+            752,
+            885,
+            828
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            859,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Vogler, D. and Eisenegger, M. 2021. CSR communication, corporate reputation, and the role of the news media as an agenda-setter in the digital age. Business & Society, 60:1957-1986. https://doi.org/10.1177/0007650320928969",
+        "bbox": [
+            111,
+            80,
+            887,
+            157
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "Yang, X., Huang, Y. and Gao, M. 2022. Can digital financial inclusion promote female entrepreneurship? Evidence and mechanisms. The North American Journal of Economics and Finance, 63:101800. https://doi.org/10.1016/j.najef.2022.101800",
+        "bbox": [
+            111,
+            172,
+            888,
+            250
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "Zakari, A., Khan, I., Tan, D., Alvarado, R. and Dagar, V. 2022. Energy efficiency and sustainable development goals (SDGs). Energy, 239:122365. https://doi.org/10.1016/j.energy.2021.122365",
+        "bbox": [
+            111,
+            263,
+            885,
+            342
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "Zhang, C., Khan, I., Dagar, V. Saeed, A. and Zafar, M.W. 2022. Environmental impact of information and communication technology: Unveiling the role of education in developing countries. Technological Forecasting and Social Change, 178:121570. https://doi.org/10.1016/j.techfore.2022.121570",
+        "bbox": [
+            111,
+            357,
+            887,
+            460
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            859,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "Tables",
+        "text_level": 2,
+        "bbox": [
+            112,
+            82,
+            187,
+            99
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "Table 1: List of economies in our sample",
+        "text_level": 2,
+        "bbox": [
+            112,
+            116,
+            493,
+            133
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "table",
+        "img_path": "images/dc00589ff086639cbc9db86a7ed65d5c6d973fdd511264f4a6cd64b8611f6823.jpg",
+        "table_caption": [
+            "The table lists economies considered in our sample, including the number of observations (N. obs)."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Economy</td><td>N. Obs</td></tr><tr><td>Afghanistan</td><td>924</td></tr><tr><td>Albania</td><td>821</td></tr><tr><td>Angola</td><td>496</td></tr><tr><td>Antigua and Barbuda</td><td>150</td></tr><tr><td>Argentina</td><td>2,673</td></tr><tr><td>Armenia</td><td>1,016</td></tr><tr><td>Austria</td><td>598</td></tr><tr><td>Azerbaijan</td><td>722</td></tr><tr><td>Bahamas, The</td><td>148</td></tr><tr><td>Bangladesh</td><td>2,429</td></tr><tr><td>Barbados</td><td>293</td></tr><tr><td>Belarus</td><td>1,039</td></tr><tr><td>Belgium</td><td>611</td></tr><tr><td>Belize</td><td>150</td></tr><tr><td>Benin</td><td>221</td></tr><tr><td>Bhutan</td><td>652</td></tr><tr><td>Bolivia</td><td>1,083</td></tr><tr><td>Bosnia and Herzegovina</td><td>1,188</td></tr><tr><td>Botswana</td><td>1,001</td></tr><tr><td>Brazil</td><td>1,309</td></tr><tr><td>Bulgaria</td><td>2,399</td></tr><tr><td>Burkina Faso</td><td>93</td></tr><tr><td>Burundi</td><td>259</td></tr><tr><td>Cambodia</td><td>857</td></tr><tr><td>Cameroon</td><td>465</td></tr><tr><td>Cabo Verde</td><td>75</td></tr><tr><td>Central African Republic</td><td>294</td></tr><tr><td>Chad</td><td>375</td></tr><tr><td>Chile</td><td>1,668</td></tr><tr><td>China</td><td>2,695</td></tr><tr><td>Colombia</td><td>3,476</td></tr><tr><td>Congo, Rep.</td><td>363</td></tr><tr><td>Costa Rica</td><td>894</td></tr><tr><td>Croatia</td><td>1,565</td></tr><tr><td>Cyprus</td><td>240</td></tr><tr><td>Czechia</td><td>842</td></tr><tr><td>Côte d&#x27;Ivoire</td><td>1,158</td></tr><tr><td>Congo, Dem. Rep.</td><td>1,017</td></tr><tr><td>Denmark</td><td>992</td></tr><tr><td>Djibouti</td><td>265</td></tr><tr><td>Dominica</td><td>150</td></tr><tr><td>Dominican Republic</td><td>707</td></tr><tr><td>Ecuador</td><td>1,084</td></tr><tr><td>Egypt, Arab Rep.</td><td>7,745</td></tr></table>",
+        "bbox": [
+            114,
+            176,
+            356,
+            902
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "table",
+        "img_path": "images/31c4414d452d6cb37254ed4f6e25134ab05a7aaf987a00943a637b2a84d00288.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Economy</td><td>N. Obs</td></tr><tr><td>Georgia</td><td>1,643</td></tr><tr><td>Germany</td><td>1,678</td></tr><tr><td>Ghana</td><td>1,709</td></tr><tr><td>Greece</td><td>1,196</td></tr><tr><td>Grenada</td><td>152</td></tr><tr><td>Guatemala</td><td>1,240</td></tr><tr><td>Guinea</td><td>278</td></tr><tr><td>Guinea-Bissau</td><td>50</td></tr><tr><td>Guyana</td><td>163</td></tr><tr><td>Honduras</td><td>943</td></tr><tr><td>Hong Kong SAR, China</td><td>591</td></tr><tr><td>Hungary</td><td>2,043</td></tr><tr><td>India</td><td>18,577</td></tr><tr><td>Indonesia</td><td>5,152</td></tr><tr><td>Iraq</td><td>1,754</td></tr><tr><td>Ireland</td><td>604</td></tr><tr><td>Israel</td><td>482</td></tr><tr><td>Italy</td><td>755</td></tr><tr><td>Jamaica</td><td>356</td></tr><tr><td>Jordan</td><td>1,159</td></tr><tr><td>Kazakhstan</td><td>2,190</td></tr><tr><td>Kenya</td><td>1,771</td></tr><tr><td>Kosovo</td><td>562</td></tr><tr><td>Kyrgyz Republic</td><td>1,074</td></tr><tr><td>Lao PDR</td><td>1,180</td></tr><tr><td>Latvia</td><td>765</td></tr><tr><td>Lebanon</td><td>1,088</td></tr><tr><td>Lesotho</td><td>297</td></tr><tr><td>Liberia</td><td>151</td></tr><tr><td>Lithuania</td><td>705</td></tr><tr><td>Luxembourg</td><td>168</td></tr><tr><td>Madagascar</td><td>1,198</td></tr><tr><td>Malawi</td><td>579</td></tr><tr><td>Malaysia</td><td>2,182</td></tr><tr><td>Mali</td><td>818</td></tr><tr><td>Malta</td><td>242</td></tr><tr><td>Mauritania</td><td>229</td></tr><tr><td>Mauritius</td><td>559</td></tr><tr><td>Mexico</td><td>3,881</td></tr><tr><td>Micronesia</td><td>5</td></tr><tr><td>Moldova</td><td>961</td></tr><tr><td>Mongolia</td><td>850</td></tr><tr><td>Montenegro</td><td>484</td></tr><tr><td>Morocco</td><td>1,982</td></tr></table>",
+        "bbox": [
+            374,
+            176,
+            609,
+            904
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "table",
+        "img_path": "images/9be89437aa33acdf887442919ac8f28d0b7cd8a6f8178232a35baf3662e040f1.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Economy</td><td>N. Obs</td></tr><tr><td>North Macedonia</td><td>1,182</td></tr><tr><td>Pakistan</td><td>2,462</td></tr><tr><td>Panama</td><td>598</td></tr><tr><td>Papua New Guinea</td><td>65</td></tr><tr><td>Paraguay</td><td>1,470</td></tr><tr><td>Peru</td><td>3,336</td></tr><tr><td>Philippines</td><td>3,251</td></tr><tr><td>Poland</td><td>2,015</td></tr><tr><td>Portugal</td><td>2,065</td></tr><tr><td>Romania</td><td>2,458</td></tr><tr><td>Russian Federation</td><td>6,074</td></tr><tr><td>Rwanda</td><td>1,016</td></tr><tr><td>Samoa</td><td>166</td></tr><tr><td>Saudi Arabia</td><td>1,556</td></tr><tr><td>Senegal</td><td>849</td></tr><tr><td>Serbia</td><td>848</td></tr><tr><td>Seychelles</td><td>103</td></tr><tr><td>Sierra Leone</td><td>360</td></tr><tr><td>Singapore</td><td>623</td></tr><tr><td>Slovak Republic</td><td>1,068</td></tr><tr><td>Slovenia</td><td>777</td></tr><tr><td>Solomon Islands</td><td>150</td></tr><tr><td>South Africa</td><td>1,768</td></tr><tr><td>South Sudan</td><td>732</td></tr><tr><td>Spain</td><td>1,049</td></tr><tr><td>Sri Lanka</td><td>609</td></tr><tr><td>St. Kitts and Nevis</td><td>147</td></tr><tr><td>St. Lucia</td><td>150</td></tr><tr><td>St. Vincent and Grenadines</td><td>151</td></tr><tr><td>Sudan</td><td>646</td></tr><tr><td>Suriname</td><td>382</td></tr><tr><td>Sweden</td><td>1,187</td></tr><tr><td>Tajikistan</td><td>797</td></tr><tr><td>Tanzania</td><td>1,657</td></tr><tr><td>Thailand</td><td>967</td></tr><tr><td>Timor-Leste</td><td>404</td></tr><tr><td>Togo</td><td>343</td></tr><tr><td>Tonga</td><td>30</td></tr><tr><td>Trinidad and Tobago</td><td>367</td></tr><tr><td>Tunisia</td><td>1,206</td></tr><tr><td>Türkiye</td><td>3,777</td></tr><tr><td>Uganda</td><td>1,054</td></tr><tr><td>Ukraine</td><td>2,785</td></tr><tr><td>Uruguay</td><td>1,307</td></tr></table>",
+        "bbox": [
+            629,
+            176,
+            883,
+            902
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "page_number",
+        "text": "29",
+        "bbox": [
+            859,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "Total",
+        "bbox": [
+            122,
+            244,
+            163,
+            257
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "table",
+        "img_path": "images/a65cadd6cfd05e15e4d60cdf746741d9f29186dc451dec41550da6e401b92f5b.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "192,132"
+        ],
+        "table_body": "<table><tr><td>Economy</td><td>N. Obs</td><td>Economy</td><td>N. Obs</td><td>Economy</td><td>N. Obs</td></tr><tr><td>El Salvador</td><td>2,236</td><td>Mozambique</td><td>942</td><td>Uzbekistan</td><td>1,732</td></tr><tr><td>Eritrea</td><td>72</td><td>Myanmar</td><td>1,233</td><td>Vanuatu</td><td>126</td></tr><tr><td>Estonia</td><td>1,070</td><td>Namibia</td><td>672</td><td>Venezuela, RB</td><td>312</td></tr><tr><td>Eswatini</td><td>218</td><td>Nepal</td><td>1,201</td><td>Viet Nam</td><td>2,775</td></tr><tr><td>Ethiopia</td><td>1,479</td><td>Netherlands</td><td>806</td><td>West Bank And Gaza</td><td>1,149</td></tr><tr><td>Fiji</td><td>32</td><td>New Zealand</td><td>357</td><td>Yemen, Rep.</td><td>825</td></tr><tr><td>Finland</td><td>753</td><td>Nicaragua</td><td>1,015</td><td>Zambia</td><td>1,615</td></tr><tr><td>France</td><td>1,557</td><td>Niger</td><td>202</td><td>Zimbabwe</td><td>1,194</td></tr><tr><td>Gambia, The</td><td>342</td><td>Nigeria</td><td>2562</td><td></td><td></td></tr></table>",
+        "bbox": [
+            114,
+            80,
+            883,
+            242
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "page_number",
+        "text": "30",
+        "bbox": [
+            861,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "Table 2: Descriptive statistics",
+        "text_level": 2,
+        "bbox": [
+            112,
+            80,
+            395,
+            99
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "table",
+        "img_path": "images/cc94206dc7ff6279ce843b289b61409f699010b99ddef1257a563ac0ae4a50eb.jpg",
+        "table_caption": [
+            "The table shows descriptive statistics. We report the number of observations (Obs), mean (Mean), standard deviation (SD), minimum (Min), and maximum (Max) for the variables we use."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Variables</td><td>Obs</td><td>Mean</td><td>SD</td><td>Min</td><td>Max</td></tr><tr><td>mon_emi</td><td>24,072</td><td>0.1698</td><td>0.3754</td><td>0</td><td>1</td></tr><tr><td>training</td><td>192,132</td><td>0.3526</td><td>0.4778</td><td>0</td><td>1</td></tr><tr><td>top_man_fem</td><td>179,032</td><td>0.1548</td><td>0.3617</td><td>0</td><td>1</td></tr><tr><td>tech orientation</td><td>192,132</td><td>0.2320</td><td>0.4221</td><td>0</td><td>1</td></tr><tr><td>digital orientation</td><td>192,132</td><td>0.5535</td><td>0.4971</td><td>0</td><td>1</td></tr><tr><td>large</td><td>192,132</td><td>0.2013</td><td>0.4010</td><td>0</td><td>1</td></tr><tr><td>fin_ins</td><td>187,430</td><td>0.3568</td><td>0.4790</td><td>0</td><td>1</td></tr><tr><td>sal_gro</td><td>149,939</td><td>1.5194</td><td>25.2919</td><td>-99.9997</td><td>100</td></tr><tr><td>age</td><td>189,499</td><td>19.5899</td><td>17.3405</td><td>0</td><td>340</td></tr><tr><td>log (GDPpercapita)</td><td>190,191</td><td>9.4326</td><td>0.9289</td><td>6.8814</td><td>11.8064</td></tr><tr><td>ltowvs</td><td>84,592</td><td>42.6878</td><td>22.0788</td><td>3.5264</td><td>86.3980</td></tr><tr><td>idv</td><td>65,848</td><td>39.1018</td><td>19.8762</td><td>6</td><td>80</td></tr><tr><td>pdi</td><td>65,848</td><td>66.8568</td><td>17.9149</td><td>11</td><td>100</td></tr><tr><td>uai</td><td>65,848</td><td>64.9892</td><td>22.5166</td><td>8</td><td>100</td></tr><tr><td>mas</td><td>65,848</td><td>49.0303</td><td>15.581</td><td>5</td><td>100</td></tr><tr><td>tim_spe</td><td>177,750</td><td>0.0640</td><td>0.2448</td><td>0</td><td>1</td></tr><tr><td>courts</td><td>178,891</td><td>0.1247</td><td>0.3303</td><td>0</td><td>1</td></tr></table>",
+        "bbox": [
+            114,
+            152,
+            883,
+            484
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "page_number",
+        "text": "31",
+        "bbox": [
+            859,
+            922,
+            883,
+            936
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "table",
+        "img_path": "images/0d333ef3e3adb726a1626bf6f262653743abbcbc750f53f55124e4e2f9450304.jpg",
+        "table_caption": [
+            "Table 3: Pairwise correlation coefficients",
+            "The Table reports the pairwise correlation coefficients of our variables."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>mon_emi</td><td>training</td><td>top_man_fem</td><td>tech orientation</td><td>digital orientation</td><td>large</td><td>fin_ins</td><td>sal_gro</td><td>age</td></tr><tr><td>mon_emi</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>training</td><td>0.1569</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>top_man_fem</td><td>-0.0360</td><td>0.0077</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>tech orientation</td><td>0.1102</td><td>0.0583</td><td>-0.0781</td><td>1</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>digital orientation</td><td>0.1055</td><td>0.2499</td><td>-0.0154</td><td>0.0825</td><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>large</td><td>0.2493</td><td>0.2238</td><td>-0.0533</td><td>0.0999</td><td>0.2414</td><td>1</td><td></td><td></td><td></td></tr><tr><td>fin_ins</td><td>0.0602</td><td>0.1991</td><td>-0.0000</td><td>-0.0046</td><td>0.1888</td><td>0.1420</td><td>1</td><td></td><td></td></tr><tr><td>sal_gro</td><td>0.0257</td><td>0.0624</td><td>0.0101</td><td>-0.0053</td><td>0.0454</td><td>0.0252</td><td>0.0612</td><td>1</td><td></td></tr><tr><td>age</td><td>0.1026</td><td>0.1074</td><td>-0.0382</td><td>0.0589</td><td>0.1680</td><td>0.2002</td><td>0.1091</td><td>-0.0457</td><td>1</td></tr></table>",
+        "bbox": [
+            64,
+            191,
+            915,
+            487
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "page_number",
+        "text": "32",
+        "bbox": [
+            898,
+            897,
+            917,
+            915
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "Table 4: Digital-tech orientation and monitoring emissions",
+        "text_level": 2,
+        "bbox": [
+            89,
+            83,
+            660,
+            101
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "table",
+        "img_path": "images/c352a112867deed9b49638e8db5e5f4e5351f034936418943f6b77d6510b0076.jpg",
+        "table_caption": [
+            "The table reports the results of model (1). We use “mon\\_emi” as the dependent variable and “digital-tech orientation” as our test variable. Columns 1-2 include year and country fixed effects (FE); column 3 includes year\\*country FE; column 4 includes industry\\*country FE. Standard errors are clustered at the industry\\*country level. \\*\\*\\*, \\*\\*, and \\* indicate significance at the 1%, 5%, and 10% levels, respectively."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>(1) mon_emi</td><td>(2) mon_emi</td><td>(3) mon_emi</td><td>(4) mon_emi</td></tr><tr><td rowspan=\"2\">digital-tech orientation</td><td>0.1617***</td><td>0.1320***</td><td>0.1315***</td><td>0.0923**</td></tr><tr><td>(0.0260)</td><td>(0.0288)</td><td>(0.0288)</td><td>(0.0454)</td></tr><tr><td rowspan=\"2\">digital orientation</td><td>0.0446***</td><td>0.0360***</td><td>0.0360***</td><td>0.0392***</td></tr><tr><td>(0.0086)</td><td>(0.0098)</td><td>(0.0098)</td><td>(0.0129)</td></tr><tr><td rowspan=\"2\">tech orientation</td><td>0.0814**</td><td>0.0837**</td><td>0.0839**</td><td>0.0150</td></tr><tr><td>(0.0363)</td><td>(0.0420)</td><td>(0.0420)</td><td>(0.0634)</td></tr><tr><td rowspan=\"2\">large</td><td></td><td>0.2223***</td><td>0.2221***</td><td>0.1863***</td></tr><tr><td></td><td>(0.0298)</td><td>(0.0299)</td><td>(0.0268)</td></tr><tr><td rowspan=\"2\">fin_ins</td><td></td><td>0.0124</td><td>0.0123</td><td>0.0066</td></tr><tr><td></td><td>(0.0111)</td><td>(0.0111)</td><td>(0.0107)</td></tr><tr><td rowspan=\"2\">sal_gro</td><td></td><td>0.0004*</td><td>0.0005*</td><td>0.0004*</td></tr><tr><td></td><td>(0.0003)</td><td>(0.0003)</td><td>(0.0002)</td></tr><tr><td rowspan=\"2\">age</td><td></td><td>0.0003</td><td>0.0003</td><td>0.0003</td></tr><tr><td></td><td>(0.0004)</td><td>(0.0004)</td><td>(0.0004)</td></tr><tr><td rowspan=\"2\">log (GDPpercapita)</td><td></td><td></td><td></td><td>-0.0151</td></tr><tr><td></td><td></td><td></td><td>(0.0193)</td></tr><tr><td rowspan=\"2\">constant</td><td>0.0589***</td><td>0.0432***</td><td>0.0428***</td><td>0.2000</td></tr><tr><td>(0.0060)</td><td>(0.0111)</td><td>(0.0112)</td><td>(0.1898)</td></tr><tr><td>Observations</td><td>24,188</td><td>20,333</td><td>20,331</td><td>20,115</td></tr><tr><td>R-squared</td><td>0.0553</td><td>0.0874</td><td>0.0885</td><td>0.2041</td></tr><tr><td>Year FE</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>Country FE</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>Year*Country FE</td><td>No</td><td>No</td><td>Yes</td><td>No</td></tr><tr><td>Industry*Country FE</td><td>No</td><td>No</td><td>No</td><td>Yes</td></tr></table>",
+        "bbox": [
+            89,
+            187,
+            905,
+            669
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "page_number",
+        "text": "33",
+        "bbox": [
+            882,
+            926,
+            905,
+            940
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "Table 5: Digital-tech orientation and training",
+        "text_level": 2,
+        "bbox": [
+            90,
+            83,
+            532,
+            101
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "table",
+        "img_path": "images/e0a189141dc6b721fbe0868e44281c96b10d72b711876fb37db472169fb441fa.jpg",
+        "table_caption": [
+            "The table reports the results of model (1). We use “training” as the dependent variable and “digital-tech orientation” as our test variable. Columns 1-2 include year and country fixed effects (FE); column 3 includes year\\*country FE; column 4 includes industry\\*country FE. Standard errors are clustered at the industry\\*country level. \\*\\*\\*, \\*\\*, and \\* indicate significance at the 1%, 5%, and 10% levels, respectively."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>(1)training</td><td>(2)training</td><td>(3)training</td><td>(4)training</td></tr><tr><td>digital-tech orientation</td><td>0.1792***(0.0153)</td><td>0.1320***(0.0140)</td><td>0.1323***(0.0140)</td><td>0.2036***(0.0371)</td></tr><tr><td>digital orientation</td><td>0.1547***(0.0095)</td><td>0.1214***(0.0102)</td><td>0.1205***(0.0103)</td><td>0.1251***(0.0096)</td></tr><tr><td>tech orientation</td><td>0.0199(0.0136)</td><td>0.0049(0.0110)</td><td>0.0086(0.0107)</td><td>0.0857**(0.0352)</td></tr><tr><td>large</td><td></td><td>0.1846***(0.0126)</td><td>0.1802***(0.0124)</td><td>0.1999***(0.0125)</td></tr><tr><td>fin_ins</td><td></td><td>0.0749***(0.0104)</td><td>0.0719***(0.0105)</td><td>0.0796***(0.0106)</td></tr><tr><td>sal_gro</td><td></td><td>0.0006***(0.0002)</td><td>0.0005**(0.0002)</td><td>0.0005**(0.0002)</td></tr><tr><td>age</td><td></td><td>-0.0001(0.0003)</td><td>-0.0001(0.0003)</td><td>-0.0001(0.0003)</td></tr><tr><td>log (GDPpercapita)</td><td></td><td></td><td></td><td>-0.0041(0.0166)</td></tr><tr><td>constant</td><td>0.2041***(0.0060)</td><td>0.1997***(0.0088)</td><td>0.2010***(0.0090)</td><td>0.2244(0.1610)</td></tr><tr><td>Observations</td><td>192,132</td><td>146,287</td><td>146,267</td><td>144,966</td></tr><tr><td>R-squared</td><td>0.2479</td><td>0.2888</td><td>0.2995</td><td>0.3183</td></tr><tr><td>Year FE</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>Country FE</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>Year*Country FE</td><td>No</td><td>No</td><td>Yes</td><td>No</td></tr><tr><td>Industry*Country FE</td><td>No</td><td>No</td><td>No</td><td>Yes</td></tr></table>",
+        "bbox": [
+            92,
+            186,
+            905,
+            648
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "page_number",
+        "text": "34",
+        "bbox": [
+            882,
+            926,
+            905,
+            940
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "Table 6: Digital-tech orientation and female top managers",
+        "text_level": 2,
+        "bbox": [
+            89,
+            84,
+            653,
+            101
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "table",
+        "img_path": "images/207c1fa33397fc198222b6f2b9f6d8b3a4e62ea9e0cd4b7c05c6cc57e8f68b72.jpg",
+        "table_caption": [
+            "The table reports the results of model (1). We use “top\\_man\\_fem” as the dependent variable and “digital-tech orientation” as our test variable. Columns 1-2 include year and country fixed effects (FE); column 3 includes year\\*country FE; column 4 includes industry\\*country FE. Standard errors are clustered at the industry\\*country level. \\*\\*\\*, \\*\\*, and \\* indicate significance at the 1%, 5%, and 10% levels, respectively."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td>(1)</td><td>(2)</td><td>(3)</td><td>(4)</td></tr><tr><td>top_man_fem</td><td>top_man_fem</td><td>top_man_fem</td><td>top_man_fem</td></tr><tr><td rowspan=\"2\">digital-tech orientation</td><td>-0.0513***</td><td>-0.0490***</td><td>-0.0494***</td><td>-0.0725***</td></tr><tr><td>(0.0151)</td><td>(0.0150)</td><td>(0.0151)</td><td>(0.0197)</td></tr><tr><td rowspan=\"2\">digital orientation</td><td>-0.0023</td><td>0.0025</td><td>0.0023</td><td>0.0150</td></tr><tr><td>(0.0114)</td><td>(0.0110)</td><td>(0.0111)</td><td>(0.0107)</td></tr><tr><td rowspan=\"2\">tech orientation</td><td>-0.0411*</td><td>-0.0520**</td><td>-0.0515**</td><td>-0.0703***</td></tr><tr><td>(0.0221)</td><td>(0.0214)</td><td>(0.0213)</td><td>(0.0253)</td></tr><tr><td rowspan=\"2\">large</td><td></td><td>-0.0235</td><td>-0.0229</td><td>-0.0139</td></tr><tr><td></td><td>(0.0147)</td><td>(0.0148)</td><td>(0.0141)</td></tr><tr><td rowspan=\"2\">fin_ins</td><td></td><td>-0.0241***</td><td>-0.0245***</td><td>-0.0174**</td></tr><tr><td></td><td>(0.0085)</td><td>(0.0087)</td><td>(0.0085)</td></tr><tr><td rowspan=\"2\">sal_gro</td><td></td><td>-0.0002</td><td>-0.0002</td><td>-0.0002</td></tr><tr><td></td><td>(0.0002)</td><td>(0.0002)</td><td>(0.0002)</td></tr><tr><td rowspan=\"2\">age</td><td></td><td>-0.0004</td><td>-0.0003</td><td>-0.0003</td></tr><tr><td></td><td>(0.0002)</td><td>(0.0002)</td><td>(0.0002)</td></tr><tr><td rowspan=\"2\">log (GDPpercapita)</td><td></td><td></td><td></td><td>-0.0124</td></tr><tr><td></td><td></td><td></td><td>(0.0110)</td></tr><tr><td rowspan=\"2\">constant</td><td>0.1897***</td><td>0.1898***</td><td>0.1897***</td><td>0.3059***</td></tr><tr><td>(0.0100)</td><td>(0.0125)</td><td>(0.0127)</td><td>(0.1067)</td></tr><tr><td>Observations</td><td>189,771</td><td>143,455</td><td>143,437</td><td>142,098</td></tr><tr><td>R-squared</td><td>0.0591</td><td>0.0622</td><td>0.0687</td><td>0.1303</td></tr><tr><td>Year FE</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>Country FE</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>Year*Country FE</td><td>No</td><td>No</td><td>Yes</td><td>No</td></tr><tr><td>Industry*Country FE</td><td>No</td><td>No</td><td>No</td><td>Yes</td></tr></table>",
+        "bbox": [
+            92,
+            181,
+            904,
+            657
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "page_number",
+        "text": "35",
+        "bbox": [
+            882,
+            926,
+            905,
+            940
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "Table 7: National cultures, digital-tech orientation, and monitoring emissions",
+        "text_level": 2,
+        "bbox": [
+            90,
+            83,
+            840,
+            101
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "table",
+        "img_path": "images/7b5bc0a09fa677c14901a673677f957cad0d0bf1d2857769bc5a592c8f114df7.jpg",
+        "table_caption": [
+            "The table reports the results of different versions of the model (1). “Mon\\_emi” is the dependent variable, and “digital-tech orientation” is our main test variable. Columns 1-2 consider long-term orientation (above and below the median value of “ltowvs”); columns 3-4 consider individualism (above and below the median value of “idv”). All the specifications include year\\*country fixed effects (FE). Standard errors are clustered at the industry\\*country level. \\*\\*\\*, \\*\\*, and \\* indicate significance at the 1%, 5%, and 10% levels, respectively."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"3\">Dimensions of culture</td><td colspan=\"2\">Long-term orientation</td><td colspan=\"2\">Individualism</td></tr><tr><td>Above (and equal to) the median</td><td>Below the median</td><td>Above (and equal to) the median</td><td>Below the median</td></tr><tr><td>(1) mon_emi</td><td>(2) mon_emi</td><td>(3) mon_emi</td><td>(4) mon_emi</td></tr><tr><td>digital-tech orientation</td><td>0.1249***(0.0326)</td><td>0.1371**(0.0539)</td><td>0.1171***(0.0450)</td><td>0.1558***(0.0387)</td></tr><tr><td>digital orientation</td><td>0.0384***(0.0135)</td><td>0.0364**(0.0166)</td><td>0.0321**(0.0146)</td><td>0.0415**(0.0170)</td></tr><tr><td>tech orientation</td><td>0.0518*(0.0304)</td><td>0.2125(0.1456)</td><td>0.1804(0.1353)</td><td>0.0609*(0.0333)</td></tr><tr><td>large</td><td>0.2124***(0.0383)</td><td>0.2256***(0.0456)</td><td>0.2285***(0.0457)</td><td>0.2193***(0.0414)</td></tr><tr><td>fin_ins</td><td>-0.0177(0.0197)</td><td>0.0311**(0.0134)</td><td>0.0292**(0.0120)</td><td>-0.0337(0.0252)</td></tr><tr><td>sal_gro</td><td>0.0004(0.0003)</td><td>0.0003(0.0005)</td><td>0.0004(0.0005)</td><td>0.0005(0.0004)</td></tr><tr><td>age</td><td>0.0007(0.0007)</td><td>0.0001(0.0006)</td><td>0.0002(0.0006)</td><td>0.0006(0.0008)</td></tr><tr><td>constant</td><td>0.0699***(0.0166)</td><td>0.0141(0.0199)</td><td>0.0226(0.0176)</td><td>0.0684***(0.0204)</td></tr><tr><td>Observations</td><td>9,015</td><td>8,780</td><td>8,187</td><td>6,856</td></tr><tr><td>R-squared</td><td>0.0670</td><td>0.0971</td><td>0.0969</td><td>0.0706</td></tr><tr><td>Year*Country FE</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr></table>",
+        "bbox": [
+            92,
+            219,
+            905,
+            639
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "page_number",
+        "text": "36",
+        "bbox": [
+            882,
+            926,
+            905,
+            940
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "table",
+        "img_path": "images/714cd4ba752d31ce10497315850c84247001ed6ff6079d576832f64c8dbaacb1.jpg",
+        "table_caption": [
+            "Table 8: National cultures, digital-tech orientation, and training",
+            "The table reports the results of different versions of the model (1). “Training” is the dependent variable, and “digital-tech orientation” is our main test variable. Columns 1-2 consider power distance (above and below the median value of “pdi”); columns 3-4 consider uncertainty avoidance (above and below the median value of “uai”). All the specifications include year\\*country fixed effects (FE). Standard errors are clustered at the industry\\*country level. \\*\\*\\*, \\*\\*, and \\* indicate significance at the 1%, 5%, and 10% levels, respectively."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"3\">Dimensions of culture</td><td colspan=\"2\">Power distance</td><td colspan=\"2\">Uncertainty avoidance</td></tr><tr><td>Above (and equal to) the median</td><td>Below the median</td><td>Above (and equal to) the median</td><td>Below the median</td></tr><tr><td>(1) training</td><td>(2) training</td><td>(3) training</td><td>(4) training</td></tr><tr><td rowspan=\"2\">digital-tech orientation</td><td>0.1009***</td><td>0.1455***</td><td>0.1631***</td><td>0.0698***</td></tr><tr><td>(0.0248)</td><td>(0.0302)</td><td>(0.0296)</td><td>(0.0175)</td></tr><tr><td rowspan=\"2\">digital orientation</td><td>0.1023***</td><td>0.0998***</td><td>0.1272***</td><td>0.0728***</td></tr><tr><td>(0.0179)</td><td>(0.0233)</td><td>(0.0233)</td><td>(0.0091)</td></tr><tr><td rowspan=\"2\">tech orientation</td><td>0.0091</td><td>0.0352</td><td>0.0239</td><td>0.0033</td></tr><tr><td>(0.0153)</td><td>(0.0405)</td><td>(0.0314)</td><td>(0.0140)</td></tr><tr><td rowspan=\"2\">large</td><td>0.1833***</td><td>0.1979***</td><td>0.1699***</td><td>0.2220***</td></tr><tr><td>(0.0298)</td><td>(0.0299)</td><td>(0.0319)</td><td>(0.0213)</td></tr><tr><td rowspan=\"2\">fin_ins</td><td>0.0948***</td><td>0.0576***</td><td>0.0813***</td><td>0.0744***</td></tr><tr><td>(0.0199)</td><td>(0.0162)</td><td>(0.0191)</td><td>(0.0161)</td></tr><tr><td rowspan=\"2\">sal_gro</td><td>0.0005*</td><td>0.0019***</td><td>0.0015***</td><td>0.0004*</td></tr><tr><td>(0.0003)</td><td>(0.0005)</td><td>(0.0004)</td><td>(0.0003)</td></tr><tr><td rowspan=\"2\">age</td><td>0.0002</td><td>0.0001</td><td>0.0001</td><td>0.0000</td></tr><tr><td>(0.0005)</td><td>(0.0005)</td><td>(0.0005)</td><td>(0.0003)</td></tr><tr><td rowspan=\"2\">constant</td><td>0.1182***</td><td>0.2563***</td><td>0.2061***</td><td>0.0986***</td></tr><tr><td>(0.0141)</td><td>(0.0233)</td><td>(0.0199)</td><td>(0.0080)</td></tr><tr><td>Observations</td><td>29,041</td><td>26,068</td><td>28,182</td><td>26,927</td></tr><tr><td>R-squared</td><td>0.2510</td><td>0.1639</td><td>0.1857</td><td>0.2471</td></tr><tr><td>Year*Country FE</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr></table>",
+        "bbox": [
+            92,
+            219,
+            905,
+            639
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "page_number",
+        "text": "37",
+        "bbox": [
+            882,
+            926,
+            905,
+            940
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "Table 9: National cultures, digital-tech orientation, and female top managers",
+        "text_level": 2,
+        "bbox": [
+            90,
+            84,
+            833,
+            101
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "table",
+        "img_path": "images/969c29a6ff31561e692cc89fae0b572d128336883e3c8b4c3d968a4214cdcc69.jpg",
+        "table_caption": [
+            "The table reports the results of different versions of the model (1). “Top\\_man\\_fem” is the dependent variable, and “digital-tech orientation” is our main test variable. Columns 1-2 consider masculinity (above and below the median value of “mas”); columns 3-4 consider long-term orientation (above and below the median value of “ltowvs”). All the specifications include year\\*country fixed effects (FE). Standard errors are clustered at the industry\\*country level. \\*\\*\\*, \\*\\*, and \\* indicate significance at the 1%, 5%, and 10% levels, respectively."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"3\">Dimensions of culture</td><td colspan=\"2\">Masculinity</td><td colspan=\"2\">Long-term orientation</td></tr><tr><td>Above (and equal to) the median</td><td>Below the median</td><td>Above (and equal to) the median</td><td>Below the median</td></tr><tr><td>(1)top_man_fem</td><td>(2)top_man_fem</td><td>(3)top_man_fem</td><td>(4)top_man_fem</td></tr><tr><td>digital-tech orientation</td><td>-0.0567**(0.0228)</td><td>-0.0320(0.0302)</td><td>-0.0222(0.0160)</td><td>-0.0975***(0.0368)</td></tr><tr><td>digital orientation</td><td>-0.0067(0.0190)</td><td>0.0091(0.0274)</td><td>0.0016(0.0127)</td><td>0.0056(0.0336)</td></tr><tr><td>tech orientation</td><td>-0.0168(0.0231)</td><td>-0.0892**(0.0419)</td><td>-0.0239(0.0207)</td><td>-0.0466(0.0430)</td></tr><tr><td>large</td><td>-0.0007(0.0335)</td><td>-0.0413(0.0263)</td><td>-0.0201(0.0169)</td><td>-0.0083(0.0500)</td></tr><tr><td>fin_ins</td><td>-0.0098(0.0140)</td><td>-0.0283*(0.0161)</td><td>-0.0035(0.0121)</td><td>-0.0386**(0.0193)</td></tr><tr><td>sal_gro</td><td>-0.0006(0.0005)</td><td>0.0000(0.0003)</td><td>-0.0003(0.0003)</td><td>-0.0006(0.0006)</td></tr><tr><td>age</td><td>-0.0003(0.0004)</td><td>-0.0002(0.0006)</td><td>-0.0000(0.0003)</td><td>-0.0012*(0.0006)</td></tr><tr><td>constant</td><td>0.1664***(0.0205)</td><td>0.2133***(0.0339)</td><td>0.1451***(0.0140)</td><td>0.2391***(0.0392)</td></tr><tr><td>Observations</td><td>31,845</td><td>23,421</td><td>35,613</td><td>34,343</td></tr><tr><td>R-squared</td><td>0.0740</td><td>0.0535</td><td>0.0554</td><td>0.1014</td></tr><tr><td>Year*Country FE</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr></table>",
+        "bbox": [
+            90,
+            216,
+            890,
+            653
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "page_number",
+        "text": "38",
+        "bbox": [
+            882,
+            926,
+            905,
+            940
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "Table 10: Bureaucracy burden, digital-tech orientation, and ESG standards",
+        "text_level": 2,
+        "bbox": [
+            89,
+            83,
+            818,
+            101
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "table",
+        "img_path": "images/04c0da87b8139b480de3f70b79c1df05c702dc0cc3800a26f3da52f6363d19a9.jpg",
+        "table_caption": [
+            "The table reports the results of different versions of the model (1). “Mon\\_emi”, “Training”, and “Top\\_man\\_fem” are the dependent variables and “digital-tech orientation” is our main variable of interest. Columns 1, 3 and 5 consider firms in which senior management’s time spent on dealing with regulations is either greater than or equal to 50%. Columns 2, 4 and 6 consider firms where senior management’s time spent dealing with regulations is less than 50%. All the specifications include year\\*country fixed effects (FE). Standard errors are clustered at the industry\\*country level. \\*\\*\\*, \\*\\*, and \\* indicate significance at the 1%, 5%, and 10% levels, respectively."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td colspan=\"2\">mon_emi</td><td colspan=\"2\">training</td><td colspan=\"2\">top_man_fem</td></tr><tr><td>Senior management&#x27;s time spent on dealing with regulations</td><td>&gt;=50%</td><td>&lt;50%</td><td>&gt;=50%</td><td>&lt;50%</td><td>&gt;=50%</td><td>&lt;50%</td></tr><tr><td>digital-tech orientation</td><td>0.1189(0.0793)</td><td>0.1320***(0.0303)</td><td>0.0496(0.0448)</td><td>0.1338***(0.0146)</td><td>0.0059(0.0378)</td><td>-0.0538***(0.0162)</td></tr><tr><td>digital orientation</td><td>0.0814(0.0509)</td><td>0.0375***(0.0108)</td><td>0.0409*(0.0244)</td><td>0.1235***(0.0104)</td><td>-0.0153(0.0243)</td><td>0.0011(0.0113)</td></tr><tr><td>tech orientation</td><td>0.3052**(0.1379)</td><td>0.0818*(0.0441)</td><td>-0.0496(0.0351)</td><td>0.0150(0.0116)</td><td>0.0005(0.0479)</td><td>-0.0535**(0.0226)</td></tr><tr><td>large</td><td>0.2118***(0.0606)</td><td>0.2260***(0.0316)</td><td>0.2576***(0.0499)</td><td>0.1752***(0.0129)</td><td>0.0834**(0.0419)</td><td>-0.0292*(0.0157)</td></tr><tr><td>fin_ins</td><td>-0.0875**(0.0373)</td><td>0.0126(0.0113)</td><td>0.1332***(0.0370)</td><td>0.0708***(0.0116)</td><td>-0.0365(0.0274)</td><td>-0.0240**(0.0100)</td></tr><tr><td>sal_gro</td><td>0.0005(0.0006)</td><td>0.0005(0.0003)</td><td>0.0018***(0.0005)</td><td>0.0002(0.0002)</td><td>-0.0001(0.0005)</td><td>-0.0002(0.0002)</td></tr><tr><td>age</td><td>0.0033**(0.0017)</td><td>0.0002(0.0004)</td><td>-0.0002(0.0008)</td><td>-0.0002(0.0003)</td><td>-0.0017**(0.0007)</td><td>-0.0002(0.0003)</td></tr><tr><td>constant</td><td>0.0214(0.0555)</td><td>0.0447***(0.0112)</td><td>0.2284***(0.0213)</td><td>0.2030***(0.0097)</td><td>0.2053***(0.0248)</td><td>0.1863***(0.0129)</td></tr><tr><td>Observations</td><td>964</td><td>18,205</td><td>8,552</td><td>129,902</td><td>8,516</td><td>126,568</td></tr><tr><td>R-squared</td><td>0.3464</td><td>0.0896</td><td>0.4131</td><td>0.3095</td><td>0.1660</td><td>0.0698</td></tr><tr><td>Year*Country FE</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr></table>",
+        "bbox": [
+            92,
+            236,
+            927,
+            645
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "page_number",
+        "text": "39",
+        "bbox": [
+            882,
+            926,
+            905,
+            940
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "Table 11: Courts as an obstacle, digital-tech orientation intensity, and ESG standards",
+        "text_level": 2,
+        "bbox": [
+            89,
+            83,
+            907,
+            101
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "table",
+        "img_path": "images/59f56fe52e5f47d59f372b97c5cd9beb01b130fce087733acd5890d71e8798fb.jpg",
+        "table_caption": [
+            "The table reports the results of different versions of the model (1). “Mon\\_emi”, “Training”, and “Top\\_man\\_fem” are the dependent variables, and “digital-tech orientation” is our main test variable. Columns 1, 3, and 5 consider firms for which courts are perceived as a major/very severe obstacle. Columns 2, 4, and 6 consider firms for which courts are perceived to be either a minor/moderate obstacle or not an obstacle. All the specifications include year\\*country fixed effects (FE). Standard errors are clustered at the industry\\*country level. \\*\\*\\*, \\*\\*, and \\* indicate significance at the 1%, 5%, and 10% levels, respectively."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td colspan=\"2\">mon_emi</td><td colspan=\"2\">training</td><td colspan=\"2\">top_man_fem</td></tr><tr><td>Courts perceived as an obstacle</td><td>major/very severe</td><td>minor/moderate (or not an obstacle)</td><td>major/very severe</td><td>minor/moderate or not an obstacle)</td><td>major/very severe</td><td>minor/moderate or not an obstacle)</td></tr><tr><td>digital-tech orientation</td><td>0.1547*(0.0813)</td><td>0.1364***(0.0295)</td><td>0.1122**(0.0508)</td><td>0.1305***(0.0157)</td><td>0.0265(0.0415)</td><td>-0.0548***(0.0156)</td></tr><tr><td>digital orientation</td><td>0.0526(0.0497)</td><td>0.0421***(0.0095)</td><td>0.1182***(0.0275)</td><td>0.1180***(0.0107)</td><td>0.0238(0.0333)</td><td>-0.0020(0.0129)</td></tr><tr><td>tech orientation</td><td>0.0441(0.0973)</td><td>0.1021**(0.0474)</td><td>0.0206(0.0466)</td><td>0.0010(0.0108)</td><td>-0.0408(0.0267)</td><td>-0.0448**(0.0223)</td></tr><tr><td>large</td><td>0.0392(0.0424)</td><td>0.2515***(0.0314)</td><td>0.2070***(0.0391)</td><td>0.1736***(0.0136)</td><td>-0.0658***(0.0235)</td><td>-0.0170(0.0162)</td></tr><tr><td>fin_ins</td><td>-0.0225(0.0333)</td><td>0.0225*(0.0124)</td><td>0.0834**(0.0383)</td><td>0.0725***(0.0109)</td><td>-0.0475(0.0310)</td><td>-0.0173*(0.0091)</td></tr><tr><td>sal_gro</td><td>0.0018(0.0014)</td><td>0.0002(0.0003)</td><td>0.0009(0.0006)</td><td>0.0007***(0.0002)</td><td>-0.0007*(0.0004)</td><td>-0.0004*(0.0002)</td></tr><tr><td>age</td><td>0.0007(0.0014)</td><td>0.0003(0.0005)</td><td>-0.0012*(0.0007)</td><td>0.0001(0.0003)</td><td>0.0012**(0.0005)</td><td>-0.0006**(0.0003)</td></tr><tr><td>constant</td><td>0.0545*(0.0301)</td><td>0.0325***(0.0115)</td><td>0.2090***(0.0284)</td><td>0.2064***(0.0096)</td><td>0.1278***(0.0213)</td><td>0.1931***(0.0145)</td></tr><tr><td>Observations</td><td>1,867</td><td>17,251</td><td>16,837</td><td>120,343</td><td>17,105</td><td>117,106</td></tr><tr><td>R-squared</td><td>0.1293</td><td>0.1056</td><td>0.2834</td><td>0.3124</td><td>0.1560</td><td>0.0683</td></tr><tr><td>Year*Country FE</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr></table>",
+        "bbox": [
+            92,
+            237,
+            932,
+            646
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "page_number",
+        "text": "40",
+        "bbox": [
+            882,
+            926,
+            905,
+            940
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "Appendix",
+        "text_level": 2,
+        "bbox": [
+            443,
+            84,
+            554,
+            103
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "Table A1: definition of variables",
+        "text_level": 2,
+        "bbox": [
+            90,
+            116,
+            405,
+            133
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "The below table shows the definition of the variables used in our empirical analysis.",
+        "bbox": [
+            89,
+            147,
+            749,
+            164
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "table",
+        "img_path": "images/49910e2617fe89c10e726f3a4eb5db585648fbf39da8dc0dd88215b1f0a7eb05.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Variable name</td><td>Symbol</td><td>Description</td></tr><tr><td colspan=\"3\">Dependent variables</td></tr><tr><td>Monitoring CO2 emissions over the past three years</td><td>mon_emi</td><td>A binary variable that takes the value of one if the establishment has monitored its CO2 emissions over the past three years, and zero otherwise</td></tr><tr><td>Availability of formal training programs in the last fiscal year</td><td>training</td><td>A binary variable that takes the value of one if there was a formal training programs for permanent, full-time employees in the last fiscal year, and zero otherwise</td></tr><tr><td>Female top manager</td><td>top_man_fem</td><td>A binary variable that takes the value of one if the top manager is female, and zero otherwise</td></tr><tr><td colspan=\"3\">Main independent variables</td></tr><tr><td>R&amp;D intensity classification at a two-digit level</td><td>tech orientation</td><td>A binary variable that takes the value of 1 if the firm is classified as having high, medium-high or medium R&amp;D intensity at the 2-digit level of ISIC Rev 4, and 0 if the firm is classified as having medium-low or low R&amp;D intensity 10</td></tr><tr><td>Website or social media page availability</td><td>digital orientation</td><td>A binary variable that takes the value of one if the establishment has its own website or social media page, and zero otherwise</td></tr><tr><td>High, medium-high or medium R&amp;D intensity firms at the 2-digit level of ISIC Rev 4 with their own website or a social media page</td><td>digital-tech orientation</td><td>A binary variable that takes the value of 1 if the firm is classified as having high, medium-high or medium R&amp;D intensity at the 2-digit level of ISIC Rev 4 and has its own website or social media page, and zero otherwise</td></tr><tr><td colspan=\"3\">Firm-level variables</td></tr><tr><td>Firm size</td><td>large</td><td>A binary variable that takes the value of one if a firm has 100 and more employees (classified as “large”), and zero if a firm is classified as medium (20-99 employees) or small (&lt;20 employees)</td></tr><tr><td>Availability of a credit line or loan from a financial institution</td><td>fin_ins</td><td>A binary variable that takes the value of one if the establishment has a line of credit or loan from a financial institution, and zero otherwise</td></tr><tr><td>Real annual sales growth</td><td>sal_gro</td><td>A variable indicating the real annual sales growth at the firm level (%)</td></tr><tr><td>Age</td><td>age</td><td>A variable that is given by the difference between the year of the survey and the year in which a firm began operations</td></tr><tr><td colspan=\"3\">Country-level variables</td></tr><tr><td>GDP per capita (constant international $)</td><td>log (GDPpercapita)</td><td>GDP per capita based on purchasing power parity (PPP). PPP GDP is gross domestic product converted to international dollars using purchasing power parity rates. An international dollar has the same purchasing power over GDP as the U.S. dollar has in the United States. GDP at purchaser's prices is the sum of gross value added by all resident producers in the country plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in constant 2021 international dollars 11</td></tr><tr><td>Long-term orientation</td><td>ltowvs</td><td>Long-term orientation deals with change. As with the other dimensions of culture, it is expressed on a scale from 0 (the most short-term oriented country) to 100 (the most long-term oriented country) 12</td></tr><tr><td>Individualism</td><td>idv</td><td>Individualism is the degree to which people feel independent as opposed to interdependent as members of a larger whole. As with the other dimensions of culture, it is expressed on a scale of 0 (the least individualistic country) to 100 (the most individualistic country)</td></tr><tr><td>Power distance</td><td>pdi</td><td>Power distance is the degree to which the less powerful members of organizations and institutions accept and expect power to be distributed unequally. As with the other dimensions of culture, it is expressed on a scale from 0 (lowest power distance) to 100 (highest power distance)</td></tr><tr><td>Uncertainty avoidance</td><td>uai</td><td>Uncertainty avoidance deals with a society's tolerance for uncertainty and ambiguity. As with the other dimensions of culture, it is expressed on a scale from 0 (the most uncertainty-tolerant country) to 100 (the most uncertainty-averse country).</td></tr><tr><td>Masculinity</td><td>mas</td><td>Masculinity is the degree to which the use of force is socially endorsed. As with the other dimensions of culture, it is expressed on a scale from 0 (the least masculine country) to 100 (the most masculine country)</td></tr><tr><td colspan=\"3\">Obstacles</td></tr><tr><td>Senior management's time spent on dealing with regulations</td><td>tim_spe</td><td>A binary variable that takes the value of one if the percentage of time spent by all senior managers (managers, directors, and officers above the level of direct supervisor of production or sales workers) in a typical week during the past year dealing with requirements imposed by government regulations is greater than or equal to 50%, and zero otherwise</td></tr><tr><td>Courts perceived as a major or very severe obstacle</td><td>courts</td><td>A binary variable that takes the value of one if the courts are perceived as a major/very severe obstacle to the current operations of the firm, and zero if the courts are perceived as either a minor/moderate obstacle or not perceived as an obstacle</td></tr></table>",
+        "bbox": [
+            95,
+            175,
+            942,
+            762
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{10}$ The classification is based on: Galindo-Rueda, F. and Verger, F. 2016. OECD taxonomy of economic activities based on R&D intensity. OECD science, technology and industry working papers 2016/04. https://doi.org/10.1787/5jlv73sqqp8r-en (Annex 2. R&D intensity classification at a two-digit level).",
+        "bbox": [
+            87,
+            884,
+            907,
+            925
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "page_number",
+        "text": "41",
+        "bbox": [
+            882,
+            927,
+            905,
+            940
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [],
+        "bbox": [
+            95,
+            82,
+            942,
+            715
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{11}$ Data are collected from: GDP per capita (constant 2021 international \\$), The World Bank, available at the following link: https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD (last accessed: November 2024).",
+        "bbox": [
+            87,
+            871,
+            907,
+            898
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{12}$ Dimension data matrix, version 2015 12 08 0-100, available at the following link: https://geerthofstede.com/research-and-vsm/dimension-data-matrix/ (last accessed: June 2024). In our database, cultural data begin in 2015.",
+        "bbox": [
+            87,
+            898,
+            907,
+            925
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "page_number",
+        "text": "42",
+        "bbox": [
+            882,
+            927,
+            905,
+            940
+        ],
+        "page_idx": 44
+    }
+]

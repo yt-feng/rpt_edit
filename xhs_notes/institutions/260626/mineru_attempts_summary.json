@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_008_ai03vkus/pdfs/0036-WorldBank_The-Elusive-Impact-of-Corporate-Tax-Incentives_16f407a5.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_008_ai03vkus/pdfs/0037-WorldBank_The-Exposure-of-Workers-to-Artificial-Intelligence-in-Low--a_1d64539f.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_008_ai03vkus/pdfs/0038-WorldBank_Weather-Shocks-and-Rural-Economic-Linkages-Evidence-from-Raj_405b317a.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

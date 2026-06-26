@@ -1,0 +1,2830 @@
+[
+    [
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.009,
+                0.441,
+                0.032,
+                0.607
+            ],
+            "angle": 0,
+            "content": "Public Disclosure Authorized"
+        },
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.009,
+                0.025,
+                0.031,
+                0.191
+            ],
+            "angle": 0,
+            "content": "Public Disclosure Authorized"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.112,
+                0.086,
+                0.612,
+                0.115
+            ],
+            "angle": 0,
+            "content": "Policy Research Working Paper"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.71,
+                0.087,
+                0.804,
+                0.114
+            ],
+            "angle": 0,
+            "content": "11077"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.258,
+                0.299,
+                0.744,
+                0.428
+            ],
+            "angle": 0,
+            "content": "Collecting Accurate Data\non Intimate Partner Violence\nLearnings from Pakistan"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.448,
+                0.454,
+                0.557,
+                0.477
+            ],
+            "angle": 0,
+            "content": "Nasir Iqbal",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.447,
+                0.478,
+                0.556,
+                0.499
+            ],
+            "angle": 0,
+            "content": "Amen Jalal",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.416,
+                0.5,
+                0.589,
+                0.522
+            ],
+            "angle": 0,
+            "content": "Mahreen Mahmud",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.44,
+                0.523,
+                0.565,
+                0.547
+            ],
+            "angle": 0,
+            "content": "Kate Vyborny",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.051,
+                0.845,
+                0.111,
+                0.895
+            ],
+            "angle": 0,
+            "content": ""
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.114,
+                0.859,
+                0.604,
+                0.926
+            ],
+            "angle": 0,
+            "content": "WORLD BANK GROUP\nSocial Sustainability and Inclusion Global Department\nMarch 2025"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.292,
+                0.298,
+                0.714,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.261,
+                0.34,
+                0.742,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.346,
+                0.399,
+                0.656,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.449,
+                0.456,
+                0.554,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.451,
+                0.479,
+                0.552,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.42,
+                0.502,
+                0.585,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.443,
+                0.523,
+                0.56,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.065,
+                0.375,
+                0.083
+            ],
+            "angle": 0,
+            "content": "POLICY RESEARCH WORKING PAPER 11077",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.084,
+                0.107,
+                0.177,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Abstract"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.083,
+                0.135,
+                0.477,
+                0.305
+            ],
+            "angle": 0,
+            "content": "Accurate measurement of intimate partner violence is challenging in face-to-face interviews due to concerns about anonymity and privacy, which can deter disclosure. In settings with high illiteracy, self-administered surveys are also impractical. To tackle these issues, this study adapted self-interviewing tools for rural-poor contexts and conducted two experiments: one to assess comprehension, and another to compare disclosure of intimate partner violence when questions were asked face-to-face first versus through audio computer-assisted interviewing first. The findings show that",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.494,
+                0.136,
+                0.888,
+                0.304
+            ],
+            "angle": 0,
+            "content": "despite high illiteracy, respondents can effectively understand audio computer-assisted interviewing questionnaires. Additionally, initially answering questions privately via audio computer-assisted interviewing significantly increases subsequent disclosure of intimate partner violence by 41 to 57 percent during face-to-face interviews. This indicates that starting with private questioning enhances openness and consistency in reporting sensitive topics, making it a viable and effective method for improving data collection on intimate partner violence.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.082,
+                0.421,
+                0.887,
+                0.491
+            ],
+            "angle": 0,
+            "content": "This paper is a product of the Social Sustainability and Inclusion Global Department. It is part of a larger effort by the World Bank to provide open access to its research and make a contribution to development policy discussions around the world. Policy Research Working Papers are also posted on the Web at http://www.worldbank.org/prwp. The authors may be contacted at kvyborny@worldbank.org."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.134,
+                0.853,
+                0.844,
+                0.926
+            ],
+            "angle": 0,
+            "content": "The Policy Research Working Paper Series disseminates the findings of work in progress to encourage the exchange of ideas about development issues. An objective of the series is to get the findings out quickly, even if the presentations are less than fully polished. The papers carry the names of the authors and should be cited accordingly. The findings, interpretations, and conclusions expressed in this paper are entirely those of the authors. They do not necessarily represent the views of the International Bank for Reconstruction and Development/World Bank and its affiliated organizations, or those of the Executive Directors of the World Bank or the governments they represent."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.356,
+                0.942,
+                0.617,
+                0.959
+            ],
+            "angle": 0,
+            "content": "Produced by the Research Support Team"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.069,
+                0.371,
+                0.08
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.107,
+                0.175,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.14,
+                0.474,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.156,
+                0.472,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.172,
+                0.475,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.19,
+                0.47,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.205,
+                0.474,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.221,
+                0.471,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.239,
+                0.471,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.254,
+                0.471,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.27,
+                0.471,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.087,
+                0.287,
+                0.471,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.501,
+                0.14,
+                0.885,
+                0.152
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.156,
+                0.885,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.498,
+                0.173,
+                0.882,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.189,
+                0.882,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.205,
+                0.882,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.498,
+                0.221,
+                0.882,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.239,
+                0.882,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.5,
+                0.255,
+                0.882,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.498,
+                0.27,
+                0.882,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.499,
+                0.288,
+                0.693,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.129,
+                0.073,
+                0.868,
+                0.157
+            ],
+            "angle": 0,
+            "content": "Collecting Accurate Data on Intimate Partner Violence: Learnings from Pakistan*"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.143,
+                0.191,
+                0.856,
+                0.215
+            ],
+            "angle": 0,
+            "content": "Nasir Iqbal Amen Jalal Mahreen Mahmud Kate Vyborny",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.643,
+                0.282,
+                0.663
+            ],
+            "angle": 0,
+            "content": "JEL codes: J12, C83, J16",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.085,
+                0.774,
+                0.914,
+                0.884
+            ],
+            "angle": 0,
+            "content": "*Iqbal: Pakistan Institute of Development Economics (nasir@pide.org.pk), Jalal: London School of Economics (u.jalal@lse.ac.uk), Mahmud: University of Exeter (m.mahmud@exeter.ac.uk), Vyborny: South Asia Region Gender Innovation Lab, World Bank (kvyborny@worldbank.org). We thank Amna Riaz for her incredible work in leading the survey activity and Maham Rasheed, Jaweria Waqar, and Sarim Zafar for their excellent research assistance. This project is funded by the Cash Transfer and IPV Research Collaborative and the IPV Initiative at Innovations for Poverty Action. We are grateful to Amber Peterman for her invaluable comments. This study has ethics approval from PIDE (RERC/2021-001), LSE (REC ref. 47614) and Duke (Protocol #2022-0207)."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.132,
+                0.077,
+                0.867,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.318,
+                0.127,
+                0.676,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.192,
+                0.423,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.472,
+                0.191,
+                0.852,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.645,
+                0.278,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.089,
+                0.088,
+                0.318,
+                0.11
+            ],
+            "angle": 0,
+            "content": "1 Introduction"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.138,
+                0.914,
+                0.43
+            ],
+            "angle": 0,
+            "content": "Collecting accurate data on intimate partner violence (IPV) is difficult because of under-reporting by women, often due to the fear, stigma, and shame associated with IPV. It is especially challenging in face-to-face (F2F) interviews where the lack of anonymity can inhibit disclosure. While self-completed surveys offer more privacy, they are impractical when illiterate respondents are the target population. In low-income or rural settings, small homes increase the risk of family members overhearing conversations with enumerators, raising further ethical concerns about privacy and the potential for backlash from perpetrators. Nonetheless, ensuring accurate IPV disclosure is crucial to preventing and responding to IPV. It is especially important in experimental or quasi-experimental studies where the interventions themselves may affect disclosure of IPV, or where low rates of disclosure may undermine statistical power.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.44,
+                0.914,
+                0.61
+            ],
+            "angle": 0,
+            "content": "We addressed these issues by adapting existing measurement tools to better suit rural-poor settings. We also fielded two experiments, one to evaluate respondents' comprehension of questions using these adapted tools, and the other to compare the impacts of face-to-face (F2F) enumerator-administered modules versus audio computer assisted interviewing (ACASI) on IPV reporting.\\(^{1}\\) In the second experiment, we randomized at the respondent-level, whether they answered IPV-related questions via ACASI first, or F2F first.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.62,
+                0.912,
+                0.761
+            ],
+            "angle": 0,
+            "content": "We have two key findings. First, our experiments demonstrate that respondents comprehend ACASI well, despite high levels of illiteracy. By randomizing the order of the Likert-scale answer options corresponding to different frequencies of IPV, we found that reporting does not depend on the ordering of the response options. This is further reinforced by the fact that we found high agreement in responses to non-IPV questions when asked via ACASI or F2F.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.772,
+                0.912,
+                0.882
+            ],
+            "angle": 0,
+            "content": "Second, answering sensitive questions in private first increases IPV disclosure later. Specifically, we find that F2F reports of IPV are significantly higher for respondents who previously answered the same questions using ACASI. By contrast, we observe no similar impact for non-IPV questions which were first asked by ACASI and then repeated F2F. The continued higher reporting of IPV",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.087,
+                0.89,
+                0.912,
+                0.924
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) ACASI is a self-interviewing method where women listen to audio recordings of questions in the local language on headphones, allowing them to privately respond to questions using a touch screen on a tablet."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.488,
+                0.954,
+                0.503,
+                0.968
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.088,
+                0.316,
+                0.111
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.14,
+                0.909,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.169,
+                0.909,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.201,
+                0.907,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.23,
+                0.908,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.26,
+                0.909,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.292,
+                0.908,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.321,
+                0.909,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.352,
+                0.907,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.382,
+                0.909,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.41,
+                0.565,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.44,
+                0.909,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.472,
+                0.909,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.502,
+                0.907,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.532,
+                0.908,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.561,
+                0.907,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.592,
+                0.609,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.623,
+                0.908,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.653,
+                0.907,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.682,
+                0.908,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.714,
+                0.907,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.744,
+                0.723,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.773,
+                0.908,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.804,
+                0.909,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.833,
+                0.908,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.863,
+                0.894,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.093,
+                0.912,
+                0.234
+            ],
+            "angle": 0,
+            "content": "in subsequent F2F interviews indicates that discussing sensitive topics in private initially helps respondents open up to enumerators later, or that respondents wish to maintain consistency in their responses. Overall, our results suggest that introducing respondents to sensitive questions privately, even if on a limited scale, is both feasible given high comprehension, and effective, as it helps respondents ease into difficult topics.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.244,
+                0.914,
+                0.505
+            ],
+            "angle": 0,
+            "content": "We implemented this experiment during in-person surveys from February to March 2023, involving over 6,000 currently married women from rural-poor households in the Layyah district of Punjab, Pakistan. All surveys were conducted by female enumerators.\\(^{2}\\) Respondents belong to poor households which were within a +/- 5 bandwidth of a multi-dimensional poverty score cut-off used to determine eligibility for Pakistan's national unconditional cash transfers program. All respondents are under the age of 60 years and the average age is 48 years. The vast majority of these women (93%) are illiterate. We relied on questions from the standard IPV module of the Demographic and Health Surveys (DHS), and asked 7 questions on experience of physical violence, 4 on sexual violence and 4 related to injuries due to violence.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.515,
+                0.914,
+                0.837
+            ],
+            "angle": 0,
+            "content": "The literature so far has focused on comparing the measurement of IPV using ACASI with F2F interviews by randomizing respondents to either answer questions using ACASI or F2F surveys (Park et al., 2021; Cullen, 2023; Peterman et al., 2024). Our experiment exploits within subject randomization instead. Park et al. (2021) also report that ACASI based questioning was poorly comprehended by respondents. We successfully addressed this concern by making the ACASI interface more accessible to our respondents (i.e., illiterate, rural-poor women). Moreover, existing studies have generally found significantly higher rates of ACASI-based IPV reporting in Malawi, Rwanda and Senegal but the results are not always consistently higher across all types of IPV, and no significant differences were found for any type of IPV in Liberia (Park et al., 2021). Our study explores a context outside Africa, where the majority of the evidence has been concentrated thus far. We also contribute to a broader literature on the use of innovative survey methods beyond",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.087,
+                0.845,
+                0.913,
+                0.907
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\) Enumerators were trained to adhere to ethical protocols related to IPV, including sharing of referral services for IPV-related matters with the respondents. To protect their privacy in case perpetrators of violence within the family got a hold of these resources, we embedded information about IPV helplines in a broader manual on other health related resources."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.488,
+                0.954,
+                0.503,
+                0.968
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.095,
+                0.908,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.124,
+                0.907,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.155,
+                0.908,
+                0.171
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.186,
+                0.909,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.215,
+                0.454,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.245,
+                0.907,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.276,
+                0.909,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.305,
+                0.909,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.337,
+                0.908,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.365,
+                0.909,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.396,
+                0.909,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.426,
+                0.908,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.457,
+                0.907,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.486,
+                0.598,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.517,
+                0.907,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.544,
+                0.908,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.094,
+                0.577,
+                0.908,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.606,
+                0.908,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.638,
+                0.854,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.667,
+                0.909,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.697,
+                0.907,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.728,
+                0.901,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.759,
+                0.901,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.789,
+                0.908,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.816,
+                0.905,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.087,
+                0.092,
+                0.902,
+                0.142
+            ],
+            "angle": 0,
+            "content": "F2F interviewing (e.g., list experiments) to measure IPV (Agüero and Frisancho, 2022; Joseph et al., 2017; Bulte and Lensink, 2019).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.153,
+                0.912,
+                0.233
+            ],
+            "angle": 0,
+            "content": "In the following, we discuss the innovations to ACASI in section 2 and the two experiments, one to test understanding of our innovations to ACASI implementation in section 3 and the results from our experiment comparing F2F and ACASI reports of IPV in section 4.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.087,
+                0.277,
+                0.596,
+                0.302
+            ],
+            "angle": 0,
+            "content": "2 Modifying the ACASI Experience"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.327,
+                0.919,
+                0.438
+            ],
+            "angle": 0,
+            "content": "Park et al. (2021) provide evidence that women in rural Liberia and Malawi face comprehension issues when responding to questions using ACASI, and one-third answer training questions incorrectly (i.e., questions that have objectively correct or incorrect responses). This indicates that the higher IPV responses they observe in ACASI-based interviewing may overestimate the incidence of IPV.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.448,
+                0.913,
+                0.65
+            ],
+            "angle": 0,
+            "content": "In light of this, we attempt to make ACASI more user-friendly to our respondents, following the guidelines from Cullen and Mahmud (2020). To allow illiterate respondents to answer the questions directly, previous studies used colored boxes or images to represent different answer options. However, this requires respondents to memorize which shapes or colors correspond to a given answer. Since that may be cognitively challenging, we worked with local enumerators in Pakistan to develop images that may make it easier for respondents to link the images to frequency-based answer options on a Likert scale (see a screenshot of the options in Figure 1).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.659,
+                0.914,
+                0.89
+            ],
+            "angle": 0,
+            "content": "During piloting, we also discovered that requesting our respondents to wear headphones for the ACASI module drew the attention of other household members, who at times demanded to hear what we were asking. To protect the privacy of our respondents and avoid backlash in case they reported IPV, we added some non-sensitive questions to the start of the ACASI module, which were answered on a similar scale to the IPV questions. Though we did not randomize this feature, qualitative reports from enumerators suggest that it helped diffuse distrust among other household members who at times asked to hear some of the questions once we asked them to put on headphones.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.489,
+                0.955,
+                0.503,
+                0.968
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.093,
+                0.899,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.124,
+                0.412,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.154,
+                0.908,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.185,
+                0.907,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.215,
+                0.702,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.276,
+                0.594,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.329,
+                0.915,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.36,
+                0.915,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.39,
+                0.911,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.419,
+                0.895,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.45,
+                0.906,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.479,
+                0.908,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.511,
+                0.907,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.54,
+                0.908,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.571,
+                0.907,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.602,
+                0.907,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.631,
+                0.879,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.66,
+                0.909,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.689,
+                0.909,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.722,
+                0.907,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.75,
+                0.909,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.781,
+                0.908,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.812,
+                0.909,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.842,
+                0.909,
+                0.859
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.872,
+                0.199,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.168,
+                0.09,
+                0.827,
+                0.11
+            ],
+            "angle": 0,
+            "content": "Figure 1: A training question preceding the ACASI administered IPV module"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.107,
+                0.134,
+                0.909,
+                0.708
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.088,
+                0.739,
+                0.857,
+                0.764
+            ],
+            "angle": 0,
+            "content": "3 Experiment 1: Do respondents understand ACASI?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.788,
+                0.913,
+                0.93
+            ],
+            "angle": 0,
+            "content": "To test if the modification to visual response options improved women's comprehension and use of ACASI, we did two measurement experiments. In one experiment, we randomized the order of the frequency answer options: for half the respondents, the options appeared in ascending order and for the other half, they appeared in descending order. This tests whether women correctly associated the response options with the frequency of IPV acts, rather than simply choosing the",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.488,
+                0.954,
+                0.504,
+                0.968
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.739,
+                0.853,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.79,
+                0.907,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.82,
+                0.909,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.851,
+                0.908,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.882,
+                0.907,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.912,
+                0.904,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.092,
+                0.912,
+                0.173
+            ],
+            "angle": 0,
+            "content": "first option. We do not find a statistically significant difference in the frequency of violence across the two orderings (Table 1). We interpret this as evidence that the respondents understood the mapping of images to answer the choices accurately.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.171,
+                0.204,
+                0.827,
+                0.223
+            ],
+            "angle": 0,
+            "content": "Table 1: Impact of the Measurement Experiment I on ACASI IPV Reporting"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.091,
+                0.233,
+                0.927,
+                0.386
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>(1)Push, Shake, Throw</td><td>(2)Slap</td><td>(3)Twist arm,Pull hair</td><td>(4)Punch</td><td>(5)Choke,Burn</td><td>(6)Threaten to attack with weapon</td></tr><tr><td>Ascending</td><td>-0.0156(0.0135)</td><td>0.0100(0.0139)</td><td>-0.00549(0.0131)</td><td>-0.00407(0.0130)</td><td>-0.00385(0.0115)</td><td>-0.000552(0.00921)</td></tr><tr><td>Observations</td><td>6133</td><td>6134</td><td>6135</td><td>6134</td><td>6135</td><td>6135</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.095,
+                0.388,
+                0.924,
+                0.465
+            ],
+            "angle": 0,
+            "content": "Notes: The table reports results from an experiment where we randomised the order of the frequency answer options. Ascending is an indicator of the order options displayed to the respondent in ascending order for questions related to the experience of violence asked using ACASI. The dependent variables take on the value 0 if the respondent did not experience the type of violence in the last 6 months, 1.5 if she experienced it once or twice and 3 if she experienced it three or more times. Standard errors are in parentheses. * p < 0.10, ** p < 0.05, *** p < 0.01."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.496,
+                0.913,
+                0.667
+            ],
+            "angle": 0,
+            "content": "Second, we asked generic (non-IPV) questions on food consumption to women using both F2F and ACASI methods. We find a very high agreement between ACASI and F2F: 94% agreement for the question “How many times did your husband eat meat in last 7 days?” 96% for the question “How many times did your husband eat fruit in last 7 days?” and 95% for the question “How many times did your husband eat eggs in last 7 days?” This provides additional evidence that respondents understood how to use ACASI.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.087,
+                0.71,
+                0.893,
+                0.781
+            ],
+            "angle": 0,
+            "content": "4 Experiment 2: Does answering sensitive questions using ACASI change disclosure face-to-face?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.806,
+                0.912,
+                0.917
+            ],
+            "angle": 0,
+            "content": "We study whether asking the same respondent questions related to their experience of violence F2F versus via ACASI affects their rate of IPV reporting. We chose two questions for the experiment: one on physical violence “During the last 6 months, how often did your husband slap you?” and one on injuries sustained as a result of violence “During the last 6 months, did you ever have cuts",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.488,
+                0.955,
+                0.503,
+                0.969
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.619,
+                0.447,
+                0.874,
+                0.463
+            ],
+            "latex": "",
+            "score": 0.49
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.094,
+                0.908,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.124,
+                0.908,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.154,
+                0.53,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.497,
+                0.908,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.528,
+                0.907,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.559,
+                0.907,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.589,
+                0.906,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.617,
+                0.909,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.649,
+                0.454,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.711,
+                0.891,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.758,
+                0.661,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.808,
+                0.908,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.837,
+                0.908,
+                0.854
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.869,
+                0.907,
+                0.883
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.898,
+                0.9,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.093,
+                0.913,
+                0.445
+            ],
+            "angle": 0,
+            "content": "or bruises or aches as a result of what your husband did to you?\" For half the respondents, these two questions were asked F2F first and then via ACASI; and for the other half, the questions were asked via ACASI first and F2F later. We present respondents with the following answer options: three or more times, once or twice, and never. Our experiment design is illustrated in Figure 2. The F2F and ACASI questions appeared in the questionnaire with a gap and allowed us to experimentally study how it might change responses. Beyond these two questions, the full DHS IPV module on physical and sexual violence, and injuries was asked to everyone using ACASI only. For the respondents who got the ACASI-first treatment, the two selected questions were followed by the rest of the ACASI-based IPV module in standard order. In a separate section of the questionnaire, the two questions were then asked again F2F. Respondents who were randomized into F2F were first asked two F2F questions, followed by all the ACASI questions in the standard order.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.086,
+                0.455,
+                0.914,
+                0.838
+            ],
+            "angle": 0,
+            "content": "In Figure 3 we report the mean value for respondents who were randomized to either answer the IPV questions using ACASI first (“ACASI First”) or to answer them F2F initially and ACASI later (“ACASI Second”). We report both the frequency and incidence of the two IPV-related questions. We find that F2F reports for both the frequency and incidence of violence are significantly higher for respondents who have already answered the question using ACASI. Specifically, the reported frequency of slaps is 57% higher and the reported frequency of cuts is 47% higher. On the extensive margin, the ACASI Second group has a 6.2% likelihood of reporting any incidence of slapping in the past six months. In comparison, this likelihood is 3.2 percentage points (52%) higher when the questions were asked via ACASI first. A similar trend is observed for the likelihood of reporting cuts: women in the ACASI Second group have a 3.9% likelihood of reporting being cut, while the ACASI First group reports a 1.6 percentage point (41%) higher likelihood. These findings suggest that respondents may become more comfortable disclosing sensitive information to enumerators after first answering privately. \\( ^{3} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.087,
+                0.845,
+                0.913,
+                0.908
+            ],
+            "angle": 0,
+            "content": "\\( ^{3} \\) It is also possible that the increased reporting during F2F interviews may be due to the respondent having already answered numerous IPV-related questions via ACASI, which could make them more accustomed to the topic. That said, we do not observe within the ACASI module itself that respondents report more violence as the module progresses."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.489,
+                0.954,
+                0.502,
+                0.968
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.09,
+                0.093,
+                0.909,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.124,
+                0.908,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.154,
+                0.907,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.185,
+                0.903,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.215,
+                0.907,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.246,
+                0.908,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.276,
+                0.907,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.305,
+                0.907,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.335,
+                0.909,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.366,
+                0.909,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.396,
+                0.909,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.089,
+                0.425,
+                0.145,
+                0.444
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.457,
+                0.909,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.486,
+                0.909,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.517,
+                0.907,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.547,
+                0.908,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.578,
+                0.908,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.608,
+                0.908,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.637,
+                0.907,
+                0.653
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.667,
+                0.907,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.697,
+                0.907,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.729,
+                0.908,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.76,
+                0.909,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.789,
+                0.906,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.817,
+                0.348,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.28,
+                0.216,
+                0.72,
+                0.236
+            ],
+            "angle": 0,
+            "content": "Figure 2: Design of the Measurement Experiment II"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.159,
+                0.262,
+                0.818,
+                0.758
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.488,
+                0.954,
+                0.504,
+                0.969
+            ],
+            "angle": 0,
+            "content": "8"
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.141,
+                0.239,
+                0.852,
+                0.26
+            ],
+            "angle": 0,
+            "content": "Figure 3: Impact of the Measurement Experiment II on Face-to-Face IPV Reporting"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.195,
+                0.277,
+                0.806,
+                0.561
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.168,
+                0.58,
+                0.831,
+                0.78
+            ],
+            "angle": 0,
+            "content": "Notes: The figure shows results from an experiment where for half the respondents two questions were asked F2F first and then via ACASI; and for the other half, the questions were asked via ACASI first and F2F later. Each bar shows the mean value for the outcome reported F2F. ACASI first is the mean value for the respondents who were asked the IPV questions using ACASI first and ACASI second is the mean value for those who were asked the IPV questions using ACASI second. Slaps Frequency is the response to the question \"During the last 6 months, how often did your husband slap you?\" and Cuts Frequency is the response to the question \"During the last 6 months, did you ever had cuts or bruises or aches as a result of what your husband did to you?\". The responses are on a scale of 0 to 2 (0: never, 1.5: once or twice, and 3: three or more times). Slaps indicator and cuts indicator are indicator variables for any experience of this type of IPV by the respondent in the last 6 months. Black vertical lines indicate \\(90\\%\\) confidence intervals on the test for mean difference for each outcome between ACASI First and ACAI Second."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.488,
+                0.954,
+                0.503,
+                0.967
+            ],
+            "angle": 0,
+            "content": "9"
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.089,
+                0.088,
+                0.293,
+                0.11
+            ],
+            "angle": 0,
+            "content": "5 Conclusion"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.088,
+                0.138,
+                0.911,
+                0.218
+            ],
+            "angle": 0,
+            "content": "In this note, we report results from two measurement experiments with 6,135 women in rural Punjab, Pakistan, who were asked questions related to their experience of intimate partner violence. The key takeaways are:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.245,
+                0.912,
+                0.385
+            ],
+            "angle": 0,
+            "content": "- There is high comprehension of survey questions asked via “audio computer assisted interviewing” (a self-interviewing tool), despite high levels of illiteracy. We randomize the order of Likert-scale answer options corresponding to different frequencies of intimate partner violence, and find that reporting does not depend on the ordering of the response options.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.408,
+                0.913,
+                0.579
+            ],
+            "angle": 0,
+            "content": "- Answering sensitive questions privately before face-to-face interviews increases later disclosure of intimate partner violence. We randomized the order in which respondents answered two questions—either face-to-face with an enumerator first, or privately using audio computer-assisted self-interviewing first. Our findings show that answering privately first significantly increases later face-to-face disclosure of intimate partner violence by 41%-57%.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.489,
+                0.954,
+                0.513,
+                0.969
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.088,
+                0.088,
+                0.293,
+                0.111
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.139,
+                0.909,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.092,
+                0.17,
+                0.908,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.2,
+                0.289,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.245,
+                0.909,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.275,
+                0.909,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.306,
+                0.91,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.335,
+                0.908,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.369,
+                0.288,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.41,
+                0.909,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.439,
+                0.908,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.47,
+                0.908,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.5,
+                0.909,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.53,
+                0.909,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.561,
+                0.254,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.088,
+                0.087,
+                0.241,
+                0.111
+            ],
+            "angle": 0,
+            "content": "References"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.089,
+                0.137,
+                0.908,
+                0.187
+            ],
+            "angle": 0,
+            "content": "Agüero, J. M. and Frisancho, V. (2022). Measuring violence against women with experimental methods. Economic Development and Cultural Change, 70 (4), 1565–1590."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.089,
+                0.21,
+                0.904,
+                0.26
+            ],
+            "angle": 0,
+            "content": "Bulte, E. and Lensink, R. (2019). Women's empowerment and domestic abuse: Experimental evidence from Vietnam. European Economic Review, 115, 172–191."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.089,
+                0.282,
+                0.898,
+                0.333
+            ],
+            "angle": 0,
+            "content": "Cullen, C. (2023). Method matters: The underreporting of intimate partner violence. The World Bank Economic Review, 37 (1), 49–73."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.091,
+                0.355,
+                0.905,
+                0.406
+            ],
+            "angle": 0,
+            "content": "— and Mahmud, M. (2020). Surveying on sensitive topics: Using audio computer assisted self-interviewing. MBRG Methods Briefs."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.088,
+                0.428,
+                0.91,
+                0.51
+            ],
+            "angle": 0,
+            "content": "Joseph, G., Javaid, S. U., Andres, L. A., Chellaraj, G., Solotaroff, J. and Rajan, S. I. (2017). Underreporting of gender-based violence in Kerala, India: An application of the list randomization method. World Bank Policy Research Working Paper, (8044)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.089,
+                0.53,
+                0.91,
+                0.613
+            ],
+            "angle": 0,
+            "content": "Park, D. S., Aggarwal, S., Jeong, D., Kumar, N., Robinson, J. and Spearot, A. (2021). Private but misunderstood? Evidence on measuring intimate partner violence via self-interviewing in rural Liberia and Malawi. NBER Working Paper 29584."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.09,
+                0.634,
+                0.911,
+                0.715
+            ],
+            "angle": 0,
+            "content": "Peterman, A., Dione, M., Le Port, A., Briaux, J., Lamesse, F. and Hidrobo, M. (2024). Disclosure of violence against women and girls in Senegal. World Bank Economic Review Forthcoming."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.489,
+                0.954,
+                0.512,
+                0.969
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.091,
+                0.088,
+                0.238,
+                0.111
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

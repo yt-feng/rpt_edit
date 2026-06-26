@@ -1,0 +1,2108 @@
+[
+    {
+        "type": "text",
+        "text": "Lying to the Taxman or Accepting a Helping Hand?",
+        "text_level": 1,
+        "bbox": [
+            217,
+            297,
+            784,
+            375
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Evidence from a Novel Experiment on SMEs in Tanzania",
+        "bbox": [
+            135,
+            397,
+            864,
+            426
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Revocatus Paul",
+        "bbox": [
+            433,
+            454,
+            570,
+            474
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ephraim Mdee",
+        "bbox": [
+            431,
+            476,
+            570,
+            500
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Massaga Fimbo",
+        "bbox": [
+            429,
+            500,
+            571,
+            521
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jonathan Karver",
+        "bbox": [
+            424,
+            522,
+            576,
+            544
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Zain Chaudhry",
+        "bbox": [
+            428,
+            544,
+            573,
+            566
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Christopher Hoy",
+        "bbox": [
+            426,
+            566,
+            575,
+            590
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "Public Disclosure Authorized",
+        "bbox": [
+            6,
+            440,
+            29,
+            606
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "Public Disclosure Authorized",
+        "bbox": [
+            8,
+            23,
+            29,
+            190
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Policy Research Working Paper",
+        "bbox": [
+            111,
+            85,
+            609,
+            113
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "11062",
+        "bbox": [
+            709,
+            85,
+            800,
+            113
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "WORLD BANK GROUP",
+        "bbox": [
+            114,
+            835,
+            356,
+            858
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Development Impact Group & Poverty and Equity Global Department February 2025",
+        "bbox": [
+            112,
+            861,
+            468,
+            926
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Reproducible Research Repository",
+        "bbox": [
+            611,
+            839,
+            949,
+            859
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "A verified reproducibility package for this paper is available at http://reproducibility.worldbank.org, click here for direct access.",
+        "bbox": [
+            624,
+            871,
+            937,
+            919
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            50,
+            821,
+            109,
+            872
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            542,
+            823,
+            602,
+            869
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "POLICY RESEARCH WORKING PAPER 11062",
+        "bbox": [
+            65,
+            64,
+            374,
+            82
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Abstract",
+        "text_level": 2,
+        "bbox": [
+            83,
+            104,
+            176,
+            127
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "This paper presents the results from a novel field experiment that examined the impact of in-creasing the presence of revenue authority officers on tax compliance and tax morale among small and medium-size enterprises in a lower-income country. The experiment was embedded in the implementation of a representative, face-to-face survey of SMEs across mainland Tanzania. An independent survey firm was accompanied by Tanzania Revenue Authority officers, who observed the interviews in a randomly selected set of urban and peri-urban wards. This translated into a temporary increase in the presence of tax officers throughout parts of the country. The findings indicate that an increase in tax officer presence did not have a significant overall impact on tax compliance and tax morale among SMEs, as measured using a combination of administrative and survey data. However, there were short-term increases in compliance in the largest city and sustained increases in tax morale in the rest of the country. A follow-up survey suggests that these results were likely driven by an increase in the perceived credibility of enforcement rather than meaningful increases in perceptions of facilitation and trust.",
+        "bbox": [
+            81,
+            133,
+            477,
+            320
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            493,
+            135,
+            887,
+            304
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_footnote",
+        "text": "This paper is a product of the Development Impact Group, Development Economics and the Poverty and Equity Global Department. It is part of a larger effort by the World Bank to provide open access to its research and make a contribution to development policy discussions around the world. Policy Research Working Papers are also posted on the Web at http://www.worldbank.org/prwp. The authors may be contacted at jkarver@worldbank.org. A verified reproducibility package for this paper is available at http://reproducibility.worldbank.org, click here for direct access.",
+        "bbox": [
+            81,
+            436,
+            887,
+            523
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "POLICY RESEARCH\nTRANSPARENT\nANALYSIS\nWORKING PAPERS",
+        "bbox": [
+            413,
+            617,
+            581,
+            744
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "The Policy Research Working Paper Series disseminates the findings of work in progress to encourage the exchange of ideas about development issues. An objective of the series is to get the findings out quickly, even if the presentations are less than fully polished. The papers carry the names of the authors and should be cited accordingly. The findings, interpretations, and conclusions expressed in this paper are entirely those of the authors. They do not necessarily represent the views of the International Bank for Reconstruction and Development/World Bank and its affiliated organizations, or those of the Executive Directors of the World Bank or the governments they represent.",
+        "bbox": [
+            133,
+            852,
+            843,
+            926
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "Produced by the Research Support Team",
+        "bbox": [
+            354,
+            941,
+            617,
+            958
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Lying to the Taxman or Accepting a Helping Hand? Evidence from a Novel Experiment on SMEs in Tanzania\\*",
+        "text_level": 1,
+        "bbox": [
+            135,
+            127,
+            856,
+            220
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Revocatus Paul (World Bank),\nEphraim Mdee (Tanzania Revenue Authority),\nMassaga Fimbo (Tanzania Revenue Authority),\nJonathan Karver (World Bank),\nZain Chaudhry (World Bank)\nand Christopher Hoy (World Bank)",
+        "bbox": [
+            258,
+            244,
+            730,
+            381
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "JEL Classification: D04, D80, D90, H20, H30, H50",
+        "bbox": [
+            109,
+            685,
+            566,
+            704
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Keywords: Taxation, Public Finance, Small Businesses, Randomized Experiment",
+        "bbox": [
+            109,
+            720,
+            810,
+            741
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_footnote",
+        "text": "\\*We thank the staff and management of the Tanzania Revenue Authority for supporting this study. This work was co-financed by the World Bank Global Tax Program and the Poverty & Equity Global Practice. We are incredibly grateful for the support, input, and guidance provided by Anne Brockmeyer, Emilia Skrok, Zeina Afif, Benu Bidani, Rinku Murgai, Pierella Paci, Stephen Davenport, Matthew Collin, Chiara Bronchi, Ceren Ozer and Rob Swinkels. The findings, interpretations, and conclusions expressed in this paper are entirely those of the authors. They do not necessarily represent the views of the World Bank and its affiliated organizations, or those of the Executive Directors of the World Bank or the governments they represent.",
+        "bbox": [
+            107,
+            821,
+            883,
+            930
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "1 Introduction",
+        "text_level": 2,
+        "bbox": [
+            111,
+            74,
+            330,
+            95
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Taxing small and medium-sized businesses -otherwise known as small and medium-sized enterprises, or SMEs- can be challenging for a variety of reasons (e.g., see Hoy et al. 2024), with uncertain or, at best, unambiguously small fiscal gains, depending on the context. Moreover, the direct and indirect costs for governments from trying to enforce tax compliance among SMEs can be substantial. As a result, revenue authorities are increasingly investing in quasi-voluntary strategies to improve compliance among SMEs, such as greater engagement between tax officials and firms to help facilitate the tax payment process (Dom et al. 2022). However, relatively little is known about how SMEs respond to closer engagement and community presence by revenue authorities, particularly when this engagement transcends the usual audit-oriented interactions.",
+        "bbox": [
+            107,
+            123,
+            883,
+            414
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "This paper examines how SMEs react to increased local presence by tax officials by drawing on a novel field experiment in Tanzania. The World Bank and the Tanzania Revenue Authority (TRA) implemented a broadly representative in-person survey of SMEs across mainland Tanzania in December 2022. Among the 119 urban and peri-urban wards that were included in the study, half were randomly assigned to have tax officials present during the data collection exercise. This clustered randomized controlled trial introduced exogenous variation in the visibility and physical presence of tax officials among SMEs. While the tax officials did not directly survey the businesses (the survey was conducted by a local survey research firm and trained enumerators were tasked with conducting the interviews), simply having a tax official present was expected to have repercussions on respondents' self-reported behavior (captured through the survey) as well as declaration behavior (captured through administrative data). As a consequence, it is valuable to examine both the impact of TRA presence on survey outcomes and ward-level indicators of compliance.",
+        "bbox": [
+            107,
+            425,
+            883,
+            808
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Tanzania is a useful context to explore strategies for improving SME taxation. Tanzania's SMEs are overwhelmingly informal. Those that are registered with the TRA are primarily subject to a simplified, presumptive tax regime. However, evidence has shown that there are likely many non-compliant businesses within the SME sector: firms that have managed to remain informal as well as those that have registered but stopped paying taxes at some point along the way. The cost of enforcing compliance among this group is particularly high: there are a considerable number of registered SMEs in Tanzania (with fewer than 10 employees) but many of these do not regularly pay taxes.",
+        "bbox": [
+            107,
+            816,
+            883,
+            897
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            490,
+            931,
+            503,
+            945
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            107,
+            78,
+            880,
+            219
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Though the TRA has offices in all tax regions and districts of Tanzania, tax administration activities are more pronounced within the country's economic capital, Dar es Salaam, which houses the headquarters of the TRA. This reflects the high concentration of economic activity in Dar es Salaam relative to the rest of the country. As a result, the visibility of the TRA on the ground varies tremendously, even across urban and peri-urban areas. For example, of the 32 tax regions in mainland Tanzania, 5 are in Dar es Salaam owing to the city's potential for raising revenue and being the trading hub (business center) of the country. Moreover, after many years of what Tanzanian society viewed as tax administration centered around enforcement that was considered excessive and unfair -in particular, by SMEs- the TRA has shifted efforts to promote voluntary compliance by engaging with taxpayers more positively. For example, by implementing awareness campaigns such as the \"Door to Door\" initiative to enhance taxpayers' knowledge, setting up self-service facilities like the taxpayer portal, and sending reminder messages to taxpayers regarding their tax obligations.",
+        "bbox": [
+            109,
+            228,
+            883,
+            613
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The TRA has adopted a tax administration approach focused on facilitation and building trust. This is evident in the expansion of awareness campaigns led by the Taxpayers' Education and Communication Department, where officials regularly visit businesses to educate them on tax responsibilities and understand their challenges. This marks a shift from traditional enforcement-based interactions. However, the effect of these engagements, which differ from audit-driven approaches, on tax morale and compliance has not yet been studied. Our experiment, designed to reflect this type of interaction, provides initial insights into its potential impact.",
+        "bbox": [
+            109,
+            619,
+            882,
+            854
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The findings from our field experiment provide mixed results in terms of the impact of increasing local presence of tax officers on taxpayer attitudes and behaviors. Findings from the survey suggest that increasing the local presence of tax officers had a positive impact on tax morale, but this was concentrated outside Dar es Salaam and centered around limited survey measures. The impact on compliance of taxpayers in targeted wards is also not straightforward. On the extensive (paid anything) and intensive (amount paid) margins, overall the treatment has no impact. However, looking at heterogeneity across regions, increased local presence of tax officers had a positive impact on both the likelihood of payment and the payment amount in the Eastern region of Tanzania (primarily made up of Dar es Salaam and Pwani) in the first quarter of 2023 (immediately after the data collection).",
+        "bbox": [
+            109,
+            862,
+            883,
+            912
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            490,
+            931,
+            503,
+            946
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            107,
+            79,
+            882,
+            310
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The explanation for the lack of overall impact is likely due to the limited spillover effects on non-visited businesses, which is supported by an endline survey conducted in April/May 2024 in treatment and control wards with the same and neighboring businesses as the December 2022 survey. Combining findings from survey and administrative data, we try to reconcile these by exploring whether survey responses were biased (i.e., untruthful) -reflecting fear of reprimand for claiming low tax morale- or unbiased (i.e., truthful) -reflecting the increase positive view of the TRA and own obligations as a result of increased visibility. Anecdotal evidence suggests that the first hypothesis -where businesses are ‘lying to the taxman’ -is more likely, though more research is needed to validate this.",
+        "bbox": [
+            107,
+            319,
+            883,
+            580
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "While the intervention does not provide clear results on the causal impact of a temporary, exogenous facilitation and trust based increase in the local presence of a revenue authority on compliance, the implementation itself provides many lessons learned for future experiments. This study was particularly unique since it involved embedding a field experiment within a data collection activity. To our knowledge, no studies exist where tax officials accompany enumerators in data collection to act as observers. This represents a useful exercise in understanding how responses about tax compliance and tax morale are and are not sensitive to who is perceived to be conducting a data collection activity. Questions around tax compliance and morale are considered particularly sensitive; a third-party survey firm is meant to represent an objective entity that can obtain unbiased responses, even when these relate to sensitive questions like tax compliance. Our study shows that potential bias exists for some tax-related questions, but not all of them. Moreover, given that this experiment was conducted with the full involvement of the tax authority, it shows the promise and perils of introducing experimentation and insights from behavioral science into revenue administration strategies when these go beyond simple “nudging” approaches (something the TRA has recently adopted) (see, for example, Pomeranz & Vila-Belda 2019, for a useful overview).",
+        "bbox": [
+            107,
+            590,
+            883,
+            912
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            488,
+            933,
+            503,
+            945
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            107,
+            79,
+            883,
+            219
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Our experiment is relevant within two strands of literature that document how increases in tax administration capacity on the ground can influence taxpayer behavior -particularly around compliance- and revenue collection more generally. An extensive literature documents the impact of increased audits -and the expectation of audits- on tax compliance (see, for example, Slemrod 2019 and Alm 2019 for a summary of studies). Increasing the expected probability of an audit can reduce evasion and improve payment compliance: for example, Bergolo et al. (2023) find letters to SMEs about audits increased tax payments in the short-term. However, actual audits can actually backfire, as highlighted in some recent field experiments (Beer et al., 2020; Erard et al., 2020; Gemmel and Ratto, 2012; Kotsogiannis et al., 2021). Audits might be viewed as unfair, and thus willingness to comply in the future might decrease (lower trust and tax morale) (Mendoza et al. 2017). Alternatively, being subject to an audit may lead to misperceptions of future audits (“Lightning never strikes in one place twice”), thus leading to lower compliance in the long-run. Finally, audits that do not fully uncover evasion (audits that underestimate true income) might reduce compliance along a similar vein, as documented in recent laboratory experiments (Kasper & Alm 2022 and Lancee et al. 2023).",
+        "bbox": [
+            107,
+            229,
+            883,
+            702
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "A separate set of literature evaluates the role of local and regional taxpayer offices on compliance and collection. Okunogbe and Tourek (2024) document how tax officials can influence compliance and find that both the scale of tax administration (number of tax officers relative to the population) and their deployment can influence compliance and collection. On the scale of tax administration, a well-known study in Indonesia (Basri et al. 2021) studies the impact of the creation of medium taxpayer offices (MTOs) on compliance and finds that increasing the intensity of tax administration at the local level can increase compliance to corporate income tax. The authors conclude that the creation of these MTOs -whose objective was to simultaneously expand enforcement reach and facilitate compliance (through customer service) through increased local staff -led to sustainable, long-term impacts on tax filing and payment behavior, and they estimate that MTOs more than doubled revenue collection in the nine-year study period. On the deployment side, a study in Peru (Kapon et al. 2022) finds that Prioritized Iterative Enforcement (PIE) -where small groups of high risk tax payers are targeted in batches -can improve property tax collection by as much as 10 percent. Other studies look at how the assignment of tax officers to jurisdictions can improve compliance (Bergeron et al. 2023).",
+        "bbox": [
+            107,
+            712,
+            883,
+            912
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            490,
+            931,
+            503,
+            946
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            109,
+            79,
+            882,
+            339
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The remainder of the paper is organized as follows; section 2 will discuss the Tanzanian context in greater detail; section 3 will discuss the study design; section 4 will summarize the experimental impacts from the intervention (identified through the survey and administrative data, with validation from a follow-up survey); and section 5 concludes with a discussion on policy implications.",
+        "bbox": [
+            109,
+            349,
+            882,
+            489
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            490,
+            931,
+            503,
+            946
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "2 Context",
+        "text_level": 2,
+        "bbox": [
+            109,
+            74,
+            267,
+            95
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Tanzania is classified as a lower-middle-income country with an annual per capita income of \\$1,057.7 (constant 2015 US\\$). Despite the challenges posed by the COVID-19 pandemic and ongoing geopolitical tensions, Tanzania’s economy grew by 5.2 percent in 2023. The country’s economy relies heavily on agriculture, which employs approximately 66 percent of the population and contributes 26.5 percent to the country’s GDP. Following agriculture, the business and trade services sector is the next most significant contributor, providing employment to 16 percent of the population and boasting a 21 percent GDP contribution. Despite the importance of the business and trade services sector, it is predominantly informal, which limits the scale and development of Tanzania’s formal private sector. The creation of new businesses remains remarkably low, with fewer than 0.2 new firms created per 1,000 adults annually (World Bank, 2023). This new business density rate is the lowest among comparable economies, including South Africa (12.5 new businesses per 1,000 adults), Rwanda (2.2), and Kenya (1.6).",
+        "bbox": [
+            107,
+            123,
+            883,
+            506
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Although tax revenue is the primary source of domestic resources, Tanzania's tax-to-GDP ratio remains relatively low at 11.4, compared to Africa's average of 15.6, Kenya's 15.2, and Rwanda's 17. Currently, approximately 4 million taxpayers are registered with the Tanzania Revenue Authority (TRA) and are thus tax-eligible. However, an overwhelming majority of these are classified as small firms, employing fewer than 10 individuals, and their contribution to domestic revenue taxes is minimal. These small firms typically pay personal income tax through the presumptive tax regime (presumptive taxpayers) or via standard personal income tax if they exceed the TZS 100 million turnover threshold. Medium-sized enterprises, on the other hand, contribute 18.8 percent, while large firms, despite being relatively few in number, dominate contributions, accounting for 58.7 percent of total business tax revenue. This disproportionate distribution of tax contributions was emphasized by the Minister of Finance in the 2022/2023 budget speech, who noted that, in 2021/2022, 80 percent of the TRA's revenue came from only 20 percent of business taxpayers, yielding a total of TZS",
+        "bbox": [
+            107,
+            515,
+            883,
+            898
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            490,
+            931,
+            503,
+            946
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "16.75 trillion.",
+        "bbox": [
+            111,
+            78,
+            228,
+            95
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Presumptive taxpayers are individuals taxed based on an estimate of their annual turnover, provided it does not exceed TZS 100 million (the presumptive tax schedule is provided in Table 1). They are not legally required to prepare or submit business records or audited accounts to the TRA unless they choose to do so. Once registered, presumptive taxpayers must visit the TRA annually for a tax assessment and receive a notice of estimated taxes. Estimates are based on annual turnover determined through interviews between TRA officials and the taxpayer, as well as a review of any available business records. The estimated tax is paid in four quarterly installments in March, June, September, and December. After the assessment, the taxpayer receives a notice of estimated taxes. When filing returns online, taxpayers can obtain a control number via the internet, but presumptive taxpayers typically are not required to file online. The generated control number, which contains the particular payment reference, helps taxpayers pay directly to the government.",
+        "bbox": [
+            107,
+            108,
+            883,
+            460
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/b05edf7fe9ca5fd081f3f019414df193edfc1324349b3ef7a92d94f220dde1b3.jpg",
+        "table_caption": [
+            "Table 1: Presumptive Tax Schedule"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Annual turnover</td><td>Tax payable when records are incomplete</td><td>Tax payable when records are complete</td></tr><tr><td>Where turnovers does not exceed Tshs 4,000,000</td><td>NIL</td><td>NIL</td></tr><tr><td>Where turnover exceeds Tshs 4,000,000/= but does not exceed Tshs 7,000,000</td><td>Tshs 100,000/=</td><td>3% of the turnover in excess of Tshs 4,000,000/=</td></tr><tr><td>Where turnover exceeds Tshs 7,000,000/= but does not exceeds Tshs 11,000,000/=</td><td>Tshs 250,000/=</td><td>Tshs 90,000/= plus 3% of the turnover in excess of Tshs 7,000,000/=</td></tr><tr><td>Where turnovers exceed Tshs. 11,000,000/= but does not exceed Tshs. 100,000,000/=</td><td colspan=\"2\">3.5% of turnover</td></tr></table>",
+        "bbox": [
+            212,
+            506,
+            777,
+            881
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            490,
+            931,
+            503,
+            946
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The underperformance of tax collection, especially among small businesses, reveals significant structural and compliance challenges. Joint research by the University of Dar es Salaam and the TRA indicates that many taxpayers who appear for tax reassessment in one year fail to return for reassessment in subsequent years. For instance, only 60 percent of assessed presumptive taxpayers returned the following year between 2014 and 2018. This problem was even more pronounced between 2018 and 2019, when only 45 percent of taxpayers reassessed in 2018 returned the next year. A longer-term perspective reveals that by 2019, just 41 percent of taxpayers assessed in 2014 remained within the government's tax base. Recognizing these challenges, the TRA has implemented several measures to improve compliance. Efforts have been directed toward simplifying the presumptive tax system, while awareness campaigns such as the \"Door to Door\" initiative have been introduced to enhance taxpayers' knowledge. These efforts have often been paired with self-service arrangements via the taxpayer portal and reminder messages sent to taxpayers regarding their tax obligations.",
+        "bbox": [
+            107,
+            79,
+            883,
+            462
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            490,
+            931,
+            503,
+            945
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "3 Study Design",
+        "text_level": 2,
+        "bbox": [
+            109,
+            73,
+            341,
+            97
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This study involved 1,210 small and medium-sized businesses spread across urban and peri-urban areas in Tanzania. These businesses were randomly selected within each of their representative wards and can be considered representative of typical small and medium-size business in these locations, covering sectors such as retail and wholesale trade, manufacturing, education, accommodation and food service activities, human health and social work, and other services. The sample design ensured representation across different business sizes, including small businesses with 1–4 employees, medium-sized enterprises with up to 49 employees, and various economic activities.",
+        "bbox": [
+            107,
+            123,
+            883,
+            354
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Dar es Salaam had the highest concentration of surveyed businesses, reflecting its role as a major commercial hub, while regions like Katavi and Simiyu had smaller sample sizes, highlighting regional disparities in business density.",
+        "bbox": [
+            109,
+            364,
+            882,
+            445
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The selection process involved stratifying businesses by size and sector to ensure comprehensive coverage of Tanzania's economic landscape. For instance, the manufacturing and retail sectors accounted for the largest shares of businesses sampled. The distribution of businesses also considered regional and sectoral diversity, capturing variations in business operations and economic activities. In total, these businesses originated from 119 wards in 84 districts and 25 regions.",
+        "bbox": [
+            107,
+            455,
+            883,
+            626
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "All of these business completed a 20 to 30 minute in-person survey providing details about their business activities and attitudes towards paying tax. The survey was in the field for a period of 15 days inclusive of weekends from December 8 to December 22, 2022. Most of the firms that were surveyed had a monthly turnover of less than one million Tanzanian shillings and were predominantly from the wholesale and retail sectors (see the appendix for more details about the sample).",
+        "bbox": [
+            107,
+            636,
+            883,
+            806
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "We embedded a clustered randomized field experiment as part of this survey activity. In this experiment, a randomly selected subset of businesses completed the survey with tax officials present. Specifically, the random assignment took place at the ward level, stratified by ward characteristics. The 119 wards were randomized into two arms; one control and the other treatment (see Figure 1). The treatment wards were surveyed with a survey firm enumerator accompanied by a TRA official as observers to data collection. TRA officials were from the Research and Policy Planning Department and their observation presence was explained by enumerators in the informed consent. The survey team informed the respondents that the TRA was not present for auditing purposes, but simply to observe. They were not deceived in any way. The control wards were surveyed only with a survey firm enumerator.",
+        "bbox": [
+            107,
+            816,
+            883,
+            898
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            486,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            107,
+            78,
+            883,
+            309
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/a9e154d5938ecafa148679f8eb65d32b50cb78277755033ded60b0ac7c286df8.jpg",
+        "image_caption": [
+            "Figure 1: Map of locations covered by survey by treatment and control wards"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            238,
+            358,
+            754,
+            756
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            485,
+            931,
+            506,
+            946
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "3.1 Tax Administrative Data",
+        "text_level": 2,
+        "bbox": [
+            109,
+            75,
+            460,
+            95
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Administrative data from the TRA was utilized to analyze the impact of the intervention on taxpayers' behavior. This data comprised of payment records for presumptive taxpayers (those with a turnover below 100 million) from January 2022 to March 2024. The data was reshaped from long to wide format, aggregating payments by the same individual within the same period to ensure a single sum per unique ID. $^{1}$ The reshaped data comprised 408,106 businesses.",
+        "bbox": [
+            107,
+            118,
+            883,
+            287
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Since randomization was implemented at the ward level, a taxpayer mapping exercise was necessary to estimate treatment effects, as the administrative data did not include ward information. However, the data contained other geographic identifiers such as street locations, regions, and tax districts. These identifiers allowed for matching each unique street location in the administrative data to its corresponding ward. The mapping process began by obtaining data from the National Bureau of Statistics (NBS), one for each region of mainland Tanzania. This data contained all location names within each region, from the highest to the lowest subnational division (containing columns for Region, Ward, Street, Village, and Neighborhood). Next, the street locations in the TRA data were cleaned by removing non-alphanumeric characters, punctuation, and special symbols, inserting spaces to separate strings, and converting all text to a common case. The matching process aimed to find the closest match between street locations from the administrative data and the Ward, Street, Village, and Neighborhood information from the NBS data, as unique street locations in the administrative data could signify not only a street but also a ward, village, or neighborhood. Using the Jaro-Winkler distance measure, matches with a similarity score below 0.3 were retained, and matching was restricted to the same region. This process identified the ward name corresponding to each street location in the TRA data, producing an output called the bridge, which linked street locations from the administration data with their corresponding wards as specified in the NBS data. In total, approximately 3,585 unique",
+        "bbox": [
+            107,
+            299,
+            883,
+            863
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_footnote",
+        "text": "$^{1}$ Some IDs represented multiple active businesses, which were not treated as duplicates since payments varied by period and amount.",
+        "bbox": [
+            109,
+            869,
+            882,
+            902
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            486,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "wards were identified.",
+        "bbox": [
+            109,
+            78,
+            297,
+            95
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The next step involved matching the bridge with survey data to obtain treatment assignments for each ward surveyed. The survey data included 119 unique wards, all of which were successfully matched using the ward name as the unique identifier. The final step involved linking the survey bridge with TRA data using the street location name as the unique identifier. This reduced the sample size from 3,585 wards to 119 wards and from 408,106 taxpayers to 40,180 taxpayers. Throughout this process, matches were consistently ensured to be within similar tax regions.",
+        "bbox": [
+            107,
+            108,
+            883,
+            309
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Balance tests were conducted to assess payment trends across treatment and control wards. The results indicate no statistically significant differences in the average payment amounts between treatment and control wards during the 3- and 5-month periods preceding the intervention (see Table 2).",
+        "bbox": [
+            107,
+            319,
+            883,
+            429
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/68f7ee2a5dec1451ecd68cf4a40f1b71744ca33609e9a4da24b53df61a07e596.jpg",
+        "table_caption": [
+            "Table 2: Balance Tests"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Variable</td><td colspan=\"2\">(1) Control</td><td colspan=\"2\">(2) Treatment</td><td colspan=\"2\">(1)-(2) Pairwise t-test</td></tr><tr><td>N</td><td>Mean/(SE)</td><td>N</td><td>Mean/(SE)</td><td>N</td><td>Mean difference</td></tr><tr><td>pay_trend_3</td><td>17,938</td><td>87,330.319(2,834.644)</td><td>22,239</td><td>80,620.056(5,541.215)</td><td>40,177</td><td>6,710.263</td></tr><tr><td>pay_trend_5</td><td>17,938</td><td>1.27e+05(3,450.451)</td><td>22,239</td><td>1.18e+05(5,742.526)</td><td>40,177</td><td>8,179.031</td></tr></table>",
+        "bbox": [
+            109,
+            479,
+            888,
+            609
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "If the table includes missing values (.n, .o, .v etc.), see the Missing values section in the help file for the Stata command iebaltab for definitions of these values. Significance: \\*\\*\\*=0.01, \\*\\*=0.05, \\*=0.1. Full user input as written by user: [iebaltab pay\\_trend\\_3 pay\\_trend\\_5, grpvar(treatment)savetex(\"C:/Users/wb589463/OneDrive - WBG/World Bank/poverty/Taxes/replicationpackage/admin/tables/balance.tex\") replace]",
+        "bbox": [
+            107,
+            619,
+            880,
+            696
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The analysis was conducted at two levels: while randomization was implemented only at the ward level, the administrative data was not randomized. The primary objective was to assess whether the intervention had an impact on compliance among firms in the surveyed wards. Ideally, compliance behavior would have been observed directly through the survey. However, due to the inability to link administrative tax records to survey respondents, the next best option was to aggregate administrative data within the surveyed wards.",
+        "bbox": [
+            107,
+            728,
+            883,
+            898
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            486,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "To ensure comparability between treatment and control groups, we conducted additional balance tests, calculating the standardized differences for both continuous and categorical variables. Standardized differences are increasingly favored over p-values in comparing groups in clinical trials and observational studies, with a threshold of 0.10 or less indicating balanced covariates between groups.",
+        "bbox": [
+            107,
+            78,
+            882,
+            218
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Since no nationally representative survey produces reliable estimates at the ward level, we utilized Tanzania's latest Census (2022) to compare household-level indicators across treatment and control wards. These indicators included demographics, educational attainment, labor market participation, housing characteristics, and access to public services. In all cases, the absolute standardized differences were below 0.1 (see appendix 1), demonstrating balance between the two groups. Similarly, we computed the standardized differences using survey data from the firms, and here too, the values did not exceed 0.1, further confirming the comparability of treatment and control groups (see appendix 2).",
+        "bbox": [
+            107,
+            229,
+            883,
+            460
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "3.2 Estimation Strategy",
+        "text_level": 2,
+        "bbox": [
+            109,
+            496,
+            403,
+            516
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To analyze the impact of the presence of TRA officials on survey responses, the following equation was estimated:",
+        "bbox": [
+            109,
+            537,
+            880,
+            587
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "equation",
+        "text": "$$\nY _ {i w} = \\alpha + \\beta T _ {w} + \\mathbf {X} _ {i w} \\gamma + \\epsilon_ {i w}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            374,
+            628,
+            617,
+            647
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Where:",
+        "bbox": [
+            138,
+            672,
+            205,
+            689
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- $Y_{iw}$ : Outcome variable for business $i$ in ward $w$ .",
+        "bbox": [
+            138,
+            710,
+            563,
+            727
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- $T_w$ : Treatment indicator, equal to 1 if the ward $w$ was in the treatment group (TRA official present), and 0 otherwise.",
+        "bbox": [
+            138,
+            750,
+            880,
+            799
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- $\\mathbf{X}_{iw}$ : Vector of control variables capturing business characteristics (e.g., sector, size, turnover).",
+        "bbox": [
+            138,
+            821,
+            879,
+            869
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- $\\alpha$ : Constant term.",
+        "bbox": [
+            140,
+            893,
+            316,
+            909
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            486,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- $\\beta$ : Coefficient of interest, measuring the impact of TRA officials' presence on the outcome.",
+        "bbox": [
+            138,
+            78,
+            880,
+            125
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "• $\\epsilon_{iw}$ : Error term.",
+        "bbox": [
+            140,
+            152,
+            297,
+            167
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Standard errors were clustered at the ward level to account for intra-ward correlation in responses.",
+        "bbox": [
+            107,
+            194,
+            880,
+            243
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "4 Results",
+        "text_level": 2,
+        "bbox": [
+            109,
+            287,
+            259,
+            309
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "We collected data from a random sample of firms across the country in two waves. We surveyed one individual representing each firm in December 2022 at the same time as the treatment was implemented. After this primary data collection, we matched each ward with administrative tax records. A second wave of data was collected to understand the first wave results as well as persistence in May 2024.",
+        "bbox": [
+            107,
+            338,
+            883,
+            477
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "4.1 Data Collection Wave 1: Survey",
+        "text_level": 2,
+        "bbox": [
+            109,
+            513,
+            540,
+            535
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "We report findings for different subgroups of outcomes for our treatment - the presence of agents of the state when conducting surveys in the field.",
+        "bbox": [
+            109,
+            556,
+            882,
+            606
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Our first set of outcomes is about the firm's own behavior. We find that our treatment led to an increase in tax morale in general (Table 3). We create an index using four different measures of own tax morale: whether firm pays on tax obligations, whether not paying taxes is considered wrong and punishable, whether firm would pay taxes even if the probability of being caught for non compliance is low, and firms should not refuse to pay taxes until services improve.",
+        "bbox": [
+            107,
+            617,
+            883,
+            787
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "We find no effect on the first three outcomes, but find a statistically significant effect on not refusing to pay tax in the absence of services. We estimate a coefficient of 0.086 over a control mean of 0.395. This shows the agreement with this statement is already high - firms believe that they should not refuse to pay taxes until they get better services from the national government.",
+        "bbox": [
+            107,
+            797,
+            883,
+            878
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            486,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            107,
+            78,
+            880,
+            127
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Finally, as we measure different variants of tax morale for own behavior, we combine all these variables in an unweighted average of z-scores and find a statistically significant effect.",
+        "bbox": [
+            109,
+            138,
+            880,
+            188
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "table",
+        "img_path": "images/49426328c17add9479ef376fc8ad2f1ce39a7f63f1c20691abf6e66989fd0680.jpg",
+        "table_caption": [
+            "Table 3: Overall Treatment Effects - Own Paying Behaviour"
+        ],
+        "table_footnote": [
+            "Standard errors in parentheses"
+        ],
+        "table_body": "<table><tr><td></td><td>Direct b/se/p</td><td>Punishable b/se/p</td><td>Will Pay b/se/p</td><td>Wont Refuse b/se/p</td><td>INDEX b/se/p</td></tr><tr><td rowspan=\"2\">Treatment group mean</td><td>0.024(0.03)</td><td>0.063(0.05)</td><td>0.046(0.05)</td><td>0.086*(0.04)</td><td>0.115**(0.05)</td></tr><tr><td>0.468</td><td>0.215</td><td>0.359</td><td>0.055</td><td>0.036</td></tr><tr><td>Control group mean</td><td>0.833</td><td>0.403</td><td>0.534</td><td>0.395</td><td>-0.072</td></tr><tr><td>Observations</td><td>1210</td><td>1210</td><td>1210</td><td>1210</td><td>1210</td></tr></table>",
+        "bbox": [
+            112,
+            263,
+            879,
+            478
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "equation",
+        "text": "$$\n^ {*} p <   0. 1 0, ^ {* *} p <   0. 0 5, ^ {* * *} p <   0. 0 1\n$$",
+        "text_format": "latex",
+        "bbox": [
+            120,
+            518,
+            382,
+            535
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Note: This Table shows heterogeneous treatment effects. Model Names (Direct Punishable Will Pay Wont Refuse INDEX) represent our outcome variables. Direct: Based on question C11 that states : My firm does not pay all the [Direct taxes] it is required to pay. Punishable: based on question D19 that asks respondent to state whether Firms not paying the taxes they owe to the government is Not wrong at all, Wrong but understandable or Wrong and punishable. Will Pay - based on question D20a, that states If I was sure I would not get caught, I would not pay all the taxes that I owe. Wont Refuse: based on question D20d that states Firms should refuse to pay taxes until they get better services from the national government. INDEX: An unweighted average of the Z-scores of all four outcome variables",
+        "bbox": [
+            117,
+            547,
+            892,
+            742
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Our second set of outcomes are secondary outcomes on awareness of obligations, ease of tax filing process, preference for rewarding instead of punishment, compliance of suppliers, and risk of legal action for evasion (Table 4). We find that treated respondents have lower awareness, and disagreement with a rewards over punishment strategy. We believe the negative effect on awareness is due to respondents being strategically dishonest. By declaring unawareness of their tax obligations, they could be shielding themselves from liability. In case any wrongdoing was uncovered, they could claim lack of awareness as a defense.",
+        "bbox": [
+            107,
+            758,
+            883,
+            900
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            486,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "table",
+        "img_path": "images/89c0d2359a02dad0d17d28e4c8e77e32fc6b95fd5bfdd91d628248ff3eda4846.jpg",
+        "table_caption": [
+            "Table 4: Overall Treatment Effects - Secondary Outcomes"
+        ],
+        "table_footnote": [
+            "Standard errors in parentheses",
+            "\\* $p < {0.10}, *  * p < {0.05}, *  *  * p < {0.01}$",
+            "Note: This Table shows the overall impact of the treatment relative to the control group. Model Names (Awareness, Ease, Reward, Supplier, Credibility) represent our secondary outcome variables. Awareness: Based on question C12a that states I am fully aware of my firm's tax obligations. Ease: Based on question C12d that states The process of declaring and paying taxes is easy. Reward: Based on question C12e that states Recognizing and rewarding tax compliant behavior is better than punishing non compliance. Supplier: Based on question C12f that states When my firm chooses suppliers/service providers, it considers whether they pay taxes. Credibility: Based on question C12g that states The risk of legal action for firms evading or underpaying taxes in Tanzania is high"
+        ],
+        "table_body": "<table><tr><td></td><td>Awarenessb/se/p</td><td>Easeb/se/p</td><td>Rewardb/se/p</td><td>Supplierb/se/p</td><td>Credibilityb/se/p</td></tr><tr><td rowspan=\"2\">Treatment group mean</td><td>-0.086***(0.03)</td><td>-0.036(0.04)</td><td>-0.118***(0.04)</td><td>-0.068(0.04)</td><td>-0.044(0.04)</td></tr><tr><td>0.006</td><td>0.326</td><td>0.002</td><td>0.101</td><td>0.283</td></tr><tr><td>Control group mean</td><td>0.821</td><td>0.767</td><td>0.798</td><td>0.739</td><td>0.730</td></tr><tr><td>Observations</td><td>1210</td><td>1210</td><td>1210</td><td>1210</td><td>1210</td></tr></table>",
+        "bbox": [
+            112,
+            104,
+            879,
+            238
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            107,
+            426,
+            882,
+            477
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "In general, respondents stated moderate to high levels of willingness to pay tax, however this varied considerably depending on the survey question asked. For instance, over 90 percent of the respondents agreed that it is important for people to pay taxes, whereas less than half of respondents thought that people should be punished for not paying tax.",
+        "bbox": [
+            107,
+            505,
+            883,
+            616
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Willingness to pay tax was relatively higher among firms with monthly turnover above one million Tanzanian Shillings, firms in wholesale and retail trade and when respondents were directly involved in decisions related to firm's legal obligations. The relationship between these three dimensions and willingness to pay tax holds even after accounting for the influence of other factors like age, level of education, or the regions in which these businesses operate.",
+        "bbox": [
+            107,
+            625,
+            883,
+            767
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "The presence of a tax official led to respondents being more likely to say they were willing to pay tax. This pattern was more pronounced among respondents who were employees of the business, when firms operated in sectors other than wholesale and retail trade, and, among firms located in Central, Northern and Western Tanzania. Even though the presence of tax officials altered responses regarding businesses' own tax-paying behavior, there was no influence on responses to any other questions.",
+        "bbox": [
+            107,
+            775,
+            883,
+            888
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            485,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            107,
+            78,
+            880,
+            126
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Overall, survey results indicate businesses portray positive attitudes and beliefs toward tax administration in Tanzania. Several questions were asked to capture this element and there were high levels of agreement across a majority of these questions; ranging from an assessment of fairness in treatment by the TRA to how much the businesses trust the institution. However most businesses expressed a concern that tax laws were quite complex.",
+        "bbox": [
+            107,
+            138,
+            882,
+            277
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Ward-level tax payment data from presumptive taxpayers",
+        "text_level": 2,
+        "bbox": [
+            140,
+            308,
+            704,
+            325
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "While the impacts identified by the survey data are meaningful, it is useful to understand how declaration behavior changes as a result of this exogenous shock in the TRA's local presence.",
+        "bbox": [
+            107,
+            338,
+            882,
+            417
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Our main outcome measure comes from ward-level tax payment data. Since we are not able to link administrative tax records to survey respondents, the next best solution is to aggregate administrative data within the surveyed wards. In the presence of some spillover effects -that is, taxpayers in treated wards that were not surveyed but nonetheless indirectly treated through their own observation and word-of-mouth -we would expect to be able to identify changes in payment behavior that can be attributed to the local presence of the tax officials.",
+        "bbox": [
+            107,
+            429,
+            883,
+            627
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The ward-level data signals that, in the aggregate, there was no impact of local presence of tax officials on taxpayer behavior in the presumptive tax regime on the extensive (registration or any payment) or the intensive (payment amount) level. That is, considering all treated wards, presumptive taxpayers registered in these areas did not declare more often or higher tax liabilities.",
+        "bbox": [
+            107,
+            638,
+            883,
+            779
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "However, given the heterogeneity we found in the first round survey in December 2022, we also explore heterogeneous impacts of local presence on aggregate presumptive tax filing behavior. Our main findings are summarized in Table 5. As can be observed, if we divide the targeted wards into geographic zones (at a higher level than Tanzania's administrative regions), we find a short-term, positive impact on both the intensive and extensive margins of compliance immediately after the intervention (in Q1 of 2023) in the country's Eastern zone, which is disproportionately represented by the Dar es Salaam administrative region of Tanzania. In particular, greater local presence of tax officers led to a 2.8 percentage point increase in the likelihood of a presumptive taxpayer paying anything in Q1. Furthermore, it led to a 31.4 percent increase in the amount of presumptive taxes paid (both results are significant at the $5\\%$ level). In subsequent quarters, probability of payment and payment amounts are statistically identical to untreated wards.",
+        "bbox": [
+            107,
+            790,
+            883,
+            900
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            486,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            107,
+            79,
+            883,
+            309
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Medium-term impacts tell a different story, though only in the Southern zone. Treated wards in the Southern zone were less likely to pay anything and paid statistically less in the third quarter of 2023 relative to untreated wards. Specifically, increased local presence of tax officials in the Southern zone decreased the probability of presumptive tax payment by 4.9 percent and decreased the amount of presumptive taxes paid by 61.6 percent. However, it is worth noting that these findings are only significant at the 10% level.",
+        "bbox": [
+            107,
+            319,
+            883,
+            489
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            486,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "table",
+        "img_path": "images/125b5b6e76678ad37c0a485dcd51ec8ba2e674bac65d8b62cbe7531a91aa34df.jpg",
+        "table_caption": [
+            "Table 5: Treatment effects on presumptive tax payments (Ward-level)"
+        ],
+        "table_footnote": [
+            "Standard errors in parentheses. \\* p < 0.05, \\*\\* p < 0.01, \\*\\*\\* p < 0.01.",
+            "Note: Paid Q1 represents taxpayers who paid their taxes between January and March 2023. Paid Q2 represents taxpayers who paid their taxes between April and June 2023. Paid Q3 represents taxpayers who paid their taxes between July and September 2023. Amount Q1, Q2, and Q3 refer to the sum paid by a taxpayer in the first three quarters of 2023. The Eastern Zone represents taxpayers in the Dar es Salaam tax region (Kinondoni, Ilala, Temeke, Tegeta, and Kariakoo tax regions) and the Pwani tax region. The Central Zone represents taxpayers from the Morogoro, Dodoma, and Singida tax regions. The Northern Zone represents taxpayers from the Tanga, Kilimanjaro, Arusha, and Manyara tax regions. The Southern High represents taxpayers from the Southern Highlands regions of Iringa, Mbeya, Rukwa, and Katavi. The Southern Zone represents taxpayers from the Lindi, Mtwara, Ruvuma, and Njombe regions."
+        ],
+        "table_body": "<table><tr><td></td><td>Paid Q1b/se/p</td><td>Amount Q1b/se/p</td><td>Paid Q2b/se/p</td><td>Amount Q2b/se/p</td><td>Paid Q3b/se/p</td><td>Amount Q3b/se/p</td></tr><tr><td rowspan=\"2\">Treatment group mean</td><td>0.014(0.01)</td><td>0.145(0.14)</td><td>0.009(0.01)</td><td>0.084(0.13)</td><td>0.008(0.01)</td><td>0.092(0.15)</td></tr><tr><td>0.235</td><td>0.287</td><td>0.421</td><td>0.521</td><td>0.515</td><td>0.551</td></tr><tr><td rowspan=\"2\">Treated X Not Eastern Zone</td><td>-0.004(0.02)</td><td>-0.066(0.23)</td><td>0.006(0.02)</td><td>0.052(0.25)</td><td>-0.004(0.02)</td><td>-0.050(0.29)</td></tr><tr><td>0.834</td><td>0.779</td><td>0.769</td><td>0.837</td><td>0.881</td><td>0.860</td></tr><tr><td rowspan=\"2\">Treated X Eastern Zone</td><td>0.028*(0.01)</td><td>0.317*(0.15)</td><td>0.011(0.01)</td><td>0.110(0.11)</td><td>0.018(0.01)</td><td>0.207(0.15)</td></tr><tr><td>0.027</td><td>0.034</td><td>0.263</td><td>0.329</td><td>0.154</td><td>0.171</td></tr><tr><td>p_diff</td><td>0.169</td><td>0.169</td><td>0.835</td><td>0.834</td><td>0.421</td><td>0.424</td></tr><tr><td rowspan=\"2\">Treated X Central Zone</td><td>-0.024(0.03)</td><td>-0.301(0.35)</td><td>0.024(0.03)</td><td>0.294(0.46)</td><td>0.006(0.03)</td><td>0.077(0.42)</td></tr><tr><td>0.435</td><td>0.390</td><td>0.486</td><td>0.527</td><td>0.859</td><td>0.854</td></tr><tr><td rowspan=\"2\">Treated X Not Central Zone</td><td>0.018(0.02)</td><td>0.193(0.22)</td><td>0.010(0.02)</td><td>0.103(0.27)</td><td>0.011(0.02)</td><td>0.120(0.27)</td></tr><tr><td>0.360</td><td>0.388</td><td>0.657</td><td>0.707</td><td>0.636</td><td>0.653</td></tr><tr><td>p_diff</td><td>0.252</td><td>0.235</td><td>0.743</td><td>0.722</td><td>0.900</td><td>0.931</td></tr><tr><td rowspan=\"2\">Treated X Northern Zone</td><td>0.032(0.03)</td><td>0.456(0.32)</td><td>-0.026(0.02)</td><td>-0.255(0.23)</td><td>0.010(0.03)</td><td>0.137(0.38)</td></tr><tr><td>0.236</td><td>0.158</td><td>0.219</td><td>0.262</td><td>0.765</td><td>0.721</td></tr><tr><td rowspan=\"2\">Treated X Not Northern Zone</td><td>0.016(0.02)</td><td>0.164(0.24)</td><td>0.015(0.02)</td><td>0.159(0.27)</td><td>0.012(0.02)</td><td>0.134(0.27)</td></tr><tr><td>0.449</td><td>0.500</td><td>0.513</td><td>0.564</td><td>0.605</td><td>0.626</td></tr><tr><td>p_diff</td><td>0.650</td><td>0.467</td><td>0.193</td><td>0.246</td><td>0.952</td><td>0.996</td></tr><tr><td rowspan=\"2\">Treated X Southern Zone</td><td>-0.067(0.04)</td><td>-0.869(0.51)</td><td>-0.014(0.04)</td><td>-0.230(0.47)</td><td>-0.050(0.03)</td><td>-0.633(0.33)</td></tr><tr><td>0.095</td><td>0.089</td><td>0.713</td><td>0.628</td><td>0.081</td><td>0.061</td></tr><tr><td rowspan=\"2\">Treated X Not Southern Zone</td><td>0.024(0.02)</td><td>0.271(0.22)</td><td>0.021(0.02)</td><td>0.236(0.23)</td><td>0.020(0.02)</td><td>0.236(0.24)</td></tr><tr><td>0.219</td><td>0.220</td><td>0.294</td><td>0.308</td><td>0.331</td><td>0.330</td></tr><tr><td>p_diff</td><td>0.042</td><td>0.041</td><td>0.416</td><td>0.378</td><td>0.048</td><td>0.037</td></tr><tr><td rowspan=\"2\">Treated X Southern High Zone</td><td>-0.025(0.02)</td><td>-0.318(0.22)</td><td>-0.032(0.03)</td><td>-0.383(0.38)</td><td>-0.031(0.03)</td><td>-0.394(0.34)</td></tr><tr><td>0.177</td><td>0.156</td><td>0.304</td><td>0.313</td><td>0.257</td><td>0.245</td></tr><tr><td rowspan=\"2\">Treated X Not Southern High Zone</td><td>0.021(0.02)</td><td>0.229(0.23)</td><td>0.018(0.02)</td><td>0.188(0.27)</td><td>0.017(0.02)</td><td>0.187(0.26)</td></tr><tr><td>0.295</td><td>0.319</td><td>0.439</td><td>0.482</td><td>0.456</td><td>0.468</td></tr><tr><td>p_diff</td><td>0.091</td><td>0.088</td><td>0.200</td><td>0.220</td><td>0.177</td><td>0.173</td></tr><tr><td>Observations</td><td>40177</td><td>40177</td><td>40177</td><td>40177</td><td>40177</td><td>40177</td></tr></table>",
+        "bbox": [
+            130,
+            104,
+            903,
+            789
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            483,
+            933,
+            508,
+            946
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "4.2 Data Collection Wave 2: Survey",
+        "text_level": 2,
+        "bbox": [
+            109,
+            75,
+            540,
+            95
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "The objective of the second wave of data collection was to explore the mechanisms underlying the results from the first wave survey as well as the findings from the ward level administrative data on presumptive taxpayers. The second wave survey questionnaire was designed to elicit recall of the tax officials visits and identify any spillover in neighboring businesses of treated wards, as well as to capture persistent changes in beliefs and attitudes that could have been attributed to the intervention.",
+        "bbox": [
+            107,
+            118,
+            883,
+            287
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "First, we explore whether there is any persistent effect of the treatment on tax morale, which was identified in the first wave of the survey among the original sample of businesses. We indeed find that the treated disagree more strongly with the idea of refusing to pay taxes until better services are provided in the second round, confirming the persistent treatment effect from the visits. We also find that the aggregate measure of an individual's tax morale, the own index, is positive and statistically significant. The remaining three measures of tax morale are statistically insignificant. Hence, we are able to replicate the results from the first wave along the exact same dimensions.",
+        "bbox": [
+            107,
+            299,
+            883,
+            530
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "As we explained above, the effect of the treatment on tax morale could have one of two explanations. The first explanation is that the treatment effect was comparatively unimportant, driven by a temporary concern or fear due to the presence of the tax officials when the survey was undertaken. The second explanation is that the treatment effect reflected a change in the way the TRA is perceived by businesses because this interaction was different from a typical one, which is solely focused on audit activity and tends to be -at a minimum -burdensome to the business. As we were able to replicate the results after more than a year and a half without the presence of a tax official, we believe this provides strong evidence that the treatment effectively changed tax morale along certain (albeit limited) dimensions, and that the observed effect was not merely driven by a temporary concern or fear caused by the presence of tax officials during the survey.",
+        "bbox": [
+            107,
+            540,
+            883,
+            863
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Second, we explore the mechanisms for the treatment effects on tax revenue in treatment areas in the Dar es Salaam Region. Out of the 2,409 firms surveyed in the second wave, 1,144 of these had been surveyed in the first wave, while 1,265 were new, neighboring firms. Among the resurveyed firms, 801 of these included the same respondent (representative) as in the first wave, whereas the remaining 343 firms included a new respondent. When we ask our first wave treated respondents if they remembered a similar survey being conducted with them in the presence of the TRA, 492 respondents remember the survey, which shows that the events were salient to a substantial part of the original treated sample. Additionally, 513 respondents remembered that the survey was conducted with someone else in the firm. Among neighboring (newly interviewed) firms, we also elicit beliefs about area-level activity. We find that 760 respondents are aware that the surveys were conducted with other people in the area that they knew (31.55 percent of the sample).",
+        "bbox": [
+            137,
+            873,
+            880,
+            890
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            483,
+            931,
+            506,
+            946
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            107,
+            79,
+            883,
+            400
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Our findings suggest that treated respondents were more likely to believe the TRA treats taxpayers fairly (Table 6). The effect of the treatment is a significant 0.222 over a control mean of 3.69. The treated respondents also report a higher level of agreement on our measure of facilitation -the belief that the TRA makes it easy for respondents to file taxes. The descriptive findings suggest the facilitation and tax morale angle was behind the impacts rather than the enforcement one: treated respondents note that the interaction with the TRA can best be described in more positive terms. This paints an overall picture of treated individuals finding interactions with the TRA to be positive and helpful. However, these findings are not supported by the compliance outcomes captured through administrative data, putting some doubt on the perception of these visits.",
+        "bbox": [
+            107,
+            410,
+            883,
+            702
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "We analyze the effect of the treatment on respondents' beliefs about fair treatment from the TRA under actual/hypothetical presence of the tax officials (Table 7). This variable asks every respondent -treated, neighbor and control -about actual or hypothetical attitudes towards the presence of the tax officials during surveys (our actual treatment). Our goal is to exploit the fact that respondents directly exposed to the tax officials during the survey had a different experience from those who simply imagine the situation. Our treatment variable is 1 for directly treated individuals and 0 for everyone else, including the neighbors.",
+        "bbox": [
+            107,
+            710,
+            883,
+            912
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            483,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "table",
+        "img_path": "images/e980e7c0057da5281e58f4e0ead63b11d458c5b88429a23e9941e361ae87f329.jpg",
+        "table_caption": [
+            "Table 6: The Effect of TRA Agent Presence on Tax Morale"
+        ],
+        "table_footnote": [
+            "Notes: \\*\\*\\*p < 0.01; \\*\\*p < 0.05; \\*p < 0.1. The dependent variables are based on surveys, are all Likert scale variables based on the following statements: (i) 'Please tell me whether the following is true or not: My firm does not pay all the [Direct taxes] it is required to pay.', (ii) 'Please tell me whether you think that the following action is not wrong at all, wrong but understandable, or wrong and punishable: Firms not paying the taxes they owe to the government.', (iii) 'Please state your level of agreement with the following statements: If I was sure I would not get caught, I would not pay all the taxes that I owe.', (iv) 'Please state your level of agreement with the following statements: Firms should refuse to pay taxes until they get better services from the national government.' and (v) The mean of the aforementioned 4 variables. The independent variable is one for any respondent who were treated themselves in the first survey wave in December 2022, and 0 for everyone else. We cluster standard errors at the ward level."
+        ],
+        "table_body": "<table><tr><td></td><td>Direct</td><td>Not Punishable</td><td>Avoid Paying</td><td>Refuse</td><td>Own Index</td></tr><tr><td>Direct Treatment</td><td>-0.025(0.021)</td><td>-0.048(0.035)</td><td>0.019(0.038)</td><td>-0.077**(0.037)</td><td>-0.082*(0.045)</td></tr><tr><td>Number of Observations</td><td>2035</td><td>1898</td><td>1742</td><td>1737</td><td>2059</td></tr><tr><td>Adjusted R2</td><td>0.000</td><td>0.000</td><td>-0.000</td><td>0.002</td><td>0.001</td></tr><tr><td>Control Group Mean</td><td>0.11</td><td>0.47</td><td>0.54</td><td>0.59</td><td>0.01</td></tr></table>",
+        "bbox": [
+            112,
+            172,
+            950,
+            306
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "table",
+        "img_path": "images/9660e65da03fceb19a1436a8b49f5a850f4f373d8ab6310eef9b2462e32bc5b5.jpg",
+        "table_caption": [
+            "Table 7: The Effect of TRA Agent Presence on interactions with the TRA"
+        ],
+        "table_footnote": [
+            "Notes: \\*\\*\\*p < 0.01; \\*\\*p < 0.05; \\*p < 0.1. The dependent variables are based on surveys, are all Likert scale variables based on the following statements: (i) 'In the last six months, how many times (if at all) did a tax inspector or tax agent from the TRA visit your business to ask you to pay taxes?', (ii) 'Was the interaction with the TRA friendly?', (iii) 'Which of the following best describes how you view these visits?', (v) 'C8. Was an informal gift or payment ever expected or requested during these visits?', (vi) 'TRA makes it easy for you to pay your taxes', and (vii) 'TRA treats all taxpayers fairly'. The independent variable is one for any respondent who were treated themselves in the first survey wave in December 2022, and 0 for everyone else. We cluster standard errors at the ward level."
+        ],
+        "table_body": "<table><tr><td></td><td>(1)</td><td>(2)</td><td>(3)</td><td>(4)</td><td>(5)</td><td>(6)</td></tr><tr><td>Direct Treatment</td><td>-0.038(0.105)</td><td>0.225*(0.115)</td><td>0.145*(0.076)</td><td>0.003(0.071)</td><td>0.140**(0.066)</td><td>0.222**(0.097)</td></tr><tr><td>Number of Observations</td><td>2044</td><td>1638</td><td>1633</td><td>1774</td><td>2069</td><td>2100</td></tr><tr><td>Adjusted R2</td><td>-0.000</td><td>0.002</td><td>0.002</td><td>-0.001</td><td>0.002</td><td>0.002</td></tr><tr><td>Control Group Mean</td><td>5.09</td><td>4.22</td><td>3.39</td><td>3.43</td><td>4.27</td><td>3.69</td></tr></table>",
+        "bbox": [
+            114,
+            601,
+            867,
+            734
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            483,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "We also explore the effect of the treatment on respondents' beliefs about respectful and fair treatment under actual/hypothetical presence of the tax officials (Table 8). This variable asks every respondent -treated, neighbor and control -about actual or hypothetical attitudes towards the presence of the tax officials during surveys (our actual treatment). Our goal is to exploit the fact that respondents who went through the experience may have experienced it very differently from those who simply imagined the situation. Our treatment variable is 1 for directly treated individuals and 0 for everyone else, including the neighbors.",
+        "bbox": [
+            107,
+            77,
+            883,
+            279
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "table",
+        "img_path": "images/838301eb327c6419151c29b5f388cddecf0a075628417ebaf7e4f304c4b360c4.jpg",
+        "table_caption": [
+            "Table 8: The Effect of TRA Agent Presence on Perceptions of Fairness and Deception"
+        ],
+        "table_footnote": [
+            "Notes: $^{***}p < 0.01$ ; $^{**}p < 0.05$ ; $^{*}p < 0.1$ . The dependent variables are based on actual or hypothetical scenarios and they are (i) a 3-scale variable based on the question 'Did you feel treated respectfully and fairly?' during the treatment (the presence of the TRA during the survey), (ii) a 5-scale variable based on the question 'How did you feel at the sights of the TRA vehicles moving around in your area' and (iii) a 4-scale variable based on the question 'Did you feel deceived?' with the presence of the TRA during the survey. The independent variable is one for any respondent who were treated themselves in the first survey wave in December 2022, and 0 for everyone else. We cluster standard errors at the ward level."
+        ],
+        "table_body": "<table><tr><td></td><td>Fair Treatment</td><td>Sight of TRA Sights</td><td>Feel Deceived</td></tr><tr><td>Direct Treatment</td><td>-0.167***(0.059)</td><td>0.039(0.092)</td><td>0.199***(0.065)</td></tr><tr><td>Number of Observations</td><td>1771</td><td>1621</td><td>1661</td></tr><tr><td>Adjusted R2</td><td>0.004</td><td>-0.001</td><td>0.005</td></tr><tr><td>Control Group Mean</td><td>1.72</td><td>3.29</td><td>3.29</td></tr></table>",
+        "bbox": [
+            127,
+            321,
+            857,
+            455
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "table",
+        "img_path": "images/cf426bc5eeac6408b58231db9eec409cb9ba334aaae7325284dd5693dd6454f1.jpg",
+        "table_caption": [
+            "Table 9: The Effect of TRA Agent Presence on beliefs about risk of evasion, and tax beliefs and public services"
+        ],
+        "table_footnote": [
+            "Notes: $^{***}p < 0.01$ ; $^{**}p < 0.05$ ; $^{*}p < 0.1$ . The dependent variables are based on surveys, are all Likert scale variables based on the following statements: (i) 'The risk of legal action for firms evading or underpaying taxes in Tanzania is high', (ii) 'The public services provided by the government justify the taxes imposed on firms', and (iii) 'Additional services benefiting firms would justify higher taxes'. The independent variable is one for any respondent who were treated themselves in the first survey wave in December 2022, and 0 for everyone else. We cluster standard errors at the ward level."
+        ],
+        "table_body": "<table><tr><td></td><td>(1)</td><td>(2)</td><td>(3)</td></tr><tr><td>Direct Treatment</td><td>-0.023(0.076)</td><td>-0.010(0.080)</td><td>-0.013(0.087)</td></tr><tr><td>Number of Observations</td><td>1983</td><td>1985</td><td>1930</td></tr><tr><td>Adjusted  $R^2$ </td><td>-0.000</td><td>-0.000</td><td>-0.001</td></tr><tr><td>Control Group Mean</td><td>4.09</td><td>3.95</td><td>3.75</td></tr></table>",
+        "bbox": [
+            245,
+            614,
+            740,
+            747
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            483,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Findings from the second wave of the survey indicate that the treatment group's perceptions do indeed differ substantially across a varied number of outcomes. The estimates suggest long-lasting effects of the presence of agents of the state over around one year and a half.",
+        "bbox": [
+            107,
+            78,
+            883,
+            186
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "5 Discussion and Conclusion",
+        "text_level": 2,
+        "bbox": [
+            109,
+            232,
+            514,
+            253
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Our study took an innovative approach to understand how an exogenous increase in the local presence of the revenue authority could change taxpayer attitudes and behaviors. The literature generally suggests that increased heavy handed presence (what could be classified as enforced compliance actions) tends to improve compliance (by shifting the perceived audit probability, consistent with the traditional model of compliance outlined in Allingham & Sandmo, 1972) and that more investments in local infrastructure and capacity more broadly can improve compliance through both enforced and (quasi-)voluntary compliance (e.g., through decentralization of tax administration functions to regional and local offices). Our study fits somewhere between these two strands of literature, looking at the mere presence of tax officers, which could serve to increase compliance through the trust and facilitation angles (the TRA is here to help us comply and hold their end of the fiscal contract) and enforcement angles (the TRA is conducting detective work to catch our evasion).",
+        "bbox": [
+            107,
+            282,
+            883,
+            635
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Our findings do not provide a clear narrative on how increased local presence of the tax officials served to increase or decrease compliance, although it is clear that taxpayers might be less than truthful when probed on their tax morale and compliance. The finding that tax morale is increased with increased presence in areas where the TRA traditionally has less local presence combined with the finding that compliance increased in the short-term in areas that have traditionally seen higher tax officials presence has a few potential explanations. The positive impact on morale that does not translate to improved behavior likely reflects dishonest responses from taxpayers not accustomed to seeing the tax officials (so their presence provided a very short-lived shock that influenced their responses); that is, taxpayers outside Dar es Salaam might have been ‘lying to the taxman.’ The lack of a behavioral response to this visit supports the notion that the visits were viewed as possible enforcement actions without much credibility to support them. In the absence of further presence, reporting behavior did not change or (in the case of the Southern Zone) actually worsened (frustration over the visit combined with a low credibility of enforcement actually backfired).",
+        "bbox": [
+            107,
+            643,
+            883,
+            906
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            483,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            107,
+            78,
+            883,
+            250
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Meanwhile, the finding that compliance improved in areas where tax morale did not improve could reflect a higher (albeit short-lived) credibility of enforcement caused by the intervention. Businesses in the Eastern zone of the country are more used to seeing heavier presence of the tax officials in their wards, so the presence of the tax officials at the moment of the survey did not influence their tax morale (stated, of course). However, as it was different from other local presence (surveying rather than conducting enforcement actions), it might have shifted the credibility of enforcement on the margin or alternatively increased the sense of trust, since the local presence was purely observational and no enforcement or quasi-voluntary actions were being take. The endline survey seems to support the second hypothesis, but this is not entirely clear from our analysis of the data.",
+        "bbox": [
+            107,
+            258,
+            883,
+            551
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Despite the lack of clarity in our findings, this intervention was meaningful in that it shows the promise and potential challenges in conducting experimentation through a revenue authority that involves face-to-face interaction and steps outside the traditional “nudge” framework. Further research is needed to understand how and why local presence in highly centralized revenue administration environments can serve to improve compliance; in particular, to understand whether increased presence interpreted as enforcement actions versus facilitation of trust-building actions can serve to increase compliance and collection, particularly among SMEs where there is limited cost-effectiveness from heavy handed enforcement interventions.",
+        "bbox": [
+            107,
+            561,
+            883,
+            823
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            483,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            109,
+            73,
+            259,
+            95
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "[1] Allingham, M. G., & Sandmo, A. (1972). Income tax evasion: A theoretical analysis. Journal of Public Economics, 1(3-4), 323–338.",
+        "bbox": [
+            120,
+            122,
+            879,
+            172
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "[2] Alm, J. (2019). What motivates tax compliance? Journal of Economic Surveys, 33(2), 353–388.",
+        "bbox": [
+            120,
+            194,
+            880,
+            243
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "[3] Basri, M. C., Dharmapala, D., & Shapiro, N. R. (2021). The impact of medium taxpayer offices on tax compliance in Indonesia: A quasi-experimental study. World Bank Policy Research Working Paper.",
+        "bbox": [
+            120,
+            267,
+            882,
+            348
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "[4] Beer, S., de Mooij, R., Liu, L., & Wingender, P. (2020). International corporate tax avoidance: A review of the channels, magnitudes, and blind spots. International Monetary Fund.",
+        "bbox": [
+            120,
+            369,
+            880,
+            450
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "[5] Bergolo, M. L., Ceni, R., Cruces, G., Giaccobasso, M., & Perez-Truglia, R. (2023). Tax audits as scarecrows: Evidence from a large-scale field experiment. American Economic Journal: Economic Policy, 15(1), 110–153.",
+        "bbox": [
+            120,
+            473,
+            883,
+            555
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "[6] Dom, R., Custers, A., Davenport, S., & Prichard, W. (2022). Innovations in tax compliance: Building trust, navigating politics, and tailoring reform. World Bank.",
+        "bbox": [
+            120,
+            577,
+            880,
+            628
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "[7] Erard, B., Kirchler, E., & Olsen, J. (2019). Audit impact study: The specific deterrence implications of increased reliance on correspondence audits. Taxpayer Advocate Service: Annual Report to Congress 2019, 257–268.",
+        "bbox": [
+            120,
+            648,
+            882,
+            731
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "[8] Gemmell, N., & Ratto, M. (2012). Behavioral responses to taxpayer audits: Evidence from random taxpayer inquiries. National Tax Journal, 65(1), 33-58.",
+        "bbox": [
+            120,
+            752,
+            880,
+            804
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "[9] Hoy, Christopher, Thiago Scot, Alex Oguso, Anna Custers, Daniel Zalo, Ruggero Doino, Jonathan Karver, and Nicolas Orgeira Pillai. 2024. “Trade-offs in the Design of Simpli-",
+        "bbox": [
+            120,
+            825,
+            880,
+            877
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            483,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "ref_text",
+        "text": "fied Tax Regimes: Evidence from Sub-Saharan Africa.” World Bank Policy Research Working Paper 10909.",
+        "bbox": [
+            148,
+            77,
+            880,
+            127
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "[10] Kapon, S., Del Carpio, L., & Chassang, S. (2022). Using divide-and-conquer to improve tax collection. NBER Working Paper No. 30218. National Bureau of Economic Research.",
+        "bbox": [
+            111,
+            148,
+            880,
+            200
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "[11] Kasper, M., & Alm, J. (2022). Audits, audit effectiveness, and post-audit tax compliance. Journal of Economic Behavior & Organization. Tulane University Working Paper No. 2010.",
+        "bbox": [
+            111,
+            222,
+            880,
+            301
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "[12] Lancee, B., Rossel, L., & Kasper, M. (2023). When the agency wants too much: Experimental evidence on unfair audits and tax compliance. Journal of Economic Behavior & Organization, 214, 406–442.",
+        "bbox": [
+            111,
+            325,
+            883,
+            406
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "[13] Mendoza, J. P., Wielhouwer, J. L., & Kirchler, E. (2017). The backfiring effect of auditing on tax compliance. Journal of Economic Psychology, 62, 284–294.",
+        "bbox": [
+            111,
+            428,
+            882,
+            479
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "[14] Okunogbe, O., & Tourek, G. (2024). How can lower-income countries collect more taxes? The role of technology, tax agents, and politics. Journal of Economic Perspectives, 38(1), 81–106.",
+        "bbox": [
+            109,
+            501,
+            880,
+            583
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "[15] Slemrod, J. (2019). Tax compliance and enforcement. Journal of Economic Literature, 57(4), 904–954.",
+        "bbox": [
+            111,
+            604,
+            880,
+            655
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "ref_text",
+        "text": "[16] World Bank. (2023). Privatizing growth: A country economic memorandum for the United Republic of Tanzania. World Bank.",
+        "bbox": [
+            111,
+            676,
+            880,
+            728
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            483,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "table",
+        "img_path": "images/a28896b59d3855b814a30613aa8d323bf3c79e1b5c4786faa9c64ff624b64f13.jpg",
+        "table_caption": [
+            "Appendix 1: Balance Test - Surveyed Wards from Census"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"2\">treatment-Control</td><td colspan=\"2\">treatment-Treatment</td><td rowspan=\"2\">Std Diff</td></tr><tr><td>Mean or N</td><td>SD or (%)</td><td>Mean or N</td><td>SD or (%)</td></tr><tr><td colspan=\"6\">femalehead</td></tr><tr><td>0</td><td>144060</td><td>(65.1)</td><td>139650</td><td>(65.6)</td><td>0.00960</td></tr><tr><td>1</td><td>77103</td><td>(34.9)</td><td>73250</td><td>(34.4)</td><td></td></tr><tr><td colspan=\"6\">primary</td></tr><tr><td>0</td><td>95059</td><td>(44.2)</td><td>93897</td><td>(44.3)</td><td>0.00372</td></tr><tr><td>1</td><td>120202</td><td>(55.8)</td><td>117846</td><td>(55.7)</td><td></td></tr><tr><td colspan=\"6\">secondary</td></tr><tr><td>0</td><td>167945</td><td>(78.0)</td><td>165680</td><td>(78.2)</td><td>0.00548</td></tr><tr><td>1</td><td>47316</td><td>(22.0)</td><td>46063</td><td>(21.8)</td><td></td></tr><tr><td colspan=\"6\">wage</td></tr><tr><td>0</td><td>188080</td><td>(85.0)</td><td>179976</td><td>(84.5)</td><td>0.01409</td></tr><tr><td>1</td><td>33083</td><td>(15.0)</td><td>32924</td><td>(15.5)</td><td></td></tr><tr><td colspan=\"6\">agri</td></tr><tr><td>0</td><td>202903</td><td>(91.7)</td><td>196392</td><td>(92.2)</td><td>0.01852</td></tr><tr><td>1</td><td>18260</td><td>(8.3)</td><td>16508</td><td>(7.8)</td><td></td></tr><tr><td colspan=\"6\">grass roof</td></tr><tr><td>0</td><td>212612</td><td>(96.1)</td><td>206143</td><td>(96.8)</td><td>0.03759</td></tr><tr><td>1</td><td>8551</td><td>(3.9)</td><td>6757</td><td>(3.2)</td><td></td></tr><tr><td colspan=\"6\">mud wall</td></tr><tr><td>0</td><td>209481</td><td>(94.7)</td><td>201115</td><td>(94.5)</td><td>0.01120</td></tr><tr><td>1</td><td>11682</td><td>(5.3)</td><td>11785</td><td>(5.5)</td><td></td></tr><tr><td colspan=\"6\">earth floor</td></tr><tr><td>0</td><td>185139</td><td>(83.7)</td><td>183365</td><td>(86.1)</td><td>0.06754</td></tr><tr><td>1</td><td>36024</td><td>(16.3)</td><td>29535</td><td>(13.9)</td><td></td></tr><tr><td colspan=\"6\">improved w~r</td></tr><tr><td>0</td><td>29488</td><td>(13.3)</td><td>26003</td><td>(12.2)</td><td>0.03354</td></tr><tr><td>1</td><td>191675</td><td>(86.7)</td><td>186897</td><td>(87.8)</td><td></td></tr><tr><td colspan=\"6\">electric</td></tr><tr><td>0</td><td>74763</td><td>(33.8)</td><td>65660</td><td>(30.8)</td><td>0.06340</td></tr><tr><td>1</td><td>146400</td><td>(66.2)</td><td>147240</td><td>(69.2)</td><td></td></tr></table>",
+        "bbox": [
+            114,
+            160,
+            977,
+            664
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            111,
+            74,
+            132,
+            94
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "header",
+        "text": "Appendix",
+        "bbox": [
+            156,
+            74,
+            292,
+            97
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "page_number",
+        "text": "29",
+        "bbox": [
+            483,
+            931,
+            509,
+            946
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "table",
+        "img_path": "images/55e1c373302408aab83869178e8373708f2e55f139f59e2e3f6faa53c302bb3c.jpg",
+        "table_caption": [
+            "Appendix 2: Balance Test - Surveyed Firms from Survey"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"2\">treatment=Control</td><td colspan=\"2\">treatment=Treatment</td><td rowspan=\"2\">Std Diff</td></tr><tr><td>Mean or N</td><td>SD or (%)</td><td>Mean or N</td><td>SD or (%)</td></tr><tr><td>owner</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Not Owner</td><td>248</td><td>(40.7)</td><td>238</td><td>(39.7)</td><td>0.02018</td></tr><tr><td>Owner</td><td>362</td><td>(59.3)</td><td>362</td><td>(60.3)</td><td></td></tr><tr><td>soletrader</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>other</td><td>167</td><td>(27.4)</td><td>131</td><td>(21.8)</td><td>0.12898</td></tr><tr><td>soletrader</td><td>443</td><td>(72.6)</td><td>469</td><td>(78.2)</td><td></td></tr><tr><td>male</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Female</td><td>241</td><td>(39.5)</td><td>238</td><td>(39.7)</td><td>0.00324</td></tr><tr><td>Male</td><td>369</td><td>(60.5)</td><td>362</td><td>(60.3)</td><td></td></tr><tr><td>TObelow 1mil</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Above 1 mil</td><td>170</td><td>(27.9)</td><td>186</td><td>(31.0)</td><td>0.06874</td></tr><tr><td>Below 1 mil</td><td>440</td><td>(72.1)</td><td>414</td><td>(69.0)</td><td></td></tr><tr><td>wr trade</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Other</td><td>381</td><td>(62.5)</td><td>345</td><td>(57.5)</td><td>0.10135</td></tr><tr><td>Wholesale ~1</td><td>229</td><td>(37.5)</td><td>255</td><td>(42.5)</td><td></td></tr></table>",
+        "bbox": [
+            112,
+            333,
+            800,
+            691
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "page_number",
+        "text": "30",
+        "bbox": [
+            483,
+            931,
+            508,
+            946
+        ],
+        "page_idx": 31
+    }
+]

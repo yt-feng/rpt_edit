@@ -1,0 +1,837 @@
+## CHINA-LINKED WILDLIFE POACHING AND TRAFFICKING IN MEXICO
+
+MARCH 2022
+
+VANDA FELBAB-BROWN
+
+## TABLE OF CONTENTS
+
+EXECUTIVE SUMMARY
+I. INTRODUCTION
+Methodology
+II. WILDLIFE TRAFFICKING IN MEXICO, CONNECTED AND UNCONNECTED TO CHINA
+Terrestrial species
+Marine species
+Organized crime's takeover of Mexico's fisheries
+The evolving relationship between Mexican organized crime and Chinese traders
+III. MONEY LAUNDERING AND VALUE TRANSFER
+IV. CHINA'S DIPLOMACY AND LAW ENFORCEMENT COOPERATION WITH MEXICO AGAINST WILDLIFE TRAFFICKING
+Interdiction and crackdown on retail markets
+China's public narratives regarding Mexico-linked wildlife trafficking
+Anti-money laundering efforts
+Trilateral anti-wildlife crime efforts
+Legal assistance
+V. "FIX IT YOURSELF, MEXICO": ENVIRONMENTAL REGULATION ENFORCEMENT, CAPABILITIES, AND CHALLENGES IN MEXICO
+VI. CONCLUSIONS AND RECOMMENDATIONS
+Law enforcement
+Economic incentives to counter poaching
+Shutting down problematic markets
+Protecting the protectors
+REFERENCES
+ABOUT THE AUTHOR
+ACKNOWLEDGEMENTS
+
+# CHINA-LINKED WILDLIFE POACHING AND TRAFFICKING IN MEXICO
+
+VANDA FELBAB-BROWN
+
+## EXECUTIVE SUMMARY
+
+Wildlife trafficking from Mexico to China receives little international attention, but it is growing, compounding the threats to Mexican biodiversity posed by preexisting poaching for other markets, including the United States. Since Mexican criminal groups often control extensive territories in Mexico which become no-go-zones for government officials and environmental defenders, visibility into the extent of poaching, illegal logging, and wildlife trafficking in Mexico is limited. It is likely, however, that the extent of poaching and trafficking, including to China, is larger than commonly understood.
+
+Terrestrial and marine species, as well as timber, illegally harvested in Mexico for Chinese markets increasingly threaten Mexico's biodiversity. Among the species poached in Mexico and smuggled to China, sometimes via the United States, are reptiles, sea cucumbers, totoaba, abalone, sharks, and increasingly also likely jaguars as well as various species of rosewood.
+
+Legal wildlife trade from Mexico to China, such as in sea cucumbers and crocodilian skins, provides cover for laundering poached animals. Illegal fishing accounts for a staggering proportion of Mexico's fish production, but even the legitimate fishing and export industry provides a means to channel illegally-caught marine products to China.
+
+The legal trade in wildlife also increasingly facilitates the money laundering activities of Mexican criminal groups, with various wildlife products used by Mexican criminal groups as a value transfer mechanism to Chinese traders in exchange for precursor chemicals for illegal drugs as such fentanyl and methamphetamine, which are then produced in Mexico from the precursors. Indeed, in Mexico, far more so than in other parts of the world, poaching and wildlife trafficking for Chinese markets is increasingly thickly intermeshed with drug trafficking, money laundering, and value transfer in illicit economies. Yet the relationship between Chinese wildlife traders and Mexican organized crime groups is also undergoing significant shifts.
+
+Organized crime groups across Mexico, especially the Sinaloa Cartel, seek to monopolize both legal and illegal fisheries along the entire vertical supply chain. Beyond merely demanding a part of the profits, they dictate to legal and illegal fishers how much the fishers can fish, insisting that the fishers sell the harvest only to the criminal groups, and that restaurants, including those catering to international tourists, buy fish only from the criminal groups. Mexican organized crime groups set prices at which fishers can be compensated and restaurants get paid for the cartels' marine products. The criminal groups also force processing plants to process the fish brought in by the criminal groups. And they charge extortion fees to seafood exporters.
+
+This takeover of the fisheries by Mexican criminal groups puts Chinese traders further into direct contact with them and alters the relationship patterns. Whereas a decade and a half ago, Chinese traders in legal wildlife commodities and illegal wildlife products dealt directly with local hunters, poachers, and fishermen, increasingly, Mexican organized crime groups forcibly inserted themselves as middlemen, dictating that producers need to sell to them and that they themselves will sell to the Chinese traders and traffickers who move the product from Mexico's borders to China.
+
+Conversely, as in illegal logging, the interest of Chinese traders in an animal or plant species and efforts to source them in Mexico on a substantial scale for Chinese markets attracts the attention of Mexican criminal groups.
+
+The Chinese government, for the most part, rejects China's responsibility for poaching and wildlife trafficking in Mexico and insists that these problems are rather for the Mexican government to solve. Prevention and enforcement cooperation has been minimal and sporadic. The Chinese government has not been keen to formalize either China-Mexico or China-Mexico-United States cooperation against wildlife trafficking, preferring informal case-by-case cooperation.
+
+Nonetheless, under intense international pressure, the Chinese government moved beyond seizures of the totoaba swim bladder smuggled to China from Mexico and in 2018 mounted several interdiction raids against retail markets. These raids ended the openly-visible and blatant sales of illegal wildlife commodities. Such retails moved behind closed doors and onto private online platforms. But it does not appear that China has maintained efforts to counter the now-more hidden illegal retail and mount raids against clandestine sales.
+
+Mexican environmental protections and environmental enforcement agencies are becoming weaker as a result of actions of the Andrés Manuel López Obrador administration, even as Mexican natural resources are increasingly under threat from organized crime and wildlife traffickers. Mexican environmental agencies lack mandates, personnel, and equipment to prevent and stop environmental crime. Government officials, legal traders in wildlife commodities, and even law enforcement agencies in Mexico are systematically corrupted and intimidated by organized crime and the poor rule of law environment facilitates poaching, illegal logging, and wildlife trafficking to China.
+
+Preventing far greater damage to Mexico's biodiversity from illegal harvesting and poaching and wildlife and timber trafficking requires urgent attention in Mexico with far more dedicated resources, as well as meaningful international cooperation, to identify and dismantle smuggling networks and retail markets.
+
+## I. INTRODUCTION
+
+China's presence and role in Southeast Asian and African wildlife trade and trafficking are deeply established, extensive, often devastating, and well-known. $^{1}$ China's role in the legal and illegal wildlife trade in Mexico is smaller and less known, receiving far less focus than China-linked wildlife trafficking in the Amazon.
+
+Like elsewhere in the Americas and globally, not all poaching and wildlife trafficking in Mexico is linked to China. But China's demand for Mexican wildlife products, whether legally harvested or poached from the wild, is growing, diversifying, and having severe consequences for biodiversity preservation.
+
+Moreover, China-linked wildlife trafficking in Mexico is expanding amidst an inadequate regulatory environment and enforcement regime. Powerful criminal groups in Mexico which have extensive and growing territorial, political, and economic influence are increasingly entering legal and illegal economies in natural resources, while the rule of law remains weak and the government struggles to mount an effective response.
+
+![](images/9767fba8f25daaa4246dda52774812e9ab7d98de59ad95b1e6a04027af689cb9.jpg)
+
+Far more so than in other parts of the world, poaching and wildlife trafficking for Chinese markets from Mexico is increasingly thickly intermeshed with drug trafficking, money laundering, and value transfer in illicit economies.
+
+Far more so than in other parts of the world, poaching and wildlife trafficking for Chinese markets from Mexico is increasingly thickly intermeshed with drug trafficking, money laundering, and value transfer in illicit economies.
+
+As Chinese wildlife traders in Mexico source an increasing array of animal and plant species for Chinese markets, their relationship with Mexican trafficking groups and local populations has undergone significant shifts. Mexican organized crime groups have inserted themselves as intermediaries between poachers and Chinese traders.
+
+Even as the Chinese government mostly disavows China's responsibility for poaching and wildlife trafficking in Mexico and insists that these problems are rather for the Mexican government to solve, the always weak Mexican environmental protections and environmental enforcement agencies are becoming more emaciated. They lack mandates, personnel, and equipment necessary to effectively prevent and stop environmental crime. Moreover, the government of President Andrés Manuel López Obrador has issued exceptions from environmental impact assessments and oversight under a sweeping executive mandate, $^{2}$ and gutted the budgets of all environmental agencies. Like many other civil society actors, environmental defenders in Mexico face violent intimidation: Between 2012 and 2019, at least 83 were murdered. $^{3}$
+
+The very thin presence of Mexican environmental officials on the ground in protected as well as unprotected areas, coupled with the fact that Mexican criminal groups often exercise dominion and control over extensive territories in Mexico which become no-go zones for government officials and environmental defenders, $^{4}$ also means that visibility into the extent of poaching, illegal logging, and wildlife trafficking in Mexico is difficult, limited, and constrained. Detailed accounts of environmental crime investigations are lacking, as are systematic databases of incidents of environmental crime and data series on poaching. Intrepid work by environmental defenders has documented plant and animal poaching in places such as the Monarch Butterfly Reserve in Michoacán. $^{5}$ However, far more poaching and wildlife trafficking than is reported likely takes place, particularly as Mexican criminal groups are increasingly taking over various economies in natural resources, such as legal and illegal fishing and logging. $^{6}$
+
+In this context and amidst the increasing and diversifying presence of Chinese traders and construction companies in Mexico, ominous trends are likely on the horizon for wildlife in Mexico.
+
+This paper is part of a series of Brookings reports that explores the role of China and Chinese traffickers and consumers in a variety of illegal economies, such as drugs, human trafficking, and natural resources, and China's internal response and international law enforcement cooperation and diplomacy in these issues.
+
+This paper proceeds as follows: It first provides an overview of China-connected wildlife trafficking in Mexico in both terrestrial and marine species, setting it within the broader pattern of poaching and wildlife trafficking in Mexico not related to Chinese markets. It then describes patterns and changes in the interactions and relationships between Mexican organized crime groups and Chinese traders. Next it shows how wildlife trade and trafficking have become means of money laundering and value transfer for the illegal drug trade. In the next part, the report analyzes China-Mexico diplomacy and narratives regarding poaching and wildlife trafficking and China's role in the enforcement of environmental regulations in Mexico. The final section provides detailed recommendations for the governments of Mexico, China, and the United States on how to improve conservation efforts in Mexico and counter poaching and wildlife trafficking from Mexico to China. The recommendations include:
+
+\- law enforcement measures, including interdiction and dismantling of wildlife trafficking networks and in situ law enforcement;
+
+• developing economic incentives for communities not to poach; and
+
+• shutting down problematic retail markets in China.
+
+## Methodology
+
+In addition to consulting the existing literature and building on the author's prior work on wildlife trafficking in Mexico, particularly on totoaba trafficking from Mexico to China, $^{7}$ the report is principally based on 73 interviews with U.S and Mexican diplomats and government and law enforcement officials, Mexican, Chinese, and international conservation biologists, representatives of civil society and environmental NGOs in Mexico, China, and elsewhere and Mexico-based poachers and traders. The author conducted the Mexico-based interviews in person across various parts of the country, including Mexico City, Baja California Sur, Michoacán, and Guerrero. Interviews with interlocutors based in China or elsewhere outside of Mexico were conducted via encrypted virtual platforms. All of the interviews were conducted under extreme sensitivity concerning possible retaliation by China's government (such as government prosecution or visa denials) or by Mexican criminal groups in the form of violence. In some cases, those interviewed had been subject to threats to their life and safety by Chinese as well as Mexican criminal groups. Thus, not only are all the interviews reported below without the use of the name of the source, but at times their location and other identifiers of the interlocutor had to be obscured further. The perception by many Chinese citizens approached for interviews that they had to obtain clearance from the Chinese government before engaging with a U.S. think tank analyst further complicated the interviews. And while Chinese citizens increasingly fear to voice criticism of the Chinese government, access to China for foreign researchers and government officials and information about Chinese law enforcement issues have diminished significantly compared to even just a decade ago.
+
+The author and her research team also examined hundreds of Chinese and international media articles and official government accounts of China's public narratives and policy attitudes toward wildlife trafficking.
+
+## II. WILDLIFE TRAFFICKING IN MEXICO, CONNECTED AND UNCONNECTED TO CHINA
+
+Poaching and wildlife trafficking in Mexico long precedes the emergence of the China connection in both terrestrial and marine species. Mexico features decades-old established poaching for markets within the country, such as in tarantulas for pets or orchids for households, and as part of human-animal conflict, such as the poaching of jaguars to remove presumed threats to cattle. $^{8}$ Much of poaching in Mexico is for local Mexican demand, such as sea turtle meat and eggs, orchids, and birds sold in Guerrero's cities of Acapulco, Chilpancingo, and Chilapa. $^{9}$ Macaws, parrots, hummingbirds, and other birds are also taken from the wild for domestic markets as well as for Central America and the United States for the pet trade and their feathers, or, in the case of hummingbirds, to be made into love protection amulets, in which the dried corpses of poached hummingbirds are wrapped with photographs of loved ones to retain or restore their love. $^{10}$ Mexico City's Sonora Market openly sells endangered plant and animal species, and a wide variety of poached wildlife and wildlife products can be bought in the massive wildlife market in San Luis Potosí. Though perhaps the largest and most well-known, the San Luis Potosí wildlife market is hardly the only market where wildlife trade including in poached species is common, accepted by local communities, and tolerated by government authorities.
+
+Mexico is an important source and transshipment country for poached wildlife smuggled into the United States. Beyond macaws and parrots (for which the United States remains Mexico's principal market), tarantulas, cacti (in which Mexico has the world's greatest biodiversity), and reptiles (alive or their skins) are among the top species trafficked into the United States. $^{11}$ The hummingbird love talismans are also trafficked into the United States for sale among Mexican communities.
+
+In 1997, the Mexican government, motivated to give local communities and private land proprietors economic stakes in conservation and ownership over natural resources on their lands, $^{12}$ implemented the Units for the Conservation, Management, and Sustainable Use of Wildlife (Unidades de Conservación y Manejo de Vida Silvestre or UMA) system. The UMA system grants legal control over the exploitation of natural resources to local communities and private owners. $^{13}$
+
+Such legal and economic control is particularly pertinent for species listed in any category of protection under the Mexican environmental regulations, which UMA grantees can harvest within a government-set quota. Thus, for example, in southern and northern Mexico, several private hunting concessions UMAs have emerged. Local communities have been able to develop their areas for wildlife trade, such as in orchids.
+
+Communities with strong governance structures reap substantial economic profits and have been able to use the system well to protect local biodiversity, when not threatened by organized crime. But these conditions only sometimes materialize, especially as local communities consume wildlife on a relatively small scale, and thus are unable to generate robust income. The last condition — absence of threatening organized crime — has been collapsing across Mexico.
+
+In many parts of Mexico, including areas of richest biodiversity such as southern Mexico, the UMA system has become a gray zone for illegal offtake beyond government permits and quota and the laundering of poached animals. In southern Mexico, for example, UMA owners have been helping American hunters to poach jaguars. $^{14}$
+
+Since anyone who owns land – or can establish even fake land ownership documents – can be granted a UMA, even organized crime groups can buy or forcibly appropriate land and declare it as an UMA. Any such potential criminal group-owned UMAs could become significant areas of major unsustainable harvesting of protecting species for global wildlife markets, such as in China.
+
+Yet monitoring of UMA management and any compliance with harvesting quota in protected species is overwhelmingly weak in Mexico. For one, Mexico does not have “rangers,” i.e., armed law enforcement guards posted in protected areas and able to act against poachers and wildlife traffickers. Mexico’s National Commission of Natural Protected Areas (La Comisión Nacional de Áreas Naturales Protegidas, CONANP) manages and regulates protected areas, but does not have enforcement capacities. In comparison with the U.S. Fish and Wildlife Service, Mexico’s Procuraduría Federal de Protección al Ambiente (PROFEPA), the unit of the Attorney General’s office for environmental protection, has only a very limited mandate. Mexican environmental protection agencies thus can essentially only report violations to another law enforcement actor, such as the army (SEDENA) or navy (SEMAR), for on-the-ground action. To the extent that a law enforcement agency does conduct an action, whether arrests of poachers and wildlife traffickers or seizures of illegal wildlife products, the poaching’s damage will often have been done.
+
+Mexican fisheries have equally been ridden with many forms of illegality, including offtake of protected species and fishing over the allotted quota or of undersized animals. $^{15}$ Illegal fishing accounts for a very large proportion of fish production in Mexico. $^{16}$ Between 1950 and 2010, even before Mexican organized crime
+
+groups entered fishing in a big way and compounded Mexico's illegal, unreported, and regulated fishing, at least half of Mexico's fish offtake was not reported. $^{17}$
+
+![](images/4f042511a5d869982db6a3745982b245eac6276acb8eb6b16e77b68ce6f060da.jpg)
+
+For a long time, the seas and ocean around Mexico have been a free-for-all, with the regulation of fisheries riddled with corruption and minimal enforcement capacities. The National Commission for Aquaculture and Fisheries (CONAPESCA)
+
+For a long time, the seas and ocean around Mexico have been a free-for-all, with the regulation of fisheries riddled with corruption and minimal enforcement capacities.
+
+is starved of personnel and resources, having far too few boats for patrolling the country's very long coastline and monitoring a fishing fleet which involves over 100,000 small vessels, known as pangas, as well as large vessels. Rights-based approaches promoted by Mexican and international NGOs to give communities rights to fishing in their localities, while inducing them to do so sustainably and to patrol and protect the entire marine ecosystem, have had important successes. But even the successes are challenged by organized crime groups and Chinese markets. $^{18}$
+
+China is widely considered the largest and most diversified demand location for wildlife from all around the world. $^{19}$ With long a tradition of wildlife utilization and consumption and increased affluence, Chinese people purchase all kinds of wildlife products for Traditional Chinese Medicine (TCM), which assigns (mostly without any scientific proof) curative and aphrodisiacal qualities to animal and plant products, as well as for curios, clothes, decorations, food, pets, and as a form of economic investment and speculation. $^{20}$
+
+And indeed, it appears that the poaching for Chinese markets of both marine and terrestrial species is expanding across Mexico.
+
+## Terrestrial species
+
+The loss of tigers, which are poached for their skins, claws, teeth, and bones for decorative clothing and TCM, $^{21}$ across Asia has led Chinese wildlife traders to source other big cats around the world to supply China's demand. In Africa, the poaching as well as the temporarily-legal trade in lion and leopard parts from farmed-raised animals became one source of supply; in May 2021, South Africa banned such exports and lion captive breeding farms, assessing the industry as posing problems to the sustainability of wild lion populations. $^{22}$ Chinese wildlife traffickers have also organized extensive poaching of jaguars in Bolivia, Peru, and Guyana for the Chinese market. $^{23}$ In Mexico, the mostly retaliatory and opportunistic jaguar poaching (despite a systematic lack of data) also increasingly appears to be connected to Chinese markets. Mexican environmental NGOs operating in southern Mexico and particularly along the border with Guatemala and Belize, often facing violent threats from Mexican criminal groups there, are increasingly finding jaguar carcasses without paws, teeth, and other body parts, suggesting this loot is heading into China for TCM. $^{24}$
+
+In those very same areas, such as in Chiapas and Campeche, Chinese brokers seeking protected bastard rosewood (Schwartzia species) and rosewood (Dalbergia species) stimulated illegal logging among local communities in 2013 and 2014. Long participating in drug trafficking, human smuggling, and poaching, poor and marginalized local indigenous communities there were readily susceptible to the promise of big Chinese money for the rosewood timber. $^{25}$ Mexican organized crime groups have also expanded their presence and role in the illegal logging. The jaguar poaching trend appears to build on those illegal logging networks. $^{26}$ The rainforests along Mexico’s border with Guatemala and Belize, including the protected areas of the Montes Azules and Calakmul Biosphere Reserves, are rife with illegal airstrips used for drug trafficking that could double for moving illegal wildlife. A similar evolution of Chinese brokers first seeking to establish supply and then attracting Mexican organized crime groups to enter the economy has taken place in Guerrero where Chinese brokers sought granadillo hardwood trees. The trees are now logged and transported to the Lázaro Cárdenas port in Michoacán for shipments to China, with Mexican criminal groups connected to municipal authorities obtaining false logging licenses for the harvesting and then selling to Chinese traders. $^{27}$
+
+Illegal logging and poaching in Asia, Africa, and Latin America has often come along with Chinese legal businesses investments in natural resource extraction and infrastructure building. The fact that the China Communications Construction Company (CCCC) is part of a conglomeration winning the construction of the first leg of the Mayan Train $^{28}$ — an environmentally-disastrous railway cutting through some of Mexico’s most pristine and biologically rich areas with jaguars, ocelots, macaws, parrots, toucans, and many other desirable mammal, avian, and reptile species $^{29}$ — poses significant risks of increased poaching along the construction route, including for the Chinese diaspora in Mexico and for Chinese markets. Yet, despite various environmental assessments warning of significant ecological costs, the López Obrador administration has been forging ahead with the project. $^{30}$
+
+Like elsewhere in the world, Chinese traffickers are also sourcing various reptile species in Mexico, including turtles for their meat and pet trade, and crocodilian skins. The UMA system helped establish crocodile and alligator breeding farms in Campeche and Tabasco to breed the reptiles for their skin. In the United States and elsewhere in Latin America, such licensing critically helped to reduce poaching by supplying demand through a legal source, the farm. In Mexico, however, the mom-and-pop crocodilian farms have been replicating the problem of wildlife laundering so prevalent in wildlife farms in Asia. $^{31}$ Catering to Chinese demand and selling the skins for a pittance of about 40, the farms are selling many more skins and animals than they are licensed to breed or are capable of breeding, sourcing a significant portion of their stock from illegal offtake in the wild. $^{32}$
+
+A wide range of animals, including rare highly-localized reptiles sourced in Mexico, has been seized in Hong Kong or identified by environmental NGOs in Hong Kong markets. These have included the red-lipped arboreal alligator lizard (Abronia lythrochila) endemic to Chiapas and likely Vallarta mud turtles (Kinosternon vogti) endemic to Jalisco. $^{33}$ In appearance, the Vallarta mud turtles and the very similar Jalisco mud turtle (Kinosternon chimalhuaca) resemble the frequently-trafficked, highly-depleted, and now critically-endangered golden coin turtle (Cuora trifasciata) endemic to China that has been extirpated in large segments of its former range. The fact that these rare endemic Mexican species are showing up in Chinese markets shows that wildlife traffickers are now prospecting in Mexico for species similar to those highly desired in China but already depleted in other source areas.
+
+Similar prospecting for replacement species in the genera depleted elsewhere or even just superficially resembling some desired quality of another animal or plant has also emerged in the Mexico-China wildlife trade in marine species, specifically in the case of the Mexican croaker fish totoaba as described below.
+
+Moreover, one of animals seized in Hong Kong was a frog that Chinese authorities sent to the United States for identification. It turned out to be a species not yet scientifically named, $^{34}$ indicating that the scope of activity of Chinese wildlife traffickers in Mexico is likely extensive.
+
+## Marine species
+
+China's role in the trafficking of Mexico's marine species is even more extensive, or at least more known. Unregulated or illegal harvested marine products sold to Chinese buyers include shark fin, sea cucumber, lobster, abalone, shrimp, clams, $^{35}$ oysters, jellyfish, and totoaba swim bladder.
+
+The totoaba poaching in the Gulf of California is perhaps the most notorious case internationally of illegal fishing in Mexico. The fish's swim bladder, maw in Chinese and buche in Spanish, is considered a gourmet specialty in China and made into soup. Mexico's endemic Totoaba macdonaldi is a croaker fish species listed as endangered, the fishing and exports of which are banned in Mexico. Chinese traders began organizing totoaba poaching in Mexico in the 2000s after the giant yellow croaker (Bahaba taipingensis), the swim bladder of which was consumed in China, became depleted in China.
+
+Crucially, however, the totoaba swim bladder, like that of other croaker species, is also a form of investment and speculation in China, with large dried and aged bladders selling for as much as \$60,000 to \$85,000 per kilogram. $^{36}$
+
+The gillnets that the fishermen use to illegally capture the totoaba also entangle a very rare mammal, the vaquita porpoise, which drowns rapidly once snared in the nets. $^{37}$ As of the winter of 2021, scientists have been able to locate only seven or eight of the porpoises. $^{38}$ Though optimistically, those numbers include two new calves, the number is still a 99% collapse in less than a decade due primarily to the totoaba poaching for markets in China. $^{39}$ The gillnets used for
+
+![](images/89dd411e1f80a489420a7051d09d53c835b6d6d6d2234d35c61d0e774bda40aa.jpg)
+
+The gillnets that the fishermen use to illegally capture the totoaba also entangle a very rare mammal, the vaquita porpoise, which drowns rapidly once snared in the nets. As of the winter of 2021, scientists have been able to locate only seven or eight of the porpoises.
+
+the totoaba poaching, as well as for the harvesting of shrimp exported to China, entangle the vaquita, which as a mammal needing to breathe oxygen from air, suffocates in the nets within a few minutes. $^{40}$
+
+Decades-long environmental protection efforts in Mexico failed to stem the totoaba poaching because of a lack of meaningful law enforcement to prevent it, layers of corruption, and failed efforts to identify legal livelihoods for the totoaba poachers. $^{41}$ Mexican organized crime groups — especially the Sinaloa Cartel but also some locally-based in San Felipe and Santa Clara in Baja California — entered the poaching and trafficking several years ago. $^{42}$ As detailed below, the Sinaloa Cartel now plays a critical and dominant role in brokering arrangements between Chinese buyers and local totoaba poachers, totoabaeros. Unwilling to use force, particularly against irate fishermen who want to poach the totoaba, the López Obrador administration has essentially given up on meaningful law enforcement on land and on the seas. $^{43}$
+
+However, even prior to the López Obrador administration, enforcement was inadequate. Neither the Mexican navy nor CONAPESCA were able to enforce either totoaba or other gillnet fisheries regulations, and compensation programs to buy back gillnets or give up fishing licenses did not diminish gillnet poaching either. $^{44}$ Moreover, in some instances enforcement against the totoaba poachers was really just smoke and mirrors by law enforcement authorities. $^{45}$
+
+Overfishing of sharks and poaching of protected shark species for expensive shark fin soup highly desired in China has decimated many shark species around the world. Mexico too is now developing a significant problem in excessive and illegal shark offtake, likely having become a large shark fin exporter by value, if not volume. $^{46}$ Even though finning, i.e., cutting off the fin from a live or dead shark and throwing the carcass into the sea, and shark fin exports are illegal in Mexico, illegal export does take place to East Asia, with Mexican and Hong Kong authorities regularly seizing dried fins from Mexican sharks. $^{47}$ Yet law enforcement seizures likely detect and capture only a small fraction of the illegal exports. $^{48}$ The problem is further compounded by the lack of monitoring of shark fishing by Mexican authorities. Shark meat is consumed locally in Mexico, but enforcement by Mexican authorities of shark offtake quotas is virtually nonexistent and excessive fishing without regarding for shark population sustainability is likely taking place. $^{49}$ Some of this fishing for Mexican markets also serves as a cover for illegal harvesting of shark fins, which are not utilized in Mexico, and trafficking into China. $^{50}$
+
+Even when marine harvesting has been legal, with the approval of the Mexican government, it has often been conducted in a disastrously unsustainable manner to feed massive demand for particular species in China and among Chinese diaspora communities, including in the United States, whose members have also been involved in trafficking sea cucumber from Mexico to China through the U.S. Promoted by the Mexican government in the early 2000s, the commercial fishing of the several sea cucumber species took off in Yucatán and the offshore Campeche Bank about a decade ago $^{51}$ when Chinese brokers started organizing the harvesting for Chinese markets, where sea cucumber is a pricey, sought-after delicacy, with putative TCM qualities. But regulatory management and law enforcement measures could not keep pace and the harvesting turned into a gold-rush madness that ignored quotas and seasonal bans on offtake. $^{52}$ The harvesting also set off violent conflict among fishing communities, maritime banditry, and piracy $^{53}$ as rival groups of fishermen sought to steal each other's increasingly rare catch, and gave rise to village self-defense groups among the indigenous populations. $^{54}$ The fishing led to the collapse of the ecologically vital species, which filters organic debris from oceans. The sea cucumber population in the Campeche Bank went from 20,000 tons in 2009 to 1,900 tons in 2013, and fewer since. $^{55}$ Bans imposed to allow the species to recover were ignored, with some 1,000 sea cucumber poachers operating in the Campeche Bank in 2018. $^{56}$
+
+Legal and illegal harvesting of several species of sea cucumber for Chinese markets or Chinese diaspora communities also takes place along Mexico's Pacific Coast. In the Gulf of California, illegal sea cucumber harvesting has become rampant. $^{57}$ Some of the species are gravely depleted, and in these highly protected species only very small quantities are permitted to be harvested. However, illegal harvesting over the quota and by unlicensed fishers continues to take place. $^{58}$
+
+Sea cucumber aquaculture managed under the UMA system could, on the one hand, supply some of the demand in Asia, but at least some Mexican environmental activists fear that the UMA aquaculture scheme could also serve to disguise illegal wild catch, as is often the case with licensed facilities around the world. $^{59}$
+
+## Organized crime's takeover of Mexico's fisheries
+
+Moreover, my interviews in Mexico (with local legal and illegal fishers, seafood producers and exporters, representatives of fishermen's cooperatives and federations, marine biologists, and environmental NGO representatives) have revealed that even legal fisheries — i.e., fisheries in marine species that can be harvested legally — are being systematically taken over by organized crime groups in Mexico, particularly the Sinaloa Cartel and, to a lesser extent, Cartel Jalisco Nueva Generación (CJNG). In some places, smaller organized crime groups operate. Mexican interlocutors are often most reluctant to name the organized crime group with which they deal, sometimes not knowing which it is, other times fearful to name it in interviews and often referring only to “the narcos” or “big guys.” Nonetheless, most of my interlocutors who were willing to put a name to the organized crime group with which their fishing business had to deal referred to the Sinaloa Cartel. Which criminal actor also depends on the locality. In Baja California Sur, the Sinaloa Cartel mostly won out against a splinter group and its CJNG ally, and has been able to become the dominant criminal actor in fisheries there. In contrast, in Baja California, such as in the large fisheries in the Ensenada-Rosarito area, the two cartels and their local allies and vassal groups compete with each other over extortion of the sport fishing industry and fish sales to restaurants and hotels. $^{60}$ The process of criminal takeover is far from complete or uniform across Mexico.
+
+Not all of the elements of takeover described below will be present in every location. In some, fishers and industry actors in both large and artisanal (i.e., traditional or subsistence) fisheries may merely pay an extortion fee. Elsewhere, they are forced to sell off their harvest to the criminal group which dictates how much they can fish, with processing plants forced to process the fish the criminal group brings into the factory and restaurants forced to buy only from the narcos.
+
+This monopolization is taking place in both high-value species such as abalone, geoduck clams, lobster, scallops such as callo de hacha, and totoaba, which are then sold by the cartels to China as well as to U.S. markets and Mexican restaurants catering to foreign tourists – as well as lower-value species such as smaller clams, species in the swimming crab (jaiba) family, and finfish like corvina, mullet, barred sand bass (verdillo), and ocean whitefish (pierna) sold for
+
+![](images/e284ccb69259268dba2d8da3f0bf5d263af0c95d9b7c25ec35e3167b57f49789.jpg)
+
+The criminal takeover first targeted fishers poaching protected species, such as totoaba, then moved toward extorting and imposing rules on small-scale fishers harvesting low-value seafood, ultimately obligating them to sell only to the cartels.
+
+consumption in Mexico. The criminal takeover first targeted fishers poaching protected species, such as totoaba, then moved toward extorting and imposing rules on small-scale fishers harvesting low-value seafood, ultimately obligating them to sell only to the cartels. Large companies fishing high-value species, particularly for export, were the last to be targeted, but are increasingly under pressure from organized crime groups across Mexico. $^{61}$
+
+This takeover of the fisheries by Mexican criminal groups puts Chinese traders into direct contact with them. Conversely, the interest of Chinese traders in an animal or plant species and efforts to source them in Mexico on a substantial scale for Chinese markets, as in illegal logging, attract the attention of Mexican criminal groups. In turn, these groups seek to penetrate and take over that particular commodity economy to cut in on the China-trade-related profits. For example, exports of the geoduck to China led the Sinaloa Cartel some five years ago to start monopolizing the entire supply chain from production and processing to the point of sales to Chinese brokers. The cartel bought up the geoduck permits issued by CONAPESCA, which were very few, but very large — 200 tons per permit — and then organized fishers to harvest the clam, while preventing anyone else doing so. The cartel also organized illegal harvesting of them, with the harvested seafood then laundered through fishers to whom the Sinaloa Cartel distributed the government fishing permits. $^{62}$
+
+Over the past several years, across the northwestern states of Sinaloa, Sonora, Baja California, and Baja California Sur, organized crime groups, especially the Sinaloa Cartel, have sought to monopolize both legal and illegal fisheries along the entire vertical supply chain. On the Gulf side of Mexico, fisheries in Tamaulipas and Quintana Roo are also under pressure from Mexican organized crime groups. $^{63}$
+
+In the initial stage, they demand an extortion fee from legal and illegal fishers, fishermen's cooperatives, and seafood processing plants, transporters, and exporters. But the organized crime groups go beyond that in their effort to monopolize the fishing industry. They show up in local communities, instructing the communities to sell the fish harvests to the criminal group or risk being killed by the narcos. They dictate to local communities the amount of a particular species to be harvested and delivered to the cartel and punish communities or their representatives who fail to deliver that amount. $^{64}$ Sometimes, they purposefully set the amount beyond what the community can fish, forcing the local fishers to organize other communities to work for the narcos or else face violent retaliation, thus de facto outsourcing the monopolization. $^{65}$ They post cartel monitors (halcones) in the community to ensure that the community does not sell to rival criminal groups or independent purchasers and to brutally punish violators. $^{66}$
+
+With large seafood suppliers or local communities, they may set the purchasing price or processing fees above or below market prices, depending how confident the criminals assess their control of local fishers and suppliers. When they try to court the community, they may pay better than market prices. $^{67}$ For example, during their takeover of a scallop-harvesting community in Baja California Sur, the Sinaloa Cartel began by paying about \$22 per kilogram (above the market price of \$19.5 per kilogram) and bought up the community's entire seasonal harvest of 22 tons. $^{68}$ When the organized crime groups believe they have a strong control over the fishing cooperative, the price they pay may drop to only 60-75\% of what the market value would be. $^{69}$ One seafood processing plant operator in Baja California Sur whose son was kidnapped by the narcos to force him to process the cartel's seafood was paid by the criminal group only one half of the market price for processing. $^{70}$
+
+In places, such as Baja California, Sinaloa, and Sonora, the criminal groups are also paying small-scale fishers in drugs, such as methamphetamine, instead of cash. $^{71}$ Such a practice creates both disastrous public health effects, turning the fishers into drug users, and further entangles them in criminality as they themselves have to sell the drug in local retail markets to generate cash for their families.
+
+In some cases, criminal groups have brought fishers from elsewhere in Mexico to participate in an illegal fishing bonanza in a particular locality: For example, the Sinaloa Cartel has long been bringing fishers from Sinaloa to poach totoaba off San Felipe, Baja California. $^{72}$ Elsewhere, criminal groups brought into a fishing locality seafood harvested elsewhere, including abroad, to launder it through local broker and processing channels. For example, when Yucatán sea cucumber harvesting started tapering off as the population crashed due to overharvesting, organized crime groups operating in Yucatán started bringing to their seafood collection hubs fish illegally caught in Costa Rica and elsewhere in Latin America. $^{73}$
+
+The Sinaloa Cartel has also orchestrated shrimp poaching during the period when legal shrimping is banned to allow the species to recover. In Sinaloa and Sonora, the cartel organized legal and illegal fishers with some 200 to 300 hundred pangas for illegal shrimp harvesting in the Gulf of California. $^{74}$ The cartel would then sell lesser quality shrimp in Mexico and bring top-quality shrimp for the U.S. market to U.S. government-certified processing plants. It would force the processing plants to issue fake documents that the shrimp were caught legally during the permitted fishing season. $^{75}$
+
+Overall, at processing plants, organized crime groups demand that the processing plant accept and process marine products bought in by the cartel. The cartels bring the seafood to Mexican (and U.S.) government-certified processing plants when dealing with high-value fish meat, scallops, or oysters requiring freezing, complex processing, and provenance and sanitary documents. A refusal by a processing plant to accept seafood brought in by Mexican organized crime groups would lead to the plant being burned down or its employees or owners killed. $^{76}$ As in local fishing communities, the cartels post monitors in the processing plants to watch the processing and maintain detailed accounting to estimate fees for the cartels. In some cases, the Sinaloa Cartel has allegedly rented the entire processing plant for itself. $^{77}$
+
+In Baja California Sur, the Sinaloa Cartel is allegedly in the process of opening its own formal legal seafood processing plant and company and hiring people for its operations. $^{78}$
+
+For marine products that do not require sophisticated processing or in which any trade is prohibited, such as totoaba buche, sea cucumber, and jellyfish, the criminal groups may themselves also organize primitive processing in rudimentary facilities in fishers' ports, including freezing, drying, or brining. Such self-processing also takes place in products the cartels sell in Mexico, such as undersized lobster or shrimp.
+
+The narcos also force restaurants to source fish from them, in addition to collecting extortion fees. $^{79}$ The criminal groups prohibit the restaurants from buying fish from their criminal rivals or independent legal seafood sellers, seeking to create a monopoly at the restaurant-supplier interface.
+
+Criminal groups are also establishing presence and control in key transportation hubs and routes, such as in the port of San Carlos in Baja California Sur where illegally-harvested fish is collected and air strips for drug trafficking are present. The same holds along highways from Baja California Sur north to Ensenada, Rosarito, Mexicali, and Tijuana where criminal groups charge fees to trucks carrying seafood. $^{80}$
+
+Lastly, criminal groups sell fuel stolen from pipelines to big industrial fishing ships as well as the pangas of small-scale fishers. In Sinaloa, it is the Sinaloa Cartel that dominates illegal fuel distribution and its sale to the fishing industry. In Tamaulipas, it is the Gulf Cartel. $^{81}$
+
+The Sinaloa Cartel frequently portrays its takeover of the fisheries as “bringing order” to local communities. To encourage sustainable harvesting of some fish species, they sometimes set harvest quotas and enforce them, punishing fishermen who take excess fish. In other instances, as in the totoaba fishery, they promote extensive illegal offtake.
+
+They also use their directives as to how much fish local communities can harvest and buy and from whom to achieve other objectives, such as to promote their drug trade. In one fishing community in Baja California Sur, the Sinaloa Cartel directed the local fishers' cooperative to buy no more than three kilograms of scallops from local drug users. The set limit was to ensure that the scallops would not be depleted. But the cartel's directive that the cooperative buy some scallop harvests from the drug users and thus provide them with income for drug purchases was also meant to promote the sustainability of the cartel's drug retail. $^{82}$
+
+Long-known for building political capital with local communities and politicians and government officials, the Sinaloa Cartel has focused intently on delivering governance and regulatory services and dispute resolution mechanisms across Mexico. $^{83}$ In one fishing community in Baja California Sur which the Sinaloa Cartel took over, it posted some seven cartel men into the village, who rented two houses right next to the municipal police station. When a small theft occurred in the village, the municipal police directed the person who came to report it to the narcos next door to identify the culprit and sort it out. $^{84}$ (But the presence of the narcos has also had chilling effects on the village, with people not daring to congregate outside in the streets and hold fiestas in public). $^{85}$
+
+Allegedly, the Sinaloa Cartel has also approached Mexican state officials and officials of CONAPESCA to offer them that it will enforce the compliance with fishing licenses and quotas, something that it sometimes does because of corruption and inadequate government resources. $^{86}$
+
+In other cases, interviewed fishers suggested criminal groups established corrupt deals with local authorities to keep away CONAPESCA inspectors or SEMAR units so unregulated fishing could take place. $^{87}$
+
+Not just illegal, but also legal fishers and fishing cooperatives and federations and large seafood businesses in Mexico feel powerless against the pressure from organized crime and live in fear. Their denouncements to Mexican government authorities of the extortion and takeover efforts by organized crime have often not been met with any robust support or law enforcement action from the Mexican government – the approached law enforcement and government officials emphasizing that they were tied up dealing with COVID-19 or instructed by the López Obrador administration not to resort to the use of visible force that would cause casualties. $^{88}$ Sometimes, after their complaints to Mexican authorities, they faced violent threats, raising in their minds the possibility of extensive government-criminal collusion and corruption. $^{89}$ One seafood operator whom the Sinaloa Cartel was forcing to process cartel-brought seafood was told by the cartel representatives that the Mexican government would not act against the cartel muscling its way into the seafood processing industry because the cartel invested in López Obrador's MORENA party during the June 2021 midterm elections. $^{90}$ MORENA won the elections in many Mexican states with large fishing industries, including Baja California, Baja California Sur, and Sinaloa. $^{91}$ The CONAPESCA commissioner installed by the López Obrador administration, Octavio Almada Palafox, a political appointee with no prior knowledge of the fishing industry, has been reluctant to engage in dialogue with fishers and other fishing industry representatives. $^{92}$
+
+Large seafood businesses believe they can either work with the narcos, sell their business and move away, or perhaps hire a private security company. As a high-level official of a Mexican fishermen's federation put it, "[b]y far the healthiest choice is to comply with the narcos."93 Small-scale fishers often do not have the option of packing up and moving elsewhere, even though violence-driven internal displacement in Mexico is extensive. Some contemplate creating
+
+![](images/769cab04f50d41a87e712503b01def6514ee0bb0986c7a3a887f11d25cc15a8c.jpg)
+
+Large seafood businesses believe they can either work with the narcos, sell their business and move away, or perhaps hire a private security company. As a high-level official of a Mexican fishermen's federation put it, '[b]y far the healthiest choice is to comply with the narcos.'
+
+armed self-defense groups, as various Mexican communities have done, $^{94}$ but such a response obviously entails enormous risks of violent retaliation by organized crime and possibly a punitive government response. $^{95}$
+
+Moreover, unity among the fisheries targeted by organized crime is being weakened by many factors, including a new tax law proposed by the López Obrador administration which would make only people who are not members of a business association, such as a fishing cooperative or federation, eligible for tax benefits. $^{96}$ Yet the potential tax benefit of some \$340 would not offset the loss of bargaining, protection, and mobilization power, even if provided by the organized crime groups, that being in a fishermen's cooperative bestows.
+
+## The evolving relationship between Mexican organized crime and Chinese traders
+
+The presence and multifaceted networks of Chinese wildlife traders and traffickers in Mexico are expanding, but the relationship between Chinese wildlife traders and Mexican poachers and organized crime groups has undergone a significant change.
+
+Wildlife smuggling, like trafficking in other commodities, is also facilitated by the growing Chinese investments in and presence of Chinese diaspora communities in critical infrastructure and transportation nodes, such as Mexicali, and ports, such as Veracruz. Chinese legal businesses, as well as illicit networks, have developed a strong presence in Mexico's large ports of Veracruz in the state of Veracruz and Tampico in the state of Tamaulipas on the Atlantic side. The latter port is partially owned by Chinese companies. In Mexicali, Chinese mafia cells have been involved in legal and illegal fishing and as well as synthetic opioid precursor smuggling. $^{97}$ Both sets of actors often invest strongly in courting local Mexican officials and developing political capital with them and with other local prominent politicians and businessmen. $^{98}$
+
+But until the recent effort by Mexican organized crime groups to take over fisheries in Mexico, Chinese traders often directly interacted with Mexican fishers. That was the case during the first years of sea cucumber harvesting off Yucatán and initially in abalone and totoaba poaching on the Pacific Coast. The Chinese traders would operate in the fishing towns and hand out contracts to local fishers for marine species the traders sought. Sea cucumber harvesters and totoaba and abalone poachers would then sell directly to the traders. The Chinese traders organized transportation to collection hubs and ports, such as Mexicali, and then the transportation and trafficking to China. Some of the products, such as totoaba maw or abalone, would be smuggled to the United States, some sold among Chinese diaspora consumers in the U.S. and others shipped on to China. $^{99}$
+
+That direct connection between Chinese traders and Mexican fishers is now being altered by Mexican criminal groups. The Mexican criminal groups have pushed out Chinese traders from direct purchases from local fishermen in an effort to monopolize the illegal and legal fishing industries. The totoaba and abalone poachers are now compelled to sell to Mexican criminal groups who then sell to the Chinese brokers. $^{100}$ This insertion of criminal groups into the seafood chains also developed in Yucatán sea cucumber harvesting. Although the sea cucumber has not recovered and ongoing poaching produces only a small harvest, Mexican organized crime groups in Yucatán now buy from local fishers and themselves sell to Chinese brokers, who are no longer allowed to buy directly from the fishers. $^{101}$
+
+Mexican organized crime groups also appear to have established their own warehouses for marine products, such as totoaba maw. Totoaba maw storage and processing is no longer the exclusive domain of Chinese traders and traffickers as it used to be a decade or so ago. $^{102}$ Totoaba maw are moved internally within Mexico and stored in places such as Cancún, San Luis Potosí, Monterrey, and Mexico City, before being shipped to the United States or China. $^{103}$
+
+Nonetheless, Mexican criminal groups do not appear to have muscled their way into trafficking and transport beyond Mexico. That part of the trade remains under the control of the Chinese traders. While Chinese brokers are present across Mexico, only in one instance were my interlocutors aware of the presence of Mexican crime group representatives in China. Specifically, the Mexican organized crime group that muscled its way into Yucatán sea cucumber harvesting was believed to have an office in China. $^{104}$
+
+Mexican organized crime groups now operate from the get-go and deal with Chinese brokers to capitalize on new seafood commodities highly desired in Chinese markets. One such commodity is jellyfish, a desirable delicacy in China. Over the past five years, the area around Santa Clara, Baja California, long a totoaba poaching hub and a key drug transshipment center, has started experiencing jellyfish blooms. Noticed by Chinese brokers, the jellyfish harvesting there has by some estimates become even more profitable than shrimp fishing. $^{105}$ The Sinaloa Cartel is instructing local fishers when and where they can catch the jellyfish and taxing them. It is also encouraging fishers from elsewhere on the Baja California peninsula and other parts of Mexico, such as Sinaloa, to partake in the fishing, providing them with income. During the jellyfish bloom period, the human population of Santa Clara swells with temporary workers from 5,000 to 15,000. On land, the jellyfish is dried and salted or packaged into sealed bags with brine and sorted for export, with the Sinaloa Cartel having “accountants” inside the processing plants to record the amounts of processed jellyfish and assess payment fees to the cartel, about 15% of sale value in fall 2021. $^{106}$ Some 1,500 tons of jellyfish were estimated to be exported to China at that time, and new processing plants were being built. $^{107}$
+
+Some Chinese jellyfish exporters, such as in Sinaloa, have used their seafood exports as cover for bringing fentanyl and meth precursors into Mexico. $^{108}$
+
+Crucially, many of the Chinese seafood traders with whom the Mexican criminal groups deal sell marine species authorized for harvesting and transport, or a mix of legal and illegal commodities and operate other businesses in Mexico such as supermarkets and restaurants. While some of the Chinese brokers seek out illegal commodities, such as totoaba, and purposefully launder money and transfer value for Mexican drug cartels, others may not even know they are dealing with Mexican organized crime groups. Several interviewees from large Mexican seafood exporters and fishermen's federation officials emphasized that Chinese buyers “are keen to have legal papers for the export of the fish from Mexico” and documents for provenance of the seafood, though “they don’t care how the papers were obtained, whether they are genuine or fake, as long as they get some papers to make it look OK with authorities.” $^{109}$
+
+Large Mexican seafood businesses, particularly those dealing with brokers based in China, are still able to deal with the Chinese brokers directly because the state of the criminal takeover of fisheries varies across Mexico and may also vary with local decisionmaking of the particular criminal group. Moreover, some large Mexican seafood exporters may not yet have experienced pressure from criminal groups or are so far only asked to pay extortion fees. Others may experience far more complex demands from the organized crime group, such as placing their processing plants at the full disposal of the narcos. Many more Chinese seafood traders are present in Baja California than in Baja California Sur.
+
+Sometimes Chinese criminal groups also operate in Mexico, particularly in areas near the U.S. border and where no criminal group has established exclusive territorial control, with violent contestation perhaps still underway. One fisherman from Baja California, for example, described his friend being tortured to death in Ensenada by what he called “the Chinese mafia” for failing to deliver the promised amount of illegally harvested and very expensive abalone, a family of marine species, some of which are in collapse around Mexico due to overharvesting. $^{110}$
+
+Finally, Chinese fishing fleets along Mexico's exclusive economic zone (EEZ) also pose substantial illegal fishing threats, including to apex predators crucial for the health of a marine ecosystem, like various sharks, and other large pelagic species, such as manta rays, both of which are highly desired by Chinese consumers. The size of the Chinese fishing flotillas and the extent of their penetration into Mexican waters do not appear anywhere near as large as in Ecuador, Argentina, or Chile, for example, where Chinese fishing flotillas several-hundred-ships-strong can fish out stocks and devastate entire marine ecosystems in a matter of hours. However, Mexico's monitoring of the EEZ is minimal. SEMAR's on-sea capacity has declined dramatically because its personnel are tied up in anti-crime and counternarcotics operations on land. Even though SEMAR has several brand-new ships, it has little crew or gas for them. Many of its naval assets remain anchored in Mexican ports without any foreseeable prospect of at-sea deployment. $^{111}$ Representatives of Mexican fishers' cooperatives and federations feel that their requests over the course of many years that the Mexican government better monitor the Chinese fishing fleets and act against violations of the EEZ have not produced sufficient government response. $^{112}$
+
+## III. MONEY LAUNDERING AND VALUE TRANSFER
+
+Mexico-China wildlife trade is also increasingly becoming a mechanism to transfer value in illicit economies and bypass anti-money-laundering mechanisms in U.S. and Mexican banks and China's capital flight controls. China's controls prevent Chinese citizens from moving more than the equivalent of \$50,000 from China abroad per year. $^{113}$ Drazen Jorgic's December 2020 Reuters investigation provides great detail into the Chinese informal banking systems that operate in Mexico and launder drug cartels' money, increasingly displacing Colombian and Mexican money launderers. $^{114}$ Some of the launderers use wildlife export businesses, such as in jellyfish, as fronts.
+
+However, the use of wildlife for money laundering and illicit value transfer between Mexican and Chinese criminal networks goes beyond that. Nor is the issue merely that of money from illegal wildlife trade or illegal logging being laundered through banking or trade-based systems – the latter of which is something to which the world's influential countries, including at G-7 and the United Nations, are increasingly paying attention. $^{115}$
+
+More and more in Mexico, totoaba buche, other marine and terrestrial products, and timber are used by the cartels to pay for precursors necessary to manufacture illicit drugs. $^{116}$ The huge markup that wildlife products register between source and retail makes them an ideal tool of money laundering and value transfer. An amount of sea cucumber for which a Mexican fisher will be paid 1 will sell in Hong Kong for 70. $^{117}$ Beyond making the illegal trade lucrative, the enormous margins allow for hiding illicit money.
+
+Such value transfer across two illicit economies goes a step beyond one trafficking network smuggling multiple commodities and utilizing the same logistical routes and corruption networks, as, for example, detected in the 2020 U.S. Operation Apex that targeted Chinese nationals in the United States smuggling totoaba maw and shark fins from Mexico as well as drugs, diamonds, and precious metals. $^{118}$ It involves payments for illegal commodities and money laundering.
+
+Further research is needed to better understand what share of money laundering the wildlife-precursor barter accounts for. $^{119}$ The amount of value generated by wildlife commodities, likely in the tens of millions of dollars, may come close to what Mexican cartels owe to Chinese brokers for precursors — likely also in the tens of millions of dollars. Nonetheless, wildlife barter is not likely to displace other methods of money laundering and value transfer. But the increasing role of this payment method can devastate natural ecosystems and biodiversity in Mexico, as the cartels seek to legally and illegally harvest more and more of a wider and wider range of animal and plant species to pay for drug precursors.
+
+Similarly in South Africa, Chinese triads pay local gangs for abalone poached around Cape Town with heroin. $^{120}$ Such wildlife-precursor barter has not yet been identified in Southeast Asia and the Pacific, $^{121}$ but, given the immense scale of poaching and wildlife trafficking there, it is something to watch for.
+
+# IV. CHINA'S DIPLOMACY AND LAW ENFORCEMENT COOPERATION WITH MEXICO AGAINST WILDLIFE TRAFFICKING
+
+Law enforcement cooperation of any kind has historically played a very small role in the Mexico-China relationship and remains minimal. China mostly disavows responsibility for poaching in Mexico and trafficking to China, assigning responsibility for environmental law enforcement to Mexico. Only under intense international pressure – specifically, in the case of totoaba maw trafficking – has China taken limited interdiction actions to stem the flow of poached wildlife from Mexico to China. Yet such interdiction operations – ideally coupled with meaningful, and so far lacking, intelligence sharing with Mexico – need to be sustained and expanded to other trafficked species.
+
+However, the Mexican government has not made significant efforts to engage China on law enforcement cooperation, including regarding wildlife trafficking. The Mexico-China relationship has centered on economic cooperation and rivalry, requiring complex diplomatic balancing. Although Mexico has tried to preserve a good relationship with China, it has often viewed China as an economic competitor. $^{122}$ In other ways, however, Mexico has sought to preserve a positive and easy relationship with China, traditionally not commenting on human rights abuses in China. For the López Obrador administration, such silence is part and parcel of its emphasis on sovereignty and avoidance of criticizing foreign leaders in general. $^{123}$
+
+## Interdiction and crackdown on retail markets
+
+China's dealing with Mexico on wildlife trafficking issues has centered mostly on totoaba smuggling since that issue, and the related extinction-driving bycatch of the vaquita, has generated most international visibility and pressure on the governments of both Mexico and China. Even so, when Mexican diplomats started raising the problem of demand for the totoaba maw in China, following the lead of international and Mexican environmental activists, Chinese government authorities were at first completely unresponsive. $^{124}$
+
+Before China's recent undermining of Hong Kong's autonomy, which may gut Hong Kong's ability to cooperate with international law enforcement counterparts, the strongest Mexico-China law enforcement cooperation centered on Hong Kong's customs, especially with respect to totoaba and other wildlife commodity smuggling. $^{125}$ With persistent engagement from Mexican diplomats, Chinese customs officials would occasionally even allow international environmental NGOs to access seized wildlife products coming from Mexico, at least for visual records, if not sample collection. $^{126}$ Yet at the same time, even in Hong Kong, with its far greater focus on wildlife trade enforcement, the customs authorities would give seized wildlife products to China's TCM schools and pharmaceutical companies for experimentation to identify potential commercial uses. $^{127}$
+
+Mexico and China have never mounted any joint wildlife trafficking investigations and law enforcement operations. However, when faced with substantial pressure from the Enrique Peña Nieto administration, the U.S. government, and the international environmental community, China finally undertook several interdiction operations against totoaba maw smugglers and retailers in 2018, following several large seizures by Chinese customs officials. The most visible and extensive of the interdiction operations took place in December 2018, the culmination of China's undercover operation "SY608." Fueled by raids against retailers of totoaba maw in cities across the Guangdong and Guangxi provinces, the interdiction operation led to the arrest of 16 totoaba traders. $^{128}$ With the urging of Mexican diplomats, Chinese authorities also increased the penalties for totoaba smuggling. $^{129}$
+
+Chinese totoaba traffickers adapted by moving the sales of the maw away from open displays and shop windows to under-the-counter private cellars and online retail through private communication platforms. $^{130}$ Unlike open displays and advertisements for totoaba maw, such clandestine retails make intelligence gathering and interdiction operations more difficult, requiring controlled delivery and undercover sting operations. Moreover, law enforcement authorities often struggle to distinguish totoaba maw from the dried bladder of other croaker species that are increasingly being fished around the world, including off Bangladesh, India, Papua New Guinea, Brazil, and French Guiana, for the Chinese market. $^{131}$ Sustainable practices and effective monitoring of offtake on new harvests of croaker fish species are rare.
+
+Seizures of smuggled totoaba have continued in China, indicating that trafficking continues. In June 2020, Chinese authorities made the biggest seizure of totoaba maw in over two decades, worth over \$3 million. $^{132}$ Another, though far smaller,
+
+seizure by Hong Kong customs took place in July 2021. $^{133}$ However, it does not appear that the interdiction against totoaba retailers and smuggling networks has been maintained outside of port and airport inspections.
+
+![](images/cc76d851f50ac9dae771c71dfa7dd4ef7221fc6bdab5625cd6e513ab3fd26534.jpg)
+
+Yet there are inherent limitations to relying on seizures alone. Traffickers easily adapt in myriad ways, including by ordering a greater amount of wildlife product and thus inducing the poaching
+
+Traffickers easily adapt in myriad ways... Wildlife seizures alone thus can actually have counterproductive effects when they do not lead to the dismantling of entire trafficking networks.
+
+of a greater number of animals from the wild. Wildlife seizures alone thus can actually have counterproductive effects when they do not lead to the dismantling of entire trafficking networks. $^{134}$ But as U.S. interdiction operations against totoaba poachers showed over the past decade, many of the Chinese totoaba poaching networks in the United States through which smuggling routes sometimes run are fairly small and atomized. Which means that when even a whole network is taken out outside of China, it can be fairly easily replaced. $^{135}$ Sustaining interdiction operations is therefore essential.
+
+## China's public narratives regarding Mexico-linked wildlife trafficking
+
+China's public messaging related to Mexican/international wildlife trafficking is largely defensive, focused primarily on deflecting international criticism and rarely (if ever) acknowledging China's own role in perpetuating Mexican/illicit wildlife trafficking.
+
+Even though China continues to seize totoaba shipments in Chinese ports and did mount interdiction actions against Chinese retailers several years ago, its public pronouncements minimally feature wildlife trafficking sourced from Mexico. Chinese officials often rebut claims by the United States or Mexico, or international NGOs. For example, when in September 2020 the Trump administration released a "China's Environmental Abuses Fact Sheet," $^{136}$ in which it accused China of being "indisputably the world's largest consumer of legal and illegal wildlife," $^{137}$ China responded with its own October 2020 "Fact Sheet on Environmental Damage by the US," $^{138}$ in which, citing data from the United Nations Office on Drugs and Crime (UNODC), it called the United States a leading destination and consumer of wildlife trafficking, highlighting, for example, the smuggling into the U.S. of "MacDonald's weakfish," i.e., Mexico's totoaba (Totoaba macdonaldi). $^{139}$ It did not mention that the U.S. was a transshipment route for the totoaba to China. Instead, Chinese government-linked media, such as People's Daily, the official newspaper of the Central Committee of the Chinese Communist Party and the largest newspaper group in China, characterized U.S. claims as "slander" (诬蔑) and a "big joke" (大笑话). $^{140}$ It also accused the United States of being hypocritical and turning a blind eye to its own environmental wrongdoing. $^{141}$ To demonstrate U.S. culpability for wildlife trafficking, China's counter-fact sheet cites UNODC data that between 2005 and 2018 the U.S. accounted for 38.5% of global wildlife seizures, not mentioning the possibility that the high U.S. seizure rate may reflect far greater willingness by the U.S. than by other countries to dedicate law enforcement assets to countering wildlife trafficking. The level of seizures is thus not simply an indicator of the extent of contraband flows but it is potentially also an indicator of the intensity of law enforcement.
+
+Chinese government officials and media, the vast majority linked to and controlled by the government, broadly emphasize China's commitment to and successes and progress in biodiversity conservation and toward President Xi Jinping's concept of an "ecological civilization" for "balanced, sustainable development." $^{142}$ They also brag about any praise and international recognition that China has garnered for its environmental efforts at home or abroad, while downplaying or dismissing criticism. Statements by Chinese government officials and research institutes linked to the Chinese government also highlight China's international cooperation in the effort to halt wildlife trafficking. For example, in early 2020, Chang Jiwen, the Vice Director General of the Research Institute for Resources and Environment Policies of the Development Research Center of the State Council, emphasized international cooperation against wildlife trafficking among his seven detailed recommendations for how to combat wildlife trafficking in China, listing also ways to address inaction and delays in China's law enforcement. $^{143}$ In highlighting China's successes toward biodiversity conservation, Chinese media such as China Daily also emphasize China's positive role in sharing its environmental conservation knowledge and experiences with other developing countries as they seek to achieve economic growth like China did. $^{144}$
+
+## Anti-money laundering efforts
+
+As of February 2022, China has not collaborated with Mexico in financial intelligence and anti-money laundering efforts to counter illicit wildlife flows from Mexico and their proceeds. $^{145}$ In 2019 and 2020, the U.S. Department of Treasury and EUROPOL characterized Chinese money launderers as “key threats.” $^{146}$ The role of Chinese money launderers appears to be growing and has extended beyond Asia to Mexico, Colombia, and Central America. $^{147}$ Relying on both trade-based laundering and cryptocurrencies such as Monero, Bitcoin, and Ethereum, Chinese launderers also move money in and out of the Chinese financial and banking systems, despite strict controls on capital outflows. Preventing capital outflows, in which Chinese organized crime groups play an important role, has long been a top priority focus of the Chinese government and law enforcement. $^{148}$
+
+In the past two years, China has strongly intensified its law enforcement measures against money laundering. But far from casting a broad net against money laundering overall, the predominant focus of China's law enforcement is aimed more narrowly on stopping Chinese capital flight, including through online gambling both in China's mainland, Hong Kong, and Macau, and in the Southeast Asia and the Pacific. Indeed, the majority of Chinese law enforcement liaison officials in Southeast Asia are dedicated to that
+
+![](images/acff7be12fe61ee6a804623daf9abab022de6574441a61c30fbfa1321f7a0d89.jpg)
+
+In the past two years, China has strongly intensified its law enforcement measures against money laundering. But far from casting a broad net against money laundering overall, the predominant focus of China's law enforcement is aimed more narrowly on stopping Chinese capital flight.
+
+issue. $^{149}$ To the extent that China collaborates in such money laundering efforts with multilateral law enforcement institutions, it avoids working with any of the “Five Eyes” intelligence-sharing countries (the United States, United Kingdom, Canada, Australia, and New Zealand), if such operations involve the banking systems in China or Hong Kong. $^{150}$ In its own domestic legislation, China is revising its legal code to incorporate money laundering related to wildlife trafficking. $^{151}$ However, these domestic anti-money laundering efforts in China have not yet expanded into China’s willingness to cooperate with Mexico or the U.S. in any extensive international collaborative investigations and prosecutions regarding wildlife crime. $^{152}$
+
+The geopolitical and functional selectivity of China's anti-money laundering efforts, however, also needs to be understood within the overall limitations of China's anti-money laundering capacities, which in terms of resources and procedures still are far behind Western anti-money laundering laws and regulations in the financial and banking sectors. As a former law enforcement official put, “[f]rankly, just getting China up to Western AML standards on paper alone is a big lift.” $^{153}$
+
+## Trilateral anti-wildlife crime efforts
+
+For a while, the U.S. and Mexican governments also sought to persuade the Chinese government to engage in trilateral discussions about how to counter totoaba trafficking, much of which still flows through the United States. $^{154}$ However, the government of China resisted making the technical discussion a permanent trilateral engagement forum, let alone expanding it to include wildlife products trafficked from China to Mexico. China's strong preference was to maintain any engagement on China-Mexico wildlife trafficking as informal case-by-case discussions so as not to remain bound by any standing protocols or cooperation commitments. $^{155}$ U.S.-Mexico-China trilateral diplomatic engagement on totoaba trafficking remains moribund.
+
+Meanwhile, under López Obrador, the Mexican government's diplomatic priorities regarding totoaba trafficking have shifted. These efforts have focused on preventing Mexico from being placed under international sanctions as a result of abject failure to act against totoaba poaching and prevent the vaquita bycatch, as indicated by the 2019 conference of parties of the Convention on International Trade in Endangered Species (CITES). $^{156}$ Mexico also sought to have CITES remove the totoaba from the endangered species list, so that the species could be legally fished and exported. $^{157}$ That would remove responsibility for the Mexican government to take enforcement actions against the poachers.
+
+In March 2022, CITES approved legal trade and exports of totoaba meat from farm-raised totoabas only, with fishing of wild totoaba and any trade in the buche (including from farm-raised fish) remaining illegal. $^{158}$ However, although an expanding totoaba aquaculture industry could potentially hire a few totoaba poachers, the new CITES approval is unlikely to significantly reduce totoaba poaching and thus, as long as gillnets are used, the extinction threat to the vaquita. The market in the highly valuable swim bladder will remain illegal and thus supplied through illegal fishing. Moreover, even if one day a legal market in the totoaba swim bladder were established, aquaculture could not compete with buche from (legally or illegally) wild-caught females for years to come as the buche's worth depends on size, and thus is a function of the age of the fish. But a legal market in buche (such as from farm-raised fish) could serve to launder swim bladders from illegally-caught totoaba. Under the current rule where only meat from farm-raised totoaba can be exported, the farms are to destroy the buche from their fish stocks so they do not leak into the illegal market.
+
+Moreover, China's interdiction efforts against totoaba trafficking were an exception within otherwise essentially nonexistent China-Mexico cooperation against wildlife trafficking. As a China-based expert on wildlife trafficking and China's enforcement put to me during an interview, "totoaba in China became a political issue. That's why there was enforcement, at least for a while." $^{159}$ The totoaba story shows that if under intense international pressure, China can respond, at least temporarily, to clamp down on its retail markets in illegal commodities. But that temporary focus did not expand into broader cooperation against wildlife trafficking. China-Mexico diplomatic engagement on countering wildlife trafficking from Mexico to China remains "very slow, complicated, unwieldy, and far from robust." $^{160}$ Maintaining international pressure on China to shut down its problematic retail markets is thus important.
+
+However, China's 2018 willingness to mount raids against the illegal totoaba retail came at a time when China was still hoping to use its collaboration against wildlife trafficking as a mechanism to reduce U.S.-China tensions. When the sought-after improvement in the relationship did not happen even under the Biden administration, China's willingness to cooperate on international wildlife trafficking issues weakened. $^{161}$
+
+## Legal assistance
+
+China-Mexico law enforcement cooperation also continues to be plagued by language difficulties, with a limited number of Mexican and Chinese justice and law enforcement officials speaking both Chinese and Spanish, and legal challenges, with the legal systems of both countries not making international cooperation easy. Thus, engagement on legal assistance issues between Mexico and China has been sporadic and piecemeal, with both countries lacking a full picture of the issue at hand and a consolidated institutional engagement channel. In both countries, various agencies and departments hold back information, stall, and bypass other departments. $^{162}$ Mexico's attorney general's office has historically shared little information with the Mexican Ministry of Foreign Affairs, even about issues on which the attorney general's office approached the government of China – a bureaucratic disconnect that has only grown more intense during the López Obrador administration. $^{163}$
+
+In contrast, U.S.-Mexico cooperation against wildlife trafficking has been far broader, encompassing many more species. For example, while China has not focused on sea cucumber or abalone trafficking to China, both have been a strong focus of U.S. wildlife regulation and enforcement efforts, even as they face enforcement challenges within Mexico. $^{164}$ Several years ago, the U.S. government identified the illegal and unsustainable flows and imposed restrictions on imports of sea cucumber from Mexico's Pacific coast and demanded certification of legal harvesting. CONAPESCA certifies that a producer and exporter comply with all permit and quota requirements, documents that are required for the sea cucumbers to legally enter the United States. U.S. border inspectors also assess whether the sea cucumbers entering the U.S. are, in fact, from the specific species permitted for U.S. imports. However, many of my interlocutors assessed that corruption, sometimes induced at the narcos' gunpoint, pervades CONAPESCA and the certification process. $^{165}$ But even though the regulatory and law enforcement process is imperfect, it shows a will on the part of the U.S. to take co-responsibility for suppressing illegal and unsustainable harvesting of wildlife species in Mexico. This is in striking contrast to China's attitudes.
+
+# V. "FIX IT YOURSELF, MEXICO": ENVIRONMENTAL REGULATION ENFORCEMENT, CAPABILITIES, AND CHALLENGES IN MEXICO
+
+The dominant position of the Chinese government has been that it is up to the Mexican government to enforce its laws within Mexico and to counter poaching and trafficking there; it is not up to China. $^{166}$
+
+But like in the drug trade, that prescription faces many challenges. Even before the López Obrador administration, many of the environmental agencies were weak, lacking mandates, rangers, and resources for enforcement against environmental crimes, and suffering budget shortcuts. For example, between 2015 and 2019, during the Enrique Peña Nieto administration, the Mexican Secretariat of Environment and Natural Resources (Secretaría de Medio Ambiente y Recursos
+
+![](images/56f1e51ce9049c8ad484fab95b418dff11cd45a57e2ce61a45d5b75d7191741a.jpg)
+
+The country's traditionally weak environmental regulation enforcement has become essentially non-existent in the López Obrador government which has further eviscerated the budgetary and personnel resources of government regulatory environmental agencies.
+
+Naturales, SEMARNAT) suffered a 61% budget cut. Many Mexican environmental agencies were also pervaded by corruption. $^{167}$ The country's traditionally weak environmental regulation enforcement has become essentially non-existent in the López Obrador government which has further eviscerated the budgetary and personnel resources of government regulatory environmental agencies. $^{168}$ For example, in June 2020, the López Obrador administration cut by 75% the budget of La Comisión Nacional de Áreas Naturales Protegidas (CONANP), the Mexican equivalent of the U.S. National Park Service and in charge of 182 natural areas covering 22% of the country's territory. $^{169}$ Beyond the immediate resulting layoff of 200 employees, further cuts were instituted. Other important Mexican governmental environmental agencies including the Comisión Nacional Forestal (National Forestry Commission or CONAFOR) have also seen large reductions to their budgets. $^{170}$
+
+These systemic problems are further compounded by the attitude of the López Obrador administration not to resort to any law enforcement action that would require the use of visible, especially lethal, force on the part of Mexican law enforcement agencies, including by the army, navy, and heavily militarized National Guard, particularly if they confront angry mobs, such as protesting totoaba poachers, any other protestors, or even armed militias. $^{171}$ It is part and parcel of the so-called “hugs, not bullets” security strategy of the Mexican government that has severely scaled back law enforcement action and instead tries to rely on the use of socioeconomic policies to address crime. $^{172}$ Moreover, while nominally handing much of the responsibility for anti-crime operations to municipal and state authorities, the López Obrador administration also severely cut their budgets, even though those law enforcement forces lacked adequate resources and capacities to start with. $^{173}$ This has meant that no meaningful enforcement actions against totoaba poachers have been mounted on the sea or land since late 2020, as Mexican law enforcement forces have sought to avoid violent anti-government riots by totoaba poachers. Protesting totoaba poachers burned government boats, offices, and cars and stole weapons during riots that occurred in 2020 and before. $^{174}$ And when for that reason in December 2020 the Mexican government also suspended the operations of two key environmental NGOs — Sea Shepherd and Museo de la Ballena y Ciencias del Mar (Museum of the Whale and Science of the Sea), the two principal entities pulling out the gillnets that entangle the vaquita — poaching, including in the vaquita's protected areas, exploded unimpeded. $^{175}$ In the fall of 2021, the Mexican government signed a new agreement with the two NGOs that permitted them to return to patrolling the vaquita's range, though the Mexican government did not reauthorize them to approach the poachers or to pull out their vaquita-killing gillnets. $^{176}$
+
+To the extent that the López Obrador administration has conducted important interdiction actions, they have taken place without the use of visible force, such as surprise raids under the cover of night. True, there have been meaningful actions against totoaba traffickers in Baja California. In 2018, Mexico's Attorney General's Office created a new anti-wildlife trafficking interdiction unit, which despite its small size and a broad focus on any kind of environmental crime, from timber to totoaba trafficking, has mounted dedicated investigations into wildlife trafficking. With arrests conducted by the navy, the unit thus led the prosecution of seven key totoaba traffickers, including Antonio "Sunshine" Rodríguez Peña, in November 2020. $^{177}$ Subsequent interdiction operations in Mexico also led to the arrest of two ethnic Chinese for totoaba poaching. However, the arrested have not yet been brought to trial. Nor have the arrests had lasting deterrent effects. In December 2021 and January 2022, totoaba poaching and other fishing with the prohibited gillnets lethal to the vaquita remained very intense, with essentially no enforcement mounted at all. $^{178}$
+
+Enforcement against poaching and trafficking in other wildlife species in Mexico fares even worse. The López Obrador administration imposed immense budget cuts across all environmental agencies, laying off hundreds of people, including highly dedicated, competent, and accomplished environmental protection officials. $^{179}$ All kinds of capacities in Mexico have withered.
+
+This shrinkage of capacities applies not only to protecting biodiversity, but also preventing public health risks related to environmental damage. For example, Mexico's capacity to take samples from poached or otherwise deceased animals to identify possible zoonotic diseases — procedures the United States was training Mexican environmental officials in a decade ago under its zoonotic disease detection program PREVENT — has more or less evaporated. $^{180}$ Economically dependent on trade with the United States and focused predominantly on collecting customs revenues, the López Obrador administration is not interested in instituting robust zoonotic disease monitoring controls at the U.S.-Mexico border. $^{181}$
+
+The Mexican customs code also makes inspections of traded wildlife products complicated. The customs code is very complex to start with, and it fails to make a meaningful distinction between products that are listed under environmental protections and those that are not, specifying very few species in the code. Thus, exports and seizures are often listed only as “product other than specified,” resulting in a very poor picture of illicit wildlife trafficking out of Mexico and preventing investigations of smuggling networks. $^{182}$
+
+And of course, corruption pervades public life in Mexico, a plague encompassing just about all of the country's law enforcement and regulatory agencies — national, state, and municipal — responsible for environmental protection.
+
+## VI. CONCLUSIONS AND RECOMMENDATIONS
+
+Poaching and wildlife trafficking in Mexico are growing and expanding beyond traditional markets within the country and across the Americas. Even as the United States has long been an important transshipment and destination location for Mexico's illegally-harvested animals and plants, China's role in Mexico's wildlife trafficking is increasing, often under the radar. The expanding legal trade in wildlife products between the two countries also serves as a means to launder poached plants and animals as well as drug proceeds. Both the legal and illegal
+
+wildlife trade also serve as mechanisms to pay for Chinese precursors for illegal drugs produced in Mexico. Connections between Mexican organized crime groups and Chinese wildlife traders and traffickers are also growing as the patterns of the relationship shift.
+
+![](images/2f8c768ee25faedccab64d688b997dd1865ef6573e0317da977502fd99c5a933.jpg)
+
+Countering the threats to Mexico's and the world's biodiversity and basic ecological health is a law enforcement, socioeconomic, and political challenge
+
+Countering the threats to Mexico's and the world's biodiversity and basic ecological health is a law enforcement, socioeconomic, and political challenge as much as a matter of environmental science.
+
+as much as a matter of environmental science. Even as the López Obrador administration has exhibited little interest in environmental protection, weakening regulations and decimating the budget of already under-resourced environmental regulatory and law enforcement agencies, on-the-ground environmental law enforcement actions and in situ protection of wildlife and natural resources are crucial. In turn, in situ protection requires addressing both Mexico's weak institutional capacities and the country's highly violent and potent organized crime groups which are forcefully expanding their presence in legal and illegal wildlife economies. It requires that the Mexican government find the will and capacity to counter the power of these groups to corrupt and intimidate government environmental officials as well as wildlife hunters, fishers, producers, and traders.
+
+But meaningful initiatives for dealing with wildlife trafficking in Mexico also need to be undertaken at the international level. Protection efforts require robust cooperation between countries of demand and countries of transshipment and supply, especially when wildlife trafficking networks span their borders. Thus, expanding Mexico-China cooperation against wildlife trafficking is vital and trilateral cooperation including the United States would be most beneficial.
+
+Addressing the growing wildlife trafficking threats in Mexico is challenging because of Mexico's extraordinarily weak rule of law, the overriding unwillingness of the López Obrador administration to forcefully confront Mexican organized crime groups, and China's reluctance to engage in meaningful environmental law enforcement cooperation with Mexico. The recommendations below should thus be treated as overarching guidelines, with the understanding the domestic political environment in China and the state of international cooperation between Mexico and China will not readily allow for their speedy adoption. Moreover, all such guidelines need to be tailored to specific animal and plant species and the wildlife trade and trafficking in them.
+
+Some of these recommendations, such as in situ law enforcement or the generation of legal income alternatives, can be undertaken by Mexico alone, but the governments of China and the United States can support them with financial and technical assistance. Others, such as dismantling illegal retail markets in China, are principally up to the government of China. However, Mexico and China can help with intelligence provision on smuggling networks or financial intelligence.
+
+## Law enforcement
+
+Seizures need to be used to develop a detailed identification of the wildlife trafficking networks and systematic and robust efforts to dismantle them. As long as demand persists, they will be replaced by new networks, but even the temporary disruptions can give fragile biodiversity and ecosystems some chance to recover.
+
+Dismantling wildlife trafficking networks should focus on apprehending as much of their middle operational layers in one sweep as possible to minimize their regeneration capacities, a policy far more effective than arresting wildlife “kingpins” (as morally desirable as that may be) or flooding prisons with low-level poachers. In Mexico, that means both a willingness to go after Chinese traders and traffickers and, also crucially, an effective law enforcement strategy against Mexican organized crime.
+
+Interdiction needs to be carefully designed to avoid producing the counterproductive effect of greater seizures leading to greater poaching, as traffickers expect to lose a certain percentage of their contraband to law enforcement interdiction efforts and adapt by placing orders for that much more animals or plants to be illegally harvested.
+
+In situ law enforcement remains an inescapable component of countering poaching and wildlife trafficking. In Mexico, that requires that the Mexican government develop the will to confront poachers, even when the poachers may resort to violent strikes against the government.
+
+Whether in interdiction or in situ enforcement, deterrence requires sufficient frequency of prosecution. High but rare penalties neither deter nor incapacitate criminal networks. Modest penalties but with a high certainty of effective prosecution generate far more potent deterrent effects.
+
+## Economic incentives to counter poaching
+
+Effective in situ law enforcement in turn requires assisting local communities with the development of human capital, social mobility, and sustainable legal incomes, whether in ecotourism or elsewhere, such as in sustainable use of natural resources or from other industries. In Mexico, such legal economic opportunities can include sustainable fishing for marine species and, for terrestrial species, hunting, ranching, or harvesting under the UMA system, which grants landowners and local communities rights over natural resources on their lands, or through other mechanisms. Such legal economic opportunities need to be smartly designed and encompass the development of value-added chains and market access and be cleared of corruption.
+
+Thus, allowing sustainable hunting and fishing should be the policy predisposition so that local stakeholders have material interests in promoting conservation. However, Mexico must do better in permitting and monitoring the harvesting of terrestrial and marine species in Mexico. Legal trade, whether by large exporters or small community-based cooperatives, is utilized to launder poached animals and plants. The Mexican government must therefore be willing to mount robust and frequent inspections and punish violators, while at the same time protecting its people from the intimidation of organized crime groups.
+
+Hunting can be sustainable and can benefit the environment, such as by keeping overpopulated species in check. This is particularly so if the numbers of keystone predator species are down, whether as a result of poaching, habitat destruction, or other causes. Poaching and unsustainable hunting of apex predators is particularly problematic as it has large-scale repercussions throughout an ecosystem. Indeed, not all poaching, just as not all legal trade, threatens a species' survival and health. In buffer zones and even in core parts of protected areas, it makes good sense to allow limited hunting of non-endangered species and the limited sustainable extraction of natural resources to mitigate food insecurity and income losses of poor local communities. Thus, it is crucial to make a case-by-case assessment of what type of hunting is sustainable at what levels.
+
+Whenever possible, local communities should be given rights to land in conservation areas and to proceeds from sustainable wildlife utilization, such as under the UMA system. Marginalized communities should receive assistance to secure their rights and should have a strong voice in the determination of land use and protection to achieve environmental equity and sustainability. The rights conferred should be limited, with restrictions applied on use to ensure the preservation of biodiversity. Communities should not be allowed to destroy valuable biodiversity areas. This does not preclude sustainable logging or the hunting of non-endangered species either for subsistence or trophy hunting, or of limited grazing in protected areas.
+
+Such conditional rights should also include the community's entitlement to $100\%$ of the revenues derived from sustainable wildlife management, though the revenues should be taxed to provide external government support for local community efforts. With those tax proceeds the state may have fewer incentives to collude in external poaching and deforestation or to leave the community high and dry when other actors, such as wildlife traffickers or the logging industry, threaten its resources. All such arrangements need to be monitored and reassessed on a regular basis, with a strong input from local communities.
+
+In some cases, where legal alternatives cannot be generated, donors may have to pay people not to poach — with diligent monitoring and conditionality. $^{183}$ Prior compensation schemes for fishers not to fish in the vaquita range in the Sea of Cortez have failed, and lessons would need to be drawn from those failures to avoid replicating them there or elsewhere. $^{184}$
+
+Careful monitoring and reassessments need to be conducted regularly and repeatedly to reassess whether wildlife populations and ecosystems are bearing up well, since the impact of limited exploitation may change over time. Mexico has some good examples of such monitoring to build on, such as of the hunting of the desert bighorn sheep population on Tiburón Island with the indigenous Seri community, $^{185}$ showing that when the Mexican government has the political will to better implement and enforce environmental policies, it can have the capacities to do so.
+
+Yet, when levels of corruption, law evasion, and the laundering of wildlife are pervasive, policymakers need to be willing to move to temporary and locale-specific bans for specific species and license suspensions, such as when extensive violations are taking place on Mexican crocodilian farms or among UMA permit grantees. Farms, fisheries, or fishing communities where extensive violations take place, and where the Mexican government has provided law enforcement support to prevent intimidation and retaliation by organized crime groups, should have their licenses suspended.
+
+The financing of conservation must move toward diversified funding beyond ecotourism, such as by pricing biodiversity under payments-for-ecosystem services schemes or otherwise. $^{186}$
+
+## Shutting down problematic markets
+
+Retail and demand markets for plant and animal wildlife products, including in China, need to be reshaped – both through persuasion and messaging campaigns and through enforcement. Penalties should differentiate between small-level buyers of turtles and reptiles sourced in Mexico, for example, and speculators, investors, and heavy users of prohibited wildlife products, such as totoaba. Mexico, working with international fora and partners, should seek to incentivize China to mount much more determined,
+
+![](images/a256b9a501cf8386ed6488b15b025fab56a13e91c15ff9684cb55a01b7b33d38.jpg)
+
+Mexico should seek to incentivize China to mount much more determined, robust, and sustained efforts to counter the retail and trafficking of wildlife products sourced in China, and to expand them beyond totoaba to shark fin, abalone, and sea cucumber as well as terrestrial species.
+
+robust, and sustained efforts to counter the retail and trafficking of wildlife products sourced in China, and to expand them beyond totoaba to shark fin, abalone, and sea cucumber as well as terrestrial species. Diligent efforts are required to enforce such bans, anticipating that they will push trade in wild animals and meat underground or online, such as happened in the case of the totoaba raids in China. It is imperative to achieve substantial effective identification and prosecution of violators to create deterrence effects against clandestine offenses.
+
+Incentivizing China to become more willing to cooperate meaningfully with Mexico and the United States in countering money laundering linked to wildlife products and serving to make payments for drug shipments would also help. Although such anti-money laundering actions would not defund wildlife trafficking or bankrupt either wildlife traders or drug cartels, such financial intelligence could be converted to valuable intelligence enabling the effective actions against middle-layer traffickers and entire smuggling networks. $^{187}$
+
+It is imperative to suppress demand and supply of wildlife products that lead to major ecological losses, such as Traditional Chinese Medicine products sourced with unsustainable offtake and poaching. TCM products should no longer be derived from threatened or endangered wildlife. But the pressure to source illegal wildlife components for TCM appears to be spreading to Mexico, targeting, for example, jaguars.
+
+## Protecting the protectors
+
+Unfortunately, there is little prospect for either the Mexican or Chinese government to adopt these recommendations in the foreseeable future and more broadly mount robust efforts and cooperation to counter poaching in Mexico and wildlife trafficking from the country.
+
+At a minimum, the Mexican government must become willing to protect Mexico's first and last-resort protectors of wildlife – environmental activists and NGOs – with a far greater commitment than it has exhibited so far.
+
+Sadly, environmental protection actors in Mexico need to brace themselves against both the dangerous pressures on Mexico's biodiversity and the growing wildlife trafficking which has been increasingly involving violent organized crime groups connected to Chinese and other markets.
+
+## REFERENCES
+
+1 See, for example, Vanda Felbab-Brown, The Extinction Market: Wildlife Trafficking and How to Counter It (New York and London: Hurst-Oxford University Press, 2017); and Craig Simmons, The Devouring Dragon: How China's Rise Threatens the Natural World (New York: St. Martin's Griffin, 2013).
+
+2 “Mexican president decrees automatic approval for projects,” The Associated Press, November 22, 2021, https://apnews.com/article/business-mexico-caribbean-environment-regulatory-agencies-598589970794270a7db908dbd662e976.
+
+3 Alejandra Leyva Hernández, Rita Chantal Reyes Medina, Cristina García Bravo, and José Carlos Juárez Pérez, "Informe sobre la situación de las personas defensoras de los derechos humanos ambientales, México, 2019" [Report on the situation of environmental human rights defenders, Mexico, 2019], (Mexico City: Centro Mexicano de Derecho Ambiental [Mexican Center for Environmental Law], March 2020), https://www.cemda.org.mx/wp-content/uploads/2020/03/informe-personas-defensoras-2019.pdf.
+
+4 See, for example, Vanda Felbab-Brown, “Mexico’s out-of-control criminal market,” (Washington, DC: The Brookings Institution, March 2019), https://www.brookings.edu/research/mexicos-out-of-control-criminal-market/; Vanda Felbab-Brown, “The Rise of Militias in Mexico: Citizens’ Security or Further Conflict Escalation?” PRISM, 5, no. 4 (December 2015): 173-186, https://www.brookings.edu/wp-content/uploads/2016/07/Rise-of-Militias-Mexico.pdf; and Vanda Felbab-Brown, “Crime & Anti-Crime Policies in Mexico in 2022: A Bleak Outlook,” Mexico Today, January 21, 2022, https://mexicotoday.com/2022/01/21/opinion-crime-anti-crime-policies-in-mexico-in-2022-a-bleak-outlook/.
+
+5 See, for example, Martha Pskowski, “Deforestation and mining threaten a monarch butterfly reserve in Mexico,” Mongabay, December 19, 2018, https://news.mongabay.com/2018/12/deforestation-and-mining-threaten-a-monarch-butterfly-reserve-in-mexico/.
+
+6 It is beyond the scope of this report to provide a systematic overview of illegal logging in Mexico. See, for example, Deborah Bonello, “How Drug Cartels Moved into Illegal Logging in Mexico,” InSight Crime, September 18, 2020, https://insightcrime.org/investigations/drug-cartels-illegal-logging-mexico/.
+
+7 See, for example, Vanda Felbab-Brown, “The vanishing vaquita and the challenges of combating wildlife trafficking,” The Brookings Institution, June 5, 2017, https://www.brookings.edu/blog/order-from-chaos/2017/06/05/the-vanishing-vaquita-and-the-challenges-of-combating-wildlife-trafficking/, and Vanda Felbab-Brown, “Saving the Vaquita Marina & Urgency of This fall,” Mexico Today, October 11, 2020, https://mexicotoday.com/2020/10/11/opinion-saving-the-vaquita-marina-urgency-of-this-fall/.
+
+8 For a review of Mexico's wildlife markets, Ines Arroyo-Quiroz and Tanya Wyatt, eds., Green Crime in Mexico: A Collection of Case studies (New York: Palgrave-Macmillan: 2018).
+
+9 Author interview with Mexican environmental protection government official, October 2011, Mexico.
+
+10 Rene Ebersole, “Inside the Black Market of Hummingbird Love Charm Trade,” National Geographic, April 18, 2018, https://www.nationalgeographic.com/animals/article/wildlife-watch-illegal-hummingbird-trade-love-charm-mexico-witchcraft.
+
+11 See, for example, Alejandra Goyenechea and Rosa A. Indenbaum, “Combating Wildlife Trafficking from Latin America to the United States: The illegal trade from Mexico, the Caribbean, Central America and South America and what we can do to address it,” (Washington, DC: Defenders of Wildlife: October 13, 2015), https://defenders.org/combating-wildlife-trafficking.
+
+12 For the importance and role of local ownership and economic rights and the challenges surrounding such approaches, see Vanda Felbab-Brown, The Extinction Market.
+
+13 For background, see, for example, Juan Manuel Torres-Rojo, Rafael Moreno-Sánchez, and Martín Alfonso Mendoza-Briseño, “Sustainable forest management in Mexico,” Current Forestry Reports 2 (2016): 93-105, https://link.springer.com/article/10.1007/s40725-016-0033-0.
+
+14 Author interview with four Mexican biologists and conservation activists, Mexico City, October 2021.
+
+15 Vanda Felbab-Brown, “Illegal Fishing in Mexico & Policy Responses,” Mexico Today, September 12, 2020, https://mexicotoday.com/2020/09/12/opinion-illegal-fishing-in-mexico-policy-responses/.
+
+16 “Illegal and irregular fishing in Mexico: A Barrier to competitiveness,” Environmental Defense Fund, https://www.edf.org/sites/default/files/content/illegalfishing.pdf.
+
+17 Andrés M. Cisneros-Montemayor, Miguel A. Cisneros-Mata, Sarah Harper, and Daniel Pauly, "Extent and implications of IUU catch in Mexico's marine fisheries," Marine Policy 13 (May 2013): 283-288, http://dx.doi.org/10.1016/j.marpol.2012.12.003.
+
+18 Author interviews with 15 Mexican and international marine biologists and representatives of environmental NGOs, Mexico City and Baja California Sur and by virtual platforms, October and November 2021.
+
+19 See, for example, Suzanna Stephens and Matthew Southerland, “China’s Role in Wildlife Trafficking and the Chinese Government’s Response,” (Washington, DC: U.S.-China Economic and Security Review Commission, December 6, 2018), https://www.uscc.gov/research/chinas-role-wildlife-trafficking-and-chinese-governments-response.
+
+20 See Vanda Felbab-Brown, The Extinction Market; and Craig Simmons, The Devouring Dragon.
+
+21 For background, see, for example, "Increasing number of tiger farms implicated in illegal wildlife trade," WWF, https://tigers.panda.org/news\_and\_stories/stories/increasing\_number\_of\_tiger\_farms\_implicated\_in\_illegal\_wildlife\_trade/.
+
+22 For details, see, for example, Vivienne L. Williams, Andrew J. Loveridge, David J. Newton, and David W. Macdonald, “A roaring trade? The legal trade in Panthera leo bones from Africa to East-Southeast Asia,” PLOS ONE 12, no. 10 (October 24, 2017), https://doi.org/10.1371/journal.pone.0185996; Vivienne L. Williams and Michael J. ‘t Sas-Rolfes, “Born captive: A survey of the lion breeding, keeping and hunting industries in South Africa,” PLOS ONE 14, no. 15 (May 28, 2019), https://doi.org/10.1371/journal.pone.0217409; and Morgan Winsor, “South Africa to end captive lion breeding, bone trade,” ABC News, May 2, 2021, https://abcnews.go.com/International/south-africa-end-captive-lion-breeding-bone-trade/story?id=77451913.
+
+23 See, for example, Rachel Nuwer, “Where Jaguars Are Killed, New Common Factor Emerges: Chinese Investment,” The New York Times, June 11, 2020, https://www.nytimes.com/2020/06/11/science/jaguars-poaching-china.html; Pauline Verheij, “An assessment of wildlife poaching and trafficking in Bolivia and Suriname,” (Amsterdam: IUCN National Committee of the Netherlands, January 2019), http://dx.doi.org/10.13140/RG.2.2.33323.59684.
+
+24 Author interview with a Mexican environmental NGO representative who has spent several years working in southern Mexico and Guatemala, Mexico City, October 2021.
+
+26 Ibid.
+
+27 Author interview with a Mexican environmental government official, Mexico, October 2021.
+
+28 Gwendolyn Ledger, “China, The Silent Conductor In Latin America’s Big Rail Projects,” WorldCrunch, October 11, 2021, https://worldcrunch.com/business-finance/railway-construction/particle-6.
+
+29 Victor Lichtinger and Homero Aridjis, "The Mayan trainwreck," The Washington Post, December 4, 2018, https://www.washingtonpost.com/news/theworldpost/wp/2018/12/04/amlo/.
+
+30 María Verza, “Mexico’s president goes full-steam ahead with Mayan Train,” The Associated Press, June 3, 2020, https://abcnews.go.com/International/wireStory/mexicos-president-full-steam-ahead-mayan-train-71036966.
+
+31 For details, see Vanda Felbab-Brown, The Extinction Market.
+
+32 Deborah Bonello and Parker Asmann, “Can crocodile and turtle farms reduce Mexico’s eco-trafficking?” InSight Crime, June 10, 2019, https://insightcrime.org/investigations/crocodile-turtle-farms-reduce-mexico-eco-trafficking/.
+
+33 Author interview with a former Mexican government official, Mexico City, October 2021.
+
+34 Ibid.
+
+35 Among the various species of clams that are poached in Mexico and smuggled to China is the geoduck. For details about the poaching, see Antonio Heras, “Pesca ilegal pone en peligro población de almeja chiluda” [Illegal fishing endangers geoduck clam population], La Jornada, January 23, 2022, https://www.jornada.com.mx/notas/2021/09/22/estados/pesca-ilegal-pone-en-peligros-especie-almeja-chiluda/.
+
+36 Linda Pressly, “Cocaine of the sea’ threatens critically endangered vaquita,” BBC News, May 13, 2021, https://www.bbc.com/news/world-latin-america-57070814.
+
+37 For background, see Vanda Felbab-Brown, "Saving the Vaquita Marina & Urgency of This fall"; Vanda Felbab-Brown, "The vanishing vaquita and the challenges of combating wildlife trafficking."
+
+38 Author interviews with marine biologists who conducted the vaquita November 2021 survey, by virtual platforms, November and December 2021. See “Vaquitas seen in autumn 2021 survey,” IUCN-SSC Cetacean Specialist Group, December 16, 2021, https://iucn-csg.org/vaquitas-seen-in-autumn-2021-survey/.
+
+39 Kristin Nowell and Vanda Felbab-Brown, “A porpoise to serve: Rescuing the vaquita and the US-Mexico relationship,” The Brookings Institution, July 26, 2021, https://www.brookings.edu/blog/order-from-chaos/2021/07/26/a-porpoise-to-serve-rescuing-the-vaquita-and-the-us-mexico-relationship/.
+
+40 Caterina D'Agrosa, Cleridy E. Lennert Cody, and Omar Vidal, "Vaquita Bycatch in Mexico's Artisanal Gillnet Fisheries: Driving a Small Population to Extinction," Conservation Biology 14, no. 4 (2000): 1110-1119, https://doi.org/10.1046/j.1523-1739.2000.98191.x.
+
+41 Enrique Sanjurjo-Rivera, Sarah L. Mesnick, Sara Ávila-Forcada, Oriana Poindexter, Rebecca Lent, Vanda Felbab-Brown, Andrés M. Cisneros-Montemayor, Dale Squires, U. Rashid Sumaila, Gordon Munro, Rafael Ortiz-Rodriguez, Ramses Rodriguez, and Jade F. Sainz, "An Economic Perspective on Policies to Save the Vaquita: Conservation Actions, Wildlife Trafficking, and the Structure of Incentives," Frontiers in Marine Science (August 27, 2021), https://doi.org/10.3389/
+
+fmars.2021.644022; and Vanda Felbab-Brown and Alejandro Castillo López, “Restore U.S. Mexico seafood trade & save the vaquita,” Mexico Today, May 7, 2021, https://mexicotoday.com/2021/05/07/opinion-restore-us-mexico-seafood-trade-save-the-vaquita/.
+
+42 Author interviews with marine biologists and conservation activists, Mexico City, Baja California Sur, and by virtual platforms, October and November 2021. See also Camilo Mejía Giraldo and James Bargent, “Are Mexican narcos moving into lucrative fish bladder market?” InSight Crime, August 6, 2014, https://insightcrime.org/news/brief/mexico-narcos-fish-bladder-market/; Mimi Yagoub, “Narco fish’ trafficking easy money for Mexican criminals,” InSight Crime, July 8, 2016, https://insightcrime.org/news/brief/narco-fish-trafficking-easy-money-for-mexico-criminals/; “Hooked: How Demand for a Protected Fish Lined the Pockets of Mexican Cartels & Sunk the Future of an Endangered Porpoise Species,” (Washington, DC: C4ADS, August 2017), https://static1.squarespace.com/static/566ef8b4d8af107232d5358a/t/59c011106f4ca3a44430588c/1505759529205/Hooked.pdf.
+
+43 Author interviews with Mexican environmental activists and marine biologists and residents of San Felipe, in Mexico City and by virtual platforms, October and November 2021.
+
+44 Enrique Sanjurjo-Rivera, Sarah L. Mesnick, Sara Ávila-Forcada, Oriana Poindexter, Rebecca Lent, Vanda Felbab-Brown, Andrés M. Cisneros-Montemayor, Dale Squires, U. Rashid Sumaila, Gordon Munro, Rafael Ortiz-Rodriguez, Ramses Rodriguez, and Jade F. Sainz, "An Economic Perspective on Policies to Save the Vaquita."
+
+45 See the documentary feature film Sea of Shadows, directed by Richard Ladkani (2019, National Geographic Documentary Films), https://films.nationalgeographic.com/sea-of-shadows.
+
+46 Author interview with a former Mexican government official, Mexico City, October 2021.
+
+47 “Hong Kong Customs seizes over three tonnes of suspected scheduled dried shark fins,” The Government of the Hong Kong Special Administrative Region, May 29, 2021, https://www.info.gov.hk/gia/general/202105/29/P2021052900696.htm; James Pasley, “Hong Kong custom officials seized a record 28 tons of shark fin worth over \$1 million,” Business Insider, May 7, 2020, https://www.businessinsider.com/hong-kong-seized-28-tons-shark-fin-largest-capture-ever-2020-5; “Customs agents seize 10 tonnes of shark fins in Manzanillo,” May 27, 2019, Mexico News Daily, https://mexiconewsdaily.com/news/customs-agents-seizes-10-tonnes-of-shark-fins/.
+
+48 For more details, see Leonor Flores, “SAT asegura 10.4 toneladas de aletas de tiburón en aduana de Manzanillo” [SAT seized 10.4 tons of shark fins at Manzanillo customs], El Universal, May 26, 2019, https://www.eluniversal.com.mx/estados/sat-asegura-104-toneladas-de-aletas-de-tiburon-en-aduana-de-manzanillo; and Aimee Ortiz, “International Crime Ring That Trafficked in Shark Fins Is Dismantled, U.S. Says,” The New York Times, September 4, 2020, https://www.nytimes.com/2020/09/04/us/shark-fin-ring-georgia.html.
+
+49 Author interviews with two Mexican marine biologists and an environmental activist, by virtual platforms, February 2022.
+
+50 Ibid.
+
+51 Abigail Bennett and Xavier Basurto, "Local institutional responses to global market pressures: The sea cucumber trade in Yucatán Mexico," World Development 102 (February 2018): 57-70, https://doi.org/10.1016/j.worlddev.2017.09.006; and Meredith Gore and Abigail Bennett, "Importance of deepening integration of crime and conservation sciences," Conservation Biology 36, no.1 (February 2022): 981-989, https://pubmed.ncbi.nlm.nih.gov/33600003/.
+
+52 Miguel Ángel Gamboa-Álvarez, Jorge Alberto López-Rocha, Gaspar Román Poot-López, Alfonso Aguilar-Perera, and Harold Villegas-Hernández, “Rise and decline of the sea cucumber fishery in Campeche Bank, Mexico,” Ocean & Coastal Management 184 (February 1, 2020), https://doi.org/10.1016/j.ocecoaman.2019.105011. For details on Mexican law enforcement measures, including land and sea seizures, see Teale N. Phelps Bondaroff, Felix Morrow, Abigail Bennett, Carmen Pedroza-Gutiérrez, Meredith L. Gore, and Jorge A. López-Rocha, “Characterizing Changes in a Decade of Mexican Sea Cucumber Crime (2011-2021) Using Media Reports,” The Beche-de-Mer (BDM) Information Bulletin 42 (Spring 2022), forthcoming, author’s advance copy.
+
+53 Karla Zabludovsky, "Quest for Illegal Gain at the Sea Bottom Divides Fishing Communities," The New York Times, March 19, 2013, https://www.nytimes.com/2013/03/20/world/americas/quest-for-illegal-gain-at-the-sea-bottom-divides-fishing-communities.html.
+
+54 Víctor Hugo Michel, “Campeche y Yucatán: la peor crisis por el pepino de mar” [Campeche and Yucatán: The worst crisis for the sea cucumber], Milenio, September 17, 2014, https://www.milenio.com/estados/campeche-y-yucatan-la-peor-crisis-por-el-pepino-de-mar.
+
+55 Karla Zabludovsky, "Quest for Illegal Gain at the Sea Bottom Divides Fishing Communities."
+
+56 “A ‘Sea Cucumber Mafia’ operates along the Yucatecan coast,” The Yucatán Times, March 8, 2018, https://www.theyucatantimes.com/2018/03/a-sea-cucumber-mafia-operates-along-the-yucatecan-coast/.
+
+57 See, for example, Luis E. Calderon-Aguilera, “Illegal fishing of the sea cucumber Isostichopus fuscus is rampant in the Gulf of California, Mexico,” SPC Beche-de-mer Information Bulletin 39 (March 2019): 42-46, https://www.spc.int/DigitalLibrary/Doc/FAME/InfoBull/BDM/39/BDM39\_49\_Calderon.html.
+
+58 Author interviews with seven Mexican government officials, marine biologists, and representatives of environmental NGOs, Mexico City and Baja California Sur, October and November 2021.
+
+59 See, for example, Vanda Felbab-Brown, The Extinction Market.
+
+60 Author interviews with seven Mexican government officials, marine biologists, and representatives of environmental NGOs, Mexico City and Baja California Sur, October and November 2021.
+
+61 Author interviews with current and former high officials of Mexican fishers' federations, Mexico, November 2021.
+
+62 Author interview with a top executive of a large Mexican seafood exporter, Mexico, November 2021.
+
+63 Ibid.
+
+64 Author interviews with legal and illegal fishers, seafood producers and exporters, representatives of fishers' cooperatives and federations, marine biologists, and environmental NGO representatives, Mexico City, Baja California Sur, and by virtual platforms, October and November 2021.
+
+65 Author interview with a marine biologist, seafood producer, and representative of a fishers' federation, Mexico, November 2021.
+
+66 Ibid.
+
+67 Author interview with seafood producers, representatives of Mexican fishers' federations, and artisanal legal and illegal fishers, Mexico, November 2021.
+
+68 Author interview with a seafood exporter in Mexico, Mexico, November 2021.
+
+69 Author interview with a representative of a Mexican fishers' federation and a Mexican seafood supplier, Mexico, November 2021.
+
+70 Author interview with a seafood exporter in Mexico, Mexico, November 2021.
+
+71 Author interviews with fishers, marine biologists, environmental NGO representatives, and seafood exports, various parts of Mexico and by virtual platforms, September, October, and November 2021.
+
+72 Author interviews with marine biologists and environmental activists based in San Felipe, Mexico City, Baja California Sur, and by virtual platforms, September, October, and November 2021.
+
+73 Author interview with a top executive of a large Mexican seafood exporter, Mexico, November 2021.
+
+74 Author interview with a top executive of a large Mexican seafood export company, Mexico, November 2021.
+
+75 Ibid.
+
+76 Author interview with an owner of seafood processing plants, Mexico, November 2021.
+
+77 Ibid.
+
+78 Ibid.
+
+79 Author interviews with legal and illegal fishers, seafood producers and exporters, representatives of fishers' cooperatives and federations, marine biologists, and environmental NGO representatives, Mexico City, Baja California Sur, and by virtual platforms, October and November 2021.
+
+80 Author interviews with a former Mexican government intelligence official and a seafood exporter, in Mexico and by virtual platforms, November 2021.
+
+81 Author interviews with former and current officials of Mexican fishers' cooperatives and federations, Mexico, November 2021.
+
+82 Author interview with a seafood exporter in Mexico and a marine biologist, Mexico, November 2021.
+
+83 See, for example, Vanda Felbab-Brown, “Mexican cartels and the COVID-19 pandemic” Mexico Today, April 24, 2020, https://mexicotoday.com/2020/04/24/opinion-mexican-cartels-and-the-covid-19-pandemic/.
+
+84 Author interview with a seafood exporter in Mexico, Mexico, November 2021.
+
+85 Ibid.
+
+86 Author interviews with legal and illegal fishers, seafood producers and exporters, representatives of fishing cooperatives and federations, marine biologists, and environmental NGO representatives, and U.S. government officials, Mexico City, Baja California Sur, and by virtual platforms, October and November 2021.
+
+87 Author interviews with fishers and officials of Mexican fishing cooperatives and federations, Mexico, November 2021.
+
+88 Author interviews with legal and illegal fishers, seafood producers and exporters, representatives of fishing cooperatives and federations, marine biologists, and environmental NGO representatives, Mexico City, Baja California Sur, and by virtual platforms, October and November 2021. For the unwillingness of the Mexican government to authorize the visible use of lethal force, see Vanda Felbab-Brown, “Crime & Anti-Crime Policies in Mexico in 2022.”
+
+89 Ibid.
+
+90 Author interview with a Mexican seafood processing executive, Mexico, November 2021.
+
+91 “Cómputos Distritales 2021: Elecciones Federales” [District Counts 2021: Federal Elections], Instituto Nacional Electoral, https://computos2021.ine.mx/votos-ppyci/representacion-proporcional.
+
+92 Author interviews with Mexican fishing industry representatives, Mexico, November 2021, and with Mexican marine biologists and environmental activists, by virtual platforms, February 2022.
+
+93 Author interview with a high-official of a Mexican fishers' federation, Mexico, November 2021.
+
+94 Vanda Felbab-Brown, "The Rise of Militias in Mexico."
+
+95 Author interviews with seven illegal and legal artisanal fishers and a former high official of a Mexican fishers' federation, Mexico, November 2021.
+
+96 Elías Medina, “Molesta a productores pagar más impuestos por la reforma fiscal” [It annoys producers to pay more taxes for the tax reform], El Sudcaliforniano, October 28, 2021, https://www.elsudcaliforniano.com.mx/local/molesta-a-productores-pagar-mas-impuestos-por-la-reforma-fiscal-7401783.html.
+
+97 Author interviews with U.S. government officials, by virtual platforms and in Mexico City, and with a former high-level officer of a Mexican fishers' organization, Mexico, October and November 2021.
+
+98 Author interviews with four former Mexican government officials, Mexico City, and by virtual platforms, October and November 2021 and five experts on organized crime in Mexico, Mexico City, Morelia, La Paz, and by a virtual platform, October and November 2021. See also Drazen Jorgic, "Special report: Burner phones and mobile banking apps: Meet the Chinese brokers laundering Mexican drug money," Reuters, December 3, 2020, https://www.reuters.com/article/us-mexico-china-cartels-specialreport/special-report-burner-phones-and-banking-apps-meet-the-chinese-brokers-laundering-mexican-drug-money-idUSKBN28D1M4.
+
+99 Author interviews with legal and illegal fishers, seafood producers and exporters, representatives of fishers' cooperatives and federations, marine biologists, and environmental NGO representatives, Mexico City, Baja California Sur, and by virtual platforms, October and November 2021.
+
+100 Author interviews with representatives of Mexican fishers' federations and illegal and legal fishers, Mexico, November 2021.
+
+101 Author interviews with high officials of Mexican fishers' cooperatives and federation, a Mexican seafood exporter, and Mexican environmental government officials, Mexico and by virtual platforms, October and November 2021.
+
+102 Ibid.
+
+103 See, for example, Andrea Crosta, Kimberly Sutherland, Chiara Talerico, Isabelle Layolle, and Beatrice Fantacci, “Operation Fake Gold – The Totoaba Supply Chain – From Mexico’s Totoaba Cartels to China’s Totoaba Maw Wholesalers – An Illegal Trade Killing the Vaquita,” (Los Angeles: Elephant Action League, July 2018), https://earthleagueinternational.org/operation-fake-gold/; Eduardo Murillo, “Decomisan 27 buches de totoaba en aeropuerto de Cancún” [27 totoaba maws seized at Cancun airport], La Jornada, July 12, 2020, https://www.jornada.com.mx/ultimas/estados/2020/07/12/decomisan-27-buches-de-totoaba-en-aeropuerto-de-cancun-1387.html; and “Caballitos de mar y buche de totoaba decomisó la PF en el Aeropuerto de SLP” [Seahorses and totoaba maw seized by the Federal Police at the SLP Airport], La Brecha, May 18, 2016, https://labrecha.me/municipalidades/ciudad/caballitos-de-mar-y-buche-de-totoaba-decomiso-la-pf-en-el-aeropuerto-de-slp/.
+
+104 Author interview with a top executive of a large Mexican seafood exporter, Mexico, November 2021.
+
+105 Author interviews with environmental activists operating in Santa Clara and high officials of a fishers' federation, Mexico City and elsewhere in Mexico, October and November 2021. See also María Esther Cruz-Colín, Miguel Ángel Cisneros-Mata, Gabriela Montáno-Moctezuma, Ileana Espejel, Andrés Miguel Cisneros-Montemayor, and Luis Malpica-Cruz, "Analysis of the Gulf of California cannonball jellyfish fishery as a complex system," Ocean & Coastal Management 207 (June 15, 2021): 105610, https://doi.org/10.1016/j.ocecoaman.2021.105610.
+
+106 Author interview with a representative of high official of a fishers' federation, Mexico, November 2021.
+
+107 Ibid.
+
+108 Drazen Jorgic, "Special report: Burner phones and mobile banking apps."
+
+109 Author interviews with three Mexican seafood exporters and officials of fishers' federation, Mexico, November 2021.
+
+110 Author interviews with three marine biologists, Mexico, November 2021. For background on legal harvesting, poaching, and aquaculture of abalone in Mexico, see Ricardo Searcy-Bernal, Mario R. Ramade-Villanueva, and Benito Altamira, “Current Status of Abalone Fisheries and Culture in Mexico,” Journal of Shellfish Research 29, no. 3 (2010): 573-576, https://doi.org/10.2983/035.029.0304; and Ricardo Bórquez Reyes, Oscar Alberto Pombo, and Germán Ponce Díaz, “Fishers’ reasons for poaching abalone (Haliotidae): A study in the Baja California Peninsula, Mexico,” North American Journal of Fisheries Management 29, no. 1 (2009): 237-244, https://doi.org/10.1577/M06-032.1.
+
+111 Author interviews with experts on Mexican drug trafficking, Mexico City and by virtual platforms, October 2021.
+
+112 Author interviews with current and former officials of Mexican fishers' cooperatives and federations, Mexico, November 2021.
+
+113 Karen Yeung, “Cryptocurrencies help Chinese evade capital and currency controls in moving billions overseas,” South China Morning Post, August 26, 2020, https://www.scmp.com/economy/china-economy/article/3098981/cryptocurrencies-help-chinese-evade-capital-and-currency.
+
+114 Drazen Jorgic, "Special report: Burner phones and mobile banking apps."
+
+115 See, for example, “Money Laundering Risks in the Illegal Wildlife Trade,” G-7, December 21, 2021, https://www.g7uk.org/g7-interior-and-security-ministers-senior-officials-meeting-crimes-that-affect-the-environment/.
+
+116 Author interviews with U.S. government officials, Mexican environmental activists, and Mexican seafood producers, various parts of Mexico, October and November 2021.
+
+117 Author interviews with a former Mexican government official, U.S. government officials, Mexican environmental activists, and Mexican seafood producers, various parts of Mexico, October and November 2021.
+
+118 Aimee Ortiz, "International Crime Ring That Trafficked in Shark Fins Is Dismantled, U.S. Says."
+
+119 Author interviews with current and former U.S. and Mexican officials and law enforcement officers, Mexico City and by virtual platforms, October and November 2021.
+
+120 Peter Gastrow, “Triad Societies and Chinese Organised Crime in South Africa,” (Pretoria: Institute for Security Studies, 2001), https://media.africaportal.org/documents/paper48.pdf; Jonny Steinberg, “The illicit abalone trade in South Africa,” (Pretoria: Institute for Security Studies, April 2005), https://www.files.ethz.ch/isn/99200/105.pdf; Kimon de Greef and Serge Raemaekers, “South Africa’s illicit abalone trade: An updated overview and knowledge gap analysis,” (Cambridge, U.K.: TRAFFIC, 2014), https://www.traffic.org/site/assets/files/8469/south-africas-illicit-abalone.pdf; and Wilson Lau, “An assessment of South African dried abalone Haliotis midae consumption and trade in Hong Kong,” (Cambridge, U.K.: TRAFFIC, February 2018), https://www.traffic.org/site/assets/files/2235/traffic-hk-abalone-report.pdf; and Kimon de Greef and Simone Haysom, “Disrupting abalone harms: Illicit flows of H. midae from South Africa to East Asia,” (Geneva: Global Initiative against Organized Crime, February 2022), https://globalinitiative.net/analysis/abalone-south-africa-east-asia/.
+
+121 Author interviews with current and former U.S. and international law enforcement officials and drug policy officials, by virtual platforms, November 2021.
+
+122 Author interviews with former Mexican government officials, Mexico City, October 2021.
+
+123 Ibid.
+
+124 Author interview with former Mexican diplomats, Mexico City, October 2021.
+
+125 Author interviews with former Mexican government officials, Mexico City, October 2021.
+
+126 Author interview with a former Mexican diplomat, Mexico City, October 2021.
+
+127 Ibid.
+
+128 “China seizes totoaba swim bladders worth \$26 million, arrests 16,” Mongabay, December 29, 2018, https://news.mongabay.com/2018/12/china-seizes-totoaba-swim-bladders-worth-26-million-arrests-16/.
+
+129 Author interview with a former Mexican diplomat, Mexico City, October 2021. For earlier seizures in the United States, Mexico, and Hong Kong, see “Dual extinction: The illegal trade in the endangered totoaba and its impact on the critically endangered vaquita,” (London: Environmental Investigative Agency, January 2016), https://eia-international.org/wp-content/uploads/EIA-Dual-Extinction.pdf.
+
+130 Author interviews with investigative environmental activists, by virtual platforms, October 2021.
+
+140 Gao Qiao, “保护野生动物，中国言行一致” [In protecting the wildlife, China lives up to its words and deeds], 人民日报 [People's Daily], December 10, 2020, http://www.xinhuanet.com/world/2020-12/10/c\_1210924693.htm.
+
+131 See, for example, Abdulrahman Ben-Hasan, Yvonne Sadovy de Mitcheson, Miguel A. Cisneros-Mata, Érica Antunes Jimenez, Moslem Daliri, Andrés M. Cisneros-Montemayor, Rekha J. Nair, Sangeetha A. Thankappan, Carl J. Walters, and Villy Christensen, “China’s fish maw demand and its implications for fisheries in source countries,” Marine Policy 132 (October 2021): 104696, https://doi.org/10.1016/j.marpol.2021.104696; “132 - Controlling and monitoring trade in croaker swim bladders to protect target croakers and reduce incidental catches of threatened marine megafauna,” World Conservation Congress Marseilles, International Union for Conservation of Nature, October 3, 2021, https://www.iucncongress2020.org/motion/132; and Lulu Ning Hui and Sarita Reed, “Gold in the sea”: Brazil’s booming fish bladder trade,” Al Jazeera, January 20, 2022, https://www.aljazeera.com/economy/2022/1/20/gold-in-the-sea-brazils-booming-fish-bladder-trade.
+
+132 Clifford Lo, "Five arrested and fish bladders worth HK\$25 million seized by Hong Kong customs officers in biggest haul in nearly 20 years," South China Morning Post, June 8, 2020, https://www.scmp.com/news/hong-kong/law-and-crime/article/3088021/five-arrested-and-fish-bladders-worth-hk25-million.
+
+133 Clifford Lo, "Hong Kong customs seizes HK\$3.3 million worth of fish bladders from endangered totoaba species," South China Morning Post, July 27, 2021, https://www.scmp.com/news/hong-kong/law-and-crime/article/3142717/hong-kong-customs-seizes-hk33-million-worth-fish.
+
+134 Vanda Felbab-Brown, The Extinction Market.
+
+135 For prior U.S. interdiction operations against totoaba poaching, see, for example, “Fishy Business – Smuggler Of Swim Bladders Is Sentenced In Federal Court,” U.S. Department of Justice, August 11, 2014, https://www.justice.gov/usao-sdca/pr/fishy-business-smuggler-swim-bladders-sentenced-federal-court; and Aimee Ortiz, “International Crime Ring That Trafficked in Shark Fins Is Dismantled, U.S. Says.” For the structure of some of the Chinese totoaba smuggling networks, see, C4ADS, “Hooked: How Demand for a Protected Fish Lined the Pockets of Mexican Cartels & Sunk the Future of an Endangered Porpoise Species.”
+
+136 “China’s Environmental Abuses Fact Sheet,” U.S. Embassy & Consulates in Brazil, September 25, 2020, https://br.usembassy.gov/chinas-environmental-abuses-fact-sheet/.
+
+137 Ibid.
+
+138 "Fact Sheet on Environmental Damage by the US," Ministry of Foreign Affairs of the People's Republic of China, October 19, 2020, https://www.fmprc.gov.cn/mfa\_eng/wjb\_663304/zzjg\_663340/tyfls\_665260/tfsxw\_665262/202010/t20201019\_599997.html.
+
+141 Ibid.
+
+142 Yang Wanli, “National parks to reinforce ‘beautiful China’ program,” China Daily, September 28, 2020, https://www.chinadaily.com.cn/a/202009/28/WS5f713785a31024ad0ba7c3a5.html.
+
+143 常纪文 [Chang Jiwen], “应对野生动物走私法治问题的中国策略” [Suggestions for China's strategy of tackling the rule of law issues in wildlife trafficking], 中国环境报 [China Forum of Environmental Journalists], February 10, 2020, http://www.cfej.net/jizhe/cmlw/202002/t20200211\_762606.shtml.
+
+144 Li Hongyang, “Nations Can Learn from China’s Biodiversity Efforts,” China Daily, October 18, 2021, https://www.chinadaily.com.cn/a/202110/18/WS616ccb6da310cdd39bc6f788.html.
+
+145 Author interviews with former Mexican and current and former U.S. government officials and environmental crime investigators of international NGOs, October, November, and December 2021.
+
+146 Drazen Jorgic, "Special report: Burner phones and mobile banking apps."
+
+147 “2020 National Drug Threat Assessment,” (Washington, DC: U.S. Drug Enforcement Administration, U.S. Department of Justice, March 2021), https://www.dea.gov/sites/default/files/2021-02/DIR-008-21%202020%20National%20Drug%20Threat%20Assessment\_WEB.pdf.
+
+148 Author interview with a U.S. law enforcement official, by virtual platform, December 2021.
+
+149 Author interviews with three current and former international and U.S. and law enforcement officials and three current international drug policy officials, by virtual platforms, November and December 2021.
+
+150 Author interview with a former international law enforcement official, by virtual platform, November 2021.
+
+151 Author interviews with Chinese experts on environmental crime and officials of multilateral anti-crime bodies in Southeast Asia, by virtual platforms, November and December 2021.
+
+152 Author interviews with former Mexican government officials, U.S. officials, and representatives of environmental NGOs investigating wildlife crime in Southeast Asia and Africa, Mexico City and by virtual platforms, October, November, and December 2021.
+
+153 Author interview with a former international law enforcement official, by virtual platform, December 2021.
+
+154 See, for example, “Chinese nationals arrested in US after smuggling totoaba swim bladders worth \$3.7 million from Mexico,” Mongabay, June 21, 2019, https://news.mongabay.com/2019/06/chinese-nationals-arrested-in-us-after-smuggling-totoaba-swim-bladders-worth-3-7-million-from-mexico/.
+
+155 Author interviews with former Mexican diplomats, Mexico City, October 2021.
+
+156 Author interview with a former Mexican diplomat, Mexico City, October 2021. See also “CITES's last chance: Stop the illegal totoaba trade to save the vaquita,” (London: Environmental Investigation Agency, Animal Welfare Institute, Center for Biological Diversity, and Natural Resource Defense Council, August 2019), https://eia-international.org/wp-content/uploads/EIA-report-citess-last-chance-single-pages-for-print.pdf.
+
+157 Author interview with a former Mexican diplomat and Mexican environmental activists, Mexico City and Baja California Sur, October and November 2021.
+
+158 Ernesto Méndez, "Aprueban a Earth Ocean Farms para exporter carne de Totoaba, criada en cautiverio" [Earth Ocean Farms approved to export captive-bred Totoaba meat], Excelsior, March 10, 2022, https://www.excelsior.com.mx/nacional/aprueban-exportacion-carne-totoaba-criada-en-cautiverio/1503230.
+
+159 Author interview with a China-based expert on wildlife trafficking, by virtual platform, December 2021.
+
+160 Author interview with a former Mexican government official, Mexico City, October 2021.
+
+161 Author interviews with former and current U.S. government officials, by virtual platforms, November and December 2021.
+
+163 Author interviews with former Mexican government officials, Mexico City, October 2021.
+
+164 See, for example, Pauline Repard, “San Diego importers fined \$1M for smuggling sea cucumbers,” The San Diego Union-Tribune, October 2, 2018, https://www.sandiegouniontribune.com/news/courts/sd-me-cucumber-sentenced-20181002-story.html; “Sea Cucumber Smuggler Sentenced to Eight Months Jail,” U.S. Department of Justice, June 9, 2020, https://www.justice.gov/usao-sdca/pr/sea-cucumber-smuggler-sentenced-eight-months-jail; “Chula Vista Resident Guilty of Illegal Importation of \$3 Million of Abalone,” U.S. Department of Justice, August 30, 2017, https://www.justice.gov/usao-sdca/pr/chula-vista-resident-guilty-illegal-importation-3-million-abalone.
+
+165 Author interviews with Mexican and international marine biologists, environmental activists, and seafood producers, various parts of Mexico and by virtual platforms, October and November 2021.
+
+166 Author interviews with current and former Mexican government officials specializing in wildlife crime and environmental protection and U.S. government officials, in Mexico City and other parts of Mexico and by virtual platforms, October and November 2021.
+
+167 Enrique Provencio and Julia Carabias, “El Presupuesto federal de medio ambiente: Un Trato injustificado y desproporcionado” [The federal environmental budget: An unjustified and disproportionate treatment], Centro Interdisciplinario de Biodiversidad y Ambiente [Interdisciplinary Center for Biodiversity and Environment], April 18, 2019, https://ceiba.org.mx/jcl-y-epd-injustificado-presupuesto-federal-medio-ambiente.
+
+168 See, for example, Emilio Godoy, “Mexico eschews its environmental leadership,” Diálogo Chino, January 15, 2021, https://dialogochino.net/en/climate-energy/39215-mexico-eschews-its-environmental-leadership/; Max De Haldevang, “Mexican NGOs Blast AMLO’s Plan to Mothball Climate Institute,” Bloomberg Green, December 16, 2021, https://www.bloomberg.com/news/articles/2021-12-16/mexican-ngos-blast-amlo-s-plan-to-mothball-climate-institute.
+
+169 Paulo Quadri Barba, "Mexico Abandons its Protected Areas," Sky Island Alliance, June 5, 2020, https://skyislandalliance.org/2020/06/mexico-abandons-its-protected-areas/.
+
+170 Ibid.
+
+171 Author interviews with former Mexican government officials, security experts, and U.S. government officials, Mexico City and by virtual platforms, October 2021. See also, Vanda Felbab-Brown, “Crime & Anti-Crime Policies in Mexico in 2022: A Bleak Outlook”; and Vanda Felbab-Brown, “Criminal Brazenness Matters,” Mexico Today, July 31, 2020, https://mexicotoday.com/2020/07/31/opinion-criminal-brazeness-matters/.
+
+172 For details, see Vanda Felbab-Brown, "AMLO's security policy: Creative ideas, tough reality," (Washington, DC: The Brookings Institution, March 2019), https://www.brookings.edu/research/amlos-security-policy-creative-ideas-tough-reality/.
+
+173 Author interviews with former Mexican law enforcement and intelligence officials, various parts of Mexico and by virtual platform, October and November 2021. See also Vanda Felbab-Brown, "Crime & Anti-Crime Policies in Mexico in 2022: A Bleak Outlook."
+
+174 Kristin Nowell and Vanda Felbab-Brown, "A porpoise to serve."
+
+175 For details on the role of Sea Shepherd, see Sea of Shadows, National Geographic Documentary Films, and on Museo de la Ballena, Ernesto Mendéz, “Barco del Museo de la Ballena regresa a Zona de Tolerancia Cero de Vaquita Marina” [Whale Museum ship returns to Vaquita Marina Zero Tolerance Zone], Excelsior, August 6, 2021, https://www.excelsior.com.mx/nacional/barco-del-museo-de-la-ballena-regresa-a-zona-de-tolerancia-cero-de-vaquita-marina/1464572. For details about the Mexican government’s suspension of gillnet removal by Sea Shepherd and Museo de la Ballena, see Kristin Nowell and Vanda Felbab-Brown, “A porpoise to serve: Rescuing the vaquita and the US-Mexico relationship.”
+
+176 Author interviews with representatives of Mexican and international environmental NGOs, Mexico City and Baja California Sur and by virtual platforms, October and November 2021 and January 2022; Ernesto Méndez, "ONG's amordazadas y maniatadas para salvar a la vaquita marina" [NGOs muzzled and handcuffed from saving the vaquita marina], Excelsior, December 15, 2021, https://www.excelsior.com.mx/nacional/ong-maniatadas-salvar-vaquita-marina-alto-golfo-california/1488092.
+
+177 “Sacude’ SEIDO al Cártel del Mar” [SEIDO ‘shake up’ of the Cártel del Mar], Zeta Tijuana, November 16, 2020, https://zetatijuana.com/2020/11/sacude-seido-al-cartel-del-mar/.
+
+178 Author interviews with Mexico-based marine biologists and environmental NGO representatives, by virtual platforms, January and February 2022.
+
+179 Author interviews with current and former Mexican government officials specializing in wildlife crime and environmental protection, Mexican environmental defenders, and U.S. government officials, in Mexico City and other parts of Mexico and by virtual platforms, October and November 2021.
+
+180 Author interviews with current and former Mexican government officials specializing in wildlife crime and environmental protection and U.S. government officials, in Mexico City and other parts of Mexico and by virtual platforms, October and November 2021.
+
+181 Ibid.
+
+182 Author interviews with former Mexican government officials, Mexico City, October 2021.
+
+183 For details, see Vanda Felbab-Brown, The Extinction Market, 198.
+
+184 Enrique Sanjurjo-Rivera, Sarah L. Mesnick, Sara Ávila-Forcada, Oriana Poindexter, Rebecca Lent, Vanda Felbab-Brown, Andrés M. Cisneros-Montemayor, Dale Squires, U. Rashid Sumaila, Gordon Munro, Rafael Ortiz-Rodriguez, Ramses Rodriguez, and Jade F. Sainz, "An Economic Perspective on Policies to Save the Vaquita: Conservation Actions, Wildlife Trafficking, and the Structure of Incentives."
+
+185 Rosie Cooney, Paola Mosig Reidl, and Luis Guillermo Muñoz Lacy, “Community-based trophy hunting of bighorn sheep in Mexico,” (Geneva: CITES, 2019), https://cites.org/sites/default/files/eng/prog/Livelihoods/case\_studies/6.%20Mexico\_bighornsheep\_long\_Aug2.pdf.
+
+186 For examples of payments for ecosystem services and other biodiversity pricing schemes, their design, and the challenges they encounter, see, for example, Ina Porras and Paul Steele, “Making the market work for nature: How biocredits can protect biodiversity and reduce poverty,” (London: International Institute for Environment and Development, March 2020), https://pubs.iied.org/sites/default/files/pdfs/migrate/16664IIED.pdf.
+
+187 For details on the limitations of anti-money laundering measures and their capacity to bankrupt wildlife trafficking groups, see Vanda Felbab-Brown, The Extinction Market, 205-218.
+
+## ABOUT THE AUTHOR
+
+Vanda Felbab-Brown is a senior fellow in Foreign Policy at the Brookings Institution. She is also the director of Brookings's Initiative on Nonstate Armed Actors and co-director of its Africa Security Initiative as well as of the 2020 paper series "The opioid crisis in America: Domestic and international dimensions." Dr. Felbab-Brown is an expert on international and internal conflicts, insurgency, terrorism, urban violence, and illicit economies. Her fieldwork has covered Afghanistan, South Asia, Myanmar, Indonesia, the Andean region, Mexico, Iraq, the Horn of Africa, Nigeria, and other African regions. She is the author of five books: Narco Noir: Mexico's Cartels, Cops, and Corruption (forthcoming); The Extinction Market: Wildlife Trafficking and How to Counter It (2017); Militants, Criminals, and Warlords: The Challenge of Local Governance in an Age of Disorder (2017, co-authored with Shadi Hamid and Harold Trinkunas); Aspiration and Ambivalence: Strategies and Realities of Counterinsurgency and State-Building in Afghanistan (2013); and Shooting Up: Counterinsurgency and the War on Drugs (2010). Dr. Felbab-Brown received her Ph.D. in political science from MIT and her B.A. in government from Harvard University.
+
+## ACKNOWLEDGEMENTS
+
+I am deeply grateful to the anonymous reviewers for their very helpful suggestions. My special thanks go to Kristin Nowell for invaluable field research suggestions as well as several other researchers who prefer to remain anonymous. I would also like to thank Nathan Paul Southern and Lindsey Kennedy for their investigative work in locating additional valuable interlocutors in Asia and the Pacific for me to interview for this project. My deep thanks also go to Bradley Porter, Abigail Zisus, Wazhma Yousafi, and Ryan Harbison for great research assistance and other project support and to Cindy Zhou for her excellent research support in Chinese and more. Enormous thanks also to Ted Reinert for this superb editing of the paper and Rachel Slattery for the terrific layout. Finally, I would like to deeply thank all of my many interlocutors in Mexico, Asia and the Pacific, and the United States who were willing to speak with me, sometimes at the risks of serious repercussions from authoritarian or corrupt government officials or organized crime groups.
+
+Brookings is grateful to the U.S. Department of State and the Institute for War and Peace Reporting for funding this research.
+
+The Brookings Institution is a nonprofit organization devoted to independent research and policy solutions. Its mission is to conduct high-quality, independent research and, based on that research, to provide innovative, practical recommendations for policymakers and the public. The conclusions and recommendations of any Brookings publication are solely those of its author(s), and do not reflect the views of the Institution, its management, or its other scholars.
+
+![](images/2f505c8335626f1501632dacd0ffb9a01bf0df25a5bc651a64395aeac948a49b.jpg)
+
+## BROOKINGS
+
+The Brookings Institution
+1775 Massachusetts Ave., NW
+Washington, D.C. 20036
+brookings.edu
