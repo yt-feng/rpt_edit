@@ -1,0 +1,291 @@
+{
+  "date_folder": "260626",
+  "max_reports": "all",
+  "selected_count": 28,
+  "successful_count": 28,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_0/0001-01-Citi-China-Economics-26H2-Outlook-AI-Supercycle-Cuts-into-the-K-shaped-E",
+      "title": "Citi：AI超级周期正在重塑中国K型经济，但“涓滴效应”远未到来",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260626/01-0001-01-Citi-China-Economics-26H2-Outlook-AI-Supercycle-Cuts-into-the-K-shaped-E",
+      "pdf_path": "kc_translated_reports/260626/01-0001-01-Citi-China-Economics-26H2-Outlook-AI-Supercycle-Cuts-into-the-K-shaped-E/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_0/0002-02-Barclays-Rates-Strategy-A-global-bond-glut-260625",
+      "title": "BARC：全球正从“储蓄过剩”转向“债券过剩”，长端利率的结构性上行才刚刚开始",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260626/02-0002-02-Barclays-Rates-Strategy-A-global-bond-glut-260625",
+      "pdf_path": "kc_translated_reports/260626/02-0002-02-Barclays-Rates-Strategy-A-global-bond-glut-260625/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_0/0003-03-J.P.-Morgan-A-cyclical-state-of-mind-2026-Mid-Year-Global-Economic-Outlo",
+      "title": "JPM：全球经济的“滞胀幻觉”正在被打破，真正的周期上行已经启动",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 12,
+      "output_dir": "kc_translated_reports/260626/03-0003-03-J.P",
+      "pdf_path": "kc_translated_reports/260626/03-0003-03-J.P/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_0/0004-04-Goldman-Sachs-Japan-Shipbuilding--Japan-Growth-Strategy-Council--Reaffir",
+      "title": "GS：日本造船业的“经济安全”逻辑，正在催生一个被低估的结构性机会",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 1,
+      "output_dir": "kc_translated_reports/260626/04-0004-04-Goldman-Sachs-Japan-Shipbuilding--Japan-Growth-Strategy-Council--Reaffir",
+      "pdf_path": "kc_translated_reports/260626/04-0004-04-Goldman-Sachs-Japan-Shipbuilding--Japan-Growth-Strategy-Council--Reaffir/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_0/0005-05-Goldman-Sachs-AUSTRALIA-TECHNOLOGY-Takeaways-from-expert-call-on-global-",
+      "title": "GS：数据中心最大的瓶颈不是电力，是碳化硅",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260626/05-0005-05-Goldman-Sachs-AUSTRALIA-TECHNOLOGY-Takeaways-from-expert-call-on-global",
+      "pdf_path": "kc_translated_reports/260626/05-0005-05-Goldman-Sachs-AUSTRALIA-TECHNOLOGY-Takeaways-from-expert-call-on-global/kc_translated_report_05.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_1/0001-06-Barclays-Macro-Outlook-Long-the-cycle--short-the-complacency-260625",
+      "title": "BARC：盈利周期未过热，但市场已容不下意外",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_06.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260626/06-0001-06-Barclays-Macro-Outlook-Long-the-cycle--short-the-complacency-260625",
+      "pdf_path": "kc_translated_reports/260626/06-0001-06-Barclays-Macro-Outlook-Long-the-cycle--short-the-complacency-260625/kc_translated_report_06.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_1/0002-07-Barclays-US-Equity-Strategy-Upgrading-into-uncertainty-260625",
+      "title": "BARC：标普500目标上调至7800，但真正驱动上涨的不是估值",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_07.pdf",
+      "figure_count": 20,
+      "output_dir": "kc_translated_reports/260626/07-0002-07-Barclays-US-Equity-Strategy-Upgrading-into-uncertainty-260625",
+      "pdf_path": "kc_translated_reports/260626/07-0002-07-Barclays-US-Equity-Strategy-Upgrading-into-uncertainty-260625/kc_translated_report_07.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_1/0003-08-Goldman-Sachs-Oil-Tracker--Gulf-Flows-Recover--Market-Fast-Forwards-to-F",
+      "title": "GS：市场正在快速定价一个未来的供应过剩",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_08.pdf",
+      "figure_count": 25,
+      "output_dir": "kc_translated_reports/260626/08-0003-08-Goldman-Sachs-Oil-Tracker--Gulf-Flows-Recover--Market-Fast-Forwards-to-F",
+      "pdf_path": "kc_translated_reports/260626/08-0003-08-Goldman-Sachs-Oil-Tracker--Gulf-Flows-Recover--Market-Fast-Forwards-to-F/kc_translated_report_08.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_1/0004-09-HSBC-China-Macro-Tracker-Financial-opening-up-260624",
+      "title": "HSBC：消费谨慎，但资本正在重新发现中国",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_09.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260626/09-0004-09-HSBC-China-Macro-Tracker-Financial-opening-up-260624",
+      "pdf_path": "kc_translated_reports/260626/09-0004-09-HSBC-China-Macro-Tracker-Financial-opening-up-260624/kc_translated_report_09.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_1/0005-10-J.P.-Morgan-Japan-Rates-Topics-Outline-of-Public-Private-Investment-acro",
+      "title": "JPM：日本370万亿投资计划，国债市场才是真正的考场",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_10.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260626/10-0005-10-J.P",
+      "pdf_path": "kc_translated_reports/260626/10-0005-10-J.P/kc_translated_report_10.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_2/0001-11-Nomura-Asia-Insights-China--PBoC-is-to-add-overnight-OMO-260625",
+      "title": "NOM：央行加急推出隔夜逆回购，不是降息信号而是框架升级",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_11.pdf",
+      "figure_count": 2,
+      "output_dir": "kc_translated_reports/260626/11-0001-11-Nomura-Asia-Insights-China--PBoC-is-to-add-overnight-OMO-260625",
+      "pdf_path": "kc_translated_reports/260626/11-0001-11-Nomura-Asia-Insights-China--PBoC-is-to-add-overnight-OMO-260625/kc_translated_report_11.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_2/0002-12-Goldman-Sachs-European-Utilities-Hormuz-re-opening-what-to-do-with-the-s",
+      "title": "GS：欧洲公用事业股的下行已近尾声，真正的机会藏在电气化超级周期里",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_12.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260626/12-0002-12-Goldman-Sachs-European-Utilities-Hormuz-re-opening-what-to-do-with-the-s",
+      "pdf_path": "kc_translated_reports/260626/12-0002-12-Goldman-Sachs-European-Utilities-Hormuz-re-opening-what-to-do-with-the-s/kc_translated_report_12.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_2/0003-13-J.P.-Morgan-Cosmetics-Sector--Earnings-Outlook--Apr-Jun--Need-strategies",
+      "title": "JPM：日本化妆品巨头正集体失速于中国战场",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_13.pdf",
+      "figure_count": 4,
+      "output_dir": "kc_translated_reports/260626/13-0003-13-J.P",
+      "pdf_path": "kc_translated_reports/260626/13-0003-13-J.P/kc_translated_report_13.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_2/0004-14-Nomura-USD-CNY-fix-model-Projection--6.8023-260626",
+      "title": "NOM：人民币中间价模型已释放一个被低估的政策信号",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_14.pdf",
+      "figure_count": 3,
+      "output_dir": "kc_translated_reports/260626/14-0004-14-Nomura-USD-CNY-fix-model-Projection--6",
+      "pdf_path": "kc_translated_reports/260626/14-0004-14-Nomura-USD-CNY-fix-model-Projection--6/kc_translated_report_14.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_2/0005-15-Bernstein-Bernstein-Energy---Power--Taking-it-to-the-NaX.-Are-sodium-ion",
+      "title": "Bernstein：钠离子电池正在改写光伏基荷电力的经济学",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_15.pdf",
+      "figure_count": 4,
+      "output_dir": "kc_translated_reports/260626/15-0005-15-Bernstein-Bernstein-Energy---Power--Taking-it-to-the-NaX",
+      "pdf_path": "kc_translated_reports/260626/15-0005-15-Bernstein-Bernstein-Energy---Power--Taking-it-to-the-NaX/kc_translated_report_15.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_3/0001-16-Bernstein-Japan-Autos---Auto-Parts-Best-of-Times--Worst-of-Times--How-K-",
+      "title": "Bernstein：日本车市正在K型分化，丰田和铃木是赢家",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_16.pdf",
+      "figure_count": 24,
+      "output_dir": "kc_translated_reports/260626/16-0001-16-Bernstein-Japan-Autos---Auto-Parts-Best-of-Times--Worst-of-Times--How-K",
+      "pdf_path": "kc_translated_reports/260626/16-0001-16-Bernstein-Japan-Autos---Auto-Parts-Best-of-Times--Worst-of-Times--How-K/kc_translated_report_16.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_3/0002-17-Goldman-Sachs-CHINA-SOLAR--TRACKING-PROFITABILITY-INFLECTION-Jun-26--Per",
+      "title": "GS：光伏盈利拐点只出现在组件，上游还在失血",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_17.pdf",
+      "figure_count": 8,
+      "output_dir": "kc_translated_reports/260626/17-0002-17-Goldman-Sachs-CHINA-SOLAR--TRACKING-PROFITABILITY-INFLECTION-Jun-26--Per",
+      "pdf_path": "kc_translated_reports/260626/17-0002-17-Goldman-Sachs-CHINA-SOLAR--TRACKING-PROFITABILITY-INFLECTION-Jun-26--Per/kc_translated_report_17.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_3/0003-18-Goldman-Sachs-China-Banks-Questions-Arising-from-Strengthened-Tax-Superv",
+      "title": "GS：中国银行税案冲击有限，真正考验的是净息差",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_18.pdf",
+      "figure_count": 4,
+      "output_dir": "kc_translated_reports/260626/18-0003-18-Goldman-Sachs-China-Banks-Questions-Arising-from-Strengthened-Tax-Superv",
+      "pdf_path": "kc_translated_reports/260626/18-0003-18-Goldman-Sachs-China-Banks-Questions-Arising-from-Strengthened-Tax-Superv/kc_translated_report_18.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_3/0004-19-J.P.-Morgan-China-Beauty-Takeaways-from-expert-call-after-6.18-events--L",
+      "title": "JPM：618之后，中国美妆的“双轨”格局已经固化",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_19.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260626/19-0004-19-J.P.-Morgan-China-Beauty-Takeaways-from-expert-call-after-6",
+      "pdf_path": "kc_translated_reports/260626/19-0004-19-J.P.-Morgan-China-Beauty-Takeaways-from-expert-call-after-6/kc_translated_report_19.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_3/0005-20-Jefferies-China---Technology-China-WFE--Fast-Growing-Semi-Deficit-to-Dri",
+      "title": "JEF：中国半导体设备进口的窄幅下跌背后，藏着一个更大的结构性故事",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_20.pdf",
+      "figure_count": 10,
+      "output_dir": "kc_translated_reports/260626/20-0005-20-Jefferies-China---Technology-China-WFE--Fast-Growing-Semi-Deficit-to-Dri",
+      "pdf_path": "kc_translated_reports/260626/20-0005-20-Jefferies-China---Technology-China-WFE--Fast-Growing-Semi-Deficit-to-Dri/kc_translated_report_20.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_4/0001-21-Morgan-Stanley-Industrial-capex---production.-A-case-for-selective-broad",
+      "title": "摩根斯坦利：MS：工业资本开支比生产更值得关注——一个选择性扩散的时机",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_21.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260626/21-0001-21-Morgan-Stanley-Industrial-capex---production",
+      "pdf_path": "kc_translated_reports/260626/21-0001-21-Morgan-Stanley-Industrial-capex---production/kc_translated_report_21.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_4/0002-22-Nomura-China-Internet---New-Media-Takeaways-from-ByteDance-FORCE-AI-Clou",
+      "title": "NOM：字节AI视频生成已跨过“生产门槛”，但真正的战场还在别处",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_22.pdf",
+      "figure_count": 1,
+      "output_dir": "kc_translated_reports/260626/22-0002-22-Nomura-China-Internet---New-Media-Takeaways-from-ByteDance-FORCE-AI-Clou",
+      "pdf_path": "kc_translated_reports/260626/22-0002-22-Nomura-China-Internet---New-Media-Takeaways-from-ByteDance-FORCE-AI-Clou/kc_translated_report_22.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_4/0003-23-JPM-Flows---Liquidity-Has-investors-leveraged-peaked--260624",
+      "title": "JPM：散户杠杆正在撤退，科技股的下一个对手不是关税",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_23.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260626/23-0003-23-JPM-Flows---Liquidity-Has-investors-leveraged-peaked--260624",
+      "pdf_path": "kc_translated_reports/260626/23-0003-23-JPM-Flows---Liquidity-Has-investors-leveraged-peaked--260624/kc_translated_report_23.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_4/0004-24-Bofa-The-Flow-Show-Small-is-Big-260625",
+      "title": "美国银行：资金正从科技巨头流向小盘股，但真正的信号是“规模”不再为王",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_24.pdf",
+      "figure_count": 17,
+      "output_dir": "kc_translated_reports/260626/24-0004-24-Bofa-The-Flow-Show-Small-is-Big-260625",
+      "pdf_path": "kc_translated_reports/260626/24-0004-24-Bofa-The-Flow-Show-Small-is-Big-260625/kc_translated_report_24.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_4/0005-25-Goldman-Sachs-AN-AI-JOB-APOCALYPSE--260625",
+      "title": "GS：AI“失业末日”不会来，但真正的考验藏在2027年",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_25.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260626/25-0005-25-Goldman-Sachs-AN-AI-JOB-APOCALYPSE--260625",
+      "pdf_path": "kc_translated_reports/260626/25-0005-25-Goldman-Sachs-AN-AI-JOB-APOCALYPSE--260625/kc_translated_report_25.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_5/0001-26-Goldman-Sachs-Insurance--M-A-and-Reinsurance--Opportunities-in-a-softer-",
+      "title": "GS：澳洲保险业正进入“费率见顶、并购重启”的关键拐点",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_26.pdf",
+      "figure_count": 16,
+      "output_dir": "kc_translated_reports/260626/26-0001-26-Goldman-Sachs-Insurance--M-A-and-Reinsurance--Opportunities-in-a-softer",
+      "pdf_path": "kc_translated_reports/260626/26-0001-26-Goldman-Sachs-Insurance--M-A-and-Reinsurance--Opportunities-in-a-softer/kc_translated_report_26.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_5/0002-27-JPM-Retail-Radar-Jun-24---Retail-Remembers-the-Dip--Memory-MU-Serves-Rig",
+      "title": "JPM：散户正在用行动重写“逢低买入”的定义",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_27.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260626/27-0002-27-JPM-Retail-Radar-Jun-24---Retail-Remembers-the-Dip--Memory-MU-Serves-Rig",
+      "pdf_path": "kc_translated_reports/260626/27-0002-27-JPM-Retail-Radar-Jun-24---Retail-Remembers-the-Dip--Memory-MU-Serves-Rig/kc_translated_report_27.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260626/shard_5/0003-28-Morgan-Stanley-How-Much-Will-Vol-Go-Up-Under-Warsh--260624",
+      "title": "摩根斯坦利：MS：Warsh治下的美联储，波动率回归格林斯潘时代",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_28.pdf",
+      "figure_count": 12,
+      "output_dir": "kc_translated_reports/260626/28-0003-28-Morgan-Stanley-How-Much-Will-Vol-Go-Up-Under-Warsh--260624",
+      "pdf_path": "kc_translated_reports/260626/28-0003-28-Morgan-Stanley-How-Much-Will-Vol-Go-Up-Under-Warsh--260624/kc_translated_report_28.pdf"
+    }
+  ]
+}
