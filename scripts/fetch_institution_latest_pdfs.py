@@ -190,6 +190,9 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "impersonate": True,
         "recency_filter": False,
         "query": "site:mckinsey.com filetype:pdf",
+        # DDG is relevance-ranked; keep only reports whose URL/title mentions the
+        # current or previous year so old evergreen reports are excluded.
+        "recent_years": 2,
     },
     "bain": {
         "name_en": "Bain",
@@ -216,6 +219,8 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "child_filter": r"content|latest",
         "include": r"bcg\.com/publications/",
         "sitemap_scan_limit": 40,
+        # Only publications modified within this window, so we skip old reports.
+        "sitemap_max_age_days": 120,
     },
 }
 
@@ -576,7 +581,15 @@ def collect_ddg_items(cfg: dict[str, Any], session: requests.Session, timeout: i
             break
 
     kept = [it for it in items if not NON_REPORT_RE.search(it["source_url"]) and not NON_REPORT_RE.search(it["title"])]
-    log(f"  ddg '{cfg['query']}' -> {len(items)} pdf results, kept {len(kept)} after non-report filter")
+    # DuckDuckGo ranks by relevance, not date, so without this it would surface old
+    # evergreen reports. Keep only items whose URL or title mentions a recent year.
+    recent_years = int(cfg.get("recent_years", 0))
+    if recent_years:
+        years = {str(datetime.now(timezone.utc).year - offset) for offset in range(recent_years)}
+        before = len(kept)
+        kept = [it for it in kept if any(y in it["source_url"] or y in it["title"] for y in years)]
+        log(f"  recent-year filter ({'/'.join(sorted(years, reverse=True))}): {before} -> {len(kept)}")
+    log(f"  ddg '{cfg['query']}' -> {len(items)} pdf results, kept {len(kept)}")
     return kept
 
 
@@ -622,12 +635,24 @@ def collect_sitemap_items(cfg: dict[str, Any], session: requests.Session, timeou
             lm = re.search(r"<lastmod>([^<]+)</lastmod>", block)
             entries.append((lm.group(1).strip() if lm else "", loc))
     entries.sort(key=lambda e: e[0], reverse=True)  # newest <lastmod> first
+    # Keep only recently-modified publications so we don't pull in old reports.
+    max_age = int(cfg.get("sitemap_max_age_days", 0))
+    if max_age:
+        cutoff = datetime.now(timezone.utc) - timedelta(days=max_age)
+        before = len(entries)
+        fresh: list[tuple[str, str]] = []
+        for lastmod, loc in entries:
+            dt = parse_date(lastmod)
+            if dt is not None and dt >= cutoff:
+                fresh.append((lastmod, loc))
+        entries = fresh
+        log(f"  sitemap age filter (<= {max_age}d): {before} -> {len(entries)} recent urls")
     limit = cfg.get("sitemap_scan_limit", 40)
     items = [
         {"title": "", "source_url": loc, "guid": loc, "date": lastmod, "pdf_candidates": [], "scrape_url": loc}
         for lastmod, loc in entries[:limit]
     ]
-    log(f"  sitemap -> {len(entries)} matching urls; scanning newest {len(items)}")
+    log(f"  sitemap -> scanning newest {len(items)} urls")
     return items
 
 
