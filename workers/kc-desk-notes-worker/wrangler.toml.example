@@ -8,6 +8,10 @@ R2_OBJECT_PREFIX = "reports"
 CATALOG_URL = "https://YOUR_GITHUB_PAGES_HOST/rpt_edit/data/catalog.json"
 PASSWORD_RULES_URL = "https://YOUR_GITHUB_PAGES_HOST/rpt_edit/data/password_rules.json"
 ALLOWED_ORIGIN = "https://YOUR_GITHUB_PAGES_HOST"
+# Reportify module: lets a gated-report click trigger the reportify-grab workflow.
+# GH_DISPATCH_TOKEN is a fine-grained PAT with Actions: read/write on this repo
+# (set it as a secret: `wrangler secret put GH_DISPATCH_TOKEN`).
+GH_REPO = "yt-feng/rpt_edit"
 
 [[r2_buckets]]
 binding = "REPORT_BUCKET"

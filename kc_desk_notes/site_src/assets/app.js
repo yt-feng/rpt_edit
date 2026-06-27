@@ -363,6 +363,23 @@
     `;
   }
 
+  function reportifyRow(item) {
+    const meta = [item.institution, item.date, item.file_type]
+      .map((value) => String(value || "").trim())
+      .filter(Boolean)
+      .join(" · ");
+    const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
+    return `
+      <button class="related-row reportify-row" type="button" data-id="${escapeHtml(item.id)}">
+        <span class="related-title">
+          <span>${escapeHtml(item.title)}</span>
+          ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
+        </span>
+        <span class="related-meta">${escapeHtml(meta)}</span>
+      </button>
+    `;
+  }
+
   function setOptions(select, options, allLabel) {
     const current = select.value;
     const rows = [`<option value="">${escapeHtml(allLabel)}</option>`];
@@ -533,6 +550,144 @@
       const row = event.target.closest(".report-link");
       if (!row) return;
       window.location.href = `report.html?id=${encodeURIComponent(row.dataset.id)}`;
+    });
+
+    // --- Reportify (其他报告) integration ---------------------------------
+    // Live, no-login search of reportify.cn via the Worker proxy, shown below the
+    // local results. Clicking a row downloads the PDF: readable reports are served
+    // instantly; gated ones are grabbed in the background (~2 min) then served.
+    const reportifyUrl = workerBaseUrl(config);
+    const reportifySection = document.getElementById("reportifySection");
+    const reportifyResults = document.getElementById("reportifyResults");
+    const reportifyCount = document.getElementById("reportifyCount");
+    const reportifyStatus = document.getElementById("reportifyStatus");
+    let reportifyTimer = 0;
+    let reportifyToken = 0;
+    const reportifyPolls = new Map();
+
+    function setReportifyStatus(text, kind) {
+      if (!reportifyStatus) return;
+      reportifyStatus.className = kind ? `status-line ${kind}` : "status-line";
+      reportifyStatus.textContent = text || "";
+    }
+
+    function triggerBlobDownload(blob, disposition, fallbackName) {
+      const objectUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = objectUrl;
+      link.download = filenameFromDisposition(disposition, fallbackName);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(objectUrl);
+    }
+
+    async function runReportifySearch(query) {
+      if (!reportifySection || !reportifyResults) return;
+      if (!reportifyUrl || !query) {
+        reportifySection.hidden = true;
+        reportifyResults.innerHTML = "";
+        if (reportifyCount) reportifyCount.textContent = "";
+        setReportifyStatus("");
+        return;
+      }
+      const token = ++reportifyToken;
+      reportifySection.hidden = false;
+      if (reportifyCount) reportifyCount.textContent = "搜索中…";
+      setReportifyStatus("");
+      try {
+        const response = await fetch(
+          `${reportifyUrl}/reportify/search?q=${encodeURIComponent(query)}`,
+          { cache: "no-store" },
+        );
+        if (!response.ok) throw new Error(`Reportify 搜索失败 (${response.status})`);
+        const data = await response.json();
+        if (token !== reportifyToken) return; // a newer query superseded this one
+        const items = Array.isArray(data.items) ? data.items : [];
+        if (reportifyCount) reportifyCount.textContent = items.length ? `${items.length} 条` : "";
+        reportifyResults.innerHTML = items.length
+          ? items.map(reportifyRow).join("")
+          : '<div class="empty-state">Reportify 暂无匹配结果。</div>';
+      } catch (error) {
+        if (token !== reportifyToken) return;
+        if (reportifyCount) reportifyCount.textContent = "";
+        reportifyResults.innerHTML = "";
+        setReportifyStatus(error.message || "Reportify 搜索暂不可用。", "error");
+      }
+    }
+
+    function scheduleReportifySearch() {
+      window.clearTimeout(reportifyTimer);
+      const query = input.value.trim();
+      reportifyTimer = window.setTimeout(() => runReportifySearch(query), 400);
+    }
+
+    function pollReportify(id) {
+      if (reportifyPolls.has(id)) return;
+      let attempts = 0;
+      const timer = window.setInterval(async () => {
+        attempts += 1;
+        if (attempts > 12) { // ~3 minutes at 15s intervals
+          window.clearInterval(timer);
+          reportifyPolls.delete(id);
+          return;
+        }
+        try {
+          const response = await fetch(
+            `${reportifyUrl}/reportify/status?id=${encodeURIComponent(id)}`,
+            { cache: "no-store" },
+          );
+          const data = await response.json();
+          if (data.ready) {
+            window.clearInterval(timer);
+            reportifyPolls.delete(id);
+            setReportifyStatus("报告已就绪，正在下载…", "ok");
+            downloadReportify(id);
+          }
+        } catch (_error) {
+          // Keep polling; a transient error is expected while the grab runs.
+        }
+      }, 15000);
+      reportifyPolls.set(id, timer);
+    }
+
+    async function downloadReportify(id) {
+      if (!reportifyUrl || !id) return;
+      setReportifyStatus("正在获取报告…");
+      try {
+        const response = await fetch(
+          `${reportifyUrl}/reportify/pdf?id=${encodeURIComponent(id)}`,
+          { cache: "no-store" },
+        );
+        if (response.status === 202) {
+          setReportifyStatus("报告正在后台抓取，请约 2 分钟后回到本页重新点击下载（或刷新页面）。");
+          pollReportify(id);
+          return;
+        }
+        if (!response.ok) {
+          let message = `下载失败 (${response.status})`;
+          try {
+            const data = await response.json();
+            if (data.error) message = data.error;
+          } catch (_error) {
+            // Non-JSON error body; keep the generic message.
+          }
+          throw new Error(message);
+        }
+        const blob = await response.blob();
+        triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${id}.pdf`);
+        setReportifyStatus("下载已开始。", "ok");
+      } catch (error) {
+        setReportifyStatus(error.message || "下载失败。", "error");
+      }
+    }
+
+    input.addEventListener("input", scheduleReportifySearch);
+    clearFilters.addEventListener("click", () => runReportifySearch(""));
+    reportifyResults.addEventListener("click", (event) => {
+      const row = event.target.closest(".reportify-row");
+      if (!row) return;
+      downloadReportify(row.dataset.id);
     });
 
     loadJson("data/search_index.json")

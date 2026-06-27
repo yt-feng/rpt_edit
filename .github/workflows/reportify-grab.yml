@@ -1,0 +1,67 @@
+name: Reportify Grab
+
+# On-demand download of a single reportify.cn report PDF. The KC Desk Notes Worker
+# fires this via repository_dispatch (event type "reportify-grab") when a user clicks
+# a gated report. The grabbed PDF is mirrored to R2 at reportify/<id>.pdf, where the
+# Worker's GET /reportify/pdf?id=<id> serves it on the next request.
+on:
+  repository_dispatch:
+    types: [reportify-grab]
+  workflow_dispatch:
+    inputs:
+      report_id:
+        description: "Reportify report id (numeric, e.g. 1264649995240476672)"
+        required: true
+        type: string
+
+# Avoid duplicate grabs of the same report racing each other.
+concurrency:
+  group: reportify-grab-${{ github.event.client_payload.id || github.event.inputs.report_id }}
+  cancel-in-progress: false
+
+jobs:
+  grab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Resolve report id
+        id: resolve
+        run: |
+          ID="${{ github.event.client_payload.id || github.event.inputs.report_id }}"
+          if ! printf '%s' "$ID" | grep -qE '^[0-9]{6,25}$'; then
+            echo "Invalid report id: '$ID'" >&2
+            exit 1
+          fi
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright boto3
+          python -m playwright install --with-deps chromium
+
+      - name: Grab reportify PDF
+        run: |
+          python scripts/reportify_pdf_grabber.py \
+            --url "https://reportify.cn/reports/${{ steps.resolve.outputs.id }}" \
+            --output "/tmp/${{ steps.resolve.outputs.id }}.pdf" \
+            --headless
+
+      - name: Upload PDF to R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID || '8182ec40eab8c484e11ebf5d6a516fbd' }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'kc-desk-notes-pdfs' }}
+        run: |
+          python scripts/upload_reportify_pdf_to_r2.py \
+            --id "${{ steps.resolve.outputs.id }}" \
+            --pdf "/tmp/${{ steps.resolve.outputs.id }}.pdf"
