@@ -205,11 +205,17 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "name_en": "BCG",
         "name_cn": "波士顿咨询",
         "token": "BCG",
-        "kind": "ddg_search",
-        "pdf": "direct",
+        # BCG's publication list is JS-rendered and DuckDuckGo discovery is flaky, but
+        # its sitemap exposes every publication URL and the pages link to downloadable
+        # PDFs (web-assets / media-publications hosts). Sort by <lastmod> for recency.
+        "kind": "sitemap",
+        "pdf": "scrape",
         "impersonate": True,
         "recency_filter": False,
-        "query": "site:bcg.com filetype:pdf",
+        "sitemap_urls": ["https://www.bcg.com/sitemap.xml"],
+        "child_filter": r"content|latest",
+        "include": r"bcg\.com/publications/",
+        "sitemap_scan_limit": 40,
     },
 }
 
@@ -574,6 +580,57 @@ def collect_ddg_items(cfg: dict[str, Any], session: requests.Session, timeout: i
     return kept
 
 
+def collect_sitemap_items(cfg: dict[str, Any], session: requests.Session, timeout: int) -> list[dict[str, Any]]:
+    """Collect publication page URLs from a sitemap (following a sitemap index),
+    newest first by <lastmod>; each page's PDF is resolved later by the scrape step.
+
+    Used for BCG, whose listing is JS-rendered but whose sitemap exposes every
+    publication URL and whose pages link to downloadable PDFs on asset hosts.
+    """
+    include = re.compile(cfg["include"], re.I) if cfg.get("include") else None
+    child_filter = re.compile(cfg["child_filter"], re.I) if cfg.get("child_filter") else None
+    impersonate = cfg.get("impersonate", False)
+    to_fetch = list(cfg["sitemap_urls"])
+    fetched = 0
+    entries: list[tuple[str, str]] = []  # (lastmod, loc)
+    seen_sm: set[str] = set()
+    while to_fetch and fetched < cfg.get("max_sitemaps", 8):
+        sm = to_fetch.pop(0)
+        if sm in seen_sm:
+            continue
+        seen_sm.add(sm)
+        fetched += 1
+        try:
+            resp = http_get(session, sm, timeout, impersonate)
+            resp.raise_for_status()
+            text = resp.text
+        except Exception as exc:  # noqa: BLE001 - isolate sitemap failures
+            warn(f"  sitemap failed {sm}: {exc}")
+            continue
+        if "<sitemapindex" in text[:1000].lower():
+            for loc in re.findall(r"<loc>([^<]+)</loc>", text):
+                if not child_filter or child_filter.search(loc):
+                    to_fetch.append(html.unescape(loc.strip()))
+            continue
+        for block in re.findall(r"<url>(.*?)</url>", text, re.S):
+            loc_m = re.search(r"<loc>([^<]+)</loc>", block)
+            if not loc_m:
+                continue
+            loc = html.unescape(loc_m.group(1).strip())
+            if include and not include.search(loc):
+                continue
+            lm = re.search(r"<lastmod>([^<]+)</lastmod>", block)
+            entries.append((lm.group(1).strip() if lm else "", loc))
+    entries.sort(key=lambda e: e[0], reverse=True)  # newest <lastmod> first
+    limit = cfg.get("sitemap_scan_limit", 40)
+    items = [
+        {"title": "", "source_url": loc, "guid": loc, "date": lastmod, "pdf_candidates": [], "scrape_url": loc}
+        for lastmod, loc in entries[:limit]
+    ]
+    log(f"  sitemap -> {len(entries)} matching urls; scanning newest {len(items)}")
+    return items
+
+
 def collect_html_listing_items(cfg: dict[str, Any], session: requests.Session, timeout: int) -> list[dict[str, Any]]:
     """Scrape a listing page for article links; each is resolved to a PDF later."""
     pattern = re.compile(cfg["item_link_pattern"], re.I)
@@ -837,6 +894,8 @@ def main() -> int:
                 items = collect_coveo_items(cfg, session, args.request_timeout, args.imf_rows)
             elif cfg["kind"] == "ddg_search":
                 items = collect_ddg_items(cfg, session, args.request_timeout, args.ddg_df)
+            elif cfg["kind"] == "sitemap":
+                items = collect_sitemap_items(cfg, session, args.request_timeout)
             elif cfg["kind"] == "html_listing":
                 items = collect_html_listing_items(cfg, session, args.request_timeout)
             else:
