@@ -1,0 +1,11 @@
+Found 37 total PDFs; shard 7/40 has 2 PDFs, skips 0 already converted, will process 2 PDFs with batch_size=5.
+Running batch 1: 2 PDFs
+Found 2 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 2 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_80au5w66/pdfs/0001-36-Bernstein-Weekend Consumer Blast- Whatever happened to Howard Johnson- The lifecycle of a hotel brand-260626.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_80au5w66/pdfs/0002-37-Bernstein-Weekend Healthcare Pulse- Deadtech forever- Can Medtech recover--260626.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=adc2055a-cfc4-4e6e-84ff-09925996e96e
+MinerU states: running, waiting-file
+MinerU states: done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260627/shard_7; successful_reports=2; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 2 report directories.

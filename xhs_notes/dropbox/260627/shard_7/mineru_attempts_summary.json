@@ -1,0 +1,24 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 2,
+    "successful_pdf_count": 2,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_80au5w66/pdfs/0001-36-Bernstein-Weekend Consumer Blast- Whatever happened to Howard Johnson- The lifecycle of a hotel brand-260626.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_80au5w66/pdfs/0002-37-Bernstein-Weekend Healthcare Pulse- Deadtech forever- Can Medtech recover--260626.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
