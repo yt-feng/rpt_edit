@@ -40,7 +40,7 @@ except Exception:  # pragma: no cover
 # names institution_names.infer_institution_name returns, so --exclude-institutions
 # can drop whole sources (e.g. rand,brookings) before translating.
 INSTITUTION_KEY_TO_CN = {
-    "imf": "国际货币基金组织",
+    "imf": "IMF",
     "bis": "国际清算银行",
     "worldbank": "世界银行",
     "world bank": "世界银行",
