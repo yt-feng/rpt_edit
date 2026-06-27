@@ -687,6 +687,25 @@ button.primary:disabled {
   font-size: 12px;
 }
 
+.reportify-section {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.reportify-hint {
+  margin: 0 0 12px;
+  font-size: 13px;
+}
+
+.reportify-row .related-title {
+  font-weight: 600;
+}
+
+.reportify-section .status-line {
+  margin-top: 10px;
+}
+
 .about-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 148px;

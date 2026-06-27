@@ -184,6 +184,7 @@ jobs:
           CATALOG_URL = "$PAGES_URL/data/catalog.json"
           PASSWORD_RULES_URL = "$PAGES_URL/data/password_rules.json"
           ALLOWED_ORIGIN = "$PAGES_ORIGIN"
+          GH_REPO = "$GITHUB_REPOSITORY"
 
           [[r2_buckets]]
           binding = "REPORT_BUCKET"
@@ -198,6 +199,11 @@ jobs:
           PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
           CALC_KEY: ${{ secrets.CALC_KEY }}
           MASTER_KEY: ${{ secrets.KC_DESK_MASTER_KEY || secrets.KC_DESK_DOWNLOAD_PASSWORD }}
+          # Reportify module: lets a gated-report click trigger the reportify-grab
+          # workflow. Optional - if the secret is unset the Worker treats the token as
+          # absent and returns a "view on reportify.cn" link for gated reports. The
+          # fallback keeps wrangler from pushing an empty secret value.
+          GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN || 'unconfigured' }}
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID || '8182ec40eab8c484e11ebf5d6a516fbd' }}
@@ -207,3 +213,4 @@ jobs:
             PASSWORD_SECRET
             CALC_KEY
             MASTER_KEY
+            GH_DISPATCH_TOKEN

@@ -3,6 +3,16 @@ const DEFAULT_R2_PREFIX = "reports";
 const CONTACT_WECHAT = "macroGate";
 const ADMIN_TOKEN_TTL_SECONDS = 180 * 24 * 60 * 60;
 
+// Reportify (reportify.cn) integration. The reports search + detail endpoints are
+// public (no login); only some PDFs are directly downloadable. See handleReportify*.
+const REPORTIFY_API = "https://api.reportify.cn";
+const REPORTIFY_SITE = "https://reportify.cn";
+const REPORTIFY_R2_PREFIX = "reportify";
+const REPORTIFY_SEARCH_PAGE_SIZE = 20;
+const REPORTIFY_UA =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
+  "(KHTML, like Gecko) Chrome/124.0 Safari/537.36";
+
 let catalogCache = null;
 let catalogFetchedAt = 0;
 let rulesCache = null;
@@ -419,6 +429,190 @@ async function handleAdminReportPassword(request, env) {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Reportify integration
+// ---------------------------------------------------------------------------
+
+function reportifyHeaders() {
+  return {
+    "User-Agent": REPORTIFY_UA,
+    "Referer": `${REPORTIFY_SITE}/`,
+    "Accept": "application/json",
+  };
+}
+
+function reportifyObjectKey(id) {
+  return `${REPORTIFY_R2_PREFIX}/${id}.pdf`;
+}
+
+function isReportifyId(value) {
+  return /^[0-9]{6,25}$/.test(String(value || "").trim());
+}
+
+function reportifyIsoDate(publishAt) {
+  const ms = Number(publishAt || 0);
+  if (!ms) return "";
+  try {
+    return new Date(ms).toISOString().slice(0, 10);
+  } catch (_error) {
+    return "";
+  }
+}
+
+// Map a raw reportify report record to the slim shape the frontend renders.
+function slimReportifyItem(item) {
+  const title = String(item.title || item.title_cn || "").trim();
+  const summary = String(item.summary || "").replace(/\s+/g, " ").trim();
+  return {
+    id: String(item.report_id || ""),
+    title: title || "Untitled report",
+    title_cn: String(item.title_cn || "").trim(),
+    institution: String(item.institution_name || item.channel_name || "").trim(),
+    date: reportifyIsoDate(item.publish_at),
+    file_type: String(item.file_type || "").trim(),
+    summary: summary.length > 220 ? `${summary.slice(0, 220)}…` : summary,
+  };
+}
+
+async function handleReportifySearch(request, env) {
+  const url = new URL(request.url);
+  const query = String(url.searchParams.get("q") || "").trim();
+  const page = Math.max(1, Number(url.searchParams.get("page") || "1") || 1);
+  if (!query) {
+    return jsonResponse(request, env, 200, { items: [], page: 1, total_page: 0 });
+  }
+
+  const target = new URL(`${REPORTIFY_API}/reports`);
+  target.searchParams.set("query", query);
+  target.searchParams.set("page_num", String(page));
+  target.searchParams.set("page_size", String(REPORTIFY_SEARCH_PAGE_SIZE));
+
+  let data;
+  try {
+    const upstream = await fetch(target.toString(), { headers: reportifyHeaders() });
+    if (!upstream.ok) {
+      return jsonResponse(request, env, 502, { error: "Reportify search is unavailable." });
+    }
+    data = await upstream.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 502, { error: "Reportify search is unavailable." });
+  }
+
+  const items = Array.isArray(data.items) ? data.items.map(slimReportifyItem).filter((it) => it.id) : [];
+  return jsonResponse(request, env, 200, {
+    items,
+    page: Number(data.page_num || page),
+    total_page: Number(data.total_page || 0),
+  });
+}
+
+// Fetch the reportify detail and, if the report is directly readable, return its
+// presigned PDF url. Returns "" when the PDF is gated (needs a browser grab).
+async function reportifyDirectPdfUrl(id) {
+  try {
+    const resp = await fetch(`${REPORTIFY_API}/reports/${id}`, { headers: reportifyHeaders() });
+    if (!resp.ok) return { url: "", title: "" };
+    const data = await resp.json();
+    const main = data.main || {};
+    return { url: String(main.url_pdf || "").trim(), title: String(main.title || main.title_cn || "").trim() };
+  } catch (_error) {
+    return { url: "", title: "" };
+  }
+}
+
+function reportifyPdfResponse(request, env, body, title, id) {
+  return new Response(body, {
+    headers: {
+      ...corsHeaders(request, env),
+      "Content-Type": "application/pdf",
+      "Content-Disposition": contentDisposition(`${title || id}.pdf`),
+      "Cache-Control": "no-store, private",
+      "X-Content-Type-Options": "nosniff",
+    },
+  });
+}
+
+// Ask GitHub to run the reportify-grab workflow for a gated report. Returns true
+// when the dispatch was accepted (HTTP 204).
+async function triggerReportifyGrab(env, id) {
+  const repo = String(env.GH_REPO || "").trim();
+  const token = String(env.GH_DISPATCH_TOKEN || "").trim();
+  if (!repo || !token || token === "unconfigured") return false;
+  try {
+    const resp = await fetch(`https://api.github.com/repos/${repo}/dispatches`, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Accept": "application/vnd.github+json",
+        "Content-Type": "application/json",
+        "User-Agent": "kc-desk-notes-worker",
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+      body: JSON.stringify({ event_type: "reportify-grab", client_payload: { id } }),
+    });
+    return resp.ok;
+  } catch (_error) {
+    return false;
+  }
+}
+
+async function handleReportifyPdf(request, env) {
+  const url = new URL(request.url);
+  const id = String(url.searchParams.get("id") || "").trim();
+  if (!isReportifyId(id)) {
+    return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  }
+
+  // 1) Directly readable reports expose a presigned PDF url - stream it (instant).
+  const direct = await reportifyDirectPdfUrl(id);
+  if (direct.url) {
+    try {
+      const pdf = await fetch(direct.url, { headers: { "User-Agent": REPORTIFY_UA } });
+      if (pdf.ok) {
+        return reportifyPdfResponse(request, env, pdf.body, direct.title, id);
+      }
+    } catch (_error) {
+      // Fall through to the R2 / grab paths below.
+    }
+  }
+
+  // 2) Already grabbed by the workflow and mirrored to R2.
+  if (env.REPORT_BUCKET) {
+    const object = await env.REPORT_BUCKET.get(reportifyObjectKey(id));
+    if (object) {
+      return reportifyPdfResponse(request, env, object.body, direct.title, id);
+    }
+  }
+
+  // 3) Gated and not yet grabbed - kick off the browser grab in GitHub Actions.
+  const dispatched = await triggerReportifyGrab(env, id);
+  if (dispatched) {
+    return jsonResponse(request, env, 202, {
+      status: "pending",
+      wait_seconds: 120,
+      source_url: `${REPORTIFY_SITE}/reports/${id}`,
+    });
+  }
+  return jsonResponse(request, env, 503, {
+    error: "This report needs a background download, which is not configured.",
+    source_url: `${REPORTIFY_SITE}/reports/${id}`,
+  });
+}
+
+async function handleReportifyStatus(request, env) {
+  const url = new URL(request.url);
+  const id = String(url.searchParams.get("id") || "").trim();
+  if (!isReportifyId(id)) {
+    return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  }
+  let ready = false;
+  if (env.REPORT_BUCKET) {
+    const head = await env.REPORT_BUCKET.head(reportifyObjectKey(id));
+    ready = Boolean(head);
+  }
+  return jsonResponse(request, env, 200, { ready });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -445,6 +639,18 @@ export default {
 
     if (url.pathname === "/admin/report-password" && request.method === "POST") {
       return handleAdminReportPassword(request, env);
+    }
+
+    if (url.pathname === "/reportify/search" && request.method === "GET") {
+      return handleReportifySearch(request, env);
+    }
+
+    if (url.pathname === "/reportify/pdf" && request.method === "GET") {
+      return handleReportifyPdf(request, env);
+    }
+
+    if (url.pathname === "/reportify/status" && request.method === "GET") {
+      return handleReportifyStatus(request, env);
     }
 
     return jsonResponse(request, env, 404, { error: "Not found." });

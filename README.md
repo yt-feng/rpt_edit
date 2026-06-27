@@ -26,6 +26,7 @@
 - `.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml`：每日 Dropbox PDF → 小红书/微信/知乎/闲鱼内容主流程。
 - `.github/workflows/daily-bilingual-podcast-videos.yml`：每日生成 5 条双语 podcast 讲解视频。
 - `.github/workflows/kc-desk-notes-pages.yml`：生成 KC Desk Notes 搜索页，并把 PDF 镜像到私有 Cloudflare R2。
+- `.github/workflows/reportify-grab.yml`：按需抓取单篇 reportify.cn 报告 PDF 并上传到 R2（KC Desk Notes「其他报告 · Reportify」模块用）。
 - `scripts/pdf_to_xhs_batch.py`：批处理脚本。
 - `scripts/kc_desk_notes_catalog.py`：KC Desk Notes catalog 和 R2 同步脚本。
 - `prompts/xhs_report_note_prompt.md`：小红书文案 prompt。
