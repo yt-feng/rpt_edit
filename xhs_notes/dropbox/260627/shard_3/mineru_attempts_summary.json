@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_79xvsbrs/pdfs/0001-16-NOM-Asia Chart Alert China- The inflated rating system is challenged by a rising share of loss-making firms-260626.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_79xvsbrs/pdfs/0002-17-DB-China Power Sector-Frozen solar installations- above-normal heat may lift power demand-260625.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_79xvsbrs/pdfs/0003-18-GS-EUROPE AUTOMOBILES European OEM in China May-26- German JVs broadly underperform despite growing demand for premium segment-260626.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_79xvsbrs/pdfs/0004-19-GS-Japan Machinery- Automation- Robot Robodrill May 2026 volume trends-260626.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_79xvsbrs/pdfs/0005-20-MS-AI - The Entertainment Industry-16th Annual Streaming Survey- More Is More-260625.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

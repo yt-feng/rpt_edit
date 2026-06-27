@@ -1,0 +1,2902 @@
+[
+    {
+        "type": "text",
+        "text": "Asia\nChina\nHong Kong",
+        "bbox": [
+            68,
+            94,
+            163,
+            138
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Utilities\nUtilities",
+        "bbox": [
+            68,
+            147,
+            129,
+            177
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Date\n25 June 2026",
+        "bbox": [
+            655,
+            93,
+            769,
+            124
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Industry Update",
+        "bbox": [
+            655,
+            132,
+            838,
+            155
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Frozen solar installations; above-normal heat may lift power demand",
+        "text_level": 1,
+        "bbox": [
+            68,
+            230,
+            630,
+            284
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Four-year low solar installations",
+        "bbox": [
+            68,
+            295,
+            297,
+            310
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "On June 25, National Energy Administration data showed China added 8.7GW of solar power capacity in May, down 9% MoM and 91% YoY, with the latter due to a high base from the May 2025 installation rush. More importantly, stripping out the distortion from last year's unusually strong demand, 5M26 installations were still 25% below 5M24 levels and 3% below 5M23, marking a four-year low. Meanwhile, expectations for near-term support from tighter energy-efficiency standards across the solar manufacturing value chain have yet to materialize. Industry fundamentals continue to weaken, with polysilicon prices falling to Rmb33/kg this week, approaching our estimated trough of \\~Rmb30/kg. With polysilicon output set to rise in the near term, we expect the solar value chain to remain under pressure through July-August, with any meaningful recovery likely dependent on seasonal demand improvement in 4Q26 and/or tangible policy progress.",
+        "bbox": [
+            67,
+            310,
+            638,
+            494
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Gary Zhou, CFA\nResearch Analyst\n+852-2203-5889",
+        "bbox": [
+            655,
+            284,
+            757,
+            327
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/465f0f5608f297bfa08216d6f955024c2abf64ddd57d956a3a79645462842352.jpg",
+        "table_caption": [
+            "Figure 1: China monthly solar installations"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">Key Changes</td></tr><tr><td>Company</td><td>Target Price</td><td>Rating</td></tr><tr><td>0836.HK</td><td>23.00 to 21.50</td><td>-</td></tr><tr><td>600438.SS</td><td>13.00 to 10.00</td><td>-</td></tr><tr><td colspan=\"3\">Source: DB</td></tr></table>",
+        "bbox": [
+            657,
+            340,
+            926,
+            421
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/12416fdc8ed5b717b859550180fd2f8bfb3cd77030672c6a94a51924b4a7059e.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source : National Energy Administration (NEA)"
+        ],
+        "bbox": [
+            68,
+            535,
+            490,
+            665
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4c9873c23047b31a46a711eefad8109c30e21dd7319f4985c0edbff730555a4c.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 2: 5M China solar installations"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            507,
+            540,
+            924,
+            667
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Looking ahead, China's National Climate Center expects temperatures across most regions to be normal to above normal in July, while rainfall is projected to be above",
+        "bbox": [
+            68,
+            790,
+            638,
+            823
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Summer power demand potential: A comparison with 2022",
+        "bbox": [
+            68,
+            684,
+            490,
+            699
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "DB AG/Hong Kong",
+        "text_level": 2,
+        "bbox": [
+            70,
+            854,
+            290,
+            871
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In May 2026, China's power demand grew $6.9\\%$ YoY, accelerating slightly from $6.0\\%$ in April. By segment, industrial demand growth rose to $6.0\\%$ from $5.3\\%$ , commercial demand to $9.7\\%$ from $8.9\\%$ , and residential demand to $7.5\\%$ from $6.0\\%$ . AI-related power demand remained robust, with electricity consumption from internet data services rising $45.4\\%$ YoY in May, up from $42.8\\%$ in April.",
+        "bbox": [
+            67,
+            699,
+            638,
+            776
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "DB",
+        "bbox": [
+            70,
+            31,
+            233,
+            68
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            838,
+            32,
+            924,
+            95
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "IMPORTANT RESEARCH DISCLOSURES AND ANALYST CERTIFICATIONS LOCATED IN APPENDIX 1. DB does and seeks to do business with companies covered in its research reports. Thus, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. THE CONTENT MAY NOT BE DISTRIBUTED IN THE PEOPLE\"S REPUBLIC OF CHINA (\"THE PRC\") (EXCEPT IN COMPLIANCE WITH THE APPLICABLE LAWS AND REGULATIONS OF PRC), EXCLUDING SPECIAL ADMINISTRATIVE REGIONS OF HONG KONG AND MACAU.",
+        "bbox": [
+            67,
+            872,
+            929,
+            957
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "normal in parts of Northeast, East and South China, and near-normal to below-normal elsewhere. The outlook suggests potential upside to summer cooling demand and power consumption, although current forecasts do not indicate a repeat of the extreme 2022 heatwave. In 2022, residential power demand surged 27-34% YoY during July-August, helping drive total power demand growth of 7-12% YoY. Summer 2022 was China's hottest since 1961, with rainfall ranking as the second lowest on record.",
+        "bbox": [
+            67,
+            104,
+            638,
+            211
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Earnings revisions and valuations",
+        "text_level": 2,
+        "bbox": [
+            68,
+            229,
+            310,
+            244
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Among solar manufacturers, we see Tongwei (600438.SS) as a key casualty of the near-term polysilicon downturn. We now expect FY26E/FY27E net losses to be 10% wider than our previous forecasts and cut FY28E EPS by 25%, primarily reflecting lower polysilicon and cell ASP assumptions. Accordingly, we lower our DCF-based TP to Rmb10.0 from Rmb13.0. We derive our target price via DCF methodology with a WACC of 9% (cost of equity at 10% and after-tax cost of debt at 4%), and a terminal growth rate of 0%. Its current P/B valuation is relatively higher than peers.",
+        "bbox": [
+            67,
+            244,
+            638,
+            351
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "With the stock down c.40% YTD, it has underperformed the CSI 300 by 48% and solar peers by 22%. We have yet to see an inflection point in the polysilicon sector and remain concerned that Tongwei's more leveraged balance sheet may constrain its ability to execute a meaningful business transition. Maintain Sell. Key upside risks for Tongwei are 1) better-than-expected solar demand; 2) an unexpected breakthrough in polysilicon anti-involution/industry consolidation; 3) higher-than-expected polysilicon and solar cell prices, and better-than-expected cost control.",
+        "bbox": [
+            67,
+            365,
+            638,
+            474
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "China Resources Power's (0836.HK; CRP) renewable power spin-off and A-share listing is finally approaching the finish line. In mid-June, the company announced that China Resources New Energy will issue up to 2.42bn shares at Rmb10.11/share. We estimate the IPO proceeds (\\~Rmb24bn) could reduce CRP's net gearing by c.20ppts. On the negative side, China Resources New Energy guided that its 1H26 net profit could decline by 19-30% YoY, due to less favourable weather conditions, higher wind and solar curtailment, lower realised electricity prices, reduced subsidy income, and rising costs from capacity expansion. This may also weigh on CRP's near-term earnings, in our view.",
+        "bbox": [
+            67,
+            486,
+            638,
+            624
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We cut our FY26-28E EPS for CRP by 22-23%, mainly due to lower tariff assumptions and earnings dilution from the listing. As a result, we lower our DCF-based TP from HK\\$23.0 to HK\\$21.5 and maintain our Buy rating. We derive our target price via DCF methodology with a WACC of 4% (cost of equity at 8% and after-tax cost of debt at 3%), and a terminal growth rate of 0%. Following the renewable power listing, we expect CRP to gradually raise its dividend payout ratio to 45-50% over the next three years, from 40% currently. We believe the key downside risks for CRP are: (1) Tariff-related uncertainty surrounding newly-built renewable power projects as market trading expands with tariff discounts; (2) higher-than-expected interest rates.",
+        "bbox": [
+            67,
+            636,
+            640,
+            791
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026\nUtilities\nChina Power Sector",
+        "bbox": [
+            68,
+            34,
+            200,
+            81
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            855,
+            32,
+            926,
+            83
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "Page 2",
+        "bbox": [
+            70,
+            945,
+            117,
+            959
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            731,
+            944,
+            927,
+            959
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/3f271bdaef66478275ef407b9f161de088fdff9e7622f714c6c0e2adac28cfbe.jpg",
+        "table_caption": [
+            "Figure 3: Valuation comparison - solar & renewable operators"
+        ],
+        "table_footnote": [
+            "Source : DB estimates (Prices as of 24 June 2026)"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Company</td><td rowspan=\"2\">BBG ticker</td><td rowspan=\"2\">Market Cap (USD MN)</td><td rowspan=\"2\">Rating</td><td rowspan=\"2\">TP (LC)</td><td rowspan=\"2\">Price (LC)</td><td rowspan=\"2\">U/D</td><td colspan=\"3\">P/E (x)</td><td colspan=\"3\">P/B (x)</td><td colspan=\"3\">ROE (%)</td><td colspan=\"3\">Div yield (%)</td><td rowspan=\"2\">EPS CAGR 2026-28E</td></tr><tr><td>2026E</td><td>2027E</td><td>2028E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan=\"20\">Solar manufacturers</td></tr><tr><td>Tongwei</td><td>600438 CH</td><td>8,111</td><td>Sell</td><td>10.00</td><td>12.24</td><td>-18%</td><td>n.m.</td><td>n.m.</td><td>189.4</td><td>1.7</td><td>1.9</td><td>1.9</td><td>-18.8</td><td>-9.8</td><td>1.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>n.a.</td></tr><tr><td>Drinda</td><td>2865 HK</td><td>2,181</td><td>Buy</td><td>50.00</td><td>22.26</td><td>125%</td><td>n.m.</td><td>5.9</td><td>4.5</td><td>1.7</td><td>1.3</td><td>1.0</td><td>-6.5</td><td>25.6</td><td>26.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>n.a.</td></tr><tr><td>GCL Tech</td><td>3800 HK</td><td>3,008</td><td>Buy</td><td>1.40</td><td>0.67</td><td>109%</td><td>125.1</td><td>11.0</td><td>5.8</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.3</td><td>3.7</td><td>6.7</td><td>0.0</td><td>0.0</td><td>0.0</td><td>363%</td></tr><tr><td>LONGi</td><td>601012 CH</td><td>14,053</td><td>Buy</td><td>25.00</td><td>12.45</td><td>101%</td><td>n.m.</td><td>121.2</td><td>33.7</td><td>1.8</td><td>1.8</td><td>1.7</td><td>-5.0</td><td>1.5</td><td>5.2</td><td>0.0</td><td>0.1</td><td>0.4</td><td>n.a.</td></tr><tr><td>Xinyi Solar</td><td>968 HK</td><td>2,380</td><td>Buy</td><td>4.70</td><td>2.00</td><td>135%</td><td>9.2</td><td>7.3</td><td>6.4</td><td>0.5</td><td>0.5</td><td>0.5</td><td>5.6</td><td>6.9</td><td>7.6</td><td>6.2</td><td>7.9</td><td>9.0</td><td>20%</td></tr><tr><td colspan=\"20\">Clean energy operators</td></tr><tr><td>China Yangtze Power</td><td>600900 CH</td><td>94,351</td><td>Buy</td><td>36.00</td><td>26.60</td><td>35%</td><td>17.4</td><td>16.5</td><td>15.6</td><td>2.8</td><td>2.6</td><td>2.5</td><td>16.4</td><td>16.4</td><td>16.4</td><td>4.1</td><td>4.3</td><td>4.5</td><td>6%</td></tr><tr><td>CR Power</td><td>836 HK</td><td>12,011</td><td>Buy</td><td>21.50</td><td>18.30</td><td>17%</td><td>9.5</td><td>8.5</td><td>7.6</td><td>0.8</td><td>0.8</td><td>0.7</td><td>8.7</td><td>9.3</td><td>9.9</td><td>4.7</td><td>5.3</td><td>6.6</td><td>12%</td></tr><tr><td>Longyuan Power</td><td>916 HK</td><td>14,074</td><td>Buy</td><td>8.10</td><td>5.23</td><td>55%</td><td>7.7</td><td>7.2</td><td>6.2</td><td>0.5</td><td>0.5</td><td>0.4</td><td>6.4</td><td>6.6</td><td>7.3</td><td>3.9</td><td>4.2</td><td>4.9</td><td>12%</td></tr></table>",
+        "bbox": [
+            70,
+            134,
+            924,
+            263
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Previous issues: March 2025, April 2025, May 2025, June 2025, July 2025, August 2025, September 2025, October 2025, November 2025, December 2025, January 2026, March 2026, May 2026",
+        "bbox": [
+            68,
+            288,
+            638,
+            336
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026\nUtilities\nChina Power Sector",
+        "bbox": [
+            70,
+            34,
+            200,
+            80
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            855,
+            32,
+            926,
+            84
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            70,
+            945,
+            265,
+            959
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "Page 3",
+        "bbox": [
+            880,
+            945,
+            927,
+            959
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Table Of Contents",
+        "text_level": 2,
+        "bbox": [
+            78,
+            103,
+            206,
+            118
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Power demand growth in May....5   \nPower supply - hydro momentum remains in the near term....6   \nPower utilization....7   \nPower capacity additions....8   \nPower tariffs and coal prices....9   \nValuation comparison - renewable operators....10   \nRenewable operators - one-year-forward P/B history....11   \nRenewable operators - dividend yield history....12",
+        "bbox": [
+            75,
+            121,
+            631,
+            250
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026\nUtilities\nChina Power Sector",
+        "bbox": [
+            70,
+            35,
+            200,
+            81
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            857,
+            32,
+            926,
+            83
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "Page 4",
+        "bbox": [
+            70,
+            945,
+            117,
+            959
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            732,
+            945,
+            927,
+            959
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Power demand growth in May",
+        "text_level": 2,
+        "bbox": [
+            81,
+            78,
+            297,
+            102
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "In May 2026, China's power consumption recorded a $6.9\\%$ YoY, a steady acceleration from $+6.0\\%$ YoY in April 2026. Agricultural/Industrial/Service/Residential power demand maintained a continued growth trajectory, rising by $5.0\\% / 6.0\\% / 9.7\\% / 7.5\\%$ YoY, respectively. Electricity consumption in the internet and related services sector remained elevated at $45.4\\%$ YoY in May 2026, extending the strong growth trend seen in early 2026 and underscoring robust demand from data centres and AI-related infrastructure.",
+        "bbox": [
+            100,
+            115,
+            916,
+            191
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b744347da061310c615f015c9dd4f5d994e8cbe8d523f407fb71442df9697706.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 4: China – monthly total power consumption (YoY)"
+        ],
+        "chart_footnote": [
+            "Source : National Energy Administration"
+        ],
+        "bbox": [
+            89,
+            263,
+            480,
+            482
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6eb07c2c69ecfcc96a6bd262482dcb3bb62f8ba80d78abf978e0ca989c736faa.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 5: China – monthly power consumption by end user (YoY)"
+        ],
+        "chart_footnote": [
+            "Source : National Energy Administration"
+        ],
+        "bbox": [
+            511,
+            268,
+            900,
+            504
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/bc507fe568744491cf3a50801e680ce56077d7c59d9df7e471647f7ac0b0c9cf.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 6: China – power consumption breakdown (May 2026)"
+        ],
+        "chart_footnote": [
+            "Source : National Energy Administration"
+        ],
+        "bbox": [
+            182,
+            638,
+            388,
+            826
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5408fa241e32586f2dd0ad990a7adbfde9e4f964450fd390c892303d2e941697.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 7: Power consumption in the internet and related services sector - YoY"
+        ],
+        "chart_footnote": [
+            "Source : WIND, National Energy Administration"
+        ],
+        "bbox": [
+            506,
+            643,
+            896,
+            838
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "aside_text",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            32,
+            70,
+            46,
+            265
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "aside_text",
+        "text": "Utilities",
+        "bbox": [
+            947,
+            72,
+            959,
+            122
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "aside_text",
+        "text": "Page 5",
+        "bbox": [
+            32,
+            880,
+            46,
+            926
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "aside_text",
+        "text": "25 June 2026",
+        "bbox": [
+            962,
+            70,
+            976,
+            159
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "aside_text",
+        "text": "China Power Sector",
+        "bbox": [
+            931,
+            70,
+            944,
+            196
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            926,
+            857,
+            977,
+            922
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Power supply - hydro momentum remains in the near term",
+        "text_level": 2,
+        "bbox": [
+            81,
+            78,
+            493,
+            102
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "China's total power generation volume increased by 4.2% YoY to 784bn kWh in May 2026, accelerating from the 2.6% YoY growth observed in Apr 2026. Thermal output posted a slower but still positive YoY increase of 2.1% (vs. 3.1% YoY in Apr 2026). Hydro output stayed strong at 13.0% YoY (vs. 12.2% YoY in April).",
+        "bbox": [
+            100,
+            115,
+            916,
+            173
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Solar power output rose robustly by 12.1% YoY in May 2026 (compared with +7.1% YoY in Apr 2026). Wind power output experienced a slightly increase of 0.5% YoY in May 2026 (vs. -5% in Apr 2026). Nuclear power output regained growth momentum, increasing by 5.0% YoY in May 2026 (vs. 8.7% YoY decrease in April 2026).",
+        "bbox": [
+            100,
+            181,
+            916,
+            238
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6916c751393d3b23c493d6d6b041c09455895774ef20d1fd4d27c8fccbb4dcc9.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 8: China – monthly total power generation volume (YoY)"
+        ],
+        "chart_footnote": [
+            "Source : National Bureau of Statistics"
+        ],
+        "bbox": [
+            89,
+            312,
+            479,
+            534
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/94420bb4ea8b08b48a8bbc9784cd7a3045e7053546e5d0e70aa4698c3bc04e97.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 9: China – monthly power generation volume by fuel type (YoY)"
+        ],
+        "chart_footnote": [
+            "Source : National Bureau of Statistics"
+        ],
+        "bbox": [
+            511,
+            300,
+            900,
+            537
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5a8f4cade810aece05e14028bb2df3efa7bdc6370317f2bc00f6ca3b1cb9ad8f.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 10: China – power generation output breakdown (May 2026)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            179,
+            650,
+            409,
+            847
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "aside_text",
+        "text": "Page 6",
+        "bbox": [
+            32,
+            70,
+            46,
+            117
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "aside_text",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            32,
+            729,
+            46,
+            926
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "Source : National Bureau of Statistics",
+        "bbox": [
+            81,
+            878,
+            192,
+            892
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "aside_text",
+        "text": "25 June 2026",
+        "bbox": [
+            962,
+            70,
+            976,
+            159
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "aside_text",
+        "text": "China Power Sector",
+        "bbox": [
+            931,
+            70,
+            944,
+            196
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            926,
+            855,
+            978,
+            922
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Power utilization",
+        "text_level": 2,
+        "bbox": [
+            81,
+            78,
+            201,
+            102
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d79664fbaeb6a8a861492e2a8b71f55a8f893c4c52f79c32f7f6ff4ee29ecaa7.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 11: Utilization hours YoY change by fuel type in Apr 2026 (DBe)"
+        ],
+        "chart_footnote": [
+            "Source : DB estimates"
+        ],
+        "bbox": [
+            85,
+            159,
+            476,
+            357
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f8dc62f8af7ded414c8a55948e533b56c73de22c4635c90d89ca8c290df3db71.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 12: Thermal power monthly utilization hours and YoY changes"
+        ],
+        "chart_footnote": [
+            "Source : National Energy Administration, DB estimates"
+        ],
+        "bbox": [
+            510,
+            169,
+            902,
+            347
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b2af2eba360937cc91cb411d43001b4749e4cda5435ab0ff60e3359f15f0b3a0.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 13: Hydro power monthly utilization hours and YoY changes"
+        ],
+        "chart_footnote": [
+            "Source : National Energy Administration, DB estimates"
+        ],
+        "bbox": [
+            87,
+            468,
+            482,
+            640
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f989363636fd48453e2299b9fd3baf57812fd151e28efb2590e014f852bff095.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 14: Wind/solar monthly utilization hours (YoY)"
+        ],
+        "chart_footnote": [
+            "Source : National Energy Administration, DB estimates"
+        ],
+        "bbox": [
+            510,
+            470,
+            897,
+            643
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "aside_text",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            32,
+            70,
+            46,
+            265
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "aside_text",
+        "text": "25 June 2026",
+        "bbox": [
+            962,
+            70,
+            977,
+            159
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "aside_text",
+        "text": "China Power Sector",
+        "bbox": [
+            931,
+            70,
+            944,
+            196
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "aside_text",
+        "text": "Page 7",
+        "bbox": [
+            32,
+            878,
+            46,
+            926
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            926,
+            855,
+            978,
+            922
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Power capacity additions",
+        "text_level": 2,
+        "bbox": [
+            81,
+            78,
+            261,
+            102
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Solar. China added 8.7GW of new solar power capacity in May 2026, down 91% YoY (high base in May 2025). For 2026, we estimate full-year solar installations at 215GW, down a 32% YoY.",
+        "bbox": [
+            100,
+            115,
+            916,
+            154
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Wind. China added 3.8GW of wind power capacity in May 2026, marking a 86% YoY decrease. We estimate China to add 110GW and 120GW of wind power capacity in 2026E and 2027E, respectively (vs. 119GW in 2025).",
+        "bbox": [
+            100,
+            161,
+            916,
+            201
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Thermal/hydro/nuclear. In May 2026, China added 4.4GW of new thermal power capacity, down 4.2% YoY. For hydro, 1.6GW was added in May 2026, up 173.3% YoY. For nuclear, no capacity was added during the month.",
+        "bbox": [
+            100,
+            208,
+            915,
+            248
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ed3b4db58947e2ae9a1793a29f63f01cf9406167cd180404e016597c5299e5b2.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 15: China – monthly solar installations"
+        ],
+        "chart_footnote": [
+            "Source : National Energy Administration",
+            "Figure 16: China – annual solar installation demand estimates"
+        ],
+        "bbox": [
+            85,
+            315,
+            479,
+            517
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/36c0fa100684e8b6c7828b5bdf2b7c3ca5738460dea84d29786d29968b135daf.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source : National Energy Administration, DB estimate"
+        ],
+        "bbox": [
+            504,
+            315,
+            900,
+            485
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9c6c24d7b2550d78889b36a00e46fd1e85280af813e6e2e5bca6ad3d6159e803.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 17: China – monthly wind installations"
+        ],
+        "chart_footnote": [
+            "Source : National Energy Administration"
+        ],
+        "bbox": [
+            87,
+            625,
+            479,
+            816
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3d13c376fc3ef99e6c66c38daf85eda5615ad843f9d71090df3e4bdcd162ce12.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 18: China - power capacity addition breakdown"
+        ],
+        "chart_footnote": [
+            "Source : National Energy Administration"
+        ],
+        "bbox": [
+            517,
+            633,
+            897,
+            821
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "aside_text",
+        "text": "Page 8",
+        "bbox": [
+            32,
+            70,
+            45,
+            117
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "aside_text",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            32,
+            731,
+            46,
+            926
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "aside_text",
+        "text": "25 June 2026",
+        "bbox": [
+            962,
+            70,
+            976,
+            159
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "aside_text",
+        "text": "China Power Sector",
+        "bbox": [
+            931,
+            70,
+            943,
+            196
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            926,
+            857,
+            976,
+            922
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Power tariffs and coal prices",
+        "text_level": 2,
+        "bbox": [
+            81,
+            78,
+            283,
+            102
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Thermal market-based tariffs. The average market-based tariff for January–June 2026 (based on volumes procured by power grid enterprises as purchasing agents) declined by 9-13% YoY, indicating continued weakness despite the recent rebound in coal prices.",
+        "bbox": [
+            100,
+            115,
+            915,
+            154
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Coal price. Amidst considerable global energy price hikes, China's Qinhuangdao spot thermal coal price (5,500kcal) rose by 27% YTD in 2026. The average spot price in 1H26 was 10% higher than 1H25.",
+        "bbox": [
+            102,
+            163,
+            915,
+            201
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3972352e0af474bb56186ae35a9f84f76405bc47f4a5f90940386c3349daf870.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 19: China's average monthly market-based power tariffs"
+        ],
+        "chart_footnote": [
+            "Source : BJX News (calculated based on volume, with power grid enterprises acting as purchasing agents)"
+        ],
+        "bbox": [
+            84,
+            272,
+            486,
+            478
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1d58a34b63c4351a2782c3a65319f65924be4597ff467b83232f1f7a1e5e9509.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 20: Qinhuangdao 5500kcal spot thermal coal price"
+        ],
+        "chart_footnote": [
+            "Source : Bloomberg Finance LP"
+        ],
+        "bbox": [
+            515,
+            265,
+            891,
+            492
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "aside_text",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            32,
+            70,
+            46,
+            265
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "aside_text",
+        "text": "25 June 2026",
+        "bbox": [
+            960,
+            70,
+            977,
+            159
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "aside_text",
+        "text": "Page 9",
+        "bbox": [
+            32,
+            880,
+            46,
+            926
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "aside_text",
+        "text": "China Power Sector",
+        "bbox": [
+            931,
+            70,
+            944,
+            196
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            926,
+            855,
+            978,
+            922
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Valuation comparison - renewable operators",
+        "text_level": 2,
+        "bbox": [
+            81,
+            78,
+            395,
+            102
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Among China renewable operators, we like China Resources Power (0836.HK) and China Yangtze Power (600900.SS).",
+        "bbox": [
+            100,
+            115,
+            749,
+            136
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "China Resources Power's renewable power spin-off and A-share listing is finally approaching the finish line. In mid-June, the company announced that China Resources New Energy will issue up to 2.42bn shares at Rmb10.11/share. We estimate the IPO proceeds (\\~Rmb24bn) could reduce CRP's net gearing by c.20ppts. On the negative side, China Resources New Energy guided that its 1H26 net profit could decline by 19-30% YoY, due to less favourable weather conditions, higher wind and solar curtailment, lower realised electricity prices, reduced subsidy income, and rising costs from capacity expansion. This may also weigh on CRP's near-term earnings, in our view. We cut our FY26-28E EPS for CRP by 22-23%, mainly due to lower tariff assumptions and earnings dilution from the listing. As a result, we lower our DCF-based TP from HK\\$23.0 to HK\\$21.5 and maintain our Buy rating. We derive our target price via DCF methodology with a WACC of 4% (cost of equity at 8% and after-tax cost of debt at 3%), and a terminal growth rate of 0%. Following the renewable power listing, we expect CRP to gradually raise its dividend payout ratio to 45-50% over the next three years, from 40% currently.",
+        "bbox": [
+            100,
+            144,
+            916,
+            295
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We believe the key downside risks for CRP are: (1) Tariff-related uncertainty surrounding newly-built renewable power projects as market trading expands with tariff discounts; (2) higher-than-expected interest rates.",
+        "bbox": [
+            100,
+            312,
+            916,
+            351
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/8e306bba11a4d6839045c793ef23293df2209997aa47dbd76791bd19ec5c7bb7.jpg",
+        "table_caption": [
+            "Figure 21: Valuation comparison - renewable operators"
+        ],
+        "table_footnote": [
+            "Source : DB estimates (Prices as of 24 June 2026)"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Company</td><td rowspan=\"2\">BBG ticker</td><td rowspan=\"2\">Market Cap (USD MN)</td><td rowspan=\"2\">Rating</td><td rowspan=\"2\">TP (LC)</td><td rowspan=\"2\">Price (LC)</td><td rowspan=\"2\">U/D</td><td colspan=\"3\">P/E (x)</td><td colspan=\"3\">P/B (x)</td><td colspan=\"3\">ROE (%)</td><td colspan=\"3\">Div yield (%)</td><td rowspan=\"2\">EPS CAGR 2026-28E</td></tr><tr><td>2026E</td><td>2027E</td><td>2028E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan=\"20\">Clean energy operators</td></tr><tr><td>China Yangtze Power</td><td>600900 CH</td><td>94,351</td><td>Buy</td><td>36.00</td><td>26.60</td><td>35%</td><td>17.4</td><td>16.5</td><td>15.6</td><td>2.8</td><td>2.6</td><td>2.5</td><td>16.4</td><td>16.4</td><td>16.4</td><td>4.1</td><td>4.3</td><td>4.5</td><td>6%</td></tr><tr><td>CR Power</td><td>836 HK</td><td>12,011</td><td>Buy</td><td>21.50</td><td>18.30</td><td>17%</td><td>9.5</td><td>8.5</td><td>7.6</td><td>0.8</td><td>0.8</td><td>0.7</td><td>8.7</td><td>9.3</td><td>9.9</td><td>4.7</td><td>5.3</td><td>6.6</td><td>12%</td></tr><tr><td>Longyuan Power</td><td>916 HK</td><td>14,074</td><td>Buy</td><td>8.10</td><td>5.23</td><td>55%</td><td>7.7</td><td>7.2</td><td>6.2</td><td>0.5</td><td>0.5</td><td>0.4</td><td>6.4</td><td>6.6</td><td>7.3</td><td>3.9</td><td>4.2</td><td>4.9</td><td>12%</td></tr></table>",
+        "bbox": [
+            81,
+            426,
+            914,
+            537
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "aside_text",
+        "text": "Page 10",
+        "bbox": [
+            32,
+            70,
+            46,
+            124
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "aside_text",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            31,
+            729,
+            47,
+            926
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "aside_text",
+        "text": "China Power Sector",
+        "bbox": [
+            931,
+            70,
+            943,
+            196
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "aside_text",
+        "text": "25 June 2026",
+        "bbox": [
+            962,
+            70,
+            976,
+            159
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            926,
+            855,
+            978,
+            922
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Renewable operators – one-year-forward P/B history",
+        "text_level": 2,
+        "bbox": [
+            81,
+            78,
+            451,
+            104
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f505758f60692c42acef5d35edb6a3a374d1f617250fbcddb9fb635c7915eee9.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source : Bloomberg Finance LP, DB estimates"
+        ],
+        "bbox": [
+            81,
+            132,
+            480,
+            391
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/11c92ace88e3fed234ab3be83d1ffd0c0e8acbe36ac5b91c73a206bf01022fd4.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source : Bloomberg Finance LP, DB estimates"
+        ],
+        "bbox": [
+            505,
+            134,
+            887,
+            389
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/35202bf5ead453d0c4dfc8f389e2decda96baa935427e04f77f7de2a0a348245.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 24: China Resources Power (0836.HK) – one-year-forward P/B history"
+        ],
+        "chart_footnote": [
+            "Source : Bloomberg Finance LP, DB estimates"
+        ],
+        "bbox": [
+            85,
+            475,
+            470,
+            715
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "aside_text",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            32,
+            70,
+            46,
+            265
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "aside_text",
+        "text": "Page 11",
+        "bbox": [
+            32,
+            872,
+            46,
+            924
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "aside_text",
+        "text": "25 June 2026",
+        "bbox": [
+            960,
+            70,
+            977,
+            159
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "aside_text",
+        "text": "China Power Sector",
+        "bbox": [
+            931,
+            70,
+            944,
+            196
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            926,
+            855,
+            978,
+            922
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/33fc75ce6d9e0f3765390aff7d02b3da5638897d58878f787ebd088df32d34d1.jpg",
+        "content": "",
+        "chart_caption": [
+            "Renewable operators – dividend yield history",
+            "Figure 25: China Yangtze Power (600900.SS) – dividend yield history"
+        ],
+        "chart_footnote": [
+            "Source : Bloomberg Finance LP, DB estimates"
+        ],
+        "bbox": [
+            92,
+            166,
+            470,
+            428
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ee44f0f69284dc7fa8ababc54cabf8033d8d714c7ef387790bcda3eb34d676a1.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source : Bloomberg Finance LP, DB estimates"
+        ],
+        "bbox": [
+            506,
+            136,
+            891,
+            448
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/467b649acd803a484e8cccff2a7e6312142dccf40888db9220abb19cc6750a25.jpg",
+        "content": "",
+        "chart_caption": [
+            "Figure 27: China Resources Power (0836.HK) – dividend yield history"
+        ],
+        "chart_footnote": [
+            "Source : Bloomberg Finance LP, DB estimates"
+        ],
+        "bbox": [
+            88,
+            536,
+            461,
+            801
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "aside_text",
+        "text": "Page 12",
+        "bbox": [
+            32,
+            70,
+            46,
+            124
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "aside_text",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            32,
+            729,
+            47,
+            926
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "aside_text",
+        "text": "25 June 2026\nUtilities\nChina Power Sector",
+        "bbox": [
+            931,
+            68,
+            976,
+            196
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "",
+        "bbox": [
+            926,
+            855,
+            978,
+            922
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/abf5e23f6de334ad77185cc6518dda13045821c254cea3c4ee2cef2aecce35df.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Gary Zhou, CFA\n+852 2203 5889 gary.zhou@db.com"
+        ],
+        "table_body": "<table><tr><td colspan=\"2\">Model updated: 25 June 2026</td></tr><tr><td colspan=\"2\">Running the numbers</td></tr><tr><td colspan=\"2\">Asia</td></tr><tr><td colspan=\"2\">China</td></tr><tr><td colspan=\"2\">Utilities</td></tr><tr><td colspan=\"2\">China Resources Power</td></tr><tr><td>Reuters: 0836.HK</td><td>Bloomberg: 836 HK</td></tr><tr><td colspan=\"2\">Buy</td></tr><tr><td>Price (24 Jun 26)</td><td>HKD 18.30</td></tr><tr><td>Target Price</td><td>HKD 21.50</td></tr><tr><td>52 Week range</td><td>HKD 17.09 - 21.70</td></tr><tr><td>Market cap (m)</td><td>HKDm 88,031USDm 11,229</td></tr></table>",
+        "bbox": [
+            68,
+            97,
+            366,
+            335
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/f34feb087424c768bd60c584bfd43c49750ff01c8b2b078473ab88178358f160.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Fiscal year end 31-Dec</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan=\"7\">Financial Summary</td></tr><tr><td>DB EPS (HKD)</td><td>2.29</td><td>2.97</td><td>2.80</td><td>1.92</td><td>2.15</td><td>2.40</td></tr><tr><td>Reported EPS (HKD)</td><td>2.29</td><td>2.97</td><td>2.80</td><td>1.92</td><td>2.15</td><td>2.40</td></tr><tr><td>DPS (HKD)</td><td>1.42</td><td>1.19</td><td>1.13</td><td>0.86</td><td>0.97</td><td>1.20</td></tr><tr><td>BVPS (HKD)</td><td>17.7</td><td>20.5</td><td>21.5</td><td>22.6</td><td>23.7</td><td>24.9</td></tr><tr><td>Weighted average shares (m)</td><td>4,810</td><td>4,845</td><td>5,177</td><td>5,177</td><td>5,177</td><td>5,177</td></tr><tr><td>Average market cap (HKDm)</td><td>78,768</td><td>95,341</td><td>96,583</td><td>88,031</td><td>88,031</td><td>88,031</td></tr><tr><td>Enterprise value (HKDm)</td><td>230,904</td><td>279,165</td><td>292,466</td><td>306,487</td><td>319,100</td><td>330,697</td></tr></table>",
+        "bbox": [
+            376,
+            97,
+            929,
+            204
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/3697b5c9a54913ddf823a2c87959d4c663c8c1a2a2979fa551811203ca94c105.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"7\">Valuation Metrics</td></tr><tr><td>P/E (DB) (x)</td><td>7.2</td><td>6.6</td><td>6.7</td><td>9.5</td><td>8.5</td><td>7.6</td></tr><tr><td>P/E (Reported) (x)</td><td>7.2</td><td>6.6</td><td>6.7</td><td>9.5</td><td>8.5</td><td>7.6</td></tr><tr><td>P/BV (x)</td><td>0.89</td><td>0.92</td><td>0.81</td><td>0.81</td><td>0.77</td><td>0.73</td></tr><tr><td>FCF Yield (%)</td><td>nm</td><td>nm</td><td>nm</td><td>nm</td><td>nm</td><td>nm</td></tr><tr><td>Dividend Yield (%)</td><td>8.6</td><td>6.0</td><td>6.0</td><td>4.7</td><td>5.3</td><td>6.6</td></tr><tr><td>EV/Sales (x)</td><td>2.2</td><td>2.7</td><td>2.9</td><td>2.9</td><td>2.9</td><td>2.9</td></tr><tr><td>EV/EBITDA (x)</td><td>6.5</td><td>7.2</td><td>7.2</td><td>8.5</td><td>7.8</td><td>7.5</td></tr><tr><td>EV/EBIT (x)</td><td>11.1</td><td>12.5</td><td>13.1</td><td>18.0</td><td>16.4</td><td>15.4</td></tr></table>",
+        "bbox": [
+            376,
+            206,
+            929,
+            313
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Company Profile",
+        "text_level": 2,
+        "bbox": [
+            73,
+            340,
+            173,
+            353
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "China Resources Power Holdings Company Limited invests, develops, owns, and operates wind and solar farm, as well as coal-fired power plants in China.",
+        "bbox": [
+            68,
+            353,
+            359,
+            384
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/744a1d0f3c4e97e6378a11e2cc56e4231246156c8743dcbc239e05e3accab7aa.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            70,
+            431,
+            364,
+            537
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/79aa291da64e3dbff79ad7b5c4884ba4bef7749e6e66f9724018b0381f1089ae.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"7\">Income Statement (HKDm)</td></tr><tr><td>Sales revenue</td><td>103,334</td><td>105,284</td><td>102,010</td><td>105,594</td><td>111,695</td><td>115,699</td></tr><tr><td>Gross profit</td><td>31,784</td><td>34,683</td><td>35,886</td><td>30,847</td><td>33,493</td><td>35,964</td></tr><tr><td>EBITDA</td><td>35,453</td><td>38,695</td><td>40,342</td><td>36,250</td><td>40,841</td><td>44,171</td></tr><tr><td>Depreciation</td><td>14,720</td><td>16,417</td><td>18,076</td><td>19,247</td><td>21,427</td><td>22,701</td></tr><tr><td>Amortisation</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>EBIT</td><td>20,733</td><td>22,277</td><td>22,266</td><td>17,003</td><td>19,414</td><td>21,471</td></tr><tr><td>Net interest income(expense)</td><td>-4,241</td><td>-4,119</td><td>-3,989</td><td>-4,208</td><td>-4,368</td><td>-4,688</td></tr><tr><td>Associates/affiliates</td><td>1,541</td><td>1,091</td><td>2,242</td><td>1,700</td><td>1,955</td><td>2,151</td></tr><tr><td>Exceptionals/extraordinaries</td><td>-2,534</td><td>947</td><td>-307</td><td>-307</td><td>-307</td><td>-307</td></tr><tr><td>Other pre-tax income/(expense)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Profit before tax</td><td>15,499</td><td>20,197</td><td>20,212</td><td>14,188</td><td>16,694</td><td>18,626</td></tr><tr><td>Income tax expense</td><td>3,389</td><td>4,218</td><td>3,706</td><td>2,498</td><td>2,948</td><td>3,295</td></tr><tr><td>Minorities</td><td>1,107</td><td>1,590</td><td>1,987</td><td>1,754</td><td>2,612</td><td>2,913</td></tr><tr><td>Other post-tax income/(expense)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Net profit</td><td>11,003</td><td>14,388</td><td>14,519</td><td>9,937</td><td>11,134</td><td>12,418</td></tr><tr><td>DB adjustments (including dilution)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>DB Net profit</td><td>11,003</td><td>14,388</td><td>14,519</td><td>9,937</td><td>11,134</td><td>12,418</td></tr></table>",
+        "bbox": [
+            376,
+            320,
+            929,
+            501
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a35cbea2aaf42921db33800839ad6605b35bc4d9cfe1d9bf08ef98a9271cd1ba.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            70,
+            540,
+            363,
+            646
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/8bc085d445e1f285f218cd7a2ae02094198d8f98d851ae7e17fd50bde61ebf12.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"7\">Cash Flow (HKDm)</td></tr><tr><td>Cash flow from operations</td><td>28,869</td><td>33,695</td><td>46,358</td><td>33,079</td><td>33,239</td><td>35,559</td></tr><tr><td>Net Capex</td><td>-44,734</td><td>-53,433</td><td>-48,391</td><td>-47,200</td><td>-36,259</td><td>-36,259</td></tr><tr><td>Free cash flow</td><td>-15,865</td><td>-19,738</td><td>-2,033</td><td>-14,121</td><td>-3,019</td><td>-700</td></tr><tr><td>Equity raised/(bought back)</td><td>0</td><td>7,197</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Dividends paid</td><td>-2,827</td><td>-6,807</td><td>-5,765</td><td>-5,835</td><td>-4,472</td><td>-5,011</td></tr><tr><td>Net inc/(dec) in borrowings</td><td>27,486</td><td>31,175</td><td>17,752</td><td>0</td><td>13,000</td><td>13,000</td></tr><tr><td>Other investing/financing cash flows</td><td>-12,033</td><td>-9,285</td><td>-4,080</td><td>21,737</td><td>-4,465</td><td>-5,125</td></tr><tr><td>Net cash flow</td><td>-3,238</td><td>2,542</td><td>5,874</td><td>1,782</td><td>1,044</td><td>2,165</td></tr><tr><td>Change in working capital</td><td>-3,927</td><td>10,410</td><td>-13,711</td><td>-3,534</td><td>286</td><td>630</td></tr></table>",
+        "bbox": [
+            376,
+            506,
+            929,
+            611
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a6ba8e595b73ccd5c0484aa7373d4cc9d2bc94b1dd7032ad04446657a14631e8.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            70,
+            648,
+            364,
+            755
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7ce5864a92ab35a14c8d6ccb72d5974a771d5c7117bfd251eef107b7d1689413.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            70,
+            757,
+            364,
+            863
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/bc786ba0be7594e011334452a75764c0533e9b53da419777781e0165806131a2.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"7\">Balance Sheet (HKDm)</td></tr><tr><td>Cash and other liquid assets</td><td>4,502</td><td>6,009</td><td>11,884</td><td>13,665</td><td>14,709</td><td>16,874</td></tr><tr><td>Tangible fixed assets</td><td>215,752</td><td>244,851</td><td>278,785</td><td>310,357</td><td>328,808</td><td>345,985</td></tr><tr><td>Goodwill/intangible assets</td><td>10,516</td><td>14,173</td><td>16,824</td><td>16,824</td><td>16,824</td><td>16,824</td></tr><tr><td>Associates/investments</td><td>22,128</td><td>21,335</td><td>22,696</td><td>24,396</td><td>26,351</td><td>28,501</td></tr><tr><td>Other assets</td><td>69,499</td><td>76,096</td><td>79,176</td><td>81,344</td><td>84,161</td><td>85,953</td></tr><tr><td>Total assets</td><td>322,396</td><td>362,464</td><td>409,364</td><td>446,586</td><td>470,853</td><td>494,136</td></tr><tr><td>Interest bearing debt</td><td>159,192</td><td>190,367</td><td>208,119</td><td>208,119</td><td>221,119</td><td>234,119</td></tr><tr><td>Other liabilities</td><td>58,657</td><td>52,146</td><td>67,606</td><td>73,308</td><td>75,840</td><td>77,001</td></tr><tr><td>Total liabilities</td><td>217,849</td><td>242,512</td><td>275,725</td><td>281,428</td><td>296,959</td><td>311,120</td></tr><tr><td>Shareholders&#x27; equity</td><td>84,974</td><td>99,151</td><td>111,296</td><td>116,761</td><td>122,885</td><td>129,094</td></tr><tr><td>Minorities</td><td>19,573</td><td>20,801</td><td>22,344</td><td>48,397</td><td>51,009</td><td>53,922</td></tr><tr><td>Total shareholders&#x27; equity</td><td>104,547</td><td>119,952</td><td>133,640</td><td>165,158</td><td>173,894</td><td>183,016</td></tr><tr><td>Net debt</td><td>154,690</td><td>184,357</td><td>196,236</td><td>194,454</td><td>206,410</td><td>217,245</td></tr></table>",
+        "bbox": [
+            376,
+            616,
+            929,
+            757
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/20244af906aa02baf78054ca2b03dd31b0f736b42d0abe741747196b4d26c5a5.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Company data, DB estimates"
+        ],
+        "table_body": "<table><tr><td colspan=\"7\">Key Company Metrics</td></tr><tr><td>Sales growth (%)</td><td>0.0</td><td>1.9</td><td>-3.1</td><td>3.5</td><td>5.8</td><td>3.6</td></tr><tr><td>DB EPS growth (%)</td><td>56.7</td><td>29.8</td><td>-5.6</td><td>-31.6</td><td>12.1</td><td>11.5</td></tr><tr><td>EBITDA Margin (%)</td><td>34.3</td><td>36.8</td><td>39.5</td><td>34.3</td><td>36.6</td><td>38.2</td></tr><tr><td>EBIT Margin (%)</td><td>20.1</td><td>21.2</td><td>21.8</td><td>16.1</td><td>17.4</td><td>18.6</td></tr><tr><td>Payout ratio (%)</td><td>61.9</td><td>40.1</td><td>40.2</td><td>45.0</td><td>45.0</td><td>50.0</td></tr><tr><td>ROE (%)</td><td>13.2</td><td>15.6</td><td>13.8</td><td>8.7</td><td>9.3</td><td>9.9</td></tr><tr><td>Capex/sales (%)</td><td>43.3</td><td>50.8</td><td>47.4</td><td>44.7</td><td>32.5</td><td>31.3</td></tr><tr><td>Capex/depreciation (x)</td><td>3.0</td><td>3.3</td><td>2.7</td><td>2.5</td><td>1.7</td><td>1.6</td></tr><tr><td>Net debt/equity (%)</td><td>148.0</td><td>153.7</td><td>146.8</td><td>117.7</td><td>118.7</td><td>118.7</td></tr><tr><td>Net interest cover (x)</td><td>4.9</td><td>5.4</td><td>5.6</td><td>4.0</td><td>4.4</td><td>4.6</td></tr></table>",
+        "bbox": [
+            376,
+            762,
+            929,
+            876
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026\nUtilities\nChina Power Sector",
+        "bbox": [
+            68,
+            34,
+            200,
+            81
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            855,
+            32,
+            926,
+            84
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            70,
+            945,
+            265,
+            959
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "Page 13",
+        "bbox": [
+            873,
+            945,
+            927,
+            959
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "table",
+        "img_path": "images/9702ae2b6f74d6cbdcf69db9e0186b768e62ed98c5943a47398db8e6e0df8734.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">Model updated: 25 June 2026</td></tr><tr><td colspan=\"2\">Running the numbers</td></tr><tr><td colspan=\"2\">Asia</td></tr><tr><td colspan=\"2\">China</td></tr><tr><td colspan=\"2\">Alternative Energy</td></tr><tr><td colspan=\"2\">Tongwei</td></tr><tr><td>Reuters: 600438.SS</td><td>Bloomberg: 600438 CG</td></tr></table>",
+        "bbox": [
+            68,
+            98,
+            364,
+            220
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/fef2f394aff49a55fe4b723382a7f9347b650d79005d2a08b6d034d6f9859621.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Fiscal year end 31-Dec</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan=\"7\">Financial Summary</td></tr><tr><td>DB EPS (CNY)</td><td>2.90</td><td>-1.56</td><td>-2.12</td><td>-1.49</td><td>-0.67</td><td>0.06</td></tr><tr><td>Reported EPS (CNY)</td><td>2.90</td><td>-1.56</td><td>-2.12</td><td>-1.49</td><td>-0.67</td><td>0.06</td></tr><tr><td>DPS (CNY)</td><td>0.91</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>BVPS (CNY)</td><td>13.7</td><td>10.8</td><td>8.6</td><td>7.2</td><td>6.5</td><td>6.5</td></tr><tr><td>Weighted average shares (m)</td><td>4,502</td><td>4,502</td><td>4,502</td><td>4,502</td><td>4,502</td><td>4,502</td></tr><tr><td>Average market cap (CNYm)</td><td>141,097</td><td>101,219</td><td>92,229</td><td>55,100</td><td>55,100</td><td>55,100</td></tr><tr><td>Enterprise value (CNYm)</td><td>162,571</td><td>145,050</td><td>144,374</td><td>104,251</td><td>97,374</td><td>86,564</td></tr></table>",
+        "bbox": [
+            376,
+            97,
+            929,
+            204
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/03d661d6d90b47f3c8994524428b2fc89adba6ec5e5de0af4152ad1aae00fbb6.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Price (24 Jun 26)</td><td>CNY 12.24</td></tr><tr><td>Target Price</td><td>CNY 10.00</td></tr><tr><td>52 Week range</td><td>CNY 12.24 - 27.16</td></tr><tr><td>Market cap (m)</td><td>CNYm 55,100USDm 8,098.3</td></tr></table>",
+        "bbox": [
+            68,
+            249,
+            366,
+            334
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/fc83dbdac8d966650c74be15fd48afea400e41a777096cc4ec850373aea10bfa.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"7\">Valuation Metrics</td></tr><tr><td>P/E (DB) (x)</td><td>10.8</td><td>nm</td><td>nm</td><td>nm</td><td>nm</td><td>189.4</td></tr><tr><td>P/E (Reported) (x)</td><td>10.8</td><td>nm</td><td>nm</td><td>nm</td><td>nm</td><td>189.4</td></tr><tr><td>P/BV (x)</td><td>1.75</td><td>2.05</td><td>2.38</td><td>1.71</td><td>1.89</td><td>1.87</td></tr><tr><td>FCF Yield (%)</td><td>nm</td><td>nm</td><td>nm</td><td>12.5</td><td>20.5</td><td>28.3</td></tr><tr><td>Dividend Yield (%)</td><td>2.9</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>EV/Sales (x)</td><td>1.2</td><td>1.6</td><td>1.7</td><td>1.3</td><td>1.1</td><td>0.9</td></tr><tr><td>EV/EBITDA (x)</td><td>4.7</td><td>20.6</td><td>17.6</td><td>9.7</td><td>6.2</td><td>4.4</td></tr><tr><td>EV/EBIT (x)</td><td>5.8</td><td>nm</td><td>nm</td><td>nm</td><td>61.3</td><td>16.4</td></tr></table>",
+        "bbox": [
+            376,
+            208,
+            929,
+            313
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Company Profile",
+        "text_level": 2,
+        "bbox": [
+            73,
+            340,
+            173,
+            353
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Tongwei Co., Ltd manufactures solar-grade polysilicon, photovoltaic cells and solar modules. Tongwei also engages in animal feeds, aquaculture, and other businesses.",
+        "bbox": [
+            68,
+            353,
+            361,
+            384
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a7656a58858fdf55d4694423528cbe7650e28e391cb69917da7d08a699712606.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            70,
+            431,
+            364,
+            537
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/e368e932f68625f2c79dc36847f09eaab81d8fc5ea3ce5dff1cd3b05bc64f03c.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"7\">Income Statement (CNYm)</td></tr><tr><td>Sales revenue</td><td>139,104</td><td>91,994</td><td>84,128</td><td>79,642</td><td>87,645</td><td>94,718</td></tr><tr><td>Gross profit</td><td>36,776</td><td>5,877</td><td>2,272</td><td>3,851</td><td>8,687</td><td>13,249</td></tr><tr><td>EBITDA</td><td>34,551</td><td>7,044</td><td>8,198</td><td>10,705</td><td>15,617</td><td>19,887</td></tr><tr><td>Depreciation</td><td>6,567</td><td>9,122</td><td>12,467</td><td>13,445</td><td>14,028</td><td>14,611</td></tr><tr><td>Amortisation</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>EBIT</td><td>27,984</td><td>-2,078</td><td>-4,269</td><td>-2,740</td><td>1,589</td><td>5,276</td></tr><tr><td>Net interest income(expense)</td><td>-581</td><td>-2,002</td><td>-2,718</td><td>-2,807</td><td>-2,625</td><td>-2,387</td></tr><tr><td>Associates/affiliates</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Exceptionals/extraordinaries</td><td>-6,169</td><td>-5,070</td><td>-5,028</td><td>-3,010</td><td>-3,010</td><td>-2,910</td></tr><tr><td>Other pre-tax income/(expense)</td><td>817</td><td>467</td><td>343</td><td>376</td><td>376</td><td>376</td></tr><tr><td>Profit before tax</td><td>22,052</td><td>-8,683</td><td>-11,671</td><td>-8,181</td><td>-3,670</td><td>355</td></tr><tr><td>Income tax expense</td><td>3,805</td><td>-575</td><td>-770</td><td>-541</td><td>-243</td><td>24</td></tr><tr><td>Minorities</td><td>4,672</td><td>-1,070</td><td>-1,347</td><td>-944</td><td>-424</td><td>41</td></tr><tr><td>Other post-tax income/(expense)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Net profit</td><td>13,574</td><td>-7,039</td><td>-9,553</td><td>-6,696</td><td>-3,004</td><td>291</td></tr><tr><td>DB adjustments (including dilution)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>DB Net profit</td><td>13,574</td><td>-7,039</td><td>-9,553</td><td>-6,696</td><td>-3,004</td><td>291</td></tr></table>",
+        "bbox": [
+            376,
+            320,
+            929,
+            501
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/560a7c71a19780c741ac0d23272d565bc1a565e845e2b845e0ef5c5adfcd8fdf.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            70,
+            540,
+            364,
+            646
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/cc73a11e8b19e3e35c772a91455e3674971ff8ccf9d1c995fe13e92e231c6a2f.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"7\">Cash Flow (CNYm)</td></tr><tr><td>Cash flow from operations</td><td>30,679</td><td>1,144</td><td>1,379</td><td>12,882</td><td>17,288</td><td>21,585</td></tr><tr><td>Net Capex</td><td>-36,452</td><td>-28,388</td><td>-13,056</td><td>-6,000</td><td>-6,000</td><td>-6,000</td></tr><tr><td>Free cash flow</td><td>-5,773</td><td>-27,244</td><td>-11,677</td><td>6,882</td><td>11,288</td><td>15,585</td></tr><tr><td>Equity raised/(bought back)</td><td>-8</td><td>3</td><td>506</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Dividends paid</td><td>-12,867</td><td>-4,074</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Net inc/(dec) in borrowings</td><td>14,182</td><td>36,742</td><td>11,342</td><td>-5,000</td><td>-5,000</td><td>-5,000</td></tr><tr><td>Other investing/financing cash flows</td><td>-19,761</td><td>-2,250</td><td>-610</td><td>-216</td><td>-217</td><td>-117</td></tr><tr><td>Net cash flow</td><td>-24,226</td><td>3,177</td><td>-439</td><td>1,666</td><td>6,071</td><td>10,469</td></tr><tr><td>Change in working capital</td><td>-2,111</td><td>912</td><td>-9,737</td><td>-422</td><td>-812</td><td>-757</td></tr></table>",
+        "bbox": [
+            376,
+            506,
+            929,
+            611
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/732a63022870e93c3e9b11e63d3444d620ecc90ce2ba7b5d3c428cecc1eeab14.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            68,
+            648,
+            364,
+            755
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/674637a7748302250122745649046907dad17e55b85de5fa00f4b623f3f53503.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Gary Zhou, CFA\n+852 2203 5889 gary.zhou@db.com"
+        ],
+        "bbox": [
+            70,
+            757,
+            364,
+            863
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/26dd0b8449664433f38d7a376ff807a3091ecab41fe9a7f74b5cde7a365f8e8e.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"7\">Balance Sheet (CNYm)</td></tr><tr><td>Cash and other liquid assets</td><td>19,418</td><td>16,448</td><td>17,475</td><td>19,875</td><td>26,679</td><td>37,881</td></tr><tr><td>Tangible fixed assets</td><td>68,270</td><td>100,025</td><td>98,186</td><td>83,075</td><td>67,382</td><td>51,106</td></tr><tr><td>Goodwill/intangible assets</td><td>5,198</td><td>5,320</td><td>5,238</td><td>5,238</td><td>5,238</td><td>5,238</td></tr><tr><td>Associates/investments</td><td>377</td><td>2,307</td><td>2,407</td><td>2,057</td><td>1,706</td><td>1,356</td></tr><tr><td>Other assets</td><td>71,099</td><td>71,816</td><td>64,473</td><td>62,746</td><td>64,435</td><td>65,876</td></tr><tr><td>Total assets</td><td>164,363</td><td>195,917</td><td>187,779</td><td>172,991</td><td>165,441</td><td>161,456</td></tr><tr><td>Interest bearing debt</td><td>28,969</td><td>53,123</td><td>59,523</td><td>59,523</td><td>59,523</td><td>59,523</td></tr><tr><td>Other liabilities</td><td>61,565</td><td>84,875</td><td>76,869</td><td>69,720</td><td>65,597</td><td>61,281</td></tr><tr><td>Total liabilities</td><td>90,534</td><td>137,998</td><td>136,391</td><td>129,243</td><td>125,120</td><td>120,804</td></tr><tr><td>Shareholders&#x27; equity</td><td>61,529</td><td>48,456</td><td>38,884</td><td>32,188</td><td>29,185</td><td>29,475</td></tr><tr><td>Minorities</td><td>12,301</td><td>9,463</td><td>12,504</td><td>11,560</td><td>11,136</td><td>11,177</td></tr><tr><td>Total shareholders&#x27; equity</td><td>73,829</td><td>57,919</td><td>51,388</td><td>43,748</td><td>40,321</td><td>40,653</td></tr><tr><td>Net debt</td><td>9,551</td><td>36,674</td><td>42,047</td><td>39,648</td><td>32,844</td><td>21,642</td></tr></table>",
+        "bbox": [
+            376,
+            616,
+            929,
+            757
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/2c91d79e4462d6072f900e3df451a080115bb486e29f230e739aedf4416a0064.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Company data, DB estimates"
+        ],
+        "table_body": "<table><tr><td colspan=\"7\">Key Company Metrics</td></tr><tr><td>Sales growth (%)</td><td>-2.3</td><td>-33.9</td><td>-8.6</td><td>-5.3</td><td>10.0</td><td>8.1</td></tr><tr><td>DB EPS growth (%)</td><td>-47.3</td><td>na</td><td>-35.7</td><td>29.9</td><td>55.1</td><td>na</td></tr><tr><td>EBITDA Margin (%)</td><td>24.8</td><td>7.7</td><td>9.7</td><td>13.4</td><td>17.8</td><td>21.0</td></tr><tr><td>EBIT Margin (%)</td><td>20.1</td><td>-2.3</td><td>-5.1</td><td>-3.4</td><td>1.8</td><td>5.6</td></tr><tr><td>Payout ratio (%)</td><td>30.0</td><td>nm</td><td>nm</td><td>nm</td><td>nm</td><td>0.0</td></tr><tr><td>ROE (%)</td><td>22.2</td><td>-12.8</td><td>-21.9</td><td>-18.8</td><td>-9.8</td><td>1.0</td></tr><tr><td>Capex/sales (%)</td><td>26.2</td><td>30.9</td><td>15.5</td><td>7.5</td><td>6.8</td><td>6.3</td></tr><tr><td>Capex/depreciation (x)</td><td>5.6</td><td>3.1</td><td>1.0</td><td>0.4</td><td>0.4</td><td>0.4</td></tr><tr><td>Net debt/equity (%)</td><td>12.9</td><td>63.3</td><td>81.8</td><td>90.6</td><td>81.5</td><td>53.2</td></tr><tr><td>Net interest cover (x)</td><td>48.2</td><td>nm</td><td>nm</td><td>nm</td><td>0.6</td><td>2.2</td></tr></table>",
+        "bbox": [
+            376,
+            762,
+            929,
+            876
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026\nUtilities\nChina Power Sector",
+        "bbox": [
+            68,
+            34,
+            200,
+            81
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            855,
+            32,
+            926,
+            84
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "Page 14",
+        "bbox": [
+            70,
+            945,
+            124,
+            959
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            732,
+            945,
+            927,
+            959
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Appendix 1",
+        "text_level": 2,
+        "bbox": [
+            68,
+            105,
+            299,
+            139
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            68,
+            172,
+            280,
+            190
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\*Other information available upon request",
+        "text_level": 2,
+        "bbox": [
+            70,
+            197,
+            468,
+            216
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\*Prices are current as of the end of the previous trading session unless otherwise indicated and are sourced from local exchanges via Reuters, Bloomberg and other vendors. Other information is sourced from DB, subject companies, and other sources. For disclosures pertaining to recommendations or estimates made on securities other than the primary subject of this research, please see the most recently published company report or visit our global disclosure look-up page on our website at https://research.db.com/Research/Disclosures/EquityResearchDisclosures. Aside from within this report, important risk and conflict disclosures can also be found at https://research.db.com/Research/Disclosures/Disclaimer. Investors are strongly encouraged to review this information before investing.",
+        "bbox": [
+            67,
+            229,
+            929,
+            313
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification",
+        "text_level": 2,
+        "bbox": [
+            68,
+            320,
+            263,
+            337
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The views expressed in this report accurately reflect the personal views of the undersigned lead analyst about the subject issuers and the securities of those issuers. In addition, the undersigned lead analyst has not and will not receive any compensation for providing a specific recommendation or view in this report. Gary Zhou.",
+        "bbox": [
+            67,
+            340,
+            929,
+            379
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026\nUtilities\nChina Power Sector",
+        "bbox": [
+            68,
+            34,
+            200,
+            81
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            855,
+            32,
+            926,
+            84
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            70,
+            944,
+            265,
+            959
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "Page 15",
+        "bbox": [
+            873,
+            945,
+            927,
+            959
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/58e2cbd7d0cb0c1b0255e65d4a1b29fe044c88920c4ed0b49331ac08b6c840ef.jpg",
+        "content": "",
+        "chart_caption": [
+            "Equity rating dispersion and banking relationships",
+            "Equity Rating and Dispersion Key"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            75,
+            127,
+            480,
+            359
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The Equity Rating Dispersion Chart depicts the following:",
+        "bbox": [
+            68,
+            404,
+            472,
+            419
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The proportion of recommendations that are rated \"buy\", \"sell\" and \"hold\" over the previous 12 months. This is shown for securities issued in the stated region e.g. \"Europe Universe\". See rating definitions below. This is represented by the \"Companies Covered\" bars in the chart. The percentage value displayed above the bar is the proportion as a percentage. E.g. 50% above the \"buy\" / \"Companies Covered\" bar means that 50% of DB's equity research covered companies over the past 12 months have a \"buy\" rating.",
+        "bbox": [
+            68,
+            438,
+            917,
+            510
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Next to each of the three respective bars showing the proportion of \"buy\", \"sell\" and \"hold\" recommendations we provide two additional bars to show:",
+        "bbox": [
+            68,
+            527,
+            919,
+            557
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- The proportion of \"buy\", \"sell\" or \"hold recommendations where DB and or/Affiliates provided MIFID Investment or Ancillary Services in the past 12 months. This is represented in the \"MIFID Investment and Ancillary Services\" bar. The percentage value displayed above the bar shows the proportion of Companies Covered with the given rating where DB has also provided MIFID Investment and Ancillary Services in the past 12 months. E.g. 50% above the \"Cos. w/ MIFID Investment and Ancillary Services\" bar means 50% of the Companies Covered with the rating stated have also received MIFID Investment and Ancillary Services from DB.",
+        "bbox": [
+            68,
+            575,
+            921,
+            660
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "\\- The proportion of \"buy\" (or \"sell\" or \"hold\") recommendations where DB and or/Affiliates has provided Investment Banking services in the past 12 months for which it has received compensation. The percentage value displayed above the bar shows the proportion of Companies Covered with the stated rating where DB has also provided Investment Banking services in the past 12 months. E.g. 50% above the \"Cos. w/ Investment Banking relationship\" bar means 50% of the Companies Covered with the rating stated also have an Investment Banking Relationship with DB.",
+        "bbox": [
+            67,
+            677,
+            907,
+            749
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Buy: Based on a current 12-month view of TSR, we recommend that investors buy the stock.",
+        "bbox": [
+            68,
+            774,
+            721,
+            790
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Sell: Based on a current 12-month view of TSR, we recommend that investors sell the stock.",
+        "bbox": [
+            68,
+            794,
+            715,
+            810
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Hold: We take a neutral view on the stock 12-months out and, based on this time horizon, do not recommend either a Buy or Sell.",
+        "bbox": [
+            68,
+            815,
+            890,
+            844
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "TSR = Total Shareholder Return. Percentage change in share price from current price to projected target price plus projected dividend yield",
+        "bbox": [
+            68,
+            849,
+            868,
+            880
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Newly issued research recommendations and target prices supersede previously published research.",
+        "bbox": [
+            68,
+            887,
+            776,
+            902
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026\nUtilities\nChina Power Sector",
+        "bbox": [
+            70,
+            34,
+            200,
+            81
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            857,
+            32,
+            926,
+            84
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "Page 16",
+        "bbox": [
+            70,
+            945,
+            124,
+            959
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            732,
+            945,
+            927,
+            959
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Additional Information",
+        "text_level": 2,
+        "bbox": [
+            68,
+            105,
+            285,
+            121
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The information and opinions in this report were prepared by DB AG or one of its affiliates (collectively 'DB'). Though the information herein is believed to be reliable and has been obtained from public sources believed to be reliable, DB makes no representation as to its accuracy or completeness. Hyperlinks to third-party websites in this report are provided for reader convenience only. DB neither endorses the content nor is responsible for the accuracy or security controls of those websites.",
+        "bbox": [
+            67,
+            126,
+            929,
+            187
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "If you use the services of DB in connection with a purchase or sale of a security that is discussed in this report, or is included or discussed in another communication (oral or written) from a DB analyst, DB may act as principal for its own account or as agent for another person.",
+        "bbox": [
+            67,
+            197,
+            929,
+            235
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "DB may consider this report in deciding to trade as principal. It may also engage in transactions, for its own account or with customers, in a manner inconsistent with the views taken in this research report. Others within DB, including strategists, sales staff and other analysts, may take views that are inconsistent with those taken in this research report. DB issues a variety of research products, including fundamental analysis, equity-linked analysis, quantitative analysis and trade ideas. Recommendations contained in one type of communication may differ from recommendations contained in others, whether as a result of differing time horizons, methodologies, perspectives or otherwise. DB and/or its affiliates may also be holding debt or equity securities of the issuers it writes on. Analysts are paid in part based on the profitability of DB AG and its affiliates, which includes investment banking, trading and principal trading revenues.",
+        "bbox": [
+            67,
+            247,
+            929,
+            354
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Opinions, estimates and projections constitute the current judgment of the author as of the date of this report. They do not necessarily reflect the opinions of DB and are subject to change without notice. DB provides liquidity for buyers and sellers of securities issued by the companies it covers. DB analysts sometimes have shorter-term trade ideas that may be inconsistent with DB's existing longer-term ratings. Some trade ideas for equities are listed as Catalyst Calls on the Research Website (https://research.db.com/Research/), and can be found on the general coverage list and also on the covered company's page. A Catalyst Call represents a high-conviction belief by an analyst that a stock will outperform or underperform the market and/or a specified sector over a time frame of no less than two weeks and no more than three months. In addition to Catalyst Calls, analysts may occasionally discuss with our clients, and with DB salespersons and traders, trading strategies or ideas that reference catalysts or events that may have a near-term or medium-term impact on the market price of the securities discussed in this report, which impact may be directionally counter to the analysts' current 12-month view of total return or investment return as described herein. DB has no obligation to update, modify or amend this report or to otherwise notify a recipient thereof if an opinion, forecast or estimate changes or becomes inaccurate. Coverage and the frequency of changes in market conditions and in both general and company-specific economic prospects make it difficult to update research at defined intervals. Updates are at the sole discretion of the coverage analyst or of the Research Department Management, and the majority of reports are published at irregular intervals. This report is provided for informational purposes only and does not take into account the particular investment objectives, financial situations, or needs of individual clients. It is not an offer or a solicitation of an offer to buy or sell any financial instruments or to participate in any particular trading strategy. Target prices are inherently imprecise and a product of the analyst's judgment. The financial instruments discussed in this report may not be suitable for all investors, and investors must make their own informed investment decisions. Prices and availability of financial instruments are subject to change without notice, and investment transactions can lead to losses as a result of price fluctuations and other factors. If a financial instrument is denominated in a currency other than an investor's currency, a change in exchange rates may adversely affect the investment. Past performance is not necessarily indicative of future results. Performance calculations exclude transaction costs, unless otherwise indicated. Unless otherwise indicated, prices are current as of the end of the previous trading session and are sourced from local exchanges via Reuters, Bloomberg and other vendors. Data is also sourced from DB, subject companies, and other parties. Artificial intelligence tools may be used in the preparation of this material, including but not limited to assist in fact-finding, data analysis, pattern recognition, content drafting and editorial corrections pertaining to research material.",
+        "bbox": [
+            67,
+            365,
+            929,
+            687
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The DB Department is independent of other business divisions of the Bank. Details regarding our organizational arrangements and information barriers we have to prevent and avoid conflicts of interest with respect to our research are available on our website (https://research.db.com/Research/) under Disclaimer.",
+        "bbox": [
+            67,
+            697,
+            929,
+            735
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Macroeconomic fluctuations often account for most of the risks associated with exposures to instruments that promise to pay fixed or variable interest rates. For an investor who is long fixed-rate instruments (thus receiving these cash flows), increases in interest rates naturally lift the discount factors applied to the expected cash flows and thus cause a loss. The longer the maturity of a certain cash flow and the higher the move in the discount factor, the higher will be the loss. Upside surprises in inflation, fiscal funding needs, and FX depreciation rates are among the most common adverse macroeconomic shocks to receivers. But counterparty exposure, issuer creditworthiness, client segmentation, regulation (including changes in assets holding limits for different types of investors), changes in tax policies, currency convertibility (which may constrain currency conversion, repatriation of profits and/or liquidation of positions), and settlement issues related to local clearing houses are also important risk factors. The sensitivity of fixed-income instruments to macroeconomic shocks may be mitigated by indexing the contracted cash flows to inflation, to FX depreciation, or to specified interest rates - these are common in emerging markets. The index fixings may - by construction - lag or mis-measure the actual move in the underlying variables they are intended to track. The choice of the proper fixing (or metric) is particularly important in swaps markets, where floating coupon rates (i.e., coupons indexed to a typically short-dated interest rate reference index) are exchanged for fixed coupons. Funding in a currency that differs from the currency in which coupons are denominated carries FX risk. Options on swaps (swaptions) the risks typical to options in addition to the risks related to rates movements.",
+        "bbox": [
+            67,
+            746,
+            929,
+            921
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026\nUtilities\nChina Power Sector",
+        "bbox": [
+            68,
+            34,
+            200,
+            80
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            855,
+            32,
+            926,
+            84
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            70,
+            945,
+            265,
+            959
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "Page 17",
+        "bbox": [
+            873,
+            945,
+            927,
+            959
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Derivative transactions involve numerous risks including market, counterparty default and illiquidity risk. The appropriateness of these products for use by investors depends on the investors' own circumstances, including their tax position, their regulatory environment and the nature of their other assets and liabilities; as such, investors should take expert legal and financial advice before entering into any transaction similar to or inspired by the contents of this publication. The risk of loss in futures trading and options, foreign or domestic, can be substantial. As a result of the high degree of leverage obtainable in futures and options trading, losses may be incurred that are greater than the amount of funds initially deposited - up to theoretically unlimited losses. Trading in options involves risk and is not suitable for all investors. Prior to buying or selling an option, investors must review the 'Characteristics and Risks of Standardized Options\", at https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document. If you are unable to access the website, please contact your DB representative for a copy of this important document.",
+        "bbox": [
+            67,
+            100,
+            929,
+            219
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Participants in foreign exchange transactions may incur risks arising from several factors, including the following: (i) exchange rates can be volatile and are subject to large fluctuations; (ii) the value of currencies may be affected by numerous market factors, including world and national economic, political and regulatory events, events in equity and debt markets and changes in interest rates; and (iii) currencies may be subject to devaluation or government-imposed exchange controls, which could affect the value of the currency. Investors in securities such as ADRs, whose values are affected by the currency of an underlying security, effectively assume currency risk.",
+        "bbox": [
+            67,
+            229,
+            929,
+            302
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Unless governing law provides otherwise, all transactions should be executed through the DB entity in the investor's home jurisdiction. Aside from within this report, important conflict disclosures can also be found at https://research.db.com/Research/ on each company's research page or under the 'Disclosures' tab. Investors are strongly encouraged to review this information before investing.",
+        "bbox": [
+            67,
+            312,
+            929,
+            361
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "DB (which includes DB AG, its branches and affiliated companies) is not acting as a financial adviser, consultant or fiduciary to you or any of your agents (collectively, \"You\" or \"Your\") with respect to any information provided in this report. DB does not provide investment, legal, tax or accounting advice, DB is not acting as your impartial adviser, and does not express any opinion or recommendation whatsoever as to any strategies, products or any other information presented in the materials. Information contained herein is being provided solely on the basis that the recipient will make an independent assessment of the merits of any investment decision, and it does not constitute a recommendation of, or express an opinion on, any product or service or any trading strategy.",
+        "bbox": [
+            67,
+            372,
+            929,
+            457
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The information presented is general in nature and is not directed to retirement accounts or any specific person or account type, and is therefore provided to You on the express basis that it is not advice, and You may not rely upon it in making Your decision. The information we provide is being directed only to persons we believe to be financially sophisticated, who are capable of evaluating investment risks independently, both in general and with regard to particular transactions and investment strategies, and who understand that DB has financial interests in the offering of its products and services. If this is not the case, or if You are an IRA or other retail investor receiving this directly from us, we ask that you inform us immediately.",
+        "bbox": [
+            67,
+            467,
+            929,
+            540
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "In July 2018, DB revised its rating system for short term ideas whereby the branding has been changed to Catalyst Calls (\"CC\") from SOLAR ideas; the rating categories for Catalyst Calls originated in the Americas region have been made consistent with the categories used by Analysts globally; and the effective time period for CCs has been reduced from a maximum of 180 days to 90 days.",
+        "bbox": [
+            67,
+            549,
+            929,
+            600
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "United States: Approved and/or distributed by DB Securities Incorporated, a member of FINRA and SIPC. Analysts located outside of the United States are employed by non-US affiliates and are not registered/qualified as research analysts with FINRA.",
+        "bbox": [
+            67,
+            610,
+            927,
+            648
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area (exc. United Kingdom): Approved and/or distributed by DB AG, a joint stock corporation with limited liability incorporated in the Federal Republic of Germany with its principal office in Frankfurt am Main. DB AG is authorized under German Banking Law and is subject to supervision by the European Central Bank and by BaFin, Germany's Federal Financial Supervisory Authority.",
+        "bbox": [
+            68,
+            660,
+            929,
+            709
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "United Kingdom: Approved and/or distributed by DB AG acting through its London Branch at 21 Moorfields, London EC2Y 9DB. DB AG in the United Kingdom is authorised by the Prudential Regulation Authority and is subject to limited regulation by the Prudential Regulation Authority and Financial Conduct Authority. Details about the extent of our authorisation and regulation are available on request.",
+        "bbox": [
+            67,
+            720,
+            927,
+            770
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Hong Kong SAR: Distributed by DB AG, Hong Kong Branch except for any research content relating to futures contracts within the meaning of the Hong Kong Securities and Futures Ordinance Cap. 571. Research reports on such futures contracts are not intended for access by persons who are located, incorporated, constituted or resident in Hong Kong. The author(s) of a research report, and the entities for which they act and/or are affiliated with, may not be licensed to carry on regulated activities in Hong Kong and, if not licensed, do not hold themselves out as being able to do so. The provisions set out above in the 'Additional Information' section shall apply to the fullest extent permissible by local laws and regulations, including without limitation the Code of Conduct for Persons Licensed or Registered with the Securities and Futures Commission. This report is intended for distribution only to 'professional investors' as defined in Part 1 of Schedule of the SFO. This document must not be acted or relied on by persons who are not professional investors. Any investment or investment activity to which this document relates is only available to professional investors and will be engaged only with professional investors.",
+        "bbox": [
+            67,
+            780,
+            929,
+            909
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026\nUtilities\nChina Power Sector",
+        "bbox": [
+            68,
+            34,
+            200,
+            81
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            855,
+            32,
+            924,
+            84
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "Page 18",
+        "bbox": [
+            70,
+            945,
+            124,
+            959
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            731,
+            945,
+            927,
+            959
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "India: Prepared by Deutsche Equities India Private Limited (DEIPL) having CIN: U65990MH2002PTC137431 and registered office at 14th Floor, The Capital, C-70, G Block, Bandra Kurla Complex, Mumbai (India) 400051. Tel: +91 22 7180 4444. It is registered by the Securities and Exchange Board of India (SEBI) as a Stock broker bearing registration no.: INZ000252437; Merchant Banker bearing SEBI Registration no.: INM000010833 and Research Analyst bearing SEBI Registration no.: INH000001741. DEIPL's Compliance / Grievance officer is Ms. Rashmi Poddar (Tel: +91 22 7180 4929 email ID: complaints.deipl@db.com). Registration granted by SEBI and certification from NISM in no way guarantee performance of DEIPL or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. DEIPL may have received administrative warnings from the SEBI for breaches of Indian regulations. DB and/or its affiliate(s) may have debt holdings or positions in the subject company. With regard to information on associates, please refer to the \"Shareholdings\" section in the Annual Report at: https://www.db.com/ir/en/annual-reports.htm. For latest India research audit report, refer https://country.db.com/india/deutsche-equities-india/index?language\\_id=1.",
+        "bbox": [
+            67,
+            100,
+            929,
+            242
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Japan: Approved and/or distributed by Deutsche Securities Inc.(DSI). Registration number - Registered as a financial instruments dealer by the Head of the Kanto Local Finance Bureau (Kinsho) No. 117. Member of associations: JSDA, Type II Financial Instruments Firms Association and The Financial Futures Association of Japan. Commissions and risks involved in stock transactions - for stock transactions, we charge stock commissions and consumption tax by multiplying the transaction amount by the commission rate agreed with each customer. Stock transactions can lead to losses as a result of share price fluctuations and other factors. Transactions in foreign stocks can lead to additional losses stemming from foreign exchange fluctuations. We may also charge commissions and fees for certain categories of investment advice, products and services. Recommended investment strategies, products and services carry the risk of losses to principal and other losses as a result of changes in market and/or economic trends, and/or fluctuations in market value. Before deciding on the purchase of financial products and/or services, customers should carefully read the relevant disclosures, prospectuses and other documentation. 'Moody's', 'Standard Poor's', and 'Fitch' mentioned in this report are not registered credit rating agencies in Japan unless Japan or 'Nippon' is specifically designated in the name of the entity. Reports on Japanese listed companies not written by analysts of DSI are written by DB Group's analysts with the coverage companies specified by DSI. Some of the foreign securities stated on this report are not disclosed according to the Financial Instruments and Exchange Law of Japan. Target prices set by DB's equity analysts are based on a 12-month forecast period.",
+        "bbox": [
+            67,
+            252,
+            929,
+            427
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Korea: Distributed by Deutsche Securities Korea Co.",
+        "bbox": [
+            68,
+            437,
+            438,
+            452
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "South Africa: DB AG Johannesburg is incorporated in the Federal Republic of Germany (Branch Register Number in South Africa: 1998/003298/10).",
+        "bbox": [
+            67,
+            462,
+            927,
+            489
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Singapore: This report is issued by DB AG, Singapore Branch (One Raffles Quay #18-00 South Tower Singapore 048583, 65 6423 8001), which may be contacted in respect of any matters arising from, or in connection with, this report. Where this report is issued or promulgated by DB in Singapore to a person who is not an accredited investor, expert investor or institutional investor (as defined in the applicable Singapore laws and regulations), they accept legal responsibility to such person for its contents.",
+        "bbox": [
+            67,
+            501,
+            929,
+            562
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Taiwan: Information on securities/investments that trade in Taiwan is for your reference only. Readers should independently evaluate investment risks and are solely responsible for their investment decisions. DB may not be distributed to the Taiwan public media or quoted or used by the Taiwan public media without written consent. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation to trade in such securities/instruments.",
+        "bbox": [
+            67,
+            573,
+            929,
+            634
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Qatar: DB AG in the Qatar Financial Centre (registered no. 00032) is regulated by the Qatar Financial Centre Regulatory Authority. DB AG - QFC Branch may undertake only the financial services activities that fall within the scope of its existing QFCRA license. Its principal place of business in the QFC: Qatar Financial Centre, Tower, West Bay, Level 5, PO Box 14928, Doha, Qatar. This information has been distributed by DB AG. Related financial products or services are only available only to Business Customers, as defined by the Qatar Financial Centre Regulatory Authority.",
+        "bbox": [
+            67,
+            644,
+            929,
+            706
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Russia: The information, interpretation and opinions submitted herein are not in the context of, and do not constitute, any appraisal or evaluation activity requiring a license in the Russian Federation.",
+        "bbox": [
+            67,
+            716,
+            927,
+            744
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Kingdom of Saudi Arabia: Deutsche Securities Saudi Arabia (DSSA) is a closed joint stock company authorized by the Capital Market Authority of the Kingdom of Saudi Arabia with a license number (No. 37-07073) to conduct the following business activities: Dealing, Arranging, Advising, and Custody activities. DSSA registered office is Faisaliah Tower, 17th Floor, King Fahad Road - Al Olaya District Riyadh, Kingdom of Saudi Arabia P.O. Box 301806.",
+        "bbox": [
+            67,
+            755,
+            929,
+            804
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "United Arab Emirates: DB AG in the Dubai International Financial Centre (registered no. 00045) is regulated by the Dubai Financial Services Authority. DB AG - DIFC Branch may only undertake the financial services activities that fall within the scope of its existing DFSA license. Principal place of business in the DIFC: Dubai International Financial Centre, The Gate Village, Building 5, PO Box 504902, Dubai, U.A.E. This information has been distributed by DB AG. Related financial products or services are available only to Professional Clients, as defined by the Dubai Financial Services Authority.",
+        "bbox": [
+            67,
+            814,
+            929,
+            887
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Australia and New Zealand: This research is intended only for 'wholesale clients' within the meaning of the Australian Corporations Act and New Zealand Financial Advisors Act, respectively. Please refer to Australia-specific research disclosures and related information at https://www.dbresearch.com/PROD/RPS\\_EN-PROD/PROD0000000000521304.xhtml. Where research refers to any particular financial product recipients of the research should consider any product disclosure statement, prospectus or other applicable disclosure document before making any decision about whether to acquire the product. In preparing this report, the primary analyst or an individual who assisted in the preparation of this report has likely been in contact with the company that is the subject of this research for confirmation/clarification of data, facts, statements, permission to use company-sourced material in the report, and/or site-visit attendance. Without prior approval from Research Management, analysts may not accept from current or potential Banking clients the costs of travel, accommodations, or other expenses incurred by analysts attending site visits, conferences, social events, and the like. Similarly, without prior approval from Research Management and Anti-Bribery and Corruption (\"ABC\") team, analysts may not accept perks or other items of value for their personal use from issuers they cover.",
+        "bbox": [
+            67,
+            897,
+            929,
+            925
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026\nUtilities\nChina Power Sector",
+        "bbox": [
+            68,
+            34,
+            200,
+            80
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            855,
+            32,
+            924,
+            84
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            70,
+            945,
+            265,
+            959
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "Page 19",
+        "bbox": [
+            873,
+            945,
+            927,
+            959
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            67,
+            100,
+            929,
+            219
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Additional information relative to securities, other financial products or issuers discussed in this report is available upon request. This report may not be reproduced, distributed or published without DB's prior written consent.",
+        "bbox": [
+            68,
+            229,
+            927,
+            255
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Backtested, hypothetical or simulated performance results have inherent limitations. Unlike an actual performance record based on trading actual client portfolios, simulated results are achieved by means of the retroactive application of a backtested model itself designed with the benefit of hindsight. Taking into account historical events the backtesting of performance also differs from actual account performance because an actual investment strategy may be adjusted any time, for any reason, including a response to material, economic or market factors. The backtested performance includes hypothetical results that do not reflect the reinvestment of dividends and other earnings or the deduction of advisory fees, brokerage or other commissions, and any other expenses that a client would have paid or actually paid. No representation is made that any trading strategy or account will or is likely to achieve profits or losses similar to those shown. Alternative modeling techniques or assumptions might produce significantly different results and prove to be more appropriate. Past hypothetical backtest results are neither an indicator nor guarantee of future returns. Actual results will vary, perhaps materially, from the analysis.",
+        "bbox": [
+            67,
+            267,
+            929,
+            385
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The method for computing individual E,S,G and composite ESG scores set forth herein is a novel method developed by the Research department within DB AG, computed using a systematic approach without human intervention. Different data providers, market sectors and geographies approach ESG analysis and incorporate the findings in a variety of ways. As such, the ESG scores referred to herein may differ from equivalent ratings developed and implemented by other ESG data providers in the market and may also differ from equivalent ratings developed and implemented by other divisions within the DB Group. Such ESG scores also differ from other ratings and rankings that have historically been applied in research reports published by DB AG. Further, such ESG scores do not represent a formal or official view of DB AG. It should be noted that the decision to incorporate ESG factors into any investment strategy may inhibit the ability to participate in certain investment opportunities that otherwise would be consistent with your investment objective and other principal investment strategies. The returns on a portfolio consisting primarily of sustainable investments may be lower or higher than portfolios where ESG factors, exclusions, or other sustainability issues are not considered, and the investment opportunities available to such portfolios may differ. Companies may not necessarily meet high performance standards on all aspects of ESG or sustainable investing issues; there is also no guarantee that any company will meet expectations in connection with corporate responsibility, sustainability, and/or impact performance.",
+        "bbox": [
+            67,
+            395,
+            929,
+            559
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Copyright © 2026 DB AG",
+        "bbox": [
+            68,
+            569,
+            334,
+            583
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "25 June 2026\nUtilities\nChina Power Sector",
+        "bbox": [
+            68,
+            34,
+            200,
+            80
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            855,
+            32,
+            924,
+            84
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "Page 20",
+        "bbox": [
+            70,
+            945,
+            124,
+            959
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "DB AG/Hong Kong",
+        "bbox": [
+            732,
+            945,
+            927,
+            959
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "table",
+        "img_path": "images/98acf44a50841da024a4474b91642b4c266efd720cc5f97a37b20e905881aac2.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>DB AG21 MoorfieldsLondon EC2Y 9DBUnited KingdomTel: (44) 20 7545 8000</td><td>DB Securities Inc.The DB Center1 Columbus CircleNew York, NY 10019Tel: (1) 212 250 2500</td><td>DB AGFiliale SingapurOne Raffles Quay, South Tower,Singapore 048583TeL: +65 6423 8001</td></tr></table>",
+        "bbox": [
+            68,
+            462,
+            552,
+            530
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "table",
+        "img_path": "images/3a525527ae7096a4fea56500d1c94ee60f36f0a3124ea1551852995415426c59.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"4\">David Folkerts-LandauGroup Chief Economist and Global Head of Research</td></tr><tr><td>Pam FinelliCOO and Head of Fixed Income Research</td><td>Steve PollardGlobal Head of Company Research and Sales</td><td>Jim ReidGlobal Head of Macro and Thematic Research</td><td>Tim RokossaHead of European Company Research</td></tr><tr><td>Matthew BarnardHead of AmericasCompany Research</td><td>Debbie JonesGlobal Head of Sustainability and Data Innovation, Research</td><td>Robin WinklerHead of German Macro Research</td><td>Sameer GoelGlobal Head of EM &amp; APAC Research</td></tr><tr><td>Francis YaredGlobal Head of Rates Research</td><td>George SaravelosGlobal Head of FX Research</td><td>Peter HooperVice-Chair of Research</td><td>Nilendra de-MelHead of APAC &amp; Middle East Product Development</td></tr></table>",
+        "bbox": [
+            92,
+            100,
+            924,
+            327
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "International Production Locations",
+        "text_level": 2,
+        "bbox": [
+            70,
+            344,
+            315,
+            359
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "table",
+        "img_path": "images/964c24b7560ed76cb2bc1d39b5cc835670e4b887deff565c7abc661d07b5ac18.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>DB AG</td><td>DB AG</td><td>DB AG</td><td>Deutsche Securities Inc.</td></tr><tr><td>DB Place</td><td>Equity Research</td><td>Filiale Hongkong</td><td>1-3-1 Azabudai</td></tr><tr><td>Level 16</td><td>Mainzer Landstrasse 11-17</td><td>International Commerce</td><td>Azabudai Hills Mori JP Tower</td></tr><tr><td>Corner of Hunter &amp; Phillip</td><td>60329 Frankfurt am Main</td><td>Centre,</td><td>Minato-ku, Tokyo 106-0041</td></tr><tr><td>Streets</td><td>Germany</td><td>1 Austin Road West,Kowloon,</td><td>Japan</td></tr><tr><td>Sydney, NSW 2000</td><td>Tel: (49) 69 910 00</td><td>Hong Kong</td><td>Tel: (81) 3 6730 1000</td></tr><tr><td>Australia</td><td></td><td>Tel: (852) 2203 8888</td><td></td></tr><tr><td>Tel: (61) 2 8258 1234</td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            68,
+            364,
+            751,
+            457
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "/",
+        "bbox": [
+            855,
+            32,
+            924,
+            84
+        ],
+        "page_idx": 20
+    }
+]
