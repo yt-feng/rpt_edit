@@ -48,6 +48,7 @@ import json
 import os
 import re
 import sys
+import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
@@ -497,22 +498,16 @@ def _extract_html_title(html_text: str) -> str:
     return re.sub(r"\s*[|–-]\s*Brookings.*$", "", title).strip()
 
 
-def collect_ddg_items(cfg: dict[str, Any], session: requests.Session, timeout: int, df: str) -> list[dict[str, Any]]:
-    """Discover PDFs via DuckDuckGo HTML search (site:<domain> filetype:pdf).
+# Marketing / recruiting / boilerplate PDFs that are not research reports.
+NON_REPORT_RE = re.compile(
+    r"brochure|fact[\s_-]?sheet|recruit|career|\bmba\b|code[\s_-]?of[\s_-]?conduct|"
+    r"modern[\s_-]?slavery|gender[\s_-]?pay|privacy|cookie|terms[\s_-]?of[\s_-]?use|"
+    r"who[\s_-]?we[\s_-]?are|media[\s_-]?kit|press[\s_-]?kit",
+    re.I,
+)
 
-    Bypasses the consultancies' bot walls: we only hit DuckDuckGo and the PDF CDN
-    hosts. df ('d'/'w'/'m'/'y' or '') biases toward recent results; seen-dedup keeps
-    each report one-time.
-    """
-    url = "https://html.duckduckgo.com/html/?q=" + quote(cfg["query"])
-    if df:
-        url += "&df=" + df
-    headers = {"Referer": "https://duckduckgo.com/", "Accept-Language": "en-US,en;q=0.9"}
-    if _HAS_CFFI:
-        resp = cffi_requests.get(url, impersonate=CFFI_IMPERSONATE, timeout=timeout, headers=headers, allow_redirects=True)
-    else:
-        resp = session.get(url, timeout=timeout, headers=headers, allow_redirects=True)
-    resp.raise_for_status()
+
+def _parse_ddg_pdfs(text: str) -> list[dict[str, Any]]:
     items: list[dict[str, Any]] = []
     seen: set[str] = set()
 
@@ -531,9 +526,9 @@ def collect_ddg_items(cfg: dict[str, Any], session: requests.Session, timeout: i
             "scrape_url": "",
         })
 
-    # Primary: every anchor whose target (via the uddg= redirect or a direct href)
+    # Primary: any anchor whose target (via the uddg= redirect or a direct href)
     # resolves to a PDF. Not tied to DuckDuckGo's CSS class names.
-    for match in re.finditer(r'<a\b[^>]*\bhref="([^"]+)"[^>]*>(.*?)</a>', resp.text, re.S | re.I):
+    for match in re.finditer(r'<a\b[^>]*\bhref="([^"]+)"[^>]*>(.*?)</a>', text, re.S | re.I):
         redirect = re.search(r"[?&]uddg=([^&]+)", match.group(1))
         target = unquote(redirect.group(1)) if redirect else html.unescape(match.group(1))
         target = target.split("&rut=")[0]
@@ -541,11 +536,42 @@ def collect_ddg_items(cfg: dict[str, Any], session: requests.Session, timeout: i
 
     # Fallback: bare PDF URLs in the page (handles markup changes), title from filename.
     if not items:
-        for raw in re.findall(r'https?(?:%3a%2f%2f|%3A%2F%2F|://)[^\s"\'<>()]+?\.pdf', resp.text, re.I):
+        for raw in re.findall(r'https?(?:%3a%2f%2f|%3A%2F%2F|://)[^\s"\'<>()]+?\.pdf', text, re.I):
             add(unquote(raw), "")
-
-    log(f"  ddg '{cfg['query']}' (df={df or 'none'}) -> {len(items)} pdf results")
     return items
+
+
+def collect_ddg_items(cfg: dict[str, Any], session: requests.Session, timeout: int, df: str) -> list[dict[str, Any]]:
+    """Discover PDFs via DuckDuckGo HTML search (site:<domain> filetype:pdf).
+
+    Bypasses the consultancies' bot walls: we only hit DuckDuckGo and the PDF CDN
+    hosts. DDG can return an empty page when queried rapidly, so retry with backoff;
+    obvious non-reports (brochures, fact sheets, recruiting) are filtered out, and
+    seen-dedup keeps each report one-time.
+    """
+    url = "https://html.duckduckgo.com/html/?q=" + quote(cfg["query"])
+    if df:
+        url += "&df=" + df
+    headers = {"Referer": "https://duckduckgo.com/", "Accept-Language": "en-US,en;q=0.9"}
+    items: list[dict[str, Any]] = []
+    for attempt in range(3):
+        time.sleep(2 + 2 * attempt)  # space queries so DDG doesn't return an empty page
+        try:
+            if _HAS_CFFI:
+                resp = cffi_requests.get(url, impersonate=CFFI_IMPERSONATE, timeout=timeout, headers=headers, allow_redirects=True)
+            else:
+                resp = session.get(url, timeout=timeout, headers=headers, allow_redirects=True)
+            resp.raise_for_status()
+            items = _parse_ddg_pdfs(resp.text)
+        except Exception as exc:  # noqa: BLE001 - retry
+            warn(f"  ddg attempt {attempt + 1} failed: {exc}")
+            items = []
+        if items:
+            break
+
+    kept = [it for it in items if not NON_REPORT_RE.search(it["source_url"]) and not NON_REPORT_RE.search(it["title"])]
+    log(f"  ddg '{cfg['query']}' -> {len(items)} pdf results, kept {len(kept)} after non-report filter")
+    return kept
 
 
 def collect_html_listing_items(cfg: dict[str, Any], session: requests.Session, timeout: int) -> list[dict[str, Any]]:
