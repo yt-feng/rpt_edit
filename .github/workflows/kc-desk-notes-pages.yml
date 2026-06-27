@@ -171,7 +171,8 @@ jobs:
             exit 0
           fi
 
-          PAGES_URL="${PAGES_URL%/}"
+          PAGES_URL="$(node -e "const url = new URL(process.env.PAGES_URL); if (url.protocol === 'http:') url.protocol = 'https:'; console.log(url.toString().replace(/\\/$/, ''))")"
+          export PAGES_URL
           PAGES_ORIGIN="$(node -e "console.log(new URL(process.env.PAGES_URL).origin)")"
           cat > workers/kc-desk-notes-worker/wrangler.toml <<EOF
           name = "kc-desk-notes-worker"
