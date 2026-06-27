@@ -22,7 +22,7 @@ on:
         type: boolean
         default: false
       storage_limit_gb:
-        description: "Prune oldest report dates when catalog PDF total exceeds this many GiB. 0 disables."
+        description: "Archive oldest PDFs when PDF storage exceeds this many GiB. Catalog/search records stay. 0 disables."
         required: true
         default: "8"
       deploy_worker:

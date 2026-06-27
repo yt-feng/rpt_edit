@@ -1,5 +1,6 @@
 const CACHE_TTL_MS = 5 * 60 * 1000;
 const DEFAULT_R2_PREFIX = "reports";
+const CONTACT_WECHAT = "macroGate";
 
 let catalogCache = null;
 let catalogFetchedAt = 0;
@@ -189,8 +190,8 @@ async function handleDownload(request, env) {
   let catalog;
   try {
     catalog = await loadCatalog(env);
-  } catch (error) {
-    return jsonResponse(request, env, 503, { error: error.message || "Worker is not configured." });
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { error: "Download service is not configured." });
   }
 
   const report = findReport(catalog, id);
@@ -198,7 +199,11 @@ async function handleDownload(request, env) {
     return jsonResponse(request, env, 404, { error: "Report not found." });
   }
   if (report.available === false) {
-    return jsonResponse(request, env, 404, { error: "PDF is not mirrored to R2 yet." });
+    return jsonResponse(request, env, 404, {
+      error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
+      archived: true,
+      contact: CONTACT_WECHAT,
+    });
   }
 
   let derivedOk = false;
@@ -213,23 +218,27 @@ async function handleDownload(request, env) {
       const rules = await loadRules(env);
       const group = findPasswordGroup(rules, report.password_group || rules.default_group);
       if (!group) {
-        return jsonResponse(request, env, 503, { error: "Password group is not configured." });
+        return jsonResponse(request, env, 503, { error: "Password validation failed." });
       }
       const ok = await passwordMatches(env, group, password);
       if (!ok) return jsonResponse(request, env, 401, { error: "Password is incorrect." });
-    } catch (error) {
-      return jsonResponse(request, env, 503, { error: error.message || "Password validation failed." });
+    } catch (_error) {
+      return jsonResponse(request, env, 503, { error: "Password validation failed." });
     }
   }
 
   if (!env.REPORT_BUCKET) {
-    return jsonResponse(request, env, 503, { error: "R2 bucket binding is not configured." });
+    return jsonResponse(request, env, 503, { error: "Download storage is not configured." });
   }
 
   const key = objectKeyForReport(env, id);
   const object = await env.REPORT_BUCKET.get(key);
   if (!object) {
-    return jsonResponse(request, env, 404, { error: "PDF object was not found in R2." });
+    return jsonResponse(request, env, 404, {
+      error: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`,
+      archived: true,
+      contact: CONTACT_WECHAT,
+    });
   }
 
   return new Response(object.body, {

@@ -99,8 +99,8 @@ a {
 }
 
 .search-panel {
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 390px);
-  align-items: end;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 430px);
+  align-items: start;
 }
 
 h1,
@@ -132,7 +132,12 @@ h3 {
   line-height: 1.55;
 }
 
-.search-box {
+.search-copy {
+  min-width: 0;
+}
+
+.search-box,
+.filter-control {
   display: grid;
   gap: 8px;
   color: var(--muted);
@@ -141,7 +146,9 @@ h3 {
 }
 
 .search-box input,
-.password-row input {
+.password-row input,
+.filter-control input,
+.filter-control select {
   width: 100%;
   min-height: 44px;
   border: 1px solid var(--line);
@@ -153,9 +160,65 @@ h3 {
 }
 
 .search-box input:focus,
-.password-row input:focus {
+.password-row input:focus,
+.filter-control input:focus,
+.filter-control select:focus {
   border-color: var(--accent);
   outline: 3px solid rgba(15, 118, 110, 0.16);
+}
+
+.search-main {
+  align-self: end;
+}
+
+.filter-grid {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  padding-top: 2px;
+}
+
+.filter-control select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 18px,
+    calc(100% - 12px) 18px;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.filter-actions {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 34px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.filter-actions button {
+  min-height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 14px;
+  background: #ffffff;
+  color: var(--accent-strong);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.filter-actions button:hover,
+.filter-actions button:focus {
+  border-color: #b7d8d3;
+  background: #eef7f5;
+  outline: none;
 }
 
 .results-section {
@@ -184,7 +247,7 @@ h3 {
 
 .report-row {
   display: grid;
-  grid-template-columns: 110px 92px minmax(0, 1fr) 100px;
+  grid-template-columns: 86px 94px minmax(0, 1fr) 138px 92px;
   gap: 14px;
   align-items: center;
   width: 100%;
@@ -209,6 +272,15 @@ h3 {
   outline: none;
 }
 
+.report-row.is-archived {
+  background: #fffdf7;
+}
+
+.report-row.is-archived:hover,
+.report-row.is-archived:focus {
+  background: #fff7e6;
+}
+
 .pill {
   display: inline-flex;
   align-items: center;
@@ -225,10 +297,21 @@ h3 {
 }
 
 .date-text,
-.size-text {
+.size-text,
+.industry-text {
   color: var(--muted);
   font-size: 13px;
   white-space: nowrap;
+}
+
+.industry-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.size-text.archived {
+  color: var(--warn);
+  font-weight: 800;
 }
 
 .title-text {
@@ -350,6 +433,73 @@ button.primary:disabled {
   line-height: 1.5;
 }
 
+.archive-notice {
+  padding: 14px;
+  border: 1px solid #f5d08a;
+  border-radius: 8px;
+  color: #78350f;
+  background: #fffbeb;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.related-section {
+  padding-top: 4px;
+  border-top: 1px solid var(--line);
+}
+
+.related-heading {
+  margin-bottom: 10px;
+}
+
+.related-list {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.related-row {
+  display: grid;
+  gap: 5px;
+  width: 100%;
+  min-height: 64px;
+  padding: 12px 14px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.related-row:last-child {
+  border-bottom: 0;
+}
+
+.related-row:hover,
+.related-row:focus {
+  background: #eef7f5;
+  outline: none;
+}
+
+.related-row.is-archived {
+  background: #fffdf7;
+}
+
+.related-title {
+  overflow-wrap: anywhere;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.related-meta {
+  color: var(--muted);
+  font-size: 12px;
+}
+
 @media (max-width: 760px) {
   .topbar {
     align-items: flex-start;
@@ -364,6 +514,15 @@ button.primary:disabled {
   .search-panel {
     grid-template-columns: 1fr;
     padding: 18px;
+  }
+
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-actions {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   h1 {
@@ -383,8 +542,12 @@ button.primary:disabled {
     grid-column: 2;
   }
 
+  .industry-text {
+    grid-column: 2;
+  }
+
   .size-text {
-    display: none;
+    grid-column: 2;
   }
 
   .detail-grid,

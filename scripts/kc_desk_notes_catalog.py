@@ -237,8 +237,20 @@ def item_size_bytes(item: dict[str, Any]) -> int:
         return 0
 
 
+def item_counts_toward_pdf_storage(item: dict[str, Any]) -> bool:
+    if item.get("present_in_latest_scan"):
+        return True
+    if item.get("pdf_archived"):
+        return False
+    return bool(item.get("available") or item.get("r2_synced"))
+
+
 def catalog_size_bytes(catalog: dict[str, Any]) -> int:
-    return sum(item_size_bytes(item) for item in catalog.get("items", []))
+    return sum(
+        item_size_bytes(item)
+        for item in catalog.get("items", [])
+        if item_counts_toward_pdf_storage(item)
+    )
 
 
 def apply_storage_limit(
@@ -247,13 +259,15 @@ def apply_storage_limit(
     now_bjt: str,
 ) -> tuple[list[dict[str, Any]], int, int]:
     items = list(catalog.get("items", []))
-    total_before = sum(item_size_bytes(item) for item in items)
-    removed: list[dict[str, Any]] = []
-    remove_ids: set[str] = set()
+    total_before = catalog_size_bytes({"items": items})
+    archived: list[dict[str, Any]] = []
+    archive_ids: set[str] = set()
 
     if limit_bytes > 0 and total_before > limit_bytes:
         by_date: dict[str, list[dict[str, Any]]] = {}
         for item in items:
+            if not item_counts_toward_pdf_storage(item):
+                continue
             by_date.setdefault(str(item.get("date_folder") or ""), []).append(item)
 
         running_total = total_before
@@ -261,25 +275,35 @@ def apply_storage_limit(
             if running_total <= limit_bytes:
                 break
             date_items = by_date[date_folder]
-            removed.extend(date_items)
-            remove_ids.update(str(item.get("id")) for item in date_items if item.get("id"))
+            archived.extend(date_items)
+            archive_ids.update(str(item.get("id")) for item in date_items if item.get("id"))
             running_total -= sum(item_size_bytes(item) for item in date_items)
 
-    if remove_ids:
-        items = [item for item in items if str(item.get("id")) not in remove_ids]
+    for item in items:
+        report_id = str(item.get("id") or "")
+        if report_id in archive_ids:
+            item["available"] = False
+            item["r2_synced"] = False
+            item["pdf_archived"] = True
+            item["pdf_archived_at_bjt"] = now_bjt
+            item["archive_reason"] = "pdf_storage_limit"
+        elif item.get("present_in_latest_scan"):
+            item.pop("pdf_archived", None)
+            item.pop("pdf_archived_at_bjt", None)
+            item.pop("archive_reason", None)
 
-    total_after = sum(item_size_bytes(item) for item in items)
+    total_after = catalog_size_bytes({"items": items})
     removed_size = total_before - total_after
-    removed_dates = sorted({str(item.get("date_folder") or "") for item in removed}, key=parse_date_sort_value)
+    removed_dates = sorted({str(item.get("date_folder") or "") for item in archived}, key=parse_date_sort_value)
     storage = {
         "limit_bytes": limit_bytes,
         "total_size_bytes": total_after,
-        "pruned_this_run_count": len(removed),
-        "pruned_this_run_size_bytes": removed_size,
-        "pruned_this_run_dates": removed_dates,
+        "pdf_pruned_this_run_count": len(archived),
+        "pdf_pruned_this_run_size_bytes": removed_size,
+        "pdf_pruned_this_run_dates": removed_dates,
     }
     previous_storage = catalog.get("storage") if isinstance(catalog.get("storage"), dict) else {}
-    if removed:
+    if archived:
         storage["last_pruned_at_bjt"] = now_bjt
     elif previous_storage.get("last_pruned_at_bjt"):
         storage["last_pruned_at_bjt"] = previous_storage["last_pruned_at_bjt"]
@@ -289,7 +313,7 @@ def apply_storage_limit(
     catalog["total_size_bytes"] = total_after
     catalog["storage_limit_bytes"] = limit_bytes
     catalog["storage"] = storage
-    return removed, total_before, total_after
+    return archived, total_before, total_after
 
 
 def prune_r2_objects_for_items(items: list[dict[str, Any]]) -> int:
@@ -418,6 +442,9 @@ def sync_current_reports_to_r2(
             dropbox_path = download_paths.get(report_id)
             if not item or not dropbox_path:
                 continue
+            if item.get("pdf_archived"):
+                log(f"Skipping archived PDF storage: {report_id}")
+                continue
             if item.get("r2_synced") and not force_upload:
                 item["available"] = True
                 continue
@@ -488,11 +515,11 @@ def main() -> int:
         )
         if pruned_items:
             pruned_dates = ", ".join(sorted({str(item.get("date_folder") or "") for item in pruned_items}, key=parse_date_sort_value))
-            log(f"Pruned {len(pruned_items)} old reports from dates: {pruned_dates}")
+            log(f"Archived PDF storage for {len(pruned_items)} old reports from dates: {pruned_dates}")
             if args.sync_r2:
                 prune_r2_objects_for_items(pruned_items)
             else:
-                log("Skipping R2 deletion for pruned reports because --sync-r2 is not enabled")
+                log("Skipping R2 deletion for archived PDFs because --sync-r2 is not enabled")
 
         uploaded = 0
         if args.sync_r2:

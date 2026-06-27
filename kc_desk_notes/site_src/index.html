@@ -17,14 +17,53 @@
 
     <main class="shell">
       <section class="search-panel" aria-labelledby="searchTitle">
-        <div>
+        <div class="search-copy">
           <h1 id="searchTitle">KC Desk Notes</h1>
-          <p class="subtle">Search report titles, catalog text, and available MinerU parsed text. PDFs stay private until password unlock.</p>
+          <p class="subtle">Research notes and reports, indexed for fast lookup.</p>
         </div>
-        <label class="search-box">
+        <label class="search-box search-main">
           <span>Search</span>
-          <input id="searchInput" type="search" autocomplete="off" placeholder="Title, bank, date, or report text">
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Topic, company, ticker, title, or keyword">
         </label>
+        <div class="filter-grid" aria-label="Report filters">
+          <label class="filter-control">
+            <span>Institution</span>
+            <select id="bankFilter"></select>
+          </label>
+          <label class="filter-control">
+            <span>Industry</span>
+            <select id="industryFilter"></select>
+          </label>
+          <label class="filter-control">
+            <span>From</span>
+            <input id="startDate" type="date">
+          </label>
+          <label class="filter-control">
+            <span>To</span>
+            <input id="endDate" type="date">
+          </label>
+          <label class="filter-control">
+            <span>Search In</span>
+            <select id="scopeFilter">
+              <option value="all">Everything</option>
+              <option value="title">Title only</option>
+              <option value="catalog">Catalog fields</option>
+              <option value="fulltext">Document text</option>
+            </select>
+          </label>
+          <label class="filter-control">
+            <span>PDF</span>
+            <select id="availabilityFilter">
+              <option value="">All records</option>
+              <option value="available">PDF available</option>
+              <option value="textOnly">Text only</option>
+            </select>
+          </label>
+        </div>
+        <div class="filter-actions">
+          <span id="activeFilters">No filters</span>
+          <button id="clearFilters" type="button">Clear</button>
+        </div>
       </section>
 
       <section class="results-section" aria-live="polite">

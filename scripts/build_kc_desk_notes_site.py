@@ -30,6 +30,12 @@ PUBLIC_ITEM_KEYS = [
     "last_seen_at_bjt",
     "available",
     "present_in_latest_scan",
+    "industry",
+    "sector",
+    "category",
+    "pdf_archived",
+    "pdf_archived_at_bjt",
+    "archive_reason",
 ]
 
 BANK_ALIASES = [
@@ -275,6 +281,59 @@ def build_search_index(
     }
 
 
+def search_index_size_bytes(index: dict[str, Any]) -> int:
+    return len(json.dumps(index, ensure_ascii=False, separators=(",", ":")).encode("utf-8"))
+
+
+def limit_search_index_by_size(
+    index: dict[str, Any],
+    catalog: dict[str, Any],
+    limit_bytes: int,
+) -> dict[str, Any]:
+    if limit_bytes <= 0:
+        index["text_storage_limit_bytes"] = 0
+        index["text_storage_size_bytes"] = search_index_size_bytes(index)
+        index["text_pruned_dates"] = []
+        return index
+
+    id_to_date = {
+        str(item.get("id")): str(item.get("date_folder") or "")
+        for item in catalog.get("items", [])
+        if item.get("id")
+    }
+    items = list(index.get("items", []))
+    pruned_dates: list[str] = []
+
+    candidate_index = dict(index)
+    candidate_index["items"] = items
+    while items and search_index_size_bytes(candidate_index) > limit_bytes:
+        dates = sorted({id_to_date.get(str(item.get("id")), "") for item in items}, key=sort_date_value)
+        oldest = dates[0]
+        pruned_dates.append(oldest)
+        items = [item for item in items if id_to_date.get(str(item.get("id")), "") != oldest]
+        candidate_index = dict(index)
+        candidate_index["items"] = items
+        candidate_index["item_count"] = len(items)
+        candidate_index["text_pruned_dates"] = pruned_dates
+
+    candidate_index["item_count"] = len(items)
+    candidate_index["text_storage_limit_bytes"] = limit_bytes
+    candidate_index["text_storage_size_bytes"] = search_index_size_bytes(candidate_index)
+    candidate_index["text_pruned_dates"] = pruned_dates
+    return candidate_index
+
+
+def sort_date_value(value: str) -> tuple[int, int, str]:
+    text = str(value or "")
+    match = re.fullmatch(r"\d{6}", text)
+    if match:
+        return 0, int(f"20{text}"), text
+    match = re.fullmatch(r"\d{8}", text)
+    if match:
+        return 0, int(text), text
+    return 1, 0, text
+
+
 def public_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
     items: list[dict[str, Any]] = []
     for item in catalog.get("items", []):
@@ -298,6 +357,9 @@ def public_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
             "limit_bytes": storage.get("limit_bytes", 0),
             "total_size_bytes": storage.get("total_size_bytes", public["total_size_bytes"]),
             "last_pruned_at_bjt": storage.get("last_pruned_at_bjt", ""),
+            "pdf_pruned_this_run_count": storage.get("pdf_pruned_this_run_count", storage.get("pruned_this_run_count", 0)),
+            "pdf_pruned_this_run_size_bytes": storage.get("pdf_pruned_this_run_size_bytes", storage.get("pruned_this_run_size_bytes", 0)),
+            "pdf_pruned_this_run_dates": storage.get("pdf_pruned_this_run_dates", storage.get("pruned_this_run_dates", [])),
         }
     return public
 
@@ -341,6 +403,12 @@ def main() -> int:
     parser.add_argument("--bank-catalog-root", default="bank_report_catalogs")
     parser.add_argument("--mineru-root", default="xhs_notes/dropbox")
     parser.add_argument("--search-text-limit", type=int, default=0, help="Per-report normalized search text cap. 0 keeps all matched text.")
+    parser.add_argument(
+        "--search-index-limit-gb",
+        type=float,
+        default=2,
+        help="Maximum public text index size in GiB. Oldest date folders are removed from the text index if exceeded. 0 disables.",
+    )
     args = parser.parse_args()
 
     site_src = Path(args.site_src)
@@ -353,6 +421,11 @@ def main() -> int:
         bank_catalog_root=Path(args.bank_catalog_root),
         mineru_root=Path(args.mineru_root),
         text_limit=args.search_text_limit,
+    )
+    search_index = limit_search_index_by_size(
+        index=search_index,
+        catalog=catalog,
+        limit_bytes=int(args.search_index_limit_gb * 1024 * 1024 * 1024),
     )
     rules = public_password_rules(load_json(Path(args.password_rules)))
     write_json(output_dir / "data" / "catalog.json", catalog)
