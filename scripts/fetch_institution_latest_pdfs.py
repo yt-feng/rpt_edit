@@ -54,7 +54,7 @@ from email.utils import parsedate_to_datetime
 from html.entities import name2codepoint
 from pathlib import Path
 from typing import Any, Iterable
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import quote, unquote, urljoin, urlsplit
 
 import requests
 
@@ -174,6 +174,41 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
             "https://www.brookings.edu/research/",
         ],
         "item_link_pattern": r"https://www\.brookings\.edu/articles/[a-z0-9-]+/",
+    },
+    # MBB strategy consultancies. Their sites are JS apps behind Akamai/Cloudflare
+    # (Bain is fully Cloudflare-challenged), so we don't scrape them directly. Instead
+    # we discover their published PDFs via DuckDuckGo (site:<domain> filetype:pdf) and
+    # download from the asset/CDN hosts, which are not bot-walled. df=m biases toward
+    # recent; seen-dedup guarantees no report is processed twice.
+    "mckinsey": {
+        "name_en": "McKinsey",
+        "name_cn": "麦肯锡",
+        "token": "McKinsey",
+        "kind": "ddg_search",
+        "pdf": "direct",
+        "impersonate": True,
+        "recency_filter": False,
+        "query": "site:mckinsey.com filetype:pdf",
+    },
+    "bain": {
+        "name_en": "Bain",
+        "name_cn": "贝恩",
+        "token": "Bain",
+        "kind": "ddg_search",
+        "pdf": "direct",
+        "impersonate": True,
+        "recency_filter": False,
+        "query": "site:bain.com filetype:pdf",
+    },
+    "bcg": {
+        "name_en": "BCG",
+        "name_cn": "波士顿咨询",
+        "token": "BCG",
+        "kind": "ddg_search",
+        "pdf": "direct",
+        "impersonate": True,
+        "recency_filter": False,
+        "query": "site:bcg.com filetype:pdf",
     },
 }
 
@@ -462,6 +497,57 @@ def _extract_html_title(html_text: str) -> str:
     return re.sub(r"\s*[|–-]\s*Brookings.*$", "", title).strip()
 
 
+def collect_ddg_items(cfg: dict[str, Any], session: requests.Session, timeout: int, df: str) -> list[dict[str, Any]]:
+    """Discover PDFs via DuckDuckGo HTML search (site:<domain> filetype:pdf).
+
+    Bypasses the consultancies' bot walls: we only hit DuckDuckGo and the PDF CDN
+    hosts. df ('d'/'w'/'m'/'y' or '') biases toward recent results; seen-dedup keeps
+    each report one-time.
+    """
+    url = "https://html.duckduckgo.com/html/?q=" + quote(cfg["query"])
+    if df:
+        url += "&df=" + df
+    headers = {"Referer": "https://duckduckgo.com/", "Accept-Language": "en-US,en;q=0.9"}
+    if _HAS_CFFI:
+        resp = cffi_requests.get(url, impersonate=CFFI_IMPERSONATE, timeout=timeout, headers=headers, allow_redirects=True)
+    else:
+        resp = session.get(url, timeout=timeout, headers=headers, allow_redirects=True)
+    resp.raise_for_status()
+    items: list[dict[str, Any]] = []
+    seen: set[str] = set()
+
+    def add(target: str, title: str) -> None:
+        if not re.search(r"\.pdf(\?|$)", target, re.I) or target in seen:
+            return
+        seen.add(target)
+        if not title:
+            title = unquote(Path(urlsplit(target).path).name) or target
+        items.append({
+            "title": title,
+            "source_url": target,
+            "guid": target,
+            "date": "",
+            "pdf_candidates": [target],
+            "scrape_url": "",
+        })
+
+    # Primary: every anchor whose target (via the uddg= redirect or a direct href)
+    # resolves to a PDF. Not tied to DuckDuckGo's CSS class names.
+    for match in re.finditer(r'<a\b[^>]*\bhref="([^"]+)"[^>]*>(.*?)</a>', resp.text, re.S | re.I):
+        redirect = re.search(r"[?&]uddg=([^&]+)", match.group(1))
+        target = unquote(redirect.group(1)) if redirect else html.unescape(match.group(1))
+        target = target.split("&rut=")[0]
+        add(target, html.unescape(re.sub(r"<[^>]+>", "", match.group(2))).strip())
+
+    # Fallback: bare PDF URLs in the page (handles markup changes), title from filename.
+    if not items:
+        for raw in re.findall(r'https?(?:%3a%2f%2f|%3A%2F%2F|://)[^\s"\'<>()]+?\.pdf', resp.text, re.I):
+            add(unquote(raw), "")
+
+    log(f"  ddg '{cfg['query']}' (df={df or 'none'}) -> {len(items)} pdf results")
+    return items
+
+
 def collect_html_listing_items(cfg: dict[str, Any], session: requests.Session, timeout: int) -> list[dict[str, Any]]:
     """Scrape a listing page for article links; each is resolved to a PDF later."""
     pattern = re.compile(cfg["item_link_pattern"], re.I)
@@ -681,6 +767,7 @@ def main() -> int:
     parser.add_argument("--max-pdf-mb", type=float, default=60.0)
     parser.add_argument("--worldbank-rows", type=int, default=30)
     parser.add_argument("--imf-rows", type=int, default=60, help="Coveo results to scan for IMF (newest first).")
+    parser.add_argument("--ddg-df", default="m", help="DuckDuckGo date filter for search sources: d/w/m/y or '' for none.")
     parser.add_argument("--request-timeout", type=int, default=60)
     parser.add_argument("--user-agent", default=DEFAULT_USER_AGENT)
     args = parser.parse_args()
@@ -722,6 +809,8 @@ def main() -> int:
                 items = collect_worldbank_items(cfg, session, args.request_timeout, args.worldbank_rows)
             elif cfg["kind"] == "coveo_api":
                 items = collect_coveo_items(cfg, session, args.request_timeout, args.imf_rows)
+            elif cfg["kind"] == "ddg_search":
+                items = collect_ddg_items(cfg, session, args.request_timeout, args.ddg_df)
             elif cfg["kind"] == "html_listing":
                 items = collect_html_listing_items(cfg, session, args.request_timeout)
             else:
