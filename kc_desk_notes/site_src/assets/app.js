@@ -600,19 +600,19 @@
           `${reportifyUrl}/reportify/search?q=${encodeURIComponent(query)}`,
           { cache: "no-store" },
         );
-        if (!response.ok) throw new Error(`Reportify 搜索失败 (${response.status})`);
+        if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
         const data = await response.json();
         if (token !== reportifyToken) return; // a newer query superseded this one
         const items = Array.isArray(data.items) ? data.items : [];
         if (reportifyCount) reportifyCount.textContent = items.length ? `${items.length} 条` : "";
         reportifyResults.innerHTML = items.length
           ? items.map(reportifyRow).join("")
-          : '<div class="empty-state">Reportify 暂无匹配结果。</div>';
+          : '<div class="empty-state">暂无匹配结果。</div>';
       } catch (error) {
         if (token !== reportifyToken) return;
         if (reportifyCount) reportifyCount.textContent = "";
         reportifyResults.innerHTML = "";
-        setReportifyStatus(error.message || "Reportify 搜索暂不可用。", "error");
+        setReportifyStatus(error.message || "搜索暂不可用。", "error");
       }
     }
 

@@ -394,6 +394,28 @@ def copy_site(src: Path, output: Path) -> None:
     shutil.copytree(src, output)
 
 
+def version_assets(output: Path) -> None:
+    """Append a content-hash query to app.js / styles.css links in every HTML file.
+
+    kcdesk.com is fronted by Cloudflare, which caches these assets for hours, so an
+    unversioned `assets/app.js` keeps serving stale JS after a deploy. Hashing the
+    URL (`assets/app.js?v=<hash>`) makes each change a new cache key, so deploys take
+    effect immediately. Only busts when the file content actually changes.
+    """
+    versions: dict[str, str] = {}
+    for rel in ("assets/app.js", "assets/styles.css"):
+        path = output / rel
+        if path.exists():
+            versions[rel] = hashlib.sha1(path.read_bytes()).hexdigest()[:8]
+    if not versions:
+        return
+    for html_path in output.glob("*.html"):
+        text = html_path.read_text(encoding="utf-8")
+        for rel, digest in versions.items():
+            text = text.replace(f'"{rel}"', f'"{rel}?v={digest}"')
+        html_path.write_text(text, encoding="utf-8")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--site-src", default="kc_desk_notes/site_src")
@@ -433,6 +455,7 @@ def main() -> int:
     write_json(output_dir / "data" / "search_index.json", search_index)
     write_json(output_dir / "data" / "password_rules.json", rules)
     write_json(output_dir / "data" / "config.json", {"worker_base_url": args.worker_base_url.rstrip("/")})
+    version_assets(output_dir)
     print(
         f"Built {output_dir} with {catalog['item_count']} catalog items "
         f"and {search_index['item_count']} full-text search entries"
