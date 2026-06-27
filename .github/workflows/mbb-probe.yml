@@ -1,9 +1,5 @@
 name: MBB probe (temporary)
 
-# Temporary diagnostic: characterize McKinsey / Bain / BCG insights pages (HTML vs
-# SPA, PDF links, feeds, sitemaps) so we can build the consulting adapter. Delete
-# once MBB is wired up.
-
 on:
   workflow_dispatch: {}
 
@@ -22,43 +18,64 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install curl_cffi
-      - name: Probe MBB insight pages
+      - name: Deep probe McKinsey / BCG / Bain
         run: |
           python - <<'PY'
           import re
           from curl_cffi import requests as cr
 
-          urls = [
-              "https://www.mckinsey.com/featured-insights",
-              "https://www.mckinsey.com/mgi/our-research",
-              "https://www.bain.com/insights/",
-              "https://www.bcg.com/publications",
-          ]
-          for u in urls:
-              print("=" * 74)
+          def pdfs_on(url):
               try:
-                  r = cr.get(u, impersonate="chrome", timeout=40, allow_redirects=True)
-                  html = r.text
+                  r = cr.get(url, impersonate="chrome", timeout=40, allow_redirects=True)
               except Exception as e:
-                  print("ERR", u, e); continue
-              print(u, r.status_code, r.headers.get("content-type", "")[:30], "len", len(html))
-              pdfs = sorted(set(re.findall(r'(?:href|content)="([^"]+\.pdf[^"]*)"', html, re.I)))
-              print("  pdf links:", len(pdfs))
-              for p in pdfs[:5]:
-                  print("    ", p)
-              arts = sorted(set(re.findall(r'href="(/[^"]*(?:insights|publications|our-research|mgi)[^"]*)"', html, re.I)))
-              print("  article-ish links:", len(arts))
-              for a in arts[:6]:
-                  print("    ", a)
-              feed = re.search(r'<link[^>]+application/(?:rss|atom)\+xml[^>]+href="([^"]+)"', html, re.I)
-              print("  __NEXT_DATA__:", "__NEXT_DATA__" in html, "| declared feed:", feed.group(1) if feed else None)
+                  return f"ERR {e}", []
+              html = r.text
+              pdfs = sorted(set(re.findall(r'https?://[^\s"\'<>()]+?\.pdf(?:\?[^\s"\'<>()]*)?', html, re.I)))
+              return f"{r.status_code} len{len(html)}", pdfs
 
-          for dom in ["www.mckinsey.com", "www.bain.com", "www.bcg.com"]:
+          print("### McKinsey insight/MGI pages -> PDFs? ###")
+          for u in [
+              "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/valuation-measuring-and-managing-the-value-of-companies",
+              "https://www.mckinsey.com/mgi/our-research/a-century-of-plenty",
+          ]:
+              st, pdfs = pdfs_on(u)
+              print(" ", u); print("    ", st, "pdfs:", len(pdfs), pdfs[:3])
+
+          print("### BCG sitemap index -> child sitemaps -> publication urls ###")
+          try:
+              r = cr.get("https://www.bcg.com/sitemap.xml", impersonate="chrome", timeout=40)
+              children = re.findall(r"<loc>([^<]+)</loc>", r.text)
+              print("  children:", children[:6])
+              pub_urls = []
+              for c in children[:4]:
+                  try:
+                      rc = cr.get(c, impersonate="chrome", timeout=40)
+                      locs = re.findall(r"<loc>([^<]+)</loc>", rc.text)
+                      pubs = [l for l in locs if "/publications/" in l]
+                      print("   ", c, "locs", len(locs), "pub-locs", len(pubs), pubs[:2])
+                      pub_urls += pubs
+                  except Exception as e:
+                      print("    child err", e)
+              if pub_urls:
+                  st, pdfs = pdfs_on(pub_urls[0])
+                  print("  BCG pub page", pub_urls[0]); print("    ", st, "pdfs:", len(pdfs), pdfs[:3])
+          except Exception as e:
+              print("  BCG sitemap err", e)
+
+          print("### BCG /publications href pattern ###")
+          try:
+              r = cr.get("https://www.bcg.com/publications", impersonate="chrome", timeout=40)
+              hrefs = sorted(set(re.findall(r'href="([^"]+)"', r.text)))
+              pubish = [h for h in hrefs if "/publications/" in h]
+              print("  total hrefs", len(hrefs), "pub hrefs", len(pubish), pubish[:8])
+          except Exception as e:
+              print("  err", e)
+
+          print("### Bain retry ###")
+          for u in ["https://www.bain.com/insights/", "https://www.bain.com/sitemap.xml", "https://www.bain.com/insights/sitemap.xml"]:
               try:
-                  r = cr.get(f"https://{dom}/sitemap.xml", impersonate="chrome", timeout=40, allow_redirects=True)
-                  body = r.text
-                  locs = re.findall(r"<loc>([^<]+)</loc>", body)
-                  print("SITEMAP", dom, r.status_code, "len", len(body), "locs", len(locs), "first", (locs[0] if locs else body[:80].replace(chr(10), " ")))
+                  r = cr.get(u, impersonate="chrome", timeout=40)
+                  print(" ", u, r.status_code, repr(r.text[:70]))
               except Exception as e:
-                  print("SITEMAP ERR", dom, e)
+                  print(" ", u, "ERR", e)
           PY
