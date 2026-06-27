@@ -1,6 +1,7 @@
 const CACHE_TTL_MS = 5 * 60 * 1000;
 const DEFAULT_R2_PREFIX = "reports";
 const CONTACT_WECHAT = "macroGate";
+const ADMIN_TOKEN_TTL_SECONDS = 180 * 24 * 60 * 60;
 
 let catalogCache = null;
 let catalogFetchedAt = 0;
@@ -105,6 +106,40 @@ function base32NoPadding(bytes) {
   return output;
 }
 
+function base64UrlEncodeBytes(bytes) {
+  let binary = "";
+  for (const byte of bytes) {
+    binary += String.fromCharCode(byte);
+  }
+  return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+}
+
+function base64UrlEncodeText(value) {
+  return base64UrlEncodeBytes(new TextEncoder().encode(value));
+}
+
+function base64UrlDecodeText(value) {
+  const base64 = String(value || "").replace(/-/g, "+").replace(/_/g, "/");
+  const padded = base64 + "=".repeat((4 - base64.length % 4) % 4);
+  const binary = atob(padded);
+  const bytes = new Uint8Array(binary.length);
+  for (let index = 0; index < binary.length; index += 1) {
+    bytes[index] = binary.charCodeAt(index);
+  }
+  return new TextDecoder().decode(bytes);
+}
+
+function constantTimeEqual(left, right) {
+  const a = String(left || "");
+  const b = String(right || "");
+  const length = Math.max(a.length, b.length);
+  let diff = a.length ^ b.length;
+  for (let index = 0; index < length; index += 1) {
+    diff |= (a.charCodeAt(index) || 0) ^ (b.charCodeAt(index) || 0);
+  }
+  return diff === 0;
+}
+
 async function hmacSha256Bytes(secret, message) {
   const encoder = new TextEncoder();
   const key = await crypto.subtle.importKey(
@@ -116,6 +151,37 @@ async function hmacSha256Bytes(secret, message) {
   );
   const signature = await crypto.subtle.sign("HMAC", key, encoder.encode(message));
   return new Uint8Array(signature);
+}
+
+function adminTokenSecret(env) {
+  return String(env.PASSWORD_SECRET || env.MASTER_KEY || "");
+}
+
+async function signAdminToken(env, payload) {
+  const secret = adminTokenSecret(env);
+  if (!secret) throw new Error("Admin token secret is not configured");
+  const body = base64UrlEncodeText(JSON.stringify(payload));
+  const signature = base64UrlEncodeBytes(await hmacSha256Bytes(secret, body));
+  return `${body}.${signature}`;
+}
+
+async function verifyAdminToken(env, token) {
+  const secret = adminTokenSecret(env);
+  if (!secret) throw new Error("Admin token secret is not configured");
+  const [body, signature] = String(token || "").split(".");
+  if (!body || !signature) throw new Error("Admin session is invalid");
+  const expected = base64UrlEncodeBytes(await hmacSha256Bytes(secret, body));
+  if (!constantTimeEqual(signature, expected)) throw new Error("Admin session is invalid");
+
+  let payload;
+  try {
+    payload = JSON.parse(base64UrlDecodeText(body));
+  } catch (_error) {
+    throw new Error("Admin session is invalid");
+  }
+  const now = Math.floor(Date.now() / 1000);
+  if (!payload || Number(payload.exp || 0) < now) throw new Error("Admin session has expired");
+  return payload;
 }
 
 async function derivedReportPassword(env, id) {
@@ -276,6 +342,83 @@ async function handleCalculator(request, env) {
   }
 }
 
+async function handleAdminLogin(request, env) {
+  let payload;
+  try {
+    payload = await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { error: "Invalid JSON body." });
+  }
+
+  const submitted = String(payload.key || "").trim();
+  const expected = String(env.MASTER_KEY || "").trim();
+  if (!expected) {
+    return jsonResponse(request, env, 503, { error: "Private tools are not configured." });
+  }
+  if (!submitted || !constantTimeEqual(submitted, expected)) {
+    return jsonResponse(request, env, 401, { error: "Private key is incorrect." });
+  }
+
+  try {
+    const now = Math.floor(Date.now() / 1000);
+    const expires = now + ADMIN_TOKEN_TTL_SECONDS;
+    const token = await signAdminToken(env, { v: 1, iat: now, exp: expires });
+    return jsonResponse(request, env, 200, {
+      ok: true,
+      token,
+      expires_in: ADMIN_TOKEN_TTL_SECONDS,
+      expires_at: new Date(expires * 1000).toISOString(),
+    });
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { error: "Private tools are not configured." });
+  }
+}
+
+async function handleAdminReportPassword(request, env) {
+  let payload;
+  try {
+    payload = await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { error: "Invalid JSON body." });
+  }
+
+  const id = String(payload.id || "").trim();
+  const token = String(payload.token || "");
+  if (!/^[a-f0-9]{16,64}$/i.test(id)) {
+    return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  }
+
+  try {
+    await verifyAdminToken(env, token);
+  } catch (error) {
+    return jsonResponse(request, env, 401, { error: error.message || "Admin session is invalid." });
+  }
+
+  let catalog;
+  try {
+    catalog = await loadCatalog(env);
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { error: "Catalog is not configured." });
+  }
+
+  const report = findReport(catalog, id);
+  if (!report) {
+    return jsonResponse(request, env, 404, { error: "Report not found." });
+  }
+
+  try {
+    return jsonResponse(request, env, 200, {
+      id,
+      title: report.title || "",
+      title_zh: report.title_zh || "",
+      available: report.available !== false,
+      password: await derivedReportPassword(env, id),
+    });
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { error: "Could not calculate report password." });
+  }
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -294,6 +437,14 @@ export default {
 
     if (url.pathname === "/download" && request.method === "POST") {
       return handleDownload(request, env);
+    }
+
+    if (url.pathname === "/admin/login" && request.method === "POST") {
+      return handleAdminLogin(request, env);
+    }
+
+    if (url.pathname === "/admin/report-password" && request.method === "POST") {
+      return handleAdminReportPassword(request, env);
     }
 
     return jsonResponse(request, env, 404, { error: "Not found." });

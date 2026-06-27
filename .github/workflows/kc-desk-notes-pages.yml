@@ -102,6 +102,18 @@ jobs:
             --storage-limit-gb "${{ github.event.inputs.storage_limit_gb || '8' }}" \
             "${EXTRA_ARGS[@]}"
 
+      - name: Translate missing report titles
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
+          DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-chat' }}
+        run: |
+          python scripts/translate_kc_desk_titles.py \
+            --catalog-path "kc_desk_notes/data/catalog.json" \
+            --model "$DEEPSEEK_MODEL" \
+            --deepseek-base-url "$DEEPSEEK_BASE_URL" \
+            --workers 500
+
       - name: Build static Pages artifact
         env:
           KC_DESK_WORKER_URL: ${{ vars.KC_DESK_WORKER_URL || 'https://kc-desk-notes-worker.yt-feng.workers.dev' }}
@@ -184,6 +196,7 @@ jobs:
         env:
           PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
           CALC_KEY: ${{ secrets.CALC_KEY }}
+          MASTER_KEY: ${{ secrets.KC_DESK_MASTER_KEY || secrets.KC_DESK_DOWNLOAD_PASSWORD }}
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID || '8182ec40eab8c484e11ebf5d6a516fbd' }}
@@ -192,3 +205,4 @@ jobs:
           secrets: |
             PASSWORD_SECRET
             CALC_KEY
+            MASTER_KEY

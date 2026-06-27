@@ -12,7 +12,10 @@
         <img src="assets/kc-mark.svg" alt="" width="34" height="34">
         <span>KC Desk Notes</span>
       </a>
-      <div class="catalog-meta" id="catalogMeta">Loading catalog...</div>
+      <div class="topbar-actions">
+        <div class="catalog-meta" id="catalogMeta">Loading catalog...</div>
+        <button id="adminGate" class="admin-gate" type="button" aria-label="Private tools"></button>
+      </div>
     </header>
 
     <main class="shell">
@@ -71,7 +74,28 @@
           <h2>Reports</h2>
           <span id="resultCount">0 items</span>
         </div>
+        <div class="pagination-bar" aria-label="Report pages">
+          <button id="prevPage" type="button">Previous</button>
+          <span id="pageInfo">Page 1 / 1</span>
+          <label class="page-size">
+            <span>Rows</span>
+            <select id="pageSize">
+              <option value="25">25</option>
+              <option value="50" selected>50</option>
+              <option value="100">100</option>
+            </select>
+          </label>
+          <button id="nextPage" type="button">Next</button>
+        </div>
         <div id="results" class="results-list"></div>
+      </section>
+
+      <section class="about-section" aria-labelledby="aboutTitle">
+        <div class="about-copy">
+          <h2 id="aboutTitle">关于我们</h2>
+          <p>平台全面覆盖宏观策略、行业分析、公司研究、财报、招股书、定制报告等内容。通过前沿的技术和便捷的产品体验，为金融从业人员、投资者、市场运营等提供信息获取和整合的专业服务。</p>
+        </div>
+        <img class="wechat-qr" src="assets/macrogate.jpg" alt="macroGate 微信二维码">
       </section>
     </main>
 

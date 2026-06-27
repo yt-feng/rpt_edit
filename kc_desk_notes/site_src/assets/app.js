@@ -1,6 +1,9 @@
 (function () {
   const page = document.body.dataset.page;
   const CONTACT_WECHAT = "macroGate";
+  const ADMIN_TOKEN_KEY = "kcdesk_admin_token";
+  const ADMIN_COOKIE_NAME = "kcdesk_admin_token";
+  const ADMIN_COOKIE_MAX_AGE = 180 * 24 * 60 * 60;
 
   const INDUSTRY_RULES = [
     ["Macro / FX / Rates", /\b(macro|fx|foreign exchange|currency|cny|yuan|dollar|usd|rate|rates|yield|fed|ecb|boj|inflation|cpi|pmi|gdp|economy|economic|recession|treasury|bond|nominal|real rate)\b/],
@@ -82,6 +85,147 @@
     }
   }
 
+  function getCookie(name) {
+    const prefix = `${name}=`;
+    return document.cookie
+      .split(";")
+      .map((part) => part.trim())
+      .find((part) => part.startsWith(prefix))
+      ?.slice(prefix.length) || "";
+  }
+
+  function setCookie(name, value, maxAge) {
+    document.cookie = `${name}=${encodeURIComponent(value)}; Max-Age=${maxAge}; Path=/; SameSite=Lax; Secure`;
+  }
+
+  function clearCookie(name) {
+    document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax; Secure`;
+  }
+
+  function getAdminToken() {
+    try {
+      const stored = localStorage.getItem(ADMIN_TOKEN_KEY);
+      if (stored) {
+        const data = JSON.parse(stored);
+        if (!data.expiresAt || Date.parse(data.expiresAt) > Date.now()) return data.token || "";
+      }
+    } catch (_error) {
+      // Fall back to the cookie below.
+    }
+    return decodeURIComponent(getCookie(ADMIN_COOKIE_NAME) || "");
+  }
+
+  function setAdminToken(token, expiresAt) {
+    const value = String(token || "");
+    if (!value) return;
+    try {
+      localStorage.setItem(ADMIN_TOKEN_KEY, JSON.stringify({ token: value, expiresAt: expiresAt || "" }));
+    } catch (_error) {
+      // Cookie still keeps the device remembered.
+    }
+    setCookie(ADMIN_COOKIE_NAME, value, ADMIN_COOKIE_MAX_AGE);
+    document.dispatchEvent(new CustomEvent("kcdesk-admin-change"));
+  }
+
+  function clearAdminToken() {
+    try {
+      localStorage.removeItem(ADMIN_TOKEN_KEY);
+    } catch (_error) {
+      // Ignore localStorage access errors.
+    }
+    clearCookie(ADMIN_COOKIE_NAME);
+    document.dispatchEvent(new CustomEvent("kcdesk-admin-change"));
+  }
+
+  function workerBaseUrl(config) {
+    return String((config && config.worker_base_url) || "").replace(/\/$/, "");
+  }
+
+  function adminModalMarkup() {
+    return `
+      <div class="admin-modal" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle">
+        <div class="admin-dialog">
+          <button class="admin-close" id="adminClose" type="button" aria-label="Close">&times;</button>
+          <h3 id="adminModalTitle">Private tools</h3>
+          <form id="adminLoginForm">
+            <label class="search-box">
+              <span>Key</span>
+              <input id="adminKeyInput" type="password" autocomplete="current-password" required>
+            </label>
+            <button class="primary" type="submit">Unlock</button>
+            <div id="adminLoginStatus" class="status-line" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    `;
+  }
+
+  function showAdminLogin(workerUrl) {
+    if (!workerUrl) {
+      window.alert("Private tools are not configured.");
+      return Promise.resolve("");
+    }
+
+    const existing = document.getElementById("adminModal");
+    if (existing) existing.remove();
+    document.body.insertAdjacentHTML("beforeend", adminModalMarkup());
+
+    const modal = document.getElementById("adminModal");
+    const form = document.getElementById("adminLoginForm");
+    const input = document.getElementById("adminKeyInput");
+    const status = document.getElementById("adminLoginStatus");
+    const close = document.getElementById("adminClose");
+    const button = form.querySelector("button");
+    input.focus();
+
+    return new Promise((resolve) => {
+      function finish(token) {
+        modal.remove();
+        resolve(token || "");
+      }
+
+      close.addEventListener("click", () => finish(""));
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) finish("");
+      });
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        button.disabled = true;
+        status.className = "status-line";
+        status.textContent = "Checking...";
+        try {
+          const response = await fetch(`${workerUrl}/admin/login`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ key: input.value }),
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(data.error || "Private key is incorrect.");
+          setAdminToken(data.token, data.expires_at);
+          finish(data.token);
+        } catch (error) {
+          status.textContent = error.message || "Unlock failed.";
+          status.classList.add("error");
+        } finally {
+          button.disabled = false;
+        }
+      });
+    });
+  }
+
+  function initAdminGate(workerUrl) {
+    const gate = document.getElementById("adminGate");
+    if (!gate) return;
+    function update() {
+      gate.classList.toggle("is-unlocked", Boolean(getAdminToken()));
+    }
+    update();
+    document.addEventListener("kcdesk-admin-change", update);
+    gate.addEventListener("click", () => {
+      showAdminLogin(workerUrl);
+    });
+  }
+
   function formatSize(bytes) {
     const size = Number(bytes || 0);
     if (!size) return "";
@@ -126,10 +270,18 @@
     return code || name || "Other";
   }
 
+  function titleText(item) {
+    return String(item.title || item.filename || "Untitled report").trim() || "Untitled report";
+  }
+
+  function titleZhText(item) {
+    return String(item.title_zh || "").trim();
+  }
+
   function inferIndustry(item) {
     const explicit = item.industry || item.sector || item.category;
     if (explicit) return String(explicit);
-    const text = normalize([item.title, item.filename].join(" "));
+    const text = normalize([item.title, item.title_zh, item.filename].join(" "));
     for (const [label, pattern] of INDUSTRY_RULES) {
       if (pattern.test(text)) return label;
     }
@@ -143,6 +295,7 @@
   function metadataText(item) {
     return normalize([
       item.title,
+      item.title_zh,
       item.filename,
       item.bank_code,
       item.bank_name,
@@ -155,7 +308,7 @@
   }
 
   function selectedSearchText(item, queryScope, metadataById, searchTextById) {
-    const title = normalize([item.title, item.filename].join(" "));
+    const title = normalize([item.title, item.title_zh, item.filename].join(" "));
     const catalog = metadataById.get(item.id) || "";
     const fullText = searchTextById.get(item.id) || "";
     if (queryScope === "title") return { title, catalog: "", fullText: "", combined: title };
@@ -181,11 +334,15 @@
     const industry = inferIndustry(item);
     const available = isPdfAvailable(item);
     const status = available ? size : "Text only";
+    const zh = titleZhText(item);
     return `
       <button class="report-row report-link${available ? "" : " is-archived"}" type="button" data-id="${escapeHtml(item.id)}">
         <span class="pill">${escapeHtml(bank)}</span>
         <span class="date-text">${escapeHtml(displayDate(item.date_folder))}</span>
-        <span class="title-text">${escapeHtml(item.title)}</span>
+        <span class="title-text">
+          <span class="title-en">${escapeHtml(titleText(item))}</span>
+          ${zh ? `<span class="title-zh">${escapeHtml(zh)}</span>` : ""}
+        </span>
         <span class="industry-text">${escapeHtml(industry)}</span>
         <span class="size-text${available ? "" : " archived"}">${escapeHtml(status)}</span>
       </button>
@@ -194,9 +351,13 @@
 
   function relatedRow(item) {
     const available = isPdfAvailable(item);
+    const zh = titleZhText(item);
     return `
       <button class="related-row report-link${available ? "" : " is-archived"}" type="button" data-id="${escapeHtml(item.id)}">
-        <span class="related-title">${escapeHtml(item.title)}</span>
+        <span class="related-title">
+          <span>${escapeHtml(titleText(item))}</span>
+          ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
+        </span>
         <span class="related-meta">${escapeHtml(bankLabel(item))} · ${escapeHtml(displayDate(item.date_folder))} · ${escapeHtml(inferIndustry(item))}${available ? "" : " · Text only"}</span>
       </button>
     `;
@@ -224,7 +385,10 @@
   }
 
   async function initIndex() {
-    const catalog = await loadJson("data/catalog.json");
+    const [catalog, config] = await Promise.all([
+      loadJson("data/catalog.json"),
+      loadOptionalJson("data/config.json", {}),
+    ]);
     const input = document.getElementById("searchInput");
     const results = document.getElementById("results");
     const count = document.getElementById("resultCount");
@@ -237,10 +401,17 @@
     const availabilityFilter = document.getElementById("availabilityFilter");
     const clearFilters = document.getElementById("clearFilters");
     const activeFilters = document.getElementById("activeFilters");
+    const prevPage = document.getElementById("prevPage");
+    const nextPage = document.getElementById("nextPage");
+    const pageInfo = document.getElementById("pageInfo");
+    const pageSize = document.getElementById("pageSize");
     const items = Array.isArray(catalog.items) ? catalog.items : [];
     const metadataById = new Map(items.map((item) => [item.id, metadataText(item)]));
     const searchTextById = new Map();
     let searchIndexLabel = "Text index loading";
+    let currentPage = 1;
+
+    initAdminGate(workerBaseUrl(config));
 
     const bankOptions = new Map();
     const industryOptions = new Map();
@@ -296,7 +467,8 @@
       activeFilters.textContent = labels.length ? labels.join(" · ") : "No filters";
     }
 
-    function render() {
+    function render(options = {}) {
+      if (options.resetPage) currentPage = 1;
       const query = normalize(input.value);
       const scoped = items
         .filter(passesFilters)
@@ -313,11 +485,23 @@
 
       count.textContent = `${scoped.length} of ${items.length} reports`;
       updateActiveFilters();
+      const rowsPerPage = Math.max(1, Number(pageSize.value) || 50);
+      const pageCount = Math.max(1, Math.ceil(scoped.length / rowsPerPage));
+      currentPage = Math.min(Math.max(currentPage, 1), pageCount);
+      const start = (currentPage - 1) * rowsPerPage;
+      const visible = scoped.slice(start, start + rowsPerPage);
+      pageInfo.textContent = scoped.length
+        ? `Page ${currentPage} / ${pageCount}`
+        : "Page 0 / 0";
+      prevPage.disabled = currentPage <= 1 || !scoped.length;
+      nextPage.disabled = currentPage >= pageCount || !scoped.length;
+
       if (!scoped.length) {
         results.innerHTML = '<div class="empty-state">No matching reports.</div>';
         return;
       }
-      results.innerHTML = scoped.map((entry) => resultRow(entry.item)).join("");
+      results.innerHTML = visible.map((entry) => resultRow(entry.item)).join("");
+      results.scrollTop = 0;
     }
 
     function clearAllFilters() {
@@ -328,12 +512,21 @@
       endDate.value = "";
       scopeFilter.value = "all";
       availabilityFilter.value = "";
-      render();
+      render({ resetPage: true });
     }
 
-    input.addEventListener("input", render);
+    input.addEventListener("input", () => render({ resetPage: true }));
     [bankFilter, industryFilter, startDate, endDate, scopeFilter, availabilityFilter].forEach((control) => {
-      control.addEventListener("change", render);
+      control.addEventListener("change", () => render({ resetPage: true }));
+    });
+    pageSize.addEventListener("change", () => render({ resetPage: true }));
+    prevPage.addEventListener("click", () => {
+      currentPage -= 1;
+      render();
+    });
+    nextPage.addEventListener("click", () => {
+      currentPage += 1;
+      render();
     });
     clearFilters.addEventListener("click", clearAllFilters);
     results.addEventListener("click", (event) => {
@@ -401,7 +594,7 @@
     const currentIndustry = inferIndustry(current);
     const currentBank = bankKey(current);
     const currentDate = dateSortValue(current);
-    const keywords = importantTokens(`${current.title} ${(searchTextById.get(current.id) || "").slice(0, 6000)}`);
+    const keywords = importantTokens(`${current.title} ${current.title_zh || ""} ${(searchTextById.get(current.id) || "").slice(0, 6000)}`);
 
     const scored = items
       .filter((item) => item.id !== current.id)
@@ -411,7 +604,7 @@
         if (bankKey(item) === currentBank) score += 18;
         if (dateSortValue(item) === currentDate) score += 5;
 
-        const title = normalize(item.title);
+        const title = normalize(`${item.title || ""} ${item.title_zh || ""}`);
         const text = searchTextById.get(item.id) || "";
         for (const token of keywords) {
           if (title.includes(token)) score += 8;
@@ -439,6 +632,110 @@
     if (/password/i.test(text)) return text;
     if (/configured/i.test(text)) return "PDF download is not configured.";
     return text || "Download failed.";
+  }
+
+  function adminPanelMarkup() {
+    return `
+      <section class="admin-panel" id="adminPanel" hidden>
+        <div class="admin-panel-heading">
+          <h3>Delivery link</h3>
+          <span>Private</span>
+        </div>
+        <div class="delivery-row">
+          <button class="primary" id="generateDeliveryLink" type="button">Generate</button>
+          <input id="deliveryLinkInput" type="text" readonly aria-label="Delivery link">
+          <button id="copyDeliveryLink" type="button">Copy</button>
+        </div>
+        <div id="deliveryStatus" class="status-line" aria-live="polite"></div>
+      </section>
+    `;
+  }
+
+  function reportPageUrl(id) {
+    const url = new URL("report.html", window.location.href);
+    url.searchParams.set("id", id);
+    return url.toString();
+  }
+
+  function deliveryPageUrl(id, password) {
+    const url = new URL("delivery.html", window.location.href);
+    url.searchParams.set("id", id);
+    url.searchParams.set("password", password);
+    return url.toString();
+  }
+
+  async function requestReportPassword(workerUrl, id) {
+    const token = getAdminToken();
+    if (!token) throw new Error("Private tools are locked.");
+    const response = await fetch(`${workerUrl}/admin/report-password`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, token }),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      if (response.status === 401) clearAdminToken();
+      throw new Error(data.error || "Could not generate delivery link.");
+    }
+    return data;
+  }
+
+  function initDetailAdmin(item, workerUrl) {
+    const panel = document.getElementById("adminPanel");
+    const generate = document.getElementById("generateDeliveryLink");
+    const linkInput = document.getElementById("deliveryLinkInput");
+    const copy = document.getElementById("copyDeliveryLink");
+    const status = document.getElementById("deliveryStatus");
+    if (!panel || !generate || !linkInput || !copy || !status) return;
+
+    function refresh() {
+      panel.hidden = !getAdminToken();
+    }
+
+    refresh();
+    document.addEventListener("kcdesk-admin-change", refresh);
+
+    generate.addEventListener("click", async () => {
+      status.className = "status-line";
+      status.textContent = "Generating...";
+      generate.disabled = true;
+      try {
+        const data = await requestReportPassword(workerUrl, item.id);
+        linkInput.value = deliveryPageUrl(item.id, data.password);
+        status.textContent = "Delivery link generated.";
+        status.classList.add("ok");
+      } catch (error) {
+        linkInput.value = "";
+        status.textContent = error.message || "Could not generate delivery link.";
+        status.classList.add("error");
+      } finally {
+        generate.disabled = false;
+      }
+    });
+
+    copy.addEventListener("click", async () => {
+      if (!linkInput.value) return;
+      try {
+        await navigator.clipboard.writeText(linkInput.value);
+        status.className = "status-line ok";
+        status.textContent = "Copied.";
+      } catch (_error) {
+        linkInput.select();
+        status.className = "status-line";
+        status.textContent = "Select and copy the link.";
+      }
+    });
+  }
+
+  function detailTitleMarkup(item) {
+    const zh = titleZhText(item);
+    return `
+      <div>
+        <h1 class="detail-title">${escapeHtml(titleText(item))}</h1>
+        ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
+        <p class="subtle">Indexed report record with password-protected PDF access when available.</p>
+      </div>
+    `;
   }
 
   function renderDetail(item, config, catalogItems, searchTextById) {
@@ -478,10 +775,7 @@
       : archiveNotice;
 
     detail.innerHTML = `
-      <div>
-        <h1 class="detail-title">${escapeHtml(item.title)}</h1>
-        <p class="subtle">Indexed report record with password-protected PDF access when available.</p>
-      </div>
+      ${detailTitleMarkup(item)}
       <div class="detail-grid">
         ${field("Institution", bankLabel(item))}
         ${field("Industry", inferIndustry(item))}
@@ -489,6 +783,7 @@
         ${field("PDF", available ? formatSize(item.size_bytes) || "Available" : "Text only")}
       </div>
       ${unlockMarkup}
+      ${workerUrl ? adminPanelMarkup() : ""}
       ${relatedMarkup}
     `;
 
@@ -497,6 +792,8 @@
       if (!row) return;
       window.location.href = `report.html?id=${encodeURIComponent(row.dataset.id)}`;
     });
+
+    initDetailAdmin(item, workerUrl);
 
     if (!available) return;
 
@@ -567,6 +864,8 @@
       loadJson("data/config.json"),
       loadOptionalJson("data/search_index.json", { items: [] }),
     ]);
+    const workerUrl = workerBaseUrl(config);
+    initAdminGate(workerUrl);
     const items = Array.isArray(catalog.items) ? catalog.items : [];
     const item = items.find((entry) => entry.id === id);
     if (!item) {
@@ -577,13 +876,75 @@
     for (const entry of Array.isArray(searchIndex.items) ? searchIndex.items : []) {
       if (entry.id && entry.text) searchTextById.set(entry.id, String(entry.text));
     }
-    document.title = `${item.title} | KC Desk Notes`;
+    document.title = `${titleText(item)} | KC Desk Notes`;
     renderDetail(item, config, items, searchTextById);
   }
 
-  const boot = page === "report" ? initReport : initIndex;
+  async function initDelivery() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const password = params.get("password") || "";
+    const target = document.getElementById("delivery");
+    if (!id || !password) {
+      target.innerHTML = '<div class="error-state">Delivery link is incomplete.</div>';
+      return;
+    }
+
+    const catalog = await loadJson("data/catalog.json");
+    const items = Array.isArray(catalog.items) ? catalog.items : [];
+    const item = items.find((entry) => entry.id === id);
+    if (!item) {
+      target.innerHTML = '<div class="error-state">Report not found.</div>';
+      return;
+    }
+
+    const available = isPdfAvailable(item);
+    const zh = titleZhText(item);
+    document.title = `Delivery | ${titleText(item)}`;
+    target.innerHTML = `
+      <div>
+        <h1 class="detail-title">${escapeHtml(titleText(item))}</h1>
+        ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
+        <p class="subtle">Report delivery details.</p>
+      </div>
+      <div class="detail-grid">
+        ${field("Institution", bankLabel(item))}
+        ${field("Date", displayDate(item.date_folder))}
+        ${field("Industry", inferIndustry(item))}
+        ${field("PDF", available ? formatSize(item.size_bytes) || "Available" : "Text only")}
+      </div>
+      <div class="delivery-card">
+        <span>Report password</span>
+        <strong>${escapeHtml(password)}</strong>
+      </div>
+      ${available ? "" : `<div class="archive-notice">PDF storage for this report is currently archived. Contact WeChat: <strong>${escapeHtml(CONTACT_WECHAT)}</strong>.</div>`}
+      <div class="delivery-actions">
+        <a class="primary-link" href="${escapeHtml(reportPageUrl(item.id))}">Open report page</a>
+        <button id="copyDeliveryPassword" type="button">Copy password</button>
+      </div>
+      <div id="deliveryCopyStatus" class="status-line" aria-live="polite"></div>
+    `;
+
+    document.getElementById("copyDeliveryPassword").addEventListener("click", async () => {
+      const status = document.getElementById("deliveryCopyStatus");
+      try {
+        await navigator.clipboard.writeText(password);
+        status.className = "status-line ok";
+        status.textContent = "Copied.";
+      } catch (_error) {
+        status.className = "status-line";
+        status.textContent = "Password can be selected from the box above.";
+      }
+    });
+  }
+
+  const boot = page === "report" ? initReport : page === "delivery" ? initDelivery : initIndex;
   boot().catch((error) => {
-    const target = page === "report" ? document.getElementById("detail") : document.getElementById("results");
+    const target = page === "report"
+      ? document.getElementById("detail")
+      : page === "delivery"
+        ? document.getElementById("delivery")
+        : document.getElementById("results");
     if (target) target.innerHTML = `<div class="error-state">${escapeHtml(error.message)}</div>`;
   });
 }());

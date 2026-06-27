@@ -17,6 +17,7 @@ from typing import Any
 PUBLIC_ITEM_KEYS = [
     "id",
     "title",
+    "title_zh",
     "filename",
     "date_folder",
     "date_folders",
