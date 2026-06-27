@@ -767,7 +767,7 @@ def main() -> int:
     parser.add_argument("--max-pdf-mb", type=float, default=60.0)
     parser.add_argument("--worldbank-rows", type=int, default=30)
     parser.add_argument("--imf-rows", type=int, default=60, help="Coveo results to scan for IMF (newest first).")
-    parser.add_argument("--ddg-df", default="m", help="DuckDuckGo date filter for search sources: d/w/m/y or '' for none.")
+    parser.add_argument("--ddg-df", default="", help="DuckDuckGo date filter for search sources: d/w/m/y or '' for none. The html endpoint returns nothing with a date filter, so default is none; recent reports still surface by relevance and seen-dedup avoids reprocessing.")
     parser.add_argument("--request-timeout", type=int, default=60)
     parser.add_argument("--user-agent", default=DEFAULT_USER_AGENT)
     args = parser.parse_args()
