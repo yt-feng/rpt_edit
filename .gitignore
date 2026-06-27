@@ -8,3 +8,4 @@ workers/kc-desk-notes-worker/wrangler.toml
 # Transient institution-source PDFs: only an input for the WeChat pipeline.
 # We keep the original PDF link in institution_feeds/, never the PDF itself.
 _institution_latest_pdfs/
+_consulting_latest_pdfs/

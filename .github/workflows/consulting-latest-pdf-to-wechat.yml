@@ -1,0 +1,228 @@
+name: Consulting latest PDF to WeChat
+
+# Daily MBB (strategy consulting) companion to the institution flow. Discovers the
+# latest McKinsey (DuckDuckGo) and BCG (sitemap) report PDFs, runs them through the
+# MinerU -> KC translated -> WeChat draft pipeline (with the China-sensitivity title
+# guard), and archives the original PDF links. Source PDFs are transient.
+# Bain is intentionally excluded: its report PDFs sit behind Cloudflare and cannot be
+# downloaded reliably yet.
+
+on:
+  workflow_dispatch:
+    inputs:
+      institutions:
+        description: "Comma list of consulting sources (mckinsey,bcg). Bain is Cloudflare-blocked."
+        required: true
+        default: "mckinsey,bcg"
+      max_per_institution:
+        description: "Cap new PDFs per firm per run"
+        required: true
+        default: "5"
+      max_translated:
+        description: "How many fetched reports to translate into WeChat articles. Use all."
+        required: true
+        default: "all"
+      articles_per_draft:
+        description: "Number of articles in each WeChat draft item"
+        required: true
+        default: "8"
+      dry_run:
+        description: "Build WeChat draft payloads without calling WeChat APIs"
+        required: true
+        type: boolean
+        default: false
+      publish:
+        description: "Submit created WeChat drafts for publishing (needs publish API access)"
+        required: true
+        type: boolean
+        default: false
+
+  schedule:
+    # 06:30 Beijing time (UTC+8), after the institution flow at 06:00.
+    - cron: "30 22 * * *"
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+concurrency:
+  group: consulting-latest-pdf-to-wechat
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    outputs:
+      date_folder: ${{ steps.fetch.outputs.date_folder }}
+      pdf_count: ${{ steps.fetch.outputs.pdf_count }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Pull latest main (archive + seen state)
+        run: |
+          git fetch --depth=1 origin main
+          git reset --hard origin/main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install reportlab
+
+      - name: Install Chinese fonts
+        timeout-minutes: 5
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+
+      - name: Fetch latest consulting PDFs
+        id: fetch
+        run: |
+          set -o pipefail
+          DATE="$(TZ=Asia/Shanghai date +%y%m%d)"
+          echo "date_folder=$DATE" >> "$GITHUB_OUTPUT"
+          python scripts/fetch_institution_latest_pdfs.py \
+            --output-dir _consulting_latest_pdfs \
+            --date "$DATE" \
+            --institutions "${{ github.event.inputs.institutions || 'mckinsey,bcg' }}" \
+            --max-per-institution "${{ github.event.inputs.max_per_institution || '5' }}" \
+            --archive-path "institution_feeds/consulting_pdf_archive.jsonl" \
+            --seen-state-path "institution_feeds/consulting_seen_state.json" \
+            2>&1 | tee consulting_fetch_progress.log
+
+      - name: Generate MinerU source text and notes
+        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          MINER_U: ${{ secrets.MINER_U }}
+        run: |
+          set -o pipefail
+          DATE="${{ steps.fetch.outputs.date_folder }}"
+          python scripts/run_pdf_to_xhs_in_batches.py \
+            --input-dir _consulting_latest_pdfs \
+            --output-dir "xhs_notes/consulting/$DATE" \
+            --batch-size 5 \
+            --skip-existing true 2>&1 | tee consulting_xhs_progress.log
+
+      - name: Build KC translated report PDFs
+        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: "https://api.deepseek.com"
+        run: |
+          set -o pipefail
+          DATE="${{ steps.fetch.outputs.date_folder }}"
+          python scripts/build_kc_translated_reports.py \
+            --dropbox-output-root "xhs_notes/consulting" \
+            --date-folder "$DATE" \
+            --output-root "kc_translated_reports/consulting" \
+            --max-reports "${{ github.event.inputs.max_translated || 'all' }}" \
+            --title-guard \
+            2>&1 | tee consulting_translated_progress.log
+
+      - name: Commit PDF link archive and seen state
+        run: |
+          bash scripts/commit_output_dir.sh "institution_feeds" "Update consulting PDF link archive" 8
+
+      - name: Commit generated consulting outputs
+        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        run: |
+          DATE="${{ steps.fetch.outputs.date_folder }}"
+          bash scripts/commit_output_dir.sh "xhs_notes/consulting/$DATE" "Generate consulting XHS/MinerU outputs $DATE" 8
+          bash scripts/commit_output_dir.sh "kc_translated_reports/consulting/$DATE" "Generate consulting KC translated PDFs $DATE" 8
+
+      - name: Upload run artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: consulting-pdf-run-${{ steps.fetch.outputs.date_folder }}-${{ github.run_id }}
+          path: |
+            _consulting_latest_pdfs/institution_run_manifest.json
+            consulting_fetch_progress.log
+            consulting_xhs_progress.log
+            consulting_translated_progress.log
+            kc_translated_reports/consulting
+          if-no-files-found: ignore
+
+  upload-wechat-drafts:
+    needs: fetch-and-build
+    if: ${{ needs.fetch-and-build.outputs.pdf_count != '0' }}
+    runs-on: [self-hosted, linux, x64, wechat-draft]
+    timeout-minutes: 120
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Pull latest generated translated reports
+        run: |
+          git fetch --depth=1 origin main
+          git reset --hard origin/main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Build and upload WeChat drafts
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          set -o pipefail
+          DATE="${{ needs.fetch-and-build.outputs.date_folder }}"
+          TRANSLATED_DIR="kc_translated_reports/consulting/$DATE"
+          if [ ! -d "$TRANSLATED_DIR" ]; then
+            echo "::warning::No translated reports at $TRANSLATED_DIR; nothing to upload."
+            exit 0
+          fi
+
+          ARGS=()
+          if [ "${{ github.event.inputs.dry_run || 'false' }}" = "true" ]; then
+            ARGS+=(--dry-run)
+          fi
+          if [ "${{ github.event.inputs.publish || 'false' }}" = "true" ]; then
+            ARGS+=(--publish)
+          fi
+
+          python scripts/push_kc_translated_to_wechat_drafts.py \
+            --translated-root "kc_translated_reports/consulting" \
+            --date-folder "$DATE" \
+            --output-root "wechat_drafts/consulting" \
+            --max-articles "all" \
+            --articles-per-draft "${{ github.event.inputs.articles_per_draft || '8' }}" \
+            --max-body-chars "2000" \
+            --min-inline-images "3" \
+            --max-inline-images "3" \
+            "${ARGS[@]}" 2>&1 | tee consulting_wechat_progress.log
+
+      - name: Upload WeChat draft artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: consulting-wechat-drafts-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}
+          path: |
+            wechat_drafts/consulting
+            consulting_wechat_progress.log
+          if-no-files-found: ignore
+
+      - name: Commit WeChat draft summaries
+        run: |
+          DATE="${{ needs.fetch-and-build.outputs.date_folder }}"
+          bash scripts/commit_output_dir.sh "wechat_drafts/consulting/$DATE" "Generate consulting WeChat draft payloads $DATE" 8

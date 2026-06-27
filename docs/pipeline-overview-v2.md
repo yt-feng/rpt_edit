@@ -46,6 +46,8 @@ KC Desk Notes / Cloudflare R2 额外需要：
 | `KC_DESK_WORKER_URL` | Pages 前端调用的 Worker URL |
 | `KC_DESK_PAGES_URL` | 可选，Worker 读取 catalog/password rules 的 Pages URL |
 | `R2_OBJECT_PREFIX` | 可选，R2 内 PDF 前缀，默认 `reports` |
+| `GH_DISPATCH_TOKEN` | 可选（Reportify 模块），Worker 用来触发 reportify-grab 的 fine-grained PAT（Actions 读写） |
+| `GH_REPO` | 可选（Reportify 模块），repository_dispatch 目标，如 `yt-feng/rpt_edit` |
 
 可选环境变量：
 
@@ -281,6 +283,36 @@ https://<worker>/calc?id=<report_id>&key=<CALC_KEY>
 
 如果需要，也可以继续使用 `KC_DESK_DOWNLOAD_PASSWORD` 作为全局备用密码。
 
+#### 3.5.1 Reportify 模块（其他报告）
+
+在 KC Desk Notes 搜索页，本地 catalog 结果下方新增「其他报告 · Reportify」一栏，实时检索
+[reportify.cn](https://reportify.cn/reports) 的公开研报，点击即可下载 PDF。reportify 的搜索和
+报告详情都无需登录。
+
+数据通路（全部走现有 Cloudflare Worker，避免浏览器跨域并隐藏第三方调用）：
+
+```text
+Pages 前端 → {worker}/reportify/search?q=关键词 → api.reportify.cn/reports?query=关键词
+Pages 前端 → {worker}/reportify/pdf?id=<report_id>
+   1) 可直接预览（readable）→ Worker 转发其 presigned url_pdf，秒级返回 PDF
+   2) 已抓取过 → Worker 从 R2 `reportify/<report_id>.pdf` 直接返回
+   3) 需后台抓取（gated）→ Worker 用 repository_dispatch 触发 reportify-grab workflow，
+      返回 202 pending；前端提示「约 2 分钟后回本页刷新重新点击下载」并轮询 /reportify/status
+```
+
+相关文件：
+
+```text
+.github/workflows/reportify-grab.yml          # repository_dispatch / 手动触发的单篇抓取
+scripts/reportify_pdf_grabber.py              # Playwright 抓取器（与 assets/rptify 一致）
+scripts/upload_reportify_pdf_to_r2.py         # 把抓到的 PDF 传到 R2 reportify/<id>.pdf
+workers/kc-desk-notes-worker/src/index.js     # /reportify/search、/reportify/pdf、/reportify/status
+```
+
+额外配置：Worker 需要 `GH_REPO`（如 `yt-feng/rpt_edit`）和 secret `GH_DISPATCH_TOKEN`
+（fine-grained PAT，Actions 读写权限），只用于触发 gated 报告的后台抓取；不配置时 readable 报告
+仍可下载，gated 报告会回退为提示去 reportify.cn 查看。grab workflow 复用现有 `R2_*` secrets。
+
 ### 3.6 KC translated reports and WeChat publishing
 
 相关文件：
@@ -418,6 +450,38 @@ institution_feeds/seen_state.json                 # 去重状态，标记 downlo
 - **标题敏感性审核：精译步骤加了 `--title-guard`，对剩余 3 家逐篇用 DeepSeek 审核标题（是否唱衰中国 / 攻击中国制度 / 涉敏感政治议题）。判为 SENSITIVE 的不翻译、不进草稿箱；DeepSeek 报错或结论不明时按"宁可漏发"处理（跳过）。被跳过的记录在 `kc_translated_reports/institutions/<日期>/translation_summary.json` 的 `sensitive_skipped` 里。**
 - market views 汇总 PDF 不做敏感过滤，5 家（含 RAND / Brookings）全部纳入，见 §3.3。
 
+### 3.9 Consulting latest PDF to WeChat（MBB：麦肯锡 / BCG，贝恩暂缓）
+
+文件：`.github/workflows/consulting-latest-pdf-to-wechat.yml`，复用 `scripts/fetch_institution_latest_pdfs.py`。
+
+用途：和 §3.8 并行，每天额外抓取 MBB 战略咨询的最新报告 PDF，复用 MinerU → KC 精译 → 公众号草稿 链路。MBB 官网都是 JS + 反爬（Bain 直接 Cloudflare 挑战），所以不直接爬官网：
+
+| 机构 | 发现方式 | 时效控制 |
+| --- | --- | --- |
+| McKinsey 麦肯锡 | DuckDuckGo 搜 `site:mckinsey.com filetype:pdf`（curl_cffi），PDF 在 mckinsey.com/~/media 直链下载 | DDG 按相关性排序、非按日期，故用 `recent_years=2` 只保留 URL/标题含 **当年或去年** 的报告，过滤掉旧的常青报告 |
+| BCG 波士顿咨询 | 站点 sitemap 列出全部 publications，页面链向 web-assets/media-publications 的 PDF | 按 `<lastmod>` 倒序，并用 `sitemap_max_age_days=120` 只取最近修改的，过滤旧报告 |
+| Bain 贝恩 | 暂缓 | 报告 PDF 在 `www.bain.com/contentassets` 的 Cloudflare 后面，下载直接 403，curl_cffi 过不去；以后有稳定绕过方法再加 |
+
+触发：手动 Actions → **Consulting latest PDF to WeChat**；定时北京时间 06:30（cron `30 22 * * *`，排在机构流程 06:00 之后）。
+
+输出（与 §3.8 同构、相互独立）：
+
+```text
+_consulting_latest_pdfs/                          # 中转 PDF，gitignore
+institution_feeds/consulting_pdf_archive.jsonl    # 原始链接长期归档
+institution_feeds/consulting_seen_state.json      # 去重状态
+xhs_notes/consulting/<日期>/...
+kc_translated_reports/consulting/<日期>/...
+wechat_drafts/consulting/<日期>/...               # 独立的一批公众号草稿
+```
+
+说明：
+
+- **时效性：不是"只抓当天发布"，而是"最新优先 + 旧报告过滤 + seen 去重"。** McKinsey 限定当年/去年，BCG 限定最近 120 天修改；首跑会抓当前这批近期报告，之后每天只增量抓新出现的（seen 去重保证不重复）。想更严格可调小 `recent_years`（改 1）或 `sitemap_max_age_days`（改 30/60）。这些常青站点没有可靠的"今天发布"信号，做不到严格的"仅当天"。
+- 同样过 `--title-guard` 标题敏感性审核；`--max-per-institution` 默认 5，控制每家每天量。
+- MBB 也并入 market views 汇总 PDF（§3.3 的 `--extra-roots` 已含 `xhs_notes/consulting`）。
+- 加 / 调来源、时效阈值：编辑 `scripts/fetch_institution_latest_pdfs.py` 顶部 `INSTITUTIONS` 里 `mckinsey` / `bcg` / `bain` 的配置。
+
 ## 4. 主要脚本
 
 | 脚本 | 用途 |
@@ -441,6 +505,8 @@ institution_feeds/seen_state.json                 # 去重状态，标记 downlo
 | `scripts/kc_desk_notes_catalog.py` | 扫描 Dropbox PDF、合并长期 catalog、按 8GiB 总量上限清理旧日期、同步当前 PDF 到 R2 |
 | `scripts/build_kc_desk_notes_site.py` | 生成 KC Desk Notes GitHub Pages 静态站点 artifact，并把投行目录 txt 与可匹配的 MinerU 正文并入前端全文搜索索引 |
 | `scripts/hash_kc_desk_notes_password.py` | 生成 `password_rules.json` 里的密码 hash |
+| `scripts/reportify_pdf_grabber.py` | Playwright 抓取 reportify.cn 单篇报告 PDF（Reportify 模块后台抓取用） |
+| `scripts/upload_reportify_pdf_to_r2.py` | 把抓到的 reportify PDF 上传到 R2 `reportify/<id>.pdf` |
 | `scripts/commit_output_dir.sh` | GitHub Action 里提交输出目录，带重试和强制 add PDF |
 
 ## 5. Prompt 文件
