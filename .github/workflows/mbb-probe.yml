@@ -18,64 +18,63 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install curl_cffi
-      - name: Deep probe McKinsey / BCG / Bain
+      - name: Search-engine PDF discovery probe
         run: |
           python - <<'PY'
           import re
+          from urllib.parse import quote, unquote
           from curl_cffi import requests as cr
 
-          def pdfs_on(url):
+          domains = {
+              "bcg": "bcg.com",
+              "mckinsey": "mckinsey.com",
+              "bain": "bain.com",
+          }
+
+          def extract_pdfs(text):
+              out = []
+              for m in re.findall(r'https?%3a%2f%2f[^\s"\'<>()]+?\.pdf', text, re.I):
+                  out.append(unquote(m))
+              for m in re.findall(r'https?://[^\s"\'<>()]+?\.pdf(?:\?[^\s"\'<>()]*)?', text, re.I):
+                  out.append(m)
+              # de-dup, drop search-engine internal
+              seen, res = set(), []
+              for u in out:
+                  u = u.replace("&amp;", "&")
+                  if any(b in u for b in ("bing.com", "duckduckgo.com", "google.com", "gstatic", "w3.org")):
+                      continue
+                  if u not in seen:
+                      seen.add(u); res.append(u)
+              return res
+
+          def bing(q):
+              url = "https://www.bing.com/search?q=" + quote(q) + "&count=30&setlang=en&cc=us"
+              r = cr.get(url, impersonate="chrome", timeout=40)
+              return r.status_code, len(r.text), extract_pdfs(r.text)
+
+          def ddg(q):
+              url = "https://html.duckduckgo.com/html/?q=" + quote(q)
+              r = cr.get(url, impersonate="chrome", timeout=40, headers={"Referer": "https://duckduckgo.com/"})
+              return r.status_code, len(r.text), extract_pdfs(r.text)
+
+          for key, d in domains.items():
+              q = f"site:{d} filetype:pdf"
+              print("=" * 70, "\n", key, "::", q)
               try:
-                  r = cr.get(url, impersonate="chrome", timeout=40, allow_redirects=True)
+                  st, ln, pdfs = bing(q); print(f"  BING {st} len{ln} pdfs={len(pdfs)}"); [print("    ", p) for p in pdfs[:6]]
               except Exception as e:
-                  return f"ERR {e}", []
-              html = r.text
-              pdfs = sorted(set(re.findall(r'https?://[^\s"\'<>()]+?\.pdf(?:\?[^\s"\'<>()]*)?', html, re.I)))
-              return f"{r.status_code} len{len(html)}", pdfs
-
-          print("### McKinsey insight/MGI pages -> PDFs? ###")
-          for u in [
-              "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/valuation-measuring-and-managing-the-value-of-companies",
-              "https://www.mckinsey.com/mgi/our-research/a-century-of-plenty",
-          ]:
-              st, pdfs = pdfs_on(u)
-              print(" ", u); print("    ", st, "pdfs:", len(pdfs), pdfs[:3])
-
-          print("### BCG sitemap index -> child sitemaps -> publication urls ###")
-          try:
-              r = cr.get("https://www.bcg.com/sitemap.xml", impersonate="chrome", timeout=40)
-              children = re.findall(r"<loc>([^<]+)</loc>", r.text)
-              print("  children:", children[:6])
-              pub_urls = []
-              for c in children[:4]:
-                  try:
-                      rc = cr.get(c, impersonate="chrome", timeout=40)
-                      locs = re.findall(r"<loc>([^<]+)</loc>", rc.text)
-                      pubs = [l for l in locs if "/publications/" in l]
-                      print("   ", c, "locs", len(locs), "pub-locs", len(pubs), pubs[:2])
-                      pub_urls += pubs
-                  except Exception as e:
-                      print("    child err", e)
-              if pub_urls:
-                  st, pdfs = pdfs_on(pub_urls[0])
-                  print("  BCG pub page", pub_urls[0]); print("    ", st, "pdfs:", len(pdfs), pdfs[:3])
-          except Exception as e:
-              print("  BCG sitemap err", e)
-
-          print("### BCG /publications href pattern ###")
-          try:
-              r = cr.get("https://www.bcg.com/publications", impersonate="chrome", timeout=40)
-              hrefs = sorted(set(re.findall(r'href="([^"]+)"', r.text)))
-              pubish = [h for h in hrefs if "/publications/" in h]
-              print("  total hrefs", len(hrefs), "pub hrefs", len(pubish), pubish[:8])
-          except Exception as e:
-              print("  err", e)
-
-          print("### Bain retry ###")
-          for u in ["https://www.bain.com/insights/", "https://www.bain.com/sitemap.xml", "https://www.bain.com/insights/sitemap.xml"]:
+                  print("  BING ERR", e)
               try:
-                  r = cr.get(u, impersonate="chrome", timeout=40)
-                  print(" ", u, r.status_code, repr(r.text[:70]))
+                  st, ln, pdfs = ddg(q); print(f"  DDG  {st} len{ln} pdfs={len(pdfs)}"); [print("    ", p) for p in pdfs[:6]]
               except Exception as e:
-                  print(" ", u, "ERR", e)
+                  print("  DDG ERR", e)
+
+          # Can we download a BCG asset PDF directly via curl_cffi?
+          test = "http://media-publications.bcg.com/pdf/Your-Strategy-Needs-a-Strategy-chapter-01.pdf"
+          try:
+              r = cr.get(test, impersonate="chrome", timeout=40)
+              ok = r.content[:5] == b"%PDF-"
+              print("DOWNLOAD test", test, r.status_code, "is_pdf", ok, "bytes", len(r.content))
+          except Exception as e:
+              print("DOWNLOAD ERR", e)
           PY
