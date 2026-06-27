@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_shdfezks/pdfs/0001-31-NOM-China consumer-Nanjing-based mall records mixed performances by brands-260625.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_shdfezks/pdfs/0002-32-NOM-China consumer-Sales of a leading highend mall operator softened in 2Q26-260625.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_shdfezks/pdfs/0003-33-JPM-Fund Manager Radar-Know when to walk away- and know when to run...-260625.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_shdfezks/pdfs/0004-34-HSBC-Software Apocalypse--Taking stock of AI threat for software-260625.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_shdfezks/pdfs/0005-35-MS-Investor Feedback on Sodium-Ion Batteries-260625.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

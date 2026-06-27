@@ -1,0 +1,3295 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Software Apocalypse?"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                57,
+                112,
+                552,
+                150
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taking stock of AI threat for software"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                179,
+                453,
+                200
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- We reviewed hard evidence of AI disrupting the software sector and see no signs of material AI disruption"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                232,
+                576,
+                270
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Market is likely overestimating the productivity boost from AI tools, which is leading it to overestimate AI risk to software"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                277,
+                610,
+                315
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- We maintain Buy on major software names that have sold off on what we consider are unwarranted fears of AI disruption"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                321,
+                616,
+                359
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "No signs of a software apocalypse yet: We maintain our view that AI is unlikely to replace software as explained in: Can AI replace software? (9 Feb 2026) and Software is already eating AI (26 Feb 2026)."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                369,
+                613,
+                416
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Software revenue growth remained strong in 1Q26 (median 12.7% y-o-y constant currency). Current remaining performance obligations also posted strong double-digit growth. Multiple software companies (e.g. SAP, Salesforce, and ServiceNow) provided multiyear guidance and are generally guiding to continuation of strong growth for several years. There are no signs of pricing pressure in the sector. Most software companies reported increased non-GAAP operating margin in 1Q26 and are guiding to further margin expansion."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                423,
+                623,
+                533
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Software companies are generally downplaying concerns about AI disrupting their business and are buying back shares aggressively. If we leave aside outliers, total share buybacks by major software companies are up more than 3x since 2023-24."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                538,
+                601,
+                586
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI impact on employee productivity low single-digit currently: AI-driven cost savings identified by software companies are at about 5-7.5% of their existing cost base. We estimate AI coding tools have boosted productivity at IT services and software companies by 100-500bp, at best. As the productivity boost is modest, there is nothing to suggest that one could replace existing enterprise software applications cheaply by fresh vibe-coded systems as the market seems to be dreading."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                592,
+                621,
+                686
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Enterprise software stocks oversold: Software shares have de-rated significantly over the last 12 months on concerns that AI will disrupt their business. If we use consensus estimates, major software shares are trading at c50% lower P/NTM non-GAAP EPS than their 24-month averages. As explained above, we consider these concerns unwarranted."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                692,
+                611,
+                769
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities Software"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                653,
+                114,
+                747,
+                149
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "United States"
+                    }
+                ]
+            },
+            "bbox": [
+                653,
+                184,
+                757,
+                199
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Abhishek Shukla*, CFA"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                640,
+                241,
+                779,
+                254
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Senior Analyst, Technology\nHSBC Bank Middle East Limited, DIFC\nabhishek2.shukla@hsbc.com\n+971 4 5093343"
+                    }
+                ]
+            },
+            "bbox": [
+                640,
+                252,
+                850,
+                294
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Sameer Lam*"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                640,
+                296,
+                724,
+                309
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Software Analyst\nHSBC Bank plc\nsameer.lam@hsbc.com\n+44 20 7992 3780"
+                    }
+                ]
+            },
+            "bbox": [
+                640,
+                308,
+                786,
+                350
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Stephen Bersey"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                640,
+                353,
+                737,
+                366
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Head of US Technology Research\nHSBC Securities (USA) Inc.\nstephen.bersey@us.hsbc.com\n+1 212 525 4153"
+                    }
+                ]
+            },
+            "bbox": [
+                640,
+                364,
+                838,
+                406
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "* Employed by a non-US affiliate of HSBC Securities (USA) Inc, and is not registered/ qualified pursuant to FINRA regulations"
+                    }
+                ]
+            },
+            "bbox": [
+                640,
+                422,
+                947,
+                445
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": []
+            },
+            "bbox": [
+                45,
+                30,
+                122,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Global Investment Research"
+                    }
+                ]
+            },
+            "bbox": [
+                124,
+                34,
+                448,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                860,
+                38,
+                957,
+                52
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures & Disclaimer\nThis report must be read with the disclosures and the analyst certifications in the Disclosure appendix, and with the Disclaimer, which forms part of it."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                916,
+                618,
+                961
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Issuer of report: HSBC Bank Middle East Limited, DIFC"
+                    }
+                ]
+            },
+            "bbox": [
+                636,
+                914,
+                947,
+                939
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "View HSBC Global Investment Research at: https://www.research.hsbc.com"
+                    }
+                ]
+            },
+            "bbox": [
+                636,
+                948,
+                922,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Software revenue and guidance remain strong"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                280,
+                133,
+                731,
+                150
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We have reviewed results, guidance, comments, and other actions of software companies in the last few months to review our stance on the software apocalypse debate."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                165,
+                929,
+                195
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Software revenue growth remained strong in 1Q26 (median 12.7% y-o-y constant currency)."
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                203,
+                862,
+                233
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Current remaining performance obligations growth remained strong. Adobe (13.1%), Salesforce (13.5%), ServiceNow (22.7%), and Workday (15.4%) reported robust y-o-y growth in cRPO in the last reported quarter. SAP's current cloud backlog rose 25% y-o-y cc in 1Q26."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                241,
+                927,
+                301
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Total remaining performance obligations growth also remained strong. Adobe (13.1%), Salesforce (11.5%), ServiceNow (25.3%), and Workday (10.9%) reported robust y-o-y growth in RPO in the last reported quarter. Workday's growth of 10.9% was, however, materially less than 20% y-o-y growth it reported during 2024 and 9M25. Management attributed it to a higher portion of RPO coming from renewals, which tend to have shorter duration than new contracts. Oracle's (362% y-o-y to USD638bn in 2QCY26) and Microsoft's (97.2% y-o-y to USD633bn in 1QCY26) RPO growth rates were off the charts but were driven largely by cloud infrastructure and not software. Oracle and Microsoft do not report separate RPO for software segment."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                309,
+                910,
+                448
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SAP, ServiceNow, Salesforce, and Oracle have issued/maintained multi-year revenue growth guidance in the last two months. All of them are guiding to continued double-digit revenue growth for several years. SAP, Salesforce, and Oracle are guiding to revenue acceleration, although Oracle's acceleration is largely due to cloud infrastructure segment and not due to software. ServiceNow has guided to an 18.4% revenue CAGR over FY26-30e. If a software apocalypse is in the works, we do not see signs of concerns coming from the largest enterprise software companies on the planet (and their customers responsible for RPO)."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                454,
+                926,
+                578
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0038b9fe748bc61b57545580a75d5b9d3ea3b82f191ac2dd40cb35fc12716315.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Constant currency revenue growth for software sector has remained strong"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC"
+                    },
+                    {
+                        "type": "text",
+                        "content": "— Median revenue growth: y-o-y, constant currency"
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                625,
+                919,
+                779
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                29,
+                191,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • Software\n25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                29,
+                929,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                964,
+                78,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/1decf74eabfe3e7f52dbc63728d43da2f4616e5e80fc1489e5f05de041e3c191.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Software companies have maintained/issued strong short-term and long-term guidance"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC. *Adjusted for new transaction model. **Most growth driven by cloud infra and not software. #Software companies typically beat guidance, so current FY guidance being slight below last FY actual does not really suggest a slowdown. ***20% aspirational target hinted at during the last results briefing."
+                    }
+                ],
+                "html": "<table><tr><td>Revenue growth</td><td>Last FY actual</td><td>Current FY guidance#</td><td>Long-term guidance</td><td>Long-term CAGR</td><td>LT guidance issued on</td></tr><tr><td>Adobe</td><td>10.5% y-o-y</td><td>11.7% y-o-y</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>Autodesk</td><td>12% y-o-y, cc, adj*</td><td>9.5% y-o-y, cc, adj*</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>Salesforce</td><td>8% y-o-y cc, organic</td><td>7.5% y-o-y cc, organic</td><td>FY26-30e</td><td>10.98%</td><td>May-26</td></tr><tr><td>Intuit</td><td>15.6% y-o-y</td><td>13.5% y-o-y</td><td>NA</td><td>NA</td><td>NA</td></tr><tr><td>ServiceNow</td><td>20.5% y-o-y, cc</td><td>19.5% y-o-y cc, organic</td><td>2025-30e</td><td>18.40%***</td><td>May-26</td></tr><tr><td>Oracle**</td><td>17.4% y-o-y</td><td>33.6% y-o-y</td><td>FY26-30e</td><td>31.00%</td><td>Jun-26</td></tr><tr><td>SAP</td><td>11.3% y-o-y cc</td><td>11.3% y-o-y cc</td><td>2025-27e</td><td>&gt;11.3% cc</td><td>May-26</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                65,
+                155,
+                927,
+                245
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Companies reporting low churn"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                280,
+                287,
+                515,
+                301
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Most software companies continued to report low churn."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                302,
+                662,
+                315
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ServiceNow reported 1QCY26 renewal rate of 97%, not far from 97.75% average over the previous four quarters."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                325,
+                917,
+                353
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Autodesk reported net revenue retention rate of “more than 110%”, which was helped by the impact of the new transaction model (we estimate low single-digit percentage). The company continues to expect NRR to settle at 100-110% as the impact of the new transaction model recedes. NRR above 100% suggests continued revenue growth at existing customers."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                362,
+                907,
+                439
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Salesforce has reported an attrition rate of about 8% for the last several quarters including in 4QCY25. The company did not report attrition in 1QCY26 but called it “very little”."
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                446,
+                917,
+                477
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SAP described its churn in 4QCY25 as “low”. SAP has historically talked about an annual churn of about 3%."
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                483,
+                912,
+                513
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Other major software companies in our coverage universe do not report churn regularly"
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                521,
+                899,
+                536
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "No signs of pricing pressure"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                280,
+                566,
+                494,
+                580
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "There are also no signs of pricing pressure in the sector. In absence of better information, we are using non-GAAP operating margin as a proxy for pricing. Most software companies reported increased non-GAAP operating margin and are guiding to further margin expansion."
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                581,
+                929,
+                627
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SAP non-GAAP operating margin was up 276bp y-o-y in 1Q26. The company continues to expect that its operating expense growth over 2026-27 would be 80-90% of revenue growth, resulting in improving operating margins."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                635,
+                921,
+                681
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ServiceNow non-GAAP operating margin expanded 94bp y-o-y to 31.8% in 1QCY26. CY26 non-GAAP operating margin guidance stood at 31.5% (FY25: 31.2%) despite 75bp adverse impact of Armis acquisition in CY26. The company guided to a further 100bp non-GAAP operating margin and FCF margin expansion in 2027e."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                687,
+                927,
+                749
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Salesforce non-GAAP operating margin rose 253bp y-o-y to 34.8% in 1QCY26. Margin guidance of 34.3% in FY27 ending Jan 2027 (FY26: 34.1%) suggests more gradual progress after c15ppt of expansion since FY22."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                756,
+                897,
+                802
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Microsoft non-GAAP operating margin rose 66bp y-o-y to 46.3% in 1QCY26 despite likely adverse impact of rising share of Azure cloud infrastructure in the mix."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                809,
+                914,
+                839
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Oracle non-GAAP operating margin rose 54bp y-o-y to 44.8% despite likely adverse impact of rising share of Oracle cloud infrastructure in the mix."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                847,
+                927,
+                877
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                29,
+                191,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • Software\n25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                29,
+                931,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                919,
+                963,
+                929,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Mixed narrative, but the talk is cheap"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                131,
+                425,
+                149
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/ebcc86dcb9a93997b1c72fd7214106548afe61e768711ad51321722d421a3a6c.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Company comments on AI disruption and opportunities"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, AlphaSense, HSBC"
+                    }
+                ],
+                "html": "<table><tr><td>Company</td><td>Comment</td></tr><tr><td>Oracle</td><td>Co-CEO on software apocalypse: As far as impact of SaaS apocalypse, I would say maybe a couple quarters ago, there were some delayed decision cycles out there as customers thought through that. But really, particularly in the mission-critical systems space, which is where we play at Oracle, people have quickly moved on to that and realized that enterprise software, particularly when you have AI built into our SaaS solutions, is certainly a very good approach and is necessary to move forward for the modernization and protection of their businesses. So, I expect that our Applications business will continue to be a healthy contributor to Oracle as it has been.</td></tr><tr><td>Autodesk</td><td>CEO on Autodesk&#x27; right to win in an AI-driven world: This combination of probabilistic AI generation and deterministic engineering validation is why we said last quarter that 3D agentic AI requires high-fidelity, geometry-rich data, deep industry context embedded in real-world Design and Make processes, and specialized 3D AI expertise. Few companies have all these. Autodesk does. It&#x27;s why we believe Autodesk will define the next generation of industrial AI.</td></tr><tr><td>Salesforce</td><td>Chief marketing office on how AgentForce adds value to pure AI solutions: If you start building an agent, you get very excited early on because you&#x27;re like, all I have to do is write human instructions like I&#x27;ve coded my agent. But what you realize when you&#x27;re starting to try to get agents to do multi-step and complex workflows is you have a lot of like do this, but unless this happens, then do this. And you start writing it like that. And the agent gets very, very, very confused, very, very quickly. And the irony of like programming languages is that&#x27;s effectively what they are, if this and then that, types of flows. And so, we pioneered this way to kind of put little micro moments of scripting into the prompts so that you could eliminate some of the probabilistic problems of working with an LLM. You&#x27;ve all seen this, you ask it a question and then you ask it the same question, and you get two different answers. So, it&#x27;s a probabilistic, non-deterministic system. When you&#x27;re trying to execute workflows, you don&#x27;t want that, you want deterministic. You want to do it the way I&#x27;ve asked you to do it, every single time.</td></tr><tr><td>ServiceNow</td><td>CFO on whether AI will cannibalize software budgets: 1) AI savings aren&#x27;t coming from IT budgets, they are coming from the labor pool. 2) If you&#x27;re able to reduce labor by 65%, you can increase technology by a whole hell of a lot and still be driving significant value for our customers.</td></tr><tr><td>Palantir</td><td>CTO on why legacy software is dead: AIP replaces static workflows not by replicating the playbook, but by eliminating the need for one. Thomas Cavanagh Construction, 97% of their employees use Foundry every day. And every other piece of software must now justify its existence, and so far, they haven&#x27;t been able to. We&#x27;re seeing this internally too. This quarter, we replaced our old expensive CRM with an AI first solution built on AIP in a few months that users absolutely love.</td></tr><tr><td>SAP</td><td>CTO on killer AI use case: Killer AI use cases are in the world of unstructured data: document AI. It&#x27;s a service that basically, instead of people keying in the information into an SAP system coming from an invoice or purchase order or bill of lading, we are now processing this all with Document AI. We have processed 750 million documents in 2025 alone.CEO on how SAP is optimizing token costs paid to LLMs: The good piece is we have built into our agent builder a model where we can say we can switch from one model to another. We are not only doing a switch, we can also have a logic in there where we route the prompts to the model who has the best price-outcome ratio.CEO on using AI instead of programming to offer new features: You see that more and more work is now also shifting from the system of record into the agentic AI layer. The good piece is, we&#x27;re having native access to the system of record. What I just shared with you can decide what the agents are allowed to do in the system of record. More and more is shifting now in the Autonomous Suite to the agentic AI layer. While we coded, in the past, a lot of features, now we are shifting towards coding agents and skills. There are still a lot of complex business scenarios where a customer says, &quot;I don&#x27;t want to have an agent for that. I just want to see that a system of record does this out of the box.&quot; You see this is more and more shifting. With that, also our development capacity is more and more shifting. We are doing this, of course, in close cooperation with our customers, who also are very good indicator on how much do we put into the AI layer and how much do we still code features in the system of record.CEO on who will get disrupted by AI: Now you can say maybe in certain parts of the software world, for some niche players, you could say, &quot;Okay, the LLM can do the job.&quot; When I look at our portfolio, definitely I don&#x27;t see that now for the 95% of parts of our portfolio that you can just say, &quot;Oh, it&#x27;s so easy now. Let&#x27;s just use an LLM, and the LLM does the job.&quot; No. I&#x27;m not seeing that this will go away. I rather see that we will sell a lot of agents. Of course, we will always lead now with AI, but with that comes the system of record. An agent doesn&#x27;t work without a system of record.</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                65,
+                198,
+                927,
+                650
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Software companies putting their money where the mouth is"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                280,
+                700,
+                721,
+                713
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As can be seen above, software companies have downplayed the idea of AI replacing them. On the other hand, Palantir, which is more of a data and AI platform, has heralded the “death of legacy software”."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                714,
+                926,
+                760
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We note, however, software companies are putting their money where their mouth is by buying back their shares aggressively. Salesforce has been the most aggressive and bought back USD27bn worth of shares in the last reported quarter. In comparison, we have not seen software companies that also have significant exposure to cloud infrastructure capex (Oracle and Microsoft) increase their share buybacks. If we exclude Salesforce, Oracle, and Microsoft, the total amount of share buybacks by major software companies are up by more than 3x since the level in 2023-24."
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                769,
+                924,
+                876
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                29,
+                191,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • Software\n25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                29,
+                929,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                964,
+                78,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/047ac5222f5d36587839283bbf882c055290c375e4ad008b1667ede73a0e78f1.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Software companies have accelerated share buybacks"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Share repurchases: Indexed* Share repurchases software ex Salesforce: Indexed**"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC *Oracle, Adobe, Autodesk, Salesforce, Intuit, Microsoft, ServiceNow **Adobe, Autodesk, Intuit, ServiceNow, SAP"
+                    }
+                ]
+            },
+            "bbox": [
+                315,
+                154,
+                905,
+                313
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "We do not expect AI to replace software"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                280,
+                391,
+                668,
+                409
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We estimate AI coding tools have boosted productivity at IT services and software companies by 100-500bp, at best. There is nothing to suggest that one could replace existing enterprise software applications cheaply by fresh vibe-coded systems"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                432,
+                257,
+                564
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We maintain our view that AI is unlikely to replace software as explained in our notes Can AI replace software? (9 Feb 2026) and Software is already eating AI (26 Feb 2026). In this note, we primarily review our assumptions and premises behind our conclusion."
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                425,
+                910,
+                471
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Productivity boost from vibe coding is often overestimated"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                280,
+                478,
+                712,
+                492
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Many of us have used AI tools to make simple programs and have come away amazed at how quickly it is able to come up with programs that would have taken us days manually (two of the authors of the report were previously professional programmers). Many investors, in our opinion, are making the mistake of extrapolating these superlative productivity gains into large enterprise software applications. As the system that you are trying to vibe code becomes larger, your ability to describe it accurately in plain English deteriorates. If you feed incorrect or incomplete description to AI coding tools, they will generate a wrong program. Even if you provide a perfect description, LLMs are still prone to hallucinate and make occasional mistakes. Talking to some of the programmers, we get a sense that AI code generators are dramatically increasing the speed of writing code. But they make subtle mistakes and human employees are forced to spend inordinate amounts of time trying to catch the mistakes largely offsetting the benefit from quickly written code."
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                492,
+                927,
+                678
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "IT services productivity gain"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                280,
+                686,
+                475,
+                701
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We estimate IT sector productivity may have been boosted by at best 100-200bp due to the adoption of AI tools. We are using revenue per employee as one measure of productivity. Over 2023-24 (before AI coding tools became ubiquitous), revenue per employee for major IT service companies rose by c2% p.a. We have seen revenue per employee rise by c5% y-o-y in 1Q26 and 2Q26. For example:"
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                707,
+                927,
+                783
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Accenture's 2QCY26 annualized revenue per employee of USD102K is up  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "4.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " y-o-y. Three-year revenue per employee CAGR is only  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.8\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " as revenue per employee dipped in 2024 before rising in 2026 and 1H26. Total number of employees rose by  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " y-o-y to 799K in 2QCY26 and utilization rose by 1ppt y-o-y to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "93\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                792,
+                927,
+                853
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Infosys's 1QCY26 annualized revenue per employee of USD74K was up by  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "4.4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " y-o-y. Three-year revenue per employee CAGR is only  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". Total number of employees rose  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "4.2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " y-o-y to 337k in 1QCY26 albeit utilization dipped 2ppt y-o-y to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "80\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                859,
+                905,
+                907
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                29,
+                191,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • Software\n25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                29,
+                931,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                919,
+                963,
+                929,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We see no tangible metric that would indicate that a typical IT service employee is seeing any dramatic improvement in productivity. Revenue per employee is rising barely above inflation while changes in number of employees or their utilization is unremarkable."
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                135,
+                912,
+                182
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8c41b668f7402692b71b8b03b48979d5799a8592b423c4121f7a5f494f2df84c.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "AI may have added 100-200bp to IT services sector productivity growth"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC estimates *2023-24 as AI coding tools were not prevalent at that time"
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                223,
+                919,
+                347
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b09b645cd4247c9f4346be4592f963f62fabb845fe477a0b95c30c0d6314a6dc.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Number of utilized employees at major IT services firms*"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC *Employees (excluding those who are on bench/unutilized) at Accenture, TCS, Infosys and CapGemini as a proxy for the entire sector"
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                441,
+                924,
+                564
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Software productivity gain"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                280,
+                624,
+                460,
+                637
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We estimate AI tools may have boosted software sector productivity growth by up to c500bp. Over 2018-24 (before large scale adoption of AI coding tools), software companies saw their revenue per employee rise at a CAGR of about 4.2% while the broader technology sector saw its revenue per employee rise at a CAGR of about 4.3%. Revenue per employee for software companies rose by c9% y-o-y in the last few quarters. Broader technology sector revenue per employee rose by 10-13% y-o-y as the growth was dominated by cloud infrastructure, social media, and search sectors, which are much less employee-intensive."
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                646,
+                915,
+                754
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Revenue per employee is an imperfect measure of productivity, especially in the software sector due to high operating leverage. Revenue per employee dipped during 2019 and 2022 due to broader slowdown in growth and not because of any reduction in productivity. Likewise, some of the recent boost may be cyclical as opposed to true increase in productivity (or in other words, we may be overestimating AI's impact on productivity). Unfortunately, we do not have access to data on (say) features developed per programmer to truly assess the productivity boost."
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                761,
+                931,
+                853
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                29,
+                191,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • Software\n25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                28,
+                931,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                964,
+                78,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/855df5b180e1f7aac3131e7bae8591a3900c6fe7c5aba5c5e244d1e262caa240.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "AI may have added 100-500bp to Software sector productivity growth"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                157,
+                912,
+                320
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9bca0f3fa8b7ad3f921c0b5e69003b42d811657336e28c7417651dcedc5a2b7d.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Revenue per employee for the broader technology sector"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                292,
+                397,
+                912,
+                564
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a417cb226dc788d8b988c7370cd925f5bf9941883be26d59fa90f9c4d94017c8.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Total number of employees at major software companies*"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC *Oracle, Adobe, Intuit, Salesforce, ServiceNow, SAP. Leaving Microsoft, et al as latest data not available"
+                    }
+                ]
+            },
+            "bbox": [
+                304,
+                646,
+                905,
+                809
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                29,
+                191,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • Software\n25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                29,
+                931,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                919,
+                964,
+                929,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "So what?"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                280,
+                135,
+                351,
+                149
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If a challenger tried to replicate (say) SAP using a new vibe coded system, he/she may be able to develop an alternative SAP that could be 1-5% cheaper (reflecting 100-500bp improvement in productivity estimated above) than what it cost the original SAP to build itself. But considering heavy costs of replacing an existing ERP vendor and hardly 3% per annum churn, it is far from clear that the challenger will have a winning cost advantage."
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                157,
+                927,
+                235
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Software incumbents have significant advantages including users' familiarization with the system GUI, interoperability with other tools, favourable network externalities including availability of experienced support staff, and bug reduction that comes after decades of being used by thousands of enterprise customers. A challenger needs a lot more than a slight cost advantage to replace the incumbents."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                242,
+                910,
+                319
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "What about Oracle job cuts?"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                280,
+                326,
+                478,
+                340
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Oracle slashed its workforce to 141,000 in 2QCY26 from 162,000 in 2QCY25. However, we note Oracle had significantly lower revenue per employee than peers and may have “cut the flab”."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                349,
+                900,
+                394
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1504e4177abdc91a30fbc8aa512d77545a18ac3bcf3f34f4150f7a8bcdfb1085.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Annualized revenue per employee (USD '000): Oracle vs peers"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, HSBC estimates"
+                    }
+                ]
+            },
+            "bbox": [
+                307,
+                439,
+                897,
+                610
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "What have software companies said about AI-driven productivity gains"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                280,
+                650,
+                796,
+                663
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SAP expects to cut its costs by EUR2bn by 2028, which is  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "7.6\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of SAP's 2025 non-GAAP operating costs."
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                666,
+                919,
+                695
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ServiceNow expects AI to cut its costs by USD500m over 2025-26, of which USD300m could flow to the bottom-line while the rest will likely be reinvested into the business. USD500m is c5.5% of ServiceNow's CY25 non-GAAP operating costs."
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                703,
+                897,
+                748
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Is there a counter point as well?"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                280,
+                779,
+                517,
+                793
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "There are several anecdotes of sharply improving productivity even though these are not apparent from overall numbers. As cost-cutting guidance from these same companies are more muted (as shown in the above section), we have treated these anecdotes as not indicative of the overall situation. We also note that R&D is only about 10-20% of revenue (15-35% of costs) for major software companies and programming is only part of the total R&D costs. Therefore, sharply increased programmer productivity does not necessarily mean sharply higher companywide productivity. A challenger to incumbent software companies will need to spend money not just on programming but also on designing, testing, and marketing the software system."
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                795,
+                926,
+                919
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                29,
+                191,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • Software\n25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                29,
+                931,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                964,
+                78,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Salesforce mentioned in 1QCY26 that AI coding tools enabled it to double the features and code shipped y-o-y, while simultaneously reducing incidents and defects."
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                135,
+                922,
+                166
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SAP CEO said in a recent conference call: “We will also set up our development teams. It's not anymore these teams of 10. It will be teams of five, more agile. You prototype an idea with vibe coding with one or two days, then you turn around because the validation brought you some insights which you need to consider. Then you go into the automation side where we can automate a lot on code generation, agent development, testing, et cetera.”"
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                173,
+                927,
+                250
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Oracle said in 1QCY26 earnings conference call: \"The use of AI coding tools inside Oracle is enabling smaller engineering teams to deliver more complete solutions to our customers more quickly. We are building brand-new SaaS products using AI and also embedding AI agents right into our existing application suites. By embracing AI with small engineering teams, we have just built three brand new CX applications; lead generation and qualification, sales orchestration and automated selling, and our new website generator.\""
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                256,
+                919,
+                350
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Comparative valuation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                372,
+                289,
+                390
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/1b53bec7876db005497ad99537c10b4ffd918b0374c516c16330fa2581b7345c.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Comparative valuation treating share-based compensation as real expense"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: LSEG Datastream, company data, HSBC estimates *Priced on 23 June 2026"
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\">Company</td><td rowspan=\"2\">Ticker</td><td rowspan=\"2\">Rating</td><td rowspan=\"2\">CMP (USD)</td><td rowspan=\"2\">TP (USD)</td><td colspan=\"4\">PE (non-GAAP, after SBC)</td><td colspan=\"4\">EV/EBIT (non-GAAP, after SBC)</td><td rowspan=\"2\">EPS CAGR 26-28e</td><td rowspan=\"2\">PEG 26e</td></tr><tr><td>CY25</td><td>CY26e</td><td>CY27e</td><td>CY28e</td><td>CY25</td><td>CY26e</td><td>CY27e</td><td>CY28e</td></tr><tr><td>Oracle</td><td>ORCL US</td><td>Buy</td><td>165.16</td><td>316.00</td><td>31.5</td><td>28.8</td><td>22.9</td><td>16.3</td><td>26.5</td><td>21.8</td><td>17.6</td><td>13.7</td><td>33.1%</td><td>0.87</td></tr><tr><td>Autodesk</td><td>ADSK US</td><td>Buy</td><td>188.78</td><td>357.00</td><td>35.5</td><td>27.9</td><td>20.6</td><td>18.4</td><td>21.0</td><td>15.7</td><td>13.0</td><td>11.0</td><td>23.2%</td><td>1.21</td></tr><tr><td>Salesforce</td><td>CRM US</td><td>Buy</td><td>153.42</td><td>356.00</td><td>15.8</td><td>14.1</td><td>12.8</td><td>11.0</td><td>14.2</td><td>12.9</td><td>10.6</td><td>8.9</td><td>13.5%</td><td>1.05</td></tr><tr><td>Fair Isaac</td><td>FICO US</td><td>Reduce</td><td>1,099.41</td><td>707.00</td><td>41.5</td><td>25.2</td><td>24.6</td><td>25.0</td><td>30.0</td><td>18.9</td><td>18.7</td><td>19.2</td><td>0.4%</td><td>64.40</td></tr><tr><td>HP</td><td>HPQ US</td><td>Buy</td><td>23.67</td><td>29.60</td><td>7.4</td><td>7.1</td><td>6.8</td><td>6.2</td><td>7.0</td><td>6.7</td><td>6.4</td><td>5.9</td><td>7.5%</td><td>0.95</td></tr><tr><td>IBM</td><td>IBM US</td><td>Hold</td><td>264.94</td><td>231.00</td><td>22.9</td><td>21.5</td><td>20.3</td><td>18.1</td><td>21.1</td><td>19.4</td><td>17.9</td><td>15.7</td><td>9.0%</td><td>2.38</td></tr><tr><td>Intuit</td><td>INTU US</td><td>Buy</td><td>258.05</td><td>707.00</td><td>15.7</td><td>13.3</td><td>10.9</td><td>9.6</td><td>12.3</td><td>9.6</td><td>7.4</td><td>5.7</td><td>17.4%</td><td>0.76</td></tr><tr><td>Microsoft</td><td>MSFT US</td><td>Buy</td><td>373.94</td><td>571.00</td><td>24.2</td><td>19.9</td><td>16.6</td><td>13.9</td><td>19.2</td><td>16.3</td><td>13.5</td><td>11.3</td><td>19.9%</td><td>1.00</td></tr><tr><td>ServiceNow</td><td>NOW US</td><td>Buy</td><td>95.94</td><td>177.00</td><td>NA</td><td>40.4</td><td>31.4</td><td>23.4</td><td>41.9</td><td>32.2</td><td>24.0</td><td>16.9</td><td>31.5%</td><td>1.28</td></tr><tr><td>Palantir</td><td>PLTR US</td><td>Hold</td><td>116.70</td><td>151.00</td><td>243.1</td><td>101.3</td><td>67.1</td><td>57.2</td><td>186.1</td><td>77.9</td><td>50.1</td><td>42.5</td><td>33.1%</td><td>3.06</td></tr><tr><td>SAP (EUR)</td><td>SAP GR</td><td>Buy</td><td>134.52</td><td>185.00</td><td>22.0</td><td>19.1</td><td>16.3</td><td>14.4</td><td>14.8</td><td>13.3</td><td>11.1</td><td>9.6</td><td>15.0%</td><td>1.27</td></tr><tr><td>Snowflake</td><td>SNOW US</td><td>Buy</td><td>230.41</td><td>289.00</td><td>-68.9</td><td>-88.5</td><td>-119.9</td><td>-146.5</td><td>-72.0</td><td>-76.1</td><td>-95.6</td><td>-115.4</td><td>NA</td><td>NA</td></tr><tr><td>TE Connectivity</td><td>TEL US</td><td>Hold</td><td>203.05</td><td>234.00</td><td>21.3</td><td>17.8</td><td>15.9</td><td>14.2</td><td>17.6</td><td>14.4</td><td>12.6</td><td>13.9</td><td>11.9%</td><td>1.50</td></tr><tr><td>Median</td><td></td><td></td><td></td><td></td><td>22.9</td><td>19.9</td><td>16.6</td><td>14.4</td><td>19.2</td><td>15.7</td><td>13.0</td><td>11.0</td><td>18.6%</td><td>1.13</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                65,
+                445,
+                929,
+                628
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Software shares have de-rated significantly over the last 12 months on concerns that AI will disrupt their business. If we use consensus estimates, major software shares are trading at c52% lower P/NTM non-GAAP EPS vs the 24-month average. As explained above, we consider these concerns unwarranted."
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                657,
+                929,
+                719
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Software shares have derated significantly"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                742,
+                366,
+                756
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/5ad804edb2c693d3737abeecaadaf711270be953315a6b3af851d04b9ca201d4.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: LSEG Datastream, company data, HSBC estimates *Priced on 23 June 2026"
+                    }
+                ],
+                "html": "<table><tr><td>P/NTM consensus EPS</td><td>28-Jun-24</td><td>30-Sep-24</td><td>30-Dec-24</td><td>31-Mar-25</td><td>30-Jun-25</td><td>30-Sep-25</td><td>30-Dec-25</td><td>24M Avg</td><td>23-Jun-26</td><td>Spot vs 18M Avg</td></tr><tr><td>SAP</td><td>35.7</td><td>36.2</td><td>38.4</td><td>37.2</td><td>38.1</td><td>32.7</td><td>29.1</td><td>32.78</td><td>17.1</td><td>-48%</td></tr><tr><td>Microsoft</td><td>33.7</td><td>31.6</td><td>30.4</td><td>25.9</td><td>32.9</td><td>32.0</td><td>27.7</td><td>28.67</td><td>19.3</td><td>-33%</td></tr><tr><td>Salesforce</td><td>24.8</td><td>25.4</td><td>30.3</td><td>23.6</td><td>23.0</td><td>19.3</td><td>20.6</td><td>21.89</td><td>10.4</td><td>-52%</td></tr><tr><td>ServiceNow</td><td>52.8</td><td>56.4</td><td>63.9</td><td>46.1</td><td>56.4</td><td>47.8</td><td>37.7</td><td>46.50</td><td>21.0</td><td>-55%</td></tr><tr><td>Intuit</td><td>34.7</td><td>31.3</td><td>30.8</td><td>28.9</td><td>34.7</td><td>28.8</td><td>27.3</td><td>27.27</td><td>9.5</td><td>-65%</td></tr><tr><td>Median</td><td>34.7</td><td>31.6</td><td>30.8</td><td>28.9</td><td>34.7</td><td>32.0</td><td>27.7</td><td>28.7</td><td>17.1</td><td>-52%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                55,
+                758,
+                929,
+                840
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                29,
+                191,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • Software\n25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                28,
+                931,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                919,
+                964,
+                929,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure appendix"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                138,
+                517,
+                171
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                207,
+                221,
+                220
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following analyst(s), economist(s), or strategist(s) who is(are) primarily responsible for this report, including any analyst(s) whose name(s) appear(s) as author of an individual section or sections of the report and any analyst(s) named as the covering analyst(s) of a subsidiary company in a sum-of-the-parts valuation certifies(y) that the opinion(s) on the subject security(ies) or issuer(s), any views or forecasts expressed in the section(s) of which such individual(s) is(are) named as author(s), and any other views or forecasts expressed herein, including any views expressed on the back page of the research report, accurately reflect their personal view(s) and that no part of their compensation was, is or will be directly or indirectly related to the specific recommendation(s) or views contained in this research report: Abhishek Shukla, CFA, Sameer Lam and Stephen Bersey"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                222,
+                934,
+                331
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                338,
+                231,
+                352
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities: Stock ratings and basis for financial analysis"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                356,
+                465,
+                371
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC and its affiliates, including the issuer of this report (“HSBC”) believes an investor's decision to buy or sell a stock should depend on individual circumstances such as the investor's existing holdings, risk tolerance and other considerations and that investors utilise various disciplines and investment horizons when making investment decisions. Ratings should not be used or relied on in isolation as investment advice. Different securities firms use a variety of ratings terms as well as different rating systems to describe their recommendations and therefore investors should carefully read the definitions of the ratings used in each research report. Further, investors should carefully read the entire research report and not infer its contents from the rating because research reports contain more complete information concerning the analysts' views and the basis for the rating."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                372,
+                932,
+                480
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "From 23rd March 2015 HSBC has assigned ratings on the following basis:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                486,
+                603,
+                501
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The target price is based on the analyst's assessment of the stock's actual current value, although we expect it to take six to 12 months for the market price to reflect this. When the target price is more than  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " above the current share price, the stock will be classified as a Buy; when it is between  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " above the current share price, the stock may be classified as a Buy or a Hold; when it is between  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " below and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " above the current share price, the stock will be classified as a Hold; when it is between  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " below the current share price, the stock may be classified as a Hold or a Reduce; and when it is more than  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " below the current share price, the stock will be classified as a Reduce."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                502,
+                932,
+                595
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our ratings are re-calibrated against these bands at the time of any 'material change' (initiation or resumption of coverage, change in target price or estimates)."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                602,
+                931,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Upside/Downside is the percentage difference between the target price and the share price."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                640,
+                685,
+                655
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Prior to this date, HSBC's rating structure was applied on the following basis:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                663,
+                631,
+                676
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For each stock we set a required rate of return calculated from the cost of equity for that stock's domestic or, as appropriate, regional market established by our strategy team. The target price for a stock represented the value the analyst expected the stock to reach over our performance horizon. The performance horizon was 12 months. For a stock to be classified as Overweight, the potential return, which equals the percentage difference between the current share price and the target price, including the forecast dividend yield when indicated, had to exceed the required return by at least 5 percentage points over the succeeding 12 months (or 10 percentage points for a stock classified as Volatile*). For a stock to be classified as Underweight, the stock was expected to underperform its required return by at least 5 percentage points over the succeeding 12 months (or 10 percentage points for a stock classified as Volatile*). Stocks between these bands were classified as Neutral."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                679,
+                932,
+                802
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "*A stock was classified as volatile if its historical volatility had exceeded 40%, if the stock had been listed for less than 12 months (unless it was in an industry or sector where volatility is low) or if the analyst expected significant volatility. However, stocks which we did not consider volatile may in fact also have behaved in such a way. Historical volatility was defined as the past month's average of the daily 365-day moving average volatilities. In order to avoid misleadingly frequent changes in rating, however, volatility had to move 2.5 percentage points past the 40% benchmark in either direction for a stock's status to change."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                809,
+                932,
+                887
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                29,
+                191,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • Software\n25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                28,
+                931,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                964,
+                85,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Rating distribution for long-term investment opportunities"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                135,
+                490,
+                150
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As of 31 March 2026, the distribution of all independent ratings published by HSBC is as follows:"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                154,
+                769,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Buy 59% (12% of these provided with Investment Banking Services in the past 12 months)"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                169,
+                902,
+                182
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hold 36% (12% of these provided with Investment Banking Services in the past 12 months)"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                187,
+                902,
+                201
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sell 6% (6% of these provided with Investment Banking Services in the past 12 months)"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                206,
+                895,
+                220
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For the purposes of the distribution above the following mapping structure is used during the transition from the previous to current rating models: under our previous model, Overweight = Buy, Neutral = Hold and Underweight = Sell; under our current model Buy = Buy, Hold = Hold and Reduce = Sell. For rating definitions under both models, please see “Stock ratings and basis for financial analysis” above."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                226,
+                931,
+                283
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For the distribution of non-independent ratings published by HSBC, please see the disclosure page available at http://www.hsbcnet.com/gbm/financial-regulation/investment-recommendations-disclosures."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                290,
+                931,
+                320
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To view a list of all the independent fundamental ratings/recommendations disseminated by HSBC during the preceding 12-month period, and the location where we publish our quarterly distribution of non-fundamental recommendations (applicable to Fixed Income and Currencies research only), please use the following links to access the disclosure page:"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                326,
+                931,
+                370
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Clients of HSBC Private Bank: www.research.privatebank.hsbc.com/Disclosures"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                376,
+                611,
+                391
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All other clients: www.research.hsbc.com/A/Disclosures"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                397,
+                447,
+                412
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC and its affiliates will from time to time sell to and buy from customers the securities/instruments, both equity and debt (including derivatives) of companies covered in HSBC on a principal or agency basis or act as a market maker or liquidity provider in the securities/instruments mentioned in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                419,
+                931,
+                463
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analysts, economists, and strategists are paid in part by reference to the profitability of HSBC which includes investment banking, sales & trading, and principal trading revenues."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                469,
+                929,
+                498
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Whether, or in what time frame, an update of this analysis will be published is not determined in advance."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                505,
+                774,
+                519
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Non-U.S. analysts may not be associated persons of HSBC Securities (USA) Inc, and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with the subject company, public appearances and trading securities held by the analysts."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                526,
+                929,
+                570
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Economic sanctions laws imposed by certain jurisdictions such as the US, the EU, the UK, and others, may prohibit persons subject to those laws from making certain types of investments, including by transacting or dealing in securities of particular issuers, sectors, or regions. This report does not constitute advice in relation to any such laws and should not be construed as an inducement to transact in securities in breach of such laws."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                576,
+                932,
+                634
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For disclosures in respect of any company mentioned in this report, please see the most recently published report on that company available at www.hsbcnet.com/research. HSBC Private Bank clients should contact their Relationship Manager for queries regarding other research reports. In order to find out more about the proprietary models used to produce this report, please contact the authoring analyst."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                640,
+                932,
+                698
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Additional disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                705,
+                235,
+                719
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1 This report is dated as at 25 June 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                722,
+                376,
+                735
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2 All market data included in this report are dated as at close 23 June 2026, unless a different date and/or a specific time of day is indicated in the report."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                739,
+                921,
+                768
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3 HSBC has procedures in place to identify and manage any potential conflicts of interest that arise in connection with its Research business. HSBC's analysts and its other staff who are involved in the preparation and dissemination of Research operate and have a management reporting line independent of HSBC's Investment Banking business. Information Barrier procedures are in place between the Investment Banking, Principal Trading, and Research businesses to ensure that any confidential and/or price sensitive information is handled in an appropriate manner."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                771,
+                924,
+                843
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4 You are not permitted to use, for reference, any data in this document for the purpose of (i) determining the interest payable, or other sums due, under loan agreements or under other financial contracts or instruments, (ii) determining the price at which a financial instrument may be bought or sold or traded or redeemed, or the value of a financial instrument, and/or (iii) measuring the performance of a financial instrument or of an investment fund."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                846,
+                915,
+                904
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                29,
+                191,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • Software\n25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                28,
+                931,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                912,
+                964,
+                929,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Production & distribution disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                135,
+                344,
+                149
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. This report was produced and signed off by the author on 25 Jun 2026 04:49 GMT."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                150,
+                658,
+                165
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. In order to see when this report was first disseminated please see the disclosure page available at https://www.research.hsbc.com/R/34/GgvxPM7"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                173,
+                757,
+                203
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                30,
+                191,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • Software\n25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                29,
+                931,
+                54
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                964,
+                85,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclaimer"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                70,
+                138,
+                302,
+                167
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal entities as at 13 May 2026:"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                171,
+                230,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Bank plc; HSBC Continental Europe; HSBC Continental Europe SA, Germany; HSBC Bank Middle East Limited, DIFC; HSBC Bank Middle East Limited, Dubai branch; HSBC Yatirim Menkul Degerler AS, Istanbul; The Hongkong and Shanghai Banking Corporation Limited, Hong Kong; The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch; HSBC Qianhai Securities Limited; HSBC Securities (Taiwan) Corporation Limited; HSBC Securities and Capital Markets (India) Private Limited, Mumbai; HSBC Bank Australia Limited; HSBC Securities (USA) Inc., New York; HSBC México, SA, Institución de Banca Múltiple, Grupo Financiero HSBC; Banco HSBC SA"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                181,
+                663,
+                257
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Issuer of report\nHSBC Bank Middle East Limited, DIFC\nPO Box 30444\nDIFC, Dubai UAE\nTelephone: +971 4 5623465\nFax: +971 4 4267397\nWebsite: www.research.hsbc.com"
+                    }
+                ]
+            },
+            "bbox": [
+                670,
+                171,
+                860,
+                245
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the United Arab Emirates (\"UAE\"), this document has been distributed to you by HSBC Bank Middle East Limited (\"HBME\") through its Dubai branch for distribution within the UAE (excluding free zones) only and through its head office in the Dubai International Financial Centre (\"DIFC\") for distribution within the DIFC only. HBME is regulated and authorised for these purposes by the Central Bank of the UAE, the Capital Market Authority of the UAE for licenced activities (including Fifth Category License no. 602004 for 'Financial Consultations' activity) and lead regulated by the Dubai Financial Services Authority. This document is for private circulation to the intended recipients only and may not be distributed to any other person. It is intended only to be distributed to 'Professional Clients' or 'Market Counterparties' in the DIFC or 'Professional Investors or Counterparties' in the UAE (excluding free zones) and is not intended to be distributed to or relied on by 'Retail Clients' in the DIFC or 'Ordinary Investors' in the UAE (excluding free zones)."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                258,
+                939,
+                323
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the UK, this publication is distributed by HSBC Bank plc for the information of its Clients (as defined in the Rules of FCA) and those of its affiliates only. Nothing herein excludes or restricts any duty or liability to a customer which HSBC Bank plc has under the Financial Services and Markets Act 2000 or under the Rules of FCA and PRA. A recipient who chooses to deal with any person who is not a representative of HSBC Bank plc in the UK will not enjoy the protections afforded by the UK regulatory regime. HSBC Bank plc is regulated by the Financial Conduct Authority and the Prudential Regulation Authority. If this research is received by a customer of an affiliate of HSBC, its provision to the recipient is subject to the terms of business in place between the recipient and such affiliate."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                323,
+                939,
+                375
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the European Economic Area, this publication has been distributed by HSBC Continental Europe or by such other HSBC affiliate from which the recipient receives relevant services."
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                377,
+                889,
+                387
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Japan, this publication has been distributed by HSBC Securities (Japan) Co., Ltd.. It may not be further distributed in whole or in part for any purpose. In Hong Kong, this document has been distributed by The Hongkong and Shanghai Banking Corporation Limited in the conduct of its Hong Kong regulated business for the information of its institutional and professional customers; it is not intended for and should not be distributed to retail customers in Hong Kong, unless permitted otherwise. The Hongkong and Shanghai Banking Corporation Limited makes no representations that the products or services mentioned in this document are available to persons in Hong Kong or are necessarily suitable for any particular person or appropriate in accordance with local law. All inquiries by such recipients must be directed to The Hongkong and Shanghai Banking Corporation Limited. In Korea, this publication is distributed by either The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch (\"HBAP SLS\") or The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch (\"HBAP SEL\") for the general information of professional investors specified in Article 9 of the Financial Investment Services and Capital Markets Act (\"FSCMA\"). This publication is not a prospectus as defined in the FSCMA. It may not be further distributed in whole or in part for any purpose. Both HBAP SLS and HBAP SEL are regulated by the Financial Services Commission and the Financial Supervisory Service of Korea. In Singapore, this publication is distributed by The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch for the general information of institutional investors or other persons specified in Sections 274 and 304 of the Securities and Futures Act 2001 of Singapore (\"SFA\") and accredited investors and other persons in accordance with the conditions specified in Sections 275 and 305 of the SFA. Only Economics or Currencies reports are intended for distribution to a person who is not an Accredited Investor, Expert Investor or Institutional Investor as defined in SFA. The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch accepts legal responsibility for the contents of reports. This publication is not a prospectus as defined in the SFA. It may not be further distributed in whole or in part for any purpose. The Hongkong and Shanghai Banking Corporation Limited Singapore Branch is regulated by the Monetary Authority of Singapore. Recipients in Singapore should contact a \"Hongkong and Shanghai Banking Corporation Limited, Singapore Branch\" representative in respect of any matters arising from, or in connection with this report. Please refer to The Hongkong and Shanghai Banking Corporation Limited Singapore Branch's website at www.business.hsbc.com.sg for contact details. In Australia, this publication has been distributed by The Hongkong and Shanghai Banking Corporation Limited (ABN 65 117 925 970, AFSL 301737) for the general information of its \"wholesale\" customers (as defined in the Corporations Act 2001). Where distributed to retail customers, this research is distributed by HSBC Bank Australia Limited (ABN 48 006 434 162, AFSL No. 232595). These respective entities make no representations that the products or services mentioned in this document are available to persons in Australia or are necessarily suitable for any particular person or appropriate in accordance with local law. No consideration has been given to the particular investment objectives, financial situation or particular needs of any recipient."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                385,
+                939,
+                591
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Securities (USA) Inc. accepts responsibility for the content of this research report prepared by its non-US foreign affiliate. The information contained herein is under no circumstances to be construed as investment advice and is not tailored to the needs of the recipient. All U.S. persons receiving and/or accessing this report and wishing to effect transactions in any security discussed herein should do so with HSBC Securities (USA) Inc. in the United States and not with its non-US foreign affiliate, the issuer of this report. HSBC México, S.A., Institución de Banca Múltiple, Grupo Financiero HSBC is authorized and regulated by Secretaría de Hacienda y Crédito Público and Comisión Nacional Bancaria y de Valores (CNBV). In Brazil, this document has been distributed by Banco HSBC SA (\"HSBC Brazil\"), and/or its affiliates. As required by Resolution No. 20/2021 of the Securities and Exchange Commission of Brazil (Comissão de Valores Mobiliários), potential conflicts of interest concerning (i) HSBC Brazil and/or its affiliates; and (ii) the analyst(s) responsible for authoring this report are stated on the chart above labelled \"HSBC & Analyst Disclosures\". This document is not and should not be construed as an offer to sell or the solicitation of an offer to purchase or subscribe for any investment. HSBC has based this document on information obtained from sources it believes to be reliable but which it has not independently verified; HSBC makes no guarantee, representation or warranty and accepts no responsibility or liability as to its accuracy or completeness. The opinions contained within the report are based upon publicly available information at the time of publication and are subject to change without notice. From time to time research analysts conduct site visits of covered issuers. HSBC policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits. Past performance is not necessarily a guide to future performance. The value of any investment or income may go down as well as up and you may not get back the full amount invested. Where an investment is denominated in a currency other than the local currency of the recipient of the research report, changes in the exchange rates may have an adverse effect on the value, price or income of that investment. In case of investments for which there is no recognised market it may be difficult for investors to sell their investments or to obtain reliable information about its value or the extent of the risk to which it is exposed. The document is intended to be distributed in its entirety. Unless governing law permits otherwise, you must contact a HSBC Group member in your home jurisdiction if you wish to use HSBC Group services in effecting a transaction in any investment mentioned in this document."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                591,
+                939,
+                752
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If you are a customer of HSBC International Wealth & Premier Banking (\"IWPB\"), including HSBC Private Bank, you are eligible to receive this publication only if: (i) you have been approved to receive relevant research publications by an applicable HSBC legal entity; (ii) you have agreed to the applicable HSBC entity's terms and conditions and/or customer declaration for accessing research; and (iii) you have agreed to the terms and conditions of any other internet banking, online banking, mobile banking and/or investment services offered by that HSBC entity, through which you will access research publications (collectively with (ii), the \"Terms\"). If you do not meet the above eligibility requirements, please disregard this publication and, if you are a IWPB customer, please notify your Relationship Manager or call the relevant customer hotline. Distribution of this publication is the sole responsibility of the HSBC entity with whom you have agreed the Terms. Receipt of research publications is strictly subject to the Terms and any other conditions or disclaimers applicable to the provision of the publications that may be advised by IWPB."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                751,
+                939,
+                815
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "© Copyright 2026, HSBC Bank Middle East Limited, DIFC, ALL RIGHTS RESERVED. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, on any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without the prior written permission of HSBC Bank Middle East Limited."
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                815,
+                939,
+                837
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                29,
+                191,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • Software\n25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                29,
+                929,
+                54
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "[1281594]"
+                    }
+                ]
+            },
+            "bbox": [
+                858,
+                852,
+                929,
+                865
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                912,
+                963,
+                929,
+                973
+            ]
+        }
+    ]
+]
