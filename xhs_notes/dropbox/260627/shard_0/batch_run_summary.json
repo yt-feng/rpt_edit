@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 37,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-CITI-Global Economic Outlook & Strategy：The Resilient Global Economy—Cascading Supply Shocks-260625.pdf",
+          "batch_file": "/tmp/pdf_batch_001_5t260vbb/pdfs/0001-01-CITI-Global Economic Outlook - Strategy-The Resilient Global Economy-Cascading Supply Shocks-260625.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-GS-GLOBAL RATES TRADER：Oil Relief Gets Real-260626.pdf",
+          "batch_file": "/tmp/pdf_batch_001_5t260vbb/pdfs/0002-02-GS-GLOBAL RATES TRADER-Oil Relief Gets Real-260626.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-GS-GLOBAL FX TRADER：Deferential to the Differential-260626.pdf",
+          "batch_file": "/tmp/pdf_batch_001_5t260vbb/pdfs/0003-03-GS-GLOBAL FX TRADER-Deferential to the Differential-260626.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-GS-Global Market Views： From Macro to Micro Volatility-260626.pdf",
+          "batch_file": "/tmp/pdf_batch_001_5t260vbb/pdfs/0004-04-GS-Global Market Views- From Macro to Micro Volatility-260626.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-JPM-A cyclical state of mind：2026 Mid~Year Global Economic Outlook-260625.pdf",
+          "batch_file": "/tmp/pdf_batch_001_5t260vbb/pdfs/0005-05-JPM-A cyclical state of mind-2026 Mid-Year Global Economic Outlook-260625.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
