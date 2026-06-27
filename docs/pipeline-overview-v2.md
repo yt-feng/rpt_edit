@@ -300,7 +300,8 @@ scripts/push_kc_translated_to_wechat_drafts.py
 - 默认把 `kc_translated_reports/<日期>/<报告>/translated.md` 转成微信公众号短版图文 HTML，可见正文约 2000 字；正文图片先走微信 `uploadimg`，封面走永久图片素材，并调用 `draft/add` 创建草稿；当 `wechat_freepublish=true` 时再调用 `freepublish/submit` 提交发布。
 - 微信短版正文图默认最多 3 张、至少 3 张。优先使用 MinerU 抽出的报告图表；如果报告图不足，会参考 `gen_rpt` 的方式用 Pollinations 生成主题相关 AI 配图，下载压缩后再上传微信。
 - 每篇公众号草稿正文末尾固定追加 `prompts/zsxq_img.jpg`，上传时会先通过微信 `uploadimg` 转成公众号可用图片 URL。
-- 每篇公众号草稿正文末尾、星球图之前固定加钩子：`更多完整报告和后续精译，扫文末图片进群交流。`
+- 星球图之前的钩子（`DEFAULT_BODY_HOOK`）：`更多国际信源汇编&评论，扫码交流，每日更新~40页…`（星球介绍 CTA）。
+- 星球图之后、文章最结尾再追加关注/星标提醒（`DEFAULT_AFTER_IMAGE_NOTE`）：`微信推荐机制调整，期望收到更多此类信息，关注后可以加微信从朋友圈查看更新&免费领取原文报告。或将「KC桌面」设为星标`。两段文案都在 `scripts/push_kc_translated_to_wechat_drafts.py` 顶部常量里改。
 - 图文分组默认 `articles_per_draft=8`。如果微信 `draft/add` 返回 `45008 article size out of limit`，脚本会自动把该组拆小重试，优先保证草稿能保存成功；`wechat_freepublish=true` 时会按实际成功草稿组提交发布。
 
 主流程入口：

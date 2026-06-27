@@ -36,9 +36,9 @@ BRAND = "KC桌面——外资精译"
 AUTHOR = "KC桌面"
 BOTTOM_DISCLAIMER = "For informational purposes only. Not investment advice."
 DEFAULT_BODY_HOOK = (
-    "更多完整报告和后续精译，扫文末图片进群交流。每天由 AI agent + 人工 review 生成国际投行"
-    "中文摘要与 KC评论，daily 更新约 10-40 页，并整理当天最新数据图表合集，方便喂给 AI，"
-    "也方便人工快速把握 market dynamics。"
+    "更多国际信源汇编&评论，扫码交流，每日更新~40页，汇总国际层面主流叙事&多种口径的数据，"
+    "便于观测边际变化。星球汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、"
+    "战略咨询等朋友，期待交流"
 )
 DEFAULT_BODY_VISIBLE_CHARS = 2000
 DEFAULT_MIN_INLINE_IMAGES = 3
@@ -52,6 +52,11 @@ WECHAT_TITLE_MAX_CHARS = 64
 WECHAT_UPLOADIMG_MAX_BYTES = 1024 * 1024
 WECHAT_UPLOADIMG_TARGET_BYTES = 930 * 1024
 DEFAULT_TRAILING_IMAGE = "prompts/zsxq_img.jpg"
+# Shown at the very end of every article, after the 星球 QR image.
+DEFAULT_AFTER_IMAGE_NOTE = (
+    "微信推荐机制调整，期望收到更多此类信息，关注后可以加微信从朋友圈查看更新&免费领取原文报告。"
+    "或将「KC桌面」设为星标"
+)
 POLLINATIONS_BASE_URL = "https://image.pollinations.ai/prompt/"
 WECHAT_REQUEST_MAX_ATTEMPTS = 5
 WECHAT_REQUEST_RETRY_BASE_SECONDS = 1.5
@@ -696,6 +701,18 @@ def hook_html(text: str) -> str:
     )
 
 
+def after_image_note_html(text: str) -> str:
+    """Follow-and-star reminder shown at the very end, after the 星球 QR image."""
+    if not text:
+        return ""
+    return (
+        '<p style="margin:16px 0 0;padding:14px 16px;background:#EAF2FB;'
+        'border-left:4px solid #2E6FB7;color:#152033;font-size:15px;line-height:1.75;font-weight:600;">'
+        f"{html.escape(text)}"
+        "</p>"
+    )
+
+
 def compose_limited_html(parts: list[str], tail_parts: list[str], max_chars: int) -> str:
     tail = [part for part in tail_parts if part]
     if max_chars <= 0:
@@ -926,6 +943,8 @@ def markdown_to_wechat_html(
         tail.append(image_html(trailing_image_url, alt="KC Desk"))
     if source_report_name:
         tail.append(source_report_footer_html(source_report_name))
+    # Very end of the article: follow / add-WeChat / star reminder.
+    tail.append(after_image_note_html(DEFAULT_AFTER_IMAGE_NOTE))
     content = compose_limited_html(parts, tail, max_chars)
     total_visible = text_used + visible_char_count(hook_text)
     return content, total_visible, len(body_images)
