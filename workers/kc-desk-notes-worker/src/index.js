@@ -439,52 +439,70 @@ function queryString(params) {
   return search.toString();
 }
 
+async function createSiteUserInR2(env, fields) {
+  const id = crypto.randomUUID ? crypto.randomUUID() : randomHex(16);
+  const user = { ...fields, id };
+  await r2PutJson(env, accountKey("users", "id", id), user);
+  await r2PutJson(env, accountKey("users", "username", user.username), user);
+  await r2PutJson(env, accountKey("users", "email", user.email), user);
+  return user;
+}
+
+async function updateSiteUserInR2(env, userId, fields) {
+  const existing = await r2GetJson(env, accountKey("users", "id", userId));
+  const user = { ...(existing || {}), ...fields, id: userId, updated_at: new Date().toISOString() };
+  if (user.username) await r2PutJson(env, accountKey("users", "username", user.username), user);
+  if (user.email) await r2PutJson(env, accountKey("users", "email", user.email), user);
+  await r2PutJson(env, accountKey("users", "id", userId), user);
+  return user;
+}
+
 async function findSiteUserByUsername(env, username) {
-  if (!hasSupabaseConfig(env)) {
-    return r2GetJson(env, accountKey("users", "username", username));
+  const r2User = await r2GetJson(env, accountKey("users", "username", username));
+  if (!hasSupabaseConfig(env)) return r2User;
+  try {
+    const query = queryString({ username: `eq.${username}`, limit: "1" });
+    const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
+    return Array.isArray(rows) && rows.length ? rows[0] : r2User;
+  } catch (_error) {
+    return r2User;
   }
-  const query = queryString({ username: `eq.${username}`, limit: "1" });
-  const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
-  return Array.isArray(rows) && rows.length ? rows[0] : null;
 }
 
 async function findSiteUserByEmail(env, email) {
-  if (!hasSupabaseConfig(env)) {
-    return r2GetJson(env, accountKey("users", "email", email));
+  const r2User = await r2GetJson(env, accountKey("users", "email", email));
+  if (!hasSupabaseConfig(env)) return r2User;
+  try {
+    const query = queryString({ email: `eq.${email}`, limit: "1" });
+    const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
+    return Array.isArray(rows) && rows.length ? rows[0] : r2User;
+  } catch (_error) {
+    return r2User;
   }
-  const query = queryString({ email: `eq.${email}`, limit: "1" });
-  const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
-  return Array.isArray(rows) && rows.length ? rows[0] : null;
 }
 
 async function createSiteUser(env, fields) {
-  if (!hasSupabaseConfig(env)) {
-    const id = crypto.randomUUID ? crypto.randomUUID() : randomHex(16);
-    const user = { ...fields, id };
-    await r2PutJson(env, accountKey("users", "id", id), user);
-    await r2PutJson(env, accountKey("users", "username", user.username), user);
-    await r2PutJson(env, accountKey("users", "email", user.email), user);
-    return user;
+  if (!hasSupabaseConfig(env)) return createSiteUserInR2(env, fields);
+  try {
+    const rows = await supabaseRequest(env, "POST", "/rest/v1/site_users?select=*", fields, { preferReturn: true });
+    return Array.isArray(rows) && rows.length ? rows[0] : fields;
+  } catch (_error) {
+    return createSiteUserInR2(env, fields);
   }
-  const rows = await supabaseRequest(env, "POST", "/rest/v1/site_users?select=*", fields, { preferReturn: true });
-  return Array.isArray(rows) && rows.length ? rows[0] : fields;
 }
 
 async function updateSiteUser(env, userId, fields) {
-  if (!hasSupabaseConfig(env)) {
-    const existing = await r2GetJson(env, accountKey("users", "id", userId));
-    const user = { ...(existing || {}), ...fields, id: userId, updated_at: new Date().toISOString() };
-    if (user.username) await r2PutJson(env, accountKey("users", "username", user.username), user);
-    if (user.email) await r2PutJson(env, accountKey("users", "email", user.email), user);
-    await r2PutJson(env, accountKey("users", "id", userId), user);
-    return user;
+  if (!hasSupabaseConfig(env)) return updateSiteUserInR2(env, userId, fields);
+  try {
+    const query = queryString({ id: `eq.${userId}`, select: "*" });
+    const rows = await supabaseRequest(env, "PATCH", `/rest/v1/site_users?${query}`, {
+      ...fields,
+      updated_at: new Date().toISOString(),
+    }, { preferReturn: true });
+    return Array.isArray(rows) && rows.length ? rows[0] : fields;
+  } catch (_error) {
+    return updateSiteUserInR2(env, userId, fields);
   }
-  const query = queryString({ id: `eq.${userId}`, select: "*" });
-  const rows = await supabaseRequest(env, "PATCH", `/rest/v1/site_users?${query}`, {
-    ...fields,
-    updated_at: new Date().toISOString(),
-  }, { preferReturn: true });
-  return Array.isArray(rows) && rows.length ? rows[0] : fields;
 }
 
 async function currentUserFromRequest(env, request) {
@@ -497,45 +515,55 @@ async function currentUserFromRequest(env, request) {
 }
 
 async function findEntitlement(env, email) {
-  if (!hasSupabaseConfig(env)) {
-    return r2GetJson(env, accountKey("entitlements", email));
+  const r2Entitlement = await r2GetJson(env, accountKey("entitlements", email));
+  if (!hasSupabaseConfig(env)) return r2Entitlement;
+  try {
+    const query = queryString({ email: `eq.${email}`, order: "updated_at.desc", limit: "1" });
+    const rows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
+    return Array.isArray(rows) && rows.length ? rows[0] : r2Entitlement;
+  } catch (_error) {
+    return r2Entitlement;
   }
-  const query = queryString({ email: `eq.${email}`, order: "updated_at.desc", limit: "1" });
-  const rows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
-  return Array.isArray(rows) && rows.length ? rows[0] : null;
+}
+
+async function saveEntitlementInR2(env, email, fields, now = new Date().toISOString()) {
+  const existing = await r2GetJson(env, accountKey("entitlements", email));
+  return r2PutJson(env, accountKey("entitlements", email), {
+    ...(existing || {}),
+    ...fields,
+    email,
+    id: existing && existing.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
+    updated_at: now,
+    created_at: existing && existing.created_at || now,
+  });
 }
 
 async function saveEntitlement(env, email, fields) {
   const now = new Date().toISOString();
-  if (!hasSupabaseConfig(env)) {
-    const existing = await findEntitlement(env, email);
-    return r2PutJson(env, accountKey("entitlements", email), {
-      ...(existing || {}),
-      ...fields,
-      email,
-      id: existing && existing.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
-      updated_at: now,
-      created_at: existing && existing.created_at || now,
-    });
-  }
-  const existing = await findEntitlement(env, email);
-  const payload = { ...fields, email, updated_at: now };
-  if (existing && existing.id) {
-    const query = queryString({ id: `eq.${existing.id}`, select: "*" });
-    const rows = await supabaseRequest(env, "PATCH", `/rest/v1/user_entitlements?${query}`, payload, { preferReturn: true });
+  if (!hasSupabaseConfig(env)) return saveEntitlementInR2(env, email, fields, now);
+  try {
+    const query = queryString({ email: `eq.${email}`, order: "updated_at.desc", limit: "1" });
+    const existingRows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
+    const existing = Array.isArray(existingRows) && existingRows.length ? existingRows[0] : null;
+    const payload = { ...fields, email, updated_at: now };
+    if (existing && existing.id) {
+      const patchQuery = queryString({ id: `eq.${existing.id}`, select: "*" });
+      const rows = await supabaseRequest(env, "PATCH", `/rest/v1/user_entitlements?${patchQuery}`, payload, { preferReturn: true });
+      return Array.isArray(rows) && rows.length ? rows[0] : payload;
+    }
+    const rows = await supabaseRequest(env, "POST", "/rest/v1/user_entitlements?select=*", {
+      ...payload,
+      created_at: now,
+    }, { preferReturn: true });
     return Array.isArray(rows) && rows.length ? rows[0] : payload;
+  } catch (_error) {
+    return saveEntitlementInR2(env, email, fields, now);
   }
-  const rows = await supabaseRequest(env, "POST", "/rest/v1/user_entitlements?select=*", {
-    ...payload,
-    created_at: now,
-  }, { preferReturn: true });
-  return Array.isArray(rows) && rows.length ? rows[0] : payload;
 }
 
 async function findReportPurchase(env, email, reportId, source) {
-  if (!hasSupabaseConfig(env)) {
-    return r2GetJson(env, accountKey("purchases", source, reportId, email));
-  }
+  const r2Purchase = await r2GetJson(env, accountKey("purchases", source, reportId, email));
+  if (!hasSupabaseConfig(env)) return r2Purchase;
   const query = queryString({
     email: `eq.${email}`,
     report_id: `eq.${reportId}`,
@@ -543,57 +571,80 @@ async function findReportPurchase(env, email, reportId, source) {
     order: "updated_at.desc",
     limit: "1",
   });
-  const rows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
-  return Array.isArray(rows) && rows.length ? rows[0] : null;
+  try {
+    const rows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
+    return Array.isArray(rows) && rows.length ? rows[0] : r2Purchase;
+  } catch (_error) {
+    return r2Purchase;
+  }
+}
+
+async function saveReportPurchaseInR2(env, fields, now = new Date().toISOString()) {
+  const existing = await r2GetJson(env, accountKey("purchases", fields.source, fields.report_id, fields.email));
+  return r2PutJson(env, accountKey("purchases", fields.source, fields.report_id, fields.email), {
+    ...(existing || {}),
+    ...fields,
+    id: existing && existing.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
+    purchased_at: existing && existing.purchased_at || now,
+    created_at: existing && existing.created_at || now,
+    updated_at: now,
+  });
 }
 
 async function saveReportPurchase(env, fields) {
   const now = new Date().toISOString();
-  if (!hasSupabaseConfig(env)) {
-    const existing = await findReportPurchase(env, fields.email, fields.report_id, fields.source);
-    return r2PutJson(env, accountKey("purchases", fields.source, fields.report_id, fields.email), {
-      ...(existing || {}),
-      ...fields,
-      id: existing && existing.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
-      purchased_at: existing && existing.purchased_at || now,
-      created_at: existing && existing.created_at || now,
-      updated_at: now,
+  if (!hasSupabaseConfig(env)) return saveReportPurchaseInR2(env, fields, now);
+  try {
+    const query = queryString({
+      email: `eq.${fields.email}`,
+      report_id: `eq.${fields.report_id}`,
+      source: `eq.${fields.source}`,
+      order: "updated_at.desc",
+      limit: "1",
     });
-  }
-  const existing = await findReportPurchase(env, fields.email, fields.report_id, fields.source);
-  const payload = { ...fields, updated_at: now };
-  if (existing && existing.id) {
-    const query = queryString({ id: `eq.${existing.id}`, select: "*" });
-    const rows = await supabaseRequest(env, "PATCH", `/rest/v1/report_purchases?${query}`, payload, { preferReturn: true });
+    const existingRows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
+    const existing = Array.isArray(existingRows) && existingRows.length ? existingRows[0] : null;
+    const payload = { ...fields, updated_at: now };
+    if (existing && existing.id) {
+      const patchQuery = queryString({ id: `eq.${existing.id}`, select: "*" });
+      const rows = await supabaseRequest(env, "PATCH", `/rest/v1/report_purchases?${patchQuery}`, payload, { preferReturn: true });
+      return Array.isArray(rows) && rows.length ? rows[0] : payload;
+    }
+    const rows = await supabaseRequest(env, "POST", "/rest/v1/report_purchases?select=*", {
+      ...payload,
+      purchased_at: now,
+      created_at: now,
+    }, { preferReturn: true });
     return Array.isArray(rows) && rows.length ? rows[0] : payload;
+  } catch (_error) {
+    return saveReportPurchaseInR2(env, fields, now);
   }
-  const rows = await supabaseRequest(env, "POST", "/rest/v1/report_purchases?select=*", {
-    ...payload,
-    purchased_at: now,
-    created_at: now,
-  }, { preferReturn: true });
-  return Array.isArray(rows) && rows.length ? rows[0] : payload;
 }
 
-async function insertUsageEvent(env, email, eventType, metadata = {}) {
-  if (!hasSupabaseConfig(env)) {
-    const key = accountKey("usage", email, `${Date.now()}-${randomHex(4)}.json`);
-    await r2PutJson(env, key, {
-      id: crypto.randomUUID ? crypto.randomUUID() : randomHex(16),
-      email,
-      event_type: eventType,
-      units: 1,
-      metadata,
-      created_at: new Date().toISOString(),
-    });
-    return;
-  }
-  await supabaseRequest(env, "POST", "/rest/v1/usage_events", {
+async function insertUsageEventInR2(env, email, eventType, metadata = {}) {
+  const key = accountKey("usage", email, `${Date.now()}-${randomHex(4)}.json`);
+  await r2PutJson(env, key, {
+    id: crypto.randomUUID ? crypto.randomUUID() : randomHex(16),
     email,
     event_type: eventType,
     units: 1,
     metadata,
+    created_at: new Date().toISOString(),
   });
+}
+
+async function insertUsageEvent(env, email, eventType, metadata = {}) {
+  if (!hasSupabaseConfig(env)) return insertUsageEventInR2(env, email, eventType, metadata);
+  try {
+    await supabaseRequest(env, "POST", "/rest/v1/usage_events", {
+      email,
+      event_type: eventType,
+      units: 1,
+      metadata,
+    });
+  } catch (_error) {
+    await insertUsageEventInR2(env, email, eventType, metadata);
+  }
 }
 
 function periodIsCurrent(value) {
