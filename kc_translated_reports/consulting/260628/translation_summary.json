@@ -1,0 +1,111 @@
+{
+  "date_folder": "260628",
+  "max_reports": "all",
+  "selected_count": 10,
+  "successful_count": 10,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/consulting/260628/0001-BCG_AI-for-CEOs-Amplifying-Time-and-Judgment-at-the-Top_da5c8f13",
+      "title": "波士顿咨询：CEO的AI使用方式，正在成为公司竞争力的分水岭",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 8,
+      "output_dir": "kc_translated_reports/consulting/260628/01-0001-BCG_AI-for-CEOs-Amplifying-Time-and-Judgment-at-the-Top_da5c8f13",
+      "pdf_path": "kc_translated_reports/consulting/260628/01-0001-BCG_AI-for-CEOs-Amplifying-Time-and-Judgment-at-the-Top_da5c8f13/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260628/0002-BCG_From-Recovery-to-Resurgence_f3f1cc88",
+      "title": "波士顿咨询：Fintech已过“幸存者考验”，下一轮赢家靠的是“规模议价权”",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/consulting/260628/02-0002-BCG_From-Recovery-to-Resurgence_f3f1cc88",
+      "pdf_path": "kc_translated_reports/consulting/260628/02-0002-BCG_From-Recovery-to-Resurgence_f3f1cc88/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260628/0003-BCG_The-2026-Insurance-Value-Creators-Report-Softer-Rates-and-Bi_3d6ace83",
+      "title": "波士顿咨询：BCG：美国财险市场最危险的信号不是费率走软，而是承保能力断层",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 11,
+      "output_dir": "kc_translated_reports/consulting/260628/03-0003-BCG_The-2026-Insurance-Value-Creators-Report-Softer-Rates-and-Bi_3d6ace83",
+      "pdf_path": "kc_translated_reports/consulting/260628/03-0003-BCG_The-2026-Insurance-Value-Creators-Report-Softer-Rates-and-Bi_3d6ace83/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260628/0004-BCG_The-Widening-AI-Value-Gap_b106fd5f",
+      "title": "波士顿咨询：5%的公司正在拉大AI价值鸿沟，其余95%面临被锁定的风险",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/consulting/260628/04-0004-BCG_The-Widening-AI-Value-Gap_b106fd5f",
+      "pdf_path": "kc_translated_reports/consulting/260628/04-0004-BCG_The-Widening-AI-Value-Gap_b106fd5f/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260628/0005-BCG_Video-Gaming-Report-2026-How-Platforms-Are-Colliding-and-Why_7d720238",
+      "title": "波士顿咨询：游戏行业“冬季”结束，但增长逻辑已彻底改变",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/consulting/260628/05-0005-BCG_Video-Gaming-Report-2026-How-Platforms-Are-Colliding-and-Why_7d720238",
+      "pdf_path": "kc_translated_reports/consulting/260628/05-0005-BCG_Video-Gaming-Report-2026-How-Platforms-Are-Colliding-and-Why_7d720238/kc_translated_report_05.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260628/0006-McKinsey_PDF-At-250-sustaining-America-s-competitive-edge---McKinsey-_1f47b",
+      "title": "麦肯锡：美国250年的竞争力，正被三个“历史负债”侵蚀",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_06.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/consulting/260628/06-0006-McKinsey_PDF-At-250-sustaining-America-s-competitive-edge---McKinsey-_1f47b",
+      "pdf_path": "kc_translated_reports/consulting/260628/06-0006-McKinsey_PDF-At-250-sustaining-America-s-competitive-edge---McKinsey-_1f47b/kc_translated_report_06.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260628/0007-McKinsey_PDF-Reimagined-Development-in-the-Future-of-Work_bb64b08e",
+      "title": "麦肯锡：2025年，企业最大的风险不是AI，而是把学习当作“福利”",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_07.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/consulting/260628/07-0007-McKinsey_PDF-Reimagined-Development-in-the-Future-of-Work_bb64b08e",
+      "pdf_path": "kc_translated_reports/consulting/260628/07-0007-McKinsey_PDF-Reimagined-Development-in-the-Future-of-Work_bb64b08e/kc_translated_report_07.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260628/0008-McKinsey_PDF-Technology-Trends-Outlook-2025---McKinsey-Company_518523bb",
+      "title": "麦肯锡：AI不再独自奔跑，2025年最值得关注的不是大模型本身",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_08.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/consulting/260628/08-0008-McKinsey_PDF-Technology-Trends-Outlook-2025---McKinsey-Company_518523bb",
+      "pdf_path": "kc_translated_reports/consulting/260628/08-0008-McKinsey_PDF-Technology-Trends-Outlook-2025---McKinsey-Company_518523bb/kc_translated_report_08.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260628/0009-McKinsey_PDF-The-State-of-Organizations---McKinsey-Company_da7ae141",
+      "title": "麦肯锡：88%企业在试AI，但81%没赚到钱",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_09.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/consulting/260628/09-0009-McKinsey_PDF-The-State-of-Organizations---McKinsey-Company_da7ae141",
+      "pdf_path": "kc_translated_reports/consulting/260628/09-0009-McKinsey_PDF-The-State-of-Organizations---McKinsey-Company_da7ae141/kc_translated_report_09.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260628/0010-McKinsey_PDF-The-state-of-AI---McKinsey-Company_5b97d469",
+      "title": "麦肯锡：AI不缺技术，缺的是CEO亲自下场",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_10.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/consulting/260628/10-0010-McKinsey_PDF-The-state-of-AI---McKinsey-Company_5b97d469",
+      "pdf_path": "kc_translated_reports/consulting/260628/10-0010-McKinsey_PDF-The-state-of-AI---McKinsey-Company_5b97d469/kc_translated_report_10.pdf"
+    }
+  ]
+}
