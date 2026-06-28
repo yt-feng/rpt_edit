@@ -292,7 +292,7 @@
               <button class="secondary-button" id="accountLogout" type="button">退出登录</button>
             </div>
           </div>
-          <div class="plan-grid">
+          <div class="plan-grid" id="accountPlanGrid" hidden>
             ${reportCard}
             <div class="plan-card">
               <strong>年度会员 ¥600</strong>
@@ -336,10 +336,18 @@
       .then(async (response) => {
         const data = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(data.detail || "支付配置接口异常。");
-        if (data.missing && data.missing.length) throw new Error(`支付配置缺少：${data.missing.join(", ")}`);
-        return data.config || {};
+        return { ...(data.config || {}), __missing: data.missing || [] };
       });
     return paddleConfigPromise;
+  }
+
+  async function paymentReady(workerUrl) {
+    try {
+      const config = await fetchPaddleConfig(workerUrl);
+      return !(config.__missing && config.__missing.length);
+    } catch (_error) {
+      return false;
+    }
   }
 
   function loadPaddleScript() {
@@ -365,6 +373,9 @@
     paddleLoadPromise = Promise.all([fetchPaddleConfig(workerUrl), loadPaddleScript()]).then(([config]) => {
       const paddle = windowPaddle();
       if (!paddle) throw new Error("Paddle.js 未就绪。");
+      if (config.__missing && config.__missing.length) {
+        throw new Error("支付功能还没有配置完成。");
+      }
       if (config.PADDLE_ENV === "sandbox" && paddle.Environment && paddle.Environment.set) {
         paddle.Environment.set("sandbox");
       }
@@ -459,6 +470,7 @@
     const buyReport = document.getElementById("accountBuyReport");
     const buyAnnual = document.getElementById("accountBuyAnnual");
     const status = document.getElementById("accountModalStatus");
+    const planGrid = document.getElementById("accountPlanGrid");
     let mode = "login";
     let captchaToken = "";
 
@@ -475,7 +487,7 @@
       if (signedIn) {
         document.getElementById("accountName").textContent = authUserLabel(session);
         document.getElementById("accountEmailText").textContent = session.user.email || "";
-        setStatus("已登录，支付会绑定到当前账号。", "ok");
+        setStatus("已登录。", "ok");
         fetch(`${workerUrl}/entitlement`, { cache: "no-store", headers: authHeaders() })
           .then((response) => response.json())
           .then((data) => {
@@ -489,6 +501,10 @@
         captchaToken = "";
         loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; });
       }
+      paymentReady(workerUrl).then((ready) => {
+        if (planGrid) planGrid.hidden = !ready;
+        if (!ready && !signedIn) setStatus("付费功能正在配置中，暂时请使用报告密码或发货链接下载。");
+      });
     }
 
     function setMode(nextMode) {
@@ -1227,14 +1243,14 @@
 
   function accountAccessMarkup() {
     return `
-      <section class="account-access" id="accountAccess">
+      <section class="account-access" id="accountAccess" hidden>
         <h3>Account access</h3>
-        <p class="subtle">登录后可购买单篇报告，或开通年度会员下载大部分可用报告。</p>
+        <p class="subtle" id="accountAccessHint">登录后可查看账号下载权限。</p>
         <div class="account-access-actions">
           <button class="secondary-button" id="openAccountPanel" type="button">登录 / 账号</button>
           <button class="primary" id="accountDownloadReport" type="button" hidden>会员下载</button>
-          <button class="secondary-button" id="buySingleReport" type="button">单篇 ¥20</button>
-          <button class="secondary-button" id="buyAnnualPlan" type="button">年度 ¥600</button>
+          <button class="secondary-button" id="buySingleReport" type="button" hidden>单篇 ¥20</button>
+          <button class="secondary-button" id="buyAnnualPlan" type="button" hidden>年度 ¥600</button>
         </div>
         <div id="accountAccessStatus" class="status-line" aria-live="polite"></div>
       </section>
@@ -1286,8 +1302,10 @@
     const accountDownload = document.getElementById("accountDownloadReport");
     const buySingle = document.getElementById("buySingleReport");
     const buyAnnual = document.getElementById("buyAnnualPlan");
+    const hint = document.getElementById("accountAccessHint");
     const status = document.getElementById("accountAccessStatus");
     const context = { item, source };
+    let canPay = false;
 
     function statusTarget(text, kind) {
       setLineStatus(status, text, kind);
@@ -1295,9 +1313,17 @@
 
     async function refresh() {
       const session = loadAuthSession();
+      canPay = await paymentReady(workerUrl);
+      panel.hidden = !session && !canPay;
+      buyAnnual.hidden = !canPay;
+      buySingle.hidden = !canPay;
+      hint.textContent = canPay
+        ? "登录后可购买单篇报告，或开通年度会员下载大部分可用报告。"
+        : "登录后可查看账号下载权限。";
       accountDownload.hidden = true;
       if (!session) {
-        statusTarget("登录后可购买单篇报告或开通年度会员。");
+        if (canPay) statusTarget("登录后可购买单篇报告或开通年度会员。");
+        else statusTarget("");
         return;
       }
       statusTarget("正在读取账号权益…");
@@ -1308,8 +1334,8 @@
           buySingle.hidden = true;
           statusTarget("当前账号已解锁此报告，可直接下载。", "ok");
         } else {
-          buySingle.hidden = false;
-          statusTarget("当前账号尚未解锁此报告。");
+          buySingle.hidden = !canPay;
+          statusTarget(canPay ? "当前账号尚未解锁此报告。" : "付费功能正在配置中，暂时请使用报告密码或发货链接下载。");
         }
       } catch (error) {
         statusTarget(error.message || "账号状态读取失败。", "error");
@@ -1698,14 +1724,22 @@
 
   function pollExternalDetail(workerUrl, id, password, statusTarget, onReady) {
     let attempts = 0;
+    const maxAttempts = 40; // 10 minutes at 15s intervals
+    const startedAt = Date.now();
+    statusTarget("报告正在准备，页面每 15 秒自动检测一次。准备好后会自动开始下载。");
     const timer = window.setInterval(async () => {
       attempts += 1;
-      if (attempts > 12) {
+      const elapsedSeconds = Math.max(15, Math.round((Date.now() - startedAt) / 1000));
+      const elapsedText = elapsedSeconds >= 60
+        ? `${Math.floor(elapsedSeconds / 60)} 分 ${elapsedSeconds % 60} 秒`
+        : `${elapsedSeconds} 秒`;
+      if (attempts > maxAttempts) {
         window.clearInterval(timer);
-        statusTarget("报告仍在准备中。请保留这个页面，稍后再次点击下载。", "error");
+        statusTarget("报告准备时间超过预期。请保留这个页面，稍后再次点击下载；如果多次失败请联系 macroGate。", "error");
         return;
       }
       try {
+        statusTarget(`报告仍在准备中，已等待 ${elapsedText}。页面会继续自动检测。`);
         const response = await fetch(`${workerUrl}/external/status?id=${encodeURIComponent(id)}`, {
           cache: "no-store",
         });
@@ -1724,7 +1758,7 @@
   async function downloadExternalWithAccount(workerUrl, item, statusTarget) {
     const result = await fetchExternalPdf(workerUrl, item.id, "", statusTarget, { auth: true });
     if (result.pending) {
-      statusTarget("报告正在准备，通常约 3 分钟。页面会自动等待，准备好后开始下载。");
+      statusTarget("报告正在准备，通常约 3-8 分钟。页面会自动检测，准备好后开始下载。");
       pollExternalDetail(workerUrl, item.id, "", statusTarget, () => (
         downloadExternalWithAccount(workerUrl, item, statusTarget)
       ));
@@ -1769,7 +1803,7 @@
           <button class="primary" type="submit">Download</button>
         </div>
         <div class="external-wait" id="externalDetailWait" hidden>
-          报告正在准备，通常约 3 分钟。这个页面会自动检测，文件准备好后会开始下载。
+          报告正在准备，通常约 3-8 分钟。这个页面会自动检测，文件准备好后会开始下载。
         </div>
         <div id="externalDetailStatus" class="status-line" aria-live="polite"></div>
       </form>
@@ -1802,7 +1836,7 @@
     function setStatus(text, kind) {
       status.className = kind ? `status-line ${kind}` : "status-line";
       status.textContent = text || "";
-      wait.hidden = !/准备|3 分钟|自动检测/.test(String(text || ""));
+      wait.hidden = !/准备|等待|自动检测/.test(String(text || ""));
     }
 
     function refreshAdmin() {
@@ -1817,10 +1851,10 @@
       }
       button.disabled = true;
       try {
-        const result = await fetchExternalPdf(workerUrl, item.id, input.value, setStatus);
+          const result = await fetchExternalPdf(workerUrl, item.id, input.value, setStatus);
         if (result.pending) {
           setRememberedDownloadPassword(input.value);
-          setStatus("报告正在准备，通常约 3 分钟。页面会自动等待，准备好后开始下载。");
+          setStatus("报告正在准备，通常约 3-8 分钟。页面会自动检测，准备好后开始下载。");
           pollExternalDetail(workerUrl, item.id, input.value, setStatus, () => submitDownload());
         }
       } catch (error) {

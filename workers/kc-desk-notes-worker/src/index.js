@@ -1441,7 +1441,7 @@ async function handleExternalPdf(request, env) {
   await triggerExternalGrab(env, id);
   return jsonResponse(request, env, 202, {
     status: "pending",
-    wait_seconds: 180,
+    wait_seconds: 480,
   });
 }
 
