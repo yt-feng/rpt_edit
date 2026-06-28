@@ -1,0 +1,160 @@
+{
+  "date_folder": "260628",
+  "source": "xhs_notes/dropbox",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 7,
+  "selected_count": 7,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多国际信源汇编&评论，扫码交流，每日更新~40页，汇总国际层面主流叙事&多种口径的数据，便于观测边际变化。星球汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询等朋友，期待交流",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit80eDCt1Z6FEZx9Zny-2ntsb6ug2ruYy4Kz7W70_HlDDi",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 7,
+      "payload_bytes": 90851,
+      "payload": "wechat_drafts/xhs_notes/260628/draft_payload_01.json",
+      "titles": [
+        "高盛：印度30年国债的买入窗口已经打开",
+        "摩根士丹利：美联储今年加息的“数据路线图”已经画好",
+        "摩根士丹利：美元兑日元接近公允价值，但真正的机会在“跌出来的买点”",
+        "摩根大通：人民币正在成为全球波动中的“安全锚”",
+        "高盛：工业利润环比转负，但这不是最值得关注的事",
+        "摩根士丹利：能源股跌过头了，但真正的机会不在油价反弹",
+        "野村：AI Agent正引爆一场被低估的元器件短缺"
+      ],
+      "wechat_titles": [
+        "高盛：印度30年国债的买入窗口已经打开",
+        "摩根士丹利：美联储今年加息的“数据路线图”已经画好",
+        "摩根士丹利：美元兑日元接近公允价值，但真正的机会在“跌出来的买点”",
+        "摩根大通：人民币正在成为全球波动中的“安全锚”",
+        "高盛：工业利润环比转负，但这不是最值得关注的事",
+        "摩根士丹利：能源股跌过头了，但真正的机会不在油价反弹",
+        "野村：AI Agent正引爆一场被低估的元器件短缺"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 7,
+        "expected_article_count": 7,
+        "matches_expected_article_count": true,
+        "titles": [
+          "é«çï¼å°åº¦30å¹´å½åºçä¹°å ¥çªå£å·²ç»æå¼",
+          "æ©æ ¹å£«ä¸¹å©ï¼ç¾èå¨ä»å¹´å æ¯çâæ°æ®è·¯çº¿å¾âå·²ç»ç»å¥½",
+          "æ©æ ¹å£«ä¸¹å©ï¼ç¾å å æ¥å æ¥è¿å ¬å ä»·å¼ï¼ä½çæ­£çæºä¼å¨âè·åºæ¥çä¹°ç¹â",
+          "æ©æ ¹å¤§éï¼äººæ°å¸æ­£å¨æä¸ºå ¨çæ³¢å¨ä¸­çâå®å ¨éâ",
+          "é«çï¼å·¥ä¸å©æ¶¦ç¯æ¯è½¬è´ï¼ä½è¿ä¸æ¯æå¼å¾å ³æ³¨çäº",
+          "æ©æ ¹å£«ä¸¹å©ï¼è½æºè¡è·è¿å¤´äºï¼ä½çæ­£çæºä¼ä¸å¨æ²¹ä»·åå¼¹",
+          "éæï¼AI Agentæ­£å¼çä¸åºè¢«ä½ä¼°çå å¨ä»¶ç­ç¼º"
+        ],
+        "create_time": 1782685425,
+        "update_time": 1782685426
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "高盛：印度30年国债的买入窗口已经打开",
+      "wechat_title": "高盛：印度30年国债的买入窗口已经打开",
+      "institution_name": "高盛",
+      "source_report_name": "01-GS-EM ASIA FX RATES VIEWS-We recommend going long INR 30Y bonds on improving macro backdrop- recent RBI FX measures and likely Global Agg Index inclusion-260627",
+      "report_dir": "xhs_notes/dropbox/260628/shard_0/0001-01-Goldman-Sachs-EM-ASIA-FX-RATES-VIEWS-We-recommend-going-long-INR-30Y-bon",
+      "content_chars": 8500,
+      "content_bytes": 12266,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260628/shard_0/0001-01-Goldman-Sachs-EM-ASIA-FX-RATES-VIEWS-We-recommend-going-long-INR-30Y-bon/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：美联储今年加息的“数据路线图”已经画好",
+      "wechat_title": "摩根士丹利：美联储今年加息的“数据路线图”已经画好",
+      "institution_name": "摩根斯坦利",
+      "source_report_name": "02-MS-US Economics Weekly-The data road map to rate hikes-260626",
+      "report_dir": "xhs_notes/dropbox/260628/shard_0/0002-02-Morgan-Stanley-US-Economics-Weekly-The-data-road-map-to-rate-hikes-26062",
+      "content_chars": 9751,
+      "content_bytes": 13487,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260628/shard_0/0002-02-Morgan-Stanley-US-Economics-Weekly-The-data-road-map-to-rate-hikes-26062/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：美元兑日元接近公允价值，但真正的机会在“跌出来的买点”",
+      "wechat_title": "摩根士丹利：美元兑日元接近公允价值，但真正的机会在“跌出来的买点”",
+      "institution_name": "摩根斯坦利",
+      "source_report_name": "03-MS-G10 FX Strategy-Waiting for a Dip-Buying Opportunity-260626",
+      "report_dir": "xhs_notes/dropbox/260628/shard_0/0003-03-Morgan-Stanley-G10-FX-Strategy-Waiting-for-a-Dip-Buying-Opportunity-2606",
+      "content_chars": 7758,
+      "content_bytes": 11780,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260628/shard_0/0003-03-Morgan-Stanley-G10-FX-Strategy-Waiting-for-a-Dip-Buying-Opportunity-2606/assets/cover.png"
+    },
+    {
+      "title": "摩根大通：人民币正在成为全球波动中的“安全锚”",
+      "wechat_title": "摩根大通：人民币正在成为全球波动中的“安全锚”",
+      "institution_name": "摩根大通",
+      "source_report_name": "04-JPM-China Local Markets 2026 MidYear Outlook-Safer harbor- calmer waters-260626",
+      "report_dir": "xhs_notes/dropbox/260628/shard_0/0004-04-J.P.-Morgan-China-Local-Markets-2026-MidYear-Outlook-Safer-harbor--calme",
+      "content_chars": 10031,
+      "content_bytes": 13875,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260628/shard_0/0004-04-J.P.-Morgan-China-Local-Markets-2026-MidYear-Outlook-Safer-harbor--calme/assets/cover.png"
+    },
+    {
+      "title": "高盛：工业利润环比转负，但这不是最值得关注的事",
+      "wechat_title": "高盛：工业利润环比转负，但这不是最值得关注的事",
+      "institution_name": "高盛",
+      "source_report_name": "05-GS-China- Industrial profits fell sequentially in May-260627",
+      "report_dir": "xhs_notes/dropbox/260628/shard_0/0005-05-Goldman-Sachs-China--Industrial-profits-fell-sequentially-in-May-260627",
+      "content_chars": 9117,
+      "content_bytes": 12871,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260628/shard_0/0005-05-Goldman-Sachs-China--Industrial-profits-fell-sequentially-in-May-260627/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：能源股跌过头了，但真正的机会不在油价反弹",
+      "wechat_title": "摩根士丹利：能源股跌过头了，但真正的机会不在油价反弹",
+      "institution_name": "摩根斯坦利",
+      "source_report_name": "06-MS-Energy-Refreshing the Price Deck-260626",
+      "report_dir": "xhs_notes/dropbox/260628/shard_1/0001-06-Morgan-Stanley-Energy-Refreshing-the-Price-Deck-260626",
+      "content_chars": 8928,
+      "content_bytes": 12612,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260628/shard_1/0001-06-Morgan-Stanley-Energy-Refreshing-the-Price-Deck-260626/assets/cover.png"
+    },
+    {
+      "title": "野村：AI Agent正引爆一场被低估的元器件短缺",
+      "wechat_title": "野村：AI Agent正引爆一场被低估的元器件短缺",
+      "institution_name": "野村",
+      "source_report_name": "07-NOM-NOM Tech Monthly- June 2026-260626",
+      "report_dir": "xhs_notes/dropbox/260628/shard_1/0002-07-Nomura-Nomura-Tech-Monthly--June-2026-260626",
+      "content_chars": 7154,
+      "content_bytes": 10624,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260628/shard_1/0002-07-Nomura-Nomura-Tech-Monthly--June-2026-260626/assets/cover.png"
+    }
+  ]
+}
