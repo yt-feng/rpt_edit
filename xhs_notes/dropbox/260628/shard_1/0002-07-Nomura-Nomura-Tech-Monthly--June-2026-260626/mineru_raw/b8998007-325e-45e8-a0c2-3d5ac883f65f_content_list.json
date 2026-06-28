@@ -1,0 +1,3885 @@
+[
+    {
+        "type": "text",
+        "text": "EQUITY: JAPAN ELECTRONICS",
+        "bbox": [
+            67,
+            155,
+            253,
+            168
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sector view",
+        "bbox": [
+            67,
+            191,
+            186,
+            207
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Strengthening FDE capabilities to spur uptake of physical AI",
+        "bbox": [
+            65,
+            233,
+            564,
+            251
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Lead times lengthening even for analog products owing to rising demand from data centers",
+        "bbox": [
+            65,
+            271,
+            675,
+            296
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Advances in AI models continue to outpace system deployment, but even so major IT companies and private equity funds have been strengthening their forward deployed engineering (FDE) capabilities to spur uptake of AI agents. Japanese IT majors are targeting profit growth of over 15% on a CAGR basis in their medium-term business plans, and we see prospects for faster profit growth via increased uptake of AI agents. We think AI represents substantial business opportunities rather than a threat. Shipments of servers and networking equipment for AI have also been rising sharply as companies increase their supply capacity, and demand for conventional servers has been increasing substantially too. The increase in demand has caused supply-demand conditions to tighten, first for GPUs and HBM during the AI learning phase, spreading to ASICs and SSDs during the inference phase, and now to CPUs, analog semiconductors, and MLCCs in the AI agent phase.",
+        "bbox": [
+            63,
+            296,
+            677,
+            470
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Memory prices: NAND contract price momentum remains strong",
+        "text_level": 2,
+        "bbox": [
+            65,
+            473,
+            537,
+            488
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Commodity DRAM prices were solid in May, with the end-May spot price for DDR5 DRAM up 3.1% m-m at \\$26.3/GB and the contract price up +2.0% at \\$12.8/GB. The spot price of 512Gb TLC NAND remained high in May at \\$0.36/GB (flat m-m). Monthly data from Taiwanese memory module manufacturer Adata suggests that NAND prices may have been rising faster than DRAM prices of late. Since the start of June, share prices of memory-related stocks have been negatively affected by news reports about a letter sent to the White House by memory customers and Nvidia's plan to halve LPDDR5X capacity per rack for its next-generation Vera Rubin systems. However, we do not see any signs of a slowdown in demand for these products, and if anything see evidence of ongoing structural supply shortages, on which basis we think a share price correction would represent a good entry point.",
+        "bbox": [
+            65,
+            486,
+            675,
+            646
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Special feature (Vol. 91): FDEs contributing to speedier deployment of AI agents\n\nFDEs have been attracting attention of late. AI companies station FDEs at customer premises to oversee deployment of proprietary AI agents. When generative AI first appeared, prompt engineers were the focus of attention. With the growing uptake of AI agents, though, customers' needs have changed and FDEs are in demand. FDEs embedded at client companies communicate directly with clients about the challenges they face, moving swiftly to address those challenges and expedite AI deployment. AI companies then take the expertise thus gleaned and integrate it into their products, facilitating lateral expansion of service offerings. Hitachi plans to bolster its Physical AI FDE Team to facilitate integration of its IT technology (AI technology, security, and data infrastructure) and OT (operational technology: domain expertise). Fujitsu similarly plans to bolster its team of FDEs with specialist knowledge of its proprietary Takane AI model and Kozuchi AI platform.",
+        "bbox": [
+            63,
+            649,
+            665,
+            839
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Research Analysts",
+        "text_level": 2,
+        "bbox": [
+            695,
+            179,
+            845,
+            195
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Masaya Yamasaki, CFA - NSC\nmasaya.yamasaki@NOM.com\n+81 3 6703 1190",
+        "bbox": [
+            695,
+            213,
+            907,
+            252
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Manabu Akizuki - NSC\nmanabu.akizuki@NOM.com\n+81 3 6703 1185",
+        "bbox": [
+            695,
+            256,
+            875,
+            296
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Yu Okazaki - NSC\nyu.okazaki@NOM.com\n+81 3 6703 1210",
+        "bbox": [
+            695,
+            299,
+            847,
+            339
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Atsushi Yoshioka - NSC\natsushi.yoshioka@NOM.com\n+81 3 6703 1176",
+        "bbox": [
+            695,
+            342,
+            878,
+            383
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Virginia Wang - NSC\nvirginia.wang@NOM.com\n+81 3 6703 1215",
+        "bbox": [
+            695,
+            385,
+            862,
+            426
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Kosuke Hatanaka - NSC\nkosuke.hatanaka@NOM.com\n+81 3 6703 1127",
+        "bbox": [
+            695,
+            428,
+            882,
+            469
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Japan chemicals & textiles",
+        "bbox": [
+            695,
+            472,
+            892,
+            486
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Daiki Ban - NSC\ndaiki.ban@NOM.com\n+81 3 6703 1124",
+        "bbox": [
+            695,
+            486,
+            838,
+            527
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Shigeki Okazaki - NSC\nshigeki.okazaki@NOM.com\n+81 3 6703 1170",
+        "bbox": [
+            695,
+            530,
+            872,
+            571
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Taiwan Technology",
+        "bbox": [
+            695,
+            574,
+            843,
+            589
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Aaron Jeng, CFA - NITB\naaron.jeng@NOM.com\n+886(2) 21769962",
+        "bbox": [
+            695,
+            589,
+            868,
+            629
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Asia Technology",
+        "text_level": 2,
+        "bbox": [
+            695,
+            631,
+            823,
+            647
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "CW Chung - NIHK\ncwchung@NOM.com\n+852 2252 6075",
+        "bbox": [
+            695,
+            647,
+            836,
+            687
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Japanese version published on 17 June 2026",
+        "bbox": [
+            690,
+            883,
+            954,
+            913
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "NOM",
+        "bbox": [
+            67,
+            22,
+            295,
+            58
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "",
+        "bbox": [
+            672,
+            0,
+            952,
+            108
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "NOM Tech Monthly: June 2026",
+        "bbox": [
+            67,
+            118,
+            475,
+            141
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Global Markets Research",
+        "bbox": [
+            739,
+            108,
+            952,
+            125
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            833,
+            127,
+            952,
+            144
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See Appendix A-1 for analyst certification, important disclosures and the status of non-US analysts.",
+        "bbox": [
+            65,
+            973,
+            808,
+            990
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Table of contests",
+        "text_level": 2,
+        "bbox": [
+            68,
+            42,
+            302,
+            64
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Tech sector overview.... 3\nMonthly global semiconductor/electronic parts shipments.... 9\nSPE.... 17\nSemiconductor & display materials.... 20\nSpecial feature (Vol. 91): FDEs contributing to speedier deployment of AI agents.... 25\nShare price performance chart for select companies.... 27\nAppendix A-1.... 30",
+        "bbox": [
+            80,
+            93,
+            915,
+            220
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            912,
+            954,
+            924,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Tech sector overview",
+        "text_level": 2,
+        "bbox": [
+            68,
+            47,
+            359,
+            67
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Lead times lengthening even for analog products owing to rising demand from data centers",
+        "bbox": [
+            65,
+            74,
+            673,
+            100
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Advances in AI models continue to outpace system deployment, but even so major IT companies and private equity funds have been strengthening their FDE capabilities to spur uptake of AI agents. Japanese IT majors are targeting profit growth of over 15% on a CAGR basis in their medium-term business plans, and we see prospects for faster profit growth via increased uptake of AI agents. We think AI represents substantial business opportunities rather than a threat. Shipments of servers and networking equipment for AI have also been rising sharply as companies increase their supply capacity, and demand for conventional servers has been increasing substantially too. The increase in demand has caused supply-demand conditions to tighten, first for GPUs and HBM during the AI learning phase, spreading to ASICs and SSDs during the inference phase, and now to CPUs, analog semiconductors, and MLCCs in the AI agent phase.",
+        "bbox": [
+            65,
+            106,
+            673,
+            263
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Demand for Al-related semiconductors remains strong",
+        "text_level": 2,
+        "bbox": [
+            65,
+            267,
+            468,
+            280
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We have seen brisk growth in demand for Nvidia's GPUs and custom AI accelerators from Broadcom and Marvell Technology. Results for Feb–Apr also showed a 92% y-y (21% q-q) rise in data center-related sales at Nvidia, including a sharp 115% (12%) rise in sales to hyperscalers. Management expects sales to continue rising strongly, and is guiding for May–Jul companywide sales of \\$91bn (up 11% q-q). Broadcom also reported Feb–Apr semiconductor sales of \\$10.8bn (up 143% y-y), slightly ahead of guidance, and is projecting May–Jul sales of \\$20.5bn (up 124%). Marvell Technology reported Feb–Apr sales of \\$2,418mn (up 28% y-y), again slightly ahead of guidance. The company had said it was expecting sales growth of at least 25% y-y in full-year 27/1 in December, but hiked this to at least 40% three months later, and again to 50% when it released its latest results. It also hiked its outlook for 28/1 sales growth from 40% to nearly 50% and again to 55% at the same time.",
+        "bbox": [
+            65,
+            286,
+            673,
+            458
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/50d3fd3a8dbfbb0c73601202e5bb796df35b92bc9176cdf7341fa993a8f7ac41.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 1: Data center-related sales at major semiconductor companies"
+        ],
+        "chart_footnote": [
+            "Source: NOM, based on data disclosed by each company"
+        ],
+        "bbox": [
+            78,
+            524,
+            670,
+            763
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            912,
+            954,
+            924,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3dc20011aa139619b7cbe79639ff9a1a3e985a25e4250912a8db93432dfce5cf.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 2: Global semiconductor shipment value, domestic inventory ratio for electronic parts & devices, and sector share prices"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            80,
+            80,
+            870,
+            203
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/118ecf4e96a21f91fdd619f055bd7a0785e546711f4d5bdd1082c48e5333fa32.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            80,
+            195,
+            926,
+            347
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9e8b0226e69e1f9e29c73e70a0a1589659c6f45b3ebde6ebf69cbb22a1c6fffa.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            87,
+            340,
+            929,
+            473
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/efc24b2ec62e292d88a0220df6a98d53af96db2267d1571ffb4b409932fa85e7.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: (1) Electronic parts & devices inventory ratio excludes impact of cathode ray tubes (CRTs). (2) Electronics, ICT, and machinery data shows performance versus the TOPIX based on industry share price indices covering all stocks listed on TSE-1.",
+            "Source: NOM, based on WSTS data, METI's Indices of Industrial Production, and other materials"
+        ],
+        "bbox": [
+            85,
+            467,
+            929,
+            581
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            912,
+            954,
+            924,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3531653045d4e52e813d2730f3245a660e82f80e007aed3176024a9e64baa797.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 3: Market cap versus the TOPIX by subsector in 2025"
+        ],
+        "chart_footnote": [
+            "Note: Shows relative share price for combined market cap of major companies covered by NOM in each sector.\nSource: NOM"
+        ],
+        "bbox": [
+            75,
+            81,
+            477,
+            345
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/01e3bc3ffb2ec8ab1a401055c6695353304d3d491fc472d6645cefa4def2c1e4.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 4: Market cap versus the TOPIX by subsector in 2026"
+        ],
+        "chart_footnote": [
+            "Note: Shows relative share price for combined market cap of major companies covered by NOM in each sector.\nSource: NOM"
+        ],
+        "bbox": [
+            499,
+            81,
+            900,
+            346
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Markets other than AI also heading toward recovery, but gap with AI growing",
+        "text_level": 2,
+        "bbox": [
+            67,
+            391,
+            626,
+            406
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Anthropic, OpenAI, Google, and others have continued to make advances in AI agents, and uptake in white-collar parts of the B2B market has been gathering pace. While rapid advancements have been made in AI models, deployment in client systems has failed to keep pace. In view of this, we have seen moves to step up rollout at large firms via collaboration with conventional system integration and SaaS companies and at SMEs via involvement from private equity funds. Japanese IT majors have also adopted a multi-AI agent strategy of using third-party products for commodity AI models and in-house-developed products for industry-specific AI. We think investment in AI servers and related data centers will remain brisk as long as competition between AI agents continues in these B2B markets. Tight supply-demand for many components is leading to price hikes, which is increasing capex as well. In the past, tight supply-demand created a trade-off in which higher component costs suppressed PC/smartphone demand via price elasticity. In contrast, in the AI server market, price hikes are actively accepted to secure greater procurement volumes, which in turn encourages more aggressive capital investment by suppliers. Thus, while the cyclical nature of the business model in which prices fluctuate in line with the supply-demand balance remains unchanged, there is a possibility that supply-demand conditions for various products will remain tight for longer than previously. Meanwhile, price-sensitive B2C markets such as PCs/smartphones may see demand shrink after preemptive buying, a negative impact on the price-sensitive mass market zone from price hikes, and potential PC supply contraction on CPU shortages.",
+        "bbox": [
+            65,
+            410,
+            673,
+            695
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Industrial electronics: Ongoing solid infrastructure-related demand amid tight memory supply-demand",
+        "text_level": 2,
+        "bbox": [
+            65,
+            700,
+            633,
+            725
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "While the materialization of geopolitical risks has raised uncertainty over the macroeconomy, we see little direct impact from the Middle East conflict at industrial electronics majors and semiconductor producers, thanks in part to business portfolio reforms, and expect ongoing growth in earnings on continued strong investment in data centers, especially for AI, and electric power infrastructure. Industrial electronics majors generated record-high profits in 26/3 and we expect earnings to continue to grow from 27/3 onwards. We think the era of full-fledged deployment of AI agents will provide large tailwinds for major IT firms with AI platforms, system architecture, and domain knowledge, leading to growth in their own services. We recommend: Kioxia Holdings, which stands to benefit from growth in AI-related demand; Hitachi, where HMAX services using physical AI are likely to start making a full-scale contribution; Mitsubishi Electric, on strong performance in infrastructure-related businesses such as defense; Fujitsu, on progress with the transformation of its business model in the direction of Uvance and modernization; Fuji Electric, on strong performance in power supplies for data centers and energy management; and NEC, on growth driven by defense and BluStellar.",
+        "bbox": [
+            65,
+            730,
+            677,
+            946
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            912,
+            954,
+            924,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Electronic parts: Focus on new products for AI data centers",
+        "text_level": 2,
+        "bbox": [
+            67,
+            40,
+            504,
+            54
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The 10 major Japanese electronic parts suppliers under our coverage generated aggregate sales of ¥2,862.6bn (up 12.8% y-y) and operating profits of ¥269.8bn (up 66.2%) in Jan–Mar 2026. Sales were 5.3% higher and operating profits were 9.5% higher than our pre-release estimates of ¥2,716.2bn and ¥245.9bn. The main factor behind the overshoot in operating profits was better-than-expected sales. By application, there was strong growth for data center and general industrial applications, and strong demand for high-end automotive, smartphone, and wearable applications. We estimate that yen depreciation buoyed sales by 3.5ppt and operating profits by 4.1ppt in Jan–Mar. Excluding forex effects and business divestments, we estimate that sales rose 10.3%. We think a number of companies will benefit from sustained positive impacts from new AI-related products. They include Hirose Electric's probe application products, Murata Manufacturing's advanced compact, high-capacitance capacitors, TDK's battery backup units (BBUs) for 400V/800V data centers, Ibiden's EMIB, and Niterra's electrostatic chucks for ultra-low-temperature etching.",
+        "bbox": [
+            65,
+            60,
+            673,
+            258
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Consumer electronics: We recommend Sony Group, Fujifilm Holdings, Canon",
+        "text_level": 2,
+        "bbox": [
+            67,
+            263,
+            631,
+            277
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Although the consumer electronics industry is expected to face cost increases due to surging memory prices and the impact of conditions in the Middle East, this has not yet led to production halts caused by supply shortages. In addition to companies taking a proactive stance on passing higher costs on to prices, there are also favorable factors such as the positive impact of a weaker yen and lower US tariff rates, on which basis we expect solid earnings at sector companies. On the demand side, demand related to AI and data centers has remained buoyant, while sales of hobby-oriented products such as cameras and watches have been strong, and even the previously sluggish musical instrument segment is showing signs of bottoming out. In sectors with many diversified companies, we still think it is important to closely examine each company's business portfolio strategy. We recommend: Fujifilm Holdings, which has been developing its business portfolio strategy based on proprietary technologies it has built up in photographic film; Sony Group, which has been reinforcing its position as a platform provider within the entertainment industry; and Canon on the prospect of stable cash generation from printers and cameras.",
+        "bbox": [
+            65,
+            283,
+            663,
+            497
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "SPE: We see near-term upside for front-end equipment, look to qualitative changes too",
+        "text_level": 2,
+        "bbox": [
+            67,
+            501,
+            668,
+            524
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Demand for front-end SPE has been gathering pace, and we think investors are likely to carry on focusing on demand upside in the short term (2026 and 2027). We also get the impression that the nature of growth has been changing. (1) Improved earnings at advanced foundries other than TSMC has increased investment upside for 2027 onwards. (2) Memory producers have been drafting more concrete investment plans as their customers have been signing long-term contracts, and this has made it easier for SPE companies to come up with demand forecasts with longer-term horizons and given greater clarity to front-end equipment demand over the medium term. (3) Tokyo Electron, Japan's biggest front-end SPE producer, has become more confident about hiking prices to pass on cost increases, and while this does not necessarily apply to all Japanese front-end companies, we now see increased expectations for cost pass-throughs rather than inflation being a negative for the sector overall. Earnings at back-end SPE companies have also been improving, but we expect investors to carry on preferring front-end SPE. Among back-end SPE companies, we recommend Tokyo Seimitsu, where we expect margins to improve as its sales exposure to the high value-added AI market increases.",
+        "bbox": [
+            65,
+            530,
+            672,
+            745
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            921,
+            24
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            912,
+            954,
+            924,
+            965
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/38042ed0f13a9c6267b0e3753b8dec39ddf1c66827641edde33fa2d7ea80496e.jpg",
+        "table_caption": [
+            "Fig. 5: Developments at major overseas electronics companies (1)"
+        ],
+        "table_footnote": [
+            "Source: NOM; consensus forecasts are by Bloomberg, comments on business conditions are taken from results documents, etc"
+        ],
+        "table_body": "<table><tr><td>Results date</td><td>Ticker</td><td>Company</td><td>Segment</td><td>Development</td></tr><tr><td>5/13</td><td>CSCO US</td><td>Cisco Systems</td><td>Telecommunication equipment</td><td>Results announcementFY26 Q3 sales up 12% y-y to $15.8bn, slightly above the midpoint of the guidance range ($15.5bn). Non-GAAP gross margin of 66.0% and non-GAAP operating margin of 34.2%, versus guidance of 66.0% and 34.0%. Product orders up 35% y-y overall, with rises of 18% at enterprise segment, 27% at public segment, and 105% at cloud and telecom services segment. AI infrastructure orders from hyperscalers totaled $5.3bn on a Q1-3 basis, and company raised FY26 full-year guidance for orders from over $5bn to $9bn and for sales from $3bn to $4bn. Guiding for Q4 sales of $16.8bn, non-GAAP gross margin of 66.0%, and non-GAAP operating margin of 34.5%. Looking for price hikes to offset higher memory costs to some extent.</td></tr><tr><td>5/20</td><td>ADI US</td><td>Analog Devices</td><td>Semiconductors</td><td>Results announcementFY26 Q2 sales of $3.63bn (up 37% y-y, up 15% q-q), versus guidance of $3.5bn ±$0.1bn, adjusted gross margin of 73.0%, and adjusted operating margin of 49.0%. Sales up 20% q-q at industrial segment, up 8% at automotive segment, up 22% at communications &amp; data center segment, and flat at consumer electronics segment. Midpoints of Q3 guidance are $3.9bn for sales, 49.0% for non-GAAP operating margin, and 8% for q-q sales growth. Guiding for q-q sales growth of mid- to high-single digit growth at industrial segment, low- to mid-teen growth at communications &amp; data center segment, but a sales decline at the consumer segment.</td></tr><tr><td>5/20</td><td>NVDA US</td><td>NVIDIA</td><td>GPU/MPU</td><td>Results announcementFY27 Q1 sales up 85% y-y at $82.0bn (guidance: $78bn), non-GAAP gross margin of 75.0% (75.0%), and non-GAAP operating margin of 65.9%. Data center orders up 92% y-y and 21% q-q, with hyperscaler orders up 115% and 12% q-q, other orders up 74% and 31% q-q and edge orders up 29% y-y and 10% q-q. Q2 guidance calls for sales of $91.0bn and gross margin of 75.0%. It estimates CY26 CPU TAM of $200.0bn, with its share at just over $20bn.</td></tr><tr><td>5/27</td><td>HPQ US</td><td>HP</td><td>IT hardware/services</td><td>Results announcementFor Q2 (from Feb-Apr 2026), the company reported revenue growth of 9% y-y (up 6% in constant currency terms) and adjusted EPS of $0.86 (up 21%), versus the 27 May Bloomberg consensus forecasts of $14.0bn and $0.71 respectively. PC shipment volume fell 7% y-y. The company said that there had been some rush demand for commercial PCs. Printer shipment volumes were down 7% and consumable sales volumes were up 1% (flat y-y on a constant currency basis). The company is guiding for 26/10 adjusted EPS of $2.9–3.1 (previously $2.9–3.2). Price revisions helped sales at the personal systems segment to rise 10% y-y on a constant currency basis even though PC shipment volumes fell. Margins at the segment rose y-y, partly thanks to the use of strategic inventories, but the company said it expected them to deteriorate through Q4 as the boost from strategic inventories fades. The company still expects the hardware market to contract by low single digits in 2026 H2 and sales of consumables to also fall by low single digits on a constant currency basis. It said that while companies had been prioritizing investment in PCs recently, it expected a recovery in due course.</td></tr></table>",
+        "bbox": [
+            77,
+            100,
+            926,
+            523
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            921,
+            24
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            912,
+            954,
+            924,
+            966
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/6710fae5392a20c4b93976c0fac8c494075ccdc929bbf381d7f17fcd1b9fd695.jpg",
+        "table_caption": [
+            "Fig. 6: Developments at major overseas electronics companies (2)"
+        ],
+        "table_footnote": [
+            "Source: NOM; consensus forecasts are by Bloomberg, comments on business conditions are taken from results documents, etc"
+        ],
+        "table_body": "<table><tr><td>Results date</td><td>Ticker</td><td>Company</td><td>Segment</td><td>Development</td></tr><tr><td>5/27</td><td>MRVL US</td><td>Marvell Technology</td><td>Semiconductors for telecoms</td><td>Results announcementFY27 Q1 sales of $2.418bn (up 28% y-y, up 9% q-q), slightly above the midpoint of the guidance range of $2.4bn, and non-GAAP gross margin of 58.9% (58.75%). Data center sales of $1.83bn were up 27% y-y (up 11% q-q), with strong demand for custom XPUs, interconnects, and switches. Midpoints of Q2 sales guidance are $2.7bn (up 12% q-q) for sales and 58.75% for non-GAAP gross margin. FY27 data center sales growth guidance raised from over 25% y-y six months earlier and over 40% three months earlier to 50%, FY28 sales growth guidance raised from 40% and just under 50% to 55%.</td></tr><tr><td>5/28</td><td>DELL US</td><td>Dell Technologies</td><td>PC/IT hardware</td><td>Results announcementFY27 Q1 sales up 88% y-y at $43.8bn (guidance: $35.2bn), non-GAAP operating margin of 9.7%. Corporate PC sales up 18%. IT infrastructure sales up 181%, with an 8.6x increase in sales of AI servers. Sales of conventional servers and network equipment were up 92%. Midpoint of FY27 Q2 sales guidance is $44.5bn (up 50% y-y). Q1 AI server orders of $24.4bn, order backlog of $51.3bn, sales of $16.1bn. FY27 sales guidance raised sharply from $25bn in Q3 FY26 and $50bn in Q4 to $60bn (2.4x y-y the prior-year level). Also guiding for sales of conventional servers to rise 60% y-y.</td></tr><tr><td>6/1</td><td>HPE US</td><td>HP Enterprise</td><td>Servers</td><td>Results announcementFY26 Q2 sales up 40% y-y at $10.7bn (guidance: $9.6bn–10.0bn), non-GAAP operating margin of 13.3%, Juniper performed well even after merger, boosting networking sales overall. Server sales rose 33%, AI system orders were $2.1bn in Q2, and order backlog was $6.3bn (up $1.0bn). Q3 sales guidance is $11.5bn–12.1bn, with sales growth (reported basis) revised from 17–22% to 29–33% and sales growth (pro forma basis) revised from 5–10% to high-teens.</td></tr><tr><td>6/3</td><td>AVGO US</td><td>Broadcom</td><td>Semiconductors</td><td>Results announcementFY26 Q2 sales up 48% y-y to $22.2bn, in line with guidance of $22.0bn. Non-GAAP gross margin of 77% and non-GAAP operating margin of 67%. Semiconductor sales up 79%, breaking down as rise of 43% to $10.8bn for AI (versus guidance of $10.7bn), rise of 6% for non-AI, and rise of 9% to $7.2bn for infrastructure software. FY26 Q3 sales guidance of $29.4bn (up 84% y-y), including up 124% to $20.5bn for AI. Expects AI semiconductor sales to exceed $100.0bn in FY27.</td></tr><tr><td>6/11</td><td>ORCL US</td><td>Oracle</td><td>Software</td><td>Results announcementFY26 Q4 (Feb–Apr) sales up 21% y-y at $19.2bn (initial guidance was for 19–21% growth), and the operating margin of 32% (32% in Q3). Cloud sales up 47% (including 119% rise in the CPU &amp; GPU business), software sales down 2%, hardware sales up 9%, and services sales up 13%. Guiding for FY27 Q1 sales growth of 27–29% y-y (with cloud sales up 58–64%) and non-GAAP EPS growth of 16–19%. In FY26, net cash expenditure from capex was $48.0bn (excluding prepayments of around $8.0bn from customers), but the company plans to step up capex to around $70.0bn in FY27 (excluding prepayments of $20.0bn–25.0bn from customers). The company said it plans to raise around $40.0bn via both debt and equity in FY27.</td></tr></table>",
+        "bbox": [
+            77,
+            80,
+            926,
+            539
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            921,
+            24
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            912,
+            954,
+            924,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Monthly global semiconductor/electronic parts shipments",
+        "text_level": 1,
+        "bbox": [
+            67,
+            46,
+            611,
+            93
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Analysis of preliminary April 2026 WSTS statistics",
+        "bbox": [
+            65,
+            99,
+            554,
+            117
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "April WSTS semiconductor shipment value up 106.3% y-y",
+        "bbox": [
+            65,
+            119,
+            487,
+            135
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "SIA/WSTS data for April show a 106.3% y-y rise in global semiconductor shipment value (three-month moving average up 94.0%). AI and data center-related demand has remained strong, and sales growth has been particularly strong for memory, partly thanks to price hikes caused by supply shortages. Generative AI has continued to broadly boost demand, with rising demand not only for GPUs and ASICs designed to boost computing power, but also for advanced logic devices designed to boost performance per unit of power consumption. Shipment value has also been boosted by rising prices for commodity DRAM, HBM, and NAND flash as a result of tighter supply-demand. The spread of AI agents has resulted in a sharp rise in demand for CPUs for AI servers, leading to supply shortages for PC applications. The recovery in areas other than AI and data centers has also been solid thanks to the end of inventory corrections. However, shipment volumes of PCs and home appliances are increasingly likely to fall because of tighter supply-demand conditions for CPUs as well as concerns about memory shortages. In addition to difficulties in securing procurement volumes, it is becoming harder for companies to pass higher costs on to consumer prices, and we think this might have a broader impact than previous concerns about tariffs in 2025. Conditions for network equipment and conventional servers have also been increasingly becoming overheated as customers in enterprise areas have been bringing forward orders in response to rising memory prices and concerns about supply shortages. Growth in the Americas looks to have accelerated, particularly for AI applications, and shipments to the Americas continued to rise strongly with a rise of 116.1% y-y in April on a three-month moving average basis. Shipments in Europe turned upward for the first time in 16 months in May 2025, rising 5.0%, and have remained on an upward trend since, rising 55.3% in April.",
+        "bbox": [
+            65,
+            140,
+            672,
+            470
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6dad4ad2ca178e10e11344c74c6678c742b5f1d11229b70afbf6cec6002e33a3.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 7: Global semiconductor shipments by region (three-month moving average)"
+        ],
+        "chart_footnote": [
+            "Note: Percentage figures at right of graph are the most recent preliminary figures. Source: NOM, based on Semiconductor Industry Association (SIA) data"
+        ],
+        "bbox": [
+            77,
+            536,
+            808,
+            838
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            912,
+            954,
+            924,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fbc849376ce3ca5a809f20479883f71ec9310334b79d276b42f132df08ab4f46.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 8: Industrial general-use electrical equipment: y-y shipment value\nShipment data for Japanese manufacturers"
+        ],
+        "chart_footnote": [
+            "Source: NOM, based on Japan Electrical Manufacturers' Association data"
+        ],
+        "bbox": [
+            80,
+            77,
+            594,
+            353
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Japanese semiconductor shipments and inventories",
+        "text_level": 2,
+        "bbox": [
+            67,
+            397,
+            576,
+            413
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Japanese semiconductor shipments up 8.1% y-y in April 2026",
+        "text_level": 2,
+        "bbox": [
+            67,
+            416,
+            517,
+            431
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "According to METI's industrial production statistics, the value of semiconductor shipments in Japan was up 8.1% y-y in April 2026 (down 10.8% in March 2026) (Figure 9). Production rose 3.6% (down 14.6%), inventory fell 2.3% (up 4.5%), and the inventory ratio rose 8.9% (up 29.4%). Inventories of discrete semiconductors (excluding rectifiers, same hereinafter) were up 2.5% (up 14.6%) and inventories of ICs were down 4.2% (up 0.5%). On a m-m basis, shipments were up 3.2% (up 14.4%), production was down 5.4% (up 19.0%), inventories were down 8.0% (down 4.0%), and the inventory ratio was down 17.3% (down 7.9%). The shipment value of memory devices, which have a high weighting in overall semiconductor shipment value, was down 15.7% (down 36.4%). (Starting with the release of the Indices of Industrial Production for June 2020, data for microcontrollers and CCDs are classed as \"confidential\", so we have retroactively adjusted the data to exclude these two categories.)",
+        "bbox": [
+            65,
+            435,
+            675,
+            608
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            921,
+            24
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            914,
+            954,
+            934,
+            966
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/840d5f2de4ee0060829648dcf340a326a03254e3335e1bf43ee8b3e6e5ce3e68.jpg",
+        "image_caption": [
+            "Fig. 9: Domestic semiconductor shipments and inventory cycle"
+        ],
+        "image_footnote": [
+            "Note: (1) Data for discrete semiconductors exclude rectifiers and memory. (2) Data retroactively adjusted from the July 2023 NOM Tech Monthly with 2020 as base year.",
+            "Source: NOM, based on METI's Indices of Industrial Production data"
+        ],
+        "content": "",
+        "bbox": [
+            77,
+            81,
+            724,
+            491
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            912,
+            954,
+            932,
+            966
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "April 2026 inventory turnover",
+        "text_level": 2,
+        "bbox": [
+            67,
+            40,
+            354,
+            57
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "In April 2026, the inventory turnover period was 39.9 days for analog devices (37.7 days in March), 35.9 days for logic devices (34.9 days), 27.2 days for memory devices (19.5 days), and 10.3 days for discrete semiconductors (13.1 days) (Figure 10).",
+        "bbox": [
+            65,
+            62,
+            660,
+            106
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/31dc6e275b0778ddf449417030b76ac8630c5ce322f679f230d6a39f994732d2.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 10: Japanese semiconductor inventory turnover periods by product type"
+        ],
+        "chart_footnote": [
+            "Note: (1) Inventory turnover (days) = inventory volume / (monthly sales volume x 30). (2) Figures for discrete semiconductors are only for the five products included in preliminary data (silicon diodes, transistors, light-emitting diodes, laser diodes, and couplers/interrupters). (3) Data for microcontrollers became \"confidential\" in June 2020, so the most recent data for this category is for May 2020. Source: NOM, based on METI's Current Production Statistics Survey data"
+        ],
+        "bbox": [
+            78,
+            172,
+            732,
+            457
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Monthly sales at Taiwanese companies",
+        "text_level": 2,
+        "bbox": [
+            67,
+            530,
+            448,
+            547
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "May 2026 sales at Taiwanese electronics companies (confirmed): Up 42.2% y-y, up 0.7% m-m",
+        "text_level": 2,
+        "bbox": [
+            65,
+            551,
+            665,
+            576
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Total sales in May 2026 at Taiwanese electronics companies (confirmed data based on 265 companies) were up 42.2% y-y and up 0.7% m-m. Sales at Hon Hai Precision Industry, which makes the largest contribution to aggregate sales (over 20–30%) in our universe of Taiwanese electronic part suppliers, were up 39.6% y-y and up 3.3% m-m in May 2026 at TWD859bn.",
+        "bbox": [
+            65,
+            580,
+            663,
+            653
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Sales rose sharply y-y at all four main segments. Orders rose sharply m-m at the smart consumer electronics segment, partly because of rush demand, but came in flat at the cloud & networking products segment despite ongoing strong AI-related demand because of customer schedules, and were down slightly at the computing products segment and at the electronic components & other products segment because of the previous boost from new products. 26/12 Q2 was a weak quarter in any case, partly because of the timing of the switchover to new products, but we now expect sales growth to be much higher than we had previously envisioned on strong demand for AI racks.",
+        "bbox": [
+            65,
+            657,
+            673,
+            773
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Data center-related: In May, sales rose 68% y-y at baseboard management controller (BMC) producer ASPEED and rose 18% at assembly company Wiwynn. Demand for AI servers looks to have remained strong. Sales rose 9% at CPU socket manufacturer Lotes and 32% at power management IC fabless company Silergy, which is highly exposed to notebook PCs, and rose 15% at ANPEC.",
+        "bbox": [
+            65,
+            777,
+            672,
+            850
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The largest positive contributor to the 42.2% y-y rise in sales in May 2026 in the Taiwanese electronics sector was Hon Hai Precision Industry with a contribution of +9.7ppt, followed by Quanta Computer with +6.0ppt. Figure 11 shows sales rankings for Taiwanese electronics companies as of May 2026.",
+        "bbox": [
+            65,
+            853,
+            665,
+            913
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            914,
+            954,
+            934,
+            966
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/e49a0900c1ee633238611d8e27c5c029793319f671c2e7aaef43cc863ea75a43.jpg",
+        "table_caption": [
+            "Fig. 11: May 2026 sales rankings for Taiwanese electronics companies"
+        ],
+        "table_footnote": [
+            "Note: Shows data for top 20 companies by sales out of the 265 companies that had published confirmed data as of 12 June 2026.\nSource: NOM, based on data disclosed by each company"
+        ],
+        "table_body": "<table><tr><td>Sales Ranking</td><td>Company Company name</td><td>Currency Units</td><td>2025/5</td><td rowspan=\"21\"></td><td>2026/4</td><td>2026/5</td><td rowspan=\"21\"></td><td>y-y 25/5→26/5</td><td>m-m 26/4→26/5</td></tr><tr><td>1</td><td>Hon Hai Precision Industry</td><td>(thTWD)</td><td>615,744,933</td><td>832,097,956</td><td>859,409,333</td><td>+39.6%</td><td>+3.3%</td></tr><tr><td>2</td><td>Taiwan Semiconductor Manufacturing</td><td>(thTWD)</td><td>320,515,951</td><td>410,725,118</td><td>416,975,163</td><td>+30.1%</td><td>+1.5%</td></tr><tr><td>3</td><td>Quanta Computer Inc</td><td>(thTWD)</td><td>160,242,327</td><td>339,921,315</td><td>311,481,017</td><td>+94.4%</td><td>-8.4%</td></tr><tr><td>4</td><td>Wistron Corporation</td><td>(thTWD)</td><td>208,405,603</td><td>283,437,176</td><td>290,183,471</td><td>+39.2%</td><td>+2.4%</td></tr><tr><td>5</td><td>Wt Microelectronics Co Ltd</td><td>(thTWD)</td><td>78,326,329</td><td>211,019,731</td><td>197,924,567</td><td>+152.7%</td><td>-6.2%</td></tr><tr><td>6</td><td>Wpg Holdings Limited</td><td>(thTWD)</td><td>75,461,393</td><td>127,337,859</td><td>138,023,979</td><td>+82.9%</td><td>+8.4%</td></tr><tr><td>7</td><td>Pegatron Corporation</td><td>(thTWD)</td><td>85,685,084</td><td>87,189,236</td><td>95,962,959</td><td>+12.0%</td><td>+10.1%</td></tr><tr><td>8</td><td>Wiwynn Corp</td><td>(thTWD)</td><td>71,132,658</td><td>82,730,996</td><td>84,050,473</td><td>+18.2%</td><td>+1.6%</td></tr><tr><td>9</td><td>Inventec Corp</td><td>(thTWD)</td><td>61,203,003</td><td>84,786,839</td><td>82,807,865</td><td>+35.3%</td><td>-2.3%</td></tr><tr><td>10</td><td>Compal Electronics</td><td>(thTWD)</td><td>57,624,778</td><td>71,979,261</td><td>70,461,810</td><td>+22.3%</td><td>-2.1%</td></tr><tr><td>11</td><td>Asustek Computer Inc</td><td>(thTWD)</td><td>63,215,719</td><td>81,915,499</td><td>69,094,002</td><td>+9.3%</td><td>-15.7%</td></tr><tr><td>12</td><td>Synnex Technology Intl Corp</td><td>(thTWD)</td><td>29,523,080</td><td>57,336,402</td><td>67,818,918</td><td>+129.7%</td><td>+18.3%</td></tr><tr><td>13</td><td>ASE Technology Holding Co Ltd</td><td>(thTWD)</td><td>49,026,935</td><td>62,247,107</td><td>63,033,313</td><td>+28.6%</td><td>+1.3%</td></tr><tr><td>14</td><td>Delta Electronics Inc</td><td>(thTWD)</td><td>41,044,766</td><td>58,691,652</td><td>58,961,817</td><td>+43.7%</td><td>+0.5%</td></tr><tr><td>15</td><td>Gigabyte Technology Co Ltd</td><td>(thTWD)</td><td>46,728,346</td><td>52,267,730</td><td>49,053,470</td><td>+5.0%</td><td>-6.1%</td></tr><tr><td>16</td><td>Mediatek Inc</td><td>(thTWD)</td><td>45,180,526</td><td>46,736,664</td><td>47,434,191</td><td>+5.0%</td><td>+1.5%</td></tr><tr><td>17</td><td>Accton Technology Corp</td><td>(thTWD)</td><td>18,280,186</td><td>27,360,301</td><td>28,622,864</td><td>+56.6%</td><td>+4.6%</td></tr><tr><td>18</td><td>Nanya Technology Corp</td><td>(thTWD)</td><td>3,333,121</td><td>25,491,201</td><td>27,669,563</td><td>+730.1%</td><td>+8.5%</td></tr><tr><td>19</td><td>Acer Inc</td><td>(thTWD)</td><td>19,168,323</td><td>31,311,752</td><td>26,165,549</td><td>+36.5%</td><td>-16.4%</td></tr><tr><td>20</td><td>Au Optronics Corp</td><td>(thTWD)</td><td>24,177,397</td><td>22,100,381</td><td>23,838,344</td><td>-1.4%</td><td>+7.9%</td></tr></table>",
+        "bbox": [
+            77,
+            79,
+            927,
+            399
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e0ffac45c130fb4fc8f22644f6f732269ab78e5fda9c5cf94b3f4ec910d74f6b.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 12: Taiwan electronics sector sales (y-y)"
+        ],
+        "chart_footnote": [
+            "Note: (1) Based on the universe of 265 companies that have disclosed the latest data. (2) Y-y comparisons are based on 267 companies, including ASE [2311 TW] and SPIL [2325 TW], through April 2018, and 265 companies, excluding these two companies but including ASE Technology [3711 TW], established after the merger, from May 2018. Source: NOM, based on various materials"
+        ],
+        "bbox": [
+            75,
+            495,
+            927,
+            730
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "TSMC: Sales up 30% y-y and up 2% m-m in May",
+        "text_level": 2,
+        "bbox": [
+            67,
+            790,
+            416,
+            805
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "TSMC generated sales of TWD417bn (up 30% y-y, up 2% m-m) in May. This marks a 29th straight month of y-y growth and represents 66% of the midpoint of sales guidance for Apr–Jun 2026 (Q2), released on 16 April.",
+        "bbox": [
+            65,
+            809,
+            660,
+            853
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            914,
+            954,
+            934,
+            966
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/bac47e8f4b96fe630230b682147a21ebaeca0dbc64df9cd65b50874c144f4af1.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 13: TSMC's monthly sales and share price performance"
+        ],
+        "chart_footnote": [
+            "Source: NOM, based on company data"
+        ],
+        "bbox": [
+            80,
+            84,
+            593,
+            290
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4aca41adfaac8ceaea67fdff4b1590ae502a06b0183018297c21017380fbd1e8.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 14: TSMC sales (m-m)"
+        ],
+        "chart_footnote": [
+            "Source: NOM, based on company data"
+        ],
+        "bbox": [
+            85,
+            376,
+            594,
+            583
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Memory prices: NAND contract price momentum remains strong",
+        "text_level": 2,
+        "bbox": [
+            67,
+            633,
+            536,
+            648
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Commodity DRAM prices were solid in May, with the end-May spot price for DDR5 DRAM up 3.1% m-m at \\$26.3/GB and the contract price up 2.0% at \\$12.8/GB. Spot prices are still at a premium of 105% to contract prices, suggesting that demand has continued to rise amid ongoing supply shortages. The spot price of 512Gb TLC NAND remained high in May at \\$0.36/GB (flat m-m). Monthly data from Taiwanese memory module manufacturer Adata suggests that NAND prices may have been rising faster than DRAM prices of late. However, we expect upward momentum in commodity memory prices to slow markedly from 2026 H2, partly because margins on DRAM and NAND are already at historically high levels.",
+        "bbox": [
+            65,
+            652,
+            673,
+            782
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Since the start of June, share prices of memory-related stocks have been negatively affected by news reports about a letter sent to the White House by memory customers and Nvidia's plan to halve LPDDR5X capacity per rack for its next-generation Vera Rubin systems. However, we do not regard these reports as a sign of a slowdown in demand, and if anything think they demonstrate that structural supply shortages are continuing.",
+        "bbox": [
+            65,
+            787,
+            668,
+            859
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "US industry bodies (including the Alliance for Automotive Innovation, the National Retail Federation, and the Medical Device Manufacturers Association) sent a letter to the White House demanding measures to address shortages and price rises for memory, but we see few effective ways for the government to control memory prices as the current rise is mainly due to structural growth in demand caused by AI. Memory suppliers have been",
+        "bbox": [
+            65,
+            864,
+            667,
+            937
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            914,
+            954,
+            934,
+            966
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "working hard to ease supply constraints by increasing capacity ahead of schedule while shouldering additional costs.",
+        "bbox": [
+            65,
+            41,
+            658,
+            70
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "We also think Nvidia's reduction in LPDDR5X for Vera Rubin systems is not a cost issue, but a strategic decision to prioritize market penetration of standalone Vera CPUs. We think that reduced capacity will affect performance at Vera Rubin customers, thereby triggering upgrade demand as and when memory supply improves. There is plenty of evidence corroborating growth in memory demand from AI, and we regard share price corrections for memory-related stocks as a good opportunity to increase buying.",
+        "bbox": [
+            65,
+            76,
+            665,
+            163
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/aa0c1475cfb26c2135437cb17bab50c5f843bcf6d7ca202d7486eaac3fc1c3f6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 15: DRAM spot and contract prices"
+        ],
+        "chart_footnote": [
+            "Source: NOM, based on DRAMeXchange data"
+        ],
+        "bbox": [
+            77,
+            228,
+            680,
+            415
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/19ffd0229c313379a2cba3455614fcc9c6b15494af0f704f7b4150e0e4ed9c7d.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 16: NAND flash spot prices"
+        ],
+        "chart_footnote": [
+            "Source: NOM, based on ChinaFlashMarket data"
+        ],
+        "bbox": [
+            78,
+            498,
+            673,
+            663
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ced30f4b6c679328fa284900aef6e0589fb454e0212621cc7de4c26ebd729bda.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 17: All-Japan monthly flash memory export value"
+        ],
+        "chart_footnote": [
+            "Source: NOM, based on MOF data"
+        ],
+        "bbox": [
+            78,
+            754,
+            500,
+            910
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/55885d8a86b250a0f8718ef636b919d84ef34413475273e2182e7cd19be8e87d.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 18: All-Japan monthly flash memory export value"
+        ],
+        "chart_footnote": [
+            "Source: NOM, based on MOF data"
+        ],
+        "bbox": [
+            522,
+            752,
+            947,
+            913
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            914,
+            954,
+            934,
+            966
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/dab65cadbcc6b1b8b5a4250d112c40859b9db6424d25d441771790951419edf5.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 19: Taiwanese company ADATA's DRAM-related sales +74% q-q in Jan–Mar, -8% m-m in April, and +7% m-m in May"
+        ],
+        "chart_footnote": [
+            "Source: Company data, NOM"
+        ],
+        "bbox": [
+            73,
+            90,
+            500,
+            271
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6cb5521d167a6bbf7e6b08632c9f0544ae5e5cb0376ef77d9b76c0a23b997b8f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Company data, NOM"
+        ],
+        "bbox": [
+            519,
+            72,
+            947,
+            258
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            921,
+            24
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            914,
+            954,
+            934,
+            966
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "SPE",
+        "text_level": 2,
+        "bbox": [
+            67,
+            46,
+            132,
+            66
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "April statistics point to increase in SPE demand",
+        "text_level": 2,
+        "bbox": [
+            67,
+            74,
+            418,
+            89
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "On a three-month moving average basis, April 2026 sales of Japanese-made SPE (including exports), as announced by the Semiconductor Equipment Association of Japan (SEAJ) on 25 May, totaled ¥510.2bn, up 14% y-y and up 6% m-m. We estimate April shipments were up 20–30% y-y on a single-month basis. On a three-month moving average basis, export value was up y-y for the first time in four months for assembly equipment, up 5% for wafer processing equipment, and up nearly 40% for inspection equipment. The Ministry of Finance (MOF) published confirmed trade statistics for April on 28 May. SPE exports rose 6% y-y to ¥236.2bn in April, marking a second straight month of y-y growth. The rise in SPE demand, which gathered pace in Jan–Mar, has started to feed through to export statistics since March. Shipments to Taiwan and South Korea have been rising recently, but shipments to China have been sluggish.",
+        "bbox": [
+            65,
+            95,
+            675,
+            252
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Chinese demand looks likely to be skewed to 2026 H2",
+        "text_level": 2,
+        "bbox": [
+            67,
+            256,
+            460,
+            270
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "April SPE exports were down 30% y-y to China (down 24% on a three-month moving average basis), down 5% to Taiwan (up 7%), and up 2.2-fold to South Korea (up 21%). Import statistics for April for regions other than Japan have also been published, and show SPE imports down 6% in China (down 9%), up 47% in Taiwan (up 24%), and up 73% in South Korea (up 32%). These statistics reflect the rise in SPE in demand in Taiwan and South Korea driven by rising investment in advanced memory and logic, but exports to China fell for an 18th straight month, which has been longer than we had expected. Many SPE companies in Japan and overseas said when they released Jan–Mar results that their outlook for Chinese demand in 2026 was broadly unchanged versus three months previously, and that they expected to peg level or be slightly higher than in 2025. We think this partly reflects Chinese demand being skewed to H2 in 2026 too because of the timing of equipment deliveries to Chinese NAND producers, among other factors.",
+        "bbox": [
+            65,
+            275,
+            670,
+            460
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Sales of Japanese-made FPD production equipment up 4% y-y in April",
+        "text_level": 2,
+        "bbox": [
+            67,
+            465,
+            579,
+            480
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "On a three-month moving average basis, April 2026 sales of Japanese-made FPD production equipment (including exports), as announced by SEAJ on 25 May, totaled ¥20.9bn, down 21% versus the April 2025 figure of ¥26.5bn and down 20% versus the March 2026 figure of ¥26.2bn.",
+        "bbox": [
+            65,
+            485,
+            650,
+            542
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            914,
+            954,
+            932,
+            966
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "table",
+        "img_path": "images/64f060be9f2235ce68911f18644795b09aff33c61b5269508262a06bf7cc3546.jpg",
+        "table_caption": [
+            "Fig. 21: Sales of Japanese-made SPE (1)",
+            "Sales value (¥mn, 3-M average)"
+        ],
+        "table_footnote": [
+            "Source: NOM, based on SEAJ data",
+            "% y-y (3-M average)"
+        ],
+        "table_body": "<table><tr><td></td><td>Total</td><td>Wafer-processing equipment</td><td>Assembly equipment</td><td>Test equipment</td></tr><tr><td>22/1</td><td>306,321</td><td>227,228</td><td>19,753</td><td>39,093</td></tr><tr><td>22/2</td><td>294,008</td><td>214,340</td><td>19,025</td><td>39,885</td></tr><tr><td>22/3</td><td>314,872</td><td>234,105</td><td>18,853</td><td>43,564</td></tr><tr><td>22/4</td><td>306,198</td><td>225,079</td><td>17,554</td><td>44,833</td></tr><tr><td>22/5</td><td>307,718</td><td>223,577</td><td>17,158</td><td>47,957</td></tr><tr><td>22/6</td><td>284,584</td><td>200,997</td><td>15,867</td><td>45,047</td></tr><tr><td>22/7</td><td>320,567</td><td>227,820</td><td>18,133</td><td>49,761</td></tr><tr><td>22/8</td><td>347,356</td><td>252,223</td><td>19,545</td><td>49,915</td></tr><tr><td>22/9</td><td>380,929</td><td>284,583</td><td>20,356</td><td>50,837</td></tr><tr><td>22/10</td><td>347,054</td><td>255,442</td><td>18,735</td><td>46,530</td></tr><tr><td>22/11</td><td>335,495</td><td>245,389</td><td>18,080</td><td>46,961</td></tr><tr><td>22/12</td><td>306,596</td><td>221,540</td><td>16,397</td><td>45,181</td></tr><tr><td>23/1</td><td>299,809</td><td>219,455</td><td>15,440</td><td>43,011</td></tr><tr><td>23/2</td><td>294,526</td><td>217,140</td><td>14,405</td><td>40,661</td></tr><tr><td>23/3</td><td>337,042</td><td>240,639</td><td>16,722</td><td>53,801</td></tr><tr><td>23/4</td><td>336,162</td><td>240,227</td><td>16,176</td><td>53,047</td></tr><tr><td>23/5</td><td>315,730</td><td>217,228</td><td>14,806</td><td>49,029</td></tr><tr><td>23/6</td><td>260,913</td><td>179,635</td><td>11,096</td><td>33,457</td></tr><tr><td>23/7</td><td>281,604</td><td>193,875</td><td>11,753</td><td>35,892</td></tr><tr><td>23/8</td><td>287,821</td><td>199,096</td><td>14,086</td><td>38,545</td></tr><tr><td>23/9</td><td>299,524</td><td>212,681</td><td>15,166</td><td>40,781</td></tr><tr><td>23/10</td><td>289,198</td><td>206,408</td><td>15,200</td><td>40,963</td></tr><tr><td>23/11</td><td>300,187</td><td>223,378</td><td>14,848</td><td>39,635</td></tr><tr><td>23/12</td><td>306,412</td><td>225,647</td><td>16,698</td><td>40,192</td></tr><tr><td>24/1</td><td>314,875</td><td>232,878</td><td>17,857</td><td>40,490</td></tr><tr><td>24/2</td><td>317,418</td><td>230,900</td><td>17,804</td><td>40,044</td></tr><tr><td>24/3</td><td>365,680</td><td>258,210</td><td>21,479</td><td>46,273</td></tr><tr><td>24/4</td><td>389,106</td><td>283,472</td><td>21,199</td><td>45,067</td></tr><tr><td>24/5</td><td>400,954</td><td>292,746</td><td>21,747</td><td>51,560</td></tr><tr><td>24/6</td><td>343,990</td><td>254,608</td><td>17,954</td><td>46,138</td></tr><tr><td>24/7</td><td>348,092</td><td>245,206</td><td>20,029</td><td>55,484</td></tr><tr><td>24/8</td><td>351,058</td><td>245,739</td><td>21,700</td><td>57,550</td></tr><tr><td>24/9</td><td>369,598</td><td>257,026</td><td>22,664</td><td>65,378</td></tr><tr><td>24/10</td><td>385,676</td><td>273,747</td><td>20,399</td><td>68,054</td></tr><tr><td>24/11</td><td>405,788</td><td>276,953</td><td>19,761</td><td>71,824</td></tr><tr><td>24/12</td><td>443,365</td><td>307,383</td><td>19,680</td><td>73,297</td></tr><tr><td>25/1</td><td>416,791</td><td>283,236</td><td>20,788</td><td>71,149</td></tr><tr><td>25/2</td><td>412,066</td><td>286,463</td><td>19,816</td><td>77,352</td></tr><tr><td>25/3</td><td>432,401</td><td>299,742</td><td>23,994</td><td>80,238</td></tr><tr><td>25/4</td><td>447,038</td><td>301,272</td><td>22,044</td><td>92,492</td></tr><tr><td>25/5</td><td>446,291</td><td>291,455</td><td>22,716</td><td>90,511</td></tr><tr><td>25/6</td><td>404,592</td><td>253,523</td><td>20,226</td><td>91,154</td></tr><tr><td>25/7</td><td>410,946</td><td>261,246</td><td>23,072</td><td>85,069</td></tr><tr><td>25/8</td><td>405,764</td><td>261,017</td><td>23,728</td><td>86,928</td></tr><tr><td>25/9</td><td>424,590</td><td>276,151</td><td>21,888</td><td>92,590</td></tr><tr><td>25/10</td><td>413,876</td><td>262,593</td><td>21,337</td><td>93,461</td></tr><tr><td>25/11</td><td>420,670</td><td>270,172</td><td>21,380</td><td>92,871</td></tr><tr><td>25/12</td><td>423,487</td><td>270,540</td><td>20,852</td><td>92,631</td></tr><tr><td>26/1</td><td>427,508</td><td>279,387</td><td>20,206</td><td>94,549</td></tr><tr><td>26/2</td><td>423,103</td><td>266,816</td><td>19,266</td><td>105,724</td></tr><tr><td>26/3</td><td>480,182</td><td>310,207</td><td>22,195</td><td>116,153</td></tr><tr><td>26/4</td><td>510,155</td><td>316,086</td><td>23,263</td><td>127,874</td></tr></table>",
+        "bbox": [
+            78,
+            95,
+            502,
+            825
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "table",
+        "img_path": "images/0f7e72be39f4c809b680e93b6d0acfcb9e97484833146e5167b57365bc7fd3d4.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>Total</td><td>Wafer-processing equipment</td><td>Assembly equipment</td><td>Test equipment</td></tr><tr><td>22/1</td><td>69.4</td><td>82.2</td><td>80.4</td><td>37.5</td></tr><tr><td>22/2</td><td>56.8</td><td>64.4</td><td>63.7</td><td>29.7</td></tr><tr><td>22/3</td><td>30.8</td><td>33.1</td><td>33.6</td><td>26.3</td></tr><tr><td>22/4</td><td>8.6</td><td>5.0</td><td>16.1</td><td>22.7</td></tr><tr><td>22/5</td><td>0.8</td><td>-4.4</td><td>3.6</td><td>27.2</td></tr><tr><td>22/6</td><td>14.1</td><td>10.6</td><td>3.5</td><td>20.5</td></tr><tr><td>22/7</td><td>31.8</td><td>30.0</td><td>15.1</td><td>33.7</td></tr><tr><td>22/8</td><td>38.5</td><td>37.7</td><td>9.7</td><td>39.6</td></tr><tr><td>22/9</td><td>36.1</td><td>33.1</td><td>11.9</td><td>59.0</td></tr><tr><td>22/10</td><td>27.6</td><td>25.9</td><td>0.3</td><td>48.2</td></tr><tr><td>22/11</td><td>19.1</td><td>17.3</td><td>2.4</td><td>40.3</td></tr><tr><td>22/12</td><td>1.1</td><td>-0.0</td><td>-16.5</td><td>13.1</td></tr><tr><td>23/1</td><td>-2.1</td><td>-3.4</td><td>-21.8</td><td>10.0</td></tr><tr><td>23/2</td><td>0.2</td><td>1.3</td><td>-24.3</td><td>1.9</td></tr><tr><td>23/3</td><td>7.0</td><td>2.8</td><td>-11.3</td><td>23.5</td></tr><tr><td>23/4</td><td>9.8</td><td>6.7</td><td>-7.9</td><td>18.3</td></tr><tr><td>23/5</td><td>2.6</td><td>-2.8</td><td>-13.7</td><td>2.2</td></tr><tr><td>23/6</td><td>-8.3</td><td>-10.6</td><td>-30.1</td><td>-25.7</td></tr><tr><td>23/7</td><td>-12.2</td><td>-14.9</td><td>-35.2</td><td>-27.9</td></tr><tr><td>23/8</td><td>-17.1</td><td>-21.1</td><td>-27.9</td><td>-22.8</td></tr><tr><td>23/9</td><td>-21.4</td><td>-25.3</td><td>-25.5</td><td>-19.8</td></tr><tr><td>23/10</td><td>-16.7</td><td>-19.2</td><td>-18.9</td><td>-12.0</td></tr><tr><td>23/11</td><td>-10.5</td><td>-9.0</td><td>-17.9</td><td>-15.6</td></tr><tr><td>23/12</td><td>-0.1</td><td>1.9</td><td>1.8</td><td>-11.0</td></tr><tr><td>24/1</td><td>5.0</td><td>6.1</td><td>15.7</td><td>-5.9</td></tr><tr><td>24/2</td><td>7.8</td><td>6.3</td><td>23.6</td><td>-1.5</td></tr><tr><td>24/3</td><td>8.5</td><td>7.3</td><td>28.4</td><td>-14.0</td></tr><tr><td>24/4</td><td>15.7</td><td>18.0</td><td>31.1</td><td>-15.0</td></tr><tr><td>24/5</td><td>27.0</td><td>34.8</td><td>46.9</td><td>5.2</td></tr><tr><td>24/6</td><td>31.8</td><td>41.7</td><td>61.8</td><td>37.9</td></tr><tr><td>24/7</td><td>23.6</td><td>26.5</td><td>70.4</td><td>54.6</td></tr><tr><td>24/8</td><td>22.0</td><td>23.4</td><td>54.1</td><td>49.3</td></tr><tr><td>24/9</td><td>23.4</td><td>20.9</td><td>49.4</td><td>60.3</td></tr><tr><td>24/10</td><td>33.4</td><td>32.6</td><td>34.2</td><td>66.1</td></tr><tr><td>24/11</td><td>35.2</td><td>24.0</td><td>33.1</td><td>81.2</td></tr><tr><td>24/12</td><td>44.7</td><td>36.2</td><td>17.9</td><td>82.4</td></tr><tr><td>25/1</td><td>32.4</td><td>21.6</td><td>16.4</td><td>75.7</td></tr><tr><td>25/2</td><td>29.8</td><td>24.1</td><td>11.3</td><td>93.2</td></tr><tr><td>25/3</td><td>18.2</td><td>16.1</td><td>11.7</td><td>73.4</td></tr><tr><td>25/4</td><td>14.9</td><td>6.3</td><td>4.0</td><td>105.2</td></tr><tr><td>25/5</td><td>11.3</td><td>-0.4</td><td>4.5</td><td>75.5</td></tr><tr><td>25/6</td><td>17.6</td><td>-0.4</td><td>12.7</td><td>97.6</td></tr><tr><td>25/7</td><td>18.1</td><td>6.5</td><td>15.2</td><td>53.3</td></tr><tr><td>25/8</td><td>15.6</td><td>6.2</td><td>9.3</td><td>51.0</td></tr><tr><td>25/9</td><td>14.9</td><td>7.4</td><td>-3.4</td><td>41.6</td></tr><tr><td>25/10</td><td>7.3</td><td>-4.1</td><td>4.6</td><td>37.3</td></tr><tr><td>25/11</td><td>3.7</td><td>-2.4</td><td>8.2</td><td>29.3</td></tr><tr><td>25/12</td><td>-4.5</td><td>-12.0</td><td>6.0</td><td>26.4</td></tr><tr><td>26/1</td><td>2.6</td><td>-1.4</td><td>-2.8</td><td>32.9</td></tr><tr><td>26/2</td><td>2.7</td><td>-6.9</td><td>-2.8</td><td>36.7</td></tr><tr><td>26/3</td><td>11.1</td><td>3.5</td><td>-7.5</td><td>44.8</td></tr><tr><td>26/4</td><td>14.1</td><td>4.9</td><td>5.5</td><td>38.3</td></tr></table>",
+        "bbox": [
+            505,
+            95,
+            929,
+            825
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            914,
+            954,
+            934,
+            966
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "chart",
+        "img_path": "images/604c990cfa7cefb10e4f1534150e1b2fe63d862955ecaede563223c4c3d4ad71.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 22: Sales of Japanese-made SPE (2)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            84,
+            81,
+            485,
+            270
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e04517931066a3d2faa702e021e0b016a6ad26d8da864c5af12287bc99d351bc.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            505,
+            83,
+            885,
+            267
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b40a867d78853969ef15ee90ca772536dc519b6bbf53fd36e21f4569be011ed2.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            85,
+            277,
+            482,
+            464
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4094832bcc2f3782e5931095bff9f4501f0e4827c7d9aa38e891224ac36b1d96.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            507,
+            293,
+            878,
+            448
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/bdcfae1a48985d4d573630b7e04a874e8214df1925f4b473f0450b61440a7d3a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            85,
+            470,
+            482,
+            657
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2417ffe10fd65e0f7857a8c473efda9fd1e1d2b525fde588b4406cd647a1bb2d.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            507,
+            471,
+            885,
+            655
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f900db9c1941dda5ba030b2206ace6285780949424080914d755b9251d4716ac.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: NOM, based on SEAJ data"
+        ],
+        "bbox": [
+            89,
+            662,
+            482,
+            849
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6941f1b8df82e01a3bb9b1ffd7238ec9006f95ffabd15de6b2a2f365df014cc4.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            505,
+            663,
+            885,
+            847
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            914,
+            954,
+            934,
+            966
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Semiconductor & display materials",
+        "text_level": 2,
+        "bbox": [
+            67,
+            46,
+            537,
+            68
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Semiconductor materials (1): Strong demand for semiconductor materials for AI applications, likely to persist longer",
+        "text_level": 2,
+        "bbox": [
+            65,
+            74,
+            648,
+            100
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "April 2026 trade statistics showed export value close to all-time highs for silicon wafers and photoresists, pointing to rising demand for semiconductor materials. TSMC reported a 30% y-y rise in sales for May 2026, and we think this has ensured consistently strong demand for semiconductor materials, for example materials used in advanced logic devices such as photoresists made by Tokyo Ohka Kogyo and semiconductor targets made by JX Advanced Metals. AI demand has been spreading to GPU/HBM, ASIC/CPU/NAND, and analog/power semiconductors, and business conditions are now such that a wide range of semiconductor materials can benefit from AI demand. Moreover, the Nikkei reported on 2 June and Nikkei Asia reported on 11 June that SK Hynix plans to double memory output over the next five years and triple wafer production capacity by 2034. AI demand for semiconductor materials has entered a phase of structural growth, and we see an increased likelihood that it will continue to grow over the longer term.",
+        "bbox": [
+            65,
+            105,
+            667,
+            290
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Semiconductor materials (2): We expect price hikes to boost margins",
+        "text_level": 2,
+        "bbox": [
+            67,
+            295,
+            571,
+            309
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Recently, in addition to strong demand, there has also been debate about potential supply shortages for some semiconductor materials. Tight supply-demand conditions and rising costs for semiconductor materials are likely to spur discussions about price hikes. Resonac Holdings and Mitsubishi Gas Chemical have announced price hikes of at least 30% for copper-clad laminates used in package substrates, while Sumitomo Bakelite has announced price hikes of around 10–20% for encapsulants. We expect margins to improve in 2026 H2 thanks to price hikes as well as strong sales. Moreover, while price hikes mainly reflect rising costs, we think this encompasses past rises in fixed costs and secondary input costs as well as recent input costs. In addition, the majority of sales of silicon wafers are on long-term contracts with fixed contract prices. We see scope for contract prices for wafers to rise by around 20% in 2027–2029, when current long-term contracts will be renewed, as a result of tighter supply-demand conditions.",
+        "bbox": [
+            65,
+            315,
+            672,
+            486
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Display materials: Weak demand for smaller displays for smartphones and PCs, solid demand for large displays",
+        "text_level": 2,
+        "bbox": [
+            65,
+            490,
+            648,
+            515
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "End demand for small display materials has remained weak because of rising memory prices and CPU supply shortages. While we envision only a limited impact on high-end models, we assume a y-y decline in output of smartphones and notebook PCs in 2026. We expect strong sales of some models such as MacBook Neo, but do not envision any major tailwinds for material producers because of the lack of value-added for display materials used in low-priced models. Elsewhere, semiconductor supply has been less of a constraint for large display materials, and the shift to larger TVs has continued. We think business conditions for large display materials have been relatively solid.",
+        "bbox": [
+            65,
+            520,
+            673,
+            635
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            912,
+            954,
+            934,
+            966
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/07216cc869362d589f9ee0e00250c8df5715ce7fe2d53cc85ec97f21417c1fcf.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 23: Business environment for semiconductor materials and relative share price performance"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            95,
+            93,
+            863,
+            219
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "chart",
+        "img_path": "images/58686643a1ba2d861ebbf644de988063ea95554c366a272ec7fe41596fc0c41c.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            77,
+            212,
+            862,
+            306
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f0adbb69dc854e1972b26c846680cb1fff51ab3822a1a23b926124f820d45d6a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            80,
+            304,
+            845,
+            437
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7eeb149cb0451c2c3526f91c487f05022c9071e83e12b4a31db736065e6c533e.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            87,
+            423,
+            867,
+            604
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7c7f248b599de4a81a7cc0ad8b0571c4b7d40b718624d56a7e8455ecc25f3b66.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Note: Data for global semiconductor shipments are presented as the period between the bottom and peak of y-y changes, and the most recent data is for up to April 2026. Relative share prices (vs TOPIX) and DRAM spot prices are as of 12 June 2026, TSMC sales are through March. Semiconductor wafer shipments are through Apr–Jun 2025."
+        ],
+        "bbox": [
+            85,
+            606,
+            865,
+            725
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Source: NOM, based on company data, SEMI, Bloomberg, etc",
+        "bbox": [
+            70,
+            760,
+            393,
+            771
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            912,
+            954,
+            932,
+            966
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "table",
+        "img_path": "images/6291697197bc53a9f1f8677655c35c4f14b0bc7ffa0beddc1044a452dc9795d9.jpg",
+        "table_caption": [
+            "Fig. 24: Earnings at semiconductor silicon (wafer) producers"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">mn USD</td><td>CY23</td><td>CY24</td><td>CY25</td><td>24/10-12</td><td>25/1-3</td><td>25/4-6</td><td>25/7-9</td><td>25/10-12</td></tr><tr><td rowspan=\"6\">Shin-Etsu Chemical (Electronic materials)</td><td>Sales</td><td>5,983</td><td>6,048</td><td>6,511</td><td>1,599</td><td>1,483</td><td>1,672</td><td>1,724</td><td>1,632</td></tr><tr><td>Operating profits</td><td>1,932</td><td>2,090</td><td>2,159</td><td>482</td><td>423</td><td>579</td><td>589</td><td>569</td></tr><tr><td>Operating profit margin</td><td>32.3%</td><td>34.6%</td><td>33.2%</td><td>30.1%</td><td>28.5%</td><td>34.6%</td><td>34.2%</td><td>34.8%</td></tr><tr><td>EBITDA</td><td>2,723</td><td>2,809</td><td>2,895</td><td>690</td><td>620</td><td>757</td><td>774</td><td>744</td></tr><tr><td>EBITDA margin</td><td>45.5%</td><td>46.4%</td><td>44.5%</td><td>43.1%</td><td>41.8%</td><td>45.3%</td><td>44.9%</td><td>45.6%</td></tr><tr><td>Capex</td><td>1,507</td><td>1,765</td><td>1,422</td><td>413</td><td>246</td><td>233</td><td>708</td><td>235</td></tr><tr><td rowspan=\"6\">Sumco (Total)</td><td>Sales</td><td>3,019</td><td>2,604</td><td>2,735</td><td>643</td><td>675</td><td>716</td><td>667</td><td>676</td></tr><tr><td>Operating profits</td><td>523</td><td>257</td><td>10</td><td>59</td><td>39</td><td>10</td><td>-11</td><td>-29</td></tr><tr><td>Operating profit margin</td><td>17.3%</td><td>9.9%</td><td>0.4%</td><td>9.2%</td><td>5.8%</td><td>1.5%</td><td>-1.6%</td><td>-4.3%</td></tr><tr><td>EBITDA</td><td>1,027</td><td>750</td><td>750</td><td>190</td><td>188</td><td>191</td><td>184</td><td>186</td></tr><tr><td>EBITDA margin</td><td>34.0%</td><td>28.8%</td><td>27.4%</td><td>29.5%</td><td>27.9%</td><td>26.7%</td><td>27.6%</td><td>27.6%</td></tr><tr><td>Capex</td><td>2,234</td><td>1,394</td><td>534</td><td>282</td><td>215</td><td>134</td><td>117</td><td>68</td></tr><tr><td rowspan=\"6\">Siltronic (Germany) (Total)</td><td>Sales</td><td>1,637</td><td>1,526</td><td>1,521</td><td>383</td><td>363</td><td>378</td><td>348</td><td>432</td></tr><tr><td>Operating profits</td><td>-</td><td>133</td><td>-32</td><td>29</td><td>16</td><td>28</td><td>-36</td><td>-40</td></tr><tr><td>Operating profit margin</td><td>-</td><td>8.7%</td><td>-2.1%</td><td>7.6%</td><td>4.3%</td><td>7.3%</td><td>-10.3%</td><td>-9.1%</td></tr><tr><td>EBITDA</td><td>469</td><td>393</td><td>357</td><td>99</td><td>82</td><td>99</td><td>77</td><td>100</td></tr><tr><td>EBITDA margin</td><td>28.7%</td><td>25.7%</td><td>23.5%</td><td>25.8%</td><td>22.5%</td><td>26.1%</td><td>22.0%</td><td>23.1%</td></tr><tr><td>Capex</td><td>1,424</td><td>565</td><td>418</td><td>123</td><td>102</td><td>145</td><td>100</td><td>72</td></tr><tr><td rowspan=\"6\">SK Siltron (Korea) (Total)</td><td>Sales</td><td>1,544</td><td>1,554</td><td>-</td><td>409</td><td>315</td><td>373</td><td>370</td><td>387</td></tr><tr><td>Operating profits</td><td>214</td><td>230</td><td>-</td><td>77</td><td>26</td><td>39</td><td>27</td><td>44</td></tr><tr><td>Operating profit margin</td><td>13.9%</td><td>14.8%</td><td>-</td><td>18.9%</td><td>8.2%</td><td>10.4%</td><td>7.2%</td><td>11.4%</td></tr><tr><td>EBITDA</td><td>515</td><td>467</td><td>-</td><td>129</td><td>72</td><td>87</td><td>74</td><td>90</td></tr><tr><td>EBITDA margin</td><td>33.4%</td><td>30.1%</td><td>-</td><td>31.6%</td><td>22.8%</td><td>23.3%</td><td>19.9%</td><td>23.2%</td></tr><tr><td>Capex</td><td>652</td><td>695</td><td>-</td><td>141</td><td>143</td><td>92</td><td>105</td><td>85</td></tr><tr><td rowspan=\"6\">GlobalWafers (Taiwan) (Total)</td><td>Sales</td><td>2,021</td><td>1,891</td><td>1,940</td><td>504</td><td>471</td><td>527</td><td>478</td><td>465</td></tr><tr><td>Operating profits</td><td>575</td><td>424</td><td>275</td><td>111</td><td>78</td><td>80</td><td>40</td><td>76</td></tr><tr><td>Operating profit margin</td><td>28.4%</td><td>22.5%</td><td>14.2%</td><td>21.9%</td><td>16.6%</td><td>15.2%</td><td>8.5%</td><td>16.4%</td></tr><tr><td>EBITDA</td><td>768</td><td>668</td><td>-</td><td>176</td><td>146</td><td>161</td><td>118</td><td>-</td></tr><tr><td>EBITDA margin</td><td>38.0%</td><td>35.4%</td><td>-</td><td>34.9%</td><td>31.1%</td><td>30.5%</td><td>24.8%</td><td>-</td></tr><tr><td>Capex</td><td>1,046</td><td>1,462</td><td>1,065</td><td>323</td><td>349</td><td>248</td><td>231</td><td>237</td></tr><tr><td rowspan=\"6\">5 companies total</td><td>Sales</td><td>14,204</td><td>13,624</td><td></td><td>3,538</td><td>3,307</td><td>3,667</td><td>3,586</td><td>3,593</td></tr><tr><td>Operating profits</td><td>3,244</td><td>3,001</td><td></td><td>729</td><td>566</td><td>708</td><td>646</td><td>660</td></tr><tr><td>Operating profit margin</td><td>22.8%</td><td>22.0%</td><td></td><td>23.1%</td><td>19.2%</td><td>21.5%</td><td>19.9%</td><td>20.9%</td></tr><tr><td>EBITDA</td><td>5,503</td><td>5,088</td><td></td><td>1,283</td><td>962</td><td>1,134</td><td>1,108</td><td>1,120</td></tr><tr><td>EBITDA margin</td><td>38.7%</td><td>37.3%</td><td></td><td>36.3%</td><td>29.1%</td><td>30.9%</td><td>30.9%</td><td>31.2%</td></tr><tr><td>Capex</td><td>6,863</td><td>5,881</td><td></td><td>1,282</td><td>1,055</td><td>851</td><td>1,261</td><td>697</td></tr><tr><td>$/¥ rate</td><td></td><td>141</td><td>152</td><td>150</td><td>153</td><td>152</td><td>144</td><td>149</td><td>156</td></tr><tr><td>KRW/JPY</td><td></td><td>10.8</td><td>11.1</td><td>10.5</td><td>10.8</td><td>10.4</td><td>10.4</td><td>10.6</td><td>10.8</td></tr><tr><td>TWD/JPY</td><td></td><td>4.0</td><td>4.6</td><td>4.8</td><td>4.7</td><td>4.6</td><td>4.7</td><td>4.9</td><td>5.0</td></tr><tr><td>€/¥ rate</td><td></td><td>153</td><td>164</td><td>169</td><td>162</td><td>159</td><td>165</td><td>172</td><td>181</td></tr></table>",
+        "bbox": [
+            77,
+            79,
+            927,
+            539
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Note: Unit is \\$mn. Based on companies' semiconductor wafer businesses. Depreciation data for Shin-Etsu Chemical's semiconductor segment allocated proportionally based on annual sales. EBITDA data for Sumco and Siltronic based on company materials. Five companies total is the total for Shin-Etsu Chemical, Sumco, Siltronic, SK Siltron, and Global Wafers. We use EBIT instead of operating profits for Siltronic, as it stopped disclosing operating profits in Jan–Mar 2023.\nSource: NOM, based on data disclosed by each company",
+        "bbox": [
+            70,
+            549,
+            929,
+            592
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            912,
+            953,
+            934,
+            966
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1e09ae27a3700cd612584bcbb3216db65330afb584c0fa4760f89cf8ee22ef71.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 25: Selling prices of LCDs and panel makers' relative share price performance"
+        ],
+        "chart_footnote": [
+            "Note: Global LCD panel shipment data and US television import volume data are through April 2026. LCD sales prices are through June 2026 (OMDIA forecasts for June). Relative share prices are versus TOPIX, share prices are through 12 June.\nSource: NOM, based on OMDIA, Witsview, and US Department of Commerce data"
+        ],
+        "bbox": [
+            85,
+            79,
+            848,
+            795
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            912,
+            953,
+            934,
+            966
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Note: Share prices are as of 12 June 2026 close.\nSource: NOM",
+        "bbox": [
+            70,
+            457,
+            310,
+            479
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fe32c0c89dde3af027ea4ea8cde4bedde64769c8a7efce61d8379c158d94d64f.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 26: Relative share price performance of major electronic material stocks (versus the TOPIX)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            80,
+            79,
+            749,
+            262
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1c016db769ace1de98fe28be20fcd5de785ebde119df4a9c686abb2fb416e3f7.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "12/1 12/7 13/1 13/7 14/1 14/7 15/1 15/7 16/1 16/7 17/1 17/7 18/1 18/7 19/0 119/07 20/1 20/7 21/1 21/7 22/0 122/07 23/1 23/7 24/1 24/7 25/1 25/7 26/1"
+        ],
+        "bbox": [
+            78,
+            269,
+            746,
+            440
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5c23ff87e45b694094ffa2639a8d89b89bea3c8e4c3d13379f8650ab8d73569e.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 27: Global silicon wafer shipments"
+        ],
+        "chart_footnote": [
+            "Source: NOM, based on SEMI data"
+        ],
+        "bbox": [
+            85,
+            547,
+            657,
+            752
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            912,
+            954,
+            934,
+            966
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Special feature (Vol. 91): FDEs contributing to speedier deployment of AI agents",
+        "text_level": 1,
+        "bbox": [
+            65,
+            46,
+            653,
+            93
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Forward deployment engineers (FDEs) have been attracting attention of late. AI companies station FDEs at customer premises to oversee deployment of proprietary AI agents. When generative AI first appeared, prompt engineers were the focus of attention. With the growing uptake of AI agents, though, customer needs have changed and FDEs are in demand. FDEs embedded at client companies communicate directly with clients about the challenges they face, moving swiftly to address those challenges and expedite AI deployment. AI companies then take the expertise thus gleaned and integrate it into their products, enabling lateral expansion of service offerings. Hitachi plans to strengthen its Physical AI FDE Team to facilitate integration of its IT technology (AI technology, security, and data infrastructure) and OT (operational technology: domain expertise). Fujitsu similarly plans to bolster its team of FDEs with specialist knowledge of the company's proprietary Takane AI model and Kozuchi AI platform",
+        "bbox": [
+            65,
+            100,
+            670,
+            273
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The FDE concept is said to have been formalized in the early 2010s by Palantir Technologies, which was established in 2003. Initially, FDEs were known internally as \"Deltas.\" The role of Deltas went beyond system implementation; it was to build the optimal platform for clients based on a thorough understanding of their operations and challenges, and remain onsite to supervise the platform's adoption. Identification of client requirements is important as a starting point for building systems. Palantir paired its Deltas with \"Echoes,\" domain experts who hailed from the same industry as the client and accordingly were able to elicit the latter's requirements in the language of that field. In doing so, Palantir created a system for driving clients' business transformation from within. Palantir offers systems that integrate and analyze vast amounts of big data, informing optimal decision-making. Among the company's flagship platforms, Palantir Gotham is used by the US Department of Defense, while Palantir Foundry is its commercial platform.",
+        "bbox": [
+            65,
+            277,
+            673,
+            464
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "While there are differences in AI model performance, these are dwarfed by disparities in on-site deployment capabilities, and reducing these disparities is regarded as a major challenge. Against this backdrop, Anthropic is partnering with Blackstone, Hellman & Friedman, and GS to launch a new \\$1.5bn AI-native enterprise services firm. In the same vein, OpenAI has raised \\$4bn from 19 investors to launch The Deployment Company. Rather than simply creating AI models, AI companies these days aim to strengthen their ability to deploy those models directly inside client businesses, as the deployment stage now represents the main bottleneck.",
+        "bbox": [
+            65,
+            467,
+            670,
+            584
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "There are three main obstacles hindering use of AI by companies: technological barriers, operational barriers, and organizational barriers. In the context of technological barriers, an AI tool on its own is unlikely to address the needs of a company looking to utilize AI; this tool must also be linked to the company's existing core systems and business flows, but this integration is complex and requires a high degree of customization. In terms of operational barriers, when new tasks or processes are introduced there can be pushback from staff about a perceived increase in \"unnecessary work.\" And when it comes to organizational barriers, there is often lack of understanding between companies' IT and business divisions. The role of an FDE is to help customers surmount these barriers and ensure that the AI company's product is actually usable.",
+        "bbox": [
+            65,
+            589,
+            668,
+            733
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "While the role of an FDE in some ways resembles that of conventional IT specialists such as project managers, IT consultants, and system engineers, FDEs are distinguished by their much greater range of responsibilities. FDEs embedded at client companies communicate directly with clients about the challenges they face, moving swiftly to address those challenges and expedite AI deployment. AI companies then take the expertise thus gleaned and integrate it into their products, facilitating lateral expansion of service offerings. In enterprise AI there are seemingly conflicting needs for both customization and standardization. If a balance between the two is not found, customer satisfaction may rise in the near term, but over the longer term a company may end up mass-producing products that deviate somewhat from its development roadmap. In traditional business process outsourcing (BPO), there is a risk of clients contracting other companies to perform routine operations when renewing the BPO contract and of downward pressure on prices. With the FDE approach, on the other hand, the more the AI model is used, the better the fit between the model and the company using it, resulting in a vendor lock-in. Thus, in addition to keeping up with advances in AI, by continuously refining the model's accuracy companies can build and consolidate a recurring revenue-based business model.",
+        "bbox": [
+            65,
+            737,
+            675,
+            939
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            912,
+            954,
+            934,
+            966
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            65,
+            41,
+            662,
+            84
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "table",
+        "img_path": "images/3f599954305283918f129824ccdab9a907051ca215000cf897fa6dd4e574e0c5.jpg",
+        "table_caption": [
+            "Fig. 28: Comparison of FDEs with project managers, systems engineers, and IT consultants"
+        ],
+        "table_footnote": [
+            "Source: NOM"
+        ],
+        "table_body": "<table><tr><td></td><td>FDE</td><td>PM</td><td>IT consultants</td><td>SE</td></tr><tr><td>Role</td><td>Identifying challenges faced by client companies and swiftly implementing and establishing solutions</td><td>Planning, progress tracking, adjustments, and risk management</td><td>Strategy planning and identification of requirements</td><td>Development and maintenance based on client specifications</td></tr><tr><td>Typical location</td><td>On-site (at client&#x27;s offices, factories, logistics facilities, etc.)</td><td>Conference room</td><td>Conference room</td><td>Client site or remote</td></tr><tr><td>Development method</td><td>Prototyping</td><td>Drawing on nearshore, offshore, and internal resources</td><td>Design documents and proposals</td><td>Waterfall or agile</td></tr><tr><td>Technology</td><td>Proprietary product technologies</td><td>Proprietary technology + partner&#x27;s technology</td><td>Various technologies</td><td>At customer&#x27;s discretion</td></tr><tr><td>Business model</td><td>Monetizing proprietary products</td><td>Outcome-based or time &amp; materials</td><td>Consulting fees</td><td>Monthly fee per engineer</td></tr></table>",
+        "bbox": [
+            77,
+            128,
+            927,
+            267
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Consulting firms are coming up with their own approaches. For example, Accenture announced a major partnership with Anthropic in December 2025, revealing plans to train thousands of Accenture professionals on Claude, including FDEs (also known as \"reinvention deployed engineers\" or RDEs at Accenture) who will help embed Claude within client environments. In April 2026, Accenture joined forces with Microsoft to launch a forward deployed engineering practice.",
+        "bbox": [
+            65,
+            309,
+            670,
+            396
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Sovereignty is an important concept in the operation of AI agents. For customers, securely managing core data and ensuring its reliability is paramount. Maintaining server, cloud, and AI model sovereignty is important to ensure data confidentiality. Anthropic has been clashing with the US government over limitations on military use of AI, with the US government recently ordering Anthropic to block foreign nationals worldwide from accessing its latest Claude models, Mythos 5 and Fable 5. Anthropic has retaliated by shutting down access entirely, highlighting the debate over whether AI sovereignty lies with the state or with private-sector companies. Anthropic's launch of the agentic coding tool Claude Code has sparked further debate over clients bringing AI development in-house, but in practical terms we think customers would struggle to directly employ AI models from other countries unless they have plentiful engineering resources internally.",
+        "bbox": [
+            65,
+            401,
+            668,
+            559
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "We think these industry developments could be a significant boon for major Japanese IT companies that have their own AI products. Fujitsu started a collaboration with Palantir in 2020, focusing on data integration and DX support in the Japanese market, and the pair formed a global partnership in 2023. In August 2025, Fujitsu signed a licensing agreement with Palantir for the Palantir Artificial Intelligence Platform (Palantir AIP), which has since been integrated into Fujitsu Uvance. That said, Fujitsu has had FDEs from the outset, with some specializing in its AI model Takane and others specializing in the underlying AI platform Kozuchi. Going forward, we can conceive of Fujitsu also having FDEs specializing in the physical AI, intelligent society, and sovereign platform domains.",
+        "bbox": [
+            65,
+            564,
+            677,
+            693
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "As mentioned above, Hitachi also plans to strengthen its Physical AI FDE Team. The company is focusing on four areas: the digital systems & services (DSS) sector, which operates in the cyber space, and the mobility, energy, and industry sectors, which are mainly in the physical domain. The Physical AI FDE Team seeks to integrate the relevant IT and OT with AI. It will merge GlobalLogic and Hitachi Digital Services' IT technologies (AI technology, security, and data infrastructure) with the domain knowledge of experts in the three OT sectors. We think other companies will face high barriers to entry, as much of Hitachi's mission-critical expertise is proprietary. In the DSS segment, Hitachi plans to expand its FDE team to capture growth in the \"modernization and AI services\" market. It plans to train 5,000 FDEs to support AI-readiness across the existing installed base of approximately 15,000 customer systems in operation around Japan, also supporting AI deployment and delivery of AI-related services. On 19 May, Hitachi furthermore announced the start of a strategic collaboration with Anthropic. Hitachi will establish the Frontier AI Deployment Center, a global organization spanning North America, Europe, and Asia, and as its initial initiative the Center will launch a joint team comprising Anthropic's Applied AI experts and Hitachi's specialists across IT, OT, products, and cybersecurity, with the aim of establishing best practices for enterprise-scale deployment.",
+        "bbox": [
+            65,
+            698,
+            672,
+            942
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            912,
+            953,
+            934,
+            966
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Share price performance chart for select companies",
+        "text_level": 2,
+        "bbox": [
+            67,
+            46,
+            613,
+            93
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "table",
+        "img_path": "images/80bf1c284304223089f2059a8c9165e9dde7618d87f99628369178e8a44d22be.jpg",
+        "table_caption": [
+            "Fig. 29: Share price performance of major electronics company stocks (1)"
+        ],
+        "table_footnote": [
+            "Note: Companies in each sector shown in order of market cap.",
+            "Source: NOM"
+        ],
+        "table_body": "<table><tr><td>Code</td><td>Company</td><td>16 Jun</td><td>16 Jun</td><td colspan=\"8\">Performance relative to TOPIX (%)</td></tr><tr><td></td><td></td><td>Share price(¥)</td><td>Market cap(¥bn)</td><td>1 week</td><td>1 mo</td><td>2 mo</td><td>3 mo</td><td>4 mo</td><td>5 mo</td><td>6 mo</td><td>1 year</td></tr><tr><td></td><td>Industrial electronics</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>285A</td><td>Kioxia Holdings</td><td>94,720.0</td><td>51,749.3</td><td>20.9</td><td>83.6</td><td>154.6</td><td>298.3</td><td>299.1</td><td>465.9</td><td>820.7</td><td>3,073.8</td></tr><tr><td>6501</td><td>Hitachi</td><td>4,747.0</td><td>21,530.3</td><td>-5.1</td><td>-7.4</td><td>-9.9</td><td>-10.1</td><td>-8.6</td><td>-17.0</td><td>-17.5</td><td>-17.5</td></tr><tr><td>6503</td><td>Mitsubishi Electric</td><td>5,872.0</td><td>12,408.7</td><td>-1.5</td><td>-5.9</td><td>-5.7</td><td>-2.2</td><td>1.2</td><td>7.3</td><td>6.0</td><td>36.5</td></tr><tr><td>6723</td><td>Renesas Electronics</td><td>4,484.0</td><td>8,387.8</td><td>-0.4</td><td>23.3</td><td>54.4</td><td>64.1</td><td>41.6</td><td>72.9</td><td>84.6</td><td>64.8</td></tr><tr><td>6702</td><td>Fujitsu</td><td>3,276.0</td><td>5,699.5</td><td>-7.0</td><td>-5.1</td><td>-11.5</td><td>-15.5</td><td>-16.6</td><td>-32.1</td><td>-34.0</td><td>-34.8</td></tr><tr><td>6701</td><td>NEC</td><td>3,849.0</td><td>5,251.0</td><td>-7.6</td><td>-13.6</td><td>-11.3</td><td>-16.7</td><td>-9.4</td><td>-40.7</td><td>-39.9</td><td>-34.7</td></tr><tr><td>6504</td><td>Fuji Electric</td><td>14,375.0</td><td>2,146.1</td><td>0.4</td><td>-5.0</td><td>15.8</td><td>15.7</td><td>19.4</td><td>12.9</td><td>8.7</td><td>54.9</td></tr><tr><td>6963</td><td>Rohm</td><td>5,069.0</td><td>2,046.7</td><td>-5.6</td><td>18.4</td><td>27.2</td><td>37.9</td><td>91.8</td><td>83.8</td><td>108.9</td><td>114.3</td></tr><tr><td>6507</td><td>Sinfonia Technology</td><td>14,720.0</td><td>438.5</td><td>3.1</td><td>4.4</td><td>4.1</td><td>7.1</td><td>23.5</td><td>23.2</td><td>37.8</td><td>14.8</td></tr><tr><td>6526</td><td>Socionext</td><td>2,400.0</td><td>431.9</td><td>-4.1</td><td>0.6</td><td>23.4</td><td>22.8</td><td>8.1</td><td>-4.9</td><td>-5.7</td><td>-35.7</td></tr><tr><td>3105</td><td>Nisshinbo Holdings</td><td>2,139.5</td><td>362.3</td><td>-0.8</td><td>-11.4</td><td>20.8</td><td>26.6</td><td>23.5</td><td>38.3</td><td>40.7</td><td>63.8</td></tr><tr><td>6544</td><td>Japan Elevator Service Holdings</td><td>1,614.5</td><td>288.6</td><td>-3.3</td><td>-16.1</td><td>-4.3</td><td>-11.5</td><td>-6.2</td><td>-13.6</td><td>-23.1</td><td>-43.8</td></tr><tr><td>6703</td><td>Oki Electric Industry</td><td>3,045.0</td><td>265.6</td><td>-7.3</td><td>-2.7</td><td>-5.8</td><td>2.0</td><td>4.9</td><td>26.9</td><td>38.3</td><td>33.3</td></tr><tr><td></td><td>Consumer electronics</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>6758</td><td>Sony Group</td><td>3,275.0</td><td>19,536.4</td><td>-7.1</td><td>-15.1</td><td>-6.1</td><td>-10.5</td><td>-11.5</td><td>-20.4</td><td>-32.1</td><td>-36.9</td></tr><tr><td>6752</td><td>Panasonic Holdings</td><td>4,079.0</td><td>10,012.0</td><td>1.5</td><td>17.4</td><td>31.5</td><td>42.4</td><td>63.5</td><td>61.8</td><td>67.7</td><td>90.1</td></tr><tr><td>8050</td><td>Seiko Group</td><td>7,250.0</td><td>600.4</td><td>1.8</td><td>12.1</td><td>3.7</td><td>7.6</td><td>28.1</td><td>74.5</td><td>69.1</td><td>140.8</td></tr><tr><td>7762</td><td>Citizen Watch</td><td>2,363.0</td><td>581.3</td><td>4.4</td><td>1.9</td><td>23.9</td><td>28.7</td><td>29.2</td><td>56.8</td><td>54.1</td><td>91.9</td></tr><tr><td>6754</td><td>Anritsu</td><td>4,096.0</td><td>556.5</td><td>-6.6</td><td>-4.6</td><td>13.5</td><td>32.4</td><td>53.2</td><td>57.9</td><td>55.8</td><td>59.6</td></tr><tr><td>7951</td><td>Yamaha</td><td>1,103.5</td><td>510.9</td><td>-2.6</td><td>-6.9</td><td>-12.6</td><td>-10.0</td><td>-13.0</td><td>-13.9</td><td>-15.1</td><td>-22.2</td></tr><tr><td>6952</td><td>Casio Computer</td><td>1,833.0</td><td>429.8</td><td>-0.7</td><td>10.9</td><td>-0.4</td><td>18.3</td><td>10.0</td><td>26.1</td><td>21.8</td><td>18.4</td></tr><tr><td>6753</td><td>Sharp</td><td>593.8</td><td>386.2</td><td>-9.4</td><td>-10.5</td><td>-5.2</td><td>-7.7</td><td>-15.8</td><td>-29.4</td><td>-35.3</td><td>-38.6</td></tr><tr><td>6588</td><td>Toshiba Tec</td><td>3,065.0</td><td>176.6</td><td>-3.9</td><td>-4.9</td><td>-0.2</td><td>-2.3</td><td>-5.4</td><td>-5.8</td><td>-6.6</td><td>-23.7</td></tr><tr><td>7740</td><td>Tamron</td><td>1,033.0</td><td>176.4</td><td>-1.7</td><td>-4.4</td><td>-7.8</td><td>-5.8</td><td>-5.3</td><td>-11.5</td><td>-16.2</td><td>-15.9</td></tr><tr><td>6632</td><td>JVCKenwood</td><td>1,081.0</td><td>174.7</td><td>-11.4</td><td>-9.5</td><td>-19.0</td><td>-15.6</td><td>-20.5</td><td>-23.6</td><td>-23.6</td><td>-31.0</td></tr><tr><td>6750</td><td>Elecom</td><td>1,731.0</td><td>159.6</td><td>-4.9</td><td>-1.2</td><td>0.9</td><td>-5.3</td><td>-6.6</td><td>-7.9</td><td>-15.8</td><td>-33.7</td></tr><tr><td>6727</td><td>Wacom</td><td>855.0</td><td>115.4</td><td>-6.2</td><td>5.8</td><td>4.6</td><td>1.4</td><td>-3.0</td><td>-2.2</td><td>-8.4</td><td>-11.9</td></tr><tr><td>7944</td><td>Roland</td><td>4,325.0</td><td>115.0</td><td>-2.9</td><td>-9.8</td><td>-4.7</td><td>2.5</td><td>4.0</td><td>1.0</td><td>3.5</td><td>-5.0</td></tr><tr><td>6737</td><td>Eizo</td><td>2,504.0</td><td>106.0</td><td>-5.6</td><td>0.2</td><td>11.7</td><td>5.4</td><td>7.3</td><td>-2.1</td><td>-3.8</td><td>-16.3</td></tr><tr><td>7965</td><td>Zojirushi</td><td>1,446.0</td><td>105.0</td><td>1.8</td><td>-13.2</td><td>-19.5</td><td>-14.1</td><td>-13.9</td><td>-17.3</td><td>-24.7</td><td>-22.9</td></tr><tr><td>6810</td><td>Maxell</td><td>2,235.0</td><td>90.9</td><td>0.7</td><td>11.8</td><td>-5.5</td><td>-0.3</td><td>-4.6</td><td>-14.7</td><td>-20.3</td><td>-13.2</td></tr></table>",
+        "bbox": [
+            77,
+            140,
+            927,
+            657
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            912,
+            953,
+            932,
+            966
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "table",
+        "img_path": "images/818b1c2c62ba1cfaf00b2e325b81cc776c98639e3b4272f24dfb36729fe54435.jpg",
+        "table_caption": [
+            "Fig. 30: Share price performance of major electronics company stocks (2)"
+        ],
+        "table_footnote": [
+            "Note: Companies in each sector shown in order of market cap.",
+            "Source: NOM"
+        ],
+        "table_body": "<table><tr><td>Code</td><td>Company</td><td>16 Jun</td><td>16 Jun</td><td colspan=\"8\">Performance relative to TOPIX (%)</td></tr><tr><td></td><td></td><td>Share price (¥)</td><td>Market cap (¥bn)</td><td>1 week</td><td>1 mo</td><td>2 mo</td><td>3 mo</td><td>4 mo</td><td>5 mo</td><td>6 mo</td><td>1 year</td></tr><tr><td></td><td>Precision and medical equipment</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>7751</td><td>Canon</td><td>4,306.0</td><td>5,743.2</td><td>-3.8</td><td>-2.3</td><td>-6.8</td><td>-9.9</td><td>-15.2</td><td>-16.3</td><td>-23.2</td><td>-29.2</td></tr><tr><td>4901</td><td>Fujifilm Holdings</td><td>3,379.0</td><td>4,203.1</td><td>-5.9</td><td>2.8</td><td>2.3</td><td>3.2</td><td>3.2</td><td>-7.4</td><td>-17.5</td><td>-24.2</td></tr><tr><td>6724</td><td>Seiko Epson</td><td>2,806.5</td><td>1,048.4</td><td>-6.5</td><td>7.4</td><td>27.5</td><td>29.4</td><td>27.4</td><td>24.4</td><td>18.9</td><td>5.2</td></tr><tr><td>6448</td><td>Brother Industries</td><td>3,770.0</td><td>971.7</td><td>-5.5</td><td>3.4</td><td>16.6</td><td>17.0</td><td>13.2</td><td>6.2</td><td>2.3</td><td>8.6</td></tr><tr><td>7752</td><td>Ricoh</td><td>1,462.5</td><td>833.2</td><td>-3.6</td><td>-3.9</td><td>1.0</td><td>-1.3</td><td>-5.2</td><td>-7.6</td><td>-11.0</td><td>-22.1</td></tr><tr><td>8060</td><td>Canon Marketing Japan</td><td>3,359.0</td><td>746.2</td><td>-5.7</td><td>-15.8</td><td>-9.8</td><td>-11.4</td><td>-6.7</td><td>-10.1</td><td>-17.3</td><td>-15.6</td></tr><tr><td>4902</td><td>Konica Minolta</td><td>587.8</td><td>295.5</td><td>-7.5</td><td>-4.7</td><td>-3.3</td><td>7.3</td><td>-3.4</td><td>-24.6</td><td>-30.5</td><td>-9.6</td></tr><tr><td></td><td>SPE</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>8035</td><td>Tokyo Electron</td><td>70,860.0</td><td>33,164.8</td><td>15.4</td><td>45.0</td><td>52.6</td><td>66.1</td><td>58.4</td><td>56.7</td><td>93.2</td><td>100.2</td></tr><tr><td>6857</td><td>Advantest</td><td>30,340.0</td><td>22,208.9</td><td>12.5</td><td>15.7</td><td>5.7</td><td>17.1</td><td>6.7</td><td>28.3</td><td>33.6</td><td>121.8</td></tr><tr><td>7741</td><td>Hoya</td><td>27,065.0</td><td>9,062.4</td><td>3.2</td><td>-2.9</td><td>-13.4</td><td>-11.1</td><td>-7.0</td><td>-1.9</td><td>-4.8</td><td>14.1</td></tr><tr><td>6146</td><td>Disco</td><td>81,550.0</td><td>8,846.4</td><td>11.3</td><td>27.7</td><td>7.1</td><td>10.0</td><td>7.2</td><td>23.5</td><td>48.7</td><td>55.0</td></tr><tr><td>6920</td><td>Lasertec</td><td>46,570.0</td><td>4,390.9</td><td>12.3</td><td>24.6</td><td>2.4</td><td>18.1</td><td>43.3</td><td>17.4</td><td>33.6</td><td>111.0</td></tr><tr><td>7735</td><td>Screen Holdings</td><td>14,970.0</td><td>2,855.7</td><td>17.3</td><td>37.3</td><td>25.8</td><td>40.0</td><td>33.0</td><td>51.7</td><td>97.2</td><td>92.7</td></tr><tr><td>6525</td><td>Kokusai Electric</td><td>9,745.0</td><td>2,320.4</td><td>21.6</td><td>42.5</td><td>27.3</td><td>69.3</td><td>54.3</td><td>44.6</td><td>87.5</td><td>103.1</td></tr><tr><td>7729</td><td>Tokyo Seimitsu</td><td>19,190.0</td><td>811.4</td><td>6.9</td><td>16.3</td><td>12.6</td><td>21.9</td><td>11.5</td><td>40.3</td><td>58.8</td><td>51.7</td></tr><tr><td>7731</td><td>Nikon</td><td>2,100.0</td><td>700.5</td><td>11.2</td><td>0.3</td><td>1.6</td><td>-0.7</td><td>2.0</td><td>2.5</td><td>0.1</td><td>1.7</td></tr><tr><td>6871</td><td>Micronics Japan</td><td>15,510.0</td><td>620.8</td><td>13.2</td><td>5.3</td><td>15.9</td><td>32.3</td><td>19.3</td><td>63.6</td><td>124.3</td><td>129.2</td></tr><tr><td>6728</td><td>Ulvac</td><td>9,018.0</td><td>445.1</td><td>5.8</td><td>-5.8</td><td>-15.1</td><td>-10.9</td><td>-15.6</td><td>1.2</td><td>16.1</td><td>22.9</td></tr><tr><td>6925</td><td>Ushio</td><td>4,302.0</td><td>359.2</td><td>3.8</td><td>5.7</td><td>23.2</td><td>38.1</td><td>34.8</td><td>39.5</td><td>46.2</td><td>73.8</td></tr><tr><td></td><td>Electronic parts</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>6981</td><td>Murata Manufacturing</td><td>10,530.0</td><td>20,670.4</td><td>6.1</td><td>64.4</td><td>128.9</td><td>151.7</td><td>182.8</td><td>189.3</td><td>179.1</td><td>248.9</td></tr><tr><td>6762</td><td>TDK</td><td>3,802.0</td><td>7,390.6</td><td>-3.2</td><td>22.9</td><td>57.4</td><td>63.8</td><td>57.2</td><td>74.4</td><td>44.3</td><td>73.7</td></tr><tr><td>4062</td><td>Ibiden</td><td>22,445.0</td><td>6,323.2</td><td>17.8</td><td>41.4</td><td>113.0</td><td>140.0</td><td>136.5</td><td>157.1</td><td>233.3</td><td>414.5</td></tr><tr><td>6971</td><td>Kyocera</td><td>3,777.0</td><td>5,359.9</td><td>1.7</td><td>25.2</td><td>37.6</td><td>39.3</td><td>36.2</td><td>49.5</td><td>43.0</td><td>54.6</td></tr><tr><td>6594</td><td>Nidec</td><td>2,737.0</td><td>3,264.1</td><td>-0.2</td><td>-1.3</td><td>16.2</td><td>10.8</td><td>9.6</td><td>5.1</td><td>17.1</td><td>-34.8</td></tr><tr><td>6976</td><td>Taiyo Yuden</td><td>20,190.0</td><td>2,629.1</td><td>9.6</td><td>150.8</td><td>259.9</td><td>338.7</td><td>328.2</td><td>416.6</td><td>401.3</td><td>498.3</td></tr><tr><td>5334</td><td>Niterra</td><td>10,315.0</td><td>2,055.2</td><td>-1.9</td><td>4.2</td><td>14.5</td><td>24.1</td><td>31.2</td><td>33.7</td><td>30.2</td><td>52.4</td></tr><tr><td>6479</td><td>Minebea Mitsumi</td><td>4,618.0</td><td>1,972.3</td><td>-3.1</td><td>14.9</td><td>51.3</td><td>54.8</td><td>27.7</td><td>29.4</td><td>21.5</td><td>56.8</td></tr><tr><td>6806</td><td>Hirose Electric</td><td>28,205.0</td><td>1,006.7</td><td>0.8</td><td>12.6</td><td>25.8</td><td>18.9</td><td>25.4</td><td>46.6</td><td>40.2</td><td>17.9</td></tr><tr><td>6770</td><td>Alps Alpine</td><td>2,105.0</td><td>438.1</td><td>-2.1</td><td>-8.8</td><td>-10.5</td><td>-7.7</td><td>-9.3</td><td>-2.0</td><td>-11.4</td><td>4.2</td></tr></table>",
+        "bbox": [
+            77,
+            80,
+            927,
+            612
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            912,
+            954,
+            934,
+            966
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "table",
+        "img_path": "images/07993c32bb8731ad147dfa5d2cef6e17083c6124518ef72f88da8c0724aec98a.jpg",
+        "table_caption": [
+            "Fig. 31: Japanese companies mentioned in this report (additional to those in tables)"
+        ],
+        "table_footnote": [
+            "Source: NOM"
+        ],
+        "table_body": "<table><tr><td>Code</td><td>Company</td></tr><tr><td>4004</td><td>Resonac Holdings</td></tr><tr><td>4062</td><td>Ibiden</td></tr><tr><td>4182</td><td>Mitsubishi Gas Chemical</td></tr><tr><td>4186</td><td>Tokyo Ohka Kogyo</td></tr><tr><td>4203</td><td>Sumitomo Bakelite</td></tr><tr><td>4901</td><td>Fujifilm Holdings</td></tr><tr><td>5016</td><td>JX Advanced Metals</td></tr><tr><td>5334</td><td>Niterra</td></tr><tr><td>6501</td><td>Hitachi</td></tr><tr><td>6503</td><td>Mitsubishi Electric</td></tr><tr><td>6504</td><td>Fuji Electric</td></tr><tr><td>6701</td><td>NEC</td></tr><tr><td>6702</td><td>Fujitsu</td></tr><tr><td>6758</td><td>Sony Group</td></tr><tr><td>6762</td><td>TDK</td></tr><tr><td>6806</td><td>Hirose Electric</td></tr><tr><td>6981</td><td>Murata Manufacturing</td></tr><tr><td>7729</td><td>Tokyo Seimitsu</td></tr><tr><td>7751</td><td>Canon</td></tr><tr><td>8035</td><td>Tokyo Electron</td></tr><tr><td>285A</td><td>Kioxia Holdings</td></tr></table>",
+        "bbox": [
+            78,
+            90,
+            594,
+            439
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            921,
+            24
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "page_number",
+        "text": "29",
+        "bbox": [
+            912,
+            954,
+            934,
+            966
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Appendix A-1",
+        "text_level": 2,
+        "bbox": [
+            65,
+            55,
+            265,
+            78
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "This report has been produced by NOM Securities Co., Ltd. (NSC), Japan.",
+        "bbox": [
+            65,
+            91,
+            529,
+            104
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "See Disclaimers for NOM Group entity details.",
+        "bbox": [
+            65,
+            105,
+            364,
+            119
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification",
+        "text_level": 2,
+        "bbox": [
+            65,
+            131,
+            268,
+            149
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Each research analyst identified herein certifies that all of the views expressed in this report by such analyst accurately reflect his or her personal views about the subject securities and issuers. In addition, each research analyst identified in this report hereby certifies that no part of his or her compensation was, is, or will be, directly or indirectly related to the specific recommendations or views that he or she has expressed in this research report, nor is it tied to any specific investment banking transactions performed by NOM Securities International, Inc., NOM International plc or any other NOM Group company.",
+        "bbox": [
+            65,
+            163,
+            931,
+            235
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            65,
+            247,
+            268,
+            262
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "The lists of issuers that are affiliates or subsidiaries of NOM Holdings Inc., the parent company of NOM Securities Co., Ltd., issuers that have officers who concurrently serve as officers of NOM Securities Co., Ltd., issuers in which the NOM Group holds 1% or more of any class of common equity securities and issuers for which NOM Securities Co., Ltd. has lead managed a public offering of equity or equity linked securities in the past 12 months are available at https://www.NOMholdings.com/report/. Please contact the Research Production Operation Dept. of NOM Securities Co., Ltd. for additional information.",
+        "bbox": [
+            63,
+            276,
+            912,
+            347
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Online availability of research and conflict-of-interest disclosures",
+        "text_level": 2,
+        "bbox": [
+            65,
+            359,
+            544,
+            374
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "NOM Group research is available on www.NOMnow.com/research, Bloomberg, Capital IQ, Factset, LSEG.",
+        "bbox": [
+            65,
+            383,
+            737,
+            396
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Important disclosures may be read at http://go.NOMnow.com/research/m/Disclosures or requested from NOM Securities International, Inc. If you have any difficulties with the website, please email grpsupport@NOM.com for help.",
+        "bbox": [
+            65,
+            397,
+            922,
+            426
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "The analysts responsible for preparing this report have received compensation based upon various factors including the firm's total revenues, a portion of which is generated by Investment Banking activities. Unless otherwise noted, the non-US analysts listed at the front of this report are not registered/qualified as research analysts under FINRA rules, may not be associated persons of NSI, and may not be subject to FINRA Rule 2241 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.",
+        "bbox": [
+            65,
+            440,
+            924,
+            498
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "NOM Global Financial Products Inc. (NGFP) NOM Derivative Products Inc. (NDP) and NOM International plc. (NIplc) are registered with the Commodities Futures Trading Commission and the National Futures Association (NFA) as swap dealers. NGFP, NDPI, and NIplc are generally engaged in the trading of swaps and other derivative products, any of which may be the subject of this report.",
+        "bbox": [
+            65,
+            511,
+            929,
+            554
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings (NOM Group)",
+        "text_level": 2,
+        "bbox": [
+            65,
+            566,
+            352,
+            580
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "The distribution of all ratings published by NOM Group Global Equity Research is as follows:",
+        "bbox": [
+            65,
+            590,
+            638,
+            602
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "57% have been assigned a Buy rating which, for purposes of mandatory disclosures, are classified as a Buy rating; 34% of companies with this rating are investment banking clients of the NOM Group\\*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services\\*\\* by the NOM Group.",
+        "bbox": [
+            65,
+            604,
+            924,
+            644
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "41% have been assigned a Neutral rating which, for purposes of mandatory disclosures, is classified as a Hold rating; 57% of companies with this rating are investment banking clients of the NOM Group\\*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services by the NOM Group",
+        "bbox": [
+            65,
+            647,
+            915,
+            688
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "2% have been assigned a Reduce rating which, for purposes of mandatory disclosures, are classified as a Sell rating; 0% of companies with this rating are investment banking clients of the NOM Group\\*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services by the NOM Group.",
+        "bbox": [
+            65,
+            688,
+            929,
+            731
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "As at 31 March 2026.",
+        "bbox": [
+            67,
+            732,
+            200,
+            745
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "\\*The NOM Group as defined in the Disclaimer section at the end of this report.",
+        "bbox": [
+            67,
+            747,
+            554,
+            760
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "\\*\\* As defined by the EU Market Abuse Regulation",
+        "bbox": [
+            67,
+            761,
+            369,
+            774
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Definition of NOM Group's equity research rating system and sectors",
+        "text_level": 2,
+        "bbox": [
+            65,
+            787,
+            591,
+            801
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "The rating system is a relative system, indicating expected performance against a specific benchmark identified for each individual stock, subject to limited management discretion. An analyst's target price is an assessment of the current intrinsic fair value of the stock based on an appropriate valuation methodology determined by the analyst. Valuation methodologies include, but are not limited to, discounted cash flow analysis, expected return on equity and multiple analysis. Analysts may also indicate expected absolute upside/downside relative to the stated target price, defined as (target price - current price)/current price.",
+        "bbox": [
+            63,
+            811,
+            917,
+            881
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "STOCKS",
+        "text_level": 2,
+        "bbox": [
+            67,
+            894,
+            136,
+            907
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "A rating of 'Buy', indicates that the analyst expects the stock to outperform the Benchmark over the next 12 months. A rating of 'Neutral', indicates that the analyst expects the stock to perform in line with the Benchmark over the next 12 months. A rating of 'Reduce', indicates that the analyst expects the stock to underperform the Benchmark over the next 12 months. A rating of 'Suspended', indicates that the rating, target price and estimates have been suspended temporarily to comply with applicable regulations and/or firm policies. Securities and/or companies that are labelled as 'Not rated' or shown as 'No rating' are not in regular research coverage. Investors should not expect continuing or additional information from NOM relating to such securities and/or companies. Benchmarks are as follows: United States/Europe/Asia ex-Japan: please see valuation methodologies for explanations of relevant benchmarks for stocks, which can be accessed at: http://go.NOMnow.com/research/m/Disclosures; Global Emerging Markets (ex-Asia): MSCI Emerging Markets ex-Asia, unless otherwise stated in the valuation methodology; Japan: Russell/NOM Large Cap.",
+        "bbox": [
+            65,
+            916,
+            917,
+            946
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "30",
+        "bbox": [
+            912,
+            954,
+            934,
+            965
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            63,
+            41,
+            926,
+            141
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "SECTORS",
+        "text_level": 2,
+        "bbox": [
+            65,
+            152,
+            147,
+            166
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "A 'Bullish' stance, indicates that the analyst expects the sector to outperform the Benchmark during the next 12 months. A 'Neutral' stance, indicates that the analyst expects the sector to perform in line with the Benchmark during the next 12 months. A 'Bearish' stance, indicates that the analyst expects the sector to underperform the Benchmark during the next 12 months. Sectors that are labelled as 'Not rated' or shown as 'N/A' are not assigned ratings. Benchmarks are as follows: United States: S&P 500; Europe: Dow Jones STOXX 600; Global Emerging Markets (ex-Asia): MSCI Emerging Markets ex-Asia. Japan/Asia ex-Japan: Sector ratings are not assigned.",
+        "bbox": [
+            63,
+            176,
+            924,
+            248
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "Target Price",
+        "text_level": 2,
+        "bbox": [
+            67,
+            260,
+            161,
+            274
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "A Target Price, if discussed, indicates the analyst's forecast for the share price with a 12-month time horizon, reflecting in part the analyst's estimates for the company's earnings. The achievement of any target price may be impeded by general market and macroeconomic trends, and by other risks related to the company or the market, and may not occur if the company's earnings differ from estimates.",
+        "bbox": [
+            63,
+            283,
+            929,
+            326
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "Disclaimers",
+        "text_level": 2,
+        "bbox": [
+            67,
+            339,
+            168,
+            353
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "This publication contains material that has been prepared by the NOM Group entity identified on page 1 and, if applicable, with the contributions of one or more NOM Group entities whose employees and their respective affiliations are specified on page 1 or identified elsewhere in this publication. The term \"NOM Group\" used herein refers to NOM Holdings, Inc. and its affiliates and subsidiaries including: (a) NOM Securities Co., Ltd. ('NSC') Tokyo, Japan, (b) NOM Financial Products Europe GmbH ('NFPE'), Germany, (c) NOM International plc ('NIplc'), UK, (d) NOM Securities International, Inc. ('NSI'), New York, US, (e) NOM International (Hong Kong) Ltd. ('NIHK'), Hong Kong, (f) NOM Financial Investment (Korea) Co., Ltd. ('NFIK'), Korea (Information on NOM analysts registered with the Korea Financial Investment Association ('KOFIA') can be found on the KOFIA Intranet at http://dis.kofia.or.kr, (g) NOM Singapore Ltd. ('NSL'), Singapore (Registration number 197201440E, regulated by the Monetary Authority of Singapore) (h) NOM Australia Ltd. ('NAL'), Australia (ABN 48 003 032 513), regulated by the Australian Securities and Investment Commission ('ASIC') and holder of an Australian financial services licence number 246412, (i) NOM Securities Malaysia Sdn. Bhd. ('NSM'), Malaysia, (j) NIHK, Taipei Branch ('NITB'), Taiwan, (k) NOM Financial Advisory and Securities (India) Private Limited ('NFASL'), Mumbai, India (Registered Address: Ceejay House, Level 11, Plot F, Shivsagar Estate, Dr. Annie Besant Road, Worli, Mumbai- 400 018, India; Tel: 91 22 4037 4037, Fax: 91 22 4037 4111; CIN No: U74140MH2007PTC169116, SEBI Registration No. for Stock Broking activities : INZ000255633; SEBI Registration No. for Merchant Banking : INM000011419; SEBI Registration No. for Research: INH000001014 - Compliance Officer: Ms. Pratiksha Tondwalkar, 91 22 40374904, grievance email: investorgrievancesra@NOM.com Webpage: LINK",
+        "bbox": [
+            63,
+            364,
+            929,
+            577
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "For reports with respect to Indian public companies or authored by India-based NFASL research analysts: (i) Investment in securities markets is subject to market risks. Read all the related documents carefully before investing. (ii) Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. (iii) NFASL terms and conditions for availing research services is disclosed on NFASL webpage.",
+        "bbox": [
+            65,
+            579,
+            902,
+            665
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "(I) NOM Fiduciary Research & Consulting Co., Ltd. ('NFRC') Tokyo, Japan. (m) NOM Orient International Securities Co., Ltd (\"NOI\"), is a majority owned joint venture amongst NOM Group, Orient International (Holding) Co., Ltd, and Shanghai Huangpu Investment Holding (Group) Co., Ltd. In accordance with the laws of the People's Republic of China (\"PRC\", excluding Hong Kong, Macau and Taiwan, for the purpose of this document), NOI is licensed in the PRC to provide securities research and investment recommendations and it operates independently from the other members of the NOM Group; in particular, NOI's interests in PRC securities are not disclosed to, or aggregated with the holdings of, any other NOM Group entities and the interests in PRC securities of other NOM Group entities are not disclosed to, or aggregated with the holdings of, NOI. An individual name printed next to NOI on the front page of a research report indicates that individual is employed by NOI to provide research assistance to NIHK under a research partnership agreement. 'NSFSPL' next to an employee's name on the front page of a research report indicates that the individual is employed by NOM Structured Finance Services Private Limited to provide assistance to certain NOM entities under inter-company agreements. 'Verdhana' next to an individual's name on the front page of a research report indicates that the individual is employed by PT Verdhana Sekuritas Indonesia ('Verdhana') to provide research assistance to NIHK under a research partnership agreement and neither Verdhana nor such individual is licensed outside of Indonesia.",
+        "bbox": [
+            63,
+            667,
+            929,
+            836
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "THIS MATERIAL IS: (I) FOR YOUR PRIVATE INFORMATION, AND WE ARE NOT SOLICITING ANY ACTION BASED UPON IT; (II) NOT TO BE CONSTRUED AS AN OFFER TO SELL OR A SOLICITATION OF AN OFFER TO BUY ANY SECURITIES IN ANY JURISDICTION WHERE SUCH OFFER OR SOLICITATION WOULD BE ILLEGAL; AND (III) OTHER THAN DISCLOSURES RELATING TO THE NOM GROUP, BASED UPON INFORMATION FROM SOURCES THAT WE CONSIDER RELIABLE, BUT HAS NOT BEEN INDEPENDENTLY VERIFIED BY NOM GROUP.",
+        "bbox": [
+            65,
+            837,
+            927,
+            908
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "Other than disclosures relating to the NOM Group, the NOM Group does not warrant, represent or undertake, express or implied, that the document is fair, accurate, complete, correct, reliable or fit for any particular purpose or merchantable, and to the maximum extent permissible by law and/or regulation, does not accept liability (in negligence or otherwise, and in whole or in part) for any act (or decision not to act) resulting from use of this document and related data. To the maximum extent permissible by law and/or regulation, all warranties and other assurances by the NOM Group are hereby excluded and the NOM Group shall have no liability (in negligence or otherwise, and in whole or in part) for any loss howsoever arising from the use, misuse, or distribution of this material or the information contained in this material or otherwise arising in connection therewith.",
+        "bbox": [
+            65,
+            909,
+            929,
+            952
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "page_number",
+        "text": "31",
+        "bbox": [
+            912,
+            954,
+            932,
+            966
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            63,
+            41,
+            924,
+            96
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "Opinions or estimates expressed are current opinions as of the original publication date appearing on this material and the information, including the opinions and estimates contained herein, are subject to change without notice. The NOM Group, however, expressly disclaims any obligation, and therefore is under no duty, to update or revise this document. Any comments or statements made herein are those of the author(s) and may differ from views held by other parties within NOM Group. Clients should consider whether any advice or recommendation in this report is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The NOM Group does not provide tax advice.",
+        "bbox": [
+            65,
+            98,
+            927,
+            182
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "The NOM Group, and/or its officers, directors, employees and affiliates, may, to the extent permitted by applicable law and/or regulation, deal as principal, agent, or otherwise, or have long or short positions in, or buy or sell, the securities, commodities or instruments, or options or other derivative instruments based thereon, of issuers or securities mentioned herein. The NOM Group companies may also act as market maker or liquidity provider (within the meaning of applicable regulations in the UK) in the financial instruments of the issuer. Where the activity of market maker is carried out in accordance with the definition given to it by specific laws and regulations of the US or other jurisdictions, this will be separately disclosed within the specific issuer disclosures.",
+        "bbox": [
+            65,
+            184,
+            924,
+            267
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "This document may contain information obtained from third parties, including, but not limited to, ratings from credit ratings agencies such as Standard & Poor's. The NOM Group hereby expressly disclaims all representations, warranties or undertakings of originality, fairness,",
+        "bbox": [
+            65,
+            269,
+            902,
+            296
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of any of the information obtained from third parties contained in this material or otherwise arising in connection therewith. Reproduction and distribution of third-party content in any form is prohibited except with the prior written permission of the related third-party. Third-party content providers do not, express or implied, guarantee the fairness, accuracy, completeness, correctness, timeliness or availability of any information, including ratings, and are not in any way responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use or misuse of such content. Third-party content providers give no express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Third-party content providers shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses,",
+        "bbox": [
+            65,
+            342,
+            924,
+            454
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Any MSCI sourced information in this document is the exclusive property of MSCI Inc. ('MSCI'). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be duplicated, reproduced, re-disseminated, redistributed or used, in whole or in part, for any purpose whatsoever, including creating any financial products and any indices. This information is provided on an \"as is\" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all representations, warranties or undertakings of originality, fairness, accuracy,",
+        "bbox": [
+            65,
+            456,
+            929,
+            568
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "completeness, correctness, merchantability or fitness for a particular purpose with respect to any of this material or the information contained in this material or otherwise arising in connection therewith. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability (in negligence or otherwise, and in whole or in part) for any damages of any kind. MSCI and the MSCI indexes are services marks of MSCI and its affiliates.",
+        "bbox": [
+            65,
+            568,
+            927,
+            624
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "The intellectual property rights and any other rights, in Russell/NOM Japan Equity Index belong to NOM Fiduciary Research & Consulting Co., Ltd. (\"NFRC\") and FTSE Russell (\"Russell\"). NFRC and Russell do not guarantee fairness, accuracy, completeness, correctness, reliability, usefulness, marketability, merchantability or fitness of the Index, and do not account for business activities or services that any index user and/or its affiliates undertakes with the use of the Index.",
+        "bbox": [
+            65,
+            625,
+            927,
+            681
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "Investors should consider this document as only a single factor in making their investment decision and, as such, the report should not be viewed as identifying or suggesting all risks, direct or indirect, that may be associated with any investment decision. NOM Group produces a number of different types of research product including, among others, fundamental analysis and quantitative analysis; recommendations contained in one type of research product may differ from recommendations contained in other types of research product, whether as a result of differing time horizons, methodologies or otherwise. The NOM Group publishes research product in a number of different ways including the posting of product on the NOM Group portals and/or distribution directly to clients. Different groups of clients may receive different products and services from the research department depending on their individual requirements.",
+        "bbox": [
+            65,
+            682,
+            927,
+            781
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "Figures presented herein may refer to past performance or simulations based on past performance which are not reliable indicators of future or likely performance. Where the information contains an expectation, projection or indication of future performance and business prospects, such forecasts may not be a reliable indicator of future or likely performance. Moreover, simulations are based on models and simplifying assumptions which may oversimplify and not reflect the future distribution of returns. Any figure, strategy or index created and published for illustrative purposes within this document is not intended for “use” as a “benchmark” as defined by the European Benchmark Regulation. Certain securities are subject to fluctuations in exchange rates that could have an adverse effect on the value or price of, or income derived from, the investment.",
+        "bbox": [
+            65,
+            783,
+            922,
+            881
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "With respect to Fixed Income Research: Recommendations fall into two categories: tactical, which typically last up to three months; or strategic, which typically last from 6-12 months. However, trade recommendations may be reviewed at any time as circumstances change. 'Stop loss' levels for trades are also provided; which, if hit, closes the trade recommendation automatically. Prices and yields shown in recommendations are taken at the time of submission for publication and are based on either indicative Bloomberg, LSEG or NOM prices and yields at that time. The prices and yields shown are not necessarily those at which the trade recommendation can be implemented.",
+        "bbox": [
+            63,
+            883,
+            924,
+            952
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            921,
+            24
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "page_number",
+        "text": "32",
+        "bbox": [
+            912,
+            954,
+            934,
+            965
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not have been registered under the US Securities Act of 1933 (the ‘1933 Act’), and, in such case, may not be offered or sold in the US or to US persons unless they have been registered under the 1933 Act, or except in compliance with an exemption from the registration requirements of the 1933 Act. Unless governing law permits otherwise, any transaction should be executed via a NOM entity in your home jurisdiction.",
+        "bbox": [
+            63,
+            41,
+            922,
+            96
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "This document has been approved for distribution in the UK as investment research by NIplc. NIplc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. NIplc is a member of the London Stock Exchange. This document does not constitute a personal recommendation within the meaning of applicable regulations in the UK, or take into account the particular investment objectives, financial situations, or needs of individual investors. This document is intended only for investors who are 'eligible counterparties' or 'professional clients' for the purposes of applicable regulations in the UK, and may not, therefore, be redistributed to persons who are 'retail clients' for such purposes.",
+        "bbox": [
+            65,
+            98,
+            915,
+            182
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "This document has been approved for distribution in the European Economic Area as investment research by NOM Financial Products Europe GmbH (“NFPE”). NFPE is a company organized as a limited liability company under German law registered in the Commercial Register of the Court of Frankfurt/Main under HRB 110223. NFPE is authorized and regulated by the German Federal Financial Supervisory Authority (BaFin).",
+        "bbox": [
+            65,
+            184,
+            922,
+            238
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "This document has been approved by NIHK, which is regulated by the Hong Kong Securities and Futures Commission, for distribution in Hong Kong by NIHK. This document is intended only for investors who are 'professional investors' for the purposes of applicable regulations in Hong Kong and may not, therefore, be redistributed to persons who are not 'professional investors' for such purposes.",
+        "bbox": [
+            65,
+            241,
+            919,
+            282
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "This document has been approved for distribution in Australia by NAL, which is authorized and regulated in Australia by the ASIC. This document has also been approved for distribution in Malaysia by NSM.",
+        "bbox": [
+            65,
+            283,
+            840,
+            309
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "In Singapore, this document has been distributed by NSL, an exempt financial adviser as defined under the Financial Advisers Act (Chapter 110), among other things, and regulated by the Monetary Authority of Singapore. NSL may distribute this document produced by its foreign affiliates pursuant to an arrangement under Regulation 32C of the Financial Advisers Regulations. This document is intended for accredited, expert or institutional investors as defined by the Securities and Futures Act (Chapter 289). Where the recipient of this document is not an accredited, expert or institutional investor, NSL accepts legal responsibility for the contents of this document in respect of such recipient only to the extent required by law. Recipients of this document in Singapore should contact NSL in respect of matters arising from, or in connection with, this document. THIS DOCUMENT IS INTENDED FOR GENERAL CIRCULATION. IT DOES NOT TAKE INTO ACCOUNT THE SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS OF ANY PARTICULAR PERSON. RECIPIENTS SHOULD TAKE INTO ACCOUNT THEIR SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS BEFORE MAKING A COMMITMENT TO PURCHASE ANY SECURITIES, INCLUDING SEEKING ADVICE FROM AN INDEPENDENT FINANCIAL ADVISER REGARDING THE SUITABILITY OF THE INVESTMENT, UNDER A SEPARATE ENGAGEMENT, AS THE RECIPIENT DEEMS FIT. Unless prohibited by the provisions of Regulation S of the 1933 Act, this material is distributed in the US, by NSI, a US-registered broker-dealer, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6, under the US Securities Exchange Act of 1934. The entity that prepared this document permits its separately operated affiliates within the NOM Group to make copies of such documents available to their clients.",
+        "bbox": [
+            65,
+            312,
+            927,
+            524
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "This document has not been approved for distribution to persons other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ (as defined by the Capital Markets Authority) in the Kingdom of Saudi Arabia (‘Saudi Arabia’) or a ‘Market Counterparty’ or a ‘Professional Client’ (as defined by the Dubai Financial Services Authority) in the United Arab Emirates (‘UAE’) or a ‘Market Counterparty’ or a ‘Business Customer’ (as defined by the Qatar Financial Centre Regulatory Authority) in the State of Qatar (‘Qatar’) by NOM Saudi Arabia, NIplc or any other member of the NOM Group, as the case may be. Neither this document nor any copy thereof may be taken or transmitted or distributed, directly or indirectly, by any person other than those authorised to do so into Saudi Arabia or in the UAE or in Qatar or to any person other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ located in Saudi Arabia or a ‘Market Counterparty’ or a ‘Professional Client’ in the UAE or a ‘Market Counterparty’ or a ‘Business Customer’ in Qatar. Any failure to comply with these restrictions may constitute a violation of the laws of the UAE or Saudi Arabia or Qatar.",
+        "bbox": [
+            65,
+            526,
+            931,
+            653
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "For report with reference of TAIWAN public companies or authored by Taiwan based research analyst:",
+        "bbox": [
+            65,
+            654,
+            682,
+            666
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "THIS DOCUMENT IS SOLELY FOR REFERENCE ONLY. You should independently evaluate the investment risks and are solely responsible for your investment decisions. NO PORTION OF THE REPORT MAY BE REPRODUCED OR QUOTED BY THE PRESS OR ANY OTHER PERSON WITHOUT WRITTEN AUTHORIZATION FROM NOM GROUP. Pursuant to Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers and/or other applicable laws or regulations in Taiwan, you are prohibited to provide the reports to others (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities in connection with the reports which may involve conflicts of interests. INFORMATION ON SECURITIES / INSTRUMENTS NOT EXECUTABLE BY NOM INTERNATIONAL (HONG KONG) LTD., TAIPEI BRANCH IS FOR INFORMATIONAL PURPOSES ONLY AND IS NOT BE CONSTRUED AS A RECOMMENDATION OR A SOLICITATION TO TRADE IN SUCH SECURITIES / INSTRUMENTS.",
+        "bbox": [
+            65,
+            669,
+            924,
+            781
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "This material may not be distributed in Indonesia or passed on within the territory of the Republic of Indonesia or to persons who are Indonesian citizens (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia. The securities mentioned in this document may not be offered or sold in Indonesia or to persons who are citizens of Indonesia (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia.",
+        "bbox": [
+            65,
+            783,
+            927,
+            852
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "An individual name printed next to NOI on the front page of a research report indicates that this document is a translation of a research report issued by NOI in the PRC. In all other cases, this document is prepared by NOM Group or its subsidiary or affiliate (collectively, “Offshore Issuers”) that is not licensed in the PRC to provide securities research. This research report is not approved or intended to be circulated in the PRC. The A-share related analysis (if any) is not produced for any persons located or incorporated in the PRC. The recipients should not rely on any information contained in this research report in making investment decisions and Offshore Issuers take no responsibility in this regard. NO PART OF THIS MATERIAL MAY BE (I) COPIED, PHOTOCOPIED, REPRODUCED OR DUPLICATED IN ANY FORM, BY ANY MEANS; OR (II) REDISSEMINATED, REPUBLISHED OR REDISTRIBUTED WITHOUT THE PRIOR WRITTEN CONSENT OF A MEMBER OF THE",
+        "bbox": [
+            63,
+            853,
+            931,
+            953
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            921,
+            24
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "page_number",
+        "text": "33",
+        "bbox": [
+            912,
+            954,
+            932,
+            965
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "NOM GROUP. If this document has been distributed by electronic transmission, such as e-mail, then such transmission cannot be guaranteed to be secure or error-free as information could be intercepted, corrupted, lost, destroyed, arrive late or incomplete, or contain viruses. The sender therefore does not accept liability (in negligence or otherwise, and in whole or in part) for any errors or omissions in the contents of this document, which may arise as a result of electronic transmission. If verification is required, please request a hard-copy version.",
+        "bbox": [
+            63,
+            41,
+            922,
+            98
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "Disclaimers required in Japan",
+        "text_level": 2,
+        "bbox": [
+            65,
+            111,
+            312,
+            125
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "Credit ratings in the text that are marked with an asterisk (\\*) are issued by a rating agency not registered under Japan's Financial Instruments and Exchange Act (“Unregistered Ratings”). For details on Unregistered Ratings, please contact the Research Production Operation Dept. of NOM Securities Co., Ltd.",
+        "bbox": [
+            65,
+            136,
+            912,
+            176
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "Investors in the financial products offered by NOM Securities may incur fees and commissions specific to those products (for example, transactions involving Japanese equities are subject to a sales commission (all figures on a tax-inclusive basis) of up to 1.43% of the transaction amount or a commission of ¥2,860 for transactions of ¥200,000 or less, while transactions involving investment trusts are subject to various fees, such as commissions at the time of purchase and asset management fees, such as commissions at the time of purchase and asset management fees (trust fees), specific to each investment trust).",
+        "bbox": [
+            65,
+            179,
+            929,
+            249
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "In addition, all products carry the risk of losses owing to price fluctuations or other factors. Fees and risks vary by product. Please thoroughly read the written materials provided, such as documents delivered before making a contract, listed securities documents, or prospectuses. Transactions involving Japanese equities (including Japanese REITs, Japanese ETFs, and Japanese ETNs, Japanese Infrastructure Funds) are subject to a sales commission of up to 1.43% (tax included) of the transaction amount (or a commission of ¥2,860 (tax included) for transactions of ¥200,000 or less). When Japanese equities are purchased via OTC transactions (including offerings), only the purchase price shall be paid, with no sales commission charged. However, NOM Securities may charge a separate fee for OTC transactions, as agreed with the customer. Japanese equities carry the risk of losses owing to price fluctuations. Japanese REITs carry the risk of losses owing to fluctuations in price and/or earnings of underlying real estate. Japanese ETFs and ETNs carry the risk of losses owing to fluctuations in the underlying indexes or other benchmarks. Japanese Infrastructure Funds carry out the risk of losses owing to fluctuations in price and/or earnings of underlying infrastructures.",
+        "bbox": [
+            63,
+            250,
+            927,
+            391
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "Transactions involving foreign equities are subject to a domestic sales commission of up to 1.045% (tax included) of the transaction amount (which equals the local transaction amount plus local fees and taxes in the case of a purchase or the local transaction amount minus local fees and taxes in the case of a sale) (for transaction amounts of ¥750,000 and below, maximum domestic sales commission is ¥7,810 (tax included)). Local fees and taxes in foreign financial instruments markets vary by country/territory. When foreign equities are purchased via OTC transactions (including offerings), only the purchase price shall be paid, with no sales commission charged. However, NOM Securities may charge a separate fee for OTC transactions, as agreed with the customer. Foreign equities carry the risk of losses owing to factors such as price fluctuations and foreign exchange rate fluctuations.",
+        "bbox": [
+            65,
+            393,
+            927,
+            492
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "Margin transactions are subject to a sales commission of up to 1.43% (tax included) of the transaction amount (or a commission of ¥2,860 (tax included) for transactions of ¥200,000 or less), as well as management fees and rights handling fees. In addition, long margin transactions are subject to interest on the purchase amount, while short margin transactions are subject to fees for the lending of the shares borrowed. A margin equal to at least 30% of the transaction amount (at least 33% for online transactions) and at least ¥300,000 is required. With margin transactions, an amount up to roughly 3.3x the margin (roughly 3x for online transactions) may be traded. Margin transactions therefore carry the risk of losses in excess of the margin owing to share price fluctuations. For details, please thoroughly read the written materials provided, such as listed securities documents or documents delivered before making a contract.",
+        "bbox": [
+            63,
+            492,
+            924,
+            591
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "Transactions involving convertible bonds are subject to a sales commission of up to 1.10% (tax included) of the transaction amount (or a commission of ¥4,400 (tax included) if this would be less than ¥4,400). When convertible bonds are purchased via OTC transactions (including offerings), only the purchase price shall be paid, with no sales commission charged. However, NOM Securities may charge a separate fee for OTC transactions, as agreed with the customer. Convertible bonds carry the risk of losses owing to factors such as interest rate fluctuations and price fluctuations in the underlying stock. In addition, convertible bonds denominated in foreign currencies also carry the risk of losses owing to factors such as foreign exchange rate fluctuations.",
+        "bbox": [
+            65,
+            593,
+            929,
+            676
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "When bonds are purchased via public offerings, secondary distributions, or other OTC transactions with NOM Securities, only the purchase price shall be paid, with no sales commission charged. Bonds carry the risk of losses, as prices fluctuate in line with changes in market interest rates. Bond prices may also fall below the invested principal as a result of such factors as changes in the management and financial circumstances of the issuer, or changes in third-party valuations of the bond in question. In addition, foreign currency-denominated bonds also carry the risk of losses owing to factors such as foreign exchange rate fluctuations.",
+        "bbox": [
+            65,
+            676,
+            921,
+            748
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "When Japanese government bonds (JGBs) for individual investors are purchased via public offerings, only the purchase price shall be paid, with no sales commission charged. As a rule, JGBs for individual investors may not be sold in the first 12 months after issuance. When JGBs for individual investors are sold before maturity, an amount calculated via the following formula will be subtracted from the par value of the bond plus accrued interest: (1) for 10-year variable rate bonds, an amount equal to the two preceding coupon payments (before tax) x 0.79685 will be used, (2) for 5-year and 3-year fixed rate bonds, an amount equal to the two preceding coupon payments (before tax) x 0.79685 will be used. When inflation-indexed JGBs are purchased via public offerings, secondary distributions (uridashi deals), or other OTC transactions with NOM Securities, only the purchase price shall be paid, with no sales commission charged. Inflation-indexed JGBs carry the risk of losses, as prices fluctuate in line with changes in market interest rates and fluctuations in the nationwide consumer price index. The notional principal of inflation-indexed JGBs changes in line with the rate of change in nationwide CPI inflation from the time of its issuance. The amount of the coupon payment is calculated by multiplying the coupon rate by the notional principal at the time of payment. The maturity value is the amount of the notional principal when the issue becomes due. For JI17 and subsequent issues, the maturity value shall not undercut the face amount. Purchases of investment trusts (and sales of some investment trusts) are subject to a purchase or sales fee of up to 5.5% (tax included) of the transaction amount. Also, a direct cost that may be incurred when selling investment trusts is a fee of up to 2.0% of the unit price at the time of redemption. Indirect costs that may be incurred during the course of holding investment trusts include, for domestic investment trusts, an asset management fee (trust fee) of up to 5.5% (tax included/annualized basis) of the net assets in trust, as well as fees based on investment performance. Other indirect costs may also be incurred. For foreign investment trusts, indirect fees may be incurred during the course of holding such as investment company compensation.",
+        "bbox": [
+            63,
+            749,
+            929,
+            948
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            922,
+            24
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "page_number",
+        "text": "34",
+        "bbox": [
+            912,
+            954,
+            932,
+            965
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            65,
+            41,
+            927,
+            81
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "Investment trusts invest mainly in securities such as Japanese and foreign equities and bonds, whose prices fluctuate. Investment trust unit prices fluctuate owing to price fluctuations in the underlying assets and to foreign exchange rate fluctuations. As such, investment trusts carry the risk of losses. Fees and risks vary by investment trust. Maximum applicable fees are subject to change; please thoroughly read the written materials provided, such as prospectuses or documents delivered before making a contract.",
+        "bbox": [
+            65,
+            84,
+            915,
+            140
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "In interest rate swap transactions and USD/JPY basis swap transactions (“interest rate swap transactions, etc.”), only the agreed transaction payments shall be made on the settlement dates. Some interest rate swap transactions, etc. may require pledging of margin collateral. In some of these cases, transaction payments may exceed the amount of collateral. There shall be no advance notification of required collateral value or collateral ratios as they vary depending on the transaction. Interest rate swap transactions, etc. carry the risk of losses owing to fluctuations in market prices in the interest rate, currency and other markets, as well as reference indices. Losses incurred as such may exceed the value of margin collateral, in which case margin calls may be triggered. In the event that both parties agree to enter a replacement (or termination) transaction, the interest rates received (paid) under the new arrangement may differ from those in the original arrangement, even if terms other than the interest rates are identical to those in the original transaction. Risks vary by transaction. Please thoroughly read the written materials provided, such as documents delivered before making a contract and disclosure statements.",
+        "bbox": [
+            65,
+            141,
+            924,
+            268
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "In OTC transactions of credit default swaps (CDS), no sales commission will be charged. When entering into CDS transactions, the protection buyer will be required to pledge or entrust an agreed amount of margin collateral. In some of these cases, the transaction payments may exceed the amount of margin collateral. There shall be no advance notification of required collateral value or collateral ratios as they vary depending on the financial position of the protection buyer. CDS transactions carry the risk of losses owing to changes in the credit position of some or all of the referenced entities, and/or fluctuations of the interest rate market. The amount the protection buyer receives in the event that the CDS is triggered by a credit event may undercut the total amount of premiums that he/she has paid in the course of the transaction. Similarly, the amount the protection seller pays in the event of a credit event may exceed the total amount of premiums that he/she has received in the transaction. All other conditions being equal, the amount of premiums that the protection buyer pays and that received by the protection seller shall differ. In principle, CDS transactions will be limited to financial instruments business operators and qualified institutional investors. Transfers of equities to another securities company via the Japan Securities Depository Center are subject to a transfer fee of up to ¥11,000 (tax included) per issue transferred depending on volume. No account fee will be charged for marketable securities or monies deposited.",
+        "bbox": [
+            65,
+            269,
+            929,
+            427
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "NOM Securities Co., Ltd.",
+        "text_level": 2,
+        "bbox": [
+            67,
+            438,
+            270,
+            451
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "Financial instruments firm registered with the Kanto Local Finance Bureau (registration No. 142)",
+        "bbox": [
+            65,
+            461,
+            643,
+            473
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "Member associations: Japan Securities Dealers Association; Investment Management Association of Japan; The Financial Futures Association of Japan; Type II Financial Instruments Firms Association; and Japan Security Token Offering Association.",
+        "bbox": [
+            65,
+            476,
+            922,
+            504
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "The NOM Group manages conflicts with respect to the production of research through its compliance policies and procedures (including, but not limited to, Conflicts of Interest, Chinese Wall and Confidentiality policies) as well as through the maintenance of Chinese Walls and employee training.",
+        "bbox": [
+            65,
+            517,
+            922,
+            559
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "Additional information regarding the methodologies or models used in the production of any investment recommendations contained within this document is available upon request by contacting the Research Analysts of NOM listed on the front page. Disclosures information is available upon request and disclosure information is available at the NOM Disclosure web page:",
+        "bbox": [
+            65,
+            561,
+            924,
+            603
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "Copyright © 2026 NOM Securities Co., Ltd., Japan. All rights reserved.",
+        "bbox": [
+            67,
+            618,
+            509,
+            631
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "header",
+        "text": "NOM | NOM Tech Monthly: June 2026",
+        "bbox": [
+            55,
+            14,
+            287,
+            26
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "header",
+        "text": "26 June 2026",
+        "bbox": [
+            843,
+            14,
+            921,
+            24
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "page_footnote",
+        "text": "http://go.NOMnow.com/research/m/Disclosures",
+        "bbox": [
+            67,
+            605,
+            371,
+            617
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "page_number",
+        "text": "35",
+        "bbox": [
+            912,
+            954,
+            934,
+            965
+        ],
+        "page_idx": 34
+    }
+]
