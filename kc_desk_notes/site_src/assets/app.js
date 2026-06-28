@@ -1,6 +1,6 @@
 (function () {
   const page = document.body.dataset.page;
-  const CONTACT_WECHAT = "macroGate";
+  const CONTACT_WECHAT = "MacroGate";
   const ADMIN_TOKEN_KEY = "kcdesk_admin_token";
   const ADMIN_PLAIN_KEY = "kcdesk_admin_plain_key";
   const ADMIN_COOKIE_NAME = "kcdesk_admin_token";
@@ -967,6 +967,7 @@
     const searchTextById = new Map();
     let searchIndexLabel = "Text index loading";
     let currentPage = 1;
+    let primaryUsableCount = items.filter(isPdfAvailable).length;
 
     const workerUrl = workerBaseUrl(config);
     initAccountGate(workerUrl);
@@ -1042,6 +1043,7 @@
         return dateSortValue(b.item) - dateSortValue(a.item);
       });
 
+      primaryUsableCount = scoped.filter((entry) => isPdfAvailable(entry.item)).length;
       count.textContent = `${scoped.length} of ${items.length} reports`;
       updateActiveFilters();
       const rowsPerPage = Math.max(1, Number(pageSize.value) || 50);
@@ -1057,10 +1059,12 @@
 
       if (!scoped.length) {
         results.innerHTML = '<div class="empty-state">No matching reports.</div>';
+        maybeRunAuthoritySearch(input.value.trim());
         return;
       }
       results.innerHTML = visible.map((entry) => resultRow(entry.item)).join("");
       results.scrollTop = 0;
+      maybeRunAuthoritySearch(input.value.trim());
     }
 
     function clearAllFilters() {
@@ -1112,6 +1116,10 @@
     let externalTimer = 0;
     let externalToken = 0;
     let authorityToken = 0;
+    let externalSearchSettled = false;
+    let externalUsableCount = 0;
+    let externalQuery = "";
+    let authorityQuery = "";
     const externalItems = new Map();
     const authorityItems = new Map();
 
@@ -1127,17 +1135,45 @@
       authorityStatus.textContent = text || "";
     }
 
+    function hideAuthorityResults() {
+      authorityQuery = "";
+      authorityToken += 1;
+      if (authoritySection) authoritySection.hidden = true;
+      if (authorityResults) authorityResults.innerHTML = "";
+      authorityItems.clear();
+      if (authorityCount) authorityCount.textContent = "";
+      setAuthorityStatus("");
+    }
+
+    function maybeRunAuthoritySearch(query) {
+      const cleanQuery = String(query || "").trim();
+      if (!cleanQuery || externalQuery !== cleanQuery || primaryUsableCount > 0 || !externalSearchSettled || externalUsableCount > 0) {
+        hideAuthorityResults();
+        return;
+      }
+      if (authorityQuery === cleanQuery && authorityItems.size) return;
+      runAuthoritySearch(cleanQuery);
+    }
+
     async function runExternalSearch(query) {
       if (!externalSection || !externalResults) return;
       if (!externalUrl || !query) {
+        externalQuery = "";
+        externalSearchSettled = true;
+        externalUsableCount = 0;
         externalSection.hidden = true;
         externalResults.innerHTML = "";
         externalItems.clear();
         if (externalCount) externalCount.textContent = "";
         setExternalStatus("");
+        hideAuthorityResults();
         return;
       }
       const token = ++externalToken;
+      externalQuery = query;
+      externalSearchSettled = false;
+      externalUsableCount = 0;
+      hideAuthorityResults();
       externalSection.hidden = false;
       if (externalCount) externalCount.textContent = "搜索中…";
       setExternalStatus("");
@@ -1158,29 +1194,32 @@
         const items = Array.isArray(data.items) ? data.items : [];
         externalItems.clear();
         items.forEach((item) => externalItems.set(String(item.id), item));
+        externalUsableCount = items.length;
+        externalSearchSettled = true;
         if (externalCount) externalCount.textContent = items.length ? `${items.length} 条` : "";
         externalResults.innerHTML = items.length
           ? items.map(externalRow).join("")
           : '<div class="empty-state">暂无匹配结果。</div>';
+        maybeRunAuthoritySearch(query);
       } catch (error) {
         if (token !== externalToken) return;
+        externalUsableCount = 0;
+        externalSearchSettled = true;
         if (externalCount) externalCount.textContent = "";
         externalResults.innerHTML = "";
         setExternalStatus(error.message || "搜索暂不可用。", "error");
+        maybeRunAuthoritySearch(query);
       }
     }
 
     async function runAuthoritySearch(query) {
       if (!authoritySection || !authorityResults) return;
       if (!externalUrl || !query) {
-        authoritySection.hidden = true;
-        authorityResults.innerHTML = "";
-        authorityItems.clear();
-        if (authorityCount) authorityCount.textContent = "";
-        setAuthorityStatus("");
+        hideAuthorityResults();
         return;
       }
       const token = ++authorityToken;
+      authorityQuery = query;
       authoritySection.hidden = false;
       if (authorityCount) authorityCount.textContent = "搜索中…";
       setAuthorityStatus("");
@@ -1218,14 +1257,13 @@
       const query = input.value.trim();
       externalTimer = window.setTimeout(() => {
         runExternalSearch(query);
-        runAuthoritySearch(query);
       }, 400);
     }
 
     input.addEventListener("input", scheduleExternalSearch);
     clearFilters.addEventListener("click", () => {
       runExternalSearch("");
-      runAuthoritySearch("");
+      hideAuthorityResults();
     });
     externalResults.addEventListener("click", (event) => {
       const row = event.target.closest(".external-row");
@@ -1907,7 +1945,7 @@
         : `${elapsedSeconds} 秒`;
       if (attempts > maxAttempts) {
         window.clearInterval(timer);
-        statusTarget("报告准备时间超过预期。请保留这个页面，稍后再次点击下载；如果多次失败请联系 macroGate。", "error");
+        statusTarget(`报告准备时间超过预期。请保留这个页面，稍后再次点击下载；如果多次失败请联系 ${CONTACT_WECHAT}。`, "error");
         return;
       }
       try {
@@ -1922,7 +1960,7 @@
           onReady();
         } else if (data.status === "failed") {
           window.clearInterval(timer);
-          statusTarget(data.message || "报告准备失败，请联系 macroGate。", "error");
+          statusTarget(data.message || `报告准备失败，请联系 ${CONTACT_WECHAT}。`, "error");
         }
       } catch (_error) {
         // Keep polling while the background grab runs.
@@ -1954,7 +1992,6 @@
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
 
-    const passwordFromLink = params.get("password") || "";
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     document.title = `${item.title || "Report"} | KC Desk Notes`;
     const detailFields = isAuthorityItem(item)
@@ -1972,15 +2009,31 @@
         ${field("Date", item.date || "-")}
         ${field("Type", item.file_type || "-")}
       `;
-    target.innerHTML = `
+    const detailHeader = `
       <div>
         <h1 class="detail-title">${escapeHtml(item.title || "Report")}</h1>
         ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
-        <p class="subtle">Password-protected report delivery.</p>
+        <p class="subtle">${isAuthorityItem(item) ? "High-authority report lead." : "Password-protected report delivery."}</p>
       </div>
       <div class="detail-grid">
         ${detailFields}
       </div>
+    `;
+    if (isAuthorityItem(item)) {
+      target.innerHTML = `
+        ${detailHeader}
+        <section class="unlock-box authority-contact-box">
+          <h3>获取报告</h3>
+          <p class="subtle">高权报告仅提供检索线索，无法在本站直接下载。</p>
+          <p class="contact-line">如需具体报告，请联系微信号：<strong>${escapeHtml(CONTACT_WECHAT)}</strong></p>
+        </section>
+      `;
+      return;
+    }
+
+    const passwordFromLink = params.get("password") || "";
+    target.innerHTML = `
+      ${detailHeader}
       <form class="unlock-box" id="externalDetailForm">
         <h3>PDF Download</h3>
         <p class="subtle">Enter the report password to download the PDF.</p>

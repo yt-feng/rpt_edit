@@ -1,6 +1,6 @@
 const CACHE_TTL_MS = 5 * 60 * 1000;
 const DEFAULT_R2_PREFIX = "reports";
-const CONTACT_WECHAT = "macroGate";
+const CONTACT_WECHAT = "MacroGate";
 const ADMIN_TOKEN_TTL_SECONDS = 180 * 24 * 60 * 60;
 const USER_TOKEN_TTL_SECONDS = 30 * 24 * 60 * 60;
 const CAPTCHA_TTL_SECONDS = 10 * 60;
@@ -31,8 +31,8 @@ const EXTERNAL_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 
-// High-authority foreign-report metadata. Search endpoints are public; PDF
-// download requires an authorized upstream token configured as a Worker secret.
+// High-authority foreign-report metadata. Search endpoints are public; this
+// integration intentionally does not download PDFs.
 const AUTHORITY_HOST = "www.nash-ai.cn";
 const AUTHORITY_ORIGIN = `https://${AUTHORITY_HOST}`;
 const AUTHORITY_SOURCE = "authority";
@@ -41,14 +41,12 @@ const AUTHORITY_UA = "NashForeignSearchMetadataClient/1.0";
 const AUTHORITY_KINDS = {
   "foreign": {
     endpoint: "/reports/foreign/search",
-    download: "/reports/foreign/pdf/download",
     referer: `${AUTHORITY_ORIGIN}/foreign.html`,
     price_cents: 2600,
     label: "普通外文",
   },
   "foreign-rt": {
     endpoint: "/reports/foreign-rt/search",
-    download: "/reports/foreign-rt/pdf/download",
     referer: `${AUTHORITY_ORIGIN}/foreign-rt.html`,
     price_cents: 4600,
     label: "实时外文",
@@ -1343,7 +1341,14 @@ async function handleAdminReportPassword(request, env) {
     return jsonResponse(request, env, 401, { error: error.message || "Admin session is invalid." });
   }
 
-  if (source === "external" || source === AUTHORITY_SOURCE) {
+  if (source === AUTHORITY_SOURCE) {
+    return jsonResponse(request, env, 403, {
+      error: `高权报告仅提供检索线索，无法生成下载发货链接。请联系 WeChat: ${CONTACT_WECHAT}。`,
+      contact: CONTACT_WECHAT,
+    });
+  }
+
+  if (source === "external") {
     try {
       return jsonResponse(request, env, 200, {
         id,
@@ -1740,74 +1745,10 @@ async function handleAuthoritySearch(request, env) {
   });
 }
 
-function authorityDownloadToken(env) {
-  return cleanEnv(env.AUTHORITY_AUTH_TOKEN) || cleanEnv(env.NASH_AUTH_TOKEN);
-}
-
 async function handleAuthorityPdf(request, env) {
-  const url = new URL(request.url);
-  let payload = {};
-  if (request.method === "POST") {
-    try {
-      payload = await request.json();
-    } catch (_error) {
-      return jsonResponse(request, env, 400, { error: "Invalid JSON body." });
-    }
-  }
-  const parsed = parseAuthorityId(String(payload.id || url.searchParams.get("id") || ""));
-  const password = String(payload.password || url.searchParams.get("password") || "");
-  if (!parsed) {
-    return jsonResponse(request, env, 400, { error: "Invalid report id." });
-  }
-
-  const accountAllowed = await accountCanDownload(env, request, parsed.compoundId, AUTHORITY_SOURCE);
-  if (!password && !accountAllowed) {
-    return jsonResponse(request, env, 402, { error: "Please log in, purchase this report, or enter the report password." });
-  }
-  if (!accountAllowed && !(await sharedReportPasswordMatches(env, parsed.compoundId, password))) {
-    return jsonResponse(request, env, 401, { error: "Password is incorrect." });
-  }
-
-  const token = authorityDownloadToken(env);
-  if (!token) {
-    return jsonResponse(request, env, 503, {
-      error: `高权报告下载服务需要授权配置，请联系 WeChat: ${CONTACT_WECHAT}。`,
-      contact: CONTACT_WECHAT,
-    });
-  }
-
-  const target = new URL(`${AUTHORITY_ORIGIN}${parsed.config.download}`);
-  target.searchParams.set("id", parsed.upstreamId);
-  let upstream;
-  try {
-    upstream = await fetch(target.toString(), {
-      headers: {
-        "Accept": "application/pdf,*/*",
-        "Authorization": `Bearer ${token}`,
-        "Referer": parsed.config.referer,
-        "User-Agent": AUTHORITY_UA,
-      },
-    });
-  } catch (_error) {
-    return jsonResponse(request, env, 502, { error: `高权报告下载暂不可用，请联系 ${CONTACT_WECHAT}。` });
-  }
-
-  const contentType = upstream.headers.get("Content-Type") || "";
-  if (!upstream.ok || /json/i.test(contentType)) {
-    return jsonResponse(request, env, upstream.status === 401 ? 401 : 502, {
-      error: `高权报告授权下载暂不可用，请联系 ${CONTACT_WECHAT}。`,
-      contact: CONTACT_WECHAT,
-    });
-  }
-
-  return new Response(upstream.body, {
-    headers: {
-      ...corsHeaders(request, env),
-      "Content-Type": contentType || "application/pdf",
-      "Content-Disposition": contentDisposition(`${parsed.config.label}-${parsed.upstreamId}.pdf`),
-      "Cache-Control": "no-store, private",
-      "X-Content-Type-Options": "nosniff",
-    },
+  return jsonResponse(request, env, 403, {
+    error: `高权报告仅提供检索线索，无法直接下载。请联系 WeChat: ${CONTACT_WECHAT}。`,
+    contact: CONTACT_WECHAT,
   });
 }
 

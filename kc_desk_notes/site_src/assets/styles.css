@@ -809,6 +809,12 @@ button.primary:disabled {
   line-height: 1.6;
 }
 
+.contact-line {
+  margin: 12px 0 0;
+  color: var(--ink);
+  font-size: 16px;
+}
+
 .about-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 148px;
