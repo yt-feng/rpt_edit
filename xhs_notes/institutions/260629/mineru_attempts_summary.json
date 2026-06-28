@@ -1,0 +1,24 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 2,
+    "successful_pdf_count": 2,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_blluswx5/pdfs/0001-BIS_Financial-and-real-effects-of-fiscal-risk_a8507f2b.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_blluswx5/pdfs/0002-BIS_Public-debt-and-monetary-policy-transmission-evidence-from-a_144c6898.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

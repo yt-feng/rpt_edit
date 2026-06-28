@@ -1,0 +1,5189 @@
+[
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/37327e42efcc31e58e000f2e9774e5c909cdcb093147818c56603ab35b98e18f.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                104,
+                408,
+                379,
+                606
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BIS Working Papers No 1365"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                527,
+                340,
+                884,
+                400
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Public debt and monetary policy transmission: evidence from advanced and emerging Europe"
+                    }
+                ]
+            },
+            "bbox": [
+                527,
+                413,
+                966,
+                498
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "by Christopher Johns, Aaron Mehrotra and Fabrizio Zampolli"
+                    }
+                ]
+            },
+            "bbox": [
+                527,
+                502,
+                914,
+                536
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Monetary and Economic Department"
+                    }
+                ]
+            },
+            "bbox": [
+                527,
+                543,
+                919,
+                565
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                527,
+                592,
+                611,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JEL classification: E31, E52, E62, E63"
+                    }
+                ]
+            },
+            "bbox": [
+                527,
+                729,
+                794,
+                745
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Keywords: monetary policy transmission, government debt, debt maturity, policy spillovers"
+                    }
+                ]
+            },
+            "bbox": [
+                526,
+                758,
+                946,
+                793
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BIS"
+                    }
+                ]
+            },
+            "bbox": [
+                526,
+                119,
+                771,
+                176
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BIS Working Papers are written by members of the Monetary and Economic Department of the Bank for International Settlements, and from time to time by other economists, and are published by the Bank. The papers are on subjects of topical interest and are technical in character. The views expressed in this publication are those of the authors and do not necessarily reflect the views of the BIS or its member central banks."
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                343,
+                756,
+                439
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This publication is available on the BIS website (www.bis.org)."
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                674,
+                581,
+                691
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ISSN 1020-0959 (print)\nISSN 1682-7678 (online)"
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                866,
+                309,
+                899
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "© Bank for International Settlements 2026. All rights reserved. Brief excerpts may be reproduced or translated provided the source is stated."
+                    }
+                ]
+            },
+            "bbox": [
+                122,
+                743,
+                754,
+                776
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Public debt and monetary policy transmission: evidence from advanced and emerging Europe"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                171,
+                189,
+                808,
+                251
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Christopher Johns* Aaron Mehrotra† Fabrizio Zampolli‡"
+                    }
+                ]
+            },
+            "bbox": [
+                210,
+                272,
+                779,
+                294
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "First version: 1 September 2025\nLatest version: 25 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                308,
+                619,
+                343
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Abstract"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                450,
+                398,
+                534,
+                414
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Using high-frequency euro area monetary policy shocks and panel local projections for the period 2001-2020, this paper examines how macroeconomic variables respond based on the level and the maturity structure of public debt. The results show that public debt plays a significant role in influencing monetary policy transmission. Higher public debt is associated with a weaker response of prices and inflation expectations to tighter monetary policy, while output declines at least as much as in low-debt economies. The maturity structure of debt also matters in a non-linear way: debt at intermediate maturities is associated with weaker effects, whereas debt at very short and long maturities is associated with stronger effects. Fiscal responses indicate a lack of contemporaneous fiscal backing, as primary balances tend to deteriorate following monetary tightening. Finally, for non-euro area European economies, the paper introduces a novel dataset on public debt maturity profiles and shows that spillovers from euro area monetary policy depend on the maturity structure in the receiving economy."
+                    }
+                ]
+            },
+            "bbox": [
+                158,
+                422,
+                823,
+                664
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JEL Codes: E31; E52; E62; E63."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                694,
+                374,
+                710
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Keywords: Monetary policy transmission, government debt, debt maturity, policy spillovers."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                713,
+                836,
+                729
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "*Georgetown University, 37th and O Streets NW, Washington, DC 20057, United States. E-mail address: cwj20@georgetown.edu"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                753,
+                867,
+                785
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{\\dagger}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Corresponding author. Bank for International Settlements. E-mail address: aaron.mehrotra@bis.org\n  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{\\ddagger}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Bank for International Settlements. E-mail address: fabrizio.zampolli@bis.org"
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                784,
+                864,
+                815
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "We thank Berenice Martinez and Nina Rose McClure for excellent research assistance. We are grateful to Georgios Palaiodimos (discussant), Maria Siranova (discussant), Benoit Mojon, Andreas Schrimpf and Frank Smets for comments, suggestions and discussions. We also thank seminar and conference participants at the BIS, the ECB, the 19th South-Eastern European Research Workshop, the Third International Conference on Climate-Macro-Finance Interface and the 6th ERMEES European Macroeconomics Workshop for comments and suggestions. The views expressed in the paper are those of the authors and do not necessarily reflect those of the Bank for International Settlements."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                815,
+                870,
+                922
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1 Introduction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                133,
+                341,
+                155
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In standard models of monetary policy, public debt is assumed to have no role. Policy rate changes affect output through conventional channels such as intertemporal substitution, credit conditions and asset prices, and influence prices through the Phillips curve. While interest rate changes do have fiscal consequences, these models rely on the implicit assumption that such effects are offset by corresponding adjustments in fiscal policy (e.g. Woodford, 2001; Gali, 2015). Consequently, neither the level nor the maturity profile of public debt affects monetary transmission."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                184,
+                870,
+                383
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "However, with high public debt levels, this assumption may no longer be innocuous. Changes in monetary policy affect not only private borrowing costs but also government interest payments, the income earned by government bondholders and the market value of outstanding public debt. Specifically, three channels are particularly relevant."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                395,
+                870,
+                505
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A first channel operates through fiscal risk repricing. When monetary policy tightens, government interest payments rise and the fiscal outlook may worsen. Financial investors may then reassess fiscal risk, causing spreads and term premia to widen (e.g. Corsetti et al., 2013; Gorea et al., 2026). This can amplify the tightening of financial conditions that normally follows higher policy rates and strengthen the contractionary effect on output. The impact on inflation is more ambiguous. Weaker output may be disinflationary, but a deterioration in the perceived fiscal outlook may also lead to currency depreciation and higher import prices, raise inflation expectations or make them less well anchored (Gorea et al., 2026; Bianchi et al., 2026)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                515,
+                870,
+                776
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A second channel operates through valuation effects. All else equal, a monetary tightening lowers the market value of outstanding government bonds. This generates capital losses for investors and financial institutions holding public debt. These losses can reduce wealth and weigh on spending (Caramp and Silva, 2023, 2024; Caramp and Feilich, 2024)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                787,
+                870,
+                898
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                485,
+                943,
+                498,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "They can also erode the risk-bearing capacity of financial institutions and tighten credit supply, thereby reinforcing the contractionary effects of monetary policy on output.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Unlike fiscal risk repricing, this channel need not weaken the disinflationary effect of monetary policy. By weighing on demand, valuation losses can instead reinforce disinflation."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                138,
+                870,
+                250
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Finally, a third channel operates through interest income effects. Higher policy rates raise the income paid by the government to bondholders. If this additional income is not offset by higher taxes or lower transfers, it can support aggregate spending (Caramp and Silva, 2023, 2024; Caramp and Feilich, 2024). The interest income channel can therefore attenuate the contractionary effects of monetary tightening on output and weaken its disinflationary impact."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                258,
+                870,
+                430
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The quantitative importance of these channels depends on level of public debt, its maturity profile and the fiscal response. The debt level determines the scale of the effects: a larger debt magnifies the increase in interest payments, the transfer to bondholders, the valuation losses and the scope for fiscal risk repricing. The maturity profile determines their timing and relative strength. Shorter maturities speed up the pass-through of policy rates to government interest payments and bondholder income, strengthening the income channel and potentially increasing rollover risk. Longer maturities delay the rise in interest income but make bond prices more sensitive to changes in yields, strengthening the valuation channel. Finally, the fiscal response determines whether these income and valuation effects are offset or allowed to affect aggregate demand. If fiscal policy provides full backing, the effects of public debt on monetary transmission may be muted. If fiscal backing is partial, delayed or negative, the level and maturity structure of public debt can materially affect the response of output and prices to monetary policy shocks."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                440,
+                872,
+                823
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Recent theoretical studies have explored some of these mechanisms. Namely, Caramp and Silva (2023), Caramp and Silva (2024) and Caramp and Feilich (2024) study the valuation and income effects associated with public debt holdings and the role of fiscal backing. Yet they do not consider financial intermediation or default risk. Other work highlights the importance of the fiscal response to monetary policy (Kaplan et al., 2018). Despite the valuable insights provided by these studies, the net effect of various channels remains difficult to sign ex-ante. Fiscal risk repricing, valuation, and interest income effects may operate in opposite directions. Thus, whether public debt ultimately strengthens or weakens monetary policy transmission remains an empirical question."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                833,
+                870,
+                882
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Valuation effects may be amplified by duration rebalancing, procyclical leverage and margin-induced deleveraging (see e.g. Domanski et al., 2017; Adrian and Shin, 2010, 2014; Aramonte et al., 2023)."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                890,
+                870,
+                922
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                485,
+                944,
+                498,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                138,
+                870,
+                340
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this paper, we address this question for the euro area and for European economies outside the euro area. The euro area is a useful setting because, despite sharing a common monetary policy, member states differ substantially in their fiscal positions and debt management policies. This diversity provides a rich setting for testing the \"public debt channels\" of monetary policy transmission. Moreover, while some recent studies explore these channels in the context of the United States (De Luigi and Huber, 2018; Caramp and Feilich, 2024; Andreolli, 2023) and the United Kingdom (Andreolli, 2023), there remains a gap in the literature for the euro area. Euro area monetary policy also affects European countries outside the euro area, not least given tight trade and financial linkages (e.g. Pot-jagailo, 2017). Thus, this paper also examines whether the level and maturity structure of domestic public debt also help to explain cross-country differences in the strength of monetary policy spillovers to non-euro area European economies."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                349,
+                872,
+                702
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our empirical approach is to estimate the effects of euro area monetary policy shocks using panel local projections (Jordà, 2005) over the period 2001-2020. Monetary policy shocks for the euro area are obtained from Jarociński and Karadi (2020), who identify them at high frequency around monetary policy announcements. We interact these shocks with variables capturing the level and the maturity composition of public debt.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                712,
+                870,
+                852
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " In baseline estimates that do not condition on public debt, contractionary monetary policy shocks reduce both output and prices, with no evidence of a price puzzle. The effects of monetary contractions are also stronger than those of monetary expansions, consistent with recent evidence for the United States"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                859,
+                870,
+                907
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                485,
+                944,
+                498,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In particular, we represent public debt using detailed security-level data from De Graeve and Mazzolini (2023), which we extend by constructing comparable data for Greece after 2012. For each country-quarter, we decompose the government's repayment schedule into four maturity buckets: debt falling due within 9 months, between 9 months and 4 years, between 4 and 8 years, and after 8 years. This four-bin structure provides a parsimonious way to capture the main points along the maturity spectrum (Barrett and Johns, 2024): "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{3}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " very short-term debt, where policy rates pass quickly into fiscal costs and bondholder income; intermediate maturities; and longer-term debt, where valuation effects are stronger. Each bucket is measured as the amount of debt in that maturity range, expressed as a share of GDP. Since the four buckets add up to total public debt as a share of GDP, the specification allows us to study not only whether total debt matters for monetary transmission, but also whether the effects depend on where debt is located along the maturity profile. We do so by interacting the monetary policy shock with the lagged debt-to-GDP ratio in each maturity bucket."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                138,
+                872,
+                551
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We first use the estimated model to examine the role of the size of public debt. To separate debt size from maturity composition, we compare monetary transmission under counterfactual debt ratios of 60% and 120% of GDP while keeping the maturity profile fixed at the sample average. In practice, this means that the higher and lower debt stocks are distributed across the four maturity buckets in the same proportions. The results suggest that high debt does alter monetary transmission. Under higher public debt, contractionary monetary policy shocks are associated with a weaker response of prices – the difference relative to the low debt case is statistically significant. Inflation expectations also fall by less in high-debt countries than in low-debt ones. The output contraction is larger under high debt, although the difference is mostly not statistically significant. The weaker response of prices under high debt is consistent with the \"stepping on a rake\" logic in Sims (2011), whereby higher interest rates may have less disinflationary traction when fiscal backing is incomplete. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{4}"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                561,
+                870,
+                823
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "(e.g. Tenreyro and Thwaites, 2016; Angrist et al., 2018)."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                830,
+                519,
+                845
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{3}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " The four buckets are motivated by Barrett and Johns (2024), who show that the US debt maturity profile can be well approximated by four constant-coupon bonds with average duration of about 6 months, 3 years, 5 years and 14 years. The bucket thresholds used here are chosen to closely match these reference points: below 9 months, 9 months to 4 years, 4 to 8 years, and above 8 years correspond to weighted-average maturities of about 6 months, 2.25 years, 5.8 years and 14.6 years in our sample."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                845,
+                870,
+                922
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                485,
+                943,
+                498,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                138,
+                870,
+                250
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We then examine the role of the maturity profile itself. The evidence points to a highly non-linear relationship between debt maturity and monetary transmission. Debt at intermediate maturities is associated with smaller responses of output and prices to monetary policy shocks. By contrast, debt at very short and long maturities is associated with larger responses. These results are consistent with the interaction of the three channels described above: very short maturities make fiscal balances and refinancing needs more sensitive to policy rates, intermediate maturities may allow interest income effects to partly offset valuation effects, and longer maturities strengthen valuation effects. We also show that the results do not depend on including periods of elevated sovereign risk in the estimation and are therefore more general in nature."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                258,
+                870,
+                551
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The fiscal response helps to explain why public debt matters for monetary transmission. Following contractionary monetary policy shocks, primary balances deteriorate and public debt rises relative to GDP. Expected long-term sovereign yields also increase, while expected bond returns fall. These findings suggest that the effects of monetary policy on the government balance sheet, bondholder income and bond valuations are not fully neutralised by fiscal policy."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                561,
+                870,
+                732
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Finally, we examine spillovers to European economies outside the euro area. We first show that euro area monetary tightening has contractionary spillover effects on output and prices in advanced and emerging European economies outside the monetary union. This is consistent with close trade integration with the euro area and with previous evidence on spillovers to central and eastern Europe (Colabella, 2021; Feldkircher and Schuberth, 2023; Potjagailo, 2017; Horvath and Voslarova, 2017). We then construct a new security-level dataset of central government debt maturity profiles for ten central and eastern European (CEE) economies.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{5}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  The maturity profile of public debt in the \"receiving\" economy matters for these spillovers: effects are strongest when more debt matures between 4 and 8 years. This suggests that valuation effects of government debt holdings are also relevant for the international transmission of monetary policy."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                742,
+                870,
+                852
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{4}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " This interpretation is related to Bianchi et al. (2026), who show that adverse debt news about fiscally vulnerable euro area countries can affect firms' inflation expectations, especially when trust in the central bank is low."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                859,
+                870,
+                907
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                485,
+                944,
+                498,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                138,
+                870,
+                339
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Relationship with the literature. This paper contributes to several strands of literature. The first is the literature on fiscal-monetary interactions and the role of public debt in monetary policy transmission. Standard New Keynesian models typically assume that the fiscal consequences of monetary policy are offset by fiscal policy so that public debt does not independently influence monetary transmission (Woodford, 2001; Gali, 2015).  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{6}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Recent work relaxes this assumption and shows that government debt can affect monetary transmission through valuation and interest income effects generated by changes in interest rates. It also shows that the macroeconomic relevance of these effects depend on fiscal backing and debt maturity (e.g. Kaplan et al., 2018; Caramp and Feilich, 2024; Caramp and Silva, 2023, 2024; Cochrane, 2022, 2023; Smets and Wouters, 2024). Our paper brings these mechanisms to the data by estimating how the level and maturity structure of public debt condition the response of output and prices to monetary policy shocks."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                349,
+                872,
+                702
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A second, closely related, strand of literature studies whether these debt-related channels are empirically relevant. Evidence remains limited. Caramp and Feilich (2024) find that monetary policy has less traction on industrial production and unemployment in the"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                710,
+                870,
+                792
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{5}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " We show that the maturity structure differs across non-euro area Europe: while the distribution of debt within bins under 8 years is wider across CEE countries than for advanced non-euro area, the distribution of debt at or above 8 years maturity is narrower."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                800,
+                870,
+                847
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{6}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Earlier work had already recognised that the maturity structure of public debt could affect monetary policy transmission. Tobin (1963) and Friedman (1981), for example, showed that changes in debt maturity can affect relative asset yields and real activity when assets of different maturities are imperfect substitutes. See also Zampolli (2012) for a review."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                845,
+                870,
+                907
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                485,
+                943,
+                498,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "United States when federal debt is high, while De Luigi and Huber (2018) find that the effects of monetary policy are stronger when the debt-to-GDP ratio is rising. Andreolli (2023) also studies related channels in the United States and the United Kingdom. Our paper differs in three respects. First, it focuses on the euro area, where a common monetary policy coexists with heterogeneous national fiscal positions and debt management policies. Second, it studies not only the level of public debt but also its maturity distribution. Third, it shows that maturity matters in a non-linear way: debt at intermediate maturities is associated with weaker transmission, while debt at very short and longer maturities is associated with stronger effects."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                138,
+                870,
+                398
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The paper also contributes to the literature on fiscal policy and monetary transmission in the euro area. Afonso et al. (2023) and Kloosterman et al. (2024) show that the fiscal stance and fiscal regimes affect the transmission of monetary policy. We add to this literature by focusing on the maturity structure of the public debt stock rather than only the fiscal stance or fiscal reaction function. The results show that primary balances deteriorate and debt rises following contractionary monetary policy shocks, pointing to a lack of contemporaneous fiscal backing over the sample period. This helps explain why the interest income and valuation effects associated with public debt holdings are not fully neutralised by fiscal policy."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                410,
+                870,
+                672
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The paper is also related to the literature on sovereign risk, financial fragility and heterogeneous monetary transmission. Corsetti et al. (2013) show how sovereign risk can amplify macroeconomic fluctuations by tightening private sector financing conditions. Gorea et al. (2026) provide evidence that fiscal risk shocks tighten financial conditions, weigh on activity and affect inflation, with the effects depending on the monetary policy response. Previous studies further show that sovereign risk can affect the bank lending channel and contribute to cross-country differences in the transmission of monetary policy in the euro area (Cantero-Saiz et al., 2014; Ciccarelli et al., 2014; Grandi, 2019; Cantero-Saiz et al.,"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                681,
+                870,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                483,
+                944,
+                498,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2022). Other studies document heterogeneous effects of unconventional monetary policy across euro area countries, in part depending on sovereign risk and financial fragility (Al-tavilla et al., 2016; Boeckx et al., 2017; Burriel and Galesi, 2018; Hristov et al., 2021). Our contribution is to show that debt maturity provides an additional source of heterogeneity. The maturity profile affects the relative strength of fiscal risk repricing, valuation effects and interest income effects. The results do not appear to be driven only by periods of elevated sovereign stress."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                138,
+                870,
+                339
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Finally, the paper contributes to the literature on euro area monetary policy spillovers to central and eastern Europe. Existing work shows that euro area monetary policy shocks affect output, prices and financial conditions in non-euro European economies, reflecting close trade and financial linkages (Potjagailo, 2017; Horvath and Voslarova, 2017; Colabella, 2021; Feldkircher and Schuberth, 2023). To our knowledge, this literature has not examined whether the level and debt maturity structure of public debt in the receiving economy conditions these spillovers. We address this gap by constructing a new security-level dataset of central government debt maturity profiles for ten central and eastern European economies and showing that spillovers are strongest when more debt matures between 4 and 8 years."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                349,
+                870,
+                611
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The rest of this paper is structured as follows. Section 2 describes the methodology and the data. Section 3 presents the empirical results. Section 4 concludes."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                621,
+                870,
+                670
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2 Methodology and data"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                714,
+                480,
+                739
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In order to examine how public debt affects the transmission of monetary policy, we analyse the effects of monetary policy shocks conditional on the level and maturity of public debt. As the estimation framework, we use panel local projection regressions. These amount to flexible sequential regressions where the dependent variable is shifted forward by one period at each step (see Jordà, 2005)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                765,
+                870,
+                905
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                485,
+                943,
+                498,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The benefits of using local projections to study the question at hand are twofold. First, we are able to trace the dynamic effects of monetary policy shocks on several variables over time while imposing only minimal structure. Second, the methodology allows to incorporate asymmetric effects in a flexible manner, such as those arising from high public debt and/or high debt maturity."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                138,
+                870,
+                277
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our baseline model that conditions on the maturity structure of public debt is written as:"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                289,
+                869,
+                337
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{r l} & y _ {i, t + h} - y _ {i, t - 1} = \\alpha_ {i} ^ {h} + \\beta_ {1} ^ {h} s h o c k _ {t} \\\\ & \\qquad + \\beta_ {2} ^ {h} s h o c k _ {t} M _ {i, t - 1} ^ {<   9 M} + \\beta_ {3} ^ {h} s h o c k _ {t} M _ {i, t - 1} ^ {[ 9 M, 4 Y)} + \\beta_ {4} ^ {h} s h o c k _ {t} M _ {i, t - 1} ^ {[ 4 Y, 8 Y)} + \\beta_ {5} ^ {h} s h o c k _ {t} M _ {i, t - 1} ^ {\\geq 8 Y} \\\\ & \\qquad + \\beta_ {6} ^ {h} M _ {i, t - 1} ^ {<   9 M} + \\beta_ {7} ^ {h} M _ {i, t - 1} ^ {[ 9 M, 4 Y)} + \\beta_ {8} ^ {h} M _ {i, t - 1} ^ {[ 4 Y, 8 Y)} + \\beta_ {9} ^ {h} M _ {i, t - 1} ^ {\\geq 8 Y} + \\beta_ {1 0} ^ {h} X _ {i, t} + u _ {i, t + h}. \\end{array}\\tag{1}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/ff6a644b9890aebfe6d2c21ba1144d14a7e55d66bdfaf01166f72f4cc86d1e5c.jpg"
+                }
+            },
+            "bbox": [
+                127,
+                376,
+                826,
+                467
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "where  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "y_{i,t + h}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " denotes the dependent variable  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "h = 0,1,2,\\dots,12"
+                    },
+                    {
+                        "type": "text",
+                        "content": " quarters ahead;  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "shock_{t}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " is the monetary policy shock;  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "M_{i,t - 1}^{\\tau}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " is the government's debt mass for each maturity bin  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\tau"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". As discussed in greater detail in Sub-section 3.2 below, we divide a government's maturity schedule into discrete bins to obtain the amount debt in each maturity bin  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\tau"
+                    },
+                    {
+                        "type": "text",
+                        "content": " (as percent of GDP). Additionally,  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "X_{i,t}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " includes the control variables;  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\alpha_{i}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " contains the country fixed effects; and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "u_{i,t + h}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " is the error term."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                501,
+                870,
+                672
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As the measure of monetary policy, we use the high-frequency shocks proposed by Jarociński and Karadi (2020) for the euro area. These authors derive the shocks using information about the comovement of euro area interest rates (based on EONIA swaps) and equity prices (EURO STOXX 50) around the time of monetary policy announcements. A negative comovement is classified as a monetary policy shock, consistent with news being revealed about monetary policy. A positive comovement is regarded as a central bank information shock, as it reflects something in the central bank announcement that is not news about monetary policy. We use the former in the analysis. In the estimation, we sum the high frequency shocks up to quarterly frequency and normalise the shock size to one standard deviation."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                683,
+                870,
+                914
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                482,
+                943,
+                503,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                138,
+                870,
+                186
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In order to analyse the implications of the sovereign debt structure, we interact the lagged debt at maturity bin   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\tau"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  with the monetary policy shock. That is, debt due within one quarter will mature during the period of the shock. In further analysis, we also differentiate between positive (tightening) and negative (expansionary) shocks, including both type of shocks in the equation simultaneously. Finally, following Kloosterman et al. (2024) and Alloza et al. (2025), we include one lead and two lags of the monetary policy shock variable to capture potential persistence in the shocks."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                199,
+                872,
+                400
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For government debt and its maturity, we use a novel quarterly dataset provided by De Graeve and Mazzolini (2023). We extend this dataset by constructing a similar novel dataset for Greece (post-2012), and for ten central and eastern European (CEE) countries.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{7}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  The data refer to marketable central government debt in the form of debt securities."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                410,
+                870,
+                520
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As the main dependent variables   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "y_{i,t+h}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , we consider the level of real GDP and the level of consumer prices, but we also evaluate the responses of private consumption, investment and one-year-ahead inflation expectations to monetary policy shocks. Inflation expectations are obtained from Consensus Economics. As is conventional in the literature, one-year-ahead expectations are computed as the weighted average of expectations for the current and next calendar year (see e.g. Mehrotra and Yetman, 2018)."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                531,
+                872,
+                702
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the vector of control variables   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "X_{i,t}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " , we include four lags of real GDP growth, inflation and the policy interest rate. These data are retrieved from the BIS database and come from national sources. We also include as controls four lags of the primary balance and of net interest payments, both expressed as ratio to GDP and obtained from Eurostat. The controls also include four lags of an indicator of sovereign stress that contains information on yield and liquidity spreads and volatility (Garcia-de Andoain and Kremer, 2017). We include dummy variables for the Great Financial Crisis (2008Q3-2009Q2) and the Covid-19 pandemic (2020Q1-2020Q4), respectively."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                712,
+                872,
+                883
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{7}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " The CEE countries for which we construct the dataset are Bulgaria, Croatia, Czechia, Hungary, Latvia, Lithuania, Poland, Romania, Slovakia and Slovenia."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                890,
+                870,
+                922
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                501,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                138,
+                870,
+                188
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We estimate the model over the period 2001Q3-2020Q4, using a panel of eleven euro area member states: Austria, Belgium, Finland, France, Germany, Greece, Ireland, Italy, the Netherlands, Portugal and Spain. We use Driscoll-Kraay standard errors to account for cross-sectional correlation, as well as for serial correlation in the residuals."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                199,
+                870,
+                308
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3 Empirical evidence"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                353,
+                429,
+                376
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1 Baseline responses to monetary policy shocks"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                409,
+                704,
+                429
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We first examine the responses of output and the price level to monetary policy shocks without conditioning on the level of debt. Furthermore, we start with symmetric shocks, ie without distinguishing between contractionary and expansionary shocks. For the purposes of plotting the shocks in Figure 1, we set the symmetric shocks to be positive in sign, in effect corresponding to a tightening. We show the responses from the period of the shock to   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "t + 12"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  quarters, together with the 90% confidence intervals."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                450,
+                870,
+                619
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1 shows that the signs of the responses of real GDP and the price level are consistent with conventional models. Both variables decline in response to the policy shock. Output reaches a trough after around one year and then gradually returns to baseline after 10 quarters. The response of prices is more sluggish, but there is no price puzzle, and the price level reaches its trough after around 1.5 years. Perhaps surprisingly, the response of the price level does not remain negative over the long run and, similar to output, prices gradually return back to baseline."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                631,
+                870,
+                832
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As to the responses of other macro variables, those of consumption and investment are qualitatively similar to those found for real GDP. Moreover, the effects of monetary policy shocks on investment are large in magnitude, consistent with its cyclical sensitivity. We also investigate the response of one-year-ahead inflation expectations based on Consensus surveys. The sign on the response of inflation expectations is consistent with theoretical priors: in response to a monetary policy tightening, inflation expectations decline."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                843,
+                870,
+                922
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                504,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/63178e21490ae4b517f34c8937210e42b2fa5f112c7bf069d01788bfe5f2128a.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1: Response of key variables to a monetary policy shock, using symmetric shocks. Note: The shaded area shows the 90% confidence interval. The responses are in %; the size of the monetary policy shock is one standard deviation."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                127,
+                141,
+                864,
+                453
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                545,
+                870,
+                626
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We then distinguish between contractionary and expansionary monetary policy shocks, including both simultaneously in the estimated local projections. Figure 2 shows that the signs of the responses are consistent with conventional models. However, the responses of output and prices to expansionary shocks are much weaker both in terms of the magnitude as well as their statistical significance. Indeed, as shown by the black dots in Figure 2, it is mostly in the case of monetary contractions that the responses of output and prices are statistically significant (in addition to being statistically different between contractions/expansions). Similar patterns hold for the responses of consumption and inflation expectations. These results are consistent with recent literature that has documented stronger effects of monetary contractions compared to expansions (e.g. Tenreyro and Thwaites, 2016; Angrist et al., 2018)."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                636,
+                870,
+                898
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                504,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3070beb14987cdea26161e2d2fcb534a4730131a679720ba597c0088fcfa60e8.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2: Response of key variables to a monetary policy shock, using asymmetric shocks. Note: The shaded area shows the 90% confidence intervals. The responses are in %; the size of the monetary policy shock is one standard deviation. The dots indicate that the effect is statistically significant at the 90% level, and that the difference between the effects of MP expansions and MP contractions is statistically significant at the 90% level."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                127,
+                141,
+                862,
+                443
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                564,
+                869,
+                614
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2 Importance of debt size and maturity"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                651,
+                614,
+                671
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To what extent do the size and maturity of public debt matter for monetary transmission? To examine this issue, we first divide the maturity structure into four “bins”. To choose the appropriate bins, we loosely rely on the efforts of Barrett and Johns (2024) who find that the best constant-coupon approximation of the US debt maturity profile is one with bonds of average durations of approximately 6 months, 3 years, 5 years and 14 years. We calibrate to these approximations by selecting the following four maturity bins: [0 Months, 9M), [9M, 4 Years), [4Y, 8Y), and [8Y, 30Y] which correspond to the respective weighted-average maturities: 6 months, 2.25 years, 5.8 years, and 14.6 years. This division helps us to distinguish between ultra-short, short, medium and long debt."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                693,
+                870,
+                924
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                503,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                138,
+                663,
+                157
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The maturity distribution in our sample is plotted in Figure 3. We scale the share of debt in the respective maturity bins by GDP. On average, about 15% of GDP is due within the next 9 months, and about 45% of GDP is due in less than five years. In Annex Figure A.2, we provide corresponding evidence without scaling by GDP. There, we show that half of all debt outstanding is due in less than five years for the countries in our sample. However, belied by the median debt maturity is that all countries in our sample have experienced periods where more than 20% of all debt is due within just 9 months. The distribution across the bins is highly similar in both cases."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                167,
+                872,
+                398
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8d978791bb3f653e539bea8fbdfd6fddcff22b914baf8b91f7f317969db0d282.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3: Euro area government debt residual maturity, by select maturity bins, relative to the size of GDP. Note: The line denotes the median, the box the interquartile range, and the whiskers the 25th (75th) percentiles minus (plus) 1.5 times the interquartile range. The dots correspond to outliers."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                210,
+                412,
+                774,
+                643
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Before investigating the effects of the maturity structure on monetary transmission, it is of interest to investigate the impact of the size of government debt, while keeping the maturity structure constant. To do this, we proceed as follows. We first estimate Equation (1) - we interact the lagged debt mass at each of the four maturity bins   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\tau"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  with the monetary policy shock. This gives us the average impact of the monetary policy shock associated with each maturity bucket on the dependent variable of interest."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                738,
+                870,
+                907
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                504,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To study the impact of the size of public debt, we then use these estimates on the average impact under the different maturity buckets, together with information about the average amount of debt in each maturity bucket. We investigate transmission under counterfactual total debt stocks of 60% of GDP (low debt) and of 120% of GDP (high debt), respectively."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                138,
+                870,
+                279
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/06f5f081c5d045e952dc14ad93cd0aa69f45f007925079cbcf73b9cb7c05e92f.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                114,
+                292,
+                480,
+                633
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/fd47efb8f40143604c8990d431fa22c079d9c44c7027cab683dddf685268a359.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "- High Debt (120% GDP)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Figure 4: Comparison of responses to MP shock for countries at different levels of public debt, with a fixed maturity structure. Note: Hollow points denote statistical insignificance (< 90% confidence) between responses under high and low debt."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                503,
+                290,
+                867,
+                598
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4 shows interesting differences in monetary transmission between economies at different levels of government debt. In particular, countries with higher debt see a larger impact of monetary policy shocks on output, although the difference is not statistically significant for many horizons. However, the impact on prices is weaker with high debt, with a statistically significant difference from the effect that obtains under low debt. Moreover, Annex Figure A.2 shows that inflation expectations decline by less under high debt. This is consistent with a \"stepping on a rake\" type of effect when debt is high - some increase in inflation may be required in the future to stabilise public debt when the fiscal backing of monetary policy is only partial (Sims (2011)). In Sub-section 3.3, we provide further evidence on the fiscal response to monetary policy shocks."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                723,
+                870,
+                924
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                504,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                109,
+                138,
+                870,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We then consider the impact of the maturity structure on monetary transmission. To get a sense of the economic significance of conditioning monetary policy effectiveness on  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "M_{i,t-1}^{\\tau}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in Equation (1), let's imagine that we roll over maturing debt (< 3 months) in the current quarter to one of our selected maturity bins. The median rollover share of debt - matured debt replaced with new issues quarter to quarter - is around 5% of GDP within the sample. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{8}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Accordingly, we estimate the change in monetary policy's effect on key variables following a 5% of GDP increase in the size of bin  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\tau"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". That is, for each bin  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\tau"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", we calculate the marginal effect of monetary policy conditioning on average rollover debt (< 9M) being fully replaced by  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\tau"
+                    },
+                    {
+                        "type": "text",
+                        "content": "-maturity debt:"
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                229,
+                872,
+                491
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mu_ {t} ^ {<   9 M} = 0. 0 5 * \\beta_ {2} - 0. 0 5 * \\beta_ {2} = 0",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/be494b418d6e0177cb1d327306def3b34caefd488f88b163904c9f61645df167.jpg"
+                }
+            },
+            "bbox": [
+                349,
+                523,
+                632,
+                544
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mu_ {t} ^ {[ 9 M, 4 Y)} = 0. 0 5 * \\beta_ {3} - 0. 0 5 * \\beta_ {2}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/80358d1e5c1e881d7ec918f16a687438719202f72d133661d86be596deb787a5.jpg"
+                }
+            },
+            "bbox": [
+                357,
+                575,
+                622,
+                599
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mu_ {t} ^ {[ 4 Y, 8 Y)} = 0. 0 5 * \\beta_ {4} - 0. 0 5 * \\beta_ {2}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/82e1643bdfa3d716c38ca7d0c4c216d23cf7ce2d3fbc1a1bef7e9877966b05cc.jpg"
+                }
+            },
+            "bbox": [
+                361,
+                619,
+                620,
+                643
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\mu_ {t} ^ {\\ge 8 Y} = 0. 0 5 * \\beta_ {5} - 0. 0 5 * \\beta_ {2}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/663b093294489ece165564d3771c70727d0a083245368a05a8acf3d233faec8b.jpg"
+                }
+            },
+            "bbox": [
+                370,
+                665,
+                612,
+                688
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Thus, we subtract 5% from the short-term debt (that matures) and add 5% to one of the bins (as debt is newly issued). The full conditional results are plotted in Figure 5 over a 12-quarter horizon. These are obtained as the sum of the average effect, as estimated in Equation (1), and the marginal effect of a 5% of GDP shift across the respective bins. For simplicity, we remove error bands and denote statistical significance at the 90% level using filled markers on the graph."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                710,
+                872,
+                882
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{8}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Measured relative to the size of total debt instead, the median rollover share amounts to 6.7%."
+                    }
+                ]
+            },
+            "bbox": [
+                132,
+                890,
+                823,
+                907
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                504,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e193ca4c2b7b46ba48f145b47dcad5ad06099289e72d8c715d2c6467ea5ae548.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5: Key responses to MP shock, conditional on 5% of GDP increase in respective maturity bin share. Note: Hollow points denote statistical insignificance from “<9 Months” at the 90% level. The responses are in %; the size of the monetary policy shock is one standard deviation."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                114,
+                138,
+                866,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Across each of the four key variables we consider, there emerges a clear general conclusion. First, more debt with maturity between 9 months and 4 years (intermediate debt) is associated with a smaller or less negative response following a monetary policy shock. Second, having more debt with maturity below 9 months (ultra-short) and above 4 years (long) is associated with a larger or more negative response following a monetary policy shock. The ultra-short/long effect is underscored by the price level response, where conditioning on ultra-short or long debt yields virtually the same result. These results suggest that, for the most accurate modeling of the maturity structure impact on monetary policy effectiveness, it is important to jointly consider the valuation effect that occurs due to long-term debt and the refinancing effect that occurs due to ultra-short-term debt."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                571,
+                870,
+                864
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To add more context to the conditioning of monetary policy effects on debt maturity composition, we compute the effect of a MP shock on output and prices for two countries with similar levels of debt relative to GDP (each between 97 and 98 percent of GDP in 2019) but different maturity structures. Figure 6 displays the two countries' debt in each bin as a percent of GDP. Country A has a greater share of debt in the < 9 month bin and in both of the bins ≥ 4 years. Country B makes up for the lesser shares of short and long debt by having more intermediate debt. Based on our above results, Country A's debt maturity profile should be MP enhancing, while Country B's should be MP dampening. That is exactly what we see when we fit the impulse response functions to condition on Country A and Country B's debt maturity structures (Figure 7). Country A's output and prices responses are about 1 p.p. and 0.5 p.p. greater at their peak, respectively. This difference is statistically significant with 90% confidence too. Furthermore, Country B's price response is insignificantly different from zero for all 12 quarters after the shock. These results underscore that even subtle shifts in the government's debt maturity structure can have an influence on the transmission of monetary policy shocks."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                873,
+                870,
+                924
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "18"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                504,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2d61d6fb27f88f38cfc65cf3ca9fdc403384649d0077f715e2b7ede04cabbdf8.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6: Maturity structures of two countries with similar debt-to-GDP levels at the end of 2019. Note: Debt levels for each country are between 97 and 98% of GDP."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                205,
+                137,
+                764,
+                380
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                109,
+                455,
+                872,
+                839
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To what extent do these effects arise merely due to elevated sovereign stress? To address this issue, we exclude from the estimation periods associated with elevated sovereign risk."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                848,
+                870,
+                898
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "19"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                504,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/02851b1bf116e76416da9f2531dd7fd268698b9f2edcae27ccdcf2a888b5fe92.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 7: Response to MP shock for two countries with similar debt-to-GDP levels and different maturity structures (end-of-2019 values). Note: Hollow points denote statistical insignificance (< 90% confidence) between responses under Country A and Country B debt profiles. WAM = weighted-average maturity of debt."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                205,
+                135,
+                774,
+                396
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In particular, we exclude the quarters identified in Johns et al. (2026) as corresponding to high sovereign risk in the respective euro area economies, where the level of sovereign CDS spreads was at the highest quartile of the panel distribution. Figure 8 shows the effects obtained for the conditional impact of the maturity structure while an economy is not under high sovereign stress. Here, the impact of monetary policy on output, prices, and consumption is significantly muted in the presence of additional intermediate-maturity debt. Indeed, the effects with periods of elevated risk excluded from the estimation look highly similar to the baseline results documented in Figure 5."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                500,
+                870,
+                732
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 9 provides further evidence when we distinguish between contractionary and expansionary monetary policy shocks. The results for aggregate output concur with previous ones: for both monetary contractions and expansions, having more debt at the intermediate maturity between 9 months and 4 years is associated with weaker effects of monetary policy shocks. Similar effects are obtained for the price level in the case of monetary policy contractions - the effect on the price level is smaller and outside the  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "90\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " confidence interval of the ultra-short debt. Surprisingly however, the results are reversed when we consider the effects of expansionary monetary policy shocks on the price level – in this case, weakest effects are obtained when more debt is at a maturity below 9 months."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                741,
+                870,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "20"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                503,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f43600541694f683627ade1a1cafe7ce47db046c267a0bb433543ee4370a21eb.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 8: Key responses to MP shock while countries are not under sovereign stress, conditional on 5% of GDP increase in respective maturity bin share. Note: Hollow points denote statistical insignificance from “<9 Months” at the 90% level. The responses are in %; the size of the monetary policy shock is one standard deviation. Sovereign stress is defined as occurring when the level of sovereign CDS spread in a particular country in a given quarter is in the highest quartile of the sample distribution (computed for the full panel)."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                114,
+                138,
+                866,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                109,
+                617,
+                870,
+                696
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.3 Fiscal response"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                734,
+                354,
+                753
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The effects of the monetary policy shock and the associated income and valuation effects are likely to also depend on the response of the fiscal authority. For example, in response to a monetary tightening, any decline in current or expected government consumption may offset income effects. At the same time, the fiscal response may also reduce sovereign risk and hence valuation effects."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                776,
+                870,
+                916
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "21"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                943,
+                501,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/897556b099890253ce74da23a403f22406be47e2d47991ff67cf9b16308d91fc.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 9: Asymmetric response to MP shock, conditional on 5% of GDP increase in respective maturity bin share. Note: Hollow points denote statistical insignificance from “<9 Months” at 90% level. The responses are in %; the size of the monetary policy shock is one standard deviation."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                117,
+                136,
+                862,
+                481
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The lower of panel of Figure 10 plots the responses of primary balances and government debt, respectively, to monetary policy shocks. It shows that, over the sample period, fiscal balances have deteriorated in response to contractionary monetary policy shocks. In particular, the primary balance relative to GDP has declined and the government debt ratio risen. There is evidence that these effects also depend on the maturity of sovereign debt, such that the decline in the primary balance and the increase in government debt are somewhat smaller when more of the debt is of intermediate maturity (between 9 months and 4 years)."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                571,
+                870,
+                804
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "These results indicate that fiscal policy has generally not provided backing to monetary policy over the sample - as monetary policy has tightened, fiscal policy has become looser, with primary balances declining and government debt rising. These dynamics could partly account for the finding that the size and structure of government debt matter for the"
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                811,
+                870,
+                924
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "22"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                504,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/aa90aa7b1d2ede6cb370c3f922791e1ea188a22ff19e80465d701f4b0c90890f.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                117,
+                138,
+                480,
+                284
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/95a6c865b2fc908d415585b63984b6c608e8d28ca3b614d34e1f4e0025071ecb.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                504,
+                138,
+                867,
+                284
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/460ee4916610898fc4f53896e6ebe27c6ed39c01564d7b9f326cf635d1beeca0.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                114,
+                299,
+                500,
+                479
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9597538f3f03783c8d17d54c413764eecd74dd2dacd23ce19b7f9430b456cd02.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 10: Fiscal response to MP shock, conditional on 5% of GDP increase in respective maturity bin share. Note: Hollow points denote statistical insignificance from “<9 Months” at 90% level. The size of the monetary policy shock is one standard deviation."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                503,
+                300,
+                867,
+                445
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "strength of monetary transmission."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                571,
+                411,
+                590
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The upper panel of Figure 10 plots the responses of 10-year government bond yields and the corresponding bond returns, respectively, to the monetary policy shocks. We consider the expected changes in these variables, as they could be important in driving the real economy responses. In particular, bondholders may adjust their consumption and investment decisions downwards based on the anticipated losses. For the long-term rate, using the yield curve, we compute the one-year-ahead 10-year forward rate. For the expected bond returns, we use an approximation based on Swinkels (2019) that only requires information on the yield-to-maturity and the yield curve."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                602,
+                870,
+                834
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The upper panels show that the forward-looking bond yields and returns respond in the expected directions. The one-year-ahead 10-year forward rate rises by around 0.05 percentage points, after two quarters, in response to a monetary policy shock of one standard deviation. The expected bond returns mirror this dynamic, falling by 0.5% after two quarters. Thus, the real economy effects of monetary policy shocks could partly reflect these expected shifts in financial market prices."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                843,
+                870,
+                924
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "23"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                504,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                138,
+                870,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Expected long-term yield change (ppts.)"
+                    }
+                ]
+            },
+            "bbox": [
+                132,
+                229,
+                450,
+                247
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1aad747b4fc8cc861d0b412b68e1728e71eaccf635f3eae5601d96aefa43b1c4.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                117,
+                250,
+                289,
+                373
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/34ac91e4d9300d237f94edd46452b6681092ea3cecb6765de7599b3dc429963a.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Expected long-term bond return (%)"
+                    }
+                ]
+            },
+            "bbox": [
+                303,
+                250,
+                475,
+                373
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3589e7c5a79c6a3404f517ba817ebb066fe4609b27684c889b1144a217559cff.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                506,
+                250,
+                679,
+                373
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b2d92402fc534b12e5afc2aa7a6ed8682ee0c2418fc676eeb6cd9ea7e8aff93b.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                694,
+                250,
+                862,
+                372
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/fe46777b52ccd34bc70f9678bbf0ecf7ea7e9e01e04a74d7de74a679f69fee98.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Primary Balance (% GDP)"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                117,
+                411,
+                287,
+                532
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/432aa7f27d95f80bbb6b01ce6e8b8a24852f6ffdfd01e30fbfb93092ed224bfe.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                300,
+                410,
+                480,
+                534
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/97fa5bb46c0c92bff68a07f6635c5c50cc5b448b9c2f0b67170108a8da56c6a7.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Debt (% GDP)"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                504,
+                410,
+                679,
+                534
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e76722278c02f533e4d5f52703862b70271782db63ae29cdcb17d88119797104.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 11: Fiscal response to MP shock (using asymmetric shocks), conditional on 5% of GDP increase in respective maturity bin share. Note: Hollow points denote statistical insignificance from “<9 Months” at 90% level. The size of the monetary policy shock is one standard deviation."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                692,
+                411,
+                862,
+                534
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 11 shows corresponding evidence for monetary contractions and expansions, respectively. As in the case of symmetric shocks, fiscal balances deteriorate in response to contractionary monetary policy shocks, the expected long-term yield increases (albeit with some lag) and the expected bond returns decline. These effects are mirrored with opposite signs for expansionary monetary policy shocks. Nevertheless, as with the real economy responses, the impacts on the fiscal balances are less strong for expansionary than for contractionary shocks. In particular, the improvement in primary balances in response to expansionary monetary policy shocks is often not statistically significant."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                662,
+                870,
+                895
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The maturity structure also appears to play a role in the responses of fiscal balances, especially for expansionary monetary policy shocks. In particular, the improvements on fiscal balances tend to be smaller when more debt is of longer-term maturity, both for the primary balance and for government debt."
+                    }
+                ]
+            },
+            "bbox": [
+                138,
+                904,
+                869,
+                922
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "24"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                943,
+                503,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                109,
+                138,
+                870,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To what extent do the results on fiscal backing simply reflect a cyclical decline of output in response to contractionary monetary policy shocks? In additional regressions applying cyclical adjustment to fiscal aggregates, we find that cyclically adjusted tax revenues remain broadly unchanged, while the cyclically adjusted primary balance deteriorates in response to contractionary monetary policy shocks.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{9}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  These results confirm that fiscal policy has not, on average, provided backing to monetary policy."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                229,
+                870,
+                400
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.4 Accounting for asset purchases"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                111,
+                436,
+                537,
+                457
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "While the previous results were based on total outstanding government debt, many of the channels outlined above apply in particular to the share of debt held by the private sector. One question that arises is to what extent the purchases of government debt by the central bank during the sample period affect our results."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                479,
+                870,
+                588
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/cc022fe3cfb2f145cccb67cd256c276b09d93e55dc8e85f2a673980b85cbf1d1.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 12: Average maturity of total debt vs. debt held by private sector"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                227,
+                599,
+                754,
+                838
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{9}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Detailed results are available from the authors upon request."
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                883,
+                581,
+                898
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "25"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                503,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Given the data available to us, we address this issue by comparing the transmission of monetary policy shocks conditional on the weighted average maturity (WAM) of total public debt, and conditional on the WAM of public debt held by the private sector. To construct the latter, we use data provided by the ECB on the monthly WAM of its Public Sector Purchase Programme."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                138,
+                870,
+                277
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Notably, the WAM of total debt and the WAM of the debt held by the private sector (constructed with ECB data) are highly correlated, with a correlation coefficient of 98%. Figure 12, which plots the two WAMs against one another, shows that the two indicators are in most cases very close to the 45-degree line.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{10}"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                289,
+                870,
+                398
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/db5db3a7b8c9f5d8d9ce53300ffdb6f80bbf419a44f1f4ea65e87f26c535eb95.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Conditioning on average maturity of total public debt"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                132,
+                435,
+                490,
+                554
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/34bd0782c352b45f9ddfd3003b2461c3935a9dab169041d434230e6bd0e816b0.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                504,
+                436,
+                857,
+                554
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8408cbad18ad1ebd7618ce98461b2545f6b4c9108f6590cd835682c02d6e9f2d.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Conditioning on average maturity of privately-held public debt"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                130,
+                593,
+                857,
+                750
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 13: Monetary policy effectiveness and weighted average maturity of total vs privately-held public debt. Note: Maturities are divided into four quartiles based on the distributions of the weighted average maturity. Hollow points denote statistical insignificance from “1st Quartile” at 90% level. The responses are in %; the size of the monetary policy shock is one standard deviation."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                766,
+                869,
+                829
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{10}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " We note that the WAM of the debt held by the private sector considered here does not correspond to the WAM of the consolidated public sector which treats debt held by the ECB as overnight debt when computing the weighted average maturity (thus considerably shortening the WAM)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                839,
+                869,
+                887
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "26"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                503,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To examine the transmission of monetary policy shocks under the two different maturity structures, we divide the maturities into four quartiles based on the distributions of the two WAMs. Figure 13 shows that the impacts of monetary policy shocks on output and prices are similar when conditioning on the WAM of total public debt as when conditioning on the WAM of privately-held public debt. Moreover, the non-linearities bear some resemblance to the baseline results, with larger effects at higher maturities, although it is not possible to construct similar maturity bins based on the data on central bank holdings available to us, as done for the baseline results."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                138,
+                870,
+                369
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.5 Spillovers to advanced and emerging Europe"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                406,
+                694,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Next, we evaluate the spillovers of the euro area monetary policy shocks to both advanced and emerging Europe. In particular, we evaluate to what extent such spillovers depend on the size and structure of public debt in the non-euro area economy. As to advanced Europe not part of the euro area, we include Denmark, Norway, Sweden, Switzerland and United Kingdom. As to CEE, we include six economies that were not part of the euro area during the sample period: Bulgaria, Croatia, Czechia, Hungary, Poland and Romania. We also include other CEE countries in the sample before they joined the euro area: Latvia, Lithuania, Slovakia and Slovenia. Many of these CEE economies - but not all - were inflation targeters with largely flexible exchange rates over the sample period. Czechia adopted inflation targeting in 1997; Hungary in 2001; Poland in 1998; and Romania in 2005."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                448,
+                870,
+                768
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To include the ten CEE countries in our analysis, we construct a novel dataset of central government debt maturity profiles. For each country, we gather detailed information on each individual outstanding bond outstanding at quarterly snapshots. The sources and availability of these data can be found in Annex Table A.1. With these data, we are able to construct the outstanding maturity profiles at each point in time. Annex Figure A.3 plots the detailed cumulative distribution of debt maturing in 1 to 30 years at the end of 2019. Annex Figure A.4 similarly plots cumulative debt at each maturity horizon as a percent of GDP at the end of 2019."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                780,
+                870,
+                920
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "27"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                503,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                109,
+                138,
+                870,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Using the constructed detailed maturity structures, we allocate debt outstanding to the four maturity bins previously discussed. Figure 14 plots the distributions of debt by maturity bin (scaled by GDP) for the sample of advanced, non-euro area countries in Europe (subfigure a) and for the sample of CEE countries (subfigure b). The median profiles look similar across each country group, however, the distributions within each bin feature some notable differences. Namely, the distribution of debt within bins under 8 years is wider for CEE countries, while the distribution of debt 8 years or longer is narrower. This pattern suggests that CEE countries may have less flexibility than advanced Europe in how they manage their long-term debt issuance. One reason may be that CEE countries are perceived as riskier and have less access to long-term debt markets."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                229,
+                870,
+                520
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "After obtaining the necessary maturity structure data, we analyse the output and price effects in advanced and emerging Europe of the euro area monetary policy shock, conditioning on the maturity structure of sovereign debt in the \"receiving\" economy."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                531,
+                870,
+                611
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 15 shows that an unexpected monetary tightening in the euro area has contractionary effects in the rest of Europe: both output and prices decline. The magnitude of the effects is sizeable and comparable to that occurring in euro area member states in our baseline estimates. The sign and size of the effects are consistent with the tight economic linkages between euro area and both advanced non-EA countries and CEE, as well as previous estimates regarding such spillovers from the euro area to CEE (eg Colabella (2021); Feldkircher and Schuberth (2023); Potjagailo (2017); Horvath and Voslarova (2017))."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                621,
+                870,
+                823
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 15 also shows that the spillover effects of monetary policy shocks tend to be strongest with more sovereign debt in the maturity range between four and eight years. This is the case for aggregate output, as well as for consumption and investment. However, for the latter two variables, the effects are not statistically different from those obtained with ultra-short debt for some periods."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                833,
+                870,
+                912
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "28"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                503,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4b11e6f755c290a39665e80fd7e1d5c7c4db5b252f6d8e457f3dad04ac6f52f5.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                212,
+                133,
+                774,
+                368
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b9a3c2842ac9f6b7c13fd158323c27921177eb8fadc8193966336d1966863b61.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "(a) Advanced non-euro area"
+                    },
+                    {
+                        "type": "text",
+                        "content": "(b) Central and eastern Europe"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Figure 14: Spillover countries' government debt residual maturity, by select maturity bins, relative to the size of GDP. Note: The line denotes the median, the box the interquartile range, and the whiskers the 25th (75th) percentiles minus (plus) 1.5 times the interquartile range. The dots correspond to outliers."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                210,
+                392,
+                774,
+                627
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                109,
+                753,
+                867,
+                803
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "What are the effects of the same shocks on interest rates, the exchange rates and sovereign debt in the non-EA European countries? Figure 16 shows that, in response to a euro area monetary policy tightening, currencies outside the euro area depreciate, policy interest rates decline and the yield curve steepens. The decline in domestic short-term rates is consistent with the decline in domestic real GDP and the price level observed in response to the euro area monetary policy shock. However, the overall effects are not consistent with a conventional Mundell-Fleming model, which would predict that output in the non-EA countries should increase as a result of the exchange rate depreciation and the subsequent expenditure switching. Instead, our results suggest that the negative demand effects from a euro area monetary contraction counteract any expenditure switching effects. This is consistent with previous literature on euro area spillovers to emerging Europe (see the discussion in Feldkircher and Schuberth (2023))."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                814,
+                870,
+                893
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "29"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                943,
+                503,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d9f121e912d3e708adff8ea56cfbf451557965e08d74471d244149a7906219d2.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 15: Non-euro area response to EA MP shock, conditional on 5% of GDP increase in respective maturity bin share. Note: Hollow points denote statistical insignificance from “<9 Months” at 90% level. The responses are in %; the size of the monetary policy shock is one standard deviation."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                114,
+                138,
+                866,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                109,
+                571,
+                870,
+                834
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Importantly, we also document that the expected long-term yields rise and the expected bond returns decline in response to contractionary monetary policy shocks in the euro area. These findings are similar to those obtained for the euro area economies and suggest that valuation effects are potentially an important factor driving the results."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                843,
+                870,
+                924
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "30"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                503,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/010460493211541d7caa5c6ed592dd8c7368d7c8982fbc575fb9cf790e1f1f19.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 16: Non-euro area financial market response to EA MP shock, conditional on 5% of GDP increase in respective maturity bin share. Note: Hollow points denote statistical insignificance from “<9 Months” at 90% level. The size of the monetary policy shock is one standard deviation."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                114,
+                136,
+                867,
+                481
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                571,
+                717,
+                590
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To what extent does the maturity of debt in the receiving economy affect the financial spillovers? The exchange rate depreciation and the yield curve slope increase tend to be larger when more public debt is maturing within four to eight years. The same holds for the increase in government debt. This is consistent with larger output effects at this maturity (Figure 15). Similarly, expected long-term yield changes and changes in bond returns are greater at longer maturities."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                602,
+                870,
+                773
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4 Conclusion"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                816,
+                318,
+                838
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The evidence in this paper clearly shows that public debt is not neutral for monetary policy transmission. Under a common euro area monetary policy shock, countries respond differently depending on both the size and the maturity profile of their public debt. Higher debt is associated with less disinflationary traction, while the effects of maturity are non-linear: intermediate maturities dampen transmission, whereas very short and long maturities strengthen it. The observed fiscal response after monetary tightening also points to a lack of contemporaneous fiscal backing. The spillover analysis extends the same logic beyond the euro area, showing that the debt maturity profile of the receiving economy influences the international transmission of euro area monetary policy."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                866,
+                870,
+                916
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "31"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                943,
+                501,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                111,
+                138,
+                870,
+                340
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Several extensions follow naturally. A particularly valuable extension, if the necessary data could be constructed, would be to combine debt maturity data with information on the holders of public debt, including banks, pension funds, insurance companies and other types of non-bank financial institutions, foreign investors and the central bank. Such data are not yet readily available in consistent cross-country format. Their availability would make it possible to distinguish more clearly between interest income effects, valuation effects and other channels. Another extension would be to examine how fiscal institutions, fiscal rules and measures of fiscal credibility affect the degree of fiscal backing and, in turn, the strength of monetary transmission. Finally, the new dataset for central and eastern Europe could be extended across countries and over time to assess more systematically how public debt structures affect the international transmission of monetary policy."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                349,
+                870,
+                672
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "32"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                503,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "References"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                133,
+                269,
+                156
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "ADRIAN, T. AND H. S. SHIN (2010): “Liquidity and leverage,” Journal of Financial Intermediation, 19."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                170,
+                870,
+                208
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- (2014): “Procyclical leverage and value-at-risk,” Review of Financial Studies, 27."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                219,
+                861,
+                239
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "AFONSO, A., J. ALVES, AND S. IONTA (2023): “The Effects of Monetary Policy Surprises and Fiscal Sustainability Regimes in the Euro Area,” Tech. rep."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                250,
+                869,
+                287
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "ALLOZA, M., J. GONZALO, AND C. SANZ (2025): “Dynamic Effects of Persistent Shocks,” Journal of Applied Econometrics, 40, 380–394."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                299,
+                867,
+                337
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "ALTAVILLA, C., D. GIANNONE, AND M. LENZA (2016): “The Financial and Macroeconomic Effects of the OMT Announcements,” International Journal of Central Banking, 12, 29–57."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                348,
+                870,
+                402
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "ANDREOLLI, M. (2023): “Monetary policy and the maturity structure of public debt,” mimeo."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                415,
+                867,
+                452
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "ANGRIST, J. D., ÓSCAR JORDÀ, AND G. M. KUERSTEINER (2018): “Semiparametric Estimates of Monetary Policy Effects: String Theory Revisited,” Journal of Business & Economic Statistics, 36, 371–387."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                464,
+                870,
+                520
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "ARAMONTE, S., A. SCHRIMPF, AND H. S. SHIN (2023): “Margins, debt capacity, and systemic risk,” BIS Working Papers 1121, Bank for International Settlements."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                532,
+                870,
+                570
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "BARRETT, P. AND C. JOHNS (2024): “Parameterizing Debt Maturity,” Journal of Money, Credit and Banking, 56, 1321–1365."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                580,
+                869,
+                619
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "BIANCHI, F., R. FACCINI, L. MELOSI, AND N. WEHRHÖFER (2026): “Lack of Trust and Fiscal Dominance: Evidence from a Firm Survey Experiment,” NBER Working Paper 35341, National Bureau of Economic Research."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                628,
+                870,
+                686
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "BOECKX, J., M. DOSSCHE, AND G. PEERSMAN (2017): “Effectiveness and Transmission of the ECB’s Balance Sheet Policies,” International Journal of Central Banking, 13, 297–333."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                696,
+                870,
+                752
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "BURRIEL, P. AND A. GALESI (2018): “Uncovering the heterogeneous effects of ECB unconventional monetary policies across euro area countries,” European Economic Review, 101, 210–229."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                763,
+                870,
+                819
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "CANTERO-SAIZ, M., S. SANFILIPPO-AZOFRA, B. TORRE-OLMO, AND C. LÓPEZ-GUTIÉRREZ (2014): “Sovereign risk and the bank lending channel in Europe,” Journal of International Money and Finance, 47, 1–20."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                830,
+                870,
+                888
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "33"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                943,
+                504,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "CANTERO-SAIZ, M., S. SANFILIPPO-AZOFRA, AND B. TORRE-OLMO (2022): “Sovereign Risk and the Bank Lending Channel: Differences across Countries and the Effects of the Financial Crisis,” Journal of Money, Credit and Banking, 54, 285–312."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                138,
+                870,
+                194
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "CARAMP, N. AND E. FEILICH (2024): “Monetary policy and government debt,” Journal of Money, Credit and Banking, forthcoming."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                205,
+                870,
+                243
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "CARAMP, N. AND D. SILVA (2023): “Fiscal Policy and the Monetary Transmission Mechanism,” Review of Economic Dynamics, 51, 716–746."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                253,
+                869,
+                292
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "CARAMP, N. AND D. H. SILVA (2024): “Monetary Policy and Wealth Effects: The Role of Risk and Heterogeneity,” Tech. rep."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                303,
+                870,
+                340
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "CICCARELLI, M., A. MADDALONI, AND J.-L. PEYDRÓ (2014): “Heterogeneous transmission mechanism: monetary policy and financial fragility in the eurozone,” Economic Policy, 28, 459–512."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                352,
+                870,
+                407
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "COCHRANE, J. (2022): “A fiscal theory of monetary policy with partially repaid long-term debt,” Review of Economic Dynamics, 45, 1–21."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                419,
+                869,
+                457
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "—— (2023): The fiscal theory of the price level, Princeton, NJ: Princeton University Press."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                468,
+                870,
+                505
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "COLABELLA, A. (2021): “Do ECB’s Monetary Policies Benefit EMEs? A GVAR Analysis on the Global Financial and Sovereign Debt Crises and Postcrises Period,” Oxford Bulletin of Economics and Statistics, 83, 472–494."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                517,
+                870,
+                574
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "CORSETTI, G., K. Kuester, A. MEIER, AND G. J. MÜLLER (2013): “Sovereign Risk, Fiscal Policy, and Macroeconomic Stability,” The Economic Journal, 123, F99–F132."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                584,
+                869,
+                623
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "DE GRAEVE, F. AND G. MAZZOLINI (2023): “The maturity composition of government debt: A comprehensive database,” European Economic Review, 154."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                633,
+                869,
+                672
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "DE LUIGI, C. AND F. HUBER (2018): “Debt regimes and the effectiveness of monetary policy,” Journal of Economic Dynamics and Control, 93, 218–238."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                681,
+                869,
+                720
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "DOMANSKI, D., H. S. SHIN, AND V. SUSHKO (2017): “The hunt for duration: not waving but drowning?” IMF Economic Review, 65."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                731,
+                870,
+                768
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "FELDKIRCHER, M. AND H. SCHUBERTH (2023): “Understanding Monetary Spillovers in Highly Integrated Regions: The Case of Europe,” Oxford Bulletin of Economics and Statistics, 85, 859–893."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                780,
+                872,
+                835
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "FRIEDMAN, B. M. (1981): “Debt management policy, interest rates, and economic activity,” NBER Working Paper 830, National Bureau of Economic Research."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                848,
+                869,
+                886
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "34"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                943,
+                503,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "GALI, J. (2015): Monetary Policy, Inflation, and the Business Cycle: An Introduction to the New Keynesian Framework and Its Applications Second edition, vol. None of Economics Books, Princeton University Press, 2 ed."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                138,
+                870,
+                194
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "GARCIA-DE ANDOAIN, C. AND M. KREMER (2017): “Beyond spreads: Measuring sovereign market stress in the euro area,” Economics Letters, 159, 153–156."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                203,
+                870,
+                241
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "GOREA, D., D. X. NG, AND F. ZAMPOLLI (2026): “The financial and real effects of fiscal risk,” Bis working papers, Bank for International Settlements, forthcoming."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                251,
+                870,
+                289
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "GRANDI, P. (2019): “Sovereign stress and heterogeneous monetary transmission to bank lending in the euro area,” European Economic Review, 119, 251–273."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                299,
+                869,
+                337
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "HORVATH, R. AND K. VOSLAROVA (2017): “International spillovers of ECB’s unconventional monetary policy: the effect on Central Europe,” Applied Economics, 49, 2352–2364."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                345,
+                870,
+                400
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Hristov, N., O. Hülsewig, and J. Scharler (2021): “Unconventional Monetary Policy Shocks in the Euro Area and the Sovereign-Bank Nexus,” International Journal of Central Banking, 17, 337–383."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                412,
+                870,
+                468
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "JAROCIŃSKI, M. AND P. KARADI (2020): “Deconstructing Monetary Policy Surprises—The Role of Information Shocks,” American Economic Journal: Macroeconomics, 12, 1–43."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                478,
+                870,
+                534
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "JOHNS, C., A. MEHROTRA, AND F. ZAMPOLLI (2026): “Sovereign risk and monetary policy transmission: Evidence from the euro area,” Economics Letters, 260, 112817."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                544,
+                869,
+                583
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "JORDÀ, O. (2005): “Estimation and Inference of Impulse Responses by Local Projections,” American Economic Review, 95, 161–182."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                590,
+                867,
+                628
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "KAPLAN, G., B. MOLL, AND G. L. VIOLANTE (2018): “Monetary Policy According to HANK,” American Economic Review, 108, 697–743."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                638,
+                869,
+                676
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "KLOOSTERMAN, R., D. BONAM, AND K. VAN DER VEER (2024): “The effects of monetary policy across fiscal regimes,” Journal of Macroeconomics, 81."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                686,
+                869,
+                726
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "MEHROTRA, A. AND J. YETMAN (2018): “Decaying Expectations: What Inflation Forecasts Tell Us about the Anchoring of Inflation Expectations,” International Journal of Central Banking, 14, 55–101."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                734,
+                872,
+                791
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "POTJAGAILO, G. (2017): “Spillover effects from Euro area monetary policy across Europe: A factor-augmented VAR approach,” Journal of International Money and Finance, 72, 127–147."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                801,
+                870,
+                856
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "SIMS, C. A. (2011): “Stepping on a rake: The role of fiscal policy in the inflation of the 1970s,” European Economic Review, 55, 48–56, special Issue on Monetary and Fiscal Interactions in Times of Economic Stress."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                867,
+                870,
+                922
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "35"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                943,
+                504,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "SMETS, F. AND R. WOUTERS (2024): “Fiscal backing, inflation and US business cycles,” CEPR Discussion Papers 19791, Centre for Economic Policy Research."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                138,
+                866,
+                175
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "SWINKELS, L. (2019): “Treasury Bond Return Data Starting in 1962,” Data, 4."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                186,
+                790,
+                205
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "TENREYRO, S. AND G. THWAITES (2016): “Pushing on a String: US Monetary Policy Is Less Powerful in Recessions,” American Economic Journal: Macroeconomics, 8, 43–74."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                217,
+                867,
+                253
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "TOBIN, J. (1963): “An essay on principles of debt management,” in Fiscal and Debt Management Policies, Englewood Cliffs, NJ: Prentice-Hall, 143–218, in Commission on Money and Credit; reprinted in J. Tobin, Essays in Economics, Vol. 1, North-Holland, Amsterdam, 1971."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                266,
+                870,
+                339
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "WOODFORD, M. (2001): “Fiscal Requirements for Price Stability,” Journal of Money, Credit and Banking, 33, 669–728."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                351,
+                867,
+                388
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "ZAMPOLLI, F. (2012): “Sovereign debt management as an instrument of monetary policy: an overview,” in BIS Papers, Bank for International Settlements, 65, 97–118."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                401,
+                867,
+                438
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "36"
+                    }
+                ]
+            },
+            "bbox": [
+                480,
+                943,
+                504,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Appendix A: Additional Tables and Figures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                133,
+                728,
+                159
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0236afe73eb0c95ca325818f5d5f483288eddf2f39c5534f3f3a227e242f11ae.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure A.1: Euro area government debt maturity profile, by select maturity bins. Note: The maturity profile is shown relative to the size of total debt. The line denotes the median, the box the interquartile range, and the whiskers the 25th (75th) percentiles minus (plus) 1.5 times the interquartile range. The dots correspond to outliers."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                210,
+                183,
+                776,
+                420
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1c47761d9bd4923dd2f6e7efc9586553cb74dc8cb0a12e686d4d8d8ea2ecb723.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure A.2: Comparison of responses of one-year-ahead inflation expectations to MP shock for countries at different levels of public debt, with a fixed maturity structure. Note: Hollow points denote statistical insignificance (< 90% confidence) between responses under high and low debt."
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                227,
+                526,
+                767,
+                773
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "37"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                943,
+                504,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A.1 Novel government debt maturity data for Greece and 10 CEE countries"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                135,
+                870,
+                178
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/a444efd6b1bb8534669da74b7550f5580a9974ce9ddd8f94800f251762ca6c3a.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table A.1: Novel government debt maturity structure sources"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Country</td><td>Date Range</td><td>Source</td></tr><tr><td>Greece</td><td>2012Q1 - 2020Q4</td><td>Public Debt Management Agency</td></tr><tr><td>Bulgaria</td><td>2006Q4 – 2020Q4</td><td>Ministry of Finance</td></tr><tr><td>Croatia</td><td>2004Q1 – 2020Q4</td><td>Ministry of Finance</td></tr><tr><td>Czech Republic</td><td>2009Q1 – 2020Q4</td><td>Ministry of Finance</td></tr><tr><td>Hungary</td><td>2004Q4 – 2020Q4</td><td>Government Debt Management Agency (AKK)</td></tr><tr><td>Latvia</td><td>1999Q1 – 2020Q4</td><td>Treasury</td></tr><tr><td>Lithuania</td><td>1999Q1 – 2020Q4</td><td>Ministry of Finance</td></tr><tr><td>Poland</td><td>1999Q1 – 2020Q4</td><td>Ministry of Finance</td></tr><tr><td>Romania</td><td>2008Q4– 2020Q4</td><td>Ministry of Finance</td></tr><tr><td>Slovakia</td><td>1999Q1 –2020Q4</td><td>National Bank of Slovakia&amp; Debt and Liquidity Management Agency</td></tr><tr><td>Slovenia</td><td>1999Q1–2020Q4</td><td>Ministry of Finance</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                122,
+                243,
+                857,
+                505
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "38"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                943,
+                504,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/143f393046704b792071759d1879b667876c9b8d71442f53fc8095a63296ab86.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure A.3: Detailed maturity structure of CEE countries at the end of 2019"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                112,
+                146,
+                854,
+                473
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/39df40569e6a974a6dd5194605040035751087d23dacb26c300dd0485026bf21.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Residual Maturity (years)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Figure A.4: Detailed maturity structure of CEE countries at the end of 2019, as percent of GDP"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                109,
+                537,
+                854,
+                859
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "39"
+                    }
+                ]
+            },
+            "bbox": [
+                478,
+                943,
+                504,
+                958
+            ]
+        }
+    ]
+]
