@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_002_x7b8q1uf/pdfs/0006-McKinsey_PDF-At-250-sustaining-America-s-competitive-edge---McKinsey-_1f47b079.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_x7b8q1uf/pdfs/0007-McKinsey_PDF-Reimagined-Development-in-the-Future-of-Work_bb64b08e.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_x7b8q1uf/pdfs/0008-McKinsey_PDF-Technology-Trends-Outlook-2025---McKinsey-Company_518523bb.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_x7b8q1uf/pdfs/0009-McKinsey_PDF-The-State-of-Organizations---McKinsey-Company_da7ae141.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_002_x7b8q1uf/pdfs/0010-McKinsey_PDF-The-state-of-AI---McKinsey-Company_5b97d469.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
