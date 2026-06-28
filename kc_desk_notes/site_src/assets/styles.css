@@ -284,7 +284,8 @@ h3 {
 .pagination-bar button,
 .page-size select,
 #copyDeliveryLink,
-#copyDeliveryPassword {
+#copyDeliveryPassword,
+#copyReportifyDeliveryLink {
   min-height: 34px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -706,6 +707,63 @@ button.primary:disabled {
   margin-top: 10px;
 }
 
+.reportify-access {
+  margin-top: 12px;
+}
+
+.reportify-access-card {
+  display: grid;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.reportify-access-title {
+  display: grid;
+  gap: 5px;
+}
+
+.reportify-access-title strong {
+  color: var(--ink);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.reportify-actions,
+.reportify-delivery-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.reportify-delivery-row {
+  grid-template-columns: 156px minmax(0, 1fr) 84px;
+}
+
+.reportify-actions input,
+.reportify-delivery-row input {
+  min-width: 0;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 12px;
+  color: var(--ink);
+  font: inherit;
+}
+
+.reportify-wait {
+  padding: 12px 14px;
+  border: 1px solid #f5d08a;
+  border-radius: 8px;
+  background: #fffbeb;
+  color: #78350f;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
 .about-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 148px;
@@ -828,6 +886,8 @@ button.primary:disabled {
   .detail-grid,
   .password-row,
   .delivery-row,
+  .reportify-actions,
+  .reportify-delivery-row,
   .about-section {
     grid-template-columns: 1fr;
   }

@@ -224,6 +224,29 @@ async function passwordMatches(env, group, password) {
   return actual === expected.toLowerCase();
 }
 
+async function defaultPasswordMatches(env, password) {
+  const master = String(env.MASTER_KEY || "").trim();
+  if (master && normalizePassword(password) === normalizePassword(master)) return true;
+
+  try {
+    const rules = await loadRules(env);
+    const group = findPasswordGroup(rules, rules.default_group);
+    return group ? await passwordMatches(env, group, password) : false;
+  } catch (_error) {
+    return false;
+  }
+}
+
+async function sharedReportPasswordMatches(env, id, password) {
+  if (!password) return false;
+  try {
+    if (await derivedPasswordMatches(env, id, password)) return true;
+  } catch (_error) {
+    // Fall through to the shared password.
+  }
+  return defaultPasswordMatches(env, password);
+}
+
 function safeFilename(value) {
   const filename = String(value || "report.pdf")
     .replace(/[\r\n"\\/:*?<>|]+/g, " ")
@@ -394,7 +417,12 @@ async function handleAdminReportPassword(request, env) {
 
   const id = String(payload.id || "").trim();
   const token = String(payload.token || "");
-  if (!/^[a-f0-9]{16,64}$/i.test(id)) {
+  const source = String(payload.source || "catalog").trim().toLowerCase();
+  if (source === "reportify") {
+    if (!isReportifyId(id)) {
+      return jsonResponse(request, env, 400, { error: "Invalid report id." });
+    }
+  } else if (!/^[a-f0-9]{16,64}$/i.test(id)) {
     return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
 
@@ -402,6 +430,18 @@ async function handleAdminReportPassword(request, env) {
     await verifyAdminToken(env, token);
   } catch (error) {
     return jsonResponse(request, env, 401, { error: error.message || "Admin session is invalid." });
+  }
+
+  if (source === "reportify") {
+    try {
+      return jsonResponse(request, env, 200, {
+        id,
+        source: "reportify",
+        password: await derivedReportPassword(env, id),
+      });
+    } catch (_error) {
+      return jsonResponse(request, env, 503, { error: "Could not calculate report password." });
+    }
   }
 
   let catalog;
@@ -558,9 +598,24 @@ async function triggerReportifyGrab(env, id) {
 
 async function handleReportifyPdf(request, env) {
   const url = new URL(request.url);
-  const id = String(url.searchParams.get("id") || "").trim();
+  let payload = {};
+  if (request.method === "POST") {
+    try {
+      payload = await request.json();
+    } catch (_error) {
+      return jsonResponse(request, env, 400, { error: "Invalid JSON body." });
+    }
+  }
+  const id = String(payload.id || url.searchParams.get("id") || "").trim();
+  const password = String(payload.password || url.searchParams.get("password") || "");
   if (!isReportifyId(id)) {
     return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  }
+  if (!password) {
+    return jsonResponse(request, env, 400, { error: "Password is required." });
+  }
+  if (!(await sharedReportPasswordMatches(env, id, password))) {
+    return jsonResponse(request, env, 401, { error: "Password is incorrect." });
   }
 
   // 1) Directly readable reports expose a presigned PDF url - stream it (instant).
@@ -648,7 +703,7 @@ export default {
       return handleReportifySearch(request, env);
     }
 
-    if (pathname === "/reportify/pdf" && request.method === "GET") {
+    if (pathname === "/reportify/pdf" && (request.method === "GET" || request.method === "POST")) {
       return handleReportifyPdf(request, env);
     }
 

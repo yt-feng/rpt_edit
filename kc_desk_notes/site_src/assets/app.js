@@ -416,11 +416,16 @@
     `;
   }
 
-  function reportifyRow(item) {
+  function reportifyMeta(item) {
     const meta = [item.institution, item.date, item.file_type]
       .map((value) => String(value || "").trim())
       .filter(Boolean)
       .join(" · ");
+    return meta;
+  }
+
+  function reportifyRow(item) {
+    const meta = reportifyMeta(item);
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     return `
       <button class="related-row reportify-row" type="button" data-id="${escapeHtml(item.id)}">
@@ -612,10 +617,12 @@
     const reportifyUrl = workerBaseUrl(config);
     const reportifySection = document.getElementById("reportifySection");
     const reportifyResults = document.getElementById("reportifyResults");
+    const reportifyAccess = document.getElementById("reportifyAccess");
     const reportifyCount = document.getElementById("reportifyCount");
     const reportifyStatus = document.getElementById("reportifyStatus");
     let reportifyTimer = 0;
     let reportifyToken = 0;
+    const reportifyItems = new Map();
     const reportifyPolls = new Map();
 
     function setReportifyStatus(text, kind) {
@@ -624,22 +631,16 @@
       reportifyStatus.textContent = text || "";
     }
 
-    function triggerBlobDownload(blob, disposition, fallbackName) {
-      const objectUrl = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = objectUrl;
-      link.download = filenameFromDisposition(disposition, fallbackName);
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(objectUrl);
-    }
-
     async function runReportifySearch(query) {
       if (!reportifySection || !reportifyResults) return;
       if (!reportifyUrl || !query) {
         reportifySection.hidden = true;
         reportifyResults.innerHTML = "";
+        reportifyItems.clear();
+        if (reportifyAccess) {
+          reportifyAccess.hidden = true;
+          reportifyAccess.innerHTML = "";
+        }
         if (reportifyCount) reportifyCount.textContent = "";
         setReportifyStatus("");
         return;
@@ -657,6 +658,12 @@
         const data = await response.json();
         if (token !== reportifyToken) return; // a newer query superseded this one
         const items = Array.isArray(data.items) ? data.items : [];
+        reportifyItems.clear();
+        items.forEach((item) => reportifyItems.set(String(item.id), item));
+        if (reportifyAccess) {
+          reportifyAccess.hidden = true;
+          reportifyAccess.innerHTML = "";
+        }
         if (reportifyCount) reportifyCount.textContent = items.length ? `${items.length} 条` : "";
         reportifyResults.innerHTML = items.length
           ? items.map(reportifyRow).join("")
@@ -675,7 +682,7 @@
       reportifyTimer = window.setTimeout(() => runReportifySearch(query), 400);
     }
 
-    function pollReportify(id) {
+    function pollReportify(id, password, onReady, statusTarget = setReportifyStatus) {
       if (reportifyPolls.has(id)) return;
       let attempts = 0;
       const timer = window.setInterval(async () => {
@@ -683,6 +690,7 @@
         if (attempts > 12) { // ~3 minutes at 15s intervals
           window.clearInterval(timer);
           reportifyPolls.delete(id);
+          statusTarget("报告仍在准备中。请保留页面，稍后再次点击下载。", "error");
           return;
         }
         try {
@@ -694,8 +702,8 @@
           if (data.ready) {
             window.clearInterval(timer);
             reportifyPolls.delete(id);
-            setReportifyStatus("报告已就绪，正在下载…", "ok");
-            downloadReportify(id);
+            statusTarget("报告已就绪，正在下载…", "ok");
+            onReady(password);
           }
         } catch (_error) {
           // Keep polling; a transient error is expected while the grab runs.
@@ -704,18 +712,26 @@
       reportifyPolls.set(id, timer);
     }
 
-    async function downloadReportify(id) {
-      if (!reportifyUrl || !id) return;
-      setReportifyStatus("正在获取报告…");
+    async function downloadReportify(id, password, options = {}) {
+      const statusTarget = options.status || setReportifyStatus;
+      if (!reportifyUrl || !id) return false;
+      if (!password) {
+        statusTarget("Password is required.", "error");
+        return false;
+      }
+      statusTarget("正在获取报告…");
       try {
-        const response = await fetch(
-          `${reportifyUrl}/reportify/pdf?id=${encodeURIComponent(id)}`,
-          { cache: "no-store" },
-        );
+        const response = await fetch(`${reportifyUrl}/reportify/pdf`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          cache: "no-store",
+          body: JSON.stringify({ id, password }),
+        });
         if (response.status === 202) {
-          setReportifyStatus("报告正在后台抓取，请约 2 分钟后回到本页重新点击下载（或刷新页面）。");
-          pollReportify(id);
-          return;
+          setRememberedDownloadPassword(password);
+          statusTarget("报告正在准备，通常约 3 分钟。页面会自动等待，准备好后开始下载。");
+          pollReportify(id, password, (readyPassword) => downloadReportify(id, readyPassword, options), statusTarget);
+          return true;
         }
         if (!response.ok) {
           let message = `下载失败 (${response.status})`;
@@ -725,22 +741,118 @@
           } catch (_error) {
             // Non-JSON error body; keep the generic message.
           }
+          if (response.status === 401) clearRememberedDownloadPassword();
           throw new Error(message);
         }
         const blob = await response.blob();
         triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${id}.pdf`);
-        setReportifyStatus("下载已开始。", "ok");
+        setRememberedDownloadPassword(password);
+        statusTarget("下载已开始。", "ok");
+        return true;
       } catch (error) {
-        setReportifyStatus(error.message || "下载失败。", "error");
+        statusTarget(error.message || "下载失败。", "error");
+        return false;
       }
+    }
+
+    function refreshReportifyAdminTools() {
+      if (!reportifyAccess) return;
+      const tools = reportifyAccess.querySelector(".reportify-admin-tools");
+      if (tools) tools.hidden = !getAdminToken();
+    }
+
+    function renderReportifyAccess(item) {
+      if (!reportifyAccess || !item) return;
+      const meta = reportifyMeta(item);
+      const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
+      reportifyAccess.hidden = false;
+      reportifyAccess.innerHTML = `
+        <div class="reportify-access-card">
+          <div class="reportify-access-title">
+            <strong>${escapeHtml(item.title || "Untitled report")}</strong>
+            ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
+            ${meta ? `<span class="related-meta">${escapeHtml(meta)}</span>` : ""}
+          </div>
+          <form class="reportify-actions" id="reportifyDownloadForm">
+            <input id="reportifyPasswordInput" type="password" autocomplete="current-password" placeholder="Password" required>
+            <button class="primary" type="submit">Download</button>
+          </form>
+          <div class="reportify-wait" id="reportifyWait" hidden>
+            报告正在准备，通常约 3 分钟。这个页面会自动检测，文件准备好后会开始下载。
+          </div>
+          <div class="reportify-delivery-row reportify-admin-tools" hidden>
+            <button class="primary" id="generateReportifyDeliveryLink" type="button">Generate link</button>
+            <input id="reportifyDeliveryLinkInput" type="text" readonly aria-label="Reportify delivery link">
+            <button id="copyReportifyDeliveryLink" type="button">Copy</button>
+          </div>
+          <div id="reportifyAccessStatus" class="status-line" aria-live="polite"></div>
+        </div>
+      `;
+
+      const form = document.getElementById("reportifyDownloadForm");
+      const inputEl = document.getElementById("reportifyPasswordInput");
+      const status = document.getElementById("reportifyAccessStatus");
+      const wait = document.getElementById("reportifyWait");
+      const deliveryButton = document.getElementById("generateReportifyDeliveryLink");
+      const deliveryInput = document.getElementById("reportifyDeliveryLinkInput");
+      const copyButton = document.getElementById("copyReportifyDeliveryLink");
+      const remembered = getRememberedDownloadPassword();
+      if (remembered) inputEl.value = remembered;
+
+      function setPanelStatus(text, kind) {
+        status.className = kind ? `status-line ${kind}` : "status-line";
+        status.textContent = text || "";
+        if (wait) wait.hidden = !/准备|3 分钟|自动等待/.test(String(text || ""));
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const button = form.querySelector("button");
+        button.disabled = true;
+        try {
+          await downloadReportify(item.id, inputEl.value, { status: setPanelStatus });
+        } finally {
+          button.disabled = false;
+        }
+      });
+
+      deliveryButton.addEventListener("click", async () => {
+        deliveryButton.disabled = true;
+        deliveryInput.value = "";
+        setPanelStatus("Generating delivery link...");
+        try {
+          const data = await requestReportifyPassword(reportifyUrl, item.id);
+          deliveryInput.value = reportifyPageUrl(item, data.password);
+          setPanelStatus("Delivery link generated.", "ok");
+        } catch (error) {
+          setPanelStatus(error.message || "Could not generate delivery link.", "error");
+        } finally {
+          deliveryButton.disabled = false;
+        }
+      });
+
+      copyButton.addEventListener("click", async () => {
+        if (!deliveryInput.value) return;
+        try {
+          await navigator.clipboard.writeText(deliveryInput.value);
+          setPanelStatus("Copied.", "ok");
+        } catch (_error) {
+          deliveryInput.select();
+          setPanelStatus("Select and copy the link.");
+        }
+      });
+
+      refreshReportifyAdminTools();
+      reportifyAccess.scrollIntoView({ block: "nearest" });
     }
 
     input.addEventListener("input", scheduleReportifySearch);
     clearFilters.addEventListener("click", () => runReportifySearch(""));
+    document.addEventListener("kcdesk-admin-change", refreshReportifyAdminTools);
     reportifyResults.addEventListener("click", (event) => {
       const row = event.target.closest(".reportify-row");
       if (!row) return;
-      downloadReportify(row.dataset.id);
+      renderReportifyAccess(reportifyItems.get(String(row.dataset.id)));
     });
 
     loadJson("data/search_index.json")
@@ -775,6 +887,17 @@
     const plainMatch = header.match(/filename="?([^";]+)"?/i);
     if (plainMatch) return plainMatch[1];
     return fallback || "report.pdf";
+  }
+
+  function triggerBlobDownload(blob, disposition, fallbackName) {
+    const objectUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = objectUrl;
+    link.download = filenameFromDisposition(disposition, fallbackName);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(objectUrl);
   }
 
   function field(label, value) {
@@ -859,16 +982,28 @@
     `;
   }
 
-  function reportPageUrl(id) {
+  function reportPageUrl(id, options = {}) {
     const url = new URL("report.html", window.location.href);
     url.searchParams.set("id", id);
+    if (options.password) url.searchParams.set("password", options.password);
+    if (options.deliver) url.searchParams.set("deliver", "1");
     return url.toString();
   }
 
   function deliveryPageUrl(id, password) {
-    const url = new URL("delivery.html", window.location.href);
-    url.searchParams.set("id", id);
-    url.searchParams.set("password", password);
+    return reportPageUrl(id, { password, deliver: true });
+  }
+
+  function reportifyPageUrl(item, password, options = {}) {
+    const url = new URL("reportify.html", window.location.href);
+    url.searchParams.set("id", item.id);
+    if (password) url.searchParams.set("password", password);
+    if (options.deliver !== false) url.searchParams.set("deliver", "1");
+    if (item.title) url.searchParams.set("title", item.title);
+    if (item.title_cn) url.searchParams.set("title_cn", item.title_cn);
+    if (item.institution) url.searchParams.set("institution", item.institution);
+    if (item.date) url.searchParams.set("date", item.date);
+    if (item.file_type) url.searchParams.set("file_type", item.file_type);
     return url.toString();
   }
 
@@ -880,6 +1015,30 @@
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id, token }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        if (response.status === 401) clearAdminToken();
+        const fallback = response.status >= 500 ? getAdminPlainKey() : "";
+        if (fallback) return { id, password: fallback };
+        throw new Error(data.error || "Could not generate delivery link.");
+      }
+      return data;
+    } catch (error) {
+      const fallback = getAdminPlainKey();
+      if (fallback) return { id, password: fallback };
+      throw error;
+    }
+  }
+
+  async function requestReportifyPassword(workerUrl, id) {
+    const token = getAdminToken();
+    if (!token) throw new Error("Private tools are locked.");
+    try {
+      const response = await fetch(`${workerUrl}/admin/report-password`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, token, source: "reportify" }),
       });
       const data = await response.json().catch(() => ({}));
       if (!response.ok) {
@@ -954,7 +1113,7 @@
     `;
   }
 
-  function renderDetail(item, config, catalogItems, searchTextById) {
+  function renderDetail(item, config, catalogItems, searchTextById, options = {}) {
     const detail = document.getElementById("detail");
     const workerUrl = workerBaseUrl(config);
     const available = isPdfAvailable(item);
@@ -1017,14 +1176,26 @@
     const input = document.getElementById("passwordInput");
     const status = document.getElementById("downloadStatus");
     const button = form.querySelector("button");
-    const rememberedPassword = getRememberedDownloadPassword();
+    const deliveryPassword = String(options.password || "");
+    const rememberedPassword = deliveryPassword || getRememberedDownloadPassword();
     if (rememberedPassword) {
       input.value = rememberedPassword;
-      status.textContent = "Password remembered on this device.";
+      if (deliveryPassword) {
+        setRememberedDownloadPassword(deliveryPassword);
+        status.textContent = options.autoDownload
+          ? "Password filled from delivery link. Download will start automatically."
+          : "Password filled from delivery link.";
+        const cleanUrl = new URL(window.location.href);
+        cleanUrl.searchParams.delete("password");
+        cleanUrl.searchParams.delete("deliver");
+        window.history.replaceState({}, "", cleanUrl.toString());
+      } else {
+        status.textContent = "Password remembered on this device.";
+      }
     }
 
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
+    async function submitDownload(event) {
+      if (event) event.preventDefault();
       status.className = "status-line";
       if (!workerUrl) {
         status.textContent = "PDF download is not configured.";
@@ -1059,14 +1230,7 @@
         }
 
         const blob = await response.blob();
-        const objectUrl = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = objectUrl;
-        link.download = filenameFromDisposition(response.headers.get("Content-Disposition"), item.filename);
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-        URL.revokeObjectURL(objectUrl);
+        triggerBlobDownload(blob, response.headers.get("Content-Disposition"), item.filename);
         setRememberedDownloadPassword(input.value);
         status.textContent = "Download started.";
         status.classList.add("ok");
@@ -1076,7 +1240,12 @@
       } finally {
         button.disabled = false;
       }
-    });
+    }
+
+    form.addEventListener("submit", submitDownload);
+    if (deliveryPassword && options.autoDownload) {
+      window.setTimeout(() => submitDownload(), 250);
+    }
   }
 
   async function initReport() {
@@ -1100,7 +1269,226 @@
       if (entry.id && entry.text) searchTextById.set(entry.id, String(entry.text));
     }
     document.title = `${titleText(item)} | KC Desk Notes`;
-    renderDetail(item, config, items, searchTextById);
+    renderDetail(item, config, items, searchTextById, {
+      password: params.get("password") || "",
+      autoDownload: params.get("deliver") === "1",
+    });
+  }
+
+  function reportifyItemFromParams(params) {
+    return {
+      id: String(params.get("id") || "").trim(),
+      title: params.get("title") || "Report",
+      title_cn: params.get("title_cn") || "",
+      institution: params.get("institution") || "",
+      date: params.get("date") || "",
+      file_type: params.get("file_type") || "",
+    };
+  }
+
+  async function fetchReportifyPdf(workerUrl, id, password, statusTarget) {
+    statusTarget("正在获取报告…");
+    const response = await fetch(`${workerUrl}/reportify/pdf`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      cache: "no-store",
+      body: JSON.stringify({ id, password }),
+    });
+    if (response.status === 202) return { pending: true };
+    if (!response.ok) {
+      let message = `下载失败 (${response.status})`;
+      try {
+        const data = await response.json();
+        if (data.error) message = data.error;
+      } catch (_error) {
+        // Keep generic message.
+      }
+      if (response.status === 401) clearRememberedDownloadPassword();
+      throw new Error(message);
+    }
+    const blob = await response.blob();
+    triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${id}.pdf`);
+    setRememberedDownloadPassword(password);
+    statusTarget("下载已开始。", "ok");
+    return { pending: false };
+  }
+
+  function pollReportifyDetail(workerUrl, id, password, statusTarget, onReady) {
+    let attempts = 0;
+    const timer = window.setInterval(async () => {
+      attempts += 1;
+      if (attempts > 12) {
+        window.clearInterval(timer);
+        statusTarget("报告仍在准备中。请保留这个页面，稍后再次点击下载。", "error");
+        return;
+      }
+      try {
+        const response = await fetch(`${workerUrl}/reportify/status?id=${encodeURIComponent(id)}`, {
+          cache: "no-store",
+        });
+        const data = await response.json();
+        if (data.ready) {
+          window.clearInterval(timer);
+          statusTarget("报告已就绪，正在下载…", "ok");
+          onReady();
+        }
+      } catch (_error) {
+        // Keep polling while the background grab runs.
+      }
+    }, 15000);
+  }
+
+  async function initReportifyDetail() {
+    const params = new URLSearchParams(window.location.search);
+    const item = reportifyItemFromParams(params);
+    const target = document.getElementById("reportifyDetail");
+    if (!/^[0-9]{6,25}$/.test(item.id)) {
+      target.innerHTML = '<div class="error-state">Report not found.</div>';
+      return;
+    }
+
+    const config = await loadOptionalJson("data/config.json", {});
+    const workerUrl = workerBaseUrl(config);
+    initAdminGate(workerUrl);
+
+    const passwordFromLink = params.get("password") || "";
+    const meta = reportifyMeta(item);
+    const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
+    document.title = `${item.title || "Report"} | KC Desk Notes`;
+    target.innerHTML = `
+      <div>
+        <h1 class="detail-title">${escapeHtml(item.title || "Report")}</h1>
+        ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
+        <p class="subtle">Password-protected report delivery.</p>
+      </div>
+      <div class="detail-grid">
+        ${field("Source", "其他报告")}
+        ${field("Institution", item.institution || "-")}
+        ${field("Date", item.date || "-")}
+        ${field("Type", item.file_type || "-")}
+      </div>
+      <form class="unlock-box" id="reportifyDetailForm">
+        <h3>PDF Download</h3>
+        <p class="subtle">Enter the report password to download the PDF.</p>
+        <div class="password-row">
+          <input id="reportifyDetailPassword" type="password" autocomplete="current-password" placeholder="Password" required>
+          <button class="primary" type="submit">Download</button>
+        </div>
+        <div class="reportify-wait" id="reportifyDetailWait" hidden>
+          报告正在准备，通常约 3 分钟。这个页面会自动检测，文件准备好后会开始下载。
+        </div>
+        <div id="reportifyDetailStatus" class="status-line" aria-live="polite"></div>
+      </form>
+      <section class="admin-panel reportify-admin-tools" hidden>
+        <div class="admin-panel-heading">
+          <h3>Delivery link</h3>
+          <span>Private</span>
+        </div>
+        <div class="delivery-row">
+          <button class="primary" id="generateReportifyDetailDeliveryLink" type="button">Generate</button>
+          <input id="reportifyDetailDeliveryLinkInput" type="text" readonly aria-label="Reportify delivery link">
+          <button id="copyReportifyDeliveryLink" type="button">Copy</button>
+        </div>
+        <div id="reportifyDetailDeliveryStatus" class="status-line" aria-live="polite"></div>
+      </section>
+    `;
+
+    const form = document.getElementById("reportifyDetailForm");
+    const input = document.getElementById("reportifyDetailPassword");
+    const button = form.querySelector("button");
+    const status = document.getElementById("reportifyDetailStatus");
+    const wait = document.getElementById("reportifyDetailWait");
+    const adminTools = target.querySelector(".reportify-admin-tools");
+    const generate = document.getElementById("generateReportifyDetailDeliveryLink");
+    const linkInput = document.getElementById("reportifyDetailDeliveryLinkInput");
+    const copy = document.getElementById("copyReportifyDeliveryLink");
+    const deliveryStatus = document.getElementById("reportifyDetailDeliveryStatus");
+
+    function setStatus(text, kind) {
+      status.className = kind ? `status-line ${kind}` : "status-line";
+      status.textContent = text || "";
+      wait.hidden = !/准备|3 分钟|自动检测/.test(String(text || ""));
+    }
+
+    function refreshAdmin() {
+      adminTools.hidden = !getAdminToken();
+    }
+
+    async function submitDownload(event) {
+      if (event) event.preventDefault();
+      if (!input.value) {
+        setStatus("Password is required.", "error");
+        return;
+      }
+      button.disabled = true;
+      try {
+        const result = await fetchReportifyPdf(workerUrl, item.id, input.value, setStatus);
+        if (result.pending) {
+          setRememberedDownloadPassword(input.value);
+          setStatus("报告正在准备，通常约 3 分钟。页面会自动等待，准备好后开始下载。");
+          pollReportifyDetail(workerUrl, item.id, input.value, setStatus, () => submitDownload());
+        }
+      } catch (error) {
+        setStatus(error.message || "下载失败。", "error");
+      } finally {
+        button.disabled = false;
+      }
+    }
+
+    form.addEventListener("submit", submitDownload);
+    document.addEventListener("kcdesk-admin-change", refreshAdmin);
+    refreshAdmin();
+
+    generate.addEventListener("click", async () => {
+      generate.disabled = true;
+      linkInput.value = "";
+      deliveryStatus.className = "status-line";
+      deliveryStatus.textContent = "Generating...";
+      try {
+        const data = await requestReportifyPassword(workerUrl, item.id);
+        linkInput.value = reportifyPageUrl(item, data.password);
+        deliveryStatus.className = "status-line ok";
+        deliveryStatus.textContent = "Delivery link generated.";
+      } catch (error) {
+        deliveryStatus.className = "status-line error";
+        deliveryStatus.textContent = error.message || "Could not generate delivery link.";
+      } finally {
+        generate.disabled = false;
+      }
+    });
+
+    copy.addEventListener("click", async () => {
+      if (!linkInput.value) return;
+      try {
+        await navigator.clipboard.writeText(linkInput.value);
+        deliveryStatus.className = "status-line ok";
+        deliveryStatus.textContent = "Copied.";
+      } catch (_error) {
+        linkInput.select();
+        deliveryStatus.className = "status-line";
+        deliveryStatus.textContent = "Select and copy the link.";
+      }
+    });
+
+    const initialPassword = passwordFromLink || getRememberedDownloadPassword();
+    if (initialPassword) {
+      input.value = initialPassword;
+      if (passwordFromLink) {
+        setRememberedDownloadPassword(passwordFromLink);
+        setStatus(params.get("deliver") === "1"
+          ? "Password filled from delivery link. Download will start automatically."
+          : "Password filled from delivery link.");
+        const cleanUrl = new URL(window.location.href);
+        cleanUrl.searchParams.delete("password");
+        cleanUrl.searchParams.delete("deliver");
+        window.history.replaceState({}, "", cleanUrl.toString());
+      } else {
+        setStatus("Password remembered on this device.");
+      }
+    }
+    if (passwordFromLink && params.get("deliver") === "1") {
+      window.setTimeout(() => submitDownload(), 250);
+    }
   }
 
   async function initDelivery() {
@@ -1112,62 +1500,34 @@
       target.innerHTML = '<div class="error-state">Delivery link is incomplete.</div>';
       return;
     }
-
-    const catalog = await loadJson("data/catalog.json");
-    const items = Array.isArray(catalog.items) ? catalog.items : [];
-    const item = items.find((entry) => entry.id === id);
-    if (!item) {
-      target.innerHTML = '<div class="error-state">Report not found.</div>';
-      return;
-    }
-
-    const available = isPdfAvailable(item);
-    const zh = titleZhText(item);
-    document.title = `Delivery | ${titleText(item)}`;
+    const targetUrl = deliveryPageUrl(id, password);
     target.innerHTML = `
       <div>
-        <h1 class="detail-title">${escapeHtml(titleText(item))}</h1>
-        ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
-        <p class="subtle">Report delivery details.</p>
+        <h1 class="detail-title">Opening report...</h1>
+        <p class="subtle">This delivery link now opens the report page directly.</p>
       </div>
-      <div class="detail-grid">
-        ${field("Institution", bankLabel(item))}
-        ${field("Date", displayDate(item.date_folder))}
-        ${field("Industry", inferIndustry(item))}
-        ${field("PDF", available ? formatSize(item.size_bytes) || "Available" : "Text only")}
-      </div>
-      <div class="delivery-card">
-        <span>Report password</span>
-        <strong>${escapeHtml(password)}</strong>
-      </div>
-      ${available ? "" : `<div class="archive-notice">PDF storage for this report is currently archived. Contact WeChat: <strong>${escapeHtml(CONTACT_WECHAT)}</strong>.</div>`}
       <div class="delivery-actions">
-        <a class="primary-link" href="${escapeHtml(reportPageUrl(item.id))}">Open report page</a>
-        <button id="copyDeliveryPassword" type="button">Copy password</button>
+        <a class="primary-link" href="${escapeHtml(targetUrl)}">Open report</a>
       </div>
-      <div id="deliveryCopyStatus" class="status-line" aria-live="polite"></div>
     `;
-
-    document.getElementById("copyDeliveryPassword").addEventListener("click", async () => {
-      const status = document.getElementById("deliveryCopyStatus");
-      try {
-        await navigator.clipboard.writeText(password);
-        status.className = "status-line ok";
-        status.textContent = "Copied.";
-      } catch (_error) {
-        status.className = "status-line";
-        status.textContent = "Password can be selected from the box above.";
-      }
-    });
+    window.location.replace(targetUrl);
   }
 
-  const boot = page === "report" ? initReport : page === "delivery" ? initDelivery : initIndex;
+  const boot = page === "report"
+    ? initReport
+    : page === "reportify"
+      ? initReportifyDetail
+      : page === "delivery"
+        ? initDelivery
+        : initIndex;
   boot().catch((error) => {
     const target = page === "report"
       ? document.getElementById("detail")
-      : page === "delivery"
-        ? document.getElementById("delivery")
-        : document.getElementById("results");
+      : page === "reportify"
+        ? document.getElementById("reportifyDetail")
+        : page === "delivery"
+          ? document.getElementById("delivery")
+          : document.getElementById("results");
     if (target) target.innerHTML = `<div class="error-state">${escapeHtml(error.message)}</div>`;
   });
 }());
