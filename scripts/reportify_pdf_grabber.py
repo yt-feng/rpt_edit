@@ -36,6 +36,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import sys
 import time
@@ -126,6 +127,45 @@ def sanitize_filename(name: str) -> str:
     name = re.sub(r'[\\/:*?"<>|]+', '_', name)
     name = re.sub(r'\s+', ' ', name).strip()
     return name or "downloaded_report.pdf"
+
+
+def parse_cookie_header(header: str) -> list[tuple[str, str]]:
+    """
+    Parse a Cookie header into name/value pairs without logging secret values.
+    """
+    pairs: list[tuple[str, str]] = []
+    for part in string_parts(header):
+        if "=" not in part:
+            continue
+        name, value = part.split("=", 1)
+        name = name.strip()
+        value = value.strip()
+        if name and value:
+            pairs.append((name, value))
+    return pairs
+
+
+def string_parts(value: str) -> list[str]:
+    return [part.strip() for part in str(value or "").split(";") if part.strip()]
+
+
+def add_cookie_header_to_context(context, cookie_header: str) -> None:
+    pairs = parse_cookie_header(cookie_header)
+    if not pairs:
+        return
+    cookies = []
+    for domain in ["reportify.cn", ".reportify.cn", "api.reportify.cn", ".api.reportify.cn"]:
+        for name, value in pairs:
+            cookies.append({
+                "name": name,
+                "value": value,
+                "domain": domain,
+                "path": "/",
+                "secure": True,
+                "sameSite": "Lax",
+            })
+    context.add_cookies(cookies)
+    log(f"已加载后台访问凭证：{len(pairs)} 个 cookie。")
 
 
 # ------------------------------
@@ -329,13 +369,20 @@ class ReportifyPDFGrabber:
         candidates = result.get("candidates", [])
         for url in candidates:
             low = url.lower()
+            if any(blocked in low for blocked in ["rumt-zh.com", "/collect", "/speed", "rateconfig"]):
+                continue
             if ".pdf" in low or "application/pdf" in low or "download" in low:
                 log(f"发现候选资源：{url}")
                 return url
 
         if candidates:
-            log(f"发现候选资源（首个）：{candidates[0]}")
-            return candidates[0]
+            filtered = [
+                url for url in candidates
+                if not any(blocked in url.lower() for blocked in ["rumt-zh.com", "/collect", "/speed", "rateconfig"])
+            ]
+            if filtered:
+                log(f"发现候选资源（首个）：{filtered[0]}")
+                return filtered[0]
 
         return None
 
@@ -401,6 +448,38 @@ class ReportifyPDFGrabber:
 
         raise RuntimeError("未能抓取到 PDF 文件")
 
+    def is_login_limited_page(self) -> bool:
+        try:
+            text = self.page.locator("body").inner_text(timeout=5000)
+        except Exception:
+            return True
+        login_markers = ["登录查看全文", "立即登录", "手机号", "验证码"]
+        return any(marker in text for marker in login_markers)
+
+    def try_print_page_pdf(self) -> bool:
+        """
+        Some readable pages render the document directly without exposing the
+        original PDF URL. In that case, print the rendered document page to PDF.
+        """
+        if self.is_login_limited_page():
+            warn("页面仍处于登录/预览限制状态，不能打印为交付 PDF。")
+            return False
+        try:
+            self.output_path.parent.mkdir(parents=True, exist_ok=True)
+            self.page.pdf(
+                path=str(self.output_path),
+                format="A4",
+                print_background=True,
+                margin={"top": "8mm", "right": "8mm", "bottom": "8mm", "left": "8mm"},
+            )
+            data = self.output_path.read_bytes()
+            if is_pdf_bytes(data):
+                log(f"已通过页面打印兜底保存 PDF：{self.output_path}")
+                return True
+        except Exception as exc:
+            warn(f"页面打印 PDF 兜底失败：{exc}")
+        return False
+
 
 # ------------------------------
 # 主流程
@@ -414,6 +493,11 @@ def main() -> int:
         "--headless",
         action="store_true",
         help="启用无头模式（默认是有头，便于调试）",
+    )
+    parser.add_argument(
+        "--cookie-header",
+        default=os.getenv("REPORTIFY_COOKIE_HEADER") or os.getenv("REPORTIFY_COOKIE") or "",
+        help="可选 Cookie header，用于后台浏览器访问需要登录的页面。",
     )
     args = parser.parse_args()
 
@@ -429,6 +513,7 @@ def main() -> int:
         # accept_downloads=True 非常关键：
         # 只有开启后，Playwright 才会真正接住浏览器下载文件。
         context = browser.new_context(accept_downloads=True)
+        add_cookie_header_to_context(context, args.cookie_header)
         page = context.new_page()
 
         grabber = ReportifyPDFGrabber(page=page, output_path=output_path)
@@ -463,7 +548,11 @@ def main() -> int:
                     if candidate_url:
                         grabber.try_fetch_candidate_url(context=context, candidate_url=candidate_url)
 
-            saved = grabber.save_result()
+            printed = False
+            if grabber.captured_pdf_bytes is None and grabber.captured_download is None:
+                printed = grabber.try_print_page_pdf()
+
+            saved = output_path if printed else grabber.save_result()
 
             # 最后再做一次非常轻量的文件头校验
             data = saved.read_bytes()

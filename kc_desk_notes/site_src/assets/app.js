@@ -9,6 +9,7 @@
   const AUTH_SESSION_KEY = "kcdesk_auth_session";
   const PADDLE_SCRIPT_URL = "https://cdn.paddle.com/paddle/v2/paddle.js";
   const REPORT_PRICE_QUANTITY = 2000;
+  const ANNUAL_PRICE_QUANTITY = 60000;
   let paddleConfigPromise = null;
   let paddleLoadPromise = null;
   let paddleInitialized = false;
@@ -414,9 +415,11 @@
     const source = context.source || "catalog";
     const isReport = plan === "single_report";
     const priceId = isReport ? config.PADDLE_PRICE_REPORT_CNY_CENT : config.PADDLE_PRICE_YEARLY;
+    const isSharedCentPrice = !isReport && priceId && priceId === config.PADDLE_PRICE_REPORT_CNY_CENT;
+    const quantity = isReport ? REPORT_PRICE_QUANTITY : (isSharedCentPrice ? ANNUAL_PRICE_QUANTITY : 1);
     if (!priceId) throw new Error(isReport ? "支付配置缺少单篇报告价格。" : "支付配置缺少年度价格。");
     paddle.Checkout.open({
-      items: [{ priceId, quantity: isReport ? REPORT_PRICE_QUANTITY : 1 }],
+      items: [{ priceId, quantity }],
       customer: { email: session.user.email },
       customData: {
         plan,
@@ -427,7 +430,7 @@
         report_id: isReport ? item.id || "" : "",
         source,
         title: isReport ? titleText(item).slice(0, 500) : "",
-        quantity: isReport ? REPORT_PRICE_QUANTITY : 1,
+        quantity,
       },
       settings: {
         displayMode: "overlay",
@@ -1700,7 +1703,15 @@
       cache: "no-store",
       body: JSON.stringify({ id, password: password || "" }),
     });
-    if (response.status === 202) return { pending: true };
+    if (response.status === 202) {
+      let data = {};
+      try {
+        data = await response.json();
+      } catch (_error) {
+        // Keep the generic pending state.
+      }
+      return { pending: true, wait_seconds: Number(data.wait_seconds || 0) || 480 };
+    }
     if (!response.ok) {
       let message = `下载失败 (${response.status})`;
       try {
@@ -1708,9 +1719,6 @@
         if (data.error) message = data.error;
       } catch (_error) {
         // Keep generic message.
-      }
-      if (response.status === 503 && /background|configured|prepar/i.test(message)) {
-        return { pending: true };
       }
       if (response.status === 401) clearRememberedDownloadPassword();
       throw new Error(message);
@@ -1748,6 +1756,9 @@
           window.clearInterval(timer);
           statusTarget("报告已就绪，正在下载…", "ok");
           onReady();
+        } else if (data.status === "failed") {
+          window.clearInterval(timer);
+          statusTarget(data.message || "报告准备失败，请联系 macroGate。", "error");
         }
       } catch (_error) {
         // Keep polling while the background grab runs.

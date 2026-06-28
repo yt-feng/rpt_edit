@@ -25,6 +25,7 @@ const EXTERNAL_HOST = "report" + "ify.cn";
 const EXTERNAL_API = `https://api.${EXTERNAL_HOST}`;
 const EXTERNAL_SITE = `https://${EXTERNAL_HOST}`;
 const EXTERNAL_R2_PREFIX = "report" + "ify";
+const EXTERNAL_STATUS_PREFIX = "report" + "ify-status";
 const EXTERNAL_SEARCH_PAGE_SIZE = 20;
 const EXTERNAL_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
@@ -855,11 +856,13 @@ function cleanEnv(value) {
 }
 
 function paddleConfig(env) {
+  const cnyCentPrice = cleanEnv(env.PADDLE_PRICE_CNY_CENT);
   return {
     PADDLE_ENV: cleanEnv(env.PADDLE_ENV) || "production",
     PADDLE_CLIENT_TOKEN: cleanEnv(env.PADDLE_CLIENT_TOKEN),
-    PADDLE_PRICE_REPORT_CNY_CENT: cleanEnv(env.PADDLE_PRICE_REPORT_CNY_CENT),
-    PADDLE_PRICE_YEARLY: cleanEnv(env.PADDLE_PRICE_YEARLY),
+    PADDLE_PRICE_CNY_CENT: cnyCentPrice,
+    PADDLE_PRICE_REPORT_CNY_CENT: cleanEnv(env.PADDLE_PRICE_REPORT_CNY_CENT) || cnyCentPrice,
+    PADDLE_PRICE_YEARLY: cleanEnv(env.PADDLE_PRICE_YEARLY) || cnyCentPrice,
   };
 }
 
@@ -961,6 +964,10 @@ function paddlePeriodEnd(plan, data) {
   return firstText(period.ends_at, data.next_billed_at, data.billing_period_end) || (plan === "annual" ? futureIso(365) : null);
 }
 
+function requestedPaddlePlan(customData) {
+  return firstText(customData.plan, customData.kc_plan, customData.order_plan);
+}
+
 async function processPaddleEvent(env, event) {
   const eventType = String(event.event_type || "");
   if (!PADDLE_HANDLED_EVENTS.has(eventType)) return { processed: false, event_type: eventType };
@@ -972,10 +979,16 @@ async function processPaddleEvent(env, event) {
   const config = paddleConfig(env);
   const reportPrice = config.PADDLE_PRICE_REPORT_CNY_CENT;
   const yearlyPrice = config.PADDLE_PRICE_YEARLY;
+  const requestedPlan = requestedPaddlePlan(customData);
+  const orderKind = firstText(customData.order_kind, customData.orderKind);
 
   if (!email) return { processed: false, event_type: eventType, detail: "missing email" };
 
-  if (reportPrice && priceIds.includes(reportPrice) && eventType === "transaction.completed") {
+  const isReportPurchase = eventType === "transaction.completed"
+    && reportPrice
+    && priceIds.includes(reportPrice)
+    && (requestedPlan === "single_report" || orderKind === "report_purchase" || reportPrice !== yearlyPrice);
+  if (isReportPurchase) {
     const reportId = firstText(customData.report_id, customData.reportId);
     const source = firstText(customData.source) || "catalog";
     if (!reportId) return { processed: false, event_type: eventType, detail: "missing report id" };
@@ -992,12 +1005,21 @@ async function processPaddleEvent(env, event) {
       event_id: event.event_id,
       report_id: reportId,
       source,
+      quantity: Number(customData.quantity || 0) || null,
       price_ids: priceIds,
     });
     return { processed: true, event_type: eventType, email, report_id: saved.report_id, source };
   }
 
-  if (yearlyPrice && priceIds.includes(yearlyPrice)) {
+  const isAnnualPurchase = yearlyPrice
+    && priceIds.includes(yearlyPrice)
+    && (
+      requestedPlan === "annual"
+      || orderKind === "membership"
+      || eventType.startsWith("subscription.")
+      || reportPrice !== yearlyPrice
+    );
+  if (isAnnualPurchase) {
     const status = resolvePaddleStatus(eventType, data);
     const saved = await saveEntitlement(env, email, {
       plan: "annual",
@@ -1012,6 +1034,7 @@ async function processPaddleEvent(env, event) {
       event_id: event.event_id,
       plan: "annual",
       status,
+      quantity: Number(customData.quantity || 0) || null,
       price_ids: priceIds,
     });
     return { processed: true, event_type: eventType, email, plan: saved.plan, status: saved.status };
@@ -1282,8 +1305,43 @@ function externalObjectKey(id) {
   return `${EXTERNAL_R2_PREFIX}/${id}.pdf`;
 }
 
+function externalStatusKey(id) {
+  return `${EXTERNAL_STATUS_PREFIX}/${id}.json`;
+}
+
 function isExternalId(value) {
   return /^[0-9]{6,25}$/.test(String(value || "").trim());
+}
+
+async function externalStoredStatus(env, id) {
+  if (!env.REPORT_BUCKET) return null;
+  try {
+    const object = await env.REPORT_BUCKET.get(externalStatusKey(id));
+    if (!object) return null;
+    const data = JSON.parse(await object.text());
+    return data && typeof data === "object" ? data : null;
+  } catch (_error) {
+    return null;
+  }
+}
+
+async function externalPutStatus(env, id, status, message = "") {
+  if (!env.REPORT_BUCKET) return;
+  try {
+    await env.REPORT_BUCKET.put(externalStatusKey(id), JSON.stringify({
+      id,
+      status,
+      message: String(message || "").slice(0, 500),
+      updated_at: new Date().toISOString(),
+    }), {
+      httpMetadata: {
+        contentType: "application/json; charset=utf-8",
+        cacheControl: "no-store",
+      },
+    });
+  } catch (_error) {
+    // Status files are best-effort; the PDF path remains the source of truth.
+  }
 }
 
 function externalIsoDate(publishAt) {
@@ -1438,7 +1496,14 @@ async function handleExternalPdf(request, env) {
   }
 
   // 3) Gated and not yet mirrored - request preparation and let the page poll.
-  await triggerExternalGrab(env, id);
+  await externalPutStatus(env, id, "queued");
+  const dispatched = await triggerExternalGrab(env, id);
+  if (!dispatched) {
+    await externalPutStatus(env, id, "failed", "dispatch failed");
+    return jsonResponse(request, env, 503, {
+      error: `文件准备服务暂时不可用，请联系 WeChat: ${CONTACT_WECHAT}。`,
+    });
+  }
   return jsonResponse(request, env, 202, {
     status: "pending",
     wait_seconds: 480,
@@ -1456,7 +1521,22 @@ async function handleExternalStatus(request, env) {
     const head = await env.REPORT_BUCKET.head(externalObjectKey(id));
     ready = Boolean(head);
   }
-  return jsonResponse(request, env, 200, { ready });
+  if (ready) return jsonResponse(request, env, 200, { ready, status: "ready" });
+
+  const stored = await externalStoredStatus(env, id);
+  if (stored && stored.status === "failed") {
+    return jsonResponse(request, env, 200, {
+      ready: false,
+      status: "failed",
+      message: `报告准备失败，请联系 ${CONTACT_WECHAT}。`,
+      updated_at: String(stored.updated_at || ""),
+    });
+  }
+  return jsonResponse(request, env, 200, {
+    ready: false,
+    status: stored && stored.status ? String(stored.status) : "pending",
+    updated_at: stored && stored.updated_at ? String(stored.updated_at) : "",
+  });
 }
 
 export default {
