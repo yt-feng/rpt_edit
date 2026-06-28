@@ -1038,6 +1038,8 @@
     results.addEventListener("click", (event) => {
       const row = event.target.closest(".report-link");
       if (!row) return;
+      event.preventDefault();
+      event.stopPropagation();
       openReportPage(row.dataset.id);
     });
 
@@ -1113,6 +1115,8 @@
     externalResults.addEventListener("click", (event) => {
       const row = event.target.closest(".external-row");
       if (!row) return;
+      event.preventDefault();
+      event.stopPropagation();
       const item = externalItems.get(String(row.dataset.id));
       if (item) openInNewTab(externalPageUrl(item, ""));
     });
@@ -1389,12 +1393,10 @@
   }
 
   function openInNewTab(url) {
-    const opened = window.open(url, "_blank", "noopener,noreferrer");
+    const opened = window.open(url, "_blank");
     if (opened) {
       opened.opener = null;
-      return;
     }
-    window.location.href = url;
   }
 
   function openReportPage(id) {
@@ -1576,6 +1578,8 @@
     detail.addEventListener("click", (event) => {
       const row = event.target.closest(".report-link");
       if (!row) return;
+      event.preventDefault();
+      event.stopPropagation();
       openReportPage(row.dataset.id);
     });
 
