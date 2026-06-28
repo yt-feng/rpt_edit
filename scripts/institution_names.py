@@ -32,6 +32,7 @@ INSTITUTION_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bBIS\b|Bank\s+for\s+International\s+Settlements", re.I), "国际清算银行"),
     (re.compile(r"\bRAND\b", re.I), "兰德公司"),
     (re.compile(r"\bBrookings\b", re.I), "布鲁金斯学会"),
+    (re.compile(r"\bARK\s+Invest\b|\bARKInvest\b|\bARKK\b|Cathie\s+Wood", re.I), "木头姐ARK"),
     # MBB strategy consultancies.
     (re.compile(r"\bMcKinsey\b", re.I), "麦肯锡"),
     (re.compile(r"\bBain\b", re.I), "贝恩"),

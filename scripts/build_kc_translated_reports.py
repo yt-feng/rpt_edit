@@ -123,6 +123,7 @@ PUBLIC_AND_CONSULTING_INSTITUTIONS = {
     "波士顿咨询",
     "兰德公司",
     "布鲁金斯学会",
+    "木头姐ARK",
 }
 CHART_CONTEXT_RE = re.compile(
     r"(?:\b(?:exhibit|figure|fig\.|chart|table|source|survey|respondents?|percentage|percent|"
@@ -299,7 +300,7 @@ def is_public_or_consulting_report(report_dir: Path, title: str = "", source_pre
     if institution in PUBLIC_AND_CONSULTING_INSTITUTIONS:
         return True
     path_hint = str(report_dir).lower()
-    return "/institutions/" in path_hint or "/consulting/" in path_hint
+    return "/institutions/" in path_hint or "/consulting/" in path_hint or "/ark/" in path_hint
 
 
 def chart_context(lines: list[str], index: int, radius: int = 5) -> str:

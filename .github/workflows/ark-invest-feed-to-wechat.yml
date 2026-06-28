@@ -1,0 +1,210 @@
+name: ARK Invest feed to WeChat
+
+# Daily monitor for ARK Invest ("木头姐") RSS updates. New feed items are written
+# into xhs_notes/ark, rewritten through the KC translated article pipeline, uploaded
+# to WeChat drafts, and then picked up by the daily market views PDF via extra-roots.
+
+on:
+  workflow_dispatch:
+    inputs:
+      since_days:
+        description: "Only process ARK feed items updated/published within this many days"
+        required: true
+        default: "1"
+      max_items:
+        description: "Cap new ARK items per run. Use all for every new item."
+        required: true
+        default: "5"
+      include_types:
+        description: "Comma list of ARK feed types to process"
+        required: true
+        default: "Articles,Newsletters,White Papers,Crypto Reports"
+      articles_per_draft:
+        description: "Number of articles in each WeChat draft item"
+        required: true
+        default: "8"
+      dry_run:
+        description: "Build WeChat draft payloads without calling WeChat APIs"
+        required: true
+        type: boolean
+        default: false
+      publish:
+        description: "Submit created WeChat drafts for publishing (needs publish API access)"
+        required: true
+        type: boolean
+        default: false
+
+  schedule:
+    # 06:45 Beijing time (UTC+8), before the market views PDF at 08:00.
+    - cron: "45 22 * * *"
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+concurrency:
+  group: ark-invest-feed-to-wechat
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    outputs:
+      date_folder: ${{ steps.fetch.outputs.date_folder }}
+      article_count: ${{ steps.fetch.outputs.article_count }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Pull latest main
+        run: |
+          git fetch --depth=1 origin main
+          git reset --hard origin/main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install reportlab
+
+      - name: Install Chinese fonts
+        timeout-minutes: 5
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+
+      - name: Fetch new ARK feed items
+        id: fetch
+        run: |
+          set -o pipefail
+          DATE="$(TZ=Asia/Shanghai date +%y%m%d)"
+          python scripts/fetch_ark_invest_feed.py \
+            --output-root "xhs_notes/ark" \
+            --date "$DATE" \
+            --since-days "${{ github.event.inputs.since_days || '1' }}" \
+            --max-items "${{ github.event.inputs.max_items || '5' }}" \
+            --include-types "${{ github.event.inputs.include_types || 'Articles,Newsletters,White Papers,Crypto Reports' }}" \
+            2>&1 | tee ark_feed_progress.log
+
+      - name: Build ARK KC translated articles
+        if: ${{ steps.fetch.outputs.article_count != '0' }}
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: "https://api.deepseek.com"
+        run: |
+          set -o pipefail
+          DATE="${{ steps.fetch.outputs.date_folder }}"
+          python scripts/build_kc_translated_reports.py \
+            --dropbox-output-root "xhs_notes/ark" \
+            --date-folder "$DATE" \
+            --output-root "kc_translated_reports/ark" \
+            --max-reports "all" \
+            --title-guard \
+            2>&1 | tee ark_translated_progress.log
+
+      - name: Commit ARK feed state
+        if: ${{ steps.fetch.outputs.article_count != '0' }}
+        run: |
+          bash scripts/commit_output_dir.sh "ark_invest_feed" "Update ARK Invest feed archive" 8
+
+      - name: Commit generated ARK outputs
+        if: ${{ steps.fetch.outputs.article_count != '0' }}
+        run: |
+          DATE="${{ steps.fetch.outputs.date_folder }}"
+          bash scripts/commit_output_dir.sh "xhs_notes/ark/$DATE" "Generate ARK Invest feed outputs $DATE" 8
+          bash scripts/commit_output_dir.sh "kc_translated_reports/ark/$DATE" "Generate ARK Invest KC translated articles $DATE" 8
+
+      - name: Upload run artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ark-invest-feed-run-${{ steps.fetch.outputs.date_folder }}-${{ github.run_id }}
+          path: |
+            ark_invest_feed/ark_feed_run_manifest.json
+            ark_feed_progress.log
+            ark_translated_progress.log
+            xhs_notes/ark
+            kc_translated_reports/ark
+          if-no-files-found: ignore
+
+  upload-wechat-drafts:
+    needs: fetch-and-build
+    if: ${{ needs.fetch-and-build.outputs.article_count != '0' }}
+    runs-on: [self-hosted, linux, x64, wechat-draft]
+    timeout-minutes: 90
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Pull latest generated ARK articles
+        run: |
+          git fetch --depth=1 origin main
+          git reset --hard origin/main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Build and upload WeChat drafts
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          set -o pipefail
+          DATE="${{ needs.fetch-and-build.outputs.date_folder }}"
+          TRANSLATED_DIR="kc_translated_reports/ark/$DATE"
+          if [ ! -d "$TRANSLATED_DIR" ]; then
+            echo "::warning::No translated ARK articles at $TRANSLATED_DIR; nothing to upload."
+            exit 0
+          fi
+
+          ARGS=()
+          if [ "${{ github.event.inputs.dry_run || 'false' }}" = "true" ]; then
+            ARGS+=(--dry-run)
+          fi
+          if [ "${{ github.event.inputs.publish || 'false' }}" = "true" ]; then
+            ARGS+=(--publish)
+          fi
+
+          python scripts/push_kc_translated_to_wechat_drafts.py \
+            --translated-root "kc_translated_reports/ark" \
+            --date-folder "$DATE" \
+            --output-root "wechat_drafts/ark" \
+            --max-articles "all" \
+            --articles-per-draft "${{ github.event.inputs.articles_per_draft || '8' }}" \
+            --max-body-chars "2000" \
+            --min-inline-images "3" \
+            --max-inline-images "3" \
+            "${ARGS[@]}" 2>&1 | tee ark_wechat_progress.log
+
+      - name: Upload WeChat draft artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ark-invest-wechat-drafts-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}
+          path: |
+            wechat_drafts/ark
+            ark_wechat_progress.log
+          if-no-files-found: ignore
+
+      - name: Commit WeChat draft summaries
+        run: |
+          DATE="${{ needs.fetch-and-build.outputs.date_folder }}"
+          bash scripts/commit_output_dir.sh "wechat_drafts/ark/$DATE" "Generate ARK Invest WeChat draft payloads $DATE" 8
