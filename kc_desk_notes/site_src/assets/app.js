@@ -817,8 +817,9 @@
     const available = isPdfAvailable(item);
     const status = available ? size : "Text only";
     const zh = titleZhText(item);
+    const url = reportPageUrl(item.id);
     return `
-      <button class="report-row report-link${available ? "" : " is-archived"}" type="button" data-id="${escapeHtml(item.id)}">
+      <a class="report-row report-link${available ? "" : " is-archived"}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
         <span class="pill">${escapeHtml(bank)}</span>
         <span class="date-text">${escapeHtml(displayDate(item.date_folder))}</span>
         <span class="title-text">
@@ -827,21 +828,22 @@
         </span>
         <span class="industry-text">${escapeHtml(industry)}</span>
         <span class="size-text${available ? "" : " archived"}">${escapeHtml(status)}</span>
-      </button>
+      </a>
     `;
   }
 
   function relatedRow(item) {
     const available = isPdfAvailable(item);
     const zh = titleZhText(item);
+    const url = reportPageUrl(item.id);
     return `
-      <button class="related-row report-link${available ? "" : " is-archived"}" type="button" data-id="${escapeHtml(item.id)}">
+      <a class="related-row report-link${available ? "" : " is-archived"}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
         <span class="related-title">
           <span>${escapeHtml(titleText(item))}</span>
           ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
         </span>
         <span class="related-meta">${escapeHtml(bankLabel(item))} · ${escapeHtml(displayDate(item.date_folder))} · ${escapeHtml(inferIndustry(item))}${available ? "" : " · Text only"}</span>
-      </button>
+      </a>
     `;
   }
 
@@ -856,15 +858,20 @@
   function externalRow(item) {
     const meta = externalMeta(item);
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
+    const url = externalPageUrl(item, "");
     return `
-      <button class="related-row external-row" type="button" data-id="${escapeHtml(item.id)}">
+      <a class="related-row external-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
         <span class="related-title">
           <span>${escapeHtml(item.title)}</span>
           ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
         </span>
         <span class="related-meta">${escapeHtml(meta)}</span>
-      </button>
+      </a>
     `;
+  }
+
+  function isNativeNewTabLink(row) {
+    return row && row.tagName === "A" && row.getAttribute("target") === "_blank" && row.getAttribute("href");
   }
 
   function setOptions(select, options, allLabel) {
@@ -1038,6 +1045,7 @@
     results.addEventListener("click", (event) => {
       const row = event.target.closest(".report-link");
       if (!row) return;
+      if (isNativeNewTabLink(row)) return;
       event.preventDefault();
       event.stopPropagation();
       openReportPage(row.dataset.id);
@@ -1115,6 +1123,7 @@
     externalResults.addEventListener("click", (event) => {
       const row = event.target.closest(".external-row");
       if (!row) return;
+      if (isNativeNewTabLink(row)) return;
       event.preventDefault();
       event.stopPropagation();
       const item = externalItems.get(String(row.dataset.id));
@@ -1578,6 +1587,7 @@
     detail.addEventListener("click", (event) => {
       const row = event.target.closest(".report-link");
       if (!row) return;
+      if (isNativeNewTabLink(row)) return;
       event.preventDefault();
       event.stopPropagation();
       openReportPage(row.dataset.id);

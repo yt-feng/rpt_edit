@@ -361,6 +361,7 @@ h3 {
   background: transparent;
   color: inherit;
   font: inherit;
+  text-decoration: none;
   text-align: left;
   cursor: pointer;
 }
@@ -747,6 +748,7 @@ button.primary:disabled {
   background: transparent;
   color: inherit;
   font: inherit;
+  text-decoration: none;
   text-align: left;
   cursor: pointer;
 }
