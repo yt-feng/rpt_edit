@@ -2,6 +2,22 @@ const CACHE_TTL_MS = 5 * 60 * 1000;
 const DEFAULT_R2_PREFIX = "reports";
 const CONTACT_WECHAT = "macroGate";
 const ADMIN_TOKEN_TTL_SECONDS = 180 * 24 * 60 * 60;
+const USER_TOKEN_TTL_SECONDS = 30 * 24 * 60 * 60;
+const CAPTCHA_TTL_SECONDS = 10 * 60;
+const PASSWORD_ITERATIONS = 120000;
+const GENERATED_EMAIL_DOMAIN = "users.kcdesk.com";
+const USERNAME_PATTERN = /^[a-z0-9][a-z0-9_.-]{2,31}$/;
+const EMAIL_PATTERN = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+const ACTIVE_STATUSES = new Set(["active", "trialing"]);
+const PADDLE_HANDLED_EVENTS = new Set([
+  "transaction.completed",
+  "subscription.created",
+  "subscription.updated",
+  "subscription.canceled",
+  "subscription.past_due",
+  "subscription.paused",
+  "subscription.resumed",
+]);
 
 // External report integration. Search/detail endpoints are public; PDF access
 // still requires a password.
@@ -42,7 +58,7 @@ function corsHeaders(request, env) {
   return {
     "Access-Control-Allow-Origin": allowedOrigin(request, env),
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, Paddle-Signature",
     "Access-Control-Expose-Headers": "Content-Disposition",
     "Vary": "Origin",
   };
@@ -215,6 +231,480 @@ async function sha256Hex(value) {
     .join("");
 }
 
+async function hmacSha256Hex(secret, message) {
+  const digest = await hmacSha256Bytes(secret, message);
+  return Array.from(digest).map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+function randomInt(min, max) {
+  const span = max - min + 1;
+  const buffer = new Uint32Array(1);
+  crypto.getRandomValues(buffer);
+  return min + (buffer[0] % span);
+}
+
+function randomHex(byteLength) {
+  const bytes = new Uint8Array(byteLength);
+  crypto.getRandomValues(bytes);
+  return Array.from(bytes).map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+async function pbkdf2Digest(password, salt, iterations) {
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw",
+    encoder.encode(password),
+    "PBKDF2",
+    false,
+    ["deriveBits"],
+  );
+  const bits = await crypto.subtle.deriveBits(
+    {
+      name: "PBKDF2",
+      salt: encoder.encode(salt),
+      iterations,
+      hash: "SHA-256",
+    },
+    key,
+    256,
+  );
+  return base64UrlEncodeBytes(new Uint8Array(bits));
+}
+
+async function hashUserPassword(password) {
+  const salt = randomHex(16);
+  const digest = await pbkdf2Digest(password, salt, PASSWORD_ITERATIONS);
+  return {
+    password_salt: salt,
+    password_hash: `pbkdf2_sha256$${PASSWORD_ITERATIONS}$${digest}`,
+  };
+}
+
+async function verifyUserPassword(password, salt, storedHash) {
+  let algorithm = "pbkdf2_sha256";
+  let iterations = PASSWORD_ITERATIONS;
+  let digest = String(storedHash || "");
+  const parts = digest.split("$");
+  if (parts.length === 3) {
+    [algorithm, iterations, digest] = [parts[0], Number(parts[1]), parts[2]];
+  }
+  if (algorithm !== "pbkdf2_sha256" || !Number.isFinite(iterations) || !digest) return false;
+  const actual = await pbkdf2Digest(password, salt, iterations);
+  return constantTimeEqual(actual, digest);
+}
+
+function normalizeUsername(value) {
+  return String(value || "").trim().toLowerCase().replace(/^@+/, "");
+}
+
+function normalizeEmail(value) {
+  const email = String(value || "").trim().toLowerCase();
+  return EMAIL_PATTERN.test(email) ? email : "";
+}
+
+function generatedEmailForUsername(username) {
+  return `${username}@${GENERATED_EMAIL_DOMAIN}`;
+}
+
+function isGeneratedEmail(email) {
+  return String(email || "").trim().toLowerCase().endsWith(`@${GENERATED_EMAIL_DOMAIN}`);
+}
+
+function accountSecret(env) {
+  const secret = String(env.AUTH_SECRET || env.PASSWORD_SECRET || env.MASTER_KEY || "").trim();
+  if (!secret || secret === "unconfigured") throw new Error("Account service is temporarily unavailable.");
+  return secret;
+}
+
+async function signAccountPayload(env, payload) {
+  const body = base64UrlEncodeText(JSON.stringify(payload));
+  const signature = base64UrlEncodeBytes(await hmacSha256Bytes(accountSecret(env), body));
+  return `${body}.${signature}`;
+}
+
+async function verifyAccountPayload(env, token, expectedKind) {
+  const [body, signature] = String(token || "").split(".");
+  if (!body || !signature) throw new Error("Session is invalid.");
+  const expected = base64UrlEncodeBytes(await hmacSha256Bytes(accountSecret(env), body));
+  if (!constantTimeEqual(signature, expected)) throw new Error("Session is invalid.");
+  let payload;
+  try {
+    payload = JSON.parse(base64UrlDecodeText(body));
+  } catch (_error) {
+    throw new Error("Session is invalid.");
+  }
+  if (payload.kind !== expectedKind) throw new Error("Session is invalid.");
+  const now = Math.floor(Date.now() / 1000);
+  if (Number(payload.exp || 0) < now) throw new Error("Session has expired.");
+  return payload;
+}
+
+async function createUserToken(env, user) {
+  const now = Math.floor(Date.now() / 1000);
+  return signAccountPayload(env, {
+    kind: "user",
+    sub: String(user.id || ""),
+    username: String(user.username || ""),
+    email: String(user.email || ""),
+    iat: now,
+    exp: now + USER_TOKEN_TTL_SECONDS,
+  });
+}
+
+function publicUser(user) {
+  const email = String(user.email || "");
+  return {
+    id: user.id || "",
+    username: user.username || "",
+    email,
+    email_is_generated: Boolean(user.email_is_generated) || isGeneratedEmail(email),
+    created_at: user.created_at || "",
+    updated_at: user.updated_at || "",
+  };
+}
+
+function bearerToken(request) {
+  const header = request.headers.get("Authorization") || request.headers.get("authorization") || "";
+  return header.toLowerCase().startsWith("bearer ") ? header.slice(7).trim() : "";
+}
+
+function supabaseBaseUrl(env) {
+  const url = String(env.SUPABASE_URL || "").trim().replace(/\/+$/, "");
+  if (!url || url === "unconfigured") throw new Error("Account database is not configured.");
+  return url;
+}
+
+function supabaseServiceKey(env) {
+  const key = String(env.SUPABASE_SERVICE_ROLE_KEY || "").trim();
+  if (!key || key === "unconfigured") throw new Error("Account database is not configured.");
+  return key;
+}
+
+async function supabaseRequest(env, method, path, payload = null, options = {}) {
+  const key = supabaseServiceKey(env);
+  const headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${key}`,
+    "apikey": key,
+  };
+  if (options.prefer) headers.Prefer = options.prefer;
+  else if (options.preferReturn) headers.Prefer = "return=representation";
+  const response = await fetch(`${supabaseBaseUrl(env)}${path}`, {
+    method,
+    headers,
+    body: payload === null ? undefined : JSON.stringify(payload),
+  });
+  const text = await response.text();
+  if (!response.ok) {
+    throw new Error(`Account database error ${response.status}: ${text.slice(0, 300)}`);
+  }
+  return text ? JSON.parse(text) : null;
+}
+
+function hasSupabaseConfig(env) {
+  return cleanEnv(env.SUPABASE_URL) && cleanEnv(env.SUPABASE_SERVICE_ROLE_KEY);
+}
+
+function accountBucket(env) {
+  if (!env.REPORT_BUCKET) throw new Error("Account storage is temporarily unavailable.");
+  return env.REPORT_BUCKET;
+}
+
+async function r2GetJson(env, key) {
+  const object = await accountBucket(env).get(key);
+  if (!object) return null;
+  try {
+    return JSON.parse(await object.text());
+  } catch (_error) {
+    return null;
+  }
+}
+
+async function r2PutJson(env, key, payload) {
+  await accountBucket(env).put(key, JSON.stringify(payload), {
+    httpMetadata: { contentType: "application/json; charset=utf-8" },
+  });
+  return payload;
+}
+
+function accountKey(...parts) {
+  return ["_account", ...parts.map((part) => encodeURIComponent(String(part || "")))].join("/");
+}
+
+function queryString(params) {
+  const search = new URLSearchParams();
+  Object.entries(params).forEach(([key, value]) => search.set(key, value));
+  return search.toString();
+}
+
+async function findSiteUserByUsername(env, username) {
+  if (!hasSupabaseConfig(env)) {
+    return r2GetJson(env, accountKey("users", "username", username));
+  }
+  const query = queryString({ username: `eq.${username}`, limit: "1" });
+  const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
+  return Array.isArray(rows) && rows.length ? rows[0] : null;
+}
+
+async function findSiteUserByEmail(env, email) {
+  if (!hasSupabaseConfig(env)) {
+    return r2GetJson(env, accountKey("users", "email", email));
+  }
+  const query = queryString({ email: `eq.${email}`, limit: "1" });
+  const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
+  return Array.isArray(rows) && rows.length ? rows[0] : null;
+}
+
+async function createSiteUser(env, fields) {
+  if (!hasSupabaseConfig(env)) {
+    const id = crypto.randomUUID ? crypto.randomUUID() : randomHex(16);
+    const user = { ...fields, id };
+    await r2PutJson(env, accountKey("users", "id", id), user);
+    await r2PutJson(env, accountKey("users", "username", user.username), user);
+    await r2PutJson(env, accountKey("users", "email", user.email), user);
+    return user;
+  }
+  const rows = await supabaseRequest(env, "POST", "/rest/v1/site_users?select=*", fields, { preferReturn: true });
+  return Array.isArray(rows) && rows.length ? rows[0] : fields;
+}
+
+async function updateSiteUser(env, userId, fields) {
+  if (!hasSupabaseConfig(env)) {
+    const existing = await r2GetJson(env, accountKey("users", "id", userId));
+    const user = { ...(existing || {}), ...fields, id: userId, updated_at: new Date().toISOString() };
+    if (user.username) await r2PutJson(env, accountKey("users", "username", user.username), user);
+    if (user.email) await r2PutJson(env, accountKey("users", "email", user.email), user);
+    await r2PutJson(env, accountKey("users", "id", userId), user);
+    return user;
+  }
+  const query = queryString({ id: `eq.${userId}`, select: "*" });
+  const rows = await supabaseRequest(env, "PATCH", `/rest/v1/site_users?${query}`, {
+    ...fields,
+    updated_at: new Date().toISOString(),
+  }, { preferReturn: true });
+  return Array.isArray(rows) && rows.length ? rows[0] : fields;
+}
+
+async function currentUserFromRequest(env, request) {
+  const token = bearerToken(request);
+  if (!token) throw new Error("Please log in.");
+  const payload = await verifyAccountPayload(env, token, "user");
+  const user = await findSiteUserByUsername(env, normalizeUsername(payload.username));
+  if (!user) throw new Error("Account not found.");
+  return user;
+}
+
+async function findEntitlement(env, email) {
+  if (!hasSupabaseConfig(env)) {
+    return r2GetJson(env, accountKey("entitlements", email));
+  }
+  const query = queryString({ email: `eq.${email}`, order: "updated_at.desc", limit: "1" });
+  const rows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
+  return Array.isArray(rows) && rows.length ? rows[0] : null;
+}
+
+async function saveEntitlement(env, email, fields) {
+  const now = new Date().toISOString();
+  if (!hasSupabaseConfig(env)) {
+    const existing = await findEntitlement(env, email);
+    return r2PutJson(env, accountKey("entitlements", email), {
+      ...(existing || {}),
+      ...fields,
+      email,
+      id: existing && existing.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
+      updated_at: now,
+      created_at: existing && existing.created_at || now,
+    });
+  }
+  const existing = await findEntitlement(env, email);
+  const payload = { ...fields, email, updated_at: now };
+  if (existing && existing.id) {
+    const query = queryString({ id: `eq.${existing.id}`, select: "*" });
+    const rows = await supabaseRequest(env, "PATCH", `/rest/v1/user_entitlements?${query}`, payload, { preferReturn: true });
+    return Array.isArray(rows) && rows.length ? rows[0] : payload;
+  }
+  const rows = await supabaseRequest(env, "POST", "/rest/v1/user_entitlements?select=*", {
+    ...payload,
+    created_at: now,
+  }, { preferReturn: true });
+  return Array.isArray(rows) && rows.length ? rows[0] : payload;
+}
+
+async function findReportPurchase(env, email, reportId, source) {
+  if (!hasSupabaseConfig(env)) {
+    return r2GetJson(env, accountKey("purchases", source, reportId, email));
+  }
+  const query = queryString({
+    email: `eq.${email}`,
+    report_id: `eq.${reportId}`,
+    source: `eq.${source}`,
+    order: "updated_at.desc",
+    limit: "1",
+  });
+  const rows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
+  return Array.isArray(rows) && rows.length ? rows[0] : null;
+}
+
+async function saveReportPurchase(env, fields) {
+  const now = new Date().toISOString();
+  if (!hasSupabaseConfig(env)) {
+    const existing = await findReportPurchase(env, fields.email, fields.report_id, fields.source);
+    return r2PutJson(env, accountKey("purchases", fields.source, fields.report_id, fields.email), {
+      ...(existing || {}),
+      ...fields,
+      id: existing && existing.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
+      purchased_at: existing && existing.purchased_at || now,
+      created_at: existing && existing.created_at || now,
+      updated_at: now,
+    });
+  }
+  const existing = await findReportPurchase(env, fields.email, fields.report_id, fields.source);
+  const payload = { ...fields, updated_at: now };
+  if (existing && existing.id) {
+    const query = queryString({ id: `eq.${existing.id}`, select: "*" });
+    const rows = await supabaseRequest(env, "PATCH", `/rest/v1/report_purchases?${query}`, payload, { preferReturn: true });
+    return Array.isArray(rows) && rows.length ? rows[0] : payload;
+  }
+  const rows = await supabaseRequest(env, "POST", "/rest/v1/report_purchases?select=*", {
+    ...payload,
+    purchased_at: now,
+    created_at: now,
+  }, { preferReturn: true });
+  return Array.isArray(rows) && rows.length ? rows[0] : payload;
+}
+
+async function insertUsageEvent(env, email, eventType, metadata = {}) {
+  if (!hasSupabaseConfig(env)) {
+    const key = accountKey("usage", email, `${Date.now()}-${randomHex(4)}.json`);
+    await r2PutJson(env, key, {
+      id: crypto.randomUUID ? crypto.randomUUID() : randomHex(16),
+      email,
+      event_type: eventType,
+      units: 1,
+      metadata,
+      created_at: new Date().toISOString(),
+    });
+    return;
+  }
+  await supabaseRequest(env, "POST", "/rest/v1/usage_events", {
+    email,
+    event_type: eventType,
+    units: 1,
+    metadata,
+  });
+}
+
+function periodIsCurrent(value) {
+  if (!value || typeof value !== "string") return false;
+  const time = Date.parse(value);
+  return Number.isFinite(time) && time > Date.now();
+}
+
+function publicEntitlement(row) {
+  if (!row) {
+    return {
+      plan: "free",
+      status: "inactive",
+      lifetime: false,
+      current_period_end: null,
+      active: false,
+    };
+  }
+  const status = String(row.status || "inactive");
+  const lifetime = Boolean(row.lifetime);
+  const currentPeriodEnd = row.current_period_end || null;
+  const active = ACTIVE_STATUSES.has(status) && (lifetime || periodIsCurrent(currentPeriodEnd));
+  return {
+    email: row.email || "",
+    plan: row.plan || "free",
+    status,
+    lifetime,
+    current_period_end: currentPeriodEnd,
+    active,
+    updated_at: row.updated_at || "",
+  };
+}
+
+async function reportAccessForUser(env, user, reportId, source) {
+  const email = normalizeEmail(user.email);
+  if (!email) return { can_download: false, entitlement: publicEntitlement(null), purchase: null };
+  const [entitlementRow, purchase] = await Promise.all([
+    findEntitlement(env, email).catch(() => null),
+    reportId ? findReportPurchase(env, email, reportId, source).catch(() => null) : Promise.resolve(null),
+  ]);
+  const entitlement = publicEntitlement(entitlementRow);
+  const annual = entitlement.active && entitlement.plan === "annual";
+  const purchased = purchase && ACTIVE_STATUSES.has(String(purchase.status || "active"));
+  return {
+    can_download: Boolean(annual || purchased),
+    entitlement,
+    purchase: purchased ? purchase : null,
+  };
+}
+
+async function accountCanDownload(env, request, reportId, source) {
+  try {
+    const user = await currentUserFromRequest(env, request);
+    const access = await reportAccessForUser(env, user, reportId, source);
+    return access.can_download;
+  } catch (_error) {
+    return false;
+  }
+}
+
+async function captchaAnswerHash(env, answer, nonce) {
+  return hmacSha256Hex(accountSecret(env), `captcha:${nonce}:${answer}`);
+}
+
+function captchaSvg(question) {
+  const rotate = randomInt(-5, 5);
+  const lineA = randomInt(12, 28);
+  const lineB = randomInt(84, 108);
+  const dotA = randomInt(24, 132);
+  const dotB = randomInt(18, 50);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="180" height="64" viewBox="0 0 180 64" role="img" aria-label="captcha">
+  <rect width="180" height="64" rx="14" fill="#f8fafc"/>
+  <path d="M8 ${lineA} C52 2, 92 68, 172 ${lineB}" fill="none" stroke="#99f6e4" stroke-width="3" opacity=".8"/>
+  <path d="M4 ${lineB} C48 70, 118 -4, 176 ${lineA}" fill="none" stroke="#bfdbfe" stroke-width="3" opacity=".8"/>
+  <circle cx="${dotA}" cy="${dotB}" r="4" fill="#fbbf24" opacity=".75"/>
+  <text x="90" y="42" text-anchor="middle" transform="rotate(${rotate} 90 32)" fill="#111827" font-size="28" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-weight="900">${question}</text>
+</svg>`;
+}
+
+async function createCaptchaChallenge(env) {
+  const left = randomInt(2, 9);
+  const right = randomInt(1, 9);
+  const answer = String(left + right);
+  const nonce = randomHex(12);
+  const now = Math.floor(Date.now() / 1000);
+  const token = await signAccountPayload(env, {
+    kind: "captcha",
+    nonce,
+    answer_hash: await captchaAnswerHash(env, answer, nonce),
+    iat: now,
+    exp: now + CAPTCHA_TTL_SECONDS,
+  });
+  const svg = captchaSvg(`${left} + ${right} = ?`);
+  return {
+    token,
+    image: `data:image/svg+xml;base64,${btoa(svg)}`,
+    expires_in: CAPTCHA_TTL_SECONDS,
+  };
+}
+
+async function verifyCaptchaResponse(env, token, answer) {
+  try {
+    const payload = await verifyAccountPayload(env, token, "captcha");
+    const clean = String(answer || "").replace(/\D+/g, "");
+    if (!clean || !payload.nonce || !payload.answer_hash) return false;
+    const actual = await captchaAnswerHash(env, clean, payload.nonce);
+    return constantTimeEqual(actual, payload.answer_hash);
+  } catch (_error) {
+    return false;
+  }
+}
+
 async function passwordMatches(env, group, password) {
   const expected = String(group.password_sha256 || "");
   if (!expected || expected === "REPLACE_WITH_SHA256_HASH") {
@@ -246,6 +736,309 @@ async function sharedReportPasswordMatches(env, id, password) {
     // Fall through to the shared password.
   }
   return defaultPasswordMatches(env, password);
+}
+
+async function handleCaptcha(request, env) {
+  try {
+    return jsonResponse(request, env, 200, await createCaptchaChallenge(env));
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { detail: "Account service is temporarily unavailable." });
+  }
+}
+
+async function handleAuth(request, env) {
+  if (request.method === "GET") {
+    try {
+      const user = await currentUserFromRequest(env, request);
+      return jsonResponse(request, env, 200, {
+        token: await createUserToken(env, user),
+        user: publicUser(user),
+      });
+    } catch (error) {
+      return jsonResponse(request, env, 401, { detail: error.message || "Please log in." });
+    }
+  }
+
+  let payload = {};
+  try {
+    payload = await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+
+  const action = String(payload.action || "login").trim().toLowerCase();
+  const username = normalizeUsername(payload.username);
+  const password = String(payload.password || "");
+  if (!["login", "register"].includes(action)) {
+    return jsonResponse(request, env, 400, { detail: "Unsupported auth action." });
+  }
+  if (!(await verifyCaptchaResponse(env, String(payload.captcha_token || ""), String(payload.captcha_answer || "")))) {
+    return jsonResponse(request, env, 400, { detail: "验证码不正确或已过期。" });
+  }
+  if (!USERNAME_PATTERN.test(username)) {
+    return jsonResponse(request, env, 400, { detail: "用户名需为 3-32 位小写字母、数字、点、短横线或下划线。" });
+  }
+  if (password.length < 4 || password.length > 128) {
+    return jsonResponse(request, env, 400, { detail: "密码需为 4-128 位。" });
+  }
+
+  try {
+    if (action === "register") {
+      const existing = await findSiteUserByUsername(env, username);
+      if (existing) return jsonResponse(request, env, 409, { detail: "用户名已被注册。" });
+      const rawEmail = String(payload.email || "");
+      let email = normalizeEmail(rawEmail);
+      let emailIsGenerated = false;
+      if (rawEmail.trim() && !email) {
+        return jsonResponse(request, env, 400, { detail: "邮箱格式不正确，可以留空。" });
+      }
+      if (!email) {
+        email = generatedEmailForUsername(username);
+        emailIsGenerated = true;
+      }
+      const existingEmail = await findSiteUserByEmail(env, email);
+      if (existingEmail) return jsonResponse(request, env, 409, { detail: "用户名或邮箱已被注册。" });
+      const now = new Date().toISOString();
+      const passwordFields = await hashUserPassword(password);
+      const user = await createSiteUser(env, {
+        username,
+        email,
+        email_is_generated: emailIsGenerated,
+        ...passwordFields,
+        created_at: now,
+        updated_at: now,
+        last_login_at: now,
+      });
+      return jsonResponse(request, env, 201, {
+        token: await createUserToken(env, user),
+        user: publicUser(user),
+      });
+    }
+
+    const user = await findSiteUserByUsername(env, username);
+    const ok = user && await verifyUserPassword(password, String(user.password_salt || ""), String(user.password_hash || ""));
+    if (!ok) return jsonResponse(request, env, 401, { detail: "用户名或密码不正确。" });
+    const updated = user.id ? await updateSiteUser(env, user.id, { last_login_at: new Date().toISOString() }) : user;
+    const merged = { ...user, ...updated };
+    return jsonResponse(request, env, 200, {
+      token: await createUserToken(env, merged),
+      user: publicUser(merged),
+    });
+  } catch (error) {
+    const text = String(error && error.message || "");
+    if (/duplicate|409|unique/i.test(text)) {
+      return jsonResponse(request, env, 409, { detail: "用户名或邮箱已被注册。" });
+    }
+    return jsonResponse(request, env, 503, { detail: "Account service is temporarily unavailable." });
+  }
+}
+
+async function handleEntitlement(request, env) {
+  const url = new URL(request.url);
+  try {
+    const user = await currentUserFromRequest(env, request);
+    const reportId = String(url.searchParams.get("report_id") || "").trim();
+    const source = String(url.searchParams.get("source") || "catalog").trim() || "catalog";
+    const access = await reportAccessForUser(env, user, reportId, source);
+    return jsonResponse(request, env, 200, {
+      user: publicUser(user),
+      ...access,
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 401, { detail: error.message || "Please log in." });
+  }
+}
+
+function cleanEnv(value) {
+  const text = String(value || "").trim();
+  return text === "unconfigured" ? "" : text;
+}
+
+function paddleConfig(env) {
+  return {
+    PADDLE_ENV: cleanEnv(env.PADDLE_ENV) || "production",
+    PADDLE_CLIENT_TOKEN: cleanEnv(env.PADDLE_CLIENT_TOKEN),
+    PADDLE_PRICE_REPORT_CNY_CENT: cleanEnv(env.PADDLE_PRICE_REPORT_CNY_CENT),
+    PADDLE_PRICE_YEARLY: cleanEnv(env.PADDLE_PRICE_YEARLY),
+  };
+}
+
+function handlePaddleConfig(request, env) {
+  const config = paddleConfig(env);
+  const missing = ["PADDLE_CLIENT_TOKEN", "PADDLE_PRICE_REPORT_CNY_CENT", "PADDLE_PRICE_YEARLY"]
+    .filter((key) => !config[key]);
+  return jsonResponse(request, env, 200, { config, missing });
+}
+
+function parsePaddleSignature(header) {
+  let timestamp = "";
+  const signatures = [];
+  for (const part of String(header || "").split(";")) {
+    const [key, value] = part.split("=");
+    if (!key || !value) continue;
+    if (key.trim() === "ts") timestamp = value.trim();
+    if (key.trim() === "h1") signatures.push(value.trim());
+  }
+  return { timestamp, signatures };
+}
+
+async function verifyPaddleSignature(env, rawBody, signatureHeader) {
+  const secret = cleanEnv(env.PADDLE_WEBHOOK_SECRET);
+  if (!secret || !signatureHeader) return false;
+  const { timestamp, signatures } = parsePaddleSignature(signatureHeader);
+  if (!timestamp || !signatures.length) return false;
+  const sentAt = Number(timestamp);
+  if (!Number.isFinite(sentAt) || Math.abs(Math.floor(Date.now() / 1000) - sentAt) > 300) return false;
+  const expected = await hmacSha256Hex(secret, `${timestamp}:${rawBody}`);
+  return signatures.some((signature) => constantTimeEqual(signature, expected));
+}
+
+function asObject(value) {
+  return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+}
+
+function firstText(...values) {
+  for (const value of values) {
+    if (typeof value === "string" && value.trim()) return value.trim();
+  }
+  return "";
+}
+
+function collectPriceIds(value, found = []) {
+  if (Array.isArray(value)) {
+    value.forEach((child) => collectPriceIds(child, found));
+  } else if (value && typeof value === "object") {
+    Object.values(value).forEach((child) => collectPriceIds(child, found));
+  } else if (typeof value === "string" && value.startsWith("pri_") && !found.includes(value)) {
+    found.push(value);
+  }
+  return found;
+}
+
+function extractPaddleEmail(data, customData) {
+  const customer = asObject(data.customer);
+  const billing = asObject(data.billing_details);
+  return normalizeEmail(firstText(
+    customData.email,
+    customData.customer_email,
+    data.customer_email,
+    data.email,
+    customer.email,
+    billing.email,
+  ));
+}
+
+function transactionIdForEvent(eventType, data) {
+  return eventType.startsWith("transaction.")
+    ? firstText(data.id, data.transaction_id)
+    : firstText(data.transaction_id);
+}
+
+function subscriptionIdForEvent(eventType, data) {
+  return eventType.startsWith("subscription.")
+    ? firstText(data.id, data.subscription_id)
+    : firstText(data.subscription_id);
+}
+
+function resolvePaddleStatus(eventType, data) {
+  if (eventType === "subscription.canceled") return "canceled";
+  if (eventType === "subscription.paused") return "paused";
+  if (eventType === "subscription.past_due") return "past_due";
+  if (eventType === "subscription.resumed") return "active";
+  if (eventType.startsWith("subscription.")) {
+    const status = String(data.status || "active").toLowerCase();
+    return ACTIVE_STATUSES.has(status) ? "active" : status;
+  }
+  return "active";
+}
+
+function futureIso(days) {
+  return new Date(Date.now() + days * 24 * 60 * 60 * 1000).toISOString();
+}
+
+function paddlePeriodEnd(plan, data) {
+  const period = asObject(data.current_billing_period);
+  return firstText(period.ends_at, data.next_billed_at, data.billing_period_end) || (plan === "annual" ? futureIso(365) : null);
+}
+
+async function processPaddleEvent(env, event) {
+  const eventType = String(event.event_type || "");
+  if (!PADDLE_HANDLED_EVENTS.has(eventType)) return { processed: false, event_type: eventType };
+
+  const data = asObject(event.data);
+  const customData = asObject(data.custom_data || data.customData);
+  const email = extractPaddleEmail(data, customData);
+  const priceIds = collectPriceIds(data);
+  const config = paddleConfig(env);
+  const reportPrice = config.PADDLE_PRICE_REPORT_CNY_CENT;
+  const yearlyPrice = config.PADDLE_PRICE_YEARLY;
+
+  if (!email) return { processed: false, event_type: eventType, detail: "missing email" };
+
+  if (reportPrice && priceIds.includes(reportPrice) && eventType === "transaction.completed") {
+    const reportId = firstText(customData.report_id, customData.reportId);
+    const source = firstText(customData.source) || "catalog";
+    if (!reportId) return { processed: false, event_type: eventType, detail: "missing report id" };
+    const saved = await saveReportPurchase(env, {
+      email,
+      report_id: reportId,
+      source,
+      title: firstText(customData.title).slice(0, 500),
+      status: "active",
+      paddle_customer_id: firstText(data.customer_id, customData.paddle_customer_id),
+      paddle_transaction_id: transactionIdForEvent(eventType, data),
+    });
+    await insertUsageEvent(env, email, "report_purchase.completed", {
+      event_id: event.event_id,
+      report_id: reportId,
+      source,
+      price_ids: priceIds,
+    });
+    return { processed: true, event_type: eventType, email, report_id: saved.report_id, source };
+  }
+
+  if (yearlyPrice && priceIds.includes(yearlyPrice)) {
+    const status = resolvePaddleStatus(eventType, data);
+    const saved = await saveEntitlement(env, email, {
+      plan: "annual",
+      status,
+      lifetime: false,
+      paddle_customer_id: firstText(data.customer_id, customData.paddle_customer_id),
+      paddle_subscription_id: subscriptionIdForEvent(eventType, data),
+      paddle_transaction_id: transactionIdForEvent(eventType, data),
+      current_period_end: paddlePeriodEnd("annual", data),
+    });
+    await insertUsageEvent(env, email, eventType, {
+      event_id: event.event_id,
+      plan: "annual",
+      status,
+      price_ids: priceIds,
+    });
+    return { processed: true, event_type: eventType, email, plan: saved.plan, status: saved.status };
+  }
+
+  await insertUsageEvent(env, email, eventType, {
+    event_id: event.event_id,
+    processed: false,
+    reason: "unrecognized price",
+    price_ids: priceIds,
+  }).catch(() => {});
+  return { processed: false, event_type: eventType, detail: "unrecognized price" };
+}
+
+async function handlePaddleWebhook(request, env) {
+  const rawBody = await request.text();
+  const signatureHeader = request.headers.get("Paddle-Signature") || "";
+  if (!(await verifyPaddleSignature(env, rawBody, signatureHeader))) {
+    return jsonResponse(request, env, 401, { detail: "Invalid Paddle signature." });
+  }
+  try {
+    const event = JSON.parse(rawBody || "{}");
+    const result = await processPaddleEvent(env, event);
+    return jsonResponse(request, env, 200, { ok: true, ...result });
+  } catch (error) {
+    return jsonResponse(request, env, 500, { detail: error.message || "Webhook processing failed." });
+  }
 }
 
 function safeFilename(value) {
@@ -283,15 +1076,16 @@ async function handleDownload(request, env) {
   if (!/^[a-f0-9]{16,64}$/i.test(id)) {
     return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
-  if (!password) {
-    return jsonResponse(request, env, 400, { error: "Password is required." });
+  const accountAllowed = await accountCanDownload(env, request, id, "catalog");
+  if (!password && !accountAllowed) {
+    return jsonResponse(request, env, 402, { error: "Please log in, purchase this report, or enter the report password." });
   }
 
   let catalog;
   try {
     catalog = await loadCatalog(env);
   } catch (_error) {
-    return jsonResponse(request, env, 503, { error: "Download service is not configured." });
+    return jsonResponse(request, env, 503, { error: "Download service is temporarily unavailable." });
   }
 
   const report = findReport(catalog, id);
@@ -306,29 +1100,31 @@ async function handleDownload(request, env) {
     });
   }
 
-  let derivedOk = false;
-  try {
-    derivedOk = await derivedPasswordMatches(env, id, password);
-  } catch (_error) {
-    derivedOk = false;
-  }
-
-  if (!derivedOk) {
+  if (!accountAllowed) {
+    let derivedOk = false;
     try {
-      const rules = await loadRules(env);
-      const group = findPasswordGroup(rules, report.password_group || rules.default_group);
-      if (!group) {
+      derivedOk = await derivedPasswordMatches(env, id, password);
+    } catch (_error) {
+      derivedOk = false;
+    }
+
+    if (!derivedOk) {
+      try {
+        const rules = await loadRules(env);
+        const group = findPasswordGroup(rules, report.password_group || rules.default_group);
+        if (!group) {
+          return jsonResponse(request, env, 503, { error: "Password validation failed." });
+        }
+        const ok = await passwordMatches(env, group, password);
+        if (!ok) return jsonResponse(request, env, 401, { error: "Password is incorrect." });
+      } catch (_error) {
         return jsonResponse(request, env, 503, { error: "Password validation failed." });
       }
-      const ok = await passwordMatches(env, group, password);
-      if (!ok) return jsonResponse(request, env, 401, { error: "Password is incorrect." });
-    } catch (_error) {
-      return jsonResponse(request, env, 503, { error: "Password validation failed." });
     }
   }
 
   if (!env.REPORT_BUCKET) {
-    return jsonResponse(request, env, 503, { error: "Download storage is not configured." });
+    return jsonResponse(request, env, 503, { error: "Download service is temporarily unavailable." });
   }
 
   const key = objectKeyForReport(env, id);
@@ -612,10 +1408,11 @@ async function handleExternalPdf(request, env) {
   if (!isExternalId(id)) {
     return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
-  if (!password) {
-    return jsonResponse(request, env, 400, { error: "Password is required." });
+  const accountAllowed = await accountCanDownload(env, request, id, "external");
+  if (!password && !accountAllowed) {
+    return jsonResponse(request, env, 402, { error: "Please log in, purchase this report, or enter the report password." });
   }
-  if (!(await sharedReportPasswordMatches(env, id, password))) {
+  if (!accountAllowed && !(await sharedReportPasswordMatches(env, id, password))) {
     return jsonResponse(request, env, 401, { error: "Password is incorrect." });
   }
 
@@ -640,16 +1437,11 @@ async function handleExternalPdf(request, env) {
     }
   }
 
-  // 3) Gated and not yet grabbed - kick off the browser grab in GitHub Actions.
-  const dispatched = await triggerExternalGrab(env, id);
-  if (dispatched) {
-    return jsonResponse(request, env, 202, {
-      status: "pending",
-      wait_seconds: 120,
-    });
-  }
-  return jsonResponse(request, env, 503, {
-    error: "This report needs a background download, which is not configured.",
+  // 3) Gated and not yet mirrored - request preparation and let the page poll.
+  await triggerExternalGrab(env, id);
+  return jsonResponse(request, env, 202, {
+    status: "pending",
+    wait_seconds: 180,
   });
 }
 
@@ -688,6 +1480,26 @@ export default {
 
     if (pathname === "/download" && request.method === "POST") {
       return handleDownload(request, env);
+    }
+
+    if (pathname === "/captcha" && request.method === "GET") {
+      return handleCaptcha(request, env);
+    }
+
+    if (pathname === "/auth" && (request.method === "GET" || request.method === "POST")) {
+      return handleAuth(request, env);
+    }
+
+    if (pathname === "/entitlement" && request.method === "GET") {
+      return handleEntitlement(request, env);
+    }
+
+    if (pathname === "/paddle-config" && request.method === "GET") {
+      return handlePaddleConfig(request, env);
+    }
+
+    if (pathname === "/paddle-webhook" && request.method === "POST") {
+      return handlePaddleWebhook(request, env);
     }
 
     if (pathname === "/admin/login" && request.method === "POST") {

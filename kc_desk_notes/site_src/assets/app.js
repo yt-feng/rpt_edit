@@ -6,6 +6,12 @@
   const ADMIN_COOKIE_NAME = "kcdesk_admin_token";
   const ADMIN_COOKIE_MAX_AGE = 180 * 24 * 60 * 60;
   const DOWNLOAD_PASSWORD_KEY = "kcdesk_download_password";
+  const AUTH_SESSION_KEY = "kcdesk_auth_session";
+  const PADDLE_SCRIPT_URL = "https://cdn.paddle.com/paddle/v2/paddle.js";
+  const REPORT_PRICE_QUANTITY = 2000;
+  let paddleConfigPromise = null;
+  let paddleLoadPromise = null;
+  let paddleInitialized = false;
 
   const INDUSTRY_RULES = [
     ["Macro / FX / Rates", /\b(macro|fx|foreign exchange|currency|cny|yuan|dollar|usd|rate|rates|yield|fed|ecb|boj|inflation|cpi|pmi|gdp|economy|economic|recession|treasury|bond|nominal|real rate)\b/],
@@ -169,6 +175,410 @@
     return configured || "/api";
   }
 
+  function loadAuthSession() {
+    try {
+      const raw = localStorage.getItem(AUTH_SESSION_KEY);
+      if (!raw) return null;
+      const session = JSON.parse(raw);
+      if (!session || !session.token || !session.user || !session.user.email) return null;
+      return session;
+    } catch (_error) {
+      return null;
+    }
+  }
+
+  function saveAuthSession(session) {
+    try {
+      localStorage.setItem(AUTH_SESSION_KEY, JSON.stringify(session));
+    } catch (_error) {
+      // Ignore storage errors; the current page still has the response.
+    }
+    document.dispatchEvent(new CustomEvent("kcdesk-auth-change"));
+  }
+
+  function clearAuthSession() {
+    try {
+      localStorage.removeItem(AUTH_SESSION_KEY);
+    } catch (_error) {
+      // Ignore storage errors.
+    }
+    document.dispatchEvent(new CustomEvent("kcdesk-auth-change"));
+  }
+
+  function authHeaders() {
+    const session = loadAuthSession();
+    return session && session.token ? { "Authorization": `Bearer ${session.token}` } : {};
+  }
+
+  function authUserLabel(session) {
+    const user = session && session.user;
+    if (!user) return "登录";
+    return user.username || user.email || "账号";
+  }
+
+  async function refreshAuthSession(workerUrl) {
+    const session = loadAuthSession();
+    if (!session || !session.token || !workerUrl) return null;
+    try {
+      const response = await fetch(`${workerUrl}/auth`, {
+        cache: "no-store",
+        headers: authHeaders(),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || !data.token || !data.user) throw new Error(data.detail || "Session expired.");
+      saveAuthSession({ token: data.token, user: data.user });
+      return { token: data.token, user: data.user };
+    } catch (_error) {
+      clearAuthSession();
+      return null;
+    }
+  }
+
+  function initAccountGate(workerUrl) {
+    const gate = document.getElementById("accountGate");
+    if (!gate) return;
+    function update() {
+      const session = loadAuthSession();
+      gate.textContent = authUserLabel(session);
+      gate.classList.toggle("is-unlocked", Boolean(session));
+    }
+    update();
+    document.addEventListener("kcdesk-auth-change", update);
+    gate.addEventListener("click", () => showAccountModal(workerUrl));
+    refreshAuthSession(workerUrl).then(update);
+  }
+
+  function accountModalMarkup(context = {}) {
+    const session = loadAuthSession();
+    const signedIn = Boolean(session);
+    const reportTitle = context.item ? titleText(context.item) : "";
+    const reportCard = context.item
+      ? `
+        <div class="plan-card">
+          <strong>单篇报告 ¥20</strong>
+          <span>${escapeHtml(reportTitle)}</span>
+          <button class="primary" id="accountBuyReport" type="button">购买本篇</button>
+        </div>
+      `
+      : "";
+    return `
+      <div class="admin-modal account-modal" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle">
+        <div class="admin-dialog account-dialog">
+          <button class="admin-close" id="accountClose" type="button" aria-label="Close">&times;</button>
+          <h3 id="accountModalTitle">账号管理</h3>
+          <form id="accountAuthForm" class="auth-form" ${signedIn ? "hidden" : ""}>
+            <div class="auth-grid">
+              <label>用户名<input id="accountUsername" type="text" autocomplete="username" placeholder="yourname" required></label>
+              <label id="accountEmailLabel" hidden>邮箱（可选）<input id="accountEmail" type="email" autocomplete="email" placeholder="you@example.com"></label>
+              <label>密码<input id="accountPassword" type="password" autocomplete="current-password" placeholder="至少 4 位" required></label>
+            </div>
+            <label class="captcha-field">验证码
+              <div class="captcha-row">
+                <img id="accountCaptchaImage" alt="验证码">
+                <button class="secondary-button" id="accountRefreshCaptcha" type="button">换一张</button>
+              </div>
+              <input id="accountCaptchaAnswer" type="text" inputmode="numeric" autocomplete="off" placeholder="输入结果" required>
+            </label>
+            <div class="account-modal-actions">
+              <button class="primary" id="accountSubmit" type="submit">登录</button>
+              <button class="secondary-button" id="accountModeToggle" type="button">注册新账号</button>
+            </div>
+          </form>
+          <div id="accountSummary" class="account-summary" ${signedIn ? "" : "hidden"}>
+            <span>当前账号</span>
+            <strong id="accountName">${escapeHtml(authUserLabel(session))}</strong>
+            <span id="accountEmailText">${escapeHtml(session && session.user ? session.user.email : "")}</span>
+            <div class="account-modal-actions">
+              <button class="secondary-button" id="accountLogout" type="button">退出登录</button>
+            </div>
+          </div>
+          <div class="plan-grid">
+            ${reportCard}
+            <div class="plan-card">
+              <strong>年度会员 ¥600</strong>
+              <span>一年内下载大部分可用报告，适合高频使用。</span>
+              <button class="primary" id="accountBuyAnnual" type="button">开通年度</button>
+            </div>
+          </div>
+          <div id="accountModalStatus" class="status-line" aria-live="polite"></div>
+        </div>
+      </div>
+    `;
+  }
+
+  async function loadAccountCaptcha(workerUrl, status) {
+    const image = document.getElementById("accountCaptchaImage");
+    const refresh = document.getElementById("accountRefreshCaptcha");
+    if (!image || !refresh) return "";
+    refresh.disabled = true;
+    try {
+      const response = await fetch(`${workerUrl}/captcha`, { cache: "no-store" });
+      const data = await response.json();
+      if (!response.ok || !data.image || !data.token) throw new Error(data.detail || "验证码加载失败。");
+      image.src = data.image;
+      return data.token;
+    } catch (error) {
+      status.textContent = error.message || "验证码加载失败。";
+      status.className = "status-line error";
+      return "";
+    } finally {
+      refresh.disabled = false;
+    }
+  }
+
+  function windowPaddle() {
+    return window.Paddle;
+  }
+
+  async function fetchPaddleConfig(workerUrl) {
+    if (paddleConfigPromise) return paddleConfigPromise;
+    paddleConfigPromise = fetch(`${workerUrl}/paddle-config`, { cache: "no-store" })
+      .then(async (response) => {
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.detail || "支付配置接口异常。");
+        if (data.missing && data.missing.length) throw new Error(`支付配置缺少：${data.missing.join(", ")}`);
+        return data.config || {};
+      });
+    return paddleConfigPromise;
+  }
+
+  function loadPaddleScript() {
+    if (windowPaddle()) return Promise.resolve();
+    return new Promise((resolve, reject) => {
+      const existing = document.querySelector(`script[src="${PADDLE_SCRIPT_URL}"]`);
+      if (existing) {
+        existing.addEventListener("load", () => resolve(), { once: true });
+        existing.addEventListener("error", () => reject(new Error("Paddle.js 加载失败。")), { once: true });
+        return;
+      }
+      const script = document.createElement("script");
+      script.src = PADDLE_SCRIPT_URL;
+      script.async = true;
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error("Paddle.js 加载失败。"));
+      document.head.appendChild(script);
+    });
+  }
+
+  async function ensurePaddle(workerUrl) {
+    if (paddleLoadPromise) return paddleLoadPromise;
+    paddleLoadPromise = Promise.all([fetchPaddleConfig(workerUrl), loadPaddleScript()]).then(([config]) => {
+      const paddle = windowPaddle();
+      if (!paddle) throw new Error("Paddle.js 未就绪。");
+      if (config.PADDLE_ENV === "sandbox" && paddle.Environment && paddle.Environment.set) {
+        paddle.Environment.set("sandbox");
+      }
+      if (!paddleInitialized) {
+        if (!config.PADDLE_CLIENT_TOKEN) throw new Error("支付配置缺少：PADDLE_CLIENT_TOKEN");
+        paddle.Initialize({
+          token: config.PADDLE_CLIENT_TOKEN,
+          eventCallback: (event) => {
+            const name = String(event && (event.name || event.eventName || event.type) || "");
+            if (name === "checkout.completed") {
+              document.dispatchEvent(new CustomEvent("kcdesk-checkout-complete"));
+            }
+          },
+        });
+        paddleInitialized = true;
+      }
+      return config;
+    });
+    return paddleLoadPromise;
+  }
+
+  async function requireAccount(workerUrl, context = {}) {
+    let session = loadAuthSession();
+    if (session) return session;
+    if (!document.getElementById("accountModal")) showAccountModal(workerUrl, context);
+    throw new Error("请先登录或注册账号。");
+  }
+
+  async function openCheckout(workerUrl, plan, context = {}, statusTarget) {
+    const status = statusTarget || (() => {});
+    const session = await requireAccount(workerUrl, context);
+    status("正在打开支付窗口…");
+    const config = await ensurePaddle(workerUrl);
+    const paddle = windowPaddle();
+    const item = context.item || {};
+    const source = context.source || "catalog";
+    const isReport = plan === "single_report";
+    const priceId = isReport ? config.PADDLE_PRICE_REPORT_CNY_CENT : config.PADDLE_PRICE_YEARLY;
+    if (!priceId) throw new Error(isReport ? "支付配置缺少单篇报告价格。" : "支付配置缺少年度价格。");
+    paddle.Checkout.open({
+      items: [{ priceId, quantity: isReport ? REPORT_PRICE_QUANTITY : 1 }],
+      customer: { email: session.user.email },
+      customData: {
+        plan,
+        order_kind: isReport ? "report_purchase" : "membership",
+        email: session.user.email,
+        username: session.user.username || "",
+        account_id: session.user.id || "",
+        report_id: isReport ? item.id || "" : "",
+        source,
+        title: isReport ? titleText(item).slice(0, 500) : "",
+        quantity: isReport ? REPORT_PRICE_QUANTITY : 1,
+      },
+      settings: {
+        displayMode: "overlay",
+        theme: "light",
+        successUrl: checkoutSuccessUrl(plan),
+      },
+    });
+    status("支付窗口已打开。完成后页面会自动更新，也可以稍后刷新。", "ok");
+  }
+
+  function checkoutSuccessUrl(plan) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("checkout", "success");
+    url.searchParams.set("plan", plan);
+    return url.toString();
+  }
+
+  async function showAccountModal(workerUrl, context = {}) {
+    if (!workerUrl) {
+      window.alert("Account service is temporarily unavailable.");
+      return "";
+    }
+    const existing = document.getElementById("accountModal");
+    if (existing) existing.remove();
+    document.body.insertAdjacentHTML("beforeend", accountModalMarkup(context));
+
+    const modal = document.getElementById("accountModal");
+    const close = document.getElementById("accountClose");
+    const form = document.getElementById("accountAuthForm");
+    const summary = document.getElementById("accountSummary");
+    const username = document.getElementById("accountUsername");
+    const emailLabel = document.getElementById("accountEmailLabel");
+    const email = document.getElementById("accountEmail");
+    const password = document.getElementById("accountPassword");
+    const answer = document.getElementById("accountCaptchaAnswer");
+    const refresh = document.getElementById("accountRefreshCaptcha");
+    const submit = document.getElementById("accountSubmit");
+    const toggle = document.getElementById("accountModeToggle");
+    const logout = document.getElementById("accountLogout");
+    const buyReport = document.getElementById("accountBuyReport");
+    const buyAnnual = document.getElementById("accountBuyAnnual");
+    const status = document.getElementById("accountModalStatus");
+    let mode = "login";
+    let captchaToken = "";
+
+    function setStatus(text, kind) {
+      status.className = kind ? `status-line ${kind}` : "status-line";
+      status.textContent = text || "";
+    }
+
+    function refreshUi() {
+      const session = loadAuthSession();
+      const signedIn = Boolean(session);
+      form.hidden = signedIn;
+      summary.hidden = !signedIn;
+      if (signedIn) {
+        document.getElementById("accountName").textContent = authUserLabel(session);
+        document.getElementById("accountEmailText").textContent = session.user.email || "";
+        setStatus("已登录，支付会绑定到当前账号。", "ok");
+        fetch(`${workerUrl}/entitlement`, { cache: "no-store", headers: authHeaders() })
+          .then((response) => response.json())
+          .then((data) => {
+            const entitlement = data && data.entitlement;
+            if (entitlement && entitlement.active && entitlement.plan === "annual") {
+              setStatus(`年度会员有效${entitlement.current_period_end ? `至 ${entitlement.current_period_end.slice(0, 10)}` : ""}。`, "ok");
+            }
+          })
+          .catch(() => {});
+      } else {
+        captchaToken = "";
+        loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; });
+      }
+    }
+
+    function setMode(nextMode) {
+      mode = nextMode;
+      emailLabel.hidden = mode !== "register";
+      password.autocomplete = mode === "register" ? "new-password" : "current-password";
+      submit.textContent = mode === "register" ? "注册并登录" : "登录";
+      toggle.textContent = mode === "register" ? "已有账号，去登录" : "注册新账号";
+      answer.value = "";
+      loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; });
+    }
+
+    function finish() {
+      modal.remove();
+    }
+
+    close.addEventListener("click", finish);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) finish();
+    });
+    toggle.addEventListener("click", () => setMode(mode === "login" ? "register" : "login"));
+    refresh.addEventListener("click", () => loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; }));
+    if (logout) {
+      logout.addEventListener("click", () => {
+        clearAuthSession();
+        setStatus("已退出登录。");
+        refreshUi();
+      });
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      submit.disabled = true;
+      setStatus(mode === "register" ? "正在注册…" : "正在登录…");
+      try {
+        const response = await fetch(`${workerUrl}/auth`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            action: mode,
+            username: username.value,
+            password: password.value,
+            email: mode === "register" ? email.value : "",
+            captcha_token: captchaToken,
+            captcha_answer: answer.value,
+          }),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.token || !data.user) throw new Error(data.detail || "账号请求失败。");
+        saveAuthSession({ token: data.token, user: data.user });
+        password.value = "";
+        answer.value = "";
+        refreshUi();
+      } catch (error) {
+        setStatus(error.message || "账号请求失败。", "error");
+        answer.value = "";
+        captchaToken = await loadAccountCaptcha(workerUrl, status);
+      } finally {
+        submit.disabled = false;
+      }
+    });
+
+    if (buyReport) {
+      buyReport.addEventListener("click", async () => {
+        buyReport.disabled = true;
+        try {
+          await openCheckout(workerUrl, "single_report", context, setStatus);
+        } catch (error) {
+          setStatus(error.message || "支付窗口打开失败。", "error");
+        } finally {
+          buyReport.disabled = false;
+        }
+      });
+    }
+
+    buyAnnual.addEventListener("click", async () => {
+      buyAnnual.disabled = true;
+      try {
+        await openCheckout(workerUrl, "annual", context, setStatus);
+      } catch (error) {
+        setStatus(error.message || "支付窗口打开失败。", "error");
+      } finally {
+        buyAnnual.disabled = false;
+      }
+    });
+
+    refreshUi();
+    if (!loadAuthSession() && username) username.focus();
+  }
+
   function adminModalMarkup() {
     return `
       <div class="admin-modal" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle">
@@ -190,7 +600,7 @@
 
   function showAdminLogin(workerUrl) {
     if (!workerUrl) {
-      window.alert("Private tools are not configured.");
+      window.alert("Private tools are temporarily unavailable.");
       return Promise.resolve("");
     }
 
@@ -486,7 +896,9 @@
     let searchIndexLabel = "Text index loading";
     let currentPage = 1;
 
-    initAdminGate(workerBaseUrl(config));
+    const workerUrl = workerBaseUrl(config);
+    initAccountGate(workerUrl);
+    initAdminGate(workerUrl);
 
     const bankOptions = new Map();
     const industryOptions = new Map();
@@ -607,22 +1019,20 @@
     results.addEventListener("click", (event) => {
       const row = event.target.closest(".report-link");
       if (!row) return;
-      window.location.href = `report.html?id=${encodeURIComponent(row.dataset.id)}`;
+      openReportPage(row.dataset.id);
     });
 
     // --- 其他报告 integration ---------------------------------------------
-    // Live search through the Worker proxy. Clicking a row opens a password gate;
-    // gated PDFs are prepared in the background and then served from private R2.
-    const externalUrl = workerBaseUrl(config);
+    // Live search through the Worker proxy. Rows open the same password-gated
+    // detail flow used by primary reports.
+    const externalUrl = workerUrl;
     const externalSection = document.getElementById("externalSection");
     const externalResults = document.getElementById("externalResults");
-    const externalAccess = document.getElementById("externalAccess");
     const externalCount = document.getElementById("externalCount");
     const externalStatus = document.getElementById("externalStatus");
     let externalTimer = 0;
     let externalToken = 0;
     const externalItems = new Map();
-    const externalPolls = new Map();
 
     function setExternalStatus(text, kind) {
       if (!externalStatus) return;
@@ -636,10 +1046,6 @@
         externalSection.hidden = true;
         externalResults.innerHTML = "";
         externalItems.clear();
-        if (externalAccess) {
-          externalAccess.hidden = true;
-          externalAccess.innerHTML = "";
-        }
         if (externalCount) externalCount.textContent = "";
         setExternalStatus("");
         return;
@@ -648,6 +1054,12 @@
       externalSection.hidden = false;
       if (externalCount) externalCount.textContent = "搜索中…";
       setExternalStatus("");
+      externalResults.innerHTML = `
+        <div class="loading-state">
+          <span class="loading-spinner" aria-hidden="true"></span>
+          <span>正在搜索其他报告…</span>
+        </div>
+      `;
       try {
         const response = await fetch(
           `${externalUrl}/external/search?q=${encodeURIComponent(query)}`,
@@ -659,10 +1071,6 @@
         const items = Array.isArray(data.items) ? data.items : [];
         externalItems.clear();
         items.forEach((item) => externalItems.set(String(item.id), item));
-        if (externalAccess) {
-          externalAccess.hidden = true;
-          externalAccess.innerHTML = "";
-        }
         if (externalCount) externalCount.textContent = items.length ? `${items.length} 条` : "";
         externalResults.innerHTML = items.length
           ? items.map(externalRow).join("")
@@ -681,177 +1089,13 @@
       externalTimer = window.setTimeout(() => runExternalSearch(query), 400);
     }
 
-    function pollExternal(id, password, onReady, statusTarget = setExternalStatus) {
-      if (externalPolls.has(id)) return;
-      let attempts = 0;
-      const timer = window.setInterval(async () => {
-        attempts += 1;
-        if (attempts > 12) { // ~3 minutes at 15s intervals
-          window.clearInterval(timer);
-          externalPolls.delete(id);
-          statusTarget("报告仍在准备中。请保留页面，稍后再次点击下载。", "error");
-          return;
-        }
-        try {
-          const response = await fetch(
-            `${externalUrl}/external/status?id=${encodeURIComponent(id)}`,
-            { cache: "no-store" },
-          );
-          const data = await response.json();
-          if (data.ready) {
-            window.clearInterval(timer);
-            externalPolls.delete(id);
-            statusTarget("报告已就绪，正在下载…", "ok");
-            onReady(password);
-          }
-        } catch (_error) {
-          // Keep polling; a transient error is expected while the grab runs.
-        }
-      }, 15000);
-      externalPolls.set(id, timer);
-    }
-
-    async function downloadExternal(id, password, options = {}) {
-      const statusTarget = options.status || setExternalStatus;
-      if (!externalUrl || !id) return false;
-      if (!password) {
-        statusTarget("Password is required.", "error");
-        return false;
-      }
-      statusTarget("正在获取报告…");
-      try {
-        const response = await fetch(`${externalUrl}/external/pdf`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          cache: "no-store",
-          body: JSON.stringify({ id, password }),
-        });
-        if (response.status === 202) {
-          setRememberedDownloadPassword(password);
-          statusTarget("报告正在准备，通常约 3 分钟。页面会自动等待，准备好后开始下载。");
-          pollExternal(id, password, (readyPassword) => downloadExternal(id, readyPassword, options), statusTarget);
-          return true;
-        }
-        if (!response.ok) {
-          let message = `下载失败 (${response.status})`;
-          try {
-            const data = await response.json();
-            if (data.error) message = data.error;
-          } catch (_error) {
-            // Non-JSON error body; keep the generic message.
-          }
-          if (response.status === 401) clearRememberedDownloadPassword();
-          throw new Error(message);
-        }
-        const blob = await response.blob();
-        triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${id}.pdf`);
-        setRememberedDownloadPassword(password);
-        statusTarget("下载已开始。", "ok");
-        return true;
-      } catch (error) {
-        statusTarget(error.message || "下载失败。", "error");
-        return false;
-      }
-    }
-
-    function refreshExternalAdminTools() {
-      if (!externalAccess) return;
-      const tools = externalAccess.querySelector(".external-admin-tools");
-      if (tools) tools.hidden = !getAdminToken();
-    }
-
-    function renderExternalAccess(item) {
-      if (!externalAccess || !item) return;
-      const meta = externalMeta(item);
-      const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
-      externalAccess.hidden = false;
-      externalAccess.innerHTML = `
-        <div class="external-access-card">
-          <div class="external-access-title">
-            <strong>${escapeHtml(item.title || "Untitled report")}</strong>
-            ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
-            ${meta ? `<span class="related-meta">${escapeHtml(meta)}</span>` : ""}
-          </div>
-          <form class="external-actions" id="externalDownloadForm">
-            <input id="externalPasswordInput" type="password" autocomplete="current-password" placeholder="Password" required>
-            <button class="primary" type="submit">Download</button>
-          </form>
-          <div class="external-wait" id="externalWait" hidden>
-            报告正在准备，通常约 3 分钟。这个页面会自动检测，文件准备好后会开始下载。
-          </div>
-          <div class="external-delivery-row external-admin-tools" hidden>
-            <button class="primary" id="generateExternalDeliveryLink" type="button">Generate link</button>
-            <input id="externalDeliveryLinkInput" type="text" readonly aria-label="Delivery link">
-            <button id="copyExternalDeliveryLink" type="button">Copy</button>
-          </div>
-          <div id="externalAccessStatus" class="status-line" aria-live="polite"></div>
-        </div>
-      `;
-
-      const form = document.getElementById("externalDownloadForm");
-      const inputEl = document.getElementById("externalPasswordInput");
-      const status = document.getElementById("externalAccessStatus");
-      const wait = document.getElementById("externalWait");
-      const deliveryButton = document.getElementById("generateExternalDeliveryLink");
-      const deliveryInput = document.getElementById("externalDeliveryLinkInput");
-      const copyButton = document.getElementById("copyExternalDeliveryLink");
-      const remembered = getRememberedDownloadPassword();
-      if (remembered) inputEl.value = remembered;
-
-      function setPanelStatus(text, kind) {
-        status.className = kind ? `status-line ${kind}` : "status-line";
-        status.textContent = text || "";
-        if (wait) wait.hidden = !/准备|3 分钟|自动等待/.test(String(text || ""));
-      }
-
-      form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        const button = form.querySelector("button");
-        button.disabled = true;
-        try {
-          await downloadExternal(item.id, inputEl.value, { status: setPanelStatus });
-        } finally {
-          button.disabled = false;
-        }
-      });
-
-      deliveryButton.addEventListener("click", async () => {
-        deliveryButton.disabled = true;
-        deliveryInput.value = "";
-        setPanelStatus("Generating delivery link...");
-        try {
-          const data = await requestExternalPassword(externalUrl, item.id);
-          deliveryInput.value = externalPageUrl(item, data.password);
-          setPanelStatus("Delivery link generated.", "ok");
-        } catch (error) {
-          setPanelStatus(error.message || "Could not generate delivery link.", "error");
-        } finally {
-          deliveryButton.disabled = false;
-        }
-      });
-
-      copyButton.addEventListener("click", async () => {
-        if (!deliveryInput.value) return;
-        try {
-          await navigator.clipboard.writeText(deliveryInput.value);
-          setPanelStatus("Copied.", "ok");
-        } catch (_error) {
-          deliveryInput.select();
-          setPanelStatus("Select and copy the link.");
-        }
-      });
-
-      refreshExternalAdminTools();
-      externalAccess.scrollIntoView({ block: "nearest" });
-    }
-
     input.addEventListener("input", scheduleExternalSearch);
     clearFilters.addEventListener("click", () => runExternalSearch(""));
-    document.addEventListener("kcdesk-admin-change", refreshExternalAdminTools);
     externalResults.addEventListener("click", (event) => {
       const row = event.target.closest(".external-row");
       if (!row) return;
-      renderExternalAccess(externalItems.get(String(row.dataset.id)));
+      const item = externalItems.get(String(row.dataset.id));
+      if (item) openInNewTab(externalPageUrl(item, ""));
     });
 
     loadJson("data/search_index.json")
@@ -960,7 +1204,7 @@
       return `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.`;
     }
     if (/password/i.test(text)) return text;
-    if (/configured/i.test(text)) return "PDF download is not configured.";
+    if (/configured/i.test(text)) return "PDF download is temporarily unavailable. Please try again later.";
     return text || "Download failed.";
   }
 
@@ -981,11 +1225,151 @@
     `;
   }
 
+  function accountAccessMarkup() {
+    return `
+      <section class="account-access" id="accountAccess">
+        <h3>Account access</h3>
+        <p class="subtle">登录后可购买单篇报告，或开通年度会员下载大部分可用报告。</p>
+        <div class="account-access-actions">
+          <button class="secondary-button" id="openAccountPanel" type="button">登录 / 账号</button>
+          <button class="primary" id="accountDownloadReport" type="button" hidden>会员下载</button>
+          <button class="secondary-button" id="buySingleReport" type="button">单篇 ¥20</button>
+          <button class="secondary-button" id="buyAnnualPlan" type="button">年度 ¥600</button>
+        </div>
+        <div id="accountAccessStatus" class="status-line" aria-live="polite"></div>
+      </section>
+    `;
+  }
+
+  function setLineStatus(target, text, kind) {
+    if (!target) return;
+    target.className = kind ? `status-line ${kind}` : "status-line";
+    target.textContent = text || "";
+  }
+
+  async function fetchReportAccess(workerUrl, item, source) {
+    const session = loadAuthSession();
+    if (!session) return null;
+    const response = await fetch(
+      `${workerUrl}/entitlement?report_id=${encodeURIComponent(item.id)}&source=${encodeURIComponent(source)}`,
+      { cache: "no-store", headers: authHeaders() },
+    );
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      if (response.status === 401) clearAuthSession();
+      throw new Error(data.detail || "账号状态读取失败。");
+    }
+    return data;
+  }
+
+  async function downloadCatalogWithAccount(workerUrl, item, statusTarget) {
+    statusTarget("正在检查账号权益…");
+    const response = await fetch(`${workerUrl}/download`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", ...authHeaders() },
+      body: JSON.stringify({ id: item.id }),
+    });
+    if (!response.ok) {
+      const data = await response.json().catch(() => ({}));
+      if (response.status === 401) clearAuthSession();
+      throw new Error(downloadErrorMessage(response.status, data.error || "Download failed.", data));
+    }
+    const blob = await response.blob();
+    triggerBlobDownload(blob, response.headers.get("Content-Disposition"), item.filename);
+    statusTarget("下载已开始。", "ok");
+  }
+
+  function initReportAccessControls(item, workerUrl, source, downloadHandler) {
+    const panel = document.getElementById("accountAccess");
+    if (!panel || !workerUrl) return;
+    const openAccount = document.getElementById("openAccountPanel");
+    const accountDownload = document.getElementById("accountDownloadReport");
+    const buySingle = document.getElementById("buySingleReport");
+    const buyAnnual = document.getElementById("buyAnnualPlan");
+    const status = document.getElementById("accountAccessStatus");
+    const context = { item, source };
+
+    function statusTarget(text, kind) {
+      setLineStatus(status, text, kind);
+    }
+
+    async function refresh() {
+      const session = loadAuthSession();
+      accountDownload.hidden = true;
+      if (!session) {
+        statusTarget("登录后可购买单篇报告或开通年度会员。");
+        return;
+      }
+      statusTarget("正在读取账号权益…");
+      try {
+        const access = await fetchReportAccess(workerUrl, item, source);
+        if (access && access.can_download) {
+          accountDownload.hidden = false;
+          buySingle.hidden = true;
+          statusTarget("当前账号已解锁此报告，可直接下载。", "ok");
+        } else {
+          buySingle.hidden = false;
+          statusTarget("当前账号尚未解锁此报告。");
+        }
+      } catch (error) {
+        statusTarget(error.message || "账号状态读取失败。", "error");
+      }
+    }
+
+    openAccount.addEventListener("click", () => showAccountModal(workerUrl, context));
+    buySingle.addEventListener("click", async () => {
+      buySingle.disabled = true;
+      try {
+        await openCheckout(workerUrl, "single_report", context, statusTarget);
+      } catch (error) {
+        statusTarget(error.message || "支付窗口打开失败。", "error");
+      } finally {
+        buySingle.disabled = false;
+      }
+    });
+    buyAnnual.addEventListener("click", async () => {
+      buyAnnual.disabled = true;
+      try {
+        await openCheckout(workerUrl, "annual", context, statusTarget);
+      } catch (error) {
+        statusTarget(error.message || "支付窗口打开失败。", "error");
+      } finally {
+        buyAnnual.disabled = false;
+      }
+    });
+    accountDownload.addEventListener("click", async () => {
+      accountDownload.disabled = true;
+      try {
+        await downloadHandler(statusTarget);
+      } catch (error) {
+        statusTarget(error.message || "下载失败。", "error");
+      } finally {
+        accountDownload.disabled = false;
+      }
+    });
+    document.addEventListener("kcdesk-auth-change", refresh);
+    document.addEventListener("kcdesk-checkout-complete", refresh);
+    refresh();
+  }
+
   function reportPageUrl(id, options = {}) {
     const url = new URL("report.html", window.location.href);
     url.searchParams.set("id", id);
     if (options.password) url.searchParams.set("password", options.password);
     return url.toString();
+  }
+
+  function openInNewTab(url) {
+    const opened = window.open(url, "_blank", "noopener,noreferrer");
+    if (opened) {
+      opened.opener = null;
+      return;
+    }
+    window.location.href = url;
+  }
+
+  function openReportPage(id) {
+    openInNewTab(reportPageUrl(id));
   }
 
   function deliveryPageUrl(id, password) {
@@ -1116,7 +1500,7 @@
     const available = isPdfAvailable(item);
     const setupWarning = workerUrl || !available
       ? ""
-      : '<div class="setup-warning">PDF download is not configured.</div>';
+      : '<div class="setup-warning">PDF download is temporarily unavailable. Please try again later.</div>';
     const archiveNotice = available
       ? ""
       : `<div class="archive-notice">PDF storage for this report is currently archived, but the text record remains searchable. Contact WeChat: <strong>${escapeHtml(CONTACT_WECHAT)}</strong>.</div>`;
@@ -1134,6 +1518,7 @@
     const unlockMarkup = available
       ? `
         ${setupWarning}
+        ${workerUrl ? accountAccessMarkup() : ""}
         <form class="unlock-box" id="unlockForm">
           <h3>PDF Download</h3>
           <p class="subtle">Enter the report password to download the PDF.</p>
@@ -1162,10 +1547,13 @@
     detail.addEventListener("click", (event) => {
       const row = event.target.closest(".report-link");
       if (!row) return;
-      window.location.href = `report.html?id=${encodeURIComponent(row.dataset.id)}`;
+      openReportPage(row.dataset.id);
     });
 
     initDetailAdmin(item, workerUrl);
+    initReportAccessControls(item, workerUrl, "catalog", (statusTarget) => (
+      downloadCatalogWithAccount(workerUrl, item, statusTarget)
+    ));
 
     if (!available) return;
 
@@ -1193,7 +1581,7 @@
       if (event) event.preventDefault();
       status.className = "status-line";
       if (!workerUrl) {
-        status.textContent = "PDF download is not configured.";
+        status.textContent = "PDF download is temporarily unavailable. Please try again later.";
         status.classList.add("error");
         return;
       }
@@ -1249,6 +1637,7 @@
       loadOptionalJson("data/search_index.json", { items: [] }),
     ]);
     const workerUrl = workerBaseUrl(config);
+    initAccountGate(workerUrl);
     initAdminGate(workerUrl);
     const items = Array.isArray(catalog.items) ? catalog.items : [];
     const item = items.find((entry) => entry.id === id);
@@ -1277,13 +1666,13 @@
     };
   }
 
-  async function fetchExternalPdf(workerUrl, id, password, statusTarget) {
+  async function fetchExternalPdf(workerUrl, id, password, statusTarget, options = {}) {
     statusTarget("正在获取报告…");
     const response = await fetch(`${workerUrl}/external/pdf`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...(options.auth ? authHeaders() : {}) },
       cache: "no-store",
-      body: JSON.stringify({ id, password }),
+      body: JSON.stringify({ id, password: password || "" }),
     });
     if (response.status === 202) return { pending: true };
     if (!response.ok) {
@@ -1293,6 +1682,9 @@
         if (data.error) message = data.error;
       } catch (_error) {
         // Keep generic message.
+      }
+      if (response.status === 503 && /background|configured|prepar/i.test(message)) {
+        return { pending: true };
       }
       if (response.status === 401) clearRememberedDownloadPassword();
       throw new Error(message);
@@ -1329,6 +1721,16 @@
     }, 15000);
   }
 
+  async function downloadExternalWithAccount(workerUrl, item, statusTarget) {
+    const result = await fetchExternalPdf(workerUrl, item.id, "", statusTarget, { auth: true });
+    if (result.pending) {
+      statusTarget("报告正在准备，通常约 3 分钟。页面会自动等待，准备好后开始下载。");
+      pollExternalDetail(workerUrl, item.id, "", statusTarget, () => (
+        downloadExternalWithAccount(workerUrl, item, statusTarget)
+      ));
+    }
+  }
+
   async function initExternalDetail() {
     const params = new URLSearchParams(window.location.search);
     const item = externalItemFromParams(params);
@@ -1340,6 +1742,7 @@
 
     const config = await loadOptionalJson("data/config.json", {});
     const workerUrl = workerBaseUrl(config);
+    initAccountGate(workerUrl);
     initAdminGate(workerUrl);
 
     const passwordFromLink = params.get("password") || "";
@@ -1370,6 +1773,7 @@
         </div>
         <div id="externalDetailStatus" class="status-line" aria-live="polite"></div>
       </form>
+      ${workerUrl ? accountAccessMarkup() : ""}
       <section class="admin-panel external-admin-tools" hidden>
         <div class="admin-panel-heading">
           <h3>Delivery link</h3>
@@ -1429,6 +1833,9 @@
     form.addEventListener("submit", submitDownload);
     document.addEventListener("kcdesk-admin-change", refreshAdmin);
     refreshAdmin();
+    initReportAccessControls(item, workerUrl, "external", (statusTarget) => (
+      downloadExternalWithAccount(workerUrl, item, statusTarget)
+    ));
 
     generate.addEventListener("click", async () => {
       generate.disabled = true;
