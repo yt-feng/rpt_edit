@@ -903,6 +903,12 @@
     `;
   }
 
+  function externalTitleMatchesQuery(item, query) {
+    const cleanQuery = normalize(query);
+    if (!cleanQuery) return false;
+    return textMatches(normalize([item.title, item.title_cn].join(" ")), cleanQuery);
+  }
+
   function authorityRow(item) {
     const meta = authorityMeta(item);
     const url = externalPageUrl({ ...item, source: AUTHORITY_SOURCE }, "");
@@ -967,7 +973,6 @@
     const searchTextById = new Map();
     let searchIndexLabel = "Text index loading";
     let currentPage = 1;
-    let primaryUsableCount = items.filter(isPdfAvailable).length;
 
     const workerUrl = workerBaseUrl(config);
     initAccountGate(workerUrl);
@@ -1043,7 +1048,6 @@
         return dateSortValue(b.item) - dateSortValue(a.item);
       });
 
-      primaryUsableCount = scoped.filter((entry) => isPdfAvailable(entry.item)).length;
       count.textContent = `${scoped.length} of ${items.length} reports`;
       updateActiveFilters();
       const rowsPerPage = Math.max(1, Number(pageSize.value) || 50);
@@ -1117,7 +1121,7 @@
     let externalToken = 0;
     let authorityToken = 0;
     let externalSearchSettled = false;
-    let externalUsableCount = 0;
+    let externalTitleMatchCount = 0;
     let externalQuery = "";
     let authorityQuery = "";
     const externalItems = new Map();
@@ -1147,7 +1151,7 @@
 
     function maybeRunAuthoritySearch(query) {
       const cleanQuery = String(query || "").trim();
-      if (!cleanQuery || externalQuery !== cleanQuery || primaryUsableCount > 0 || !externalSearchSettled || externalUsableCount > 0) {
+      if (!cleanQuery || externalQuery !== cleanQuery || !externalSearchSettled || externalTitleMatchCount > 0) {
         hideAuthorityResults();
         return;
       }
@@ -1160,7 +1164,7 @@
       if (!externalUrl || !query) {
         externalQuery = "";
         externalSearchSettled = true;
-        externalUsableCount = 0;
+        externalTitleMatchCount = 0;
         externalSection.hidden = true;
         externalResults.innerHTML = "";
         externalItems.clear();
@@ -1172,7 +1176,7 @@
       const token = ++externalToken;
       externalQuery = query;
       externalSearchSettled = false;
-      externalUsableCount = 0;
+      externalTitleMatchCount = 0;
       hideAuthorityResults();
       externalSection.hidden = false;
       if (externalCount) externalCount.textContent = "搜索中…";
@@ -1194,7 +1198,7 @@
         const items = Array.isArray(data.items) ? data.items : [];
         externalItems.clear();
         items.forEach((item) => externalItems.set(String(item.id), item));
-        externalUsableCount = items.length;
+        externalTitleMatchCount = items.filter((item) => externalTitleMatchesQuery(item, query)).length;
         externalSearchSettled = true;
         if (externalCount) externalCount.textContent = items.length ? `${items.length} 条` : "";
         externalResults.innerHTML = items.length
@@ -1203,7 +1207,7 @@
         maybeRunAuthoritySearch(query);
       } catch (error) {
         if (token !== externalToken) return;
-        externalUsableCount = 0;
+        externalTitleMatchCount = 0;
         externalSearchSettled = true;
         if (externalCount) externalCount.textContent = "";
         externalResults.innerHTML = "";
@@ -2013,7 +2017,7 @@
       <div>
         <h1 class="detail-title">${escapeHtml(item.title || "Report")}</h1>
         ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
-        <p class="subtle">${isAuthorityItem(item) ? "High-authority report lead." : "Password-protected report delivery."}</p>
+        <p class="subtle">${isAuthorityItem(item) ? "高权报告检索线索。" : "Password-protected report delivery."}</p>
       </div>
       <div class="detail-grid">
         ${detailFields}

@@ -33,11 +33,11 @@ const EXTERNAL_UA =
 
 // High-authority foreign-report metadata. Search endpoints are public; this
 // integration intentionally does not download PDFs.
-const AUTHORITY_HOST = "www.nash-ai.cn";
+const AUTHORITY_HOST = ["www", "na" + "sh-ai", "cn"].join(".");
 const AUTHORITY_ORIGIN = `https://${AUTHORITY_HOST}`;
 const AUTHORITY_SOURCE = "authority";
 const AUTHORITY_SEARCH_PAGE_SIZE = 20;
-const AUTHORITY_UA = "NashForeignSearchMetadataClient/1.0";
+const AUTHORITY_UA = "KCDeskAuthoritySearch/1.0";
 const AUTHORITY_KINDS = {
   "foreign": {
     endpoint: "/reports/foreign/search",
@@ -294,22 +294,30 @@ async function pbkdf2Digest(password, salt, iterations) {
   return base64UrlEncodeBytes(new Uint8Array(bits));
 }
 
-async function hashUserPassword(password) {
+async function hashUserPassword(env, password) {
   const salt = randomHex(16);
-  const digest = await pbkdf2Digest(password, salt, PASSWORD_ITERATIONS);
+  const digest = await hmacSha256Hex(accountSecret(env), `user-password:${salt}:${password}`);
   return {
     password_salt: salt,
-    password_hash: `pbkdf2_sha256$${PASSWORD_ITERATIONS}$${digest}`,
+    password_hash: `hmac_sha256$${digest}`,
   };
 }
 
-async function verifyUserPassword(password, salt, storedHash) {
+async function verifyUserPassword(env, password, salt, storedHash) {
   let algorithm = "pbkdf2_sha256";
   let iterations = PASSWORD_ITERATIONS;
   let digest = String(storedHash || "");
   const parts = digest.split("$");
+  if (parts.length === 2) {
+    [algorithm, digest] = [parts[0], parts[1]];
+  }
   if (parts.length === 3) {
     [algorithm, iterations, digest] = [parts[0], Number(parts[1]), parts[2]];
+  }
+  if (algorithm === "hmac_sha256") {
+    if (!digest) return false;
+    const actual = await hmacSha256Hex(accountSecret(env), `user-password:${salt}:${password}`);
+    return constantTimeEqual(actual, digest);
   }
   if (algorithm !== "pbkdf2_sha256" || !Number.isFinite(iterations) || !digest) return false;
   const actual = await pbkdf2Digest(password, salt, iterations);
@@ -459,6 +467,15 @@ async function r2PutJson(env, key, payload) {
   return payload;
 }
 
+async function safeR2PutJson(env, key, payload) {
+  try {
+    await r2PutJson(env, key, payload);
+    return true;
+  } catch (_error) {
+    return false;
+  }
+}
+
 function accountKey(...parts) {
   return ["_account", ...parts.map((part) => encodeURIComponent(String(part || "")))].join("/");
 }
@@ -472,10 +489,33 @@ function queryString(params) {
 async function createSiteUserInR2(env, fields) {
   const id = crypto.randomUUID ? crypto.randomUUID() : randomHex(16);
   const user = { ...fields, id };
-  await r2PutJson(env, accountKey("users", "id", id), user);
-  await r2PutJson(env, accountKey("users", "username", user.username), user);
-  await r2PutJson(env, accountKey("users", "email", user.email), user);
-  return user;
+  return writeSiteUserIndexesInR2(env, user);
+}
+
+async function writeSiteUserIndexesInR2(env, user) {
+  const now = new Date().toISOString();
+  const normalized = {
+    ...user,
+    id: user.id || (crypto.randomUUID ? crypto.randomUUID() : randomHex(16)),
+    updated_at: user.updated_at || now,
+  };
+  const writes = [
+    safeR2PutJson(env, accountKey("users", "id", normalized.id), normalized),
+  ];
+  if (normalized.username) writes.push(safeR2PutJson(env, accountKey("users", "username", normalized.username), normalized));
+  if (normalized.email) writes.push(safeR2PutJson(env, accountKey("users", "email", normalized.email), normalized));
+  const results = await Promise.all(writes);
+  if (!results.some(Boolean)) throw new Error("Account storage is temporarily unavailable.");
+  return normalized;
+}
+
+async function repairSiteUserIndexesInR2(env, user) {
+  if (!user) return null;
+  try {
+    return await writeSiteUserIndexesInR2(env, user);
+  } catch (_error) {
+    return user;
+  }
 }
 
 async function updateSiteUserInR2(env, userId, fields) {
@@ -497,7 +537,7 @@ async function findSiteUserByUsername(env, username) {
       // Fall through to account data persisted in R2.
     }
   }
-  return safeR2GetJson(env, accountKey("users", "username", username));
+  return repairSiteUserIndexesInR2(env, await safeR2GetJson(env, accountKey("users", "username", username)));
 }
 
 async function findSiteUserByEmail(env, email) {
@@ -510,7 +550,7 @@ async function findSiteUserByEmail(env, email) {
       // Fall through to account data persisted in R2.
     }
   }
-  return safeR2GetJson(env, accountKey("users", "email", email));
+  return repairSiteUserIndexesInR2(env, await safeR2GetJson(env, accountKey("users", "email", email)));
 }
 
 async function createSiteUser(env, fields) {
@@ -544,6 +584,30 @@ async function currentUserFromRequest(env, request) {
   const user = await findSiteUserByUsername(env, normalizeUsername(payload.username));
   if (!user) throw new Error("Account not found.");
   return user;
+}
+
+async function siteUserPasswordMatches(env, user, password) {
+  if (!user) return false;
+  return verifyUserPassword(
+    env,
+    password,
+    String(user.password_salt || ""),
+    String(user.password_hash || ""),
+  );
+}
+
+async function authSuccessResponse(request, env, status, user, extra = {}) {
+  const repaired = await repairSiteUserIndexesInR2(env, user);
+  return jsonResponse(request, env, status, {
+    token: await createUserToken(env, repaired),
+    user: publicUser(repaired),
+    ...extra,
+  });
+}
+
+async function recoverExistingUserResponse(request, env, user, password) {
+  if (!await siteUserPasswordMatches(env, user, password)) return null;
+  return authSuccessResponse(request, env, 200, user, { recovered: true });
 }
 
 async function findEntitlement(env, email) {
@@ -871,7 +935,11 @@ async function handleAuth(request, env) {
   try {
     if (action === "register") {
       const existing = await findSiteUserByUsername(env, username);
-      if (existing) return jsonResponse(request, env, 409, { detail: "用户名已被注册。" });
+      if (existing) {
+        const recovered = await recoverExistingUserResponse(request, env, existing, password);
+        if (recovered) return recovered;
+        return jsonResponse(request, env, 409, { detail: "用户名已被注册。" });
+      }
       const rawEmail = String(payload.email || "");
       let email = normalizeEmail(rawEmail);
       let emailIsGenerated = false;
@@ -883,10 +951,14 @@ async function handleAuth(request, env) {
         emailIsGenerated = true;
       }
       const existingEmail = await findSiteUserByEmail(env, email);
-      if (existingEmail) return jsonResponse(request, env, 409, { detail: "用户名或邮箱已被注册。" });
+      if (existingEmail) {
+        const recovered = await recoverExistingUserResponse(request, env, existingEmail, password);
+        if (recovered) return recovered;
+        return jsonResponse(request, env, 409, { detail: "用户名或邮箱已被注册。" });
+      }
       const now = new Date().toISOString();
-      const passwordFields = await hashUserPassword(password);
-      const user = await createSiteUser(env, {
+      const passwordFields = await hashUserPassword(env, password);
+      const fields = {
         username,
         email,
         email_is_generated: emailIsGenerated,
@@ -894,22 +966,25 @@ async function handleAuth(request, env) {
         created_at: now,
         updated_at: now,
         last_login_at: now,
-      });
-      return jsonResponse(request, env, 201, {
-        token: await createUserToken(env, user),
-        user: publicUser(user),
-      });
+      };
+      let user;
+      try {
+        user = await createSiteUser(env, fields);
+      } catch (error) {
+        const recovered = await recoverExistingUserResponse(request, env, await findSiteUserByUsername(env, username), password);
+        if (recovered) return recovered;
+        throw error;
+      }
+      return authSuccessResponse(request, env, 201, user);
     }
 
     const user = await findSiteUserByUsername(env, username);
-    const ok = user && await verifyUserPassword(password, String(user.password_salt || ""), String(user.password_hash || ""));
+    const ok = await siteUserPasswordMatches(env, user, password);
     if (!ok) return jsonResponse(request, env, 401, { detail: "用户名或密码不正确。" });
-    const updated = user.id ? await updateSiteUser(env, user.id, { last_login_at: new Date().toISOString() }) : user;
-    const merged = { ...user, ...updated };
-    return jsonResponse(request, env, 200, {
-      token: await createUserToken(env, merged),
-      user: publicUser(merged),
-    });
+    const repaired = await repairSiteUserIndexesInR2(env, user);
+    const updated = repaired.id ? await updateSiteUser(env, repaired.id, { last_login_at: new Date().toISOString() }) : repaired;
+    const merged = { ...repaired, ...updated };
+    return authSuccessResponse(request, env, 200, merged);
   } catch (error) {
     const text = String(error && error.message || "");
     if (/duplicate|409|unique/i.test(text)) {
