@@ -1,0 +1,81 @@
+{
+  "date_folder": "260629",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 2,
+  "selected_count": 2,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多国际信源汇编&评论，扫码交流，每日更新~40页，汇总国际层面主流叙事&多种口径的数据，便于观测边际变化。星球汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询等朋友，期待交流",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit87WMrwAeM_sJnwfOdbGQdyamXW3XPBCFY80AriocNjpb",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 2,
+      "payload_bytes": 22816,
+      "payload": "wechat_drafts/institutions/260629/draft_payload_01.json",
+      "titles": [
+        "国际清算银行：财政风险冲击正在制造“滞胀陷阱”，而央行宽松只会让情况更糟，财政风险冲击不是“纸上谈兵”，它真实制造了滞胀",
+        "国际清算银行：高债务正在悄悄削弱加息的通胀抑制力，高债务让加息“打折扣”，通胀降得更慢，产出跌得更深"
+      ],
+      "wechat_titles": [
+        "国际清算银行：财政风险冲击正在制造“滞胀陷阱”，而央行宽松只会让情况更糟，财政风险冲击不是“纸上谈兵”，它真实制造了滞胀",
+        "国际清算银行：高债务正在悄悄削弱加息的通胀抑制力，高债务让加息“打折扣”，通胀降得更慢，产出跌得更深"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 2,
+        "expected_article_count": 2,
+        "matches_expected_article_count": true,
+        "titles": [
+          "å½é æ¸ ç®é¶è¡ï¼è´¢æ¿é£é©å²å»æ­£å¨å¶é âæ»èé·é±âï¼èå¤®è¡å®½æ¾åªä¼è®©æ åµæ´ç³ï¼è´¢æ¿é£é©å²å»ä¸æ¯âçº¸ä¸è°å µâï¼å®çå®å¶é äºæ»è",
+          "å½é æ¸ ç®é¶è¡ï¼é«åºå¡æ­£å¨ææåå¼±å æ¯çéèæå¶åï¼é«åºå¡è®©å æ¯âæææ£âï¼éèéå¾æ´æ ¢ï¼äº§åºè·å¾æ´æ·±"
+        ],
+        "create_time": 1782688038,
+        "update_time": 1782688039
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "国际清算银行：财政风险冲击正在制造“滞胀陷阱”，而央行宽松只会让情况更糟，财政风险冲击不是“纸上谈兵”，它真实制造了滞胀",
+      "wechat_title": "国际清算银行：财政风险冲击正在制造“滞胀陷阱”，而央行宽松只会让情况更糟，财政风险冲击不是“纸上谈兵”，它真实制造了滞胀",
+      "institution_name": "国际清算银行",
+      "source_report_name": "BIS Financial-and-real-effects-of-fiscal-risk a8507f2b",
+      "report_dir": "kc_translated_reports/institutions/260629/01-0001-BIS_Financial-and-real-effects-of-fiscal-risk_a8507f2b",
+      "content_chars": 8386,
+      "content_bytes": 11932,
+      "visible_text_chars": 1703,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/institutions/260629/01-0001-BIS_Financial-and-real-effects-of-fiscal-risk_a8507f2b/assets/fig_001.jpg"
+    },
+    {
+      "title": "国际清算银行：高债务正在悄悄削弱加息的通胀抑制力，高债务让加息“打折扣”，通胀降得更慢，产出跌得更深",
+      "wechat_title": "国际清算银行：高债务正在悄悄削弱加息的通胀抑制力，高债务让加息“打折扣”，通胀降得更慢，产出跌得更深",
+      "institution_name": "国际清算银行",
+      "source_report_name": "BIS Public-debt-and-monetary-policy-transmission-evidence-from-a 144c6898",
+      "report_dir": "kc_translated_reports/institutions/260629/02-0002-BIS_Public-debt-and-monetary-policy-transmission-evidence-from-a_144c6898",
+      "content_chars": 6741,
+      "content_bytes": 9793,
+      "visible_text_chars": 1497,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/institutions/260629/02-0002-BIS_Public-debt-and-monetary-policy-transmission-evidence-from-a_144c6898/assets/fig_001.jpg"
+    }
+  ]
+}
