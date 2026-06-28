@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_1x1ow9i2/pdfs/0001-01-GS-EM ASIA FX RATES VIEWS-We recommend going long INR 30Y bonds on improving macro backdrop- recent RBI FX measures and likely Global Agg Index inclusion-260627.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1x1ow9i2/pdfs/0002-02-MS-US Economics Weekly-The data road map to rate hikes-260626.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1x1ow9i2/pdfs/0003-03-MS-G10 FX Strategy-Waiting for a Dip-Buying Opportunity-260626.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1x1ow9i2/pdfs/0004-04-JPM-China Local Markets 2026 MidYear Outlook-Safer harbor- calmer waters-260626.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1x1ow9i2/pdfs/0005-05-GS-China- Industrial profits fell sequentially in May-260627.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
