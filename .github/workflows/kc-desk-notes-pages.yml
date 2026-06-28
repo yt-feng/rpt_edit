@@ -116,7 +116,7 @@ jobs:
 
       - name: Build static Pages artifact
         env:
-          KC_DESK_WORKER_URL: ${{ vars.KC_DESK_WORKER_URL || 'https://kc-desk-notes-worker.yt-feng.workers.dev' }}
+          KC_DESK_WORKER_URL: ${{ vars.KC_DESK_WORKER_URL || '/api' }}
           KC_DESK_DOWNLOAD_PASSWORD: ${{ secrets.KC_DESK_DOWNLOAD_PASSWORD }}
           PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
         run: |
@@ -154,6 +154,8 @@ jobs:
           KC_DESK_DOWNLOAD_PASSWORD: ${{ secrets.KC_DESK_DOWNLOAD_PASSWORD }}
           PAGES_URL: ${{ vars.KC_DESK_PAGES_URL || steps.deployment.outputs.page_url }}
           R2_OBJECT_PREFIX: ${{ vars.R2_OBJECT_PREFIX || 'reports' }}
+          WORKER_ROUTE: ${{ vars.KC_DESK_WORKER_ROUTE || 'kcdesk.com/api/*' }}
+          WORKER_ZONE_NAME: ${{ vars.KC_DESK_WORKER_ZONE_NAME || 'kcdesk.com' }}
         run: |
           if [ "$DEPLOY_WORKER" != "true" ]; then
             echo "enabled=false" >> "$GITHUB_OUTPUT"
@@ -178,6 +180,9 @@ jobs:
           name = "kc-desk-notes-worker"
           main = "src/index.js"
           compatibility_date = "2026-05-01"
+          routes = [
+            { pattern = "$WORKER_ROUTE", zone_name = "$WORKER_ZONE_NAME" }
+          ]
 
           [vars]
           R2_OBJECT_PREFIX = "$R2_OBJECT_PREFIX"

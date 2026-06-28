@@ -616,40 +616,43 @@ async function handleReportifyStatus(request, env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const pathname = url.pathname.startsWith("/api/")
+      ? url.pathname.slice(4) || "/"
+      : url.pathname;
 
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: corsHeaders(request, env) });
     }
 
-    if (url.pathname === "/health") {
+    if (pathname === "/health") {
       return jsonResponse(request, env, 200, { ok: true });
     }
 
-    if (url.pathname === "/calc" && request.method === "GET") {
+    if (pathname === "/calc" && request.method === "GET") {
       return handleCalculator(request, env);
     }
 
-    if (url.pathname === "/download" && request.method === "POST") {
+    if (pathname === "/download" && request.method === "POST") {
       return handleDownload(request, env);
     }
 
-    if (url.pathname === "/admin/login" && request.method === "POST") {
+    if (pathname === "/admin/login" && request.method === "POST") {
       return handleAdminLogin(request, env);
     }
 
-    if (url.pathname === "/admin/report-password" && request.method === "POST") {
+    if (pathname === "/admin/report-password" && request.method === "POST") {
       return handleAdminReportPassword(request, env);
     }
 
-    if (url.pathname === "/reportify/search" && request.method === "GET") {
+    if (pathname === "/reportify/search" && request.method === "GET") {
       return handleReportifySearch(request, env);
     }
 
-    if (url.pathname === "/reportify/pdf" && request.method === "GET") {
+    if (pathname === "/reportify/pdf" && request.method === "GET") {
       return handleReportifyPdf(request, env);
     }
 
-    if (url.pathname === "/reportify/status" && request.method === "GET") {
+    if (pathname === "/reportify/status" && request.method === "GET") {
       return handleReportifyStatus(request, env);
     }
 

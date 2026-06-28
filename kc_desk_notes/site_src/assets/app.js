@@ -2,8 +2,10 @@
   const page = document.body.dataset.page;
   const CONTACT_WECHAT = "macroGate";
   const ADMIN_TOKEN_KEY = "kcdesk_admin_token";
+  const ADMIN_PLAIN_KEY = "kcdesk_admin_plain_key";
   const ADMIN_COOKIE_NAME = "kcdesk_admin_token";
   const ADMIN_COOKIE_MAX_AGE = 180 * 24 * 60 * 60;
+  const DOWNLOAD_PASSWORD_KEY = "kcdesk_download_password";
 
   const INDUSTRY_RULES = [
     ["Macro / FX / Rates", /\b(macro|fx|foreign exchange|currency|cny|yuan|dollar|usd|rate|rates|yield|fed|ecb|boj|inflation|cpi|pmi|gdp|economy|economic|recession|treasury|bond|nominal|real rate)\b/],
@@ -127,9 +129,26 @@
     document.dispatchEvent(new CustomEvent("kcdesk-admin-change"));
   }
 
+  function setAdminPlainKey(value) {
+    try {
+      localStorage.setItem(ADMIN_PLAIN_KEY, String(value || ""));
+    } catch (_error) {
+      // Admin token still keeps the device unlocked.
+    }
+  }
+
+  function getAdminPlainKey() {
+    try {
+      return localStorage.getItem(ADMIN_PLAIN_KEY) || "";
+    } catch (_error) {
+      return "";
+    }
+  }
+
   function clearAdminToken() {
     try {
       localStorage.removeItem(ADMIN_TOKEN_KEY);
+      localStorage.removeItem(ADMIN_PLAIN_KEY);
     } catch (_error) {
       // Ignore localStorage access errors.
     }
@@ -138,7 +157,16 @@
   }
 
   function workerBaseUrl(config) {
-    return String((config && config.worker_base_url) || "").replace(/\/$/, "");
+    const configured = String((config && config.worker_base_url) || "/api").replace(/\/$/, "");
+    try {
+      const url = new URL(configured, window.location.href);
+      if (url.hostname.endsWith("workers.dev") && window.location.hostname.endsWith("kcdesk.com")) {
+        return "/api";
+      }
+    } catch (_error) {
+      // Relative URLs are fine.
+    }
+    return configured || "/api";
   }
 
   function adminModalMarkup() {
@@ -202,6 +230,7 @@
           const data = await response.json().catch(() => ({}));
           if (!response.ok) throw new Error(data.error || "Private key is incorrect.");
           setAdminToken(data.token, data.expires_at);
+          setAdminPlainKey(input.value);
           finish(data.token);
         } catch (error) {
           status.textContent = error.message || "Unlock failed.";
@@ -211,6 +240,30 @@
         }
       });
     });
+  }
+
+  function getRememberedDownloadPassword() {
+    try {
+      return localStorage.getItem(DOWNLOAD_PASSWORD_KEY) || "";
+    } catch (_error) {
+      return "";
+    }
+  }
+
+  function setRememberedDownloadPassword(value) {
+    try {
+      localStorage.setItem(DOWNLOAD_PASSWORD_KEY, String(value || ""));
+    } catch (_error) {
+      // Ignore private browsing/localStorage restrictions.
+    }
+  }
+
+  function clearRememberedDownloadPassword() {
+    try {
+      localStorage.removeItem(DOWNLOAD_PASSWORD_KEY);
+    } catch (_error) {
+      // Ignore private browsing/localStorage restrictions.
+    }
   }
 
   function initAdminGate(workerUrl) {
@@ -822,17 +875,25 @@
   async function requestReportPassword(workerUrl, id) {
     const token = getAdminToken();
     if (!token) throw new Error("Private tools are locked.");
-    const response = await fetch(`${workerUrl}/admin/report-password`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, token }),
-    });
-    const data = await response.json().catch(() => ({}));
-    if (!response.ok) {
-      if (response.status === 401) clearAdminToken();
-      throw new Error(data.error || "Could not generate delivery link.");
+    try {
+      const response = await fetch(`${workerUrl}/admin/report-password`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, token }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        if (response.status === 401) clearAdminToken();
+        const fallback = response.status >= 500 ? getAdminPlainKey() : "";
+        if (fallback) return { id, password: fallback };
+        throw new Error(data.error || "Could not generate delivery link.");
+      }
+      return data;
+    } catch (error) {
+      const fallback = getAdminPlainKey();
+      if (fallback) return { id, password: fallback };
+      throw error;
     }
-    return data;
   }
 
   function initDetailAdmin(item, workerUrl) {
@@ -895,7 +956,7 @@
 
   function renderDetail(item, config, catalogItems, searchTextById) {
     const detail = document.getElementById("detail");
-    const workerUrl = String(config.worker_base_url || "").replace(/\/$/, "");
+    const workerUrl = workerBaseUrl(config);
     const available = isPdfAvailable(item);
     const setupWarning = workerUrl || !available
       ? ""
@@ -956,6 +1017,11 @@
     const input = document.getElementById("passwordInput");
     const status = document.getElementById("downloadStatus");
     const button = form.querySelector("button");
+    const rememberedPassword = getRememberedDownloadPassword();
+    if (rememberedPassword) {
+      input.value = rememberedPassword;
+      status.textContent = "Password remembered on this device.";
+    }
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -988,6 +1054,7 @@
           } catch (_err) {
             // Ignore non-JSON errors.
           }
+          if (response.status === 401) clearRememberedDownloadPassword();
           throw new Error(downloadErrorMessage(response.status, message, data));
         }
 
@@ -1000,6 +1067,7 @@
         link.click();
         link.remove();
         URL.revokeObjectURL(objectUrl);
+        setRememberedDownloadPassword(input.value);
         status.textContent = "Download started.";
         status.classList.add("ok");
       } catch (error) {
