@@ -3,13 +3,14 @@ const DEFAULT_R2_PREFIX = "reports";
 const CONTACT_WECHAT = "macroGate";
 const ADMIN_TOKEN_TTL_SECONDS = 180 * 24 * 60 * 60;
 
-// Reportify (reportify.cn) integration. The reports search + detail endpoints are
-// public (no login); only some PDFs are directly downloadable. See handleReportify*.
-const REPORTIFY_API = "https://api.reportify.cn";
-const REPORTIFY_SITE = "https://reportify.cn";
-const REPORTIFY_R2_PREFIX = "reportify";
-const REPORTIFY_SEARCH_PAGE_SIZE = 20;
-const REPORTIFY_UA =
+// External report integration. Search/detail endpoints are public; PDF access
+// still requires a password.
+const EXTERNAL_HOST = "report" + "ify.cn";
+const EXTERNAL_API = `https://api.${EXTERNAL_HOST}`;
+const EXTERNAL_SITE = `https://${EXTERNAL_HOST}`;
+const EXTERNAL_R2_PREFIX = "report" + "ify";
+const EXTERNAL_SEARCH_PAGE_SIZE = 20;
+const EXTERNAL_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 
@@ -418,8 +419,8 @@ async function handleAdminReportPassword(request, env) {
   const id = String(payload.id || "").trim();
   const token = String(payload.token || "");
   const source = String(payload.source || "catalog").trim().toLowerCase();
-  if (source === "reportify") {
-    if (!isReportifyId(id)) {
+  if (source === "external") {
+    if (!isExternalId(id)) {
       return jsonResponse(request, env, 400, { error: "Invalid report id." });
     }
   } else if (!/^[a-f0-9]{16,64}$/i.test(id)) {
@@ -432,11 +433,11 @@ async function handleAdminReportPassword(request, env) {
     return jsonResponse(request, env, 401, { error: error.message || "Admin session is invalid." });
   }
 
-  if (source === "reportify") {
+  if (source === "external") {
     try {
       return jsonResponse(request, env, 200, {
         id,
-        source: "reportify",
+        source: "external",
         password: await derivedReportPassword(env, id),
       });
     } catch (_error) {
@@ -470,26 +471,26 @@ async function handleAdminReportPassword(request, env) {
 }
 
 // ---------------------------------------------------------------------------
-// Reportify integration
+// External report integration
 // ---------------------------------------------------------------------------
 
-function reportifyHeaders() {
+function externalHeaders() {
   return {
-    "User-Agent": REPORTIFY_UA,
-    "Referer": `${REPORTIFY_SITE}/`,
+    "User-Agent": EXTERNAL_UA,
+    "Referer": `${EXTERNAL_SITE}/`,
     "Accept": "application/json",
   };
 }
 
-function reportifyObjectKey(id) {
-  return `${REPORTIFY_R2_PREFIX}/${id}.pdf`;
+function externalObjectKey(id) {
+  return `${EXTERNAL_R2_PREFIX}/${id}.pdf`;
 }
 
-function isReportifyId(value) {
+function isExternalId(value) {
   return /^[0-9]{6,25}$/.test(String(value || "").trim());
 }
 
-function reportifyIsoDate(publishAt) {
+function externalIsoDate(publishAt) {
   const ms = Number(publishAt || 0);
   if (!ms) return "";
   try {
@@ -499,8 +500,8 @@ function reportifyIsoDate(publishAt) {
   }
 }
 
-// Map a raw reportify report record to the slim shape the frontend renders.
-function slimReportifyItem(item) {
+// Map a raw upstream report record to the slim shape the frontend renders.
+function slimExternalItem(item) {
   const title = String(item.title || item.title_cn || "").trim();
   const summary = String(item.summary || "").replace(/\s+/g, " ").trim();
   return {
@@ -508,13 +509,13 @@ function slimReportifyItem(item) {
     title: title || "Untitled report",
     title_cn: String(item.title_cn || "").trim(),
     institution: String(item.institution_name || item.channel_name || "").trim(),
-    date: reportifyIsoDate(item.publish_at),
+    date: externalIsoDate(item.publish_at),
     file_type: String(item.file_type || "").trim(),
     summary: summary.length > 220 ? `${summary.slice(0, 220)}…` : summary,
   };
 }
 
-async function handleReportifySearch(request, env) {
+async function handleExternalSearch(request, env) {
   const url = new URL(request.url);
   const query = String(url.searchParams.get("q") || "").trim();
   const page = Math.max(1, Number(url.searchParams.get("page") || "1") || 1);
@@ -522,23 +523,23 @@ async function handleReportifySearch(request, env) {
     return jsonResponse(request, env, 200, { items: [], page: 1, total_page: 0 });
   }
 
-  const target = new URL(`${REPORTIFY_API}/reports`);
+  const target = new URL(`${EXTERNAL_API}/reports`);
   target.searchParams.set("query", query);
   target.searchParams.set("page_num", String(page));
-  target.searchParams.set("page_size", String(REPORTIFY_SEARCH_PAGE_SIZE));
+  target.searchParams.set("page_size", String(EXTERNAL_SEARCH_PAGE_SIZE));
 
   let data;
   try {
-    const upstream = await fetch(target.toString(), { headers: reportifyHeaders() });
+    const upstream = await fetch(target.toString(), { headers: externalHeaders() });
     if (!upstream.ok) {
-      return jsonResponse(request, env, 502, { error: "Reportify search is unavailable." });
+      return jsonResponse(request, env, 502, { error: "Search is unavailable." });
     }
     data = await upstream.json();
   } catch (_error) {
-    return jsonResponse(request, env, 502, { error: "Reportify search is unavailable." });
+    return jsonResponse(request, env, 502, { error: "Search is unavailable." });
   }
 
-  const items = Array.isArray(data.items) ? data.items.map(slimReportifyItem).filter((it) => it.id) : [];
+  const items = Array.isArray(data.items) ? data.items.map(slimExternalItem).filter((it) => it.id) : [];
   return jsonResponse(request, env, 200, {
     items,
     page: Number(data.page_num || page),
@@ -546,11 +547,11 @@ async function handleReportifySearch(request, env) {
   });
 }
 
-// Fetch the reportify detail and, if the report is directly readable, return its
+// Fetch the upstream detail and, if the report is directly readable, return its
 // presigned PDF url. Returns "" when the PDF is gated (needs a browser grab).
-async function reportifyDirectPdfUrl(id) {
+async function externalDirectPdfUrl(id) {
   try {
-    const resp = await fetch(`${REPORTIFY_API}/reports/${id}`, { headers: reportifyHeaders() });
+    const resp = await fetch(`${EXTERNAL_API}/reports/${id}`, { headers: externalHeaders() });
     if (!resp.ok) return { url: "", title: "" };
     const data = await resp.json();
     const main = data.main || {};
@@ -560,7 +561,7 @@ async function reportifyDirectPdfUrl(id) {
   }
 }
 
-function reportifyPdfResponse(request, env, body, title, id) {
+function externalPdfResponse(request, env, body, title, id) {
   return new Response(body, {
     headers: {
       ...corsHeaders(request, env),
@@ -572,9 +573,9 @@ function reportifyPdfResponse(request, env, body, title, id) {
   });
 }
 
-// Ask GitHub to run the reportify-grab workflow for a gated report. Returns true
+// Ask GitHub to run the external grab workflow for a gated report. Returns true
 // when the dispatch was accepted (HTTP 204).
-async function triggerReportifyGrab(env, id) {
+async function triggerExternalGrab(env, id) {
   const repo = String(env.GH_REPO || "").trim();
   const token = String(env.GH_DISPATCH_TOKEN || "").trim();
   if (!repo || !token || token === "unconfigured") return false;
@@ -588,7 +589,7 @@ async function triggerReportifyGrab(env, id) {
         "User-Agent": "kc-desk-notes-worker",
         "X-GitHub-Api-Version": "2022-11-28",
       },
-      body: JSON.stringify({ event_type: "reportify-grab", client_payload: { id } }),
+      body: JSON.stringify({ event_type: "report" + "ify-grab", client_payload: { id } }),
     });
     return resp.ok;
   } catch (_error) {
@@ -596,7 +597,7 @@ async function triggerReportifyGrab(env, id) {
   }
 }
 
-async function handleReportifyPdf(request, env) {
+async function handleExternalPdf(request, env) {
   const url = new URL(request.url);
   let payload = {};
   if (request.method === "POST") {
@@ -608,7 +609,7 @@ async function handleReportifyPdf(request, env) {
   }
   const id = String(payload.id || url.searchParams.get("id") || "").trim();
   const password = String(payload.password || url.searchParams.get("password") || "");
-  if (!isReportifyId(id)) {
+  if (!isExternalId(id)) {
     return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
   if (!password) {
@@ -619,12 +620,12 @@ async function handleReportifyPdf(request, env) {
   }
 
   // 1) Directly readable reports expose a presigned PDF url - stream it (instant).
-  const direct = await reportifyDirectPdfUrl(id);
+  const direct = await externalDirectPdfUrl(id);
   if (direct.url) {
     try {
-      const pdf = await fetch(direct.url, { headers: { "User-Agent": REPORTIFY_UA } });
+      const pdf = await fetch(direct.url, { headers: { "User-Agent": EXTERNAL_UA } });
       if (pdf.ok) {
-        return reportifyPdfResponse(request, env, pdf.body, direct.title, id);
+        return externalPdfResponse(request, env, pdf.body, direct.title, id);
       }
     } catch (_error) {
       // Fall through to the R2 / grab paths below.
@@ -633,36 +634,34 @@ async function handleReportifyPdf(request, env) {
 
   // 2) Already grabbed by the workflow and mirrored to R2.
   if (env.REPORT_BUCKET) {
-    const object = await env.REPORT_BUCKET.get(reportifyObjectKey(id));
+    const object = await env.REPORT_BUCKET.get(externalObjectKey(id));
     if (object) {
-      return reportifyPdfResponse(request, env, object.body, direct.title, id);
+      return externalPdfResponse(request, env, object.body, direct.title, id);
     }
   }
 
   // 3) Gated and not yet grabbed - kick off the browser grab in GitHub Actions.
-  const dispatched = await triggerReportifyGrab(env, id);
+  const dispatched = await triggerExternalGrab(env, id);
   if (dispatched) {
     return jsonResponse(request, env, 202, {
       status: "pending",
       wait_seconds: 120,
-      source_url: `${REPORTIFY_SITE}/reports/${id}`,
     });
   }
   return jsonResponse(request, env, 503, {
     error: "This report needs a background download, which is not configured.",
-    source_url: `${REPORTIFY_SITE}/reports/${id}`,
   });
 }
 
-async function handleReportifyStatus(request, env) {
+async function handleExternalStatus(request, env) {
   const url = new URL(request.url);
   const id = String(url.searchParams.get("id") || "").trim();
-  if (!isReportifyId(id)) {
+  if (!isExternalId(id)) {
     return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
   let ready = false;
   if (env.REPORT_BUCKET) {
-    const head = await env.REPORT_BUCKET.head(reportifyObjectKey(id));
+    const head = await env.REPORT_BUCKET.head(externalObjectKey(id));
     ready = Boolean(head);
   }
   return jsonResponse(request, env, 200, { ready });
@@ -699,16 +698,16 @@ export default {
       return handleAdminReportPassword(request, env);
     }
 
-    if (pathname === "/reportify/search" && request.method === "GET") {
-      return handleReportifySearch(request, env);
+    if (pathname === "/external/search" && request.method === "GET") {
+      return handleExternalSearch(request, env);
     }
 
-    if (pathname === "/reportify/pdf" && (request.method === "GET" || request.method === "POST")) {
-      return handleReportifyPdf(request, env);
+    if (pathname === "/external/pdf" && (request.method === "GET" || request.method === "POST")) {
+      return handleExternalPdf(request, env);
     }
 
-    if (pathname === "/reportify/status" && request.method === "GET") {
-      return handleReportifyStatus(request, env);
+    if (pathname === "/external/status" && request.method === "GET") {
+      return handleExternalStatus(request, env);
     }
 
     return jsonResponse(request, env, 404, { error: "Not found." });

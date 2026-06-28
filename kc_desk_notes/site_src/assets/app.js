@@ -416,7 +416,7 @@
     `;
   }
 
-  function reportifyMeta(item) {
+  function externalMeta(item) {
     const meta = [item.institution, item.date, item.file_type]
       .map((value) => String(value || "").trim())
       .filter(Boolean)
@@ -424,11 +424,11 @@
     return meta;
   }
 
-  function reportifyRow(item) {
-    const meta = reportifyMeta(item);
+  function externalRow(item) {
+    const meta = externalMeta(item);
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     return `
-      <button class="related-row reportify-row" type="button" data-id="${escapeHtml(item.id)}">
+      <button class="related-row external-row" type="button" data-id="${escapeHtml(item.id)}">
         <span class="related-title">
           <span>${escapeHtml(item.title)}</span>
           ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
@@ -610,98 +610,97 @@
       window.location.href = `report.html?id=${encodeURIComponent(row.dataset.id)}`;
     });
 
-    // --- Reportify (其他报告) integration ---------------------------------
-    // Live, no-login search of reportify.cn via the Worker proxy, shown below the
-    // local results. Clicking a row downloads the PDF: readable reports are served
-    // instantly; gated ones are grabbed in the background (~2 min) then served.
-    const reportifyUrl = workerBaseUrl(config);
-    const reportifySection = document.getElementById("reportifySection");
-    const reportifyResults = document.getElementById("reportifyResults");
-    const reportifyAccess = document.getElementById("reportifyAccess");
-    const reportifyCount = document.getElementById("reportifyCount");
-    const reportifyStatus = document.getElementById("reportifyStatus");
-    let reportifyTimer = 0;
-    let reportifyToken = 0;
-    const reportifyItems = new Map();
-    const reportifyPolls = new Map();
+    // --- 其他报告 integration ---------------------------------------------
+    // Live search through the Worker proxy. Clicking a row opens a password gate;
+    // gated PDFs are prepared in the background and then served from private R2.
+    const externalUrl = workerBaseUrl(config);
+    const externalSection = document.getElementById("externalSection");
+    const externalResults = document.getElementById("externalResults");
+    const externalAccess = document.getElementById("externalAccess");
+    const externalCount = document.getElementById("externalCount");
+    const externalStatus = document.getElementById("externalStatus");
+    let externalTimer = 0;
+    let externalToken = 0;
+    const externalItems = new Map();
+    const externalPolls = new Map();
 
-    function setReportifyStatus(text, kind) {
-      if (!reportifyStatus) return;
-      reportifyStatus.className = kind ? `status-line ${kind}` : "status-line";
-      reportifyStatus.textContent = text || "";
+    function setExternalStatus(text, kind) {
+      if (!externalStatus) return;
+      externalStatus.className = kind ? `status-line ${kind}` : "status-line";
+      externalStatus.textContent = text || "";
     }
 
-    async function runReportifySearch(query) {
-      if (!reportifySection || !reportifyResults) return;
-      if (!reportifyUrl || !query) {
-        reportifySection.hidden = true;
-        reportifyResults.innerHTML = "";
-        reportifyItems.clear();
-        if (reportifyAccess) {
-          reportifyAccess.hidden = true;
-          reportifyAccess.innerHTML = "";
+    async function runExternalSearch(query) {
+      if (!externalSection || !externalResults) return;
+      if (!externalUrl || !query) {
+        externalSection.hidden = true;
+        externalResults.innerHTML = "";
+        externalItems.clear();
+        if (externalAccess) {
+          externalAccess.hidden = true;
+          externalAccess.innerHTML = "";
         }
-        if (reportifyCount) reportifyCount.textContent = "";
-        setReportifyStatus("");
+        if (externalCount) externalCount.textContent = "";
+        setExternalStatus("");
         return;
       }
-      const token = ++reportifyToken;
-      reportifySection.hidden = false;
-      if (reportifyCount) reportifyCount.textContent = "搜索中…";
-      setReportifyStatus("");
+      const token = ++externalToken;
+      externalSection.hidden = false;
+      if (externalCount) externalCount.textContent = "搜索中…";
+      setExternalStatus("");
       try {
         const response = await fetch(
-          `${reportifyUrl}/reportify/search?q=${encodeURIComponent(query)}`,
+          `${externalUrl}/external/search?q=${encodeURIComponent(query)}`,
           { cache: "no-store" },
         );
         if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
         const data = await response.json();
-        if (token !== reportifyToken) return; // a newer query superseded this one
+        if (token !== externalToken) return; // a newer query superseded this one
         const items = Array.isArray(data.items) ? data.items : [];
-        reportifyItems.clear();
-        items.forEach((item) => reportifyItems.set(String(item.id), item));
-        if (reportifyAccess) {
-          reportifyAccess.hidden = true;
-          reportifyAccess.innerHTML = "";
+        externalItems.clear();
+        items.forEach((item) => externalItems.set(String(item.id), item));
+        if (externalAccess) {
+          externalAccess.hidden = true;
+          externalAccess.innerHTML = "";
         }
-        if (reportifyCount) reportifyCount.textContent = items.length ? `${items.length} 条` : "";
-        reportifyResults.innerHTML = items.length
-          ? items.map(reportifyRow).join("")
+        if (externalCount) externalCount.textContent = items.length ? `${items.length} 条` : "";
+        externalResults.innerHTML = items.length
+          ? items.map(externalRow).join("")
           : '<div class="empty-state">暂无匹配结果。</div>';
       } catch (error) {
-        if (token !== reportifyToken) return;
-        if (reportifyCount) reportifyCount.textContent = "";
-        reportifyResults.innerHTML = "";
-        setReportifyStatus(error.message || "搜索暂不可用。", "error");
+        if (token !== externalToken) return;
+        if (externalCount) externalCount.textContent = "";
+        externalResults.innerHTML = "";
+        setExternalStatus(error.message || "搜索暂不可用。", "error");
       }
     }
 
-    function scheduleReportifySearch() {
-      window.clearTimeout(reportifyTimer);
+    function scheduleExternalSearch() {
+      window.clearTimeout(externalTimer);
       const query = input.value.trim();
-      reportifyTimer = window.setTimeout(() => runReportifySearch(query), 400);
+      externalTimer = window.setTimeout(() => runExternalSearch(query), 400);
     }
 
-    function pollReportify(id, password, onReady, statusTarget = setReportifyStatus) {
-      if (reportifyPolls.has(id)) return;
+    function pollExternal(id, password, onReady, statusTarget = setExternalStatus) {
+      if (externalPolls.has(id)) return;
       let attempts = 0;
       const timer = window.setInterval(async () => {
         attempts += 1;
         if (attempts > 12) { // ~3 minutes at 15s intervals
           window.clearInterval(timer);
-          reportifyPolls.delete(id);
+          externalPolls.delete(id);
           statusTarget("报告仍在准备中。请保留页面，稍后再次点击下载。", "error");
           return;
         }
         try {
           const response = await fetch(
-            `${reportifyUrl}/reportify/status?id=${encodeURIComponent(id)}`,
+            `${externalUrl}/external/status?id=${encodeURIComponent(id)}`,
             { cache: "no-store" },
           );
           const data = await response.json();
           if (data.ready) {
             window.clearInterval(timer);
-            reportifyPolls.delete(id);
+            externalPolls.delete(id);
             statusTarget("报告已就绪，正在下载…", "ok");
             onReady(password);
           }
@@ -709,19 +708,19 @@
           // Keep polling; a transient error is expected while the grab runs.
         }
       }, 15000);
-      reportifyPolls.set(id, timer);
+      externalPolls.set(id, timer);
     }
 
-    async function downloadReportify(id, password, options = {}) {
-      const statusTarget = options.status || setReportifyStatus;
-      if (!reportifyUrl || !id) return false;
+    async function downloadExternal(id, password, options = {}) {
+      const statusTarget = options.status || setExternalStatus;
+      if (!externalUrl || !id) return false;
       if (!password) {
         statusTarget("Password is required.", "error");
         return false;
       }
       statusTarget("正在获取报告…");
       try {
-        const response = await fetch(`${reportifyUrl}/reportify/pdf`, {
+        const response = await fetch(`${externalUrl}/external/pdf`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           cache: "no-store",
@@ -730,7 +729,7 @@
         if (response.status === 202) {
           setRememberedDownloadPassword(password);
           statusTarget("报告正在准备，通常约 3 分钟。页面会自动等待，准备好后开始下载。");
-          pollReportify(id, password, (readyPassword) => downloadReportify(id, readyPassword, options), statusTarget);
+          pollExternal(id, password, (readyPassword) => downloadExternal(id, readyPassword, options), statusTarget);
           return true;
         }
         if (!response.ok) {
@@ -755,47 +754,47 @@
       }
     }
 
-    function refreshReportifyAdminTools() {
-      if (!reportifyAccess) return;
-      const tools = reportifyAccess.querySelector(".reportify-admin-tools");
+    function refreshExternalAdminTools() {
+      if (!externalAccess) return;
+      const tools = externalAccess.querySelector(".external-admin-tools");
       if (tools) tools.hidden = !getAdminToken();
     }
 
-    function renderReportifyAccess(item) {
-      if (!reportifyAccess || !item) return;
-      const meta = reportifyMeta(item);
+    function renderExternalAccess(item) {
+      if (!externalAccess || !item) return;
+      const meta = externalMeta(item);
       const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
-      reportifyAccess.hidden = false;
-      reportifyAccess.innerHTML = `
-        <div class="reportify-access-card">
-          <div class="reportify-access-title">
+      externalAccess.hidden = false;
+      externalAccess.innerHTML = `
+        <div class="external-access-card">
+          <div class="external-access-title">
             <strong>${escapeHtml(item.title || "Untitled report")}</strong>
             ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
             ${meta ? `<span class="related-meta">${escapeHtml(meta)}</span>` : ""}
           </div>
-          <form class="reportify-actions" id="reportifyDownloadForm">
-            <input id="reportifyPasswordInput" type="password" autocomplete="current-password" placeholder="Password" required>
+          <form class="external-actions" id="externalDownloadForm">
+            <input id="externalPasswordInput" type="password" autocomplete="current-password" placeholder="Password" required>
             <button class="primary" type="submit">Download</button>
           </form>
-          <div class="reportify-wait" id="reportifyWait" hidden>
+          <div class="external-wait" id="externalWait" hidden>
             报告正在准备，通常约 3 分钟。这个页面会自动检测，文件准备好后会开始下载。
           </div>
-          <div class="reportify-delivery-row reportify-admin-tools" hidden>
-            <button class="primary" id="generateReportifyDeliveryLink" type="button">Generate link</button>
-            <input id="reportifyDeliveryLinkInput" type="text" readonly aria-label="Reportify delivery link">
-            <button id="copyReportifyDeliveryLink" type="button">Copy</button>
+          <div class="external-delivery-row external-admin-tools" hidden>
+            <button class="primary" id="generateExternalDeliveryLink" type="button">Generate link</button>
+            <input id="externalDeliveryLinkInput" type="text" readonly aria-label="Delivery link">
+            <button id="copyExternalDeliveryLink" type="button">Copy</button>
           </div>
-          <div id="reportifyAccessStatus" class="status-line" aria-live="polite"></div>
+          <div id="externalAccessStatus" class="status-line" aria-live="polite"></div>
         </div>
       `;
 
-      const form = document.getElementById("reportifyDownloadForm");
-      const inputEl = document.getElementById("reportifyPasswordInput");
-      const status = document.getElementById("reportifyAccessStatus");
-      const wait = document.getElementById("reportifyWait");
-      const deliveryButton = document.getElementById("generateReportifyDeliveryLink");
-      const deliveryInput = document.getElementById("reportifyDeliveryLinkInput");
-      const copyButton = document.getElementById("copyReportifyDeliveryLink");
+      const form = document.getElementById("externalDownloadForm");
+      const inputEl = document.getElementById("externalPasswordInput");
+      const status = document.getElementById("externalAccessStatus");
+      const wait = document.getElementById("externalWait");
+      const deliveryButton = document.getElementById("generateExternalDeliveryLink");
+      const deliveryInput = document.getElementById("externalDeliveryLinkInput");
+      const copyButton = document.getElementById("copyExternalDeliveryLink");
       const remembered = getRememberedDownloadPassword();
       if (remembered) inputEl.value = remembered;
 
@@ -810,7 +809,7 @@
         const button = form.querySelector("button");
         button.disabled = true;
         try {
-          await downloadReportify(item.id, inputEl.value, { status: setPanelStatus });
+          await downloadExternal(item.id, inputEl.value, { status: setPanelStatus });
         } finally {
           button.disabled = false;
         }
@@ -821,8 +820,8 @@
         deliveryInput.value = "";
         setPanelStatus("Generating delivery link...");
         try {
-          const data = await requestReportifyPassword(reportifyUrl, item.id);
-          deliveryInput.value = reportifyPageUrl(item, data.password);
+          const data = await requestExternalPassword(externalUrl, item.id);
+          deliveryInput.value = externalPageUrl(item, data.password);
           setPanelStatus("Delivery link generated.", "ok");
         } catch (error) {
           setPanelStatus(error.message || "Could not generate delivery link.", "error");
@@ -842,17 +841,17 @@
         }
       });
 
-      refreshReportifyAdminTools();
-      reportifyAccess.scrollIntoView({ block: "nearest" });
+      refreshExternalAdminTools();
+      externalAccess.scrollIntoView({ block: "nearest" });
     }
 
-    input.addEventListener("input", scheduleReportifySearch);
-    clearFilters.addEventListener("click", () => runReportifySearch(""));
-    document.addEventListener("kcdesk-admin-change", refreshReportifyAdminTools);
-    reportifyResults.addEventListener("click", (event) => {
-      const row = event.target.closest(".reportify-row");
+    input.addEventListener("input", scheduleExternalSearch);
+    clearFilters.addEventListener("click", () => runExternalSearch(""));
+    document.addEventListener("kcdesk-admin-change", refreshExternalAdminTools);
+    externalResults.addEventListener("click", (event) => {
+      const row = event.target.closest(".external-row");
       if (!row) return;
-      renderReportifyAccess(reportifyItems.get(String(row.dataset.id)));
+      renderExternalAccess(externalItems.get(String(row.dataset.id)));
     });
 
     loadJson("data/search_index.json")
@@ -986,19 +985,17 @@
     const url = new URL("report.html", window.location.href);
     url.searchParams.set("id", id);
     if (options.password) url.searchParams.set("password", options.password);
-    if (options.deliver) url.searchParams.set("deliver", "1");
     return url.toString();
   }
 
   function deliveryPageUrl(id, password) {
-    return reportPageUrl(id, { password, deliver: true });
+    return reportPageUrl(id, { password });
   }
 
-  function reportifyPageUrl(item, password, options = {}) {
-    const url = new URL("reportify.html", window.location.href);
+  function externalPageUrl(item, password, options = {}) {
+    const url = new URL("doc.html", window.location.href);
     url.searchParams.set("id", item.id);
     if (password) url.searchParams.set("password", password);
-    if (options.deliver !== false) url.searchParams.set("deliver", "1");
     if (item.title) url.searchParams.set("title", item.title);
     if (item.title_cn) url.searchParams.set("title_cn", item.title_cn);
     if (item.institution) url.searchParams.set("institution", item.institution);
@@ -1031,14 +1028,14 @@
     }
   }
 
-  async function requestReportifyPassword(workerUrl, id) {
+  async function requestExternalPassword(workerUrl, id) {
     const token = getAdminToken();
     if (!token) throw new Error("Private tools are locked.");
     try {
       const response = await fetch(`${workerUrl}/admin/report-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id, token, source: "reportify" }),
+        body: JSON.stringify({ id, token, source: "external" }),
       });
       const data = await response.json().catch(() => ({}));
       if (!response.ok) {
@@ -1182,9 +1179,7 @@
       input.value = rememberedPassword;
       if (deliveryPassword) {
         setRememberedDownloadPassword(deliveryPassword);
-        status.textContent = options.autoDownload
-          ? "Password filled from delivery link. Download will start automatically."
-          : "Password filled from delivery link.";
+        status.textContent = "Password filled from delivery link.";
         const cleanUrl = new URL(window.location.href);
         cleanUrl.searchParams.delete("password");
         cleanUrl.searchParams.delete("deliver");
@@ -1243,9 +1238,6 @@
     }
 
     form.addEventListener("submit", submitDownload);
-    if (deliveryPassword && options.autoDownload) {
-      window.setTimeout(() => submitDownload(), 250);
-    }
   }
 
   async function initReport() {
@@ -1271,11 +1263,10 @@
     document.title = `${titleText(item)} | KC Desk Notes`;
     renderDetail(item, config, items, searchTextById, {
       password: params.get("password") || "",
-      autoDownload: params.get("deliver") === "1",
     });
   }
 
-  function reportifyItemFromParams(params) {
+  function externalItemFromParams(params) {
     return {
       id: String(params.get("id") || "").trim(),
       title: params.get("title") || "Report",
@@ -1286,9 +1277,9 @@
     };
   }
 
-  async function fetchReportifyPdf(workerUrl, id, password, statusTarget) {
+  async function fetchExternalPdf(workerUrl, id, password, statusTarget) {
     statusTarget("正在获取报告…");
-    const response = await fetch(`${workerUrl}/reportify/pdf`, {
+    const response = await fetch(`${workerUrl}/external/pdf`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       cache: "no-store",
@@ -1313,7 +1304,7 @@
     return { pending: false };
   }
 
-  function pollReportifyDetail(workerUrl, id, password, statusTarget, onReady) {
+  function pollExternalDetail(workerUrl, id, password, statusTarget, onReady) {
     let attempts = 0;
     const timer = window.setInterval(async () => {
       attempts += 1;
@@ -1323,7 +1314,7 @@
         return;
       }
       try {
-        const response = await fetch(`${workerUrl}/reportify/status?id=${encodeURIComponent(id)}`, {
+        const response = await fetch(`${workerUrl}/external/status?id=${encodeURIComponent(id)}`, {
           cache: "no-store",
         });
         const data = await response.json();
@@ -1338,10 +1329,10 @@
     }, 15000);
   }
 
-  async function initReportifyDetail() {
+  async function initExternalDetail() {
     const params = new URLSearchParams(window.location.search);
-    const item = reportifyItemFromParams(params);
-    const target = document.getElementById("reportifyDetail");
+    const item = externalItemFromParams(params);
+    const target = document.getElementById("externalDetail");
     if (!/^[0-9]{6,25}$/.test(item.id)) {
       target.innerHTML = '<div class="error-state">Report not found.</div>';
       return;
@@ -1352,7 +1343,7 @@
     initAdminGate(workerUrl);
 
     const passwordFromLink = params.get("password") || "";
-    const meta = reportifyMeta(item);
+    const meta = externalMeta(item);
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     document.title = `${item.title || "Report"} | KC Desk Notes`;
     target.innerHTML = `
@@ -1367,42 +1358,42 @@
         ${field("Date", item.date || "-")}
         ${field("Type", item.file_type || "-")}
       </div>
-      <form class="unlock-box" id="reportifyDetailForm">
+      <form class="unlock-box" id="externalDetailForm">
         <h3>PDF Download</h3>
         <p class="subtle">Enter the report password to download the PDF.</p>
         <div class="password-row">
-          <input id="reportifyDetailPassword" type="password" autocomplete="current-password" placeholder="Password" required>
+          <input id="externalDetailPassword" type="password" autocomplete="current-password" placeholder="Password" required>
           <button class="primary" type="submit">Download</button>
         </div>
-        <div class="reportify-wait" id="reportifyDetailWait" hidden>
+        <div class="external-wait" id="externalDetailWait" hidden>
           报告正在准备，通常约 3 分钟。这个页面会自动检测，文件准备好后会开始下载。
         </div>
-        <div id="reportifyDetailStatus" class="status-line" aria-live="polite"></div>
+        <div id="externalDetailStatus" class="status-line" aria-live="polite"></div>
       </form>
-      <section class="admin-panel reportify-admin-tools" hidden>
+      <section class="admin-panel external-admin-tools" hidden>
         <div class="admin-panel-heading">
           <h3>Delivery link</h3>
           <span>Private</span>
         </div>
         <div class="delivery-row">
-          <button class="primary" id="generateReportifyDetailDeliveryLink" type="button">Generate</button>
-          <input id="reportifyDetailDeliveryLinkInput" type="text" readonly aria-label="Reportify delivery link">
-          <button id="copyReportifyDeliveryLink" type="button">Copy</button>
+          <button class="primary" id="generateExternalDetailDeliveryLink" type="button">Generate</button>
+          <input id="externalDetailDeliveryLinkInput" type="text" readonly aria-label="Delivery link">
+          <button id="copyExternalDeliveryLink" type="button">Copy</button>
         </div>
-        <div id="reportifyDetailDeliveryStatus" class="status-line" aria-live="polite"></div>
+        <div id="externalDetailDeliveryStatus" class="status-line" aria-live="polite"></div>
       </section>
     `;
 
-    const form = document.getElementById("reportifyDetailForm");
-    const input = document.getElementById("reportifyDetailPassword");
+    const form = document.getElementById("externalDetailForm");
+    const input = document.getElementById("externalDetailPassword");
     const button = form.querySelector("button");
-    const status = document.getElementById("reportifyDetailStatus");
-    const wait = document.getElementById("reportifyDetailWait");
-    const adminTools = target.querySelector(".reportify-admin-tools");
-    const generate = document.getElementById("generateReportifyDetailDeliveryLink");
-    const linkInput = document.getElementById("reportifyDetailDeliveryLinkInput");
-    const copy = document.getElementById("copyReportifyDeliveryLink");
-    const deliveryStatus = document.getElementById("reportifyDetailDeliveryStatus");
+    const status = document.getElementById("externalDetailStatus");
+    const wait = document.getElementById("externalDetailWait");
+    const adminTools = target.querySelector(".external-admin-tools");
+    const generate = document.getElementById("generateExternalDetailDeliveryLink");
+    const linkInput = document.getElementById("externalDetailDeliveryLinkInput");
+    const copy = document.getElementById("copyExternalDeliveryLink");
+    const deliveryStatus = document.getElementById("externalDetailDeliveryStatus");
 
     function setStatus(text, kind) {
       status.className = kind ? `status-line ${kind}` : "status-line";
@@ -1422,11 +1413,11 @@
       }
       button.disabled = true;
       try {
-        const result = await fetchReportifyPdf(workerUrl, item.id, input.value, setStatus);
+        const result = await fetchExternalPdf(workerUrl, item.id, input.value, setStatus);
         if (result.pending) {
           setRememberedDownloadPassword(input.value);
           setStatus("报告正在准备，通常约 3 分钟。页面会自动等待，准备好后开始下载。");
-          pollReportifyDetail(workerUrl, item.id, input.value, setStatus, () => submitDownload());
+          pollExternalDetail(workerUrl, item.id, input.value, setStatus, () => submitDownload());
         }
       } catch (error) {
         setStatus(error.message || "下载失败。", "error");
@@ -1445,8 +1436,8 @@
       deliveryStatus.className = "status-line";
       deliveryStatus.textContent = "Generating...";
       try {
-        const data = await requestReportifyPassword(workerUrl, item.id);
-        linkInput.value = reportifyPageUrl(item, data.password);
+        const data = await requestExternalPassword(workerUrl, item.id);
+        linkInput.value = externalPageUrl(item, data.password);
         deliveryStatus.className = "status-line ok";
         deliveryStatus.textContent = "Delivery link generated.";
       } catch (error) {
@@ -1475,9 +1466,7 @@
       input.value = initialPassword;
       if (passwordFromLink) {
         setRememberedDownloadPassword(passwordFromLink);
-        setStatus(params.get("deliver") === "1"
-          ? "Password filled from delivery link. Download will start automatically."
-          : "Password filled from delivery link.");
+        setStatus("Password filled from delivery link.");
         const cleanUrl = new URL(window.location.href);
         cleanUrl.searchParams.delete("password");
         cleanUrl.searchParams.delete("deliver");
@@ -1485,9 +1474,6 @@
       } else {
         setStatus("Password remembered on this device.");
       }
-    }
-    if (passwordFromLink && params.get("deliver") === "1") {
-      window.setTimeout(() => submitDownload(), 250);
     }
   }
 
@@ -1515,16 +1501,16 @@
 
   const boot = page === "report"
     ? initReport
-    : page === "reportify"
-      ? initReportifyDetail
+    : page === "external"
+      ? initExternalDetail
       : page === "delivery"
         ? initDelivery
         : initIndex;
   boot().catch((error) => {
     const target = page === "report"
       ? document.getElementById("detail")
-      : page === "reportify"
-        ? document.getElementById("reportifyDetail")
+      : page === "external"
+        ? document.getElementById("externalDetail")
         : page === "delivery"
           ? document.getElementById("delivery")
           : document.getElementById("results");

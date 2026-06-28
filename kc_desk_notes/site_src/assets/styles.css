@@ -285,7 +285,7 @@ h3 {
 .page-size select,
 #copyDeliveryLink,
 #copyDeliveryPassword,
-#copyReportifyDeliveryLink {
+#copyExternalDeliveryLink {
   min-height: 34px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -688,30 +688,30 @@ button.primary:disabled {
   font-size: 12px;
 }
 
-.reportify-section {
+.external-section {
   margin-top: 28px;
   padding-top: 18px;
   border-top: 1px solid var(--line);
 }
 
-.reportify-hint {
+.external-hint {
   margin: 0 0 12px;
   font-size: 13px;
 }
 
-.reportify-row .related-title {
+.external-row .related-title {
   font-weight: 600;
 }
 
-.reportify-section .status-line {
+.external-section .status-line {
   margin-top: 10px;
 }
 
-.reportify-access {
+.external-access {
   margin-top: 12px;
 }
 
-.reportify-access-card {
+.external-access-card {
   display: grid;
   gap: 14px;
   padding: 14px;
@@ -720,31 +720,31 @@ button.primary:disabled {
   background: #ffffff;
 }
 
-.reportify-access-title {
+.external-access-title {
   display: grid;
   gap: 5px;
 }
 
-.reportify-access-title strong {
+.external-access-title strong {
   color: var(--ink);
   line-height: 1.4;
   overflow-wrap: anywhere;
 }
 
-.reportify-actions,
-.reportify-delivery-row {
+.external-actions,
+.external-delivery-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 10px;
   align-items: center;
 }
 
-.reportify-delivery-row {
+.external-delivery-row {
   grid-template-columns: 156px minmax(0, 1fr) 84px;
 }
 
-.reportify-actions input,
-.reportify-delivery-row input {
+.external-actions input,
+.external-delivery-row input {
   min-width: 0;
   min-height: 44px;
   border: 1px solid var(--line);
@@ -754,7 +754,7 @@ button.primary:disabled {
   font: inherit;
 }
 
-.reportify-wait {
+.external-wait {
   padding: 12px 14px;
   border: 1px solid #f5d08a;
   border-radius: 8px;
@@ -886,8 +886,8 @@ button.primary:disabled {
   .detail-grid,
   .password-row,
   .delivery-row,
-  .reportify-actions,
-  .reportify-delivery-row,
+  .external-actions,
+  .external-delivery-row,
   .about-section {
     grid-template-columns: 1fr;
   }
