@@ -960,6 +960,26 @@ button.primary:disabled {
   line-height: 1.5;
 }
 
+.contact-card {
+  display: grid;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 14px;
+  border: 1px solid #b7ded8;
+  border-radius: 8px;
+  background: #eef7f5;
+}
+
+.contact-card strong {
+  font-size: 18px;
+}
+
+.contact-card span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .admin-close {
   position: absolute;
   top: 10px;

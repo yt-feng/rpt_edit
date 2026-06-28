@@ -7,14 +7,8 @@
   const ADMIN_COOKIE_MAX_AGE = 180 * 24 * 60 * 60;
   const DOWNLOAD_PASSWORD_KEY = "kcdesk_download_password";
   const AUTH_SESSION_KEY = "kcdesk_auth_session";
-  const PADDLE_SCRIPT_URL = "https://cdn.paddle.com/paddle/v2/paddle.js";
-  const REPORT_PRICE_QUANTITY = 2000;
-  const ANNUAL_PRICE_QUANTITY = 60000;
   const AUTHORITY_SOURCE = "authority";
   const EXTERNAL_SOURCE = "external";
-  let paddleConfigPromise = null;
-  let paddleLoadPromise = null;
-  let paddleInitialized = false;
 
   const INDUSTRY_RULES = [
     ["Macro / FX / Rates", /\b(macro|fx|foreign exchange|currency|cny|yuan|dollar|usd|rate|rates|yield|fed|ecb|boj|inflation|cpi|pmi|gdp|economy|economic|recession|treasury|bond|nominal|real rate)\b/],
@@ -37,7 +31,7 @@
     "the", "and", "for", "with", "from", "this", "that", "into", "after", "before", "report", "reports",
     "global", "china", "asia", "update", "updates", "note", "notes", "research", "sector", "market",
     "markets", "equity", "earnings", "preview", "review", "takeaways", "anchor", "model", "projection",
-    "slightly", "likely", "better", "pricing", "daily", "weekly", "monthly", "nom", "jpm", "ubs", "citi",
+    "slightly", "likely", "better", "daily", "weekly", "monthly", "nom", "jpm", "ubs", "citi",
     "bofa", "barc", "jef", "jpmorgan", "morgan", "stanley", "goldman", "sachs", "nomura",
   ]);
 
@@ -77,16 +71,6 @@
       if (text.includes(token)) score += weight;
     }
     return score;
-  }
-
-  function reportPriceCents(item) {
-    const cents = Number(item && item.price_cents);
-    return Number.isFinite(cents) && cents > 0 ? Math.round(cents) : REPORT_PRICE_QUANTITY;
-  }
-
-  function reportPriceLabel(item) {
-    const yuan = reportPriceCents(item) / 100;
-    return `¥${yuan.toLocaleString("zh-CN", { maximumFractionDigits: 2 })}`;
   }
 
   async function loadJson(path) {
@@ -265,16 +249,7 @@
     const session = loadAuthSession();
     const signedIn = Boolean(session);
     const reportTitle = context.item ? titleText(context.item) : "";
-    const priceLabel = context.item ? reportPriceLabel(context.item) : "¥20";
-    const reportCard = context.item
-      ? `
-        <div class="plan-card">
-          <strong>单篇报告 ${escapeHtml(priceLabel)}</strong>
-          <span>${escapeHtml(reportTitle)}</span>
-          <button class="primary" id="accountBuyReport" type="button">购买本篇</button>
-        </div>
-      `
-      : "";
+    const reportLine = reportTitle ? `<span>当前报告：${escapeHtml(reportTitle)}</span>` : "";
     return `
       <div class="admin-modal account-modal" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle">
         <div class="admin-dialog account-dialog">
@@ -306,13 +281,10 @@
               <button class="secondary-button" id="accountLogout" type="button">退出登录</button>
             </div>
           </div>
-          <div class="plan-grid" id="accountPlanGrid" hidden>
-            ${reportCard}
-            <div class="plan-card">
-              <strong>年度会员 ¥600</strong>
-              <span>一年内下载大部分可用报告，适合高频使用。</span>
-              <button class="primary" id="accountBuyAnnual" type="button">开通年度</button>
-            </div>
+          <div class="contact-card" id="accountContactCard">
+            <strong>报告获取</strong>
+            ${reportLine}
+            <span>在线支付通道正在调整。开通账号权限或获取报告，请联系微信 <b>${escapeHtml(CONTACT_WECHAT)}</b>。</span>
           </div>
           <div id="accountModalStatus" class="status-line" aria-live="polite"></div>
         </div>
@@ -340,128 +312,6 @@
     }
   }
 
-  function windowPaddle() {
-    return window.Paddle;
-  }
-
-  async function fetchPaddleConfig(workerUrl) {
-    if (paddleConfigPromise) return paddleConfigPromise;
-    paddleConfigPromise = fetch(`${workerUrl}/paddle-config`, { cache: "no-store" })
-      .then(async (response) => {
-        const data = await response.json().catch(() => ({}));
-        if (!response.ok) throw new Error(data.detail || "支付配置接口异常。");
-        return { ...(data.config || {}), __missing: data.missing || [] };
-      });
-    return paddleConfigPromise;
-  }
-
-  async function paymentReady(workerUrl) {
-    try {
-      const config = await fetchPaddleConfig(workerUrl);
-      return !(config.__missing && config.__missing.length);
-    } catch (_error) {
-      return false;
-    }
-  }
-
-  function loadPaddleScript() {
-    if (windowPaddle()) return Promise.resolve();
-    return new Promise((resolve, reject) => {
-      const existing = document.querySelector(`script[src="${PADDLE_SCRIPT_URL}"]`);
-      if (existing) {
-        existing.addEventListener("load", () => resolve(), { once: true });
-        existing.addEventListener("error", () => reject(new Error("Paddle.js 加载失败。")), { once: true });
-        return;
-      }
-      const script = document.createElement("script");
-      script.src = PADDLE_SCRIPT_URL;
-      script.async = true;
-      script.onload = () => resolve();
-      script.onerror = () => reject(new Error("Paddle.js 加载失败。"));
-      document.head.appendChild(script);
-    });
-  }
-
-  async function ensurePaddle(workerUrl) {
-    if (paddleLoadPromise) return paddleLoadPromise;
-    paddleLoadPromise = Promise.all([fetchPaddleConfig(workerUrl), loadPaddleScript()]).then(([config]) => {
-      const paddle = windowPaddle();
-      if (!paddle) throw new Error("Paddle.js 未就绪。");
-      if (config.__missing && config.__missing.length) {
-        throw new Error("支付功能还没有配置完成。");
-      }
-      if (config.PADDLE_ENV === "sandbox" && paddle.Environment && paddle.Environment.set) {
-        paddle.Environment.set("sandbox");
-      }
-      if (!paddleInitialized) {
-        if (!config.PADDLE_CLIENT_TOKEN) throw new Error("支付配置缺少：PADDLE_CLIENT_TOKEN");
-        paddle.Initialize({
-          token: config.PADDLE_CLIENT_TOKEN,
-          eventCallback: (event) => {
-            const name = String(event && (event.name || event.eventName || event.type) || "");
-            if (name === "checkout.completed") {
-              document.dispatchEvent(new CustomEvent("kcdesk-checkout-complete"));
-            }
-          },
-        });
-        paddleInitialized = true;
-      }
-      return config;
-    });
-    return paddleLoadPromise;
-  }
-
-  async function requireAccount(workerUrl, context = {}) {
-    let session = loadAuthSession();
-    if (session) return session;
-    if (!document.getElementById("accountModal")) showAccountModal(workerUrl, context);
-    throw new Error("请先登录或注册账号。");
-  }
-
-  async function openCheckout(workerUrl, plan, context = {}, statusTarget) {
-    const status = statusTarget || (() => {});
-    const session = await requireAccount(workerUrl, context);
-    status("正在打开支付窗口…");
-    const config = await ensurePaddle(workerUrl);
-    const paddle = windowPaddle();
-    const item = context.item || {};
-    const source = context.source || "catalog";
-    const isReport = plan === "single_report";
-    const priceId = isReport ? config.PADDLE_PRICE_REPORT_CNY_CENT : config.PADDLE_PRICE_YEARLY;
-    const isSharedCentPrice = !isReport && priceId && priceId === config.PADDLE_PRICE_REPORT_CNY_CENT;
-    const quantity = isReport ? reportPriceCents(item) : (isSharedCentPrice ? ANNUAL_PRICE_QUANTITY : 1);
-    if (!priceId) throw new Error(isReport ? "支付配置缺少单篇报告价格。" : "支付配置缺少年度价格。");
-    paddle.Checkout.open({
-      items: [{ priceId, quantity }],
-      customer: { email: session.user.email },
-      customData: {
-        plan,
-        order_kind: isReport ? "report_purchase" : "membership",
-        email: session.user.email,
-        username: session.user.username || "",
-        account_id: session.user.id || "",
-        report_id: isReport ? item.id || "" : "",
-        source,
-        title: isReport ? titleText(item).slice(0, 500) : "",
-        quantity,
-        price_cents: isReport ? quantity : "",
-      },
-      settings: {
-        displayMode: "overlay",
-        theme: "light",
-        successUrl: checkoutSuccessUrl(plan),
-      },
-    });
-    status("支付窗口已打开。完成后页面会自动更新，也可以稍后刷新。", "ok");
-  }
-
-  function checkoutSuccessUrl(plan) {
-    const url = new URL(window.location.href);
-    url.searchParams.set("checkout", "success");
-    url.searchParams.set("plan", plan);
-    return url.toString();
-  }
-
   async function showAccountModal(workerUrl, context = {}) {
     if (!workerUrl) {
       window.alert("Account service is temporarily unavailable.");
@@ -484,10 +334,7 @@
     const submit = document.getElementById("accountSubmit");
     const toggle = document.getElementById("accountModeToggle");
     const logout = document.getElementById("accountLogout");
-    const buyReport = document.getElementById("accountBuyReport");
-    const buyAnnual = document.getElementById("accountBuyAnnual");
     const status = document.getElementById("accountModalStatus");
-    const planGrid = document.getElementById("accountPlanGrid");
     let mode = "login";
     let captchaToken = "";
 
@@ -504,13 +351,13 @@
       if (signedIn) {
         document.getElementById("accountName").textContent = authUserLabel(session);
         document.getElementById("accountEmailText").textContent = session.user.email || "";
-        setStatus("已登录。", "ok");
+        setStatus(`已登录。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`, "ok");
         fetch(`${workerUrl}/entitlement`, { cache: "no-store", headers: authHeaders() })
           .then((response) => response.json())
           .then((data) => {
             const entitlement = data && data.entitlement;
             if (entitlement && entitlement.active && entitlement.plan === "annual") {
-              setStatus(`年度会员有效${entitlement.current_period_end ? `至 ${entitlement.current_period_end.slice(0, 10)}` : ""}。`, "ok");
+              setStatus(`账号下载权限有效${entitlement.current_period_end ? `至 ${entitlement.current_period_end.slice(0, 10)}` : ""}。`, "ok");
             }
           })
           .catch(() => {});
@@ -518,10 +365,6 @@
         captchaToken = "";
         loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; });
       }
-      paymentReady(workerUrl).then((ready) => {
-        if (planGrid) planGrid.hidden = !ready;
-        if (!ready && !signedIn) setStatus("付费功能正在配置中，暂时请使用报告密码或发货链接下载。");
-      });
     }
 
     function setMode(nextMode) {
@@ -581,30 +424,6 @@
         captchaToken = await loadAccountCaptcha(workerUrl, status);
       } finally {
         submit.disabled = false;
-      }
-    });
-
-    if (buyReport) {
-      buyReport.addEventListener("click", async () => {
-        buyReport.disabled = true;
-        try {
-          await openCheckout(workerUrl, "single_report", context, setStatus);
-        } catch (error) {
-          setStatus(error.message || "支付窗口打开失败。", "error");
-        } finally {
-          buyReport.disabled = false;
-        }
-      });
-    }
-
-    buyAnnual.addEventListener("click", async () => {
-      buyAnnual.disabled = true;
-      try {
-        await openCheckout(workerUrl, "annual", context, setStatus);
-      } catch (error) {
-        setStatus(error.message || "支付窗口打开失败。", "error");
-      } finally {
-        buyAnnual.disabled = false;
       }
     });
 
@@ -880,7 +699,6 @@
       item.date,
       item.page_count ? `${item.page_count}页` : "",
       item.language,
-      reportPriceLabel(item),
     ]
       .map((value) => String(value || "").trim())
       .filter(Boolean)
@@ -1418,16 +1236,13 @@
   }
 
   function accountAccessMarkup(item = {}) {
-    const singlePrice = reportPriceLabel(item);
     return `
       <section class="account-access" id="accountAccess" hidden>
         <h3>Account access</h3>
-        <p class="subtle" id="accountAccessHint">登录后可查看账号下载权限。</p>
+        <p class="subtle" id="accountAccessHint">登录后可查看账号下载权限；开通权限请联系微信 ${escapeHtml(CONTACT_WECHAT)}。</p>
         <div class="account-access-actions">
           <button class="secondary-button" id="openAccountPanel" type="button">登录 / 账号</button>
-          <button class="primary" id="accountDownloadReport" type="button" hidden>会员下载</button>
-          <button class="secondary-button" id="buySingleReport" type="button" hidden>单篇 ${escapeHtml(singlePrice)}</button>
-          <button class="secondary-button" id="buyAnnualPlan" type="button" hidden>年度 ¥600</button>
+          <button class="primary" id="accountDownloadReport" type="button" hidden>账号下载</button>
         </div>
         <div id="accountAccessStatus" class="status-line" aria-live="polite"></div>
       </section>
@@ -1477,12 +1292,9 @@
     if (!panel || !workerUrl) return;
     const openAccount = document.getElementById("openAccountPanel");
     const accountDownload = document.getElementById("accountDownloadReport");
-    const buySingle = document.getElementById("buySingleReport");
-    const buyAnnual = document.getElementById("buyAnnualPlan");
     const hint = document.getElementById("accountAccessHint");
     const status = document.getElementById("accountAccessStatus");
     const context = { item, source };
-    let canPay = false;
 
     function statusTarget(text, kind) {
       setLineStatus(status, text, kind);
@@ -1490,17 +1302,11 @@
 
     async function refresh() {
       const session = loadAuthSession();
-      canPay = await paymentReady(workerUrl);
-      panel.hidden = !session && !canPay;
-      buyAnnual.hidden = !canPay;
-      buySingle.hidden = !canPay;
-      hint.textContent = canPay
-        ? "登录后可购买单篇报告，或开通年度会员下载大部分可用报告。"
-        : "登录后可查看账号下载权限。";
+      panel.hidden = false;
+      hint.textContent = `登录后可查看账号下载权限；开通权限请联系微信 ${CONTACT_WECHAT}。`;
       accountDownload.hidden = true;
       if (!session) {
-        if (canPay) statusTarget("登录后可购买单篇报告或开通年度会员。");
-        else statusTarget("");
+        statusTarget(`在线支付通道正在调整。如需开通权限，请联系微信 ${CONTACT_WECHAT}。`);
         return;
       }
       statusTarget("正在读取账号权益…");
@@ -1508,11 +1314,9 @@
         const access = await fetchReportAccess(workerUrl, item, source);
         if (access && access.can_download) {
           accountDownload.hidden = false;
-          buySingle.hidden = true;
           statusTarget("当前账号已解锁此报告，可直接下载。", "ok");
         } else {
-          buySingle.hidden = !canPay;
-          statusTarget(canPay ? "当前账号尚未解锁此报告。" : "付费功能正在配置中，暂时请使用报告密码或发货链接下载。");
+          statusTarget(`当前账号尚未解锁此报告。如需开通权限，请联系微信 ${CONTACT_WECHAT}。`);
         }
       } catch (error) {
         statusTarget(error.message || "账号状态读取失败。", "error");
@@ -1520,26 +1324,6 @@
     }
 
     openAccount.addEventListener("click", () => showAccountModal(workerUrl, context));
-    buySingle.addEventListener("click", async () => {
-      buySingle.disabled = true;
-      try {
-        await openCheckout(workerUrl, "single_report", context, statusTarget);
-      } catch (error) {
-        statusTarget(error.message || "支付窗口打开失败。", "error");
-      } finally {
-        buySingle.disabled = false;
-      }
-    });
-    buyAnnual.addEventListener("click", async () => {
-      buyAnnual.disabled = true;
-      try {
-        await openCheckout(workerUrl, "annual", context, statusTarget);
-      } catch (error) {
-        statusTarget(error.message || "支付窗口打开失败。", "error");
-      } finally {
-        buyAnnual.disabled = false;
-      }
-    });
     accountDownload.addEventListener("click", async () => {
       accountDownload.disabled = true;
       try {
@@ -1551,7 +1335,6 @@
       }
     });
     document.addEventListener("kcdesk-auth-change", refresh);
-    document.addEventListener("kcdesk-checkout-complete", refresh);
     refresh();
   }
 
@@ -1591,7 +1374,6 @@
     if (item.page_count) url.searchParams.set("page_count", item.page_count);
     if (item.report_type) url.searchParams.set("report_type", item.report_type);
     if (item.language) url.searchParams.set("language", item.language);
-    if (item.price_cents) url.searchParams.set("price_cents", item.price_cents);
     return url.toString();
   }
 
@@ -1867,7 +1649,6 @@
 
   function externalItemFromParams(params) {
     const source = params.get("source") === AUTHORITY_SOURCE ? AUTHORITY_SOURCE : EXTERNAL_SOURCE;
-    const priceCents = Number(params.get("price_cents") || "");
     return {
       id: String(params.get("id") || "").trim(),
       source,
@@ -1880,7 +1661,6 @@
       page_count: params.get("page_count") || "",
       report_type: params.get("report_type") || "",
       language: params.get("language") || "",
-      price_cents: Number.isFinite(priceCents) && priceCents > 0 ? priceCents : 0,
     };
   }
 
@@ -2005,7 +1785,6 @@
         ${field("Institution", item.institution || "-")}
         ${field("Date", item.date || "-")}
         ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
-        ${field("Price", reportPriceLabel(item))}
       `
       : `
         ${field("Source", docSourceLabel(item))}

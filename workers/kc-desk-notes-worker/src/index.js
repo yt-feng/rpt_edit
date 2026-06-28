@@ -1040,10 +1040,12 @@ function paddleConfig(env) {
 }
 
 function handlePaddleConfig(request, env) {
-  const config = paddleConfig(env);
-  const missing = ["PADDLE_CLIENT_TOKEN", "PADDLE_PRICE_REPORT_CNY_CENT", "PADDLE_PRICE_YEARLY"]
-    .filter((key) => !config[key]);
-  return jsonResponse(request, env, 200, { config, missing });
+  return jsonResponse(request, env, 200, {
+    config: {},
+    missing: ["ACCESS_CHANNEL_DISABLED"],
+    disabled: true,
+    message: `Self-serve access is paused. Contact WeChat: ${CONTACT_WECHAT}.`,
+  });
 }
 
 function parsePaddleSignature(header) {
@@ -1782,7 +1784,6 @@ function slimAuthorityItem(kind, record) {
     stock_code: String(record.stockCode || record.companycode || "").trim(),
     stock_name: String(record.stockName || record.companyName || "").trim(),
     author: String(record.author || record.authors || "").trim(),
-    price_cents: config.price_cents,
     file_type: "pdf",
   };
 }
