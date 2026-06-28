@@ -1,0 +1,56 @@
+{
+  "created_at_utc": "2026-06-28T22:21:11.434548+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260628",
+  "output_dir": "publish_ready_zips/260628",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 2,
+  "skipped_shards": [],
+  "total_files": 127,
+  "total_renamed_markdown_count": 35,
+  "total_raw_file_bytes": 17353336,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260628/publish_ready_260628.zip",
+      "size_bytes": 16000169,
+      "file_count": 127,
+      "renamed_markdown_count": 35,
+      "raw_file_bytes": 17353336,
+      "shards": [
+        "shard_0",
+        "shard_1"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 81,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 10247540,
+      "reports": [
+        "0001-01-Goldman-Sachs-EM-ASIA-FX-RATES-VIEWS-We-recommend-going-long-INR-30Y-bon",
+        "0002-02-Morgan-Stanley-US-Economics-Weekly-The-data-road-map-to-rate-hikes-26062",
+        "0003-03-Morgan-Stanley-G10-FX-Strategy-Waiting-for-a-Dip-Buying-Opportunity-2606",
+        "0004-04-J.P.-Morgan-China-Local-Markets-2026-MidYear-Outlook-Safer-harbor--calme",
+        "0005-05-Goldman-Sachs-China--Industrial-profits-fell-sequentially-in-May-260627"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 2,
+      "file_count": 46,
+      "renamed_markdown_count": 10,
+      "raw_file_bytes": 7105796,
+      "reports": [
+        "0001-06-Morgan-Stanley-Energy-Refreshing-the-Price-Deck-260626",
+        "0002-07-Nomura-Nomura-Tech-Monthly--June-2026-260626"
+      ]
+    }
+  ]
+}
