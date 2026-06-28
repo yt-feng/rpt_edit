@@ -115,6 +115,30 @@ NOISE_LINE_RE = re.compile(
     r"related report:)",
     re.I,
 )
+PUBLIC_AND_CONSULTING_INSTITUTIONS = {
+    "IMF",
+    "世界银行",
+    "国际清算银行",
+    "麦肯锡",
+    "波士顿咨询",
+    "兰德公司",
+    "布鲁金斯学会",
+}
+CHART_CONTEXT_RE = re.compile(
+    r"(?:\b(?:exhibit|figure|fig\.|chart|table|source|survey|respondents?|percentage|percent|"
+    r"growth|inflation|gdp|forecast|index|rate|share|basis points?|bps?)\b|"
+    r"图表|图\s*\d+|表\s*\d+|来源[:：]|受访者|占比|同比|环比|预测|指数|增速|利率|通胀|增长)",
+    re.I,
+)
+NON_CHART_CONTEXT_RE = re.compile(
+    r"(?:\b(?:headshot|portrait|profile|author|authors?|partner|senior partner|associate partner|"
+    r"managing director|biography|bio|commentary|interview|photo|photograph|image credit|"
+    r"getty|shutterstock|unsplash|istock|cover)\b|"
+    r"合伙人|作者|头像|照片|访谈|人物|履历|麦肯锡评论)",
+    re.I,
+)
+NON_CHART_FILENAME_RE = re.compile(r"(?:avatar|author|headshot|portrait|profile|logo|cover|hero|banner|photo)", re.I)
+ARTICLE_STYLE_MAX_IMAGE_TOKENS = 3
 
 
 def log(message: str) -> None:
@@ -270,6 +294,100 @@ def is_noise_line(line: str) -> bool:
     return False
 
 
+def is_public_or_consulting_report(report_dir: Path, title: str = "", source_preview: str = "") -> bool:
+    institution = infer_institution_name(report_dir.name, title, source_preview)
+    if institution in PUBLIC_AND_CONSULTING_INSTITUTIONS:
+        return True
+    path_hint = str(report_dir).lower()
+    return "/institutions/" in path_hint or "/consulting/" in path_hint
+
+
+def chart_context(lines: list[str], index: int, radius: int = 5) -> str:
+    start = max(0, index - radius)
+    end = min(len(lines), index + radius + 1)
+    return "\n".join(line.strip() for line in lines[start:end] if line.strip())
+
+
+def image_edge_density(image: Any) -> float:
+    try:
+        gray = image.convert("L").resize((96, 96))
+        pixels = list(gray.getdata())
+    except Exception:
+        return 0.0
+    edges = 0
+    total = 0
+    width = 96
+    for y in range(95):
+        row = y * width
+        next_row = (y + 1) * width
+        for x in range(95):
+            current = pixels[row + x]
+            if abs(current - pixels[row + x + 1]) > 26 or abs(current - pixels[next_row + x]) > 26:
+                edges += 1
+            total += 1
+    return edges / max(1, total)
+
+
+def chart_image_score(path: Path, context: str = "") -> tuple[int, str]:
+    score = 0
+    reasons: list[str] = []
+    if NON_CHART_FILENAME_RE.search(path.name):
+        score -= 4
+        reasons.append("non_chart_filename")
+    if NON_CHART_CONTEXT_RE.search(context):
+        score -= 5
+        reasons.append("non_chart_context")
+    if CHART_CONTEXT_RE.search(context):
+        score += 6
+        reasons.append("chart_context")
+
+    try:
+        from PIL import Image, ImageStat
+
+        with Image.open(path) as image:
+            width, height = image.size
+            area = width * height
+            ratio = width / max(1, height)
+            if width < 320 or height < 180 or area < 100_000:
+                return -100, f"too_small:{width}x{height}"
+            if ratio < 0.38 or ratio > 4.8:
+                score -= 3
+                reasons.append(f"odd_ratio:{ratio:.2f}")
+            if 1.05 <= ratio <= 3.8:
+                score += 1
+                reasons.append("chart_ratio")
+            if 0.72 <= ratio <= 1.35 and not CHART_CONTEXT_RE.search(context):
+                score -= 3
+                reasons.append("square_without_context")
+            density = image_edge_density(image)
+            if density >= 0.10:
+                score += 2
+                reasons.append(f"edge:{density:.2f}")
+            elif density < 0.045:
+                score -= 2
+                reasons.append(f"low_edge:{density:.2f}")
+            stat = ImageStat.Stat(image.convert("L").resize((80, 80)))
+            if stat.stddev and stat.stddev[0] > 34:
+                score += 1
+                reasons.append("contrast")
+            if area >= 350_000:
+                score += 1
+                reasons.append("large")
+    except Exception as exc:
+        reasons.append(f"image_probe_failed:{str(exc)[:80]}")
+
+    return score, ",".join(reasons)
+
+
+def should_keep_report_image(path: Path, context: str, strict_chart: bool) -> tuple[bool, str]:
+    if not strict_chart:
+        return True, "legacy"
+    if not CHART_CONTEXT_RE.search(context) and not re.search(r"(?:chart|figure|fig|exhibit|table|graph|plot)", path.name, re.I):
+        return False, "missing_chart_context"
+    score, reason = chart_image_score(path, context)
+    return score >= 3, f"score={score};{reason}"
+
+
 def first_body_line(lines: list[str]) -> int:
     for idx, raw in enumerate(lines):
         line = raw.strip()
@@ -294,15 +412,12 @@ def collect_initial_headings(lines: list[str], body_start: int) -> list[str]:
     return headings
 
 
-def copy_image_for_report(
-    source_markdown: Path,
-    image_ref: str,
+def copy_resolved_image_for_report(
+    src: Path,
     assets_dir: Path,
     image_index: int,
+    score_reason: str = "",
 ) -> tuple[str, dict[str, Any]] | None:
-    src = resolve_image_path(source_markdown, image_ref)
-    if not src:
-        return None
     suffix = src.suffix.lower()
     if suffix not in {".png", ".jpg", ".jpeg", ".webp"}:
         return None
@@ -321,10 +436,29 @@ def copy_image_for_report(
         shutil.copy2(src, target)
     token = f"[[KC_IMAGE_{image_index:03d}]]"
     meta = {"token": token, "source_path": str(src), "path": str(target), "relative_path": str(target.name)}
+    if score_reason:
+        meta["chart_filter"] = score_reason
     return token, meta
 
 
-def prepare_clean_markdown(report_dir: Path, out_dir: Path, max_images: int) -> tuple[str, list[dict[str, Any]]]:
+def copy_image_for_report(
+    source_markdown: Path,
+    image_ref: str,
+    assets_dir: Path,
+    image_index: int,
+) -> tuple[str, dict[str, Any]] | None:
+    src = resolve_image_path(source_markdown, image_ref)
+    if not src:
+        return None
+    return copy_resolved_image_for_report(src, assets_dir, image_index)
+
+
+def prepare_clean_markdown(
+    report_dir: Path,
+    out_dir: Path,
+    max_images: int,
+    strict_chart_images: bool = False,
+) -> tuple[str, list[dict[str, Any]]]:
     source_markdown = report_dir / "source_mineru.md"
     lines = source_markdown.read_text(encoding="utf-8", errors="ignore").splitlines()
     lines = lines[: find_disclosure_start(lines)]
@@ -344,7 +478,7 @@ def prepare_clean_markdown(report_dir: Path, out_dir: Path, max_images: int) -> 
     image_index = 1
     previous_blank = False
 
-    for raw in lines[body_start:]:
+    for source_index, raw in enumerate(lines[body_start:], start=body_start):
         line = raw.rstrip()
         stripped = line.strip()
         if not stripped:
@@ -357,7 +491,18 @@ def prepare_clean_markdown(report_dir: Path, out_dir: Path, max_images: int) -> 
         image_match = IMAGE_RE.search(stripped)
         if image_match:
             if max_images <= 0 or image_index <= max_images:
-                copied = copy_image_for_report(source_markdown, image_match.group(1), assets_dir, image_index)
+                src = resolve_image_path(source_markdown, image_match.group(1))
+                copied = None
+                if src:
+                    keep_image, score_reason = should_keep_report_image(
+                        src,
+                        chart_context(lines, source_index),
+                        strict_chart_images,
+                    )
+                    if keep_image:
+                        copied = copy_resolved_image_for_report(src, assets_dir, image_index, score_reason)
+                    else:
+                        log(f"  Skip non-chart image {src.name}: {score_reason}")
                 if copied:
                     token, meta = copied
                     figures.append(meta)
@@ -410,7 +555,13 @@ def parse_json_response(response: requests.Response, label: str) -> dict[str, An
     return data
 
 
-def call_deepseek(prompt: str, args: argparse.Namespace, label: str, temperature: float = 0.15) -> str:
+def call_deepseek(
+    prompt: str,
+    args: argparse.Namespace,
+    label: str,
+    temperature: float = 0.15,
+    system_content: str | None = None,
+) -> str:
     api_key = os.getenv("DEEPSEEK_API_KEY")
     if not api_key:
         raise RuntimeError("Missing DEEPSEEK_API_KEY")
@@ -421,7 +572,7 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str, temperature
         "messages": [
             {
                 "role": "system",
-                "content": (
+                "content": system_content or (
                     "你是专业金融研报中文精译编辑。忠实翻译，不编造，不输出解释。"
                     "保留 Markdown 结构和图片占位符。"
                 ),
@@ -511,6 +662,97 @@ def translate_markdown(markdown: str, args: argparse.Namespace) -> str:
     text = re.sub(r"```(?:markdown)?\s*", "", text)
     text = text.replace("```", "")
     return sanitize_text(text).strip() + "\n"
+
+
+def remove_unwanted_image_tokens(markdown: str, allowed_tokens: list[str]) -> str:
+    allowed = set(allowed_tokens)
+
+    def replace(match: re.Match[str]) -> str:
+        token = f"[[KC_IMAGE_{match.group(1)}]]"
+        return token if token in allowed else ""
+
+    text = IMAGE_TOKEN_RE.sub(replace, markdown)
+    text = re.sub(r"\n{4,}", "\n\n\n", text)
+    return text.strip()
+
+
+def insert_article_tokens(markdown: str, tokens: list[str]) -> str:
+    if not tokens:
+        return markdown.strip() + "\n"
+    text = remove_unwanted_image_tokens(markdown, tokens)
+    present = [token for token in tokens if token in text]
+    missing = [token for token in tokens if token not in present]
+    if not missing:
+        return text.strip() + "\n"
+
+    lines = text.splitlines()
+    h2_indices = [idx for idx, line in enumerate(lines) if line.startswith("## ")]
+    insert_positions = h2_indices[1:] or h2_indices or [min(len(lines), 4)]
+    offset = 0
+    for token, pos in zip(missing, insert_positions):
+        insert_at = min(len(lines), pos + offset)
+        lines.insert(insert_at, "")
+        lines.insert(insert_at + 1, token)
+        lines.insert(insert_at + 2, "")
+        offset += 3
+    if len(missing) > len(insert_positions):
+        for token in missing[len(insert_positions) :]:
+            lines.extend(["", token, ""])
+    return re.sub(r"\n{4,}", "\n\n\n", "\n".join(lines)).strip() + "\n"
+
+
+def build_article_style_prompt(markdown: str, title: str, institution_name: str, image_tokens: list[str]) -> str:
+    token_text = ", ".join(image_tokens) if image_tokens else "无可用图表占位符"
+    source = markdown[: min(len(markdown), 22_000)]
+    return f"""
+你是“KC桌面”的微信公众号财经文章主笔。请把下面的公共机构/咨询公司英文报告，改写成和外资投行研报系列一致的中文微信文章。
+
+写作目标：
+- 不是逐段翻译，而是基于原报告写一篇完整、顺滑、有主线的中文综述。
+- 保留报告里的核心数据、结论、因果链和读者最该追问的问题。
+- 删除作者介绍、头像说明、访谈口吻、网页导航、版权页、脚注长串、目录、免责声明、机构自我宣传。
+- 不能编造原文没有的信息；如果某个数字不确定，就不要写。
+
+格式要求：
+1. 第一行必须是 `# {{机构中文名}}：{{短标题}}`，标题短、清楚、有传播性。
+2. 正文控制在 1200-1800 个中文字符。
+3. 使用 3 个 `##` 小节，每个小节标题都要是 action title，读标题就知道结论。
+4. 每个小节 1-2 段，段落要像投行报告解读，避免散乱摘抄。
+5. 插入 2 条 `> KC评论：...`。KC评论要用大白话解释“这对市场/企业/政策观察意味着什么”，不要空泛。
+6. 如有可用图表占位符，只能从这些 token 里选 1-3 个并原样插入，单独成行：{token_text}
+7. 不要输出代码块，不要输出英文原文，不要输出“以下是”等解释。
+
+机构中文名：{institution_name or "该机构"}
+原报告标题：{title}
+
+已清洗原文：
+{source}
+""".strip()
+
+
+def generate_article_style_markdown(
+    clean_markdown: str,
+    title: str,
+    institution_name: str,
+    figures: list[dict[str, Any]],
+    args: argparse.Namespace,
+) -> str:
+    image_tokens = [str(item.get("token") or "") for item in figures[:ARTICLE_STYLE_MAX_IMAGE_TOKENS] if item.get("token")]
+    prompt = build_article_style_prompt(clean_markdown, title, institution_name, image_tokens)
+    system_content = (
+        "你是专业中文财经编辑，擅长把英文公共机构、咨询公司、投行报告改写成"
+        "微信公众号可读的中文研报解读。只根据原文写作，不编造。"
+    )
+    article = call_deepseek(
+        prompt,
+        args,
+        f"article-style rewrite: {title[:40]}",
+        temperature=0.18,
+        system_content=system_content,
+    )
+    article = article.replace("```markdown", "").replace("```", "")
+    article = insert_article_tokens(article, image_tokens)
+    return sanitize_text(article).strip() + "\n"
 
 
 def register_cjk_font() -> str:
@@ -696,11 +938,28 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
     report_out_dir.mkdir(parents=True, exist_ok=True)
     log(f"Processing report {index}: {title}")
 
-    clean_md, figures = prepare_clean_markdown(report_dir, report_out_dir, args.max_images_per_report)
+    source_preview = ""
+    source_path = report_dir / "source_mineru.md"
+    if source_path.exists():
+        source_preview = source_path.read_text(encoding="utf-8", errors="ignore")[:1600]
+    institution_name = infer_institution_name(report_dir.name, title, source_preview)
+    article_style = is_public_or_consulting_report(report_dir, title, source_preview)
+    if article_style:
+        log(f"  Using article-style rewrite and strict chart filtering for {institution_name or report_dir.name}")
+
+    clean_md, figures = prepare_clean_markdown(
+        report_dir,
+        report_out_dir,
+        args.max_images_per_report,
+        strict_chart_images=article_style,
+    )
     (report_out_dir / "source_clean.md").write_text(clean_md, encoding="utf-8")
     (report_out_dir / "figure_manifest.json").write_text(json.dumps(figures, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    translated_md = translate_markdown(clean_md, args)
+    if article_style:
+        translated_md = generate_article_style_markdown(clean_md, title, institution_name, figures, args)
+    else:
+        translated_md = translate_markdown(clean_md, args)
     translated_path = report_out_dir / "translated.md"
     translated_path.write_text(translated_md, encoding="utf-8")
 
@@ -714,6 +973,8 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
         "translated_markdown": "translated.md",
         "pdf": output_pdf.name,
         "figure_count": len(figures),
+        "institution_name": institution_name,
+        "article_style": article_style,
     }
     (report_out_dir / "translation_status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
     return {**status, "output_dir": str(report_out_dir), "pdf_path": str(output_pdf)}

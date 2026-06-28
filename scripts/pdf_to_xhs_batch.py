@@ -16,7 +16,7 @@ from typing import Any, NamedTuple
 
 import fitz
 import requests
-from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps, ImageStat
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
@@ -39,6 +39,8 @@ XHS_CANVAS_SIZE = (1080, 1440)
 XHS_BG_COLOR = (9, 31, 64)
 XHS_CARD_COLOR = (255, 255, 255)
 XHS_WATERMARK = "KC桌面"
+CHART_FILENAME_RE = re.compile(r"(?:chart|figure|fig|exhibit|table|graph|plot|source_image)", re.I)
+NON_CHART_FILENAME_RE = re.compile(r"(?:avatar|author|headshot|portrait|profile|logo|cover|hero|banner|photo)", re.I)
 
 
 class MinerUAttemptResult(NamedTuple):
@@ -270,6 +272,79 @@ def safe_open_image(path: Path) -> Image.Image | None:
         return None
 
 
+def image_edge_density(image: Image.Image) -> float:
+    gray = image.convert("L").resize((96, 96))
+    pixels = list(gray.getdata())
+    edges = 0
+    total = 0
+    width = 96
+    for y in range(95):
+        row = y * width
+        next_row = (y + 1) * width
+        for x in range(95):
+            current = pixels[row + x]
+            if abs(current - pixels[row + x + 1]) > 26 or abs(current - pixels[next_row + x]) > 26:
+                edges += 1
+            total += 1
+    return edges / max(1, total)
+
+
+def chart_image_score(path: Path) -> tuple[int, str]:
+    image = safe_open_image(path)
+    if image is None:
+        return -100, "unreadable"
+    width, height = image.size
+    area = width * height
+    ratio = width / max(1, height)
+    if width < 320 or height < 180 or area < 100_000:
+        return -100, f"too_small:{width}x{height}"
+
+    score = 0
+    reasons: list[str] = []
+    if CHART_FILENAME_RE.search(path.name):
+        score += 2
+        reasons.append("chart_filename")
+    if NON_CHART_FILENAME_RE.search(path.name):
+        score -= 4
+        reasons.append("non_chart_filename")
+    if 1.05 <= ratio <= 3.8:
+        score += 1
+        reasons.append("chart_ratio")
+    if 0.72 <= ratio <= 1.35 and not CHART_FILENAME_RE.search(path.name):
+        score -= 3
+        reasons.append("square_without_chart_hint")
+    if ratio < 0.38 or ratio > 4.8:
+        score -= 3
+        reasons.append(f"odd_ratio:{ratio:.2f}")
+    density = image_edge_density(image)
+    if density >= 0.10:
+        score += 2
+        reasons.append(f"edge:{density:.2f}")
+    elif density < 0.045:
+        score -= 2
+        reasons.append(f"low_edge:{density:.2f}")
+    stat = ImageStat.Stat(image.convert("L").resize((80, 80)))
+    if stat.stddev and stat.stddev[0] > 34:
+        score += 1
+        reasons.append("contrast")
+    if area >= 350_000:
+        score += 1
+        reasons.append("large")
+    return score, ",".join(reasons)
+
+
+def select_chart_images(images: list[Path], max_images: int) -> list[Path]:
+    scored: list[tuple[int, int, Path, str]] = []
+    for path in images:
+        score, reason = chart_image_score(path)
+        if score >= 3:
+            scored.append((score, path.stat().st_size, path, reason))
+        else:
+            log(f"Skip non-chart visual asset {path.name}: score={score};{reason}")
+    scored.sort(key=lambda item: (item[0], item[1]), reverse=True)
+    return [path for _score, _size, path, _reason in scored[:max_images]]
+
+
 def draw_centered_text(draw: ImageDraw.ImageDraw, text: str, y: int, font: ImageFont.ImageFont, fill: tuple[int, int, int, int] | tuple[int, int, int], max_chars: int = 12, line_gap: int = 18) -> int:
     text = re.sub(r"\s+", " ", text).strip()
     if not text:
@@ -417,13 +492,15 @@ def create_visual_assets(result_dir: Path, pdf_path: Path, assets_dir: Path, max
     """
     assets_dir.mkdir(parents=True, exist_ok=True)
     images = [p for p in result_dir.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_SUFFIXES]
-    images.sort(key=lambda path: path.stat().st_size, reverse=True)
     cards: list[str] = []
 
     if images:
         draw_title_card(title, assets_dir / "xhs_card_01.png")
         cards.append("assets/xhs_card_01.png")
-        chart_images = images[:max_images]
+        chart_images = select_chart_images(images, max_images)
+        if not chart_images:
+            log("MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.")
+            return cards
         total = len(chart_images)
         for index, image in enumerate(chart_images, 1):
             original_target = assets_dir / f"source_image_{index:02d}{image.suffix.lower()}"
@@ -434,8 +511,9 @@ def create_visual_assets(result_dir: Path, pdf_path: Path, assets_dir: Path, max
             else:
                 cards.append(str(original_target.relative_to(assets_dir.parent)))
     else:
-        log("MinerU result contained no standalone images; rendering PDF page fallback cards.")
-        cards = render_pdf_page_cards(pdf_path, assets_dir, max_pages=min(max_images, 4), title=title)
+        log("MinerU result contained no standalone chart images; creating title card only.")
+        draw_title_card(title, assets_dir / "xhs_card_01.png")
+        cards.append("assets/xhs_card_01.png")
     return cards
 
 

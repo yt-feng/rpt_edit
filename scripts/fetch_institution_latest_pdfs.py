@@ -223,6 +223,7 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "sitemap_max_age_days": 120,
     },
 }
+DEFAULT_PUBLIC_INSTITUTION_KEYS = ["imf", "bis", "worldbank", "rand", "brookings"]
 
 
 def log(message: str) -> None:
@@ -887,6 +888,8 @@ def main() -> int:
     max_bytes = int(args.max_pdf_mb * 1024 * 1024)
 
     if args.institutions.strip().lower() in {"all", "*", ""}:
+        enabled = DEFAULT_PUBLIC_INSTITUTION_KEYS
+    elif args.institutions.strip().lower() in {"everything", "all-including-consulting"}:
         enabled = list(INSTITUTIONS.keys())
     else:
         enabled = [k.strip().lower() for k in args.institutions.split(",") if k.strip()]
