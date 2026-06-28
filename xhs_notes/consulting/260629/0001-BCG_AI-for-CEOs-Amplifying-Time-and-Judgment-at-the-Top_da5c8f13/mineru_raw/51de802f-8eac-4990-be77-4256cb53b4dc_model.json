@@ -1,0 +1,3010 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.398
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.432,
+                0.231,
+                0.449
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.038,
+                0.479,
+                0.716,
+                0.633
+            ],
+            "angle": 0,
+            "content": "AI for CEOs:\nAmplifying Time and\nJudgment at the Top"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.657,
+                0.702,
+                0.676
+            ],
+            "angle": 0,
+            "content": "By Christine Barton, Julie Bedard, Nicolas de Bellefonds, and Judith Wallenstein",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.701,
+                0.247,
+                0.718
+            ],
+            "angle": 0,
+            "content": "ARTICLE JUNE 23, 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.779,
+                0.951,
+                0.819
+            ],
+            "angle": 0,
+            "content": "If you want to know how seriously a company takes AI transformation, don't start with its strategy. Look at how the CEO uses it.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.834,
+                0.943,
+                0.895
+            ],
+            "angle": 0,
+            "content": "Many corporate chiefs have openly shared how they've integrated AI into their daily routines to get up to speed quickly on new subjects, tame overloaded inboxes, test assumptions, surface risks their senior team may be reluctant to raise, and manage their schedules more strategically.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.942,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.437,
+                0.224,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.474,
+                0.438,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.527,
+                0.719,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.034,
+                0.578,
+                0.697,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.66,
+                0.699,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.703,
+                0.243,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.78,
+                0.949,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.8,
+                0.309,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.836,
+                0.926,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.857,
+                0.906,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.876,
+                0.936,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.947,
+                0.147
+            ],
+            "angle": 0,
+            "content": "While early AI use cases like these confer real benefits for an organization by expanding a CEO's understanding of the technology and modeling what adoption looks like in practice, they only begin to scratch the surface. Because, when designed for individual leaders, AI can amplify two of the company's most constrained and valuable resources: the CEO's time and best judgment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.161,
+                0.654,
+                0.181
+            ],
+            "angle": 0,
+            "content": "Five Questions to Ensure AI Amplifies the CEO's Best Judgment",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.196,
+                0.95,
+                0.316
+            ],
+            "angle": 0,
+            "content": "Today, AI is primarily deployed to improve processes, strengthen functions, and boost productivity across the middle and lower layers of organizations—efforts that can generate significant value. But leadership itself is a compelling frontier. When you design AI around how a CEO and their top team lead, decide, prioritize, and communicate, as well as the unique and evolving contexts in which they operate, you aim the technology at the top of the organization. That’s where the highest-stakes decisions are made and where the value of better judgment is virtually limitless.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.329,
+                0.95,
+                0.429
+            ],
+            "angle": 0,
+            "content": "Of course, the more AI is integrated into the CEO role and the rest of the C-suite, the more leaders must scrutinize how it is built and the outputs it delivers. Otherwise, they risk mistaking poor implementation—wrong data, unclear processes, or weak controls—for bad technology, or polished output for sound answers. And like all humans, chief executives and their teams must remain vigilant against AI-driven groupthink and cognitive overload.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.443,
+                0.944,
+                0.504
+            ],
+            "angle": 0,
+            "content": "Here's how CEOs use AI today, where trailblazers are taking it, and the risks to watch out for. We've also included five questions leaders can ask themselves to ensure AI multiplies their best judgment, and not the machine's.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.575,
+                0.811,
+                0.613
+            ],
+            "angle": 0,
+            "content": "The CEO as AI's Next Use Case"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.641,
+                0.947,
+                0.761
+            ],
+            "angle": 0,
+            "content": "When CEOs use AI themselves, they send a signal that reverberates through their organization in a way no speech or strategy document can match. They give managers and employees greater incentive to experiment with AI, learn, and build confidence. They make it clear to their senior leadership team that AI is everyone's mandate, and not someone else's project. They also expand their sense of the art of the possible when they work with frontier models, helping them distinguish real potential from overblown hype or fear.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.774,
+                0.954,
+                0.855
+            ],
+            "angle": 0,
+            "content": "These benefits are not theoretical. Our research shows that while 72% of CEOs are now directly responsible for AI decisions in their companies, only 15% are generating meaningful value from it. One trait our research identified that sets these trailblazers apart from their lagging peers is the amount of time they spend building their own AI capabilities—at least eight hours a week.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.868,
+                0.927,
+                0.909
+            ],
+            "angle": 0,
+            "content": "But the lesson is not that hours alone create value. While we believe CEOs should use AI every day, what matters far more is how they use it and what they use it for.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.944,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.906,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.942,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.129,
+                0.903,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.163,
+                0.65,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.198,
+                0.947,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.219,
+                0.939,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.237,
+                0.942,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.258,
+                0.91,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.278,
+                0.881,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.297,
+                0.923,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.333,
+                0.946,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.35,
+                0.899,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.372,
+                0.887,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.391,
+                0.92,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.411,
+                0.672,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.445,
+                0.898,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.466,
+                0.941,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.486,
+                0.355,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.574,
+                0.81,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.643,
+                0.943,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.664,
+                0.843,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.682,
+                0.921,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.703,
+                0.939,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.723,
+                0.875,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.742,
+                0.6,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.776,
+                0.922,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.796,
+                0.95,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.815,
+                0.934,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.836,
+                0.878,
+                0.851
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.871,
+                0.921,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.891,
+                0.678,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.955,
+                0.167
+            ],
+            "angle": 0,
+            "content": "In our review of public examples from the past two years involving 15 high-profile chief executives, six common behaviors emerge. These leaders describe using AI to get up to speed quickly on new subjects, anticipate important conversations, synthesize complex information, stress test their thinking, express ideas more clearly, and help them better assess how they spend their time. (See the sidebar, “How CEOs Talk About Using AI.”)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.064,
+                0.197,
+                0.571,
+                0.225
+            ],
+            "angle": 0,
+            "content": "- How CEOs Talk About Using AI"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.262,
+                0.813,
+                0.321
+            ],
+            "angle": 0,
+            "content": "An on-demand tutor and communications coach. Some CEOs have described using AI to build fluency in unfamiliar domains and prepare for high-stakes conversations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.34,
+                0.827,
+                0.459
+            ],
+            "angle": 0,
+            "content": "A sparring partner and devil's advocate. Compressing large volumes of information into usable briefings and challenging assumptions before decisions harden is another common AI use case for CEOs. Some leaders have discussed using it to stress test strategic decisions, assign probabilities, and call out risks that human advisors may be too polite, too biased, or too far from the issue to raise.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.478,
+                0.828,
+                0.558
+            ],
+            "angle": 0,
+            "content": "A strategic editor and reflective tool. CEOs are also using AI to turn rough thinking into clearer communication, such as using it to help draft an annual shareholders' letter. Others are using AI as a reflective tool to review calendars and emails to see whether their time and attention match their stated priorities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.704,
+                0.952,
+                0.746
+            ],
+            "angle": 0,
+            "content": "These behaviors reflect mostly early AI use cases, presumably aided by off-the-shelf tools. But the cutting edge is trending decisively toward customized agentic systems for the C-suite.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.76,
+                0.95,
+                0.839
+            ],
+            "angle": 0,
+            "content": "For now, many of these early efforts are improvised—more duct tape than an enterprise platform—but they reflect a growing awareness that AI’s greatest value to CEOs and their top teams may well depend on whether it’s shaped around their unique priorities, evolving contexts, decision patterns, and operating environments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.853,
+                0.954,
+                0.933
+            ],
+            "angle": 0,
+            "content": "Case in point—consider how most CEOs currently arrive at major strategic decisions. The process often begins with a tangle of prereads, competing memos, and inconsistent assumptions, followed by long meetings spent largely getting up to speed. AI tailored to a CEO’s decision-making context could dramatically accelerate that process—and improve the quality of the",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.952,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.09,
+                0.946,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.925,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.13,
+                0.946,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.147,
+                0.468,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.196,
+                0.568,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.264,
+                0.809,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.284,
+                0.773,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.304,
+                0.222,
+                0.318
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.341,
+                0.748,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.363,
+                0.823,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.382,
+                0.812,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.402,
+                0.816,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.422,
+                0.8,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.441,
+                0.139,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.48,
+                0.777,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.5,
+                0.793,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.519,
+                0.812,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.539,
+                0.824,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.705,
+                0.949,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.726,
+                0.832,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.762,
+                0.947,
+                0.777
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.782,
+                0.94,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.801,
+                0.906,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.82,
+                0.407,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.855,
+                0.95,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.874,
+                0.874,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.894,
+                0.895,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.914,
+                0.891,
+                0.93
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.941,
+                0.147
+            ],
+            "angle": 0,
+            "content": "inputs informing their decisions—by reconciling conflicting information, surfacing tradeoffs, testing assumptions, and flagging risks before the meeting begins. The goal of using AI for decision making is not to automate human judgment, but to equip CEOs with better information, faster, so they enter the room not ready to be briefed, but ready to decide.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.16,
+                0.952,
+                0.281
+            ],
+            "angle": 0,
+            "content": "That is just one example. Agentic systems trained on case studies and an individual CEO's priorities, decision history, mental models, and ongoing strategic context can be superior sparring partners. Tailored systems can incorporate persona bots to help CEOs anticipate how critical conversations might unfold with specific stakeholders. They can use scenario planning to surface warning signs of potential business disruptions earlier and elevate bottom-up ideas that might otherwise never reach the CEO's desk.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.294,
+                0.953,
+                0.415
+            ],
+            "angle": 0,
+            "content": "An industrial company in EMESA offers one example of an early adopter building a bespoke agentic system to support top management. When fully operational, its array of customized AI agents will deliver always-on performance reports and benchmarks, risk analysis, competitive intelligence, and other insights. Not only will this system provide the CEO and other senior leaders with a real-time pulse on the organization, but it will also enable them to anticipate disruptions, respond before they escalate, and even convert uncertainty into strategic advantage.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.428,
+                0.955,
+                0.508
+            ],
+            "angle": 0,
+            "content": "There are limits, however. AI can inform a decision, but it cannot be held accountable for one. That responsibility still sits with the CEO. This is why leaders must be incredibly vigilant as these systems become more customized—and more capable of misleading them in subtle but consequential ways.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.578,
+                0.835,
+                0.656
+            ],
+            "angle": 0,
+            "content": "Four Ways AI Can Mislead Even the Best Leaders"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.685,
+                0.95,
+                0.764
+            ],
+            "angle": 0,
+            "content": "No one is immune to AI risks, not even CEOs. But when the person in the top job places too much trust in flawed AI output, the consequences can ripple through the organization by influencing strategy, capital allocation, workforce plans, customer decisions, and even the pace of transformation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.777,
+                0.761,
+                0.799
+            ],
+            "angle": 0,
+            "content": "The following four risks are especially important for leaders to guard against:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.813,
+                0.95,
+                0.914
+            ],
+            "angle": 0,
+            "content": "Mistaking literacy for expertise. AI can make unfamiliar subjects feel suddenly accessible, but that does not mean the CEO has mastered the underlying complexity. A polished answer can hide weak assumptions, missing context, or a low-confidence conclusion. Sycophantic AI can also make validation feel like evidence. Indeed, one of our first studies on generative AI revealed that users tend to trust the technology in areas where it is less competent.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.895,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.09,
+                0.874,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.935,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.129,
+                0.726,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.163,
+                0.88,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.949,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.911,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.223,
+                0.943,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.243,
+                0.921,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.263,
+                0.401,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.297,
+                0.899,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.316,
+                0.917,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.336,
+                0.914,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.357,
+                0.885,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.375,
+                0.892,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.395,
+                0.95,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.431,
+                0.952,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.449,
+                0.894,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.469,
+                0.865,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.491,
+                0.233,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.578,
+                0.835,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.619,
+                0.456,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.687,
+                0.948,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.707,
+                0.917,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.726,
+                0.844,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.747,
+                0.192,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.78,
+                0.757,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.815,
+                0.926,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.835,
+                0.947,
+                0.85
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.855,
+                0.901,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.874,
+                0.938,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.895,
+                0.693,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.946,
+                0.165
+            ],
+            "angle": 0,
+            "content": "Mistaking speed for better judgment. AI can compress the path from question to answer, but CEOs still need time to absorb, challenge, and decide. Otherwise, the same tools that help them cut through information overload can also make bad synthesis feel authoritative. The danger is not that AI has an answer. It is that AI always has an answer. And no human should blindly trust a know-it-all.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.18,
+                0.954,
+                0.301
+            ],
+            "angle": 0,
+            "content": "Letting AI narrow the conversation. The same tools, the same data, and the same prompts can reinforce the same assumptions. The result is groupthink, albeit groupthink that's faster, cleaner, and harder to spot. Generative AI's generally uniform output, for example, can reduce a group's diversity of thought by \\(41\\%\\), our research has found. That makes human dissent crucial. CEOs and their top team must always challenge the AI-assisted answer, ask what is missing, and whether the recommendation reflects reality or just the logic of the model.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.313,
+                0.952,
+                0.394
+            ],
+            "angle": 0,
+            "content": "Creating cognitive overload. AI can help people do more work faster, but it does not expand their cognitive capacity. Humans still have to review, judge, correct, reconcile, and decide what to trust. And by generating more information, perspectives, and synthesized insights, AI can increase cognitive overload, eroding decision quality and leading to worse outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.407,
+                0.914,
+                0.469
+            ],
+            "angle": 0,
+            "content": "The risk is real. In our study of 1,488 full-time US workers, 14% of AI users reported “AI brain fry”—mental fatigue from excessive AI use or oversight beyond their cognitive capacity—with rates ranging from about 6% in legal professions to roughly 26% in marketing.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.039,
+                0.558,
+                0.731,
+                0.68
+            ],
+            "angle": 0,
+            "content": "Five Questions to Ensure AI Amplifies the CEO's Best Judgment"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.704,
+                0.92,
+                0.764
+            ],
+            "angle": 0,
+            "content": "While most CEOs could probably benefit from using AI more, the real test is whether the technology is making them better leaders. The following five questions can help guide them to that outcome:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.778,
+                0.947,
+                0.858
+            ],
+            "angle": 0,
+            "content": "How do I want to leverage AI to expand both my abilities and my top team's? How CEOs and their senior leadership teams experience AI shapes how the rest of the organization thinks about it, adopts it, and scales it. That's why leaders need regular exposure to frontier models: to understand the real edge of the technology's capabilities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.872,
+                0.949,
+                0.912
+            ],
+            "angle": 0,
+            "content": "But exposure does not automatically translate into value. To create real leverage, CEOs and their teams need to use AI with the clear intention of making them better leaders.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.068,
+                0.912,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.089,
+                0.933,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.921,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.941,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.148,
+                0.149,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.183,
+                0.929,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.203,
+                0.94,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.222,
+                0.925,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.243,
+                0.944,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.262,
+                0.947,
+                0.276
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.28,
+                0.619,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.316,
+                0.949,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.336,
+                0.941,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.356,
+                0.9,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.375,
+                0.742,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.41,
+                0.895,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.43,
+                0.909,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.449,
+                0.764,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.557,
+                0.733,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.596,
+                0.661,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.637,
+                0.292,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.705,
+                0.861,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.726,
+                0.913,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.744,
+                0.178,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.78,
+                0.921,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.801,
+                0.943,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.821,
+                0.871,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.839,
+                0.579,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.874,
+                0.946,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.893,
+                0.755,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.947,
+                0.147
+            ],
+            "angle": 0,
+            "content": "That’s why design is critical. Weak or poorly configured tools may cause them to underestimate AI’s potential, while overly polished outputs may lead them to overestimate it. And while generic tools can help CEOs and their senior teams save time in myriad ways, more customized solutions can help them arrive at better, more informed decisions sooner.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.161,
+                0.944,
+                0.221
+            ],
+            "angle": 0,
+            "content": "Finally, given CEOs often struggle to obtain candid feedback and dissenting viewpoints, AI can challenge their assumptions and offer alternative or new perspectives that humans may not feel comfortable voicing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.236,
+                0.95,
+                0.316
+            ],
+            "angle": 0,
+            "content": "Is AI helping me make a better decision, or just a faster one? AI can shorten the path from question to answer. But CEOs still have to decide. Before trusting the output, they and their top team must ask whether AI for decision making has clarified the tradeoffs, surfaced better options, exposed risks, or simply produced a confident answer more quickly.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.329,
+                0.953,
+                0.39
+            ],
+            "angle": 0,
+            "content": "Do I know enough to know when the AI is wrong? AI can make unfamiliar subjects feel accessible fast. That is part of its appeal. But CEOs and the rest of the C-suite must constantly ask themselves whether they are mistaking a fluent explanation for real expertise.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.403,
+                0.955,
+                0.504
+            ],
+            "angle": 0,
+            "content": "Who is challenging the answers AI is giving? The CEO should not be the only line of defense against misleading AI. AI-assisted work needs dissent built in. That could mean asking another model to critique the first answer, assigning someone in the senior leadership team to play challenger, or simply making it normal to ask: What is missing, what is biased, and what are we too ready to believe?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.517,
+                0.949,
+                0.617
+            ],
+            "angle": 0,
+            "content": "How do I know if AI is making me better at my job? To improve leadership outcomes, CEOs should ask whether they can measure the quality of AI recommendations as well as the decisions those recommendations support and the speed at which they are made. That is not easy. In a call center, performance can be tracked quickly and clearly. For a CEO, the value of a decision may only become visible over time. Nevertheless, building that discipline still matters.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.667,
+                0.956,
+                0.786
+            ],
+            "angle": 0,
+            "content": "AI does not guarantee great leadership. But it can act as a positive force multiplier for CEOs if they use it with discipline, curiosity, and humility. Leaders who get the most value from AI will use it every day, prioritize building their own capabilities as part of their weekly routine, remain constantly vigilant against its limits, and shape it around their job. For CEOs, the next frontier of AI is not just enterprise transformation; it is personal transformation of how they learn, decide, communicate, and lead.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.801,
+                0.684,
+                0.82
+            ],
+            "angle": 0,
+            "content": "The authors wish to thank Taha Khursheed for his contribution to this article.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.069,
+                0.921,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.091,
+                0.932,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.108,
+                0.942,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.633,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.162,
+                0.916,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.938,
+                0.197
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.203,
+                0.234,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.239,
+                0.891,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.257,
+                0.923,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.278,
+                0.946,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.298,
+                0.668,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.331,
+                0.95,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.351,
+                0.855,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.371,
+                0.774,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.405,
+                0.9,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.425,
+                0.916,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.445,
+                0.881,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.466,
+                0.95,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.485,
+                0.205,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.519,
+                0.895,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.54,
+                0.944,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.559,
+                0.944,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.578,
+                0.912,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.598,
+                0.803,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.669,
+                0.916,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.689,
+                0.953,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.709,
+                0.865,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.729,
+                0.932,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.748,
+                0.922,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.767,
+                0.267,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.802,
+                0.681,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.105,
+                0.247,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.187,
+                0.22,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.352,
+                0.22,
+                0.458
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.245,
+                0.19,
+                0.428,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Christine Barton"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.223,
+                0.449,
+                0.297
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner; North America Lead, CEO Advisory\nDallas"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.28,
+                0.275,
+                0.296
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.246,
+                0.355,
+                0.365,
+                0.399
+            ],
+            "angle": 0,
+            "content": "Nicolas de\nBellefonds"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.408,
+                0.437,
+                0.473
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nParis",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.454,
+                0.275,
+                0.471
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.187,
+                0.683,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.196,
+                0.843,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Julie Bedard"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.563,
+                0.351,
+                0.682,
+                0.46
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.274,
+                0.737,
+                0.29
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.229,
+                0.912,
+                0.27
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner; BCG Institute Fellow\nBoston",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.707,
+                0.359,
+                0.91,
+                0.381
+            ],
+            "angle": 0,
+            "content": "Judith Wallenstein"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.449,
+                0.737,
+                0.466
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.392,
+                0.901,
+                0.445
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner; Global Lead, CEO Advisory\nMunich",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.566,
+                0.436,
+                0.585
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.601,
+                0.953,
+                0.722
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.103,
+                0.247,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.356,
+                0.36,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.376,
+                0.364,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.411,
+                0.433,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.424,
+                0.3,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.436,
+                0.283,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.455,
+                0.274,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.711,
+                0.232,
+                0.908,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.243,
+                0.846,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.256,
+                0.757,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.708,
+                0.361,
+                0.907,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.711,
+                0.395,
+                0.895,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.405,
+                0.886,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.708,
+                0.416,
+                0.768,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.431,
+                0.763,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.569,
+                0.433,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.603,
+                0.949,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.622,
+                0.901,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.643,
+                0.903,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.662,
+                0.912,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.681,
+                0.935,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.702,
+                0.594,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
