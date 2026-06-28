@@ -1,0 +1,241 @@
+{
+  "date_folder": "260629",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 10,
+  "selected_count": 10,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 2,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多国际信源汇编&评论，扫码交流，每日更新~40页，汇总国际层面主流叙事&多种口径的数据，便于观测边际变化。星球汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询等朋友，期待交流",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit87sxGm8393jd_l4NikZFgOeEDjJ_atLP508dHP0DzDm9",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 8,
+      "payload_bytes": 96681,
+      "payload": "wechat_drafts/consulting/260629/draft_payload_01.json",
+      "titles": [
+        "波士顿咨询：CEO的AI红利，不在效率，在判断，先行者每周花8小时亲自“练手”，但真正的杠杆在定制化系统",
+        "波士顿咨询：金融科技重回增长，但赢家的门槛已经变了，增长回归但不再普惠，头部玩家正在拉开差距",
+        "波士顿咨询：美国P&C保险的“好日子”结束了，但赢家还没定，承保能力决定盈利鸿沟，投资收入只是“遮羞布”",
+        "波士顿咨询：95%的公司正在错过AI真正的价值拐点，未来型企业正在拉开不可逆转的差距",
+        "波士顿咨询：游戏行业的下一个增长引擎不是硬件，是平台碰撞，四大趋势正在重塑行业，平台碰撞将开启新增长时代",
+        "麦肯锡：美国250年竞争力未断，但真正考验的是“下一章”能否续写，美国仍是全球最强大的经济体，但领先优势正在被侵蚀",
+        "麦肯锡：HR正站在“被IT吞噬”与“重塑组织”的分叉口，战略人力规划，只有11%的企业在做，但这是AI时代最关键的“护城河”",
+        "麦肯锡：2025年，企业最大的风险不是AI，而是把学习当成福利，学习与工作的边界正在消失，从“抽空去学”到“在工作中成长”"
+      ],
+      "wechat_titles": [
+        "波士顿咨询：CEO的AI红利，不在效率，在判断，先行者每周花8小时亲自“练手”，但真正的杠杆在定制化系统",
+        "波士顿咨询：金融科技重回增长，但赢家的门槛已经变了，增长回归但不再普惠，头部玩家正在拉开差距",
+        "波士顿咨询：美国P&C保险的“好日子”结束了，但赢家还没定，承保能力决定盈利鸿沟，投资收入只是“遮羞布”",
+        "波士顿咨询：95%的公司正在错过AI真正的价值拐点，未来型企业正在拉开不可逆转的差距",
+        "波士顿咨询：游戏行业的下一个增长引擎不是硬件，是平台碰撞，四大趋势正在重塑行业，平台碰撞将开启新增长时代",
+        "麦肯锡：美国250年竞争力未断，但真正考验的是“下一章”能否续写，美国仍是全球最强大的经济体，但领先优势正在被侵蚀",
+        "麦肯锡：HR正站在“被IT吞噬”与“重塑组织”的分叉口，战略人力规划，只有11%的企业在做，但这是AI时代最关键的“护城河”",
+        "麦肯锡：2025年，企业最大的风险不是AI，而是把学习当成福利，学习与工作的边界正在消失，从“抽空去学”到“在工作中成长”"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 8,
+        "expected_article_count": 8,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ³¢å£«é¡¿å¨è¯¢ï¼CEOçAIçº¢å©ï¼ä¸å¨æçï¼å¨å¤æ­ï¼å è¡è æ¯å¨è±8å°æ¶äº²èªâç»æâï¼ä½çæ­£çæ æå¨å®å¶åç³»ç»",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼éèç§æéåå¢é¿ï¼ä½èµ¢å®¶çé¨æ§å·²ç»åäºï¼å¢é¿åå½ä½ä¸åæ®æ ï¼å¤´é¨ç©å®¶æ­£å¨æå¼å·®è·",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼ç¾å½P&Cä¿é©çâå¥½æ¥å­âç»æäºï¼ä½èµ¢å®¶è¿æ²¡å®ï¼æ¿ä¿è½åå³å®çå©é¸¿æ²ï¼æèµæ¶å ¥åªæ¯âé®ç¾å¸â",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼95%çå ¬å¸æ­£å¨éè¿AIçæ­£çä»·å¼æç¹ï¼æªæ¥åä¼ä¸æ­£å¨æå¼ä¸å¯éè½¬çå·®è·",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼æ¸¸æè¡ä¸çä¸ä¸ä¸ªå¢é¿å¼æä¸æ¯ç¡¬ä»¶ï¼æ¯å¹³å°ç¢°æï¼åå¤§è¶å¿æ­£å¨éå¡è¡ä¸ï¼å¹³å°ç¢°æå°å¼å¯æ°å¢é¿æ¶ä»£",
+          "éº¦è¯é¡ï¼ç¾å½250å¹´ç«äºåæªæ­ï¼ä½çæ­£èéªçæ¯âä¸ä¸ç« âè½å¦ç»­åï¼ç¾å½ä»æ¯å ¨çæå¼ºå¤§çç»æµä½ï¼ä½é¢å ä¼å¿æ­£å¨è¢«ä¾µè",
+          "éº¦è¯é¡ï¼HRæ­£ç«å¨âè¢«ITåå¬âä¸âéå¡ç»ç»âçååå£ï¼æç¥äººåè§åï¼åªæ11%çä¼ä¸å¨åï¼ä½è¿æ¯AIæ¶ä»£æå ³é®çâæ¤åæ²³â",
+          "éº¦è¯é¡ï¼2025å¹´ï¼ä¼ä¸æå¤§çé£é©ä¸æ¯AIï¼èæ¯æå­¦ä¹ å½æç¦å©ï¼å­¦ä¹ ä¸å·¥ä½çè¾¹çæ­£å¨æ¶å¤±ï¼ä»âæ½ç©ºå»å­¦âå°âå¨å·¥ä½ä¸­æé¿â"
+        ],
+        "create_time": 1782690710,
+        "update_time": 1782690711
+      }
+    },
+    {
+      "draft_index": 2,
+      "media_id": "avPwUQVH0p7DPpCFFkit86PCP6BdyO-cgSH6lNONK8VH9TIE0Kv4HYL9__LRTNaR",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 2,
+      "payload_bytes": 19887,
+      "payload": "wechat_drafts/consulting/260629/draft_payload_02.json",
+      "titles": [
+        "麦肯锡：88%企业在试AI，但81%未见到利润，技术颠覆，AI试验遍地开花，但81%企业未见利润",
+        "麦肯锡：CEO不下场，AI永远只是成本，流程重构比技术部署更重要，但多数企业仍在“贴标签”"
+      ],
+      "wechat_titles": [
+        "麦肯锡：88%企业在试AI，但81%未见到利润，技术颠覆，AI试验遍地开花，但81%企业未见利润",
+        "麦肯锡：CEO不下场，AI永远只是成本，流程重构比技术部署更重要，但多数企业仍在“贴标签”"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 2,
+        "expected_article_count": 2,
+        "matches_expected_article_count": true,
+        "titles": [
+          "éº¦è¯é¡ï¼88%ä¼ä¸å¨è¯AIï¼ä½81%æªè§å°å©æ¶¦ï¼ææ¯é¢ è¦ï¼AIè¯éªéå°å¼è±ï¼ä½81%ä¼ä¸æªè§å©æ¶¦",
+          "éº¦è¯é¡ï¼CEOä¸ä¸åºï¼AIæ°¸è¿åªæ¯ææ¬ï¼æµç¨éææ¯ææ¯é¨ç½²æ´éè¦ï¼ä½å¤æ°ä¼ä¸ä»å¨âè´´æ ç­¾â"
+        ],
+        "create_time": 1782690716,
+        "update_time": 1782690716
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "波士顿咨询：CEO的AI红利，不在效率，在判断，先行者每周花8小时亲自“练手”，但真正的杠杆在定制化系统",
+      "wechat_title": "波士顿咨询：CEO的AI红利，不在效率，在判断，先行者每周花8小时亲自“练手”，但真正的杠杆在定制化系统",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG AI-for-CEOs-Amplifying-Time-and-Judgment-at-the-Top da5c8f13",
+      "report_dir": "kc_translated_reports/consulting/260629/01-0001-BCG_AI-for-CEOs-Amplifying-Time-and-Judgment-at-the-Top_da5c8f13",
+      "content_chars": 6992,
+      "content_bytes": 10416,
+      "visible_text_chars": 1855,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/consulting/260629/_assets/article_01_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "波士顿咨询：金融科技重回增长，但赢家的门槛已经变了，增长回归但不再普惠，头部玩家正在拉开差距",
+      "wechat_title": "波士顿咨询：金融科技重回增长，但赢家的门槛已经变了，增长回归但不再普惠，头部玩家正在拉开差距",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG From-Recovery-to-Resurgence f3f1cc88",
+      "report_dir": "kc_translated_reports/consulting/260629/02-0002-BCG_From-Recovery-to-Resurgence_f3f1cc88",
+      "content_chars": 8565,
+      "content_bytes": 12247,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/consulting/260629/02-0002-BCG_From-Recovery-to-Resurgence_f3f1cc88/assets/fig_001.jpg"
+    },
+    {
+      "title": "波士顿咨询：美国P&C保险的“好日子”结束了，但赢家还没定，承保能力决定盈利鸿沟，投资收入只是“遮羞布”",
+      "wechat_title": "波士顿咨询：美国P&C保险的“好日子”结束了，但赢家还没定，承保能力决定盈利鸿沟，投资收入只是“遮羞布”",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG The-2026-Insurance-Value-Creators-Report-Softer-Rates-and-Bi 3d6ace83",
+      "report_dir": "kc_translated_reports/consulting/260629/03-0003-BCG_The-2026-Insurance-Value-Creators-Report-Softer-Rates-and-Bi_3d6ace83",
+      "content_chars": 9199,
+      "content_bytes": 12883,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/consulting/260629/03-0003-BCG_The-2026-Insurance-Value-Creators-Report-Softer-Rates-and-Bi_3d6ace83/assets/fig_001.jpg"
+    },
+    {
+      "title": "波士顿咨询：95%的公司正在错过AI真正的价值拐点，未来型企业正在拉开不可逆转的差距",
+      "wechat_title": "波士顿咨询：95%的公司正在错过AI真正的价值拐点，未来型企业正在拉开不可逆转的差距",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG The-Widening-AI-Value-Gap b106fd5f",
+      "report_dir": "kc_translated_reports/consulting/260629/04-0004-BCG_The-Widening-AI-Value-Gap_b106fd5f",
+      "content_chars": 8664,
+      "content_bytes": 11938,
+      "visible_text_chars": 1754,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/consulting/260629/04-0004-BCG_The-Widening-AI-Value-Gap_b106fd5f/assets/fig_001.jpg"
+    },
+    {
+      "title": "波士顿咨询：游戏行业的下一个增长引擎不是硬件，是平台碰撞，四大趋势正在重塑行业，平台碰撞将开启新增长时代",
+      "wechat_title": "波士顿咨询：游戏行业的下一个增长引擎不是硬件，是平台碰撞，四大趋势正在重塑行业，平台碰撞将开启新增长时代",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG Video-Gaming-Report-2026-How-Platforms-Are-Colliding-and-Why 7d720238",
+      "report_dir": "kc_translated_reports/consulting/260629/05-0005-BCG_Video-Gaming-Report-2026-How-Platforms-Are-Colliding-and-Why_7d720238",
+      "content_chars": 8328,
+      "content_bytes": 11876,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/consulting/260629/05-0005-BCG_Video-Gaming-Report-2026-How-Platforms-Are-Colliding-and-Why_7d720238/assets/fig_001.jpg"
+    },
+    {
+      "title": "麦肯锡：美国250年竞争力未断，但真正考验的是“下一章”能否续写，美国仍是全球最强大的经济体，但领先优势正在被侵蚀",
+      "wechat_title": "麦肯锡：美国250年竞争力未断，但真正考验的是“下一章”能否续写，美国仍是全球最强大的经济体，但领先优势正在被侵蚀",
+      "institution_name": "麦肯锡",
+      "source_report_name": "McKinsey PDF-At-250-sustaining-America-s-competitive-edge---McKinsey- 1f47b079",
+      "report_dir": "kc_translated_reports/consulting/260629/06-0006-McKinsey_PDF-At-250-sustaining-America-s-competitive-edge---McKinsey-_1f47b",
+      "content_chars": 6413,
+      "content_bytes": 9583,
+      "visible_text_chars": 1572,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/consulting/260629/06-0006-McKinsey_PDF-At-250-sustaining-America-s-competitive-edge---McKinsey-_1f47b/assets/fig_001.jpg"
+    },
+    {
+      "title": "麦肯锡：HR正站在“被IT吞噬”与“重塑组织”的分叉口，战略人力规划，只有11%的企业在做，但这是AI时代最关键的“护城河”",
+      "wechat_title": "麦肯锡：HR正站在“被IT吞噬”与“重塑组织”的分叉口，战略人力规划，只有11%的企业在做，但这是AI时代最关键的“护城河”",
+      "institution_name": "麦肯锡",
+      "source_report_name": "McKinsey PDF-People-HR---McKinsey-Company aacb6b8e",
+      "report_dir": "kc_translated_reports/consulting/260629/07-0007-McKinsey_PDF-People-HR---McKinsey-Company_aacb6b8e",
+      "content_chars": 8212,
+      "content_bytes": 11980,
+      "visible_text_chars": 1987,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/consulting/260629/07-0007-McKinsey_PDF-People-HR---McKinsey-Company_aacb6b8e/assets/fig_001.jpg"
+    },
+    {
+      "title": "麦肯锡：2025年，企业最大的风险不是AI，而是把学习当成福利，学习与工作的边界正在消失，从“抽空去学”到“在工作中成长”",
+      "wechat_title": "麦肯锡：2025年，企业最大的风险不是AI，而是把学习当成福利，学习与工作的边界正在消失，从“抽空去学”到“在工作中成长”",
+      "institution_name": "麦肯锡",
+      "source_report_name": "McKinsey PDF-Reimagined-Development-in-the-Future-of-Work bb64b08e",
+      "report_dir": "kc_translated_reports/consulting/260629/08-0008-McKinsey_PDF-Reimagined-Development-in-the-Future-of-Work_bb64b08e",
+      "content_chars": 7953,
+      "content_bytes": 11507,
+      "visible_text_chars": 1779,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/consulting/260629/08-0008-McKinsey_PDF-Reimagined-Development-in-the-Future-of-Work_bb64b08e/assets/fig_001.jpg"
+    },
+    {
+      "title": "麦肯锡：88%企业在试AI，但81%未见到利润，技术颠覆，AI试验遍地开花，但81%企业未见利润",
+      "wechat_title": "麦肯锡：88%企业在试AI，但81%未见到利润，技术颠覆，AI试验遍地开花，但81%企业未见利润",
+      "institution_name": "麦肯锡",
+      "source_report_name": "McKinsey PDF-The-State-of-Organizations---McKinsey-Company da7ae141",
+      "report_dir": "kc_translated_reports/consulting/260629/09-0009-McKinsey_PDF-The-State-of-Organizations---McKinsey-Company_da7ae141",
+      "content_chars": 6585,
+      "content_bytes": 9213,
+      "visible_text_chars": 1345,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/consulting/260629/09-0009-McKinsey_PDF-The-State-of-Organizations---McKinsey-Company_da7ae141/assets/fig_001.jpg"
+    },
+    {
+      "title": "麦肯锡：CEO不下场，AI永远只是成本，流程重构比技术部署更重要，但多数企业仍在“贴标签”",
+      "wechat_title": "麦肯锡：CEO不下场，AI永远只是成本，流程重构比技术部署更重要，但多数企业仍在“贴标签”",
+      "institution_name": "麦肯锡",
+      "source_report_name": "McKinsey PDF-The-state-of-AI---McKinsey-Company 5b97d469",
+      "report_dir": "kc_translated_reports/consulting/260629/10-0010-McKinsey_PDF-The-state-of-AI---McKinsey-Company_5b97d469",
+      "content_chars": 7007,
+      "content_bytes": 9705,
+      "visible_text_chars": 1443,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/consulting/260629/10-0010-McKinsey_PDF-The-state-of-AI---McKinsey-Company_5b97d469/assets/fig_001.jpg"
+    }
+  ]
+}
