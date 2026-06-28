@@ -1,0 +1,990 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ARTIFICIAL INTELLIGENCE"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                33,
+                232,
+                49
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                49,
+                141,
+                74
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Era of Token-Based Competition Is Here. Is Your AI Strategy Ready?"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                79,
+                794,
+                281
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By Matthew Kropp, Julie Bedard, Clark O'Niell, Sylvain Duranton, and Megan Hsu"
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                309,
+                718,
+                328
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ARTICLE JUNE 23, 2026 8 MIN READ"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                353,
+                358,
+                369
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We have entered a new era of competition. When intelligence was the sole domain of humans, firms with a monopoly on scarce talent could sustain a clear advantage. But now, as AI models achieve PhD-level knowledge on nearly every topic, intelligence is becoming more scalable and accessible. When intelligence is abundant, advantage comes not from having it but from applying it to business problems more productively than competitors can do. Because that intelligence is deployed through the consumption of tokens—the language and currency of AI models—we call this “token-based competition.” The name is deliberate: it echoes time-based competition, the source of advantage BCG first introduced in 1988, when speed became a new basis for winning."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                430,
+                954,
+                590
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The advantage comes from putting AI at the center of how work gets done, both through automation and by augmenting the capabilities of human employees. Tokens multiply what knowledge workers can produce, much as the assembly line did for manufacturing. The firms pulling ahead are redesigning their processes around AI, with people applying expertise to direct and improve the system. These companies operate at a pace and scale that human-only organizations cannot match. Moreover, if the winners of token-based competition get it right, they’ll have created workflows that will improve organically over time as AI gets better, faster, and cheaper."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                602,
+                951,
+                762
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The reward for this could be significant. We analyzed token consumption at 107 public technology companies with more than $500 million in trailing 12-month revenue. In software engineering, roles and ways of working are already being reshaped to optimize human and AI skills. Token consumption can be measured consistently across companies through AI coding environments such as Cursor, making software engineering one of the first functions where token-based competition is observable in real usage data. Among our sample, the pattern is consistent with productive token use beginning to translate into advantage: companies in the highest token-use quintile had 16.5% median year-over-year revenue growth, compared with 5.1% in the lowest-usage group. (See the exhibit.)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                776,
+                954,
+                916
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                40,
+                67,
+                954,
+                107
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We urge leaders to take four critical actions today to capitalize on this advantage in the era of the token-based competition."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                192,
+                949,
+                231
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Manage tokens like capital investment, tracking return on intelligence (ROInt) for all AI projects. When a firm has capital to deploy, it does not only ask how to minimize spending—it also asks where that capital can generate the highest return. Similarly, companies should direct token spending toward the highest-return opportunities across the business and where returns on that token spending will grow organically over time."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                247,
+                932,
+                347
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The ability of AI models to create competitive advantage is rooted in two properties. First, AI-enabled processes get smarter, faster, and cheaper as the underlying models improve and as systems learn from every interaction. This creates a flywheel for continuous growth. Second, because AI-powered systems can scale capacity up or down, companies can better align capacity to demand."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                361,
+                949,
+                458
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Capturing the value that these properties enable requires setting the right targets for tracking the value of deployed tokens. Companies that only measure labor savings will systematically favor narrower uses of AI—and leave significant value on the table. Conversely, companies that focus solely on maximizing AI token consumption (so-called “tokenmaxxing”) create perverse incentives for employees to game token metrics."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                474,
+                952,
+                574
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We suggest adopting ROInt (return on intelligence), a broader return metric that divides the value of output by the combined costs of labor and tokens. ROInt lets companies compare very different AI applications on the same basis: what value is the company getting from the combined use of people and tokens?"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                588,
+                954,
+                668
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For example, in cases where AI is a substitute for traditional human labor, such as customer service automation, the value comes from delivering the same work at lower cost. ROInt captures efficiency. In augmentation cases, such as software engineering or R&D, ROInt measures the value that comes from greater output, faster innovation, or new revenue from the same or even more labor."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                681,
+                956,
+                780
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Move accountability for token spending to AI centers of excellence (CoEs) or business units for strategic planning. Leaders are grappling with big questions about how to manage AI spending. CFOs are asking where the funding for token consumption should come from. CTOs are worried about token “overages” causing significant budget disruptions. AI CoE leaders are tasked with budgeting for next year without insight on how token use or costs will evolve. Rather than address these questions piecemeal, we suggest moving AI accountability out of IT, where it is often viewed as a cost center, and into strategic planning, the AI CoE, or finance, where it can be integrated into the core of how work gets done."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                795,
+                952,
+                915
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                40,
+                67,
+                954,
+                105
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The goal is to capitalize on the continuous growth flywheel that is triggered when AI is deployed strategically. As employees redesign entire workflows and build new tools, agents, and review mechanisms, the organization learns how to apply these advantages more effectively across the business. In token-based competition, the advantage will go to the firms that innovate and build the highest value systems that also learn and improve over time, aiming for the bets that have the potential to drive massive growth."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                121,
+                954,
+                241
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For example, a UK-based consumer goods company, Reckitt, has applied AI selectively across marketing, product development, and R&D. Leaders use AI to change ways of working in each of these functions, augmenting expert decision making and lowering costs of innovation through accelerated R&D. They found that by strategically applying AI to high-value processes, the company could accelerate its path from insight to earned revenue—at a lower cost. In fact, Reckitt has reported up to 60% faster content development, faster research cycles with fewer prototypes, and higher-quality marketing and innovation outputs."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                255,
+                932,
+                394
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Treat tokens as talent enhancers, not just as labor substitutes. In most workflows that integrate AI, humans start, guide, and finish the work. They decide which problems are worth solving, shape the prompt or workflow, evaluate the output, apply judgment, and take accountability for the result (it's why the ROInt metric includes both human intelligence cost and token cost). This argument flips the conventional wisdom on headcount. Cutting people does not just reduce cost. It may also reduce the organization's capacity to convert AI output into trusted, deployable value."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                407,
+                947,
+                527
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Companies that over index on substitution could end up backtracking when they realize that the strategy has left them with a dearth of critical human skills. For example, Gartner predicts that half of companies that cut customer service staff due to AI will rehire by 2027. In its survey of 321 customer service and support leaders, only 20% have legitimately reduced their staffing due to AI. This is a reminder that AI capability is jagged: it can automate some tasks, while many roles still rely on human context, relationships, and physical presence, which are all harder to substitute."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                541,
+                949,
+                659
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "On the other hand, at connectivity cloud company Cloudflare, CEO Matthew Prince recently shared the organization's approach to the optimization problem in a viral Wall Street Journal op-ed. He argued that AI would reduce the need for “measuring” roles, including middle management and operations, while increasing the value of employees focused on building products and engaging with customers. While Cloudfare reduced headcount in measuring roles, it accelerated hiring in engineering and customer-facing functions."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                675,
+                951,
+                794
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Organizational change is your enabler. Be direct and honest. In our previous study, we found that 50% to 55% of jobs will be reshaped by AI, compared with 10% to 15% of jobs that are likely to be displaced by AI. This means that token-based competition will be won by companies that reject the false choice between investing in AI and investing in people. As jobs evolve, leaders can’t overlook the role of culture, behavior change, and deliberate work design to help employees know how to use AI in core workflows. This requires treating change management as part of the strategy rather than as an afterthought."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                807,
+                954,
+                906
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                40,
+                67,
+                952,
+                107
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We know that fewer than 10% of employees use AI in an agentic way, delegating multistep work to AI agents that can plan and execute on their behalf rather than just prompting for answers or help with discrete tasks. In our experience, adoption often stalls for human reasons: employees may not know where AI can create value, may fall back on familiar routines instead of redesigning the work, or may resist using AI where they feel it threatens their core expertise or identity. Leaders need to address these barriers directly and honestly. Otherwise, token consumption may rise without building the behaviors that turn tokens into value."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                121,
+                952,
+                261
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For example, when JPMorgan Chase launched its Coach AI platform, it rolled out the tool in phases, proving the value of the technology and allowing advisors to learn in the context of their day-to-day work. As asset and wealth management CEO Mary Callahan Erdoes put it during the bank’s 2026 company update, the goal is to “eliminate the no-joy work in our employees’ daily lives, so that they can get on to higher-level added value.” Advisors now use AI to research content and find client information up to 95% faster and, as a result, spend more time engaging in meaningful conversations with clients."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                274,
+                952,
+                413
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The message for company leaders is clear: start building the organizational capability to apply intelligence productively now. That capability comes from activation: leaders reinventing work with AI as part of core workflows, managers reinforcing new behaviors, teams building new habits, and employees learning how to direct, review, and improve AI output. Adoption is the entry point, but the deeper goal is building an organization that knows how to turn tokens into value."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                464,
+                949,
+                563
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The BCG Institute is Boston Consulting Group's strategy think tank, dedicated to exploring and developing valuable new insights from business, technology, and science by embracing the powerful technology of ideas. The Institute engages leaders in provocative discussion and experimentation to expand the boundaries of business theory and practice and to translate innovative ideas from within and beyond business. For more ideas and inspiration from the Institute, please visit our website and follow us on LinkedIn and X (formerly Twitter)."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                684,
+                720,
+                845
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                971,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Authors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                42,
+                68,
+                245,
+                105
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/ba59af81578a378982398c28ec953be8a90f47be00cc6cbb82e98ae004931217.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                69,
+                149,
+                218,
+                258
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2c0689e6a25c0102f48f7a125802e1439c334dffe98c77e63ad7a41d5d227782.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                70,
+                317,
+                218,
+                422
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3e73bb5345f57c9097d0c4917bad2654ce48895b30d36ed9b9118792f864ae85.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Matthew Kropp"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Senior Partner; BCG Henderson Institute Fellow\nSan Francisco - Bay Area"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Partner\nSan Francisco - Bay Area"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                470,
+                213,
+                574
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d68d5d568b2befb3e8c8244c69605d11303e8b158e223b17be5a8fdb50827bf3.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                245,
+                244,
+                272,
+                260
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Clark O'Niell"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                244,
+                323,
+                385,
+                344
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d73893567ddf8afeb6df8d67e6e586561518c0b8d29668ab66daa924e832c5c2.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Megan Hsu"
+                    }
+                ]
+            },
+            "bbox": [
+                245,
+                391,
+                272,
+                406
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/ed1addf2a5c52337e1837b65df55c4a7f8eabf5e1cefe33a049c502d81938f65.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                245,
+                544,
+                272,
+                558
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Project Leader\nSan Diego"
+                    }
+                ]
+            },
+            "bbox": [
+                242,
+                508,
+                351,
+                539
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c4ae4757ec3615d52c4b56d4c110a41bc7669c1b1186116db52196171e37cf7d.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                531,
+                149,
+                681,
+                258
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/8712900090383959ef5f5f783c49ff6ed21cf5d4b324386363a3273291514a86.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                533,
+                316,
+                681,
+                420
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Julie Bedard"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                705,
+                159,
+                841,
+                181
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d183a80add5d3de456aaada69cca24d0ad2968711ec59597828746601b8f7317.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                708,
+                237,
+                735,
+                254
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Partner; BCG Institute Fellow\nBoston"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                193,
+                910,
+                233
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Sylvain Duranton"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                707,
+                318,
+                900,
+                341
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/997c358a8508f16cbe0c646c87176696973a0c0afbed80de87d6cf2c4287a26a.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                708,
+                397,
+                735,
+                412
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Senior Partner; Global Leader, BCG X Paris"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                351,
+                915,
+                391
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ABOUT BOSTON CONSULTING GROUP"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                42,
+                662,
+                434,
+                681
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                697,
+                952,
+                816
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ]
+]

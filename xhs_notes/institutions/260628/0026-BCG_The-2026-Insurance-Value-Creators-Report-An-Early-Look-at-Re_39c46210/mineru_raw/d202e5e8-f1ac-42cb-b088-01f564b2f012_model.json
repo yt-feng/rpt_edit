@@ -1,0 +1,1293 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.047,
+                0.142,
+                0.076
+            ],
+            "angle": 0,
+            "content": "BCG"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.001,
+                1.0,
+                0.395
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.052,
+                0.432,
+                0.212,
+                0.449
+            ],
+            "angle": 0,
+            "content": "INSURANCE INDUSTRY",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.479,
+                0.581,
+                0.575
+            ],
+            "angle": 0,
+            "content": "An Early Look at\nReturns"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.608,
+                0.503,
+                0.629
+            ],
+            "angle": 0,
+            "content": "The 2026 Insurance Value Creators Report",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.657,
+                0.691,
+                0.676
+            ],
+            "angle": 0,
+            "content": "By Nathalia Bellizia, Sid Sankaran, Jürgen Bohrmann, and Sheila Seetharaman",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.701,
+                0.249,
+                0.718
+            ],
+            "angle": 0,
+            "content": "REPORT APRIL 15, 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.779,
+                0.945,
+                0.9
+            ],
+            "angle": 0,
+            "content": "Starting this year, BCG is taking a new approach to its annual examination of value creation in the global insurance industry with the goal of providing readers with more timely and useful insights. This first installment of the 2026 Insurance Value Creators Report presents an early look at market trends and developments based on available—but not yet complete for the full year—data. Subsequent installments will provide a more detailed segment- and region-specific analysis as well as offer deep dives into the property and casualty segment in the US, industry performance in Asia-Pacific, and trends in reinsurance.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.437,
+                0.208,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.475,
+                0.587,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.531,
+                0.296,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.609,
+                0.5,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.661,
+                0.688,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.703,
+                0.246,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.782,
+                0.907,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.802,
+                0.86,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.822,
+                0.872,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.842,
+                0.941,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.861,
+                0.935,
+                0.876
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.881,
+                0.796,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.939,
+                0.147
+            ],
+            "angle": 0,
+            "content": "After half a decade or more of steady, if unspectacular, shareholder returns in the insurance sector, change appears to be afoot. A 15% five-year annual total shareholder return (TSR) for the industry exceeded insurers' cost of equity for the first time since 2017. Two broad factors are at work: the pandemic years are receding, and current results have improved.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.161,
+                0.951,
+                0.261
+            ],
+            "angle": 0,
+            "content": "At the same time, we appear to be in the early stages of a shift in investor preference toward life and health (L&H) and multiline insurers over property and casualty (P&C) and reinsurance companies. Investors are also moving their geographic focus, seeking quality in Europe and Asia-Pacific as macro and equity market uncertainty in the US pushes them to look for returns in other markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.383,
+                0.543,
+                0.423
+            ],
+            "angle": 0,
+            "content": "Initial Industry Data"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.45,
+                0.952,
+                0.57
+            ],
+            "angle": 0,
+            "content": "Insurance is a local and segment-specific business, and as always, there were big variations in performance. Among insurance segments, P&C showed the strongest five-year annual TSR, followed by reinsurance, likely driven by favorable pricing conditions across many lines of business throughout the period. That said, P&C rate momentum has shown signs of moderating as prices soften in some areas (such as commercial property). TSRs for 2025 indicate that this is likely to temper return on tangible equity and momentum going forward.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.582,
+                0.909,
+                0.664
+            ],
+            "angle": 0,
+            "content": "While more capital-intensive L&H and multiline insurers have lagged, this may be shifting, as these segments outperformed in 2025, buoyed by investment income tailwinds. Elevated net investment income in the past year and supportive product dynamics have strengthened earnings and contributed to improved TSRs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.676,
+                0.926,
+                0.756
+            ],
+            "angle": 0,
+            "content": "On a five-year basis, Europe was the top-performing region, with annual TSR of 20.3%, up from 11.6% last year. Both Asia-Pacific and Europe outperformed on a one-year basis at 35.3% and 39.8%, respectively. This strong performance can be largely attributed to a “flight to quality” as investors looked for stable returns outside of volatile US markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.827,
+                0.454,
+                0.866
+            ],
+            "angle": 0,
+            "content": "Trends to Watch"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.069,
+                0.891,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.09,
+                0.934,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.921,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.129,
+                0.736,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.163,
+                0.936,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.887,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.939,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.224,
+                0.945,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.244,
+                0.129,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.382,
+                0.542,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.451,
+                0.913,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.472,
+                0.886,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.49,
+                0.881,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.51,
+                0.949,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.531,
+                0.907,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.551,
+                0.717,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.584,
+                0.902,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.605,
+                0.906,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.624,
+                0.871,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.644,
+                0.453,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.679,
+                0.91,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.699,
+                0.904,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.719,
+                0.923,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.737,
+                0.659,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.827,
+                0.453,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.954,
+                0.147
+            ],
+            "angle": 0,
+            "content": "The L&H and P&C segments are expected to undergo big changes in the coming years as technologies advance and new risks emerge. Expanding adoption of AI, including the use of AI agents, will have broad ramifications for everything from major functions such as underwriting and claims to workforce planning and talent acquisition and development.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.161,
+                0.952,
+                0.261
+            ],
+            "angle": 0,
+            "content": "In P&C, softening market dynamics, especially in US personal auto, and increased competition are immediate concerns for management teams. Longer-term concerns include persistent structural risks in casualty lines and changes in the risk landscape from shifting trade flows. M&A is expected to become increasingly important over time as companies seek to improve returns in a softer market environment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.275,
+                0.945,
+                0.374
+            ],
+            "angle": 0,
+            "content": "Aging demographics and evolving customer preferences are driving increased demand in L&H for products that feature guaranteed protections and some hybrid-style options that offer additional living benefits (such as for critical illness). Longer-term, increased investment from private capital, more omnichannel distribution, and demographic shifts are expected to drive increased demand for life products.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.073,
+                0.428,
+                0.136,
+                0.447
+            ],
+            "angle": 0,
+            "content": "BCG",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.073,
+                0.502,
+                0.275,
+                0.554
+            ],
+            "angle": 0,
+            "content": "An Early Look\nat Returns",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.073,
+                0.564,
+                0.271,
+                0.593
+            ],
+            "angle": 0,
+            "content": "The 2026 Insurance Value Creators Report",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.074,
+                0.646,
+                0.24,
+                0.658
+            ],
+            "angle": 0,
+            "content": "GLOBAL EDITION | APRIL 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.38,
+                0.408,
+                0.722,
+                0.676
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.866,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.091,
+                0.909,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.95,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.129,
+                0.698,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.162,
+                0.921,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.183,
+                0.88,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.204,
+                0.949,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.224,
+                0.947,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.242,
+                0.32,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.277,
+                0.943,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.297,
+                0.941,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.317,
+                0.881,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.337,
+                0.929,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.356,
+                0.278,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.427,
+                0.137,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.5,
+                0.275,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.53,
+                0.228,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.563,
+                0.27,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.578,
+                0.199,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.646,
+                0.239,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.708,
+                0.397,
+                0.815,
+                0.426
+            ],
+            "angle": 0,
+            "content": "Project Leader\nNew York"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.105,
+                0.247,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.071,
+                0.19,
+                0.22,
+                0.294
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.347,
+                0.217,
+                0.448
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.246,
+                0.196,
+                0.425,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Nathalia Bellizia"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.229,
+                0.446,
+                0.257
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nNew York"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.263,
+                0.275,
+                0.28
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.187,
+                0.683,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.195,
+                0.857,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Sid Sankaran"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.708,
+                0.23,
+                0.789,
+                0.26
+            ],
+            "angle": 0,
+            "content": "Partner\nNew Jersey"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.263,
+                0.737,
+                0.28
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.243,
+                0.347,
+                0.443,
+                0.371
+            ],
+            "angle": 0,
+            "content": "Jürgen Bohrmann"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.38,
+                0.437,
+                0.422
+            ],
+            "angle": 0,
+            "content": "Global Knowledge Business\nSenior Director – Insurance\nMunich"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.427,
+                0.275,
+                0.444
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.34,
+                0.683,
+                0.446
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.343,
+                0.859,
+                0.387
+            ],
+            "angle": 0,
+            "content": "Sheila\nSeetharaman"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.431,
+                0.737,
+                0.448
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.543,
+                0.436,
+                0.562
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.578,
+                0.952,
+                0.699
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.103,
+                0.247,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.545,
+                0.432,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.58,
+                0.95,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.6,
+                0.9,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.62,
+                0.903,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.639,
+                0.913,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.659,
+                0.933,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.681,
+                0.593,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

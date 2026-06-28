@@ -1,0 +1,5308 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.001,
+                1.0,
+                0.396
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.432,
+                0.212,
+                0.449
+            ],
+            "angle": 0,
+            "content": "INSURANCE INDUSTRY",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.478,
+                0.776,
+                0.626
+            ],
+            "angle": 0,
+            "content": "Softer Rates and Bigger\nRisks Are Reshaping\nthe US P&C Market"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.657,
+                0.503,
+                0.679
+            ],
+            "angle": 0,
+            "content": "The 2026 Insurance Value Creators Report",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.707,
+                0.489,
+                0.726
+            ],
+            "angle": 0,
+            "content": "By Nathalia Bellizia, Nadine Moore, and Paul Nelson",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.751,
+                0.368,
+                0.768
+            ],
+            "angle": 0,
+            "content": "ARTICLE JUNE 25, 2026 15 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.829,
+                0.952,
+                0.93
+            ],
+            "angle": 0,
+            "content": "After several years of strong performance on the heels of a prolonged hard market, US property and casualty (P&C) insurers need to navigate a market shift. Premium rates are softening across multiple lines, particularly personal auto and commercial property. Casualty lines face their own challenges. The cost of losses, driven by such factors as social inflation, severe convective storms (SCSs), and elevated claims severity, remains high. The result is a more complex operating",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.437,
+                0.207,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.475,
+                0.779,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.525,
+                0.692,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.576,
+                0.664,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.658,
+                0.5,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.709,
+                0.486,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.754,
+                0.364,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.832,
+                0.933,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.851,
+                0.937,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.872,
+                0.94,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.891,
+                0.946,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.911,
+                0.878,
+                0.926
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.946,
+                0.108
+            ],
+            "angle": 0,
+            "content": "environment in which the gap between top- and bottom-quartile performers is widening, as it has during past market realignments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.122,
+                0.955,
+                0.222
+            ],
+            "angle": 0,
+            "content": "There is one constant: profitable growth remains the clearest differentiator of long-term total shareholder return (TSR), although the recipe for achieving this growth is evolving. The most resilient performers combine disciplined underwriting fundamentals with sophisticated data and analytics capabilities and an aggressive approach to integrating AI—while keeping a close eye on the emerging structural risks reshaping their portfolios.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.236,
+                0.561,
+                0.256
+            ],
+            "angle": 0,
+            "content": "Four themes define the outlook for the US P&C market:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.286,
+                0.927,
+                0.345
+            ],
+            "angle": 0,
+            "content": "- Pricing momentum has moderated. Carriers that have relied on rate increases as a primary means of improving underwriting results must now do more with data, segmentation, and expense discipline.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.36,
+                0.913,
+                0.419
+            ],
+            "angle": 0,
+            "content": "- Underwriting excellence is non-negotiable. Top-quartile performers continue to generate significantly higher return on tangible equity (RoTE), primarily through maintaining superior loss ratios.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.434,
+                0.935,
+                0.495
+            ],
+            "angle": 0,
+            "content": "- Structural risks are deepening. Long-tail casualty, secondary peril-driven property losses, and evolving litigation dynamics represent rising headwinds that require preemptive portfolio management rather than reactive repricing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.508,
+                0.936,
+                0.569
+            ],
+            "angle": 0,
+            "content": "- AI is moving from experiment to advantage. Leading carriers are deploying AI across underwriting, claims, and pricing workflows at scale, capturing operational efficiencies as well as more detailed risk insights that translate into measurable competitive advantage.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.639,
+                0.768,
+                0.719
+            ],
+            "angle": 0,
+            "content": "TSR Performance: Strong but Moderating"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.745,
+                0.953,
+                0.864
+            ],
+            "angle": 0,
+            "content": "US P&C insurers delivered five-year average annual TSR of approximately 18% for the period from 2021 through 2025, outperforming the global insurance average of 15% as well as that of most other sectors. One-year data for 2025, however, shows deceleration in the TSRs of US-based insurers relative to their European and Asia-Pacific peers, reflecting the impact of softening pricing conditions and elevated weather-related losses, even in the absence of major hurricane events.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.878,
+                0.946,
+                0.92
+            ],
+            "angle": 0,
+            "content": "The primary engine of value creation over the 2021–2025 period remains growth in tangible book value (TBV), the result of strong underwriting income. (See Exhibit 1.) Cash flow contribution",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.071,
+                0.941,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.358,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.124,
+                0.907,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.145,
+                0.891,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.165,
+                0.939,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.95,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.204,
+                0.557,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.238,
+                0.557,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.286,
+                0.924,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.307,
+                0.889,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.328,
+                0.248,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.361,
+                0.897,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.381,
+                0.907,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.401,
+                0.171,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.435,
+                0.932,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.456,
+                0.891,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.475,
+                0.474,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.51,
+                0.861,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.531,
+                0.932,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.549,
+                0.852,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.634,
+                0.77,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.676,
+                0.337,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.746,
+                0.95,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.767,
+                0.915,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.787,
+                0.889,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.807,
+                0.891,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.826,
+                0.923,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.845,
+                0.117,
+                0.863
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.881,
+                0.943,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.9,
+                0.897,
+                0.917
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.913,
+                0.108
+            ],
+            "angle": 0,
+            "content": "(dividends and buybacks) remains the second major lever, while multiple expansion has been more muted as the market prices in a softer cycle ahead.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.156,
+                0.726,
+                0.176
+            ],
+            "angle": 0,
+            "content": "For US P&C, Profitable Growth Remains the Biggest Contributor to TSR",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.186,
+                0.382,
+                0.201
+            ],
+            "angle": 0,
+            "content": "CONTRIBUTION TO AVERAGE ANNUAL TSR: 2021–2025 (PP) \\( ^{1} \\)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.043,
+                0.196,
+                0.73,
+                0.365
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.379,
+                0.338,
+                0.39
+            ],
+            "angle": 0,
+            "content": "Sources: S&P Capital IQ; BCG ValueScience Center; BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.388,
+                0.727,
+                0.414
+            ],
+            "angle": 0,
+            "content": "Note: The sample includes 24 companies for which the US represents the lion's share of business, although a few are headquartered or domiciled elsewhere. TSRs are weighted by market cap as of January 1, 2021. P&C = property and casualty; PP = percentage point; P/TBV = price to TBV; TBV = tangible book value; TSR = total shareholder return."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.413,
+                0.667,
+                0.433
+            ],
+            "angle": 0,
+            "content": "\\( ^{3} \\) TSR was measured from January 1, 2021, through December 31, 2025. Fundamentals represent the last 12 months reported as of those dates. \\( ^{2} \\) Includes dividend contribution and share-count change."
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.576,
+                0.775,
+                0.657
+            ],
+            "angle": 0,
+            "content": "Underwriting Determines the\nProfitability Divide"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.684,
+                0.946,
+                0.764
+            ],
+            "angle": 0,
+            "content": "Across every five-year period BCG has examined, underwriting income separates leaders from laggards. From 2021 through 2025, top-quartile P&C companies generated an estimated underwriting RoTE contribution of approximately 11 percentage points, while the bottom-quartile reported negative underwriting contributions. (See Exhibit 2.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.069,
+                0.91,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.088,
+                0.573,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.159,
+                0.722,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.574,
+                0.776,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.616,
+                0.513,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.687,
+                0.909,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.706,
+                0.859,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.727,
+                0.941,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.745,
+                0.61,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.042,
+                0.522,
+                0.691,
+                0.542
+            ],
+            "angle": 0,
+            "content": "TSR Results for the First and Second Quartiles of US P&C Insurers"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.128,
+                0.121,
+                0.14
+            ],
+            "angle": 0,
+            "content": "Top quartile"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.065,
+                0.11,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.081,
+                0.72,
+                0.102
+            ],
+            "angle": 0,
+            "content": "Underwriting Results Drove Performance of Top-Quartile Companies",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.111,
+                0.422,
+                0.126
+            ],
+            "angle": 0,
+            "content": "CONTRIBUTION TO RETURN ON TANGIBLE EQUITY, 2021–2025 (PP)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.044,
+                0.112,
+                0.729,
+                0.3
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.307,
+                0.338,
+                0.319
+            ],
+            "angle": 0,
+            "content": "Sources: S&P Capital IQ; BCG ValueScience Center; BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.316,
+                0.73,
+                0.337
+            ],
+            "angle": 0,
+            "content": "Note: PP = percentage points; RoTE = return on tangible equity. RoTE is calculated as pretax operating income gross of interest expenses, as a percentage of year-end tangible book value of equity net of preferred stock. Quartiles are based on TSR performance."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.374,
+                0.954,
+                0.475
+            ],
+            "angle": 0,
+            "content": "Elevated net investment income in 2024–2025 partially masked the underwriting deterioration at weaker carriers. As interest rates normalize and investment income falls, underwriting quality will remain the primary distinguishing factor for profitability. Companies that invested in pricing sophistication and risk segmentation during the hard market are better positioned to defend their margins in the softening environment ahead. (See Exhibit 3.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.505,
+                0.11,
+                0.52
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 3"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.046,
+                0.552,
+                0.729,
+                0.799
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.818,
+                0.318,
+                0.83
+            ],
+            "angle": 0,
+            "content": "Sources: S&P Capital IQ; Refinitiv; BCG ValueScience Center."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.828,
+                0.719,
+                0.856
+            ],
+            "angle": 0,
+            "content": "Note: P&C = property and casualty; PP = percentage point; P/TBV = price to TBV; RoTE = return on tangible equity; TBV = tangible book value minus other comprehensive income; TSR = total shareholder return. Because of rounding, some figures may not sum to totals.\n\n \\( ^{3} \\) From January 1, 2026, to May 31, 2026; annualized TSR."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.068,
+                0.107,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.083,
+                0.716,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.376,
+                0.949,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.396,
+                0.95,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.415,
+                0.894,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.435,
+                0.951,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.456,
+                0.605,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.508,
+                0.108,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.068,
+                0.837,
+                0.11
+            ],
+            "angle": 0,
+            "content": "Diverging Subsegment Fortunes"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.135,
+                0.953,
+                0.255
+            ],
+            "angle": 0,
+            "content": "The subsegments of US P&C performed similarly from 2021 through 2025, with TSRs of 17% and 18% for personal and commercial lines, respectively. Behind these figures, however, are signs of diverging markets. (See Exhibit 4.) Commercial lines benefited from a prolonged hard market, while personal lines faced severe profitability challenges in 2022–2023 before recovering sharply in 2024 as rate adequacy improved. Progressive boosted the 2021–2025 personal lines by 4 points to 17%, but the overall results were still 4 points lower than the 2020–2024 TSR of 21%.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.286,
+                0.111,
+                0.301
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 4"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.304,
+                0.669,
+                0.324
+            ],
+            "angle": 0,
+            "content": "Performance Across US P&C Subsegments Is Starting to Diverge",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.333,
+                0.383,
+                0.348
+            ],
+            "angle": 0,
+            "content": "CONTRIBUTION TO AVERAGE ANNUAL TSR: 2021–2025 (PP) \\( ^{1} \\)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.049,
+                0.35,
+                0.725,
+                0.529
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.535,
+                0.338,
+                0.546
+            ],
+            "angle": 0,
+            "content": "Sources: S&P Capital IQ; BCG ValueScience Center; BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.543,
+                0.712,
+                0.561
+            ],
+            "angle": 0,
+            "content": "Note: TSRs are weighted by market cap as of January 1, 2021. P&C = property and casualty; PP = percentage point; P/TBV = price to TBV; TBV = tangible book value; TSR = total shareholder return."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.56,
+                0.667,
+                0.573
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\) TSR was measured from January 1, 2021, through December 31, 2025. Fundamentals represent the last 12 months reported as of those dates."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.609,
+                0.939,
+                0.67
+            ],
+            "angle": 0,
+            "content": "Personal lines also showed the widest spread between leaders and laggards, with one outlier significantly expanding the gap between top- and bottom-quartile performers. (See Exhibit 5.) In contrast, specialty lines have reduced the spread compared with last year.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.068,
+                0.837,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.136,
+                0.929,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.158,
+                0.929,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.177,
+                0.912,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.197,
+                0.947,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.216,
+                0.894,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.235,
+                0.916,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.289,
+                0.108,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.304,
+                0.665,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.611,
+                0.903,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.631,
+                0.935,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.651,
+                0.733,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.081,
+                0.571,
+                0.101
+            ],
+            "angle": 0,
+            "content": "Personal Lines Experienced the Widest Spread in TSR",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.044,
+                0.118,
+                0.728,
+                0.313
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.323,
+                0.339,
+                0.335
+            ],
+            "angle": 0,
+            "content": "Sources: S&P Capital IQ; BCG ValueScience Center; BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.331,
+                0.711,
+                0.352
+            ],
+            "angle": 0,
+            "content": "Note: TSRs are weighted by market cap as of January 1, 2021. The spread for “personal and commercial lines” is based on the minimum and maximum. P&C = property and casualty; TSR = total shareholder return."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.35,
+                0.357,
+                0.36
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) TSR was measured from January 1, 2021, through December 31, 2025."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.358,
+                0.283,
+                0.368
+            ],
+            "angle": 0,
+            "content": "\\( ^{2} \\) The 98 largest stock exchange-listed insurers globally."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.366,
+                0.46,
+                0.377
+            ],
+            "angle": 0,
+            "content": "\\( ^{3} \\) Top 24 US P&C primary insurers in the S&P 1500 Index (excluding title and multiline insurers)."
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.448,
+                0.788,
+                0.524
+            ],
+            "angle": 0,
+            "content": "Near-Term Trends in Personal Lines"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.555,
+                0.931,
+                0.594
+            ],
+            "angle": 0,
+            "content": "We expect several key trends to shape the auto and homeowners markets over the next one to three years.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.609,
+                0.952,
+                0.748
+            ],
+            "angle": 0,
+            "content": "From Defense to Offense in Auto (but Not for Everyone). After several years of aggressive re-underwriting, nonrenewal campaigns, and double-digit rate increases, the US personal auto market has largely restored underwriting profitability. Combined ratios in personal auto improved to 92% in 2025 from 112% in 2022, according to S&P Global Market Intelligence and NAIC (National Association of Insurance Commissioners) data. The 92% ratio marks the best performance since 2020, when COVID-19 reduced driving significantly. Before 2020, the personal auto market had not reported a combined ratio below 95% since 2004.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.762,
+                0.953,
+                0.882
+            ],
+            "angle": 0,
+            "content": "The recovery, however, was uneven. Progressive, which moved first and most decisively to reprice its book, recovered profitability substantially ahead of the rest of the market. The company reduced its personal auto combined ratio to approximately 88% in 2025 and achieved significant premium growth as competitors remained in repair mode. It is now the number one personal auto insurer in the US. Other companies required more sustained periods of remediation, shedding policies to restore margin, before achieving combined ratios in the 90s.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.083,
+                0.567,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.448,
+                0.786,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.487,
+                0.182,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.557,
+                0.927,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.575,
+                0.158,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.611,
+                0.921,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.631,
+                0.892,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.649,
+                0.949,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.67,
+                0.875,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.69,
+                0.854,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.709,
+                0.938,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.729,
+                0.699,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.765,
+                0.933,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.785,
+                0.887,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.804,
+                0.94,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.824,
+                0.947,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.844,
+                0.911,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.863,
+                0.702,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.934,
+                0.128
+            ],
+            "angle": 0,
+            "content": "With profitability broadly restored, the competitive dynamic is shifting. Carriers are moving from defense to offense, re-entering states and segments that they’d left, re-engaging growth levers, and competing more aggressively for new business. This shift brings with it several risks:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.156,
+                0.912,
+                0.197
+            ],
+            "angle": 0,
+            "content": "- Claims frequency is returning from pandemic-era lows, while loss severity continues to rise because of vehicle complexity, repair costs, and medical expense inflation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.211,
+                0.93,
+                0.252
+            ],
+            "angle": 0,
+            "content": "- Annual loss costs (estimated at 6% to 8% by industry actuaries) are outpacing rate increases in some states, compressing margins.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.266,
+                0.926,
+                0.325
+            ],
+            "angle": 0,
+            "content": "- Competitive intensity from large mutuals remains significant. Unconstrained by quarterly investor expectations, mutual insurers may be willing to absorb margin pressure to increase market share.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.355,
+                0.951,
+                0.474
+            ],
+            "angle": 0,
+            "content": "Scale and Underwriting Precision Decisive in Homeowners. The homeowners market has emerged as perhaps the most strategically consequential battleground in US P&C insurance. The market approached a turning point in 2025 with an impressive 88% combined ratio. Driving this result, the best since 2006, was an absence of major hurricanes making landfall, even though other natural catastrophes, such as the Palisades and Eaton wildfires and continuing SCSs, had big impacts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.489,
+                0.946,
+                0.589
+            ],
+            "angle": 0,
+            "content": "Carriers and capital providers should be cautious, however. The 2025 result reflects a favorable confluence of factors rather than a structural reset, and several tailwinds are expected to recede as we move forward. Rate momentum should decelerate as adequacy is restored across states. Loss cost inflation remains active, and wildfire and other non-modeled perils are expected to keep the pressure on loss ratios as a new floor takes shape.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.602,
+                0.951,
+                0.782
+            ],
+            "angle": 0,
+            "content": "The compounding effects of climate change, reinsurance repricing, and regulatory shifts will likely create a bifurcated market. Carriers with superior catastrophe modeling, disciplined exposure management, and adequate pricing should generate strong returns, while the results of others will be undermined by future natural catastrophe events. SCS losses have already surpassed traditional hurricane losses as the primary driver of catastrophe losses across the US. According to Verisk and Munich Re, insured losses from SCS events exceeded $50 billion in each of 2023, 2024, and 2025, compared with an average of roughly $30 billion a year in the prior decade. These losses are geographically dispersed, making portfolio management and reinsurance structure more complex than traditional coastal catastrophe loss management programs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.794,
+                0.668,
+                0.814
+            ],
+            "angle": 0,
+            "content": "Key strategic considerations for homeowners underwriters include:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.844,
+                0.917,
+                0.904
+            ],
+            "angle": 0,
+            "content": "- Detail-Focused Policy Form Management. Coverage terms, exclusions, and sublimits are becoming more material to profitability as the frequency and severity of claims and the use of specialized policies in the excess and surplus market increases.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.071,
+                0.932,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.926,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.863,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.158,
+                0.907,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.177,
+                0.759,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.212,
+                0.926,
+                0.229
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.233,
+                0.417,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.269,
+                0.897,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.287,
+                0.921,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.309,
+                0.197,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.357,
+                0.88,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.378,
+                0.947,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.397,
+                0.926,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.416,
+                0.906,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.436,
+                0.924,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.456,
+                0.16,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.492,
+                0.923,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.511,
+                0.94,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.531,
+                0.923,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.55,
+                0.903,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.57,
+                0.603,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.604,
+                0.948,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.622,
+                0.912,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.643,
+                0.918,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.661,
+                0.909,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.681,
+                0.936,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.702,
+                0.92,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.723,
+                0.944,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.742,
+                0.915,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.761,
+                0.791,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.797,
+                0.664,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.846,
+                0.896,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.865,
+                0.91,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.886,
+                0.685,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.928,
+                0.127
+            ],
+            "angle": 0,
+            "content": "- Scale as a Moat. Fixed costs in claims handling, distribution, and technology are increasingly disadvantaging smaller carriers. The top five personal lines writers continue to extend their market share advantage.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.142,
+                0.925,
+                0.222
+            ],
+            "angle": 0,
+            "content": "- Reinsurance Optimization. With reinsurance pricing moderating modestly at 2025 renewals (approximately 15% to 20% reductions are reported by primary carriers), the cost of protection has eased. However, terms and conditions remain more restrictive than in the years before 2022 levels, according to reinsurance broker Guy Carpenter.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.293,
+                0.809,
+                0.334
+            ],
+            "angle": 0,
+            "content": "Longer-Term Structural Trends"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.36,
+                0.948,
+                0.399
+            ],
+            "angle": 0,
+            "content": "Over the longer term, three years and beyond, we expect several structural trends to reshape the US P&C market and industry.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.414,
+                0.946,
+                0.495
+            ],
+            "angle": 0,
+            "content": "The Long Shadow of Social Inflation. Long-tail casualty lines represent the most significant unresolved risk. The compounding forces of more attorney involvement in claims, third-party litigation financing, and the frequency of nuclear verdicts (\\$10 million or more) are recasting loss patterns in ways that are materially less predictable than historical models imply.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.507,
+                0.95,
+                0.626
+            ],
+            "angle": 0,
+            "content": "The data is striking. According to Marathon Strategies, a strategic communications and research firm, there were 135 nuclear verdicts in 2024, the most since Marathon began tracking the data in 2009, capping five years of consistent growth since 2020. Swiss Re Institute estimates that third-party litigation financing, in which hedge funds, family offices, and other investors fund plaintiffs' legal costs in exchange for a share of awards, has grown to an estimated $15 billion to $18 billion market.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.642,
+                0.947,
+                0.741
+            ],
+            "angle": 0,
+            "content": "These dynamics increase loss costs, extend settlement timelines, and create uncertainty around reserve adequacy. According to Swiss Re, US insurers experienced $62 billion in total adverse developments during the decade 2015 through 2024 for commercial liability lines (excluding medical professional liability). This stands in sharp contrast to 19 consecutive years of favorable aggregate reserve developments for the broader US P&C market.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.754,
+                0.503,
+                0.774
+            ],
+            "angle": 0,
+            "content": "The implications for US P&C carriers are several:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.804,
+                0.926,
+                0.865
+            ],
+            "angle": 0,
+            "content": "- Reserve Uncertainty. Carriers with significant prior-year commercial liability and auto exposure face potential adverse development. Analysts and rating agencies are scrutinizing reserve adequacy with increasing intensity.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.879,
+                0.902,
+                0.92
+            ],
+            "angle": 0,
+            "content": "- Underwriting Posture. Leading carriers are shifting capacity toward shorter-tail exposures and excess and surplus lines, which offer more flexible policy terms and pricing.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.069,
+                0.923,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.089,
+                0.913,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.108,
+                0.299,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.142,
+                0.922,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.163,
+                0.842,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.183,
+                0.884,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.202,
+                0.746,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.293,
+                0.809,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.362,
+                0.944,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.381,
+                0.316,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.415,
+                0.898,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.436,
+                0.9,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.457,
+                0.94,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.475,
+                0.804,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.51,
+                0.933,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.529,
+                0.947,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.55,
+                0.933,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.569,
+                0.935,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.59,
+                0.943,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.608,
+                0.12,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.644,
+                0.943,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.663,
+                0.906,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.682,
+                0.895,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.702,
+                0.941,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.723,
+                0.65,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.756,
+                0.499,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.806,
+                0.858,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.825,
+                0.921,
+                0.842
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.847,
+                0.465,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.88,
+                0.898,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.9,
+                0.806,
+                0.917
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.906,
+                0.108
+            ],
+            "angle": 0,
+            "content": "- Repricing Cycle. Even as property lines soften, casualty pricing is expected to remain firm, creating a bifurcated rate environment in commercial lines portfolios.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.137,
+                0.93,
+                0.217
+            ],
+            "angle": 0,
+            "content": "Rethinking the Climate and Catastrophe Exposure Map. Climate change is reshaping insurers' underwriting, pricing, and portfolio strategy. The combination of rising hurricane intensity, accelerating wildfire risk in the western US, and the broad geographic expansion of SCS losses has fundamentally altered the risk landscape relative to historical models.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.232,
+                0.957,
+                0.351
+            ],
+            "angle": 0,
+            "content": "Several data points illustrate the scope of the challenge. According to NOAA, the average annual insured loss from billion-dollar weather events more than doubled between the 2010–2019 decade and the 2020–2024 period. Swiss Re Institute estimates that global insured natural-catastrophe losses will continue to grow at approximately 5% to 7% annually through 2030, fueled primarily by rising asset values in exposed areas and increasing loss severity from climate-related perils. This is in addition to the SCS losses discussed above.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.364,
+                0.817,
+                0.385
+            ],
+            "angle": 0,
+            "content": "For P&C management teams, the strategic response requires action in three areas:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.414,
+                0.919,
+                0.454
+            ],
+            "angle": 0,
+            "content": "- Exposure Management. Actively managing geographic concentrations through underwriting guidelines, capacity limits, and nonrenewal programs in high-risk zones.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.468,
+                0.903,
+                0.529
+            ],
+            "angle": 0,
+            "content": "- Model Evolution. Investing in next-generation catastrophe models that go beyond vendor models that may lag data from observed loss trends to incorporate climate-adjusted frequency and severity assumptions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.543,
+                0.918,
+                0.584
+            ],
+            "angle": 0,
+            "content": "- Product Innovation. Developing new product structures (such as parametric covers and climate risk indices) that offer scalable protection while managing balance sheet exposure.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.613,
+                0.947,
+                0.691
+            ],
+            "angle": 0,
+            "content": "AI as a New Risk Class. It’s early days, but thus far new coverages have not kept pace with businesses’ deployment of AI. AI agents represent an emerging frontier, and major carriers recognize the risks. They are pursuing blanket AI exclusions, but the design of innovative policies lags.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.706,
+                0.95,
+                0.807
+            ],
+            "angle": 0,
+            "content": "The absence of actuarial data is a significant problem. Because the technology is new, companies don't have loss histories for AI systems. Actuarial data takes five to seven years to develop, and new AI models come to market in a matter of months. The need for new coverages is urgent because of emerging exposures in such areas as professional liability, IP, and copyright. Further, physical damage could be subject to gaps in business interruption coverages.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.82,
+                0.93,
+                0.9
+            ],
+            "angle": 0,
+            "content": "The cyber insurance market's evolution from early temporary bounded policies to full first- and third-party coverage may offer a path forward. Carriers that invest now in loss data and early product development will lead an expanding market, while those that rely on exclusions risk ceding the market to others.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.9,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.09,
+                0.714,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.139,
+                0.926,
+                0.154
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.159,
+                0.871,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.178,
+                0.918,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.199,
+                0.737,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.233,
+                0.94,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.254,
+                0.889,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.273,
+                0.891,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.292,
+                0.954,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.311,
+                0.888,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.332,
+                0.67,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.366,
+                0.814,
+                0.383
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.417,
+                0.915,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.437,
+                0.73,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.47,
+                0.898,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.49,
+                0.843,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.51,
+                0.409,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.544,
+                0.883,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.564,
+                0.915,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.615,
+                0.883,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.636,
+                0.88,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.655,
+                0.943,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.671,
+                0.094,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.708,
+                0.948,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.727,
+                0.927,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.746,
+                0.892,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.768,
+                0.927,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.787,
+                0.763,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.823,
+                0.926,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.843,
+                0.897,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.861,
+                0.903,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.882,
+                0.308,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.904,
+                0.128
+            ],
+            "angle": 0,
+            "content": "M&A: A New Wave of Consolidation. With underlying profitability restored for most well-run carriers and industry surplus at historically high levels, the strategic rationale for M&A is strengthening. Several market forces are converging to drive increased deal activity:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.157,
+                0.912,
+                0.217
+            ],
+            "angle": 0,
+            "content": "- Scale Economics. As technology investment requirements increase and distribution costs rise, scale provides necessary advantages in unit economics. Smaller carriers, in particular, face rising pressure to either invest aggressively or find a larger partner.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.232,
+                0.912,
+                0.311
+            ],
+            "angle": 0,
+            "content": "- Capability Acquisition. It’s easier, and a lot faster, today to acquire new capabilities in such fields as AI, advanced analytics, and climate modeling rather than build them organically. Target companies with proprietary data assets, managing general agent platforms, and frontier technologies command premium valuations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.325,
+                0.917,
+                0.404
+            ],
+            "angle": 0,
+            "content": "- Cross-Border Activity. Japanese and Korean insurers (Tokio Marine, Sompo, MS&AD, and Samsung Fire & Marine) have demonstrated a sustained appetite for acquisitions in the US as a source of earnings diversification and growth. We expect this trend to continue, subject to regulatory scrutiny.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.434,
+                0.918,
+                0.593
+            ],
+            "angle": 0,
+            "content": "The $11 billion merger of Zurich Insurance and Beazley, expected to close later this year, illustrates the scale of ambition now on the table. In the US market, midsize specialty carriers and excess and surplus platforms are likely to be the most attractive targets as buyers seek underwriting expertise and access to profitable market niches. While transaction volume has decreased since 2023, deal values have increased, owing to more-targeted, higher-value acquisitions. Carriers are showing an increased willingness to identify growth areas and put excess capital to work through M&A. Political uncertainty and state regulation could limit the pace of cross-border deal execution, but strategic intent appears strong.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.607,
+                0.917,
+                0.667
+            ],
+            "angle": 0,
+            "content": "AI: From Pilot to Platform. AI has moved quickly from future potential to current competitive differentiation. Leading carriers are now deploying AI across the value chain at scale, with measurable impacts on loss ratios, expense ratios, and cycle times.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.68,
+                0.618,
+                0.7
+            ],
+            "angle": 0,
+            "content": "The AI applications with the highest impact currently include:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.731,
+                0.921,
+                0.83
+            ],
+            "angle": 0,
+            "content": "- Underwriting Augmentation. Advanced models combining structured data (such as loss histories and financial information) with unstructured inputs (such as images, satellite data, and IoT information) can generate much more detailed and specific risk assessments. Some commercial lines underwriters report reductions in underwriting cycle times of 20% to 30% and measurable improvement in loss ratio predictive accuracy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.844,
+                0.925,
+                0.924
+            ],
+            "angle": 0,
+            "content": "- Claims Automation. AI is reducing claims leakage and cycle times by automating such important and expensive functions as first-notice-of-loss triage, damage assessment (using computer vision and drone imagery), and fraud detection. Some carriers report reductions of 15% to 25% in claims processing costs in automated segments.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.069,
+                0.9,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.863,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.822,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.158,
+                0.9,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.179,
+                0.907,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.198,
+                0.733,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.234,
+                0.907,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.254,
+                0.891,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.274,
+                0.871,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.292,
+                0.554,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.327,
+                0.891,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.347,
+                0.912,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.367,
+                0.913,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.388,
+                0.27,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.436,
+                0.867,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.456,
+                0.917,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.475,
+                0.902,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.496,
+                0.906,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.515,
+                0.848,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.534,
+                0.891,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.554,
+                0.906,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.573,
+                0.717,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.608,
+                0.913,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.628,
+                0.871,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.649,
+                0.673,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.682,
+                0.613,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.732,
+                0.881,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.753,
+                0.916,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.773,
+                0.916,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.793,
+                0.906,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.812,
+                0.652,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.846,
+                0.868,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.866,
+                0.911,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.886,
+                0.921,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.904,
+                0.653,
+                0.921
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.932,
+                0.167
+            ],
+            "angle": 0,
+            "content": "- Pricing Optimization. Real-time pricing engines that incorporate telematics data, behavioral signals, and external information sources are enabling more specific risk segmentation, particularly in personal auto. Integrating strong pipelines of claims data into actuarial pricing is also enabling commercial lines carriers to develop more dynamic pricing capabilities that better align pricing with underlying risks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.18,
+                0.898,
+                0.222
+            ],
+            "angle": 0,
+            "content": "- Distribution and Marketing. AI-driven lead scoring, agent support tools, and digital-direct platforms are improving conversion economics and reducing customer acquisition costs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.251,
+                0.953,
+                0.331
+            ],
+            "angle": 0,
+            "content": "The gap between AI leaders and laggards in P&C is already widening. Companies that have invested in data infrastructure, model governance, and talent over the past three to five years are now capturing advantages that are difficult to replicate quickly. Carriers still in pilot mode risk falling further behind peers on both expense ratios and risk selection quality.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.401,
+                0.733,
+                0.481
+            ],
+            "angle": 0,
+            "content": "C-Suite Priorities: What Top Performers Do Differently"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.507,
+                0.95,
+                0.588
+            ],
+            "angle": 0,
+            "content": "The challenges confronting US P&C carriers are neither uniformly new nor evenly distributed. But today's operating environment punishes inaction much more harshly than in the past. In a softening market with rising structural risks, the actions that management teams take now will determine their position in the value creation rankings for the next five years.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.601,
+                0.871,
+                0.622
+            ],
+            "angle": 0,
+            "content": "Our analysis of top-quartile performers identifies four areas of consistent differentiation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.636,
+                0.947,
+                0.776
+            ],
+            "angle": 0,
+            "content": "Master the Softening Cycle Transition. The transition from a hard to a soft market is one of the most strategically consequential periods in the insurance cycle. Carriers that maintain underwriting discipline during this shift—resisting the temptation to grow premium volume at the expense of margin—consistently outperform over the subsequent five-year period. Practical priorities include preemptive portfolio steering (actively reallocating capital away from lines where pricing is deteriorating faster than loss trends), rigorous account-level profitability review, and maintaining pricing adequacy discipline, even in lines where competitors are reducing rates.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.788,
+                0.936,
+                0.868
+            ],
+            "angle": 0,
+            "content": "Build the Next-Generation Underwriting Engine. Underwriting excellence remains the primary driver of value in P&C, but the definition of excellence is evolving. The best underwriters in 2026 combine deep domain expertise with advanced data and technology capabilities. Companies should invest in three areas:",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.07,
+                0.928,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.089,
+                0.88,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.109,
+                0.867,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.129,
+                0.832,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.147,
+                0.602,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.182,
+                0.895,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.204,
+                0.886,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.254,
+                0.884,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.272,
+                0.949,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.292,
+                0.915,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.312,
+                0.761,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.397,
+                0.733,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.439,
+                0.691,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.511,
+                0.948,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.529,
+                0.882,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.55,
+                0.921,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.57,
+                0.762,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.602,
+                0.868,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.64,
+                0.929,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.659,
+                0.848,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.678,
+                0.943,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.699,
+                0.903,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.718,
+                0.898,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.737,
+                0.933,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.757,
+                0.936,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.79,
+                0.931,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.81,
+                0.931,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.83,
+                0.906,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.851,
+                0.31,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.875,
+                0.108
+            ],
+            "angle": 0,
+            "content": "- Data Infrastructure. Unified, accessible data assets that support real-time pricing, risk assessment, and portfolio management decisions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.122,
+                0.887,
+                0.181
+            ],
+            "angle": 0,
+            "content": "- Model Sophistication. Advanced predictive models that go beyond traditional actuarial approaches by incorporating alternative data sources (such as satellite imagery, climate data, behavioral signals, and third-party information).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.196,
+                0.913,
+                0.257
+            ],
+            "angle": 0,
+            "content": "- Workflow Automation. Straight-through processing for standard risks that frees expert underwriters to focus on complex, high-value accounts where human judgment provides the greatest value.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.286,
+                0.918,
+                0.366
+            ],
+            "angle": 0,
+            "content": "Secure Scarce Talent. Access to talent has emerged as a binding constraint on value creation. The competition for skilled underwriters, data scientists, and AI engineers has intensified significantly, with managing general agents, private-equity-backed startups, and technology companies all competing in the same pools of expertise.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.379,
+                0.88,
+                0.4
+            ],
+            "angle": 0,
+            "content": "Top-performing carriers are differentiating on talent strategy through several approaches:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.429,
+                0.88,
+                0.469
+            ],
+            "angle": 0,
+            "content": "- Creating specialized centers of excellence that offer underwriters meaningful technical autonomy",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.484,
+                0.846,
+                0.525
+            ],
+            "angle": 0,
+            "content": "- Developing AI upskilling programs that help experienced underwriters amplify their judgment with data tools",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.539,
+                0.899,
+                0.578
+            ],
+            "angle": 0,
+            "content": "- Building compensation structures that reward long-term underwriting performance rather than near-term premium volume",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.608,
+                0.952,
+                0.788
+            ],
+            "angle": 0,
+            "content": "Address Structural Risks. The structural risks described in this report—social inflation, climate-driven property losses, and AI disruption—do not resolve themselves. Carriers that wait for these risks to manifest before responding are likely to find themselves in a reactive, loss-driven mode at precisely the moment when others are investing in new capabilities and stronger market position. For casualty lines, the importance of reserve review rigor, active litigation management programs, and deliberate capacity management is on the rise. Property insurers need to invest in next-generation climate exposure management tools and work collaboratively with regulators on frameworks that allow market-based pricing. All P&C insurers need to move quickly from AI pilots to AI platforms, with governance structures that ensure responsible deployment at scale.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.069,
+                0.871,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.088,
+                0.537,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.124,
+                0.877,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.144,
+                0.883,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.163,
+                0.56,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.197,
+                0.869,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.218,
+                0.909,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.239,
+                0.206,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.287,
+                0.917,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.308,
+                0.87,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.327,
+                0.889,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.346,
+                0.572,
+                0.363
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.382,
+                0.876,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.432,
+                0.876,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.452,
+                0.162,
+                0.468
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.486,
+                0.842,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.064,
+                0.505,
+                0.295,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.54,
+                0.896,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.559,
+                0.368,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.61,
+                0.934,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.63,
+                0.949,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.65,
+                0.931,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.67,
+                0.893,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.689,
+                0.933,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.708,
+                0.946,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.728,
+                0.946,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.747,
+                0.946,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.769,
+                0.874,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.067,
+                0.88,
+                0.148
+            ],
+            "angle": 0,
+            "content": "The Fundamentals Still Win—But the Bar Is Rising"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.174,
+                0.949,
+                0.273
+            ],
+            "angle": 0,
+            "content": "BCG's multiyear analysis of US P&C value creation continues to demonstrate a consistent truth: companies that get the fundamentals right—disciplined underwriting, rigorous capital allocation, and sustained investment in capability—outperform over every measurable time horizon. This finding has held across hard and soft markets, through catastrophe cycles, and during economic downturns.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.287,
+                0.956,
+                0.368
+            ],
+            "angle": 0,
+            "content": "The new challenge is the sophistication required to execute. The best underwriting organizations of 2026 look very different from those of 2016. Today, they combine deep domain expertise with AI-powered tools, real-time data, and rigorous portfolio management processes that were not available a decade ago.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.381,
+                0.947,
+                0.463
+            ],
+            "angle": 0,
+            "content": "The carriers most at risk are those in the middle: not yet facing acute financial distress but also not investing aggressively enough to build the capabilities that will define competitive advantage in the next cycle. As the gap widens between leaders and laggards, “good enough” is no longer good enough.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.475,
+                0.933,
+                0.517
+            ],
+            "angle": 0,
+            "content": "The evidence is clear that those companies that respond to structural risks and invest in talent and technology will power the next generation of underwriting excellence.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.529,
+                0.934,
+                0.571
+            ],
+            "angle": 0,
+            "content": "The authors are grateful to Jürgen Böhrmann, Azariah Harris, Teresa Schreiber, and their colleagues in BCG's Insurance practice for their contributions to this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.065,
+                0.881,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.106,
+                0.449,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.177,
+                0.94,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.197,
+                0.944,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.216,
+                0.923,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.236,
+                0.929,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.254,
+                0.151,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.289,
+                0.937,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.31,
+                0.952,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.33,
+                0.881,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.35,
+                0.264,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.383,
+                0.927,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.404,
+                0.942,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.423,
+                0.915,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.443,
+                0.168,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.477,
+                0.929,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.497,
+                0.73,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.533,
+                0.93,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.552,
+                0.495,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.105,
+                0.247,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.19,
+                0.22,
+                0.294
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.246,
+                0.196,
+                0.426,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Nathalia Bellizia"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.229,
+                0.446,
+                0.257
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nNew York"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.263,
+                0.275,
+                0.28
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.535,
+                0.188,
+                0.679,
+                0.294
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.708,
+                0.19,
+                0.871,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Nadine Moore"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.341,
+                0.22,
+                0.447
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.268,
+                0.737,
+                0.285
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.222,
+                0.9,
+                0.286
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nChicago"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.348,
+                0.379,
+                0.372
+            ],
+            "angle": 0,
+            "content": "Paul Nelson"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.243,
+                0.381,
+                0.445,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nChicago",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.416,
+                0.275,
+                0.433
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.534,
+                0.436,
+                0.553
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.569,
+                0.952,
+                0.69
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "14"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.103,
+                0.248,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.384,
+                0.442,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.397,
+                0.304,
+                0.411
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.537,
+                0.433,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.571,
+                0.95,
+                0.586
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.59,
+                0.901,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.611,
+                0.903,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.63,
+                0.912,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.649,
+                0.934,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.672,
+                0.592,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

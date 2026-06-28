@@ -1,0 +1,6919 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                48,
+                103,
+                961,
+                239
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年12月"
+                    }
+                ]
+            },
+            "bbox": [
+                48,
+                277,
+                161,
+                297
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\left[ \\begin{array}{c c}  & \\text {BCG + QED} \\\\ \\hline \\end{array} \\right]",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/f35ce16a064e4c100da990071f03e5d581b6374491e2ea1832d12eb6322e410c.jpg"
+                }
+            },
+            "bbox": [
+                26,
+                326,
+                974,
+                975
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "金融机构\nBCG 与 QED Investors 联合发布"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                36,
+                368,
+                79
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "目录"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                62,
+                48,
+                176,
+                91
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "03 前言\n05 融资寒冬延续，增长势头仍盛\n12 金融科技现状：四大发展主题\n19 未来前行方向：五项行动呼吁\n24 结语\n25 关于作者"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                258,
+                989,
+                921
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                948,
+                68,
+                958
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                947,
+                396,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                731,
+                947,
+                942,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "前言"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                281,
+                176,
+                326
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "二十年前的金融服务行业样貌或许早已淡出我们的记忆。那时金融科技尚未兴起，还未彻底改变我们的银行业态和交易方式。过去二十年间，多少金融科技公司兴衰起落。一些金融科技公司已然成为金融服务生态的重要组成部分，但金融科技真正带给世界的，是对我们日常生活和金融体系的深远影响。"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                400,
+                942,
+                590
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "金融科技行业仍有巨大增长空间。鉴于生成式AI（GenAI）等变革性技术的兴起，以及全球仍有数十亿人没有银行账户或未充分享受银行服务的现状，我们在此重申去年报告中的预判观点：金融科技刚刚进入长篇史诗的第二篇章，未来发展潜力广阔。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                633,
+                487,
+                739
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "然而，行业游戏规则正悄然改变。现阶段的融资寒冬过后，市场环境将不同以往，金融科技公司必须升级自身能力，才能制胜市场、蓬勃发展。审慎经营，即避免增加金融体系风险的能力，将变得与盈利增长能力同等重要。金融科技发展前景依然光明，并将继续给客户带来丰厚利益，但通往成功的道路将变得更加崎岖难行。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                760,
+                489,
+                884
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "我们采访了60多位全球金融科技公司的CEO和投资者，了解他们对行业未来发展的看法，同时结合我们的行业经验，撰写了本报告。我们认为，九大趋势正在塑造当前金融科技市场格局，其中有些是新近出现的趋势，有些趋势则由来已久。透过上述发展趋势，我们看到四大核心议题的重要性日益凸显，金融科技公司和传统银行需要正视和应对这些变化和挑战。最后，我们将探讨新兴金融科技生态中的参与者需要践行的五大要务。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                632,
+                944,
+                791
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                946,
+                267,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                600,
+                946,
+                914,
+                960
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                929,
+                947,
+                941,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "主要亮点"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                57,
+                36,
+                183,
+                63
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1.5 万亿美元"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                57,
+                108,
+                253,
+                151
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "鉴于全球仍有数十亿人没有银行账户或未充分享受银行服务，以及生成式AI带来的效率提升，金融科技行业仍有巨大发展潜力。我们预计到2030年，以营收计，全球金融科技市场规模将从目前的3200亿美元增长至1.5万亿美元。"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                171,
+                243,
+                363
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/09ddecf25a2606f1109227f2be359ad02f4e07fdd235ae780f8ac0bf402c57e4.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                55,
+                393,
+                127,
+                447
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "行业的新发展口号是审慎经营。金融科技公司需要全面审视合规工作：预先评估适用的监管法规，并积极实施行业级指导方针和管控措施。"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                470,
+                236,
+                595
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/26c2e9758fe9f4a48986d3aecdc23826cc3e3b80f6105e24d92f219d839427c8.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                55,
+                676,
+                127,
+                733
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "通过互联商务，大型银行终于有机会利用其海量客户需求和行为数据来创造价值。"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                741,
+                236,
+                814
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "14%"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                285,
+                107,
+                411,
+                149
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "全球金融科技行业营收保持稳健增长，过去两年年增长率为 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "14\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "。在各细分赛道，排名前四分位和排名后四分位的金融科技公司的业绩差距十分明显。"
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                171,
+                465,
+                312
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/08993ccc32c5e71724dde9130b33f663224fd21aacd3f4503c210cbe5c04989a.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                282,
+                393,
+                351,
+                450
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "巴西和印度在应用数字公共基础设施（两国分别为 Pix 和 UPI）方面走在前列，旨在扩大金融服务覆盖，激发创新。但数字公共基础设施的成功取决于其综合水平以及各类系统的全面整合。"
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                470,
+                475,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "生成式AI能为金融科技公司带来巨大的效率提升，特别是成本集中的领域：代码编写、客户支持、数字营销。相较于其他金融服务机构，金融科技公司在短期内收获的增效红利最大。"
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                741,
+                468,
+                901
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "+25百分点"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                108,
+                700,
+                151
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "金融科技公司需要并且能够将EBITDA利润率提高25个百分点以上。为此，金融科技公司需要建立支撑规模化发展的成本结构，能够随着公司发展，产生复合回报。"
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                171,
+                697,
+                312
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1亿"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                391,
+                626,
+                441
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "数字化挑战者银行表现出色。在巴西，Nubank用户数突破1亿大关。在欧洲，Monzo在2023年上半年实现经营盈利，并在近期获得额外融资，支持其全球增长的雄心计划。"
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                470,
+                692,
+                629
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/52bcf4b328470f66a6a8b090b879d0312b275a8be12414cd65e3ad1c7d4a03fa.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                739,
+                105,
+                803,
+                158
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "金融科技IPO市场终将迎来复苏，但金融科技公司现在必须讲好股权故事，包括如何以可持续的成本吸引用户，实现盈利性增长，满足日益严苛的监管要求。"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                171,
+                919,
+                312
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3200亿美元"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                739,
+                397,
+                887,
+                464
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "到2030年，嵌入式金融将在全球范围内创造3200亿美元营业收入，主要来自中小企业客群（1500亿美元）、消费者客群（1200亿美元）和大企业客群（500亿美元）。"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                470,
+                927,
+                612
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                948,
+                68,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                947,
+                396,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                732,
+                947,
+                939,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/99420c192d36873bbd327be37d6715530746ffe9f81ffeea175028e88176e84c.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                58,
+                40,
+                1000,
+                533
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "融资寒冬延续，增长势头仍盛"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                193,
+                554,
+                937,
+                599
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "过去三年，金融科技行业经历严峻考验。相较于2021年的高位，金融科技公司平均市销率从20倍降至目前的4倍，融资规模骤减约70%，去年更是同比将近减半（参阅图1）。某些方面的降幅较其他方面更显著。例如，后期轮次（C轮至E+轮）融资规模锐减81%-89%，而早期轮次融资规模则减少了54%-73%。总体而言，除保险和支付外，所有金融科技细分赛道的融资规模都缩减了至少一半。但我们认为，这些挑战都属于去年报告中提到的短期回调（投资者热情降温），而且现在已经出现缓和迹象。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                702,
+                489,
+                894
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "金融科技行业前几年并不缺乏资金,2021年甚至出现融资过剩的局面。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                700,
+                942,
+                787
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HANS MORRIS, NYCA PARTNERS主管合伙人"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                802,
+                818,
+                819
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                265,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                600,
+                946,
+                912,
+                959
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                929,
+                948,
+                941,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "营业收入增长强劲上市金融科技公司和非上市金融科技公司营收（十亿美元）"
+                    }
+                ]
+            },
+            "bbox": [
+                621,
+                80,
+                932,
+                115
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/88ba3274ab385b350259a6542bb2ee6f85eb958e7be0382b806f32a6a6da6d75.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "图1 | 金融科技行业融资和估值双降，但营收增势迅猛"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                55,
+                78,
+                275,
+                258
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5617821ee31e74340f1b1116514b7db35050b70aeda92e7780e2ccf99a1862a3.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                332,
+                78,
+                556,
+                256
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9ddbc94d0d219b07ca343d4256f0bd6df799b8b26c160a5c7666271441a528b7.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "来源：Capital IQ；Pitchbook；公司投资者简报；案头研究；BCG金融科技控制塔；BCG分析。  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 基于每年截至第二季度的市值和过去12个月的营收计算的平均值。"
+                    }
+                ]
+            },
+            "bbox": [
+                618,
+                80,
+                929,
+                256
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "新的口号是：“在维持正净收入和中性现金流的前提下，尽可能快地增长。”"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                360,
+                462,
+                447
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SERGIO FURIO, CREDITAS 创始人兼 CEO"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                462,
+                332,
+                480
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "与此同时，全球金融科技行业营业收入继续保持稳健增长，过去两年行业整体年复合增长率（CAGR）达到14%；若排除涉及加密货币的金融科技公司和中国市场的金融科技公司，增速则为21%。事实上，即使是与2019至2023年间29%的年复合增长率相比，2022和2023两年间的增速表现也相当不错。不同赛道和地区的增速依旧参差不齐，但在各细分赛道，排名前四分位（新兴赢家）相比后四分位的金融科技公司营收增速差距显著（参阅图2）。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                362,
+                944,
+                537
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "图2 | 排名前四分位与后四分位的金融科技公司之间的营收增速差距显著"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                569,
+                905,
+                595
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "特定赛道和地区之间的差距\n2021-2023年营收CAGR"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                621,
+                268,
+                652
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7529bf75d641887f7f0d145c529b05cd9c8012c2932aa16cc1ba45ba9dd497a1.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                73,
+                648,
+                263,
+                876
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9f8152d3d410bb332eef4d701259413927ff281395b9b9de55f432b0d17998e8.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "排名前四分位和排名后四分位的金融科技公司之间的差距2021-2023年排名前四分位与排名后四分位的营收CAGR"
+                    }
+                ]
+            },
+            "bbox": [
+                265,
+                624,
+                445,
+                877
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/dc1bdafe26be4637e82c2a04df84bb9df6938ab69601d71fdfbdb503164d0de6.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "来源：Capital IQ；Pitchbook；公司投资者简报；案头研究；BCG金融科技控制塔；BCG分析。"
+                    }
+                ]
+            },
+            "bbox": [
+                487,
+                642,
+                934,
+                875
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                70,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                82,
+                946,
+                396,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                732,
+                946,
+                942,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/99c3a45faebb85a1a83650f11759db37b7d515fc815e098cf3fbe24fbe88e6f1.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "图3 | 上市金融科技公司正迈向盈利性增长，但还有很长的路要走"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                53,
+                96,
+                250,
+                321
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1905f7b3383f771a387efbe385580d3e72719d131427d6039fc525aeaa2e7a5d.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                394,
+                96,
+                601,
+                321
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7307599b5599126fb71808bec186053720d2883ae3bf9422dfeb8d1a48ca6212.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "来源：Capital IQ；Pitchbook；公司投资者简报；案头研究；BCG金融科技控制塔；BCG分析。"
+                    },
+                    {
+                        "type": "text",
+                        "content": "注：数据基于2022-2023年排名前70的上市金融科技公司业绩情况。pp=百分点。"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 40法则是一个财务指标，指公司营收增长率（%）和利润率（%）之和应达到40%或更多。"
+                    }
+                ]
+            },
+            "bbox": [
+                741,
+                97,
+                942,
+                322
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "更值得注意的是，金融科技行业已开始从“不计成本的增长”模式向盈利性增长模式转变，2023年行业EBITDA利润率同比平均提高了9个百分点。但这一转变尚处于初期阶段，排名前70的上市金融科技公司中的绝大多数仍未达到“40法则”门槛（40法则是一个财务指标，指公司营收增长率和利润率之和应达到40%或更多）（参阅图3）。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                476,
+                487,
+                600
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "宏观形势依然有利于金融科技增长"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                632,
+                428,
+                653
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "虽然现阶段面临融资挑战，但金融科技行业发展的底层逻辑依然坚固，并将继续支撑增长。2023年，挑战者银行向投资者和客户证明了自身的价值（参阅专题1）。我们预计，到2030年，以营收计，全球金融科技市场规模将增至2023年的五倍左右，达到1.5万亿美元。金融科技公司仍将保持并发挥自身的显著优势：聚焦解决客户痛点，提供有吸引力的用户体验，快速开展创新。这些优势将继续驱动行业增长——虽然监管致力于营造更加平衡和公平的竞争环境，近年来开始将金融科技纳入监管，而这对许多金融科技公司构成一定挑战。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                665,
+                489,
+                858
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "金融科技行业仍有巨大的增长空间——目前全球仍有15亿成年人没有银行账户，28亿成年人未充分享受银行服务。当然，传统银行也可能开发这些潜在客户，从中挖掘增长机会。问题在于，银行是否会这样做，以及会怎么做。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                476,
+                942,
+                565
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "新技术的兴起似乎对金融科技公司更有利，至少在短期内如此，以生成式AI为例。生成式AI一经问世，迅速成为金融科技行业的福音，为其带来显著的效率提升，特别是在金融科技公司成本集中的领域：代码编写、客户支持和数字营销（提高营销精准度）。生成式AI，以及API连接和分布式账本技术，将为金融科技公司带来快速提升；银行也将从这些技术中获益，但所需时间周期相对较长。总之，在许多金融科技公司资金紧张之际，生成式AI应运而生，可以缓解不少公司的成本压力，帮助它们维持经营，从而更有余力去解决迫切的盈利性增长问题。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                587,
+                942,
+                796
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                946,
+                265,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                601,
+                946,
+                912,
+                960
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                929,
+                948,
+                941,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "从后起之秀到强劲对手：挑战者银行在2023年业绩创纪录，实现规模化发展和盈利"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                55,
+                74,
+                936,
+                147
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2023年，数字化挑战者银行表现亮眼（参阅下图）。在巴西，Nubank于2024年5月用户数突破1亿大关，有望在不久的将来成为拉美地区最大、最能盈利的银行——差不多每两名巴西成年人中就有一人是Nubank的客户。而在欧洲，Monzo在2023年上半年实现了经营盈利，并在近期获得额外融资，支持其全球增长的雄心计划。半数以上盈利的挑战者银行位于亚洲（如韩国的KakaoBank），它们一般都是某个综合生态的一部分。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                209,
+                487,
+                367
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "挑战者银行没有单一的成功秘诀。领先玩家各自采取不同的规模化发展和盈利路径；共同之处在于，它们都扎根市场，致力于长期深耕发展。"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                209,
+                942,
+                263
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "领先的挑战者银行在2023年业绩创纪录，展现出规模化发展的盈利能力"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                53,
+                403,
+                902,
+                428
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "453\n全球数字化挑战者银行数量"
+                    }
+                ]
+            },
+            "bbox": [
+                82,
+                494,
+                277,
+                568
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "23"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                631,
+                176,
+                678
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "经营盈利的数字化挑战者银行数量"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                689,
+                317,
+                705
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/9bd3420655957474ada2096e49be2ee5311d18a8bca340fac564c47c3b504bcd.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                400,
+                480,
+                416,
+                493
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "四个先进案例："
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                413,
+                478,
+                512,
+                495
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/06ba039e0e0d7849ae6cf13599572717ef4238ebe25518398a8c7b83e372d5c3.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                400,
+                502,
+                438,
+                529
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Nubank  \n2024年5月用户数突破1亿大关，有望成为拉美地区最大、最能盈利的银行"
+                    }
+                ]
+            },
+            "bbox": [
+                396,
+                536,
+                588,
+                589
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/e6ab383f046329ab8b506059271c7b0888318d089c944b120aaef3c7f2a88f19.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                400,
+                615,
+                438,
+                643
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Monzo  \n现为英国第七大银行；2023年上半年实现经营盈利，营收达到3.56亿英镑"
+                    }
+                ]
+            },
+            "bbox": [
+                396,
+                648,
+                611,
+                699
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/6dcc2ce174f7662fef0f5662f99caec4ae336eec26206304f4cf8646cbbc6672.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                682,
+                502,
+                721,
+                529
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chime  \n2023年营收增至13亿美元，客户规模达到1450万，2024年第一季度盈利；  \n准备在2025年进行IPO"
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                536,
+                907,
+                589
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4009f0b8c2e8081b219ded12f0a548029edff8f2228e88dea6492a7e9712a917.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                682,
+                617,
+                721,
+                642
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Revolut  \n2023年营收达到20亿美元，净利润率达到两位数，全球客户规模超过4000万"
+                    }
+                ]
+            },
+            "bbox": [
+                678,
+                646,
+                890,
+                697
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "来源：Capital IQ；Pitchbook；公司投资者简报；案头研究；BCG金融科技控制塔；BCG分析。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                758,
+                727,
+                775
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "专题1"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                38,
+                124,
+                57
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                948,
+                68,
+                958
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                947,
+                396,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                732,
+                947,
+                941,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "影响金融科技发展的九大趋势"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                36,
+                379,
+                58
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "过去一年，九大趋势共同塑造了金融科技行业的发展格局；其中一些趋势见于特定领域和地区。一些趋势长期以来一直存在，另一些趋势则是新兴影响力量。"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                73,
+                487,
+                143
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. 高利率环境持续。全球经济正进入一段较长的高利率时期，这将继续抬高金融科技公司的融资成本，而私募资本继续敦促企业实现盈利性增长，最终带来投资回报。靠低成本资金支持的“不计成本的增长”时代，已经一去不复返了。"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                165,
+                489,
+                273
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. 监管环境趋同。在监管方面，过去一年，金融科技公司一直以来享有的监管优势在逐渐缩小。各国监管机构采取了诸多行动，包括针对多家金融科技主办银行出具合意处分书，整体加强对银行即服务（BaaS）的监管审查，针对加密货币机构采取监管措施，以及美国消费者金融保护局（CFPB）起草针对大型科技公司及其他数字钱包和支付应用提供商的监管提案。虽然在为银行和金融科技公司创造公平公正的监管经营环境方面仍有许多工作要做，但我们相信形势正朝着正确的方向发展。"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                294,
+                489,
+                493
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. 全球陆续出台新监管框架。全球金融科技监管框架和标准逐渐清晰，势必将会影响行业未来的发展方向。例如，印度发布了新的监管通知，重申并澄清针对金融科技公司的了解客户（KYC）和联合贷款标准。美国消费者金融保护局正准备制定基于《多德-弗兰克法案》第1033条的具体指引，旨在澄清客户数据访问和使用方面的相关规则。"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                514,
+                487,
+                659
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4. 数字公共基础设施在全球推广。数字公共基础设施（DPI）加速了实时支付在印度（统一支付接口，简称UPI）和巴西（实时支付系统Pix）等国的普及（参阅专题2）。数字公共基础设施是一种三层架构，包括国民数字身份系统层、支付层和数据交换层，能为金融科技的发展创造有利条件。许多国家，特别是新兴市场，希望效仿UPI和Pix的成功经验。虽然印度和巴西两国数字公共基础设施的成功毋庸置疑，但其他国家，包括发达市场，能否顺利复制其成功模式尚未可知。这在很大程度上取决于当前市场环境和基础设施各层的成熟水平。"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                681,
+                489,
+                896
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "监管机构一旦介入并制定监管框架，会给市场带来巨大的动态变化。监管机构提供明确指引，比如在加密货币和AI核贷方面，所有利益相关方都能更具建设性地开展工作。"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                535,
+                942,
+                734
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GAL KRUBINER, PAGAYA 联合创始人兼 CEO"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                751,
+                806,
+                766
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                265,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                601,
+                947,
+                912,
+                959
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                929,
+                948,
+                939,
+                958
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/fe3381c6ff282ad158c64a5b7b730c7802ea677d86b9cb5131a1d65f1f5c228e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                63,
+                448,
+                934,
+                763
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "巴西监管机构积极培育金融科技创新和发展环境"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                55,
+                74,
+                803,
+                146
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "巴西已然成为金融科技创新的热土，建立起了一个繁荣活跃的金融科技生态，吸引了全球广泛关注。作为巴西最负盛名的金融科技公司，Nubank在这个曾经严重依赖现金的国家打造了一家极为成功的数字银行。但Nubank并非个例，它只是巴西国内17家独角兽公司之一。其他知名金融科技公司包括Creditas（借贷平台）、Dock（金融科技基础设施提供商），以及Ebanx（支付服务提供商），这些公司在各自领域都取得了非凡的成功。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                189,
+                487,
+                346
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "而这要归功于巴西央行和监管机构，特别是国家货币委员会。他们秉持着积极的监管态度，为该国建设支撑金融科技解决方案规模化应用的基础设施铺平了道路（参阅下图）。除了支持发展数字公共基础设施，包括实时支付平台Pix，巴西监管机构还积极主动地监管科技巨头，保障竞争有序的市场环境。巴西还采取灵活的牌照制度，在标准银行牌照之外，还同时颁发支付机构牌照。此类牌照允许机构发起和处理支付交易，而对其监管限制相对较松。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                189,
+                942,
+                363
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "巴西监管环境支持金融科技创新和发展"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                409,
+                519,
+                432
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "巴西在建设一体化数字公共基础设施方面树立了典范……"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                464,
+                557,
+                485
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "愿景 “本项目将成为推动国家未来金融中介体系全面转型的起点，协同金融科技行业和开放银行，发展和巩固新的支付方式。” Roberto Campos，巴西央行行长，2020年表示"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                507,
+                600,
+                549
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "协议 巴西央行负责管理和运行支撑Pix的即时支付系统（SPI）以及BR码（标准二维码）协议"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                565,
+                611,
+                595
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "治理 巴西央行负责管理目录和支付活动，而Pix理事会（Pix Forum）则由银行和其他利益相关方代表组成"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                615,
+                623,
+                644
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "目录 巴西央行还负责运行交易账户识别码目录（DICT），这是一个将身份别名（如电子邮件、二维码或随机密钥）与账户信息关联的全国数据库"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                665,
+                603,
+                695
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "定价 Pix对个人免费，对商家每笔交易平均收取  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "0.22\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 的费用（据国际清算银行数据）"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                718,
+                596,
+                736
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "来源：公司投资者简报；案头研究；BCG分析。"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                782,
+                393,
+                797
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "……重塑该国金融市场格局"
+                    }
+                ]
+            },
+            "bbox": [
+                744,
+                463,
+                900,
+                499
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1.5倍"
+                    }
+                ]
+            },
+            "bbox": [
+                744,
+                536,
+                882,
+                577
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "十年间有银行账户的人口增长（从2011年的 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "57\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "增至2021年的 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "84\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "）"
+                    }
+                ]
+            },
+            "bbox": [
+                744,
+                580,
+                890,
+                619
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "17 巴西国内金融科技独角兽公司数量"
+                    }
+                ]
+            },
+            "bbox": [
+                744,
+                656,
+                858,
+                727
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "专题2"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                38,
+                124,
+                57
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                948,
+                73,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                946,
+                401,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                732,
+                946,
+                941,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5. 欺诈和网络安全问题备受关注。随着实时支付和生成式AI日益融入消费者金融服务，欺诈风险不断攀升。在美国，根据身份盗窃资源中心（ITRC）数据，2023年美国国内数据泄露事件同比增加78%，达到创纪录的3205起。根据2024年美国金融犯罪执法局报告，美国国内超过40%的《银行安全法》相关报案与身份欺诈有关，因银行身份验证失败直接导致的可疑活动涉案金额高达2120亿美元。  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 各种新的安全威胁，如利用深伪技术（使用AI制作以假乱真的视频或其他媒体材料），不仅损害了金融体系，而且侵蚀了基本信任。"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                137,
+                489,
+                354
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "6. 生成式AI规模化应用加速。生成式AI应用将加速发展，短期内的应用场景以提效和营销为主。包括PayPal和Klarna在内的一些金融科技公司，正将生成式AI深度融入自身运营模式，实现自动化客户服务、结账付款及个性化推荐。我们认为，借助生成式AI的产品创新即将到来，但在短期内不会产生很大影响。"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                375,
+                487,
+                502
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "7. 嵌入式金融服务深化发展。随着 B2C 和 B2B 领域客户活动不断数字化，金融服务嵌入非金融服务旅程的趋势将会继续扩大。"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                523,
+                487,
+                577
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "8. 主流银行跨界涉足广告。虽然银行长期以来一直掌握着宝贵的客户数据，但鲜有银行通过广告将这些数据变现。大通银行（Chase）等主流银行开始跟随金融科技公司的步伐，利用第一方数据在自营的封闭商务网站上展示相关广告内容。"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                601,
+                487,
+                709
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "9. IPO和并购市场迎来复苏。融资寒冬过后，我们预计，随着企业流动性需求的增加和资本市场条件的改善（利率回落），金融科技公司IPO和并购活动将大幅升温。"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                731,
+                489,
+                804
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "欺诈是个随处可能发生的严重问题，每个人都可能成为受害者。欺诈是支付活动中自然会出现的，但一旦太多，就成了严重问题。反欺诈工作需要更多政府支持，但作为金融科技公司，我们必须合力解决这个问题。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                137,
+                942,
+                366
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GB AGBOOLA, FLUTTERWAVE PAYMENTS 创始人兼 CEO"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                381,
+                892,
+                397
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "1. 美国身份盗窃资源中心《2023年数据泄露报告》，2024年1月25日；美国金融犯罪执法局《财务趋势分析》，2024年1月；Plaid与Fintech Takes联合发布《数字身份范式转变》，2024年2月。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                885,
+                934,
+                915
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                265,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                946,
+                905,
+                960
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                922,
+                948,
+                939,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/16c129e90f69b8711a92ba7f2a3000855bf97df88a7bbcc830bbe9f58bf75ff7.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                1,
+                937,
+                486
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "金融科技现状：四大发展主题"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                507,
+                426,
+                600
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "过去几年，一度高歌猛进的金融科技行业逐渐回归现实。这样的故事曾反复上演：淘金热潮终将退去，总有理性清算的一天。但与以往情形一样，市场上将会出现一批业务精简、有所收敛、重新聚焦的金融科技公司。当前的融资寒冬已经淘汰并将继续淘汰那些商业模式不具盈利或规模化发展能力的弱势公司。幸存下来的强者将面临新的金融服务市场环境，它们（以及传统银行）将要应对四大发展主题带来的挑战："
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                609,
+                942,
+                766
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 嵌入式金融将无处不在。"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                783,
+                757,
+                801
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 互联商务蓄势起飞。"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                819,
+                719,
+                837
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 开放银行给银行业和广告业带来不同的影响。"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                854,
+                932,
+                873
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 生成式AI发挥变革性力量。"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                890,
+                781,
+                908
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                948,
+                75,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                946,
+                401,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                732,
+                946,
+                941,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "到2030年，嵌入式金融将无处不在"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                36,
+                430,
+                59
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "如今，金融服务与非金融服务的整合方兴未艾。嵌入式金融作为一种更自然的货币交易便利方式，能够消除客户旅程卡点，实现高度定制化的客户体验（参阅图4）。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                73,
+                487,
+                143
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "目前，嵌入式金融的主要应用场景仍是支付、借贷和保险，涵盖B2B和B2C领域。金融生态的API化和整合能够促进业务增长。在支付领域，Stripe和Adyen作为嵌入式金融的两大头部公司，2023年支付交易总额突破了万亿美元大关。这些公司及其他同业继续扩展应用场景，包括银行支付、接受加密货币支付，以及使用数字资产（参阅专题3）。嵌入式借贷（包括先买后付，BNPL）虽不像其他金融科技细分市场那样成熟，但交易量稳健增长，其中Klarna处理的交易量达到900亿美元，Affirm处理的交易量达到200亿美元。此外，嵌入式保险也迎来可观的增长前景；其在欧洲的接受率已经较高，2023年保费规模约为80亿美元。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                165,
+                487,
+                391
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "这仅仅只是开始。我们预计到2030年，以营收计，嵌入式金融市场规模将超过3200亿美元，其中中小企业市场将占一半左右（1500亿美元），垂直和水平独立软件供应商都在积极响应应该客群未满足的需求。水平解决方案将发挥越来越大的作用，如提供薪资服务和流动资金贷款的会计软件。同时，银行也开始越来越多地提供包括会计在内的端到端解决方案。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                412,
+                487,
+                552
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "嵌入式金融零售端的消费者市场发展如火如荼，支付、保险和借贷领域接受度较高。预计到2030年，该细分市场营收规模将达到1200亿美元。"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                574,
+                487,
+                627
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在大企业市场，预计嵌入式金融营收规模将增长至500亿美元，水平软件将越来越多地嵌入支付、借贷和贸易解决方案，以解决应付账款和应收账款方面的长期痛点。我们看到金融服务已经嵌入B2B平台和供应商网络，提供越来越多的增值服务，包括现金流预测和支出管理工具。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                649,
+                487,
+                753
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "一个重要的问题是：这个利润池主要是由金融科技公司独享，还是传统银行也会想方设法来分一杯羹？我们预计在短期内，成熟金融科技公司将继续占据绝大多数的份额，而未来传统银行也将逐渐抢占份额。随着监管对银行与金融科技合作的审查加强，那些拥有健全风险管控能力、能够有效监督金融科技公司并建立牢固合作关系的银行，将更能收获经济效益。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                776,
+                489,
+                915
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "嵌入式金融继续迅猛发展。在垂直软件领域，我们已进入嵌入式金融发展的第三阶段，但在其他职能领域，如CFO办公室，我们仍处于第一阶段。嵌入式金融是时代大势，而非一时狂热。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                186,
+                942,
+                387
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MATT HARRIS, BAIN CAPITAL VENTURES合伙人"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                401,
+                843,
+                418
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                265,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                946,
+                905,
+                959
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                922,
+                948,
+                939,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "专题3"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                38,
+                124,
+                57
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "“数字资产的第三春”：这次真的来了吗？"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                75,
+                74,
+                870,
+                110
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在最近一次加密货币市场动荡之后，许多人开始怀疑更加广义的数字资产是否还能东山再起。尽管近期出现短期波动，但人们对数字资产的兴趣依然浓厚，支持者将其视为货币的下一种形态，甚至有人期望数字资产推动全球经济增长。数字资产技术包括央行数字货币（CBDC）、稳定币、加密货币，以及支持更广泛的资产和存款代币化的统一账本用例。数字资产市场近期呈现多种发展趋势："
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                175,
+                489,
+                317
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 在全球范围，央行数字货币发展迅猛，各国央行大多都在积极研究或启动试点项目。"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                177,
+                942,
+                215
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 稳定币投资规模庞大，支持者看重该技术能够支持即时跨境支付结算，提高流程效率，并降低交易成本。PayPal近期推出与美元挂钩的稳定币PayPal USD，可用于转账业务，便是很好的例子。"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                235,
+                942,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 在金融科技的大环境下，近期监管政策澄清，以及机构投资规范化，包括推出比特币ETF，对加密货币发展构成利好。"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                344,
+                932,
+                399
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 根据国际清算银行的说法，统一账本正逐渐成为一种潜在的新型金融市场基础设施，通过一个可程序控制的平台，将央行数字货币、代币化存款和代币化资产整合到一起，从而提供代币化优势。"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                420,
+                942,
+                508
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "虽然数字资产市场出现上述投资活动和变化趋势，但对于近期会产生何种影响，以及数字资产这次是否真的会迎来春天，目前仍难下定论。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                530,
+                942,
+                585
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/849be25c283071967df2915107aab32357fe84e17ea97b6d72ffa927244abdf3.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td></td><td>●</td><td>●</td><td></td><td></td><td>●</td></tr><tr><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td>●</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td>●</td><td>—</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>—</td><td>●</td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td></td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td></td><td></td><td>●</td><td>●</td><td>●</td><td>●</td><td>—</td><td>●</td><td>●</td><td>●</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                68,
+                659,
+                927,
+                917
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                948,
+                75,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                89,
+                946,
+                403,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                731,
+                946,
+                942,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2c23531c641fc0711f0526eeec1212cb39bf4498e17b86b7fce948e92c1747d1.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "图4 | 到2030年，嵌入式金融市场营收规模将超过3200亿美元"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "来源：Capital IQ；Pitchbook；公司投资者简报；案头研究；BCG金融科技控制塔；BCG分析。注：ERP = 企业资源规划。"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                98,
+                922,
+                341
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "互联商务蓄势起飞"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                476,
+                258,
+                498
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "传统银行掌握着最富洞察力的客户数据，这一优势自不必言，但尚未得到充分发挥。如果有一个“杀手级”应用能将这些专有数据转化为创收来源的话，那这个应用就是互联商务。由于cookie“贬值”以及应用追踪透明化，第一方数据的价值日益凸显，互联商务正逐渐成为银行的“三效合一”战略打法——创造新收入来源，提高客户忠诚度，并为中小企业和大企业客户提供营销渠道。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                512,
+                487,
+                659
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "互联商务的蓬勃发展离不开必要的市场环境，即较高的消费者数字化互动水平，无论是在网站还是在移动应用上。利用精细化客户数据，银行可以推送高度定制化的广告内容，从而提高客户忠诚度；商家按照银行带来的销售额或流量向银行付费，从而形成一个三赢局面：客户得到奖励，商家增加销售，银行获得收入。随着核心支付收入来源（如清算费和滞纳费）持续承压，且存款产品在高收益环境下存在同质化风险，互联商务或将成为银行的未来商业模式之一。不少大型金融机构正积极布局互联商务，代表例子包括摩根大通的Chase Media Solutions、第一资本的Capital One Shopping及花旗银行的Citi Shop。一些金融科技公司，如Klarna，也在大力投资发展互联商务。Revolut和PayPal近期也都宣布推出广告业务。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                682,
+                487,
+                829
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                507,
+                476,
+                942,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "苹果公司可能也在发力互联商务（参阅专题4）。在这方面，金融科技公司与银行之间存在丰富的合作机会：金融科技公司能够提供快速流程和优质的用户体验，银行则能带来客户和数据。例如，花旗银行与B2B2X金融科技公司Wildfire Systems合作，联手打造了Citi Shop。"
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                625,
+                942,
+                734
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "银行及其合作伙伴需要警惕的风险是，这种精准广告投放可能会把广告商变成客户，而把消费者变成服务广告商需求的产品，这样会损害品牌忠诚度。银行在这方面需要谨慎权衡。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                756,
+                942,
+                829
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                946,
+                265,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                946,
+                907,
+                960
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                922,
+                948,
+                941,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "苹果公司在金融服务领域会走多远？"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                55,
+                74,
+                739,
+                110
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "苹果公司可以说是全球最大的“金融科技”公司，直接与新型银行及支付公司展开竞争。我们注意到，苹果的新AI能力支持众多应用场景，包括购物和个人财务管理。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                136,
+                942,
+                223
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "LOGAN ALLIN, FIN CAPITAL 创始人兼主管合伙人"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                237,
+                384,
+                255
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "长期以来，科技巨头一直站在引领嵌入式金融服务发展的前沿。大型科技公司主要利用嵌入式金融来强化自身核心业务，但这一过程并非一帆风顺。亚马逊近期宣布退出中小企业贷款项目；谷歌虽然继续发展支付业务，但目前主要是在美国境外开展。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                288,
+                487,
+                395
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "或许最大的悬念和风向标是，苹果公司究竟会把金融服务做到多深（参阅下图）。苹果已在其生态内无缝推出一系列金融服务。然而，苹果与高盛未来合作的不确定性、日益严苛的监管审查，以及美国司法部近期以非竞争性行为为由提起的反垄断诉讼（特别针对Apple Wallet），可能会在短期内抑制其发展金融服务的欲望和企图。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                416,
+                487,
+                539
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在我们看来，许多消费者银行产品都是公平竞争的选择，只要它们符合苹果公司的核心理念：提高核心产品粘性，支持产品升级周期，支撑客户服务战略，贡献高利润。Apple Wallet是否会提供自主投资和互联商务服务，是未来值得关注的两大动向。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                290,
+                942,
+                395
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "苹果公司的金融服务发展进程"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                53,
+                580,
+                411,
+                605
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/244e538d826eed86c5331cd9d52674b6fdbd02d448d218f3fc1fa76620dccbc7.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                77,
+                633,
+                119,
+                682
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "支付：Apple Pay 2014年推出"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                694,
+                159,
+                740
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "· Apple Wallet支持手机端借记卡和信用卡交易"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                769,
+                206,
+                802
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "·覆盖80个国家"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                802,
+                169,
+                816
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "·拥有6亿用户 存款：现金 + 储蓄账户"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                816,
+                164,
+                831
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4017fbc1d948bd692c077c4a6fdaca1228a9efbbbb0e4141e08c57082ec78765.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                250,
+                633,
+                307,
+                683
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                250,
+                695,
+                364,
+                725
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2017年推出现金账户  \n2023年推出储蓄账户"
+                    }
+                ]
+            },
+            "bbox": [
+                248,
+                725,
+                364,
+                751
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "·高盛支持的存储钱包和高收益储蓄账户"
+                    }
+                ]
+            },
+            "bbox": [
+                248,
+                768,
+                389,
+                791
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "· 拥有1200万用户，储蓄存款规模超100亿美元信用卡：Apple Card  \n2019年推出"
+                    }
+                ]
+            },
+            "bbox": [
+                248,
+                793,
+                391,
+                816
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/bda3fc4cb6fb28cf4ffbc5736ba3aa33c232fb03470b1469c754d4cb2411263f.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                428,
+                644,
+                487,
+                673
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                426,
+                694,
+                515,
+                740
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "·高盛支持的白标信用卡"
+                    }
+                ]
+            },
+            "bbox": [
+                428,
+                769,
+                566,
+                783
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "·上线三天内信用卡激活量达100万张"
+                    }
+                ]
+            },
+            "bbox": [
+                428,
+                783,
+                566,
+                806
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "· 2023年现金返还总额达10亿美元"
+                    }
+                ]
+            },
+            "bbox": [
+                426,
+                806,
+                569,
+                829
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/6d6d08fdec1e5369f70b3d3de66dfd06cc95a5b2cf4841fa3a89d4502e617dc9.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                603,
+                634,
+                675,
+                680
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "先买后付：Apple Pay Later  \n2023年推出"
+                    }
+                ]
+            },
+            "bbox": [
+                601,
+                695,
+                724,
+                740
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "·苹果近期宣布将终止“先买后付”服务，转而推出新的全球分期贷款服务，包括与第三方合作，如联手Affirm"
+                    }
+                ]
+            },
+            "bbox": [
+                601,
+                766,
+                731,
+                834
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2b1e36c4d81ce2b1aad09352b542f7b09231835f2ee9fd5ab1dfbabe6fba6014.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                788,
+                642,
+                850,
+                686
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "下一步发展方向？"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                697,
+                910,
+                715
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "·互联商务？"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                717,
+                860,
+                732
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "·自主投资？"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                731,
+                860,
+                746
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "· 结合Apple Intelligence的个人CFO?"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                746,
+                880,
+                778
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "·其他解决方案？"
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                778,
+                885,
+                795
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "来源：苹果公司投资者简报；案头研究；BCG分析。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                894,
+                425,
+                910
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "专题4"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                36,
+                126,
+                58
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                948,
+                75,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                947,
+                403,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                732,
+                946,
+                941,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "开放银行对银行业影响有限，但对广告业影响甚大"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                36,
+                485,
+                80
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "随着越来越多的国家实行API支持的客户授权个人金融数据访问，开放银行势必将会继续发展壮大。虽然开放银行有助于推动创新（如在贷款审核和客户体验等方面），扩大金融服务覆盖，但不太可能改变银行业的基本竞争格局。事实上，在那些开放银行已经发展了十年乃至更长时间的国家，目前并未出现“杀手级”应用场景。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                93,
+                487,
+                217
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "虽说开放银行不太可能掀起大的风浪，但并不意味着它毫无影响。目前，全球已有超过65个国家在一定程度上实施了开放银行，我们预计这一趋势将继续下去。  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 不同司法管辖区的做法不同，一些地区采取市场化模式（美国之前的做法曾是优秀案例，但现在将会通过消费者金融保护局1033规则实施监管），另一些地区则通过监管来塑造开放银行市场，例如欧盟出台了第三版支付服务指令（PSD3）。在一些亚太国家出现了一种混合模式，即监管机构与市场主体合作，韩国即为一例。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                237,
+                487,
+                412
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在某些领域，开放银行确实带来了积极变化，推动了产品服务创新，提升了客户体验。例如，账户信息访问使得市场新进入者能够高效地开展针对非主办客户的信贷审核。但总体而言，开放银行的影响比较有限。在英国，开放银行已经推出了六年，但消费者接受度增长停滞，稳定在12%的月活用户率水平。即使是数字化普及一向走在前列的北欧国家，开放银行的用户渗透率也远低于50%（例如瑞典约为30%，挪威约为25%）。  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{3}"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                432,
+                489,
+                590
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "开放银行需要具备什么条件才能对银行业产生更大的影响？如果银行账号能像手机号码一样便于携转，切换服务端口将变得容易得多。但问题仍然在于，银行数据的访问是否能够支持打造全新的差异化价值主张。我们预计，在传统的银行应用场景之外，开放交易层面的数据访问可能会对广告和互联商务产生更广泛的影响。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                613,
+                487,
+                734
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "我们认为，开放银行将继续在消费者和中小企业金融服务及金融科技领域发挥作用，但并不会改变游戏规则。开放银行连接层（即调取和管理银行按法规要求提供的数据）的收入池将维持适度规模，价值将主要聚集到依托开放银行基础设施的最终应用场景提供方。这些应用场景提供方往往使用专有API，有更高的数据粒度和广度，辅以开放银行提供的数据访问，而非依赖于目前常见的屏幕抓取或其他数据收集方法。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                36,
+                942,
+                196
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在韩国，开放银行降低了金融数据的访问门槛。金融科技公司无需金融牌照即可访问金融信息。它们可以对接原有银行账户，并在平台内进行简单汇款操作和综合余额查询。不过这种数据访问并非差异化优势，许多其他机构也能提供同样的服务。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                256,
+                942,
+                516
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "DANIEL YUN, KAKAOBANK CEO"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                530,
+                734,
+                546
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Konsentus《开放银行和开放金融的世界》，2023年10月12日。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                868,
+                519,
+                884
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "3. Open Banking Limited《开放银行影响报告》，2023年10月19日；Finansinspektionen《瑞典开放金融》，2023年6月28日；Finanstilsynets。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                885,
+                937,
+                916
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                946,
+                265,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                946,
+                905,
+                960
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17"
+                    }
+                ]
+            },
+            "bbox": [
+                922,
+                948,
+                939,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "我们认为，生成式AI在提效方面拥有巨大潜力，例如客户支持、欺诈风险管理、客户导入和开发人员辅助等应用场景。此外，生成式AI还能针对不同国家和客单价（ATV）应用场景，更好地自动提供支付方法建议。"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                53,
+                36,
+                919,
+                151
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "FRAN RYAN, STRIPE 金融服务总经理"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                167,
+                307,
+                183
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "生成式AI的变革性潜力在于效率提升，后续也将应用于产品创新"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                210,
+                473,
+                253
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "生成式AI正在改变全球众多行业，同时也在金融服务领域迅速证明其价值，带来切实可见的效率提升。金融科技公司和传统银行都在利用生成式AI开展各类工作，包括客户服务和支持；软件编程、测试和建档；监管申报及合规；以及自动精准数字化营销。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                266,
+                487,
+                368
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "生成式AI的应用和影响将不断扩大。具体而言，我们认为银行和金融科技公司可在销货成本各环节（如提高开发人员和服务运营效率）、销售与营销（加快内容创作产出速度，提高销售团队效能），以及综合管理成本（优化第三方支出，精简技术栈，自动化支持职能）等方面利用生成式AI实现降本增效。特别是对于金融科技公司而言，短期内生成式AI的影响可能更为明显，因为在其“数字优先”成本结构集中的领域（如代码编写、客户支持和数字营销），生成式AI都能带来显著效率提升（参阅图5）。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                388,
+                487,
+                558
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "虽然滞后于在效率提升方面的应用，但我们预计生成式AI在产品创新方面的应用终将到来。我们认为，生成式AI技术在个人财务管理方面存在可观的应用前景，大语言模型能够更好地评估客户需求，提供储蓄和实现财务目标等方面的定制化建议。除了提效和创新方面的优势，生成式AI还能帮助金融机构实现端到端转型，成为更高效、更有战略力和竞争力的组织。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                210,
+                942,
+                350
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "强调负责任的AI，并确保建立适当的治理机制和风险管控体系，是生成式AI应用的基本要求。随着生成式AI的广泛应用，能力标准将进一步提高。生成式AI风险管理将是企业规模化发展的差异化优势所在。富有远见的金融科技公司和银行现在就应投入资源建设相关能力和治理机制。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                370,
+                942,
+                476
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "生成式AI生态圈也必将为新的垂直领域创新企业提供发展空间，这些创新企业能够帮助银行和金融科技公司加快生成式AI技术部署。"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                498,
+                942,
+                552
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "图5 | 生成式AI将变革性地提升生产效率"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                595,
+                536,
+                618
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "生成式AI已在大规模推广应用，带来巨大效率提升生成式AI应用场景及行业案例"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                634,
+                310,
+                684
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/cb2731839dfa8df89bf97eca83ec8ddae0f5ee5c5588d9956df93cefe14b3d14.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "来源：公司申报文件。"
+                    },
+                    {
+                        "type": "text",
+                        "content": "鉴于其“数字优先”的成本结构，金融科技公司在短期内能从生成式AI获得更多效益各类成本在运营成本中的占比1"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                690,
+                460,
+                860
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 租用成本、专业服务费用等。"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                909,
+                270,
+                925
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2cfb0c2205d4c524684f42a1c12fe0be7e9a7eb8c83fa3f7d032109fb9fc2b88.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 基于70家上市金融科技公司及一部分北美银行。不包括交易和利息成本。"
+                    }
+                ]
+            },
+            "bbox": [
+                485,
+                693,
+                914,
+                862
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "18"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                948,
+                75,
+                958
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                946,
+                401,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                732,
+                946,
+                941,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/0fda9df22986363ba7286782f673e080d1ebbb6b78ad767f9ca76cd56c3fda55.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                58,
+                41,
+                1000,
+                657
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "未来前行方向：五项行动呼吁"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                524,
+                675,
+                895,
+                768
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                947,
+                265,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                946,
+                905,
+                959
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "19"
+                    }
+                ]
+            },
+            "bbox": [
+                924,
+                948,
+                939,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "审慎：风控与合规作为金融科技和更广泛生态的竞争优势"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                53,
+                36,
+                484,
+                80
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于银行和金融科技公司，鉴于当前监管环境以及双方加强合作的广泛机会，加强风控与合规能力的重要性日益凸显。对于金融科技公司，这意味着要将合规视为一种战略优势，而非义务负担。这种战略思维要求全面审视风控与合规工作：预先评估适用的监管法规，并积极实施行业级指导方针和管控措施，特别是在反洗钱（AML）、了解客户（KYC）和经济制裁等金融犯罪合规的关键领域，以及在网络安全方面。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                93,
+                487,
+                246
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于银行而言，本身已对严格的监管环境习以为常，应该强化并发挥现有的合规优势。今后，银行与金融科技公司合作会越来越多，银行应该重视尽职调查能力，强化第三方监督管理流程。这在美国显得尤为重要。美国多家监管机构联合发布《第三方关系机构间指引》，要求银行直接监督第三方合规和风控活动，并确保建立针对与金融科技公司合作的监控机制。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                267,
+                487,
+                403
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "美国一些大型银行，包括摩根大通和花旗等全球性银行，以及Fifth Third Bank和KeyBank等地区性银行，利用自身在合规和风险管理方面的优势，与金融科技公司建立了牢固的合作关系，后来甚至收购了这些公司。这表明，双方可以构建互利共赢的合作模式。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                423,
+                487,
+                526
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "盈利：金融科技公司需将EBITDA利润率提高25个百分点以上"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                53,
+                558,
+                485,
+                601
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在接近零利率的迷幻时期，许多金融科技公司根本没有把战略目光放在盈利上面，这种“后遗症”至今犹存。2023年，排名前70的上市金融科技公司中，仅有33家实现了盈利。虽然情况相较于2022年有所改善，但仍反映出金融科技行业的健康和前景问题，只有不足半数的上市金融科技公司实现了可持续盈利。基于我们的调查研究和实践经验，我们认为金融科技公司需要并且能够将EBITDA利润率提高25个百分点以上。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                613,
+                487,
+                766
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "当然，金融科技公司目前正经历高利率环境的挑战，这令单位成本成为焦点问题。在这种形势下，严谨规范的成本管理将成为经营盈亏的分水岭。一些公司注重单位盈利能力并因此获益。特别是一些挑战者银行，已经实现营业利润转正，因而在目前融资受限的环境下，它们处于有利地位，更能实现规模化发展。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                787,
+                487,
+                906
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "总体来看，上市金融科技公司的经营成本大致可分为销货成本（30%-60%）、销售与营销成本（10%-40%），以及综合管理成本（10%-30%）。2023年，EBITDA排名前四分位的公司在各成本类别表现均比排名后四分位的公司要好约25个百分点。这给落后者敲响了警钟，同时也说明整个金融科技行业存在明显的成本节约机会。这些数据表明，金融科技公司有很大空间来简化运营并逐步实现盈利。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                36,
+                942,
+                185
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "我们并不建议落后的金融科技公司简单粗暴地削减成本，而是应该建立支撑规模化发展的成本结构，能够随着公司发展，带来复合回报。有效实现盈利需要多措并举，包括收入提升和成本节降，以及资产负债表改善："
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                205,
+                942,
+                288
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 收入提升抓手包括定价，特别是对支付业务定价的新营收模式（如基点费率、固定费用），而非软件即服务类型的订阅模式，从而产生更多收入。金融科技公司还应注重销售团队效能和商业化工作，包括明确垂直与水平细分客群，并制定相应的市场进入策略。"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                310,
+                942,
+                412
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 成本节降抓手永不过时，但许多金融科技公司尚未充分加以运用。重塑组织架构，进而减少组织层级并重新定义角色职责，可产生显著的成本影响；运营前中后台数字化，特别是增加关键流程的自动化决策，也可实现成本节约。成本领先的企业还重视卓越采购，合理优化并整合关键采购合同。对于集中、支持和技术等职能，适当优化和精简可进一步降低成本，特别是对于技术密集型金融科技公司来说。金融科技公司可以考虑建立共享服务团队，完善支持职能标准化流程，以及精简第三方支出。最后，金融科技公司可以将所有非差异化能力外包，专注于发展核心竞争力。"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                432,
+                942,
+                652
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 营运资本优化能在资产负债表上产生成本节约，重点在于完善应收账款和应付账款职能，提高现金流可见性。"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                673,
+                941,
+                725
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "增长：IPO（或战略性出售）和长远发展之迭"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                741,
+                942,
+                780
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "金融科技IPO市场不会一直沉寂下去。随着利率回落，金融科技公司寻求资本，我们预计金融科技IPO、战略性出售及其他并购活动将会升温（参阅图6）。全球各地的领先金融科技公司已纷纷表示，有意在不久的将来上市，其中包括非洲的Flutterwave、欧洲的Klarna、亚太的Airwallex，以及北美的Chime。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                794,
+                942,
+                913
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "20"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                948,
+                73,
+                958
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                947,
+                401,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                732,
+                946,
+                941,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "然而，金融科技公司必须谨慎对待IPO。过去曾有不少公司跑步IPO，之后股价较发行价大跌四到八成。投资者的态度也发生了转变，过去要求金融科技公司“不计成本地增长”，现在则赞扬可持续的盈利性增长。评判标准已然改变，金融科技公司现在更有压力去讲好长期股权故事。在这种背景下，为了最大化IPO及之后的估值，金融科技公司需要聚焦以下最佳实践："
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                38,
+                487,
+                177
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 讲好股权故事。以前，金融科技公司凭借一个简单巧妙的客户痛点解决方案就能“一路开挂”。如今，投资者期待听到更丰富全面、逻辑清晰的故事，阐明长期成功的商业逻辑。当然，对于寻求上市的金融科技公司而言，详细说明如何满足客户需求缺口以及如何颠覆现状格局仍然至关重要。但现在投资者开始寻找可持续的长期投资标的，他们需要更多细节信息。金融科技公司将如何以可持续的成本吸引用户？有何计划来实现盈利性增长？如何应对日益增加的监管合规要求？"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                202,
+                487,
+                393
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 适时采取行动。在IPO之前，金融科技公司首先需要达到足够的规模、经营稳定性及可预测性，才值得为了上市而承担相应成本和面对严苛审查。为此，金融科技公司需要关注业务基本面。这些要求其实并不新鲜，但现在却成为金融科技公司的成败关键。要想在新环境下生存发展，金融科技公司必须高度关注单位经济效益，并积极优化成本、收入、市场进入策略、风控与合规能力以及合作模式。只有这样，金融科技公司才能做好充分准备，以可盈利、可预测的方式发展壮大。"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                419,
+                487,
+                558
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                546,
+                36,
+                942,
+                91
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 加强合规能力。要为成功IPO及长远发展做好准备，除了前文所述的成本和收入抓手，金融科技公司还应建立健全合规管理，以减轻未来监管措施带来的风险和影响，增强潜在合作伙伴对共同事业的信心。这不是在IPO前几个月内能完成的事情。我们建议金融科技公司在IPO前五个季度按照上市公司标准进行日常运营。"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                112,
+                942,
+                252
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- 积极准备合作。金融科技公司领导层应高度重视合作战略，因为我们预期金融科技公司与银行之间将持续存在大量协同机会。金融科技公司只有具备稳健的资产负债表和管控制度，以及卓越的合作建立和业务发展能力，才能充分把握这些机会。"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                274,
+                942,
+                379
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "金融科技公司越早搭好股权故事框架并阐明投资者评估的关键指标，越有可能在IPO及之后维持高估值水平。我们以Affirm为例：在2021年1月上市之际，Affirm清晰阐明了其区别于传统借贷的商业模式，并披露了平台成交总额（GMV）同比增长77%，NPS得分达到78，拥有620万消费者用户及6500家商家用户。  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{4}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Affirm强调了自己是美国持牌贷款机构，同时说明了其遵从联邦和州贷款法规的长期计划。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                401,
+                942,
+                558
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4a9ec8702a9c24715510bd4a0fef8b968590a75e40d63ab9f34c839af195fc42.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "图6 | 筹划IPO和长远发展之路"
+                    }
+                ],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "来源：公司投资者简报；案头研究；BCG分析。"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                621,
+                937,
+                838
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "4. Affirm 于 2020 年 11 月 18 日向美国证监会申报的 S-1 表格登记声明。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                898,
+                544,
+                915
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                946,
+                265,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                946,
+                905,
+                960
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "21"
+                    }
+                ]
+            },
+            "bbox": [
+                922,
+                947,
+                939,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/12df21f993700ae15cca685de61be1fc3b926522ad53efadcc386e547c9a875b.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "图7 | 传统零售银行需要转型为数字化互动平台"
+                    }
+                ],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "来源：data.AI；摩根大通消费者银行业务报告（2024年2月）；BCG分析。"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " data.AI报告的2023年月活天数比率，其中银行包括美国银行、富国银行、大通银行、Fifth Third、PNC、Regions、TD；金融科技公司包括Affirm、Cash App、Chime、MoneyLion、PayPal、Robinhood、Venmo、Varo。\n  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 摩根大通消费者银行业务调查（2024年2月）。"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                87,
+                937,
+                306
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "增长：零售银行作为数字化互动平台"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                53,
+                467,
+                452,
+                488
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在金融科技创新热潮中，我们容易忽视银行的独特优势，即专有客户数据访问和高频客户互动。毋庸置疑的是，银行坐拥宝贵的客户数据资源，但银行利用这些数据掘金的成功案例相对较少。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                502,
+                487,
+                571
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "“杀手级”应用或许已经出现。为了抗衡金融科技公司将金融服务嵌入非银行旅程的做法，银行纷纷开发自己的商务网站，利用自身对客户需求和行为的深度洞察，精准定制产品服务和奖励方案（参阅图7）。银行这样的做法，有点像是转到“主场”作战以发挥自身优势，特别是鉴于银行拥有庞大的客户群。虽然银行一般被认为是数字化落后者，但许多银行实际上比金融科技公司享有更高的消费者互动，应该充分利用这一优势。金融科技公司目前胜过银行的方面在于更能将平台互动转化为消费行为。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                594,
+                487,
+                785
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "许多情况下，互联商务平台的成败取决于银行、金融科技公司以及商家之间的合作水平——这是一个典型的“三赢”局面。但这也对金融科技公司自身的合规能力及与银行对接的便捷程度提出了更高的要求。金融科技公司需要有信心能够迅速落地，其潜在合作伙伴也是如此。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                807,
+                489,
+                913
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "新世代消费者是在金融科技产品的伴随下成长起来的。他们普遍从未去过银行网点——他们是真正的数字原住民，可能只使用过虚拟银行卡。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                612,
+                942,
+                784
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "FRANCESCA CARLESI, REVOLUT 英国 CEO"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                799,
+                801,
+                816
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "22"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                948,
+                75,
+                958
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                946,
+                401,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                732,
+                946,
+                942,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "在金融科技领域，印度汲取了各地最佳实践：借鉴了美国的资本驱动创新理念，参考欧洲提出监管要求，学习中国和亚太地区重视本土科技企业并强调价值创造。"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                53,
+                36,
+                942,
+                123
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "KARTHIK RAGHUPATHY, PHONEPE 战略与投资者关系负责人"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                137,
+                475,
+                155
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "增长：政府支持建设全方位、一体化数字公共基础设施"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                53,
+                180,
+                485,
+                223
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "政府部署建设三方数字公共基础设施（DPI）生态（由数字身份层、支付层和数据交换层组成），能够拓宽金融服务覆盖，激发创新，最终造福公众，在新兴市场更是如此（参阅图8）。"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                236,
+                485,
+                307
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "许多国家尝试效仿两个国家的先进案例——印度的UPI和巴西的Pix，但鲜少有成功案例。这表明，孤立地实施数字身份或实时支付系统方面的单点解决方案，并不足以推动广泛普及。政府应该制定一套互通互操协议，并落实重要支撑体系，从而促进创新。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                329,
+                487,
+                435
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "目前，实时支付基础设施已比较普遍，全球有70多个国家建有某种形式的实时支付系统。但在许多市场普及率欠佳，往往是由于存在既有替代解决方案，以及缺乏配套数字公共基础设施功能（如目录服务），这些功能对于用户增长至关重要。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                456,
+                487,
+                492
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                507,
+                180,
+                942,
+                235
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在全面落实数字公共基础设施的市场，实时支付发展态势良好。在印度，过去三年月均实时支付交易量增长了四倍，从26亿笔增至133亿笔。  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{5}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 在实时支付基础设施之上，别名目录和二维码的可用性对于推动创新至关重要。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                256,
+                942,
+                344
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在数字公共基础设施获得成功的国家，政府引导和参与起到了决定性作用——制定数字公共基础设施宏观愿景，建立操作协议，并推动私营部门采用。此外，数字公共基础设施的成功还取决于其综合水平，即涵盖数字身份、目录和配套服务，以及各类系统的全面整合；相反，孤立的单点解决方案无法产生同样效果。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                365,
+                942,
+                492
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a8c12206ffffacc289c1919365099d27ec51dc78189a394c7eb039a00fef3195.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "图8 | 数字公共基础设施如何助力私营部门创新"
+                    },
+                    {
+                        "type": "text",
+                        "content": "印度的DPI技术栈三层均有政府制定的协议，进而支持私营部门创新"
+                    }
+                ],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "来源：公司投资者简报；案头研究；BCG分析。"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                583,
+                606,
+                838
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/fecb794c0098d4215a86131ef5320cfce033efde8d40409176d3eb0ec1fd9695.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "各层整合产生强大效果"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                630,
+                588,
+                937,
+                841
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "过去三年的月均实时支付交易量增长了四倍，从26亿笔增至133亿笔"
+                    }
+                ]
+            },
+            "bbox": [
+                700,
+                775,
+                882,
+                814
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "5. 印度国家支付公司 UPI 产品统计数据，2024 年 4 月报告。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                898,
+                472,
+                915
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                947,
+                265,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                946,
+                905,
+                960
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "23"
+                    }
+                ]
+            },
+            "bbox": [
+                922,
+                947,
+                939,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/7acc077529e66e98803037c879d0f33cb831195ef04173c377d4edc32c3e66db.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                937,
+                485
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "结语"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                58,
+                506,
+                174,
+                548
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "当今世界，金融科技的成功秘诀非同以往，包含三大要素：审慎经营为本，单位经济盈利，稳健客户增长。这种变化对于所有金融科技公司都有影响和启示，特别是在它们刚刚经历融资寒冬、渴求投资之际。对于寻求IPO的金融科技公司，前进道路变得愈加复杂难行：投资者仍然在寻找金融科技的神奇魔力——巧妙地解决金融服务中仍普遍存在的痛点——但他们同时也希望金融科技公司能讲述更清晰、更细致的故事，阐明如何实现长期盈利性增长。对于所有金融科技公司，无论是上市还是未上市，以及与之竞争的银行，牢牢把握成本和收入两大抓手将是成功关键。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                577,
+                487,
+                785
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "同时，我们认为，未来金融科技公司与传统银行之间将能建立更高层次的合作和伙伴关系，双方之间存在许多互利共赢的协同机会，而且可望带来丰厚回报。如今，嵌入式金融、互联商务以及二者之间的其他创新模式成为常态，强大的合作和合规能力将变得与创新、技术和营销能力同等重要。"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                807,
+                487,
+                912
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "全球金融科技领域不乏成功案例。在印度和巴西，我们看到两国数字公共基础设施模式展现的未来愿景——监管机构谨慎权衡，在鼓励和促进创新的同时，注重保护消费者权益。我们发现，通过互联商务，银行终于找到有效利用客户数据创造价值的方式。我们认为，生成式AI简直是一种量身定制的提效抓手，可以帮助一些金融科技公司在困难时期维持经营，渐渐站稳脚跟。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                577,
+                942,
+                715
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "今年的报告贯穿着 “回归本源” 的主题，但这并不意味着令人兴奋的金融科技时代已经结束。F1车队工程师一般会优先改进刹车系统，从而帮助赛车在整个赛程中最大限度延长高速飞驰的时间。在金融科技领域同样如此，我们必须学会如何以及何时放慢步伐，才能最终更快地抵达目的地。"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                738,
+                942,
+                843
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "24"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                948,
+                73,
+                958
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                947,
+                401,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                732,
+                947,
+                941,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "关于作者"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                48,
+                282,
+                93
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                112,
+                115,
+                133
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Deepak Goyal"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                149,
+                193,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "董事总经理，全球资深合伙人纽约\ngoyal.deepak@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                167,
+                315,
+                219
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Inderpreet Batra"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                224,
+                221,
+                243
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "董事总经理，全球资深合伙人\n纽约\nbatra.inderpreet@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                241,
+                315,
+                294
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Alexander Paddington"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                298,
+                273,
+                318
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "合伙人  \n纽约  \npaddington.alexander@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                317,
+                332,
+                367
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Andrew Janssens"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                373,
+                223,
+                391
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "项目经理\n纽约\njanssens.andrew@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                390,
+                290,
+                442
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Sooahn Choi"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                447,
+                181,
+                464
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "咨询顾问\n纽约\nchoi.sooahn@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                464,
+                252,
+                516
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Aaron Cormier"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                521,
+                203,
+                539
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "首席商业分析师\n多伦多\ncormier.aaron@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                539,
+                268,
+                590
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "QED Investors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                630,
+                228,
+                652
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Nigel Morris"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                667,
+                179,
+                684
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "联合创始人，主管合伙人nigel@qedinvestors.com"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                684,
+                275,
+                720
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Frank Rotman"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                53,
+                726,
+                198,
+                743
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "联合创始人，合伙人，CIO\n美国早期投资业务负责人\nfrank@qedinvestors.com"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                741,
+                287,
+                793
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Bill Cilluffo"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                800,
+                169,
+                816
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "合伙人，国际业务负责人\nbill@qedinvestors.com"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                816,
+                275,
+                852
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Tommy Blanchard"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                858,
+                233,
+                875
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "首席运营官\ntommy@qedinvestors.com"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                875,
+                285,
+                910
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Stefan Dab"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                149,
+                623,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "董事总经理，全球资深合伙人\n布鲁塞尔\ndab.stefan@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                167,
+                769,
+                219
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Yashraj Erande"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                224,
+                660,
+                243
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "董事总经理，全球合伙人孟买\nerande.yashraj@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                242,
+                732,
+                294
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Aparna Pande"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                298,
+                650,
+                317
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "项目经理  \n纽约  \npande.aparna@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                316,
+                722,
+                368
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Yann Sénant"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                373,
+                638,
+                390
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "董事总经理，全球资深合伙人\n巴黎\nsenant.yann@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                388,
+                769,
+                442
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Saurabh Tripathi"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                447,
+                678,
+                464
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "董事总经理，全球资深合伙人\nBCG 金融机构专项全球负责人\n孟买\ntripathi.saurabh@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                464,
+                771,
+                532
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Rishi Varma"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                510,
+                537,
+                636,
+                555
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "董事总经理，全球资深合伙人  \n新泽西  \nvarma.rishi@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                554,
+                769,
+                606
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Mike Packer"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                667,
+                633,
+                684
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "合伙人，拉美业务负责人\nmike@qedinvestors.com"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                684,
+                731,
+                720
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Sandeep Patil"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                725,
+                650,
+                743
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "合伙人，亚洲业务负责人\nsandeep@qedinvestors.com"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                741,
+                752,
+                778
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Amias Gerety"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                784,
+                645,
+                802
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "合伙人，美国早期投资业务核心成员amias@qedinvestors.com"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                800,
+                826,
+                837
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                946,
+                267,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                946,
+                905,
+                960
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "25"
+                    }
+                ]
+            },
+            "bbox": [
+                922,
+                948,
+                939,
+                959
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "关于BCG中国区专家"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                38,
+                292,
+                60
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "刘冰冰  \n董事总经理，全球合伙人  \nBCG金融机构专项中国区负责人  \nBCG财富管理和资产管理业务亚太区负责人"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                77,
+                433,
+                143
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "陈威震  \n董事总经理，全球合伙人  \nBCG金融机构专项中国区核心领导"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                151,
+                357,
+                203
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "成卓民董事经理"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                208,
+                142,
+                244
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "致谢"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                55,
+                442,
+                112,
+                464
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "本报告由波士顿咨询公司（BCG）与QED Investors（QED）联合撰写发布。作者团队在此诚挚感谢双方公司同事对本报告编写和制作做出的贡献。此外，作者团队十分感谢一对一访谈和小组讨论的所有参与者，他们为丰富本报告的洞察观点做出了宝贵贡献。"
+                    }
+                ]
+            },
+            "bbox": [
+                53,
+                476,
+                489,
+                583
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "邓俊豪  \n董事总经理，全球资深合伙人  \nBCG金融机构专项中国区核心领导"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                76,
+                811,
+                129
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "张岳泓  \n董事总经理，全球合伙人  \nBCG金融机构专项中国区核心领导"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                149,
+                811,
+                203
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "洪鸿达项目经理"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                208,
+                598,
+                244
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "更多联系"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                509,
+                442,
+                616,
+                464
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "如果您希望与我们作进一步探讨，请致信GCMKT@bcg.com。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                476,
+                931,
+                514
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "26"
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                947,
+                75,
+                959
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2024年全球金融科技报告：审慎经营，盈利提升，稳健增长"
+                    }
+                ]
+            },
+            "bbox": [
+                90,
+                946,
+                403,
+                960
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司 + QED INVESTORS"
+                    }
+                ]
+            },
+            "bbox": [
+                731,
+                946,
+                942,
+                960
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                40,
+                184,
+                79
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/6f867008ff8ac74969333d443ee457a80c4af6f6ca388e8306c7c9528213a7d3.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                510,
+                38,
+                623,
+                82
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "波士顿咨询公司（BCG）与商界以及社会领袖携手并肩，帮助他们在应对最严峻挑战的同时，把握千载难逢的绝佳机遇。自1963年成立伊始，BCG便成为商业战略的开拓者和引领者。如今，BCG致力于帮助客户启动和落实整体转型，使所有利益相关方受益——赋能组织增长、打造可持续的竞争优势、发挥积极的社会影响力。"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                98,
+                487,
+                221
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG 复合多样的国际化团队能够为客户提供深厚的行业知识、职能专长和深刻洞察，激发组织变革。BCG 基于最前沿的技术和构思，结合企业数字化创新实践，为客户量身打造符合其商业目标的解决方案。BCG 创立的独特合作模式，与客户组织的各个层面紧密协作，帮助客户实现卓越发展，打造更美好的明天。"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                242,
+                487,
+                363
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "QED Investors（QED）是一家全球领先的风险投资公司，总部位于美国弗吉尼亚州亚历山德里亚市。QED由Nigel Morris和Frank Rotman于2007年创立，专注于投资世界各地的颠覆性金融服务企业。QED致力于打造伟大企业，采取独到实战方法，充分利用其合伙人团队长达数十年的创业和运营经验，帮助企业实现突破性增长。截至目前，QED已投资了18个国家的200多家企业，其中包括28家独角兽企业。著名的投资案例包括AvidXchange、Betterfly、Bitso、Caribou、ClearScore、Current、Creditas、Credit Karma、Flywire、Greensky、Kavak、Klarna、Konfio、Loft、Mission Lane、Nubank、QuintoAndar、Remitly、SoFi、Wagestream和Wayflyer。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                98,
+                929,
+                343
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "如需获得有关 BCG 的详细资料，请发送邮件至：GCMKT@bcg.com。"
+                    }
+                ]
+            },
+            "bbox": [
+                94,
+                443,
+                673,
+                461
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "如欲了解更多 BCG 的精彩洞察，请关注我们的官方微信账号：BCG 波士顿咨询；BCG 数智港；“BCG 洞察”小程序；BCG 微信视频号。"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                483,
+                885,
+                518
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/cfa9d2b732234f58dc9aebcf770dec719dff7841b4486a8f01883bddf55ff3a6.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "BCG波士顿咨询"
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                532,
+                226,
+                624
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/04d2e363abbc60409b89ae0c5b567b1df20820d035b12ace510dcc0bea9521e1.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "BCG数智港"
+                    }
+                ]
+            },
+            "bbox": [
+                258,
+                532,
+                389,
+                625
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/8854389bd6313a95f138d9da2cb6d2c9f8bd34be86c2e77d09805ad333a7073e.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "BCG洞察"
+                    }
+                ]
+            },
+            "bbox": [
+                413,
+                527,
+                557,
+                630
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/cb93e33c0b8fba4ba3aadb2367fc6d16d0fbb0b17b00cc996143a4f2caa6b489.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "BCG微信视频号"
+                    },
+                    {
+                        "type": "text",
+                        "content": "© 波士顿咨询公司 2024 年版权所有。\n12/24"
+                    }
+                ]
+            },
+            "bbox": [
+                581,
+                532,
+                712,
+                624
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                848,
+                288,
+                949,
+                312
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/b12b9fdbc4cdebea02d0f993046da7625b7a06ae1c747435e05375d8b5272638.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                43,
+                326,
+                952,
+                961
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "金融机构  \n2024年全球金融科技报告  \nBCG与QED Investors联合发布"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                36,
+                368,
+                99
+            ]
+        }
+    ]
+]

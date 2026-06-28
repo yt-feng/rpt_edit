@@ -1,0 +1,4267 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        446,
+                        52,
+                        543,
+                        95
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                446,
+                                52,
+                                543,
+                                95
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        446,
+                                        52,
+                                        543,
+                                        95
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        35,
+                        35,
+                        559,
+                        485
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                35,
+                                35,
+                                559,
+                                485
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        35,
+                                        559,
+                                        485
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                35,
+                                                35,
+                                                559,
+                                                485
+                                            ],
+                                            "type": "image",
+                                            "image_path": "f9b4d1fc1fb1a434881d3e8e1da5dbfab48b430a23f5d228dba1028c680a441a.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        32,
+                        502,
+                        122,
+                        519
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                32,
+                                502,
+                                122,
+                                519
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        32,
+                                        502,
+                                        122,
+                                        519
+                                    ],
+                                    "type": "text",
+                                    "content": "WHITE PAPER"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        33,
+                        531,
+                        456,
+                        666
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                33,
+                                531,
+                                456,
+                                666
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        531,
+                                        456,
+                                        666
+                                    ],
+                                    "type": "text",
+                                    "content": "Navigating the Medtech GenAI Journey: A Policy Primer"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        32,
+                        758,
+                        449,
+                        785
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                32,
+                                758,
+                                449,
+                                785
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        32,
+                                        758,
+                                        449,
+                                        785
+                                    ],
+                                    "type": "text",
+                                    "content": "October 10, 2023\nBy Nadya Bartol, Meghna Eichelberger, Peter Lawyer, Kirsten Rulf, Bradley Merrill Thompson "
+                                },
+                                {
+                                    "bbox": [
+                                        32,
+                                        758,
+                                        449,
+                                        785
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{1}"
+                                },
+                                {
+                                    "bbox": [
+                                        32,
+                                        758,
+                                        449,
+                                        785
+                                    ],
+                                    "type": "text",
+                                    "content": " ."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        32,
+                        793,
+                        391,
+                        806
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                32,
+                                793,
+                                391,
+                                806
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        32,
+                                        793,
+                                        391,
+                                        806
+                                    ],
+                                    "type": "text",
+                                    "content": "1. Bradley Merrill Thompson is an external author who is a Member of Epstein Becker & Green, P.C."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        446,
+                        52,
+                        543,
+                        95
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                446,
+                                52,
+                                543,
+                                95
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        446,
+                                        52,
+                                        543,
+                                        95
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        35,
+                        35,
+                        559,
+                        485
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                35,
+                                35,
+                                559,
+                                485
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        35,
+                                        559,
+                                        485
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                35,
+                                                35,
+                                                559,
+                                                485
+                                            ],
+                                            "type": "image",
+                                            "image_path": "f9b4d1fc1fb1a434881d3e8e1da5dbfab48b430a23f5d228dba1028c680a441a.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        32,
+                        502,
+                        122,
+                        519
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                32,
+                                502,
+                                122,
+                                519
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        32,
+                                        502,
+                                        122,
+                                        519
+                                    ],
+                                    "type": "text",
+                                    "content": "WHITE PAPER"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        33,
+                        531,
+                        456,
+                        666
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                33,
+                                531,
+                                456,
+                                666
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        531,
+                                        456,
+                                        666
+                                    ],
+                                    "type": "text",
+                                    "content": "Navigating the Medtech GenAI Journey: A Policy Primer"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        32,
+                        758,
+                        449,
+                        785
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                32,
+                                758,
+                                449,
+                                785
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        32,
+                                        758,
+                                        449,
+                                        785
+                                    ],
+                                    "type": "text",
+                                    "content": "October 10, 2023\nBy Nadya Bartol, Meghna Eichelberger, Peter Lawyer, Kirsten Rulf, Bradley Merrill Thompson "
+                                },
+                                {
+                                    "bbox": [
+                                        32,
+                                        758,
+                                        449,
+                                        785
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{1}"
+                                },
+                                {
+                                    "bbox": [
+                                        32,
+                                        758,
+                                        449,
+                                        785
+                                    ],
+                                    "type": "text",
+                                    "content": " ."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        32,
+                        793,
+                        391,
+                        806
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                32,
+                                793,
+                                391,
+                                806
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        32,
+                                        793,
+                                        391,
+                                        806
+                                    ],
+                                    "type": "text",
+                                    "content": "1. Bradley Merrill Thompson is an external author who is a Member of Epstein Becker & Green, P.C."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        32,
+                        32,
+                        468,
+                        116
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                32,
+                                32,
+                                468,
+                                116
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        32,
+                                        32,
+                                        468,
+                                        116
+                                    ],
+                                    "type": "text",
+                                    "content": "Navigating the Medtech GenAI Journey: A Policy Primer"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        158,
+                        146,
+                        560,
+                        281
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                146,
+                                560,
+                                281
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        146,
+                                        560,
+                                        281
+                                    ],
+                                    "type": "text",
+                                    "content": "The road to successful Generative Artificial Intelligence (GenAI) deployment in medtech can draw parallels from classical literature and mythology. The hero (a medtech company) heeds a call to adventure in pursuit of some glorious proposition (the power of GenAI), embarking on a journey from the known world into the abyss, where they must contend with forbidding and frightening obstacles (incomplete and unclear regulations, potential legal consequences, unknown cyber threats) as well as individual temptation (violations of data privacy, copyright infringement) presenting clear and present danger (to the company and, potentially, to patients). In storybooks, the hero emerges triumphant after an epiphany—while quick thinking may dodge a threat, and great courage and skill may win a battle, it is the hero’s own moral compass that separates their tale from a tragedy. Will your medtech GenAI journey be a Hero’s Tale or a Tragedy?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        290,
+                        558,
+                        364
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                290,
+                                558,
+                                364
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        290,
+                                        558,
+                                        364
+                                    ],
+                                    "type": "text",
+                                    "content": "Our previous articles have focused on the call to adventure (“Medtech Companies Must Move Faster on Generative AI”) as well as the tremendous potential for GenAI technology (“Medtech’s GenAI Opportunity”) and the building blocks required to field GenAI products and services (“Building A Medtech GenAI Platform”). This article focuses on the Policy aspects of your GenAI initiative, including the Responsible AI (RAI) Playbook that serves as a roadmap to ensure your medtech GenAI journey is a successful one."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        35,
+                        417,
+                        558,
+                        655
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                33,
+                                381,
+                                227,
+                                401
+                            ],
+                            "type": "image_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        381,
+                                        227,
+                                        401
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                33,
+                                                381,
+                                                227,
+                                                401
+                                            ],
+                                            "type": "text",
+                                            "content": "This Article's Focus - Policy"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        },
+                        {
+                            "bbox": [
+                                35,
+                                417,
+                                558,
+                                655
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        417,
+                                        558,
+                                        655
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                35,
+                                                417,
+                                                558,
+                                                655
+                                            ],
+                                            "type": "image",
+                                            "image_path": "15222dfaf312df935b9ab5eecb815c6cfafd450d79539471d89691966f47a7f1.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 4
+                        },
+                        {
+                            "bbox": [
+                                33,
+                                666,
+                                260,
+                                688
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        666,
+                                        260,
+                                        688
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                33,
+                                                666,
+                                                260,
+                                                688
+                                            ],
+                                            "type": "text",
+                                            "content": "Source: BCG\nCopyright 2023 by Boston Consulting Group. All rights reserved."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 5
+                        }
+                    ],
+                    "index": 4
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        34,
+                        798,
+                        41,
+                        806
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                34,
+                                798,
+                                41,
+                                806
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        34,
+                                        798,
+                                        41,
+                                        806
+                                    ],
+                                    "type": "text",
+                                    "content": "1"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6
+                },
+                {
+                    "bbox": [
+                        356,
+                        797,
+                        560,
+                        807
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                356,
+                                797,
+                                560,
+                                807
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        356,
+                                        797,
+                                        560,
+                                        807
+                                    ],
+                                    "type": "text",
+                                    "content": "NAVIGATING THE MEDTECH GENAI JOURNEY: A POLICY PRIMER"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        32,
+                        32,
+                        468,
+                        116
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                32,
+                                32,
+                                468,
+                                116
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        32,
+                                        32,
+                                        468,
+                                        116
+                                    ],
+                                    "type": "text",
+                                    "content": "Navigating the Medtech GenAI Journey: A Policy Primer"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        158,
+                        146,
+                        560,
+                        281
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                146,
+                                560,
+                                281
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        146,
+                                        560,
+                                        281
+                                    ],
+                                    "type": "text",
+                                    "content": "The road to successful Generative Artificial Intelligence (GenAI) deployment in medtech can draw parallels from classical literature and mythology. The hero (a medtech company) heeds a call to adventure in pursuit of some glorious proposition (the power of GenAI), embarking on a journey from the known world into the abyss, where they must contend with forbidding and frightening obstacles (incomplete and unclear regulations, potential legal consequences, unknown cyber threats) as well as individual temptation (violations of data privacy, copyright infringement) presenting clear and present danger (to the company and, potentially, to patients). In storybooks, the hero emerges triumphant after an epiphany—while quick thinking may dodge a threat, and great courage and skill may win a battle, it is the hero’s own moral compass that separates their tale from a tragedy. Will your medtech GenAI journey be a Hero’s Tale or a Tragedy?"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        290,
+                        558,
+                        364
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                290,
+                                558,
+                                364
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        290,
+                                        558,
+                                        364
+                                    ],
+                                    "type": "text",
+                                    "content": "Our previous articles have focused on the call to adventure (“Medtech Companies Must Move Faster on Generative AI”) as well as the tremendous potential for GenAI technology (“Medtech’s GenAI Opportunity”) and the building blocks required to field GenAI products and services (“Building A Medtech GenAI Platform”). This article focuses on the Policy aspects of your GenAI initiative, including the Responsible AI (RAI) Playbook that serves as a roadmap to ensure your medtech GenAI journey is a successful one."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        35,
+                        417,
+                        558,
+                        655
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                33,
+                                381,
+                                227,
+                                401
+                            ],
+                            "type": "image_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        381,
+                                        227,
+                                        401
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                33,
+                                                381,
+                                                227,
+                                                401
+                                            ],
+                                            "type": "text",
+                                            "content": "This Article's Focus - Policy"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        },
+                        {
+                            "bbox": [
+                                35,
+                                417,
+                                558,
+                                655
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        417,
+                                        558,
+                                        655
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                35,
+                                                417,
+                                                558,
+                                                655
+                                            ],
+                                            "type": "image",
+                                            "image_path": "15222dfaf312df935b9ab5eecb815c6cfafd450d79539471d89691966f47a7f1.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 4
+                        },
+                        {
+                            "bbox": [
+                                33,
+                                666,
+                                260,
+                                688
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        666,
+                                        260,
+                                        688
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                33,
+                                                666,
+                                                260,
+                                                688
+                                            ],
+                                            "type": "text",
+                                            "content": "Source: BCG\nCopyright 2023 by Boston Consulting Group. All rights reserved."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 5
+                        }
+                    ],
+                    "index": 4
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        33,
+                        37,
+                        202,
+                        52
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                33,
+                                37,
+                                202,
+                                52
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        37,
+                                        202,
+                                        52
+                                    ],
+                                    "type": "text",
+                                    "content": "Risks on Your Medtech Journey"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        33,
+                        62,
+                        427,
+                        173
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                33,
+                                62,
+                                427,
+                                173
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        62,
+                                        427,
+                                        173
+                                    ],
+                                    "type": "text",
+                                    "content": "Dangers such as leaking Protected Health Information (PHI), making false claims, releasing proprietary data, and infringing copyrights exist regardless of the underlying technology. GenAI heightens these latent risks and introduces others via the inner workings of Large Language Models (LLMs) that are not yet fully understood. These risks could have unpredictable consequences, including biased output (generally due to inadequate training data), so-called “hallucination” (confidently presenting an “answer” that is objectively wrong and often cartoonishly flawed), capability overhang (the propensity for probabilistic models and heuristics to reach a conclusion beyond the natural stopping point, leading to unexpected outcomes), and poor robustness, including false positives and negatives."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        33,
+                        190,
+                        465,
+                        210
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                33,
+                                190,
+                                465,
+                                210
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        190,
+                                        465,
+                                        210
+                                    ],
+                                    "type": "text",
+                                    "content": "Exhibit 1 – Generative AI Increases Some Existing LLM Risks"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        35,
+                        226,
+                        558,
+                        444
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                35,
+                                226,
+                                558,
+                                444
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        226,
+                                        558,
+                                        444
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                35,
+                                                226,
+                                                558,
+                                                444
+                                            ],
+                                            "type": "image",
+                                            "image_path": "8b9a233b373707d625e21efc76d738712d533c4e2ea470438127b2bcb14db184.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        },
+                        {
+                            "bbox": [
+                                33,
+                                463,
+                                260,
+                                476
+                            ],
+                            "type": "image_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        463,
+                                        260,
+                                        476
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                33,
+                                                463,
+                                                260,
+                                                476
+                                            ],
+                                            "type": "text",
+                                            "content": "Copyright 2023 by Boston Consulting Group. All rights reserved."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 4
+                        }
+                    ],
+                    "index": 3
+                },
+                {
+                    "bbox": [
+                        32,
+                        507,
+                        423,
+                        593
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                32,
+                                507,
+                                423,
+                                593
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        32,
+                                        507,
+                                        423,
+                                        593
+                                    ],
+                                    "type": "text",
+                                    "content": "AI cyberattacks, especially those involving data poisoning of the model's training data or hijacking the GenAI model itself, present another danger. Maintaining data privacy and safeguarding your model's training data will therefore be a paramount concern. Likewise, the algorithms and services that leverage patient data and your company's intellectual property must be both scrubbed for bias and battle-hardened to prevent unauthorized access and use. Simulated attacks on your GenAI products enable your company to devise response scenarios that help put regulators' minds at ease."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        33,
+                        602,
+                        427,
+                        666
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                33,
+                                602,
+                                427,
+                                666
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        602,
+                                        427,
+                                        666
+                                    ],
+                                    "type": "text",
+                                    "content": "The vanguard protecting your medtech GenAI journey is your company's RAI framework. Simply put, it is an articulation of your company's intended use of AI, with clear guardrails to prevent the misuse and unintended consequences of deploying this technology. Your RAI framework should anticipate and accommodate key concerns of regulators, patients and providers, and other stakeholders, while upholding your company's own value system."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        34,
+                        797,
+                        138,
+                        808
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                34,
+                                797,
+                                138,
+                                808
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        34,
+                                        797,
+                                        138,
+                                        808
+                                    ],
+                                    "type": "text",
+                                    "content": "BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        553,
+                        798,
+                        559,
+                        807
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                553,
+                                798,
+                                559,
+                                807
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        553,
+                                        798,
+                                        559,
+                                        807
+                                    ],
+                                    "type": "text",
+                                    "content": "2"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        33,
+                        37,
+                        202,
+                        52
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                33,
+                                37,
+                                202,
+                                52
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        37,
+                                        202,
+                                        52
+                                    ],
+                                    "type": "text",
+                                    "content": "Risks on Your Medtech Journey"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        33,
+                        62,
+                        427,
+                        173
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                33,
+                                62,
+                                427,
+                                173
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        62,
+                                        427,
+                                        173
+                                    ],
+                                    "type": "text",
+                                    "content": "Dangers such as leaking Protected Health Information (PHI), making false claims, releasing proprietary data, and infringing copyrights exist regardless of the underlying technology. GenAI heightens these latent risks and introduces others via the inner workings of Large Language Models (LLMs) that are not yet fully understood. These risks could have unpredictable consequences, including biased output (generally due to inadequate training data), so-called “hallucination” (confidently presenting an “answer” that is objectively wrong and often cartoonishly flawed), capability overhang (the propensity for probabilistic models and heuristics to reach a conclusion beyond the natural stopping point, leading to unexpected outcomes), and poor robustness, including false positives and negatives."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        33,
+                        190,
+                        465,
+                        210
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                33,
+                                190,
+                                465,
+                                210
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        190,
+                                        465,
+                                        210
+                                    ],
+                                    "type": "text",
+                                    "content": "Exhibit 1 – Generative AI Increases Some Existing LLM Risks"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        35,
+                        226,
+                        558,
+                        444
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                35,
+                                226,
+                                558,
+                                444
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        226,
+                                        558,
+                                        444
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                35,
+                                                226,
+                                                558,
+                                                444
+                                            ],
+                                            "type": "image",
+                                            "image_path": "8b9a233b373707d625e21efc76d738712d533c4e2ea470438127b2bcb14db184.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        },
+                        {
+                            "bbox": [
+                                33,
+                                463,
+                                260,
+                                476
+                            ],
+                            "type": "image_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        463,
+                                        260,
+                                        476
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                33,
+                                                463,
+                                                260,
+                                                476
+                                            ],
+                                            "type": "text",
+                                            "content": "Copyright 2023 by Boston Consulting Group. All rights reserved."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 4
+                        }
+                    ],
+                    "index": 3
+                },
+                {
+                    "bbox": [
+                        32,
+                        507,
+                        423,
+                        593
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                32,
+                                507,
+                                423,
+                                593
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        32,
+                                        507,
+                                        423,
+                                        593
+                                    ],
+                                    "type": "text",
+                                    "content": "AI cyberattacks, especially those involving data poisoning of the model's training data or hijacking the GenAI model itself, present another danger. Maintaining data privacy and safeguarding your model's training data will therefore be a paramount concern. Likewise, the algorithms and services that leverage patient data and your company's intellectual property must be both scrubbed for bias and battle-hardened to prevent unauthorized access and use. Simulated attacks on your GenAI products enable your company to devise response scenarios that help put regulators' minds at ease."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        33,
+                        602,
+                        427,
+                        666
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                33,
+                                602,
+                                427,
+                                666
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        602,
+                                        427,
+                                        666
+                                    ],
+                                    "type": "text",
+                                    "content": "The vanguard protecting your medtech GenAI journey is your company's RAI framework. Simply put, it is an articulation of your company's intended use of AI, with clear guardrails to prevent the misuse and unintended consequences of deploying this technology. Your RAI framework should anticipate and accommodate key concerns of regulators, patients and providers, and other stakeholders, while upholding your company's own value system."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        160,
+                        37,
+                        335,
+                        52
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                160,
+                                37,
+                                335,
+                                52
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        160,
+                                        37,
+                                        335,
+                                        52
+                                    ],
+                                    "type": "text",
+                                    "content": "The Evolving Regulatory Landscape"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        158,
+                        62,
+                        552,
+                        160
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                62,
+                                552,
+                                160
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        62,
+                                        552,
+                                        160
+                                    ],
+                                    "type": "text",
+                                    "content": "Regulators walk the highwire of managing risk while providing sufficient leeway for innovation. For Software as a Medical Device (SaMD) and many AI/Machine Learning (ML) products, regulators can simulate hundreds of thousands of real-world scenarios to stress the underlying logic and test the robustness of the code. However, GenAI technology asks regulators to weigh the safety and effectiveness of medical products that generate new information, reaching conclusions that—in clinical situations—could determine how a patient is treated. Hubris on the part of the medtech company or the regulator can lead to tragedy."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        169,
+                        558,
+                        269
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                169,
+                                558,
+                                269
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        169,
+                                        558,
+                                        269
+                                    ],
+                                    "type": "text",
+                                    "content": "In the US, the Food and Drug Administration's (FDA's) Center for Device and Radiological Health (CDRH) acts as the principal regulator for GenAI-powered medical devices, though the Department of Health and Human Services Office of Civil Rights oversees the Health Insurance Portability and Accountability Act (HIPAA), which upholds privacy laws concerning PHI. The EU's FDA equivalent, the European Medicines Agency, bears specific responsibility for devices and equipment via its Medical Device Regulations (MDR), but laws concerning data privacy in AI and GenAI are embedded in the EU's General Data Protection Regulation (GDPR)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        277,
+                        552,
+                        364
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                277,
+                                552,
+                                364
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        277,
+                                        552,
+                                        364
+                                    ],
+                                    "type": "text",
+                                    "content": "The EU’s pending Artificial Intelligence Act proposes a four-tiered risk framework that currently defines all GenAI-powered medical products as “high-risk,” imposing a set of preconditions for market release, facilities for monitoring performance and compliance, as well as significant fines of up to 6% of global revenue for violations. Any such penalties would be incremental to violations of GDPR. EU officials hope to ratify the Artificial Intelligence Act by the close of 2023, compelling all member states to implement its measures within a 20-month transitional period."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        374,
+                        559,
+                        557
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                374,
+                                559,
+                                557
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        374,
+                                        559,
+                                        557
+                                    ],
+                                    "type": "text",
+                                    "content": "The FDA has led the International Medical Device Regulators Forum SaMD working group to agree upon key definitions, a framework for risk categorization, the Quality Management System, and practical ways to run clinical trials. The FDA's December 2019 discussion paper set forth a risk-based framework for AI/ML-enabled device software functions. Congress then authorized the use of Predetermined Change Control Plans (PCCP) for products that evolve within predetermined parameters, enabling applicants to submit for FDA approval their proposed process for validating the model. Low-risk products such as heart rate monitors would require only periodic retesting, while more critical GenAI applications—say, implantable cardiac defibrillators that refine their own parameters for when to fire—would need to undergo more continuous testing. In June, the National Institute of Standards and Technology (NIST) launched a public working group on AI to build on its existing Risk Management Framework. Existing HIPAA regulations would also extend to any new US GenAI offering—but these rules, launched in 2006 and last modified in 2009, are scheduled for an update, possibly before the end of 2023."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        34,
+                        798,
+                        41,
+                        806
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                34,
+                                798,
+                                41,
+                                806
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        34,
+                                        798,
+                                        41,
+                                        806
+                                    ],
+                                    "type": "text",
+                                    "content": "3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5
+                },
+                {
+                    "bbox": [
+                        356,
+                        797,
+                        559,
+                        807
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                356,
+                                797,
+                                559,
+                                807
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        356,
+                                        797,
+                                        559,
+                                        807
+                                    ],
+                                    "type": "text",
+                                    "content": "NAVIGATING THE MEDTECH GENAI JOURNEY: A POLICY PRIMER"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 3,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        160,
+                        37,
+                        335,
+                        52
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                160,
+                                37,
+                                335,
+                                52
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        160,
+                                        37,
+                                        335,
+                                        52
+                                    ],
+                                    "type": "text",
+                                    "content": "The Evolving Regulatory Landscape"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        158,
+                        62,
+                        552,
+                        160
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                62,
+                                552,
+                                160
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        62,
+                                        552,
+                                        160
+                                    ],
+                                    "type": "text",
+                                    "content": "Regulators walk the highwire of managing risk while providing sufficient leeway for innovation. For Software as a Medical Device (SaMD) and many AI/Machine Learning (ML) products, regulators can simulate hundreds of thousands of real-world scenarios to stress the underlying logic and test the robustness of the code. However, GenAI technology asks regulators to weigh the safety and effectiveness of medical products that generate new information, reaching conclusions that—in clinical situations—could determine how a patient is treated. Hubris on the part of the medtech company or the regulator can lead to tragedy."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        169,
+                        558,
+                        269
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                169,
+                                558,
+                                269
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        169,
+                                        558,
+                                        269
+                                    ],
+                                    "type": "text",
+                                    "content": "In the US, the Food and Drug Administration's (FDA's) Center for Device and Radiological Health (CDRH) acts as the principal regulator for GenAI-powered medical devices, though the Department of Health and Human Services Office of Civil Rights oversees the Health Insurance Portability and Accountability Act (HIPAA), which upholds privacy laws concerning PHI. The EU's FDA equivalent, the European Medicines Agency, bears specific responsibility for devices and equipment via its Medical Device Regulations (MDR), but laws concerning data privacy in AI and GenAI are embedded in the EU's General Data Protection Regulation (GDPR)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        277,
+                        552,
+                        364
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                277,
+                                552,
+                                364
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        277,
+                                        552,
+                                        364
+                                    ],
+                                    "type": "text",
+                                    "content": "The EU’s pending Artificial Intelligence Act proposes a four-tiered risk framework that currently defines all GenAI-powered medical products as “high-risk,” imposing a set of preconditions for market release, facilities for monitoring performance and compliance, as well as significant fines of up to 6% of global revenue for violations. Any such penalties would be incremental to violations of GDPR. EU officials hope to ratify the Artificial Intelligence Act by the close of 2023, compelling all member states to implement its measures within a 20-month transitional period."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        374,
+                        559,
+                        557
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                374,
+                                559,
+                                557
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        374,
+                                        559,
+                                        557
+                                    ],
+                                    "type": "text",
+                                    "content": "The FDA has led the International Medical Device Regulators Forum SaMD working group to agree upon key definitions, a framework for risk categorization, the Quality Management System, and practical ways to run clinical trials. The FDA's December 2019 discussion paper set forth a risk-based framework for AI/ML-enabled device software functions. Congress then authorized the use of Predetermined Change Control Plans (PCCP) for products that evolve within predetermined parameters, enabling applicants to submit for FDA approval their proposed process for validating the model. Low-risk products such as heart rate monitors would require only periodic retesting, while more critical GenAI applications—say, implantable cardiac defibrillators that refine their own parameters for when to fire—would need to undergo more continuous testing. In June, the National Institute of Standards and Technology (NIST) launched a public working group on AI to build on its existing Risk Management Framework. Existing HIPAA regulations would also extend to any new US GenAI offering—but these rules, launched in 2006 and last modified in 2009, are scheduled for an update, possibly before the end of 2023."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "type": "image",
+                    "bbox": [
+                        58,
+                        106,
+                        530,
+                        243
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                33,
+                                32,
+                                528,
+                                64
+                            ],
+                            "type": "image_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        32,
+                                        528,
+                                        64
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                33,
+                                                32,
+                                                528,
+                                                64
+                                            ],
+                                            "type": "text",
+                                            "content": "Exhibit 2 – Agility Needed to Respond to Existing & Upcoming Regulations (non-exhaustive, selection of key regulations)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 0
+                        },
+                        {
+                            "bbox": [
+                                58,
+                                106,
+                                530,
+                                243
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        106,
+                                        530,
+                                        243
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                58,
+                                                106,
+                                                530,
+                                                243
+                                            ],
+                                            "type": "image",
+                                            "image_path": "8b433da948344a809f64881c8f9495024c39e22aa51f78e895a7b0d7629ed9c3.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        },
+                        {
+                            "bbox": [
+                                33,
+                                275,
+                                260,
+                                305
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        275,
+                                        260,
+                                        305
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                33,
+                                                275,
+                                                260,
+                                                305
+                                            ],
+                                            "type": "text",
+                                            "content": "Note: BCG does not provide legal advice  \nSource: BCG  \nCopyright 2023 by Boston Consulting Group. All rights reserved."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 2
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        40,
+                        321,
+                        104,
+                        373
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                40,
+                                321,
+                                104,
+                                373
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        40,
+                                        321,
+                                        104,
+                                        373
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                40,
+                                                321,
+                                                104,
+                                                373
+                                            ],
+                                            "type": "image",
+                                            "image_path": "da1428f39e742f760993fca5bbb53edadc114095e90b0a5094c050a1fe6ac826.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        }
+                    ],
+                    "index": 3
+                },
+                {
+                    "bbox": [
+                        86,
+                        426,
+                        509,
+                        613
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                426,
+                                509,
+                                613
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        426,
+                                        509,
+                                        613
+                                    ],
+                                    "type": "text",
+                                    "content": "Functional and commercial use cases perceived as low-risk offer a safe pathway to gain GenAI experience"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        34,
+                        796,
+                        138,
+                        808
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                34,
+                                796,
+                                138,
+                                808
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        34,
+                                        796,
+                                        138,
+                                        808
+                                    ],
+                                    "type": "text",
+                                    "content": "BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5
+                },
+                {
+                    "bbox": [
+                        553,
+                        798,
+                        559,
+                        806
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                553,
+                                798,
+                                559,
+                                806
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        553,
+                                        798,
+                                        559,
+                                        806
+                                    ],
+                                    "type": "text",
+                                    "content": "4"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 4,
+            "para_blocks": [
+                {
+                    "type": "image",
+                    "bbox": [
+                        58,
+                        106,
+                        530,
+                        243
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                33,
+                                32,
+                                528,
+                                64
+                            ],
+                            "type": "image_caption",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        32,
+                                        528,
+                                        64
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                33,
+                                                32,
+                                                528,
+                                                64
+                                            ],
+                                            "type": "text",
+                                            "content": "Exhibit 2 – Agility Needed to Respond to Existing & Upcoming Regulations (non-exhaustive, selection of key regulations)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 0
+                        },
+                        {
+                            "bbox": [
+                                58,
+                                106,
+                                530,
+                                243
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        106,
+                                        530,
+                                        243
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                58,
+                                                106,
+                                                530,
+                                                243
+                                            ],
+                                            "type": "image",
+                                            "image_path": "8b433da948344a809f64881c8f9495024c39e22aa51f78e895a7b0d7629ed9c3.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        },
+                        {
+                            "bbox": [
+                                33,
+                                275,
+                                260,
+                                305
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        275,
+                                        260,
+                                        305
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                33,
+                                                275,
+                                                260,
+                                                305
+                                            ],
+                                            "type": "text",
+                                            "content": "Note: BCG does not provide legal advice  \nSource: BCG  \nCopyright 2023 by Boston Consulting Group. All rights reserved."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 2
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        40,
+                        321,
+                        104,
+                        373
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                40,
+                                321,
+                                104,
+                                373
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        40,
+                                        321,
+                                        104,
+                                        373
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                40,
+                                                321,
+                                                104,
+                                                373
+                                            ],
+                                            "type": "image",
+                                            "image_path": "da1428f39e742f760993fca5bbb53edadc114095e90b0a5094c050a1fe6ac826.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        }
+                    ],
+                    "index": 3
+                },
+                {
+                    "bbox": [
+                        86,
+                        426,
+                        509,
+                        613
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                86,
+                                426,
+                                509,
+                                613
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        426,
+                                        509,
+                                        613
+                                    ],
+                                    "type": "text",
+                                    "content": "Functional and commercial use cases perceived as low-risk offer a safe pathway to gain GenAI experience"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        159,
+                        37,
+                        409,
+                        52
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                37,
+                                409,
+                                52
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        37,
+                                        409,
+                                        52
+                                    ],
+                                    "type": "text",
+                                    "content": "A Closer Look at the US Regulatory Landscape"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        158,
+                        62,
+                        542,
+                        124
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                62,
+                                542,
+                                124
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        62,
+                                        542,
+                                        124
+                                    ],
+                                    "type": "text",
+                                    "content": "Functional and commercial use cases perceived as low-risk (for example, HR, IT, Finance, Customer Service) offer a safe pathway for medtech companies eager to gain GenAI experience. Still, customer-facing applications that govern patient access or customer support can come under Federal Trade Commission (FTC) scrutiny, given this agency's mission to uphold health equity across all patient segments."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        134,
+                        555,
+                        196
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                134,
+                                555,
+                                196
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        134,
+                                        555,
+                                        196
+                                    ],
+                                    "type": "text",
+                                    "content": "All Gen AI use cases involving the diagnosis, mitigation, treatment, cure, or prevention of disease or other medical conditions fall directly under FDA jurisdiction. Since CDRH has yet to introduce specific requirements, medtech companies can leverage the existing SaMD frameworks as a guide, and follow some commonsense steps in their GenAI approval and compliance strategies, including the following:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        206,
+                        551,
+                        244
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                206,
+                                551,
+                                244
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        206,
+                                        551,
+                                        244
+                                    ],
+                                    "type": "text",
+                                    "content": "- Intended Use: The narrower the intended use, the clearer the clinical trial endpoints. Loading up a GenAI offering with a broad swath of clinical claims will create a series of hurdles for your proposed solution that may be difficult to overcome."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        254,
+                        558,
+                        304
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                254,
+                                558,
+                                304
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        254,
+                                        558,
+                                        304
+                                    ],
+                                    "type": "text",
+                                    "content": "- Human in the Loop. While the presence of a human in the loop can reduce risk, the innovator must note how and under what circumstances this interaction takes place. Companies must specify what happens if the human response is erroneous or if there is no human response at all."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        315,
+                        549,
+                        352
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                315,
+                                549,
+                                352
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        315,
+                                        549,
+                                        352
+                                    ],
+                                    "type": "text",
+                                    "content": "- Explainability and Transparency. Medtech companies can lower the regulatory bar by ensuring that their model output is transparent and fully explainable so that end users can compare the GenAI solution to the current standard of care."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        363,
+                        555,
+                        424
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                363,
+                                555,
+                                424
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        363,
+                                        555,
+                                        424
+                                    ],
+                                    "type": "text",
+                                    "content": "- GenAI Model—Locked or Adaptive? Running simulations on a locked model can provide a sense of comfort that the product will perform as expected, but quirks in an adaptive GenAI model can lead to hallucination, capability overhang, and unpredictable output. The regulator therefore needs to devise a means of assessing the potential for dangerous results, as well as a means of re-evaluating the solution once in the field."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        434,
+                        555,
+                        521
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                434,
+                                555,
+                                521
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        434,
+                                        555,
+                                        521
+                                    ],
+                                    "type": "text",
+                                    "content": "- Data Inputs. GenAI models are trained with defined data sets, which serve as the basis for inferred and suggested solutions as well as guardrails to ensure that cold logic does not lead to extreme and unacceptable answers. So-called “constitutional” models embed human values into the model, permitting an intuitive user interface and more acceptable outputs. However, if new inputs render the model obsolete (“model drift”), the system’s guardrails and solutions can be altered. Moreover, data inputs acquired by the model may be subject to privacy and copyright laws."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        531,
+                        543,
+                        568
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                531,
+                                543,
+                                568
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        531,
+                                        543,
+                                        568
+                                    ],
+                                    "type": "text",
+                                    "content": "- Algorithm Change Protocol. When seeking clearance or approval from the FDA for products that evolve over time, companies can submit a PCCP to allow the model to change within constraints."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        578,
+                        558,
+                        640
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                578,
+                                558,
+                                640
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        578,
+                                        558,
+                                        640
+                                    ],
+                                    "type": "text",
+                                    "content": "- Edge Cases. During the clearance or approval process, the FDA may be concerned about so-called “edge cases,” or rare circumstances that may not present themselves in a trial setting but which are fully expected in the field. While humans may recognize the specific circumstances, machines may not—and the potential for adverse consequences must be mitigated."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        651,
+                        559,
+                        701
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                651,
+                                559,
+                                701
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        651,
+                                        559,
+                                        701
+                                    ],
+                                    "type": "text",
+                                    "content": "- Post-Approval Controls. The FDA will almost certainly seek policy changes that require more stringent post-approval controls to monitor and report on real-world input data validation, intended use, algorithm validation, as well as the safety and effectiveness of your GenAI products and services as they evolve."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        711,
+                        552,
+                        749
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                711,
+                                552,
+                                749
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        711,
+                                        552,
+                                        749
+                                    ],
+                                    "type": "text",
+                                    "content": "- Secure by Design. GenAI models must be designed with security in mind to resist subversion. Medtech companies should use cybersecurity experts to determine what security controls are required and the types of testing the applications should undergo."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        34,
+                        798,
+                        41,
+                        807
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                34,
+                                798,
+                                41,
+                                807
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        34,
+                                        798,
+                                        41,
+                                        807
+                                    ],
+                                    "type": "text",
+                                    "content": "5"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12
+                },
+                {
+                    "bbox": [
+                        356,
+                        797,
+                        559,
+                        807
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                356,
+                                797,
+                                559,
+                                807
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        356,
+                                        797,
+                                        559,
+                                        807
+                                    ],
+                                    "type": "text",
+                                    "content": "NAVIGATING THE MEDTECH GENAI JOURNEY: A POLICY PRIMER"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 5,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        159,
+                        37,
+                        409,
+                        52
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                37,
+                                409,
+                                52
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        37,
+                                        409,
+                                        52
+                                    ],
+                                    "type": "text",
+                                    "content": "A Closer Look at the US Regulatory Landscape"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        158,
+                        62,
+                        542,
+                        124
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                62,
+                                542,
+                                124
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        62,
+                                        542,
+                                        124
+                                    ],
+                                    "type": "text",
+                                    "content": "Functional and commercial use cases perceived as low-risk (for example, HR, IT, Finance, Customer Service) offer a safe pathway for medtech companies eager to gain GenAI experience. Still, customer-facing applications that govern patient access or customer support can come under Federal Trade Commission (FTC) scrutiny, given this agency's mission to uphold health equity across all patient segments."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        134,
+                        555,
+                        196
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                134,
+                                555,
+                                196
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        134,
+                                        555,
+                                        196
+                                    ],
+                                    "type": "text",
+                                    "content": "All Gen AI use cases involving the diagnosis, mitigation, treatment, cure, or prevention of disease or other medical conditions fall directly under FDA jurisdiction. Since CDRH has yet to introduce specific requirements, medtech companies can leverage the existing SaMD frameworks as a guide, and follow some commonsense steps in their GenAI approval and compliance strategies, including the following:"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        206,
+                        551,
+                        244
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                206,
+                                551,
+                                244
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        206,
+                                        551,
+                                        244
+                                    ],
+                                    "type": "text",
+                                    "content": "- Intended Use: The narrower the intended use, the clearer the clinical trial endpoints. Loading up a GenAI offering with a broad swath of clinical claims will create a series of hurdles for your proposed solution that may be difficult to overcome."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        254,
+                        558,
+                        304
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                254,
+                                558,
+                                304
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        254,
+                                        558,
+                                        304
+                                    ],
+                                    "type": "text",
+                                    "content": "- Human in the Loop. While the presence of a human in the loop can reduce risk, the innovator must note how and under what circumstances this interaction takes place. Companies must specify what happens if the human response is erroneous or if there is no human response at all."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        315,
+                        549,
+                        352
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                315,
+                                549,
+                                352
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        315,
+                                        549,
+                                        352
+                                    ],
+                                    "type": "text",
+                                    "content": "- Explainability and Transparency. Medtech companies can lower the regulatory bar by ensuring that their model output is transparent and fully explainable so that end users can compare the GenAI solution to the current standard of care."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        363,
+                        555,
+                        424
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                363,
+                                555,
+                                424
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        363,
+                                        555,
+                                        424
+                                    ],
+                                    "type": "text",
+                                    "content": "- GenAI Model—Locked or Adaptive? Running simulations on a locked model can provide a sense of comfort that the product will perform as expected, but quirks in an adaptive GenAI model can lead to hallucination, capability overhang, and unpredictable output. The regulator therefore needs to devise a means of assessing the potential for dangerous results, as well as a means of re-evaluating the solution once in the field."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        434,
+                        555,
+                        521
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                434,
+                                555,
+                                521
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        434,
+                                        555,
+                                        521
+                                    ],
+                                    "type": "text",
+                                    "content": "- Data Inputs. GenAI models are trained with defined data sets, which serve as the basis for inferred and suggested solutions as well as guardrails to ensure that cold logic does not lead to extreme and unacceptable answers. So-called “constitutional” models embed human values into the model, permitting an intuitive user interface and more acceptable outputs. However, if new inputs render the model obsolete (“model drift”), the system’s guardrails and solutions can be altered. Moreover, data inputs acquired by the model may be subject to privacy and copyright laws."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        531,
+                        543,
+                        568
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                531,
+                                543,
+                                568
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        531,
+                                        543,
+                                        568
+                                    ],
+                                    "type": "text",
+                                    "content": "- Algorithm Change Protocol. When seeking clearance or approval from the FDA for products that evolve over time, companies can submit a PCCP to allow the model to change within constraints."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        578,
+                        558,
+                        640
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                578,
+                                558,
+                                640
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        578,
+                                        558,
+                                        640
+                                    ],
+                                    "type": "text",
+                                    "content": "- Edge Cases. During the clearance or approval process, the FDA may be concerned about so-called “edge cases,” or rare circumstances that may not present themselves in a trial setting but which are fully expected in the field. While humans may recognize the specific circumstances, machines may not—and the potential for adverse consequences must be mitigated."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        651,
+                        559,
+                        701
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                651,
+                                559,
+                                701
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        651,
+                                        559,
+                                        701
+                                    ],
+                                    "type": "text",
+                                    "content": "- Post-Approval Controls. The FDA will almost certainly seek policy changes that require more stringent post-approval controls to monitor and report on real-world input data validation, intended use, algorithm validation, as well as the safety and effectiveness of your GenAI products and services as they evolve."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        159,
+                        711,
+                        552,
+                        749
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                711,
+                                552,
+                                749
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        711,
+                                        552,
+                                        749
+                                    ],
+                                    "type": "text",
+                                    "content": "- Secure by Design. GenAI models must be designed with security in mind to resist subversion. Medtech companies should use cybersecurity experts to determine what security controls are required and the types of testing the applications should undergo."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        34,
+                        31,
+                        551,
+                        52
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                34,
+                                31,
+                                551,
+                                52
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        34,
+                                        31,
+                                        551,
+                                        52
+                                    ],
+                                    "type": "text",
+                                    "content": "Exhibit 3 - Clinical Use Cases Have the Most Risks to Proactively Mitigate"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "type": "chart",
+                    "bbox": [
+                        38,
+                        96,
+                        552,
+                        327
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                38,
+                                96,
+                                552,
+                                327
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        96,
+                                        552,
+                                        327
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                38,
+                                                96,
+                                                552,
+                                                327
+                                            ],
+                                            "type": "chart",
+                                            "image_path": "d6b7d8cf4167e4cb0fcf1abae4072c1adb5991484ae4a4009bc29ffa6f715aa8.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        },
+                        {
+                            "bbox": [
+                                33,
+                                367,
+                                260,
+                                379
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        367,
+                                        260,
+                                        379
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                33,
+                                                367,
+                                                260,
+                                                379
+                                            ],
+                                            "type": "text",
+                                            "content": "Copyright 2023 by Boston Consulting Group. All rights reserved."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 2
+                        },
+                        {
+                            "bbox": [
+                                34,
+                                359,
+                                83,
+                                368
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        34,
+                                        359,
+                                        83,
+                                        368
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                34,
+                                                359,
+                                                83,
+                                                368
+                                            ],
+                                            "type": "text",
+                                            "content": "Source: BCG"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        }
+                    ],
+                    "index": 1
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        34,
+                        797,
+                        138,
+                        807
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                34,
+                                797,
+                                138,
+                                807
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        34,
+                                        797,
+                                        138,
+                                        807
+                                    ],
+                                    "type": "text",
+                                    "content": "BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4
+                },
+                {
+                    "bbox": [
+                        553,
+                        798,
+                        560,
+                        807
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                553,
+                                798,
+                                560,
+                                807
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        553,
+                                        798,
+                                        560,
+                                        807
+                                    ],
+                                    "type": "text",
+                                    "content": "6"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 6,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        34,
+                        31,
+                        551,
+                        52
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                34,
+                                31,
+                                551,
+                                52
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        34,
+                                        31,
+                                        551,
+                                        52
+                                    ],
+                                    "type": "text",
+                                    "content": "Exhibit 3 - Clinical Use Cases Have the Most Risks to Proactively Mitigate"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "type": "chart",
+                    "bbox": [
+                        38,
+                        96,
+                        552,
+                        327
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                38,
+                                96,
+                                552,
+                                327
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        96,
+                                        552,
+                                        327
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                38,
+                                                96,
+                                                552,
+                                                327
+                                            ],
+                                            "type": "chart",
+                                            "image_path": "d6b7d8cf4167e4cb0fcf1abae4072c1adb5991484ae4a4009bc29ffa6f715aa8.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        },
+                        {
+                            "bbox": [
+                                33,
+                                367,
+                                260,
+                                379
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        367,
+                                        260,
+                                        379
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                33,
+                                                367,
+                                                260,
+                                                379
+                                            ],
+                                            "type": "text",
+                                            "content": "Copyright 2023 by Boston Consulting Group. All rights reserved."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 2
+                        },
+                        {
+                            "bbox": [
+                                34,
+                                359,
+                                83,
+                                368
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        34,
+                                        359,
+                                        83,
+                                        368
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                34,
+                                                359,
+                                                83,
+                                                368
+                                            ],
+                                            "type": "text",
+                                            "content": "Source: BCG"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        }
+                    ],
+                    "index": 1
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        160,
+                        37,
+                        366,
+                        52
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                160,
+                                37,
+                                366,
+                                52
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        160,
+                                        37,
+                                        366,
+                                        52
+                                    ],
+                                    "type": "text",
+                                    "content": "Developing a Responsible AI Playbook"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        158,
+                        62,
+                        559,
+                        173
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                62,
+                                559,
+                                173
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        62,
+                                        559,
+                                        173
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG recommends a centralized approach to developing your RAI playbook at the outset of your GenAI journey to both ensure more control over technology applications and enable rapid iteration. As an initial step, your CEO should sponsor and designate an AI leader within the organization. This leader, who acts as your company's primary GenAI business strategist, should assemble key business sponsors and a cross-functional and cross-organizational team with experts in IT, legal, regulatory, HR, cybersecurity, and privacy to provide the necessary policies and guardrails for your AI solutions. Each potential use case that addresses an internal and external customer pain point requires a business sponsor who approves the investment and takes responsibility for the solution's performance in the field."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        182,
+                        558,
+                        292
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                182,
+                                558,
+                                292
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        182,
+                                        558,
+                                        292
+                                    ],
+                                    "type": "text",
+                                    "content": "The leadership team develops a holistic AI risk assessment for your medtech business, detailing which areas are considered “safe” and which pose potential risk. Informed by this heat map, the team prepares 5–10 guiding principles for GenAI that are consistent with your medtech company’s mission and value statement. These principles underpin your clear and consistent RAI framework, which spells out how, when, and where your company will employ GenAI—as well as where and how it will not. Business sponsors serve as a advocates and missionaries for GenAI, taking the lead from your corporate policy and adapting it to specific use cases. Each use case should be mapped and characterized by your Compliance and IT functions to enable ongoing maintenance and monitoring."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        302,
+                        555,
+                        424
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                302,
+                                555,
+                                424
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        302,
+                                        555,
+                                        424
+                                    ],
+                                    "type": "text",
+                                    "content": "Historically, AI was the province of a select group of technically skilled individuals designing black box solutions that users did not need to understand. However, as GenAI has democratized technology with exciting innovative solutions such as ChatGPT and Bard, your company's approach to managing GenAI technology must also change. Your RAI framework places the onus of managing GenAI solutions at the feet of business leaders, with the IT and Compliance organizations providing necessary support. With your framework and AI leadership team in place, the next step is to create a corporate culture that supports RAI. This may be the trickiest aspect of fielding RAI solutions, and it will be the subject of our next and final article in the medtech GenAI series (Putting Medtech People and Processes to Work With GenAI)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        434,
+                        559,
+                        533
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                434,
+                                559,
+                                533
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        434,
+                                        559,
+                                        533
+                                    ],
+                                    "type": "text",
+                                    "content": "To recap, your medtech company's GenAI journey involves a quest for massive improvements in efficiency in the short term, and personalized and improved patient outcomes over time. Medtech companies will need to experiment safely, learn and iterate quickly, and scale up their capabilities for maximum impact. It will require intellect and determination to take on the known challenges posed by GenAI—and courage and resilience to slay the unknown beasts lurking in the shadows. Medtech leaders must possess all these qualities and one more—humility—to approach the GenAI opportunity in a responsible fashion and avoid turning their Hero's Tale into a Tragedy."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        160,
+                        577,
+                        260,
+                        592
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                160,
+                                577,
+                                260,
+                                592
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        160,
+                                        577,
+                                        260,
+                                        592
+                                    ],
+                                    "type": "text",
+                                    "content": "Acknowledgments"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        158,
+                        602,
+                        543,
+                        628
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                602,
+                                543,
+                                628
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        602,
+                                        543,
+                                        628
+                                    ],
+                                    "type": "text",
+                                    "content": "The authors would like to thank the following for their contributions to this article: Stuart John, Tad Roselund, and Gunnar Trommer."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        34,
+                        798,
+                        41,
+                        807
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                34,
+                                798,
+                                41,
+                                807
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        34,
+                                        798,
+                                        41,
+                                        807
+                                    ],
+                                    "type": "text",
+                                    "content": "7"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        356,
+                        797,
+                        559,
+                        807
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                356,
+                                797,
+                                559,
+                                807
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        356,
+                                        797,
+                                        559,
+                                        807
+                                    ],
+                                    "type": "text",
+                                    "content": "NAVIGATING THE MEDTECH GENAI JOURNEY: A POLICY PRIMER"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 7,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        160,
+                        37,
+                        366,
+                        52
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                160,
+                                37,
+                                366,
+                                52
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        160,
+                                        37,
+                                        366,
+                                        52
+                                    ],
+                                    "type": "text",
+                                    "content": "Developing a Responsible AI Playbook"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        158,
+                        62,
+                        559,
+                        173
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                62,
+                                559,
+                                173
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        62,
+                                        559,
+                                        173
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG recommends a centralized approach to developing your RAI playbook at the outset of your GenAI journey to both ensure more control over technology applications and enable rapid iteration. As an initial step, your CEO should sponsor and designate an AI leader within the organization. This leader, who acts as your company's primary GenAI business strategist, should assemble key business sponsors and a cross-functional and cross-organizational team with experts in IT, legal, regulatory, HR, cybersecurity, and privacy to provide the necessary policies and guardrails for your AI solutions. Each potential use case that addresses an internal and external customer pain point requires a business sponsor who approves the investment and takes responsibility for the solution's performance in the field."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        182,
+                        558,
+                        292
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                182,
+                                558,
+                                292
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        182,
+                                        558,
+                                        292
+                                    ],
+                                    "type": "text",
+                                    "content": "The leadership team develops a holistic AI risk assessment for your medtech business, detailing which areas are considered “safe” and which pose potential risk. Informed by this heat map, the team prepares 5–10 guiding principles for GenAI that are consistent with your medtech company’s mission and value statement. These principles underpin your clear and consistent RAI framework, which spells out how, when, and where your company will employ GenAI—as well as where and how it will not. Business sponsors serve as a advocates and missionaries for GenAI, taking the lead from your corporate policy and adapting it to specific use cases. Each use case should be mapped and characterized by your Compliance and IT functions to enable ongoing maintenance and monitoring."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        302,
+                        555,
+                        424
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                302,
+                                555,
+                                424
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        302,
+                                        555,
+                                        424
+                                    ],
+                                    "type": "text",
+                                    "content": "Historically, AI was the province of a select group of technically skilled individuals designing black box solutions that users did not need to understand. However, as GenAI has democratized technology with exciting innovative solutions such as ChatGPT and Bard, your company's approach to managing GenAI technology must also change. Your RAI framework places the onus of managing GenAI solutions at the feet of business leaders, with the IT and Compliance organizations providing necessary support. With your framework and AI leadership team in place, the next step is to create a corporate culture that supports RAI. This may be the trickiest aspect of fielding RAI solutions, and it will be the subject of our next and final article in the medtech GenAI series (Putting Medtech People and Processes to Work With GenAI)."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        158,
+                        434,
+                        559,
+                        533
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                434,
+                                559,
+                                533
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        434,
+                                        559,
+                                        533
+                                    ],
+                                    "type": "text",
+                                    "content": "To recap, your medtech company's GenAI journey involves a quest for massive improvements in efficiency in the short term, and personalized and improved patient outcomes over time. Medtech companies will need to experiment safely, learn and iterate quickly, and scale up their capabilities for maximum impact. It will require intellect and determination to take on the known challenges posed by GenAI—and courage and resilience to slay the unknown beasts lurking in the shadows. Medtech leaders must possess all these qualities and one more—humility—to approach the GenAI opportunity in a responsible fashion and avoid turning their Hero's Tale into a Tragedy."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        160,
+                        577,
+                        260,
+                        592
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                160,
+                                577,
+                                260,
+                                592
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        160,
+                                        577,
+                                        260,
+                                        592
+                                    ],
+                                    "type": "text",
+                                    "content": "Acknowledgments"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        158,
+                        602,
+                        543,
+                        628
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                158,
+                                602,
+                                543,
+                                628
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        158,
+                                        602,
+                                        543,
+                                        628
+                                    ],
+                                    "type": "text",
+                                    "content": "The authors would like to thank the following for their contributions to this article: Stuart John, Tad Roselund, and Gunnar Trommer."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}

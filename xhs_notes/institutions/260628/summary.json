@@ -1,0 +1,65 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_008_ve7jopml/pdfs/0036-McKinsey_PDF-Technology-Trends-Outlook-2025---McKinsey-Company_518523bb.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "麦肯锡",
+    "cover_short_title": "AI 正在吃掉所有科",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_008_ve7jopml/pdfs/0037-McKinsey_PDF-The-State-of-Organizations---McKinsey-Company_da7ae141.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "麦肯锡",
+    "cover_short_title": "组织正在被三股力量重",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_008_ve7jopml/pdfs/0038-McKinsey_PDF-The-state-of-AI---McKinsey-Company_5b97d469.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "麦肯锡",
+    "cover_short_title": "AI落地，CEO亲自",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

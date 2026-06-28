@@ -1,0 +1,1648 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG"
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                46,
+                141,
+                74
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/59c03cc52eaf71e64628758167d6f2de4093d17de6508dc41c47c66e959e304d.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                395
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AGRIBUSINESS INDUSTRY"
+                    }
+                ]
+            },
+            "bbox": [
+                50,
+                430,
+                234,
+                448
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Agricultural Intelligence: How AI Is Reshaping the Global Food System"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                476,
+                760,
+                678
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By David Potere, Sonya Hoo, Michael Glotter, Emily Wu, and Adam Haidermota"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                706,
+                705,
+                725
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ARTICLE JUNE 25, 2026 12 MIN READ"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                749,
+                367,
+                766
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In September 1898, Sir William Crookes, president of the British Association for the Advancement of Science, delivered a warning for civilization: the world’s supply of usable nitrogen, the element underpinning all plant growth, was finite. Within a generation, he maintained, food production would hit a ceiling; after that, its decline would be simple arithmetic. His appeal was direct: unless chemistry could produce nitrogen from the atmosphere itself, mass starvation would follow."
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                828,
+                954,
+                929
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                967,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Eleven years later, Fritz Haber found the answer, and Carl Bosch industrialized it. For the first time, agriculture was no longer bound by the natural nitrogen cycle."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                907,
+                108
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "But removing a hard constraint is not the same as solving the problem. What followed was a cascade of innovation: new seed genetics that could exploit large-scale artificial crop nutrition, generating yield potential previously out of reach; mechanization that opened up production across vast new acreage; and agronomy that reorganized itself around a fundamentally different input base. Each layer reinforced the others. Together, they reshaped how food was grown, traded, and consumed across the planet. Roughly half the nitrogen in human bodies now traces back to that moment."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                121,
+                942,
+                260
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Today, the global agrifood system feeds more than 8.2 billion people, five times the population when Crookes issued his warning. Despite the enormous gains made over the past 125 years, the industry currently faces three threats to the agrifood system: climate volatility, geopolitical realignment, and regulatory shifts."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                274,
+                942,
+                354
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A fourth force is now gaining momentum: AI across every stage of the agrifood system. Its timing is critical. We call it agricultural intelligence, and it will likely further revolutionize how our food is researched, grown, distributed, and sold."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                368,
+                951,
+                428
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This article examines the potential transformative power of agentic AI across the agricultural value chain: its expected impact on researchers, farmers, seed and input companies, traders, distributors, and retailers. How each of these players manages through the transformation will determine just how beneficial its impact is and which ones will be the new winners and losers in the agrifood system of the future."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                442,
+                934,
+                542
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Three Threats"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                613,
+                398,
+                650
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The global agrifood system is under pressure from three increasingly powerful threats. (See Exhibit 1.) The first is climate-related volatility, which is making three of the foundational inputs of agriculture—precipitation, temperature, and seasonal variability—measurably less predictable. These key inputs have become a source of systemic risk rather than a reliable given, requiring far greater precision in monitoring and reacting to changes in growing patterns."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                678,
+                952,
+                780
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Three of Four Structural Drivers Are Reshaping the Global Agrifood System, and One—Agricultural Intelligence—Offers a Response"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                80,
+                713,
+                122
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Climate volatility"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                48,
+                164,
+                185,
+                181
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/1c4c89e935be705a26a8b755a9ca93510917c936363af2c2a1c9472e846e561a.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                40,
+                137,
+                732,
+                340
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Regulatory paradigm shift"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                523,
+                165,
+                722,
+                183
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Agricultural intelligence"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                50,
+                259,
+                232,
+                275
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Geopolitical realignment"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                533,
+                262,
+                720,
+                278
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: BCG analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                350,
+                146,
+                363
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The second is geopolitical realignment and disruption, which has made supply chain shock a permanent feature of commodity markets. The restructuring of US-China tariffs has compounded instability for a decade; the war in Ukraine redrew the wheat map overnight; and the closing of the Strait of Hormuz is affecting the supply of fertilizer in the middle of the northern hemisphere's planting season. Now, whichever company reads such signals earliest and hedges their exposure most precisely stands to gain an advantage."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                399,
+                952,
+                519
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The third threat is a major regulatory paradigm shift. The European Union's deforestation rules, Scope 3 carbon reporting, and carbon market protocols (coupled with shifting consumer demand for transparency, verified sustainability, and provenance) are mandating a data infrastructure that the agriculture industry has never had at scale. Increasingly, food companies must be able to determine, precisely and verifiably, where every input was grown, under what conditions, and using what practices."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                532,
+                951,
+                652
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This is where agricultural intelligence comes in, both as a counter to these threats and as a transformation of how the business of agriculture is carried out, from research into new types of crops to the retailing of the industry's final products."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                665,
+                934,
+                727
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Role of Agricultural Intelligence"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                846,
+                641,
+                928
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 1"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                64,
+                114,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                250,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Agricultural intelligence uses agentic AI to sequence decisions and act autonomously, with minimal human handoff at each step. Going beyond the precision agriculture of the past two decades, it acts on behalf of humans in the field, at the trading desk, and in the breeding lab. In doing so, it erodes the information asymmetries and expertise premiums that have underpinned margins across the food system for generations. Wherever human expertise, skilled labor, or proprietary information has historically been the source of competitive advantage, companies will have to find new sources of outperformance. (See Exhibit 2.)"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                954,
+                206
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 2"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                237,
+                116,
+                252
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Agricultural Intelligence Is Shifting Competitive Advantage Across the Value Chain"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                254,
+                696,
+                294
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c18dff6775434cf97524c35bbf2e963035e8846f091473c0b38c4137cb41d992.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BCG analysis.\nNote: IP = intellectual property; CPG = consumer packaged goods."
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                307,
+                725,
+                529
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "What is compressing most quickly is the advice premium: AI tools now deliver field-specific recommendations that rival the best crop scientists, making the advice available to any grower with a smartphone and a basic subscription to an AI tool. How agricultural intelligence transforms the industry depends on each player's position across the value chain."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                600,
+                927,
+                678
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The Producers. Farmers and ranchers are the origin point of the data, labor, and production on which every other player depends, putting them squarely at the center of the transition. Growers are both the most exposed to climate volatility and the most surveilled by new sensing infrastructure, making the deployment of agentic AI on farms and ranches especially valuable. And many are small and medium-sized business owners with direct access to frontier AI tools, making them increasingly capable of understanding what their data is worth and acting on that understanding."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                708,
+                930,
+                848
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The Agriculture Input Companies. Depending for their profits on proprietary intellectual property and agronomic advice, these players accumulated expertise about which chemistry or seed performs best in which soil type, rotation, and season. The patent-protected"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                860,
+                922,
+                921
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "molecule is likely to survive, though agricultural intelligence is opening even this frontier to new challengers in trait discovery and R&D."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                67,
+                914,
+                107
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The Agriculture Retailers and Cooperatives. These organizations built their businesses on relationship-based input sales and a patchwork of custom application services. Currently, farmers typically buy field scouting services from one provider, fertilizer and crop-protection inputs from another, and seed advice from a third. This fragmented model is now under pressure from two directions. First, agentic purchasing systems are expected to seek competitive prices transparently across suppliers, compressing the wholesale-to-retail margin. Second, the potential is emerging for the development of integrated, whole-season intelligence that bundles the sensing, deciding, and acting dimensions for a single field into one closed intelligence loop. The company that assembles that loop first, rather than sells the pieces separately, can redefine the value proposition."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                121,
+                920,
+                319
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The Equipment Manufacturers. These companies sit closer to the physical act of farming than almost any other player aside from the growers themselves. The rich operational data generated through their machines (every pass, every yield map, and every application record) is a genuine and defensible asset. The structural risk for them lies in the likelihood that the switching cost that has anchored their business models migrates from their hardware to AI-powered software as crop insights become increasingly independent of which brand of iron is responsible."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                332,
+                932,
+                472
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The Originators and Trading Houses. More than any other segment, these companies have thrived on information asymmetry, leveraging their physical and logistical capabilities to buy and sell commodity crops as they move farm production down the supply chain. They have a local edge in knowing which farmer has grain in the bin and how much and a global edge through visibility into supply and demand flows that few other players can match. But that premium is compressing as real-time market data, AI-generated analysis, and satellite monitoring reach deeper into the system. The sharpest players are using AI to move up the intelligence stack."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                486,
+                925,
+                644
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The Food Companies and Retailers. At the consumer-facing end, food processors, consumer packaged goods (CPG) companies, and retailers have historically gained an advantage through demand-signal asymmetry: knowing what consumers want before upstream players could see it. That advantage is compressing as agricultural intelligence gives every layer of the value chain better forecasting, more granular supply chain visibility, and new tools for verifying food safety and provenance. In addition, AI-accelerated alternative protein development and precision fermentation could, over time, reshape the raw material economics on which commodity processing businesses depend."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                659,
+                925,
+                818
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Intelligent Actors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                43,
+                888,
+                468,
+                929
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Agricultural intelligence is not a single technology, and treating it as one is a costly mistake. The four distinct dimensions of agricultural intelligence—sensing, deciding, acting, and creating—provide a map of what these systems do simultaneously, not a hierarchy to climb."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                67,
+                937,
+                126
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Creating is the long bet and the dimension that most closely mirrors what Haber and Bosch achieved. GenAI models working on genomic and scientific literature data are beginning to design new traits, new molecules, and new biologicals at machine speed. Instead of optimizing for current constraints, these models are redesigning the inputs themselves."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                156,
+                922,
+                237
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Bayer's Icafolin herbicide, submitted for registration in major markets in 2025, is the company's first crop-protection product to be developed under their CropKey approach. The technology uses AI and data science to design candidate molecules against defined targets, rather than screening thousands of compounds."
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                250,
+                924,
+                329
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Sensing turns the physical world into data. Tractors, sprayers, and combine harvesters generate a continuous stream of operational data. Combined with data from satellites, drones, Internet of Things sensors, and computer vision technology, this data converts field conditions into labeled signals that can be queried at costs inconceivable a decade ago. For most agribusinesses, sensing is the lowest-risk entry point and the data foundation on which every other dimension depends."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                344,
+                925,
+                463
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "InnerPlant's InnerSoy soybean varieties illustrate where sensing is heading: the soybean itself emits an optical stress signal that InnerPlant's CropVoice system reads and translates into real-time farmer alerts, turning the plant itself into the sensor."
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                476,
+                927,
+                537
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Deciding turns data into the right recommendation at the right moment. In markets where expert advice has been unavailable, it creates access to expertise that never existed before."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                551,
+                924,
+                590
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "FarmerChat, already deployed in Africa, India, and Brazil, has reached more than 830,000 farmers and answered over 5 million queries, delivering agronomic guidance previously requiring a trained extension worker and bringing the cost down from $35 per interaction to just 35 cents."
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                606,
+                917,
+                684
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Acting closes the loop between recommendation and execution, translating decisions into automated, site-specific actions without the need for a human handoff at each step."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                699,
+                909,
+                740
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "John Deere's See & Spray uses computer vision to distinguish crops from weeds at speeds of up to 15 mph, reducing chemical use by half, on average. No longer a pilot, the system covered 5 million acres in North America in 2025, up from just 1 million in 2024."
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                753,
+                924,
+                814
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "These four dimensions interact as a network. The data infrastructure that makes sensing so powerful can sharpen deciding. The quality of the deciding process enables acting. And the data generated by acting augments sensing while feeding the creating dimension. Companies"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                843,
+                934,
+                904
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "investing in any one dimension currently are building a compounding advantage that competitors starting later may not be able to shortcut."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                66,
+                952,
+                108
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Questions Your Leadership Team Should Be Asking"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                40,
+                175,
+                821,
+                258
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Every major player in the agrifood value chain (whether an input company, equipment manufacturer, agriculture retailer, processor, CPG company, or food retailer) needs to understand that the following questions are not hypothetical. They are critical to your future competitive advantage and business success."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                284,
+                942,
+                363
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategy. What part of your business model was built on something your organization knew that your counterparties did not? Name it precisely: not “relationships” or “scale,” but rather the specific informational or expertise advantage that has allowed you to maintain and grow your margins. Then answer honestly what happens to it as AI democratizes the knowledge layer, climate volatility erodes historical patterns, and geopolitical disruption punishes the slowest to build alternatives. Does your organization have the strategic will to build something truly new before someone else does?"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                378,
+                936,
+                517
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data. Have you solved the farmer data problem, or are you assuming someone else will? Current systems are fragmented and subscale (aside from a few exceptions), and a solid, whole-farm perspective is needed. In part, it is a trust problem, not a data problem. And it is getting harder to address: farmers are already gaining direct access to frontier AI tools and increasingly capable of getting direct, personalized value from their own data themselves, with no external platform needed. The organizations closest to the farmer may be best positioned to win the infrastructure race of the next decade, but only if they move quickly."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                530,
+                949,
+                671
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Operations. Are you treating agricultural intelligence as a nice feature or restructuring your core operations around it? Is there anyone at your company who can see clearly what this moment means for your company? Are you willing to make the moves required to stay ahead of all these developments and make your organization essential in the farm system of the future, before the restructuring happens to you rather than with you?"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                684,
+                939,
+                784
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The application of AI to the global agriculture value chain is likely to be rapid and transformative. Big gains in input innovation, data capture and analysis, decision making, and operations on the farm and in the marketplace can restructure not only how our food is grown but what kinds of food we eat."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                833,
+                946,
+                913
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                969,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                983
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Producers, input providers, machinery makers, traders, food companies, and retailers can all gain by adopting these new AI-driven capabilities. But the advantage will go to those who move first."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                66,
+                944,
+                108
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Agriculture's new nitrogen-moment window is open. It will not stay that way."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                120,
+                747,
+                142
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Authors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                212,
+                245,
+                252
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/1a72b485aab0fe17f98bac6f24dbaeaf8cd1cc05ffb0d51fdbae5e31a19d291b.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "David Potere"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                294,
+                220,
+                401
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2adc2b92d495aa6a89f4f34e47e14983cc10249c5fed29f6e94ebb870e4dbc64.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                535,
+                294,
+                683,
+                401
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/b04374a6ca47a05b3dcd7ea251b676c1ce2674ff275982e08d90764faafc1324.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Partner\nBoston"
+                    }
+                ]
+            },
+            "bbox": [
+                245,
+                370,
+                274,
+                388
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/99be727037f3c4ba3d0121a151fdd87bf0e2fc5d2b4a4f481f8e212852707739.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sonya Hoo"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Partner\nWashington, DC"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                450,
+                217,
+                556
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/8b40930e91abae6cb10d5d953c1bab32ab0679584a924fef164386398fa43b94.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                708,
+                370,
+                735,
+                388
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/411857180281b2c623dff7bfc2104c57353afd01d7ea9454500baf47ec373bf0.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                69,
+                602,
+                220,
+                708
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Michael Glotter"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                242,
+                457,
+                419,
+                481
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2a44425d44d810bf4e178f42846181cd4cad16e8a1f7db4da11b3328f6242b5a.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                245,
+                525,
+                274,
+                542
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Managing Director & Partner\nChicago"
+                    }
+                ]
+            },
+            "bbox": [
+                242,
+                489,
+                446,
+                521
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d15ae9443e9b2fafc00b039a5b9aaee2afc805d6b4d3bdfca1acdb2652537dd9.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Emily Wu"
+                    }
+                ]
+            },
+            "bbox": [
+                531,
+                456,
+                671,
+                555
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Principal Auckland"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                489,
+                779,
+                521
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/65cd44da8efc8b5afd2c196738d7727733c83e6b4d61de60e701bb49d69aea59.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Adam Haidermota"
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                524,
+                737,
+                542
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/96c8844e3dc25dd338e740155688644faaa4f91d1173573ca2ea104bd2f6456c.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                244,
+                678,
+                274,
+                695
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Senior Analyst, BCG Vantage Chicago"
+                    }
+                ]
+            },
+            "bbox": [
+                242,
+                643,
+                446,
+                674
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                984
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ABOUT BOSTON CONSULTING GROUP"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                42,
+                102,
+                434,
+                120
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                137,
+                951,
+                256
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "©2026 Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                970,
+                249,
+                983
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                970,
+                954,
+                982
+            ]
+        }
+    ]
+]

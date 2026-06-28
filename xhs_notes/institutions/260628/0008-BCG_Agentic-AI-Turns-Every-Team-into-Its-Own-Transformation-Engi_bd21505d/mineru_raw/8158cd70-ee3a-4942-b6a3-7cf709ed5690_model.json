@@ -1,0 +1,3678 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.395
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.048,
+                0.431,
+                0.139,
+                0.45
+            ],
+            "angle": 0,
+            "content": "AI AGENTS",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.479,
+                0.777,
+                0.628
+            ],
+            "angle": 0,
+            "content": "Agentic AI Turns Every\nTeam into Its Own\nTransformation Engine"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.657,
+                0.726,
+                0.676
+            ],
+            "angle": 0,
+            "content": "By Gavin Parker, Caryn Katsikogianis, Alan Wong, Simon Murphy, and Nicole Sibilio",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.701,
+                0.368,
+                0.718
+            ],
+            "angle": 0,
+            "content": "ARTICLE JUNE 19, 2026 12 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.779,
+                0.955,
+                0.819
+            ],
+            "angle": 0,
+            "content": "Agentic AI is exposing an uncomfortable truth: the organisations getting value from it are not the ones with the best technology, but the ones working closely with their teams to redesign how they work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.834,
+                0.932,
+                0.914
+            ],
+            "angle": 0,
+            "content": "Caryn Katsikogianis is the former Chief People Officer of Woolworths Group, capping a 25-year career in HR leadership across Australian retail. She reflects here on perspectives drawn from that journey, including conversations with other senior People leaders. Gavin Parker is a Managing Director and Senior Partner at Boston Consulting Group, and Alan Wong is a Partner at BCG, bringing BCG's global perspectives from",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.435,
+                0.131,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.475,
+                0.783,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.529,
+                0.636,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.578,
+                0.774,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.661,
+                0.721,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.703,
+                0.364,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.782,
+                0.952,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.802,
+                0.776,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.837,
+                0.928,
+                0.852
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.857,
+                0.883,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.875,
+                0.911,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.896,
+                0.881,
+                0.911
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.875,
+                0.108
+            ],
+            "angle": 0,
+            "content": "supporting clients across industries and geographies on AI transformation. Together, they explore how organisations are scaling agentic AI.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.179,
+                0.357,
+                0.216
+            ],
+            "angle": 0,
+            "content": "Introduction"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.245,
+                0.956,
+                0.386
+            ],
+            "angle": 0,
+            "content": "How organisations scale AI is changing how change itself happens. Transformation programs have traditionally been rolled out by a central team in steady, sequential phases. But with AI-led transformations, particularly those drawing on GenAI and agentic AI, many teams across the organisation are being asked to transform — often simultaneously. While it’s widely recognised that AI adoption will lead to some job displacement in the short term, it is also expected to drive net job creation and new forms of work in the near future, increasing the urgency for organisations to adapt how work is designed and delivered.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.399,
+                0.956,
+                0.539
+            ],
+            "angle": 0,
+            "content": "GenAI has reached 70% adoption in just three years. It’s high on the agenda at every boardroom and management meeting, yet only 16% of Australian executives report significant value from GenAI today. Discussion to date has focused on the technology, but experience shows that organisations derive value from AI only when it is deployed in service of strategic priorities — not treated as a tool confined to the CIO’s toolkit. That shift is already visible in the C-suite: more than 70% of CEOs state that they are now the primary decision-maker when it comes to AI, recognising AI’s role as an enabler of strategy rather than a purely technical capability.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.552,
+                0.947,
+                0.632
+            ],
+            "angle": 0,
+            "content": "The adoption-value constraint is no longer the technology, but whether teams have the confidence, capability and permission to change how they work to deliver organisational goals. In other words, the bottleneck in AI transformation has shifted from technology to organisational capability.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.68,
+                0.645,
+                0.8
+            ],
+            "angle": 0,
+            "content": "Generative AI (GenAI) refers to systems that generate outputs from prompts or data, including large language models (LLMs) such as ChatGPT and Claude. Agentic AI extends this capability by enabling systems to autonomously plan, decide and act across multiple steps to achieve an outcome.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.125,
+                0.819,
+                0.639,
+                0.898
+            ],
+            "angle": 0,
+            "content": "While this article focuses on agentic AI, the implications apply to GenAI and even more traditional forms of AI (e.g. machine learning) which are reshaping how teams work.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.07,
+                0.872,
+                0.087
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.091,
+                0.339,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.178,
+                0.358,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.247,
+                0.952,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.268,
+                0.887,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.286,
+                0.9,
+                0.303
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.306,
+                0.93,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.327,
+                0.934,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.348,
+                0.952,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.366,
+                0.461,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.402,
+                0.93,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.421,
+                0.914,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.44,
+                0.878,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.46,
+                0.946,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.48,
+                0.952,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.499,
+                0.944,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.518,
+                0.741,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.555,
+                0.848,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.574,
+                0.943,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.593,
+                0.919,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.614,
+                0.143,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.679,
+                0.119,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.682,
+                0.632,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.702,
+                0.642,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.722,
+                0.643,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.741,
+                0.563,
+                0.758
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.761,
+                0.604,
+                0.777
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.781,
+                0.404,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.819,
+                0.529,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.84,
+                0.637,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.859,
+                0.637,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.88,
+                0.285,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.067,
+                0.705,
+                0.146
+            ],
+            "angle": 0,
+            "content": "Agentic AI Is Changing the\nNature of Transformation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.174,
+                0.956,
+                0.235
+            ],
+            "angle": 0,
+            "content": "Agentic AI is still emerging, but it is already changing how work gets done. Work is shifting from execution to orchestration. Teams are flattening into human-AI structures, changing what it means to ‘manage’. Organisational design, talent and governance are being reshaped in response.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.248,
+                0.946,
+                0.33
+            ],
+            "angle": 0,
+            "content": "Yet focusing on the adoption of AI is not enough to unlock the full potential of GenAI and agentic AI — what matters is quality adoption of AI to deliver a measurable business outcome. In three stages of AI adoption, Deploy can create immediate value in organisations, but most of the value will come from using AI to Reshape critical functions and to Invent new AI-led experiences.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.377,
+                0.663,
+                0.416
+            ],
+            "angle": 0,
+            "content": "Organisations Need to Move Through Three Stages of AI Adoption to Generate Value From Agentic AI"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.042,
+                0.424,
+                0.734,
+                0.702
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.372,
+                0.676,
+                0.629,
+                0.692
+            ],
+            "angle": 0,
+            "content": "Incremental adoption to do the same, but better"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.769,
+                0.953,
+                0.89
+            ],
+            "angle": 0,
+            "content": "What does ‘reshape’ look like in practice? A company sets a strategic objective to dramatically scale the volume and personalisation of its marketing. It deploys agentic AI to automate much of the campaign development process, from generating creative assets to tailoring messaging for different audiences and channels. The marketing function then reshapes itself around this new capability, redesigning workflows end-to-end and removing large amounts of manual work. Routine tasks are automated, allowing teams to focus on strategy, creativity and experimentation.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.067,
+                0.704,
+                0.109
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.109,
+                0.684,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.177,
+                0.919,
+                0.191
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.195,
+                0.953,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.216,
+                0.892,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.251,
+                0.938,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.27,
+                0.926,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.289,
+                0.938,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.31,
+                0.884,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.381,
+                0.657,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.397,
+                0.331,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.771,
+                0.92,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.791,
+                0.941,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.811,
+                0.921,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.831,
+                0.926,
+                0.845
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.85,
+                0.881,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.87,
+                0.952,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.944,
+                0.128
+            ],
+            "angle": 0,
+            "content": "To drive effective, sustained adoption in this context, we need to understand how GenAI and agentic AI are changing how transformation occurs in organisations. Five structural shifts explain why transformation is becoming more distributed and team-led:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.156,
+                0.935,
+                0.236
+            ],
+            "angle": 0,
+            "content": "- Work is changing faster than central programs can keep up: Agentic AI capabilities are evolving weekly, if not daily. Recent examples include Anthropic releasing the Mythos-class Claude Fable 5 in June 2026 and OpenAI releasing GPT-5.5 – rebuilt for agentic workflows – in April 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.251,
+                0.9,
+                0.33
+            ],
+            "angle": 0,
+            "content": "- Innovation becomes grassroots: Teams can often access generative AI tools themselves, meaning that pockets of innovation are occurring regardless of company guidance. These green shoots can lead to uplifts in effectiveness and efficiency, but also introduce organisational risk if left unaddressed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.344,
+                0.869,
+                0.405
+            ],
+            "angle": 0,
+            "content": "- Transformation multiplies: When nearly every team is affected by agentic AI, transformation no longer scales through a handful of large programs. It scales through hundreds of small, local reinventions happening in parallel.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.419,
+                0.92,
+                0.499
+            ],
+            "angle": 0,
+            "content": "- Teams become the engine of change: As agentic transformation starts with rethinking end-to-end workflows in prioritised business domains, change has to run through the teams that hold the expertise. The leadership task is to channel that capability towards the organisation’s key strategic priorities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.513,
+                0.919,
+                0.572
+            ],
+            "angle": 0,
+            "content": "- Roles are re-shaped in real time: Each team is effectively being asked to redesign how work gets done, while still delivering day-to-day outcomes and navigating uncertainty about the future – leading to resistance to change.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.602,
+                0.955,
+                0.722
+            ],
+            "angle": 0,
+            "content": "Agentic AI does more than improve productivity; it brings transformation closer to teams. Organisations that recognise that teams need to be involved in redesigning their own workflows in pursuit of business outcomes are the ones driving sustainable change. Distributed change does not mean undirected change. The organisations getting real value are not letting every team experiment at once; they are pointing this team-led energy at the two or three domains that move a business metric, and reshaping these domains end to end.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.842,
+                0.858,
+                0.922
+            ],
+            "angle": 0,
+            "content": "Agentic in Practice: Insights from an Industry Leader"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.251,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.069,
+                0.896,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.089,
+                0.941,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.108,
+                0.636,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.159,
+                0.872,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.178,
+                0.911,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.198,
+                0.928,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.218,
+                0.169,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.254,
+                0.895,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.273,
+                0.894,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.293,
+                0.823,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.313,
+                0.425,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.345,
+                0.789,
+                0.363
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.366,
+                0.864,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.385,
+                0.621,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.42,
+                0.917,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.44,
+                0.915,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.461,
+                0.805,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.48,
+                0.415,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.515,
+                0.916,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.535,
+                0.895,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.554,
+                0.44,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.604,
+                0.87,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.624,
+                0.931,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.642,
+                0.952,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.663,
+                0.901,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.683,
+                0.947,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.702,
+                0.604,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.841,
+                0.861,
+                0.884
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.882,
+                0.519,
+                0.923
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.955,
+                0.127
+            ],
+            "angle": 0,
+            "content": "To close the adoption-value gap, focus on teams before technology and understand how to empower teams to drive change. Bringing this to life is a case study of one global industry leader's journey.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.064,
+                0.157,
+                0.851,
+                0.215
+            ],
+            "angle": 0,
+            "content": "- Case Study: AWS Software Development Lifecycle Transformation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.252,
+                0.829,
+                0.392
+            ],
+            "angle": 0,
+            "content": "AWS used GenAI to reshape how software engineering work gets done. The starting point was a familiar challenge: organisations had introduced AI tools to engineers, but usage alone was not changing how work was performed or improving outcomes. Recognising that GenAI can pose a threat to the identity of team members, a core focus of the transformation was helping teams to understand that AI is there to enhance their work by enabling them to spend more time creating and building.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.409,
+                0.814,
+                0.49
+            ],
+            "angle": 0,
+            "content": "Firstly, AWS linked GenAI adoption directly to business outcomes. “It's not just about the adoption, it's about meaningful usage. Are you deploying code to production and is it making it to customers in the form of features?” This reframed success around impact, rather than simply adoption of tools.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.508,
+                0.838,
+                0.589
+            ],
+            "angle": 0,
+            "content": "Secondly, the transformation was explicitly team-led, with capability built inside engineering teams by focusing on changing habits, not just enabling access. AWS embedded experienced peer engineers into teams to model new ways of working and reset day-to-day practices, accelerating adoption within the workflow itself.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.606,
+                0.843,
+                0.687
+            ],
+            "angle": 0,
+            "content": "Finally, AWS is extending this reshape across the full lifecycle. With “about a third of the work due to coding,” the focus is shifting to the processes before and after the coding – the design and the maintenance and ops reinforcing that most of the value will come from using AI to reshape critical functions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.705,
+                0.824,
+                0.765
+            ],
+            "angle": 0,
+            "content": "These changes reshaped the role of the developer, reducing manual effort, increasing time spent creating and building, and resulting in 27% more features shipped.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.07,
+                0.881,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.949,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.11,
+                0.12,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.158,
+                0.848,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.103,
+                0.19,
+                0.337,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.253,
+                0.773,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.274,
+                0.818,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.294,
+                0.759,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.314,
+                0.825,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.333,
+                0.751,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.354,
+                0.795,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.374,
+                0.385,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.412,
+                0.811,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.43,
+                0.776,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.451,
+                0.753,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.47,
+                0.738,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.511,
+                0.821,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.53,
+                0.833,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.55,
+                0.831,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.57,
+                0.814,
+                0.584
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.608,
+                0.838,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.628,
+                0.828,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.648,
+                0.838,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.667,
+                0.624,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.708,
+                0.771,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.728,
+                0.82,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.746,
+                0.167,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.067,
+                0.874,
+                0.183
+            ],
+            "angle": 0,
+            "content": "An Executive Checklist for\nEmpowering Your Teams to Scale\nAI"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.213,
+                0.953,
+                0.352
+            ],
+            "angle": 0,
+            "content": "Realising value from AI requires a reshape of organisations as transformation shifts from central programs to guided change that unfolds team-by-team. While no silver bullet change playbook exists to navigate transformation with new technologies, a people-led approach can close the gap between adoption and value. Drawing on Caryn's experience as a senior People leader in Australian retail and BCG's global perspectives, we have created a checklist to guide organisations to align agentic AI use cases with business priorities and empower their teams to deliver.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.064,
+                0.383,
+                0.797,
+                0.442
+            ],
+            "angle": 0,
+            "content": "- 1. Be honest about whether AI actually serves your strategy, or just decorates it"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.077,
+                0.477,
+                0.835,
+                0.517
+            ],
+            "angle": 0,
+            "content": "Have you identified the 2–3 domains where AI will move a business metric, not just add activity?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.537,
+                0.842,
+                0.735
+            ],
+            "angle": 0,
+            "content": "AI is not your strategy, and a wide portfolio of pilots is not a transformation. Your data and AI strategy exists to serve your business strategy. The discipline lies in choosing the two or three domains where AI can materially accelerate a priority, and reshaping those domains end to end. Take a retailer whose priority is getting the right assortment in every store. The place to start is merchandising: take customer data and demand signals, reimagine the workflow from end to end alongside the team, and generate the localised ranges and planograms that store operations will execute. Critically, do this with the team, from category managers through to customer insights and store operations. One domain reshaped properly creates more value than ten explored at the surface.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.1,
+                0.905,
+                0.832,
+                0.933
+            ],
+            "angle": 0,
+            "content": "2. Put your CHRO at the centre of the AI agenda,"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.066,
+                0.694,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.107,
+                0.876,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.146,
+                0.117,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.215,
+                0.938,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.235,
+                0.918,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.255,
+                0.95,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.275,
+                0.872,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.293,
+                0.827,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.314,
+                0.927,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.334,
+                0.115,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.384,
+                0.795,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.099,
+                0.415,
+                0.593,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.479,
+                0.832,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.5,
+                0.247,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.539,
+                0.825,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.558,
+                0.821,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.577,
+                0.821,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.596,
+                0.829,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.618,
+                0.79,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.638,
+                0.786,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.657,
+                0.838,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.676,
+                0.825,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.696,
+                0.763,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.716,
+                0.656,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.103,
+                0.906,
+                0.829,
+                0.932
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.1,
+                0.069,
+                0.807,
+                0.097
+            ],
+            "angle": 0,
+            "content": "as Chief Transformation and Capability Officer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.164,
+                0.773,
+                0.204
+            ],
+            "angle": 0,
+            "content": "Is there a clear mandate to translate strategy into integrated human–AI structures, or are you relying on technology adoption alone?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.223,
+                0.84,
+                0.322
+            ],
+            "angle": 0,
+            "content": "Context and culture matter, but they are not enough on their own. Agentic AI puts organisation design at the centre of the AI agenda, and the CHRO is best placed to lead it: actively partnering with business leaders to translate strategy into how teams are structured, flattening hierarchies and orienting these hierarchies around human-AI workflows.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.341,
+                0.832,
+                0.422
+            ],
+            "angle": 0,
+            "content": "Technology will not do all the heavy lifting; the CHRO's job is to make sure teams are ready, driving the reskilling that reshapes roles as the work changes. This is where HR acts as capability and organisational design architects, helping teams navigate the shift to new ways of working.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.548,
+                0.824,
+                0.577
+            ],
+            "angle": 0,
+            "content": "- 3. Treat adoption quality, not access, as the goal"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.613,
+                0.751,
+                0.652
+            ],
+            "angle": 0,
+            "content": "You've handed out the tools; what are you doing to turn adoption into measurable value?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.672,
+                0.832,
+                0.85
+            ],
+            "angle": 0,
+            "content": "Giving teams a licence is the start of transformation, not the substance of it. Access without governance reliably produces ungoverned workarounds and little measurable value. So roll out productivity tools that let teams experiment, and pair them with AI risk governance strong enough to contain the unauthorised solutions that otherwise accumulate in the gaps. Invest in curated content and genuine AI literacy so people understand what the tools can do and where the risks sit. And build standard, reusable foundations, from identity and access to safe sandboxes, connectors and observability, so teams are not each rebuilding the same plumbing.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.07,
+                0.804,
+                0.095
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.165,
+                0.771,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.186,
+                0.65,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.224,
+                0.835,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.246,
+                0.825,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.265,
+                0.837,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.285,
+                0.779,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.304,
+                0.346,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.343,
+                0.83,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.363,
+                0.813,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.383,
+                0.826,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.403,
+                0.465,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.549,
+                0.823,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.614,
+                0.748,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.634,
+                0.257,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.086,
+                0.674,
+                0.788,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.693,
+                0.831,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.714,
+                0.815,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.733,
+                0.796,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.754,
+                0.812,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.772,
+                0.808,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.793,
+                0.809,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.81,
+                0.825,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.832,
+                0.27,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.11,
+                0.854,
+                0.169
+            ],
+            "angle": 0,
+            "content": "- 4. Separate how you transform from how you run, and protect the difference"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.205,
+                0.806,
+                0.245
+            ],
+            "angle": 0,
+            "content": "Have you invested in the capacity and capability for teams to reinvent their own work, or are you expecting them to innovate in the gaps of the day job?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.263,
+                0.826,
+                0.365
+            ],
+            "angle": 0,
+            "content": "Transformation bolted onto teams already at capacity tends to fail quietly. But agentic AI means rethinking workflows end to end, so change cannot be handed to a detached central program; it has to run through the teams that hold the domain expertise. The fix is to draw a clear line between running the business and transforming it, and to protect the teams leading that change.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.382,
+                0.827,
+                0.463
+            ],
+            "angle": 0,
+            "content": "Leadership's job is to give those teams a clear mandate, tie their work to a specific outcome and business metric, and fund the capacity – by backfilling roles or bringing in temporary support – so people can step out of the daily run. That gives them a dedicated build space to focus on reinventing the work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.48,
+                0.842,
+                0.601
+            ],
+            "angle": 0,
+            "content": "None of this lands unless leadership frames it as an opportunity, not a burden. For the business, protecting that capacity is an investment in transformation, not an operational cost. For teams, it is an exciting chance to build new skills and design their own future human-AI structures. Framed that way, change becomes not just another tool to adopt, but rather a way for teams to set themselves apart and gain agency in their actions.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.726,
+                0.738,
+                0.785
+            ],
+            "angle": 0,
+            "content": "- 5. Make build, buy or partner a deliberate decision, not a default"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.82,
+                0.834,
+                0.861
+            ],
+            "angle": 0,
+            "content": "Do you have a framework for build/buy/partner, or does 'we'll build it ourselves' win by default?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.88,
+                0.843,
+                0.921
+            ],
+            "angle": 0,
+            "content": "The instinct to build everything internally is often the slowest and most expensive route to value. Better to define an explicit framework for build, buy and",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.112,
+                0.851,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.103,
+                0.142,
+                0.495,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.207,
+                0.802,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.226,
+                0.799,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.266,
+                0.808,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.285,
+                0.823,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.306,
+                0.783,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.325,
+                0.803,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.345,
+                0.697,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.384,
+                0.769,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.404,
+                0.791,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.424,
+                0.823,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.443,
+                0.763,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.482,
+                0.815,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.503,
+                0.837,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.522,
+                0.8,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.541,
+                0.815,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.562,
+                0.835,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.582,
+                0.384,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.728,
+                0.735,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.758,
+                0.437,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.823,
+                0.83,
+                0.839
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.843,
+                0.227,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.883,
+                0.747,
+                0.898
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.902,
+                0.84,
+                0.918
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.068,
+                0.839,
+                0.166
+            ],
+            "angle": 0,
+            "content": "partner decisions. Be deliberate about where you retain strategic control, such as ownership of the customer in agentic commerce, and about how you manage third-party risk everywhere else. With that in place, teams can draw on technology and service partners wherever those partners speed things up and allow you to retain control where it matters."
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.334,
+                0.786,
+                0.456
+            ],
+            "angle": 0,
+            "content": "Close the Adoption-Value Gap with a Team-Led Approach to Agentic AI"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.481,
+                0.938,
+                0.541
+            ],
+            "angle": 0,
+            "content": "If organisations see AI only as a tool to increase productivity, they will miss its full potential. The real value in agentic AI isn't about removing humans from the equation; it's about changing how we work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.555,
+                0.952,
+                0.715
+            ],
+            "angle": 0,
+            "content": "Most of the work required to scale agentic AI still lies ahead. Agentic AI will create significant value, but success requires a fundamental evolution in how organisations approach change. Organisations often have deep expertise in programs such as reviewing your customer offer or assessing a new market; rethinking how you embed and transform your organisation with AI will feel a bit like stepping into the unknown for many executives. The only way that executives can address this uncertainty is to allocate sufficient time, resources, and focus to this critical strategic agenda. Organisations that succeed will not just deploy AI; they will institutionalise the capability for teams to continuously redesign how work gets done.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.728,
+                0.921,
+                0.769
+            ],
+            "angle": 0,
+            "content": "We’ve provided our reflections on how the transformation and change journey needs to evolve with agentic AI; let us know yours.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.332,
+                0.789,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.374,
+                0.782,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.416,
+                0.313,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.484,
+                0.934,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.502,
+                0.93,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.522,
+                0.128,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.558,
+                0.904,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.578,
+                0.897,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.598,
+                0.917,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.617,
+                0.929,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.636,
+                0.926,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.657,
+                0.949,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.676,
+                0.943,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.697,
+                0.56,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.73,
+                0.916,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.75,
+                0.357,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.104,
+                0.247,
+                0.143
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.187,
+                0.221,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.071,
+                0.34,
+                0.22,
+                0.447
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.245,
+                0.189,
+                0.39,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Gavin Parker"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.222,
+                0.437,
+                0.265
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nSydney"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.268,
+                0.275,
+                0.285
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.349,
+                0.372,
+                0.373
+            ],
+            "angle": 0,
+            "content": "Alan Wong"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.383,
+                0.302,
+                0.413
+            ],
+            "angle": 0,
+            "content": "Partner\nSydney",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.416,
+                0.275,
+                0.433
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.186,
+                0.683,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.204,
+                0.927,
+                0.226
+            ],
+            "angle": 0,
+            "content": "Caryn Katsikogianis"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.236,
+                0.9,
+                0.279
+            ],
+            "angle": 0,
+            "content": "Former Chief People Officer,\nWoolworths Group\nSydney"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.341,
+                0.682,
+                0.447
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.343,
+                0.875,
+                0.366
+            ],
+            "angle": 0,
+            "content": "Simon Murphy"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.422,
+                0.737,
+                0.439
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.376,
+                0.9,
+                0.419
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nSydney",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.494,
+                0.22,
+                0.6
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.246,
+                0.502,
+                0.393,
+                0.525
+            ],
+            "angle": 0,
+            "content": "Nicole Sibilio"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.569,
+                0.275,
+                0.586
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.243,
+                0.534,
+                0.446,
+                0.565
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nSydney",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.687,
+                0.436,
+                0.707
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.722,
+                0.953,
+                0.843
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.102,
+                0.247,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.384,
+                0.3,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.396,
+                0.299,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.343,
+                0.872,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.377,
+                0.897,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.391,
+                0.763,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.708,
+                0.404,
+                0.762,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.504,
+                0.389,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.537,
+                0.442,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.551,
+                0.298,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.691,
+                0.432,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.724,
+                0.949,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.743,
+                0.899,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.764,
+                0.904,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.784,
+                0.912,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.802,
+                0.935,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.824,
+                0.594,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

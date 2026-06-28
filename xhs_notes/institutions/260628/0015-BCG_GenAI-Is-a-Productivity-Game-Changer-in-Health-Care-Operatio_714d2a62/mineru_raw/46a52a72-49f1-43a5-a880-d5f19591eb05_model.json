@@ -1,0 +1,2775 @@
+[
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.751,
+                0.063,
+                0.914,
+                0.113
+            ],
+            "angle": 0,
+            "content": "BCG",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.06,
+                0.042,
+                0.94,
+                0.577
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.597,
+                0.206,
+                0.618
+            ],
+            "angle": 0,
+            "content": "WHITE PAPER",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.056,
+                0.632,
+                0.768,
+                0.793
+            ],
+            "angle": 0,
+            "content": "Navigating the Medtech\nGenAI Journey: A Policy\nPrimer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.902,
+                0.756,
+                0.934
+            ],
+            "angle": 0,
+            "content": "October 10, 2023\nBy Nadya Bartol, Meghna Eichelberger, Peter Lawyer, Kirsten Rulf, Bradley Merrill Thompson \\( ^{1} \\) .",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.054,
+                0.943,
+                0.658,
+                0.959
+            ],
+            "angle": 0,
+            "content": "1. Bradley Merrill Thompson is an external author who is a Member of Epstein Becker & Green, P.C.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.741,
+                0.057,
+                0.923,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.602,
+                0.203,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.061,
+                0.634,
+                0.769,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.691,
+                0.754,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.748,
+                0.268,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.905,
+                0.184,
+                0.917
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.92,
+                0.755,
+                0.931
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.947,
+                0.654,
+                0.956
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.054,
+                0.039,
+                0.788,
+                0.139
+            ],
+            "angle": 0,
+            "content": "Navigating the Medtech GenAI Journey: A Policy Primer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.266,
+                0.174,
+                0.942,
+                0.335
+            ],
+            "angle": 0,
+            "content": "The road to successful Generative Artificial Intelligence (GenAI) deployment in medtech can draw parallels from classical literature and mythology. The hero (a medtech company) heeds a call to adventure in pursuit of some glorious proposition (the power of GenAI), embarking on a journey from the known world into the abyss, where they must contend with forbidding and frightening obstacles (incomplete and unclear regulations, potential legal consequences, unknown cyber threats) as well as individual temptation (violations of data privacy, copyright infringement) presenting clear and present danger (to the company and, potentially, to patients). In storybooks, the hero emerges triumphant after an epiphany—while quick thinking may dodge a threat, and great courage and skill may win a battle, it is the hero’s own moral compass that separates their tale from a tragedy. Will your medtech GenAI journey be a Hero’s Tale or a Tragedy?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.267,
+                0.345,
+                0.938,
+                0.434
+            ],
+            "angle": 0,
+            "content": "Our previous articles have focused on the call to adventure (“Medtech Companies Must Move Faster on Generative AI”) as well as the tremendous potential for GenAI technology (“Medtech’s GenAI Opportunity”) and the building blocks required to field GenAI products and services (“Building A Medtech GenAI Platform”). This article focuses on the Policy aspects of your GenAI initiative, including the Responsible AI (RAI) Playbook that serves as a roadmap to ensure your medtech GenAI journey is a successful one.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.056,
+                0.454,
+                0.383,
+                0.477
+            ],
+            "angle": 0,
+            "content": "This Article's Focus - Policy"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.059,
+                0.497,
+                0.938,
+                0.779
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.792,
+                0.437,
+                0.819
+            ],
+            "angle": 0,
+            "content": "Source: BCG\nCopyright 2023 by Boston Consulting Group. All rights reserved."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.058,
+                0.949,
+                0.07,
+                0.959
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.948,
+                0.942,
+                0.96
+            ],
+            "angle": 0,
+            "content": "NAVIGATING THE MEDTECH GENAI JOURNEY: A POLICY PRIMER"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.04,
+                0.789,
+                0.078
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.055,
+                0.097,
+                0.635,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.175,
+                0.935,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.19,
+                0.886,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.205,
+                0.933,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.27,
+                0.218,
+                0.915,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.233,
+                0.897,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.247,
+                0.892,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.273,
+                0.263,
+                0.918,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.27,
+                0.276,
+                0.933,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.291,
+                0.932,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.305,
+                0.938,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.319,
+                0.66,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.347,
+                0.924,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.361,
+                0.935,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.376,
+                0.906,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.39,
+                0.933,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.404,
+                0.917,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.419,
+                0.62,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.057,
+                0.044,
+                0.34,
+                0.062
+            ],
+            "angle": 0,
+            "content": "Risks on Your Medtech Journey"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.074,
+                0.719,
+                0.206
+            ],
+            "angle": 0,
+            "content": "Dangers such as leaking Protected Health Information (PHI), making false claims, releasing proprietary data, and infringing copyrights exist regardless of the underlying technology. GenAI heightens these latent risks and introduces others via the inner workings of Large Language Models (LLMs) that are not yet fully understood. These risks could have unpredictable consequences, including biased output (generally due to inadequate training data), so-called “hallucination” (confidently presenting an “answer” that is objectively wrong and often cartoonishly flawed), capability overhang (the propensity for probabilistic models and heuristics to reach a conclusion beyond the natural stopping point, leading to unexpected outcomes), and poor robustness, including false positives and negatives.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.057,
+                0.227,
+                0.783,
+                0.25
+            ],
+            "angle": 0,
+            "content": "Exhibit 1 – Generative AI Increases Some Existing LLM Risks"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.059,
+                0.269,
+                0.939,
+                0.529
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.057,
+                0.551,
+                0.437,
+                0.566
+            ],
+            "angle": 0,
+            "content": "Copyright 2023 by Boston Consulting Group. All rights reserved."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.603,
+                0.711,
+                0.706
+            ],
+            "angle": 0,
+            "content": "AI cyberattacks, especially those involving data poisoning of the model's training data or hijacking the GenAI model itself, present another danger. Maintaining data privacy and safeguarding your model's training data will therefore be a paramount concern. Likewise, the algorithms and services that leverage patient data and your company's intellectual property must be both scrubbed for bias and battle-hardened to prevent unauthorized access and use. Simulated attacks on your GenAI products enable your company to devise response scenarios that help put regulators' minds at ease.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.717,
+                0.718,
+                0.792
+            ],
+            "angle": 0,
+            "content": "The vanguard protecting your medtech GenAI journey is your company's RAI framework. Simply put, it is an articulation of your company's intended use of AI, with clear guardrails to prevent the misuse and unintended consequences of deploying this technology. Your RAI framework should anticipate and accommodate key concerns of regulators, patients and providers, and other stakeholders, while upholding your company's own value system.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.058,
+                0.948,
+                0.233,
+                0.961
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.931,
+                0.949,
+                0.941,
+                0.96
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.044,
+                0.338,
+                0.061
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.077,
+                0.716,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.09,
+                0.687,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.104,
+                0.693,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.119,
+                0.648,
+                0.132
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.133,
+                0.712,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.147,
+                0.672,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.161,
+                0.701,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.176,
+                0.704,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.19,
+                0.666,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.226,
+                0.781,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.605,
+                0.693,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.619,
+                0.683,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.633,
+                0.698,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.648,
+                0.683,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.662,
+                0.679,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.675,
+                0.708,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.689,
+                0.486,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.719,
+                0.695,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.733,
+                0.706,
+                0.746
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.748,
+                0.715,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.761,
+                0.695,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.775,
+                0.674,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.269,
+                0.044,
+                0.564,
+                0.062
+            ],
+            "angle": 0,
+            "content": "The Evolving Regulatory Landscape"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.267,
+                0.074,
+                0.928,
+                0.191
+            ],
+            "angle": 0,
+            "content": "Regulators walk the highwire of managing risk while providing sufficient leeway for innovation. For Software as a Medical Device (SaMD) and many AI/Machine Learning (ML) products, regulators can simulate hundreds of thousands of real-world scenarios to stress the underlying logic and test the robustness of the code. However, GenAI technology asks regulators to weigh the safety and effectiveness of medical products that generate new information, reaching conclusions that—in clinical situations—could determine how a patient is treated. Hubris on the part of the medtech company or the regulator can lead to tragedy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.268,
+                0.202,
+                0.938,
+                0.32
+            ],
+            "angle": 0,
+            "content": "In the US, the Food and Drug Administration's (FDA's) Center for Device and Radiological Health (CDRH) acts as the principal regulator for GenAI-powered medical devices, though the Department of Health and Human Services Office of Civil Rights oversees the Health Insurance Portability and Accountability Act (HIPAA), which upholds privacy laws concerning PHI. The EU's FDA equivalent, the European Medicines Agency, bears specific responsibility for devices and equipment via its Medical Device Regulations (MDR), but laws concerning data privacy in AI and GenAI are embedded in the EU's General Data Protection Regulation (GDPR).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.267,
+                0.33,
+                0.929,
+                0.434
+            ],
+            "angle": 0,
+            "content": "The EU’s pending Artificial Intelligence Act proposes a four-tiered risk framework that currently defines all GenAI-powered medical products as “high-risk,” imposing a set of preconditions for market release, facilities for monitoring performance and compliance, as well as significant fines of up to 6% of global revenue for violations. Any such penalties would be incremental to violations of GDPR. EU officials hope to ratify the Artificial Intelligence Act by the close of 2023, compelling all member states to implement its measures within a 20-month transitional period.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.267,
+                0.445,
+                0.94,
+                0.663
+            ],
+            "angle": 0,
+            "content": "The FDA has led the International Medical Device Regulators Forum SaMD working group to agree upon key definitions, a framework for risk categorization, the Quality Management System, and practical ways to run clinical trials. The FDA's December 2019 discussion paper set forth a risk-based framework for AI/ML-enabled device software functions. Congress then authorized the use of Predetermined Change Control Plans (PCCP) for products that evolve within predetermined parameters, enabling applicants to submit for FDA approval their proposed process for validating the model. Low-risk products such as heart rate monitors would require only periodic retesting, while more critical GenAI applications—say, implantable cardiac defibrillators that refine their own parameters for when to fire—would need to undergo more continuous testing. In June, the National Institute of Standards and Technology (NIST) launched a public working group on AI to build on its existing Risk Management Framework. Existing HIPAA regulations would also extend to any new US GenAI offering—but these rules, launched in 2006 and last modified in 2009, are scheduled for an update, possibly before the end of 2023.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.058,
+                0.949,
+                0.069,
+                0.959
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.948,
+                0.941,
+                0.96
+            ],
+            "angle": 0,
+            "content": "NAVIGATING THE MEDTECH GENAI JOURNEY: A POLICY PRIMER"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.046,
+                0.561,
+                0.06
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.273,
+                0.075,
+                0.896,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.09,
+                0.899,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.104,
+                0.861,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.118,
+                0.874,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.27,
+                0.132,
+                0.876,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.147,
+                0.859,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.161,
+                0.924,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.176,
+                0.906,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.273,
+                0.204,
+                0.875,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.273,
+                0.219,
+                0.888,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.232,
+                0.915,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.273,
+                0.248,
+                0.874,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.261,
+                0.924,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.275,
+                0.935,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.29,
+                0.909,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.304,
+                0.924,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.273,
+                0.333,
+                0.91,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.347,
+                0.926,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.361,
+                0.924,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.376,
+                0.921,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.39,
+                0.915,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.27,
+                0.403,
+                0.915,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.419,
+                0.841,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.445,
+                0.935,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.461,
+                0.929,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.475,
+                0.926,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.49,
+                0.91,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.504,
+                0.9,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.518,
+                0.909,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.532,
+                0.937,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.546,
+                0.874,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.561,
+                0.927,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.574,
+                0.888,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.59,
+                0.918,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.604,
+                0.906,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.618,
+                0.931,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.632,
+                0.897,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.646,
+                0.802,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.056,
+                0.039,
+                0.888,
+                0.077
+            ],
+            "angle": 0,
+            "content": "Exhibit 2 – Agility Needed to Respond to Existing & Upcoming Regulations (non-exhaustive, selection of key regulations)"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.098,
+                0.127,
+                0.892,
+                0.29
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.327,
+                0.438,
+                0.363
+            ],
+            "angle": 0,
+            "content": "Note: BCG does not provide legal advice  \nSource: BCG  \nCopyright 2023 by Boston Consulting Group. All rights reserved."
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.068,
+                0.382,
+                0.175,
+                0.444
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.146,
+                0.507,
+                0.856,
+                0.729
+            ],
+            "angle": 0,
+            "content": "Functional and commercial\nuse cases perceived as\nlow-risk offer a safe pathway\nto gain GenAI experience"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.058,
+                0.947,
+                0.233,
+                0.961
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.93,
+                0.949,
+                0.941,
+                0.959
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.152,
+                0.513,
+                0.825,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.151,
+                0.57,
+                0.712,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.153,
+                0.624,
+                0.851,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.15,
+                0.684,
+                0.774,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.268,
+                0.044,
+                0.688,
+                0.062
+            ],
+            "angle": 0,
+            "content": "A Closer Look at the US Regulatory Landscape"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.267,
+                0.074,
+                0.912,
+                0.148
+            ],
+            "angle": 0,
+            "content": "Functional and commercial use cases perceived as low-risk (for example, HR, IT, Finance, Customer Service) offer a safe pathway for medtech companies eager to gain GenAI experience. Still, customer-facing applications that govern patient access or customer support can come under Federal Trade Commission (FTC) scrutiny, given this agency's mission to uphold health equity across all patient segments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.267,
+                0.16,
+                0.933,
+                0.234
+            ],
+            "angle": 0,
+            "content": "All Gen AI use cases involving the diagnosis, mitigation, treatment, cure, or prevention of disease or other medical conditions fall directly under FDA jurisdiction. Since CDRH has yet to introduce specific requirements, medtech companies can leverage the existing SaMD frameworks as a guide, and follow some commonsense steps in their GenAI approval and compliance strategies, including the following:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.268,
+                0.246,
+                0.927,
+                0.291
+            ],
+            "angle": 0,
+            "content": "- Intended Use: The narrower the intended use, the clearer the clinical trial endpoints. Loading up a GenAI offering with a broad swath of clinical claims will create a series of hurdles for your proposed solution that may be difficult to overcome.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.268,
+                0.303,
+                0.938,
+                0.362
+            ],
+            "angle": 0,
+            "content": "- Human in the Loop. While the presence of a human in the loop can reduce risk, the innovator must note how and under what circumstances this interaction takes place. Companies must specify what happens if the human response is erroneous or if there is no human response at all.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.268,
+                0.375,
+                0.923,
+                0.419
+            ],
+            "angle": 0,
+            "content": "- Explainability and Transparency. Medtech companies can lower the regulatory bar by ensuring that their model output is transparent and fully explainable so that end users can compare the GenAI solution to the current standard of care.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.268,
+                0.432,
+                0.934,
+                0.505
+            ],
+            "angle": 0,
+            "content": "- GenAI Model—Locked or Adaptive? Running simulations on a locked model can provide a sense of comfort that the product will perform as expected, but quirks in an adaptive GenAI model can lead to hallucination, capability overhang, and unpredictable output. The regulator therefore needs to devise a means of assessing the potential for dangerous results, as well as a means of re-evaluating the solution once in the field.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.267,
+                0.517,
+                0.934,
+                0.62
+            ],
+            "angle": 0,
+            "content": "- Data Inputs. GenAI models are trained with defined data sets, which serve as the basis for inferred and suggested solutions as well as guardrails to ensure that cold logic does not lead to extreme and unacceptable answers. So-called “constitutional” models embed human values into the model, permitting an intuitive user interface and more acceptable outputs. However, if new inputs render the model obsolete (“model drift”), the system’s guardrails and solutions can be altered. Moreover, data inputs acquired by the model may be subject to privacy and copyright laws.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.268,
+                0.632,
+                0.913,
+                0.676
+            ],
+            "angle": 0,
+            "content": "- Algorithm Change Protocol. When seeking clearance or approval from the FDA for products that evolve over time, companies can submit a PCCP to allow the model to change within constraints.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.268,
+                0.688,
+                0.938,
+                0.761
+            ],
+            "angle": 0,
+            "content": "- Edge Cases. During the clearance or approval process, the FDA may be concerned about so-called “edge cases,” or rare circumstances that may not present themselves in a trial setting but which are fully expected in the field. While humans may recognize the specific circumstances, machines may not—and the potential for adverse consequences must be mitigated.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.268,
+                0.775,
+                0.94,
+                0.834
+            ],
+            "angle": 0,
+            "content": "- Post-Approval Controls. The FDA will almost certainly seek policy changes that require more stringent post-approval controls to monitor and report on real-world input data validation, intended use, algorithm validation, as well as the safety and effectiveness of your GenAI products and services as they evolve.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.268,
+                0.846,
+                0.928,
+                0.891
+            ],
+            "angle": 0,
+            "content": "- Secure by Design. GenAI models must be designed with security in mind to resist subversion. Medtech companies should use cybersecurity experts to determine what security controls are required and the types of testing the applications should undergo.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.058,
+                0.95,
+                0.069,
+                0.96
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.948,
+                0.941,
+                0.96
+            ],
+            "angle": 0,
+            "content": "NAVIGATING THE MEDTECH GENAI JOURNEY: A POLICY PRIMER"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.044,
+                0.684,
+                0.06
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.076,
+                0.91,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.091,
+                0.872,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.105,
+                0.885,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.119,
+                0.891,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.133,
+                0.706,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.162,
+                0.909,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.176,
+                0.931,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.27,
+                0.191,
+                0.901,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.27,
+                0.204,
+                0.912,
+                0.216
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.219,
+                0.603,
+                0.231
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.246,
+                0.92,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.262,
+                0.923,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.276,
+                0.794,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.304,
+                0.915,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.319,
+                0.909,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.333,
+                0.935,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.348,
+                0.491,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.376,
+                0.92,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.39,
+                0.904,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.405,
+                0.805,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.433,
+                0.907,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.448,
+                0.915,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.462,
+                0.931,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.476,
+                0.91,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.49,
+                0.903,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.519,
+                0.931,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.534,
+                0.924,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.547,
+                0.888,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.562,
+                0.915,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.576,
+                0.92,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.59,
+                0.924,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.605,
+                0.704,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.633,
+                0.91,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.647,
+                0.906,
+                0.659
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.661,
+                0.492,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.69,
+                0.898,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.704,
+                0.932,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.719,
+                0.932,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.734,
+                0.935,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.749,
+                0.438,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.776,
+                0.938,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.791,
+                0.909,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.805,
+                0.926,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.299,
+                0.818,
+                0.652,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.3,
+                0.848,
+                0.899,
+                0.859
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.862,
+                0.909,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.302,
+                0.877,
+                0.923,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.058,
+                0.038,
+                0.927,
+                0.062
+            ],
+            "angle": 0,
+            "content": "Exhibit 3 - Clinical Use Cases Have the Most Risks to Proactively Mitigate"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.064,
+                0.115,
+                0.929,
+                0.39
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.057,
+                0.437,
+                0.437,
+                0.451
+            ],
+            "angle": 0,
+            "content": "Copyright 2023 by Boston Consulting Group. All rights reserved."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.058,
+                0.427,
+                0.14,
+                0.438
+            ],
+            "angle": 0,
+            "content": "Source: BCG"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.058,
+                0.948,
+                0.233,
+                0.96
+            ],
+            "angle": 0,
+            "content": "BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.931,
+                0.949,
+                0.942,
+                0.96
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.037,
+                0.926,
+                0.06
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.27,
+                0.044,
+                0.616,
+                0.062
+            ],
+            "angle": 0,
+            "content": "Developing a Responsible AI Playbook"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.267,
+                0.074,
+                0.94,
+                0.206
+            ],
+            "angle": 0,
+            "content": "BCG recommends a centralized approach to developing your RAI playbook at the outset of your GenAI journey to both ensure more control over technology applications and enable rapid iteration. As an initial step, your CEO should sponsor and designate an AI leader within the organization. This leader, who acts as your company's primary GenAI business strategist, should assemble key business sponsors and a cross-functional and cross-organizational team with experts in IT, legal, regulatory, HR, cybersecurity, and privacy to provide the necessary policies and guardrails for your AI solutions. Each potential use case that addresses an internal and external customer pain point requires a business sponsor who approves the investment and takes responsibility for the solution's performance in the field.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.267,
+                0.217,
+                0.939,
+                0.348
+            ],
+            "angle": 0,
+            "content": "The leadership team develops a holistic AI risk assessment for your medtech business, detailing which areas are considered “safe” and which pose potential risk. Informed by this heat map, the team prepares 5–10 guiding principles for GenAI that are consistent with your medtech company’s mission and value statement. These principles underpin your clear and consistent RAI framework, which spells out how, when, and where your company will employ GenAI—as well as where and how it will not. Business sponsors serve as a advocates and missionaries for GenAI, taking the lead from your corporate policy and adapting it to specific use cases. Each use case should be mapped and characterized by your Compliance and IT functions to enable ongoing maintenance and monitoring.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.267,
+                0.36,
+                0.934,
+                0.505
+            ],
+            "angle": 0,
+            "content": "Historically, AI was the province of a select group of technically skilled individuals designing black box solutions that users did not need to understand. However, as GenAI has democratized technology with exciting innovative solutions such as ChatGPT and Bard, your company's approach to managing GenAI technology must also change. Your RAI framework places the onus of managing GenAI solutions at the feet of business leaders, with the IT and Compliance organizations providing necessary support. With your framework and AI leadership team in place, the next step is to create a corporate culture that supports RAI. This may be the trickiest aspect of fielding RAI solutions, and it will be the subject of our next and final article in the medtech GenAI series (Putting Medtech People and Processes to Work With GenAI).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.267,
+                0.517,
+                0.941,
+                0.634
+            ],
+            "angle": 0,
+            "content": "To recap, your medtech company's GenAI journey involves a quest for massive improvements in efficiency in the short term, and personalized and improved patient outcomes over time. Medtech companies will need to experiment safely, learn and iterate quickly, and scale up their capabilities for maximum impact. It will require intellect and determination to take on the known challenges posed by GenAI—and courage and resilience to slay the unknown beasts lurking in the shadows. Medtech leaders must possess all these qualities and one more—humility—to approach the GenAI opportunity in a responsible fashion and avoid turning their Hero's Tale into a Tragedy.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.269,
+                0.687,
+                0.438,
+                0.704
+            ],
+            "angle": 0,
+            "content": "Acknowledgments"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.267,
+                0.717,
+                0.914,
+                0.747
+            ],
+            "angle": 0,
+            "content": "The authors would like to thank the following for their contributions to this article: Stuart John, Tad Roselund, and Gunnar Trommer.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.058,
+                0.949,
+                0.069,
+                0.96
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.599,
+                0.948,
+                0.941,
+                0.96
+            ],
+            "angle": 0,
+            "content": "NAVIGATING THE MEDTECH GENAI JOURNEY: A POLICY PRIMER"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.274,
+                0.046,
+                0.613,
+                0.06
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.077,
+                0.904,
+                0.088
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.091,
+                0.929,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.27,
+                0.104,
+                0.937,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.119,
+                0.936,
+                0.132
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.27,
+                0.133,
+                0.902,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.147,
+                0.883,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.162,
+                0.871,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.177,
+                0.909,
+                0.188
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.191,
+                0.93,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.219,
+                0.894,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.233,
+                0.923,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.248,
+                0.935,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.262,
+                0.932,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.27,
+                0.275,
+                0.935,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.29,
+                0.913,
+                0.303
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.304,
+                0.935,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.319,
+                0.92,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.27,
+                0.333,
+                0.691,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.362,
+                0.927,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.27,
+                0.375,
+                0.859,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.39,
+                0.931,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.27,
+                0.405,
+                0.931,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.419,
+                0.904,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.434,
+                0.907,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.448,
+                0.91,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.462,
+                0.907,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.476,
+                0.906,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.49,
+                0.395,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.519,
+                0.833,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.534,
+                0.883,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.548,
+                0.914,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.563,
+                0.896,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.576,
+                0.939,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.27,
+                0.59,
+                0.93,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.606,
+                0.901,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.271,
+                0.619,
+                0.685,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.273,
+                0.688,
+                0.435,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.273,
+                0.718,
+                0.911,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.272,
+                0.734,
+                0.577,
+                0.745
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

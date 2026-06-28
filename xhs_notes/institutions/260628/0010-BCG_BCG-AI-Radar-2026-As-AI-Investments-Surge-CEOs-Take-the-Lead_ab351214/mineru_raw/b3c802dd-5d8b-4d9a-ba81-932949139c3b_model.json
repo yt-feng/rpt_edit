@@ -1,0 +1,5841 @@
+[
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.04,
+                0.07,
+                0.271,
+                0.146
+            ],
+            "angle": 0,
+            "content": "BCG X | BCG"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.376,
+                0.189,
+                0.412
+            ],
+            "angle": 0,
+            "content": "BCG AI RADAR 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.039,
+                0.425,
+                0.355,
+                0.65
+            ],
+            "angle": 0,
+            "content": "As AI Investments\nSurge, CEOs Take\nthe Lead"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.04,
+                0.885,
+                0.14,
+                0.918
+            ],
+            "angle": 0,
+            "content": "JANUARY 2026"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.034,
+                0.064,
+                0.274,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.378,
+                0.187,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.038,
+                0.421,
+                0.356,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.5,
+                0.342,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.58,
+                0.193,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.069,
+                0.294,
+                0.13
+            ],
+            "angle": 0,
+            "content": "Survey methodology"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.166,
+                0.184,
+                0.27
+            ],
+            "angle": 0,
+            "content": "2,360",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.04,
+                0.068,
+                0.606,
+                0.35
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.042,
+                0.399,
+                0.239,
+                0.877
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.04,
+                0.899,
+                0.274,
+                0.944
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar Survey 2026 (n = 2,360); BCG analysis. \\( ^{1} \\) Executives who directly report to C-suite (EVP, SVP, VP, etc.)."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.333,
+                0.399,
+                0.589,
+                0.891
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.678,
+                0.151,
+                0.906,
+                0.189
+            ],
+            "angle": 0,
+            "content": "Markets (number of respondents)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.675,
+                0.203,
+                0.967,
+                0.894
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.066,
+                0.295,
+                0.132
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.037,
+                0.155,
+                0.191,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.069,
+                0.228,
+                0.13
+            ],
+            "angle": 0,
+            "content": "Key takeaways"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.25,
+                0.073,
+                0.33
+            ],
+            "angle": 0,
+            "content": "1",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.364,
+                0.278,
+                0.558
+            ],
+            "angle": 0,
+            "content": "Corporate investments in AI have doubled since last year and are here to stay",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.642,
+                0.135,
+                0.724
+            ],
+            "angle": 0,
+            "content": "94%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.737,
+                0.283,
+                0.883
+            ],
+            "angle": 0,
+            "content": "of CEOs say they will continue to invest even if it does not pay off in 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.372,
+                0.25,
+                0.406,
+                0.33
+            ],
+            "angle": 0,
+            "content": "2",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.372,
+                0.365,
+                0.622,
+                0.558
+            ],
+            "angle": 0,
+            "content": "AI corporate transformation is moving from a CIO-led to a CEO-led initiative",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.374,
+                0.643,
+                0.467,
+                0.724
+            ],
+            "angle": 0,
+            "content": "72%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.372,
+                0.737,
+                0.613,
+                0.884
+            ],
+            "angle": 0,
+            "content": "of CEOs say they are the main decision maker on AI in their organization",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.706,
+                0.25,
+                0.741,
+                0.335
+            ],
+            "angle": 0,
+            "content": "3",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.363,
+                0.947,
+                0.559
+            ],
+            "angle": 0,
+            "content": "Three CEO archetypes emerge with Trailblazer CEOs leading end-to-end AI transformation",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.709,
+                0.641,
+                0.804,
+                0.723
+            ],
+            "angle": 0,
+            "content": "60%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.708,
+                0.736,
+                0.919,
+                0.885
+            ],
+            "angle": 0,
+            "content": "of Trailblazers' AI budget will be spent on agentic AI",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.068,
+                0.228,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.038,
+                0.244,
+                0.077,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.368,
+                0.261,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.414,
+                0.275,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.464,
+                0.253,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.511,
+                0.11,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.035,
+                0.637,
+                0.138,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.74,
+                0.226,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.79,
+                0.279,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.836,
+                0.252,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.367,
+                0.239,
+                0.412,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.367,
+                0.495,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.375,
+                0.411,
+                0.617,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.375,
+                0.461,
+                0.558,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.376,
+                0.508,
+                0.543,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.368,
+                0.634,
+                0.472,
+                0.733
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.375,
+                0.738,
+                0.59,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.377,
+                0.79,
+                0.609,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.375,
+                0.835,
+                0.553,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.697,
+                0.242,
+                0.746,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.715,
+                0.292,
+                0.717,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.711,
+                0.364,
+                0.922,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.711,
+                0.415,
+                0.937,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.712,
+                0.46,
+                0.944,
+                0.507
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.712,
+                0.51,
+                0.881,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.703,
+                0.635,
+                0.807,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.711,
+                0.741,
+                0.861,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.712,
+                0.787,
+                0.915,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.837,
+                0.799,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.444,
+                0.294,
+                0.535
+            ],
+            "angle": 0,
+            "content": "Takeaway 1"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.485,
+                0.367,
+                0.87,
+                0.604
+            ],
+            "angle": 0,
+            "content": "Corporate investments in AI have doubled since last year and are here to stay",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.033,
+                0.425,
+                0.298,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.488,
+                0.369,
+                0.866,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.485,
+                0.452,
+                0.87,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.49,
+                0.532,
+                0.863,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.038,
+                0.241,
+                0.228,
+                0.402
+            ],
+            "angle": 0,
+            "content": "94%"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.437,
+                0.272,
+                0.754
+            ],
+            "angle": 0,
+            "content": "of organizations\nwill continue their\ninvestments even\nif they do not pay\noff in 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.368,
+                0.061,
+                0.884,
+                0.175
+            ],
+            "angle": 0,
+            "content": "Only 6% of companies plan to pull back AI investments if current initiatives fall short",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.369,
+                0.215,
+                0.906,
+                0.799
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.37,
+                0.858,
+                0.603,
+                0.881
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 2,360); BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.369,
+                0.879,
+                0.914,
+                0.921
+            ],
+            "angle": 0,
+            "content": "Note: AI investments refer to all investments needed to realize the benefits from AI including but not limited to technology and infrastructure, data and architecture enablement, talent and upskilling, external partners, etc."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.369,
+                0.92,
+                0.867,
+                0.944
+            ],
+            "angle": 0,
+            "content": "Question: “What is the plan if your organization’s AI investments do not produce the desired financial impact in the next 12 months?”"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.027,
+                0.212,
+                0.243,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.439,
+                0.247,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.502,
+                0.271,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.566,
+                0.265,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.625,
+                0.262,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.692,
+                0.173,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.369,
+                0.063,
+                0.882,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.367,
+                0.119,
+                0.883,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.368,
+                0.061,
+                0.753,
+                0.178
+            ],
+            "angle": 0,
+            "content": "Investment in AI as share of an organization’s revenue \\((\\%)\\)1",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.372,
+                0.298,
+                0.603
+            ],
+            "angle": 0,
+            "content": "Investments in\nAI is projected to\ndouble in 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.369,
+                0.272,
+                0.963,
+                0.769
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.369,
+                0.859,
+                0.93,
+                0.9
+            ],
+            "angle": 0,
+            "content": "Note: AI investments refer to all investments needed to realize the benefits from AI including but not limited to technology and infrastructure, data and architecture enablement, talent and upskilling, external partners, etc."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.368,
+                0.899,
+                0.958,
+                0.944
+            ],
+            "angle": 0,
+            "content": "Questions: “How much do you expect your organization to invest in AI in 2026?”, “What is the annual revenue range of your company or organization globally?” \\( ^{1} \\) The average base revenue of the underlying companies has remained almost the same."
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.653,
+                0.121,
+                0.699,
+                0.172
+            ],
+            "latex": "",
+            "score": 0.5919
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.37,
+                0.063,
+                0.751,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.369,
+                0.119,
+                0.651,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.375,
+                0.265,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.446,
+                0.298,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.533,
+                0.26,
+                0.594
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.04,
+                0.159,
+                0.365,
+                0.194
+            ],
+            "angle": 0,
+            "content": "INVESTMENT IN AI AS SHARE OF ANNUAL REVENUE"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.039,
+                0.061,
+                0.753,
+                0.118
+            ],
+            "angle": 0,
+            "content": "All industries plan to increase their AI investments in 2026"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.04,
+                0.289,
+                0.956,
+                0.81
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.039,
+                0.857,
+                0.477,
+                0.88
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 2,308 due to exclusion of “I don’t know” and blank responses); BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.039,
+                0.879,
+                0.926,
+                0.921
+            ],
+            "angle": 0,
+            "content": "Note: Consumer combines consumer/retail and travel/tourism industries. Public sector combines government/public sector and education industries. Communication services combines advertising/marketing, media, and telecom industries. Industrials and real estate combines manufacturing, industrial goods, automotive, transportation, agriculture, and real estate industries."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.04,
+                0.92,
+                0.339,
+                0.943
+            ],
+            "angle": 0,
+            "content": "Question: \"How much do you expect your organization to invest in AI in 2026?\""
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.062,
+                0.751,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "bbox": [
+                0.027,
+                0.042,
+                0.969,
+                0.841
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"9\">Data privacy and cybersecurity remain the primary concern</td><td colspan=\"2\">Top three AI concerns remain the same, but their share is declining</td></tr><tr><td>Share of respondents</td><td>Change vs. 2025</td></tr><tr><td>Data privacy and cybersecurity risks</td><td>-12pp</td></tr><tr><td>Lack of control or understanding of AI decisions</td><td>-7pp</td></tr><tr><td>Regulatory or compliance challenges</td><td>-5pp</td></tr><tr><td colspan=\"2\">And a few other concerns have become more prominent</td></tr><tr><td>Technological failure</td><td>+6pp</td></tr><tr><td>Environmental impact of AI</td><td>+10pp</td></tr><tr><td>Geopolitical instability</td><td>+8pp</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.367,
+                0.899,
+                0.743,
+                0.944
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 2,360), BCG AI Radar 2025 Survey (n = 1,803); BCG analysis. Question: “What are the top three risks you are most concerned about when it comes to AI?”"
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.04,
+                0.062,
+                0.82,
+                0.122
+            ],
+            "angle": 0,
+            "content": "Agentic AI introduces both opportunity and risk in cybersecurity"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.175,
+                0.258,
+                0.506,
+                0.341
+            ],
+            "angle": 0,
+            "content": "9% of leaders view cybersecurity as the biggest threat from agentic AI",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.577,
+                0.256,
+                0.927,
+                0.344
+            ],
+            "angle": 0,
+            "content": "32% of leaders view cybersecurity as the biggest opportunity of agentic AI",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.04,
+                0.406,
+                0.121,
+                0.443
+            ],
+            "angle": 0,
+            "content": "Automation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.486,
+                0.08,
+                0.521
+            ],
+            "angle": 0,
+            "content": "Scale",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.564,
+                0.136,
+                0.6
+            ],
+            "angle": 0,
+            "content": "System access",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.646,
+                0.123,
+                0.683
+            ],
+            "angle": 0,
+            "content": "New targets",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.177,
+                0.389,
+                0.402,
+                0.454
+            ],
+            "angle": 0,
+            "content": "Can search for weaknesses and break without rest",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.724,
+                0.103,
+                0.762
+            ],
+            "angle": 0,
+            "content": "Learning",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.177,
+                0.47,
+                0.363,
+                0.536
+            ],
+            "angle": 0,
+            "content": "Can send many fake messages and frauds to many users",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.178,
+                0.549,
+                0.38,
+                0.617
+            ],
+            "angle": 0,
+            "content": "If taken over, can change settings, move data, or turn off protection",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.178,
+                0.645,
+                0.334,
+                0.684
+            ],
+            "angle": 0,
+            "content": "AI systems can be hacked",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.178,
+                0.709,
+                0.378,
+                0.777
+            ],
+            "angle": 0,
+            "content": "Can learn which attacks work and keep improving them",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.741,
+                0.389,
+                0.935,
+                0.457
+            ],
+            "angle": 0,
+            "content": "Can watch systems continuously and react to problems quickly",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.505,
+                0.476,
+                0.605,
+                0.562
+            ],
+            "angle": 0,
+            "content": "59%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.736,
+                0.469,
+                0.936,
+                0.536
+            ],
+            "angle": 0,
+            "content": "Can check huge amounts of logs/alerts that humans would miss",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.754,
+                0.549,
+                0.935,
+                0.617
+            ],
+            "angle": 0,
+            "content": "Can repeatedly follow security steps quickly and correctly",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.485,
+                0.577,
+                0.624,
+                0.681
+            ],
+            "angle": 0,
+            "content": "of leaders view it\nas both a threat and\nan opportunity",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.733,
+                0.63,
+                0.935,
+                0.697
+            ],
+            "angle": 0,
+            "content": "Can regularly check accounts, passwords, and settings for issues",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.746,
+                0.71,
+                0.936,
+                0.777
+            ],
+            "angle": 0,
+            "content": "Can learn which attacks appear and keep improving defense",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.039,
+                0.899,
+                0.496,
+                0.944
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 2,286 due to exclusion of executives who answered “I don’t know.”); BCG analysis. Question: “When it comes to your organization’s cybersecurity, do AI agents present an opportunity or are they a threat?”"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.061,
+                0.818,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.171,
+                0.25,
+                0.257,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.263,
+                0.264,
+                0.502,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.263,
+                0.296,
+                0.463,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.574,
+                0.251,
+                0.68,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.687,
+                0.268,
+                0.925,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.686,
+                0.298,
+                0.905,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.406,
+                0.119,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.485,
+                0.081,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.566,
+                0.136,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.646,
+                0.121,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.179,
+                0.391,
+                0.399,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.179,
+                0.423,
+                0.251,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.723,
+                0.102,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.47,
+                0.36,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.179,
+                0.501,
+                0.328,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.179,
+                0.551,
+                0.377,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.179,
+                0.582,
+                0.371,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.647,
+                0.332,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.179,
+                0.712,
+                0.376,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.179,
+                0.742,
+                0.304,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.743,
+                0.392,
+                0.934,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.759,
+                0.42,
+                0.934,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.502,
+                0.469,
+                0.609,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.738,
+                0.472,
+                0.934,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.754,
+                0.502,
+                0.933,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.757,
+                0.552,
+                0.933,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.779,
+                0.582,
+                0.933,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.495,
+                0.579,
+                0.613,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.486,
+                0.612,
+                0.621,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.502,
+                0.645,
+                0.606,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.76,
+                0.634,
+                0.932,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.735,
+                0.664,
+                0.933,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.749,
+                0.712,
+                0.933,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.768,
+                0.743,
+                0.932,
+                0.769
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.444,
+                0.294,
+                0.535
+            ],
+            "angle": 0,
+            "content": "Takeaway 2"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.46,
+                0.39,
+                0.894,
+                0.619
+            ],
+            "angle": 0,
+            "content": "AI corporate transformation is moving from a CIO-led to a CEO-led initiative"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.034,
+                0.429,
+                0.298,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.467,
+                0.391,
+                0.886,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.459,
+                0.472,
+                0.895,
+                0.536
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.547,
+                0.552,
+                0.807,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.248,
+                0.265,
+                0.435
+            ],
+            "angle": 0,
+            "content": "72%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.464,
+                0.381,
+                0.656
+            ],
+            "angle": 0,
+            "content": "of CEOs say they are the main decision maker on AI in their organization",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.052,
+                0.697,
+                0.177,
+                0.746
+            ],
+            "angle": 0,
+            "content": "2x last year",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.548,
+                0.248,
+                0.77,
+                0.427
+            ],
+            "angle": 0,
+            "content": "82%"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.546,
+                0.465,
+                0.877,
+                0.655
+            ],
+            "angle": 0,
+            "content": "are more optimistic about\nAI's potential for ROI this\nyear than last year"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.04,
+                0.9,
+                0.399,
+                0.944
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis. Question: “What is your level of involvement in decision making related to AI in your company?”"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.547,
+                0.899,
+                0.915,
+                0.943
+            ],
+            "angle": 0,
+            "content": "Question: “Are you more optimistic or less optimistic about AI’s overall ability to deliver value than you were 12 months ago?”"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.027,
+                0.219,
+                0.28,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.458,
+                0.348,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.532,
+                0.376,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.592,
+                0.298,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.695,
+                0.178,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.534,
+                0.223,
+                0.785,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.548,
+                0.468,
+                0.876,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.549,
+                0.53,
+                0.868,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.547,
+                0.593,
+                0.786,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.04,
+                0.33,
+                0.411,
+                0.643
+            ],
+            "angle": 0,
+            "content": "Half of CEOs surveyed\nbelieve their job stability\ndepends on getting AI\nstrategy right"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.673,
+                0.433,
+                0.838,
+                0.571
+            ],
+            "angle": 0,
+            "content": "50%",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.04,
+                0.901,
+                0.44,
+                0.944
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis. Question: “Do you believe your job stability depends on getting AI investments and strategy right by 2026?”"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.325,
+                0.371,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.406,
+                0.409,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.493,
+                0.365,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.572,
+                0.245,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.663,
+                0.404,
+                0.852,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.039,
+                0.062,
+                0.892,
+                0.12
+            ],
+            "angle": 0,
+            "content": "CEOs show stronger conviction in AI than their executive counterparts"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.726,
+                0.183,
+                0.919,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Expect major role disruption in the organization by 2030 \\( ^{6} \\)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.045,
+                0.179,
+                0.962,
+                0.776
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.039,
+                0.841,
+                0.275,
+                0.864
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 2,360); BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.038,
+                0.862,
+                0.951,
+                0.93
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) Includes Chief Data Officer, Chief Digital Officer, Chief AI Officer, and Chief Analytics Officer.  \\( ^{2} \\) Includes Chief Financial Officer, Chief Strategy Officer, and other C-suite roles who report to the CEO.  \\( ^{3} \\) Includes VP-level roles reporting into CXOs.  \\( ^{4} \\) “How confident are you in your ability to lead your organization through an AI transformation that will deliver a positive return on investment?”, Replies for “Very confident.”  \\( ^{5} \\) “Which of the following best reflects how you feel about investing in AI?”, Replies for “Confident AI will pay off.”  \\( ^{6} \\) “To what extent do you agree with the following: By 2030, more than half the roles in your organization, including the C-suite, will be gone or transformed by AI.”"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.062,
+                0.891,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.321,
+                0.255,
+                0.634
+            ],
+            "angle": 0,
+            "content": "CEOs in the\nEast are more\nconfident AI\nwill pay off",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.755,
+                0.251,
+                0.797
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.797,
+                0.259,
+                0.859
+            ],
+            "angle": 0,
+            "content": "Question: “Which of the following best reflects how you feel about investing in AI?”, Replies “Confident that AI will pay off.”",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.859,
+                0.259,
+                0.945
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) Greater China includes mainland China, Hong Kong, and Taiwan.  \\( ^{2} \\) Middle East and Africa includes Morocco, Qatar, Saudi Arabia, South Africa, and the UAE.  \\( ^{3} \\) Europe includes France, Germany, Italy, and Spain.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.334,
+                0.069,
+                0.656,
+                0.144
+            ],
+            "angle": 0,
+            "content": "Global East\nSHARE OF CEOS CONFIDENT THAT AI WILL PAY OFF"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.335,
+                0.175,
+                0.932,
+                0.502
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.334,
+                0.597,
+                0.656,
+                0.673
+            ],
+            "angle": 0,
+            "content": "Global West\nSHARE OF CEOS CONFIDENT THAT AI WILL PAY OFF"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.335,
+                0.698,
+                0.841,
+                0.94
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.314,
+                0.218,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.406,
+                0.253,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.482,
+                0.222,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.558,
+                0.209,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.755,
+                0.247,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.778,
+                0.094,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.798,
+                0.25,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.819,
+                0.256,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.841,
+                0.073,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.86,
+                0.253,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.88,
+                0.253,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.903,
+                0.257,
+                0.918
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.923,
+                0.169,
+                0.94
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.039,
+                0.062,
+                0.897,
+                0.119
+            ],
+            "angle": 0,
+            "content": "CEOs in Asia express confidence, while those in the West feel pressure"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.04,
+                0.167,
+                0.937,
+                0.86
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.04,
+                0.878,
+                0.302,
+                0.9
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.039,
+                0.899,
+                0.662,
+                0.921
+            ],
+            "angle": 0,
+            "content": "Question: “Which of the following best reflects how you feel about investing in AI?”, Replies “Confident that AI will pay off” and “Pressured to act or risk falling behind.”"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.039,
+                0.92,
+                0.81,
+                0.944
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) Europe includes France, Germany, Italy, and Spain.  \\( ^{2} \\) Middle East and Africa includes Morocco, Qatar, Saudi Arabia, South Africa, and the UAE.  \\( ^{3} \\) Greater China includes mainland China, Hong Kong, and Taiwan."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.062,
+                0.897,
+                0.12
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.206,
+                0.457,
+                0.268
+            ],
+            "angle": 0,
+            "content": "CEOs are excited about AI agents"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.345,
+                0.333,
+                0.53
+            ],
+            "angle": 0,
+            "content": "~90%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.568,
+                0.432,
+                0.759
+            ],
+            "angle": 0,
+            "content": "of CEOs believe AI agents will enable their organizations to report measurable ROI in 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.546,
+                0.204,
+                0.83,
+                0.526
+            ],
+            "angle": 0,
+            "content": "CEOs have committed\n>30%"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.546,
+                0.569,
+                0.865,
+                0.759
+            ],
+            "angle": 0,
+            "content": "of their organization's AI investment for 2026 to agentic AI",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.04,
+                0.879,
+                0.451,
+                0.944
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis. Question: “To what extent do you agree with the following: AI agents will finally enable my organization to see measurable ROI from AI in 2026.”, Replies for “Strongly agree” and “Somewhat agree”."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.546,
+                0.899,
+                0.927,
+                0.944
+            ],
+            "angle": 0,
+            "content": "Question: “Approximately what percent of your organization’s AI investment for 2026 is in AI agents?”, average of responses."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.026,
+                0.316,
+                0.348,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.57,
+                0.414,
+                0.625
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.636,
+                0.403,
+                0.69
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.703,
+                0.426,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.549,
+                0.209,
+                0.823,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.536,
+                0.311,
+                0.845,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.547,
+                0.568,
+                0.826,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.548,
+                0.633,
+                0.863,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.547,
+                0.7,
+                0.677,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.04,
+                0.062,
+                0.967,
+                0.12
+            ],
+            "angle": 0,
+            "content": "Agentic AI is taking on multiple roles, changing how companies organize work"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.148,
+                0.73,
+                0.186
+            ],
+            "angle": 0,
+            "content": "\"To what extent do AI applications occupy the following roles for people in your functional area?\"",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.2,
+                0.214,
+                0.233
+            ],
+            "angle": 0,
+            "content": "SHARE OF ORGANIZATIONS",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.04,
+                0.262,
+                0.955,
+                0.859
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.04,
+                0.899,
+                0.359,
+                0.922
+            ],
+            "angle": 0,
+            "content": "Sources: BCG-MIT Sloan Management Review report, 2025 (n = 2,102); BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.04,
+                0.921,
+                0.334,
+                0.943
+            ],
+            "angle": 0,
+            "content": "Note: Respondents who answered “strongly agree” or “agree” to the question."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.066,
+                0.967,
+                0.114
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.147,
+                0.728,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.206,
+                0.21,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.365,
+                0.766,
+                0.498,
+                0.873
+            ],
+            "angle": 0,
+            "content": "AI systems work\nindependently from\nhumans"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.362,
+                0.287,
+                0.96,
+                0.934
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.364,
+                0.07,
+                0.921,
+                0.178
+            ],
+            "angle": 0,
+            "content": "As AI systems increasingly gain autonomy, leaders must develop adaptable governance structures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.157,
+                0.228,
+                0.315
+            ],
+            "angle": 0,
+            "content": "58%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.354,
+                0.286,
+                0.732
+            ],
+            "angle": 0,
+            "content": "of leading\norganizations\nexpect a change in\ngovernance and\ndecision rights due\nto AI",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.041,
+                0.857,
+                0.279,
+                0.944
+            ],
+            "angle": 0,
+            "content": "Sources: BCG-MIT Sloan Management Review report, 2025 (n = 2,102); BCG analysis.\nNote: Respondents who answered “a great extent” or “a lot” to the question."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.36,
+                0.2,
+                0.833,
+                0.277
+            ],
+            "angle": 0,
+            "content": "\"To what extent do you agree with the following statements about your organization?\"",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.844,
+                0.766,
+                0.955,
+                0.875
+            ],
+            "angle": 0,
+            "content": "AI systems work\nwith ambiguous\ninputs"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.368,
+                0.073,
+                0.921,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.368,
+                0.129,
+                0.882,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.027,
+                0.128,
+                0.243,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.353,
+                0.171,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.423,
+                0.215,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.485,
+                0.278,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.55,
+                0.243,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.609,
+                0.283,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.674,
+                0.102,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.363,
+                0.204,
+                0.83,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.367,
+                0.242,
+                0.507,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.039,
+                0.061,
+                0.87,
+                0.172
+            ],
+            "angle": 0,
+            "content": "90% of CEOs believe that by 2028 AI will significantly transform what success looks like"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.094,
+                0.263,
+                0.265,
+                0.31
+            ],
+            "angle": 0,
+            "content": "Staying competitive",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.528,
+                0.263,
+                0.796,
+                0.311
+            ],
+            "angle": 0,
+            "content": "Building competitive advantage",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.157,
+                0.452,
+                0.206,
+                0.588
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.117,
+                0.622,
+                0.243,
+                0.711
+            ],
+            "angle": 0,
+            "content": "Deploy AI in\neveryday tasks",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.462,
+                0.456,
+                0.523,
+                0.59
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.421,
+                0.622,
+                0.566,
+                0.751
+            ],
+            "angle": 0,
+            "content": "Reshape critical\nworkflows and\nfunctions",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.792,
+                0.469,
+                0.847,
+                0.574
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.732,
+                0.623,
+                0.909,
+                0.75
+            ],
+            "angle": 0,
+            "content": "Invent new business\nmodels and revenue\nstreams",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.041,
+                0.921,
+                0.301,
+                0.942
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.038,
+                0.06,
+                0.87,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.118,
+                0.26,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.096,
+                0.266,
+                0.262,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.53,
+                0.265,
+                0.792,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.125,
+                0.622,
+                0.244,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.666,
+                0.242,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.422,
+                0.623,
+                0.565,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.431,
+                0.665,
+                0.553,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.452,
+                0.708,
+                0.535,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.732,
+                0.624,
+                0.908,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.734,
+                0.665,
+                0.907,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.786,
+                0.712,
+                0.856,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.444,
+                0.292,
+                0.535
+            ],
+            "angle": 0,
+            "content": "Takeaway 3"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.455,
+                0.382,
+                0.899,
+                0.613
+            ],
+            "angle": 0,
+            "content": "Three CEO archetypes emerge with Trailblazer CEOs leading end-to-end AI transformation"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.033,
+                0.429,
+                0.298,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.453,
+                0.379,
+                0.901,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.458,
+                0.459,
+                0.896,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.46,
+                0.55,
+                0.894,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.039,
+                0.061,
+                0.68,
+                0.121
+            ],
+            "angle": 0,
+            "content": "Three CEO archetypes emerge from the survey data \\( ^{1} \\)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.04,
+                0.188,
+                0.957,
+                0.794
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.039,
+                0.877,
+                0.301,
+                0.901
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.038,
+                0.899,
+                0.908,
+                0.944
+            ],
+            "angle": 0,
+            "content": "\\(^{1}\\)K-means clustering analysis reveals the five key variables that differentiate CEOs. These variables are used to define the three CEO archetypes. \\(^{2}\\)Investments in AI as a part of the organization's transformational budget in 2026. \\(^{3}\\)Includes all forms of engagement, not just formal training but also discussions, briefings, demos, and direct exploration of tools."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.06,
+                0.678,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.04,
+                0.061,
+                0.747,
+                0.12
+            ],
+            "angle": 0,
+            "content": "Trailblazers emerge, but nearly all CEOs are focused on AI"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.054,
+                0.151,
+                0.944,
+                0.771
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.472,
+                0.278,
+                0.56
+            ],
+            "angle": 0,
+            "content": "~15% Followers"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.614,
+                0.287,
+                0.725
+            ],
+            "angle": 0,
+            "content": "Recognize AI's potential but lack full conviction, making some early, cautious investments",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.389,
+                0.614,
+                0.606,
+                0.727
+            ],
+            "angle": 0,
+            "content": "Are excited and confident about AI but only invest when they see evident value and low risk",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.717,
+                0.472,
+                0.943,
+                0.56
+            ],
+            "angle": 0,
+            "content": "~15% Trailblazers"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.717,
+                0.598,
+                0.94,
+                0.744
+            ],
+            "angle": 0,
+            "content": "Drive AI-powered transformation through decisive investment, rapid upskilling, and strong belief in AI's ROI",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.059,
+                0.841,
+                0.938,
+                0.884
+            ],
+            "angle": 0,
+            "content": "Increasing levels of confidence, investments, workforce upskilling, pressure to deliver, and excitement/preparedness",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.04,
+                0.919,
+                0.301,
+                0.943
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.061,
+                0.745,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.467,
+                0.193,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.196,
+                0.505,
+                0.278,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.616,
+                0.272,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.651,
+                0.284,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.689,
+                0.199,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.392,
+                0.617,
+                0.602,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.392,
+                0.652,
+                0.603,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.392,
+                0.691,
+                0.562,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.718,
+                0.466,
+                0.845,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.845,
+                0.512,
+                0.941,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.72,
+                0.602,
+                0.935,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.72,
+                0.637,
+                0.908,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.72,
+                0.674,
+                0.938,
+                0.705
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.72,
+                0.71,
+                0.79,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.84,
+                0.937,
+                0.883
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.877,
+                0.469,
+                0.97,
+                0.646
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.062,
+                0.864,
+                0.176
+            ],
+            "angle": 0,
+            "content": "Trailblazer CEOs create a positive flywheel by prioritizing, investing, and upskilling the organization in AI",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.289,
+                0.21,
+                0.36
+            ],
+            "angle": 0,
+            "content": "1. Make AI and agentic AI a top priority"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.371,
+                0.179,
+                0.44
+            ],
+            "angle": 0,
+            "content": "Having “accelerate AI” as their top priority",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.622,
+                0.28,
+                0.658
+            ],
+            "angle": 0,
+            "content": "5. Track measurable ROI from AI"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.673,
+                0.207,
+                0.742
+            ],
+            "angle": 0,
+            "content": "Feeling “very confident” their AI strategy will pay off"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.686,
+                0.213,
+                0.84,
+                0.25
+            ],
+            "angle": 0,
+            "content": "2. Deepen AI literacy"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.686,
+                0.26,
+                0.832,
+                0.362
+            ],
+            "angle": 0,
+            "content": "Spending more than six hours a week expanding their expertise on AI"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.877,
+                0.211,
+                0.97,
+                0.381
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.686,
+                0.47,
+                0.862,
+                0.505
+            ],
+            "angle": 0,
+            "content": "3. Invest capital at scale"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.687,
+                0.515,
+                0.807,
+                0.581
+            ],
+            "angle": 0,
+            "content": "Investing more than $50M in AI in 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.686,
+                0.727,
+                0.886,
+                0.764
+            ],
+            "angle": 0,
+            "content": "4. Upskill their organization"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.686,
+                0.777,
+                0.839,
+                0.844
+            ],
+            "angle": 0,
+            "content": "Upskilling more than half of their workforce",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.877,
+                0.728,
+                0.969,
+                0.902
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.04,
+                0.919,
+                0.301,
+                0.943
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.06,
+                0.862,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.119,
+                0.479,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.289,
+                0.209,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.323,
+                0.175,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.371,
+                0.178,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.405,
+                0.159,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.623,
+                0.279,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.687,
+                0.212,
+                0.84,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.687,
+                0.47,
+                0.861,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.687,
+                0.516,
+                0.806,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.686,
+                0.546,
+                0.8,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.686,
+                0.728,
+                0.885,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.687,
+                0.777,
+                0.838,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.687,
+                0.811,
+                0.791,
+                0.842
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.039,
+                0.051,
+                0.284,
+                0.144
+            ],
+            "angle": 0,
+            "content": "1. MAKE AI AND AGENTIC AI A TOP PRIORITY"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.357,
+                0.062,
+                0.954,
+                0.147
+            ],
+            "angle": 0,
+            "content": "\"End-to-end AI transformation is one of our greatest opportunities to succeed with AI agents in the next 12 months\""
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.366,
+                0.207,
+                0.666,
+                0.241
+            ],
+            "angle": 0,
+            "content": "SHARE OF RESPONSES FROM CEOS THAT AGREE",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.04,
+                0.354,
+                0.277,
+                0.605
+            ],
+            "angle": 0,
+            "content": "Trailblazer CEOs\nare twice as likely\nto apply agentic AI\nend-to-end"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.366,
+                0.264,
+                0.962,
+                0.866
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.426,
+                0.838,
+                0.49,
+                0.87
+            ],
+            "angle": 0,
+            "content": "Followers"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.625,
+                0.836,
+                0.708,
+                0.871
+            ],
+            "angle": 0,
+            "content": "Pragmatists"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.837,
+                0.836,
+                0.917,
+                0.87
+            ],
+            "angle": 0,
+            "content": "Trailblazers"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.042,
+                0.921,
+                0.301,
+                0.942
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.356,
+                0.061,
+                0.954,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.364,
+                0.104,
+                0.769,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.367,
+                0.208,
+                0.665,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.352,
+                0.252,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.418,
+                0.27,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.483,
+                0.277,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.55,
+                0.18,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.041,
+                0.05,
+                0.089,
+                0.143
+            ],
+            "angle": 0,
+            "content": ""
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.097,
+                0.085,
+                0.286,
+                0.116
+            ],
+            "angle": 0,
+            "content": "2. INVEST CAPITAL AT SCALE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.34,
+                0.268,
+                0.595
+            ],
+            "angle": 0,
+            "content": "Trailblazer CEOs\nsee value in AI\nagents and invest\nsignificantly",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.439,
+                0.117,
+                0.629,
+                0.486
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.489,
+                0.289,
+                0.579,
+                0.325
+            ],
+            "angle": 0,
+            "content": "Trailblazers",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.537,
+                0.607,
+                0.627,
+                0.777
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.541,
+                0.791,
+                0.623,
+                0.825
+            ],
+            "angle": 0,
+            "content": "Pragmatists"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.651,
+                0.194,
+                0.891,
+                0.344
+            ],
+            "angle": 0,
+            "content": "~60%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.66,
+                0.366,
+                0.883,
+                0.453
+            ],
+            "angle": 0,
+            "content": "of their AI budget is currently being spent on agentic AI",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.65,
+                0.513,
+                0.691,
+                0.593
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.72,
+                0.608,
+                0.81,
+                0.777
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.733,
+                0.791,
+                0.798,
+                0.821
+            ],
+            "angle": 0,
+            "content": "Followers"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.041,
+                0.88,
+                0.3,
+                0.943
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis. Question: “Approximately what percent of your organization’s AI investment for 2026 is in AI agents?”"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.605,
+                0.894,
+                0.762,
+                0.924
+            ],
+            "angle": 0,
+            "content": "% of AI spending on agentic AI"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.337,
+                0.251,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.406,
+                0.226,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.472,
+                0.266,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.533,
+                0.196,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.492,
+                0.292,
+                0.576,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.64,
+                0.174,
+                0.902,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.661,
+                0.364,
+                0.882,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.661,
+                0.41,
+                0.854,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.04,
+                0.065,
+                0.09,
+                0.154
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.098,
+                0.067,
+                0.318,
+                0.097
+            ],
+            "angle": 0,
+            "content": "4. UPSKILL THEIR ORGANIZATION"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.097,
+                0.103,
+                0.848,
+                0.161
+            ],
+            "angle": 0,
+            "content": "Trailblazers invest twice as much in upskilling their workforce"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.043,
+                0.257,
+                0.173,
+                0.503
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.195,
+                0.266,
+                0.341,
+                0.362
+            ],
+            "angle": 0,
+            "content": "~60%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.194,
+                0.38,
+                0.436,
+                0.495
+            ],
+            "angle": 0,
+            "content": "of their organization's AI budget is allocated to upskilling and retraining current workforce on \\(\\mathsf{AI}^1\\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.712,
+                0.266,
+                0.855,
+                0.363
+            ],
+            "angle": 0,
+            "content": "~70%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.712,
+                0.381,
+                0.894,
+                0.457
+            ],
+            "angle": 0,
+            "content": "of their workforce has been upskilled/reskilled on AI \\( ^{2} \\)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.228,
+                0.552,
+                0.247,
+                0.578
+            ],
+            "angle": 0,
+            "content": "VS",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.131,
+                0.693,
+                0.165,
+                0.724
+            ],
+            "angle": 0,
+            "content": "27%",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.108,
+                0.632,
+                0.189,
+                0.782
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.792,
+                0.19,
+                0.829
+            ],
+            "angle": 0,
+            "content": "Pragmatists",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.286,
+                0.632,
+                0.365,
+                0.782
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.31,
+                0.692,
+                0.344,
+                0.724
+            ],
+            "angle": 0,
+            "content": "24%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.294,
+                0.792,
+                0.361,
+                0.826
+            ],
+            "angle": 0,
+            "content": "Followers",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.603,
+                0.632,
+                0.681,
+                0.781
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.693,
+                0.659,
+                0.724
+            ],
+            "angle": 0,
+            "content": "41%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.601,
+                0.792,
+                0.684,
+                0.828
+            ],
+            "angle": 0,
+            "content": "Pragmatists",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.782,
+                0.633,
+                0.856,
+                0.781
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.804,
+                0.693,
+                0.838,
+                0.724
+            ],
+            "angle": 0,
+            "content": "35%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.789,
+                0.792,
+                0.855,
+                0.826
+            ],
+            "angle": 0,
+            "content": "Followers",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.738,
+                0.552,
+                0.757,
+                0.577
+            ],
+            "angle": 0,
+            "content": "VS"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.04,
+                0.899,
+                0.301,
+                0.921
+            ],
+            "angle": 0,
+            "content": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.039,
+                0.92,
+                0.753,
+                0.944
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) “Approximately what percent of your overall AI budget is being allocated to upskill and retrain your current workforce on AI?”  \\( ^{2} \\) “What share of your workforce has been upskilled/reskilled for AI?”"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.098,
+                0.107,
+                0.846,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.185,
+                0.24,
+                0.348,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.198,
+                0.383,
+                0.417,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.198,
+                0.42,
+                0.431,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.198,
+                0.458,
+                0.353,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.705,
+                0.253,
+                0.862,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.714,
+                0.381,
+                0.892,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.713,
+                0.417,
+                0.876,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.226,
+                0.55,
+                0.247,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.69,
+                0.166,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.791,
+                0.188,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.308,
+                0.688,
+                0.345,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.292,
+                0.79,
+                0.361,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.624,
+                0.69,
+                0.66,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.6,
+                0.791,
+                0.684,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.802,
+                0.689,
+                0.839,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.788,
+                0.79,
+                0.856,
+                0.829
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.04,
+                0.064,
+                0.952,
+                0.12
+            ],
+            "angle": 0,
+            "content": "Trailblazers see significant impact and returns from their investments in AI"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.074,
+                0.245,
+                0.147,
+                0.378
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.553,
+                0.237,
+                0.598,
+                0.379
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.078,
+                0.473,
+                0.185,
+                0.521
+            ],
+            "angle": 0,
+            "content": "Foxconn"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.075,
+                0.547,
+                0.419,
+                0.724
+            ],
+            "angle": 0,
+            "content": "Over $400M targeted savings identified from a scalable AI operating model and AI platform deployed across more than 200 factories",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.554,
+                0.469,
+                0.647,
+                0.522
+            ],
+            "angle": 0,
+            "content": "Reckitt"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.551,
+                0.547,
+                0.885,
+                0.726
+            ],
+            "angle": 0,
+            "content": "Quality output doubled through an end-to-end AI-driven workflow reinvention in marketing, cutting routine activities by up to 90%",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.04,
+                0.92,
+                0.16,
+                0.942
+            ],
+            "angle": 0,
+            "content": "Source: BCG client experience."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.064,
+                0.951,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.472,
+                0.186,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.547,
+                0.418,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.077,
+                0.592,
+                0.418,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.639,
+                0.388,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.078,
+                0.68,
+                0.183,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.552,
+                0.469,
+                0.647,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.553,
+                0.548,
+                0.85,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.552,
+                0.592,
+                0.815,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.552,
+                0.637,
+                0.882,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.553,
+                0.683,
+                0.732,
+                0.721
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.065,
+                0.671,
+                0.121
+            ],
+            "angle": 0,
+            "content": "CEOs must act decisively to execute their AI agenda"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.273,
+                0.272,
+                0.397
+            ],
+            "angle": 0,
+            "content": "1. Make AI your key priority\nPosition the organization to be the disruptor, not the disrupted.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.607,
+                0.28,
+                0.731
+            ],
+            "angle": 0,
+            "content": "5. Track measurable ROI from AI\nTrack AI's impact to drive sustainable ROI over time.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.702,
+                0.197,
+                0.932,
+                0.32
+            ],
+            "angle": 0,
+            "content": "2. Deepen AI literacy\nExpand individual AI fluency to effectively lead transformations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.702,
+                0.453,
+                0.931,
+                0.571
+            ],
+            "angle": 0,
+            "content": "3. Commit investments at scale\nInvest decisively across end-to-end\nbusiness functions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.702,
+                0.711,
+                0.951,
+                0.838
+            ],
+            "angle": 0,
+            "content": "4. Upskill the organization\nUpskill the workforce to optimize productivity, creativity, and judgment.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.041,
+                0.921,
+                0.127,
+                0.942
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.062,
+                0.67,
+                0.12
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.275,
+                0.241,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.323,
+                0.268,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.362,
+                0.223,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.609,
+                0.277,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.659,
+                0.208,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.696,
+                0.215,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.705,
+                0.199,
+                0.854,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.706,
+                0.245,
+                0.889,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.705,
+                0.283,
+                0.927,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.705,
+                0.456,
+                0.928,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.707,
+                0.501,
+                0.927,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.707,
+                0.538,
+                0.828,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.705,
+                0.713,
+                0.891,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.707,
+                0.764,
+                0.917,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.706,
+                0.802,
+                0.947,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.073,
+                0.192,
+                0.129
+            ],
+            "angle": 0,
+            "content": "In summary"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.17,
+                0.455,
+                0.219
+            ],
+            "angle": 0,
+            "content": "Corporate investment in AI is here to stay...",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.251,
+                0.163,
+                0.34
+            ],
+            "angle": 0,
+            "content": "94%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.356,
+                0.272,
+                0.481
+            ],
+            "angle": 0,
+            "content": "will continue to invest\neven if it does not pay off\nin 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.37,
+                0.252,
+                0.488,
+                0.342
+            ],
+            "angle": 0,
+            "content": "1.7%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.369,
+                0.357,
+                0.568,
+                0.481
+            ],
+            "angle": 0,
+            "content": "of an organization's revenue is dedicated to AI investment",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.686,
+                0.252,
+                0.75,
+                0.339
+            ],
+            "angle": 0,
+            "content": "2x",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.684,
+                0.356,
+                0.862,
+                0.479
+            ],
+            "angle": 0,
+            "content": "increase in projected AI investments from 2025",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.546,
+                0.763,
+                0.597
+            ],
+            "angle": 0,
+            "content": "AI transformation is moving from a CIO-led initiative to a CEO-led strategy...",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.058,
+                0.628,
+                0.162,
+                0.717
+            ],
+            "angle": 0,
+            "content": "72%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.733,
+                0.29,
+                0.858
+            ],
+            "angle": 0,
+            "content": "of CEOs say they are the main decision maker on AI, 2x last year",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.371,
+                0.627,
+                0.476,
+                0.716
+            ],
+            "angle": 0,
+            "content": "50%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.368,
+                0.732,
+                0.565,
+                0.858
+            ],
+            "angle": 0,
+            "content": "of CEOs believe their job depends on getting AI right",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.684,
+                0.626,
+                0.791,
+                0.716
+            ],
+            "angle": 0,
+            "content": "90%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.684,
+                0.732,
+                0.938,
+                0.857
+            ],
+            "angle": 0,
+            "content": "of CEOs believe AI agents will enable their companies to see measurable ROI this year",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.041,
+                0.921,
+                0.127,
+                0.942
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.068,
+                0.194,
+                0.134
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.168,
+                0.454,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.24,
+                0.169,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.358,
+                0.243,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.398,
+                0.27,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.44,
+                0.12,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.364,
+                0.241,
+                0.494,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.371,
+                0.359,
+                0.537,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.371,
+                0.4,
+                0.565,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.372,
+                0.442,
+                0.49,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.681,
+                0.242,
+                0.755,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.685,
+                0.358,
+                0.862,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.686,
+                0.399,
+                0.857,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.684,
+                0.438,
+                0.728,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.037,
+                0.537,
+                0.764,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.612,
+                0.17,
+                0.734
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.058,
+                0.733,
+                0.261,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.774,
+                0.286,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.817,
+                0.156,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.364,
+                0.615,
+                0.481,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.372,
+                0.734,
+                0.545,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.369,
+                0.774,
+                0.563,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.371,
+                0.817,
+                0.437,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.678,
+                0.614,
+                0.797,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.686,
+                0.734,
+                0.934,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.686,
+                0.775,
+                0.936,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.686,
+                0.813,
+                0.898,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

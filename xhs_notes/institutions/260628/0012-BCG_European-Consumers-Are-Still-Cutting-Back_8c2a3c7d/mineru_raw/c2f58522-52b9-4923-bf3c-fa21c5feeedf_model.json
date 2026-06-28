@@ -1,0 +1,3875 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.396
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.432,
+                0.294,
+                0.449
+            ],
+            "angle": 0,
+            "content": "CONSUMER PRODUCTS INDUSTRY",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.481,
+                0.721,
+                0.58
+            ],
+            "angle": 0,
+            "content": "European Consumers\nAre Still Cutting Back"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.607,
+                0.698,
+                0.626
+            ],
+            "angle": 0,
+            "content": "By Andreas Malby, Nicolas de Bellefonds, Rohan Sajdeh, and Vishakha Chopra",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.65,
+                0.368,
+                0.668
+            ],
+            "angle": 0,
+            "content": "ARTICLE JUNE 09, 2026 12 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.729,
+                0.951,
+                0.83
+            ],
+            "angle": 0,
+            "content": "European consumers have been navigating a prolonged period of economic strain. Inflation and fear of a potential recession raised consumer pessimism about the economy in 2025 to 54%, up 5 points from the prior year. That trend continued in 2026, increasing to 56%, as consumers say that rising energy prices and geopolitical tensions are impacting them. Consumers also show growing pessimism about politics and their personal finances. (See Exhibit 1.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.983
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.437,
+                0.287,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.48,
+                0.723,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.526,
+                0.723,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.61,
+                0.693,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.654,
+                0.364,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.732,
+                0.936,
+                0.746
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.751,
+                0.946,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.772,
+                0.948,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.791,
+                0.941,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.811,
+                0.686,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.064,
+                0.161,
+                0.119,
+                0.181
+            ],
+            "angle": 0,
+            "content": "Economic situation"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.336,
+                0.721,
+                0.381
+            ],
+            "angle": 0,
+            "content": "Sources: 2026 BCG European Consumer Sentiment Survey (April 2026) with 20,093 respondents across 11 countries (~1,800 responses per country); 2025 BCG European Consumer Sentiment Survey (April 2025) with 16,412 respondents in 9 countries; 2024 BCG Consumer Sentiment Survey (July 2024) with 7,000 respondents in 5 countries; BCG analysis. Note: Some bars total more than 100 due to rounding. Question: \"How do you currently feel about each of the following?\""
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.065,
+                0.115,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.081,
+                0.669,
+                0.12
+            ],
+            "angle": 0,
+            "content": "Consumers Are Pessimistic on the Economy but Positive About Their Health",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.29,
+                0.161,
+                0.364,
+                0.181
+            ],
+            "angle": 0,
+            "content": "Your personal finances"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.175,
+                0.161,
+                0.241,
+                0.182
+            ],
+            "angle": 0,
+            "content": "Political atmosphere"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.425,
+                0.164,
+                0.468,
+                0.177
+            ],
+            "angle": 0,
+            "content": "Climate"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.527,
+                0.16,
+                0.6,
+                0.182
+            ],
+            "angle": 0,
+            "content": "Your physical health"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.647,
+                0.16,
+                0.714,
+                0.181
+            ],
+            "angle": 0,
+            "content": "Your mental health"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.044,
+                0.123,
+                0.733,
+                0.333
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.415,
+                0.918,
+                0.495
+            ],
+            "angle": 0,
+            "content": "Personal health is an exception to this negative sentiment. Nearly two thirds, or 65%, of consumers rate their mental health and 56% rate their physical health as good. These findings emerge from our third annual survey of European consumers. We surveyed more than 20,000 consumers in 11 European countries. (See “Methodology.”)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.525,
+                0.304,
+                0.553
+            ],
+            "angle": 0,
+            "content": "- Methodology"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.589,
+                0.811,
+                0.69
+            ],
+            "angle": 0,
+            "content": "From April 2 to 22, we partnered with NativeResearch to survey approximately 1,800 consumers in each of 11 European countries: Denmark, Finland, France, Germany, Italy, Norway, Poland, Romania, Spain, Sweden, and the UK. Respondents answered questions about their current concerns, personal financial situations, and shopping behaviors across 12 consumer categories.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.707,
+                0.843,
+                0.827
+            ],
+            "angle": 0,
+            "content": "Year-on-year comparisons draw on two prior surveys: an April 2025 survey of nine countries (Denmark, France, Germany, Italy, Norway, Romania, Spain, Sweden, and the UK, totaling 16,412 respondents) and a July 2024 survey of five countries (Denmark, France, Germany, Sweden, and the UK, totaling 7,000 consumers). Comparisons with 2025 and 2024 include only the countries surveyed in that year.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.845,
+                0.812,
+                0.906
+            ],
+            "angle": 0,
+            "content": "The survey captures consumer sentiment by looking at net spending—the percentage difference between the share of consumers reporting they have or will spend more and those reporting they have or will spend less. As with all",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.068,
+                0.111,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.083,
+                0.667,
+                0.102
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.102,
+                0.171,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.418,
+                0.856,
+                0.432
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.436,
+                0.915,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.457,
+                0.905,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.476,
+                0.588,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.522,
+                0.302,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.592,
+                0.806,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.612,
+                0.806,
+                0.625
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.631,
+                0.721,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.649,
+                0.764,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.67,
+                0.791,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.71,
+                0.834,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.729,
+                0.84,
+                0.744
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.749,
+                0.793,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.768,
+                0.796,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.789,
+                0.793,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.808,
+                0.131,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.847,
+                0.774,
+                0.863
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.867,
+                0.808,
+                0.883
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.887,
+                0.785,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.068,
+                0.798,
+                0.108
+            ],
+            "angle": 0,
+            "content": "sentiment measures, actual purchasing behavior tends to be more moderate than stated intent, particularly in downturns."
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.26,
+                0.775,
+                0.301
+            ],
+            "angle": 0,
+            "content": "Financial Stress Is the Default"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.327,
+                0.939,
+                0.39
+            ],
+            "angle": 0,
+            "content": "This pessimism is causing financial distress. More than half, or 53%, of European consumers are worried about their daily personal finances, up from 40% in 2024. Six in ten are concerned about having enough money in retirement. (See Exhibit 2.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.42,
+                0.117,
+                0.435
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.437,
+                0.694,
+                0.478
+            ],
+            "angle": 0,
+            "content": "More Than Half of European Consumers Are in Financial Distress and Changing Their Consumption Patterns",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.042,
+                0.483,
+                0.733,
+                0.663
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.673,
+                0.721,
+                0.711
+            ],
+            "angle": 0,
+            "content": "Sources: 2026 BCG European Consumer Sentiment Survey (April 2026) with 20,093 respondents across 11 countries (~1,800 responses per country); 2025 BCG European Consumer Sentiment Survey (April 2025) with 16,412 respondents in 9 countries; 2024 BCG Consumer Sentiment Survey (July 2024) with 7,000 respondents in 5 countries; BCG analysis.\nQuestion: \"Please tell us to what extent you agree with each of the following statements.\" (Results shown for \"Agree.\")"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.744,
+                0.946,
+                0.826
+            ],
+            "angle": 0,
+            "content": "Given a hypothetical windfall of 10% to 15% extra income, nearly half of consumers said their top priority would be to save more, signaling that they are focused on building a financial buffer and may not spend more right away when the economy improves. Their second priority would be to spend on experiences like travel and dining out, followed by other discretionary categories.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.262,
+                0.774,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.33,
+                0.932,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.35,
+                0.935,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.37,
+                0.521,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.423,
+                0.113,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.44,
+                0.69,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.459,
+                0.467,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.747,
+                0.94,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.766,
+                0.93,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.786,
+                0.917,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.805,
+                0.891,
+                0.821
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.32,
+                0.477,
+                0.359
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 3 Consumers Continue to Prioritize Essentials"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.067,
+                0.773,
+                0.11
+            ],
+            "angle": 0,
+            "content": "A Big Leap Toward Essentials"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.135,
+                0.952,
+                0.196
+            ],
+            "angle": 0,
+            "content": "The shift to essentials has continued and deepened. The survey captures consumer sentiment by looking at net spending—the percentage difference between the share of consumers who reported increased spending and those who reported decreased spending.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.209,
+                0.957,
+                0.291
+            ],
+            "angle": 0,
+            "content": "Over the past six months, groceries and pet care are the only categories posting positive net spending. This reported growth is primarily fueled by increasing prices rather than greater volume. Every other category is flat or negative. As in 2025, consumers report the largest negative net spending on fashion, alcohol, and packaged snacks. (See Exhibit 3.)",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.043,
+                0.363,
+                0.731,
+                0.598
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.603,
+                0.728,
+                0.657
+            ],
+            "angle": 0,
+            "content": "Sources: 2026 BCG European Consumer Sentiment Survey (April 2026) with 20,093 total respondents across 11 countries (~1,800 responses per country); BCG analysis. Note: Net spending is the percentage difference between the share of respondents indicating an increase of spending and those indicating a decrease of spending within a category. For products bought less frequently (home appliances and furniture) net spending is shown for the past year and next year, rather than previous and next six months. OTC = Over-the-counter drugs and supplements.\n\n³Question: \"In the past six months/one year, how much has your total spending changed compared to six months ago/a year ago?\" ²Question: \"How much do you expect your total spending to change in the next six months/year compared to today?\""
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.691,
+                0.955,
+                0.811
+            ],
+            "angle": 0,
+            "content": "Even within categories, consumers are making sharp distinctions between essential and indulgent items. For example, within fashion, footwear (−12 points net spending), casual wear (−13 points), and sportswear (−14 points) have held up better than formal and evening wear (−20 points), handbags (−23 points), and accessories (−22 points). Within pet care, the category with the highest overall positive net spending sentiment (12 points), consumers report spending more on everyday pet food (19 points) than on pet accessories (−10 points).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.824,
+                0.945,
+                0.883
+            ],
+            "angle": 0,
+            "content": "Consumers of all incomes and ages are pulling back from categories misaligned with their health goals. They report sharply decreasing their spending on alcohol, sugary snacks, ice cream, and beverages.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.069,
+                0.774,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.136,
+                0.946,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.157,
+                0.878,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.177,
+                0.735,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.211,
+                0.9,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.231,
+                0.953,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.252,
+                0.906,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.272,
+                0.667,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.693,
+                0.863,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.713,
+                0.952,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.732,
+                0.898,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.752,
+                0.924,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.773,
+                0.949,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.791,
+                0.696,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.826,
+                0.942,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.846,
+                0.917,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.865,
+                0.15,
+                0.881
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.174,
+                0.808,
+                0.214
+            ],
+            "angle": 0,
+            "content": "The Great Generational Divide"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.242,
+                0.953,
+                0.323
+            ],
+            "angle": 0,
+            "content": "There are age-related nuances to this overall picture. Younger consumers report cutting less relative to older cohorts. Over the next six months, reported net spending among Gen X and Baby Boomers is -13 points, and for Gen Z and Millennials it is -2 points. This 11-point delta increased by 2 points over 2025, driven by older cohorts cutting even further this year.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.336,
+                0.937,
+                0.416
+            ],
+            "angle": 0,
+            "content": "The gap widens measurably in individual categories. In furniture, younger consumers report net spending of +3 points, compared with -22 points for older consumers, a 25-point gap. In fashion, the net spending is 23 points higher for young consumers; in home appliances, 16 points. (See Exhibit 4.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.447,
+                0.116,
+                0.462
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 4"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.464,
+                0.64,
+                0.485
+            ],
+            "angle": 0,
+            "content": "Older Generations Are Cutting Discretionary Spending More"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.042,
+                0.488,
+                0.731,
+                0.808
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.817,
+                0.715,
+                0.861
+            ],
+            "angle": 0,
+            "content": "Sources: 2026 BCG European Consumer Sentiment (April 2026) with 20,093 respondents across 11 countries (~1,800 responses per country); BCG analysis. Note: Net spending is the percentage difference between the share of respondents indicating an increase of spending and those indicating a decrease of spending within a category. For products bought less frequently (home appliances and furniture) net spending is shown for the past year and next year, rather than previous and next six months. OTC = Over-the-counter drugs and supplements.\nQuestion: \"How much do you expect your total spending to change in the next six months/year compared with today?\""
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.176,
+                0.805,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.245,
+                0.897,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.264,
+                0.947,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.283,
+                0.949,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.303,
+                0.743,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.338,
+                0.928,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.359,
+                0.932,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.378,
+                0.913,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.398,
+                0.139,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.45,
+                0.113,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.947,
+                0.166
+            ],
+            "angle": 0,
+            "content": "Life stage more than income likely explains the difference. Younger consumers are spending to create a home and raise a family, even under financial pressure. When asked about their reasons for spending less, younger generations said they were trading down to less-expensive brands or stores or buying lower-quality items; older consumers said they were reducing overall consumption.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.18,
+                0.927,
+                0.242
+            ],
+            "angle": 0,
+            "content": "The younger generation are less loyal to brands, with only 28% reporting they usually buy the same brand, compared with 44% of older consumers. They are also more than twice as likely to buy second-hand goods.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.312,
+                0.68,
+                0.351
+            ],
+            "angle": 0,
+            "content": "Health Is the New Wealth"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.379,
+                0.926,
+                0.48
+            ],
+            "angle": 0,
+            "content": "Against a backdrop of broad spending cuts, health and well-being are becoming essentials in consumers' minds. Two-thirds of European consumers say health and wellness are extremely important to their lifestyle. Their actions reflect this conviction. Nearly half, or 46%, report drinking less alcohol or are considering it. Many consumers are choosing abstinence, with only 28% choosing low- or no-alcohol alternatives. (See Exhibit 5.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.508,
+                0.304,
+                0.549
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 5 Health Is the New Wealth"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.045,
+                0.563,
+                0.209,
+                0.682
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.064,
+                0.69,
+                0.19,
+                0.73
+            ],
+            "angle": 0,
+            "content": "About two-thirds of consumers say health and well-being are extremely important to their lifestyle"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.225,
+                0.556,
+                0.729,
+                0.731
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.744,
+                0.73,
+                0.765
+            ],
+            "angle": 0,
+            "content": "Sources: 2026 BCG European Consumer Sentiment Survey (April 2026) with 20,093 respondents across 11 countries (~1,800 responses per country); BCG analysis. Question: \"Please tell us to what extent you agree with each of the following statements in relation to [assigned category].\" (Results shown for \"Somewhat agree\" and \"Strongly agree.\")"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.799,
+                0.955,
+                0.918
+            ],
+            "angle": 0,
+            "content": "In snacks, the shift toward functional and clean-label formats signifying simple, natural ingredients with minimal processing and no artificial additives shows up both in attitudes and reported spending. Indulgent sub-categories like chocolates, ice creams, and cookies are among the weakest in the survey, while healthier formats like protein-fortified snacks are performing better. Supplements are growing, with 29% of consumers reporting increased spending in the past year.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.07,
+                0.924,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.943,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.93,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.129,
+                0.833,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.149,
+                0.174,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.907,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.204,
+                0.923,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.224,
+                0.27,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.313,
+                0.676,
+                0.349
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.383,
+                0.904,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.401,
+                0.904,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.421,
+                0.876,
+                0.436
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.44,
+                0.92,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.46,
+                0.605,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.512,
+                0.113,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.529,
+                0.299,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.799,
+                0.855,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.82,
+                0.91,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.841,
+                0.938,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.861,
+                0.907,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.88,
+                0.952,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.901,
+                0.093,
+                0.917
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.945,
+                0.187
+            ],
+            "angle": 0,
+            "content": "GLP-1 appetite-suppressing medications, such as Ozempic, Wegovy, and Mounjaro, have achieved remarkable consumer awareness. Nearly three-quarters of Europeans, or 74%, know what they are. One in four European consumers report either using them or are seriously considering doing so. Gen Z and Millennials are more likely to consider these medications (19%) than GenX and Baby Boomers (8%). If this awareness converts to consumption, the implications for food, personal care, and health categories will be meaningful.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.201,
+                0.946,
+                0.301
+            ],
+            "angle": 0,
+            "content": "The health and wellness mindset also applies to pet care. Six in ten consumers report they are willing to spend more on high-quality pet food, and 68% want clearly listed, recognizable ingredients in pet food. In this respect, they have higher standards for labeling of pet food than human food. Pet care is where health and wellness concerns meet emotional spending, making it a bright spot in an otherwise subdued consumer landscape.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.372,
+                0.653,
+                0.413
+            ],
+            "angle": 0,
+            "content": "The Price Is the Message"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.438,
+                0.953,
+                0.537
+            ],
+            "angle": 0,
+            "content": "After two years of uncertainty and cut-backs, value-seeking is now deeply embedded in consumer behavior. Nearly two-thirds, or 63%, of consumers will only buy at a discount or actively seek deals—the same as last year. In fashion, that share reaches 73%. Even in over-the-counter medicines and supplements, the category with the highest brand loyalty, half of consumers are hunting for a better price.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.552,
+                0.944,
+                0.69
+            ],
+            "angle": 0,
+            "content": "Brand loyalty is on a decline, with 62% of consumers reporting that they are willing to switch brands for better offers. The willingness exceeds 70% in categories such as furniture and fashion. This translates into reported purchasing behavior. A significant share of consumers (44%) say that, in their most recent purchase, they have either switched to a brand they don’t normally buy or one they have never bought before. This shift is reinforced by the steady rise of private labels, particularly in groceries (39% of consumers always or often buy private label brands), home care (30%), and fashion (29%).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.704,
+                0.948,
+                0.784
+            ],
+            "angle": 0,
+            "content": "Discounts and in-store visibility are the strongest influences converting consumers into purchasers and the top reason for brand switching. Brand reputation ranks fifth. For brands that focus on broad, mass-reach marketing, these findings call into question the belief that awareness leads to conversion. (See Exhibit 6.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.071,
+                0.944,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.921,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.937,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.913,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.148,
+                0.872,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.167,
+                0.565,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.924,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.224,
+                0.861,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.243,
+                0.921,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.261,
+                0.943,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.282,
+                0.599,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.369,
+                0.652,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.44,
+                0.947,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.46,
+                0.95,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.48,
+                0.924,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.499,
+                0.944,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.519,
+                0.162,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.554,
+                0.897,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.574,
+                0.943,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.593,
+                0.906,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.612,
+                0.937,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.634,
+                0.936,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.652,
+                0.939,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.672,
+                0.28,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.705,
+                0.857,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.726,
+                0.934,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.746,
+                0.945,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.767,
+                0.375,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.045,
+                0.065,
+                0.116,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 6"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.082,
+                0.52,
+                0.101
+            ],
+            "angle": 0,
+            "content": "Discounts Are the Top Reason to Switch Brands"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.115,
+                0.347,
+                0.135
+            ],
+            "angle": 0,
+            "content": "RESPONDENTS WILLING TO SWITCH BRANDS IF VS. 2025 THERE ARE BETTER OFFERS \\( ^{1} \\) (%) (PP)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.042,
+                0.113,
+                0.347,
+                0.31
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.368,
+                0.115,
+                0.716,
+                0.127
+            ],
+            "angle": 0,
+            "content": "TOP FACTORS INFLUENCING PURCHASE DECISIONS FOR CONSUMERS \\( ^{2} \\)"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.367,
+                0.114,
+                0.728,
+                0.169
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.367,
+                0.175,
+                0.701,
+                0.196
+            ],
+            "angle": 0,
+            "content": "WHAT BEST DESCRIBES THE CHOICE OF 44% OF CONSUMERS WHO REPORTEDLY CHANGED BRAND IN THEIR RECENT PURCHASE? \\( ^{3} \\)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.367,
+                0.199,
+                0.729,
+                0.311
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.322,
+                0.728,
+                0.368
+            ],
+            "angle": 0,
+            "content": "Sources: 2026 BCG European Consumer Sentiment Survey (April 2026) with 20,093 total respondents across 11 countries (~1,800 responses per country); BCG analysis. Note: OTC = Over-the-counter drugs and supplements.\n\n¹Question: “To what extent do you agree with the following statement: I rarely switch brands for the [category] I buy, even if there were better offers for other brands.” (Results shown for all who do not “Disagree.”) ²Question: “What were the reasons that influenced your decision during your last purchase of [allocated category]?” ³Question: “Thinking of the last time you purchased [allocated category], which of the following best describes your choice of brand?”"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.438,
+                0.61,
+                0.516
+            ],
+            "angle": 0,
+            "content": "Sustainability Is Losing\nMomentum"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.545,
+                0.953,
+                0.685
+            ],
+            "angle": 0,
+            "content": "As value rises in importance, sustainability has become less influential in purchase decisions. The share of consumers who report taking sustainability into account declined by an average of 3 percentage points across categories in 2026 from a year earlier. However, this pullback is not uniform. In categories such as home care, groceries, fashion, and personal care, consumers say they are slightly more likely to consider sustainability in their purchasing decision. (See Exhibit 7.) Willingness to pay a premium though remains stable with 17% of consumers, or one in six, willing to pay a green premium for sustainable products.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.084,
+                0.517,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.435,
+                0.611,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.479,
+                0.338,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.548,
+                0.915,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.566,
+                0.947,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.586,
+                0.906,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.605,
+                0.919,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.626,
+                0.949,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.646,
+                0.944,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.666,
+                0.505,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.043,
+                0.064,
+                0.588,
+                0.102
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 7 Consideration for Sustainability Has Slightly Decreased"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.043,
+                0.104,
+                0.73,
+                0.341
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.347,
+                0.728,
+                0.366
+            ],
+            "angle": 0,
+            "content": "Sources: 2026 BCG European Consumer Sentiment Survey (April 2026) with 20,093 respondents across 11 countries (~1,800 responses per country); BCG analysis. Note: OTC = Over-the-counter drugs and supplements."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.042,
+                0.363,
+                0.728,
+                0.4
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) Question: “Being completely honest, how often do you think about sustainability when you make decisions regarding the purchase of [category]?”  \\( ^{2} \\) Question: “How have your sustainability considerations when purchasing [category] changed over the past year?”, “Net change in consideration” is the difference between those who say it has increased and those who say it has decreased.  \\( ^{3} \\) Question: “How much less or more would you be willing to pay in [category] products for sustainable alternatives that minimize your climate impact (vs. non-sustainable alternatives)?”"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.434,
+                0.956,
+                0.574
+            ],
+            "angle": 0,
+            "content": "The second-hand market, on the other hand, continues to expand. Nearly half of consumers, or 47%, report that they sometimes, often, or almost always buy second-hand products, rising 4 points since last year. However, the underlying motivation is primarily economic rather than environmental. Among second-hand buyers, 46% cite saving money, 21% cite access to premium brands at lower prices, and just 17% point to sustainability as the primary reason. This shift positions second-hand as a value and “smart consumption” channel, especially among Gen Z and Millennials who are nearly twice more likely to buy second-hand items than older cohorts.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.642,
+                0.828,
+                0.724
+            ],
+            "angle": 0,
+            "content": "Digital Channels Are Reshaping\nDiscovery"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.749,
+                0.95,
+                0.83
+            ],
+            "angle": 0,
+            "content": "The use of GenAI tools such as ChatGPT, Gemini, and Copilot in product discovery has quadrupled since 2024, with 8% of consumers reporting they regularly use them. Usage is highest in research-led categories like home appliances (13%) and OTC medicines (11%) and lowest in impulse categories like packaged snacks and beverages (5%).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.844,
+                0.949,
+                0.924
+            ],
+            "angle": 0,
+            "content": "The fastest-growing discovery channel overall is social media, particularly among younger consumers. Nearly one-third of Gen Z and Millennials, or 32%, use Instagram, and 27% use TikTok to find and research fashion, compared with 11% and 6%, respectively, for older consumers. Influencer and celebrity recommendations matter to 15% of younger consumers in fashion and",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.437,
+                0.921,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.457,
+                0.898,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.476,
+                0.892,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.495,
+                0.936,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.516,
+                0.891,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.534,
+                0.95,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.555,
+                0.88,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.64,
+                0.83,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.683,
+                0.291,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.752,
+                0.947,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.771,
+                0.945,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.791,
+                0.888,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.811,
+                0.54,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.846,
+                0.874,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.865,
+                0.946,
+                0.881
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.885,
+                0.889,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.906,
+                0.926,
+                0.919
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.924,
+                0.109
+            ],
+            "angle": 0,
+            "content": "personal care versus 3% for older generations. Both GenAI and social media are growing at the direct expense of general internet search, which is flat to declining across every category.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.121,
+                0.933,
+                0.181
+            ],
+            "angle": 0,
+            "content": "Stores remain significant for closing the sale, with 40% of consumers ranking them first in influencing their final purchase decision. So while discovery increasingly happens online, stores remain vital for conversion.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.253,
+                0.833,
+                0.292
+            ],
+            "angle": 0,
+            "content": "Focus on Growth and Execution"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.319,
+                0.952,
+                0.4
+            ],
+            "angle": 0,
+            "content": "The findings of this survey show that consumer brands do not need a fundamental strategic reset. The trends identified in 2025 have persisted in 2026, confirming that the shifts in consumer beliefs and behaviors are more structural than temporary. The agenda sharpens around four priorities. (See Exhibit 8.)",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.044,
+                0.429,
+                0.729,
+                0.737
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.752,
+                0.529,
+                0.765
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\) More relevant for grocery, personal care, beverages, and pet care, where health and wellness are growing trends."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.799,
+                0.955,
+                0.919
+            ],
+            "angle": 0,
+            "content": "Creating structural value is essential as value remains the primary purchase driver and consumers continue seeking deals. Brands should cut costs aggressively to deliver better value to consumers who are trading down or switching for a better price. Brands should maintain promotional investment but use AI to optimize how that spend is deployed to maximize ROI. In the medium term, brands should direct innovation investments toward functional innovation as consumers report prioritizing functionality over aesthetics or branding.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.92,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.088,
+                0.871,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.125,
+                0.872,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.143,
+                0.929,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.163,
+                0.301,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.252,
+                0.832,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.322,
+                0.95,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.341,
+                0.887,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.362,
+                0.899,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.381,
+                0.275,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.801,
+                0.856,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.821,
+                0.953,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.841,
+                0.857,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.86,
+                0.924,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.88,
+                0.93,
+                0.894
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.899,
+                0.702,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.949,
+                0.207
+            ],
+            "angle": 0,
+            "content": "Aligning new demand generation with Gen Z and Millennials is critical as they will drive a disproportionate share of future growth. Brands should redirect their marketing spending and rebuild go-to-market capabilities to win younger consumers, who have significantly less brand commitment. Brands should integrate flexible ownership models—including rental, subscription, resale, and financing options—given younger consumers’ willingness to buy second-hand goods. Companies can also promote loyalty and rewards programs to build relationships early with younger consumers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.22,
+                0.937,
+                0.34
+            ],
+            "angle": 0,
+            "content": "Capturing share in the growing health segment, because it is one of the few areas where spending remains resilient. Brands should rebalance their portfolio toward health-aligned SKUs and prepare for the structural demand shifts that GLP-1 adoption will accelerate. Brands should assess M&A opportunities to move into health-adjacent categories and align marketing with targeted health-oriented messaging. Consumers respond to specific functional benefits over generic positioning.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.354,
+                0.947,
+                0.492
+            ],
+            "angle": 0,
+            "content": "Winning the digital discovery journey requires investing in the channels that are leading product discovery. Social media is the primary discovery channel for younger consumers. Brands should optimize content and invest in discovery-to-purchase pathways to convert at the moment of highest intent, including in-app checkout and affiliate links. Brands should be relevant in GenAI queries, as consumer usage in product discovery has quadrupled in two years while traditional search has declined. E-commerce continues to be a high-growth purchase channel and warrants sustained investment.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.52,
+                0.863,
+                0.592
+            ],
+            "angle": 0,
+            "content": "Explore how these consumer trends are playing out at the country level."
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.042,
+                0.614,
+                0.708,
+                0.697
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Denmark</td><td>Finland</td><td>France</td></tr><tr><td>Germany</td><td>Italy</td><td>Norway</td></tr><tr><td>Poland</td><td>Romania</td><td>Spain</td></tr><tr><td>Sweden</td><td>UK</td><td></td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.729,
+                0.948,
+                0.791
+            ],
+            "angle": 0,
+            "content": "The authors thank Abi Sonnenberg and Martina Scrocco for their contributions. They also acknowledge BCG's Center for Customer Insight, especially Tim Schulz van Endert and Gaby Barrios, for their support and NativeResearch for conducting the survey.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.07,
+                0.878,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.088,
+                0.909,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.108,
+                0.914,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.128,
+                0.944,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.149,
+                0.938,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.169,
+                0.897,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.189,
+                0.234,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.222,
+                0.869,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.243,
+                0.932,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.263,
+                0.931,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.283,
+                0.896,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.302,
+                0.901,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.321,
+                0.227,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.355,
+                0.947,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.375,
+                0.924,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.395,
+                0.897,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.415,
+                0.93,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.435,
+                0.915,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.455,
+                0.93,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.475,
+                0.253,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.519,
+                0.864,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.554,
+                0.696,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.732,
+                0.944,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.753,
+                0.877,
+                0.768
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.773,
+                0.391,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.067,
+                0.748,
+                0.139
+            ],
+            "angle": 0,
+            "content": "About BCG's Center for Customer Insight"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.164,
+                0.725,
+                0.403
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group's Center for Customer Insight (CCI) applies a unique, integrated approach that combines quantitative and qualitative consumer and citizen research with a deep understanding of business strategy, competitive dynamics as well as public policy context. The center works closely with BCG's various practices to translate its insights into actionable strategies that lead to tangible economic impact and improved public outcomes for our clients across both the private and public sector. In the course of its work, the center has amassed a rich set of proprietary data on consumers and citizens from around the world, in both emerging and developed markets. The CCI is sponsored by BCG's Marketing, Sales & Pricing practice and Global Advantage practice. For more information, please visit the Center for Customer Insight.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.485,
+                0.247,
+                0.523
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.566,
+                0.22,
+                0.673
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.742,
+                0.22,
+                0.848
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.581,
+                0.413,
+                0.605
+            ],
+            "angle": 0,
+            "content": "Andreas Malby"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.243,
+                0.613,
+                0.437,
+                0.678
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nCopenhagen"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.246,
+                0.745,
+                0.402,
+                0.767
+            ],
+            "angle": 0,
+            "content": "Rohan Sajdeh"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.243,
+                0.777,
+                0.437,
+                0.819
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nChicago"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.566,
+                0.684,
+                0.674
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.569,
+                0.83,
+                0.615
+            ],
+            "angle": 0,
+            "content": "Nicolas de\nBellefonds"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.624,
+                0.901,
+                0.688
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nParis"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.531,
+                0.742,
+                0.684,
+                0.848
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.705,
+                0.75,
+                0.896,
+                0.774
+            ],
+            "angle": 0,
+            "content": "Vishakha Chopra"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.784,
+                0.808,
+                0.814
+            ],
+            "angle": 0,
+            "content": "Principal\nJohannesburg"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.067,
+                0.745,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.103,
+                0.189,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.167,
+                0.703,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.185,
+                0.707,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.204,
+                0.695,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.225,
+                0.672,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.244,
+                0.724,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.264,
+                0.685,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.284,
+                0.688,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.305,
+                0.716,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.324,
+                0.71,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.343,
+                0.702,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.363,
+                0.698,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.383,
+                0.626,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.483,
+                0.247,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.746,
+                0.399,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.103,
+                0.436,
+                0.121
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.138,
+                0.952,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.956,
+                0.983
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.105,
+                0.433,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.14,
+                0.95,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.159,
+                0.9,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.18,
+                0.904,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.199,
+                0.911,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.218,
+                0.933,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.238,
+                0.593,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

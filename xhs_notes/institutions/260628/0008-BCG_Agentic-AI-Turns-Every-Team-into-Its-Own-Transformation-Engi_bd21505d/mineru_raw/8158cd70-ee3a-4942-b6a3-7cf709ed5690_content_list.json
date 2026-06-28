@@ -1,0 +1,1141 @@
+[
+    {
+        "type": "image",
+        "img_path": "images/739eb02fd553a34eda4a71c9a959b122b9e2a9334506cf30d8fc3a551657334e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            394
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "AI AGENTS",
+        "bbox": [
+            47,
+            430,
+            138,
+            449
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Agentic AI Turns Every Team into Its Own Transformation Engine",
+        "text_level": 1,
+        "bbox": [
+            40,
+            478,
+            776,
+            627
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "By Gavin Parker, Caryn Katsikogianis, Alan Wong, Simon Murphy, and Nicole Sibilio",
+        "bbox": [
+            40,
+            656,
+            725,
+            675
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ARTICLE JUNE 19, 2026 12 MIN READ",
+        "bbox": [
+            40,
+            700,
+            367,
+            717
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Agentic AI is exposing an uncomfortable truth: the organisations getting value from it are not the ones with the best technology, but the ones working closely with their teams to redesign how they work.",
+        "bbox": [
+            38,
+            778,
+            954,
+            818
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Caryn Katsikogianis is the former Chief People Officer of Woolworths Group, capping a 25-year career in HR leadership across Australian retail. She reflects here on perspectives drawn from that journey, including conversations with other senior People leaders. Gavin Parker is a Managing Director and Senior Partner at Boston Consulting Group, and Alan Wong is a Partner at BCG, bringing BCG's global perspectives from",
+        "bbox": [
+            38,
+            833,
+            930,
+            913
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "supporting clients across industries and geographies on AI transformation. Together, they explore how organisations are scaling agentic AI.",
+        "bbox": [
+            40,
+            67,
+            873,
+            107
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Introduction",
+        "text_level": 2,
+        "bbox": [
+            42,
+            178,
+            356,
+            215
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "How organisations scale AI is changing how change itself happens. Transformation programs have traditionally been rolled out by a central team in steady, sequential phases. But with AI-led transformations, particularly those drawing on GenAI and agentic AI, many teams across the organisation are being asked to transform — often simultaneously. While it’s widely recognised that AI adoption will lead to some job displacement in the short term, it is also expected to drive net job creation and new forms of work in the near future, increasing the urgency for organisations to adapt how work is designed and delivered.",
+        "bbox": [
+            40,
+            244,
+            954,
+            385
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "GenAI has reached 70% adoption in just three years. It’s high on the agenda at every boardroom and management meeting, yet only 16% of Australian executives report significant value from GenAI today. Discussion to date has focused on the technology, but experience shows that organisations derive value from AI only when it is deployed in service of strategic priorities — not treated as a tool confined to the CIO’s toolkit. That shift is already visible in the C-suite: more than 70% of CEOs state that they are now the primary decision-maker when it comes to AI, recognising AI’s role as an enabler of strategy rather than a purely technical capability.",
+        "bbox": [
+            40,
+            398,
+            954,
+            538
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The adoption-value constraint is no longer the technology, but whether teams have the confidence, capability and permission to change how they work to deliver organisational goals. In other words, the bottleneck in AI transformation has shifted from technology to organisational capability.",
+        "bbox": [
+            40,
+            551,
+            946,
+            631
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Generative AI (GenAI) refers to systems that generate outputs from prompts or data, including large language models (LLMs) such as ChatGPT and Claude. Agentic AI extends this capability by enabling systems to autonomously plan, decide and act across multiple steps to achieve an outcome.",
+        "bbox": [
+            53,
+            678,
+            644,
+            799
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "While this article focuses on agentic AI, the implications apply to GenAI and even more traditional forms of AI (e.g. machine learning) which are reshaping how teams work.",
+        "bbox": [
+            124,
+            818,
+            638,
+            897
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Agentic AI Is Changing the Nature of Transformation",
+        "text_level": 1,
+        "bbox": [
+            40,
+            66,
+            703,
+            145
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Agentic AI is still emerging, but it is already changing how work gets done. Work is shifting from execution to orchestration. Teams are flattening into human-AI structures, changing what it means to ‘manage’. Organisational design, talent and governance are being reshaped in response.",
+        "bbox": [
+            40,
+            173,
+            954,
+            234
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Yet focusing on the adoption of AI is not enough to unlock the full potential of GenAI and agentic AI — what matters is quality adoption of AI to deliver a measurable business outcome. In three stages of AI adoption, Deploy can create immediate value in organisations, but most of the value will come from using AI to Reshape critical functions and to Invent new AI-led experiences.",
+        "bbox": [
+            40,
+            247,
+            944,
+            329
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Organisations Need to Move Through Three Stages of AI Adoption to Generate Value From Agentic AI",
+        "text_level": 2,
+        "bbox": [
+            40,
+            376,
+            661,
+            414
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/b8bec31feb9585454ca42bc8ac4489ecc8d0899c0a2fb4e2748a762bc0450808.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Incremental adoption to do the same, but better"
+        ],
+        "content": "",
+        "bbox": [
+            40,
+            423,
+            732,
+            701
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "What does ‘reshape’ look like in practice? A company sets a strategic objective to dramatically scale the volume and personalisation of its marketing. It deploys agentic AI to automate much of the campaign development process, from generating creative assets to tailoring messaging for different audiences and channels. The marketing function then reshapes itself around this new capability, redesigning workflows end-to-end and removing large amounts of manual work. Routine tasks are automated, allowing teams to focus on strategy, creativity and experimentation.",
+        "bbox": [
+            40,
+            768,
+            952,
+            889
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "To drive effective, sustained adoption in this context, we need to understand how GenAI and agentic AI are changing how transformation occurs in organisations. Five structural shifts explain why transformation is becoming more distributed and team-led:",
+        "bbox": [
+            40,
+            67,
+            942,
+            127
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- Work is changing faster than central programs can keep up: Agentic AI capabilities are evolving weekly, if not daily. Recent examples include Anthropic releasing the Mythos-class Claude Fable 5 in June 2026 and OpenAI releasing GPT-5.5 – rebuilt for agentic workflows – in April 2026.",
+        "bbox": [
+            40,
+            155,
+            934,
+            235
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- Innovation becomes grassroots: Teams can often access generative AI tools themselves, meaning that pockets of innovation are occurring regardless of company guidance. These green shoots can lead to uplifts in effectiveness and efficiency, but also introduce organisational risk if left unaddressed.",
+        "bbox": [
+            40,
+            250,
+            898,
+            329
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- Transformation multiplies: When nearly every team is affected by agentic AI, transformation no longer scales through a handful of large programs. It scales through hundreds of small, local reinventions happening in parallel.",
+        "bbox": [
+            40,
+            343,
+            868,
+            404
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- Teams become the engine of change: As agentic transformation starts with rethinking end-to-end workflows in prioritised business domains, change has to run through the teams that hold the expertise. The leadership task is to channel that capability towards the organisation’s key strategic priorities.",
+        "bbox": [
+            40,
+            418,
+            919,
+            498
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "\\- Roles are re-shaped in real time: Each team is effectively being asked to redesign how work gets done, while still delivering day-to-day outcomes and navigating uncertainty about the future – leading to resistance to change.",
+        "bbox": [
+            40,
+            512,
+            917,
+            571
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Agentic AI does more than improve productivity; it brings transformation closer to teams. Organisations that recognise that teams need to be involved in redesigning their own workflows in pursuit of business outcomes are the ones driving sustainable change. Distributed change does not mean undirected change. The organisations getting real value are not letting every team experiment at once; they are pointing this team-led energy at the two or three domains that move a business metric, and reshaping these domains end to end.",
+        "bbox": [
+            38,
+            601,
+            954,
+            721
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Agentic in Practice: Insights from an Industry Leader",
+        "text_level": 1,
+        "bbox": [
+            40,
+            841,
+            856,
+            921
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            250,
+            984
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "To close the adoption-value gap, focus on teams before technology and understand how to empower teams to drive change. Bringing this to life is a case study of one global industry leader's journey.",
+        "bbox": [
+            40,
+            67,
+            954,
+            126
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "- Case Study: AWS Software Development Lifecycle Transformation",
+        "text_level": 2,
+        "bbox": [
+            63,
+            156,
+            850,
+            214
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "AWS used GenAI to reshape how software engineering work gets done. The starting point was a familiar challenge: organisations had introduced AI tools to engineers, but usage alone was not changing how work was performed or improving outcomes. Recognising that GenAI can pose a threat to the identity of team members, a core focus of the transformation was helping teams to understand that AI is there to enhance their work by enabling them to spend more time creating and building.",
+        "bbox": [
+            77,
+            250,
+            828,
+            391
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Firstly, AWS linked GenAI adoption directly to business outcomes. “It's not just about the adoption, it's about meaningful usage. Are you deploying code to production and is it making it to customers in the form of features?” This reframed success around impact, rather than simply adoption of tools.",
+        "bbox": [
+            79,
+            407,
+            813,
+            489
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Secondly, the transformation was explicitly team-led, with capability built inside engineering teams by focusing on changing habits, not just enabling access. AWS embedded experienced peer engineers into teams to model new ways of working and reset day-to-day practices, accelerating adoption within the workflow itself.",
+        "bbox": [
+            77,
+            507,
+            836,
+            588
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Finally, AWS is extending this reshape across the full lifecycle. With “about a third of the work due to coding,” the focus is shifting to the processes before and after the coding – the design and the maintenance and ops reinforcing that most of the value will come from using AI to reshape critical functions.",
+        "bbox": [
+            77,
+            605,
+            841,
+            686
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "These changes reshaped the role of the developer, reducing manual effort, increasing time spent creating and building, and resulting in 27% more features shipped.",
+        "bbox": [
+            77,
+            703,
+            823,
+            764
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "An Executive Checklist for Empowering Your Teams to Scale AI",
+        "text_level": 1,
+        "bbox": [
+            40,
+            66,
+            873,
+            181
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Realising value from AI requires a reshape of organisations as transformation shifts from central programs to guided change that unfolds team-by-team. While no silver bullet change playbook exists to navigate transformation with new technologies, a people-led approach can close the gap between adoption and value. Drawing on Caryn's experience as a senior People leader in Australian retail and BCG's global perspectives, we have created a checklist to guide organisations to align agentic AI use cases with business priorities and empower their teams to deliver.",
+        "bbox": [
+            40,
+            212,
+            952,
+            351
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "- 1. Be honest about whether AI actually serves your strategy, or just decorates it",
+        "text_level": 2,
+        "bbox": [
+            63,
+            382,
+            796,
+            441
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Have you identified the 2–3 domains where AI will move a business metric, not just add activity?",
+        "bbox": [
+            75,
+            476,
+            833,
+            516
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "AI is not your strategy, and a wide portfolio of pilots is not a transformation. Your data and AI strategy exists to serve your business strategy. The discipline lies in choosing the two or three domains where AI can materially accelerate a priority, and reshaping those domains end to end. Take a retailer whose priority is getting the right assortment in every store. The place to start is merchandising: take customer data and demand signals, reimagine the workflow from end to end alongside the team, and generate the localised ranges and planograms that store operations will execute. Critically, do this with the team, from category managers through to customer insights and store operations. One domain reshaped properly creates more value than ten explored at the surface.",
+        "bbox": [
+            77,
+            536,
+            841,
+            734
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "2. Put your CHRO at the centre of the AI agenda,",
+        "text_level": 2,
+        "bbox": [
+            99,
+            904,
+            831,
+            932
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "as Chief Transformation and Capability Officer",
+        "text_level": 1,
+        "bbox": [
+            99,
+            68,
+            806,
+            96
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Is there a clear mandate to translate strategy into integrated human–AI structures, or are you relying on technology adoption alone?",
+        "bbox": [
+            79,
+            162,
+            772,
+            203
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Context and culture matter, but they are not enough on their own. Agentic AI puts organisation design at the centre of the AI agenda, and the CHRO is best placed to lead it: actively partnering with business leaders to translate strategy into how teams are structured, flattening hierarchies and orienting these hierarchies around human-AI workflows.",
+        "bbox": [
+            77,
+            222,
+            838,
+            321
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Technology will not do all the heavy lifting; the CHRO's job is to make sure teams are ready, driving the reskilling that reshapes roles as the work changes. This is where HR acts as capability and organisational design architects, helping teams navigate the shift to new ways of working.",
+        "bbox": [
+            77,
+            340,
+            831,
+            420
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "- 3. Treat adoption quality, not access, as the goal",
+        "text_level": 2,
+        "bbox": [
+            63,
+            546,
+            823,
+            576
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "You've handed out the tools; what are you doing to turn adoption into measurable value?",
+        "bbox": [
+            77,
+            612,
+            750,
+            651
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Giving teams a licence is the start of transformation, not the substance of it. Access without governance reliably produces ungoverned workarounds and little measurable value. So roll out productivity tools that let teams experiment, and pair them with AI risk governance strong enough to contain the unauthorised solutions that otherwise accumulate in the gaps. Invest in curated content and genuine AI literacy so people understand what the tools can do and where the risks sit. And build standard, reusable foundations, from identity and access to safe sandboxes, connectors and observability, so teams are not each rebuilding the same plumbing.",
+        "bbox": [
+            77,
+            671,
+            831,
+            848
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "- 4. Separate how you transform from how you run, and protect the difference",
+        "text_level": 2,
+        "bbox": [
+            63,
+            109,
+            853,
+            168
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Have you invested in the capacity and capability for teams to reinvent their own work, or are you expecting them to innovate in the gaps of the day job?",
+        "bbox": [
+            77,
+            204,
+            804,
+            244
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Transformation bolted onto teams already at capacity tends to fail quietly. But agentic AI means rethinking workflows end to end, so change cannot be handed to a detached central program; it has to run through the teams that hold the domain expertise. The fix is to draw a clear line between running the business and transforming it, and to protect the teams leading that change.",
+        "bbox": [
+            77,
+            262,
+            824,
+            363
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Leadership's job is to give those teams a clear mandate, tie their work to a specific outcome and business metric, and fund the capacity – by backfilling roles or bringing in temporary support – so people can step out of the daily run. That gives them a dedicated build space to focus on reinventing the work.",
+        "bbox": [
+            77,
+            381,
+            826,
+            462
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "None of this lands unless leadership frames it as an opportunity, not a burden. For the business, protecting that capacity is an investment in transformation, not an operational cost. For teams, it is an exciting chance to build new skills and design their own future human-AI structures. Framed that way, change becomes not just another tool to adopt, but rather a way for teams to set themselves apart and gain agency in their actions.",
+        "bbox": [
+            77,
+            479,
+            841,
+            600
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "- 5. Make build, buy or partner a deliberate decision, not a default",
+        "text_level": 2,
+        "bbox": [
+            63,
+            725,
+            737,
+            784
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Do you have a framework for build/buy/partner, or does 'we'll build it ourselves' win by default?",
+        "bbox": [
+            77,
+            819,
+            833,
+            860
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The instinct to build everything internally is often the slowest and most expensive route to value. Better to define an explicit framework for build, buy and",
+        "bbox": [
+            77,
+            879,
+            841,
+            920
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Close the Adoption-Value Gap with a Team-Led Approach to Agentic AI",
+        "text_level": 1,
+        "bbox": [
+            40,
+            332,
+            784,
+            455
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "If organisations see AI only as a tool to increase productivity, they will miss its full potential. The real value in agentic AI isn't about removing humans from the equation; it's about changing how we work.",
+        "bbox": [
+            40,
+            480,
+            937,
+            539
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Most of the work required to scale agentic AI still lies ahead. Agentic AI will create significant value, but success requires a fundamental evolution in how organisations approach change. Organisations often have deep expertise in programs such as reviewing your customer offer or assessing a new market; rethinking how you embed and transform your organisation with AI will feel a bit like stepping into the unknown for many executives. The only way that executives can address this uncertainty is to allocate sufficient time, resources, and focus to this critical strategic agenda. Organisations that succeed will not just deploy AI; they will institutionalise the capability for teams to continuously redesign how work gets done.",
+        "bbox": [
+            40,
+            554,
+            951,
+            714
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "We’ve provided our reflections on how the transformation and change journey needs to evolve with agentic AI; let us know yours.",
+        "bbox": [
+            40,
+            727,
+            920,
+            768
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "partner decisions. Be deliberate about where you retain strategic control, such as ownership of the customer in agentic commerce, and about how you manage third-party risk everywhere else. With that in place, teams can draw on technology and service partners wherever those partners speed things up and allow you to retain control where it matters.",
+        "bbox": [
+            77,
+            67,
+            838,
+            165
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Authors",
+        "text_level": 2,
+        "bbox": [
+            42,
+            103,
+            245,
+            142
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/f55d33fa430f1219aa11be8feb09dc7f168d1810e868bd37d521d449809d7f3c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            67,
+            186,
+            220,
+            292
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/b5f533f1a95d586513613904772b40f16246cff64b5fecf90469801703260a56.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Gavin Parker",
+            "Managing Director & Senior Partner\nSydney"
+        ],
+        "content": "",
+        "bbox": [
+            70,
+            338,
+            218,
+            445
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/037664e8f1f3a6d609f237959573ed3d94be7355194d498f496eff7528228b3f.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Alan Wong"
+        ],
+        "content": "",
+        "bbox": [
+            245,
+            267,
+            274,
+            284
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Partner\nSydney",
+        "bbox": [
+            242,
+            382,
+            301,
+            412
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/c0330288201bd5d7e70f244e279ed7a419412a453e9f81312b976944c0baf65a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            414,
+            274,
+            432
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/98b49fa1544de9cbb5f4240bd8dad0d4f3f4c8a544c615cd6968686d365820c1.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Caryn Katsikogianis",
+            "Former Chief People Officer,\nWoolworths Group\nSydney"
+        ],
+        "content": "",
+        "bbox": [
+            531,
+            185,
+            681,
+            292
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/0acfde5ac1d45ba289e34da39b47b0392aa60251ccb8d5db40059581adea2ff8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            531,
+            340,
+            681,
+            445
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Simon Murphy",
+        "text_level": 2,
+        "bbox": [
+            707,
+            342,
+            873,
+            365
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/308be2646b220910ee7065439b3d5e5753146f1684054f2b842173391703b719.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            708,
+            420,
+            735,
+            438
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner\nSydney",
+        "bbox": [
+            705,
+            375,
+            898,
+            418
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/99f82d44881bdd646f2507b77d637d3215d699297e2330fcd278a97b637a8ed7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            493,
+            218,
+            599
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Nicole Sibilio",
+        "text_level": 2,
+        "bbox": [
+            245,
+            501,
+            392,
+            524
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/54807e3a3204068c64b95700fd8c9d00d3bb3b6ec2fc448bb695f7d5d1b8f334.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            568,
+            274,
+            585
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Partner\nSydney",
+        "bbox": [
+            242,
+            533,
+            444,
+            564
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "ABOUT BOSTON CONSULTING GROUP",
+        "text_level": 2,
+        "bbox": [
+            40,
+            686,
+            434,
+            706
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+        "bbox": [
+            40,
+            721,
+            952,
+            841
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            934,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 9
+    }
+]

@@ -1,0 +1,4273 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BOARD BRIEF"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                130,
+                223,
+                149
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "AI in CPG and Retail: How Winners Are Pulling Ahead"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                154,
+                581,
+                388
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A Collaboration of the Consumer Goods Forum and Boston Consulting Group"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                394,
+                764,
+                464
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By Mai-Britt Poulsen, Nicolas de Bellefonds, Yotam Ariav, Nate Shenck, and Arnaud Bassoulet"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                492,
+                759,
+                508
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                47,
+                189,
+                84
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "The Consumer Goods FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                238,
+                40,
+                297,
+                86
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Boston Consulting Group"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                110,
+                255,
+                124
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Where Strategic Clarity Meets Applied AI"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                139,
+                373,
+                153
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We are navigating an era of unprecedented change and disruption—powered by technology, marked by complexity, where change amplifies at scale. To lead, companies need a partner that can bridge the gap between ambition and outcomes. BCG is built for this moment. We bring strategic clarity, rooted in over 60 years of deep domain knowledge, to ensure leaders make the right choices. We combine it with applied AI, shaped and wielded by our practitioners, teaming shoulder-to-shoulder with your teams to deliver transformative impact at scale. The result? Stronger returns, transferred capabilities, and change that sticks. We are BCG."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                151,
+                475,
+                312
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Consumer Goods Forum"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                514,
+                110,
+                727,
+                124
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Guided by the vision “Better Lives Through Better Business”, The Consumer Goods Forum (CGF) is the only CEO-led, global organisation that unites retailers and manufacturers to drive positive change across the consumer goods industry."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                137,
+                927,
+                197
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With a unique model grounded in pre-competitive collaboration, we bring together the world's leading companies to tackle shared challenges such as sustainability, human rights, food safety and product data. Our global network offers unparalleled access to insights, best practices, and a thriving community committed to securing consumer trust, delivering greater impact and supporting sustainable growth."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                209,
+                929,
+                312
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By working across regions and with key stakeholders, we help future-proof businesses and shape a better future — for people, for the planet, and for the industry. Creating Better Lives Through Better Business."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                324,
+                931,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The CGF reflects the immense diversity of the industry, representing more than 380 retailers, manufacturers, and service providers across 70 countries. Our member companies account for combined sales of EUR 5.2 trillion and directly employ nearly 10 million people, with an estimated 90 million additional jobs along the value chain."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                395,
+                917,
+                482
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For more information, please visit: www.theconsumergoodsforum.com"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                495,
+                757,
+                524
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "The Consumer Goods FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                38,
+                586,
+                93
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Introduction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                47,
+                364,
+                83
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Consumer companies are facing a harder path to profitable growth. Shoppers are more value-conscious, costs remain volatile, and purchasing decisions are harder to predict across channels, brands, and occasions. AI is intensifying that pressure by changing how consumers search, compare, plan, and decide. It is also creating a new route to advantage for companies that can apply it to the commercial decisions that matter most. Across CPG and retail, companies are launching pilots, testing agents, and applying AI across most functions, from innovation and marketing to merchandising, replenishment and on-shelf availability. Yet few companies are capturing material value at scale."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                124,
+                478,
+                297
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The next competitive separation will not come from adding more solutions, nor from building more sophisticated models. It will come from applying AI more deeply to the core commercial initiatives that build sustainable advantage: faster innovation, higher-fidelity demand sensing, more localized assortment, and better execution across physical and digital channels."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                309,
+                475,
+                410
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "While there are several opportunities to deploy AI in support functions and reset cost structures, we see the greatest potential impact for consumer companies in applying AI to drive growth."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                124,
+                910,
+                183
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To understand how leaders are approaching this shift, Boston Consulting Group and The Consumer Goods Forum surveyed 39 senior CPG and retail executives. We complemented the findings with focused interviews and BCG's experience helping companies design and scale AI transformations across the industry."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                196,
+                926,
+                282
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report examines where companies are applying AI today, why many remain short of full value capture, and what winners are doing differently to build growth, productivity, and advantage. While the sample size is not necessarily representative of the full industry landscape, the perspectives collected offer a directional view into how the industry is addressing AI transformation in demand-generation value chain."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                294,
+                926,
+                410
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | THE CONSUMER GOODS FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                951,
+                453,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "AI IN CPG AND RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                951,
+                868,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                878,
+                946,
+                929,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/df60d29e9bd8699028d9d70e301b5de6e29a5333f2672253dd3625a7dce0f61f.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                405
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "State of Play: Real Value, Unevenly Captured"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                445,
+                658,
+                529
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI's impact is expanding across the demand value chain. CPG companies and retailers have long used analytics and machine learning in areas such as product recommendations, pricing, and demand forecasting. What has changed is the range of work that AI can now address. Generative AI (GenAI) and agentic models can process unstructured consumer and demand signals, create and test concepts, and orchestrate actions within guardrails."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                565,
+                480,
+                682
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CPG companies are applying AI from concept and product formulation through revenue growth management, customer planning, digital shelf, and brand engagement."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                694,
+                468,
+                739
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Retailers are using AI to inform pricing and assortment, improve demand forecasting, strengthen inventory management and replenishment, support store operations, and personalize marketing. A new layer is emerging across both sectors: generative engine optimization (GEO), which shapes how brands and products appear in AI-enabled search, AI-generated answers, and agentic commerce, in which AI-enabled assistants help consumers discover, compare, choose, and buy. (See Exhibit 1.)"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                565,
+                927,
+                696
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | THE CONSUMER GOODS FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                453,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "AI IN CPG AND RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                951,
+                868,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                945,
+                929,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Where the Focus Is Today"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                64,
+                391,
+                87
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/58aea0b8c3da2e6d0216b3ea34c09b2a7c09e7be6af45da46d0c499e2e510779.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CGF x BCG “AI for Growth, Productivity & Advantage” Survey, April 2026 (n=39), BCG case experience"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                98,
+                927,
+                602
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "So far, companies have moved fastest where the economics are clearest. In CPG, that movement has occurred in demand and supply forecasting and revenue growth management optimization. Retailers have advanced furthest in how they manage availability, forecasting, and operations. In these areas, data is relatively rich, decisions occur frequently, financial impact can be measured more directly, and AI can be embedded into existing commercial rhythms."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                652,
+                480,
+                768
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Progress has been slower in more generative, growth-oriented activities, such as idea to market and consumer engagement, where the strategic prize can be significant but the path to value is harder to define and scale."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                652,
+                922,
+                709
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Maturity remains uneven across sectors. Most CPG companies have yet to turn experimentation into scale. Roughly 75% of respondents remain in pilot and exploration mode, and only 18% are scaling impact. (See Exhibit 2.)"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                722,
+                910,
+                782
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                877,
+                945,
+                929,
+                969
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 1"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                46,
+                147,
+                60
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | THE CONSUMER GOODS FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                453,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "AI IN CPG AND RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                951,
+                868,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/9126325c070bc699a339b32fdee7f5de5bef49db4c363cacdacbc2949b079344.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                524,
+                109,
+                660,
+                137
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/12032efc5b58b47b59d669a38150267f357642b4e5e127d12eb9f46450949d30.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: CGF x BCG, “AI for Growth, Productivity, and Advantage” survey, April 2026 (n = 39); BCG analysis.\nNote: “Scaling impact” = companies scaled or fully deployed on at least half of the demand-generation initiatives. “Explorers” = companies with a mix of scaled and piloting initiatives. “Behind” = companies yet to start or still in early pilot on at least half of the initiatives."
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                646,
+                650,
+                680
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 2"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                46,
+                147,
+                61
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Significant Dispersion in Maturity; CPG Lags Retailers"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                64,
+                734,
+                89
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CPG"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                105,
+                156,
+                137
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Most CPGs have yet to turn experimentation into scale"
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                112,
+                465,
+                140
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Current state of AI deployment maturity (% of respondents in each stage, aggregated across domains)"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                159,
+                403,
+                190
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Explorers 76%"
+                    }
+                ]
+            },
+            "bbox": [
+                208,
+                197,
+                319,
+                256
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                571,
+                117,
+                658,
+                136
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sharp split between advanced players and explorers"
+                    }
+                ]
+            },
+            "bbox": [
+                726,
+                111,
+                929,
+                140
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Current state of AI deployment maturity (% of respondents in each stage, aggregated across domains)"
+                    }
+                ]
+            },
+            "bbox": [
+                529,
+                158,
+                868,
+                189
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Behind 40%"
+                    }
+                ]
+            },
+            "bbox": [
+                534,
+                196,
+                657,
+                292
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Explorers 15%"
+                    }
+                ]
+            },
+            "bbox": [
+                670,
+                197,
+                786,
+                254
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Scaling impact 45%"
+                    }
+                ]
+            },
+            "bbox": [
+                801,
+                195,
+                924,
+                292
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our retail sample shows a two-speed world: 45% are scaling impact, while a comparable percentage (40%) have barely begun. The most advanced players do not spread their efforts evenly across the enterprise. Instead, they concentrate on initiatives where value is easiest to prove, including demand forecasting, replenishment, pricing, and transport optimization."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                366,
+                473,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For the leaders, the value pool is material and likely to grow. BCG experience with clients in scaling individual initiatives suggests that scaling the full set of relevant AI initiatives across the demand value chain can deliver 220 to 350 basis points of cumulative EBIT for CPG companies and 180 to 360 basis points for retailers, assuming all initiatives are implemented at scale. (See Exhibit 3.) The value can flow directly to the bottom line, or companies can reinvest it in more competitive pricing, better offerings, and a wider array of services. AI-funded improvements can create a flywheel, making players more competitive, more relevant, and more responsive, which in turn can drive additional growth."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                481,
+                452,
+                554
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                512,
+                366,
+                929,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI solutions create a powerful, much more agile approach and faster cycle times to repeatedly pursue a more favorable balance in the consumer industry's highly competitive environment."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                480,
+                924,
+                539
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 3"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                583,
+                147,
+                598
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Potential Value Today"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                601,
+                346,
+                625
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/b3071c0816a9ba935abf31c26c656d1e8f5445f97f605ded85dcecf96d6df3bc.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "+220 - 350 bps\nTotal prize at scale today"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                646,
+                163,
+                678
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ff1bec148b88e0fc97e940d41f5ee1cc64264aa691398837f296a84093a9cb73.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BCG case experience\nNote: Numbers may not add up due to rounding"
+                    },
+                    {
+                        "type": "text",
+                        "content": "+180 - 360 bps\nTotal prize at scale today"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                696,
+                495,
+                866
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/401dc045e98e7b3db23607e81be734534d7b46b860e0a116340e810c893a946b.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                515,
+                697,
+                816,
+                868
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | THE CONSUMER GOODS FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                952,
+                453,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                895,
+                951,
+                912,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "AI IN CPG AND RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                951,
+                868,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We do not formally measure ROI of AI investments"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                706,
+                231,
+                750
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As agentic capabilities mature and as AI moves from decision support to workflow orchestration, the full-scale opportunity could expand close to 1.7x for CPGs and retailers alike. This represents full potential delivered at scale through the use of future technology before appropriate reinvestment."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                53,
+                472,
+                126
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tapping some of the next value pools may depend on stronger foundational capabilities. Voluntary, lawful and appropriately governed cross-sector collaboration on noncompetitive AI remains at an early stage of development. Surveyed executives are split on whether AI will create opportunities for voluntary collaboration, reinforce competition, or remain too uncertain to predict its future effects. The near-term opportunity may be to explore voluntary precompetitive foundational elements that help AI-enabled interactions work more reliably (for example, neutral product-data taxonomies, supply and stock signal definitions, and other standards that do not involve sharing competitively sensitive information)."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                137,
+                482,
+                325
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement remains the weak link. More than half of respondents said that they do not formally measure the ROI of consumer AI investments. (See Exhibit 4.) The most common reported barrier to scaling was that pilot economics did not translate into full-scale ROI."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                338,
+                480,
+                410
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Part of the challenge is structural. In a live commercial environment, AI improves decisions shaped simultaneously by seasonality, supply constraints, competitor moves, and consumer demand. That makes outcomes difficult to isolate and pilot economics hard to replicate at full scale."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                52,
+                924,
+                126
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This is where the pilot trap becomes real. A pilot can succeed in a controlled environment where it operates with selected data, dedicated teams, simplified workflows, and limited integration. At scale, the same initiative must handle live data, legacy systems, frontline adoption, governance requirements, and cross-functional tradeoffs."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                137,
+                924,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The other part of the challenge involves a value gap. Many pilots track activity, adoption, or solution performance without including a clear baseline or threshold for scale."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                237,
+                926,
+                282
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 4"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                445,
+                149,
+                460
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2x to 5x ROI for Best in Class, but the Rest Rarely Measure It"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                464,
+                815,
+                487
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b0cee360232f679c1ec0cc9bed8759162ec64c707a28e55e4327ed5dff225fef.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                73,
+                546,
+                924,
+                747
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: CGF x BCG “AI for Growth, Productivity & Advantage” Survey, April 2026 (n=39), BCG case experience, desk research\nNote: Numbers may not add up to 100% due to rounding. Respondents were asked, “What was the realized ROI of your Consumer AI investments targeted in 2025?”"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                769,
+                931,
+                804
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | THE CONSUMER GOODS FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                952,
+                453,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "AI IN CPG AND RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                952,
+                868,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                878,
+                946,
+                927,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/87a6323865d686614a33d97bcd1abf469abb3b8497f37334fb8cfd08b5dac8d8.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                1000,
+                406
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Recommended CEO Considerations: Six questions that matter now"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                444,
+                917,
+                527
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our findings point to six questions for CEOs and leadership teams. (See Exhibit 5.) Together, they provide a practical way to pressure-test the AI agenda and identify the moves needed to turn AI into growth, productivity, and advantage in the demand value chain."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                565,
+                932,
+                596
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 5"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                615,
+                149,
+                631
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Six Questions That Matter Now in AI Transformation"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                634,
+                727,
+                657
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "01"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                678,
+                132,
+                713
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Are we aligning investments with strategic priorities?"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                726,
+                189,
+                802
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "02"
+                    }
+                ]
+            },
+            "bbox": [
+                206,
+                678,
+                273,
+                713
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Are we ambitious enough, and how do we measure impact?"
+                    }
+                ]
+            },
+            "bbox": [
+                203,
+                726,
+                317,
+                816
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "03"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                678,
+                408,
+                714
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "How do we improve the odds for successful and sustainable transformation?"
+                    }
+                ]
+            },
+            "bbox": [
+                341,
+                726,
+                497,
+                808
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "04"
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                678,
+                578,
+                713
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "What are the broader impacts on the workforce and the operating model?"
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                725,
+                633,
+                833
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "05"
+                    }
+                ]
+            },
+            "bbox": [
+                657,
+                678,
+                724,
+                714
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "How should we think about our data assets and tech partnerships?"
+                    }
+                ]
+            },
+            "bbox": [
+                657,
+                725,
+                781,
+                818
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "06"
+                    }
+                ]
+            },
+            "bbox": [
+                805,
+                678,
+                873,
+                713
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "How do we move quickly without losing control of risks and costs?"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                725,
+                932,
+                816
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: CGF x BCG, “AI for Growth, Productivity, and Advantage” survey, April 2026 (n = 39); BCG analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                852,
+                678,
+                866
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | THE CONSUMER GOODS FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                453,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "AI IN CPG AND RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                950,
+                868,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                894,
+                951,
+                912,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Q1: Are we aligning investments with strategic priorities?"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                43,
+                436,
+                122
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In many companies, AI activity does not yet target the processes that leaders say matter most. Almost half of CPG respondents named idea to market as their most strategic process, but only 11% have deployed AI initiatives in innovation. Retailers show a similar pattern: 46% of respondents named offer to assortment as the most strategic process, but only 34% have scaled AI significantly in that area."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                139,
+                475,
+                241
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The mismatch is understandable. Early initiatives often focus on areas where data is available, the process is less fragmented, and the risk is easier to manage. Over time, however, this can create a portfolio of initiatives that are easy to launch but hard to connect to future growth or productivity."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                252,
+                473,
+                326
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The leadership challenge is to transition from a long list of initiatives to a focused set of core commercial priorities. Winners narrow the agenda before they accelerate. They focus AI on a few core commercial processes that the company has chosen to win, such as faster innovation, sharper demand sensing, better availability, or more relevant assortment."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                338,
+                477,
+                426
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Q2: Are we ambitious enough, and how do we measure impact?"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                444,
+                405,
+                521
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Ambition is a moving target. As capabilities mature, the value pool could expand significantly, as illustrated above. Industry leaders need to take into account how quickly capabilities are improving, where technology can shift from support to orchestration, where AI can unlock more generative sources of growth, and where value may depend on better connections beyond the enterprise."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                537,
+                478,
+                639
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Ambition should run ahead of today's capabilities. Winners set ambition against the capabilities that their organizations can build over the next 18 to 24 months, not only against what today's solutions can do. If a  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " improvement seems achievable today, leaders should test what data, workflow, and operating-model changes would be required to reach  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "30\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "40\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " over the next 18 to 24 months."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                653,
+                482,
+                753
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A higher percentage of initiatives should move beyond copilot to autopilot. In our survey, 67% of respondents said that they are still using AI mainly as a copilot, where AI generates insights but humans make the final call. Only 9% of respondents have pushed AI efforts into autopilot, where AI executes decisions within guardrails and humans manage exceptions."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                766,
+                473,
+                866
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Some processes from the demand value chain qualify today for autopilot operation. Demand forecasting is one example."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                879,
+                463,
+                909
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In copilot mode, AI strengthens the analytical layer: it brings together demand signals, inventory positions, customer orders, promotion calendars, and supply constraints; highlights where the forecast is changing; and explains the drivers. Meanwhile, planning teams still adjust assumptions, reconcile results, and decide on the next action. In autopilot mode, AI continuously reads demand signals, inventory positions, customer orders, and supply constraints. It can then refresh forecasts and trigger allocation and replenishment actions within agreed guardrails, with humans in the loop to manage exceptions."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                53,
+                929,
+                198
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Leaders stretch ambition to the generative frontier. AI has significant potential in generative work, expanding the set of ideas, options, and strategic choices that a team can explore."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                210,
+                915,
+                268
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For example, in innovation, advanced CPGs are beginning to use agentic portfolio management to test opportunities through multiple lenses: consumer need, white space, brand fit, margin potential, supply feasibility, cannibalization risk, and retailer relevance. The output provides a faster, sharper judgment on whether an innovation deserves to be funded, reshaped, scaled, or stopped."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                281,
+                912,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Companies need to account for value beyond the enterprise. The next frontier of the demand value chain may require lawful, selective, voluntary, pro-competitive collaboration. Better replenishment, smarter promotion planning, and more relevant personalization can all be enhanced through lawful, voluntary and appropriately governed bilateral data sharing and more connected ways of working across CPGs, retailers, and platforms."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                395,
+                921,
+                511
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Measurement should begin on day one. As our survey shows, the pilot trap is real. AI initiatives can prove to be technically feasible while leaving scale economics unclear. To avoid that trap, at the pilot stage, winners track leading indicators that will hold at scale, balancing effectiveness with efficiency measurement. Relevant indicators include share of projects course-corrected early, time saved in key development steps, and evidence that AI is strengthening the quality of the innovation funnel."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                524,
+                931,
+                653
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "One client accomplished this by making measurement a governance discipline from the outset. Before launching the pilot, the finance and business teams jointly built and endorsed a full-fledged business case that included value at stake, ROI, and leading KPIs for confirming, reducing, or expanding the potential. The differentiator was the depth of the as-is baseline. Teams mapped the current workflow, quantified the distribution of time and effort across the process, and used that information as a baseline for gauging expected improvement. This created a confidence loop: the baseline gave the measurement credibility, pilot evidence refined the value case, and each stage-gate update increased confidence in what could be delivered. By the end of the pilot, leaders could look at a revised business case grounded in tested potential, giving them a clearer basis for deciding what and where to scale."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                665,
+                922,
+                896
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | THE CONSUMER GOODS FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                453,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "AI IN CPG AND RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                951,
+                868,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                895,
+                952,
+                912,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Q3: How do we improve the odds of successful and sustainable transformation?"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                58,
+                463,
+                135
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Successful AI transformations start with clarity regarding how far the company intends to go. Three levels of transformation depth apply: deploy, reshape, and invent."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                152,
+                473,
+                198
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Deploy puts AI into existing work. In practice, AI deployment involves rolling out enterprise productivity solutions at scale. Most companies are doing this, and it will quickly become table stakes. The value comes through pervasive productivity gains spread across the organization, which makes impact difficult to isolate and measure as a standalone value case."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                209,
+                465,
+                311
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Reshape changes how the work is done. The larger, more measurable prize comes from redesigning a small number of priority functions with AI embedded in the process. That means redefining workflows, governance, and ways of working."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                323,
+                477,
+                382
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Invent creates new propositions. Some leading companies use AI to find new business models and change how consumers or customers engage with their business. For CPG companies, that could mean AI-enabled direct-to-consumer models that provide personalized advice, routines, or product discovery. For retailers, it could mean an AI-first shopping agent that helps customers plan missions, compare choices, and manage fulfilment across channels."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                395,
+                475,
+                511
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Q4: What are the broader impacts on the workforce and the operating model?"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                512,
+                58,
+                880,
+                137
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "An effective AI operating model entails reshaping the functions that power the demand value chain. Work becomes more cross-functional, connecting marketing, sales, merchandising, supply chain, data, and technology around shared outcomes. Roles shift toward orchestration, oversight, relationship management, and trade-off decisions. Alongside these, some companies look towards engineering capabilities to translate AI into repeatable workflows."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                152,
+                919,
+                269
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The shift is already visible. Leading CPGs are integrating real-time consumer sentiment analysis into concept design and building cross-functional teams from the start of the innovation process, reducing handoff friction that slows development downstream."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                280,
+                902,
+                354
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In retail, the merchandising role is shifting. As AI takes on more of the analytical and operational work, merchants will focus increasingly on category strategy, supplier relationships, and commercial judgment calls, and less time stitching together analyses and routine decisions across multiple fragmented processes (See Exhibit 6)."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                366,
+                921,
+                454
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 6"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                538,
+                147,
+                552
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Zoom-in on Merchandising and the Shift from Fixed to “Always-on”"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                555,
+                897,
+                580
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3cab34dc641ca1338e0039d64c995562b8c2cf837985cf4b422f6c1263b55ee3.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                80,
+                599,
+                129,
+                636
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Manual, cadence-driven process"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                139,
+                618,
+                460,
+                637
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Traditional AI/analytics support better decisions; merchants reconcile outputs across processes"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                659,
+                460,
+                689
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1 Several disparate merchandising processes require merchants to navigate cross-functional teams"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                703,
+                470,
+                733
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2 | Category line reviews occur on a one- to three-year schedule; the in-season process has fixed weekly decision points"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                745,
+                465,
+                787
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3 | Decisions require human approval, alignment, and hierarchy-based escalation; built on feel vs. fact"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                797,
+                468,
+                827
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: BCG case experience."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                852,
+                243,
+                865
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/7b43cb5eab1e197743b0dff9735721c6b2441d6c48738a966c613797352db865.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                529,
+                599,
+                579,
+                636
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/103cc8f25f62a5e5299bfa64ed449be797d70cdbc72c78d6df76bcd92cde9e54.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                485,
+                711,
+                509,
+                728
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a05bbca823f21950a5b5bdfb78801d02a99b3f6fe55f207210fa55c520c9fbc5.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                485,
+                756,
+                509,
+                772
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Orchestrated, ALWAYS-ON model"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                576,
+                618,
+                912,
+                636
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Specialized process-specific agents are integrated via orchestration to make instant decisions"
+                    }
+                ]
+            },
+            "bbox": [
+                526,
+                659,
+                910,
+                689
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/467db7558dce41cb433bf306e0657b4249b8568b3b389b41742d42a23d4cbdad.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                485,
+                802,
+                509,
+                821
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Agents optimize across all levers, making cross functional trade-offs within guardrails"
+                    }
+                ]
+            },
+            "bbox": [
+                559,
+                703,
+                897,
+                733
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Agents continuously filter data and signal, and surface prioritized actions that replace the fixed cadence"
+                    }
+                ]
+            },
+            "bbox": [
+                559,
+                745,
+                863,
+                785
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3 Agents follow guardrails; humans intervene on the basis of risk; decisions are more fact-based"
+                    }
+                ]
+            },
+            "bbox": [
+                529,
+                797,
+                914,
+                827
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | THE CONSUMER GOODS FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                453,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "AI IN CPG AND RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                951,
+                868,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c053f3fa71749907b0f438b42ddf6bedc03e6999572396fe55be28def1e6be13.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                73,
+                403,
+                117,
+                434
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The orchestrator role will be key moving forward.\nFor example, in marketing, three capabilities are crucial: orchestration (in charge of campaigns), the science role (analytical talent in charge of measurement and optimization, recently surfacing as “engineering” capability), and art (concept creation). Companies have made substantial investments in analytical talent, given the increasing complexity of marketing activities. AI solutions can give orchestrators more leverage, condensing expertise. The shift may matter first for smaller or subscale brands, which often do not have a full bench of specialists."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                52,
+                480,
+                212
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Q5: How should we think about our data assets and tech partnerships?"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                229,
+                431,
+                309
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 7\nWhat Leaders Do on the Stack"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                344,
+                447,
+                387
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Enterprise Orchestration"
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                403,
+                247,
+                436
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Value creation & experience"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                453,
+                205,
+                485
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Custom business and function-specific AI apps (e.g., custom GPTs, Claude skills, function-specific AI solutions)"
+                    }
+                ]
+            },
+            "bbox": [
+                290,
+                447,
+                453,
+                491
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI & Agentic\nOrchestration"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                512,
+                200,
+                545
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Anthropic, Gemini Enterprise, OpenAI Frontier, LangChain, Microsoft Foundry"
+                    }
+                ]
+            },
+            "bbox": [
+                290,
+                512,
+                450,
+                545
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data & Knowledge"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                581,
+                238,
+                598
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Snowflake, Databricks, Big Query, Frontier, Data Lake, Palantir"
+                    }
+                ]
+            },
+            "bbox": [
+                292,
+                571,
+                413,
+                607
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Enterprise Applications (Core logic) SAP Oracle, Salesforce, ServiceNow, Workday, Legacy Apps"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                634,
+                452,
+                669
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Infrastructure & Cloud"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                693,
+                201,
+                725
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AWS, Azure, GCP, NVIDIA"
+                    }
+                ]
+            },
+            "bbox": [
+                290,
+                702,
+                431,
+                717
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Companies should be consistent about ecosystem choices when moving towards autopilot ambition. Moving to agentic necessitates making deliberate and consequential technology choices. Experimentation requires flexibility, but scaled execution relies on architecture, cost management, and accountability."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                52,
+                912,
+                141
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data advantage comes from codifying what the business knows best. Winners do not wait for perfect data. In fact, as our survey sample shows, few have it. To succeed, they build data assets in parallel with deployment, using AI to accelerate cleaning and readiness in the areas that are most important to chosen workflows."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                152,
+                919,
+                240
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Proprietary knowledge and enterprise context provide deeper advantage. Building this layer requires business owners and tech teams to translate know-how and industry context into structured knowledge assets and guardrails. (See Exhibit 7.)"
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                252,
+                915,
+                325
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Orchestrate end-to-end value delivery with \"single accountability\" mindset"
+                    }
+                ]
+            },
+            "bbox": [
+                473,
+                404,
+                850,
+                434
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Fit-for-purpose: as LLMs commoditize, you can be flexible to support reshaped workflows"
+                    }
+                ]
+            },
+            "bbox": [
+                475,
+                455,
+                902,
+                486
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Stick to an ecosystem once you move to autopilot: 77% of the leaders in our survey stick to their existing stack"
+                    }
+                ]
+            },
+            "bbox": [
+                473,
+                513,
+                915,
+                544
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Competitive advantage edge: Leaders don't start from better data (all players have voluntarily standardized similar data categories), but 100% of the leaders in our survey codify tacit knowledge"
+                    }
+                ]
+            },
+            "bbox": [
+                473,
+                560,
+                931,
+                618
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Decouple: Focus on architecture and cost management"
+                    }
+                ]
+            },
+            "bbox": [
+                475,
+                643,
+                875,
+                662
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "No critical differentiation driver: multi-cloud possible"
+                    }
+                ]
+            },
+            "bbox": [
+                475,
+                699,
+                873,
+                717
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: CGF x BCG, “AI for Growth, Productivity, and Advantage” survey, April 2026 (n = 39); BCG case experience; BCG analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                744,
+                805,
+                759
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | THE CONSUMER GOODS FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                453,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "AI IN CPG AND RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                951,
+                868,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Q6: How do we move quickly without losing control of risks and costs?"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                59,
+                428,
+                135
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As AI becomes more agentic, companies need guardrails that allow the organization to scale with confidence. Three areas matter most: maintaining operational stability, monitoring cost inflation, and engaging honestly with the workforce."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                153,
+                482,
+                212
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Success starts with operational stability. Companies need to establish clear rules governing which decisions AI can execute, which exceptions require escalation, and where human judgment remains essential. Accelerated optimization can create hidden costs. BCG's AI at work survey found that leaders' employees can spend 52% more time reviewing or correcting AI output "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                224,
+                480,
+                326
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Companies should monitor cost inflation. As AI scales, token spending and model usage can become a significant recurring operating cost. The risk profile, however, is not uniform across AI transformations. At the deploy level, broad workforce access can create material costs at a time when productivity benefits remain diffuse, so leaders need to diligently track adoption and cost per utilization type and user group."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                338,
+                475,
+                454
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "At the reshape level, the cost question is most acute in connection with AI and GenAI solutions for the IT function. Consequently, leaders need clear ROI data on reshape activities and a decisive view of where and how GenAI solutions will be used. For other functional reshape areas, such as R&D, quality, and operations, AI and GenAI consumption cost is usually less prominent unless broad deployment or heavy model consumption changes the economics. At the invent level, customer-facing propositions such as chatbots and AI agents require a strong business case before adoption grows, linking cost to key outcomes such as conversion, cost to serve, or retention."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                53,
+                932,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Across the portfolio, leaders need observability across the tech stack, tighter solution-stack management, and clear cost attribution to solutions and business owners. Clarity on these points will ensure that scaling decisions are governed by value, not activity."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                237,
+                927,
+                311
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Honest engagement with the workforce is critical. Leaders should communicate early on about how work will change, which tasks will be automated, and what new capabilities teams will need. Deploying autopilot first in manual, repeatable work will give teams a chance to experience AI as a way to reduce toil before it begins changing higher-stakes work."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                324,
+                926,
+                425
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " BCG AI at work, 2026 (n=11,749). Respondents were asked which aspects of work have been changed by AI."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                892,
+                673,
+                907
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | THE CONSUMER GOODS FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                453,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "AI IN CPG AND RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                951,
+                868,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f6783d5798c7a81c5c3d7ff519d8d7ae32a41a155b561e75ba169987d0aeaeb5.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                0,
+                0,
+                998,
+                249
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Considerations to turn AI into Advantage"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                288,
+                596,
+                370
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Focus without ambition will not create advantage; ambition without focus will not scale. The companies that are pulling ahead are learning to maintain both focus and ambition: a narrower AI agenda aimed at the places where the business has chosen to win, and a higher bar for the value it must create."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                409,
+                462,
+                495
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For CEOs, the next step is not another inventory of AI pilots. It is a sharper test of the current agenda. (See Exhibit 8.) Is our AI agenda strong enough to create lasting advantage in the demand value chain? Are the best ideas moving out of controlled pilots and into day-to-day work? Will the economics still hold when the solution runs across real systems, teams, and markets? Companies that can answer yes to all three of these questions are positioned to capture value with force."
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                409,
+                922,
+                525
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 8"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                539,
+                147,
+                555
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The CEO Agenda: Where to Start"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                558,
+                480,
+                581
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "01"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                596,
+                132,
+                629
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Are we aligning investments with strategic priorities?"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                637,
+                184,
+                712
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Point your AI at the two or three battles that you have chosen to win"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                749,
+                198,
+                807
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "02"
+                    }
+                ]
+            },
+            "bbox": [
+                208,
+                596,
+                273,
+                629
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Are we ambitious enough, and how do we measure impact?"
+                    }
+                ]
+            },
+            "bbox": [
+                208,
+                637,
+                317,
+                728
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Set your ambition to anticipate exponential change, and measure it as you would a P&L item"
+                    }
+                ]
+            },
+            "bbox": [
+                208,
+                749,
+                341,
+                833
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "03"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                596,
+                413,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "How do we improve the odds for successful and sustainable transformation?"
+                    }
+                ]
+            },
+            "bbox": [
+                351,
+                636,
+                497,
+                719
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Focus on a few big bets for reshaping and reinvention; co-create with teams to build the necessary change muscle"
+                    }
+                ]
+            },
+            "bbox": [
+                349,
+                749,
+                485,
+                860
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "04"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                595,
+                571,
+                629
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "What are the broader impacts on the workforce and the operating model?"
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                636,
+                621,
+                740
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Redesign roles and workforce strategy to provide transversal capabilities; focus shifts to oversight, orchestration and relationship management"
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                747,
+                642,
+                876
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "05"
+                    }
+                ]
+            },
+            "bbox": [
+                650,
+                595,
+                715,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "How should we think about our data assets and tech partnerships?"
+                    }
+                ]
+            },
+            "bbox": [
+                650,
+                636,
+                766,
+                728
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Build your data assets in parallel with deployment, and be consistent in ecosystem choice for autopilot"
+                    }
+                ]
+            },
+            "bbox": [
+                650,
+                747,
+                781,
+                847
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "06"
+                    }
+                ]
+            },
+            "bbox": [
+                791,
+                595,
+                858,
+                629
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "How do we move quickly without losing control of risks and costs?"
+                    }
+                ]
+            },
+            "bbox": [
+                791,
+                636,
+                914,
+                726
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Put three\nguardrails into\nevery AI\ndeployment:\nreal-time accuracy,\ncost tracked\nto value,\nand upskilling"
+                    }
+                ]
+            },
+            "bbox": [
+                791,
+                749,
+                934,
+                862
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: CGF x BCG “AI for Growth, Productivity, and Advantage” survey, April 2026 (n = 39); BCG analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                894,
+                675,
+                909
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | THE CONSUMER GOODS FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                453,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "AI IN CPG AND RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                950,
+                868,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Appendix: Demand value chain map"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                46,
+                678,
+                129
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 9"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                146,
+                147,
+                161
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CPG Demand Value Chain"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                164,
+                400,
+                186
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d5fb47d5b1601c7431611bb2d7480ec44233a524400b2bd6b3441a42bfaf2adc.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: CGF x BCG, \"AI for Growth, Productivity, and Advantage\" survey, April 2026 (n = 39); BCG case experience. Note: A&P = advertising and promotion; CRM = customer relationship management; GEO = generative engine optimization; KAM = key account manager; OOS = out of stock"
+                    }
+                ],
+                "html": "<table><tr><td></td><td>AI lever</td><td>Description</td></tr><tr><td rowspan=\"4\">Idea to market</td><td>1 Insight to concept generation</td><td>Analyze trends to detect unmet consumer needs and generate winning concepts</td></tr><tr><td>2 Product innovation</td><td>Optimize formulas, materials, and packaging for performance, costs, and sustainability</td></tr><tr><td>3 Agent-led stress-testing of pipeline</td><td>Use AI agents to challenge innovation projects gate by gate, spotting risks and prescribing corrective actions in real time</td></tr><tr><td>4 Task automation</td><td>Automate innovation-related activities to drive R&amp;D, marketing, and supply efficiencies</td></tr><tr><td rowspan=\"5\">Partner to sell</td><td>5 Augmented &amp; virtual KAM</td><td>Support joint business planning, negotiations, and performance tracking</td></tr><tr><td>6 Augmented &amp; virtual sales rep</td><td>Prioritize visits, optimize routes, recommend next-best actions, and automate administration</td></tr><tr><td>7 Digital shelf optimization</td><td>Track distribution, adapt content, detect OOS, and identify pricing gaps</td></tr><tr><td>8 Revenue growth management</td><td>Run AI-driven elasticity models, promotional simulations, and pricing recommendations</td></tr><tr><td>9 Demand &amp; supply forecasting</td><td>Improve demand sensing, and automate supply planning</td></tr><tr><td rowspan=\"5\">Brand building to engagement</td><td>10 Insight generation for brand, reporting &amp; planning</td><td>Detect consumer insights to identify whitespaces and inform brand building</td></tr><tr><td>11 Tailored content &amp; end-to-end campaign execution</td><td>Produce and localize creative assets for marketing purposes</td></tr><tr><td>12 Media optimization &amp; ROI measurement</td><td>Enhance targeting and campaign activation; simulate 360° A&amp;P performance</td></tr><tr><td>13 AI-driven social &amp; influencer marketing insight &amp; activation</td><td>Identify social media trends and relevant influencers for target audience; generate content</td></tr><tr><td>14 Direct-to-consumer new business models</td><td>Unlock new service-led revenues via AI-driven disintermediated models</td></tr><tr><td>GEO and agentic commerce</td><td>15 Agentic commerce orchestration, including GEO Optimization and building connected agents</td><td>Enable AI agents to discover, compare, and purchase for consumers</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                72,
+                197,
+                924,
+                474
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXHIBIT 10"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                68,
+                545,
+                156,
+                558
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Retail Demand Value Chain"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                67,
+                563,
+                418,
+                585
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/435611eace5a35896f6153c2606a43235885b25a61c1d530e2c86caacf3371b0.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: CGF x BCG, “AI for Growth, Productivity, and Advantage” survey, April 2026 (n = 39); BCG case experience."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: A&P = advertising and promotion; CRM = customer relationship management; GEO = generative engine optimization; KAM = key account manager; OOS = out of stock."
+                    }
+                ],
+                "html": "<table><tr><td></td><td>AI lever</td><td>Description</td></tr><tr><td rowspan=\"4\">Offer to assortment</td><td>1 Shopper insights &amp; demand detection</td><td>Identify shopper needs, preferences, and emerging trend patterns</td></tr><tr><td>2 Pricing &amp; promotion optimization</td><td>Optimize price ladders, markdowns, and promotion mechanics to improve margins</td></tr><tr><td>3 Assortment, category &amp; planogram</td><td>Optimize category mix, clustering, and automated planogram design</td></tr><tr><td>4 Supplier &amp; negotiation assistant</td><td>Support negotiations, trade terms, joint planning scenarios, and contract management</td></tr><tr><td rowspan=\"7\">Plan to on-shelf availability</td><td>5 Demand &amp; inventory forecasting</td><td>Predict SKU-level demand to reduce overstocking and understocking</td></tr><tr><td>6 Supply chain &amp; replenishment</td><td>Automate stock deployment and replenishment under operations constraints to ensure OSA</td></tr><tr><td>7 Warehousing &amp; transport optimization</td><td>Optimize routes and transport modes across geographies and warehouses</td></tr><tr><td>8 Digital shelf accuracy &amp; compliance</td><td>Ensure PDP/PLP completeness and accuracy, and facilitate OOS detection</td></tr><tr><td>9 Smart operations &amp; monetization</td><td>Automate checkouts and extract operations insights for in-store efficiencies and monetization</td></tr><tr><td>10 Store workforce &amp; schedule optimization</td><td>Streamline workforce scheduling, task routing, and smart checks orchestration</td></tr><tr><td>11 Store footprint &amp; layout</td><td>Streamline store footprint and localization per store; build customer-centric layouts</td></tr><tr><td rowspan=\"5\">Marketing to engagement</td><td>12 Media optimization and ROI measurement</td><td>Enhance targeting and campaign execution, and simulate 360° A&amp;P performance</td></tr><tr><td>13 Tailored content generation &amp; end-to-end marketing campaign execution</td><td>Produce and localize marketing assets</td></tr><tr><td>14 Churn prediction &amp; CRM activation</td><td>Identify customers at risk of churn, and launch personalized retention actions</td></tr><tr><td>15 Personalized loyalty programs</td><td>Deliver personalized rewards and experiences to increase repeat purchases</td></tr><tr><td>16 Customer service assistant</td><td>Support shoppers prepurchase, and manage postpurchase interactions and returns</td></tr><tr><td>GEO and agentic commerce</td><td>17 Agentic shopping, including GEO optimization and building connected agents</td><td>Help shoppers discover, compare, and evaluate products across channels</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                68,
+                596,
+                926,
+                876
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | THE CONSUMER GOODS FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                952,
+                452,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "AI IN CPG AND RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                739,
+                951,
+                868,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "About the Authors"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                65,
+                46,
+                504,
+                85
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d92e231a0cc7034d2eb371110230091664d1eb59e9480bc390e9855686e04dc8.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Mai-Britt Poulsen\nManaging Director and Senior Partner\nLondon\nPoulsen.Mai-Britt@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                104,
+                211,
+                206
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/e9cfa8f5179d14d46d52f9e77834c8de1fab07427d7e04b78a7d79559032eec9.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Yotam Ariav\nManaging Director and Senior Partner\nChicago\nAriav.Yotam@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                319,
+                211,
+                420
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3db775a0b0a09112ecc48eb4e4709d4acaa4d72a821db54e34082a4c4e5311ff.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Nicolas de Bellefonds\nManaging Director and Senior Partner\nParis\ndeBellefonds.Nicolas@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                517,
+                105,
+                660,
+                206
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/ddf18bfb83e52a2734f9eb194fc003cf25b388ef25c2baede308a3678e5e29be.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Nate Shenck\nManaging Director and Senior Partner\nWashington, D.C\nShenck.Nathan@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                318,
+                660,
+                420
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/68a8af141018f9d60341d117b836c3fe875d701f4ebaacf15b261612057ace2f.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                68,
+                533,
+                213,
+                634
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Arnaud Bassoulet\nManaging Director and Partner\nParis\nBassoulet.Arnaud@bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                652,
+                277,
+                711
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The authors extend their gratitude to everyone who contributed to the research and development of this report. The survey at the heart of this report was partially delivered through an AI-mediated platform, Verso. (https://www.askverso.ai/). If you would like to discuss this report, please contact the authors."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                808,
+                460,
+                896
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For information or permission to reprint, please contact BCG at permissions@bcg.com. To find the latest BCG content and register to receive e-alerts on this topic or others, please visit bcg.com. Follow Boston Consulting Group on LinkedIn, Instagram, Facebook, and X."
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                807,
+                917,
+                882
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "© Boston Consulting Group 2026. All rights reserved."
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                892,
+                863,
+                909
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "BOSTON CONSULTING GROUP | THE CONSUMER GOODS FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                951,
+                453,
+                964
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "AI IN CPG AND RETAIL"
+                    }
+                ]
+            },
+            "bbox": [
+                737,
+                951,
+                868,
+                964
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                892,
+                951,
+                914,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/393cf78540024fd65398c9dc43a8044708373b99b3ce606ce1793ce362eb210b.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                1,
+                5,
+                1000,
+                1000
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG | The Consumer Goods FORUM"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                40,
+                297,
+                87
+            ]
+        }
+    ]
+]

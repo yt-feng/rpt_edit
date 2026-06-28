@@ -1,0 +1,3433 @@
+[
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.056,
+                0.047,
+                0.142,
+                0.076
+            ],
+            "angle": 0,
+            "content": "BCG",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.397
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.431,
+                0.235,
+                0.449
+            ],
+            "angle": 0,
+            "content": "AGRIBUSINESS INDUSTRY",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.478,
+                0.761,
+                0.679
+            ],
+            "angle": 0,
+            "content": "Agricultural\nIntelligence: How AI Is\nReshaping the Global\nFood System"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.707,
+                0.707,
+                0.726
+            ],
+            "angle": 0,
+            "content": "By David Potere, Sonya Hoo, Michael Glotter, Emily Wu, and Adam Haidermota",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.75,
+                0.368,
+                0.768
+            ],
+            "angle": 0,
+            "content": "ARTICLE JUNE 25, 2026 12 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.829,
+                0.955,
+                0.93
+            ],
+            "angle": 0,
+            "content": "In September 1898, Sir William Crookes, president of the British Association for the Advancement of Science, delivered a warning for civilization: the world’s supply of usable nitrogen, the element underpinning all plant growth, was finite. Within a generation, he maintained, food production would hit a ceiling; after that, its decline would be simple arithmetic. His appeal was direct: unless chemistry could produce nitrogen from the atmosphere itself, mass starvation would follow.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.969,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.052,
+                0.046,
+                0.144,
+                0.079
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.437,
+                0.228,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.478,
+                0.423,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.526,
+                0.765,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.577,
+                0.719,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.627,
+                0.454,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.71,
+                0.703,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.754,
+                0.364,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.832,
+                0.946,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.851,
+                0.941,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.872,
+                0.91,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.891,
+                0.949,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.911,
+                0.888,
+                0.926
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.908,
+                0.109
+            ],
+            "angle": 0,
+            "content": "Eleven years later, Fritz Haber found the answer, and Carl Bosch industrialized it. For the first time, agriculture was no longer bound by the natural nitrogen cycle.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.122,
+                0.944,
+                0.261
+            ],
+            "angle": 0,
+            "content": "But removing a hard constraint is not the same as solving the problem. What followed was a cascade of innovation: new seed genetics that could exploit large-scale artificial crop nutrition, generating yield potential previously out of reach; mechanization that opened up production across vast new acreage; and agronomy that reorganized itself around a fundamentally different input base. Each layer reinforced the others. Together, they reshaped how food was grown, traded, and consumed across the planet. Roughly half the nitrogen in human bodies now traces back to that moment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.275,
+                0.944,
+                0.355
+            ],
+            "angle": 0,
+            "content": "Today, the global agrifood system feeds more than 8.2 billion people, five times the population when Crookes issued his warning. Despite the enormous gains made over the past 125 years, the industry currently faces three threats to the agrifood system: climate volatility, geopolitical realignment, and regulatory shifts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.369,
+                0.952,
+                0.429
+            ],
+            "angle": 0,
+            "content": "A fourth force is now gaining momentum: AI across every stage of the agrifood system. Its timing is critical. We call it agricultural intelligence, and it will likely further revolutionize how our food is researched, grown, distributed, and sold.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.443,
+                0.935,
+                0.543
+            ],
+            "angle": 0,
+            "content": "This article examines the potential transformative power of agentic AI across the agricultural value chain: its expected impact on researchers, farmers, seed and input companies, traders, distributors, and retailers. How each of these players manages through the transformation will determine just how beneficial its impact is and which ones will be the new winners and losers in the agrifood system of the future.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.614,
+                0.399,
+                0.651
+            ],
+            "angle": 0,
+            "content": "Three Threats"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.68,
+                0.954,
+                0.781
+            ],
+            "angle": 0,
+            "content": "The global agrifood system is under pressure from three increasingly powerful threats. (See Exhibit 1.) The first is climate-related volatility, which is making three of the foundational inputs of agriculture—precipitation, temperature, and seasonal variability—measurably less predictable. These key inputs have become a source of systemic risk rather than a reliable given, requiring far greater precision in monitoring and reacting to changes in growing patterns.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.069,
+                0.906,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.672,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.124,
+                0.898,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.145,
+                0.921,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.163,
+                0.903,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.935,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.202,
+                0.938,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.223,
+                0.932,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.243,
+                0.174,
+                0.257
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.277,
+                0.915,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.296,
+                0.939,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.316,
+                0.884,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.336,
+                0.365,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.369,
+                0.949,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.39,
+                0.922,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.411,
+                0.417,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.446,
+                0.907,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.466,
+                0.906,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.485,
+                0.916,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.505,
+                0.93,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.524,
+                0.351,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.612,
+                0.398,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.683,
+                0.888,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.703,
+                0.949,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.722,
+                0.939,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.742,
+                0.943,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.762,
+                0.75,
+                0.777
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.044,
+                0.065,
+                0.116,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.081,
+                0.715,
+                0.123
+            ],
+            "angle": 0,
+            "content": "Three of Four Structural Drivers Are Reshaping the Global Agrifood System, and One—Agricultural Intelligence—Offers a Response",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.05,
+                0.165,
+                0.186,
+                0.183
+            ],
+            "angle": 0,
+            "content": "Climate volatility"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.042,
+                0.139,
+                0.733,
+                0.341
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.525,
+                0.166,
+                0.723,
+                0.184
+            ],
+            "angle": 0,
+            "content": "Regulatory paradigm shift"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.051,
+                0.26,
+                0.234,
+                0.276
+            ],
+            "angle": 0,
+            "content": "Agricultural intelligence"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.534,
+                0.263,
+                0.722,
+                0.279
+            ],
+            "angle": 0,
+            "content": "Geopolitical realignment"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.351,
+                0.148,
+                0.364
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.4,
+                0.953,
+                0.52
+            ],
+            "angle": 0,
+            "content": "The second is geopolitical realignment and disruption, which has made supply chain shock a permanent feature of commodity markets. The restructuring of US-China tariffs has compounded instability for a decade; the war in Ukraine redrew the wheat map overnight; and the closing of the Strait of Hormuz is affecting the supply of fertilizer in the middle of the northern hemisphere's planting season. Now, whichever company reads such signals earliest and hedges their exposure most precisely stands to gain an advantage.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.533,
+                0.952,
+                0.653
+            ],
+            "angle": 0,
+            "content": "The third threat is a major regulatory paradigm shift. The European Union's deforestation rules, Scope 3 carbon reporting, and carbon market protocols (coupled with shifting consumer demand for transparency, verified sustainability, and provenance) are mandating a data infrastructure that the agriculture industry has never had at scale. Increasingly, food companies must be able to determine, precisely and verifiably, where every input was grown, under what conditions, and using what practices.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.666,
+                0.936,
+                0.728
+            ],
+            "angle": 0,
+            "content": "This is where agricultural intelligence comes in, both as a counter to these threats and as a transformation of how the business of agriculture is carried out, from research into new types of crops to the retailing of the industry's final products.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.847,
+                0.642,
+                0.929
+            ],
+            "angle": 0,
+            "content": "The Role of Agricultural Intelligence"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.251,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.083,
+                0.712,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.103,
+                0.684,
+                0.12
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.165,
+                0.185,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.524,
+                0.167,
+                0.722,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.261,
+                0.233,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.534,
+                0.264,
+                0.721,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.402,
+                0.9,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.422,
+                0.944,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.442,
+                0.949,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.462,
+                0.915,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.482,
+                0.938,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.501,
+                0.456,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.534,
+                0.924,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.556,
+                0.94,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.575,
+                0.91,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.595,
+                0.947,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.615,
+                0.9,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.635,
+                0.241,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.669,
+                0.889,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.688,
+                0.932,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.708,
+                0.532,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.844,
+                0.645,
+                0.892
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.886,
+                0.335,
+                0.93
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.956,
+                0.207
+            ],
+            "angle": 0,
+            "content": "Agricultural intelligence uses agentic AI to sequence decisions and act autonomously, with minimal human handoff at each step. Going beyond the precision agriculture of the past two decades, it acts on behalf of humans in the field, at the trading desk, and in the breeding lab. In doing so, it erodes the information asymmetries and expertise premiums that have underpinned margins across the food system for generations. Wherever human expertise, skilled labor, or proprietary information has historically been the source of competitive advantage, companies will have to find new sources of outperformance. (See Exhibit 2.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.238,
+                0.117,
+                0.253
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.255,
+                0.697,
+                0.295
+            ],
+            "angle": 0,
+            "content": "Agricultural Intelligence Is Shifting Competitive Advantage Across the Value Chain",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.046,
+                0.309,
+                0.727,
+                0.53
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.546,
+                0.338,
+                0.568
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis.\nNote: IP = intellectual property; CPG = consumer packaged goods."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.601,
+                0.929,
+                0.68
+            ],
+            "angle": 0,
+            "content": "What is compressing most quickly is the advice premium: AI tools now deliver field-specific recommendations that rival the best crop scientists, making the advice available to any grower with a smartphone and a basic subscription to an AI tool. How agricultural intelligence transforms the industry depends on each player's position across the value chain.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.709,
+                0.932,
+                0.849
+            ],
+            "angle": 0,
+            "content": "- The Producers. Farmers and ranchers are the origin point of the data, labor, and production on which every other player depends, putting them squarely at the center of the transition. Growers are both the most exposed to climate volatility and the most surveilled by new sensing infrastructure, making the deployment of agentic AI on farms and ranches especially valuable. And many are small and medium-sized business owners with direct access to frontier AI tools, making them increasingly capable of understanding what their data is worth and acting on that understanding.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.862,
+                0.923,
+                0.922
+            ],
+            "angle": 0,
+            "content": "- The Agriculture Input Companies. Depending for their profits on proprietary intellectual property and agronomic advice, these players accumulated expertise about which chemistry or seed performs best in which soil type, rotation, and season. The patent-protected",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.069,
+                0.883,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.088,
+                0.898,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.924,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.934,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.149,
+                0.895,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.167,
+                0.953,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.188,
+                0.599,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.241,
+                0.113,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.256,
+                0.694,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.277,
+                0.204,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.602,
+                0.882,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.622,
+                0.925,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.643,
+                0.845,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.662,
+                0.804,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.71,
+                0.912,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.73,
+                0.906,
+                0.746
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.75,
+                0.876,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.77,
+                0.927,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.791,
+                0.87,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.81,
+                0.925,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.829,
+                0.382,
+                0.845
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.864,
+                0.89,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.884,
+                0.918,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.904,
+                0.844,
+                0.919
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.068,
+                0.915,
+                0.108
+            ],
+            "angle": 0,
+            "content": "molecule is likely to survive, though agricultural intelligence is opening even this frontier to new challengers in trait discovery and R&D.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.122,
+                0.921,
+                0.321
+            ],
+            "angle": 0,
+            "content": "- The Agriculture Retailers and Cooperatives. These organizations built their businesses on relationship-based input sales and a patchwork of custom application services. Currently, farmers typically buy field scouting services from one provider, fertilizer and crop-protection inputs from another, and seed advice from a third. This fragmented model is now under pressure from two directions. First, agentic purchasing systems are expected to seek competitive prices transparently across suppliers, compressing the wholesale-to-retail margin. Second, the potential is emerging for the development of integrated, whole-season intelligence that bundles the sensing, deciding, and acting dimensions for a single field into one closed intelligence loop. The company that assembles that loop first, rather than sells the pieces separately, can redefine the value proposition.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.334,
+                0.933,
+                0.473
+            ],
+            "angle": 0,
+            "content": "- The Equipment Manufacturers. These companies sit closer to the physical act of farming than almost any other player aside from the growers themselves. The rich operational data generated through their machines (every pass, every yield map, and every application record) is a genuine and defensible asset. The structural risk for them lies in the likelihood that the switching cost that has anchored their business models migrates from their hardware to AI-powered software as crop insights become increasingly independent of which brand of iron is responsible.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.487,
+                0.926,
+                0.645
+            ],
+            "angle": 0,
+            "content": "- The Originators and Trading Houses. More than any other segment, these companies have thrived on information asymmetry, leveraging their physical and logistical capabilities to buy and sell commodity crops as they move farm production down the supply chain. They have a local edge in knowing which farmer has grain in the bin and how much and a global edge through visibility into supply and demand flows that few other players can match. But that premium is compressing as real-time market data, AI-generated analysis, and satellite monitoring reach deeper into the system. The sharpest players are using AI to move up the intelligence stack.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.66,
+                0.927,
+                0.819
+            ],
+            "angle": 0,
+            "content": "- The Food Companies and Retailers. At the consumer-facing end, food processors, consumer packaged goods (CPG) companies, and retailers have historically gained an advantage through demand-signal asymmetry: knowing what consumers want before upstream players could see it. That advantage is compressing as agricultural intelligence gives every layer of the value chain better forecasting, more granular supply chain visibility, and new tools for verifying food safety and provenance. In addition, AI-accelerated alternative protein development and precision fermentation could, over time, reshape the raw material economics on which commodity processing businesses depend.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.889,
+                0.469,
+                0.93
+            ],
+            "angle": 0,
+            "content": "Intelligent Actors"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.071,
+                0.91,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.089,
+                0.471,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.124,
+                0.911,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.143,
+                0.901,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.163,
+                0.919,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.182,
+                0.867,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.204,
+                0.851,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.223,
+                0.874,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.242,
+                0.905,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.263,
+                0.912,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.282,
+                0.908,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.302,
+                0.601,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.336,
+                0.898,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.357,
+                0.906,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.375,
+                0.927,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.394,
+                0.91,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.414,
+                0.907,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.435,
+                0.929,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.455,
+                0.186,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.488,
+                0.921,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.508,
+                0.921,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.528,
+                0.92,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.549,
+                0.88,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.567,
+                0.9,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.587,
+                0.865,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.608,
+                0.904,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.627,
+                0.24,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.661,
+                0.926,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.681,
+                0.866,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.702,
+                0.913,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.722,
+                0.905,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.74,
+                0.896,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.76,
+                0.842,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.779,
+                0.845,
+                0.795
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.798,
+                0.658,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.887,
+                0.471,
+                0.931
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.938,
+                0.127
+            ],
+            "angle": 0,
+            "content": "Agricultural intelligence is not a single technology, and treating it as one is a costly mistake. The four distinct dimensions of agricultural intelligence—sensing, deciding, acting, and creating—provide a map of what these systems do simultaneously, not a hierarchy to climb.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.157,
+                0.923,
+                0.238
+            ],
+            "angle": 0,
+            "content": "- Creating is the long bet and the dimension that most closely mirrors what Haber and Bosch achieved. GenAI models working on genomic and scientific literature data are beginning to design new traits, new molecules, and new biologicals at machine speed. Instead of optimizing for current constraints, these models are redesigning the inputs themselves.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.062,
+                0.251,
+                0.925,
+                0.33
+            ],
+            "angle": 0,
+            "content": "Bayer's Icafolin herbicide, submitted for registration in major markets in 2025, is the company's first crop-protection product to be developed under their CropKey approach. The technology uses AI and data science to design candidate molecules against defined targets, rather than screening thousands of compounds.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.345,
+                0.927,
+                0.464
+            ],
+            "angle": 0,
+            "content": "- Sensing turns the physical world into data. Tractors, sprayers, and combine harvesters generate a continuous stream of operational data. Combined with data from satellites, drones, Internet of Things sensors, and computer vision technology, this data converts field conditions into labeled signals that can be queried at costs inconceivable a decade ago. For most agribusinesses, sensing is the lowest-risk entry point and the data foundation on which every other dimension depends.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.062,
+                0.478,
+                0.929,
+                0.538
+            ],
+            "angle": 0,
+            "content": "InnerPlant's InnerSoy soybean varieties illustrate where sensing is heading: the soybean itself emits an optical stress signal that InnerPlant's CropVoice system reads and translates into real-time farmer alerts, turning the plant itself into the sensor.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.552,
+                0.925,
+                0.592
+            ],
+            "angle": 0,
+            "content": "- Deciding turns data into the right recommendation at the right moment. In markets where expert advice has been unavailable, it creates access to expertise that never existed before.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.06,
+                0.607,
+                0.918,
+                0.685
+            ],
+            "angle": 0,
+            "content": "FarmerChat, already deployed in Africa, India, and Brazil, has reached more than 830,000 farmers and answered over 5 million queries, delivering agronomic guidance previously requiring a trained extension worker and bringing the cost down from $35 per interaction to just 35 cents.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.7,
+                0.91,
+                0.741
+            ],
+            "angle": 0,
+            "content": "- Acting closes the loop between recommendation and execution, translating decisions into automated, site-specific actions without the need for a human handoff at each step.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.06,
+                0.755,
+                0.925,
+                0.815
+            ],
+            "angle": 0,
+            "content": "John Deere's See & Spray uses computer vision to distinguish crops from weeds at speeds of up to 15 mph, reducing chemical use by half, on average. No longer a pilot, the system covered 5 million acres in North America in 2025, up from just 1 million in 2024.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.844,
+                0.935,
+                0.905
+            ],
+            "angle": 0,
+            "content": "These four dimensions interact as a network. The data infrastructure that makes sensing so powerful can sharpen deciding. The quality of the deciding process enables acting. And the data generated by acting augments sensing while feeding the creating dimension. Companies",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.07,
+                0.934,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.089,
+                0.91,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.109,
+                0.796,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.159,
+                0.92,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.179,
+                0.903,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.199,
+                0.839,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.219,
+                0.877,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.253,
+                0.842,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.273,
+                0.921,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.293,
+                0.917,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.313,
+                0.512,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.347,
+                0.861,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.366,
+                0.869,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.386,
+                0.912,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.406,
+                0.916,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.425,
+                0.924,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.445,
+                0.366,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.48,
+                0.891,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.5,
+                0.925,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.519,
+                0.685,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.555,
+                0.901,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.574,
+                0.922,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.609,
+                0.889,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.629,
+                0.869,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.648,
+                0.913,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.064,
+                0.669,
+                0.192,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.702,
+                0.906,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.722,
+                0.838,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.758,
+                0.921,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.777,
+                0.861,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.797,
+                0.802,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.846,
+                0.894,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.867,
+                0.93,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.886,
+                0.863,
+                0.902
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.067,
+                0.953,
+                0.109
+            ],
+            "angle": 0,
+            "content": "investing in any one dimension currently are building a compounding advantage that competitors starting later may not be able to shortcut.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.177,
+                0.823,
+                0.259
+            ],
+            "angle": 0,
+            "content": "The Questions Your Leadership\nTeam Should Be Asking"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.285,
+                0.943,
+                0.365
+            ],
+            "angle": 0,
+            "content": "Every major player in the agrifood value chain (whether an input company, equipment manufacturer, agriculture retailer, processor, CPG company, or food retailer) needs to understand that the following questions are not hypothetical. They are critical to your future competitive advantage and business success.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.379,
+                0.937,
+                0.518
+            ],
+            "angle": 0,
+            "content": "Strategy. What part of your business model was built on something your organization knew that your counterparties did not? Name it precisely: not “relationships” or “scale,” but rather the specific informational or expertise advantage that has allowed you to maintain and grow your margins. Then answer honestly what happens to it as AI democratizes the knowledge layer, climate volatility erodes historical patterns, and geopolitical disruption punishes the slowest to build alternatives. Does your organization have the strategic will to build something truly new before someone else does?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.531,
+                0.95,
+                0.672
+            ],
+            "angle": 0,
+            "content": "Data. Have you solved the farmer data problem, or are you assuming someone else will? Current systems are fragmented and subscale (aside from a few exceptions), and a solid, whole-farm perspective is needed. In part, it is a trust problem, not a data problem. And it is getting harder to address: farmers are already gaining direct access to frontier AI tools and increasingly capable of getting direct, personalized value from their own data themselves, with no external platform needed. The organizations closest to the farmer may be best positioned to win the infrastructure race of the next decade, but only if they move quickly.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.685,
+                0.941,
+                0.785
+            ],
+            "angle": 0,
+            "content": "Operations. Are you treating agricultural intelligence as a nice feature or restructuring your core operations around it? Is there anyone at your company who can see clearly what this moment means for your company? Are you willing to make the moves required to stay ahead of all these developments and make your organization essential in the farm system of the future, before the restructuring happens to you rather than with you?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.834,
+                0.947,
+                0.914
+            ],
+            "angle": 0,
+            "content": "The application of AI to the global agriculture value chain is likely to be rapid and transformative. Big gains in input innovation, data capture and analysis, decision making, and operations on the farm and in the marketplace can restructure not only how our food is grown but what kinds of food we eat.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.07,
+                0.95,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.09,
+                0.434,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.174,
+                0.823,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.214,
+                0.637,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.287,
+                0.835,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.307,
+                0.938,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.326,
+                0.898,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.345,
+                0.356,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.382,
+                0.933,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.401,
+                0.898,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.419,
+                0.909,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.44,
+                0.888,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.46,
+                0.93,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.479,
+                0.912,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.499,
+                0.3,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.534,
+                0.942,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.553,
+                0.898,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.572,
+                0.945,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.592,
+                0.946,
+                0.609
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.613,
+                0.901,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.632,
+                0.939,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.653,
+                0.541,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.687,
+                0.935,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.707,
+                0.914,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.725,
+                0.925,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.746,
+                0.935,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.766,
+                0.514,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.837,
+                0.946,
+                0.852
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.857,
+                0.935,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.876,
+                0.91,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.896,
+                0.159,
+                0.911
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.067,
+                0.946,
+                0.109
+            ],
+            "angle": 0,
+            "content": "Producers, input providers, machinery makers, traders, food companies, and retailers can all gain by adopting these new AI-driven capabilities. But the advantage will go to those who move first.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.121,
+                0.748,
+                0.143
+            ],
+            "angle": 0,
+            "content": "Agriculture's new nitrogen-moment window is open. It will not stay that way.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.214,
+                0.247,
+                0.253
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.068,
+                0.295,
+                0.221,
+                0.403
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.245,
+                0.305,
+                0.391,
+                0.327
+            ],
+            "angle": 0,
+            "content": "David Potere"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.537,
+                0.295,
+                0.684,
+                0.403
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.372,
+                0.275,
+                0.389
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.338,
+                0.446,
+                0.367
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nBoston"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.074,
+                0.451,
+                0.218,
+                0.557
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.305,
+                0.833,
+                0.329
+            ],
+            "angle": 0,
+            "content": "Sonya Hoo"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.706,
+                0.338,
+                0.909,
+                0.369
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nWashington, DC"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.709,
+                0.372,
+                0.737,
+                0.389
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.604,
+                0.221,
+                0.709
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.244,
+                0.458,
+                0.42,
+                0.482
+            ],
+            "angle": 0,
+            "content": "Michael Glotter"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.526,
+                0.275,
+                0.543
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.243,
+                0.491,
+                0.447,
+                0.522
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nChicago",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.457,
+                0.673,
+                0.556
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.458,
+                0.817,
+                0.483
+            ],
+            "angle": 0,
+            "content": "Emily Wu"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.706,
+                0.491,
+                0.78,
+                0.522
+            ],
+            "angle": 0,
+            "content": "Principal Auckland",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.708,
+                0.525,
+                0.739,
+                0.543
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.243,
+                0.612,
+                0.449,
+                0.634
+            ],
+            "angle": 0,
+            "content": "Adam Haidermota"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.245,
+                0.679,
+                0.276,
+                0.696
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.243,
+                0.644,
+                0.447,
+                0.675
+            ],
+            "angle": 0,
+            "content": "Senior Analyst, BCG Vantage Chicago",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.069,
+                0.941,
+                0.084
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.09,
+                0.924,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.125,
+                0.743,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.212,
+                0.248,
+                0.252
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.46,
+                0.417,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.494,
+                0.442,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.507,
+                0.304,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.494,
+                0.771,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.508,
+                0.775,
+                0.519
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.647,
+                0.442,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.66,
+                0.304,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.103,
+                0.436,
+                0.121
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.138,
+                0.952,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.105,
+                0.433,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.14,
+                0.95,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.159,
+                0.9,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.18,
+                0.904,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.199,
+                0.911,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.218,
+                0.933,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.238,
+                0.593,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

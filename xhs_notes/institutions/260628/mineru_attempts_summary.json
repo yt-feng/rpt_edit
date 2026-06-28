@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_008_ve7jopml/pdfs/0036-McKinsey_PDF-Technology-Trends-Outlook-2025---McKinsey-Company_518523bb.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_008_ve7jopml/pdfs/0037-McKinsey_PDF-The-State-of-Organizations---McKinsey-Company_da7ae141.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_008_ve7jopml/pdfs/0038-McKinsey_PDF-The-state-of-AI---McKinsey-Company_5b97d469.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

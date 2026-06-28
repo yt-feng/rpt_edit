@@ -1,0 +1,4203 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.056,
+                0.047,
+                0.142,
+                0.076
+            ],
+            "angle": 0,
+            "content": "BCG"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.398
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.05,
+                0.431,
+                0.123,
+                0.45
+            ],
+            "angle": 0,
+            "content": "ENERGY",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.478,
+                0.664,
+                0.63
+            ],
+            "angle": 0,
+            "content": "A Real-World Game\nPlan for AI in\nRenewable Energy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.657,
+                0.641,
+                0.676
+            ],
+            "angle": 0,
+            "content": "By Christopher Tuot, Anita Oh, Frank Klose, Andrej Levin, and Vinoj Pillai",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.701,
+                0.36,
+                0.718
+            ],
+            "angle": 0,
+            "content": "ARTICLE JUNE 18, 2026 8 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.779,
+                0.95,
+                0.878
+            ],
+            "angle": 0,
+            "content": "Almost all large companies today are eyeing the benefits of AI-driven transformations and increasing investment in the technology. But energy and utility players are accelerating spending faster than most. According to BCG's latest AI Radar survey, these companies plan to triple their AI spend this year compared with 2025—a bigger ramp-up than for all other sectors except insurers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.892,
+                0.946,
+                0.933
+            ],
+            "angle": 0,
+            "content": "Despite the growing enthusiasm, integrated energy companies and pure players are struggling to create tangible value from AI in their renewables businesses. While companies often run AI",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.251,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.054,
+                0.434,
+                0.122,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.478,
+                0.666,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.528,
+                0.475,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.575,
+                0.635,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.66,
+                0.637,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.703,
+                0.356,
+                0.716
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.782,
+                0.881,
+                0.796
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.802,
+                0.946,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.821,
+                0.936,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.842,
+                0.889,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.861,
+                0.128,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.896,
+                0.941,
+                0.911
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.915,
+                0.894,
+                0.93
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.041,
+                0.067,
+                0.941,
+                0.146
+            ],
+            "angle": 0,
+            "content": "pilots, they do not scale them effectively. Initiatives tend to remain confined to digital teams or high-level roadmaps, lack a measurable impact on the business, or fail to deal with issues on the front line. As a result, few players are seeing any significant operational or financial enhancements from AI."
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.216,
+                0.778,
+                0.339
+            ],
+            "angle": 0,
+            "content": "The Value Creation Potential from Scaling AI in Renewable Energy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.363,
+                0.94,
+                0.503
+            ],
+            "angle": 0,
+            "content": "Using AI-enabled solutions in renewables creates substantial value across the business, from operations and site selection to support functions like procurement. For example, we estimate that worker productivity can be increased by 15% to 25%, while energy yield can be boosted by one to three percentage points through better asset availability. (See Exhibit 1.) What’s more, managers don’t have to implement and oversee hundreds of different use cases. Our experience has shown that by building 10 to 15 use cases, companies typically achieve 60% to 70% of the overall value potential. (See Exhibit 2.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.533,
+                0.112,
+                0.549
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.042,
+                0.55,
+                0.681,
+                0.59
+            ],
+            "angle": 0,
+            "content": "Deploying AI in Renewables Can Boost Productivity and Increase Energy Yield"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.14,
+                0.608,
+                0.635,
+                0.814
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.835,
+                0.146,
+                0.847
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.215,
+                0.761,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.254,
+                0.78,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.295,
+                0.229,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.365,
+                0.919,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.384,
+                0.923,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.404,
+                0.923,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.426,
+                0.911,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.444,
+                0.936,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.465,
+                0.911,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.485,
+                0.404,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.537,
+                0.109,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.045,
+                0.065,
+                0.109,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.043,
+                0.135,
+                0.728,
+                0.4
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.417,
+                0.146,
+                0.429
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.463,
+                0.955,
+                0.563
+            ],
+            "angle": 0,
+            "content": "However, renewable energy companies must act with care and determination when implementing AI. Rising costs and policy headwinds have contributed to margin compression in the sector in recent years. Consequently, AI investments need to deliver a quick payback. Companies also have to contend with multiple external uncertainties relating to wholesale energy prices, connection timelines, and curtailment risk. So, using AI to manage internal costs is paramount.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.575,
+                0.953,
+                0.696
+            ],
+            "angle": 0,
+            "content": "Subscribing to the latest, cutting-edge GenAI models alone won’t fix the problem of how to get the most out of AI. Companies need to go further and adopt a structured approach to AI implementation. Based on our work with clients, we’ve identified six lessons to ensure that scaling AI in the energy industry delivers a meaningful impact for renewables players. These include maintaining a razor-sharp focus on value, solving operational constraints, and embedding solutions into actual workflows.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.724,
+                0.851,
+                0.794
+            ],
+            "angle": 0,
+            "content": "Lesson 1: Focus on value creation from the outset, and establish KPIs quickly."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.819,
+                0.937,
+                0.88
+            ],
+            "angle": 0,
+            "content": "Value in renewables can be viewed through the lens of performance metrics, particularly energy yield and asset availability, as well as measures across the value chain, such as the cost of operations per megawatt-hour or capex per kilowatt-hour with planned projects.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.893,
+                0.938,
+                0.934
+            ],
+            "angle": 0,
+            "content": "Rather than starting their AI journey with a grand ambition or end-to-end transformation, companies should aim at achieving a material improvement in a significant metric within 6 to 12",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.068,
+                0.107,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.466,
+                0.949,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.485,
+                0.914,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.505,
+                0.907,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.523,
+                0.87,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.543,
+                0.923,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.578,
+                0.947,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.599,
+                0.819,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.617,
+                0.885,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.638,
+                0.897,
+                0.653
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.657,
+                0.947,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.678,
+                0.339,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.724,
+                0.849,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.757,
+                0.826,
+                0.792
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.821,
+                0.932,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.841,
+                0.883,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.861,
+                0.785,
+                0.876
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.895,
+                0.868,
+                0.911
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.915,
+                0.934,
+                0.93
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.957,
+                0.167
+            ],
+            "angle": 0,
+            "content": "months. Link each AI initiative to a single key performance indicator (KPI) or a handful of KPIs that matter for a wind turbine or solar farm—and show how the use case moves the dial at a plant or P&L level for that asset before scaling. If you cannot clearly state which KPIs you will be measuring and explain the mechanism for financial impact in week one, you are not running an AI initiative, you are conducting research. (See Exhibit 3.)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.198,
+                0.633,
+                0.236
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 3 Six Lessons for Successful AI Adoption in Renewable Energy",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.048,
+                0.262,
+                0.075,
+                0.277
+            ],
+            "angle": 0,
+            "content": "01",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.263,
+                0.304,
+                0.277
+            ],
+            "angle": 0,
+            "content": "02",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.3,
+                0.279,
+                0.478,
+                0.307
+            ],
+            "angle": 0,
+            "content": "Solve constraints and build foundations",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.512,
+                0.263,
+                0.535,
+                0.277
+            ],
+            "angle": 0,
+            "content": "03",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.042,
+                0.254,
+                0.729,
+                0.389
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.332,
+                0.074,
+                0.345
+            ],
+            "angle": 0,
+            "content": "04",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.35,
+                0.204,
+                0.374
+            ],
+            "angle": 0,
+            "content": "Move fast, with discipline",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.574,
+                0.28,
+                0.688,
+                0.305
+            ],
+            "angle": 0,
+            "content": "Design for operational reality",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.332,
+                0.304,
+                0.346
+            ],
+            "angle": 0,
+            "content": "05",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.297,
+                0.347,
+                0.471,
+                0.378
+            ],
+            "angle": 0,
+            "content": "Embed MVP into real-world workflows",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.513,
+                0.332,
+                0.535,
+                0.345
+            ],
+            "angle": 0,
+            "content": "06",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.529,
+                0.344,
+                0.696,
+                0.376
+            ],
+            "angle": 0,
+            "content": "Scale via ownership and cadence",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.411,
+                0.147,
+                0.423
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.528,
+                0.744,
+                0.633
+            ],
+            "angle": 0,
+            "content": "Lesson 2: Solve constraints while building the foundations for other applications."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.658,
+                0.935,
+                0.817
+            ],
+            "angle": 0,
+            "content": "Implementing AI in asset-intensive industries such as renewable energy comes with unique challenges. Value is rarely created through beautifully redesigned processes; it is achieved by solving operational constraints so that the business can function more effectively. To maximize AI's potential, companies should prioritize creating a small slice of value before considering the implications for other parts of the business. AI applications should both solve a specific bottleneck—such as ordering parts for maintenance activities or optimizing works delivery schedules—and have a significant impact. Concentrate on fixing the constraint that is holding back your KPI to create measurable value.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.831,
+                0.95,
+                0.931
+            ],
+            "angle": 0,
+            "content": "The aim of AI is not to develop a set of disconnected projects, but to foster a virtuous cycle where one initiative helps build the foundations for the next. Consequently, beyond fixing a specific bottleneck, companies also need to think in terms of components that can be reused elsewhere in the business and design the initiative with them in mind. These components include ownership responsibilities, governance approaches, integration mechanisms, and data structures. By",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.915,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.089,
+                0.953,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.109,
+                0.884,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.951,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.147,
+                0.542,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.199,
+                0.109,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.215,
+                0.629,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.26,
+                0.076,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.279,
+                0.261,
+                0.304,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.342,
+                0.281,
+                0.448,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.342,
+                0.291,
+                0.476,
+                0.303
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.51,
+                0.261,
+                0.535,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.33,
+                0.074,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.111,
+                0.349,
+                0.18,
+                0.363
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.111,
+                0.361,
+                0.204,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.573,
+                0.28,
+                0.64,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.573,
+                0.292,
+                0.687,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.278,
+                0.33,
+                0.306,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.301,
+                0.348,
+                0.445,
+                0.363
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.342,
+                0.361,
+                0.469,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.33,
+                0.536,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.526,
+                0.345,
+                0.698,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.414,
+                0.143,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.529,
+                0.725,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.562,
+                0.743,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.598,
+                0.307,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.661,
+                0.891,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.681,
+                0.906,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.7,
+                0.926,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.719,
+                0.93,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.738,
+                0.857,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.758,
+                0.887,
+                0.774
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.779,
+                0.917,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.799,
+                0.441,
+                0.813
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.833,
+                0.943,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.852,
+                0.902,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.873,
+                0.939,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.892,
+                0.945,
+                0.907
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.912,
+                0.879,
+                0.927
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.897,
+                0.108
+            ],
+            "angle": 0,
+            "content": "starting with a targeted, high-impact initiative and applying the knowledge it generates to AI initiatives elsewhere, companies typically create more value in the new areas.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.136,
+                0.848,
+                0.206
+            ],
+            "angle": 0,
+            "content": "Lesson 3: Design your AI tool based on operational realities, not theory."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.232,
+                0.952,
+                0.39
+            ],
+            "angle": 0,
+            "content": "The day-to-day reality of how businesses operate is often quite different from how they are intended to operate. To identify what's happening on the ground, AI solution designers should shadow personnel in the business. By observing how job dispatchers and technicians use workplace tools—understanding the constraints they face and seeing how they carry out their tasks—designers can deliver initiatives that are effective in the real world. Furthermore, by applying the lessons learned to their initiatives, designers can ensure their solutions are adopted by employees rather than sitting unused and unloved on the shelf. (See “Case Study: Increasing Workforce Productivity.”)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.421,
+                0.792,
+                0.449
+            ],
+            "angle": 0,
+            "content": "- Case Study: Increasing Workforce Productivity"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.486,
+                0.837,
+                0.585
+            ],
+            "angle": 0,
+            "content": "A European integrated energy player with a sizeable renewables portfolio and distribution grid business faced a labor problem in its frontline operations. While the volume of tasks was increasing, the hiring and onboarding of technicians to handle the work could not keep up. Company leaders asked BCG to deliver an AI solution that would have a rapid and significant impact on worker productivity.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.603,
+                0.842,
+                0.722
+            ],
+            "angle": 0,
+            "content": "Following an initial assessment, the company selected a dozen use cases involving measurable efficiency levers. Among these, one of the biggest opportunities for AI to improve productivity was task execution in the field. In this area, dispatchers assign work orders to technicians, who then carry them out while facing multiple challenges including fixed customer appointments and last-minute disruptions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.741,
+                0.817,
+                0.84
+            ],
+            "angle": 0,
+            "content": "The business case was framed from the beginning in terms the CFO could understand—as a means of creating value for the company by reducing technician “gap time” (the period when a technician is available but not executing work orders), increasing overall worker productivity, and avoiding the hiring of additional employees.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.859,
+                0.835,
+                0.92
+            ],
+            "angle": 0,
+            "content": "The project team started by selecting a small number of measurable KPIs that would be impacted by the planned solution. In addition to technician gap time, they included the time spent by dispatchers reassigning jobs following real-world",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.892,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.09,
+                0.768,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.136,
+                0.849,
+                0.17
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.17,
+                0.701,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.234,
+                0.878,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.253,
+                0.909,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.272,
+                0.872,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.293,
+                0.916,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.313,
+                0.889,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.333,
+                0.949,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.352,
+                0.93,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.372,
+                0.273,
+                0.387
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.422,
+                0.789,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.488,
+                0.806,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.507,
+                0.833,
+                0.521
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.526,
+                0.814,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.546,
+                0.831,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.566,
+                0.807,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.605,
+                0.765,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.624,
+                0.743,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.644,
+                0.837,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.664,
+                0.792,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.682,
+                0.838,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.705,
+                0.264,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.742,
+                0.764,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.762,
+                0.751,
+                0.778
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.782,
+                0.751,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.801,
+                0.813,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.822,
+                0.37,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.861,
+                0.812,
+                0.876
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.881,
+                0.812,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.9,
+                0.831,
+                0.917
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.068,
+                0.69,
+                0.088
+            ],
+            "angle": 0,
+            "content": "disruptions, work order throughput, and avoided extra headcount.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.107,
+                0.84,
+                0.226
+            ],
+            "angle": 0,
+            "content": "Instead of aiming to deliver a single big number, the team used different scenarios to assess the initiative's financial impact. Observing that the average daily gap time per technician was normally between 1 and 2.5 hours, it modeled the outcome from eliminating a few hours of gap time. The team then worked with the company to achieve its gap reduction goal, lowering operating costs by a few million euros.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.245,
+                0.834,
+                0.325
+            ],
+            "angle": 0,
+            "content": "Rather than re-engineering the company's entire maintenance processes, our team concentrated on easing the constraints holding back worker productivity—namely, the quality of planning worker schedules and task allocation in the field and the ability to replan quickly following disruptions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.343,
+                0.825,
+                0.443
+            ],
+            "angle": 0,
+            "content": "The project team found that dispatchers lacked visibility about technicians' whereabouts and their progress with carrying out jobs, and they had no unified source of knowledge about the technical requirements of different assets. Consequently, they overestimated the time needed to perform a task and failed to use gaps in technicians' availability for other work.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.462,
+                0.781,
+                0.481
+            ],
+            "angle": 0,
+            "content": "Based on these challenges, the team set out two key goals for the solution:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.511,
+                0.787,
+                0.57
+            ],
+            "angle": 0,
+            "content": "- An upfront reduction in gap time through more realistic planning (better estimates of task duration, improved equipment and skills checks, and smoother work order assignment).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.585,
+                0.722,
+                0.625
+            ],
+            "angle": 0,
+            "content": "- Addressing any remaining gap time dynamically through effective replanning when disruptions or early completions occur.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.655,
+                0.841,
+                0.735
+            ],
+            "angle": 0,
+            "content": "To create a design reflecting day-to-day realities, the BCG team spent time observing dispatchers and technicians as they went about their jobs. This brought to light several important truths and made it easier for the team to eliminate weak design ideas and focus on those supported by operational reality:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.764,
+                0.803,
+                0.823
+            ],
+            "angle": 0,
+            "content": "- Many instances of gap time were not the result of technicians' work habits. They were created by hard constraints such as inflexible appointments or safety requirements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.838,
+                0.817,
+                0.898
+            ],
+            "angle": 0,
+            "content": "- While slack in the system was the result of inefficiencies, periods of downtime helped protect workers' well-being. This finding provided the team with a valuable lesson: the solution should not aim to eliminate every",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.07,
+                0.688,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.109,
+                0.75,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.128,
+                0.818,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.149,
+                0.822,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.168,
+                0.835,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.189,
+                0.827,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.208,
+                0.212,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.247,
+                0.806,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.267,
+                0.831,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.286,
+                0.826,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.305,
+                0.583,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.345,
+                0.781,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.364,
+                0.805,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.385,
+                0.766,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.405,
+                0.82,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.424,
+                0.578,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.462,
+                0.777,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.512,
+                0.784,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.534,
+                0.76,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.104,
+                0.552,
+                0.423,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.587,
+                0.717,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.608,
+                0.627,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.657,
+                0.769,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.678,
+                0.838,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.697,
+                0.793,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.717,
+                0.745,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.766,
+                0.802,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.104,
+                0.786,
+                0.789,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.805,
+                0.299,
+                0.821
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.841,
+                0.731,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.86,
+                0.812,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.879,
+                0.747,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.1,
+                0.068,
+                0.757,
+                0.106
+            ],
+            "angle": 0,
+            "content": "minute of slack, but to separate healthy buffer periods from avoidable waste.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.122,
+                0.822,
+                0.22
+            ],
+            "angle": 0,
+            "content": "- Dispatchers and technicians used a mix of systems and temporary workarounds to communicate and solve day-to-day problems. Even at critical moments, dispatchers still used traditional communication methods such as phone calls and emails to establish technicians’ whereabouts and their availability to carry out tasks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.078,
+                0.221,
+                0.837,
+                0.359
+            ],
+            "angle": 0,
+            "content": "Working within these realities, the team was able to produce an AI-enabled dispatching assistant that optimized daily planning activities and technician deployment based on well-organized information, tracked technicians' job status via push notifications, and flagged risks. The solution was integrated into real-world workflows at the MVP stage and designed to be responsive to actual behaviors while also protecting technicians' safety and well-being, enabling a successful rollout across the organization.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.47,
+                0.675,
+                0.541
+            ],
+            "angle": 0,
+            "content": "Lesson 4: Move fast—but with disciplined governance."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.565,
+                0.949,
+                0.646
+            ],
+            "angle": 0,
+            "content": "Given their role in national energy systems, renewable energy companies cannot follow the Silicon Valley ethos to “move fast and break things.” But they also cannot afford to spend a lot of time tinkering with AI pilots, which can slow momentum. Business cases can change quickly. Speed is always of the essence, but it needs to be achieved responsibly.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.66,
+                0.946,
+                0.74
+            ],
+            "angle": 0,
+            "content": "If players are not actively using pilots to test and kill weak ideas, they are not learning fast enough. But if they are risking operational stability with a flawed solution, then they are going too fast. The right balance comes down to effective governance. Companies can deploy multiple mechanisms to achieve this balance:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.769,
+                0.898,
+                0.808
+            ],
+            "angle": 0,
+            "content": "- Rank potential use cases at the outset, based on risk exposure and value creation rather than the enthusiasm of senior managers.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.823,
+                0.777,
+                0.843
+            ],
+            "angle": 0,
+            "content": "- Decide where in the business to apply AI, using the top use cases as a guide.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.858,
+                0.932,
+                0.897
+            ],
+            "angle": 0,
+            "content": "- Start small and expand outwards, introducing initiatives to areas that are increasingly critical to the business.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.07,
+                0.754,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.104,
+                0.09,
+                0.168,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.123,
+                0.722,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.144,
+                0.817,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.163,
+                0.814,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.183,
+                0.768,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.203,
+                0.38,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.223,
+                0.78,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.243,
+                0.79,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.263,
+                0.834,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.281,
+                0.801,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.301,
+                0.774,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.321,
+                0.8,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.34,
+                0.476,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.47,
+                0.674,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.503,
+                0.527,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.566,
+                0.893,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.587,
+                0.944,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.607,
+                0.897,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.628,
+                0.71,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.662,
+                0.886,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.682,
+                0.942,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.701,
+                0.898,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.721,
+                0.39,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.771,
+                0.894,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.789,
+                0.449,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.823,
+                0.774,
+                0.842
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.86,
+                0.928,
+                0.876
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.88,
+                0.215,
+                0.894
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.923,
+                0.126
+            ],
+            "angle": 0,
+            "content": "- Establish human-in-the-loop guardrails; set non-negotiable rules, safety envelopes, and stop gates that limit AI actions; and ensure that safety compliance is reflected in engineering documentation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.142,
+                0.929,
+                0.201
+            ],
+            "angle": 0,
+            "content": "- Introduce rollback mechanisms that take the initiative to a prior, reliable state when a bad update occurs, and design for graceful degradation so that it continues to operate at reduced capacity in the event of a wider system failure.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.231,
+                0.809,
+                0.301
+            ],
+            "angle": 0,
+            "content": "Lesson 5: Build your minimum viable product into real-world workflows."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.327,
+                0.94,
+                0.427
+            ],
+            "angle": 0,
+            "content": "Companies shouldn't treat their minimum viable product (MVP) as an isolated sandbox demo with no impact on real-world operations. They should view the MVP as the smallest version of an AI solution that has the potential to change behaviors at the start of the work week. The success of a solution rests upon its adoption in the workplace. If employees can ignore the solution without losing out on a key benefit, then the MVP is not doing its job.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.44,
+                0.946,
+                0.56
+            ],
+            "angle": 0,
+            "content": "To achieve this goal, MVPs need to meet certain criteria. For starters, they must be embedded in real-world workflows and processes. But this can be harder than it sounds. Workers may be reluctant to give up legacy systems or tools to make way for the new solution. Alongside effective communications and change management, companies may also need to implement a forced decommissioning of legacy systems to avoid new and old ways of working continuing to operate side-by-side.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.574,
+                0.949,
+                0.634
+            ],
+            "angle": 0,
+            "content": "To improve the chances of workplace success, MVPs must be owned by users in the business and provide support to facilitate adoption. Furthermore, alterations to the operating model will likely be needed to create new reporting lines and changes in roles and responsibilities.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.662,
+                0.771,
+                0.732
+            ],
+            "angle": 0,
+            "content": "Lesson 6: Scale through ownership, cadence, and value tracking."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.758,
+                0.954,
+                0.818
+            ],
+            "angle": 0,
+            "content": "Scaling AI initiatives from the initial development stage through rollout may look like a simple technology matter. But while technology is important, scaling ultimately comes down to operating model factors—having the right processes and people in place to achieve success.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.832,
+                0.925,
+                0.932
+            ],
+            "angle": 0,
+            "content": "Our work has shown that value creation through scaling cannot be achieved by an innovation team. Any group given this critical task needs to have a direct line to the business and to other key areas. Consequently, companies must establish a cross-functional unit made up of representatives from the business, IT, product development, and change management—and ensure that members are properly accountable so that they own their decisions.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.068,
+                0.921,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.088,
+                0.884,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.108,
+                0.215,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.143,
+                0.906,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.163,
+                0.926,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.183,
+                0.497,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.231,
+                0.808,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.267,
+                0.748,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.33,
+                0.911,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.351,
+                0.936,
+                0.363
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.369,
+                0.935,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.389,
+                0.888,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.408,
+                0.681,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.442,
+                0.93,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.463,
+                0.886,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.482,
+                0.941,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.501,
+                0.904,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.521,
+                0.927,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.542,
+                0.161,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.575,
+                0.946,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.596,
+                0.938,
+                0.612
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.617,
+                0.808,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.66,
+                0.768,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.696,
+                0.626,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.76,
+                0.913,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.781,
+                0.948,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.8,
+                0.812,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.835,
+                0.906,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.854,
+                0.92,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.873,
+                0.851,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.893,
+                0.903,
+                0.908
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.914,
+                0.791,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.948,
+                0.168
+            ],
+            "angle": 0,
+            "content": "The most effective operating model is a hub-and-spoke arrangement that combines centralized standard-setting with decentralized execution. At the center, a steering committee oversees AI strategy and makes investment and prioritization decisions—while a hub of senior individuals (organized around change management, HR, AI portfolio steering, the technology stack, data, and responsible AI and risk) defines group-wide standards and acts as a sparring partner.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.18,
+                0.936,
+                0.262
+            ],
+            "angle": 0,
+            "content": "Decentralized business units (the spokes) retain ownership of use cases and implementation within their areas, ensuring proximity to the business while leveraging shared infrastructure and governance. A time-limited centralized program can be layered on top as an accelerator to actively push priority initiatives, complementing the underlying operating model.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.275,
+                0.953,
+                0.335
+            ],
+            "angle": 0,
+            "content": "Building momentum and an effective cadence into the scaling process is essential. Companies should avoid long pauses between different stages—such as proof of concept, MVP, and rollout—to maintain momentum and track the value created at each stage.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.349,
+                0.949,
+                0.469
+            ],
+            "angle": 0,
+            "content": "AI implementation in the renewable energy sector has huge potential. However, creating successful initiatives is not straightforward. We’ve found that without a structured approach grounded in real-world challenges and realities, renewables players can easily fail to create meaningful value from the technology. But by following the lessons that we’ve distilled from working closely on AI projects with our clients, companies can harness AI’s power to dramatically improve efficiency and transform their businesses.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.071,
+                0.931,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.09,
+                0.917,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.108,
+                0.917,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.128,
+                0.945,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.147,
+                0.834,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.182,
+                0.915,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.932,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.224,
+                0.884,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.242,
+                0.793,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.277,
+                0.923,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.298,
+                0.949,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.315,
+                0.661,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.35,
+                0.867,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.371,
+                0.892,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.389,
+                0.893,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.41,
+                0.895,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.431,
+                0.943,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.449,
+                0.516,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.104,
+                0.247,
+                0.143
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.187,
+                0.221,
+                0.294
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.341,
+                0.22,
+                0.447
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.493,
+                0.22,
+                0.599
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.245,
+                0.196,
+                0.434,
+                0.219
+            ],
+            "angle": 0,
+            "content": "Christopher Tuot"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.229,
+                0.446,
+                0.257
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nDüsseldorf",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.263,
+                0.275,
+                0.28
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.246,
+                0.343,
+                0.379,
+                0.365
+            ],
+            "angle": 0,
+            "content": "Frank Klose"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.376,
+                0.437,
+                0.418
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nDüsseldorf",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.422,
+                0.275,
+                0.439
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.243,
+                0.501,
+                0.365,
+                0.526
+            ],
+            "angle": 0,
+            "content": "Vinoj Pillai"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.569,
+                0.275,
+                0.586
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.34,
+                0.682,
+                0.446
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.187,
+                0.683,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.243,
+                0.536,
+                0.418,
+                0.566
+            ],
+            "angle": 0,
+            "content": "Partner\nSan Francisco - Bay Area",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.707,
+                0.196,
+                0.811,
+                0.219
+            ],
+            "angle": 0,
+            "content": "Anita Oh"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.263,
+                0.737,
+                0.279
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.229,
+                0.909,
+                0.281
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner Sydney",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.707,
+                0.343,
+                0.848,
+                0.366
+            ],
+            "angle": 0,
+            "content": "Andrej Levin"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.422,
+                0.737,
+                0.438
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.376,
+                0.9,
+                0.419
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nHamburg",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.687,
+                0.436,
+                0.707
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.722,
+                0.953,
+                0.843
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.935,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.102,
+                0.247,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.249,
+                0.198,
+                0.43,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.232,
+                0.442,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.248,
+                0.245,
+                0.32,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.344,
+                0.376,
+                0.364
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.378,
+                0.433,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.392,
+                0.301,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.404,
+                0.321,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.538,
+                0.301,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.551,
+                0.414,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.707,
+                0.197,
+                0.809,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.231,
+                0.905,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.708,
+                0.245,
+                0.761,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.263,
+                0.737,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.708,
+                0.344,
+                0.847,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.378,
+                0.897,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.391,
+                0.763,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.708,
+                0.404,
+                0.773,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.691,
+                0.432,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.724,
+                0.949,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.743,
+                0.899,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.764,
+                0.904,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.784,
+                0.912,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.802,
+                0.935,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.824,
+                0.594,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

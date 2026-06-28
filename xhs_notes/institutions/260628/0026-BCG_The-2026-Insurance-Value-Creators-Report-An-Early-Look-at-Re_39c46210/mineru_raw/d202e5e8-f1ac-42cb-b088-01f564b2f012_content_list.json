@@ -1,0 +1,521 @@
+[
+    {
+        "type": "image",
+        "img_path": "images/86ab63d857975a9af2b53ab989043cccc3a842bd5e1eca740babf3c333fc0334.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            394
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "INSURANCE INDUSTRY",
+        "bbox": [
+            50,
+            431,
+            210,
+            448
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "An Early Look at Returns",
+        "text_level": 1,
+        "bbox": [
+            40,
+            478,
+            580,
+            574
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The 2026 Insurance Value Creators Report",
+        "bbox": [
+            40,
+            607,
+            501,
+            627
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "By Nathalia Bellizia, Sid Sankaran, Jürgen Bohrmann, and Sheila Seetharaman",
+        "bbox": [
+            42,
+            656,
+            690,
+            675
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "REPORT APRIL 15, 2026",
+        "bbox": [
+            40,
+            700,
+            247,
+            717
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Starting this year, BCG is taking a new approach to its annual examination of value creation in the global insurance industry with the goal of providing readers with more timely and useful insights. This first installment of the 2026 Insurance Value Creators Report presents an early look at market trends and developments based on available—but not yet complete for the full year—data. Subsequent installments will provide a more detailed segment- and region-specific analysis as well as offer deep dives into the property and casualty segment in the US, industry performance in Asia-Pacific, and trends in reinsurance.",
+        "bbox": [
+            38,
+            778,
+            944,
+            898
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BCG",
+        "bbox": [
+            55,
+            46,
+            141,
+            74
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "After half a decade or more of steady, if unspectacular, shareholder returns in the insurance sector, change appears to be afoot. A 15% five-year annual total shareholder return (TSR) for the industry exceeded insurers' cost of equity for the first time since 2017. Two broad factors are at work: the pandemic years are receding, and current results have improved.",
+        "bbox": [
+            40,
+            67,
+            937,
+            146
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "At the same time, we appear to be in the early stages of a shift in investor preference toward life and health (L&H) and multiline insurers over property and casualty (P&C) and reinsurance companies. Investors are also moving their geographic focus, seeking quality in Europe and Asia-Pacific as macro and equity market uncertainty in the US pushes them to look for returns in other markets.",
+        "bbox": [
+            40,
+            160,
+            949,
+            260
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Initial Industry Data",
+        "text_level": 2,
+        "bbox": [
+            40,
+            382,
+            542,
+            422
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Insurance is a local and segment-specific business, and as always, there were big variations in performance. Among insurance segments, P&C showed the strongest five-year annual TSR, followed by reinsurance, likely driven by favorable pricing conditions across many lines of business throughout the period. That said, P&C rate momentum has shown signs of moderating as prices soften in some areas (such as commercial property). TSRs for 2025 indicate that this is likely to temper return on tangible equity and momentum going forward.",
+        "bbox": [
+            40,
+            449,
+            951,
+            569
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "While more capital-intensive L&H and multiline insurers have lagged, this may be shifting, as these segments outperformed in 2025, buoyed by investment income tailwinds. Elevated net investment income in the past year and supportive product dynamics have strengthened earnings and contributed to improved TSRs.",
+        "bbox": [
+            40,
+            581,
+            907,
+            663
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "On a five-year basis, Europe was the top-performing region, with annual TSR of 20.3%, up from 11.6% last year. Both Asia-Pacific and Europe outperformed on a one-year basis at 35.3% and 39.8%, respectively. This strong performance can be largely attributed to a “flight to quality” as investors looked for stable returns outside of volatile US markets.",
+        "bbox": [
+            40,
+            675,
+            925,
+            755
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Trends to Watch",
+        "text_level": 2,
+        "bbox": [
+            40,
+            826,
+            452,
+            865
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The L&H and P&C segments are expected to undergo big changes in the coming years as technologies advance and new risks emerge. Expanding adoption of AI, including the use of AI agents, will have broad ramifications for everything from major functions such as underwriting and claims to workforce planning and talent acquisition and development.",
+        "bbox": [
+            40,
+            67,
+            952,
+            146
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In P&C, softening market dynamics, especially in US personal auto, and increased competition are immediate concerns for management teams. Longer-term concerns include persistent structural risks in casualty lines and changes in the risk landscape from shifting trade flows. M&A is expected to become increasingly important over time as companies seek to improve returns in a softer market environment.",
+        "bbox": [
+            40,
+            160,
+            951,
+            260
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Aging demographics and evolving customer preferences are driving increased demand in L&H for products that feature guaranteed protections and some hybrid-style options that offer additional living benefits (such as for critical illness). Longer-term, increased investment from private capital, more omnichannel distribution, and demographic shifts are expected to drive increased demand for life products.",
+        "bbox": [
+            40,
+            274,
+            944,
+            373
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "BCG",
+        "bbox": [
+            72,
+            426,
+            134,
+            445
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "An Early Look\nat Returns",
+        "bbox": [
+            72,
+            501,
+            274,
+            552
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The 2026 Insurance Value Creators Report",
+        "bbox": [
+            72,
+            563,
+            269,
+            592
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "GLOBAL EDITION | APRIL 2026",
+        "bbox": [
+            72,
+            645,
+            239,
+            657
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/067f21160bd51b5f500972d55c017fc8f7d0c4e739a510367ed35d5aada14f45.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            378,
+            407,
+            720,
+            675
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Project Leader\nNew York",
+        "bbox": [
+            707,
+            395,
+            814,
+            425
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Authors",
+        "text_level": 2,
+        "bbox": [
+            43,
+            104,
+            245,
+            141
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/76f11b39dbc961b5dca5574347772a921bd5201b16fae899eecd01c17a38e73e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            70,
+            189,
+            218,
+            293
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/439496d1fe5954c9e2abde54771fa5c7eef84a754d43936a9e44e2d08090499e.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Nathalia Bellizia",
+            "Managing Director & Partner\nNew York"
+        ],
+        "content": "",
+        "bbox": [
+            69,
+            346,
+            215,
+            447
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/01964da801951a49c80132c863bca587946229bd5942f89306652e3cfa4b03ac.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            262,
+            274,
+            279
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/b55a2f2ac67d7007ddd2cb9d49280e6dcd8feb0436132502733f129a41135d9a.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Sid Sankaran",
+            "Partner\nNew Jersey"
+        ],
+        "content": "",
+        "bbox": [
+            531,
+            186,
+            681,
+            292
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/ce911740406e4b726ec09ada74b9c6936284e7032725f7394a5704cbed69338d.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Jürgen Bohrmann",
+            "Global Knowledge Business\nSenior Director – Insurance\nMunich"
+        ],
+        "content": "",
+        "bbox": [
+            708,
+            262,
+            735,
+            279
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/26cdac91eb4819d5d35568df7ae1eb1d6757a8706f318a4f3e6e720f2e3d1da9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            426,
+            274,
+            443
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/64ab0928b6f7ad68576da7f58663ec6893e337e2a12ef8badef8aae6473efe89.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Sheila\nSeetharaman"
+        ],
+        "content": "",
+        "bbox": [
+            531,
+            338,
+            681,
+            445
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/d19e714f284e6a4aa4712b55313c62a3e88be6fdbdd1fc98a9d0604ee3ad4274.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            708,
+            430,
+            735,
+            447
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "ABOUT BOSTON CONSULTING GROUP",
+        "text_level": 2,
+        "bbox": [
+            42,
+            542,
+            434,
+            561
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+        "bbox": [
+            40,
+            577,
+            951,
+            697
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 3
+    }
+]

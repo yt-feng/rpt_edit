@@ -1,0 +1,3387 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG X | BCG"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                68,
+                270,
+                144
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG AI AT WORK"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                399,
+                166,
+                436
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategy Matters More Than Tools"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                37,
+                450,
+                330,
+                598
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "FOURTH EDITION | JUNE 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                883,
+                250,
+                918
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Survey parameters"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                40,
+                71,
+                277,
+                127
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "11,749"
+                    }
+                ]
+            },
+            "bbox": [
+                41,
+                165,
+                203,
+                267
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "respondents"
+                    }
+                ]
+            },
+            "bbox": [
+                41,
+                273,
+                128,
+                308
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/aaa99690530ae1a97eae95ce925fd8bed8ddc8f03a27f06f756282cef963d623.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                40,
+                66,
+                632,
+                356
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/de86d6fc66cdb561a130f1a2293d2d470d4bd02671ac794e7ee3213dbe8d53dd.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=11,749); BCG analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                388,
+                641,
+                863
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5aa7235c2c572c985963b5804f86a043e918e7e9abb0e5592b12a1722bed094c.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Notes: Frontline employees = individual white-collar employees with no managerial responsibilities. TMT = technology, media, and telecommunications. Nordics include Sweden, Denmark, Norway, and Finland. Middle East includes UAE, Saudi Arabia, Kuwait, and Qatar. Benelux includes Belgium and the Netherlands."
+                    }
+                ]
+            },
+            "bbox": [
+                675,
+                138,
+                965,
+                869
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "New findings reinforce trends observed in 2025"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                41,
+                68,
+                612,
+                125
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/828aba6a760c33ce94f6372fe6c7178af86b59bf44d35d3eb0d7f80f7b60fe5f.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                40,
+                230,
+                106,
+                340
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The time individuals save doesn’t automatically translate into value"
+                    }
+                ]
+            },
+            "bbox": [
+                32,
+                380,
+                284,
+                498
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "42% of frontline employees who are regular AI users save a full day or more per week. But 66% still receive limited or no guidance on what to do with time they save, and more than half don’t redirect it to strategic work."
+                    }
+                ]
+            },
+            "bbox": [
+                32,
+                558,
+                284,
+                831
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/abe3726af7301b57aac2cbf16e1e617db843ac53f4abb8cbe4ce244b4b8b82da.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                356,
+                224,
+                421,
+                345
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Rethinking work end-to-end is a prerequisite for creating value"
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                380,
+                576,
+                498
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "More organizations are using AI to “invent,” building new business models. Companies that redesign workflows end-to-end outperform those that only deploy tools on value captured and employee joy. The gap keeps widening, driven by a clearer roadmap and deeper investment in people."
+                    }
+                ]
+            },
+            "bbox": [
+                347,
+                558,
+                605,
+                907
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/a31f92a3f7969bc88d4d50881582c329291de324e6e674c3a677fba49722d9fc.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                686,
+                222,
+                746,
+                348
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Proper training and leadership support remain the biggest unmet promises and strong levers to unlock AI's potential"
+                    }
+                ]
+            },
+            "bbox": [
+                677,
+                380,
+                955,
+                541
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "72% of respondents say expectations about skills have shifted, yet only 36% feel they received sufficient training, stable vs 2025. Only 33% of frontline employees say leadership communicates clearly about AI, and 28% see strong alignment between what leaders say and what the organization actually does."
+                    }
+                ]
+            },
+            "bbox": [
+                677,
+                558,
+                950,
+                907
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Five key takeaways"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                41,
+                66,
+                281,
+                128
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                22,
+                219,
+                50,
+                289
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "No more “silicon ceiling”: frontline employees have integrated AI into their daily work"
+                    }
+                ]
+            },
+            "bbox": [
+                20,
+                316,
+                158,
+                515
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "74% of frontline employees are now regular AI users, an increase of 23 percentage points from 2025. India and the Middle East lead adoption, while the US, France, and Italy trail behind."
+                    }
+                ]
+            },
+            "bbox": [
+                20,
+                533,
+                170,
+                921
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                215,
+                219,
+                245,
+                289
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The real challenge is now organizational and managerial"
+                    }
+                ]
+            },
+            "bbox": [
+                215,
+                316,
+                370,
+                439
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Everyone talks about time saved, but the real shift is deeper and structural. 72% of respondents report skill expectations have changed, and nearly half say their roles have shifted toward managing and directing AI instead of doing the work itself."
+                    }
+                ]
+            },
+            "bbox": [
+                215,
+                457,
+                375,
+                925
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                412,
+                219,
+                440,
+                294
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Business value and employee joy aren't tradeoffs, they're driven by the same forces"
+                    }
+                ]
+            },
+            "bbox": [
+                411,
+                315,
+                566,
+                514
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "67% of regular AI users enjoy work more. The organizations that capture the most business value are also the places where employees enjoy working the most."
+                    }
+                ]
+            },
+            "bbox": [
+                411,
+                531,
+                569,
+                886
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                610,
+                218,
+                638,
+                294
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The AI “honeymoon” won’t last unless leaders bring strategic clarity driving sustained impact"
+                    }
+                ]
+            },
+            "bbox": [
+                608,
+                315,
+                773,
+                554
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI's novelty and cognitive stretch fuel enjoyment early on. But sustained joy comes from strategic clarity. Employees thrive when the direction is real and the message reaches them with strong CEO involvement."
+                    }
+                ]
+            },
+            "bbox": [
+                608,
+                570,
+                776,
+                961
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                813,
+                219,
+                842,
+                292
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI agents went from concept to reality, but operating models haven't caught up"
+                    }
+                ]
+            },
+            "bbox": [
+                814,
+                318,
+                980,
+                480
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Integration into workflows more than doubled since 2025, and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "61 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "of respondents believe agents could do half their job within three years. Yet governance (oversight, accountability) still lags far behind the tech."
+                    }
+                ]
+            },
+            "bbox": [
+                813,
+                495,
+                978,
+                886
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "New findings reinforce trends observed in 2025"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                296,
+                428,
+                702,
+                581
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e48254153321ce0b07d7601fef8a208196105ce7c7e3657395d8be096337b093.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Respondents saving at least 8 hours per week"
+                    }
+                ]
+            },
+            "bbox": [
+                360,
+                302,
+                907,
+                797
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Among frontline\nemployees who\nare regular AI\nusers, 42% report\nsaving at least a\nworkday per week"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                308,
+                268,
+                703
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Leaders have the biggest AI payoff, with 60% saving at least a workday per week"
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                82,
+                680,
+                165
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Some job functions are further ahead than others"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                705,
+                82,
+                953,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Top job functions where frontline employees are saving at least 8 hours per week"
+                    }
+                ]
+            },
+            "bbox": [
+                705,
+                197,
+                968,
+                267
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "60% Marketing"
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                320,
+                861,
+                388
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "50% Human resources"
+                    }
+                ]
+            },
+            "bbox": [
+                706,
+                520,
+                905,
+                590
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "49% Finance"
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                622,
+                845,
+                692
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "48% Data science and analytics"
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                722,
+                878,
+                794
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=8,989, includes regular AI users, excludes outliers); BCG analysis.\nNote: Frontline employees = individual white-collar employees with no managerial responsibilities."
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                898,
+                731,
+                942
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The gap is wide: managers and leaders feel guidance is clearer and perceive more impact than frontline employees"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                362,
+                82,
+                895,
+                164
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Frontline employees report getting the least guidance on how to spend the time AI saves, and more than half of them don’t redirect it into strategic work"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                243,
+                300,
+                767
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents who say their organizations give limited or no guidance on what to do with the time saved"
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                199,
+                607,
+                297
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/56c8f9a6062fd0f6647ac135cc15dd22cc63c1cdee37af4094fe1c9e97be4ab3.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Respondents who declare not reinvesting time saved into more strategic work"
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                326,
+                632,
+                848
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3c45f33a647c782e9aa8963577663e8635e3d4fc74810906af12fd555c787f53.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=8,989, includes regular AI users, consistent sample with time-saved analysis); BCG analysis. Note: Frontline employees = individual white-collar employees with no managerial responsibilities."
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                324,
+                956,
+                848
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "How organizations are implementing AI tools"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                365,
+                84,
+                725,
+                125
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Organizations are\nmoving past\nindividual use case\ndeployments; Invent\ninitiatives have\nnearly doubled"
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                308,
+                295,
+                700
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9325b0ff2daf180d77adc9921453df790e0a1145b19b7b076197726e595df403.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Deploy\nSupporting adoption of\nGenAI tools and\nfostering productivity"
+                    }
+                ]
+            },
+            "bbox": [
+                366,
+                195,
+                523,
+                777
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8a96fb60851289d64fd55a0848ca3f0a6588427f7ef2b033d6bcdab57c9b3ca2.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                572,
+                214,
+                745,
+                837
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b61f6798d50f99e21b4fd44fe34b0eade4847fbfe584cef6439803f5336189f5.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Invent\nBuilding and innovating\nnew business models and\nproducts to drive growth"
+                    }
+                ]
+            },
+            "bbox": [
+                792,
+                222,
+                951,
+                778
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=11,749); BCG analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                365,
+                918,
+                557,
+                942
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Using AI for\nReshape or Invent\ninitiatives pays off\nby delivering more\nvalue and providing\na better employee\nexperience"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                275,
+                285,
+                732
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Companies pursuing Reshape or Invent initiatives deliver more value..."
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                84,
+                668,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Save more time\nEmployees who\nsave at least a day\nper week"
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                222,
+                475,
+                356
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prove the impact\nEmployees who see\nmeasurable business\nimprovement"
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                410,
+                493,
+                546
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8528950b1630a3dc9fa75595bfca21dc34238f94a7c98521f17cf2f0a0034ac4.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Earn trust\nEmployees who fully trust leadership's AI communications"
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                219,
+                658,
+                343
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "... and their employees thrive"
+                    }
+                ]
+            },
+            "bbox": [
+                677,
+                84,
+                916,
+                159
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1dccf9482fa44bdc7ea11c63cb03714e9e725c06eac7e6b990e22704b97b2ebd.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                501,
+                597,
+                658,
+                719
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0df2ad121ff03a7956357ba8437d9b318052465d679391745cd825b5f4b166d4.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "■ Respondents at companies that only focus on Deploy initiatives"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Enjoy work more\nEmployees who\nreport increased\njob satisfaction"
+                    }
+                ]
+            },
+            "bbox": [
+                501,
+                410,
+                660,
+                531
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/70f1211c2f2a80787e2293f235c989bf93262aa5c84cc3506e103e6b1e9baaca.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Show their value\nEmployees who find it\neasier to demonstrate\nunique value"
+                    }
+                ]
+            },
+            "bbox": [
+                821,
+                222,
+                971,
+                340
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c2a3f19cc1c4a90acac09c73afafa2a4895e1747e12b705d2d9969d20583c17d.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Feel more confident\nEmployees who feel\nconfident working\nwith AI"
+                    }
+                ]
+            },
+            "bbox": [
+                819,
+                412,
+                971,
+                528
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/41e74626dfd6d9c5d80768246b7a10c26706468504f49e0a115a61ea5cba9daa.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "- Respondents at companies that focus on Reshape or Invent initiatives"
+                    }
+                ]
+            },
+            "bbox": [
+                819,
+                598,
+                971,
+                718
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=10,990, including 2,919 respondents at Deploy companies and 8,071 respondents at Reshape or Invent companies; total excludes respondents who were not sure how their organizations were implementing AI); BCG analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                898,
+                950,
+                942
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1f83b81843bedb29f9c717ebaeca72db0efb5e8043558648c593e5987bc8072d.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                492,
+                218,
+                665,
+                845
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "What makes\nReshape or Invent\ninitiatives more\nsuccessful: a clearer\nroadmap and\ndeeper investment\nin people"
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                275,
+                290,
+                735
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Companies pursuing Reshape or Invent initiatives build a clearer roadmap..."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                363,
+                84,
+                678,
+                162
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "... and invest in the people behind it"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                694,
+                84,
+                911,
+                160
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sets the direction\nEmployees who say\nAI strategy is clear"
+                    }
+                ]
+            },
+            "bbox": [
+                365,
+                221,
+                482,
+                326
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Defines the rules\nEmployees who see\nadequate guardrails\nin place"
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                410,
+                485,
+                542
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Puts agents to work\nEmployees who see\nagents integrated\ninto workflows"
+                    }
+                ]
+            },
+            "bbox": [
+                365,
+                616,
+                495,
+                745
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Brings people in\nEmployees who\nparticipate in\nprocess redesign"
+                    }
+                ]
+            },
+            "bbox": [
+                694,
+                221,
+                802,
+                358
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/65433209fedb6a9a1ee3ac6705e0b6f6dbee6eae34c3cecd19dd5d0c78e38085.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Measures what matters\nEmployees who see AI value creation properly tracked"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Invests in skills\nEmployees who\nexperience a major\nreskilling initiative"
+                    },
+                    {
+                        "type": "text",
+                        "content": "■ Respondents at companies that focus on Reshape or Invent initiatives"
+                    }
+                ]
+            },
+            "bbox": [
+                825,
+                221,
+                975,
+                343
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=10,990, including 2,919 respondents at Deploy companies and 8,071 respondents at Reshape or Invent companies; total excludes respondents who were not sure how their organizations were implementing AI); BCG analysis."
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                898,
+                948,
+                942
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Most respondents expect a need for upskilling in the next five years, yet only 36% feel properly trained"
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                87,
+                853,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Demand for\nupskilling is loud\nand persistent.\nThe response still\nfalls short"
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                342,
+                261,
+                662
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/18a4af00cd73ccd70fe75b5dd9d4bd133e7f47e4e15b497805d849b56db10acb.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                368,
+                243,
+                592,
+                673
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "88%"
+                    }
+                ]
+            },
+            "bbox": [
+                432,
+                415,
+                540,
+                507
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Of respondents believe\nthey need major upskilling\nin the next five years"
+                    }
+                ]
+            },
+            "bbox": [
+                400,
+                710,
+                577,
+                824
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "36%"
+                    }
+                ]
+            },
+            "bbox": [
+                745,
+                407,
+                852,
+                503
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/222a586c58bbdeb22a50736581bef361e675bc9ca4648939f6c45a0a882104fe.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Of respondents feel\nproperly trained"
+                    }
+                ]
+            },
+            "bbox": [
+                686,
+                243,
+                908,
+                673
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=11,749); BCG analysis.\nNote: Share of respondents for both metrics is unchanged from 2025."
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                899,
+                625,
+                942
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "No more “silicon ceiling”: frontline employees have integrated AI into their daily work"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                204,
+                385,
+                795,
+                628
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "74% of frontline\nemployees now\ndescribe themselves\nas regular AI users,\ndriving overall\nadoption"
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                308,
+                293,
+                700
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f5b68110d4024fea299461304e83391545cd35ddf9f611f49fe0d5368a17d0f2.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Regular AI use across worker levels"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                361,
+                165,
+                952,
+                845
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=11,749); BCG analysis.\nNotes: Regular AI users = people who use AI daily or several times a week. Frontline employees = individual white-collar employees with no managerial responsibilities."
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                898,
+                968,
+                944
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "India, the Middle East, and Australia lead adoption for frontline employees, while France, Italy, and US trail the average"
+                    }
+                ]
+            },
+            "bbox": [
+                36,
+                66,
+                955,
+                184
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2c68dc6582e0c61b9fb306a922081758d0e5a9ea2703bbeb84c353af468fdffb.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Frontline employees who use AI at least several times a week, by market"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=4,040 frontline employees); BCG analysis."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Frontline employees = individual white-collar employees with no managerial responsibilities. Middle East includes UAE, Saudi Arabia, Kuwait, and Qatar. Benelux includes Belgium and the Netherlands. Nordics include Sweden, Denmark, Norway, and Finland."
+                    }
+                ]
+            },
+            "bbox": [
+                36,
+                267,
+                971,
+                855
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Support functions lead adoption among frontline employees, while sales and operations lag behind"
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                66,
+                918,
+                181
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8174931963a21d1ff42673ddd146b555bf0dea3ee04fc64f03c267e6d2f50ee0.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Frontline employees who use AI at least several times a week, by function"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=4,040 frontline employees); BCG analysis."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Frontline employees = individual white-collar employees with no managerial responsibilities."
+                    }
+                ]
+            },
+            "bbox": [
+                33,
+                269,
+                975,
+                861
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The real challenge is now organizational and managerial"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                236,
+                429,
+                765,
+                589
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI is reshaping\nwork, impacting the\nvery nature of jobs\nand management"
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                372,
+                286,
+                635
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2cd2a38b96a603f02b4bc6ea1a231ec991d450ed7386775e552e1449d08921ab.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Aspect of work that respondents say have been changed by AI"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=11,749); BCG analysis."
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Share of respondents who report AI will significantly or moderately change the expectation for the skills needed for the role."
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                170,
+                956,
+                853
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Business value and employee joy aren’t tradeoffs, they’re driven by the same forces"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                250,
+                386,
+                753,
+                628
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The “joy paradox” of AI: it makes work both better and harder"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                372,
+                262,
+                630
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "More than two-thirds of regular AI users report an increase in job satisfaction..."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                365,
+                84,
+                966,
+                125
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Change in day-to-day work enjoyment and satisfaction since adopting AI"
+                    }
+                ]
+            },
+            "bbox": [
+                365,
+                144,
+                785,
+                181
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/97cc48038fe8a02351222c1d4dc11f8110304edee706d13afad30b087a1fc051.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "... but 41% report increased mental strain associated with it"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Change in cognitive load since adopting AI"
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                200,
+                940,
+                445
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3f2e95e1fbcd2c88a8a9e24851f215557779dc90ccf8ae2831b1ad9d1a0a7dba.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=9,923 regular AI users); BCG analysis."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Frontline employees = individual white-collar employees with no managerial responsibilities."
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                605,
+                780,
+                853
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The actions that\ndrive business\nimpact are the same\nones that make\nemployees thrive"
+                    }
+                ]
+            },
+            "bbox": [
+                37,
+                340,
+                296,
+                668
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f7f9719c224e279a546865262c9e7cb375e36153fe4f9a5a19a2cbc2054d6e0f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Top 5 organizational levers ranked by uplift across employee joy and measurable impact"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=9,923 regular AI users); BCG analysis.\nNote: Measurable impact = Improvement in key business metrics attributed to AI."
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                187,
+                956,
+                864
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Want the AI “honeymoon” to last? Strategic clarity beats tools in driving sustained impact"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                207,
+                385,
+                790,
+                630
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategic clarity\nbeats tools:\nemployees with clear\nstrategy but limited\naccess to tools\noutperform those\nwith strong access\nbut no direction"
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                243,
+                288,
+                764
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents reporting measurable impact based on AI strategy clarity and availability of AI tools"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                363,
+                84,
+                925,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Limited strategic clarity and limited access to tools"
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                273,
+                533,
+                345
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Limited strategic clarity and strong access to tools"
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                402,
+                532,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strong strategic clarity and limited access to tools"
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                533,
+                526,
+                603
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strong strategic clarity and strong access to tools"
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                662,
+                526,
+                734
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/3ca6a372b036ac461f3856228f9c86c4065ecfbfb55ea758ccd2e50d892f4fda.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                361,
+                273,
+                958,
+                732
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=9,923 regular AI users); BCG analysis.\nNotes: Strong strategic clarity is defined as making AI a priority and having a clear AI strategy and guidelines for time saved. Strong access to tools is defined as having access to AI tools or to AI tools testing and experimentation."
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                878,
+                916,
+                942
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=6,998 respondents who use AI regularly, less than 6 months vs more than a year); BCG analysis.\nNote: +/-pp = the extra share of employees who enjoy work when a driver is present (+) or the share lost when a blocker is present (-)."
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                898,
+                857,
+                944
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The drivers of joy at work when using AI evolve over time..."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                365,
+                82,
+                828,
+                125
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The AI “honeymoon”? At first employees enjoy the cognitive load, but strategic clarity is the unlock to sustaining joy over time"
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                273,
+                301,
+                730
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Regular AI users for less than 6 months"
+                    }
+                ]
+            },
+            "bbox": [
+                365,
+                152,
+                600,
+                189
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Regular AI users for more than a year"
+                    }
+                ]
+            },
+            "bbox": [
+                700,
+                152,
+                923,
+                189
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cognitive load"
+                    }
+                ]
+            },
+            "bbox": [
+                372,
+                219,
+                468,
+                257
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+43pp"
+                    }
+                ]
+            },
+            "bbox": [
+                626,
+                219,
+                668,
+                259
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+30pp"
+                    }
+                ]
+            },
+            "bbox": [
+                883,
+                219,
+                926,
+                257
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Clear AI strategy"
+                    }
+                ]
+            },
+            "bbox": [
+                372,
+                318,
+                483,
+                353
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Clear AI strategy"
+                    }
+                ]
+            },
+            "bbox": [
+                708,
+                219,
+                819,
+                257
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+24pp"
+                    }
+                ]
+            },
+            "bbox": [
+                515,
+                318,
+                557,
+                355
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Clear guidance on saved time"
+                    }
+                ]
+            },
+            "bbox": [
+                372,
+                398,
+                471,
+                466
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+23pp"
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                414,
+                551,
+                453
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Clear guidance on saved time"
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                302,
+                807,
+                369
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+25pp"
+                    }
+                ]
+            },
+            "bbox": [
+                855,
+                316,
+                898,
+                355
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cognitive load"
+                    }
+                ]
+            },
+            "bbox": [
+                708,
+                414,
+                803,
+                452
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+21pp"
+                    }
+                ]
+            },
+            "bbox": [
+                831,
+                415,
+                875,
+                453
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "...the drivers of toil do not"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                365,
+                525,
+                577,
+                566
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Regular AI users for less than 6 months"
+                    }
+                ]
+            },
+            "bbox": [
+                365,
+                595,
+                600,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Difficulty showing unique value"
+                    }
+                ]
+            },
+            "bbox": [
+                372,
+                652,
+                491,
+                721
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "-29pp"
+                    }
+                ]
+            },
+            "bbox": [
+                545,
+                668,
+                586,
+                707
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Regular AI users for more than a year"
+                    }
+                ]
+            },
+            "bbox": [
+                700,
+                595,
+                922,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Difficulty showing unique value"
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                651,
+                827,
+                722
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "-26pp"
+                    }
+                ]
+            },
+            "bbox": [
+                860,
+                668,
+                903,
+                708
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Inadequate training"
+                    }
+                ]
+            },
+            "bbox": [
+                372,
+                751,
+                451,
+                820
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "-15pp"
+                    }
+                ]
+            },
+            "bbox": [
+                461,
+                767,
+                503,
+                804
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Inadequate training"
+                    }
+                ]
+            },
+            "bbox": [
+                708,
+                751,
+                785,
+                820
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "-16pp"
+                    }
+                ]
+            },
+            "bbox": [
+                802,
+                767,
+                845,
+                804
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "AI agents have evolved from concept to reality, but operating models haven’t caught up"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                226,
+                386,
+                775,
+                632
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "86%"
+                    }
+                ]
+            },
+            "bbox": [
+                911,
+                235,
+                942,
+                265
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "More people are\naware of AI agents\nand see their\nimportance, but few\nunderstand what\nthey are: a sign for\nleaders to make a\nbetter case for what\nthey can do"
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                211,
+                292,
+                799
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents who have heard about AI agents"
+                    }
+                ]
+            },
+            "bbox": [
+                371,
+                82,
+                508,
+                149
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2553e8d647adb7a0909c6f7d317709b4469b5f709df1b6fbb17e06e7d5a454a9.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                375,
+                195,
+                505,
+                735
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents who have a limited understanding of what AI agents are"
+                    }
+                ]
+            },
+            "bbox": [
+                590,
+                82,
+                732,
+                181
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7e7778420dc223504bc097e44959e8fa229c616047c0559c089864a2cf95443c.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=11,749); BCG analysis.\nNote: Frontline employees = individual white-collar employees with no managerial responsibilities."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Respondents who think AI agents will be important in the next 2 to 3 years"
+                    }
+                ]
+            },
+            "bbox": [
+                573,
+                331,
+                728,
+                808
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3118fc9b062c1976c8e5ae3deb1314a865f9d7ce79e650ba376f1dbf04cea2be.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                817,
+                262,
+                943,
+                808
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "More than double the organizations from 2025 have integrated AI agents into workflows, with meaningful impacts expected at the managerial level"
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                243,
+                291,
+                765
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents reporting measurable impact based on AI strategy clarity and availability of AI tools"
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                84,
+                925,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI agent use by type"
+                    }
+                ]
+            },
+            "bbox": [
+                365,
+                181,
+                488,
+                216
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0680fe6e6e862f1774fd7347232770a9baed610ae58d272c7d6389cd250f00f5.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                365,
+                232,
+                937,
+                428
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Most people believe agents could do at least half their job in the future, and managers and leaders expect the biggest shift"
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                485,
+                930,
+                565
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents who think that in the next three years AI agents could perform at least half of their job"
+                    }
+                ]
+            },
+            "bbox": [
+                365,
+                585,
+                946,
+                622
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4c25c38b79caa8be052ea4d0c3bb3c34c5e2aedfded6d1eb0279aefa9a9527c4.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=9,923 regular AI users); BCG analysis.\nNote: Frontline employees = individual white-collar employees with no managerial responsibilities."
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                644,
+                881,
+                843
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The missing piece: operating models haven’t caught up with AI agents’ deployment"
+                    }
+                ]
+            },
+            "bbox": [
+                38,
+                340,
+                270,
+                667
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Half of employees lack clear governance for managing human × AI teams: frontline employees and managers feel it the most"
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                82,
+                945,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Respondents who say their company has not put in place clear guidance on managing human × AI teams"
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                179,
+                865,
+                245
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ba5da8981125f58da0e55135b5550dedc6c74e28fb394f1f67418fd3ca970efb.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                363,
+                265,
+                900,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Accountability is a universal concern, equally shared across all levels\nRespondents who rank AI-driven accountability as a top 3 concern in the next 2 to 3 years"
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                533,
+                906,
+                619
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/dc29b841df874e9788f0f4d9d54da1e2fbee3d2ceb17aa5cb001a19193e21978.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Sources: AI at Work, 2026 (n=8,849 respondents who have heard of AI agents and regular AI users); BCG analysis.\nNotes: Frontline employees = individual white-collar employees with no managerial responsibilities."
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                644,
+                841,
+                853
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c62d54599d276da8bce7e48c8b7d7ca749852cc7c50611d919ff5a865a80bc37.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                40,
+                380,
+                65,
+                444
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Five CEO imperatives"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                38,
+                66,
+                301,
+                125
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                208,
+                65,
+                277
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Make strategic clarity your top priority, and own it personally"
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                186,
+                257,
+                308
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Change the scoreboard: measure value, not adoption"
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                356,
+                271,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                539,
+                65,
+                606
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Invest in redesigning work end-to-end, not in more tools"
+                    }
+                ]
+            },
+            "bbox": [
+                93,
+                515,
+                268,
+                635
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                40,
+                713,
+                67,
+                781
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Put people at the heart of that redesign"
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                708,
+                270,
+                792
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/dd72ac8e5258c200b09d5cc9c154bc6928e1972c31cb2279474578502f17790c.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                40,
+                886,
+                65,
+                952
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Govern it as a\nmoving target, not a\none-off program"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                863,
+                250,
+                982
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategic clarity is not a communications task, it’s a leadership posture. Set AI as an explicit top priority, be clear about where the company is heading, and make sure everyone gets it, the frontline included. CEOs who personally own the transformation outperform on every dimension: value captured, employee joy, and trust."
+                    }
+                ]
+            },
+            "bbox": [
+                313,
+                173,
+                950,
+                323
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Adoption tells you that people use AI, not whether it pays off. The time that individuals save leaks out of the organization unless it is tracked and deliberately reinvested. So, watch business outcomes rather than usage."
+                    }
+                ]
+            },
+            "bbox": [
+                313,
+                358,
+                953,
+                472
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Most companies still treat AI as a tool for individual productivity, but the more important change is a collective one: AI is reshaping how teams work together and how tasks flow across the organization. Capturing that value means redesigning a few core processes from end-to-end."
+                    }
+                ]
+            },
+            "bbox": [
+                313,
+                517,
+                950,
+                636
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The redesign only works if people are in it. Look ahead at how roles will shift over the next few years, train for the skills that matter most, and bring people into shaping the change rather than presenting it to them. What keeps people engaged is knowing how AI helps them grow, not how much faster they work."
+                    }
+                ]
+            },
+            "bbox": [
+                313,
+                675,
+                943,
+                824
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Technology moves faster than any company can. Treat AI as something you keep steering, not a program with a finish line. Put a light, standing governance in place that rechecks what works, remeasures the value, and adjusts as the models and agents evolve."
+                    }
+                ]
+            },
+            "bbox": [
+                316,
+                864,
+                942,
+                980
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BCG X | BCG"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                385,
+                703,
+                615,
+                773
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "bcg.com"
+                    }
+                ]
+            },
+            "bbox": [
+                470,
+                853,
+                533,
+                886
+            ]
+        }
+    ]
+]

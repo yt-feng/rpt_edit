@@ -1,0 +1,3349 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "type": "image",
+                    "bbox": [
+                        0,
+                        0,
+                        594,
+                        332
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                0,
+                                0,
+                                594,
+                                332
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        0,
+                                        0,
+                                        594,
+                                        332
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                0,
+                                                0,
+                                                594,
+                                                332
+                                            ],
+                                            "type": "image",
+                                            "image_path": "86ab63d857975a9af2b53ab989043cccc3a842bd5e1eca740babf3c333fc0334.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        30,
+                        363,
+                        125,
+                        377
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                30,
+                                363,
+                                125,
+                                377
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        30,
+                                        363,
+                                        125,
+                                        377
+                                    ],
+                                    "type": "text",
+                                    "content": "INSURANCE INDUSTRY"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        402,
+                        345,
+                        483
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                402,
+                                345,
+                                483
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        402,
+                                        345,
+                                        483
+                                    ],
+                                    "type": "text",
+                                    "content": "An Early Look at Returns"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        24,
+                        511,
+                        298,
+                        528
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                511,
+                                298,
+                                528
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        511,
+                                        298,
+                                        528
+                                    ],
+                                    "type": "text",
+                                    "content": "The 2026 Insurance Value Creators Report"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        25,
+                        552,
+                        410,
+                        568
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                25,
+                                552,
+                                410,
+                                568
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        25,
+                                        552,
+                                        410,
+                                        568
+                                    ],
+                                    "type": "text",
+                                    "content": "By Nathalia Bellizia, Sid Sankaran, Jürgen Bohrmann, and Sheila Seetharaman"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        589,
+                        147,
+                        603
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                589,
+                                147,
+                                603
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        589,
+                                        147,
+                                        603
+                                    ],
+                                    "type": "text",
+                                    "content": "REPORT APRIL 15, 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        23,
+                        655,
+                        561,
+                        756
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                23,
+                                655,
+                                561,
+                                756
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        23,
+                                        655,
+                                        561,
+                                        756
+                                    ],
+                                    "type": "text",
+                                    "content": "Starting this year, BCG is taking a new approach to its annual examination of value creation in the global insurance industry with the goal of providing readers with more timely and useful insights. This first installment of the 2026 Insurance Value Creators Report presents an early look at market trends and developments based on available—but not yet complete for the full year—data. Subsequent installments will provide a more detailed segment- and region-specific analysis as well as offer deep dives into the property and casualty segment in the US, industry performance in Asia-Pacific, and trends in reinsurance."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        33,
+                        39,
+                        84,
+                        63
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                33,
+                                39,
+                                84,
+                                63
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        39,
+                                        84,
+                                        63
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        26,
+                        815,
+                        148,
+                        828
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                815,
+                                148,
+                                828
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        815,
+                                        148,
+                                        828
+                                    ],
+                                    "type": "text",
+                                    "content": "©2026 Boston Consulting Group"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        560,
+                        816,
+                        567,
+                        826
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                560,
+                                816,
+                                567,
+                                826
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        560,
+                                        816,
+                                        567,
+                                        826
+                                    ],
+                                    "type": "text",
+                                    "content": "1"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9
+                }
+            ],
+            "page_size": [
+                594,
+                841
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "type": "image",
+                    "bbox": [
+                        0,
+                        0,
+                        594,
+                        332
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                0,
+                                0,
+                                594,
+                                332
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        0,
+                                        0,
+                                        594,
+                                        332
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                0,
+                                                0,
+                                                594,
+                                                332
+                                            ],
+                                            "type": "image",
+                                            "image_path": "86ab63d857975a9af2b53ab989043cccc3a842bd5e1eca740babf3c333fc0334.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        30,
+                        363,
+                        125,
+                        377
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                30,
+                                363,
+                                125,
+                                377
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        30,
+                                        363,
+                                        125,
+                                        377
+                                    ],
+                                    "type": "text",
+                                    "content": "INSURANCE INDUSTRY"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        402,
+                        345,
+                        483
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                402,
+                                345,
+                                483
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        402,
+                                        345,
+                                        483
+                                    ],
+                                    "type": "text",
+                                    "content": "An Early Look at Returns"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        24,
+                        511,
+                        298,
+                        528
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                511,
+                                298,
+                                528
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        511,
+                                        298,
+                                        528
+                                    ],
+                                    "type": "text",
+                                    "content": "The 2026 Insurance Value Creators Report"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        25,
+                        552,
+                        410,
+                        568
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                25,
+                                552,
+                                410,
+                                568
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        25,
+                                        552,
+                                        410,
+                                        568
+                                    ],
+                                    "type": "text",
+                                    "content": "By Nathalia Bellizia, Sid Sankaran, Jürgen Bohrmann, and Sheila Seetharaman"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        589,
+                        147,
+                        603
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                589,
+                                147,
+                                603
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        589,
+                                        147,
+                                        603
+                                    ],
+                                    "type": "text",
+                                    "content": "REPORT APRIL 15, 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        23,
+                        655,
+                        561,
+                        756
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                23,
+                                655,
+                                561,
+                                756
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        23,
+                                        655,
+                                        561,
+                                        756
+                                    ],
+                                    "type": "text",
+                                    "content": "Starting this year, BCG is taking a new approach to its annual examination of value creation in the global insurance industry with the goal of providing readers with more timely and useful insights. This first installment of the 2026 Insurance Value Creators Report presents an early look at market trends and developments based on available—but not yet complete for the full year—data. Subsequent installments will provide a more detailed segment- and region-specific analysis as well as offer deep dives into the property and casualty segment in the US, industry performance in Asia-Pacific, and trends in reinsurance."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        24,
+                        57,
+                        557,
+                        123
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                57,
+                                557,
+                                123
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        57,
+                                        557,
+                                        123
+                                    ],
+                                    "type": "text",
+                                    "content": "After half a decade or more of steady, if unspectacular, shareholder returns in the insurance sector, change appears to be afoot. A 15% five-year annual total shareholder return (TSR) for the industry exceeded insurers' cost of equity for the first time since 2017. Two broad factors are at work: the pandemic years are receding, and current results have improved."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        135,
+                        564,
+                        219
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                135,
+                                564,
+                                219
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        135,
+                                        564,
+                                        219
+                                    ],
+                                    "type": "text",
+                                    "content": "At the same time, we appear to be in the early stages of a shift in investor preference toward life and health (L&H) and multiline insurers over property and casualty (P&C) and reinsurance companies. Investors are also moving their geographic focus, seeking quality in Europe and Asia-Pacific as macro and equity market uncertainty in the US pushes them to look for returns in other markets."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        322,
+                        322,
+                        355
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                322,
+                                322,
+                                355
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        322,
+                                        322,
+                                        355
+                                    ],
+                                    "type": "text",
+                                    "content": "Initial Industry Data"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        24,
+                        378,
+                        565,
+                        479
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                378,
+                                565,
+                                479
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        378,
+                                        565,
+                                        479
+                                    ],
+                                    "type": "text",
+                                    "content": "Insurance is a local and segment-specific business, and as always, there were big variations in performance. Among insurance segments, P&C showed the strongest five-year annual TSR, followed by reinsurance, likely driven by favorable pricing conditions across many lines of business throughout the period. That said, P&C rate momentum has shown signs of moderating as prices soften in some areas (such as commercial property). TSRs for 2025 indicate that this is likely to temper return on tangible equity and momentum going forward."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        489,
+                        539,
+                        558
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                489,
+                                539,
+                                558
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        489,
+                                        539,
+                                        558
+                                    ],
+                                    "type": "text",
+                                    "content": "While more capital-intensive L&H and multiline insurers have lagged, this may be shifting, as these segments outperformed in 2025, buoyed by investment income tailwinds. Elevated net investment income in the past year and supportive product dynamics have strengthened earnings and contributed to improved TSRs."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        568,
+                        550,
+                        635
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                568,
+                                550,
+                                635
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        568,
+                                        550,
+                                        635
+                                    ],
+                                    "type": "text",
+                                    "content": "On a five-year basis, Europe was the top-performing region, with annual TSR of 20.3%, up from 11.6% last year. Both Asia-Pacific and Europe outperformed on a one-year basis at 35.3% and 39.8%, respectively. This strong performance can be largely attributed to a “flight to quality” as investors looked for stable returns outside of volatile US markets."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        695,
+                        269,
+                        728
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                695,
+                                269,
+                                728
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        695,
+                                        269,
+                                        728
+                                    ],
+                                    "type": "text",
+                                    "content": "Trends to Watch"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "level": 2
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        26,
+                        816,
+                        148,
+                        828
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                816,
+                                148,
+                                828
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        816,
+                                        148,
+                                        828
+                                    ],
+                                    "type": "text",
+                                    "content": "©2026 Boston Consulting Group"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        560,
+                        816,
+                        567,
+                        826
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                560,
+                                816,
+                                567,
+                                826
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        560,
+                                        816,
+                                        567,
+                                        826
+                                    ],
+                                    "type": "text",
+                                    "content": "2"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                }
+            ],
+            "page_size": [
+                594,
+                841
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        24,
+                        57,
+                        557,
+                        123
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                57,
+                                557,
+                                123
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        57,
+                                        557,
+                                        123
+                                    ],
+                                    "type": "text",
+                                    "content": "After half a decade or more of steady, if unspectacular, shareholder returns in the insurance sector, change appears to be afoot. A 15% five-year annual total shareholder return (TSR) for the industry exceeded insurers' cost of equity for the first time since 2017. Two broad factors are at work: the pandemic years are receding, and current results have improved."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        135,
+                        564,
+                        219
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                135,
+                                564,
+                                219
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        135,
+                                        564,
+                                        219
+                                    ],
+                                    "type": "text",
+                                    "content": "At the same time, we appear to be in the early stages of a shift in investor preference toward life and health (L&H) and multiline insurers over property and casualty (P&C) and reinsurance companies. Investors are also moving their geographic focus, seeking quality in Europe and Asia-Pacific as macro and equity market uncertainty in the US pushes them to look for returns in other markets."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        322,
+                        322,
+                        355
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                322,
+                                322,
+                                355
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        322,
+                                        322,
+                                        355
+                                    ],
+                                    "type": "text",
+                                    "content": "Initial Industry Data"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        24,
+                        378,
+                        565,
+                        479
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                378,
+                                565,
+                                479
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        378,
+                                        565,
+                                        479
+                                    ],
+                                    "type": "text",
+                                    "content": "Insurance is a local and segment-specific business, and as always, there were big variations in performance. Among insurance segments, P&C showed the strongest five-year annual TSR, followed by reinsurance, likely driven by favorable pricing conditions across many lines of business throughout the period. That said, P&C rate momentum has shown signs of moderating as prices soften in some areas (such as commercial property). TSRs for 2025 indicate that this is likely to temper return on tangible equity and momentum going forward."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        489,
+                        539,
+                        558
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                489,
+                                539,
+                                558
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        489,
+                                        539,
+                                        558
+                                    ],
+                                    "type": "text",
+                                    "content": "While more capital-intensive L&H and multiline insurers have lagged, this may be shifting, as these segments outperformed in 2025, buoyed by investment income tailwinds. Elevated net investment income in the past year and supportive product dynamics have strengthened earnings and contributed to improved TSRs."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        568,
+                        550,
+                        635
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                568,
+                                550,
+                                635
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        568,
+                                        550,
+                                        635
+                                    ],
+                                    "type": "text",
+                                    "content": "On a five-year basis, Europe was the top-performing region, with annual TSR of 20.3%, up from 11.6% last year. Both Asia-Pacific and Europe outperformed on a one-year basis at 35.3% and 39.8%, respectively. This strong performance can be largely attributed to a “flight to quality” as investors looked for stable returns outside of volatile US markets."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        695,
+                        269,
+                        728
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                695,
+                                269,
+                                728
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        695,
+                                        269,
+                                        728
+                                    ],
+                                    "type": "text",
+                                    "content": "Trends to Watch"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "level": 2
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        24,
+                        57,
+                        566,
+                        123
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                57,
+                                566,
+                                123
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        57,
+                                        566,
+                                        123
+                                    ],
+                                    "type": "text",
+                                    "content": "The L&H and P&C segments are expected to undergo big changes in the coming years as technologies advance and new risks emerge. Expanding adoption of AI, including the use of AI agents, will have broad ramifications for everything from major functions such as underwriting and claims to workforce planning and talent acquisition and development."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        135,
+                        565,
+                        219
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                135,
+                                565,
+                                219
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        135,
+                                        565,
+                                        219
+                                    ],
+                                    "type": "text",
+                                    "content": "In P&C, softening market dynamics, especially in US personal auto, and increased competition are immediate concerns for management teams. Longer-term concerns include persistent structural risks in casualty lines and changes in the risk landscape from shifting trade flows. M&A is expected to become increasingly important over time as companies seek to improve returns in a softer market environment."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        231,
+                        561,
+                        314
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                231,
+                                561,
+                                314
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        231,
+                                        561,
+                                        314
+                                    ],
+                                    "type": "text",
+                                    "content": "Aging demographics and evolving customer preferences are driving increased demand in L&H for products that feature guaranteed protections and some hybrid-style options that offer additional living benefits (such as for critical illness). Longer-term, increased investment from private capital, more omnichannel distribution, and demographic shifts are expected to drive increased demand for life products."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        359,
+                        80,
+                        375
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                359,
+                                80,
+                                375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        359,
+                                        80,
+                                        375
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        422,
+                        163,
+                        465
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                422,
+                                163,
+                                465
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        422,
+                                        163,
+                                        465
+                                    ],
+                                    "type": "text",
+                                    "content": "An Early Look\nat Returns"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        474,
+                        160,
+                        498
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                474,
+                                160,
+                                498
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        474,
+                                        160,
+                                        498
+                                    ],
+                                    "type": "text",
+                                    "content": "The 2026 Insurance Value Creators Report"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        543,
+                        142,
+                        553
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                543,
+                                142,
+                                553
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        543,
+                                        142,
+                                        553
+                                    ],
+                                    "type": "text",
+                                    "content": "GLOBAL EDITION | APRIL 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        225,
+                        343,
+                        428,
+                        568
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                225,
+                                343,
+                                428,
+                                568
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        225,
+                                        343,
+                                        428,
+                                        568
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                225,
+                                                343,
+                                                428,
+                                                568
+                                            ],
+                                            "type": "image",
+                                            "image_path": "067f21160bd51b5f500972d55c017fc8f7d0c4e739a510367ed35d5aada14f45.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 7
+                        }
+                    ],
+                    "index": 7
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        27,
+                        816,
+                        148,
+                        827
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                27,
+                                816,
+                                148,
+                                827
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        27,
+                                        816,
+                                        148,
+                                        827
+                                    ],
+                                    "type": "text",
+                                    "content": "©2026 Boston Consulting Group"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        560,
+                        816,
+                        567,
+                        826
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                560,
+                                816,
+                                567,
+                                826
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        560,
+                                        816,
+                                        567,
+                                        826
+                                    ],
+                                    "type": "text",
+                                    "content": "3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9
+                }
+            ],
+            "page_size": [
+                594,
+                841
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        24,
+                        57,
+                        566,
+                        123
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                57,
+                                566,
+                                123
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        57,
+                                        566,
+                                        123
+                                    ],
+                                    "type": "text",
+                                    "content": "The L&H and P&C segments are expected to undergo big changes in the coming years as technologies advance and new risks emerge. Expanding adoption of AI, including the use of AI agents, will have broad ramifications for everything from major functions such as underwriting and claims to workforce planning and talent acquisition and development."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        135,
+                        565,
+                        219
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                135,
+                                565,
+                                219
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        135,
+                                        565,
+                                        219
+                                    ],
+                                    "type": "text",
+                                    "content": "In P&C, softening market dynamics, especially in US personal auto, and increased competition are immediate concerns for management teams. Longer-term concerns include persistent structural risks in casualty lines and changes in the risk landscape from shifting trade flows. M&A is expected to become increasingly important over time as companies seek to improve returns in a softer market environment."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        231,
+                        561,
+                        314
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                231,
+                                561,
+                                314
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        231,
+                                        561,
+                                        314
+                                    ],
+                                    "type": "text",
+                                    "content": "Aging demographics and evolving customer preferences are driving increased demand in L&H for products that feature guaranteed protections and some hybrid-style options that offer additional living benefits (such as for critical illness). Longer-term, increased investment from private capital, more omnichannel distribution, and demographic shifts are expected to drive increased demand for life products."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        359,
+                        80,
+                        375
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                359,
+                                80,
+                                375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        359,
+                                        80,
+                                        375
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        422,
+                        163,
+                        465
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                422,
+                                163,
+                                465
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        422,
+                                        163,
+                                        465
+                                    ],
+                                    "type": "text",
+                                    "content": "An Early Look\nat Returns"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        474,
+                        160,
+                        498
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                474,
+                                160,
+                                498
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        474,
+                                        160,
+                                        498
+                                    ],
+                                    "type": "text",
+                                    "content": "The 2026 Insurance Value Creators Report"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        43,
+                        543,
+                        142,
+                        553
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                43,
+                                543,
+                                142,
+                                553
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        43,
+                                        543,
+                                        142,
+                                        553
+                                    ],
+                                    "type": "text",
+                                    "content": "GLOBAL EDITION | APRIL 2026"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        225,
+                        343,
+                        428,
+                        568
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                225,
+                                343,
+                                428,
+                                568
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        225,
+                                        343,
+                                        428,
+                                        568
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                225,
+                                                343,
+                                                428,
+                                                568
+                                            ],
+                                            "type": "image",
+                                            "image_path": "067f21160bd51b5f500972d55c017fc8f7d0c4e739a510367ed35d5aada14f45.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 7
+                        }
+                    ],
+                    "index": 7
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        420,
+                        333,
+                        484,
+                        358
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                420,
+                                333,
+                                484,
+                                358
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        420,
+                                        333,
+                                        484,
+                                        358
+                                    ],
+                                    "type": "text",
+                                    "content": "Project Leader\nNew York"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        26,
+                        88,
+                        146,
+                        119
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                88,
+                                146,
+                                119
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        88,
+                                        146,
+                                        119
+                                    ],
+                                    "type": "text",
+                                    "content": "Authors"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        42,
+                        159,
+                        130,
+                        247
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                42,
+                                159,
+                                130,
+                                247
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        159,
+                                        130,
+                                        247
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                42,
+                                                159,
+                                                130,
+                                                247
+                                            ],
+                                            "type": "image",
+                                            "image_path": "76f11b39dbc961b5dca5574347772a921bd5201b16fae899eecd01c17a38e73e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 2
+                        }
+                    ],
+                    "index": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        41,
+                        291,
+                        128,
+                        376
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                41,
+                                291,
+                                128,
+                                376
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        291,
+                                        128,
+                                        376
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                41,
+                                                291,
+                                                128,
+                                                376
+                                            ],
+                                            "type": "image",
+                                            "image_path": "439496d1fe5954c9e2abde54771fa5c7eef84a754d43936a9e44e2d08090499e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        },
+                        {
+                            "bbox": [
+                                146,
+                                164,
+                                252,
+                                183
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        146,
+                                        164,
+                                        252,
+                                        183
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                146,
+                                                164,
+                                                252,
+                                                183
+                                            ],
+                                            "type": "text",
+                                            "content": "Nathalia Bellizia"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 4
+                        },
+                        {
+                            "bbox": [
+                                144,
+                                192,
+                                264,
+                                216
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        144,
+                                        192,
+                                        264,
+                                        216
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                144,
+                                                192,
+                                                264,
+                                                216
+                                            ],
+                                            "type": "text",
+                                            "content": "Managing Director & Partner\nNew York"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 5
+                        }
+                    ],
+                    "index": 3
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        146,
+                        221,
+                        163,
+                        235
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                146,
+                                221,
+                                163,
+                                235
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        146,
+                                        221,
+                                        163,
+                                        235
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                146,
+                                                221,
+                                                163,
+                                                235
+                                            ],
+                                            "type": "image",
+                                            "image_path": "01964da801951a49c80132c863bca587946229bd5942f89306652e3cfa4b03ac.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 6
+                        }
+                    ],
+                    "index": 6
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        316,
+                        157,
+                        405,
+                        246
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                316,
+                                157,
+                                405,
+                                246
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        316,
+                                        157,
+                                        405,
+                                        246
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                316,
+                                                157,
+                                                405,
+                                                246
+                                            ],
+                                            "type": "image",
+                                            "image_path": "b55a2f2ac67d7007ddd2cb9d49280e6dcd8feb0436132502733f129a41135d9a.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 7
+                        },
+                        {
+                            "bbox": [
+                                419,
+                                163,
+                                509,
+                                183
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        419,
+                                        163,
+                                        509,
+                                        183
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                419,
+                                                163,
+                                                509,
+                                                183
+                                            ],
+                                            "type": "text",
+                                            "content": "Sid Sankaran"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 8
+                        },
+                        {
+                            "bbox": [
+                                420,
+                                193,
+                                468,
+                                218
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        420,
+                                        193,
+                                        468,
+                                        218
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                420,
+                                                193,
+                                                468,
+                                                218
+                                            ],
+                                            "type": "text",
+                                            "content": "Partner\nNew Jersey"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 9
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        421,
+                        221,
+                        437,
+                        235
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                421,
+                                221,
+                                437,
+                                235
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        421,
+                                        221,
+                                        437,
+                                        235
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                421,
+                                                221,
+                                                437,
+                                                235
+                                            ],
+                                            "type": "image",
+                                            "image_path": "ce911740406e4b726ec09ada74b9c6936284e7032725f7394a5704cbed69338d.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 10
+                        },
+                        {
+                            "bbox": [
+                                144,
+                                291,
+                                263,
+                                312
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        144,
+                                        291,
+                                        263,
+                                        312
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                144,
+                                                291,
+                                                263,
+                                                312
+                                            ],
+                                            "type": "text",
+                                            "content": "Jürgen Bohrmann"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 11
+                        },
+                        {
+                            "bbox": [
+                                144,
+                                319,
+                                259,
+                                354
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        144,
+                                        319,
+                                        259,
+                                        354
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                144,
+                                                319,
+                                                259,
+                                                354
+                                            ],
+                                            "type": "text",
+                                            "content": "Global Knowledge Business\nSenior Director – Insurance\nMunich"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 12
+                        }
+                    ],
+                    "index": 10
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        146,
+                        359,
+                        163,
+                        373
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                146,
+                                359,
+                                163,
+                                373
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        146,
+                                        359,
+                                        163,
+                                        373
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                146,
+                                                359,
+                                                163,
+                                                373
+                                            ],
+                                            "type": "image",
+                                            "image_path": "26cdac91eb4819d5d35568df7ae1eb1d6757a8706f318a4f3e6e720f2e3d1da9.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 13
+                        }
+                    ],
+                    "index": 13
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        316,
+                        285,
+                        405,
+                        375
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                316,
+                                285,
+                                405,
+                                375
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        316,
+                                        285,
+                                        405,
+                                        375
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                316,
+                                                285,
+                                                405,
+                                                375
+                                            ],
+                                            "type": "image",
+                                            "image_path": "64ab0928b6f7ad68576da7f58663ec6893e337e2a12ef8badef8aae6473efe89.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 14
+                        },
+                        {
+                            "bbox": [
+                                419,
+                                288,
+                                510,
+                                325
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        419,
+                                        288,
+                                        510,
+                                        325
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                419,
+                                                288,
+                                                510,
+                                                325
+                                            ],
+                                            "type": "text",
+                                            "content": "Sheila\nSeetharaman"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 15
+                        }
+                    ],
+                    "index": 14
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        421,
+                        362,
+                        437,
+                        376
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                421,
+                                362,
+                                437,
+                                376
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        421,
+                                        362,
+                                        437,
+                                        376
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                421,
+                                                362,
+                                                437,
+                                                376
+                                            ],
+                                            "type": "image",
+                                            "image_path": "d19e714f284e6a4aa4712b55313c62a3e88be6fdbdd1fc98a9d0604ee3ad4274.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 16
+                        }
+                    ],
+                    "index": 16
+                },
+                {
+                    "bbox": [
+                        25,
+                        456,
+                        258,
+                        472
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                25,
+                                456,
+                                258,
+                                472
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        25,
+                                        456,
+                                        258,
+                                        472
+                                    ],
+                                    "type": "text",
+                                    "content": "ABOUT BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        24,
+                        486,
+                        565,
+                        587
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                486,
+                                565,
+                                587
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        486,
+                                        565,
+                                        587
+                                    ],
+                                    "type": "text",
+                                    "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        26,
+                        816,
+                        148,
+                        828
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                816,
+                                148,
+                                828
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        816,
+                                        148,
+                                        828
+                                    ],
+                                    "type": "text",
+                                    "content": "©2026 Boston Consulting Group"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19
+                },
+                {
+                    "bbox": [
+                        560,
+                        816,
+                        567,
+                        826
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                560,
+                                816,
+                                567,
+                                826
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        560,
+                                        816,
+                                        567,
+                                        826
+                                    ],
+                                    "type": "text",
+                                    "content": "4"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 20
+                }
+            ],
+            "page_size": [
+                594,
+                841
+            ],
+            "page_idx": 3,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        420,
+                        333,
+                        484,
+                        358
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                420,
+                                333,
+                                484,
+                                358
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        420,
+                                        333,
+                                        484,
+                                        358
+                                    ],
+                                    "type": "text",
+                                    "content": "Project Leader\nNew York"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        26,
+                        88,
+                        146,
+                        119
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                88,
+                                146,
+                                119
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        88,
+                                        146,
+                                        119
+                                    ],
+                                    "type": "text",
+                                    "content": "Authors"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        42,
+                        159,
+                        130,
+                        247
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                42,
+                                159,
+                                130,
+                                247
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        159,
+                                        130,
+                                        247
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                42,
+                                                159,
+                                                130,
+                                                247
+                                            ],
+                                            "type": "image",
+                                            "image_path": "76f11b39dbc961b5dca5574347772a921bd5201b16fae899eecd01c17a38e73e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 2
+                        }
+                    ],
+                    "index": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        41,
+                        291,
+                        128,
+                        376
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                41,
+                                291,
+                                128,
+                                376
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        291,
+                                        128,
+                                        376
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                41,
+                                                291,
+                                                128,
+                                                376
+                                            ],
+                                            "type": "image",
+                                            "image_path": "439496d1fe5954c9e2abde54771fa5c7eef84a754d43936a9e44e2d08090499e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        },
+                        {
+                            "bbox": [
+                                146,
+                                164,
+                                252,
+                                183
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        146,
+                                        164,
+                                        252,
+                                        183
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                146,
+                                                164,
+                                                252,
+                                                183
+                                            ],
+                                            "type": "text",
+                                            "content": "Nathalia Bellizia"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 4
+                        },
+                        {
+                            "bbox": [
+                                144,
+                                192,
+                                264,
+                                216
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        144,
+                                        192,
+                                        264,
+                                        216
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                144,
+                                                192,
+                                                264,
+                                                216
+                                            ],
+                                            "type": "text",
+                                            "content": "Managing Director & Partner\nNew York"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 5
+                        }
+                    ],
+                    "index": 3
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        146,
+                        221,
+                        163,
+                        235
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                146,
+                                221,
+                                163,
+                                235
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        146,
+                                        221,
+                                        163,
+                                        235
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                146,
+                                                221,
+                                                163,
+                                                235
+                                            ],
+                                            "type": "image",
+                                            "image_path": "01964da801951a49c80132c863bca587946229bd5942f89306652e3cfa4b03ac.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 6
+                        }
+                    ],
+                    "index": 6
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        316,
+                        157,
+                        405,
+                        246
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                316,
+                                157,
+                                405,
+                                246
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        316,
+                                        157,
+                                        405,
+                                        246
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                316,
+                                                157,
+                                                405,
+                                                246
+                                            ],
+                                            "type": "image",
+                                            "image_path": "b55a2f2ac67d7007ddd2cb9d49280e6dcd8feb0436132502733f129a41135d9a.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 7
+                        },
+                        {
+                            "bbox": [
+                                419,
+                                163,
+                                509,
+                                183
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        419,
+                                        163,
+                                        509,
+                                        183
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                419,
+                                                163,
+                                                509,
+                                                183
+                                            ],
+                                            "type": "text",
+                                            "content": "Sid Sankaran"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 8
+                        },
+                        {
+                            "bbox": [
+                                420,
+                                193,
+                                468,
+                                218
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        420,
+                                        193,
+                                        468,
+                                        218
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                420,
+                                                193,
+                                                468,
+                                                218
+                                            ],
+                                            "type": "text",
+                                            "content": "Partner\nNew Jersey"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 9
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        421,
+                        221,
+                        437,
+                        235
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                421,
+                                221,
+                                437,
+                                235
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        421,
+                                        221,
+                                        437,
+                                        235
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                421,
+                                                221,
+                                                437,
+                                                235
+                                            ],
+                                            "type": "image",
+                                            "image_path": "ce911740406e4b726ec09ada74b9c6936284e7032725f7394a5704cbed69338d.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 10
+                        },
+                        {
+                            "bbox": [
+                                144,
+                                291,
+                                263,
+                                312
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        144,
+                                        291,
+                                        263,
+                                        312
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                144,
+                                                291,
+                                                263,
+                                                312
+                                            ],
+                                            "type": "text",
+                                            "content": "Jürgen Bohrmann"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 11
+                        },
+                        {
+                            "bbox": [
+                                144,
+                                319,
+                                259,
+                                354
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        144,
+                                        319,
+                                        259,
+                                        354
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                144,
+                                                319,
+                                                259,
+                                                354
+                                            ],
+                                            "type": "text",
+                                            "content": "Global Knowledge Business\nSenior Director – Insurance\nMunich"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 12
+                        }
+                    ],
+                    "index": 10
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        146,
+                        359,
+                        163,
+                        373
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                146,
+                                359,
+                                163,
+                                373
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        146,
+                                        359,
+                                        163,
+                                        373
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                146,
+                                                359,
+                                                163,
+                                                373
+                                            ],
+                                            "type": "image",
+                                            "image_path": "26cdac91eb4819d5d35568df7ae1eb1d6757a8706f318a4f3e6e720f2e3d1da9.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 13
+                        }
+                    ],
+                    "index": 13
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        316,
+                        285,
+                        405,
+                        375
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                316,
+                                285,
+                                405,
+                                375
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        316,
+                                        285,
+                                        405,
+                                        375
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                316,
+                                                285,
+                                                405,
+                                                375
+                                            ],
+                                            "type": "image",
+                                            "image_path": "64ab0928b6f7ad68576da7f58663ec6893e337e2a12ef8badef8aae6473efe89.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 14
+                        },
+                        {
+                            "bbox": [
+                                419,
+                                288,
+                                510,
+                                325
+                            ],
+                            "type": "image_footnote",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        419,
+                                        288,
+                                        510,
+                                        325
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                419,
+                                                288,
+                                                510,
+                                                325
+                                            ],
+                                            "type": "text",
+                                            "content": "Sheila\nSeetharaman"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 15
+                        }
+                    ],
+                    "index": 14
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        421,
+                        362,
+                        437,
+                        376
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                421,
+                                362,
+                                437,
+                                376
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        421,
+                                        362,
+                                        437,
+                                        376
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                421,
+                                                362,
+                                                437,
+                                                376
+                                            ],
+                                            "type": "image",
+                                            "image_path": "d19e714f284e6a4aa4712b55313c62a3e88be6fdbdd1fc98a9d0604ee3ad4274.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 16
+                        }
+                    ],
+                    "index": 16
+                },
+                {
+                    "bbox": [
+                        25,
+                        456,
+                        258,
+                        472
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                25,
+                                456,
+                                258,
+                                472
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        25,
+                                        456,
+                                        258,
+                                        472
+                                    ],
+                                    "type": "text",
+                                    "content": "ABOUT BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        24,
+                        486,
+                        565,
+                        587
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                486,
+                                565,
+                                587
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        486,
+                                        565,
+                                        587
+                                    ],
+                                    "type": "text",
+                                    "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}
