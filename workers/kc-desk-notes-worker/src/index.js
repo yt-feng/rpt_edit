@@ -1015,11 +1015,24 @@ function cleanEnv(value) {
   return text === "unconfigured" ? "" : text;
 }
 
+function paddleClientToken(env) {
+  const token = cleanEnv(env.PADDLE_CLIENT_TOKEN);
+  return /^(live|test)_[A-Za-z0-9_-]+$/.test(token) ? token : "";
+}
+
+function paddleEnv(env, clientToken) {
+  const configured = cleanEnv(env.PADDLE_ENV);
+  if (clientToken.startsWith("test_")) return "sandbox";
+  if (clientToken.startsWith("live_")) return "production";
+  return configured || "production";
+}
+
 function paddleConfig(env) {
   const cnyCentPrice = cleanEnv(env.PADDLE_PRICE_CNY_CENT);
+  const clientToken = paddleClientToken(env);
   return {
-    PADDLE_ENV: cleanEnv(env.PADDLE_ENV) || "production",
-    PADDLE_CLIENT_TOKEN: cleanEnv(env.PADDLE_CLIENT_TOKEN),
+    PADDLE_ENV: paddleEnv(env, clientToken),
+    PADDLE_CLIENT_TOKEN: clientToken,
     PADDLE_PRICE_CNY_CENT: cnyCentPrice,
     PADDLE_PRICE_REPORT_CNY_CENT: cleanEnv(env.PADDLE_PRICE_REPORT_CNY_CENT) || cnyCentPrice,
     PADDLE_PRICE_YEARLY: cleanEnv(env.PADDLE_PRICE_YEARLY) || cnyCentPrice,

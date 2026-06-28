@@ -975,6 +975,62 @@ button.primary:disabled {
   line-height: 1;
 }
 
+.legal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  padding: 26px clamp(16px, 4vw, 42px) 34px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.legal-footer a {
+  color: var(--accent-strong);
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.legal-footer a:hover,
+.legal-footer a:focus {
+  text-decoration: underline;
+}
+
+.legal-shell {
+  max-width: 880px;
+}
+
+.legal-panel {
+  display: grid;
+  gap: 16px;
+  padding: clamp(22px, 4vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.legal-panel h1,
+.legal-panel h2,
+.legal-panel p {
+  margin: 0;
+}
+
+.legal-panel h1 {
+  font-size: 30px;
+}
+
+.legal-panel h2 {
+  margin-top: 8px;
+  font-size: 17px;
+}
+
+.legal-panel p {
+  color: #334155;
+  line-height: 1.7;
+}
+
 @media (max-width: 760px) {
   .topbar {
     align-items: flex-start;
