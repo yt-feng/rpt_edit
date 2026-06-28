@@ -10,6 +10,8 @@
   const PADDLE_SCRIPT_URL = "https://cdn.paddle.com/paddle/v2/paddle.js";
   const REPORT_PRICE_QUANTITY = 2000;
   const ANNUAL_PRICE_QUANTITY = 60000;
+  const AUTHORITY_SOURCE = "authority";
+  const EXTERNAL_SOURCE = "external";
   let paddleConfigPromise = null;
   let paddleLoadPromise = null;
   let paddleInitialized = false;
@@ -75,6 +77,16 @@
       if (text.includes(token)) score += weight;
     }
     return score;
+  }
+
+  function reportPriceCents(item) {
+    const cents = Number(item && item.price_cents);
+    return Number.isFinite(cents) && cents > 0 ? Math.round(cents) : REPORT_PRICE_QUANTITY;
+  }
+
+  function reportPriceLabel(item) {
+    const yuan = reportPriceCents(item) / 100;
+    return `¥${yuan.toLocaleString("zh-CN", { maximumFractionDigits: 2 })}`;
   }
 
   async function loadJson(path) {
@@ -253,10 +265,11 @@
     const session = loadAuthSession();
     const signedIn = Boolean(session);
     const reportTitle = context.item ? titleText(context.item) : "";
+    const priceLabel = context.item ? reportPriceLabel(context.item) : "¥20";
     const reportCard = context.item
       ? `
         <div class="plan-card">
-          <strong>单篇报告 ¥20</strong>
+          <strong>单篇报告 ${escapeHtml(priceLabel)}</strong>
           <span>${escapeHtml(reportTitle)}</span>
           <button class="primary" id="accountBuyReport" type="button">购买本篇</button>
         </div>
@@ -416,7 +429,7 @@
     const isReport = plan === "single_report";
     const priceId = isReport ? config.PADDLE_PRICE_REPORT_CNY_CENT : config.PADDLE_PRICE_YEARLY;
     const isSharedCentPrice = !isReport && priceId && priceId === config.PADDLE_PRICE_REPORT_CNY_CENT;
-    const quantity = isReport ? REPORT_PRICE_QUANTITY : (isSharedCentPrice ? ANNUAL_PRICE_QUANTITY : 1);
+    const quantity = isReport ? reportPriceCents(item) : (isSharedCentPrice ? ANNUAL_PRICE_QUANTITY : 1);
     if (!priceId) throw new Error(isReport ? "支付配置缺少单篇报告价格。" : "支付配置缺少年度价格。");
     paddle.Checkout.open({
       items: [{ priceId, quantity }],
@@ -431,6 +444,7 @@
         source,
         title: isReport ? titleText(item).slice(0, 500) : "",
         quantity,
+        price_cents: isReport ? quantity : "",
       },
       settings: {
         displayMode: "overlay",
@@ -855,6 +869,25 @@
     return meta;
   }
 
+  function authorityKindLabel(kind) {
+    return kind === "foreign-rt" ? "实时外文" : "普通外文";
+  }
+
+  function authorityMeta(item) {
+    const meta = [
+      authorityKindLabel(item.kind),
+      item.institution,
+      item.date,
+      item.page_count ? `${item.page_count}页` : "",
+      item.language,
+      reportPriceLabel(item),
+    ]
+      .map((value) => String(value || "").trim())
+      .filter(Boolean)
+      .join(" · ");
+    return meta;
+  }
+
   function externalRow(item) {
     const meta = externalMeta(item);
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
@@ -864,6 +897,19 @@
         <span class="related-title">
           <span>${escapeHtml(item.title)}</span>
           ${zh ? `<span class="related-title-zh">${escapeHtml(zh)}</span>` : ""}
+        </span>
+        <span class="related-meta">${escapeHtml(meta)}</span>
+      </a>
+    `;
+  }
+
+  function authorityRow(item) {
+    const meta = authorityMeta(item);
+    const url = externalPageUrl({ ...item, source: AUTHORITY_SOURCE }, "");
+    return `
+      <a class="related-row authority-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
+        <span class="related-title">
+          <span>${escapeHtml(item.title)}</span>
         </span>
         <span class="related-meta">${escapeHtml(meta)}</span>
       </a>
@@ -1059,14 +1105,26 @@
     const externalResults = document.getElementById("externalResults");
     const externalCount = document.getElementById("externalCount");
     const externalStatus = document.getElementById("externalStatus");
+    const authoritySection = document.getElementById("authoritySection");
+    const authorityResults = document.getElementById("authorityResults");
+    const authorityCount = document.getElementById("authorityCount");
+    const authorityStatus = document.getElementById("authorityStatus");
     let externalTimer = 0;
     let externalToken = 0;
+    let authorityToken = 0;
     const externalItems = new Map();
+    const authorityItems = new Map();
 
     function setExternalStatus(text, kind) {
       if (!externalStatus) return;
       externalStatus.className = kind ? `status-line ${kind}` : "status-line";
       externalStatus.textContent = text || "";
+    }
+
+    function setAuthorityStatus(text, kind) {
+      if (!authorityStatus) return;
+      authorityStatus.className = kind ? `status-line ${kind}` : "status-line";
+      authorityStatus.textContent = text || "";
     }
 
     async function runExternalSearch(query) {
@@ -1112,14 +1170,63 @@
       }
     }
 
+    async function runAuthoritySearch(query) {
+      if (!authoritySection || !authorityResults) return;
+      if (!externalUrl || !query) {
+        authoritySection.hidden = true;
+        authorityResults.innerHTML = "";
+        authorityItems.clear();
+        if (authorityCount) authorityCount.textContent = "";
+        setAuthorityStatus("");
+        return;
+      }
+      const token = ++authorityToken;
+      authoritySection.hidden = false;
+      if (authorityCount) authorityCount.textContent = "搜索中…";
+      setAuthorityStatus("");
+      authorityResults.innerHTML = `
+        <div class="loading-state">
+          <span class="loading-spinner" aria-hidden="true"></span>
+          <span>正在搜索高权报告…</span>
+        </div>
+      `;
+      try {
+        const response = await fetch(
+          `${externalUrl}/authority/search?q=${encodeURIComponent(query)}`,
+          { cache: "no-store" },
+        );
+        if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
+        const data = await response.json();
+        if (token !== authorityToken) return;
+        const items = Array.isArray(data.items) ? data.items : [];
+        authorityItems.clear();
+        items.forEach((item) => authorityItems.set(String(item.id), item));
+        if (authorityCount) authorityCount.textContent = items.length ? `${items.length} 条` : "";
+        authorityResults.innerHTML = items.length
+          ? items.map(authorityRow).join("")
+          : '<div class="empty-state">暂无匹配结果。</div>';
+      } catch (error) {
+        if (token !== authorityToken) return;
+        if (authorityCount) authorityCount.textContent = "";
+        authorityResults.innerHTML = "";
+        setAuthorityStatus(error.message || "搜索暂不可用。", "error");
+      }
+    }
+
     function scheduleExternalSearch() {
       window.clearTimeout(externalTimer);
       const query = input.value.trim();
-      externalTimer = window.setTimeout(() => runExternalSearch(query), 400);
+      externalTimer = window.setTimeout(() => {
+        runExternalSearch(query);
+        runAuthoritySearch(query);
+      }, 400);
     }
 
     input.addEventListener("input", scheduleExternalSearch);
-    clearFilters.addEventListener("click", () => runExternalSearch(""));
+    clearFilters.addEventListener("click", () => {
+      runExternalSearch("");
+      runAuthoritySearch("");
+    });
     externalResults.addEventListener("click", (event) => {
       const row = event.target.closest(".external-row");
       if (!row) return;
@@ -1129,6 +1236,17 @@
       const item = externalItems.get(String(row.dataset.id));
       if (item) openInNewTab(externalPageUrl(item, ""));
     });
+    if (authorityResults) {
+      authorityResults.addEventListener("click", (event) => {
+        const row = event.target.closest(".authority-row");
+        if (!row) return;
+        if (isNativeNewTabLink(row)) return;
+        event.preventDefault();
+        event.stopPropagation();
+        const item = authorityItems.get(String(row.dataset.id));
+        if (item) openInNewTab(externalPageUrl({ ...item, source: AUTHORITY_SOURCE }, ""));
+      });
+    }
 
     loadJson("data/search_index.json")
       .then((searchIndex) => {
@@ -1257,7 +1375,8 @@
     `;
   }
 
-  function accountAccessMarkup() {
+  function accountAccessMarkup(item = {}) {
+    const singlePrice = reportPriceLabel(item);
     return `
       <section class="account-access" id="accountAccess" hidden>
         <h3>Account access</h3>
@@ -1265,7 +1384,7 @@
         <div class="account-access-actions">
           <button class="secondary-button" id="openAccountPanel" type="button">登录 / 账号</button>
           <button class="primary" id="accountDownloadReport" type="button" hidden>会员下载</button>
-          <button class="secondary-button" id="buySingleReport" type="button" hidden>单篇 ¥20</button>
+          <button class="secondary-button" id="buySingleReport" type="button" hidden>单篇 ${escapeHtml(singlePrice)}</button>
           <button class="secondary-button" id="buyAnnualPlan" type="button" hidden>年度 ¥600</button>
         </div>
         <div id="accountAccessStatus" class="status-line" aria-live="polite"></div>
@@ -1419,12 +1538,18 @@
   function externalPageUrl(item, password, options = {}) {
     const url = new URL("doc.html", window.location.href);
     url.searchParams.set("id", item.id);
+    if (item.source) url.searchParams.set("source", item.source);
     if (password) url.searchParams.set("password", password);
     if (item.title) url.searchParams.set("title", item.title);
     if (item.title_cn) url.searchParams.set("title_cn", item.title_cn);
     if (item.institution) url.searchParams.set("institution", item.institution);
     if (item.date) url.searchParams.set("date", item.date);
     if (item.file_type) url.searchParams.set("file_type", item.file_type);
+    if (item.kind) url.searchParams.set("kind", item.kind);
+    if (item.page_count) url.searchParams.set("page_count", item.page_count);
+    if (item.report_type) url.searchParams.set("report_type", item.report_type);
+    if (item.language) url.searchParams.set("language", item.language);
+    if (item.price_cents) url.searchParams.set("price_cents", item.price_cents);
     return url.toString();
   }
 
@@ -1452,14 +1577,14 @@
     }
   }
 
-  async function requestExternalPassword(workerUrl, id) {
+  async function requestExternalPassword(workerUrl, id, source = EXTERNAL_SOURCE) {
     const token = getAdminToken();
     if (!token) throw new Error("Private tools are locked.");
     try {
       const response = await fetch(`${workerUrl}/admin/report-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id, token, source: "external" }),
+        body: JSON.stringify({ id, token, source }),
       });
       const data = await response.json().catch(() => ({}));
       if (!response.ok) {
@@ -1558,7 +1683,7 @@
     const unlockMarkup = available
       ? `
         ${setupWarning}
-        ${workerUrl ? accountAccessMarkup() : ""}
+        ${workerUrl ? accountAccessMarkup(item) : ""}
         <form class="unlock-box" id="unlockForm">
           <h3>PDF Download</h3>
           <p class="subtle">Enter the report password to download the PDF.</p>
@@ -1699,23 +1824,48 @@
   }
 
   function externalItemFromParams(params) {
+    const source = params.get("source") === AUTHORITY_SOURCE ? AUTHORITY_SOURCE : EXTERNAL_SOURCE;
+    const priceCents = Number(params.get("price_cents") || "");
     return {
       id: String(params.get("id") || "").trim(),
+      source,
       title: params.get("title") || "Report",
       title_cn: params.get("title_cn") || "",
       institution: params.get("institution") || "",
       date: params.get("date") || "",
       file_type: params.get("file_type") || "",
+      kind: params.get("kind") || "",
+      page_count: params.get("page_count") || "",
+      report_type: params.get("report_type") || "",
+      language: params.get("language") || "",
+      price_cents: Number.isFinite(priceCents) && priceCents > 0 ? priceCents : 0,
     };
   }
 
-  async function fetchExternalPdf(workerUrl, id, password, statusTarget, options = {}) {
+  function isAuthorityItem(item) {
+    return item && item.source === AUTHORITY_SOURCE;
+  }
+
+  function docSourceLabel(item) {
+    return isAuthorityItem(item) ? "高权报告" : "其他报告";
+  }
+
+  function docEndpoint(item) {
+    return isAuthorityItem(item) ? "authority" : "external";
+  }
+
+  function validDocId(item) {
+    if (isAuthorityItem(item)) return /^(foreign|foreign-rt):[0-9]{1,25}$/.test(item.id);
+    return /^[0-9]{6,25}$/.test(item.id);
+  }
+
+  async function fetchExternalPdf(workerUrl, item, password, statusTarget, options = {}) {
     statusTarget("正在获取报告…");
-    const response = await fetch(`${workerUrl}/external/pdf`, {
+    const response = await fetch(`${workerUrl}/${docEndpoint(item)}/pdf`, {
       method: "POST",
       headers: { "Content-Type": "application/json", ...(options.auth ? authHeaders() : {}) },
       cache: "no-store",
-      body: JSON.stringify({ id, password: password || "" }),
+      body: JSON.stringify({ id: item.id, password: password || "" }),
     });
     if (response.status === 202) {
       let data = {};
@@ -1738,7 +1888,7 @@
       throw new Error(message);
     }
     const blob = await response.blob();
-    triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${id}.pdf`);
+    triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${item.id}.pdf`);
     setRememberedDownloadPassword(password);
     statusTarget("下载已开始。", "ok");
     return { pending: false };
@@ -1781,7 +1931,7 @@
   }
 
   async function downloadExternalWithAccount(workerUrl, item, statusTarget) {
-    const result = await fetchExternalPdf(workerUrl, item.id, "", statusTarget, { auth: true });
+    const result = await fetchExternalPdf(workerUrl, item, "", statusTarget, { auth: true });
     if (result.pending) {
       statusTarget("报告正在准备，通常约 3-8 分钟。页面会自动检测，准备好后开始下载。");
       pollExternalDetail(workerUrl, item.id, "", statusTarget, () => (
@@ -1794,7 +1944,7 @@
     const params = new URLSearchParams(window.location.search);
     const item = externalItemFromParams(params);
     const target = document.getElementById("externalDetail");
-    if (!/^[0-9]{6,25}$/.test(item.id)) {
+    if (!validDocId(item)) {
       target.innerHTML = '<div class="error-state">Report not found.</div>';
       return;
     }
@@ -1805,9 +1955,23 @@
     initAdminGate(workerUrl);
 
     const passwordFromLink = params.get("password") || "";
-    const meta = externalMeta(item);
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     document.title = `${item.title || "Report"} | KC Desk Notes`;
+    const detailFields = isAuthorityItem(item)
+      ? `
+        ${field("Source", docSourceLabel(item))}
+        ${field("Category", authorityKindLabel(item.kind))}
+        ${field("Institution", item.institution || "-")}
+        ${field("Date", item.date || "-")}
+        ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
+        ${field("Price", reportPriceLabel(item))}
+      `
+      : `
+        ${field("Source", docSourceLabel(item))}
+        ${field("Institution", item.institution || "-")}
+        ${field("Date", item.date || "-")}
+        ${field("Type", item.file_type || "-")}
+      `;
     target.innerHTML = `
       <div>
         <h1 class="detail-title">${escapeHtml(item.title || "Report")}</h1>
@@ -1815,10 +1979,7 @@
         <p class="subtle">Password-protected report delivery.</p>
       </div>
       <div class="detail-grid">
-        ${field("Source", "其他报告")}
-        ${field("Institution", item.institution || "-")}
-        ${field("Date", item.date || "-")}
-        ${field("Type", item.file_type || "-")}
+        ${detailFields}
       </div>
       <form class="unlock-box" id="externalDetailForm">
         <h3>PDF Download</h3>
@@ -1832,7 +1993,7 @@
         </div>
         <div id="externalDetailStatus" class="status-line" aria-live="polite"></div>
       </form>
-      ${workerUrl ? accountAccessMarkup() : ""}
+      ${workerUrl ? accountAccessMarkup(item) : ""}
       <section class="admin-panel external-admin-tools" hidden>
         <div class="admin-panel-heading">
           <h3>Delivery link</h3>
@@ -1876,7 +2037,7 @@
       }
       button.disabled = true;
       try {
-          const result = await fetchExternalPdf(workerUrl, item.id, input.value, setStatus);
+        const result = await fetchExternalPdf(workerUrl, item, input.value, setStatus);
         if (result.pending) {
           setRememberedDownloadPassword(input.value);
           setStatus("报告正在准备，通常约 3-8 分钟。页面会自动检测，准备好后开始下载。");
@@ -1892,7 +2053,7 @@
     form.addEventListener("submit", submitDownload);
     document.addEventListener("kcdesk-admin-change", refreshAdmin);
     refreshAdmin();
-    initReportAccessControls(item, workerUrl, "external", (statusTarget) => (
+    initReportAccessControls(item, workerUrl, item.source, (statusTarget) => (
       downloadExternalWithAccount(workerUrl, item, statusTarget)
     ));
 
@@ -1902,7 +2063,7 @@
       deliveryStatus.className = "status-line";
       deliveryStatus.textContent = "Generating...";
       try {
-        const data = await requestExternalPassword(workerUrl, item.id);
+        const data = await requestExternalPassword(workerUrl, item.id, item.source);
         linkInput.value = externalPageUrl(item, data.password);
         deliveryStatus.className = "status-line ok";
         deliveryStatus.textContent = "Delivery link generated.";

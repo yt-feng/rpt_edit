@@ -31,6 +31,30 @@ const EXTERNAL_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 
+// High-authority foreign-report metadata. Search endpoints are public; PDF
+// download requires an authorized upstream token configured as a Worker secret.
+const AUTHORITY_HOST = "www.nash-ai.cn";
+const AUTHORITY_ORIGIN = `https://${AUTHORITY_HOST}`;
+const AUTHORITY_SOURCE = "authority";
+const AUTHORITY_SEARCH_PAGE_SIZE = 20;
+const AUTHORITY_UA = "NashForeignSearchMetadataClient/1.0";
+const AUTHORITY_KINDS = {
+  "foreign": {
+    endpoint: "/reports/foreign/search",
+    download: "/reports/foreign/pdf/download",
+    referer: `${AUTHORITY_ORIGIN}/foreign.html`,
+    price_cents: 2600,
+    label: "普通外文",
+  },
+  "foreign-rt": {
+    endpoint: "/reports/foreign-rt/search",
+    download: "/reports/foreign-rt/pdf/download",
+    referer: `${AUTHORITY_ORIGIN}/foreign-rt.html`,
+    price_cents: 4600,
+    label: "实时外文",
+  },
+};
+
 let catalogCache = null;
 let catalogFetchedAt = 0;
 let rulesCache = null;
@@ -1305,6 +1329,10 @@ async function handleAdminReportPassword(request, env) {
     if (!isExternalId(id)) {
       return jsonResponse(request, env, 400, { error: "Invalid report id." });
     }
+  } else if (source === AUTHORITY_SOURCE) {
+    if (!parseAuthorityId(id)) {
+      return jsonResponse(request, env, 400, { error: "Invalid report id." });
+    }
   } else if (!/^[a-f0-9]{16,64}$/i.test(id)) {
     return jsonResponse(request, env, 400, { error: "Invalid report id." });
   }
@@ -1315,11 +1343,11 @@ async function handleAdminReportPassword(request, env) {
     return jsonResponse(request, env, 401, { error: error.message || "Admin session is invalid." });
   }
 
-  if (source === "external") {
+  if (source === "external" || source === AUTHORITY_SOURCE) {
     try {
       return jsonResponse(request, env, 200, {
         id,
-        source: "external",
+        source,
         password: await derivedReportPassword(env, id),
       });
     } catch (_error) {
@@ -1602,6 +1630,187 @@ async function handleExternalStatus(request, env) {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Authority report integration
+// ---------------------------------------------------------------------------
+
+function parseAuthorityId(value) {
+  const match = String(value || "").trim().match(/^(foreign|foreign-rt):([0-9]{1,25})$/);
+  if (!match || !AUTHORITY_KINDS[match[1]]) return null;
+  return {
+    kind: match[1],
+    upstreamId: match[2],
+    compoundId: `${match[1]}:${match[2]}`,
+    config: AUTHORITY_KINDS[match[1]],
+  };
+}
+
+function authoritySearchPayload(query, page) {
+  return {
+    releaseDate: 0,
+    startDate: "",
+    endDate: "",
+    minPages: 0,
+    keyword: query,
+    reportTypes: [],
+    industries: [],
+    pageNum: page,
+    pageSize: AUTHORITY_SEARCH_PAGE_SIZE,
+  };
+}
+
+function authoritySearchHeaders(kindConfig) {
+  return {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "Origin": AUTHORITY_ORIGIN,
+    "Referer": kindConfig.referer,
+    "User-Agent": AUTHORITY_UA,
+  };
+}
+
+function slimAuthorityItem(kind, record) {
+  const config = AUTHORITY_KINDS[kind];
+  const id = String(record.id || "").trim();
+  const title = String(record.title || "").replace(/\s+/g, " ").trim();
+  const institution = String(record.securities || record.companyName || "").trim();
+  if (!id) return { id: "" };
+  return {
+    id: `${kind}:${id}`,
+    source: AUTHORITY_SOURCE,
+    kind,
+    kind_label: config.label,
+    title: title || "Untitled report",
+    institution,
+    date: String(record.reDate || "").trim(),
+    report_type: String(record.reportType || "").trim(),
+    page_count: Number(record.page || record.pages || 0) || 0,
+    language: String(record.lang || "").trim(),
+    stock_code: String(record.stockCode || record.companycode || "").trim(),
+    stock_name: String(record.stockName || record.companyName || "").trim(),
+    author: String(record.author || record.authors || "").trim(),
+    price_cents: config.price_cents,
+    file_type: "pdf",
+  };
+}
+
+async function authoritySearchOne(kind, query, page) {
+  const config = AUTHORITY_KINDS[kind];
+  const response = await fetch(`${AUTHORITY_ORIGIN}${config.endpoint}`, {
+    method: "POST",
+    headers: authoritySearchHeaders(config),
+    body: JSON.stringify(authoritySearchPayload(query, page)),
+  });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  const raw = await response.json();
+  const data = raw && raw.data && typeof raw.data === "object" ? raw.data : null;
+  if (raw.code !== 200 || !data || !Array.isArray(data.records)) throw new Error("bad response");
+  return {
+    kind,
+    page: Number(data.pageNum || page),
+    total: Number(data.total || 0),
+    items: data.records.map((record) => slimAuthorityItem(kind, record)).filter((item) => item.id && item.title),
+  };
+}
+
+async function handleAuthoritySearch(request, env) {
+  const url = new URL(request.url);
+  const query = String(url.searchParams.get("q") || "").trim();
+  const page = Math.max(1, Number(url.searchParams.get("page") || "1") || 1);
+  const requestedKind = String(url.searchParams.get("kind") || "both").trim();
+  if (!query) {
+    return jsonResponse(request, env, 200, { items: [], page: 1, total: 0 });
+  }
+
+  const kinds = AUTHORITY_KINDS[requestedKind] ? [requestedKind] : Object.keys(AUTHORITY_KINDS);
+  const results = await Promise.allSettled(kinds.map((kind) => authoritySearchOne(kind, query, page)));
+  const fulfilled = results
+    .filter((result) => result.status === "fulfilled")
+    .map((result) => result.value);
+  const items = fulfilled.flatMap((result) => result.items)
+    .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+  if (!fulfilled.length && results.length) {
+    return jsonResponse(request, env, 502, { error: "Authority search is unavailable." });
+  }
+  return jsonResponse(request, env, 200, {
+    items,
+    page,
+    total: fulfilled.reduce((sum, result) => sum + result.total, 0),
+    sources: fulfilled.map((result) => ({ kind: result.kind, total: result.total })),
+  });
+}
+
+function authorityDownloadToken(env) {
+  return cleanEnv(env.AUTHORITY_AUTH_TOKEN) || cleanEnv(env.NASH_AUTH_TOKEN);
+}
+
+async function handleAuthorityPdf(request, env) {
+  const url = new URL(request.url);
+  let payload = {};
+  if (request.method === "POST") {
+    try {
+      payload = await request.json();
+    } catch (_error) {
+      return jsonResponse(request, env, 400, { error: "Invalid JSON body." });
+    }
+  }
+  const parsed = parseAuthorityId(String(payload.id || url.searchParams.get("id") || ""));
+  const password = String(payload.password || url.searchParams.get("password") || "");
+  if (!parsed) {
+    return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  }
+
+  const accountAllowed = await accountCanDownload(env, request, parsed.compoundId, AUTHORITY_SOURCE);
+  if (!password && !accountAllowed) {
+    return jsonResponse(request, env, 402, { error: "Please log in, purchase this report, or enter the report password." });
+  }
+  if (!accountAllowed && !(await sharedReportPasswordMatches(env, parsed.compoundId, password))) {
+    return jsonResponse(request, env, 401, { error: "Password is incorrect." });
+  }
+
+  const token = authorityDownloadToken(env);
+  if (!token) {
+    return jsonResponse(request, env, 503, {
+      error: `高权报告下载服务需要授权配置，请联系 WeChat: ${CONTACT_WECHAT}。`,
+      contact: CONTACT_WECHAT,
+    });
+  }
+
+  const target = new URL(`${AUTHORITY_ORIGIN}${parsed.config.download}`);
+  target.searchParams.set("id", parsed.upstreamId);
+  let upstream;
+  try {
+    upstream = await fetch(target.toString(), {
+      headers: {
+        "Accept": "application/pdf,*/*",
+        "Authorization": `Bearer ${token}`,
+        "Referer": parsed.config.referer,
+        "User-Agent": AUTHORITY_UA,
+      },
+    });
+  } catch (_error) {
+    return jsonResponse(request, env, 502, { error: `高权报告下载暂不可用，请联系 ${CONTACT_WECHAT}。` });
+  }
+
+  const contentType = upstream.headers.get("Content-Type") || "";
+  if (!upstream.ok || /json/i.test(contentType)) {
+    return jsonResponse(request, env, upstream.status === 401 ? 401 : 502, {
+      error: `高权报告授权下载暂不可用，请联系 ${CONTACT_WECHAT}。`,
+      contact: CONTACT_WECHAT,
+    });
+  }
+
+  return new Response(upstream.body, {
+    headers: {
+      ...corsHeaders(request, env),
+      "Content-Type": contentType || "application/pdf",
+      "Content-Disposition": contentDisposition(`${parsed.config.label}-${parsed.upstreamId}.pdf`),
+      "Cache-Control": "no-store, private",
+      "X-Content-Type-Options": "nosniff",
+    },
+  });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -1663,6 +1872,14 @@ export default {
 
     if (pathname === "/external/status" && request.method === "GET") {
       return handleExternalStatus(request, env);
+    }
+
+    if (pathname === "/authority/search" && request.method === "GET") {
+      return handleAuthoritySearch(request, env);
+    }
+
+    if (pathname === "/authority/pdf" && (request.method === "GET" || request.method === "POST")) {
+      return handleAuthorityPdf(request, env);
     }
 
     return jsonResponse(request, env, 404, { error: "Not found." });

@@ -208,6 +208,8 @@ jobs:
           # External-report preparation token. Optional; the fallback keeps wrangler
           # from pushing an empty secret value.
           GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN || 'unconfigured' }}
+          NASH_AUTH_TOKEN: ${{ secrets.NASH_AUTH_TOKEN || 'unconfigured' }}
+          AUTHORITY_AUTH_TOKEN: ${{ secrets.AUTHORITY_AUTH_TOKEN || secrets.NASH_AUTH_TOKEN || 'unconfigured' }}
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID || '8182ec40eab8c484e11ebf5d6a516fbd' }}
@@ -227,3 +229,5 @@ jobs:
             PADDLE_PRICE_YEARLY
             PADDLE_WEBHOOK_SECRET
             GH_DISPATCH_TOKEN
+            NASH_AUTH_TOKEN
+            AUTHORITY_AUTH_TOKEN
