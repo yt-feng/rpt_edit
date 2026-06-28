@@ -24,8 +24,8 @@ for attempt in $(seq 1 "$MAX_ATTEMPTS"); do
   # Always rebase our local working tree onto the latest remote branch first.
   # reset --mixed keeps generated files in the working tree while moving HEAD/index
   # to the latest origin/main, so the next commit is based on the current remote tip.
-  git fetch origin main
-  git reset --mixed origin/main
+  git fetch --depth=1 origin main
+  git reset --mixed FETCH_HEAD
 
   git add "$OUTPUT_DIR"
   # Force-add binary PDFs in case repo/global ignore rules skip them.
