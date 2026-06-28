@@ -422,6 +422,14 @@ async function r2GetJson(env, key) {
   }
 }
 
+async function safeR2GetJson(env, key) {
+  try {
+    return await r2GetJson(env, key);
+  } catch (_error) {
+    return null;
+  }
+}
+
 async function r2PutJson(env, key, payload) {
   await accountBucket(env).put(key, JSON.stringify(payload), {
     httpMetadata: { contentType: "application/json; charset=utf-8" },
@@ -449,7 +457,7 @@ async function createSiteUserInR2(env, fields) {
 }
 
 async function updateSiteUserInR2(env, userId, fields) {
-  const existing = await r2GetJson(env, accountKey("users", "id", userId));
+  const existing = await safeR2GetJson(env, accountKey("users", "id", userId));
   const user = { ...(existing || {}), ...fields, id: userId, updated_at: new Date().toISOString() };
   if (user.username) await r2PutJson(env, accountKey("users", "username", user.username), user);
   if (user.email) await r2PutJson(env, accountKey("users", "email", user.email), user);
@@ -458,27 +466,29 @@ async function updateSiteUserInR2(env, userId, fields) {
 }
 
 async function findSiteUserByUsername(env, username) {
-  const r2User = await r2GetJson(env, accountKey("users", "username", username));
-  if (!hasSupabaseConfig(env)) return r2User;
-  try {
-    const query = queryString({ username: `eq.${username}`, limit: "1" });
-    const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
-    return Array.isArray(rows) && rows.length ? rows[0] : r2User;
-  } catch (_error) {
-    return r2User;
+  if (hasSupabaseConfig(env)) {
+    try {
+      const query = queryString({ username: `eq.${username}`, limit: "1" });
+      const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
+      if (Array.isArray(rows) && rows.length) return rows[0];
+    } catch (_error) {
+      // Fall through to account data persisted in R2.
+    }
   }
+  return safeR2GetJson(env, accountKey("users", "username", username));
 }
 
 async function findSiteUserByEmail(env, email) {
-  const r2User = await r2GetJson(env, accountKey("users", "email", email));
-  if (!hasSupabaseConfig(env)) return r2User;
-  try {
-    const query = queryString({ email: `eq.${email}`, limit: "1" });
-    const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
-    return Array.isArray(rows) && rows.length ? rows[0] : r2User;
-  } catch (_error) {
-    return r2User;
+  if (hasSupabaseConfig(env)) {
+    try {
+      const query = queryString({ email: `eq.${email}`, limit: "1" });
+      const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
+      if (Array.isArray(rows) && rows.length) return rows[0];
+    } catch (_error) {
+      // Fall through to account data persisted in R2.
+    }
   }
+  return safeR2GetJson(env, accountKey("users", "email", email));
 }
 
 async function createSiteUser(env, fields) {
@@ -515,19 +525,20 @@ async function currentUserFromRequest(env, request) {
 }
 
 async function findEntitlement(env, email) {
-  const r2Entitlement = await r2GetJson(env, accountKey("entitlements", email));
-  if (!hasSupabaseConfig(env)) return r2Entitlement;
-  try {
-    const query = queryString({ email: `eq.${email}`, order: "updated_at.desc", limit: "1" });
-    const rows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
-    return Array.isArray(rows) && rows.length ? rows[0] : r2Entitlement;
-  } catch (_error) {
-    return r2Entitlement;
+  if (hasSupabaseConfig(env)) {
+    try {
+      const query = queryString({ email: `eq.${email}`, order: "updated_at.desc", limit: "1" });
+      const rows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
+      if (Array.isArray(rows) && rows.length) return rows[0];
+    } catch (_error) {
+      // Fall through to account data persisted in R2.
+    }
   }
+  return safeR2GetJson(env, accountKey("entitlements", email));
 }
 
 async function saveEntitlementInR2(env, email, fields, now = new Date().toISOString()) {
-  const existing = await r2GetJson(env, accountKey("entitlements", email));
+  const existing = await safeR2GetJson(env, accountKey("entitlements", email));
   return r2PutJson(env, accountKey("entitlements", email), {
     ...(existing || {}),
     ...fields,
@@ -562,25 +573,26 @@ async function saveEntitlement(env, email, fields) {
 }
 
 async function findReportPurchase(env, email, reportId, source) {
-  const r2Purchase = await r2GetJson(env, accountKey("purchases", source, reportId, email));
-  if (!hasSupabaseConfig(env)) return r2Purchase;
-  const query = queryString({
-    email: `eq.${email}`,
-    report_id: `eq.${reportId}`,
-    source: `eq.${source}`,
-    order: "updated_at.desc",
-    limit: "1",
-  });
-  try {
-    const rows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
-    return Array.isArray(rows) && rows.length ? rows[0] : r2Purchase;
-  } catch (_error) {
-    return r2Purchase;
+  if (hasSupabaseConfig(env)) {
+    const query = queryString({
+      email: `eq.${email}`,
+      report_id: `eq.${reportId}`,
+      source: `eq.${source}`,
+      order: "updated_at.desc",
+      limit: "1",
+    });
+    try {
+      const rows = await supabaseRequest(env, "GET", `/rest/v1/report_purchases?${query}`);
+      if (Array.isArray(rows) && rows.length) return rows[0];
+    } catch (_error) {
+      // Fall through to account data persisted in R2.
+    }
   }
+  return safeR2GetJson(env, accountKey("purchases", source, reportId, email));
 }
 
 async function saveReportPurchaseInR2(env, fields, now = new Date().toISOString()) {
-  const existing = await r2GetJson(env, accountKey("purchases", fields.source, fields.report_id, fields.email));
+  const existing = await safeR2GetJson(env, accountKey("purchases", fields.source, fields.report_id, fields.email));
   return r2PutJson(env, accountKey("purchases", fields.source, fields.report_id, fields.email), {
     ...(existing || {}),
     ...fields,
