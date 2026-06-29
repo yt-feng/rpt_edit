@@ -21,6 +21,10 @@ from pathlib import Path
 from typing import Any
 
 import requests
+try:
+    from pypdf import PdfReader  # type: ignore
+except Exception:  # pragma: no cover - optional dependency in local shells
+    PdfReader = None  # type: ignore
 
 from build_bank_report_catalog import (
     DATE_FOLDER_RE,
@@ -198,6 +202,35 @@ def upload_pdf_to_r2(client: Any, bucket: str, key: str, local_path: Path) -> No
                 "Metadata": {"source": "kc-desk-notes"},
             },
         )
+
+
+def inspect_pdf_metadata(local_path: Path) -> dict[str, Any]:
+    if PdfReader is None:
+        return {}
+    try:
+        reader = PdfReader(str(local_path))
+        page_count = len(reader.pages)
+        first_page = reader.pages[0] if page_count else None
+        width = 0.0
+        height = 0.0
+        if first_page is not None:
+            box = first_page.mediabox
+            width = float(box.width)
+            height = float(box.height)
+            rotation = int(first_page.get("/Rotate", 0) or 0) % 360
+            if rotation in {90, 270}:
+                width, height = height, width
+        orientation = "landscape" if width > height and height > 0 else ("portrait" if height >= width and width > 0 else "")
+        return {
+            "page_count": page_count,
+            "first_page_width": round(width, 2) if width else 0,
+            "first_page_height": round(height, 2) if height else 0,
+            "first_page_orientation": orientation,
+            "first_page_landscape": orientation == "landscape",
+        }
+    except Exception as exc:
+        log(f"Could not inspect PDF metadata for {local_path.name}: {exc}")
+        return {}
 
 
 def delete_r2_objects(client: Any, bucket: str, keys: list[str]) -> int:
@@ -453,6 +486,7 @@ def sync_current_reports_to_r2(
             local_path = tmp_root / f"{report_id}.pdf"
             log(f"Mirroring to R2: {report_id} -> {key}")
             download_dropbox_file(token, dropbox_path, local_path)
+            item.update(inspect_pdf_metadata(local_path))
             upload_pdf_to_r2(client, bucket, key, local_path)
             item["r2_synced"] = True
             item["available"] = True
