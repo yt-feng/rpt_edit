@@ -1,0 +1,69 @@
+{
+  "created_at_utc": "2026-06-29T22:30:05.274505+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260629",
+  "output_dir": "publish_ready_zips/260629",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 3,
+  "skipped_shards": [],
+  "total_files": 150,
+  "total_renamed_markdown_count": 50,
+  "total_raw_file_bytes": 20751109,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260629/publish_ready_260629.zip",
+      "size_bytes": 19142341,
+      "file_count": 150,
+      "renamed_markdown_count": 50,
+      "raw_file_bytes": 20751109,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 83,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12670267,
+      "reports": [
+        "0001-01-J.P.-Morgan-Global-Data-Watch--Asia-Oil-Down--Dollar-Up--A-Rotation-in-A",
+        "0002-02-Goldman-Sachs-Commodity-Views-From-Energy-to-Metals--Why-to-Still-Divers",
+        "0003-03-Morgan-Stanley-US-Rates-Strategy-Equity-Funding-Implies-a-Tumultuous-Qua",
+        "0004-04-Bofa-Global-Memory-Tech-Weekly-theme-Micron-results-implications-for-Asi",
+        "0005-05-Bernstein-Global-Energy-Storage-Battery-Weekly-29-June-260629"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 4,
+      "file_count": 60,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 7197329,
+      "reports": [
+        "0001-06-Goldman-Sachs-South-Korea-Industrials--Defense-and-Robotics--Takeaways-f",
+        "0002-07-Nomura-Optimus-ramps--China-scales-up-as-cost-curves-bend-lower-260628",
+        "0004-09-Nomura-USD-CNY-fix-model-Projection-6.8077-260629",
+        "0005-10-Bernstein-Asia-Pacific-Nuclear-Power--The-next-wave-of-nuclear-builds.-W"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 1,
+      "file_count": 7,
+      "renamed_markdown_count": 5,
+      "raw_file_bytes": 883513,
+      "reports": [
+        "0001-11-Nomura-China-Robotics-Physical-AI--From-NeuralAxis-blueprint-to-Unitree-"
+      ]
+    }
+  ]
+}
