@@ -1952,6 +1952,9 @@ function wechatBatchFromDraft(entry, draft, fallbackIndex) {
   const articleCount = Number(draft && draft.article_count || articles.length) || articles.length;
   return {
     source_label: entry.source.label,
+    source_date_folder: entry.name || "",
+    source_date_iso: dateFolderIso(entry.name || ""),
+    source_is_today: Boolean(entry.is_today),
     batch_no: draftIndex,
     batch_label: `${entry.source.label} ${draftIndex}`,
     article_count: articleCount,
@@ -2020,7 +2023,31 @@ async function wechatDateDirs(env) {
   return entries;
 }
 
-async function wechatBatchesForDate(env, dateEntries) {
+function selectWechatDateEntries(dirs, todayFolder) {
+  const selected = [];
+  for (const source of WECHAT_DRAFT_SOURCES) {
+    const sourceDirs = dirs
+      .filter((dir) => dir.source.root === source.root)
+      .sort((a, b) => dateScore(b.name) - dateScore(a.name) || String(b.name || "").localeCompare(String(a.name || "")));
+    if (!sourceDirs.length) continue;
+    const today = sourceDirs.find((dir) => dir.name === todayFolder);
+    if (source.legacy && !today) continue;
+    const entry = today || sourceDirs[0];
+    selected.push({
+      ...entry,
+      is_today: entry.name === todayFolder,
+    });
+  }
+  if (!selected.length) {
+    const latest = dirs
+      .slice()
+      .sort((a, b) => dateScore(b.name) - dateScore(a.name) || String(b.name || "").localeCompare(String(a.name || "")))[0];
+    if (latest) selected.push({ ...latest, is_today: latest.name === todayFolder });
+  }
+  return selected;
+}
+
+async function wechatBatchesForEntries(env, dateEntries) {
   const batches = [];
   for (const entry of dateEntries) {
     let entryBatches = [];
@@ -2092,28 +2119,30 @@ async function buildWechatDraftSchedule(env) {
       date_label: "",
       is_today: false,
       window: "08:00 - 次日 00:30",
+      source_dates: [],
       total_batches: 0,
       total_articles: 0,
       batches: [],
     };
   }
-  const selectedFolder = dirs.some((dir) => dir.name === todayFolder)
-    ? todayFolder
-    : dirs
-      .map((dir) => dir.name)
-      .sort((a, b) => dateScore(b) - dateScore(a) || b.localeCompare(a))[0];
-  const dateEntries = WECHAT_DRAFT_SOURCES.flatMap((source) => (
-    dirs.filter((dir) => dir.name === selectedFolder && dir.source.root === source.root)
-  ));
-  const batches = await wechatBatchesForDate(env, dateEntries);
-  const scheduled = applyWechatSchedule(selectedFolder, batches);
+  const dateEntries = selectWechatDateEntries(dirs, todayFolder);
+  const batches = await wechatBatchesForEntries(env, dateEntries);
+  const scheduled = applyWechatSchedule(todayFolder, batches);
+  const sourceDates = dateEntries.map((entry) => ({
+    source_label: entry.source.label,
+    date_folder: entry.name,
+    date_iso: dateFolderIso(entry.name),
+    is_today: entry.name === todayFolder,
+  }));
+  const allSourcesToday = sourceDates.length > 0 && sourceDates.every((entry) => entry.is_today);
   return {
     today_folder: todayFolder,
-    date_folder: selectedFolder,
-    date_iso: dateFolderIso(selectedFolder),
-    date_label: dateFolderShortLabel(selectedFolder),
-    is_today: selectedFolder === todayFolder,
+    date_folder: todayFolder,
+    date_iso: dateFolderIso(todayFolder),
+    date_label: dateFolderShortLabel(todayFolder),
+    is_today: allSourcesToday,
     window: "08:00 - 次日 00:30",
+    source_dates: sourceDates,
     total_batches: scheduled.length,
     total_articles: scheduled.reduce((sum, batch) => sum + Number(batch.article_count || batch.articles.length || 0), 0),
     batches: scheduled,
@@ -2291,6 +2320,7 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
         date_label: "",
         is_today: false,
         window: "08:00 - 次日 00:30",
+        source_dates: [],
         total_batches: 0,
         total_articles: 0,
         batches: [],
