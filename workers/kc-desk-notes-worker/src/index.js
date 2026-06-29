@@ -1816,7 +1816,7 @@ function parseHiborItems(html) {
       rating: hiborMetaField(block, "评级"),
       page_count: pageMatch ? Number(pageMatch[0]) : 0,
       file_type: "pdf",
-      url: new URL(href, HIBOR_ORIGIN).toString(),
+      url: `/api/report-a/open?id=${encodeURIComponent(idMatch[1])}`,
     });
   }
   return items;
@@ -1856,6 +1856,15 @@ async function handleHiborSearch(request, env) {
     total: 0,
     source: HIBOR_SOURCE,
   });
+}
+
+function handleReportAOpen(request, env) {
+  const url = new URL(request.url);
+  const id = String(url.searchParams.get("id") || "").trim();
+  if (!/^[a-f0-9]{16,64}$/i.test(id)) {
+    return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  }
+  return Response.redirect(`${HIBOR_ORIGIN}/data/${id}.html`, 302);
 }
 
 // ---------------------------------------------------------------------------
@@ -2039,6 +2048,10 @@ export default {
 
     if (pathname === "/report-a/search" && request.method === "GET") {
       return handleHiborSearch(request, env);
+    }
+
+    if (pathname === "/report-a/open" && request.method === "GET") {
+      return handleReportAOpen(request, env);
     }
 
     if (pathname === "/authority/search" && request.method === "GET") {
