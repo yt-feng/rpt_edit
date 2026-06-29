@@ -1,0 +1,44 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/consulting/260630/0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd/mineru_raw/images/df60d29e9bd8699028d9d70e301b5de6e29a5333f2672253dd3625a7dce0f61f.jpg",
+    "path": "kc_translated_reports/consulting/260630/01-0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.20,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/consulting/260630/0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd/mineru_raw/images/58aea0b8c3da2e6d0216b3ea34c09b2a7c09e7be6af45da46d0c499e2e510779.jpg",
+    "path": "kc_translated_reports/consulting/260630/01-0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.16,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/consulting/260630/0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd/mineru_raw/images/ff1bec148b88e0fc97e940d41f5ee1cc64264aa691398837f296a84093a9cb73.jpg",
+    "path": "kc_translated_reports/consulting/260630/01-0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.13,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/consulting/260630/0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd/mineru_raw/images/401dc045e98e7b3db23607e81be734534d7b46b860e0a116340e810c893a946b.jpg",
+    "path": "kc_translated_reports/consulting/260630/01-0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.16,contrast"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/consulting/260630/0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd/mineru_raw/images/b0cee360232f679c1ec0cc9bed8759162ec64c707a28e55e4327ed5dff225fef.jpg",
+    "path": "kc_translated_reports/consulting/260630/01-0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=8;chart_context,chart_ratio,large"
+  },
+  {
+    "token": "[[KC_IMAGE_006]]",
+    "source_path": "xhs_notes/consulting/260630/0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd/mineru_raw/images/87a6323865d686614a33d97bcd1abf469abb3b8497f37334fb8cfd08b5dac8d8.jpg",
+    "path": "kc_translated_reports/consulting/260630/01-0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd/assets/fig_006.jpg",
+    "relative_path": "fig_006.jpg",
+    "chart_filter": "score=11;chart_context,chart_ratio,edge:0.15,contrast,large"
+  }
+]

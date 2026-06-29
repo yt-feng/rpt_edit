@@ -1,0 +1,95 @@
+{
+  "date_folder": "260630",
+  "max_reports": "all",
+  "selected_count": 7,
+  "successful_count": 7,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/consulting/260630/0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd",
+      "title": "波士顿咨询：CPG与零售的AI竞赛，赢家已经拉开差距",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 6,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/consulting/260630/01-0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd",
+      "pdf_path": "kc_translated_reports/consulting/260630/01-0001-BCG_AI-in-CPG-and-Retail-How-Winners-Are-Pulling-Ahead_7adb32bd/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260630/0002-BCG_Agricultural-Intelligence-How-AI-Is-Reshaping-the-Global-Foo_0b38bd7e",
+      "title": "波士顿咨询：农业AI不是新工具，而是新氮气时刻",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 1,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/consulting/260630/02-0002-BCG_Agricultural-Intelligence-How-AI-Is-Reshaping-the-Global-Foo_0b38bd7e",
+      "pdf_path": "kc_translated_reports/consulting/260630/02-0002-BCG_Agricultural-Intelligence-How-AI-Is-Reshaping-the-Global-Foo_0b38bd7e/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260630/0003-BCG_How-the-Factory-of-the-Future-Is-Reshaping-the-Economics-of-_cad87589",
+      "title": "波士顿咨询：AI正在重置全球制造业的选址逻辑，高成本国家并非必然输家",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 7,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/consulting/260630/03-0003-BCG_How-the-Factory-of-the-Future-Is-Reshaping-the-Economics-of-_cad87589",
+      "pdf_path": "kc_translated_reports/consulting/260630/03-0003-BCG_How-the-Factory-of-the-Future-Is-Reshaping-the-Economics-of-_cad87589/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260630/0004-BCG_Taking-a-Page-from-Commodity-Traders-A-New-Playbook-for-Comm_f081b4e1",
+      "title": "波士顿咨询：商业地产正在错过每年2000亿美元的“暗价值”",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 4,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/consulting/260630/04-0004-BCG_Taking-a-Page-from-Commodity-Traders-A-New-Playbook-for-Comm_f081b4e1",
+      "pdf_path": "kc_translated_reports/consulting/260630/04-0004-BCG_Taking-a-Page-from-Commodity-Traders-A-New-Playbook-for-Comm_f081b4e1/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260630/0005-BCG_The-2026-Insurance-Value-Creators-Report-An-Early-Look-at-Re_39c46210",
+      "title": "波士顿咨询：保险业正在经历一次投资者偏好的结构性转向",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 0,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/consulting/260630/05-0005-BCG_The-2026-Insurance-Value-Creators-Report-An-Early-Look-at-Re_39c46210",
+      "pdf_path": "kc_translated_reports/consulting/260630/05-0005-BCG_The-2026-Insurance-Value-Creators-Report-An-Early-Look-at-Re_39c46210/kc_translated_report_05.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260630/0006-McKinsey_PDF-The-State-of-Organizations-2026---McKinsey-Company_5f096500",
+      "title": "麦肯锡：88%企业试了AI，81%没赚到钱",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_06.pdf",
+      "figure_count": 24,
+      "institution_name": "麦肯锡",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/consulting/260630/06-0006-McKinsey_PDF-The-State-of-Organizations-2026---McKinsey-Company_5f096500",
+      "pdf_path": "kc_translated_reports/consulting/260630/06-0006-McKinsey_PDF-The-State-of-Organizations-2026---McKinsey-Company_5f096500/kc_translated_report_06.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260630/0007-McKinsey_PDF-The-state-of-AI-in-2025---McKinsey-Company_dbbf5cec",
+      "title": "麦肯锡：AI已铺开，但企业级价值仍卡在“最后一公里”",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_07.pdf",
+      "figure_count": 26,
+      "institution_name": "麦肯锡",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/consulting/260630/07-0007-McKinsey_PDF-The-state-of-AI-in-2025---McKinsey-Company_dbbf5cec",
+      "pdf_path": "kc_translated_reports/consulting/260630/07-0007-McKinsey_PDF-The-state-of-AI-in-2025---McKinsey-Company_dbbf5cec/kc_translated_report_07.pdf"
+    }
+  ]
+}
