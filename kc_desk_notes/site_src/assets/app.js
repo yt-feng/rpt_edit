@@ -615,13 +615,29 @@
   function adminWechatScheduleHeader(schedule) {
     if (!schedule || !schedule.date_folder) return "还没有找到公众号草稿 batch。";
     const dateText = schedule.date_iso || schedule.date_folder;
-    const todayText = schedule.is_today ? "今天生成" : "最近可用";
-    return `${dateText} · ${todayText} · ${schedule.window || "08:00 - 次日 00:30"}`;
+    return `${dateText} · 推荐发送窗口 · ${schedule.window || "08:00 - 次日 00:30"}`;
+  }
+
+  function adminWechatSourceDateNote(schedule) {
+    const sourceDates = Array.isArray(schedule && schedule.source_dates) ? schedule.source_dates : [];
+    if (!sourceDates.length) return "";
+    const text = sourceDates
+      .map((entry) => {
+        const label = entry.source_label || "来源";
+        const date = entry.date_iso || entry.date_folder || "";
+        return `${label}: ${date}${entry.is_today ? "" : "（最近可用）"}`;
+      })
+      .join(" · ");
+    const prefix = sourceDates.some((entry) => !entry.is_today)
+      ? "部分来源今天还没有新草稿，已补入各来源最近可用 batch。"
+      : "素材日期：";
+    return `<div class="account-admin-wechat-note">${escapeHtml(prefix)} ${escapeHtml(text)}</div>`;
   }
 
   function adminWechatBatchRow(batch) {
     const meta = [
       batch.source_label,
+      batch.source_date_iso ? `素材 ${batch.source_date_iso}${batch.source_is_today ? "" : "（最近可用）"}` : "",
       batch.article_count ? `${batch.article_count}篇` : "",
       batch.total_batches ? `第 ${batch.schedule_index}/${batch.total_batches} 个 batch` : "",
     ].filter(Boolean).join(" · ");
@@ -651,13 +667,13 @@
         </div>
       `;
     }
-    const fallbackNote = schedule.is_today ? "" : `<div class="account-admin-wechat-note">今天还没有检测到草稿，下面显示最近可用日期。</div>`;
+    const sourceDateNote = adminWechatSourceDateNote(schedule);
     return `
       <div class="account-admin-wechat-summary">
         <strong>${escapeHtml(adminWechatScheduleHeader(schedule))}</strong>
         <span>${escapeHtml(`${schedule.total_batches || batches.length} 个 batch · ${schedule.total_articles || 0} 篇文章`)}</span>
       </div>
-      ${fallbackNote}
+      ${sourceDateNote}
       ${batches.map(adminWechatBatchRow).join("")}
     `;
   }
