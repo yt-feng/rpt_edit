@@ -756,6 +756,34 @@
     "bis:https://www.bis.org/publ/work1365.htm": {
       "first_seen": "2026-06-28",
       "status": "downloaded"
+    },
+    "imf:70203d11ab284ae5e82b1b532bba33e9d17ce09971f3ec05ba36e8ce8e7c": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
+    },
+    "imf:816de89866d685ab9002e775fcded8d90793c30f2e7ffc00d35b1077e48b": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
+    },
+    "imf:6406876f0783a01463290c9fa6b4c89b9a54875abd21f082ace29146ad39": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
+    },
+    "imf:68127cfc342169dc794a738987461178f8b46522ca804a4e737b7263160b": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
+    },
+    "imf:c58e48c859c08b216c29a89b384226af19fdcdcb3aea0da78f073c7e42ae": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
+    },
+    "rand:https://www.rand.org/pubs/research_reports/RRA4386-2.html": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
+    },
+    "rand:https://www.rand.org/pubs/perspectives/PEA4491-5.html": {
+      "first_seen": "2026-06-29",
+      "status": "downloaded"
     }
   }
 }
