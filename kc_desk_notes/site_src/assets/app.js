@@ -1578,18 +1578,21 @@
     const currentIndustry = inferIndustry(current);
     const currentInstitution = normalize(current.institution || "");
     const currentDate = docDateSortValue(current);
-    const keywords = importantTokens([
+    const keywords = queryTokens([
+      relatedQueryForDoc(current),
       current.title,
       current.title_cn,
       current.institution,
       current.category,
       current.report_type,
-    ].join(" "));
+    ].join(" "))
+      .filter((token) => token.length >= 2 && !STOPWORDS.has(token) && !/^\d{1,3}$/.test(token))
+      .slice(0, 18);
 
     return items
       .map((item) => {
         let score = 0;
-        if (inferIndustry(item) === currentIndustry) score += 30;
+        if (currentIndustry !== "Other" && inferIndustry(item) === currentIndustry) score += 30;
         if (currentInstitution && normalize(bankLabel(item)).includes(currentInstitution)) score += 20;
         if (currentDate && Math.abs(dateSortValue(item) - currentDate) <= 7) score += 4;
 
