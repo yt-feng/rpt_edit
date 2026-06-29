@@ -1,0 +1,3027 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.001,
+                1.0,
+                0.397
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.431,
+                0.183,
+                0.449
+            ],
+            "angle": 0,
+            "content": "URBAN PLANNING",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.478,
+                0.786,
+                0.726
+            ],
+            "angle": 0,
+            "content": "Taking a Page from\nCommodity Traders: A\nNew Playbook for\nCommercial Real Estate\nInvestors"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.756,
+                0.521,
+                0.776
+            ],
+            "angle": 0,
+            "content": "By Antti Belt, Allen Thomas, Olaf Rehse, and Mark Harris",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.8,
+                0.359,
+                0.817
+            ],
+            "angle": 0,
+            "content": "ARTICLE JUNE 29, 2026 8 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.879,
+                0.945,
+                0.92
+            ],
+            "angle": 0,
+            "content": "Commercial real estate investors are overlooking the chance to boost returns by more than one-third by capturing short- and medium-term opportunities and embedding greater optionality into",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.057,
+                0.437,
+                0.177,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.475,
+                0.661,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.526,
+                0.768,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.577,
+                0.623,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.629,
+                0.788,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.679,
+                0.337,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.759,
+                0.518,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.804,
+                0.355,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.881,
+                0.942,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.901,
+                0.937,
+                0.917
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.068,
+                0.253,
+                0.088
+            ],
+            "angle": 0,
+            "content": "their decision making.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.102,
+                0.941,
+                0.222
+            ],
+            "angle": 0,
+            "content": "Our analysis shows that by not adopting this approach, commercial real estate investors are missing out on an estimated $200 billion of value worldwide each year. We call this “dark value” because, like dark matter in physics, its effects can be seen in lost opportunities, but it can’t be measured directly. Fortunately, investors can turn to AI-enabled tools and learn from commodity traders how to tap this dark value by applying greater flexibility and developing strategies that take advantage of existing industry constraints.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.293,
+                0.587,
+                0.334
+            ],
+            "angle": 0,
+            "content": "The Long-Term Game"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.359,
+                0.937,
+                0.42
+            ],
+            "angle": 0,
+            "content": "The commercial real estate sector is characterized by multiple areas of friction: high transaction costs, complex regulations, asset heterogeneity, and information asymmetry slow the pace of transactions, lead to low market liquidity, and favor a limited pool of players.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.434,
+                0.943,
+                0.573
+            ],
+            "angle": 0,
+            "content": "Most investors view commercial real estate as a long-term portfolio allocation that offers a steady income yield, diversification from public markets, and inflation protection, with valuations typically conducted annually. Even in the US, which has a dynamic property market, 54% of investors on average have held assets for over five years since 2000. And in other regions, the proportion is significantly higher. (See Exhibit 1.) About 60% of all capital invested in real estate globally is allocated on the basis of “core” or “core-plus” investment strategies, which target a stable and predictable long-term income.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.069,
+                0.25,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.106,
+                0.9,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.124,
+                0.93,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.145,
+                0.93,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.163,
+                0.934,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.921,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.203,
+                0.486,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.291,
+                0.588,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.362,
+                0.935,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.382,
+                0.91,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.4,
+                0.751,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.436,
+                0.887,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.456,
+                0.941,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.476,
+                0.889,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.493,
+                0.909,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.513,
+                0.93,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.533,
+                0.917,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.554,
+                0.43,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.065,
+                0.116,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.081,
+                0.72,
+                0.122
+            ],
+            "angle": 0,
+            "content": "Even in the US, Most Investors Hold Commercial Real Estate for the Long Term",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.129,
+                0.476,
+                0.143
+            ],
+            "angle": 0,
+            "content": "Share of property sales held for a given period before disposal (by volume, $B)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.05,
+                0.148,
+                0.725,
+                0.454
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.458,
+                0.187,
+                0.469
+            ],
+            "angle": 0,
+            "content": "Sources: CoStar; BCG analysis."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.468,
+                0.318,
+                0.479
+            ],
+            "angle": 0,
+            "content": "Note: Amounts apply to the price when assets were disposed."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.511,
+                0.942,
+                0.611
+            ],
+            "angle": 0,
+            "content": "This long-term approach should not be mistaken for a behavioral failure. For many institutional investors, extended hold periods are rational from a risk-reward perspective and aligned with mandates focused on yield, current income, and portfolio diversification rather than maximizing gains. Still, this model can leave shorter-term optimization opportunities within hold periods less fully explored.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.681,
+                0.667,
+                0.721
+            ],
+            "angle": 0,
+            "content": "The Dark Value Potential"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.749,
+                0.932,
+                0.87
+            ],
+            "angle": 0,
+            "content": "However, several factors are causing the landscape to shift from the “buy-and-hold” business model. AI and machine learning have made it far cheaper to create tools that identify arbitrage and other value creation opportunities, turning the market data that property players possess into the key differentiating factor in dark value capture. The sector has also seen an influx of private equity investors willing to shake things up. In addition, leading players are realizing that the industry’s many friction points lend themselves to generating dark value.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.882,
+                0.956,
+                0.923
+            ],
+            "angle": 0,
+            "content": "For these reasons, commercial real estate was ranked as the sector with the greatest potential for value creation via short- and medium-term optimization, according to a recent BCG survey of",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.068,
+                0.113,
+                0.078
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.083,
+                0.716,
+                0.099
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.103,
+                0.154,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.513,
+                0.925,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.534,
+                0.904,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.552,
+                0.93,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.574,
+                0.937,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.593,
+                0.18,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.681,
+                0.667,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.751,
+                0.904,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.771,
+                0.92,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.791,
+                0.917,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.811,
+                0.903,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.83,
+                0.925,
+                0.845
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.851,
+                0.76,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.884,
+                0.953,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.905,
+                0.902,
+                0.92
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.661,
+                0.088
+            ],
+            "angle": 0,
+            "content": "approximately 500 C-suite executives across industries worldwide.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.102,
+                0.954,
+                0.261
+            ],
+            "angle": 0,
+            "content": "We’ve found that most players are currently still at zero or step one on a value capture ladder, meaning they allocate capital for the long term and revalue assets on a yearly basis. (See Exhibit 2.) By applying monthly valuations and using AI to scan for opportunities, a few leading players have achieved or are close to step three (systematic dark value capture) and can progress further. Nevertheless, players that are less well suited to capturing dark value—because, for instance, they use an open-ended investment structure—can still tap significant benefits by doing things like increasing their focus on optionality and arbitrage in step two (opportunistic dark value capture).",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.291,
+                0.117,
+                0.307
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.309,
+                0.532,
+                0.331
+            ],
+            "angle": 0,
+            "content": "Players Are Able to Capture Dark Value in Stages",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.045,
+                0.344,
+                0.728,
+                0.671
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.81,
+                0.684,
+                0.893
+            ],
+            "angle": 0,
+            "content": "The Importance of Acting\nSystematically"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.071,
+                0.658,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.104,
+                0.921,
+                0.12
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.124,
+                0.945,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.144,
+                0.927,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.162,
+                0.952,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.183,
+                0.922,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.203,
+                0.934,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.222,
+                0.894,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.244,
+                0.134,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.295,
+                0.114,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.312,
+                0.528,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.808,
+                0.683,
+                0.854
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.851,
+                0.401,
+                0.892
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.951,
+                0.186
+            ],
+            "angle": 0,
+            "content": "Some commercial real estate investors already use optimization strategies similar to those of commodity traders and hedge funds. For instance, they may “flip” an asset for a quick profit. But most use these strategies sporadically and lack the operating model to deploy them systematically. When asked about optimization strategies, 67% of executives from the commercial real estate sector said they used them only occasionally or not at all, the BCG survey found. (See Exhibit 3.)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.218,
+                0.116,
+                0.233
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 3"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.236,
+                0.722,
+                0.277
+            ],
+            "angle": 0,
+            "content": "Two-Thirds of Commercial Real Estate Executives Said Their Organizations Use Optimization Strategies Occasionally or Not at All",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.047,
+                0.291,
+                0.726,
+                0.471
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.043,
+                0.478,
+                0.714,
+                0.5
+            ],
+            "angle": 0,
+            "content": "Sources: Dark Value Senior Executive Survey 2025; BCG analysis. Note: The survey was of 500 executives across industries, with 15 representing commercial real estate. Percentages may not add to \\(100\\%\\) due to rounding."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.531,
+                0.955,
+                0.71
+            ],
+            "angle": 0,
+            "content": "They are missing out on a significant prize. By applying all optimization levers, our analysis indicates that commercial real estate players can increase their return on assets by 3 to 5 percentage points per annum. Achieving the upper end of this range requires substantial changes to players' operating models and processes. Consequently, a more realistic target, even for players well-suited to dark value capture, is a per-annum uplift of 3 to 4 percentage points, which is in line with a typical return for a commodity trader. Given that commercial real estate returns averaged around \\(9\\%\\) from 1978 to 2022 (according to figures from the US National Council of Real Estate Investment Fiduciaries), an uplift of this magnitude would represent an increase in returns of around one-third.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.781,
+                0.796,
+                0.821
+            ],
+            "angle": 0,
+            "content": "Actions to Capture Dark Value"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.848,
+                0.925,
+                0.907
+            ],
+            "angle": 0,
+            "content": "We have identified six areas that can drive dark value for commercial real estate investors and other players, in a similar fashion to traders. These drivers apply to all industries but differ in detail from one to the next.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.07,
+                0.915,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.088,
+                0.929,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.108,
+                0.829,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.84,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.147,
+                0.947,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.168,
+                0.247,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.221,
+                0.113,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.238,
+                0.635,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.258,
+                0.718,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.534,
+                0.887,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.554,
+                0.883,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.573,
+                0.95,
+                0.589
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.593,
+                0.889,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.612,
+                0.94,
+                0.628
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.631,
+                0.927,
+                0.647
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.651,
+                0.949,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.672,
+                0.95,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.691,
+                0.23,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.782,
+                0.795,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.85,
+                0.922,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.869,
+                0.902,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.889,
+                0.299,
+                0.904
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.929,
+                0.147
+            ],
+            "angle": 0,
+            "content": "- Geography. The same asset type will perform differently from one regional market to the next due to local demand, pricing power, and competitive dynamics. These differences create geography-based arbitrage opportunities for investors that can identify and allocate capital to markets containing mispriced or outperforming assets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.161,
+                0.935,
+                0.242
+            ],
+            "angle": 0,
+            "content": "- Quality. It is the nature of commercial real estate that every asset is unique, with a differing tenant mix, lease terms, amenities, and risk profile. This heterogeneity complicates comparisons between assets and makes valuations more difficult. But for those with superior asset-level insights, it is a source of valuable quality-based arbitrage opportunities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.256,
+                0.936,
+                0.375
+            ],
+            "angle": 0,
+            "content": "- Time. Due to long-term lease arrangements, revenues from property assets are generally locked in for a considerable period. This situation limits both supply flexibility and short-term pricing adjustments. However, operators that embed optionality into their lease structures (using short-term or optimized leases) and anticipate market cycles can capture time-based arbitrage opportunities. It is important to note that long-term leases can provide predictable, financeable income, so shorter or more flexible terms should be evaluated selectively.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.388,
+                0.926,
+                0.508
+            ],
+            "angle": 0,
+            "content": "- Industry Reconfigurability. Due to high transaction costs, substantial regulations, long development cycles, and information asymmetry, commercial real estate players are slow to respond to supply and demand signals. This weak reconfigurability increases asset price volatility during a short-term shock, such as an interest rate hike, because players can’t easily turn off supply. But it also creates profit opportunities for players that can reposition capital or assets faster than the market.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.522,
+                0.924,
+                0.622
+            ],
+            "angle": 0,
+            "content": "- Immediate Buffers. Players that keep either space or capital in reserve as a buffer can capture significant value. For example, in a scenario in which demand for data centers grows but over 90% of under-construction capacity is already committed, players that can meet demand are in a strong position. Similarly, players that have built up abundant “dry powder” capital are well-placed to acquire distressed assets at a steep discount.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.635,
+                0.925,
+                0.735
+            ],
+            "angle": 0,
+            "content": "- Capital Flows. The sector typically has strong access to funding, especially for new and high-demand assets such as data centers. While capital is generally available in commercial real estate, companies can still get ahead of rivals by diversifying their funding base or using fractional asset ownership in the secondary market to improve liquidity so that they can move more quickly in fast-growing segments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.764,
+                0.906,
+                0.804
+            ],
+            "angle": 0,
+            "content": "There are multiple levers that commercial real estate investors and other players can use to capture dark value across these six areas. (See Exhibit 4.)",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.068,
+                0.889,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.089,
+                0.924,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.109,
+                0.917,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.129,
+                0.601,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.163,
+                0.911,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.183,
+                0.837,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.204,
+                0.93,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.223,
+                0.835,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.256,
+                0.897,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.275,
+                0.93,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.297,
+                0.903,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.316,
+                0.923,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.336,
+                0.929,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.355,
+                0.866,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.389,
+                0.866,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.409,
+                0.923,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.431,
+                0.887,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.448,
+                0.875,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.469,
+                0.912,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.489,
+                0.442,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.522,
+                0.875,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.544,
+                0.918,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.563,
+                0.889,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.583,
+                0.918,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.603,
+                0.73,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.637,
+                0.921,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.657,
+                0.919,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.676,
+                0.883,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.698,
+                0.881,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.717,
+                0.482,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.766,
+                0.902,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.786,
+                0.577,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.045,
+                0.065,
+                0.114,
+                0.078
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 4"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.045,
+                0.118,
+                0.728,
+                0.412
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.045,
+                0.42,
+                0.145,
+                0.432
+            ],
+            "angle": 0,
+            "content": "Source: BCG analysis."
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.501,
+                0.846,
+                0.581
+            ],
+            "angle": 0,
+            "content": "Building an Operating Model for\nDark Value Capture"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.608,
+                0.924,
+                0.668
+            ],
+            "angle": 0,
+            "content": "Even those investors that are well-placed for dark value capture currently lack the capabilities and operating model to do so effectively. Here are three steps that we believe will lay the foundations for a successful strategy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.697,
+                0.932,
+                0.934
+            ],
+            "angle": 0,
+            "content": "- Apply the right tools. Many investors possess a wealth of information about asset values and income streams pooled from external sources and their own proprietary databases. With AI lowering development costs for tools, this information is becoming increasingly important as a source of competitive advantage. However, investors need to apply analytical tools that provide them with a real-time view of evolving market dynamics and enable them to take the right actions. By using mark-to-market tools that accurately reflect current asset values, investors can identify dark value opportunities as they emerge. Supply and demand models and market sensing tools (including social media monitoring) are also important to assess and anticipate market conditions and sentiment. Yield arbitrage tools provide valuable insights into differences in yield between regions and asset classes, while portfolio analytics enables investors to maintain a low correlation between the assets in their portfolios and reduce risk.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.499,
+                0.848,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.54,
+                0.538,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.609,
+                0.921,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.63,
+                0.869,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.649,
+                0.391,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.699,
+                0.895,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.718,
+                0.929,
+                0.733
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.737,
+                0.924,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.758,
+                0.921,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.778,
+                0.923,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.798,
+                0.881,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.817,
+                0.914,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.837,
+                0.906,
+                0.852
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.858,
+                0.874,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.876,
+                0.92,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.897,
+                0.9,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.915,
+                0.177,
+                0.932
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.068,
+                0.931,
+                0.246
+            ],
+            "angle": 0,
+            "content": "- Change the culture. The industry’s slow pace and conservative mindset are major obstacles to dark value capture. To effectively pursue short- and medium-term opportunities, players must embrace a different attitude to risk and empower employees with the authority to act quickly. Organizations should move from avoiding risk to managing it, using real-time monitoring of positions, value at risk, and market shifts to take calculated risks rather than forgoing them. An important part of this cultural shift is introducing new performance metrics and incentives. Performance metrics ought to measure profit generated across multiple time horizons, while incentives should reward innovation rather than simply achieving long-term targets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.261,
+                0.92,
+                0.398
+            ],
+            "angle": 0,
+            "content": "- Transform governance. Governance structures among investors are too rigid to accommodate the dynamic processes involved in dark value capture. Decision making is often centralized and hierarchical, with authority concentrated among a few key individuals. This slows down reactions and stifles initiative. To capture dark value effectively, decision rights need to move closer to the front line. Each dark value team should operate as its own profit center and have the autonomy to act on market signals and grasp opportunities as they arise.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.428,
+                0.933,
+                0.548
+            ],
+            "angle": 0,
+            "content": "Not all of these steps will work for all investors. While some players already have advanced decision-making tools, such as mark-to-market systems and supply and demand models, others still rely on simple spreadsheets for their decision making. For these less sophisticated players, developing a complete dark value approach will likely be extremely challenging, if not impossible. Instead, they should select those operating model elements that align with their capabilities and ambition level.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.56,
+                0.944,
+                0.641
+            ],
+            "angle": 0,
+            "content": "Meanwhile, sophisticated investors seeking to shift to a more dark value-centric model can take a page from the trader's playbook and create a parallel play: a unit separate from the main organization that has tools, processes, and governance approaches that are better suited to short- and medium-term optimization.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.691,
+                0.955,
+                0.773
+            ],
+            "angle": 0,
+            "content": "Dark value represents a huge opportunity for commercial real estate. While the sector historically has been slow to progress from a conservative buy-and-hold business model, the situation is starting to change. With AI reducing technology costs, now is the time to pursue dark value capture. By putting in place the right capabilities, players can turn flexibility into profit.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.069,
+                0.915,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.089,
+                0.903,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.109,
+                0.908,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.129,
+                0.848,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.148,
+                0.909,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.168,
+                0.927,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.187,
+                0.924,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.208,
+                0.907,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.227,
+                0.141,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.261,
+                0.805,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.281,
+                0.886,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.301,
+                0.915,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.32,
+                0.891,
+                0.336
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.34,
+                0.915,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.36,
+                0.891,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.379,
+                0.166,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.43,
+                0.893,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.449,
+                0.927,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.468,
+                0.93,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.489,
+                0.845,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.509,
+                0.898,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.529,
+                0.341,
+                0.544
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.563,
+                0.941,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.583,
+                0.887,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.602,
+                0.898,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.621,
+                0.396,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.694,
+                0.949,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.715,
+                0.899,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.733,
+                0.88,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.753,
+                0.851,
+                0.769
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.707,
+                0.229,
+                0.789,
+                0.281
+            ],
+            "angle": 0,
+            "content": "Consultant Chicago"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.105,
+                0.247,
+                0.142
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.187,
+                0.221,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.071,
+                0.339,
+                0.221,
+                0.447
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.245,
+                0.189,
+                0.355,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Antti Belt"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.223,
+                0.446,
+                0.264
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner; BCG Institute Fellow Helsinki",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.268,
+                0.275,
+                0.284
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.245,
+                0.343,
+                0.366,
+                0.365
+            ],
+            "angle": 0,
+            "content": "Olaf Rehse"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.376,
+                0.453,
+                0.43
+            ],
+            "angle": 0,
+            "content": "Managing Director and Senior Partner, Global Lead Real Estate\nDüsseldorf",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.434,
+                0.275,
+                0.45
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.187,
+                0.683,
+                0.293
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.706,
+                0.196,
+                0.866,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Allen Thomas"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.263,
+                0.737,
+                0.28
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.34,
+                0.684,
+                0.446
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.349,
+                0.841,
+                0.372
+            ],
+            "angle": 0,
+            "content": "Mark Harris"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.428,
+                0.738,
+                0.445
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.382,
+                0.9,
+                0.423
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nToronto",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.546,
+                0.436,
+                0.565
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.58,
+                0.952,
+                0.701
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.103,
+                0.247,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.191,
+                0.353,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.226,
+                0.432,
+                0.236
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.238,
+                0.441,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.251,
+                0.301,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.344,
+                0.364,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.248,
+                0.378,
+                0.449,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.39,
+                0.42,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.402,
+                0.291,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.415,
+                0.321,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.351,
+                0.838,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.384,
+                0.896,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.397,
+                0.763,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.708,
+                0.41,
+                0.762,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.548,
+                0.432,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.583,
+                0.949,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.603,
+                0.899,
+                0.617
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.622,
+                0.905,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.642,
+                0.912,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.661,
+                0.934,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.681,
+                0.594,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]
