@@ -513,19 +513,70 @@
     const key = file.type === "artifact" ? file.id : file.path;
     const endpointAttr = file.type === "artifact" ? "artifact" : "file";
     const note = file.note ? `<span>${escapeHtml(file.note)}</span>` : "";
+    const repo = file.repo || "";
     return `
       <div class="account-admin-file">
         <div>
           <strong>${escapeHtml(file.label || file.kind || "File")}</strong>
           <span>${escapeHtml(file.date || "")} · ${escapeHtml(file.name || "")}${file.size_bytes ? ` · ${escapeHtml(formatSize(file.size_bytes))}` : ""}</span>
           ${note}
+          <div class="account-admin-progress" hidden>
+            <div class="account-admin-progress-track"><span></span></div>
+            <small>等待下载…</small>
+          </div>
         </div>
         <button class="secondary-button account-admin-download" type="button"
           data-kind="${escapeHtml(endpointAttr)}"
           data-key="${escapeHtml(key || "")}"
+          data-repo="${escapeHtml(repo)}"
           data-name="${escapeHtml(file.name || "download")}">下载</button>
       </div>
     `;
+  }
+
+  function resetDownloadProgress(progress) {
+    if (!progress) return;
+    const bar = progress.querySelector(".account-admin-progress-track span");
+    const text = progress.querySelector("small");
+    if (bar) bar.style.width = "0%";
+    if (text) text.textContent = "等待下载…";
+    progress.hidden = true;
+  }
+
+  function setDownloadProgress(progress, loaded, total) {
+    if (!progress) return;
+    const bar = progress.querySelector(".account-admin-progress-track span");
+    const text = progress.querySelector("small");
+    progress.hidden = false;
+    if (total > 0) {
+      const percent = Math.min(100, Math.round((loaded / total) * 100));
+      if (bar) bar.style.width = `${percent}%`;
+      if (text) text.textContent = `${percent}% · ${formatSize(loaded)} / ${formatSize(total)}`;
+    } else {
+      if (bar) bar.style.width = "35%";
+      if (text) text.textContent = `已下载 ${formatSize(loaded)}`;
+    }
+  }
+
+  async function responseBlobWithProgress(response, progress) {
+    const total = Number(response.headers.get("Content-Length") || 0);
+    if (!response.body || !response.body.getReader) {
+      const blob = await response.blob();
+      setDownloadProgress(progress, blob.size || total, blob.size || total);
+      return blob;
+    }
+    const reader = response.body.getReader();
+    const chunks = [];
+    let loaded = 0;
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      chunks.push(value);
+      loaded += value.byteLength || value.length || 0;
+      setDownloadProgress(progress, loaded, total);
+    }
+    setDownloadProgress(progress, loaded, total || loaded);
+    return new Blob(chunks, { type: response.headers.get("Content-Type") || "application/octet-stream" });
   }
 
   async function loadAccountAdminSummary(workerUrl, targets) {
@@ -587,11 +638,15 @@
       if (!button) return;
       const kind = button.dataset.kind;
       const key = button.dataset.key || "";
+      const repo = button.dataset.repo || "";
       const name = button.dataset.name || "download";
       const endpoint = kind === "artifact"
         ? `${workerUrl}/account-admin/github-artifact?id=${encodeURIComponent(key)}`
-        : `${workerUrl}/account-admin/github-file?path=${encodeURIComponent(key)}`;
+        : `${workerUrl}/account-admin/github-file?path=${encodeURIComponent(key)}${repo ? `&repo=${encodeURIComponent(repo)}` : ""}`;
+      const row = button.closest(".account-admin-file");
+      const progress = row && row.querySelector(".account-admin-progress");
       button.disabled = true;
+      resetDownloadProgress(progress);
       status.className = "status-line";
       status.textContent = "正在准备下载…";
       try {
@@ -600,7 +655,7 @@
           const data = await response.json().catch(() => ({}));
           throw new Error(data.detail || `下载失败 (${response.status})。`);
         }
-        const blob = await response.blob();
+        const blob = await responseBlobWithProgress(response, progress);
         triggerBlobDownload(blob, response.headers.get("Content-Disposition"), name);
         status.textContent = "下载已开始。";
         status.classList.add("ok");

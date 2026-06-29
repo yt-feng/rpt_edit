@@ -13,6 +13,9 @@ const SUPER_ACCOUNT_USERNAMES = new Set(["twotigers"]);
 const SUPER_ACCOUNT_EMAILS = new Set(["twotigers@users.kcdesk.com"]);
 const DEFAULT_GITHUB_REPO = "yt-feng/rpt_edit";
 const DEFAULT_GITHUB_REF = "main";
+const BBG_SHOW_REPO = "yt-feng/bbg-show";
+const BBG_SHOW_PREFIX = "rendered-clips";
+const GITHUB_CACHE_PREFIX = "_account/github-cache";
 const PADDLE_HANDLED_EVENTS = new Set([
   "transaction.completed",
   "subscription.created",
@@ -1620,7 +1623,8 @@ function githubRepo(env) {
   return cleanEnv(env.GH_REPO) || cleanEnv(env.GITHUB_REPO) || DEFAULT_GITHUB_REPO;
 }
 
-function githubRef(env) {
+function githubRef(env, repo = githubRepo(env)) {
+  if (repo === BBG_SHOW_REPO) return DEFAULT_GITHUB_REF;
   const configured = cleanEnv(env.GH_REF) || cleanEnv(env.GITHUB_BRANCH) || cleanEnv(env.GITHUB_REF);
   if (!configured) return DEFAULT_GITHUB_REF;
   return configured.startsWith("refs/heads/") ? configured.slice("refs/heads/".length) : configured;
@@ -1646,8 +1650,8 @@ function encodeGithubPath(path) {
   return String(path || "").split("/").filter(Boolean).map(encodeURIComponent).join("/");
 }
 
-async function githubApiFetch(env, path, init = {}) {
-  const response = await fetch(`https://api.github.com/repos/${githubRepo(env)}${path}`, {
+async function githubApiFetch(env, path, init = {}, repo = githubRepo(env)) {
+  const response = await fetch(`https://api.github.com/repos/${repo}${path}`, {
     ...init,
     headers: githubHeaders(env, init.headers || {}),
     redirect: init.redirect || "follow",
@@ -1659,20 +1663,22 @@ async function githubApiFetch(env, path, init = {}) {
   return response;
 }
 
-async function githubApiJson(env, path, init = {}) {
-  return (await githubApiFetch(env, path, init)).json();
+async function githubApiJson(env, path, init = {}, repo = githubRepo(env)) {
+  return (await githubApiFetch(env, path, init, repo)).json();
 }
 
-async function githubContents(env, path) {
+async function githubContents(env, path, repo = githubRepo(env), ref = githubRef(env, repo)) {
   const encoded = encodeGithubPath(path);
   const suffix = encoded ? `/contents/${encoded}` : "/contents";
-  const query = `?ref=${encodeURIComponent(githubRef(env))}`;
-  const data = await githubApiJson(env, `${suffix}${query}`);
+  const query = `?ref=${encodeURIComponent(ref)}`;
+  const data = await githubApiJson(env, `${suffix}${query}`, {}, repo);
   return Array.isArray(data) ? data : [];
 }
 
 function dateScore(value) {
   const text = String(value || "");
+  const iso = text.match(/(20\d{2})-(\d{2})-(\d{2})/);
+  if (iso) return Number(`${iso[1]}${iso[2]}${iso[3]}`);
   const match = text.match(/(\d{8}|\d{6})/);
   if (!match) return 0;
   const digits = match[1];
@@ -1689,7 +1695,7 @@ function sortGithubDirsDesc(items) {
     });
 }
 
-function adminGithubFile(kind, label, item, date, note = "") {
+function adminGithubFile(kind, label, item, date, note = "", repo = "") {
   return {
     type: "file",
     kind,
@@ -1699,7 +1705,13 @@ function adminGithubFile(kind, label, item, date, note = "") {
     size_bytes: Number(item.size || 0),
     date: date || "",
     note,
+    repo,
   };
+}
+
+async function githubRecursiveTree(env, repo, ref = githubRef(env, repo)) {
+  const data = await githubApiJson(env, `/git/trees/${encodeURIComponent(ref)}?recursive=1`, {}, repo);
+  return Array.isArray(data && data.tree) ? data.tree : [];
 }
 
 async function latestMarketViewFiles(env, maxItems = 3) {
@@ -1738,7 +1750,41 @@ function titleFromGeneratedPath(path) {
   return folder.replace(/^\d{4}-/, "").replace(/[-_]+/g, " ").slice(0, 120);
 }
 
-async function latestBbgShowFiles(env, maxItems = 6) {
+function renderedClipDate(path) {
+  const match = String(path || "").match(/^rendered-clips\/(20\d{2}-\d{2}-\d{2})\//);
+  return match ? match[1] : "";
+}
+
+function renderedClipNote(path) {
+  const parts = String(path || "").split("/");
+  return parts.length > 3 ? parts.slice(2, -1).join(" / ").replace(/[-_]+/g, " ") : "";
+}
+
+async function latestBbgRenderedClipFiles(env, maxItems = 8) {
+  const tree = await githubRecursiveTree(env, BBG_SHOW_REPO);
+  const dated = tree
+    .filter((item) => item && item.type === "blob" && /^rendered-clips\/20\d{2}-\d{2}-\d{2}\/.+\.mp4$/i.test(item.path || ""))
+    .sort((a, b) => {
+      const score = dateScore(b.path) - dateScore(a.path);
+      if (score) return score;
+      return String(b.path || "").localeCompare(String(a.path || ""));
+    })
+    .slice(0, maxItems);
+  return dated.map((item) => adminGithubFile(
+    "bbg-show",
+    "BBG Show 视频",
+    {
+      name: String(item.path || "").split("/").pop(),
+      path: item.path,
+      size: item.size,
+    },
+    renderedClipDate(item.path),
+    renderedClipNote(item.path),
+    BBG_SHOW_REPO,
+  ));
+}
+
+async function latestSiteVideoFiles(env, maxItems = 6) {
   const results = [];
   const dateDirs = sortGithubDirsDesc(await githubContents(env, "bilingual_podcast_videos"));
   for (const dateDir of dateDirs.slice(0, 12)) {
@@ -1750,7 +1796,7 @@ async function latestBbgShowFiles(env, maxItems = 6) {
         const files = await githubContents(env, reportDir.path);
         const video = preferredVideoItem(files);
         if (!video) continue;
-        results.push(adminGithubFile("bbg-show", "BBG Show 视频", video, dateDir.name, titleFromGeneratedPath(video.path)));
+        results.push(adminGithubFile("site-video", "站内视频", video, dateDir.name, titleFromGeneratedPath(video.path), githubRepo(env)));
         if (results.length >= maxItems) return results;
       }
     }
@@ -1763,8 +1809,8 @@ function adminGithubArtifact(artifact) {
   let kind = "artifact";
   let label = "GitHub Artifact";
   if (/bilingual-podcast-videos/i.test(name)) {
-    kind = "bbg-show";
-    label = "BBG Show 视频 artifact";
+    kind = "site-video";
+    label = "站内视频 artifact";
   } else if (/market-views-pdf/i.test(name)) {
     kind = "market-views";
     label = "Market Views PDF artifact";
@@ -1794,21 +1840,16 @@ async function latestGithubArtifacts(env) {
 }
 
 async function latestAdminGithubFiles(env) {
-  let bbg = [];
-  let market = [];
-  try {
-    [bbg, market] = await Promise.all([
-      latestBbgShowFiles(env),
-      latestMarketViewFiles(env),
-    ]);
-  } catch (_error) {
-    // Fall back to artifacts below.
-  }
+  const [bbg, market, siteVideos] = await Promise.all([
+    latestBbgRenderedClipFiles(env).catch(() => []),
+    latestMarketViewFiles(env).catch(() => []),
+    latestSiteVideoFiles(env).catch(() => []),
+  ]);
   const artifacts = await latestGithubArtifacts(env);
   const fallback = [];
-  if (!bbg.length) fallback.push(...artifacts.filter((item) => item.kind === "bbg-show").slice(0, 3));
   if (!market.length) fallback.push(...artifacts.filter((item) => item.kind === "market-views").slice(0, 3));
-  return [...bbg, ...market, ...fallback];
+  if (!siteVideos.length) fallback.push(...artifacts.filter((item) => item.kind === "site-video").slice(0, 3));
+  return [...bbg, ...market, ...fallback, ...siteVideos];
 }
 
 async function handleAccountAdminSummary(request, env) {
@@ -1833,9 +1874,17 @@ async function handleAccountAdminSummary(request, env) {
   }
 }
 
-function isAllowedAdminGithubFile(path) {
+function normalizeGithubRepoParam(env, value) {
+  const repo = String(value || githubRepo(env)).trim();
+  if (repo === githubRepo(env) || repo === DEFAULT_GITHUB_REPO) return githubRepo(env);
+  if (repo === BBG_SHOW_REPO) return BBG_SHOW_REPO;
+  return "";
+}
+
+function isAllowedAdminGithubFile(env, repo, path) {
   const clean = String(path || "").replace(/^\/+/, "");
   if (clean.includes("..")) return false;
+  if (repo === BBG_SHOW_REPO) return /^rendered-clips\/.+\.mp4$/i.test(clean);
   if (/^bilingual_podcast_videos\/.+\.mp4$/i.test(clean)) return true;
   if (/^market_view_summaries\/.+\.pdf$/i.test(clean)) return true;
   return false;
@@ -1847,24 +1896,74 @@ function contentTypeForGithubPath(path) {
   return "application/octet-stream";
 }
 
-async function fetchGithubRawFile(env, path, request) {
-  const ref = githubRef(env);
+async function githubCacheKey(repo, ref, path) {
+  const digest = await sha256Hex(`github-file:${repo}:${ref}:${path}`);
+  const filename = String(path || "").split("/").pop() || "download";
+  return `${GITHUB_CACHE_PREFIX}/${digest}/${filename}`;
+}
+
+function cachedGithubResponse(request, env, object, path) {
+  const headers = {
+    ...corsHeaders(request, env),
+    "Content-Type": object.httpMetadata && object.httpMetadata.contentType || contentTypeForGithubPath(path),
+    "Content-Disposition": contentDisposition(path.split("/").pop() || "download"),
+    "Content-Length": String(object.size || ""),
+    "Cache-Control": "no-store, private",
+    "X-Content-Type-Options": "nosniff",
+    "X-KCDesk-Cache": "R2",
+  };
+  return new Response(object.body, { headers });
+}
+
+async function fetchGithubRawFile(env, path, request, repo = githubRepo(env), ctx = null) {
+  const ref = githubRef(env, repo);
   const encodedPath = encodeGithubPath(path);
-  const rawUrl = `https://raw.githubusercontent.com/${githubRepo(env)}/${encodeURIComponent(ref)}/${encodedPath}`;
-  const headers = githubHeaders(env, { "Accept": "*/*" });
+  const cacheKey = await githubCacheKey(repo, ref, path);
   const range = request.headers.get("Range") || request.headers.get("range") || "";
+  if (!range && env.REPORT_BUCKET) {
+    try {
+      const cached = await env.REPORT_BUCKET.get(cacheKey);
+      if (cached) return cachedGithubResponse(request, env, cached, path);
+    } catch (_error) {
+      // Fall through to GitHub.
+    }
+  }
+
+  const rawUrl = `https://raw.githubusercontent.com/${repo}/${encodeURIComponent(ref)}/${encodedPath}`;
+  const headers = githubHeaders(env, { "Accept": "*/*" });
   if (range) headers.Range = range;
   let response = await fetch(rawUrl, { headers, redirect: "follow" });
-  if (response.status !== 404 || !githubToken(env)) return response;
+  if (response.status === 404 && githubToken(env)) {
+    const metadata = await githubApiJson(env, `/contents/${encodedPath}?ref=${encodeURIComponent(ref)}`, {}, repo);
+    const downloadUrl = String(metadata && metadata.download_url || "");
+    if (downloadUrl) response = await fetch(downloadUrl, { headers, redirect: "follow" });
+  }
 
-  const metadata = await githubApiJson(env, `/contents/${encodedPath}?ref=${encodeURIComponent(ref)}`);
-  const downloadUrl = String(metadata && metadata.download_url || "");
-  if (!downloadUrl) return response;
-  response = await fetch(downloadUrl, { headers, redirect: "follow" });
+  if (!range && response.ok && response.body && env.REPORT_BUCKET && ctx && typeof ctx.waitUntil === "function") {
+    const [clientBody, cacheBody] = response.body.tee();
+    const contentType = response.headers.get("Content-Type") || contentTypeForGithubPath(path);
+    ctx.waitUntil(env.REPORT_BUCKET.put(cacheKey, cacheBody, {
+      httpMetadata: {
+        contentType,
+        contentDisposition: contentDisposition(path.split("/").pop() || "download"),
+      },
+      customMetadata: {
+        repo,
+        ref,
+        path: path.slice(0, 900),
+        cached_at: new Date().toISOString(),
+      },
+    }).catch(() => null));
+    return new Response(clientBody, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: response.headers,
+    });
+  }
   return response;
 }
 
-async function handleAccountAdminGithubFile(request, env) {
+async function handleAccountAdminGithubFile(request, env, ctx = null) {
   try {
     await requireSuperUser(request, env);
   } catch (error) {
@@ -1872,12 +1971,13 @@ async function handleAccountAdminGithubFile(request, env) {
   }
   const url = new URL(request.url);
   const path = String(url.searchParams.get("path") || "").replace(/^\/+/, "");
-  if (!isAllowedAdminGithubFile(path)) {
+  const repo = normalizeGithubRepoParam(env, url.searchParams.get("repo") || "");
+  if (!repo || !isAllowedAdminGithubFile(env, repo, path)) {
     return jsonResponse(request, env, 400, { detail: "File path is not allowed." });
   }
   let upstream;
   try {
-    upstream = await fetchGithubRawFile(env, path, request);
+    upstream = await fetchGithubRawFile(env, path, request, repo, ctx);
   } catch (_error) {
     return jsonResponse(request, env, 502, { detail: "GitHub file download is unavailable." });
   }
@@ -2423,7 +2523,7 @@ async function handleAuthorityPdf(request, env) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const pathname = url.pathname.startsWith("/api/")
       ? url.pathname.slice(4) || "/"
@@ -2478,7 +2578,7 @@ export default {
     }
 
     if (pathname === "/account-admin/github-file" && request.method === "GET") {
-      return handleAccountAdminGithubFile(request, env);
+      return handleAccountAdminGithubFile(request, env, ctx);
     }
 
     if (pathname === "/account-admin/github-artifact" && request.method === "GET") {
