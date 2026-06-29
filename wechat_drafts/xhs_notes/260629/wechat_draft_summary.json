@@ -1,0 +1,226 @@
+{
+  "date_folder": "260629",
+  "source": "xhs_notes/dropbox",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 10,
+  "selected_count": 9,
+  "skipped_title_policy_count": 1,
+  "skipped_title_policy": [
+    {
+      "report_dir": "xhs_notes/dropbox/260629/shard_1/0004-09-Nomura-USD-CNY-fix-model-Projection-6.8077-260629",
+      "wechat_markdown": "xhs_notes/dropbox/260629/shard_1/0004-09-Nomura-USD-CNY-fix-model-Projection-6.8077-260629/wechat_article.md",
+      "title": "野村：人民币中间价模型透露的政策信号，比点位更重要",
+      "wechat_title": "野村：人民币中间价模型透露的政策信号，比点位更重要",
+      "institution_name": "野村",
+      "source_report_name": "09-NOM-USD CNY fix model-Projection-6.8077-260629",
+      "skip_reason": "china_political_policy_terms=人民币;sensitive=政策"
+    }
+  ],
+  "articles_per_draft": 8,
+  "draft_count": 2,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit8zyJ65fRratHzIQnQpByxmc-3746LppdYsfklIVIGo_F",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 8,
+      "payload_bytes": 101615,
+      "payload": "wechat_drafts/xhs_notes/260629/draft_payload_01.json",
+      "titles": [
+        "摩根大通：亚洲央行正经历一场“油跌美升”的轮动",
+        "高盛：大宗商品真正的故事不在能源，而在金属与电力",
+        "摩根士丹利：融资市场正发出二季度末最危险的信号",
+        "美银：美银，存储器超级周期可能延续到2030年",
+        "伯恩斯坦：钠离子电池的“奇点”不在车，在储能",
+        "高盛：韩国军工和机器人，下半年最值得关注的两个板块",
+        "野村：人形机器人量产拐点已至，但真正的主线不在机器人本身",
+        "伯恩斯坦：斗山能源的2500亿美元核能订单，不只是“韩国制造”的故事"
+      ],
+      "wechat_titles": [
+        "摩根大通：亚洲央行正经历一场“油跌美升”的轮动",
+        "高盛：大宗商品真正的故事不在能源，而在金属与电力",
+        "摩根士丹利：融资市场正发出二季度末最危险的信号",
+        "美银：美银，存储器超级周期可能延续到2030年",
+        "伯恩斯坦：钠离子电池的“奇点”不在车，在储能",
+        "高盛：韩国军工和机器人，下半年最值得关注的两个板块",
+        "野村：人形机器人量产拐点已至，但真正的主线不在机器人本身",
+        "伯恩斯坦：斗山能源的2500亿美元核能订单，不只是“韩国制造”的故事"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 8,
+        "expected_article_count": 8,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ©æ ¹å¤§éï¼äºæ´²å¤®è¡æ­£ç»åä¸åºâæ²¹è·ç¾åâçè½®å¨",
+          "é«çï¼å¤§å®ååçæ­£çæ äºä¸å¨è½æºï¼èå¨éå±ä¸çµå",
+          "æ©æ ¹å£«ä¸¹å©ï¼èèµå¸åºæ­£ååºäºå­£åº¦æ«æå±é©çä¿¡å·",
+          "ç¾é¶ï¼ç¾é¶ï¼å­å¨å¨è¶ çº§å¨æå¯è½å»¶ç»­å°2030å¹´",
+          "ä¼¯æ©æ¯å¦ï¼é ç¦»å­çµæ± çâå¥ç¹âä¸å¨è½¦ï¼å¨å¨è½",
+          "é«çï¼é©å½åå·¥åæºå¨äººï¼ä¸åå¹´æå¼å¾å ³æ³¨çä¸¤ä¸ªæ¿å",
+          "éæï¼äººå½¢æºå¨äººéäº§æç¹å·²è³ï¼ä½çæ­£çä¸»çº¿ä¸å¨æºå¨äººæ¬èº«",
+          "ä¼¯æ©æ¯å¦ï¼æå±±è½æºç2500äº¿ç¾å æ ¸è½è®¢åï¼ä¸åªæ¯âé©å½å¶é âçæ äº"
+        ],
+        "create_time": 1782772589,
+        "update_time": 1782772590
+      }
+    },
+    {
+      "draft_index": 2,
+      "media_id": "avPwUQVH0p7DPpCFFkit8zC2RBDJaxtCDTdZ-sP6OatU9SPaD5FbLXMahkmHlLoP",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 1,
+      "payload_bytes": 10448,
+      "payload": "wechat_drafts/xhs_notes/260629/draft_payload_02.json",
+      "titles": [
+        "野村：人形机器人的“脊髓”比“大脑”更关键"
+      ],
+      "wechat_titles": [
+        "野村：人形机器人的“脊髓”比“大脑”更关键"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 1,
+        "expected_article_count": 1,
+        "matches_expected_article_count": true,
+        "titles": [
+          "éæï¼äººå½¢æºå¨äººçâèé«âæ¯âå¤§èâæ´å ³é®"
+        ],
+        "create_time": 1782772594,
+        "update_time": 1782772595
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "摩根大通：亚洲央行正经历一场“油跌美升”的轮动",
+      "wechat_title": "摩根大通：亚洲央行正经历一场“油跌美升”的轮动",
+      "institution_name": "摩根大通",
+      "source_report_name": "01-JPM-Global Data Watch- Asia Oil Down- Dollar Up- A Rotation in Asian Central Banks-260627",
+      "report_dir": "xhs_notes/dropbox/260629/shard_0/0001-01-J.P.-Morgan-Global-Data-Watch--Asia-Oil-Down--Dollar-Up--A-Rotation-in-A",
+      "content_chars": 8117,
+      "content_bytes": 12149,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260629/shard_0/0001-01-J.P.-Morgan-Global-Data-Watch--Asia-Oil-Down--Dollar-Up--A-Rotation-in-A/assets/cover.png"
+    },
+    {
+      "title": "高盛：大宗商品真正的故事不在能源，而在金属与电力",
+      "wechat_title": "高盛：大宗商品真正的故事不在能源，而在金属与电力",
+      "institution_name": "高盛",
+      "source_report_name": "02-GS-Commodity Views-From Energy to Metals- Why to Still Diversify Into Commodities-260628",
+      "report_dir": "xhs_notes/dropbox/260629/shard_0/0002-02-Goldman-Sachs-Commodity-Views-From-Energy-to-Metals--Why-to-Still-Divers",
+      "content_chars": 8828,
+      "content_bytes": 12608,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260629/shard_0/0002-02-Goldman-Sachs-Commodity-Views-From-Energy-to-Metals--Why-to-Still-Divers/assets/cover.png"
+    },
+    {
+      "title": "摩根士丹利：融资市场正发出二季度末最危险的信号",
+      "wechat_title": "摩根士丹利：融资市场正发出二季度末最危险的信号",
+      "institution_name": "摩根斯坦利",
+      "source_report_name": "03-MS-US Rates Strategy-Equity Funding Implies a Tumultuous Quarter-End-260627",
+      "report_dir": "xhs_notes/dropbox/260629/shard_0/0003-03-Morgan-Stanley-US-Rates-Strategy-Equity-Funding-Implies-a-Tumultuous-Qua",
+      "content_chars": 8447,
+      "content_bytes": 12301,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260629/shard_0/0003-03-Morgan-Stanley-US-Rates-Strategy-Equity-Funding-Implies-a-Tumultuous-Qua/assets/cover.png"
+    },
+    {
+      "title": "美银：美银，存储器超级周期可能延续到2030年",
+      "wechat_title": "美银：美银，存储器超级周期可能延续到2030年",
+      "institution_name": "美国银行",
+      "source_report_name": "04-Bofa-Global Memory Tech Weekly theme-Micron results implications for Asian memory chipmakers-260626",
+      "report_dir": "xhs_notes/dropbox/260629/shard_0/0004-04-Bofa-Global-Memory-Tech-Weekly-theme-Micron-results-implications-for-Asi",
+      "content_chars": 9587,
+      "content_bytes": 13105,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260629/shard_0/0004-04-Bofa-Global-Memory-Tech-Weekly-theme-Micron-results-implications-for-Asi/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：钠离子电池的“奇点”不在车，在储能",
+      "wechat_title": "伯恩斯坦：钠离子电池的“奇点”不在车，在储能",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "05-Bernstein-Global Energy Storage-Battery Weekly 29 June-260629",
+      "report_dir": "xhs_notes/dropbox/260629/shard_0/0005-05-Bernstein-Global-Energy-Storage-Battery-Weekly-29-June-260629",
+      "content_chars": 7139,
+      "content_bytes": 10585,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260629/shard_0/0005-05-Bernstein-Global-Energy-Storage-Battery-Weekly-29-June-260629/assets/cover.png"
+    },
+    {
+      "title": "高盛：韩国军工和机器人，下半年最值得关注的两个板块",
+      "wechat_title": "高盛：韩国军工和机器人，下半年最值得关注的两个板块",
+      "institution_name": "高盛",
+      "source_report_name": "06-GS-South Korea Industrials- Defense and Robotics- Takeaways from US marketing-260629",
+      "report_dir": "xhs_notes/dropbox/260629/shard_1/0001-06-Goldman-Sachs-South-Korea-Industrials--Defense-and-Robotics--Takeaways-f",
+      "content_chars": 7551,
+      "content_bytes": 11441,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260629/shard_1/0001-06-Goldman-Sachs-South-Korea-Industrials--Defense-and-Robotics--Takeaways-f/assets/cover.png"
+    },
+    {
+      "title": "野村：人形机器人量产拐点已至，但真正的主线不在机器人本身",
+      "wechat_title": "野村：人形机器人量产拐点已至，但真正的主线不在机器人本身",
+      "institution_name": "野村",
+      "source_report_name": "07-NOM-Optimus ramps- China scales up as cost curves bend lower-260628",
+      "report_dir": "xhs_notes/dropbox/260629/shard_1/0002-07-Nomura-Optimus-ramps--China-scales-up-as-cost-curves-bend-lower-260628",
+      "content_chars": 9829,
+      "content_bytes": 13569,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260629/shard_1/0002-07-Nomura-Optimus-ramps--China-scales-up-as-cost-curves-bend-lower-260628/assets/cover.png"
+    },
+    {
+      "title": "伯恩斯坦：斗山能源的2500亿美元核能订单，不只是“韩国制造”的故事",
+      "wechat_title": "伯恩斯坦：斗山能源的2500亿美元核能订单，不只是“韩国制造”的故事",
+      "institution_name": "伯恩斯坦",
+      "source_report_name": "10-Bernstein-Asia-Pacific Nuclear Power- The next wave of nuclear builds. What does a -250bn nuclear pipeline mean for Doosan--260629",
+      "report_dir": "xhs_notes/dropbox/260629/shard_1/0005-10-Bernstein-Asia-Pacific-Nuclear-Power--The-next-wave-of-nuclear-builds.-W",
+      "content_chars": 8327,
+      "content_bytes": 12127,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260629/shard_1/0005-10-Bernstein-Asia-Pacific-Nuclear-Power--The-next-wave-of-nuclear-builds.-W/assets/cover.png"
+    },
+    {
+      "title": "野村：人形机器人的“脊髓”比“大脑”更关键",
+      "wechat_title": "野村：人形机器人的“脊髓”比“大脑”更关键",
+      "institution_name": "野村",
+      "source_report_name": "11-NOM-China Robotics Physical AI- From NeuralAxis blueprint to Unitree-260628",
+      "report_dir": "xhs_notes/dropbox/260629/shard_2/0001-11-Nomura-China-Robotics-Physical-AI--From-NeuralAxis-blueprint-to-Unitree-",
+      "content_chars": 6430,
+      "content_bytes": 10038,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "cover_image": "xhs_notes/dropbox/260629/shard_2/0001-11-Nomura-China-Robotics-Physical-AI--From-NeuralAxis-blueprint-to-Unitree-/assets/cover.png"
+    }
+  ]
+}
