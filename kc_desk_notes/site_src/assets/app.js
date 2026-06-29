@@ -1548,6 +1548,150 @@
     return scored.slice(0, 6).map((entry) => entry.item);
   }
 
+  function docDateSortValue(item) {
+    return Number((isoDateFromValue(item.date) || itemDate(item)).replace(/-/g, "")) || 0;
+  }
+
+  function relatedQueryForDoc(item) {
+    const title = [item.title_cn, item.title].filter(Boolean).join(" ");
+    const chunks = title
+      .split(/[\s,，:：;；|｜/\\()[\]（）【】「」"'“”‘’]+/u)
+      .map((part) => part.trim())
+      .filter((part) => part.length >= 2 && part.length <= 32)
+      .slice(0, 4);
+    const tokens = importantTokens(`${title} ${item.institution || ""} ${item.category || ""} ${item.report_type || ""}`)
+      .filter((token) => token.length <= 24)
+      .slice(0, 5);
+    const merged = [...chunks, ...tokens].filter(Boolean);
+    const deduped = [];
+    const seen = new Set();
+    for (const value of merged) {
+      const key = normalize(value);
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      deduped.push(value);
+    }
+    return (deduped.join(" ") || title || item.institution || "").slice(0, 120).trim();
+  }
+
+  function catalogRelatedForDoc(current, items, searchTextById, limit = 4) {
+    const currentIndustry = inferIndustry(current);
+    const currentInstitution = normalize(current.institution || "");
+    const currentDate = docDateSortValue(current);
+    const keywords = importantTokens([
+      current.title,
+      current.title_cn,
+      current.institution,
+      current.category,
+      current.report_type,
+    ].join(" "));
+
+    return items
+      .map((item) => {
+        let score = 0;
+        if (inferIndustry(item) === currentIndustry) score += 30;
+        if (currentInstitution && normalize(bankLabel(item)).includes(currentInstitution)) score += 20;
+        if (currentDate && Math.abs(dateSortValue(item) - currentDate) <= 7) score += 4;
+
+        const title = normalize(`${item.title || ""} ${item.title_zh || ""}`);
+        const meta = normalize(metadataText(item));
+        const text = searchTextById.get(item.id) || "";
+        for (const token of keywords) {
+          if (title.includes(token)) score += 10;
+          if (meta.includes(token)) score += 4;
+          if (text.includes(token)) score += 2;
+        }
+        return { item, score };
+      })
+      .filter((entry) => entry.score > 0)
+      .sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return dateSortValue(b.item) - dateSortValue(a.item);
+      })
+      .slice(0, limit)
+      .map((entry) => entry.item);
+  }
+
+  async function fetchDocRelatedSource(workerUrl, endpoint, query, source, current, limit) {
+    if (!workerUrl || !query) return [];
+    const response = await fetch(`${workerUrl}/${endpoint}?q=${encodeURIComponent(query)}`, { cache: "no-store" });
+    if (!response.ok) return [];
+    const data = await response.json().catch(() => ({}));
+    const items = Array.isArray(data.items) ? data.items : [];
+    return items
+      .map((item) => ({ ...item, source: item.source || source }))
+      .filter((item) => !(item.source === current.source && String(item.id) === String(current.id)))
+      .slice(0, limit);
+  }
+
+  function externalRelatedMarkup() {
+    return `
+      <section class="related-section external-related-section" id="externalRelatedSection" hidden aria-labelledby="externalRelatedTitle">
+        <div class="related-heading">
+          <h3 id="externalRelatedTitle">Related Reports</h3>
+        </div>
+        <div id="externalRelatedStatus" class="status-line" aria-live="polite"></div>
+        <div class="related-list" id="externalRelatedList"></div>
+      </section>
+    `;
+  }
+
+  function docRelatedRow(item) {
+    if (item.source === EXTERNAL_SOURCE) return externalRow(item);
+    if (item.source === REPORT_A_SOURCE) return reportARow(item);
+    if (item.source === AUTHORITY_SOURCE) return authorityRow(item);
+    return relatedRow(item);
+  }
+
+  async function initExternalRelated(item, workerUrl, catalogItems, searchTextById) {
+    const section = document.getElementById("externalRelatedSection");
+    const list = document.getElementById("externalRelatedList");
+    const status = document.getElementById("externalRelatedStatus");
+    if (!section || !list || !status) return;
+
+    const query = relatedQueryForDoc(item);
+    const rows = [];
+    const seen = new Set();
+    function append(sourceItems, source) {
+      for (const sourceItem of sourceItems) {
+        const key = `${source}:${sourceItem.id}`;
+        if (!sourceItem.id || seen.has(key)) continue;
+        seen.add(key);
+        rows.push({ ...sourceItem, source });
+      }
+    }
+
+    section.hidden = false;
+    status.className = "status-line";
+    status.textContent = "正在推荐相关报告…";
+    list.innerHTML = `
+      <div class="loading-state">
+        <span class="loading-spinner" aria-hidden="true"></span>
+        <span>正在推荐相关报告…</span>
+      </div>
+    `;
+
+    append(catalogRelatedForDoc(item, catalogItems, searchTextById, 4), "catalog");
+
+    const [externalResult, reportAResult, authorityResult] = await Promise.allSettled([
+      fetchDocRelatedSource(workerUrl, "external/search", query, EXTERNAL_SOURCE, item, 4),
+      fetchDocRelatedSource(workerUrl, "report-a/search", query, REPORT_A_SOURCE, item, 3),
+      fetchDocRelatedSource(workerUrl, "authority/search", query, AUTHORITY_SOURCE, item, 3),
+    ]);
+
+    if (externalResult.status === "fulfilled") append(externalResult.value, EXTERNAL_SOURCE);
+    if (reportAResult.status === "fulfilled") append(reportAResult.value, REPORT_A_SOURCE);
+    if (authorityResult.status === "fulfilled") append(authorityResult.value, AUTHORITY_SOURCE);
+
+    const rendered = rows.slice(0, 14);
+    if (!rendered.length) {
+      section.hidden = true;
+      return;
+    }
+    status.textContent = "";
+    list.innerHTML = rendered.map(docRelatedRow).join("");
+  }
+
   function downloadErrorMessage(status, message, data) {
     const text = String(message || "");
     if (
@@ -2135,8 +2279,17 @@
       return;
     }
 
-    const config = await loadOptionalJson("data/config.json", {});
+    const [config, catalog, searchIndex] = await Promise.all([
+      loadOptionalJson("data/config.json", {}),
+      loadOptionalJson("data/catalog.json", { items: [] }),
+      loadOptionalJson("data/search_index.json", { items: [] }),
+    ]);
     const workerUrl = workerBaseUrl(config);
+    const catalogItems = Array.isArray(catalog.items) ? catalog.items : [];
+    const searchTextById = new Map();
+    for (const entry of Array.isArray(searchIndex.items) ? searchIndex.items : []) {
+      if (entry.id && entry.text) searchTextById.set(entry.id, String(entry.text));
+    }
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
 
@@ -2184,7 +2337,9 @@
           <p class="subtle">${escapeHtml(hint)}</p>
           <p class="contact-line">如需原文，请联系微信号：<strong>${escapeHtml(CONTACT_WECHAT)}</strong></p>
         </section>
+        ${externalRelatedMarkup()}
       `;
+      initExternalRelated(item, workerUrl, catalogItems, searchTextById);
       return;
     }
 
@@ -2216,7 +2371,9 @@
         </div>
         <div id="externalDetailDeliveryStatus" class="status-line" aria-live="polite"></div>
       </section>
+      ${externalRelatedMarkup()}
     `;
+    initExternalRelated(item, workerUrl, catalogItems, searchTextById);
 
     const form = document.getElementById("externalDetailForm");
     const input = document.getElementById("externalDetailPassword");
