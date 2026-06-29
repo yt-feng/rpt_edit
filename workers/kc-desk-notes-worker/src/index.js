@@ -1554,6 +1554,168 @@ function adminVisibleUser(user, entitlementRow) {
   };
 }
 
+function normalizeText(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function reportBankLabel(item) {
+  const code = String(item.bank_code || "").trim();
+  const name = String(item.bank_name || "").trim();
+  return code && name && normalizeText(code) !== normalizeText(name) ? `${code} · ${name}` : (code || name || "Other");
+}
+
+function reportDisplayTitle(item) {
+  return String(item.title_zh || item.title || item.filename || "Untitled report").trim();
+}
+
+function reportEnglishTitle(item) {
+  return String(item.title || item.filename || "Untitled report").replace(/\.pdf$/i, "").trim();
+}
+
+function reportPageCount(item) {
+  const pages = Number(item.page_count || 0);
+  return Number.isFinite(pages) && pages > 0 ? pages : 0;
+}
+
+function reportIsLandscape(item) {
+  if (item.first_page_landscape === true) return true;
+  return String(item.first_page_orientation || "").toLowerCase() === "landscape";
+}
+
+function latestCatalogDateFolder(items) {
+  return (items || [])
+    .map((item) => String(item.date_folder || ""))
+    .filter(Boolean)
+    .sort((a, b) => dateScore(b) - dateScore(a) || b.localeCompare(a))[0] || "";
+}
+
+const DAILY_PICK_MACRO_KEYWORDS = [
+  "macro", "global views", "global economics", "economics", "economic", "economy",
+  "strategy", "asset allocation", "rates", "fx", "currency", "currencies", "cny",
+  "dollar", "treasury", "bond", "yield", "central bank", "fed", "fomc", "ecb",
+  "boj", "boe", "pboc", "inflation", "cpi", "pce", "pmi", "gdp", "recession",
+  "policy", "fiscal", "monetary", "liquidity", "commodities", "commodity",
+  "oil", "crude", "gold", "geopolitics", "tariff", "trade", "china economy",
+  "asia insights", "global markets", "market outlook", "weekly", "monthly",
+  "宏观", "央行", "货币政策", "财政", "利率", "汇率", "通胀", "经济", "增长",
+  "衰退", "流动性", "大类资产", "资产配置", "地缘", "油价", "黄金", "贸易",
+];
+
+const DAILY_PICK_STOCK_PATTERNS = [
+  /[（(][0-9]{4,6}\s*\.(?:hk|ss|sz|ch|us|jp|ks|tw|t)[）)]/i,
+  /[（(][a-z]{1,6}\s*\.(?:us|o|n|ln|fp|gr|sw|ks|jp|t)[）)]/i,
+  /\b(?:upgrade|downgrade|initiat(?:e|ion)|target price|price target|buy|sell|neutral|overweight|underweight)\b/i,
+  /\b(?:results|earnings|investor day|valuation|eps|ebitda|revenue)\b/i,
+  /公司|个股|目标价|评级|买入|卖出|增持|减持|业绩|财报|估值/,
+];
+
+const DAILY_PICK_SECTOR_PATTERN = /\b(?:shipbuilding|semiconductor|internet|media|technology|software|hardware|healthcare|property|real estate|autos?|automobile|retail|consumer|gaming|banks?|insurance|utilities|materials|chemicals?|pharma|biotech|airlines?|restaurants?|power equipment|capital goods|machinery)\b|造船|半导体|互联网|传媒|科技|地产|汽车|零售|消费|银行|保险|医药|航空|机械|电力设备/iu;
+
+const DAILY_PICK_MACRO_ANCHOR_PATTERN = /\b(?:global views|global economics|economic outlook|economics|economy|macro|rates strategy|rates|fx|currency|currencies|central bank|fed|fomc|ecb|boj|boe|pboc|inflation|cpi|pce|pmi|gdp|recession|monetary|fiscal|asset allocation|global markets|market outlook)\b|宏观|央行|货币政策|财政|利率|汇率|通胀|经济展望|大类资产|资产配置|衰退|流动性/iu;
+
+function dailyPickTopicTags(item) {
+  const text = normalizeText(`${item.title || ""} ${item.title_zh || ""}`);
+  const tags = [];
+  const add = (tag) => {
+    if (tag && !tags.includes(tag)) tags.push(tag);
+  };
+  if (/fed|fomc|ecb|boj|boe|pboc|central bank|央行|货币政策/.test(text)) add("央行政策");
+  if (/oil|crude|commodity|commodities|gold|energy|油价|原油|黄金|大宗/.test(text)) add("大宗商品");
+  if (/china|cny|pboc|中国|人民币/.test(text)) add("中国宏观");
+  if (/fx|currency|dollar|usd|汇率|美元|外汇/.test(text)) add("汇率");
+  if (/rates|treasury|bond|yield|利率|债券|国债/.test(text)) add("利率");
+  if (/strategy|asset allocation|market outlook|global markets|大类资产|资产配置/.test(text)) add("资产配置");
+  if (/inflation|cpi|pce|通胀/.test(text)) add("通胀");
+  add("宏观趋势");
+  const bank = String(item.bank_name || item.bank_code || "").replace(/\s+/g, "").trim();
+  if (bank && bank.length <= 12) add(bank);
+  return tags.slice(0, 4);
+}
+
+function dailyPickMacroScore(item) {
+  const raw = `${item.title || ""} ${item.title_zh || ""} ${item.filename || ""}`;
+  const text = normalizeText(raw);
+  let score = 0;
+  for (const keyword of DAILY_PICK_MACRO_KEYWORDS) {
+    if (text.includes(normalizeText(keyword))) score += keyword.length > 8 ? 12 : 8;
+  }
+  if (/\b(?:global views|asia insights|economic|economics|macro|strategy)\b/i.test(raw)) score += 22;
+  if (/宏观|经济|策略|大类资产|央行/.test(raw)) score += 18;
+  if (DAILY_PICK_SECTOR_PATTERN.test(raw) && !DAILY_PICK_MACRO_ANCHOR_PATTERN.test(raw)) score -= 42;
+  if (reportIsLandscape(item)) score += 120;
+  const pages = reportPageCount(item);
+  if (pages > 5) score += Math.min(28, pages);
+  if (!pages) score -= 8;
+  return score;
+}
+
+function isLikelySingleStockReport(item) {
+  const text = `${item.title || ""} ${item.title_zh || ""} ${item.filename || ""}`;
+  return DAILY_PICK_STOCK_PATTERNS.some((pattern) => pattern.test(text));
+}
+
+function dailyPickIntro(item, tags) {
+  const bank = String(item.bank_name || item.bank_code || "机构").trim();
+  const title = reportDisplayTitle(item);
+  const topicText = tags.filter((tag) => tag !== bank && tag !== "宏观趋势").slice(0, 3).join("、") || "全球宏观趋势、政策变化与资产市场";
+  const landscapeText = reportIsLandscape(item) ? "这份 PDF 为横屏呈现，适合直接做会议讨论或素材摘图。" : "";
+  const pageText = reportPageCount(item) ? `报告共 ${reportPageCount(item)} 页，` : "";
+  const tagLinks = tags
+    .map((tag) => `[#${tag}](https://wx.zsxq.com/tags/${encodeURIComponent(tag)})`)
+    .join("  ");
+  return `${bank}报告《${title}》是对${topicText}的更新。${pageText}核心适合关注宏观主线、政策预期和市场定价变化的读者快速把握当日信息。${landscapeText}\n${tagLinks}`.trim();
+}
+
+function selectDailyPicks(catalog, maxItems = 5) {
+  const items = Array.isArray(catalog && catalog.items) ? catalog.items : [];
+  const latestDate = latestCatalogDateFolder(items);
+  if (!latestDate) return [];
+  const candidates = items
+    .filter((item) => String(item.date_folder || "") === latestDate)
+    .filter((item) => item && item.available !== false)
+    .filter((item) => !isLikelySingleStockReport(item))
+    .map((item) => {
+      const score = dailyPickMacroScore(item);
+      const pages = reportPageCount(item);
+      const landscape = reportIsLandscape(item);
+      const pageEligible = pages > 5 || pages === 0 || landscape;
+      return { item, score, pages, landscape, pageEligible };
+    })
+    .filter((entry) => entry.pageEligible && (entry.landscape || entry.score > 0))
+    .sort((a, b) => {
+      if (a.landscape !== b.landscape) return a.landscape ? -1 : 1;
+      if (b.score !== a.score) return b.score - a.score;
+      if (b.pages !== a.pages) return b.pages - a.pages;
+      return String(b.item.client_modified || b.item.server_modified || "").localeCompare(String(a.item.client_modified || a.item.server_modified || ""));
+    })
+    .slice(0, maxItems);
+
+  return candidates.map(({ item, score, pages, landscape }) => {
+    const tags = dailyPickTopicTags(item);
+    return {
+      id: String(item.id || ""),
+      title: reportEnglishTitle(item),
+      title_zh: String(item.title_zh || ""),
+      display_title: reportDisplayTitle(item),
+      filename: item.filename || `${reportEnglishTitle(item)}.pdf`,
+      bank: reportBankLabel(item),
+      date_folder: latestDate,
+      page_count: pages,
+      first_page_orientation: String(item.first_page_orientation || ""),
+      first_page_landscape: landscape,
+      size_bytes: Number(item.size_bytes || 0) || 0,
+      score,
+      tags,
+      intro: dailyPickIntro(item, tags),
+    };
+  });
+}
+
 async function listR2JsonObjects(env, prefix, limit = 500) {
   if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function") return [];
   const rows = [];
@@ -1858,12 +2020,14 @@ async function latestAdminGithubFiles(env) {
 async function handleAccountAdminSummary(request, env, ctx = null) {
   try {
     const adminUser = await requireSuperUser(request, env);
-    const [users, entitlements, files] = await Promise.all([
+    const [users, entitlements, files, catalog] = await Promise.all([
       listSiteUsers(env),
       listEntitlementRows(env),
       latestAdminGithubFiles(env),
+      loadCatalog(env).catch(() => ({ items: [] })),
     ]);
     const entitlementsByEmail = entitlementMap(entitlements);
+    const dailyPicks = selectDailyPicks(catalog);
     if (ctx && typeof ctx.waitUntil === "function") {
       ctx.waitUntil(warmAdminGithubCache(env, files).catch(() => null));
     }
@@ -1871,6 +2035,7 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
       user: publicUser(adminUser),
       users: users.map((user) => adminVisibleUser(user, entitlementsByEmail.get(normalizeEmail(user.email)))),
       files,
+      daily_picks: dailyPicks,
       repo: githubRepo(env),
       ref: githubRef(env),
       generated_at: new Date().toISOString(),
@@ -1878,6 +2043,47 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
   } catch (error) {
     return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
   }
+}
+
+async function handleAccountAdminReportPdf(request, env) {
+  try {
+    await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+
+  const url = new URL(request.url);
+  const id = String(url.searchParams.get("id") || "").trim();
+  if (!/^[a-f0-9]{16,64}$/i.test(id)) {
+    return jsonResponse(request, env, 400, { detail: "Report id is invalid." });
+  }
+  if (!env.REPORT_BUCKET) {
+    return jsonResponse(request, env, 503, { detail: "Report storage is unavailable." });
+  }
+
+  let catalog;
+  try {
+    catalog = await loadCatalog(env);
+  } catch (_error) {
+    return jsonResponse(request, env, 503, { detail: "Catalog is unavailable." });
+  }
+  const report = findReport(catalog, id);
+  if (!report) return jsonResponse(request, env, 404, { detail: "Report not found." });
+  if (report.available === false) {
+    return jsonResponse(request, env, 404, { detail: `PDF is not currently available. Contact WeChat: ${CONTACT_WECHAT}.` });
+  }
+
+  const object = await env.REPORT_BUCKET.get(objectKeyForReport(env, id));
+  if (!object) return jsonResponse(request, env, 404, { detail: "Report PDF was not found in storage." });
+  const headers = {
+    ...corsHeaders(request, env),
+    "Content-Type": "application/pdf",
+    "Content-Disposition": contentDisposition(report.filename || `${id}.pdf`),
+    "Content-Length": String(object.size || ""),
+    "Cache-Control": "no-store, private",
+    "X-Content-Type-Options": "nosniff",
+  };
+  return new Response(object.body, { headers });
 }
 
 function githubFileRepo(env, file) {
@@ -2708,6 +2914,10 @@ export default {
 
     if (pathname === "/account-admin/github-artifact" && request.method === "GET") {
       return handleAccountAdminGithubArtifact(request, env);
+    }
+
+    if (pathname === "/account-admin/report-pdf" && request.method === "GET") {
+      return handleAccountAdminReportPdf(request, env);
     }
 
     if (pathname === "/external/search" && request.method === "GET") {
