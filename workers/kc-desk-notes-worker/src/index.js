@@ -17,6 +17,12 @@ const BBG_SHOW_REPO = "yt-feng/bbg-show";
 const BBG_SHOW_PREFIX = "rendered-clips";
 const GITHUB_CACHE_PREFIX = "_account/github-cache";
 const GITHUB_CACHE_RETENTION_MS = 3 * 24 * 60 * 60 * 1000;
+const WECHAT_DRAFT_SOURCES = [
+  { root: "wechat_drafts/xhs_notes", label: "投行文章" },
+  { root: "wechat_drafts/institutions", label: "机构文章" },
+  { root: "wechat_drafts/consulting", label: "咨询文章" },
+  { root: "wechat_drafts", label: "公众号文章", legacy: true },
+];
 const PADDLE_HANDLED_EVENTS = new Set([
   "transaction.completed",
   "subscription.created",
@@ -1840,6 +1846,19 @@ async function githubContents(env, path, repo = githubRepo(env), ref = githubRef
   return Array.isArray(data) ? data : [];
 }
 
+async function githubContentJson(env, path, repo = githubRepo(env), ref = githubRef(env, repo)) {
+  const encoded = encodeGithubPath(path);
+  const data = await githubApiJson(env, `/contents/${encoded}?ref=${encodeURIComponent(ref)}`, {}, repo);
+  const content = String(data && data.content || "").replace(/\s/g, "");
+  if (!content) return null;
+  const binary = atob(content);
+  const bytes = new Uint8Array(binary.length);
+  for (let index = 0; index < binary.length; index += 1) {
+    bytes[index] = binary.charCodeAt(index);
+  }
+  return JSON.parse(new TextDecoder().decode(bytes));
+}
+
 function dateScore(value) {
   const text = String(value || "");
   const iso = text.match(/(20\d{2})-(\d{2})-(\d{2})/);
@@ -1858,6 +1877,247 @@ function sortGithubDirsDesc(items) {
       if (score) return score;
       return String(b.name || "").localeCompare(String(a.name || ""));
     });
+}
+
+function pad2(value) {
+  return String(value).padStart(2, "0");
+}
+
+function bjtTodayFolder(now = Date.now()) {
+  const shifted = new Date(now + 8 * 60 * 60 * 1000);
+  const year = shifted.getUTCFullYear();
+  const month = shifted.getUTCMonth() + 1;
+  const day = shifted.getUTCDate();
+  return `${String(year).slice(2)}${pad2(month)}${pad2(day)}`;
+}
+
+function dateFolderParts(folder) {
+  const digits = String(folder || "").match(/^(\d{6}|\d{8})$/);
+  if (!digits) return null;
+  const value = digits[1];
+  const year = value.length === 6 ? 2000 + Number(value.slice(0, 2)) : Number(value.slice(0, 4));
+  const month = Number(value.slice(value.length - 4, value.length - 2));
+  const day = Number(value.slice(value.length - 2));
+  if (!year || !month || !day) return null;
+  return { year, month, day };
+}
+
+function dateFolderIso(folder) {
+  const parts = dateFolderParts(folder);
+  if (!parts) return String(folder || "");
+  return `${parts.year}-${pad2(parts.month)}-${pad2(parts.day)}`;
+}
+
+function dateFolderShortLabel(folder) {
+  const parts = dateFolderParts(folder);
+  if (!parts) return String(folder || "");
+  return `${pad2(parts.month)}-${pad2(parts.day)}`;
+}
+
+function isWechatDateDirName(name) {
+  return /^(\d{6}|\d{8})$/.test(String(name || ""));
+}
+
+function wechatArticleLabel(index) {
+  const labels = ["头条", "二条", "三条", "四条", "五条", "六条", "七条", "八条", "九条"];
+  return labels[index] || `${index + 1}条`;
+}
+
+function cleanWechatTitle(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
+
+function wechatArticlesFromTitles(titles) {
+  return (Array.isArray(titles) ? titles : [])
+    .map(cleanWechatTitle)
+    .filter(Boolean)
+    .map((title, index) => ({
+      position: index + 1,
+      label: wechatArticleLabel(index),
+      title,
+    }));
+}
+
+function wechatDraftTitles(draft) {
+  if (!draft || typeof draft !== "object") return [];
+  if (Array.isArray(draft.wechat_titles) && draft.wechat_titles.length) return draft.wechat_titles;
+  if (Array.isArray(draft.titles) && draft.titles.length) return draft.titles;
+  if (Array.isArray(draft.articles)) return draft.articles.map((article) => article && article.title);
+  return [];
+}
+
+function wechatBatchFromDraft(entry, draft, fallbackIndex) {
+  const draftIndex = Number(draft && draft.draft_index || fallbackIndex + 1) || fallbackIndex + 1;
+  const articles = wechatArticlesFromTitles(wechatDraftTitles(draft));
+  const articleCount = Number(draft && draft.article_count || articles.length) || articles.length;
+  return {
+    source_label: entry.source.label,
+    batch_no: draftIndex,
+    batch_label: `${entry.source.label} ${draftIndex}`,
+    article_count: articleCount,
+    articles,
+  };
+}
+
+function wechatBatchesFromSummary(entry, summary) {
+  const drafts = Array.isArray(summary && summary.drafts) ? summary.drafts : [];
+  if (drafts.length) return drafts.map((draft, index) => wechatBatchFromDraft(entry, draft, index));
+
+  const articles = Array.isArray(summary && summary.articles) ? summary.articles : [];
+  const perDraft = Math.min(9, Math.max(1, Number(summary && summary.articles_per_draft || 8) || 8));
+  const batches = [];
+  for (let index = 0; index < articles.length; index += perDraft) {
+    const group = articles.slice(index, index + perDraft);
+    batches.push(wechatBatchFromDraft(entry, {
+      draft_index: batches.length + 1,
+      article_count: group.length,
+      articles: group,
+    }, batches.length));
+  }
+  return batches;
+}
+
+async function wechatBatchesFromPayloads(env, entry) {
+  const files = await githubContents(env, entry.path);
+  const payloads = files
+    .filter((item) => item && item.type === "file" && /^draft_payload_\d+\.json$/i.test(item.name || ""))
+    .sort((a, b) => String(a.name || "").localeCompare(String(b.name || "")))
+    .slice(0, 50);
+  const batches = [];
+  for (const file of payloads) {
+    try {
+      const payload = await githubContentJson(env, file.path);
+      const match = String(file.name || "").match(/(\d+)/);
+      batches.push(wechatBatchFromDraft(entry, {
+        draft_index: match ? Number(match[1]) : batches.length + 1,
+        articles: Array.isArray(payload && payload.articles) ? payload.articles : [],
+      }, batches.length));
+    } catch (_error) {
+      // Keep the admin page usable even if one payload is malformed.
+    }
+  }
+  return batches;
+}
+
+async function wechatDateDirs(env) {
+  const entries = [];
+  for (const source of WECHAT_DRAFT_SOURCES) {
+    let dirs = [];
+    try {
+      dirs = await githubContents(env, source.root);
+    } catch (_error) {
+      continue;
+    }
+    for (const dir of dirs) {
+      if (!dir || dir.type !== "dir" || !isWechatDateDirName(dir.name)) continue;
+      entries.push({
+        source,
+        name: dir.name,
+        path: dir.path,
+      });
+    }
+  }
+  return entries;
+}
+
+async function wechatBatchesForDate(env, dateEntries) {
+  const batches = [];
+  for (const entry of dateEntries) {
+    let entryBatches = [];
+    try {
+      const summary = await githubContentJson(env, `${entry.path}/wechat_draft_summary.json`);
+      entryBatches = wechatBatchesFromSummary(entry, summary);
+    } catch (_error) {
+      try {
+        entryBatches = await wechatBatchesFromPayloads(env, entry);
+      } catch (_fallbackError) {
+        entryBatches = [];
+      }
+    }
+    batches.push(...entryBatches.filter((batch) => batch.article_count > 0 || batch.articles.length));
+  }
+  return batches;
+}
+
+function wechatScheduleSlot(dateFolder, index, total) {
+  const parts = dateFolderParts(dateFolder);
+  const offsetMinutes = total <= 1 ? 0 : Math.round((990 * index) / (total - 1));
+  const minuteOfDay = 8 * 60 + offsetMinutes;
+  if (parts && minuteOfDay === 24 * 60) {
+    return {
+      scheduled_at_bjt: `${parts.year}-${pad2(parts.month)}-${pad2(parts.day)} 24:00`,
+      scheduled_time: `${pad2(parts.month)}-${pad2(parts.day)} 24:00`,
+      day_label: "当天",
+    };
+  }
+  const dayOffset = Math.floor(minuteOfDay / (24 * 60));
+  const localMinutes = minuteOfDay % (24 * 60);
+  const hour = Math.floor(localMinutes / 60);
+  const minute = localMinutes % 60;
+  if (!parts) {
+    return {
+      scheduled_at_bjt: `${dateFolder} ${pad2(hour)}:${pad2(minute)}`,
+      scheduled_time: `${pad2(hour)}:${pad2(minute)}`,
+      day_label: dayOffset ? "次日" : "当天",
+    };
+  }
+  const date = new Date(Date.UTC(parts.year, parts.month - 1, parts.day + dayOffset));
+  const year = date.getUTCFullYear();
+  const month = date.getUTCMonth() + 1;
+  const day = date.getUTCDate();
+  return {
+    scheduled_at_bjt: `${year}-${pad2(month)}-${pad2(day)} ${pad2(hour)}:${pad2(minute)}`,
+    scheduled_time: `${pad2(month)}-${pad2(day)} ${pad2(hour)}:${pad2(minute)}`,
+    day_label: dayOffset ? "次日" : "当天",
+  };
+}
+
+function applyWechatSchedule(dateFolder, batches) {
+  const total = batches.length;
+  return batches.map((batch, index) => ({
+    ...batch,
+    schedule_index: index + 1,
+    total_batches: total,
+    ...wechatScheduleSlot(dateFolder, index, total),
+  }));
+}
+
+async function buildWechatDraftSchedule(env) {
+  const todayFolder = bjtTodayFolder();
+  const dirs = await wechatDateDirs(env);
+  if (!dirs.length) {
+    return {
+      today_folder: todayFolder,
+      date_folder: "",
+      date_label: "",
+      is_today: false,
+      window: "08:00 - 次日 00:30",
+      total_batches: 0,
+      total_articles: 0,
+      batches: [],
+    };
+  }
+  const selectedFolder = dirs.some((dir) => dir.name === todayFolder)
+    ? todayFolder
+    : dirs
+      .map((dir) => dir.name)
+      .sort((a, b) => dateScore(b) - dateScore(a) || b.localeCompare(a))[0];
+  const dateEntries = WECHAT_DRAFT_SOURCES.flatMap((source) => (
+    dirs.filter((dir) => dir.name === selectedFolder && dir.source.root === source.root)
+  ));
+  const batches = await wechatBatchesForDate(env, dateEntries);
+  const scheduled = applyWechatSchedule(selectedFolder, batches);
+  return {
+    today_folder: todayFolder,
+    date_folder: selectedFolder,
+    date_iso: dateFolderIso(selectedFolder),
+    date_label: dateFolderShortLabel(selectedFolder),
+    is_today: selectedFolder === todayFolder,
+    window: "08:00 - 次日 00:30",
+    total_batches: scheduled.length,
+    total_articles: scheduled.reduce((sum, batch) => sum + Number(batch.article_count || batch.articles.length || 0), 0),
+    batches: scheduled,
+  };
 }
 
 function adminGithubFile(kind, label, item, date, note = "", repo = "") {
@@ -2020,11 +2280,21 @@ async function latestAdminGithubFiles(env) {
 async function handleAccountAdminSummary(request, env, ctx = null) {
   try {
     const adminUser = await requireSuperUser(request, env);
-    const [users, entitlements, files, catalog] = await Promise.all([
+    const [users, entitlements, files, catalog, wechatSchedule] = await Promise.all([
       listSiteUsers(env),
       listEntitlementRows(env),
       latestAdminGithubFiles(env),
       loadCatalog(env).catch(() => ({ items: [] })),
+      buildWechatDraftSchedule(env).catch(() => ({
+        today_folder: bjtTodayFolder(),
+        date_folder: "",
+        date_label: "",
+        is_today: false,
+        window: "08:00 - 次日 00:30",
+        total_batches: 0,
+        total_articles: 0,
+        batches: [],
+      })),
     ]);
     const entitlementsByEmail = entitlementMap(entitlements);
     const dailyPicks = selectDailyPicks(catalog);
@@ -2036,6 +2306,7 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
       users: users.map((user) => adminVisibleUser(user, entitlementsByEmail.get(normalizeEmail(user.email)))),
       files,
       daily_picks: dailyPicks,
+      wechat_schedule: wechatSchedule,
       repo: githubRepo(env),
       ref: githubRef(env),
       generated_at: new Date().toISOString(),
