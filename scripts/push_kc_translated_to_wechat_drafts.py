@@ -36,9 +36,8 @@ BRAND = "KC桌面——外资精译"
 AUTHOR = "KC桌面"
 BOTTOM_DISCLAIMER = "For informational purposes only. Not investment advice."
 DEFAULT_BODY_HOOK = (
-    "更多国际信源汇编&评论，扫码交流，每日更新~40页，汇总国际层面主流叙事&多种口径的数据，"
-    "便于观测边际变化。星球汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、"
-    "战略咨询等朋友，期待交流"
+    "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。"
+    "汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流"
 )
 DEFAULT_BODY_VISIBLE_CHARS = 2000
 DEFAULT_MIN_INLINE_IMAGES = 3
