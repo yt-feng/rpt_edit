@@ -53,6 +53,13 @@ const AUTHORITY_KINDS = {
   },
 };
 
+const HIBOR_ORIGIN = "https://www.hibor.com.cn";
+const HIBOR_SOURCE = "hibor";
+const HIBOR_SEARCH_PAGE_SIZE = 30;
+const HIBOR_UA =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
+  "(KHTML, like Gecko) Chrome/137.0 Safari/537.36";
+
 let catalogCache = null;
 let catalogFetchedAt = 0;
 let rulesCache = null;
@@ -1726,6 +1733,128 @@ async function handleExternalStatus(request, env) {
 }
 
 // ---------------------------------------------------------------------------
+// Hibor metadata integration
+// ---------------------------------------------------------------------------
+
+function decodeHtmlEntities(value) {
+  const named = {
+    amp: "&",
+    lt: "<",
+    gt: ">",
+    quot: "\"",
+    apos: "'",
+    nbsp: " ",
+    middot: "·",
+  };
+  return String(value || "")
+    .replace(/&#x([0-9a-f]+);/gi, (_all, hex) => {
+      const code = Number.parseInt(hex, 16);
+      return Number.isFinite(code) ? String.fromCodePoint(code) : "";
+    })
+    .replace(/&#(\d+);/g, (_all, digits) => {
+      const code = Number.parseInt(digits, 10);
+      return Number.isFinite(code) ? String.fromCodePoint(code) : "";
+    })
+    .replace(/&([a-z]+);/gi, (all, name) => named[String(name || "").toLowerCase()] || all);
+}
+
+function stripHtml(value) {
+  return decodeHtmlEntities(String(value || "").replace(/<[^>]*>/g, " "));
+}
+
+function cleanHtmlText(value) {
+  return stripHtml(value).replace(/\s+/g, " ").trim();
+}
+
+function hiborMetaField(block, label) {
+  const match = String(block || "").match(new RegExp(`<span>\\s*${label}：([\\s\\S]*?)<\\/span>`, "i"));
+  return match ? cleanHtmlText(match[1]) : "";
+}
+
+function hiborDateFromTitle(title) {
+  const match = String(title || "").match(/-(\d{2})(\d{2})(\d{2})$/);
+  if (!match) return "";
+  return `20${match[1]}-${match[2]}-${match[3]}`;
+}
+
+function hiborInstitutionFromTitle(title) {
+  const text = String(title || "").trim();
+  const index = text.indexOf("-");
+  return index > 0 ? text.slice(0, index).trim() : "";
+}
+
+function parseHiborItems(html) {
+  const items = [];
+  const rowRe = /<tr>\s*<td>([\s\S]*?)<\/td>\s*<\/tr>/gi;
+  let match;
+  while ((match = rowRe.exec(String(html || ""))) && items.length < HIBOR_SEARCH_PAGE_SIZE) {
+    const block = match[1];
+    if (!/tab_divttl/i.test(block)) continue;
+    const link = block.match(/<div class="tab_divttl"[\s\S]*?<a\s+href="([^"]+)"[^>]*title="([^"]*)"[^>]*>([\s\S]*?)<\/a>/i);
+    if (!link) continue;
+    const href = decodeHtmlEntities(link[1]);
+    const idMatch = href.match(/\/data\/([^/.]+)\.html/i);
+    if (!idMatch) continue;
+    const title = cleanHtmlText(link[2] || link[3]);
+    if (!title) continue;
+    const shareTime = hiborMetaField(block, "分享时间");
+    const pageText = hiborMetaField(block, "页数");
+    const pageMatch = pageText.match(/\d+/);
+    items.push({
+      id: `${HIBOR_SOURCE}:${idMatch[1]}`,
+      source: HIBOR_SOURCE,
+      title,
+      institution: hiborInstitutionFromTitle(title),
+      date: shareTime.slice(0, 10) || hiborDateFromTitle(title),
+      share_time: shareTime,
+      category: hiborMetaField(block, "栏目"),
+      author: hiborMetaField(block, "作者"),
+      rating: hiborMetaField(block, "评级"),
+      page_count: pageMatch ? Number(pageMatch[0]) : 0,
+      file_type: "pdf",
+      url: new URL(href, HIBOR_ORIGIN).toString(),
+    });
+  }
+  return items;
+}
+
+async function handleHiborSearch(request, env) {
+  const url = new URL(request.url);
+  const query = String(url.searchParams.get("q") || "").trim();
+  const page = Math.max(1, Number(url.searchParams.get("page") || "1") || 1);
+  if (!query) return jsonResponse(request, env, 200, { items: [], page: 1, total: 0 });
+
+  const body = new URLSearchParams({
+    hy1: "all",
+    hy2: "all",
+    ybbt: query,
+  }).toString();
+  const upstream = `${HIBOR_ORIGIN}/newweb/web/hangye?page=${encodeURIComponent(String(page))}`;
+  const response = await fetch(upstream, {
+    method: "POST",
+    headers: {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+      "Origin": HIBOR_ORIGIN,
+      "Referer": `${HIBOR_ORIGIN}/newweb/web/hangye?page=1`,
+      "User-Agent": HIBOR_UA,
+    },
+    body,
+  });
+  if (!response.ok) {
+    return jsonResponse(request, env, 502, { error: `Hibor search failed (${response.status}).` });
+  }
+  const html = await response.text();
+  const items = parseHiborItems(html);
+  return jsonResponse(request, env, 200, {
+    items,
+    page,
+    total: 0,
+    source: HIBOR_SOURCE,
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Authority report integration
 // ---------------------------------------------------------------------------
 
@@ -1902,6 +2031,10 @@ export default {
 
     if (pathname === "/external/status" && request.method === "GET") {
       return handleExternalStatus(request, env);
+    }
+
+    if (pathname === "/hibor/search" && request.method === "GET") {
+      return handleHiborSearch(request, env);
     }
 
     if (pathname === "/authority/search" && request.method === "GET") {
