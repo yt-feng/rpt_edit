@@ -1012,6 +1012,122 @@ button.primary:disabled {
   max-width: 148px;
 }
 
+.account-admin-wechat-schedule {
+  display: grid;
+  gap: 10px;
+}
+
+.account-admin-wechat-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #c8e4df;
+  border-radius: 8px;
+  background: #f4fbf9;
+  color: #243247;
+}
+
+.account-admin-wechat-summary strong,
+.account-admin-wechat-summary span,
+.account-admin-wechat-note,
+.account-admin-wechat-empty {
+  overflow-wrap: anywhere;
+}
+
+.account-admin-wechat-summary span,
+.account-admin-wechat-note,
+.account-admin-wechat-empty {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.account-admin-wechat-note {
+  padding: 0 2px;
+}
+
+.account-admin-wechat-batch {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.account-admin-wechat-time {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.account-admin-wechat-time strong {
+  color: var(--accent-strong);
+  font-size: 18px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.account-admin-wechat-time span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.account-admin-wechat-main {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.account-admin-wechat-title {
+  display: grid;
+  gap: 3px;
+}
+
+.account-admin-wechat-title strong,
+.account-admin-wechat-title span {
+  overflow-wrap: anywhere;
+}
+
+.account-admin-wechat-title span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.account-admin-wechat-articles {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.account-admin-wechat-articles li {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+  color: #243247;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.account-admin-wechat-articles li span {
+  color: var(--accent-strong);
+  font-weight: 900;
+}
+
+.account-admin-wechat-articles li strong {
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
 .account-admin-file {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -1333,9 +1449,15 @@ button.primary:disabled {
   .auth-grid,
   .plan-grid,
   .account-admin-pick,
+  .account-admin-wechat-batch,
   .account-admin-file,
   .about-section {
     grid-template-columns: 1fr;
+  }
+
+  .account-admin-wechat-summary {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .account-admin-file-actions {
