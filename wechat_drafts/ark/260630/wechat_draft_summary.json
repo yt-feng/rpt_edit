@@ -1,0 +1,132 @@
+{
+  "date_folder": "260630",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 5,
+  "selected_count": 5,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit84GqWuDvxxaVLIBjFlNyORmGqnr5tbqHqRn0tE3E9-ml",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 5,
+      "payload_bytes": 46022,
+      "payload": "wechat_drafts/ark/260630/draft_payload_01.json",
+      "titles": [
+        "木头姐ARK：预测市场正从“事件赌场”走向“结构性爆发”，世界杯引爆交易量，预测市场年化规模突破6750亿美元",
+        "木头姐ARK：SpaceX创史上最大IPO，2万亿估值背后的AI逻辑，SpaceX的2万亿估值，不是看财报，而是看“未来资本回…",
+        "木头姐ARK：美国永续合约终获合规绿灯，加密市场结构迎来分水岭，合规永续合约填补美国市场关键空白，国际交易格局面临重塑",
+        "木头姐ARK：蓝色起源爆炸暴露月球竞赛中的发射能力瓶颈，一次爆炸暴露了美国重返月球的致命短板",
+        "木头姐ARK：Anthropic每月向SpaceX支付12.5亿美元算力租金，AI军备竞赛进入“算力租赁”新阶段，算力租赁模式…"
+      ],
+      "wechat_titles": [
+        "木头姐ARK：预测市场正从“事件赌场”走向“结构性爆发”，世界杯引爆交易量，预测市场年化规模突破6750亿美元",
+        "木头姐ARK：SpaceX创史上最大IPO，2万亿估值背后的AI逻辑，SpaceX的2万亿估值，不是看财报，而是看“未来资本回…",
+        "木头姐ARK：美国永续合约终获合规绿灯，加密市场结构迎来分水岭，合规永续合约填补美国市场关键空白，国际交易格局面临重塑",
+        "木头姐ARK：蓝色起源爆炸暴露月球竞赛中的发射能力瓶颈，一次爆炸暴露了美国重返月球的致命短板",
+        "木头姐ARK：Anthropic每月向SpaceX支付12.5亿美元算力租金，AI军备竞赛进入“算力租赁”新阶段，算力租赁模式…"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 5,
+        "expected_article_count": 5,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ¨å¤´å§ARKï¼é¢æµå¸åºæ­£ä»âäºä»¶èµåºâèµ°åâç»ææ§çåâï¼ä¸çæ¯å¼çäº¤æéï¼é¢æµå¸åºå¹´åè§æ¨¡çªç ´6750äº¿ç¾å ",
+          "æ¨å¤´å§ARKï¼SpaceXåå²ä¸æå¤§IPOï¼2ä¸äº¿ä¼°å¼èåçAIé»è¾ï¼SpaceXç2ä¸äº¿ä¼°å¼ï¼ä¸æ¯çè´¢æ¥ï¼èæ¯çâæªæ¥èµæ¬åâ¦",
+          "æ¨å¤´å§ARKï¼ç¾å½æ°¸ç»­åçº¦ç»è·åè§ç»¿ç¯ï¼å å¯å¸åºç»æè¿æ¥åæ°´å²­ï¼åè§æ°¸ç»­åçº¦å¡«è¡¥ç¾å½å¸åºå ³é®ç©ºç½ï¼å½é äº¤ææ ¼å±é¢ä¸´éå¡",
+          "æ¨å¤´å§ARKï¼èè²èµ·æºçç¸æ´é²æçç«èµä¸­çåå°è½åç¶é¢ï¼ä¸æ¬¡çç¸æ´é²äºç¾å½éè¿æççè´å½ç­æ¿",
+          "æ¨å¤´å§ARKï¼Anthropicæ¯æåSpaceXæ¯ä»12.5äº¿ç¾å ç®åç§éï¼AIåå¤ç«èµè¿å ¥âç®åç§èµâæ°é¶æ®µï¼ç®åç§èµæ¨¡å¼â¦"
+        ],
+        "create_time": 1782777455,
+        "update_time": 1782777456
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "木头姐ARK：预测市场正从“事件赌场”走向“结构性爆发”，世界杯引爆交易量，预测市场年化规模突破6750亿美元",
+      "wechat_title": "木头姐ARK：预测市场正从“事件赌场”走向“结构性爆发”，世界杯引爆交易量，预测市场年化规模突破6750亿美元",
+      "institution_name": "",
+      "source_report_name": "ARK 515-Are-Prediction-Markets-Going-Mainstream-Again-More 0341cd27bdb65a20",
+      "report_dir": "kc_translated_reports/ark/260630/01-0001-ARK_515-Are-Prediction-Markets-Going-Mainstream-Again-More_0341cd27bdb65a20",
+      "content_chars": 6545,
+      "content_bytes": 8747,
+      "visible_text_chars": 1142,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260630/_assets/article_01_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：SpaceX创史上最大IPO，2万亿估值背后的AI逻辑，SpaceX的2万亿估值，不是看财报，而是看“未来资本回…",
+      "wechat_title": "木头姐ARK：SpaceX创史上最大IPO，2万亿估值背后的AI逻辑，SpaceX的2万亿估值，不是看财报，而是看“未来资本回…",
+      "institution_name": "",
+      "source_report_name": "ARK 514-SpaceXAI-Launches-More 8d7d66416d652304",
+      "report_dir": "kc_translated_reports/ark/260630/02-0002-ARK_514-SpaceXAI-Launches-More_8d7d66416d652304",
+      "content_chars": 6569,
+      "content_bytes": 9173,
+      "visible_text_chars": 1464,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260630/_assets/article_02_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：美国永续合约终获合规绿灯，加密市场结构迎来分水岭，合规永续合约填补美国市场关键空白，国际交易格局面临重塑",
+      "wechat_title": "木头姐ARK：美国永续合约终获合规绿灯，加密市场结构迎来分水岭，合规永续合约填补美国市场关键空白，国际交易格局面临重塑",
+      "institution_name": "",
+      "source_report_name": "ARK 513-Kalshi-Launches-Perpetuals-As-Robinhood-s-Rothera-Exchange-Goes-Live ea32d66c155202ab",
+      "report_dir": "kc_translated_reports/ark/260630/03-0003-ARK_513-Kalshi-Launches-Perpetuals-As-Robinhood-s-Rothera-Exchange-Goes-Live_ea32d66c155202",
+      "content_chars": 6098,
+      "content_bytes": 9360,
+      "visible_text_chars": 1742,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260630/_assets/article_03_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：蓝色起源爆炸暴露月球竞赛中的发射能力瓶颈，一次爆炸暴露了美国重返月球的致命短板",
+      "wechat_title": "木头姐ARK：蓝色起源爆炸暴露月球竞赛中的发射能力瓶颈，一次爆炸暴露了美国重返月球的致命短板",
+      "institution_name": "",
+      "source_report_name": "ARK 512-Blue-Origin-Explosion-Highlights-Launch-Capacity-Constraints-In-Race e32b632b9e11d682",
+      "report_dir": "kc_translated_reports/ark/260630/04-0004-ARK_512-Blue-Origin-Explosion-Highlights-Launch-Capacity-Constraints-In-Race_e32b632b9e11d6",
+      "content_chars": 4548,
+      "content_bytes": 6698,
+      "visible_text_chars": 1028,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260630/_assets/article_04_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：Anthropic每月向SpaceX支付12.5亿美元算力租金，AI军备竞赛进入“算力租赁”新阶段，算力租赁模式…",
+      "wechat_title": "木头姐ARK：Anthropic每月向SpaceX支付12.5亿美元算力租金，AI军备竞赛进入“算力租赁”新阶段，算力租赁模式…",
+      "institution_name": "",
+      "source_report_name": "ARK 511-Anthropic-Is-Paying-1.25-Billion-Per-Month-To-Access-SpaceX-s-Comput bc2e37f256800e49",
+      "report_dir": "kc_translated_reports/ark/260630/05-0005-ARK_511-Anthropic-Is-Paying-1",
+      "content_chars": 6623,
+      "content_bytes": 9607,
+      "visible_text_chars": 1724,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260630/_assets/article_05_kc_ai_image_001.jpg"
+    }
+  ]
+}
