@@ -1,0 +1,49 @@
+ZH_A: 最近大家都在讨论物理AI，但很多人可能觉得它离我们还很远，是这样吗？
+ZH_B: 其实不是。最近有一份研报非常有意思，它提出了一个关键观点：物理AI的核心瓶颈不是语言模型的推理能力，而是工程层面的低延迟反射层。
+ZH_A: 反射层？这听起来像是在说机器人要有本能反应？
+ZH_B: 没错。报告引用了一个叫NeuralAxis的框架，它把人形机器人的控制系统分成了三层：推理层、协调层和反射层。反射层的延迟可以低到40毫秒，比人的眨眼还快。
+ZH_A: 40毫秒？那意味着机器人可以在我们还没反应过来的时候就做出动作调整？
+ZH_B: 对。比如抓握力的控制、脚踝的平衡，这些都不需要经过中央大脑，而是由分布在关节、手脚的反射处理器自主决定。
+ZH_A: 这听起来很颠覆。那这个框架是从哪里来的？
+ZH_B: 是由一家叫NXP的公司提出的，他们的CEO在COMPUTEX 2026上发布了这个蓝图。但报告的重点是，有一家公司已经把这个蓝图变成了产品。
+ZH_A: 哪家公司？
+ZH_B: 宇树科技。他们发布了WVLA2.0模型，这是第一个商业可部署的版本。它融合了世界模型和VLA的能力，而不是单纯押注VLA。
+ZH_A: 融合？这意味着什么？
+ZH_B: 这意味着它既有预测能力，又有端到端的行动生成能力。它的感知系统用了四个并行的视觉流，包括深度相机、激光雷达和侧边摄像头，能在干扰下10毫秒内更新位置。
+ZH_A: 那实际表现怎么样？
+ZH_B: 在一次演示中，一台配备WVLA2.0的G1机器人在被干扰的会议室里自主完成了六个任务，没有远程操控。每个推理周期大约90毫秒，也就是每秒能迭代十次左右。
+ZH_A: 每秒十次？那已经很接近人类反应了。但它有没有什么局限？
+ZH_B: 报告也指出了问题。比如存在盲区、噪声偏高、精细操作还不够精准，而且缺乏量化的连续成功率基准。
+ZH_A: 那宇树科技打算怎么商业化？
+ZH_B: 他们瞄准了工业制造作为最早落地的场景，比如关节马达装配、上下料，然后是物流分拣和柔性3C组装，最后才是家庭和医疗。
+ZH_A: 为什么家庭场景排在最后？
+ZH_B: 因为开放的非结构化环境难度会急剧上升。报告也提到，宇树的优势在于全栈自研集成和全球机器人群的实机数据，这是纯云端模型厂商无法复制的。
+ZH_A: 那这份报告里有没有什么问题是没有完全展开的？
+ZH_B: 有一个很关键的问题：反射层的安全规范到底应该怎么定义？NeuralAxis提出了蓝图，但实际部署中的故障模式和冗余设计还需要更多验证。
+ZH_A: 那听众如果想了解更多，应该怎么做？
+ZH_B: 完整报告里会深入讨论这些悬念，包括宇树的技术路线对比和更多商业细节。欢迎加入我们的社群，或者直接阅读原报告。
+
+EN_A: So everyone is talking about physical AI, but a lot of people think it is still far from reality. Is that true?
+EN_B: Actually, not really. A recent research report makes a very interesting point. It says the real bottleneck for physical AI is not scaling language model reasoning, but engineering a low-latency reflex layer.
+EN_A: A reflex layer? That sounds like robots need to have instinctive reactions.
+EN_B: Exactly. The report references a framework called NeuralAxis. It divides humanoid robot control into three layers: a reasoning layer, a coordination layer, and a reflex layer. The reflex layer can have latency as low as 40 milliseconds.
+EN_A: 40 milliseconds? That means a robot can adjust its actions before we even notice what is happening?
+EN_B: Right. Things like grip force control and ankle balancing can be handled locally by reflex processors distributed in the joints, hands, and feet, without going through a central brain.
+EN_A: That sounds pretty groundbreaking. Where does this framework come from?
+EN_B: It was proposed by a company called NXP, unveiled by their CEO at COMPUTEX 2026. But the report focuses on a company that has actually turned this blueprint into a product.
+EN_A: Which company?
+EN_B: Unitree. They released the WVLA2.0 model, which is the first commercially deployable version. It fuses the predictive power of a world model with the end-to-end action generation of VLA, rather than betting solely on VLA.
+EN_A: Fusion? What does that mean in practice?
+EN_B: It means it can both predict and generate actions. Its perception system uses four parallel visual streams, including a depth camera, a LiDAR, and side cameras, and it can update position within 10 milliseconds under interference.
+EN_A: How does it perform in real tests?
+EN_B: In one demo, a G1 robot equipped with WVLA2.0 autonomously completed six tasks in a disturbed meeting room without teleoperation. Each inference cycle took about 90 milliseconds, so roughly ten iterations per second.
+EN_A: Ten iterations per second? That is getting close to human reflexes. But are there any limitations?
+EN_B: The report points out several. There are blind spots, higher noise levels, imprecise fine manipulation, and a lack of quantified continuous success rate benchmarks.
+EN_A: So how does Unitree plan to commercialize this?
+EN_B: They are targeting industrial manufacturing as the earliest use case, things like joint motor assembly and loading. Then logistics sorting and flexible 3C assembly, and finally home and healthcare scenarios.
+EN_A: Why is home last?
+EN_B: Because open, unstructured environments are much harder to handle. The report also notes that Unitree's edge comes from full-stack in-house integration and real-machine data from its global fleet, which cloud-only model vendors cannot replicate.
+EN_A: Are there any questions the report does not fully answer?
+EN_B: One big one is how to define safety standards for the reflex layer. NeuralAxis provides a blueprint, but the actual failure modes and redundancy in deployment still need more validation.
+EN_A: So what should listeners do if they want to dig deeper?
+EN_B: The full report explores these open questions in more detail, including a comparison of Unitree's technical approach and more commercial insights. Join our community or read the original report to get the full picture.

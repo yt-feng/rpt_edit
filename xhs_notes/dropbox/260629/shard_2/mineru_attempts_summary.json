@@ -1,0 +1,19 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 1,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_e22acyoo/pdfs/0001-11-NOM-China Robotics Physical AI- From NeuralAxis blueprint to Unitree-260628.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

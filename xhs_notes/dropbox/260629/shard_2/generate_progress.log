@@ -1,0 +1,12 @@
+Found 11 total PDFs; shard 2/40 has 1 PDFs, skips 0 already converted, will process 1 PDFs with batch_size=5.
+Running batch 1: 1 PDFs
+Found 1 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e22acyoo/pdfs/0001-11-Nomura-China Robotics Physical AI- From NeuralAxis blueprint to Unitree-260628.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=9ee54248-f062-4db7-90be-05c059990cfd
+MinerU states: waiting-file
+MinerU states: running
+MinerU states: done
+MinerU result contained no standalone chart images; creating title card only.
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260629/shard_2; successful_reports=1; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 1 report directories.
