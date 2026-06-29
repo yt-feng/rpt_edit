@@ -8,6 +8,7 @@
   const DOWNLOAD_PASSWORD_KEY = "kcdesk_download_password";
   const AUTH_SESSION_KEY = "kcdesk_auth_session";
   const AUTHORITY_SOURCE = "authority";
+  const REPORT_A_SOURCE = "report-a";
   const EXTERNAL_SOURCE = "external";
 
   const INDUSTRY_RULES = [
@@ -742,8 +743,9 @@
 
   function reportARow(item) {
     const meta = reportAMeta(item);
+    const url = externalPageUrl({ ...item, source: REPORT_A_SOURCE }, "");
     return `
-      <a class="related-row report-a-row" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">
+      <a class="related-row report-a-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
         <span class="related-title">
           <span>${escapeHtml(item.title)}</span>
         </span>
@@ -1457,6 +1459,9 @@
     if (item.page_count) url.searchParams.set("page_count", item.page_count);
     if (item.report_type) url.searchParams.set("report_type", item.report_type);
     if (item.language) url.searchParams.set("language", item.language);
+    if (item.category) url.searchParams.set("category", item.category);
+    if (item.author) url.searchParams.set("author", item.author);
+    if (item.rating) url.searchParams.set("rating", item.rating);
     return url.toString();
   }
 
@@ -1731,7 +1736,10 @@
   }
 
   function externalItemFromParams(params) {
-    const source = params.get("source") === AUTHORITY_SOURCE ? AUTHORITY_SOURCE : EXTERNAL_SOURCE;
+    const rawSource = params.get("source");
+    const source = rawSource === AUTHORITY_SOURCE
+      ? AUTHORITY_SOURCE
+      : (rawSource === REPORT_A_SOURCE ? REPORT_A_SOURCE : EXTERNAL_SOURCE);
     return {
       id: String(params.get("id") || "").trim(),
       source,
@@ -1744,6 +1752,9 @@
       page_count: params.get("page_count") || "",
       report_type: params.get("report_type") || "",
       language: params.get("language") || "",
+      category: params.get("category") || "",
+      author: params.get("author") || "",
+      rating: params.get("rating") || "",
     };
   }
 
@@ -1751,8 +1762,18 @@
     return item && item.source === AUTHORITY_SOURCE;
   }
 
+  function isReportAItem(item) {
+    return item && item.source === REPORT_A_SOURCE;
+  }
+
+  function isContactOnlyItem(item) {
+    return isAuthorityItem(item) || isReportAItem(item);
+  }
+
   function docSourceLabel(item) {
-    return isAuthorityItem(item) ? "高权报告" : "其他报告";
+    if (isAuthorityItem(item)) return "高权报告";
+    if (isReportAItem(item)) return "报告A";
+    return "其他报告";
   }
 
   function docEndpoint(item) {
@@ -1761,6 +1782,7 @@
 
   function validDocId(item) {
     if (isAuthorityItem(item)) return /^(foreign|foreign-rt):[0-9]{1,25}$/.test(item.id);
+    if (isReportAItem(item)) return /^report-a:[a-f0-9]{16,64}$/i.test(item.id);
     return /^[0-9]{6,25}$/.test(item.id);
   }
 
@@ -1869,29 +1891,39 @@
         ${field("Date", item.date || "-")}
         ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
       `
-      : `
+      : (isReportAItem(item) ? `
+        ${field("Source", docSourceLabel(item))}
+        ${field("Institution", item.institution || "-")}
+        ${field("Date", item.date || "-")}
+        ${field("Category", item.category || "-")}
+        ${field("Author", item.author || "-")}
+        ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
+      ` : `
         ${field("Source", docSourceLabel(item))}
         ${field("Institution", item.institution || "-")}
         ${field("Date", item.date || "-")}
         ${field("Type", item.file_type || "-")}
-      `;
+      `);
     const detailHeader = `
       <div>
         <h1 class="detail-title">${escapeHtml(item.title || "Report")}</h1>
         ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
-        <p class="subtle">${isAuthorityItem(item) ? "高权报告检索线索。" : "Password-protected report delivery."}</p>
+        <p class="subtle">${isContactOnlyItem(item) ? `${docSourceLabel(item)}检索线索。` : "Password-protected report delivery."}</p>
       </div>
       <div class="detail-grid">
         ${detailFields}
       </div>
     `;
-    if (isAuthorityItem(item)) {
+    if (isContactOnlyItem(item)) {
+      const hint = isAuthorityItem(item)
+        ? "高权报告仅提供检索线索，无法在本站直接下载。"
+        : "报告A仅提供检索线索，本站不直接展示原文或下载文件。";
       target.innerHTML = `
         ${detailHeader}
         <section class="unlock-box authority-contact-box">
           <h3>获取报告</h3>
-          <p class="subtle">高权报告仅提供检索线索，无法在本站直接下载。</p>
-          <p class="contact-line">如需具体报告，请联系微信号：<strong>${escapeHtml(CONTACT_WECHAT)}</strong></p>
+          <p class="subtle">${escapeHtml(hint)}</p>
+          <p class="contact-line">如需原文，请联系微信号：<strong>${escapeHtml(CONTACT_WECHAT)}</strong></p>
         </section>
       `;
       return;
