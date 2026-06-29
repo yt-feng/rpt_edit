@@ -1671,10 +1671,12 @@ function dailyPickIntro(item, tags) {
   const topicText = tags.filter((tag) => tag !== bank && tag !== "宏观趋势").slice(0, 3).join("、") || "全球宏观趋势、政策变化与资产市场";
   const landscapeText = reportIsLandscape(item) ? "这份 PDF 为横屏呈现，适合直接做会议讨论或素材摘图。" : "";
   const pageText = reportPageCount(item) ? `报告共 ${reportPageCount(item)} 页，` : "";
-  const tagLinks = tags
-    .map((tag) => `[#${tag}](https://wx.zsxq.com/tags/${encodeURIComponent(tag)})`)
+  const tagText = tags
+    .map((tag) => String(tag || "").trim())
+    .filter(Boolean)
+    .map((tag) => `#${tag}`)
     .join("  ");
-  return `${bank}报告《${title}》是对${topicText}的更新。${pageText}核心适合关注宏观主线、政策预期和市场定价变化的读者快速把握当日信息。${landscapeText}\n${tagLinks}`.trim();
+  return `${bank}报告《${title}》是对${topicText}的更新。${pageText}核心适合关注宏观主线、政策预期和市场定价变化的读者快速把握当日信息。${landscapeText}\n${tagText}`.trim();
 }
 
 function selectDailyPicks(catalog, maxItems = 5) {
