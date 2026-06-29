@@ -10,6 +10,10 @@
   const AUTHORITY_SOURCE = "authority";
   const REPORT_A_SOURCE = "report-a";
   const EXTERNAL_SOURCE = "external";
+  const PDFJS_MODULE_URL = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.mjs";
+  const PDFJS_WORKER_URL = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.mjs";
+  let accountAdminDailyPicks = new Map();
+  let pdfJsLoadPromise = null;
 
   const INDUSTRY_RULES = [
     ["Macro / FX / Rates", /\b(macro|fx|foreign exchange|currency|cny|yuan|dollar|usd|rate|rates|yield|fed|ecb|boj|inflation|cpi|pmi|gdp|economy|economic|recession|treasury|bond|nominal|real rate)\b/],
@@ -458,6 +462,13 @@
             <button class="secondary-button" id="accountAdminRefresh" type="button">刷新</button>
           </div>
           <div id="accountAdminStatus" class="status-line" aria-live="polite">正在读取后台信息…</div>
+          <section class="account-admin-section account-admin-picks-section">
+            <div class="account-admin-heading">
+              <strong>每日精选</strong>
+              <span id="accountAdminPickCount"></span>
+            </div>
+            <div id="accountAdminPicks" class="account-admin-picks"></div>
+          </section>
           <section class="account-admin-section">
             <div class="account-admin-heading">
               <strong>每日文件</strong>
@@ -537,6 +548,48 @@
     `;
   }
 
+  function adminPickMeta(pick) {
+    const parts = [
+      pick.bank,
+      pick.date_folder,
+      pick.page_count ? `${pick.page_count}页` : "页数待识别",
+      pick.first_page_landscape ? "横屏PDF" : "",
+      pick.size_bytes ? formatSize(pick.size_bytes) : "",
+    ].filter(Boolean);
+    return parts.join(" · ");
+  }
+
+  function adminDailyPickRow(pick) {
+    const intro = String(pick.intro || "").trim();
+    const title = pick.display_title || pick.title_zh || pick.title || "Untitled report";
+    const tags = Array.isArray(pick.tags) && pick.tags.length
+      ? `<div class="account-admin-pick-tags">${pick.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>`
+      : "";
+    return `
+      <article class="account-admin-pick" data-id="${escapeHtml(pick.id || "")}">
+        <div class="account-admin-pick-main">
+          <div class="account-admin-pick-title">
+            <strong>${escapeHtml(title)}</strong>
+            ${pick.title && pick.title !== title ? `<span>${escapeHtml(pick.title)}</span>` : ""}
+          </div>
+          <span class="account-admin-pick-meta">${escapeHtml(adminPickMeta(pick))}</span>
+          ${tags}
+          <textarea class="account-admin-pick-intro" readonly aria-label="介绍文字">${escapeHtml(intro)}</textarea>
+          <div class="account-admin-progress" hidden>
+            <div class="account-admin-progress-track"><span></span></div>
+            <small>等待下载…</small>
+          </div>
+        </div>
+        <div class="account-admin-file-actions account-admin-pick-actions">
+          <button class="secondary-button account-admin-copy-intro" type="button">复制文案</button>
+          <button class="secondary-button account-admin-report-download" type="button">下载报告</button>
+          <button class="secondary-button account-admin-cover-save" type="button">保存首图</button>
+          <button class="secondary-button account-admin-cancel" type="button" hidden>取消</button>
+        </div>
+      </article>
+    `;
+  }
+
   function resetDownloadProgress(progress) {
     if (!progress) return;
     const bar = progress.querySelector(".account-admin-progress-track span");
@@ -582,6 +635,68 @@
     return new Blob(chunks, { type: response.headers.get("Content-Type") || "application/octet-stream" });
   }
 
+  function accountAdminReportEndpoint(workerUrl, id) {
+    return `${workerUrl}/account-admin/report-pdf?id=${encodeURIComponent(id)}`;
+  }
+
+  async function fetchAccountAdminReportBlob(workerUrl, pick, progress, signal) {
+    const response = await fetch(accountAdminReportEndpoint(workerUrl, pick.id), {
+      headers: authHeaders(),
+      signal,
+    });
+    if (!response.ok) {
+      const data = await response.json().catch(() => ({}));
+      throw new Error(data.detail || `报告读取失败 (${response.status})。`);
+    }
+    return responseBlobWithProgress(response, progress);
+  }
+
+  async function loadPdfJs() {
+    if (!pdfJsLoadPromise) {
+      pdfJsLoadPromise = import(PDFJS_MODULE_URL).then((pdfjs) => {
+        pdfjs.GlobalWorkerOptions.workerSrc = PDFJS_WORKER_URL;
+        return pdfjs;
+      });
+    }
+    return pdfJsLoadPromise;
+  }
+
+  function downloadDataUrl(dataUrl, filename) {
+    const link = document.createElement("a");
+    link.href = dataUrl;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  function imageFilenameForPick(pick) {
+    const base = String(pick.display_title || pick.title_zh || pick.title || pick.id || "report")
+      .replace(/[\r\n"\\/:*?<>|]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, 120);
+    return `${base || "report"}-page-1.png`;
+  }
+
+  async function saveFirstPageImageFromPdfBlob(blob, pick) {
+    const pdfjs = await loadPdfJs();
+    const data = new Uint8Array(await blob.arrayBuffer());
+    const pdf = await pdfjs.getDocument({ data }).promise;
+    const page = await pdf.getPage(1);
+    const baseViewport = page.getViewport({ scale: 1 });
+    const scale = Math.min(2.4, Math.max(1.2, 1600 / Math.max(baseViewport.width, baseViewport.height)));
+    const viewport = page.getViewport({ scale });
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.ceil(viewport.width);
+    canvas.height = Math.ceil(viewport.height);
+    const context = canvas.getContext("2d", { alpha: false });
+    if (!context) throw new Error("浏览器无法创建图片画布。");
+    await page.render({ canvasContext: context, viewport }).promise;
+    downloadDataUrl(canvas.toDataURL("image/png"), imageFilenameForPick(pick));
+    if (pdf && typeof pdf.destroy === "function") pdf.destroy();
+  }
+
   async function loadAccountAdminSummary(workerUrl, targets) {
     targets.status.className = "status-line";
     targets.status.textContent = "正在读取后台信息…";
@@ -595,6 +710,12 @@
       if (!response.ok) throw new Error(data.detail || "后台读取失败。");
       const users = Array.isArray(data.users) ? data.users : [];
       const files = Array.isArray(data.files) ? data.files : [];
+      const dailyPicks = Array.isArray(data.daily_picks) ? data.daily_picks : [];
+      accountAdminDailyPicks = new Map(dailyPicks.map((pick) => [String(pick.id || ""), pick]));
+      targets.pickCount.textContent = dailyPicks.length ? `${dailyPicks.length} reports` : "";
+      targets.picks.innerHTML = dailyPicks.length
+        ? dailyPicks.map(adminDailyPickRow).join("")
+        : `<div class="empty-state">还没有可用精选。新 PDF 同步后会自动根据宏观/页数/横屏规则筛选。</div>`;
       targets.userCount.textContent = `${users.length} users`;
       targets.users.innerHTML = users.length
         ? users.map(adminUserRow).join("")
@@ -622,10 +743,12 @@
     const close = document.getElementById("accountAdminClose");
     const refresh = document.getElementById("accountAdminRefresh");
     const status = document.getElementById("accountAdminStatus");
+    const pickCount = document.getElementById("accountAdminPickCount");
+    const picks = document.getElementById("accountAdminPicks");
     const userCount = document.getElementById("accountAdminUserCount");
     const users = document.getElementById("accountAdminUsers");
     const files = document.getElementById("accountAdminFiles");
-    const targets = { status, refresh, userCount, users, files };
+    const targets = { status, refresh, pickCount, picks, userCount, users, files };
 
     function finish() {
       modal.remove();
@@ -636,6 +759,70 @@
       if (event.target === modal) finish();
     });
     refresh.addEventListener("click", () => loadAccountAdminSummary(workerUrl, targets));
+    picks.addEventListener("click", async (event) => {
+      const row = event.target.closest(".account-admin-pick");
+      if (!row) return;
+      const pick = accountAdminDailyPicks.get(String(row.dataset.id || ""));
+      if (!pick) return;
+
+      const copyButton = event.target.closest(".account-admin-copy-intro");
+      if (copyButton) {
+        const text = String(pick.intro || "");
+        try {
+          await navigator.clipboard.writeText(text);
+          status.className = "status-line ok";
+          status.textContent = "文案已复制。";
+        } catch (_error) {
+          const textarea = row.querySelector(".account-admin-pick-intro");
+          if (textarea) textarea.select();
+          status.className = "status-line";
+          status.textContent = "已选中文案，可以手动复制。";
+        }
+        return;
+      }
+
+      const downloadButton = event.target.closest(".account-admin-report-download");
+      const imageButton = event.target.closest(".account-admin-cover-save");
+      if (!downloadButton && !imageButton) return;
+
+      const button = downloadButton || imageButton;
+      const progress = row.querySelector(".account-admin-progress");
+      const cancel = row.querySelector(".account-admin-cancel");
+      const controller = new AbortController();
+      button.disabled = true;
+      if (cancel) {
+        cancel.hidden = false;
+        cancel.disabled = false;
+        cancel.onclick = () => controller.abort();
+      }
+      resetDownloadProgress(progress);
+      status.className = "status-line";
+      status.textContent = downloadButton ? "正在下载精选报告…" : "正在读取 PDF 并生成第一页图片…";
+      try {
+        const blob = await fetchAccountAdminReportBlob(workerUrl, pick, progress, controller.signal);
+        if (downloadButton) {
+          triggerBlobDownload(blob, "", pick.filename || `${pick.id}.pdf`);
+          status.textContent = "报告下载已开始。";
+        } else {
+          await saveFirstPageImageFromPdfBlob(blob, pick);
+          status.textContent = "第一页图片已保存。";
+        }
+        status.classList.add("ok");
+      } catch (error) {
+        if (error && error.name === "AbortError") {
+          status.textContent = "操作已取消。";
+        } else {
+          status.textContent = error.message || "操作失败。";
+          status.classList.add("error");
+        }
+      } finally {
+        button.disabled = false;
+        if (cancel) {
+          cancel.hidden = true;
+          cancel.onclick = null;
+        }
+      }
+    });
     files.addEventListener("click", async (event) => {
       const button = event.target.closest(".account-admin-download");
       if (!button) return;
