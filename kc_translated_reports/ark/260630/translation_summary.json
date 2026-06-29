@@ -1,0 +1,71 @@
+{
+  "date_folder": "260630",
+  "max_reports": "all",
+  "selected_count": 5,
+  "successful_count": 5,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/ark/260630/0001-ARK_515-Are-Prediction-Markets-Going-Mainstream-Again-More_0341cd27bdb65a20",
+      "title": "木头姐ARK：#515: Are Prediction Markets Going Mainstream Again?, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260630/01-0001-ARK_515-Are-Prediction-Markets-Going-Mainstream-Again-More_0341cd27bdb65a20",
+      "pdf_path": "kc_translated_reports/ark/260630/01-0001-ARK_515-Are-Prediction-Markets-Going-Mainstream-Again-More_0341cd27bdb65a20/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260630/0002-ARK_514-SpaceXAI-Launches-More_8d7d66416d652304",
+      "title": "木头姐ARK：#514: SpaceXAI Launches, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260630/02-0002-ARK_514-SpaceXAI-Launches-More_8d7d66416d652304",
+      "pdf_path": "kc_translated_reports/ark/260630/02-0002-ARK_514-SpaceXAI-Launches-More_8d7d66416d652304/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260630/0003-ARK_513-Kalshi-Launches-Perpetuals-As-Robinhood-s-Rothera-Exchange-Goes-Live_ea32d66c155202ab",
+      "title": "木头姐ARK：#513: Kalshi Launches Perpetuals As Robinhood’s Rothera Exchange Goes Live, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260630/03-0003-ARK_513-Kalshi-Launches-Perpetuals-As-Robinhood-s-Rothera-Exchange-Goes-Live_ea32d66c155202",
+      "pdf_path": "kc_translated_reports/ark/260630/03-0003-ARK_513-Kalshi-Launches-Perpetuals-As-Robinhood-s-Rothera-Exchange-Goes-Live_ea32d66c155202/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260630/0004-ARK_512-Blue-Origin-Explosion-Highlights-Launch-Capacity-Constraints-In-Race_e32b632b9e11d682",
+      "title": "木头姐ARK：#512: Blue Origin Explosion Highlights Launch Capacity Constraints In Race To The Moon, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260630/04-0004-ARK_512-Blue-Origin-Explosion-Highlights-Launch-Capacity-Constraints-In-Race_e32b632b9e11d6",
+      "pdf_path": "kc_translated_reports/ark/260630/04-0004-ARK_512-Blue-Origin-Explosion-Highlights-Launch-Capacity-Constraints-In-Race_e32b632b9e11d6/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260630/0005-ARK_511-Anthropic-Is-Paying-1.25-Billion-Per-Month-To-Access-SpaceX-s-Comput_bc2e37f256800e49",
+      "title": "木头姐ARK：#511: Anthropic Is Paying $1.25 Billion Per Month To Access SpaceX’s Compute Capacity, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260630/05-0005-ARK_511-Anthropic-Is-Paying-1",
+      "pdf_path": "kc_translated_reports/ark/260630/05-0005-ARK_511-Anthropic-Is-Paying-1/kc_translated_report_05.pdf"
+    }
+  ]
+}
