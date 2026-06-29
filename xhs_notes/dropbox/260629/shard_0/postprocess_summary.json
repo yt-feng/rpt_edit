@@ -1,0 +1,129 @@
+[
+  {
+    "item": "0001-01-J.P.-Morgan-Global-Data-Watch--Asia-Oil-Down--Dollar-Up--A-Rotation-in-A",
+    "source_pdf": "/tmp/pdf_batch_001_0s9h_fw8/pdfs/0001-01-JPM-Global Data Watch- Asia Oil Down- Dollar Up- A Rotation in Asian Central Banks-260627.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "JPM",
+    "cover_short_title": "亚洲央行面临新抉择：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-02-Goldman-Sachs-Commodity-Views-From-Energy-to-Metals--Why-to-Still-Divers",
+    "source_pdf": "/tmp/pdf_batch_001_0s9h_fw8/pdfs/0002-02-GS-Commodity Views-From Energy to Metals- Why to Still Diversify Into Commodities-260628.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "能源波动后，商品配置",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-03-Morgan-Stanley-US-Rates-Strategy-Equity-Funding-Implies-a-Tumultuous-Qua",
+    "source_pdf": "/tmp/pdf_batch_001_0s9h_fw8/pdfs/0003-03-MS-US Rates Strategy-Equity Funding Implies a Tumultuous Quarter-End-260627.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "摩根斯坦利",
+    "cover_short_title": "美股融资压力拉警报，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-04-Bofa-Global-Memory-Tech-Weekly-theme-Micron-results-implications-for-Asi",
+    "source_pdf": "/tmp/pdf_batch_001_0s9h_fw8/pdfs/0004-04-Bofa-Global Memory Tech Weekly theme-Micron results implications for Asian memory chipmakers-260626.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "美国银行",
+    "cover_short_title": "存储芯片超级周期，能",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-05-Bernstein-Global-Energy-Storage-Battery-Weekly-29-June-260629",
+    "source_pdf": "/tmp/pdf_batch_001_0s9h_fw8/pdfs/0005-05-Bernstein-Global Energy Storage-Battery Weekly 29 June-260629.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "全球储能市场，这些变",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

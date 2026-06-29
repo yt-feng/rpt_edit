@@ -1,0 +1,347 @@
+[
+  {
+    "id": 0,
+    "name": "Bernstein-China Gas Holdings Ltd（0384.HK）Quick Take： China Gas FY26~Dividend cut as macro remains challenging. Underperform-260629.pdf",
+    "dropbox_path": "/zip_backup/260629/bernstein-china gas holdings ltd（0384.hk）quick take： china gas fy26~dividend cut as macro remains challenging. underperform-260629.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-china gas holdings ltd（0384.hk）quick take： china gas fy26~dividend cut as macro remains challenging. underperform-260629.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题包含股票代码和评级动作，是单一公司研报；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 2,
+    "macro_priority_score": 1,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Bernstein-Asia~Pacific Nuclear Power： The next wave of nuclear builds. What does a $250bn nuclear pipeline mean for Doosan？-260629.pdf",
+    "dropbox_path": "/zip_backup/260629/bernstein-asia~pacific nuclear power： the next wave of nuclear builds. what does a $250bn nuclear pipeline mean for doosan？-260629.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-asia~pacific nuclear power： the next wave of nuclear builds. what does a $250bn nuclear pipeline mean for doosan？-260629.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "亚太核电行业主题，不针对单一公司",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 2,
+    "name": "Bernstein-Global Energy Storage：Battery Weekly 29 June-260629.pdf",
+    "dropbox_path": "/zip_backup/260629/bernstein-global energy storage：battery weekly 29 june-260629.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global energy storage：battery weekly 29 june-260629.pdf",
+    "category": "macro_trend",
+    "score": 0.93,
+    "reason": "全球储能电池周报，行业趋势报告；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 2,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 3,
+    "name": "Bofa-Global Memory Tech Weekly theme-Micron results implications for Asian memory chipmakers-260626.pdf",
+    "dropbox_path": "/zip_backup/260629/bofa-global memory tech weekly theme-micron results implications for asian memory chipmakers-260626.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bofa-global memory tech weekly theme-micron results implications for asian memory chipmakers-260626.pdf",
+    "category": "macro_trend",
+    "score": 0.88,
+    "reason": "全球存储芯片行业周报，涉及行业趋势；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 3,
+    "macro_priority_score": 1,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 4,
+    "name": "DB-China Gas Holdings（0384.HK）FY26 core earnings in line with slight dividend miss； worst likely behind-260627.pdf",
+    "dropbox_path": "/zip_backup/260629/DB-china gas holdings（0384.hk）fy26 core earnings in line with slight dividend miss； worst likely behind-260627.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-china gas holdings（0384.hk）fy26 core earnings in line with slight dividend miss； worst likely behind-260627.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题包含股票代码和业绩点评，是单一公司研报；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "GS-China Resources Pharmaceuticals （3320.HK）： China Healthcare Corporate Day 2026 Takeaways — Positive sales growth despite-260629.pdf",
+    "dropbox_path": "/zip_backup/260629/GS-china resources pharmaceuticals （3320.hk）： china healthcare corporate day 2026 takeaways — positive sales growth despite-260629.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china resources pharmaceuticals （3320.hk）： china healthcare corporate day 2026 takeaways — positive sales growth despite-260629.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题包含股票代码和公司活动点评，是单一公司研报；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "GS-Commodity Views：From Energy to Metals： Why to Still Diversify Into Commodities-260628.pdf",
+    "dropbox_path": "/zip_backup/260629/GS-commodity views：from energy to metals： why to still diversify into commodities-260628.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-commodity views：from energy to metals： why to still diversify into commodities-260628.pdf",
+    "category": "macro_trend",
+    "score": 0.99,
+    "reason": "大宗商品观点，跨资产宏观主题；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 3,
+    "macro_priority_score": 2,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 7,
+    "name": "GS-China： Three things in China-260628.pdf",
+    "dropbox_path": "/zip_backup/260629/GS-china： three things in china-260628.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china： three things in china-260628.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "中国宏观策略报告",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 8,
+    "name": "GS-Everest Medicines （1952.HK）：China Healthcare Corporate Day 2026 Takeaways — 2026 EBIT breakeven hinges on Nefecon policy-260629.pdf",
+    "dropbox_path": "/zip_backup/260629/GS-everest medicines （1952.hk）：china healthcare corporate day 2026 takeaways — 2026 ebit breakeven hinges on nefecon policy-260629.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-everest medicines （1952.hk）：china healthcare corporate day 2026 takeaways — 2026 ebit breakeven hinges on nefecon policy-260629.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题包含股票代码和公司活动点评，是单一公司研报；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 2,
+    "macro_priority_score": 1,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "GS-Hengrui Medicine （600276）： China Healthcare Corporate Day 2026 Takeaways — Reiterated 30%+ growth guidance for innovative drug-260628.pdf",
+    "dropbox_path": "/zip_backup/260629/GS-hengrui medicine （600276）： china healthcare corporate day 2026 takeaways — reiterated 30%+ growth guidance for innovative drug-260628.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-hengrui medicine （600276）： china healthcare corporate day 2026 takeaways — reiterated 30%+ growth guidance for innovative drug-260628.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题包含股票代码和公司活动点评，是单一公司研报；本地规则排除个股/评级/目标价/财报信号：company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "GS-Henlius Biotech （2696.HK）： China Healthcare Corporate Day 2026 Takeaways — Encouraging efficacy for HLX43 supports BD potential-260629.pdf",
+    "dropbox_path": "/zip_backup/260629/GS-henlius biotech （2696.hk）： china healthcare corporate day 2026 takeaways — encouraging efficacy for hlx43 supports bd potential-260629.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-henlius biotech （2696.hk）： china healthcare corporate day 2026 takeaways — encouraging efficacy for hlx43 supports bd potential-260629.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题包含股票代码和公司活动点评，是单一公司研报；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 2,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "GS-Hansoh Pharma （3692.HK）： China Healthcare Corporate Day 2026 Takeaways — Sales guide unchanged； Target 1~2 new BD deals in 2026-260629.pdf",
+    "dropbox_path": "/zip_backup/260629/GS-hansoh pharma （3692.hk）： china healthcare corporate day 2026 takeaways — sales guide unchanged； target 1~2 new bd deals in 2026-260629.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-hansoh pharma （3692.hk）： china healthcare corporate day 2026 takeaways — sales guide unchanged； target 1~2 new bd deals in 2026-260629.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题包含股票代码和公司活动点评，是单一公司研报；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "GS-Mitsubishi Heavy Industries （7011.T）： Nikkei reports ￥100 bn+ GTCC investment and doubling capacity； consistent with existing policy； Buy-260629.pdf",
+    "dropbox_path": "/zip_backup/260629/GS-mitsubishi heavy industries （7011.t）： nikkei reports ￥100 bn+ gtcc investment and doubling capacity； consistent with existing policy； buy-260629.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-mitsubishi heavy industries （7011.t）： nikkei reports ￥100 bn+ gtcc investment and doubling capacity； consistent with existing policy； buy-260629.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题包含股票代码和评级动作，是单一公司研报；本地规则排除个股/评级/目标价/财报信号：contains_ticker",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 3,
+    "macro_priority_score": 1,
+    "company_guard_reasons": [
+      "contains_ticker"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "GS-Kerry Properties （0683.HK）： Asia Financials Corp Day Takeaways： Focus on prices over volume for HK DP. Proactive in landbank replenishment-260629.pdf",
+    "dropbox_path": "/zip_backup/260629/GS-kerry properties （0683.hk）： asia financials corp day takeaways： focus on prices over volume for hk dp. proactive in landbank replenishment-260629.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-kerry properties （0683.hk）： asia financials corp day takeaways： focus on prices over volume for hk dp. proactive in landbank replenishment-260629.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题包含股票代码和公司活动点评，是单一公司研报；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 2,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "GS-InnoCare Pharma （9969.HK）： China Healthcare Corporate Day 2026 Takeaways — Target 2 BD deals by YE26-260629.pdf",
+    "dropbox_path": "/zip_backup/260629/GS-innocare pharma （9969.hk）： china healthcare corporate day 2026 takeaways — target 2 bd deals by ye26-260629.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-innocare pharma （9969.hk）： china healthcare corporate day 2026 takeaways — target 2 bd deals by ye26-260629.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题包含股票代码和公司活动点评，是单一公司研报；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "GS-South Korea Industrials： Defense and Robotics： Takeaways from US marketing-260629.pdf",
+    "dropbox_path": "/zip_backup/260629/GS-south korea industrials： defense and robotics： takeaways from us marketing-260629.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-south korea industrials： defense and robotics： takeaways from us marketing-260629.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "韩国工业行业主题，不针对单一公司",
+    "classifier": "deepseek",
+    "macro_hint_score": 2,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 16,
+    "name": "GS-SOUTH KOREA BANKS In a sweet spot amid increased market volatility-260628.pdf",
+    "dropbox_path": "/zip_backup/260629/GS-south korea banks in a sweet spot amid increased market volatility-260628.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-south korea banks in a sweet spot amid increased market volatility-260628.pdf",
+    "category": "company_stock",
+    "score": 0.9,
+    "reason": "韩国银行业行业报告，不针对单一公司；本地规则排除个股/评级/目标价/财报信号：company_hint_score=1",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "company_hint_score=1"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "GS-NetEase Inc. （NTES.US）A compelling \"non~AI” compounder， well~placed into 2H26 with catalysts ahead；  reiterate Buy-260628.pdf",
+    "dropbox_path": "/zip_backup/260629/GS-netease inc. （ntes.us）a compelling \"non~ai” compounder， well~placed into 2h26 with catalysts ahead；  reiterate buy-260628.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-netease inc. （ntes.us）a compelling \"non~ai” compounder， well~placed into 2h26 with catalysts ahead；  reiterate buy-260628.pdf",
+    "category": "company_stock",
+    "score": 0.99,
+    "reason": "标题包含股票代码和评级动作，是单一公司研报；本地规则排除个股/评级/目标价/财报信号：contains_ticker,company_hint_score=2",
+    "classifier": "deepseek+local_guard",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": [
+      "contains_ticker",
+      "company_hint_score=2"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "JPM-Global Data Watch： Asia Oil Down， Dollar Up： A Rotation in Asian Central Banks-260627.pdf",
+    "dropbox_path": "/zip_backup/260629/JPM-global data watch： asia oil down， dollar up： a rotation in asian central banks-260627.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-global data watch： asia oil down， dollar up： a rotation in asian central banks-260627.pdf",
+    "category": "macro_trend",
+    "score": 0.99,
+    "reason": "全球数据观察，涉及亚洲央行和汇率；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 3,
+    "macro_priority_score": 3,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 19,
+    "name": "NOM-China Robotics Physical AI： From NeuralAxis blueprint to Unitree-260628.pdf",
+    "dropbox_path": "/zip_backup/260629/NOM-china robotics physical ai： from neuralaxis blueprint to unitree-260628.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-china robotics physical ai： from neuralaxis blueprint to unitree-260628.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国机器人行业主题，不针对单一公司",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 20,
+    "name": "MS-US Rates Strategy：Equity Funding Implies a Tumultuous Quarter~End-260627.pdf",
+    "dropbox_path": "/zip_backup/260629/MS-us rates strategy：equity funding implies a tumultuous quarter~end-260627.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-us rates strategy：equity funding implies a tumultuous quarter~end-260627.pdf",
+    "category": "macro_trend",
+    "score": 0.99,
+    "reason": "美国利率策略报告；宏观优先信号加权",
+    "classifier": "deepseek+macro_priority",
+    "macro_hint_score": 3,
+    "macro_priority_score": 2,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 21,
+    "name": "NOM-Optimus ramps； China scales up as cost curves bend lower-260628.pdf",
+    "dropbox_path": "/zip_backup/260629/NOM-optimus ramps； china scales up as cost curves bend lower-260628.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-optimus ramps； china scales up as cost curves bend lower-260628.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "行业成本曲线主题，不针对单一公司",
+    "classifier": "deepseek",
+    "macro_hint_score": 2,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 22,
+    "name": "NOM-USD CNY fix model：Projection：6.8077-260629.pdf",
+    "dropbox_path": "/zip_backup/260629/NOM-usd cny fix model：projection：6.8077-260629.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-usd cny fix model：projection：6.8077-260629.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "汇率模型预测，宏观主题",
+    "classifier": "deepseek",
+    "macro_hint_score": 1,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  },
+  {
+    "id": 23,
+    "name": "NOM-China consumer：Business continued solid performance for adidas in 2Q26-260628.pdf",
+    "dropbox_path": "/zip_backup/260629/NOM-china consumer：business continued solid performance for adidas in 2q26-260628.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-china consumer：business continued solid performance for adidas in 2q26-260628.pdf",
+    "category": "company_stock",
+    "score": 0.85,
+    "reason": "标题提及单一公司adidas的业绩表现",
+    "classifier": "deepseek",
+    "macro_hint_score": 2,
+    "macro_priority_score": 0,
+    "company_guard_reasons": []
+  }
+]
