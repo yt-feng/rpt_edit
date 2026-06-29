@@ -9,6 +9,10 @@ const GENERATED_EMAIL_DOMAIN = "users.kcdesk.com";
 const USERNAME_PATTERN = /^[a-z0-9][a-z0-9_.-]{2,31}$/;
 const EMAIL_PATTERN = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const ACTIVE_STATUSES = new Set(["active", "trialing"]);
+const SUPER_ACCOUNT_USERNAMES = new Set(["twotigers"]);
+const SUPER_ACCOUNT_EMAILS = new Set(["twotigers@users.kcdesk.com"]);
+const DEFAULT_GITHUB_REPO = "yt-feng/rpt_edit";
+const DEFAULT_GITHUB_REF = "main";
 const PADDLE_HANDLED_EVENTS = new Set([
   "transaction.completed",
   "subscription.created",
@@ -88,8 +92,8 @@ function corsHeaders(request, env) {
   return {
     "Access-Control-Allow-Origin": allowedOrigin(request, env),
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization, Paddle-Signature",
-    "Access-Control-Expose-Headers": "Content-Disposition",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, Paddle-Signature, Range",
+    "Access-Control-Expose-Headers": "Content-Disposition, Content-Length, Content-Range, Accept-Ranges",
     "Vary": "Origin",
   };
 }
@@ -340,6 +344,13 @@ function normalizeEmail(value) {
   return EMAIL_PATTERN.test(email) ? email : "";
 }
 
+function isSuperAccount(user) {
+  if (!user) return false;
+  const username = normalizeUsername(user.username);
+  const email = normalizeEmail(user.email);
+  return SUPER_ACCOUNT_USERNAMES.has(username) || SUPER_ACCOUNT_EMAILS.has(email);
+}
+
 function generatedEmailForUsername(username) {
   return `${username}@${GENERATED_EMAIL_DOMAIN}`;
 }
@@ -391,6 +402,7 @@ async function createUserToken(env, user) {
 
 function publicUser(user) {
   const email = String(user.email || "");
+  const superAccount = isSuperAccount(user);
   return {
     id: user.id || "",
     username: user.username || "",
@@ -398,6 +410,8 @@ function publicUser(user) {
     email_is_generated: Boolean(user.email_is_generated) || isGeneratedEmail(email),
     created_at: user.created_at || "",
     updated_at: user.updated_at || "",
+    role: superAccount ? "super" : "user",
+    is_super: superAccount,
   };
 }
 
@@ -783,9 +797,28 @@ function publicEntitlement(row) {
   };
 }
 
+function superEntitlement(user) {
+  return {
+    email: normalizeEmail(user && user.email) || "",
+    plan: "super",
+    status: "active",
+    lifetime: true,
+    current_period_end: null,
+    active: true,
+    updated_at: new Date().toISOString(),
+  };
+}
+
 async function reportAccessForUser(env, user, reportId, source) {
   const email = normalizeEmail(user.email);
   if (!email) return { can_download: false, entitlement: publicEntitlement(null), purchase: null };
+  if (isSuperAccount(user)) {
+    return {
+      can_download: true,
+      entitlement: superEntitlement(user),
+      purchase: null,
+    };
+  }
   const [entitlementRow, purchase] = await Promise.all([
     findEntitlement(env, email).catch(() => null),
     reportId ? findReportPurchase(env, email, reportId, source).catch(() => null) : Promise.resolve(null),
@@ -1409,6 +1442,26 @@ async function handleAdminLogin(request, env) {
   }
 }
 
+async function requireAdminOrSuperUser(request, env, token) {
+  let tokenError = null;
+  if (token) {
+    try {
+      await verifyAdminToken(env, token);
+      return { kind: "master" };
+    } catch (error) {
+      tokenError = error;
+    }
+  }
+  try {
+    const user = await currentUserFromRequest(env, request);
+    if (isSuperAccount(user)) return { kind: "super", user };
+  } catch (_error) {
+    // Use the token error below when an admin token was supplied.
+  }
+  if (tokenError) throw tokenError;
+  throw new Error("Admin session is invalid.");
+}
+
 async function handleAdminReportPassword(request, env) {
   let payload;
   try {
@@ -1433,7 +1486,7 @@ async function handleAdminReportPassword(request, env) {
   }
 
   try {
-    await verifyAdminToken(env, token);
+    await requireAdminOrSuperUser(request, env, token);
   } catch (error) {
     return jsonResponse(request, env, 401, { error: error.message || "Admin session is invalid." });
   }
@@ -1480,6 +1533,402 @@ async function handleAdminReportPassword(request, env) {
   } catch (_error) {
     return jsonResponse(request, env, 503, { error: "Could not calculate report password." });
   }
+}
+
+async function requireSuperUser(request, env) {
+  const user = await currentUserFromRequest(env, request);
+  if (!isSuperAccount(user)) throw new Error("Only the admin account can access this area.");
+  return user;
+}
+
+function adminVisibleUser(user, entitlementRow) {
+  const publicInfo = publicUser(user);
+  return {
+    ...publicInfo,
+    last_login_at: user.last_login_at || "",
+    entitlement: isSuperAccount(user) ? superEntitlement(user) : publicEntitlement(entitlementRow),
+  };
+}
+
+async function listR2JsonObjects(env, prefix, limit = 500) {
+  if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function") return [];
+  const rows = [];
+  let cursor = undefined;
+  while (rows.length < limit) {
+    const listed = await env.REPORT_BUCKET.list({
+      prefix,
+      limit: Math.min(1000, Math.max(1, limit - rows.length)),
+      cursor,
+    });
+    const objects = Array.isArray(listed && listed.objects) ? listed.objects : [];
+    const batch = await Promise.all(objects.map(async (object) => safeR2GetJson(env, object.key)));
+    for (const row of batch) {
+      if (row && typeof row === "object") rows.push(row);
+      if (rows.length >= limit) break;
+    }
+    if (!listed || !listed.truncated || !listed.cursor) break;
+    cursor = listed.cursor;
+  }
+  return rows;
+}
+
+async function listSiteUsers(env) {
+  if (hasSupabaseConfig(env)) {
+    try {
+      const query = queryString({
+        select: "id,username,email,email_is_generated,created_at,updated_at,last_login_at",
+        order: "updated_at.desc",
+        limit: "500",
+      });
+      const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
+      if (Array.isArray(rows)) return rows;
+    } catch (_error) {
+      // Fall through to the R2 mirror.
+    }
+  }
+  const rows = await listR2JsonObjects(env, accountKey("users", "id", ""), 500);
+  return rows.sort((a, b) => String(b.updated_at || "").localeCompare(String(a.updated_at || "")));
+}
+
+async function listEntitlementRows(env) {
+  if (hasSupabaseConfig(env)) {
+    try {
+      const query = queryString({
+        select: "email,plan,status,lifetime,current_period_end,updated_at",
+        order: "updated_at.desc",
+        limit: "1000",
+      });
+      const rows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
+      if (Array.isArray(rows)) return rows;
+    } catch (_error) {
+      // Fall through to R2.
+    }
+  }
+  return listR2JsonObjects(env, accountKey("entitlements", ""), 1000);
+}
+
+function entitlementMap(rows) {
+  const mapped = new Map();
+  for (const row of rows || []) {
+    const email = normalizeEmail(row && row.email);
+    if (email && !mapped.has(email)) mapped.set(email, row);
+  }
+  return mapped;
+}
+
+function githubRepo(env) {
+  return cleanEnv(env.GH_REPO) || cleanEnv(env.GITHUB_REPO) || DEFAULT_GITHUB_REPO;
+}
+
+function githubRef(env) {
+  const configured = cleanEnv(env.GH_REF) || cleanEnv(env.GITHUB_BRANCH) || cleanEnv(env.GITHUB_REF);
+  if (!configured) return DEFAULT_GITHUB_REF;
+  return configured.startsWith("refs/heads/") ? configured.slice("refs/heads/".length) : configured;
+}
+
+function githubToken(env) {
+  return cleanEnv(env.GH_READ_TOKEN) || cleanEnv(env.GH_DISPATCH_TOKEN) || cleanEnv(env.GITHUB_TOKEN) || cleanEnv(env.GH_TOKEN);
+}
+
+function githubHeaders(env, extra = {}) {
+  const token = githubToken(env);
+  const headers = {
+    "Accept": "application/vnd.github+json",
+    "User-Agent": "kc-desk-notes-worker",
+    "X-GitHub-Api-Version": "2022-11-28",
+    ...extra,
+  };
+  if (token) headers.Authorization = `Bearer ${token}`;
+  return headers;
+}
+
+function encodeGithubPath(path) {
+  return String(path || "").split("/").filter(Boolean).map(encodeURIComponent).join("/");
+}
+
+async function githubApiFetch(env, path, init = {}) {
+  const response = await fetch(`https://api.github.com/repos/${githubRepo(env)}${path}`, {
+    ...init,
+    headers: githubHeaders(env, init.headers || {}),
+    redirect: init.redirect || "follow",
+  });
+  if (!response.ok) {
+    const text = await response.text().catch(() => "");
+    throw new Error(`GitHub API ${response.status}: ${text.slice(0, 200)}`);
+  }
+  return response;
+}
+
+async function githubApiJson(env, path, init = {}) {
+  return (await githubApiFetch(env, path, init)).json();
+}
+
+async function githubContents(env, path) {
+  const encoded = encodeGithubPath(path);
+  const suffix = encoded ? `/contents/${encoded}` : "/contents";
+  const query = `?ref=${encodeURIComponent(githubRef(env))}`;
+  const data = await githubApiJson(env, `${suffix}${query}`);
+  return Array.isArray(data) ? data : [];
+}
+
+function dateScore(value) {
+  const text = String(value || "");
+  const match = text.match(/(\d{8}|\d{6})/);
+  if (!match) return 0;
+  const digits = match[1];
+  return digits.length === 6 ? Number(`20${digits}`) : Number(digits);
+}
+
+function sortGithubDirsDesc(items) {
+  return (items || [])
+    .filter((item) => item && item.type === "dir")
+    .sort((a, b) => {
+      const score = dateScore(b.name || b.path) - dateScore(a.name || a.path);
+      if (score) return score;
+      return String(b.name || "").localeCompare(String(a.name || ""));
+    });
+}
+
+function adminGithubFile(kind, label, item, date, note = "") {
+  return {
+    type: "file",
+    kind,
+    label,
+    name: item.name || item.path.split("/").pop(),
+    path: item.path,
+    size_bytes: Number(item.size || 0),
+    date: date || "",
+    note,
+  };
+}
+
+async function latestMarketViewFiles(env, maxItems = 3) {
+  const results = [];
+  const dateDirs = sortGithubDirsDesc(await githubContents(env, "market_view_summaries"));
+  for (const dateDir of dateDirs.slice(0, 20)) {
+    const files = await githubContents(env, dateDir.path);
+    const pdfs = files
+      .filter((item) => item.type === "file" && /^market_views_.*\.pdf$/i.test(item.name || ""))
+      .sort((a, b) => String(b.name || "").localeCompare(String(a.name || "")));
+    for (const pdf of pdfs) {
+      results.push(adminGithubFile("market-views", "Market Views PDF", pdf, dateDir.name));
+      if (results.length >= maxItems) return results;
+    }
+  }
+  return results;
+}
+
+function preferredVideoItem(items) {
+  const files = (items || []).filter((item) => item.type === "file" && /\.mp4$/i.test(item.name || ""));
+  const preferred = [
+    "podcast_mixed_bilingual_explainer.mp4",
+    "podcast_en_explainer.mp4",
+    "podcast_zh_explainer.mp4",
+  ];
+  for (const name of preferred) {
+    const item = files.find((file) => String(file.name || "").toLowerCase() === name);
+    if (item) return item;
+  }
+  return files[0] || null;
+}
+
+function titleFromGeneratedPath(path) {
+  const parts = String(path || "").split("/");
+  const folder = parts.length >= 4 ? parts[3] : parts[parts.length - 2] || "";
+  return folder.replace(/^\d{4}-/, "").replace(/[-_]+/g, " ").slice(0, 120);
+}
+
+async function latestBbgShowFiles(env, maxItems = 6) {
+  const results = [];
+  const dateDirs = sortGithubDirsDesc(await githubContents(env, "bilingual_podcast_videos"));
+  for (const dateDir of dateDirs.slice(0, 12)) {
+    const runDirs = sortGithubDirsDesc(await githubContents(env, dateDir.path))
+      .sort((a, b) => Number(b.name || 0) - Number(a.name || 0));
+    for (const runDir of runDirs.slice(0, 8)) {
+      const reportDirs = sortGithubDirsDesc(await githubContents(env, runDir.path));
+      for (const reportDir of reportDirs) {
+        const files = await githubContents(env, reportDir.path);
+        const video = preferredVideoItem(files);
+        if (!video) continue;
+        results.push(adminGithubFile("bbg-show", "BBG Show 视频", video, dateDir.name, titleFromGeneratedPath(video.path)));
+        if (results.length >= maxItems) return results;
+      }
+    }
+  }
+  return results;
+}
+
+function adminGithubArtifact(artifact) {
+  const name = String(artifact.name || "");
+  let kind = "artifact";
+  let label = "GitHub Artifact";
+  if (/bilingual-podcast-videos/i.test(name)) {
+    kind = "bbg-show";
+    label = "BBG Show 视频 artifact";
+  } else if (/market-views-pdf/i.test(name)) {
+    kind = "market-views";
+    label = "Market Views PDF artifact";
+  }
+  return {
+    type: "artifact",
+    kind,
+    label,
+    id: String(artifact.id || ""),
+    name,
+    size_bytes: Number(artifact.size_in_bytes || 0),
+    date: String(artifact.created_at || "").slice(0, 10),
+    note: "artifact zip",
+  };
+}
+
+async function latestGithubArtifacts(env) {
+  try {
+    const data = await githubApiJson(env, "/actions/artifacts?per_page=60");
+    const artifacts = Array.isArray(data && data.artifacts) ? data.artifacts : [];
+    return artifacts
+      .filter((artifact) => !artifact.expired && /bilingual-podcast-videos|market-views-pdf/i.test(String(artifact.name || "")))
+      .map(adminGithubArtifact);
+  } catch (_error) {
+    return [];
+  }
+}
+
+async function latestAdminGithubFiles(env) {
+  let bbg = [];
+  let market = [];
+  try {
+    [bbg, market] = await Promise.all([
+      latestBbgShowFiles(env),
+      latestMarketViewFiles(env),
+    ]);
+  } catch (_error) {
+    // Fall back to artifacts below.
+  }
+  const artifacts = await latestGithubArtifacts(env);
+  const fallback = [];
+  if (!bbg.length) fallback.push(...artifacts.filter((item) => item.kind === "bbg-show").slice(0, 3));
+  if (!market.length) fallback.push(...artifacts.filter((item) => item.kind === "market-views").slice(0, 3));
+  return [...bbg, ...market, ...fallback];
+}
+
+async function handleAccountAdminSummary(request, env) {
+  try {
+    const adminUser = await requireSuperUser(request, env);
+    const [users, entitlements, files] = await Promise.all([
+      listSiteUsers(env),
+      listEntitlementRows(env),
+      latestAdminGithubFiles(env),
+    ]);
+    const entitlementsByEmail = entitlementMap(entitlements);
+    return jsonResponse(request, env, 200, {
+      user: publicUser(adminUser),
+      users: users.map((user) => adminVisibleUser(user, entitlementsByEmail.get(normalizeEmail(user.email)))),
+      files,
+      repo: githubRepo(env),
+      ref: githubRef(env),
+      generated_at: new Date().toISOString(),
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+}
+
+function isAllowedAdminGithubFile(path) {
+  const clean = String(path || "").replace(/^\/+/, "");
+  if (clean.includes("..")) return false;
+  if (/^bilingual_podcast_videos\/.+\.mp4$/i.test(clean)) return true;
+  if (/^market_view_summaries\/.+\.pdf$/i.test(clean)) return true;
+  return false;
+}
+
+function contentTypeForGithubPath(path) {
+  if (/\.mp4$/i.test(path)) return "video/mp4";
+  if (/\.pdf$/i.test(path)) return "application/pdf";
+  return "application/octet-stream";
+}
+
+async function fetchGithubRawFile(env, path, request) {
+  const ref = githubRef(env);
+  const encodedPath = encodeGithubPath(path);
+  const rawUrl = `https://raw.githubusercontent.com/${githubRepo(env)}/${encodeURIComponent(ref)}/${encodedPath}`;
+  const headers = githubHeaders(env, { "Accept": "*/*" });
+  const range = request.headers.get("Range") || request.headers.get("range") || "";
+  if (range) headers.Range = range;
+  let response = await fetch(rawUrl, { headers, redirect: "follow" });
+  if (response.status !== 404 || !githubToken(env)) return response;
+
+  const metadata = await githubApiJson(env, `/contents/${encodedPath}?ref=${encodeURIComponent(ref)}`);
+  const downloadUrl = String(metadata && metadata.download_url || "");
+  if (!downloadUrl) return response;
+  response = await fetch(downloadUrl, { headers, redirect: "follow" });
+  return response;
+}
+
+async function handleAccountAdminGithubFile(request, env) {
+  try {
+    await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  const url = new URL(request.url);
+  const path = String(url.searchParams.get("path") || "").replace(/^\/+/, "");
+  if (!isAllowedAdminGithubFile(path)) {
+    return jsonResponse(request, env, 400, { detail: "File path is not allowed." });
+  }
+  let upstream;
+  try {
+    upstream = await fetchGithubRawFile(env, path, request);
+  } catch (_error) {
+    return jsonResponse(request, env, 502, { detail: "GitHub file download is unavailable." });
+  }
+  if (!upstream.ok && upstream.status !== 206) {
+    return jsonResponse(request, env, upstream.status === 404 ? 404 : 502, { detail: "GitHub file was not found." });
+  }
+
+  const headers = {
+    ...corsHeaders(request, env),
+    "Content-Type": upstream.headers.get("Content-Type") || contentTypeForGithubPath(path),
+    "Content-Disposition": contentDisposition(path.split("/").pop() || "download"),
+    "Cache-Control": "no-store, private",
+    "X-Content-Type-Options": "nosniff",
+  };
+  for (const name of ["Content-Length", "Content-Range", "Accept-Ranges"]) {
+    const value = upstream.headers.get(name);
+    if (value) headers[name] = value;
+  }
+  return new Response(upstream.body, {
+    status: upstream.status,
+    headers,
+  });
+}
+
+async function handleAccountAdminGithubArtifact(request, env) {
+  try {
+    await requireSuperUser(request, env);
+  } catch (error) {
+    return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  const url = new URL(request.url);
+  const id = String(url.searchParams.get("id") || "").trim();
+  if (!/^\d+$/.test(id)) return jsonResponse(request, env, 400, { detail: "Artifact id is invalid." });
+  let upstream;
+  try {
+    upstream = await githubApiFetch(env, `/actions/artifacts/${encodeURIComponent(id)}/zip`, {
+      headers: { "Accept": "application/vnd.github+json" },
+      redirect: "follow",
+    });
+  } catch (_error) {
+    return jsonResponse(request, env, 502, { detail: "GitHub artifact download is unavailable." });
+  }
+  return new Response(upstream.body, {
+    headers: {
+      ...corsHeaders(request, env),
+      "Content-Type": "application/zip",
+      "Content-Disposition": contentDisposition(`github-artifact-${id}.zip`),
+      "Cache-Control": "no-store, private",
+      "X-Content-Type-Options": "nosniff",
+    },
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -2022,6 +2471,18 @@ export default {
 
     if (pathname === "/admin/report-password" && request.method === "POST") {
       return handleAdminReportPassword(request, env);
+    }
+
+    if (pathname === "/account-admin/summary" && request.method === "GET") {
+      return handleAccountAdminSummary(request, env);
+    }
+
+    if (pathname === "/account-admin/github-file" && request.method === "GET") {
+      return handleAccountAdminGithubFile(request, env);
+    }
+
+    if (pathname === "/account-admin/github-artifact" && request.method === "GET") {
+      return handleAccountAdminGithubArtifact(request, env);
     }
 
     if (pathname === "/external/search" && request.method === "GET") {

@@ -868,6 +868,108 @@ button.primary:disabled {
   width: min(620px, calc(100vw - 32px));
 }
 
+.account-admin-dialog {
+  width: min(980px, calc(100vw - 28px));
+  max-height: min(84vh, 860px);
+  overflow: auto;
+}
+
+.account-admin-top,
+.account-admin-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.account-admin-top h3 {
+  margin: 0;
+}
+
+.account-admin-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.account-admin-heading span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.account-admin-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.account-admin-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.account-admin-table th,
+.account-admin-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.account-admin-table th {
+  color: var(--muted);
+  background: #f8fafc;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.account-admin-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.account-admin-files {
+  display: grid;
+  gap: 10px;
+}
+
+.account-admin-file {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.account-admin-file div {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.account-admin-file strong,
+.account-admin-file span {
+  overflow-wrap: anywhere;
+}
+
+.account-admin-file span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.quiet-admin-button {
+  border-color: #dbe6e4;
+}
+
 .auth-form {
   display: grid;
   gap: 12px;

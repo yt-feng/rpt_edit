@@ -214,6 +214,15 @@
     return user.username || user.email || "账号";
   }
 
+  function isSuperSession(session = loadAuthSession()) {
+    const user = session && session.user;
+    return Boolean(user && (user.role === "super" || user.is_super));
+  }
+
+  function privateToolsUnlocked() {
+    return Boolean(getAdminToken() || isSuperSession());
+  }
+
   async function refreshAuthSession(workerUrl) {
     const session = loadAuthSession();
     if (!session || !session.token || !workerUrl) return null;
@@ -279,13 +288,14 @@
             <strong id="accountName">${escapeHtml(authUserLabel(session))}</strong>
             <span id="accountEmailText">${escapeHtml(session && session.user ? session.user.email : "")}</span>
             <div class="account-modal-actions">
+              <button class="secondary-button quiet-admin-button" id="accountAdminOpen" type="button" hidden>管理后台</button>
               <button class="secondary-button" id="accountLogout" type="button">退出登录</button>
             </div>
           </div>
           <div class="contact-card" id="accountContactCard">
             <strong>报告获取</strong>
             ${reportLine}
-            <span>在线支付通道正在调整。开通账号权限或获取报告，请联系微信 <b>${escapeHtml(CONTACT_WECHAT)}</b>。</span>
+            <span>开通账号权限或获取报告，请联系微信 <b>${escapeHtml(CONTACT_WECHAT)}</b>。</span>
           </div>
           <div id="accountModalStatus" class="status-line" aria-live="polite"></div>
         </div>
@@ -335,6 +345,7 @@
     const submit = document.getElementById("accountSubmit");
     const toggle = document.getElementById("accountModeToggle");
     const logout = document.getElementById("accountLogout");
+    const adminOpen = document.getElementById("accountAdminOpen");
     const status = document.getElementById("accountModalStatus");
     let mode = "login";
     let captchaToken = "";
@@ -352,17 +363,19 @@
       if (signedIn) {
         document.getElementById("accountName").textContent = authUserLabel(session);
         document.getElementById("accountEmailText").textContent = session.user.email || "";
-        setStatus(`已登录。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`, "ok");
+        if (adminOpen) adminOpen.hidden = !isSuperSession(session);
+        setStatus(isSuperSession(session) ? "已登录，当前账号拥有管理员权限。" : `已登录。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`, "ok");
         fetch(`${workerUrl}/entitlement`, { cache: "no-store", headers: authHeaders() })
           .then((response) => response.json())
           .then((data) => {
             const entitlement = data && data.entitlement;
-            if (entitlement && entitlement.active && entitlement.plan === "annual") {
+            if (entitlement && entitlement.active && (entitlement.plan === "annual" || entitlement.plan === "super")) {
               setStatus(`账号下载权限有效${entitlement.current_period_end ? `至 ${entitlement.current_period_end.slice(0, 10)}` : ""}。`, "ok");
             }
           })
           .catch(() => {});
       } else {
+        if (adminOpen) adminOpen.hidden = true;
         captchaToken = "";
         loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; });
       }
@@ -394,6 +407,9 @@
         setStatus("已退出登录。");
         refreshUi();
       });
+    }
+    if (adminOpen) {
+      adminOpen.addEventListener("click", () => showAccountAdminModal(workerUrl));
     }
 
     form.addEventListener("submit", async (event) => {
@@ -430,6 +446,173 @@
 
     refreshUi();
     if (!loadAuthSession() && username) username.focus();
+  }
+
+  function accountAdminModalMarkup() {
+    return `
+      <div class="admin-modal account-admin-modal" id="accountAdminModal" role="dialog" aria-modal="true" aria-labelledby="accountAdminTitle">
+        <div class="admin-dialog account-admin-dialog">
+          <button class="admin-close" id="accountAdminClose" type="button" aria-label="Close">&times;</button>
+          <div class="account-admin-top">
+            <h3 id="accountAdminTitle">管理后台</h3>
+            <button class="secondary-button" id="accountAdminRefresh" type="button">刷新</button>
+          </div>
+          <div id="accountAdminStatus" class="status-line" aria-live="polite">正在读取后台信息…</div>
+          <section class="account-admin-section">
+            <div class="account-admin-heading">
+              <strong>用户信息</strong>
+              <span id="accountAdminUserCount"></span>
+            </div>
+            <div class="account-admin-table-wrap">
+              <table class="account-admin-table">
+                <thead>
+                  <tr>
+                    <th>用户名</th>
+                    <th>邮箱</th>
+                    <th>权限</th>
+                    <th>注册</th>
+                    <th>最近登录</th>
+                  </tr>
+                </thead>
+                <tbody id="accountAdminUsers"></tbody>
+              </table>
+            </div>
+          </section>
+          <section class="account-admin-section">
+            <div class="account-admin-heading">
+              <strong>每日文件</strong>
+              <span>GitHub latest</span>
+            </div>
+            <div id="accountAdminFiles" class="account-admin-files"></div>
+          </section>
+        </div>
+      </div>
+    `;
+  }
+
+  function adminUserEntitlementLabel(user) {
+    if (user && user.role === "super") return "super";
+    const entitlement = user && user.entitlement || {};
+    if (entitlement.active) return entitlement.plan || "active";
+    return "free";
+  }
+
+  function adminUserRow(user) {
+    return `
+      <tr>
+        <td>${escapeHtml(user.username || "")}</td>
+        <td>${escapeHtml(user.email || "")}</td>
+        <td>${escapeHtml(adminUserEntitlementLabel(user))}</td>
+        <td>${escapeHtml(String(user.created_at || "").slice(0, 10))}</td>
+        <td>${escapeHtml(String(user.last_login_at || "").replace("T", " ").slice(0, 16))}</td>
+      </tr>
+    `;
+  }
+
+  function adminFileRow(file) {
+    const key = file.type === "artifact" ? file.id : file.path;
+    const endpointAttr = file.type === "artifact" ? "artifact" : "file";
+    const note = file.note ? `<span>${escapeHtml(file.note)}</span>` : "";
+    return `
+      <div class="account-admin-file">
+        <div>
+          <strong>${escapeHtml(file.label || file.kind || "File")}</strong>
+          <span>${escapeHtml(file.date || "")} · ${escapeHtml(file.name || "")}${file.size_bytes ? ` · ${escapeHtml(formatSize(file.size_bytes))}` : ""}</span>
+          ${note}
+        </div>
+        <button class="secondary-button account-admin-download" type="button"
+          data-kind="${escapeHtml(endpointAttr)}"
+          data-key="${escapeHtml(key || "")}"
+          data-name="${escapeHtml(file.name || "download")}">下载</button>
+      </div>
+    `;
+  }
+
+  async function loadAccountAdminSummary(workerUrl, targets) {
+    targets.status.className = "status-line";
+    targets.status.textContent = "正在读取后台信息…";
+    targets.refresh.disabled = true;
+    try {
+      const response = await fetch(`${workerUrl}/account-admin/summary`, {
+        cache: "no-store",
+        headers: authHeaders(),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.detail || "后台读取失败。");
+      const users = Array.isArray(data.users) ? data.users : [];
+      const files = Array.isArray(data.files) ? data.files : [];
+      targets.userCount.textContent = `${users.length} users`;
+      targets.users.innerHTML = users.length
+        ? users.map(adminUserRow).join("")
+        : '<tr><td colspan="5">暂无用户。</td></tr>';
+      targets.files.innerHTML = files.length
+        ? files.map(adminFileRow).join("")
+        : `<div class="empty-state">还没有找到最新文件。可以稍后刷新，或检查 GitHub workflow 是否已完成。</div>`;
+      targets.status.textContent = `已更新：${String(data.generated_at || "").replace("T", " ").slice(0, 19)}`;
+      targets.status.classList.add("ok");
+    } catch (error) {
+      targets.status.textContent = error.message || "后台读取失败。";
+      targets.status.classList.add("error");
+    } finally {
+      targets.refresh.disabled = false;
+    }
+  }
+
+  function showAccountAdminModal(workerUrl) {
+    if (!workerUrl || !isSuperSession()) return;
+    const existing = document.getElementById("accountAdminModal");
+    if (existing) existing.remove();
+    document.body.insertAdjacentHTML("beforeend", accountAdminModalMarkup());
+
+    const modal = document.getElementById("accountAdminModal");
+    const close = document.getElementById("accountAdminClose");
+    const refresh = document.getElementById("accountAdminRefresh");
+    const status = document.getElementById("accountAdminStatus");
+    const userCount = document.getElementById("accountAdminUserCount");
+    const users = document.getElementById("accountAdminUsers");
+    const files = document.getElementById("accountAdminFiles");
+    const targets = { status, refresh, userCount, users, files };
+
+    function finish() {
+      modal.remove();
+    }
+
+    close.addEventListener("click", finish);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) finish();
+    });
+    refresh.addEventListener("click", () => loadAccountAdminSummary(workerUrl, targets));
+    files.addEventListener("click", async (event) => {
+      const button = event.target.closest(".account-admin-download");
+      if (!button) return;
+      const kind = button.dataset.kind;
+      const key = button.dataset.key || "";
+      const name = button.dataset.name || "download";
+      const endpoint = kind === "artifact"
+        ? `${workerUrl}/account-admin/github-artifact?id=${encodeURIComponent(key)}`
+        : `${workerUrl}/account-admin/github-file?path=${encodeURIComponent(key)}`;
+      button.disabled = true;
+      status.className = "status-line";
+      status.textContent = "正在准备下载…";
+      try {
+        const response = await fetch(endpoint, { headers: authHeaders() });
+        if (!response.ok) {
+          const data = await response.json().catch(() => ({}));
+          throw new Error(data.detail || `下载失败 (${response.status})。`);
+        }
+        const blob = await response.blob();
+        triggerBlobDownload(blob, response.headers.get("Content-Disposition"), name);
+        status.textContent = "下载已开始。";
+        status.classList.add("ok");
+      } catch (error) {
+        status.textContent = error.message || "下载失败。";
+        status.classList.add("error");
+      } finally {
+        button.disabled = false;
+      }
+    });
+
+    loadAccountAdminSummary(workerUrl, targets);
   }
 
   function adminModalMarkup() {
@@ -533,12 +716,14 @@
     const gate = document.getElementById("adminGate");
     if (!gate) return;
     function update() {
-      gate.classList.toggle("is-unlocked", Boolean(getAdminToken()));
+      gate.classList.toggle("is-unlocked", privateToolsUnlocked());
     }
     update();
     document.addEventListener("kcdesk-admin-change", update);
+    document.addEventListener("kcdesk-auth-change", update);
     gate.addEventListener("click", () => {
-      showAdminLogin(workerUrl);
+      if (isSuperSession()) showAccountAdminModal(workerUrl);
+      else showAdminLogin(workerUrl);
     });
   }
 
@@ -1391,7 +1576,7 @@
       hint.textContent = `登录后可查看账号下载权限；开通权限请联系微信 ${CONTACT_WECHAT}。`;
       accountDownload.hidden = true;
       if (!session) {
-        statusTarget(`在线支付通道正在调整。如需开通权限，请联系微信 ${CONTACT_WECHAT}。`);
+        statusTarget(`如需开通权限，请联系微信 ${CONTACT_WECHAT}。`);
         return;
       }
       statusTarget("正在读取账号权益…");
@@ -1467,11 +1652,11 @@
 
   async function requestReportPassword(workerUrl, id) {
     const token = getAdminToken();
-    if (!token) throw new Error("Private tools are locked.");
+    if (!token && !isSuperSession()) throw new Error("Private tools are locked.");
     try {
       const response = await fetch(`${workerUrl}/admin/report-password`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...authHeaders() },
         body: JSON.stringify({ id, token }),
       });
       const data = await response.json().catch(() => ({}));
@@ -1491,11 +1676,11 @@
 
   async function requestExternalPassword(workerUrl, id, source = EXTERNAL_SOURCE) {
     const token = getAdminToken();
-    if (!token) throw new Error("Private tools are locked.");
+    if (!token && !isSuperSession()) throw new Error("Private tools are locked.");
     try {
       const response = await fetch(`${workerUrl}/admin/report-password`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...authHeaders() },
         body: JSON.stringify({ id, token, source }),
       });
       const data = await response.json().catch(() => ({}));
@@ -1522,11 +1707,12 @@
     if (!panel || !generate || !linkInput || !copy || !status) return;
 
     function refresh() {
-      panel.hidden = !getAdminToken();
+      panel.hidden = !privateToolsUnlocked();
     }
 
     refresh();
     document.addEventListener("kcdesk-admin-change", refresh);
+    document.addEventListener("kcdesk-auth-change", refresh);
 
     generate.addEventListener("click", async () => {
       status.className = "status-line";
@@ -1977,7 +2163,7 @@
     }
 
     function refreshAdmin() {
-      adminTools.hidden = !getAdminToken();
+      adminTools.hidden = !privateToolsUnlocked();
     }
 
     async function submitDownload(event) {
@@ -2003,6 +2189,7 @@
 
     form.addEventListener("submit", submitDownload);
     document.addEventListener("kcdesk-admin-change", refreshAdmin);
+    document.addEventListener("kcdesk-auth-change", refreshAdmin);
     refreshAdmin();
     initReportAccessControls(item, workerUrl, item.source, (statusTarget) => (
       downloadExternalWithAccount(workerUrl, item, statusTarget)
