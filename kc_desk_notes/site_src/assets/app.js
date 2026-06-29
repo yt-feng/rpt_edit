@@ -469,6 +469,13 @@
             </div>
             <div id="accountAdminPicks" class="account-admin-picks"></div>
           </section>
+          <section class="account-admin-section account-admin-wechat-section">
+            <div class="account-admin-heading">
+              <strong>公众号发送时间</strong>
+              <span id="accountAdminWechatCount"></span>
+            </div>
+            <div id="accountAdminWechatSchedule" class="account-admin-wechat-schedule"></div>
+          </section>
           <section class="account-admin-section">
             <div class="account-admin-heading">
               <strong>每日文件</strong>
@@ -587,6 +594,71 @@
           <button class="secondary-button account-admin-cancel" type="button" hidden>取消</button>
         </div>
       </article>
+    `;
+  }
+
+  function adminWechatArticleList(batch) {
+    const articles = Array.isArray(batch.articles) ? batch.articles.slice(0, 9) : [];
+    if (!articles.length) return `<div class="account-admin-wechat-empty">这个 batch 暂无标题明细。</div>`;
+    return `
+      <ol class="account-admin-wechat-articles">
+        ${articles.map((article, index) => `
+          <li>
+            <span>${escapeHtml(article.label || `${index + 1}条`)}</span>
+            <strong>${escapeHtml(article.title || "")}</strong>
+          </li>
+        `).join("")}
+      </ol>
+    `;
+  }
+
+  function adminWechatScheduleHeader(schedule) {
+    if (!schedule || !schedule.date_folder) return "还没有找到公众号草稿 batch。";
+    const dateText = schedule.date_iso || schedule.date_folder;
+    const todayText = schedule.is_today ? "今天生成" : "最近可用";
+    return `${dateText} · ${todayText} · ${schedule.window || "08:00 - 次日 00:30"}`;
+  }
+
+  function adminWechatBatchRow(batch) {
+    const meta = [
+      batch.source_label,
+      batch.article_count ? `${batch.article_count}篇` : "",
+      batch.total_batches ? `第 ${batch.schedule_index}/${batch.total_batches} 个 batch` : "",
+    ].filter(Boolean).join(" · ");
+    return `
+      <article class="account-admin-wechat-batch">
+        <div class="account-admin-wechat-time">
+          <strong>${escapeHtml(batch.scheduled_time || "")}</strong>
+          <span>${escapeHtml(batch.day_label || "")}</span>
+        </div>
+        <div class="account-admin-wechat-main">
+          <div class="account-admin-wechat-title">
+            <strong>${escapeHtml(batch.batch_label || `Batch ${batch.batch_no || ""}`)}</strong>
+            <span>${escapeHtml(meta)}</span>
+          </div>
+          ${adminWechatArticleList(batch)}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderAdminWechatSchedule(schedule) {
+    const batches = Array.isArray(schedule && schedule.batches) ? schedule.batches : [];
+    if (!batches.length) {
+      return `
+        <div class="empty-state">
+          ${escapeHtml(adminWechatScheduleHeader(schedule))}
+        </div>
+      `;
+    }
+    const fallbackNote = schedule.is_today ? "" : `<div class="account-admin-wechat-note">今天还没有检测到草稿，下面显示最近可用日期。</div>`;
+    return `
+      <div class="account-admin-wechat-summary">
+        <strong>${escapeHtml(adminWechatScheduleHeader(schedule))}</strong>
+        <span>${escapeHtml(`${schedule.total_batches || batches.length} 个 batch · ${schedule.total_articles || 0} 篇文章`)}</span>
+      </div>
+      ${fallbackNote}
+      ${batches.map(adminWechatBatchRow).join("")}
     `;
   }
 
@@ -711,11 +783,14 @@
       const users = Array.isArray(data.users) ? data.users : [];
       const files = Array.isArray(data.files) ? data.files : [];
       const dailyPicks = Array.isArray(data.daily_picks) ? data.daily_picks : [];
+      const wechatSchedule = data.wechat_schedule && typeof data.wechat_schedule === "object" ? data.wechat_schedule : {};
       accountAdminDailyPicks = new Map(dailyPicks.map((pick) => [String(pick.id || ""), pick]));
       targets.pickCount.textContent = dailyPicks.length ? `${dailyPicks.length} reports` : "";
       targets.picks.innerHTML = dailyPicks.length
         ? dailyPicks.map(adminDailyPickRow).join("")
         : `<div class="empty-state">还没有可用精选。新 PDF 同步后会自动根据宏观/页数/横屏规则筛选。</div>`;
+      targets.wechatCount.textContent = wechatSchedule.total_batches ? `${wechatSchedule.total_batches} batches` : "";
+      targets.wechatSchedule.innerHTML = renderAdminWechatSchedule(wechatSchedule);
       targets.userCount.textContent = `${users.length} users`;
       targets.users.innerHTML = users.length
         ? users.map(adminUserRow).join("")
@@ -745,10 +820,12 @@
     const status = document.getElementById("accountAdminStatus");
     const pickCount = document.getElementById("accountAdminPickCount");
     const picks = document.getElementById("accountAdminPicks");
+    const wechatCount = document.getElementById("accountAdminWechatCount");
+    const wechatSchedule = document.getElementById("accountAdminWechatSchedule");
     const userCount = document.getElementById("accountAdminUserCount");
     const users = document.getElementById("accountAdminUsers");
     const files = document.getElementById("accountAdminFiles");
-    const targets = { status, refresh, pickCount, picks, userCount, users, files };
+    const targets = { status, refresh, pickCount, picks, wechatCount, wechatSchedule, userCount, users, files };
 
     function finish() {
       modal.remove();
