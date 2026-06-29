@@ -727,7 +727,7 @@
     return textMatches(normalize([item.title, item.title_cn].join(" ")), cleanQuery);
   }
 
-  function hiborMeta(item) {
+  function reportAMeta(item) {
     return [
       item.institution,
       item.date,
@@ -740,10 +740,10 @@
       .join(" · ");
   }
 
-  function hiborRow(item) {
-    const meta = hiborMeta(item);
+  function reportARow(item) {
+    const meta = reportAMeta(item);
     return `
-      <a class="related-row hibor-row" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">
+      <a class="related-row report-a-row" href="${escapeHtml(item.url || "#")}" target="_blank" rel="noopener noreferrer">
         <span class="related-title">
           <span>${escapeHtml(item.title)}</span>
         </span>
@@ -956,17 +956,17 @@
     const externalResults = document.getElementById("externalResults");
     const externalCount = document.getElementById("externalCount");
     const externalStatus = document.getElementById("externalStatus");
-    const hiborSection = document.getElementById("hiborSection");
-    const hiborResults = document.getElementById("hiborResults");
-    const hiborCount = document.getElementById("hiborCount");
-    const hiborStatus = document.getElementById("hiborStatus");
+    const reportASection = document.getElementById("reportASection");
+    const reportAResults = document.getElementById("reportAResults");
+    const reportACount = document.getElementById("reportACount");
+    const reportAStatus = document.getElementById("reportAStatus");
     const authoritySection = document.getElementById("authoritySection");
     const authorityResults = document.getElementById("authorityResults");
     const authorityCount = document.getElementById("authorityCount");
     const authorityStatus = document.getElementById("authorityStatus");
     let externalTimer = 0;
     let externalToken = 0;
-    let hiborToken = 0;
+    let reportAToken = 0;
     let authorityToken = 0;
     let externalSearchSettled = false;
     let externalTitleMatchCount = 0;
@@ -981,18 +981,18 @@
       externalStatus.textContent = text || "";
     }
 
-    function setHiborStatus(text, kind) {
-      if (!hiborStatus) return;
-      hiborStatus.className = kind ? `status-line ${kind}` : "status-line";
-      hiborStatus.textContent = text || "";
+    function setReportAStatus(text, kind) {
+      if (!reportAStatus) return;
+      reportAStatus.className = kind ? `status-line ${kind}` : "status-line";
+      reportAStatus.textContent = text || "";
     }
 
-    function hideHiborResults() {
-      hiborToken += 1;
-      if (hiborSection) hiborSection.hidden = true;
-      if (hiborResults) hiborResults.innerHTML = "";
-      if (hiborCount) hiborCount.textContent = "";
-      setHiborStatus("");
+    function hideReportAResults() {
+      reportAToken += 1;
+      if (reportASection) reportASection.hidden = true;
+      if (reportAResults) reportAResults.innerHTML = "";
+      if (reportACount) reportACount.textContent = "";
+      setReportAStatus("");
     }
 
     function setAuthorityStatus(text, kind) {
@@ -1078,40 +1078,40 @@
       }
     }
 
-    async function runHiborSearch(query) {
-      if (!hiborSection || !hiborResults) return;
+    async function runReportASearch(query) {
+      if (!reportASection || !reportAResults) return;
       if (!externalUrl || !query) {
-        hideHiborResults();
+        hideReportAResults();
         return;
       }
-      const token = ++hiborToken;
-      hiborSection.hidden = false;
-      if (hiborCount) hiborCount.textContent = "搜索中…";
-      setHiborStatus("");
-      hiborResults.innerHTML = `
+      const token = ++reportAToken;
+      reportASection.hidden = false;
+      if (reportACount) reportACount.textContent = "搜索中…";
+      setReportAStatus("");
+      reportAResults.innerHTML = `
         <div class="loading-state">
           <span class="loading-spinner" aria-hidden="true"></span>
-          <span>正在搜索慧博报告…</span>
+          <span>正在搜索报告A…</span>
         </div>
       `;
       try {
         const response = await fetch(
-          `${externalUrl}/hibor/search?q=${encodeURIComponent(query)}`,
+          `${externalUrl}/report-a/search?q=${encodeURIComponent(query)}`,
           { cache: "no-store" },
         );
         if (!response.ok) throw new Error(`搜索失败 (${response.status})`);
         const data = await response.json();
-        if (token !== hiborToken) return;
+        if (token !== reportAToken) return;
         const items = Array.isArray(data.items) ? data.items : [];
-        if (hiborCount) hiborCount.textContent = items.length ? `${items.length} 条` : "";
-        hiborResults.innerHTML = items.length
-          ? items.map(hiborRow).join("")
+        if (reportACount) reportACount.textContent = items.length ? `${items.length} 条` : "";
+        reportAResults.innerHTML = items.length
+          ? items.map(reportARow).join("")
           : '<div class="empty-state">暂无匹配结果。</div>';
       } catch (error) {
-        if (token !== hiborToken) return;
-        if (hiborCount) hiborCount.textContent = "";
-        hiborResults.innerHTML = "";
-        setHiborStatus(error.message || "搜索暂不可用。", "error");
+        if (token !== reportAToken) return;
+        if (reportACount) reportACount.textContent = "";
+        reportAResults.innerHTML = "";
+        setReportAStatus(error.message || "搜索暂不可用。", "error");
       }
     }
 
@@ -1160,14 +1160,14 @@
       const query = input.value.trim();
       externalTimer = window.setTimeout(() => {
         runExternalSearch(query);
-        runHiborSearch(query);
+        runReportASearch(query);
       }, 400);
     }
 
     input.addEventListener("input", scheduleExternalSearch);
     clearFilters.addEventListener("click", () => {
       runExternalSearch("");
-      hideHiborResults();
+      hideReportAResults();
       hideAuthorityResults();
     });
     externalResults.addEventListener("click", (event) => {

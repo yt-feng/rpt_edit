@@ -54,7 +54,7 @@ const AUTHORITY_KINDS = {
 };
 
 const HIBOR_ORIGIN = "https://www.hibor.com.cn";
-const HIBOR_SOURCE = "hibor";
+const HIBOR_SOURCE = "report-a";
 const HIBOR_SEARCH_PAGE_SIZE = 30;
 const HIBOR_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
@@ -1766,9 +1766,13 @@ function cleanHtmlText(value) {
   return stripHtml(value).replace(/\s+/g, " ").trim();
 }
 
+function reportAPublicText(value) {
+  return String(value || "").replace(/慧博/g, "报告A").replace(/Hibor/gi, "报告A");
+}
+
 function hiborMetaField(block, label) {
   const match = String(block || "").match(new RegExp(`<span>\\s*${label}：([\\s\\S]*?)<\\/span>`, "i"));
-  return match ? cleanHtmlText(match[1]) : "";
+  return match ? reportAPublicText(cleanHtmlText(match[1])) : "";
 }
 
 function hiborDateFromTitle(title) {
@@ -1795,7 +1799,7 @@ function parseHiborItems(html) {
     const href = decodeHtmlEntities(link[1]);
     const idMatch = href.match(/\/data\/([^/.]+)\.html/i);
     if (!idMatch) continue;
-    const title = cleanHtmlText(link[2] || link[3]);
+    const title = reportAPublicText(cleanHtmlText(link[2] || link[3]));
     if (!title) continue;
     const shareTime = hiborMetaField(block, "分享时间");
     const pageText = hiborMetaField(block, "页数");
@@ -1842,7 +1846,7 @@ async function handleHiborSearch(request, env) {
     body,
   });
   if (!response.ok) {
-    return jsonResponse(request, env, 502, { error: `Hibor search failed (${response.status}).` });
+    return jsonResponse(request, env, 502, { error: `Report A search failed (${response.status}).` });
   }
   const html = await response.text();
   const items = parseHiborItems(html);
@@ -2033,7 +2037,7 @@ export default {
       return handleExternalStatus(request, env);
     }
 
-    if (pathname === "/hibor/search" && request.method === "GET") {
+    if (pathname === "/report-a/search" && request.method === "GET") {
       return handleHiborSearch(request, env);
     }
 
