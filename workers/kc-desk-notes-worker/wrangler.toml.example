@@ -13,6 +13,9 @@ ALLOWED_ORIGIN = "https://YOUR_GITHUB_PAGES_HOST"
 # (set it as a secret: `wrangler secret put GH_DISPATCH_TOKEN`).
 GH_REPO = "yt-feng/rpt_edit"
 
+[triggers]
+crons = ["*/30 * * * *"]
+
 [[r2_buckets]]
 binding = "REPORT_BUCKET"
 bucket_name = "kc-desk-notes-pdfs"

@@ -183,6 +183,9 @@ jobs:
           ALLOWED_ORIGIN = "$PAGES_ORIGIN"
           GH_REPO = "$GITHUB_REPOSITORY"
 
+          [triggers]
+          crons = ["*/30 * * * *"]
+
           [[r2_buckets]]
           binding = "REPORT_BUCKET"
           bucket_name = "$R2_BUCKET_NAME"

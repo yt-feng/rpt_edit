@@ -460,6 +460,13 @@
           <div id="accountAdminStatus" class="status-line" aria-live="polite">正在读取后台信息…</div>
           <section class="account-admin-section">
             <div class="account-admin-heading">
+              <strong>每日文件</strong>
+              <span>GitHub latest</span>
+            </div>
+            <div id="accountAdminFiles" class="account-admin-files"></div>
+          </section>
+          <section class="account-admin-section">
+            <div class="account-admin-heading">
               <strong>用户信息</strong>
               <span id="accountAdminUserCount"></span>
             </div>
@@ -477,13 +484,6 @@
                 <tbody id="accountAdminUsers"></tbody>
               </table>
             </div>
-          </section>
-          <section class="account-admin-section">
-            <div class="account-admin-heading">
-              <strong>每日文件</strong>
-              <span>GitHub latest</span>
-            </div>
-            <div id="accountAdminFiles" class="account-admin-files"></div>
           </section>
         </div>
       </div>
@@ -525,11 +525,14 @@
             <small>等待下载…</small>
           </div>
         </div>
-        <button class="secondary-button account-admin-download" type="button"
-          data-kind="${escapeHtml(endpointAttr)}"
-          data-key="${escapeHtml(key || "")}"
-          data-repo="${escapeHtml(repo)}"
-          data-name="${escapeHtml(file.name || "download")}">下载</button>
+        <div class="account-admin-file-actions">
+          <button class="secondary-button account-admin-download" type="button"
+            data-kind="${escapeHtml(endpointAttr)}"
+            data-key="${escapeHtml(key || "")}"
+            data-repo="${escapeHtml(repo)}"
+            data-name="${escapeHtml(file.name || "download")}">下载</button>
+          <button class="secondary-button account-admin-cancel" type="button" hidden>取消</button>
+        </div>
       </div>
     `;
   }
@@ -645,12 +648,19 @@
         : `${workerUrl}/account-admin/github-file?path=${encodeURIComponent(key)}${repo ? `&repo=${encodeURIComponent(repo)}` : ""}`;
       const row = button.closest(".account-admin-file");
       const progress = row && row.querySelector(".account-admin-progress");
+      const cancel = row && row.querySelector(".account-admin-cancel");
+      const controller = new AbortController();
       button.disabled = true;
+      if (cancel) {
+        cancel.hidden = false;
+        cancel.disabled = false;
+        cancel.onclick = () => controller.abort();
+      }
       resetDownloadProgress(progress);
       status.className = "status-line";
       status.textContent = "正在准备下载…";
       try {
-        const response = await fetch(endpoint, { headers: authHeaders() });
+        const response = await fetch(endpoint, { headers: authHeaders(), signal: controller.signal });
         if (!response.ok) {
           const data = await response.json().catch(() => ({}));
           throw new Error(data.detail || `下载失败 (${response.status})。`);
@@ -660,10 +670,18 @@
         status.textContent = "下载已开始。";
         status.classList.add("ok");
       } catch (error) {
-        status.textContent = error.message || "下载失败。";
-        status.classList.add("error");
+        if (error && error.name === "AbortError") {
+          status.textContent = "下载已取消。";
+        } else {
+          status.textContent = error.message || "下载失败。";
+          status.classList.add("error");
+        }
       } finally {
         button.disabled = false;
+        if (cancel) {
+          cancel.hidden = true;
+          cancel.onclick = null;
+        }
       }
     });
 

@@ -966,6 +966,18 @@ button.primary:disabled {
   line-height: 1.45;
 }
 
+.account-admin-file .account-admin-file-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.account-admin-file .account-admin-file-actions .secondary-button {
+  min-height: 38px;
+}
+
 .account-admin-progress {
   display: grid;
   gap: 5px;
@@ -1246,8 +1258,17 @@ button.primary:disabled {
   .delivery-row,
   .auth-grid,
   .plan-grid,
+  .account-admin-file,
   .about-section {
     grid-template-columns: 1fr;
+  }
+
+  .account-admin-file-actions {
+    justify-content: stretch;
+  }
+
+  .account-admin-file-actions .secondary-button {
+    flex: 1 1 120px;
   }
 
   .pagination-bar {

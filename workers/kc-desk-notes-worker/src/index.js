@@ -16,6 +16,7 @@ const DEFAULT_GITHUB_REF = "main";
 const BBG_SHOW_REPO = "yt-feng/bbg-show";
 const BBG_SHOW_PREFIX = "rendered-clips";
 const GITHUB_CACHE_PREFIX = "_account/github-cache";
+const GITHUB_CACHE_RETENTION_MS = 3 * 24 * 60 * 60 * 1000;
 const PADDLE_HANDLED_EVENTS = new Set([
   "transaction.completed",
   "subscription.created",
@@ -1630,12 +1631,14 @@ function githubRef(env, repo = githubRepo(env)) {
   return configured.startsWith("refs/heads/") ? configured.slice("refs/heads/".length) : configured;
 }
 
-function githubToken(env) {
-  return cleanEnv(env.GH_READ_TOKEN) || cleanEnv(env.GH_DISPATCH_TOKEN) || cleanEnv(env.GITHUB_TOKEN) || cleanEnv(env.GH_TOKEN);
+function githubToken(env, repo = githubRepo(env)) {
+  const readToken = cleanEnv(env.GH_READ_TOKEN) || cleanEnv(env.GITHUB_TOKEN) || cleanEnv(env.GH_TOKEN);
+  if (readToken) return readToken;
+  return repo === githubRepo(env) ? cleanEnv(env.GH_DISPATCH_TOKEN) : "";
 }
 
-function githubHeaders(env, extra = {}) {
-  const token = githubToken(env);
+function githubHeaders(env, extra = {}, repo = githubRepo(env)) {
+  const token = githubToken(env, repo);
   const headers = {
     "Accept": "application/vnd.github+json",
     "User-Agent": "kc-desk-notes-worker",
@@ -1653,7 +1656,7 @@ function encodeGithubPath(path) {
 async function githubApiFetch(env, path, init = {}, repo = githubRepo(env)) {
   const response = await fetch(`https://api.github.com/repos/${repo}${path}`, {
     ...init,
-    headers: githubHeaders(env, init.headers || {}),
+    headers: githubHeaders(env, init.headers || {}, repo),
     redirect: init.redirect || "follow",
   });
   if (!response.ok) {
@@ -1852,7 +1855,7 @@ async function latestAdminGithubFiles(env) {
   return [...bbg, ...market, ...fallback, ...siteVideos];
 }
 
-async function handleAccountAdminSummary(request, env) {
+async function handleAccountAdminSummary(request, env, ctx = null) {
   try {
     const adminUser = await requireSuperUser(request, env);
     const [users, entitlements, files] = await Promise.all([
@@ -1861,6 +1864,9 @@ async function handleAccountAdminSummary(request, env) {
       latestAdminGithubFiles(env),
     ]);
     const entitlementsByEmail = entitlementMap(entitlements);
+    if (ctx && typeof ctx.waitUntil === "function") {
+      ctx.waitUntil(warmAdminGithubCache(env, files).catch(() => null));
+    }
     return jsonResponse(request, env, 200, {
       user: publicUser(adminUser),
       users: users.map((user) => adminVisibleUser(user, entitlementsByEmail.get(normalizeEmail(user.email)))),
@@ -1872,6 +1878,18 @@ async function handleAccountAdminSummary(request, env) {
   } catch (error) {
     return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
   }
+}
+
+function githubFileRepo(env, file) {
+  return normalizeGithubRepoParam(env, file && file.repo || "");
+}
+
+function fileDateScoreFromPath(path) {
+  return dateScore(path);
+}
+
+function retentionCutoffDateScore(now = Date.now()) {
+  return Number(new Date(now - GITHUB_CACHE_RETENTION_MS).toISOString().slice(0, 10).replace(/-/g, ""));
 }
 
 function normalizeGithubRepoParam(env, value) {
@@ -1902,6 +1920,113 @@ async function githubCacheKey(repo, ref, path) {
   return `${GITHUB_CACHE_PREFIX}/${digest}/${filename}`;
 }
 
+async function githubCacheExists(env, cacheKey) {
+  if (!env.REPORT_BUCKET) return false;
+  try {
+    if (typeof env.REPORT_BUCKET.head === "function") {
+      return Boolean(await env.REPORT_BUCKET.head(cacheKey));
+    }
+    return Boolean(await env.REPORT_BUCKET.get(cacheKey));
+  } catch (_error) {
+    return false;
+  }
+}
+
+async function cacheGithubFile(env, file) {
+  if (!env.REPORT_BUCKET || !file || file.type !== "file") return { ok: false, skipped: true };
+  const repo = githubFileRepo(env, file);
+  const path = String(file.path || "").replace(/^\/+/, "");
+  if (!repo || !isAllowedAdminGithubFile(env, repo, path)) return { ok: false, skipped: true };
+  const ref = githubRef(env, repo);
+  const cacheKey = await githubCacheKey(repo, ref, path);
+  if (await githubCacheExists(env, cacheKey)) return { ok: true, cached: true, key: cacheKey };
+
+  const encodedPath = encodeGithubPath(path);
+  const rawUrl = `https://raw.githubusercontent.com/${repo}/${encodeURIComponent(ref)}/${encodedPath}`;
+  let response = await fetch(rawUrl, {
+    headers: githubHeaders(env, { "Accept": "*/*" }, repo),
+    redirect: "follow",
+  });
+  if (response.status === 404 && githubToken(env, repo)) {
+    const metadata = await githubApiJson(env, `/contents/${encodedPath}?ref=${encodeURIComponent(ref)}`, {}, repo);
+    const downloadUrl = String(metadata && metadata.download_url || "");
+    if (downloadUrl) {
+      response = await fetch(downloadUrl, {
+        headers: githubHeaders(env, { "Accept": "*/*" }, repo),
+        redirect: "follow",
+      });
+    }
+  }
+  if (!response.ok || !response.body) return { ok: false, status: response.status };
+
+  await env.REPORT_BUCKET.put(cacheKey, response.body, {
+    httpMetadata: {
+      contentType: response.headers.get("Content-Type") || contentTypeForGithubPath(path),
+      contentDisposition: contentDisposition(path.split("/").pop() || "download"),
+    },
+    customMetadata: {
+      repo,
+      ref,
+      path: path.slice(0, 900),
+      cached_at: new Date().toISOString(),
+      file_date: String(file.date || renderedClipDate(path) || "").slice(0, 40),
+    },
+  });
+  return { ok: true, cached: false, key: cacheKey };
+}
+
+async function pruneGithubCache(env, now = Date.now()) {
+  if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function") return { deleted: 0 };
+  const cutoffTime = now - GITHUB_CACHE_RETENTION_MS;
+  const cutoffDate = retentionCutoffDateScore(now);
+  let cursor = undefined;
+  let deleted = 0;
+  do {
+    const listed = await env.REPORT_BUCKET.list({
+      prefix: `${GITHUB_CACHE_PREFIX}/`,
+      limit: 1000,
+      cursor,
+      include: ["customMetadata"],
+    });
+    const objects = Array.isArray(listed && listed.objects) ? listed.objects : [];
+    for (const object of objects) {
+      const metadata = object.customMetadata || {};
+      const pathScore = fileDateScoreFromPath(metadata.path || object.key || "");
+      const cachedAt = Date.parse(metadata.cached_at || object.uploaded || "");
+      const tooOldByFileDate = pathScore && pathScore < cutoffDate;
+      const tooOldByCacheDate = Number.isFinite(cachedAt) && cachedAt < cutoffTime;
+      if (tooOldByFileDate || tooOldByCacheDate) {
+        try {
+          await env.REPORT_BUCKET.delete(object.key);
+          deleted += 1;
+        } catch (_error) {
+          // Best-effort cleanup.
+        }
+      }
+    }
+    cursor = listed && listed.truncated ? listed.cursor : undefined;
+  } while (cursor);
+  return { deleted };
+}
+
+async function warmAdminGithubCache(env, files = null) {
+  const targetFiles = Array.isArray(files) ? files : await latestAdminGithubFiles(env);
+  const warmed = [];
+  for (const file of targetFiles.filter((item) => item && item.type === "file").slice(0, 18)) {
+    try {
+      warmed.push(await cacheGithubFile(env, file));
+    } catch (error) {
+      warmed.push({ ok: false, error: String(error && error.message || error || "cache failed").slice(0, 200) });
+    }
+  }
+  const cleanup = await pruneGithubCache(env).catch((error) => ({ deleted: 0, error: String(error && error.message || error || "") }));
+  return {
+    warmed,
+    cleanup,
+    generated_at: new Date().toISOString(),
+  };
+}
+
 function cachedGithubResponse(request, env, object, path) {
   const headers = {
     ...corsHeaders(request, env),
@@ -1930,10 +2055,10 @@ async function fetchGithubRawFile(env, path, request, repo = githubRepo(env), ct
   }
 
   const rawUrl = `https://raw.githubusercontent.com/${repo}/${encodeURIComponent(ref)}/${encodedPath}`;
-  const headers = githubHeaders(env, { "Accept": "*/*" });
+  const headers = githubHeaders(env, { "Accept": "*/*" }, repo);
   if (range) headers.Range = range;
   let response = await fetch(rawUrl, { headers, redirect: "follow" });
-  if (response.status === 404 && githubToken(env)) {
+  if (response.status === 404 && githubToken(env, repo)) {
     const metadata = await githubApiJson(env, `/contents/${encodedPath}?ref=${encodeURIComponent(ref)}`, {}, repo);
     const downloadUrl = String(metadata && metadata.download_url || "");
     if (downloadUrl) response = await fetch(downloadUrl, { headers, redirect: "follow" });
@@ -2574,7 +2699,7 @@ export default {
     }
 
     if (pathname === "/account-admin/summary" && request.method === "GET") {
-      return handleAccountAdminSummary(request, env);
+      return handleAccountAdminSummary(request, env, ctx);
     }
 
     if (pathname === "/account-admin/github-file" && request.method === "GET") {
@@ -2610,5 +2735,9 @@ export default {
     }
 
     return jsonResponse(request, env, 404, { error: "Not found." });
+  },
+
+  async scheduled(_event, env, ctx) {
+    ctx.waitUntil(warmAdminGithubCache(env).catch(() => null));
   },
 };
