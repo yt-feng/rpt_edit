@@ -1,0 +1,571 @@
+Asia-Pacific Nuclear Power
+
+# Asia-Pacific Nuclear Power: The next wave of nuclear builds. What does a \$250bn nuclear pipeline mean for Doosan?
+
+![](images/3bc5820285da1537b69662969d3ef7996091f475db893010c3d061d2fa3a9402.jpg)  
+Brian Ho, CFA  
++852 2123 2615  
+brian.ho@bernsteinsg.com
+
+![](images/7a553c03229cfda2cc7850894e87d9631433a5493d1699d1ac3651010372dd4f.jpg)
+
+Neil Beveridge, Ph.D.
+
++852 2123 2648
+
+neil.beveridge@bernsteinsg.com
+
+![](images/150fd3804d11e73662b70b848a0b8e293ecb3d092e9ba5edce16ceb3410f09e5.jpg)
+
+Kelvin Yuan, Ph.D., CFA
+
++852 2123 2612
+
+kelvin.yuan@bernsteinsg.com
+
+We identify \~35GW or \~USD250bn of nuclear projects nearing procurement for Doosan Enerbility. This pipeline is primarily driven by large-scale reactors (APR/AP1000) with a smaller contribution from SMRs. Regionally, the near-term pipeline is dominated by projects in Europe, with U.S. projects emerging toward the end of the decade as financing and supply chain support improves.
+
+This pipeline translates into \~USD44bn (KRW67tn) of potential nuclear equipment contracts. Near-term visibility is strongest in Europe, where Poland is moving toward equipment and EPC contracting this year, followed by Bulgaria targeting EPC contracting in 2027. Longer term, the key source of upside is U.S. nuclear project progression, supported by policy initiatives such as DOE financing programs. In our view, Doosan's established role in AP1000 and large reactor supply chains positions it well to capture a meaningful share of this opportunity.
+
+Despite capacity expansion for gas turbines, we believe fundamentals remain structurally supportive underpinning pricing and margin strength. We expect Doosan's gas orders to increase from KRW4.7tn in 2025 to \~KRW7tn by 2030, supported by capacity expansion. As the installed base scales, we estimate gas services revenue could reach \~KRW0.4tn by 2030 and \~KRW1tn by 2035, providing a growing and higher-margin recurring revenue stream over time.
+
+Taken together, we expect Doosan's annual orders to increase from \~KRW15tn in 2025 to \~KRW24tn by the end of the decade. This is above the company's target of \~KRW16.5tn by 2030. While execution risks and project delays remain, our forecasts incorporate risk-adjusted assumptions based on the progression of nuclear projects through key development milestones.
+
+We expect Doosan's margin profile to improve meaningfully, reaching low-teens OPM by 2028, as business mix shifts toward high value nuclear and gas equipment. These segments are expected to account for more than $75\%$ of revenue by 2027, driven by both volume growth and higher-margin equipment exposure. Globally, gas turbine OEMs are moving toward $20\%+$ margins over the next few years, while nuclear equipment suppliers operate at mid-teens EBITDA margins, providing a strong benchmark for Doosan's earnings potential as sales shift towards overseas market.
+
+We update our valuation to reflect higher nuclear and gas order assumptions. Our SOTP-based price target is KRW100,000 per share, underpinned by a standalone DCF valuation of KRW63tn (unchanged 8% WACC). We believe valuation should increasingly reflect not just current backlog, but also forward order pipeline and mix shift toward higher-quality businesses, with nuclear and gas offering structural growth, margin expansion, and scarcity value given Doosan's limited global competition.
+
+## BERNSTEIN TICKER TABLE
+
+<table><tr><td rowspan="2"></td><td colspan="4">26 Jun 2026</td><td rowspan="2">TTMRel.</td><td colspan="4">Reported EPS</td><td colspan="3">Reported P/E (x)</td></tr><tr><td>Rating</td><td>Cur</td><td>Closing Price</td><td>Price Target</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>Ticker</td><td>O</td><td>KRW</td><td>81,400</td><td>100,000</td><td>(11.0)%</td><td>KRW</td><td>132.34</td><td>691.11</td><td>1,249.76</td><td>615.1</td><td>117.8</td><td>65.1</td></tr><tr><td>034020.KS (Doosan Enerbility)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>OLD</td><td></td><td></td><td></td><td>95,000</td><td></td><td></td><td></td><td>687.53</td><td>1,484.30</td><td></td><td></td><td></td></tr><tr><td>ASIAX</td><td></td><td></td><td>1,963.59</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+## PRICE TARGET CHANGE / ESTIMATE CHANGE IN BOLD
+
+O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended
+
+Source: Bloomberg, Bernstein estimates and analysis.
+
+## INVESTMENT IMPLICATIONS
+
+Our overall conclusion is that Doosan is positioned for sustained order growth alongside a structurally improving earnings profile. First, the company's growth is increasingly underpinned by long-cycle, technically differentiated nuclear equipment, replacing lower-quality legacy exposure and supporting a more long-term investment case. Second, gas markets remain structurally supportive over the medium term, sustaining both volume growth and margin expansion. This is in light of current planned expansion to raise gas turbine capacity. Third, the mix shift toward nuclear and gas equipment should drive not just revenue growth, but also a meaningful improvement in profitability. By 2028, we expect more than $75\%$ of standalone revenue to come from nuclear and gas, and margins to reach the low-teens, aligning more closely with the profitability seen across global energy equipment peers. Reflecting stronger order visibility from nuclear and gas, we raise our SOTP-based price target to KRW100,000, as valuation increasingly incorporates forward pipeline upside and improving earnings quality.
+
+## DETAILS
+
+The orderbook outlook is a key driver of company value, as it underpins revenue visibility, earnings growth, and long-term valuation. Our annual orders outlook reflects the increasing visibility from both the global nuclear pipeline and structurally tight gas turbine market. Based on our bottom-up analysis, we see meaningful order contribution from a set of identifiable nuclear projects, alongside accelerating gas turbine demand driven by power generation needs. Within nuclear, order timing is inherently linked to project progression, with equipment contracts typically awarded after licensing, engineering, and financing milestones are completed. This gives us confidence that much of the pipeline we track is potentially actionable over the next few years. At the same time, gas turbine orders are benefiting from strong end-market demand and constrained supply, reinforcing a multi-year growth cycle. Taken together, we believe the combined nuclear and gas pipeline provides a strong foundation for sustained order growth beyond current company target. As a result, we expect annual orders to increase from \~KRW15tn in 2025 to \~KRW21tn by the end of the decade, on a risk-adjusted basis reflecting the probability of nuclear project progression.
+
+EXHIBIT 1: Order outlook is a key driver of company value. We expect annual orders to grow from c.KRW15tn in 2025 to \~KRW21tn by 2030  
+Doosan Enerbility: Annual orders (KRW bn)  
+![](images/8b922e6bca4692629695aaaeec8df4ce317127bab02ac29f3ee13dbf944955d2.jpg)  
+Source: Company data, Bernstein estimates (2026+) and analysis
+
+Historically, Doosan Enerbility's market capitalization has shown a strong correlation with annual order intake, reflecting the importance of order visibility and backlog growth in driving future revenue and earnings. More recently, however, market cap has expanded faster than reported orders. We believe this reflects a shift in the business mix—from lower-margin segments (coal and desalination) toward higher-quality nuclear and gas equipment, which offer stronger growth prospects and improved margin profiles. In our view, continued growth in nuclear and gas equipment orders should support the company's current valuation.
+
+EXHIBIT 2: Continued growth in nuclear and gas equipment orders are expected to support company's valuation  
+![](images/d13c419b2a8da028ddadb4ee9d60f49d47bc765006a68ba6fca410ca0ee668cf.jpg)  
+Source: Company data, Bloomberg, Bernstein estimates (2026+) and analysis
+
+## A \$250BN NUCLEAR TAM FOR DOOSAN ENERBILITY
+
+Nuclear projects follow a structured development process, where major equipment contracting generally occurs only after key milestones have been met—namely regulatory licensing approval, completion of front-end engineering and design (FEED), and finalisation of project financing and ownership structure. Prior to these stages, projects remain in feasibility or early engineering phases with limited certainty on scope, timing, and capital allocation. As such, we focus on projects that have progressed sufficiently through these phases and are entering the pre-procurement or early procurement stage, where long-lead items such as reactor vessels, steam generators, and other heavy components begin to be ordered. Heavy nuclear equipment is a major and technically critical part of the overall cost stack, especially for reactor vessels, steam generators, and other long-lead forged and fabricated components.
+
+EXHIBIT 3: Our nuclear TAM is based on identifiable projects nearing equipment procurement stage  
+Nuclear new build framework  
+![](images/ea6b5bc3bd249adbe043eb7c05fbb3a3f7885d69dfc2c225cb93a6b18a5d1371.jpg)  
+Source: Westinghouse, Bernstein analysis
+
+Doosan Enerbility is widely regarded as a preferred global nuclear equipment supplier, underpinned by its deep manufacturing expertise, proven track record on large-scale projects, and ability to deliver critical components at scale. The company's core strength lies in the production of heavy nuclear equipment, including reactor pressure vessels, steam generators, pressurizers, turbine systems, and other long-lead forged and fabricated components for both large reactors (APR1400/AP1000) and emerging SMR designs. These components are technologically complex, capital intensive, and form a critical bottleneck in nuclear project execution, which limits the number of qualified suppliers globally and strengthens Doosan's competitive position. Importantly, Doosan's vertically integrated manufacturing base and accumulated experience from projects such as Korea's domestic fleet and Barakah in the UAE allow it to deliver high-quality components with relatively faster lead times and more predictable execution, supporting shorter construction timelines and lower overall project costs compared to most non-China suppliers. This combination of engineering capability, scale manufacturing, cost competitiveness, and execution reliability has made Doosan a key partner in international nuclear projects and positions it well to capture a disproportionate share of future equipment orders as global nuclear deployment accelerates.
+
+EXHIBIT 4: Doosan's vertical integration and experience from projects such as Korea's domestic fleet and Barakah in the UAE allow it to deliver high-quality components with relatively faster lead times and reliable execution  
+Capital cost and construction time for recent nuclear projects  
+![](images/0cee931a1ccc95ce98c85a1e1f4472ae824daa7d756286f18e781277230fcc69.jpg)  
+Source: Bloomberg, Company data, Bernstein analysis
+
+Doosan Enerbility's Changwon facility in Korea is strategically organized as a vertically integrated "one-stop shop" for nuclear components. This means the company handles virtually every stage of production in-house, significantly reducing reliance on outside suppliers. The facility manages the entire supply chain, starting from the production of the raw material steel all the way to the final assembly of the complex nuclear components. Based on many years of experience in manufacturing large nuclear power plant main reactors, Doosan is also promoting the SMR foundry business, as consignment manufacturer for key SMR companies. As the SMR market is expected to expand in the future, Doosan will establish dedicated production line that can shorten the production period and mass-produce high-quality SMRs. Doosan's depth of experience creates a knowledge base that few competitors can match. The company has spent over 40 years as a major global supplier of nuclear components, developing unrivalled expertise in the design and manufacturing of these systems. Outside of China and Russia, Doosan is the most experienced supplier of nuclear power systems globally.
+
+EXHIBIT 5: Doosan is the most experienced nuclear power system supplier outside of China and Russia
+Number of reactors built by supplier in the last 20 years  
+![](images/494881347f7d4c1b6829fdf4ca1f37ccef7ab2673465aa5971f40f98338416f8.jpg)  
+■ Chinese or Russian suppliers
+
+## Source: IAEA, Company data, Bernstein analysis
+
+Globally, Doosan has manufactured and supplied a significant number of core components, including 34 reactor vessels and 124 steam generators. For AP1000 designs, Doosan has delivered 6 reactor vessel and 12 steam generators. Any new competitor attempting to enter this highly regulated market would need to dedicate the same kind of time and investment to reach the same level of capability and trust. Doosan also began investing heavily in SMR manufacturing more than five years ago, building new experience ahead of the market.
+
+EXHIBIT 6: Doosan's booked nuclear equipment contracts. The company has spent over 40 years as a major global supplier of nuclear components, developing unrivaled expertise in the design and manufacturing of these systems
+
+<table><tr><td colspan="2">Operator</td><td>NSSS Supplier</td><td>Size / Type</td><td>80-90</td><td>90-00</td><td>00-10</td><td>10-20</td><td>20-30</td></tr><tr><td rowspan="14">Domestic</td><td>KHNP/KEPCO</td><td>Westinghouse</td><td>900 MW</td><td>Hanbit 1&amp;2</td><td></td><td></td><td></td><td></td></tr><tr><td>KHNP/KEPCO</td><td>Framatome</td><td>900 MW</td><td>Hanul 1&amp;2</td><td></td><td></td><td></td><td></td></tr><tr><td>KHNP/KEPCO</td><td>Doosan</td><td>1000 MW (OPR1000)</td><td>Hanbit 3&amp;4</td><td></td><td></td><td></td><td></td></tr><tr><td>KHNP/KEPCO</td><td>Doosan</td><td>700 MW (PHWR)</td><td>Wolsung 2</td><td></td><td></td><td></td><td></td></tr><tr><td>KHNP/KEPCO</td><td>Doosan</td><td>1000 MW (OPR1000)</td><td>Hanul 3&amp;4</td><td></td><td></td><td></td><td></td></tr><tr><td>KHNP/KEPCO</td><td>Doosan</td><td>700 MW (PHWR)</td><td>Wolsung 3&amp;4</td><td></td><td></td><td></td><td></td></tr><tr><td>KHNP/KEPCO</td><td>Doosan</td><td>1000 MW (OPR1000)</td><td>Hanbit 3&amp;4</td><td></td><td></td><td></td><td></td></tr><tr><td>KHNP/KEPCO</td><td>Doosan</td><td>1000 MW (OPR1000)</td><td>Hanul 5&amp;6</td><td></td><td></td><td></td><td></td></tr><tr><td>KHNP/KEPCO</td><td>Doosan</td><td>1000 MW (OPR1000)</td><td>KEDO 1&amp;2</td><td></td><td></td><td></td><td></td></tr><tr><td>KHNP/KEPCO</td><td>Doosan</td><td>1000 MW (OPR1000)</td><td>Shin-Kori 1&amp;2</td><td></td><td></td><td></td><td></td></tr><tr><td>KHNP/KEPCO</td><td>Doosan</td><td>1000 MW (OPR1000)</td><td>Shin-Wolsung 1&amp;2</td><td></td><td></td><td></td><td></td></tr><tr><td>KHNP/KEPCO</td><td>Doosan</td><td>1400 MW (APR1400)</td><td>Saeul 1&amp;2</td><td></td><td></td><td></td><td></td></tr><tr><td>KHNP/KEPCO</td><td>Doosan</td><td>1400 MW (APR1400)</td><td>Saeul 3&amp;4</td><td></td><td></td><td></td><td></td></tr><tr><td>KHNP/KEPCO</td><td>Doosan</td><td>1400 MW (APR1400)</td><td>Shin-Hanul 3&amp;4</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="8">Overseas</td><td>CNNC</td><td>CNNC</td><td>700 MW (PHWR)</td><td colspan="3">China Qinshan III</td><td></td><td></td></tr><tr><td>CNNC</td><td>CNNC</td><td>600 MW</td><td colspan="3">China Qinshan</td><td></td><td></td></tr><tr><td>SMNPC</td><td>Westinghouse</td><td>1000 MW (AP1000)</td><td colspan="3">China Sanmen 1 / Haiyang 1</td><td></td><td></td></tr><tr><td>SCE&amp;G</td><td>Westinghouse</td><td>1000 MW (AP1000)</td><td colspan="3">US VC Summer 2&amp;3</td><td></td><td></td></tr><tr><td>Southern</td><td>Westinghouse</td><td>1000 MW (AP1000)</td><td colspan="3">US Vogtle 3&amp;4</td><td></td><td></td></tr><tr><td>Progress Energy</td><td>Westinghouse</td><td>1000 MW (AP1000)</td><td colspan="3">US Levy Country 1&amp;2</td><td></td><td></td></tr><tr><td>ENEC</td><td>KHNP/KEPCO</td><td>1400 MW (APR1400)</td><td colspan="3">UAE BNPP 1&amp;2, 3&amp;4</td><td></td><td></td></tr><tr><td>CEZ</td><td>KHNP/KEPCO</td><td>1000MW (APR1000)</td><td colspan="3">Dukovany</td><td></td><td></td></tr></table>
+
+Source: Company data, Bernstein analysis
+
+Our bottom-up analysis of nuclear projects globally shows a substantial and trackable order pipeline for Doosan. We estimate around 35GW of nuclear project with USD250bn of TAM where Doosan could realistically participate, translating into roughly USD44bn or KRW67tn, of potential equipment contracts for the company.
+
+EXHIBIT 7: We estimate USD44bn or KRW67tn of potential nuclear equipment contracts for Doosan Enerbility over the medium term
+
+Doosan Enerbility: Potential nuclear order backlog (KRW tn)  
+![](images/4682e8108a15f0480abd752e7109bd04bc76b8147f38aa9a1033d9018524a6ff.jpg)  
+Source: Company data, Bernstein estimates and analysis
+
+Importantly, this TAM includes projects that are sufficiently advanced to be approaching equipment contracting or pre-procurement stages, and therefore excludes a wider set of earlier-stage opportunities that could mature over time. In that sense, we view this as an actionable near-to-medium-term addressable market rather than an all-inclusive industry total.
+
+EXHIBIT 8: We estimate around 35GW of nuclear project with USD250bn of TAM where Doosan could realistically participate
+
+<table><tr><td>Country</td><td>Project</td><td>Capacity (GW)</td><td>Construction start</td><td>Expected completion</td><td>Developer</td><td>Status</td><td>Total project cost (USD bn)</td><td>Doosan contract value (USD bn)</td><td>Doosan contract value (KRW tn)</td></tr><tr><td>South Korea</td><td>Shin Hanul 3 &amp; 4</td><td>2.8</td><td>2025</td><td>2032</td><td>KHNP</td><td>Booked</td><td>8.8</td><td>1.9</td><td>2.9</td></tr><tr><td>Czech Republic</td><td>Dukovany 5 &amp; 6</td><td>2.1</td><td>2029</td><td>2036</td><td>EDU II / KHNP</td><td>Booked</td><td>18.6</td><td>3.7</td><td>5.6</td></tr><tr><td>Bulgaria</td><td>Kozloduy 7 &amp; 8</td><td>2.0</td><td>2027</td><td>2035</td><td>Westinghouse</td><td>Not Booked</td><td>14.0</td><td>2.5</td><td>3.8</td></tr><tr><td>Poland</td><td>Lubiatowo-Kopalino 1-3</td><td>3.0</td><td>2028</td><td>2036</td><td>PEJ / Westinghouse</td><td>Not Booked</td><td>20.0</td><td>3.6</td><td>5.5</td></tr><tr><td>Vietnam</td><td>Ninh Thuan 2</td><td>2.0</td><td>Late 2020s</td><td>2035</td><td>Petrovietnam / KHNP</td><td>Not Booked</td><td>11.0</td><td>2.4</td><td>3.7</td></tr><tr><td>Czech Republic</td><td>Temelín 3 &amp; 4</td><td>2.1</td><td>Late 2020s</td><td>Early/Mid 2030s</td><td>ČEZ / KHNP</td><td>Not Booked</td><td>18.6</td><td>3.7</td><td>5.6</td></tr><tr><td>United States</td><td>Matador (4 units)</td><td>4.0</td><td>2026</td><td>Early 2030s</td><td>Fermi America / West.</td><td>Not Booked</td><td>32.0</td><td>6.4</td><td>9.7</td></tr><tr><td>South Korea</td><td>Domestic 1 &amp; 2</td><td>2.8</td><td>2030</td><td>2037</td><td>KHNP</td><td>Not Booked</td><td>8.8</td><td>1.9</td><td>2.9</td></tr><tr><td>Romania</td><td>Doicesti SMR (6 units)</td><td>0.5</td><td>2026</td><td>2033</td><td>RoPower / Nuscale</td><td>Not Booked</td><td>6.5</td><td>1.6</td><td>2.5</td></tr><tr><td>United States</td><td>Kemmerer 1 (1 unit)</td><td>0.3</td><td>2026</td><td>2030</td><td>TerraPower</td><td>Not Booked</td><td>4.0</td><td>0.4</td><td>0.6</td></tr><tr><td>United States</td><td>Dow Seadrift (4 units)</td><td>0.3</td><td>2027</td><td>Early 2030s</td><td>Dow / X-energy</td><td>Not Booked</td><td>2.6</td><td>0.6</td><td>1.0</td></tr><tr><td>United Kingdom</td><td>Rolls-Royce SMR (3 units)</td><td>1.4</td><td>Late 2020s</td><td>Early/Mid 2030s</td><td>GBE / Rolls-Royce</td><td>Not Booked</td><td>7.2</td><td>1.1</td><td>1.6</td></tr><tr><td>Czech Republic</td><td>Temelín SMR (1 unit)</td><td>0.5</td><td>Late 2020s</td><td>Early/Mid 2030s</td><td>ČEZ / Rolls-Royce</td><td>Not Booked</td><td>2.4</td><td>0.4</td><td>0.5</td></tr><tr><td>United States</td><td>Amazon Cascade (12 units)</td><td>1.0</td><td>Early 2030s</td><td>Mid 2030s</td><td>Amazon / X-energy</td><td>Not Booked</td><td>7.7</td><td>1.9</td><td>2.9</td></tr><tr><td>United States</td><td>Westinghouse/Brookfield (10 units)</td><td>10.0</td><td>2030s</td><td>2030s-2040s</td><td>Westinghouse/Brookfield</td><td>Not Booked</td><td>80.0</td><td>12.0</td><td>18.2</td></tr></table>
+
+Source: Company data, Bernstein estimates and analysis
+
+Within the pipeline we track, large reactors dominate, with SMRs contributing a smaller but still meaningful portion of future optionality. Regionally, we expect the next several years to be dominated by European projects, with U.S. projects becoming more material toward the end of the decade as financing, licensing, and supply-chain support continue to improve.
+
+EXHIBIT 9: Large reactors dominate, with SMRs contributing a smaller but still meaningful portion of future optionality
+
+Nuclear order by reactor (KRW tn)
+
+![](images/a95c3c44bc1f598b2c841490c07f70371aadec8b004d37172a32f586da72041d.jpg)  
+EXHIBIT 10: Regionally, we expect the next several years to be dominated by European and U.S. projects  
+Nuclear order by region (KRW tn)
+
+![](images/dd242658564ef07c270f8cb1e9e6b653a359adf57571dfe8dee6dab7a9c7b128.jpg)  
+Source: Company data, Bernstein estimates (2026+) and analysis  
+Source: Company data, Bernstein estimates (2026+) and analysis
+
+There are several near term catalysts. In Europe, Poland is one of the most important projects to watch, with the project progressing toward equipment and EPC contracting this year. Poland has selected Westinghouse AP1000 technology for three units at Lubiatowo-Kopalino, with national plans for construction of the first plant to start in 2026 and first unit operation in 2033.
+
+EXHIBIT 11: Polish nuclear project is one of the most important projects to watch, with the project progressing toward equipment and EPC contracting in the near term
+
+## SCHEDULE FOR THE CONSTRUCTION OF THE FIRST NUCLEAR POWER PLANT IN POLAND
+
+![](images/f968f86349b8eea45bac5028ba9369800863fc55c71111f984647f70a05b6800.jpg)
+
+KEY MILESTONES FOR 2027 - 2030  
+![](images/482e2769bc730385b16581da2a58dd6dc2a156507a18cb7d7bc3bc71f4f56020.jpg)  
+Source: Company data, Bernstein analysis
+
+Bulgaria appears next in line and is currently targeting EPC contracting in 2027. Bulgaria plans to add two Westinghouse AP1000 units (Kozloduy-7 and -8) at the existing Kozloduy site and is working with a consortium to clarify a fixed-price offer. The project company and government expect to take a final investment decision in 2026, so that year's primary milestone is the FID itself and associated financing and contracting, after which detailed design and construction scheduling for Kozloduy-7 can proceed.
+
+In the U.S., the policy backdrop is also improving. The U.S. Department of Energy has announced a USD17.5bn conditional loan program to finance long-lead items for up to 10 large-scale AP1000 reactors, explicitly to help rebuild the domestic supply chain and accelerate deployment. We view this as structurally positive for Doosan given its track record supplying AP1000 components.
+
+EXHIBIT 12: Bulgaria is also advancing to EPC contract stage within 2027  
+![](images/80f14999ea0034cfb08e592e5ed44dbb5a5262419bb318d15d33837161356cec.jpg)  
+Source: Company data, Bernstein analysis
+
+A key question is what kind of profitability heavy nuclear equipment can earn. Public disclosures from Framatome, one of Europe's key nuclear equipment suppliers, show EBITDA margins in the low-teens range. This is similar to Westinghouse expectation of 10-20% EBITDA margin expectations for US projects. This suggests that mid-double digit EBITDA margin profitability is realistic for scaled, well-executed nuclear equipment businesses.
+
+EXHIBIT 13: We expect nuclear equipment margins are in the mid-double digit EBITDA margin range  
+Framatome's revenue and EBITDA  
+![](images/758a8f2813a39b16fcc2dd8b401128b39d86eaf4ebb81e09e7bccc437aab4bc6.jpg)  
+Source: Company data, Bernstein analysis
+
+## GAS TURBINE FUNDAMENTALS SUPPORTS PRICE AND MARGIN EXPANSION
+
+There has never been a better time to be a manufacturer of natural gas turbines in our view. Procuring gas turbines has become increasingly challenging, with lead times stretching to five years from two to three years historically. The global gas turbine industry is grappling with a significant backlog as demand outpace production capacity. The three dominant suppliers — Siemens Energy (SE), GE Vernova (GEV), and Mitsubishi Heavy Industries (MHI), control over 70% of the world's gas turbine manufacturing capacity, yet their combined output cannot meet the surge in orders.
+
+The global gas turbine market remains structurally supported despite the significant capacity expansion now underway. We estimate global turbine manufacturing capacity could rise by more than 60% to around 110GW by 2030. This is largely by brownfield expansions rather than speculative greenfield overbuild which is an important distinction versus the prior cycle. Because most new capacity is being added incrementally to existing facilities, it should be easier and cheaper to scale back if demand normalizes, which means oversupply risk is more manageable than in past downturns. Crucially, the market entered this expansion phase with effectively no excess capacity, reinforcing our view that the supply-demand balance should remain relatively tight even as new capacity comes online.
+
+For further details on the gas turbine market, please refer to Bernstein's research note: Powering AI: Mapping the gas turbine supply stack - a unified approach
+
+EXHIBIT 14: We estimate global turbine manufacturing capacity could rise by more than 60% to around 110GW by 2030  
+Global Gas Turbine Capacity (GW)  
+![](images/5c3e4ad63f4d44fa550b1e5b517146ab8cb6f3bb61cbcd7d5ffbc290a3e8fd0b.jpg)  
+Source: Company data, Bernstein estimates and analysis
+
+While turbine capacity is expanding rapidly, we still expect the market to remain structurally supportive even after expansion. According to third party data from Wood Mackenzie and IEA, gas turbine orders are set to almost double to around 100GW annually in the next few years from 57GW in 2024. With current gas turbine manufacturing capacity at around 60GW, there is simply not enough capacity to meet projected future demand until end of the decade which could be enough to meet current turbine demand expectations.
+
+EXHIBIT 15: There has never been a better time to be a manufacturer of natural gas turbines. Gas turbine orders are set to increase to 100GW annually in the next few years which outpace current capacity of 60GW
+
+Global gas turbine orders vs production capacity (GW)  
+![](images/f80d3c75b3cf3511f9364018bf110d5d746ffb48e31ccca0d7b25e4ecfc31660.jpg)  
+Source: IEA, Company data, Bernstein estimates and analysis
+
+New orders for gas turbine pricing continues to trend higher, with reported pricing for recent orders reaching 70% above year-ago levels for heavy-duty gas turbines. The cost of natural gas power generation projects in the US has surged by approximately 50% over the past three years driven by rising gas power demand and persistent supply chain constraints. In 2024, the average capital expenditure for a combined-cycle gas turbine (CCGT) project reached \$2,115/k, according to BloombergNEF's analysis of utility filings with US Public Service Commissions. Meanwhile, simple-cycle or open-cycle gas turbine (OCGT) projects \$1,557/kw. This upward trend reflects a combination of strong demand for new gas-fired capacity outstripping manufacturing capabilities and broader inflationary pressures. CCGTs are primarily deployed for baseload power generation, while OCGTs are more suited for peaking or backup purposes. The persistent cost growth in CCGT projects suggests utilities are actively pursuing additional or replacement baseload capacity. Notably, CCGT projects seeking state public service commission approval this year have anticipated operational start dates between 2029 and 2031, implying development timelines of four to six years.
+
+EXHIBIT 16: New orders for gas turbine pricing continues to trend higher, with reported pricing for recent orders reaching 70% above year-ago levels for heavy duty gas turbines  
+Industry gas turbine order price tracker (\$/kW)  
+![](images/22f06ec98e078adb6def2db55607d58f0f0cf9251f55a17194574848dccfd14c.jpg)  
+Source: Company data, Bernstein analysis
+
+Doosan's peers are already demonstrating that margins can move from low-to-mid teens toward the $20\%$ to $25\%$ range over next several years as pricing and installed base for services expands. We think this has clear readthrough for Doosan.
+
+EXHIBIT 17: For gas turbine manufacturers, EBIT margins are expanding to the 20% range in 2028. We think this has clear readthrough for Doosan
+
+Gas and Power EBIT margin  
+![](images/82e7e97c2559f4ab5a2d766c824fd9d66eefec00132d66d4b6ef34d323cc4fb8.jpg)  
+Source: Company data, Bernstein analysis
+
+For Doosan specifically, we expect manufacturing capacity to increase from 8 turbines per year currently to 12 in 2028 and 16 by 2030, which is our base case. In practice, management appears to retain the ability to push further, potentially up to 24 units per year if demand warrants, but we do not assume that in our forecasts.
+
+EXHIBIT 18: Doosan's turbine manufacturing capacity and turbine orders  
+Doosan Enerbility: Gas turbine production capacity and orders (units)  
+![](images/7469aa9ba4ae36fca150b7a9ee8f06367e3e1fb43d3b2374060d363e8dd6ebf9.jpg)  
+Source: Company data, Bernstein estimates (2026+) and analysis
+
+Our core assumption is that orders continue to rise broadly in line with capacity, with cumulative shipped turbines reaching roughly 45 units by 2030 and 120 units by 2035. That growing installed base is critical because it supports the emergence of a very meaningful gas services business. On our estimates, Doosan's gas service revenue could reach around KRW0.4tn by 2030 and KRW1.1tn by 2035.
+
+EXHIBIT 19: We expect cumulative shipped turbines reaching roughly 45 units by 2030 and 120 units by 2035. This implies gas service revenue of KRW1.1tn by 2035
+
+Gas turbines in service by turbine vintage (units) and service revenue (KRW tn)  
+![](images/dcb086f3d5484badcaf05ba2e0a9fffcc1f3f9148564c5b30d7ed394a3bb80dd.jpg)  
+Source: Company data, Bernstein estimates (2026+) and analysis  
+More broadly, we expect Doosan's gas business new orders to increase from KRW4.7tn in 2025 to KRW6.2tn in 2026, and to reach KRW6.9tn by 2030. Upside to this path would come from Doosan selling more than the 16 units per year that we assume in our base case.  
+EXHIBIT 20: We expect Doosan's gas business new orders to increase from KRW4.7tn in 2025 to KRW6.2tn in 2026, and to reach KRW6.9tn by 2030
+
+Doosan Enerbility: Gas segment annual orders (KRW tn)  
+![](images/e962366ac3d14f2a51bcef19b4c40def366307dc780e5883efbfd306fc556b2e.jpg)  
+Source: Company data, Bernstein estimates (2026+) and analysis
+
+## DOOSAN ENERBILITY'S FINANCIAL OUTLOOK
+
+Putting this together, we believe the market is still underappreciating Doosan Enerbility's value. New orders are the most important driver of Doosan Enerbility's future revenue and backlog growth. The company's 2025 order intake reached KRW14.7tn, more than doubling YoY, driven by Czech nuclear, gas turbines and CCPP EPC, while order backlog increased to KRW23.0tn by year-end 2025. We expect annual orders to grow from \~KRW15tn in 2025 to \~KRW21tn by end of the decade.
+
+EXHIBIT 21: New orders are a key driver of future revenue and backlog growth  
+![](images/b00e75ce45ee6c41501267c6d902f1a5b8f110d1ed5553259d8ea8fd0a2fedfd.jpg)  
+Source: Company data, Bernstein estimates and analysis
+
+More importantly, the quality of backlog is improving. Legacy coal and desalination projects continue to fade as a share of revenue, while nuclear and gas are becoming the dominant growth engines. Management is explicitly repositioning the business toward higher-margin nuclear and gas equipment, and expects backlog to expand further to around KRW48tn by 2030 as order intake continues to grow. In our view, we expect the backlog to rise to KRW53tn by 2030 based on our expectations of projects and orders that are coming to the market.
+
+EXHIBIT 22: We expect order backlog reaches KRW53tn in 2030 which is above company target of KRW48tn  
+Doosan Enerbility: 2030E Order backlog (KRW bn)  
+![](images/f6014893a6408279db91b9482191238e0ea12a1eb0fd9e856611d9a7c09518b2.jpg)  
+Source: Company data, Bernstein estimates and analysis
+
+First, we expect standalone revenue to grow at a $13\%$ CAGR from 2025 to 2030, with Doosan Enerbility's standalone revenue reaching KRW14.7tn in 2030 on our estimates. Notably, our forecast exceeds the company's own target of KRW11.3tn for 2030, reflecting our more optimistic view on the business's growth prospects.
+
+EXHIBIT 23: We project revenue to reach KRW14.7tn in 2030 (+13% CAGR). Notably, our forecast exceeds the company's own target of KRW11.3tn for 2030, reflecting our more optimistic view on the business's growth prospects
+
+Doosan Enerbility: Standalone revenue (KRW bn)  
+![](images/cf3a6d55d6565931e9874a4779e1d0b6ce8b59201c3cf0e06d41c531a599d6a2.jpg)  
+Source: Company data, Bernstein estimates and analysis
+
+Doosan Enerbility is transitioning its business mix toward high-margin nuclear and gas segments, laying the groundwork for meaningful profitability gains over the medium to long term. The company's diversified energy equipment portfolio provides multiple revenue streams while nuclear and gas equipment exports offer the highest margin and growth potential. Doosan's nuclear and gas power generation equipment revenue mix is expected to increase from 41% in 2024 to over 75% by 2028.
+
+EXHIBIT 24: Doosan's nuclear and gas power generation equipment revenue mix is expected to increase from $41\%$ in 2024 to over $75\%$ by 2028
+
+Doosan Enerbility: Standalone revenue mix by segment (%)  
+![](images/4d28f7aafb50d1e010ec77265e48f3a9c76d4d7d691303b70cba18cc184b2d04.jpg)  
+Source: Company data, Bernstein estimates and analysis
+
+As backlog composition shifts toward higher-margin nuclear and gas equipment, and legacy coal exposure continues to decline, we expect standalone operating margins to move into the low-teens by 2028, more in line with industry profitability. With the combined nuclear and gas revenue share increasing from $41\%$ in 2024 to higher than $75\%$ from 2028 onward, we forecast a significant rise in Enerbility's operating profit margin, from $4\%$ in 2025 to reach low-teens from $2028+$ .
+
+EXHIBIT 25: We forecast a significant rise in Enerbility's operating profit margin, from $4\%$ in 2025 to low-teens from 2028+
+
+Doosan Enerbility: OPM vs Nuclear + Gas Mix  
+![](images/a58512cead453d91bb7c98325d5fbd2b84716d36aaf73782687bd87e92650262.jpg)  
+Source: Company data, Bernstein estimates and analysis
+
+We summarize the key financial metrics for Doosan Enerbility below. We expect company consolidated revenue (including Bobcat and Fuel Cell) to grow at 10% CAGR and earnings to grow at 89% CAGR over the next 5 years. FCF is expected to remain positive with a healthy balance sheet of 21% net debt to equity in 2025. Based on our estimates, market P/E multiple will compress to 25x in 2030.
+
+EXHIBIT 26: Doosan Enerbility's consolidated financial outlook
+
+<table><tr><td colspan="10">Doosan Enerbility</td></tr><tr><td>KRW bn</td><td>2023A</td><td>2024A</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td><td>25-30 CAGR</td></tr><tr><td>Sales</td><td>17,590</td><td>16,233</td><td>17,058</td><td>18,188</td><td>19,981</td><td>23,906</td><td>25,534</td><td>27,275</td><td>10%</td></tr><tr><td>Operating Profit</td><td>1,467</td><td>1,018</td><td>763</td><td>1,150</td><td>1,677</td><td>2,282</td><td>2,730</td><td>3,224</td><td>33%</td></tr><tr><td>EBITDA</td><td>1,928</td><td>1,502</td><td>1,314</td><td>1,725</td><td>2,264</td><td>2,877</td><td>3,324</td><td>3,815</td><td>24%</td></tr><tr><td>Earnings</td><td>56</td><td>111</td><td>85</td><td>443</td><td>800</td><td>1,220</td><td>1,600</td><td>2,055</td><td>89%</td></tr><tr><td>EPS</td><td>87</td><td>174</td><td>132</td><td>691</td><td>1,250</td><td>1,904</td><td>2,499</td><td>3,208</td><td>89%</td></tr><tr><td>FCF</td><td>1,467</td><td>(411)</td><td>54</td><td>1,002</td><td>1,084</td><td>1,631</td><td>1,993</td><td>2,377</td><td>113%</td></tr><tr><td>GPM</td><td>17%</td><td>17%</td><td>16%</td><td>17%</td><td>17%</td><td>17%</td><td>18%</td><td>18%</td><td></td></tr><tr><td>OPM</td><td>8%</td><td>6%</td><td>4%</td><td>6%</td><td>8%</td><td>10%</td><td>11%</td><td>12%</td><td></td></tr><tr><td>P/S</td><td>2.9</td><td>3.2</td><td>3.0</td><td>2.8</td><td>2.6</td><td>2.2</td><td>2.0</td><td>1.9</td><td></td></tr><tr><td>EV/S</td><td>3.4</td><td>3.7</td><td>3.5</td><td>3.3</td><td>3.0</td><td>2.5</td><td>2.3</td><td>2.2</td><td></td></tr><tr><td>EV/EBITDA</td><td>31.1</td><td>39.9</td><td>45.6</td><td>34.7</td><td>26.5</td><td>20.8</td><td>18.0</td><td>15.7</td><td></td></tr><tr><td>P/E</td><td>928.6</td><td>463.6</td><td>609.1</td><td>116.6</td><td>64.5</td><td>42.3</td><td>32.3</td><td>25.1</td><td></td></tr><tr><td>PEG Ratio</td><td>-8.7</td><td>4.6</td><td>-25.5</td><td>0.3</td><td>0.8</td><td>0.8</td><td>1.0</td><td>0.9</td><td></td></tr><tr><td>ROACE</td><td>5%</td><td>3%</td><td>2%</td><td>4%</td><td>6%</td><td>8%</td><td>9%</td><td>10%</td><td></td></tr><tr><td>FCF yield</td><td>3%</td><td>-1%</td><td>0%</td><td>2%</td><td>2%</td><td>3%</td><td>4%</td><td>5%</td><td></td></tr><tr><td>Net Debt to Equity</td><td>18%</td><td>24%</td><td>21%</td><td>14%</td><td>5%</td><td>-5%</td><td>-17%</td><td>-27%</td><td></td></tr></table>
+
+Source: Company data, Bernstein estimates and analysis
+
+We value standalone Doosan Enerbility on a DCF model. Based on our assumptions, we value Doosan Enerbility on a standalone basis at an enterprise value of KRW63tn (from KRW59tn previously). We apply a WACC of 8% (unchanged).
+
+EXHIBIT 27: We value standalone Doosan Enerbility on a DCF model. Based on our assumptions, we value Doosan Enerbility on a standalone basis at an enterprise value of KRW63tn.
+
+<table><tr><td>KRW bn</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E 2031-2050E</td><td>Terminal</td></tr><tr><td>Revenue (KRW bn)</td><td>6,558</td><td>7,652</td><td>7,367</td><td>7,881</td><td>8,224</td><td>9,321</td><td>12,359</td><td>13,320</td><td>14,737</td><td></td></tr><tr><td>Sales Growth</td><td></td><td>16.7%</td><td>(3.7%)</td><td>7.0%</td><td>4.4%</td><td>13.3%</td><td>32.6%</td><td>7.8%</td><td>10.6%</td><td></td></tr><tr><td>EBIT</td><td>167</td><td>225</td><td>244</td><td>302</td><td>493</td><td>792</td><td>1,236</td><td>1,598</td><td>2,063</td><td></td></tr><tr><td>EBIT Margin</td><td>2.6%</td><td>2.9%</td><td>3.3%</td><td>3.8%</td><td>6.0%</td><td>8.5%</td><td>10.0%</td><td>12.0%</td><td>14.0%</td><td></td></tr><tr><td>Tax</td><td>(109)</td><td>(131)</td><td>(3)</td><td>(90)</td><td>49</td><td>79</td><td>185</td><td>240</td><td>309</td><td></td></tr><tr><td>% of EBIT</td><td>(64.9%)</td><td>(58.0%)</td><td>(1.1%)</td><td>(29.9%)</td><td>10.0%</td><td>10.0%</td><td>15.0%</td><td>15.0%</td><td>15.0%</td><td></td></tr><tr><td>NOPAT</td><td>276</td><td>356</td><td>246</td><td>392</td><td>444</td><td>713</td><td>1,051</td><td>1,359</td><td>1,754</td><td></td></tr><tr><td>D&amp;A</td><td>170</td><td>138</td><td>135</td><td>145</td><td>206</td><td>280</td><td>433</td><td>666</td><td>737</td><td></td></tr><tr><td>% of sales</td><td>2.6%</td><td>1.8%</td><td>1.8%</td><td>1.8%</td><td>2.5%</td><td>3.0%</td><td>3.5%</td><td>5.0%</td><td>5.0%</td><td></td></tr><tr><td>(CapEx)</td><td>(173)</td><td>(191)</td><td>(188)</td><td>(218)</td><td>(247)</td><td>(280)</td><td>(371)</td><td>(400)</td><td>(442)</td><td></td></tr><tr><td>% of sales</td><td>2.6%</td><td>2.5%</td><td>2.5%</td><td>2.8%</td><td>3.0%</td><td>3.0%</td><td>3.0%</td><td>3.0%</td><td>3.0%</td><td></td></tr><tr><td>FCF</td><td>273</td><td>302</td><td>194</td><td>319</td><td>403</td><td>713</td><td>1,112</td><td>1,625</td><td>2,048</td><td>111,952</td></tr></table>
+
+<table><tr><td colspan="2">DCF Valuation</td></tr><tr><td>WACC</td><td>8.02%</td></tr><tr><td>Assumed Perpetual Growth</td><td>3%</td></tr><tr><td>NPV of FCF to 2050</td><td>37,379</td></tr><tr><td>Enterprise Value (EV)</td><td>63,340</td></tr></table>
+
+<table><tr><td>Risk Free Rate</td><td>2.5%</td></tr><tr><td>Equity Beta</td><td>1.3</td></tr><tr><td>Market Risk Premium</td><td>5.7%</td></tr><tr><td>Cost of Equity</td><td>9.6%</td></tr><tr><td>After-tax Cost of Debt</td><td>3.4%</td></tr><tr><td>Target net debt to capital</td><td>25.0%</td></tr><tr><td>WACC</td><td>8.0%</td></tr></table>
+
+Source: Company data, Bernstein estimates and analysis
+
+Our price target for Doosan Enerbility is derived by a SOTP valuation which takes into account the DCF value of standalone Doosan Enerbility. For Doosan Bobcat and Doosan Fuel Cell, we apply an unchanged 30% discount to the market value. Similarly, we apply a 30% discount for the book value of other investment. This gives us a price target of KRW100,000/sh. Our target valuation multiples stand at 145x 2026 P/E before falling to 31x 2030 P/E. Given the strong order backlog and a pipeline of upcoming catalysts, we view the premium valuation as justified as the long term valuation multiple compresses.
+
+EXHIBIT 28: Our price target for Doosan Enerbility is derived by a SOTP valuation. This gives us a price target of KRW100,000/sh
+
+<table><tr><td>SOTP Valuation</td><td>Valuation method</td><td>2026E EBIT</td><td>Implied EV/EBIT</td><td>Interest (%)</td><td>Discount</td><td>Value (KRW bn)</td><td>Value (KRW/sh)</td></tr><tr><td>Doosan Enerbility</td><td>DCF</td><td>493</td><td>128.4</td><td>100.0%</td><td>0%</td><td>63,340</td><td>98,897</td></tr><tr><td>Doosan Bobcat</td><td>MV</td><td>758</td><td>2.2</td><td>46.8%</td><td>30%</td><td>1,632</td><td>2,549</td></tr><tr><td>Doosan Fuel Cell</td><td>MV</td><td>-35</td><td>-16.2</td><td>30.3%</td><td>30%</td><td>567</td><td>885</td></tr><tr><td>Other investment</td><td>BV</td><td></td><td></td><td></td><td>30%</td><td>984</td><td>1,536</td></tr><tr><td>Total Enterprise Value</td><td></td><td></td><td></td><td></td><td></td><td>66,522</td><td>103,866</td></tr><tr><td>Less: Debt</td><td></td><td></td><td></td><td></td><td></td><td>5,749</td><td>8,976</td></tr><tr><td>Add: Cash</td><td></td><td></td><td></td><td></td><td></td><td>3,189</td><td>4,979</td></tr><tr><td>Equity Value</td><td></td><td></td><td></td><td></td><td></td><td>63,963</td><td>100,000</td></tr><tr><td>Implied Target P/S (2026)</td><td></td><td></td><td></td><td></td><td></td><td></td><td>3.5</td></tr><tr><td>Implied Target P/S (2030)</td><td></td><td></td><td></td><td></td><td></td><td></td><td>2.3</td></tr><tr><td>Implied Target P/E (2026)</td><td></td><td></td><td></td><td></td><td></td><td></td><td>144.5</td></tr><tr><td>Implied Target P/E (2030)</td><td></td><td></td><td></td><td></td><td></td><td></td><td>31.1</td></tr></table>
+
+Source: Company data, Bernstein estimates and analysis
+
+Compared to key nuclear peers, Doosan Enerbility's valuation is higher than Chinese and Japanese peers but cheaper than its US peers. Doosan's valuation does not look unreasonable, in our view, particularly in light of Doosan's global footprint and its potential for long-term growth in the US nuclear and gas equipment markets.
+
+EXHIBIT 29: Doosan's valuation does not look unreasonable to us, particularly in light of Doosan's global footprint and its potential for long-term growth in the US nuclear and gas equipment markets
+
+Global nuclear equipment 2026 EV/Sales (x)  
+![](images/3a35e8397849ce3b53674dde615284f589f39686c4f07846e05e9f68b716b672.jpg)  
+Source: Bloomberg, Bernstein analysis
+
+## EXHIBIT 30: Doosan Enerbility's financial outlook
+
+Doosan Enerbility (034020 KS)  
+KRW billion, except per share amounts
+
+<table><tr><td>Income Statement (KRW bn)</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td></tr><tr><td>Revenue</td><td>15,421</td><td>17,590</td><td>16,233</td><td>17,058</td><td>18,188</td><td>19,981</td><td>23,906</td><td>25,534</td><td>27,275</td></tr><tr><td>COGS</td><td>-12,865</td><td>-14,573</td><td>-13,503</td><td>-14,315</td><td>-15,139</td><td>-16,555</td><td>-19,757</td><td>-21,049</td><td>-22,428</td></tr><tr><td>Gross profit</td><td>2,556</td><td>3,017</td><td>2,730</td><td>2,743</td><td>3,049</td><td>3,425</td><td>4,149</td><td>4,485</td><td>4,848</td></tr><tr><td>G&amp;A expenses</td><td>-1,450</td><td>-1,550</td><td>-1,712</td><td>-1,981</td><td>-1,899</td><td>-1,748</td><td>-1,867</td><td>-1,755</td><td>-1,623</td></tr><tr><td>Operating income</td><td>1,106</td><td>1,467</td><td>1,018</td><td>763</td><td>1,150</td><td>1,677</td><td>2,282</td><td>2,730</td><td>3,224</td></tr><tr><td>Finance income (expense)</td><td>-478</td><td>-268</td><td>-182</td><td>-345</td><td>-161</td><td>-108</td><td>-47</td><td>53</td><td>181</td></tr><tr><td>Other non-operating income (expense)</td><td>-815</td><td>-461</td><td>-178</td><td>-91</td><td>-150</td><td>-100</td><td>-100</td><td>-100</td><td>-100</td></tr><tr><td>Profit before income tax</td><td>-186</td><td>738</td><td>658</td><td>327</td><td>839</td><td>1,469</td><td>2,136</td><td>2,683</td><td>3,306</td></tr><tr><td>Income tax expense</td><td>-147</td><td>-221</td><td>-263</td><td>-122</td><td>-210</td><td>-367</td><td>-534</td><td>-671</td><td>-826</td></tr><tr><td>Net income</td><td>-453</td><td>518</td><td>395</td><td>205</td><td>629</td><td>1,102</td><td>1,602</td><td>2,012</td><td>2,479</td></tr><tr><td>Minority interest</td><td>-319</td><td>-462</td><td>-283</td><td>-120</td><td>-187</td><td>-301</td><td>-382</td><td>-412</td><td>-424</td></tr><tr><td>Net income attributable to equity holders</td><td>-772</td><td>56</td><td>111</td><td>85</td><td>443</td><td>800</td><td>1,220</td><td>1,600</td><td>2,055</td></tr><tr><td>EPS (KRW/sh)</td><td>-1,249</td><td>87</td><td>174</td><td>132</td><td>691</td><td>1,250</td><td>1,904</td><td>2,499</td><td>3,208</td></tr><tr><td>GPM</td><td>17%</td><td>17%</td><td>17%</td><td>16%</td><td>17%</td><td>17%</td><td>17%</td><td>18%</td><td>18%</td></tr><tr><td>OPM</td><td>7%</td><td>8%</td><td>6%</td><td>4%</td><td>6%</td><td>8%</td><td>10%</td><td>11%</td><td>12%</td></tr><tr><td>NPM</td><td>-3%</td><td>3%</td><td>2%</td><td>1%</td><td>3%</td><td>6%</td><td>7%</td><td>8%</td><td>9%</td></tr><tr><td>Revenue %YoY</td><td>37%</td><td>14%</td><td>-8%</td><td>5%</td><td>7%</td><td>10%</td><td>20%</td><td>7%</td><td>7%</td></tr><tr><td>OP %YoY</td><td>26%</td><td>33%</td><td>-31%</td><td>-25%</td><td>51%</td><td>46%</td><td>36%</td><td>20%</td><td>18%</td></tr><tr><td>NI %YoY</td><td>-170%</td><td>-214%</td><td>-24%</td><td>-48%</td><td>207%</td><td>75%</td><td>45%</td><td>26%</td><td>23%</td></tr></table>
+
+<table><tr><td>Balance Sheet (KRW bn)</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td></tr><tr><td>Cash and cash equivalents</td><td>1,502</td><td>2,738</td><td>3,042</td><td>3,189</td><td>4,030</td><td>5,006</td><td>6,591</td><td>8,637</td><td>11,195</td></tr><tr><td>Trade receivables (A/R)</td><td>3,713</td><td>3,927</td><td>3,854</td><td>4,662</td><td>4,235</td><td>4,653</td><td>5,567</td><td>5,946</td><td>6,352</td></tr><tr><td>Inventories</td><td>2,459</td><td>2,539</td><td>2,734</td><td>2,544</td><td>2,696</td><td>2,948</td><td>3,518</td><td>3,748</td><td>3,994</td></tr><tr><td>Other current assets</td><td>425</td><td>437</td><td>419</td><td>376</td><td>498</td><td>547</td><td>655</td><td>700</td><td>747</td></tr><tr><td>Current assets</td><td>8,099</td><td>9,642</td><td>10,049</td><td>10,772</td><td>11,460</td><td>13,155</td><td>16,331</td><td>19,031</td><td>22,288</td></tr><tr><td>Property, plant and equipment</td><td>5,022</td><td>5,225</td><td>5,703</td><td>5,777</td><td>5,945</td><td>6,053</td><td>6,053</td><td>6,004</td><td>5,908</td></tr><tr><td>Other non-current assets</td><td>9,929</td><td>9,774</td><td>10,563</td><td>10,965</td><td>10,970</td><td>10,976</td><td>10,981</td><td>10,986</td><td>10,991</td></tr><tr><td>Non-current assets</td><td>14,951</td><td>14,999</td><td>16,266</td><td>16,742</td><td>16,916</td><td>17,029</td><td>17,035</td><td>16,990</td><td>16,899</td></tr><tr><td>Total assets</td><td>23,050</td><td>24,641</td><td>26,315</td><td>27,513</td><td>28,376</td><td>30,184</td><td>33,366</td><td>36,021</td><td>39,187</td></tr><tr><td>Trade payables (A/P)</td><td>2,519</td><td>2,434</td><td>2,221</td><td>3,183</td><td>2,696</td><td>2,948</td><td>3,518</td><td>3,748</td><td>3,994</td></tr><tr><td>Short-Term Borrowings</td><td>2,205</td><td>2,763</td><td>2,539</td><td>2,913</td><td>2,913</td><td>2,913</td><td>2,913</td><td>2,913</td><td>2,913</td></tr><tr><td>Other current liabilities</td><td>3,336</td><td>4,400</td><td>4,185</td><td>4,011</td><td>4,731</td><td>5,185</td><td>6,195</td><td>6,608</td><td>7,049</td></tr><tr><td>Current liabilities</td><td>8,059</td><td>9,597</td><td>8,946</td><td>10,107</td><td>10,340</td><td>11,046</td><td>12,627</td><td>13,270</td><td>13,957</td></tr><tr><td>Long-Term Borrowings</td><td>2,707</td><td>1,952</td><td>3,341</td><td>2,835</td><td>2,835</td><td>2,835</td><td>2,835</td><td>2,835</td><td>2,835</td></tr><tr><td>Other non-current liabilities</td><td>2,203</td><td>2,251</td><td>2,367</td><td>2,562</td><td>2,562</td><td>2,562</td><td>2,562</td><td>2,562</td><td>2,562</td></tr><tr><td>Non-current liabilities</td><td>4,910</td><td>4,203</td><td>5,708</td><td>5,397</td><td>5,397</td><td>5,397</td><td>5,397</td><td>5,397</td><td>5,397</td></tr><tr><td>Total liabilities</td><td>12,969</td><td>13,799</td><td>14,654</td><td>15,504</td><td>15,737</td><td>16,443</td><td>18,024</td><td>18,667</td><td>19,354</td></tr><tr><td>Total equity</td><td>10,080</td><td>10,842</td><td>11,661</td><td>12,009</td><td>12,639</td><td>13,740</td><td>15,342</td><td>17,354</td><td>19,834</td></tr><tr><td>Total liabilities and equity</td><td>23,050</td><td>24,641</td><td>26,315</td><td>27,513</td><td>28,376</td><td>30,184</td><td>33,366</td><td>36,021</td><td>39,187</td></tr></table>
+
+<table><tr><td>Cash flow statement (KRW bn)</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td></tr><tr><td>Net Income</td><td>-453</td><td>518</td><td>395</td><td>205</td><td>629</td><td>1,102</td><td>1,602</td><td>2,012</td><td>2,479</td></tr><tr><td>Depreciation &amp; Amortisation</td><td>466</td><td>461</td><td>485</td><td>551</td><td>576</td><td>587</td><td>594</td><td>594</td><td>591</td></tr><tr><td>Change in working capital</td><td>-215</td><td>587</td><td>-585</td><td>139</td><td>386</td><td>-13</td><td>-11</td><td>-11</td><td>-12</td></tr><tr><td>Others</td><td>827</td><td>506</td><td>-52</td><td>-144</td><td>161</td><td>108</td><td>47</td><td>-53</td><td>-181</td></tr><tr><td>Net cash from operating activities</td><td>625</td><td>2,071</td><td>242</td><td>752</td><td>1,752</td><td>1,784</td><td>2,231</td><td>2,543</td><td>2,877</td></tr><tr><td>Increase in assets (tangible/intangible)</td><td>-545</td><td>-603</td><td>-654</td><td>-698</td><td>-750</td><td>-700</td><td>-600</td><td>-550</td><td>-500</td></tr><tr><td>Others</td><td>474</td><td>-213</td><td>-168</td><td>388</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Net cash from investing activities</td><td>-71</td><td>-817</td><td>-821</td><td>-311</td><td>-750</td><td>-700</td><td>-600</td><td>-550</td><td>-500</td></tr><tr><td>Borrow/Repay</td><td>-2,418</td><td>-215</td><td>861</td><td>-74</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Equity</td><td>1,148</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Dividends</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Others</td><td>138</td><td>162</td><td>-253</td><td>-214</td><td>-161</td><td>-108</td><td>-47</td><td>53</td><td>181</td></tr><tr><td>Net cash from financing activities</td><td>-1,132</td><td>-53</td><td>608</td><td>-288</td><td>-161</td><td>-108</td><td>-47</td><td>53</td><td>181</td></tr><tr><td>Net increase in cash and cash equivalents</td><td>-513</td><td>1,224</td><td>278</td><td>183</td><td>841</td><td>976</td><td>1,585</td><td>2,046</td><td>2,559</td></tr><tr><td>Net Debt to Equity</td><td>34%</td><td>18%</td><td>24%</td><td>21%</td><td>14%</td><td>5%</td><td>-5%</td><td>-17%</td><td>-27%</td></tr><tr><td>Net Debt (Cash)</td><td>3,410</td><td>1,976</td><td>2,839</td><td>2,560</td><td>1,718</td><td>742</td><td>-842</td><td>-2,888</td><td>-5,447</td></tr><tr><td>Invested capital</td><td>14,992</td><td>15,556</td><td>17,542</td><td>17,758</td><td>18,387</td><td>19,489</td><td>21,091</td><td>23,103</td><td>25,582</td></tr></table>
+
+Source: Company data, Bernstein estimates and analysis
+
+## I. REQUIRED DISCLOSURES
+
+References to "Bernstein" or the "Firm" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.
+
+Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.
+
+## VALUATION METHODOLOGY
+
+## Doosan Enerbility Co., Ltd
+
+Our price target for Doosan Enerbility is derived by a SOTP valuation which takes into account the DCF value of standalone Doosan Enerbility, using a WACC of 8.0% and terminal growth rate of 3%. For Doosan Bobcat and Doosan Fuel Cell, we apply a 30% discount to the market value. Similarly, we apply a 30% discount for the book value of other investment. This gives us a price target of KRW100,000/sh.
+
+## RISKS
+
+## Doosan Enerbility Co., Ltd
+
+Key risks facing Doosan Enerbility includes operational cost hikes due to fluctuating raw material and energy prices, uncertainties in the energy market, and possible earnings declines linked to the non-core Doosan Bobcat business or project delays. Additionally, any shortfall in AI-related demand could weigh on share performance.
+
+## RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION
+
+## EQUITY RATINGS DEFINITIONS
+
+## Bernstein brand
+
+The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.
+
+The Bernstein brand has three categories of ratings:
+
+\- Outperform: Stock will outpace the market index by more than 15 pp
+
+• Market-Perform: Stock will perform in line with the market index to within +/-15 pp
+
+• Underperform: Stock will trail the performance of the market index by more than 15 pp
+
+Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Bernstein brand stock ratings are based on a 12-month time horizon.
+
+## Autonomous brand – common stocks
+
+The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).
+
+The Autonomous brand has three categories of common stock ratings:
+
+\- Outperform (OP): Stock will outpace the relevant index by more than 10 pp
+
+\- Neutral (N): Stock will perform in line with the market index to within +/-10 pp
+
+• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp
+
+Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Autonomous brand common stock ratings are based on a 12-month time horizon.
+
+## Autonomous brand – preferred stocks
+
+The Autonomous brand has three categories of preferred stock ratings:
+
+\- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous preferred stock ratings are based on a 6-month time horizon.
+
+## AUTONOMOUS CREDIT RESEARCH
+
+Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.
+
+The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.
+
+## CREDIT RATINGS DEFINITIONS
+
+The Autonomous brand has three categories of credit ratings:
+
+\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+\- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous credit ratings are based on a 6-month time horizon.
+
+A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm
+
+DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES
+
+<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.1%</td><td>16.5%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>36.3%</td><td>17.8%</td></tr><tr><td>Underperform</td><td>SELL</td><td>12.6%</td><td>14.9%</td></tr></table>
+
+\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.
+As of March 31, 2026. All figures are updated quarterly.
+
+## PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY
+
+Doosan Enerbility Co., Ltd (034020.KS) Rating History for Bernstein as of 06/26/2026  
+![](images/dee5b9432023a850542277ce8e5eb0eee88005d3a5db4f625be8c39a8e947ad4.jpg)  
+All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report.
+
+## OTHER MATTERS
+
+The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:
+
++1 Bernstein Institutional Services LLC; New York, New York, USA
+
++44 Bernstein Autonomous LLP; London UK
+
++212 SG Africa Technologies & Services; Casablanca, Morocco
+
++33 BSG France S.A.; Paris, France
+
++34 BSG France S.A.; Madrid, Spain
+
++41 Bernstein Autonomous LLP; Geneva, Switzerland
+
++49 BSG France S.A.; Frankfurt, Germany
+
++91 Bernstein (India) Private Limited; Mumbai, India
+
++852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China
+
++65 Bernstein (Singapore) Private Limited; Singapore
+
++81 Bernstein Japan KK; Tokyo, Japan
+
+Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.
+
+Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.
+
+## CERTIFICATION
+
+Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.
+
+## II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.
+
+## III. OTHER IMPORTANT INFORMATION AND DISCLOSURES
+
+Separate branding is maintained for “Bernstein” and “Autonomous” research products.
+
+\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.
+
+\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.
+
+Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.
+
+This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.
+
+To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.
+
+Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.
+
+To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.
+
+This document may not be passed onto any person in Canada unless that person qualifies as "permitted client" as defined in Section 1.1 of NI 31-103.
+
+To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. ("BTG") is responsible for the distribution of this report in Brazil.
+
+To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.
+
+This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.
+
+To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).
+
+To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.
+
+To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore ("SFA"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at 8 Marina Boulevard, #12-01, Marina Bay Financial Centre, Singapore 018981, +65-6326-7000.
+
+To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the "PRC") in contravention of any applicable laws of the PRC.
+
+This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.
+
+We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.
+
+To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Investment Management Association of Japan. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.
+
+For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. ("Daiwa"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.
+
+To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:
+
+• providing financial product advice;
+
+• dealing in a financial product;
+
+\- making a market for a financial product; and
+
+• providing a custodial or depository service.
+
+To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India ("SEBI") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.
+
+\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).
+
+\- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.
+
+• SCB India does not have any disciplinary history as on the date of this report.
+
+\- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives
+
+• do not have any financial interest in the subject company
+
+• do not have actual/beneficial ownership of one percent or more in securities of the subject company;
+
+\- is not engaged in any investment banking activities for Indian companies, as such;
+
+• have not managed or co-managed a public offering in the past twelve months for any Indian companies;
+
+\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;
+
+• have not received compensation for brokerage services from the subject company in the past twelve months;
+
+\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and
+
+\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.
+
+\- do not have any conflict of interest in the subject company as of the date of this report.
+
+\- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.
+
+\- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.
+
+\- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com
+
+\- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.
+
+\- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.
+
+To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.
+
+## LEGAL
+
+All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.
+
+This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.
+
+This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.
+
+The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.
+
+Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.
+
+This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.
+
+Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.
+
+This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.
+
+The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.
+
+Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.
+
+No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.

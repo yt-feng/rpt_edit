@@ -1,0 +1,111 @@
+ZH_A: 最近有一份关于人形机器人的投行研报，我觉得里面有几个判断非常有意思。你看了吗？
+
+ZH_B: 我看了，核心结论是2026年是人形机器人从样机走向量产的关键拐点。报告认为，特斯拉的Optimus产能大幅上调，同时中国供应链也在快速起量。
+
+ZH_A: 所以这份报告真正要回答的问题是什么？是“谁先跑出来”吗？
+
+ZH_B: 不完全是。它更想回答的是：成本曲线到底什么时候能降到商业可行的程度。报告指出，数据采集方式正在发生一个“范式转移”，这可能会彻底改变整个行业的成本结构。
+
+ZH_A: 范式转移？具体指什么？
+
+ZH_B: 以前大家觉得，要训练机器人，就得用真机器人在真实环境里跑数据，成本极高。但现在行业正在转向“非机器人数据采集”，比如通过遥操作、头戴摄像头等方式获取数据。
+
+ZH_A: 这意味着什么？能省多少钱？
+
+ZH_B: 报告估算，这种新方式的成本只有真实机器人数据采集的20%左右，而且速度更快。这意味着硬件采购的压力会大幅下降，但同时对数据质量和标准化的要求会更高。
+
+ZH_A: 那特斯拉的Optimus进展如何？报告里有什么硬数据吗？
+
+ZH_B: 有。报告提到，特斯拉已经把Fremont产线的年化产能目标从5万台上调到了7万台，2028年还会有一条奥斯汀产线。最关键的是，他们预计2026年9月Optimus的周产能会爬坡到1000台。
+
+ZH_A: 1000台一周？那全年出货量大概是多少？
+
+ZH_B: 报告给出的信号是大概25000台，上下浮动10000台。这个数字比之前市场预期的要激进不少。
+
+ZH_A: 那中国这边呢？报告是怎么看的？
+
+ZH_B: 报告预测2026年中国的人形机器人出货量在4万到5万台之间。这个增长主要来自政府采购和低价消费级产品的爆发。报告特别提到，消费和娱乐场景各占30%左右，政府数据采集占20%。
+
+ZH_A: 所以中国的出货量可能比特斯拉还大？
+
+ZH_B: 从总量上看是这样。但报告也留了一个悬念：工业场景的落地仍然处于验证瓶颈期，精度、节拍和成本都还没达标。
+
+ZH_A: 那产业链上还有什么值得关注的变化？
+
+ZH_B: 有一个趋势很有意思——外包制造。报告认为，硬件供应链是资本密集型行业，回收周期长，所以大部分二线、三线厂商都会选择外包。但像宇树这种头部玩家，坚持自建供应链，可以把整机BOM成本压得更低。
+
+ZH_A: 所以未来是“自建派”和“外包派”的竞争？
+
+ZH_B: 对，但报告没有完全展开的是：谁会在长期竞争中胜出？自建派有成本优势，但外包派有规模弹性。这个问题在完整报告里有更详细的分析。
+
+ZH_A: 那定价方面呢？报告有没有提到价格下降的节奏？
+
+ZH_B: 有。报告预计2026年主流全尺寸产品的价格在15万到30万人民币之间，小尺寸产品在1万到10万之间。而且2026年的价格降幅已经超过50%，但2027年的降幅会收窄。
+
+ZH_A: 降幅收窄？这有点反直觉，为什么不是继续加速降价？
+
+ZH_B: 这就是报告里另一个没有完全展开的悬念。完整报告里讨论了成本下降的边际递减效应和供应链瓶颈。如果你想深入了解，可以去读一下原报告。
+
+ZH_A: 好的，那最后总结一下，这份报告最大的判断是什么？
+
+ZH_B: 一句话：2026年是人形机器人从“样机竞赛”进入“量产竞赛”的元年，但真正大规模商业化的时间点，可能还要看2027年以后的数据质量和成本控制。
+
+ZH_A: 如果你想获取完整报告，可以加入我们的社群，我们会定期分享这类深度研报的解读。
+
+ZH_B: 对，很多关键细节和数据，只有在完整版里才能看到。
+
+EN_A: A new investment bank report on humanoid robots just came out. It has some really interesting takes. Did you get a chance to look at it?
+
+EN_B: I did. The core argument is that 2026 is the inflection point where humanoids move from prototypes to actual production. Tesla is ramping up Optimus capacity, and at the same time, Chinese supply chains are scaling fast.
+
+EN_A: So what's the big question this report is trying to answer? Is it about who gets to mass production first?
+
+EN_B: Not exactly. It's more about when the cost curve bends low enough to make commercial sense. The report highlights a major shift in how data is collected for training these robots, and that shift could completely change the cost structure of the entire industry.
+
+EN_A: A shift in data collection? What does that mean?
+
+EN_B: Traditionally, the idea was you need real robots running in real environments to gather training data. That's incredibly expensive. But now the industry is moving toward "non-robot data capture," like using teleoperation or head-mounted cameras to collect data.
+
+EN_A: And what does that mean in terms of cost?
+
+EN_B: The report estimates it's about 20% of the cost of real-robot data, and much faster. This reduces the pressure to buy expensive hardware upfront. But it also raises the bar on data quality and standardization.
+
+EN_A: Okay, so what about Tesla's Optimus? Any hard numbers in the report?
+
+EN_B: Yes. The report says Tesla has upgraded its Fremont line capacity target from 50,000 to 70,000 units per year. And there's a second line in Austin planned for 2028. The key near-term target is September 2026, when they expect to hit about 1,000 units per week.
+
+EN_A: 1,000 a week? So what does that imply for full-year shipments?
+
+EN_B: The report suggests around 25,000 units, plus or minus 10,000. That's more aggressive than what the market was expecting.
+
+EN_A: And what about China? What does the report say about the Chinese market?
+
+EN_B: The report forecasts 40,000 to 50,000 units for China in 2026. That growth is driven by government procurement and a surge in low-cost consumer products. The mix is roughly 30% consumer, 30% entertainment, 20% government data capture, and 15% education.
+
+EN_A: So China could ship more than Tesla?
+
+EN_B: In total volume, yes. But the report also notes a big caveat: industrial deployment is still stuck in a validation bottleneck. Accuracy, cycle time, and cost haven't been solved yet.
+
+EN_A: What about the supply chain? Any interesting trends?
+
+EN_B: One big one is outsourcing. The report argues that hardware supply chains are capital-intensive with long payback periods, so most second- and third-tier players will outsource. But some leaders, like Unitree, are building in-house supply chains to lower their bill of materials.
+
+EN_A: So it's a battle between the "build it yourself" camp and the "outsource it" camp?
+
+EN_B: Exactly. But the report doesn't fully answer who will win in the long run. That's one of the questions it leaves open for the full report.
+
+EN_A: And pricing? Does the report talk about how fast prices are dropping?
+
+EN_B: Yes. It expects mainstream full-size products to be priced between 150,000 and 300,000 RMB, and small-size products between 10,000 and 100,000 RMB. Price declines in 2026 are already over 50% year-on-year, but the report says the cuts in 2027 will be narrower.
+
+EN_A: Narrower? That's counterintuitive. Why wouldn't prices keep falling faster?
+
+EN_B: That's another question the report doesn't fully unpack in this excerpt. The full report discusses diminishing returns on cost reduction and supply chain bottlenecks. If you want the details, you should read the original.
+
+EN_A: So what's the one big takeaway from this report?
+
+EN_B: One sentence: 2026 is the year humanoids move from prototype contests to production contests. But the real commercialization tipping point probably won't come until 2027 or later, depending on data quality and cost control.
+
+EN_A: If you want the full report, join our community. We share deep dives like this regularly.
+
+EN_B: Yeah, a lot of the key details and data only come through in the full version.

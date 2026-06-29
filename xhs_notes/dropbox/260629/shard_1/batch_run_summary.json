@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 11,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 4,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-GS-South Korea Industrials： Defense and Robotics： Takeaways from US marketing-260629.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kqm3aplg/pdfs/0001-06-GS-South Korea Industrials- Defense and Robotics- Takeaways from US marketing-260629.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/07-NOM-Optimus ramps； China scales up as cost curves bend lower-260628.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kqm3aplg/pdfs/0002-07-NOM-Optimus ramps- China scales up as cost curves bend lower-260628.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-GS-China： Three things in China-260628.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kqm3aplg/pdfs/0003-08-GS-China- Three things in China-260628.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-NOM-USD CNY fix model：Projection：6.8077-260629.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kqm3aplg/pdfs/0004-09-NOM-USD CNY fix model-Projection-6.8077-260629.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-Bernstein-Asia~Pacific Nuclear Power： The next wave of nuclear builds. What does a $250bn nuclear pipeline mean for Doosan？-260629.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kqm3aplg/pdfs/0005-10-Bernstein-Asia-Pacific Nuclear Power- The next wave of nuclear builds. What does a -250bn nuclear pipeline mean for Doosan--260629.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
