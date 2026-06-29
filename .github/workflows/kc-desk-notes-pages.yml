@@ -67,7 +67,7 @@ jobs:
           cache: "pip"
 
       - name: Install Python dependencies
-        run: pip install requests boto3
+        run: pip install requests boto3 pypdf
 
       - name: Update catalog and mirror current PDFs to R2
         id: catalog
