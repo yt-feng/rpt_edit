@@ -78,6 +78,8 @@ let catalogCache = null;
 let catalogFetchedAt = 0;
 let rulesCache = null;
 let rulesFetchedAt = 0;
+let searchIndexCache = null;
+let searchIndexFetchedAt = 0;
 
 function allowedOrigin(request, env) {
   const requestOrigin = request.headers.get("Origin") || "";
@@ -134,6 +136,30 @@ async function loadCatalog(env) {
   catalogCache = await fetchJson(env.CATALOG_URL);
   catalogFetchedAt = now;
   return catalogCache;
+}
+
+function searchIndexUrl(env) {
+  const configured = String(env.SEARCH_INDEX_URL || "").trim();
+  if (configured) return configured;
+  const catalogUrl = String(env.CATALOG_URL || "").trim();
+  if (!catalogUrl) return "";
+  try {
+    const url = new URL(catalogUrl);
+    url.pathname = url.pathname.replace(/\/catalog\.json$/i, "/search_index.json");
+    return url.toString();
+  } catch (_error) {
+    return catalogUrl.replace(/\/catalog\.json(?:\?.*)?$/i, "/search_index.json");
+  }
+}
+
+async function loadSearchIndex(env) {
+  const now = Date.now();
+  if (searchIndexCache && now - searchIndexFetchedAt < CACHE_TTL_MS) return searchIndexCache;
+  const url = searchIndexUrl(env);
+  if (!url) throw new Error("SEARCH_INDEX_URL is not configured");
+  searchIndexCache = await fetchJson(url);
+  searchIndexFetchedAt = now;
+  return searchIndexCache;
 }
 
 async function loadRules(env) {
@@ -1635,8 +1661,24 @@ const DAILY_PICK_SECTOR_PATTERN = /\b(?:shipbuilding|semiconductor|internet|medi
 
 const DAILY_PICK_MACRO_ANCHOR_PATTERN = /\b(?:global views|global economics|economic outlook|economics|economy|macro|rates strategy|rates|fx|currency|currencies|central bank|fed|fomc|ecb|boj|boe|pboc|inflation|cpi|pce|pmi|gdp|recession|monetary|fiscal|asset allocation|global markets|market outlook)\b|宏观|央行|货币政策|财政|利率|汇率|通胀|经济展望|大类资产|资产配置|衰退|流动性/iu;
 
-function dailyPickTopicTags(item) {
-  const text = normalizeText(`${item.title || ""} ${item.title_zh || ""}`);
+function dailyPickSourceText(item, bodyText = "") {
+  return normalizeText(`${item.title || ""} ${item.title_zh || ""} ${item.filename || ""} ${String(bodyText || "").slice(0, 30000)}`);
+}
+
+function textMatches(text, patterns) {
+  return patterns.some((pattern) => {
+    if (pattern instanceof RegExp) return pattern.test(text);
+    return text.includes(normalizeText(pattern));
+  });
+}
+
+function addUnique(list, value) {
+  const clean = String(value || "").trim();
+  if (clean && !list.includes(clean)) list.push(clean);
+}
+
+function dailyPickTopicTags(item, bodyText = "") {
+  const text = dailyPickSourceText(item, bodyText);
   const tags = [];
   const add = (tag) => {
     if (tag && !tags.includes(tag)) tags.push(tag);
@@ -1652,6 +1694,107 @@ function dailyPickTopicTags(item) {
   const bank = String(item.bank_name || item.bank_code || "").replace(/\s+/g, "").trim();
   if (bank && bank.length <= 12) add(bank);
   return tags.slice(0, 4);
+}
+
+function dailyPickThemes(item, tags, bodyText = "") {
+  const titleText = normalizeText(`${item.title || ""} ${item.title_zh || ""} ${item.filename || ""}`);
+  const text = dailyPickSourceText(item, bodyText).slice(0, 16000);
+  const focusedText = `${titleText} ${text}`;
+  const indiaStrong = textMatches(titleText, [/\bindia\b|\binr\b|\brbi\b|印度|印度央行/]);
+  const globalAggStrong = textMatches(titleText, [/\bglobal agg\b|\bglobal aggregate\b|index inclusion|指数纳入/]) ||
+    textMatches(text, [/\bglobal aggregate index\b|bloomberg global aggregate|index inclusion/]);
+  const themes = [];
+  if (indiaStrong) addUnique(themes, "印度宏观与亚洲外汇利率");
+  if (globalAggStrong) addUnique(themes, "全球综合债券指数纳入预期");
+  if (indiaStrong && textMatches(focusedText, [/\bfx\b|currency|currencies|\bdollar\b|\busd\b|汇率|外汇|美元/])) addUnique(themes, "汇率市场");
+  if (indiaStrong && textMatches(focusedText, [/\brates\b|treasury|\bbond\b|\byield\b|curve|债券|国债|收益率|利率/])) addUnique(themes, "利率与债券市场");
+  if (textMatches(focusedText, [/\bfed\b|\bfomc\b|core pce|core cpi|rate hikes|on hold|美联储|加息/])) addUnique(themes, "美联储政策路径与美国通胀数据");
+  if (textMatches(focusedText, [/payroll|unemployment|labor market|就业|失业率/])) addUnique(themes, "就业市场");
+  if (textMatches(focusedText, [/\boil\b|crude|energy|middle east|iran|油价|原油|中东/])) addUnique(themes, "油价与地缘冲突");
+  if (textMatches(focusedText, [/\bchina\b|\bcny\b|\bpboc\b|人民币|中国宏观/])) addUnique(themes, "中国宏观与人民币");
+  if (textMatches(focusedText, [/inflation|\bcpi\b|\bpce\b|通胀/])) addUnique(themes, "通胀路径");
+  if (textMatches(focusedText, [/fiscal|deficit|subsidy|财政|补贴/])) addUnique(themes, "财政压力");
+  if (textMatches(focusedText, [/asset allocation|global markets|portfolio|资产配置|大类资产/])) addUnique(themes, "大类资产配置");
+  if (textMatches(focusedText, [/\bgdp\b|growth|recession|经济增长|衰退/])) addUnique(themes, "经济增长与衰退概率");
+  if (textMatches(focusedText, [/\bfx\b|currency|currencies|\bdollar\b|\busd\b|汇率|外汇|美元/])) addUnique(themes, "汇率市场");
+  if (textMatches(focusedText, [/\brates\b|treasury|\bbond\b|\byield\b|curve|债券|国债|收益率|利率/])) addUnique(themes, "利率与债券市场");
+  for (const tag of tags || []) {
+    if (tag !== "宏观趋势" && tag !== item.bank_name && tag !== item.bank_code) addUnique(themes, tag);
+  }
+  return themes.slice(0, 4);
+}
+
+function dailyPickBodyInsights(item, bodyText = "") {
+  const titleText = normalizeText(`${item.title || ""} ${item.title_zh || ""} ${item.filename || ""}`);
+  const text = dailyPickSourceText(item, bodyText).slice(0, 22000);
+  const focusedText = `${titleText} ${text}`;
+  const indiaContext = textMatches(titleText, [/\bindia\b|\binr\b|\brbi\b|印度|印度央行/]);
+  const fedContext = textMatches(focusedText, [/\bfed\b|\bfomc\b|core pce|core cpi|rate hikes|on hold|payroll|unemployment|labor market|美联储|加息|失业率|就业/]);
+  const insights = [];
+  const add = (value) => addUnique(insights, value);
+
+  if (indiaContext && textMatches(text, [/q1 real gdp growth.*7\s*8.*yoy|7\s*8 yoy.*gdp|q1.*gdp.*above.*forecast/])) {
+    add("印度一季度实际 GDP 同比约 7.8%，增长动能好于此前预期");
+  }
+  if (indiaContext && textMatches(text, [/raised.*cy26.*real gdp|raised.*fy27.*forecast|growth.*tracking above|gdp forecast.*raised/])) {
+    add("增长预测被上修，反映投资、服务业和低油价带来的宏观改善");
+  }
+  if (indiaContext && textMatches(text, [/lower oil prices|oil forecasts.*revised lower|lower inflation trajectory|fertilizer subsidy|urea prices|油价/])) {
+    add("油价下调和化肥价格回落缓解通胀与财政补贴压力");
+  }
+  if (indiaContext && textMatches(text, [/capital flow measures|foreign inflows|full fx hedging support|concessional fx swap|domestic equities.*limits|\brbi\b.*\bfx\b/])) {
+    add("RBI 与印度政府通过外汇对冲、美元融资和投资额度等措施吸引资本流入");
+  }
+  if (indiaContext && textMatches(text, [/removed interest and capital gains tax|capital gains tax.*fii|local tax consultant|foreign investors/])) {
+    add("取消 FII 投资政府债利息与资本利得税，降低外资进入本地债市的操作摩擦");
+  }
+  if (indiaContext && textMatches(text, [/fully accessible route|far universe|15 year 30 y|index eligibility|global aggregate index/])) {
+    add("FAR 债券范围扩展至更长期限，改善进入 Bloomberg Global Aggregate Index 的条件");
+  }
+  if (textMatches(text, [/recommend going long|going long.*bond|long inr|做多/])) {
+    add("配置结论指向做多相关长期债券或利率品种");
+  }
+  if (!indiaContext && textMatches(text, [/lower oil prices|oil prices.*came down|\boil\b|crude|middle east|iran|能源价格|油价/])) {
+    add("油价和地缘局势变化会影响通胀预期、增长判断和政策路径");
+  }
+
+  if (fedContext && textMatches(text, [/\bfed\b.*stays on hold|fed on hold|on hold through year end|no rate hikes|美联储.*观望/])) {
+    add("基准判断是美联储年内维持观望，是否重新加息取决于后续数据");
+  }
+  if (fedContext && textMatches(text, [/core pce.*0\s*2|core cpi.*0\s*2|monthly rates.*0\s*2|inflation.*0\s*2/])) {
+    add("若核心 PCE/CPI 月率维持在 0.2% 或以下，加息压力相对有限");
+  }
+  if (fedContext && textMatches(text, [/core inflation.*0\s*3|0\s*3 m m|inflation remain.*0\s*3/])) {
+    add("若核心通胀持续 0.3% 或更高，政策判断可能重新转鹰");
+  }
+  if (fedContext && textMatches(text, [/unemployment rate falls below 4\s*0|unemployment.*4\s*0|overheating labor market/])) {
+    add("失业率若跌破 4.0%，劳动力市场过热会重新支撑加息风险");
+  }
+  if (fedContext && textMatches(text, [/payroll growth slows|employment growth|labor market data|就业增长/])) {
+    add("就业增长放缓是其基准路径的重要前提");
+  }
+
+  if (textMatches(text, [/recession risk|recession probability|衰退/])) {
+    add("衰退风险评估是资产市场定价的重要约束");
+  }
+  if (textMatches(text, [/ecb|boe|boj|pboc|central banks|央行/])) {
+    add("主要央行的政策分化会影响利率、汇率和风险资产定价");
+  }
+  if (textMatches(text, [/tariff|trade|exports|imports|贸易|出口|进口/])) {
+    add("贸易和出口变化会影响增长结构与市场预期");
+  }
+  if (textMatches(text, [/ai|artificial intelligence|估值|valuation/])) {
+    add("AI 与估值变化仍是风险资产需要跟踪的变量");
+  }
+
+  return insights.slice(0, 5);
+}
+
+function chineseJoin(values, fallback = "") {
+  const clean = values.map((value) => String(value || "").trim()).filter(Boolean);
+  if (!clean.length) return fallback;
+  if (clean.length === 1) return clean[0];
+  return clean.join("、");
 }
 
 function dailyPickMacroScore(item) {
@@ -1676,22 +1819,37 @@ function isLikelySingleStockReport(item) {
   return DAILY_PICK_STOCK_PATTERNS.some((pattern) => pattern.test(text));
 }
 
-function dailyPickIntro(item, tags) {
+function dailyPickIntro(item, tags, bodyText = "") {
   const bank = String(item.bank_name || item.bank_code || "机构").trim();
   const title = reportEnglishTitle(item);
-  const topicText = tags.filter((tag) => tag !== bank && tag !== "宏观趋势").slice(0, 3).join("、") || "全球宏观趋势、政策变化与资产市场";
+  const themes = dailyPickThemes(item, tags, bodyText);
+  const insights = dailyPickBodyInsights(item, bodyText);
+  const topicText = chineseJoin(themes.slice(0, 3), "全球宏观趋势、政策变化与资产市场");
   const landscapeText = reportIsLandscape(item) ? "这份 PDF 为横屏呈现，适合直接做会议讨论或素材摘图。" : "";
   const pageText = reportPageCount(item) ? `报告共 ${reportPageCount(item)} 页，` : "";
+  const detailText = insights.length
+    ? `核心围绕${chineseJoin(insights.slice(0, 3))}。${insights[3] ? `同时，报告也提示：${insights.slice(3, 5).join("，")}。` : ""}`
+    : "核心适合关注宏观主线、政策预期和市场定价变化的读者快速把握当日信息。";
   const tagText = tags
     .map((tag) => String(tag || "").trim())
     .filter(Boolean)
     .map((tag) => `#${tag}`)
     .join("  ");
-  return `${bank}报告《${title}》是对${topicText}的更新。${pageText}核心适合关注宏观主线、政策预期和市场定价变化的读者快速把握当日信息。${landscapeText}\n${tagText}`.trim();
+  return `${bank}报告《${title}》是对${topicText}的全面更新。${pageText}${detailText}${landscapeText}\n${tagText}`.trim();
 }
 
-function selectDailyPicks(catalog, maxItems = 5) {
+function searchTextMapFromIndex(searchIndex) {
+  const map = new Map();
+  const entries = Array.isArray(searchIndex && searchIndex.items) ? searchIndex.items : [];
+  for (const entry of entries) {
+    if (entry && entry.id && entry.text) map.set(String(entry.id), String(entry.text));
+  }
+  return map;
+}
+
+function selectDailyPicks(catalog, maxItems = 5, searchIndex = null) {
   const items = Array.isArray(catalog && catalog.items) ? catalog.items : [];
+  const searchTextById = searchIndex instanceof Map ? searchIndex : searchTextMapFromIndex(searchIndex);
   const dates = recentCatalogDateFolders(items);
   if (!dates.length) return [];
 
@@ -1736,7 +1894,8 @@ function selectDailyPicks(catalog, maxItems = 5) {
   }
 
   return selected.slice(0, maxItems).map(({ item, score, pages, landscape, date }) => {
-    const tags = dailyPickTopicTags(item);
+    const bodyText = searchTextById.get(String(item.id || "")) || "";
+    const tags = dailyPickTopicTags(item, bodyText);
     return {
       id: String(item.id || ""),
       title: reportEnglishTitle(item),
@@ -1751,7 +1910,7 @@ function selectDailyPicks(catalog, maxItems = 5) {
       size_bytes: Number(item.size_bytes || 0) || 0,
       score,
       tags,
-      intro: dailyPickIntro(item, tags),
+      intro: dailyPickIntro(item, tags, bodyText),
     };
   });
 }
@@ -2345,11 +2504,12 @@ async function latestAdminGithubFiles(env) {
 async function handleAccountAdminSummary(request, env, ctx = null) {
   try {
     const adminUser = await requireSuperUser(request, env);
-    const [users, entitlements, files, catalog, wechatSchedule] = await Promise.all([
+    const [users, entitlements, files, catalog, searchIndex, wechatSchedule] = await Promise.all([
       listSiteUsers(env),
       listEntitlementRows(env),
       latestAdminGithubFiles(env),
       loadCatalog(env).catch(() => ({ items: [] })),
+      loadSearchIndex(env).catch(() => ({ items: [] })),
       buildWechatDraftSchedule(env).catch(() => ({
         today_folder: bjtTodayFolder(),
         date_folder: "",
@@ -2363,7 +2523,7 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
       })),
     ]);
     const entitlementsByEmail = entitlementMap(entitlements);
-    const dailyPicks = selectDailyPicks(catalog);
+    const dailyPicks = selectDailyPicks(catalog, 5, searchIndex);
     if (ctx && typeof ctx.waitUntil === "function") {
       ctx.waitUntil(warmAdminGithubCache(env, files).catch(() => null));
     }
