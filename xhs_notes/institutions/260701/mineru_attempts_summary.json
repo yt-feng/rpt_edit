@@ -1,0 +1,29 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 3,
+    "successful_pdf_count": 3,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_zo237_19/pdfs/0001-IMF_Artificial-Intelligence-and-Cybersecurity-in-the-Financial-S_1d64100f.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zo237_19/pdfs/0002-IMF_Honduras-Fourth-and-Fifth-Reviews-Under-the-Extended-Fund-Fa_27a6426e.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_zo237_19/pdfs/0003-IMF_Luxembourg-2026-Article-IV-Consultation-Press-Release-Staff-_9d6aeec4.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
