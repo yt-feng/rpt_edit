@@ -1156,6 +1156,44 @@ button.primary:disabled {
   line-height: 1.45;
 }
 
+.account-admin-file-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.account-admin-file-label span {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 24px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.account-admin-file-label .is-bias {
+  border: 1px solid #f6d08a;
+  background: #fff7df;
+  color: #8a4b08;
+}
+
+.account-admin-file-label .is-desktop {
+  border: 1px solid #b7d8d3;
+  background: #e8f6f3;
+  color: var(--accent-strong);
+}
+
+.account-admin-file-label small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
 .account-admin-file .account-admin-file-actions {
   display: flex;
   align-items: center;
