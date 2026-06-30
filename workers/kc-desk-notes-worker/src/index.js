@@ -1600,6 +1600,17 @@ function latestCatalogDateFolder(items) {
     .sort((a, b) => dateScore(b) - dateScore(a) || b.localeCompare(a))[0] || "";
 }
 
+function recentCatalogDateFolders(items, maxDates = 14) {
+  const seen = new Set();
+  for (const item of items || []) {
+    const date = String(item && item.date_folder || "");
+    if (date) seen.add(date);
+  }
+  return Array.from(seen)
+    .sort((a, b) => dateScore(b) - dateScore(a) || b.localeCompare(a))
+    .slice(0, maxDates);
+}
+
 const DAILY_PICK_MACRO_KEYWORDS = [
   "macro", "global views", "global economics", "economics", "economic", "economy",
   "strategy", "asset allocation", "rates", "fx", "currency", "currencies", "cny",
@@ -1681,29 +1692,50 @@ function dailyPickIntro(item, tags) {
 
 function selectDailyPicks(catalog, maxItems = 5) {
   const items = Array.isArray(catalog && catalog.items) ? catalog.items : [];
-  const latestDate = latestCatalogDateFolder(items);
-  if (!latestDate) return [];
-  const candidates = items
-    .filter((item) => String(item.date_folder || "") === latestDate)
-    .filter((item) => item && item.available !== false)
-    .filter((item) => !isLikelySingleStockReport(item))
-    .map((item) => {
-      const score = dailyPickMacroScore(item);
-      const pages = reportPageCount(item);
-      const landscape = reportIsLandscape(item);
-      const pageEligible = pages > 5 || pages === 0 || landscape;
-      return { item, score, pages, landscape, pageEligible };
-    })
-    .filter((entry) => entry.pageEligible && (entry.landscape || entry.score > 0))
-    .sort((a, b) => {
-      if (a.landscape !== b.landscape) return a.landscape ? -1 : 1;
-      if (b.score !== a.score) return b.score - a.score;
-      if (b.pages !== a.pages) return b.pages - a.pages;
-      return String(b.item.client_modified || b.item.server_modified || "").localeCompare(String(a.item.client_modified || a.item.server_modified || ""));
-    })
-    .slice(0, maxItems);
+  const dates = recentCatalogDateFolders(items);
+  if (!dates.length) return [];
 
-  return candidates.map(({ item, score, pages, landscape }) => {
+  const selected = [];
+  const seenIds = new Set();
+  const fallback = [];
+  const addCandidate = (entry) => {
+    const id = String(entry.item && entry.item.id || "");
+    if (!id || seenIds.has(id) || selected.length >= maxItems) return;
+    seenIds.add(id);
+    selected.push(entry);
+  };
+  const sortEntries = (entries) => entries.sort((a, b) => {
+    if (a.landscape !== b.landscape) return a.landscape ? -1 : 1;
+    if (b.score !== a.score) return b.score - a.score;
+    if (dateScore(b.date) !== dateScore(a.date)) return dateScore(b.date) - dateScore(a.date);
+    if (b.pages !== a.pages) return b.pages - a.pages;
+    return String(b.item.client_modified || b.item.server_modified || "").localeCompare(String(a.item.client_modified || a.item.server_modified || ""));
+  });
+
+  for (const date of dates) {
+    const entries = items
+      .filter((item) => String(item.date_folder || "") === date)
+      .filter((item) => item && item.available !== false)
+      .filter((item) => !isLikelySingleStockReport(item))
+      .map((item) => {
+        const score = dailyPickMacroScore(item);
+        const pages = reportPageCount(item);
+        const landscape = reportIsLandscape(item);
+        const pageEligible = pages > 5 || pages === 0 || landscape;
+        return { item, score, pages, landscape, pageEligible, date };
+      })
+      .filter((entry) => entry.pageEligible);
+    const strict = sortEntries(entries.filter((entry) => entry.landscape || entry.score > 0));
+    for (const entry of strict) addCandidate(entry);
+    fallback.push(...entries);
+    if (selected.length >= maxItems) break;
+  }
+
+  if (selected.length < maxItems) {
+    for (const entry of sortEntries(fallback)) addCandidate(entry);
+  }
+
+  return selected.slice(0, maxItems).map(({ item, score, pages, landscape, date }) => {
     const tags = dailyPickTopicTags(item);
     return {
       id: String(item.id || ""),
@@ -1712,7 +1744,7 @@ function selectDailyPicks(catalog, maxItems = 5) {
       display_title: reportDisplayTitle(item),
       filename: item.filename || `${reportEnglishTitle(item)}.pdf`,
       bank: reportBankLabel(item),
-      date_folder: latestDate,
+      date_folder: date || String(item.date_folder || ""),
       page_count: pages,
       first_page_orientation: String(item.first_page_orientation || ""),
       first_page_landscape: landscape,
