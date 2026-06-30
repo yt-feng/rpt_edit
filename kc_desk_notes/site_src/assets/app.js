@@ -531,6 +531,14 @@
     const key = file.type === "artifact" ? file.id : file.path;
     const endpointAttr = file.type === "artifact" ? "artifact" : "file";
     const note = file.note ? `<span>${escapeHtml(file.note)}</span>` : "";
+    const accountLabel = file.recommended_account
+      ? `
+        <div class="account-admin-file-label">
+          <span class="${file.recommended_account === "KC桌面" ? "is-desktop" : "is-bias"}">适合：${escapeHtml(file.recommended_account)}</span>
+          <small>${escapeHtml(file.account_label_confidence || "低")}信心 · ${escapeHtml(file.account_label_reason || "")}</small>
+        </div>
+      `
+      : "";
     const repo = file.repo || "";
     return `
       <div class="account-admin-file">
@@ -538,6 +546,7 @@
           <strong>${escapeHtml(file.label || file.kind || "File")}</strong>
           <span>${escapeHtml(file.date || "")} · ${escapeHtml(file.name || "")}${file.size_bytes ? ` · ${escapeHtml(formatSize(file.size_bytes))}` : ""}</span>
           ${note}
+          ${accountLabel}
           <div class="account-admin-progress" hidden>
             <div class="account-admin-progress-track"><span></span></div>
             <small>等待下载…</small>
