@@ -1,0 +1,71 @@
+{
+  "date_folder": "260701",
+  "max_reports": "all",
+  "selected_count": 5,
+  "successful_count": 5,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/ark/260701/0001-ARK_510-SpaceX-Targets-Starship-Flight-Test-12-Ahead-Of-Expected-IPO-Filing-_9362036511b6b53a",
+      "title": "木头姐ARK：#510: SpaceX Targets Starship Flight Test 12 Ahead Of Expected IPO Filing This Week, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260701/01-0001-ARK_510-SpaceX-Targets-Starship-Flight-Test-12-Ahead-Of-Expected-IPO-Filing-_9362036511b6b5",
+      "pdf_path": "kc_translated_reports/ark/260701/01-0001-ARK_510-SpaceX-Targets-Starship-Flight-Test-12-Ahead-Of-Expected-IPO-Filing-_9362036511b6b5/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260701/0002-ARK_509-Shopify-Is-Building-The-Operating-System-For-Agentic-Commerce-More_bd4fc39a748858ce",
+      "title": "木头姐ARK：#509: Shopify Is Building The Operating System For Agentic Commerce, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260701/02-0002-ARK_509-Shopify-Is-Building-The-Operating-System-For-Agentic-Commerce-More_bd4fc39a748858ce",
+      "pdf_path": "kc_translated_reports/ark/260701/02-0002-ARK_509-Shopify-Is-Building-The-Operating-System-For-Agentic-Commerce-More_bd4fc39a748858ce/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260701/0003-ARK_508-Robinhood-Is-Handing-Customers-And-Investors-A-Gold-en-Opportunity-M_9ad1d4daa0314db5",
+      "title": "木头姐ARK：#508: Robinhood Is Handing Customers And Investors A 'Gold'en Opportunity, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260701/03-0003-ARK_508-Robinhood-Is-Handing-Customers-And-Investors-A-Gold-en-Opportunity-M_9ad1d4daa0314d",
+      "pdf_path": "kc_translated_reports/ark/260701/03-0003-ARK_508-Robinhood-Is-Handing-Customers-And-Investors-A-Gold-en-Opportunity-M_9ad1d4daa0314d/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260701/0004-ARK_507-A-New-Executive-Order-Is-The-Latest-Catalyst-Clearing-The-Path-For-P_bd123408df15b388",
+      "title": "木头姐ARK：#507: A New Executive Order Is The Latest Catalyst Clearing The Path For Psychedelic Therapies, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260701/04-0004-ARK_507-A-New-Executive-Order-Is-The-Latest-Catalyst-Clearing-The-Path-For-P_bd123408df15b3",
+      "pdf_path": "kc_translated_reports/ark/260701/04-0004-ARK_507-A-New-Executive-Order-Is-The-Latest-Catalyst-Clearing-The-Path-For-P_bd123408df15b3/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260701/0005-ARK_The-DeFi-Quarterly-Q1-2026_8cfda2e38b7e545e",
+      "title": "木头姐ARK：The DeFi Quarterly: Q1 2026",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260701/05-0005-ARK_The-DeFi-Quarterly-Q1-2026_8cfda2e38b7e545e",
+      "pdf_path": "kc_translated_reports/ark/260701/05-0005-ARK_The-DeFi-Quarterly-Q1-2026_8cfda2e38b7e545e/kc_translated_report_05.pdf"
+    }
+  ]
+}
