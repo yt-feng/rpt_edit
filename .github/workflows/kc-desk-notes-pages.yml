@@ -179,6 +179,7 @@ jobs:
           [vars]
           R2_OBJECT_PREFIX = "$R2_OBJECT_PREFIX"
           CATALOG_URL = "$PAGES_URL/data/catalog.json"
+          SEARCH_INDEX_URL = "$PAGES_URL/data/search_index.json"
           PASSWORD_RULES_URL = "$PAGES_URL/data/password_rules.json"
           ALLOWED_ORIGIN = "$PAGES_ORIGIN"
           GH_REPO = "$GITHUB_REPOSITORY"
