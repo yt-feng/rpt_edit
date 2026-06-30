@@ -2207,19 +2207,21 @@ function titleFromGeneratedPath(path) {
 }
 
 function renderedClipDate(path) {
-  const match = String(path || "").match(/^rendered-clips\/(20\d{2}-\d{2}-\d{2})\//);
+  const match = String(path || "").match(/^rendered-clips\/(?:[^/]+\/)*(20\d{2}-\d{2}-\d{2})\//);
   return match ? match[1] : "";
 }
 
 function renderedClipNote(path) {
   const parts = String(path || "").split("/");
-  return parts.length > 3 ? parts.slice(2, -1).join(" / ").replace(/[-_]+/g, " ") : "";
+  const dateIndex = parts.findIndex((part) => /^20\d{2}-\d{2}-\d{2}$/.test(part));
+  const noteParts = dateIndex >= 0 ? parts.slice(dateIndex + 1, -1) : parts.slice(1, -1);
+  return noteParts.length ? noteParts.join(" / ").replace(/[-_]+/g, " ") : "";
 }
 
 async function latestBbgRenderedClipFiles(env, maxItems = 8) {
   const tree = await githubRecursiveTree(env, BBG_SHOW_REPO);
   const dated = tree
-    .filter((item) => item && item.type === "blob" && /^rendered-clips\/20\d{2}-\d{2}-\d{2}\/.+\.mp4$/i.test(item.path || ""))
+    .filter((item) => item && item.type === "blob" && /^rendered-clips\/.+\.mp4$/i.test(item.path || "") && renderedClipDate(item.path))
     .sort((a, b) => {
       const score = dateScore(b.path) - dateScore(a.path);
       if (score) return score;
