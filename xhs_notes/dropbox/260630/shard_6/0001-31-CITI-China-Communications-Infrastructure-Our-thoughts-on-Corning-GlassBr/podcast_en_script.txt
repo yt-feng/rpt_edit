@@ -1,0 +1,22 @@
+EN_A: So Corning just dropped this new thing called GlassBridge. Is it really going to shake up the whole optical networking world?
+EN_B: It's definitely an interesting development, but our take is that the near-term impact is pretty limited. We don't see it disrupting the market for at least one to two years.
+EN_A: So what's the big question this report is trying to answer? Is it whether GlassBridge will replace existing solutions?
+EN_B: Exactly. The core question is whether GlassBridge will actually disrupt the current CPO architectures and what it means for Chinese optical companies. The report's conclusion is clear: the impact is very contained for now.
+EN_A: Why is that? I thought GlassBridge was supposed to solve the size mismatch between fiber and silicon photonic chips?
+EN_B: Technically, yes. But the reality is that current CPO generations, like Quantum and Spectrum, are already finalized and ready for mass production. GlassBridge wouldn't be able to step in until at least the second half of 2027.
+EN_A: So that means the current players can breathe a sigh of relief for now?
+EN_B: Pretty much. And there's a lot of uncertainty around GlassBridge itself. It needs to go through CPO and NPO evaluation cycles, plus field reliability tests on high-speed AI clusters. All of that takes time.
+EN_A: What about the Chinese companies? Who's most at risk? TFC, for example, with its iFAU business?
+EN_B: TFC does have some iFAU exposure, but the risk is well hedged by its active optical engine business. The report estimates that by 2026 to 2028, active optical engines will account for over 70% of their revenue. So the long-term threat is manageable.
+EN_A: What about companies like Eoptolink and Accelink? They're more into transceiver integration.
+EN_B: They're largely unaffected. For them, GlassBridge is just an alternative upstream component, not a direct substitute. The same goes for DSBJ and Accelink, whose core strength is in active optical chips.
+EN_A: So it sounds like the whole Chinese supply chain is pretty safe. Is there anyone who might be overlooked?
+EN_B: One name to watch is T&S Communications. They focus on passive components like MT ferrules. But because of the decoupling risk with Corning, they're in a weird spot. They won't benefit from GlassBridge, but they won't be hurt by it either.
+EN_A: So when does GlassBridge actually become a real threat? Does the report give a timeline?
+EN_B: It says the real paradigm shift might not happen until after 2030. That's when wafer-level photonic packaging could mature in terms of yield and loss, potentially moving the passive component industry from physical micro-assembly to semiconductor-like processes.
+EN_A: So it's still a waiting game. Are there any questions the report doesn't fully answer?
+EN_B: One big one is the switching cost. Adopting GlassBridge requires PIC designers to restructure optical layouts and redesign spot-size converters. That creates strong inertia. But the report doesn't fully quantify how high those switching costs really are.
+EN_A: So to get the full picture, including which companies might adopt it first or the exact switching costs, you'd need to read the full report?
+EN_B: Exactly. The full report has deeper company analysis and key assumptions that need further validation. If you're interested, you can join our community to get the complete research note.
+EN_A: Great. That's all for today. For more details, check out the full report. See you next time.
+EN_B: See you.
