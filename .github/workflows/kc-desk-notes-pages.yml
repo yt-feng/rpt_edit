@@ -208,6 +208,7 @@ jobs:
           PADDLE_PRICE_REPORT_CNY_CENT: ${{ secrets.PADDLE_PRICE_REPORT_CNY_CENT || vars.PADDLE_PRICE_REPORT_CNY_CENT || 'unconfigured' }}
           PADDLE_PRICE_YEARLY: ${{ secrets.PADDLE_PRICE_YEARLY || vars.PADDLE_PRICE_YEARLY || 'unconfigured' }}
           PADDLE_WEBHOOK_SECRET: ${{ secrets.PADDLE_WEBHOOK_SECRET || 'unconfigured' }}
+          GH_READ_TOKEN: ${{ secrets.GH_READ_TOKEN || secrets.GH_DISPATCH_TOKEN || 'unconfigured' }}
           # External-report preparation token. Optional; the fallback keeps wrangler
           # from pushing an empty secret value.
           GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN || 'unconfigured' }}
@@ -229,4 +230,5 @@ jobs:
             PADDLE_PRICE_REPORT_CNY_CENT
             PADDLE_PRICE_YEARLY
             PADDLE_WEBHOOK_SECRET
+            GH_READ_TOKEN
             GH_DISPATCH_TOKEN
