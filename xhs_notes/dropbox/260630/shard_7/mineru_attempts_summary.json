@@ -1,0 +1,90 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 4,
+    "retry_pdf_count": 1,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_7ygb9pbc/pdfs/0001-36-GS-Government Doubles Down on AI Support and Price Stabilization- Funded by AI-Boom Windfalls-260630.pdf",
+        "state": "failed",
+        "error": "parsing failed, please try again later"
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_7ygb9pbc/pdfs/0002-37-MS-Beijing Reacts to Weak Growth- EU Reacts to Beijing-260628.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_7ygb9pbc/pdfs/0003-38-Bernstein-U.S. Machinery-Construction - Rental Equipment- May Dodge Construction Starts and the latest mega project starts-260629.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_7ygb9pbc/pdfs/0004-39-MS-Electronic Components - Japan Investor Visits in Singapore - Hong Kong-260628.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_7ygb9pbc/pdfs/0005-40-MS-AI-s Insatiable Appetite for Memory-260628.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "attempt": 2,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 0,
+    "retry_pdf_count": 1,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_7ygb9pbc/pdfs/0001-36-GS-Government Doubles Down on AI Support and Price Stabilization- Funded by AI-Boom Windfalls-260630.pdf",
+        "state": "failed",
+        "error": "parsing failed, please try again later"
+      }
+    ]
+  },
+  {
+    "attempt": 3,
+    "round": 2,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 0,
+    "retry_pdf_count": 1,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_7ygb9pbc/pdfs/0001-36-GS-Government Doubles Down on AI Support and Price Stabilization- Funded by AI-Boom Windfalls-260630.pdf",
+        "state": "failed",
+        "error": "parsing failed, please try again later"
+      }
+    ]
+  },
+  {
+    "attempt": 4,
+    "round": 2,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 0,
+    "retry_pdf_count": 1,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_7ygb9pbc/pdfs/0001-36-GS-Government Doubles Down on AI Support and Price Stabilization- Funded by AI-Boom Windfalls-260630.pdf",
+        "state": "failed",
+        "error": "parsing failed, please try again later"
+      }
+    ]
+  }
+]
