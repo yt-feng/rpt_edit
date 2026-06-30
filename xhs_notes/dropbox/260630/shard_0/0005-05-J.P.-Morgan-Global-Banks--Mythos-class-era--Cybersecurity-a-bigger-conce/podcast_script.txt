@@ -1,0 +1,119 @@
+ZH_A: 最近有一份JPM的研报引起了我的注意，它说银行面临的最大风险不是信用风险，而是网络安全。这是真的吗？
+
+ZH_B: 没错，报告的核心观点就是，网络安全是当前银行估值中一个被严重低估的风险。特别是随着像Mythos和GPT-5.5这样的前沿模型出现，网络攻击的能力已经大幅提升。
+
+ZH_A: 前沿模型？这听起来很技术。它们到底能做什么，让银行这么紧张？
+
+ZH_B: 简单来说，这些模型能把发现和利用软件漏洞的时间，从几个月甚至几年，缩短到几个小时。比如，英国AI安全研究院的测试显示，Mythos在专家级黑客任务上的成功率高达73%，这在以前是做不到的。
+
+ZH_A: 73%？那这意味着什么？银行岂不是随时可能被攻破？
+
+ZH_B: 这确实很可怕。但这份报告指出，更关键的是，传统的银行监管框架，比如盯着资本充足率，可能根本管不住这种风险。报告认为，真正的薄弱环节是流动性风险。
+
+ZH_A: 流动性风险和网络安全有什么关系？
+
+ZH_B: 想象一下，如果发生一次大规模网络攻击，导致存款人恐慌，通过社交媒体迅速传播，引发挤兑。报告认为，这种流动性危机，而不是贷款违约，才可能是下一场银行危机的导火索。就像我们在CS事件中看到的那样。
+
+ZH_A: 所以，银行需要做的不只是升级软件，还要测试自己的流动性在极端网络攻击下的承受能力？
+
+ZH_B: 正是这样。报告建议，银行应该进行更严格的基础设施韧性测试，甚至是一个“存款流失流动性折价测试”。这比单纯检查资本金要实际得多。
+
+ZH_A: 但不同银行的风险敞口肯定不一样吧？哪些银行最危险？
+
+ZH_B: 报告给出了几个关键判断标准。首先，那些还在使用几十年前写的旧代码、依赖多个合并遗留系统的银行，最容易被攻击。比如还在用COBOL语言的核心系统，现在的程序员可能都不太懂，但AI模型却能轻松读懂并找出漏洞。
+
+ZH_A: 这听起来像是一个技术债的问题。那是不是意味着，科技投入越大的银行就越安全？
+
+ZH_B: 报告把这个视为一个重要的观察指标。目前全球银行的科技支出平均占运营费用的17%左右。但更重要的是绝对支出规模。美国的大型银行在这方面有明显优势，它们既有更高的预算，又能更早接触到最前沿的AI模型。
+
+ZH_A: 所以，美国银行比欧洲银行更有优势？
+
+ZH_B: 报告确实指出了这种地缘政治上的分化。美国是AI发展的中心，像Anthropic的“Project Glasswing”这样的合作项目，美国银行是核心参与者。欧洲银行在获取最新模型上存在延迟，这可能会让它们处于不利地位。
+
+ZH_A: 那对于投资者来说，这意味着什么？我们应该怎么给银行估值？
+
+ZH_B: 报告提出了一个很有意思的观点。它认为，对于那些拥有“粘性”客户存款、存款基础非常稳定的银行，市场应该给予它们更高的估值倍数。因为这些银行在下一场危机中更有能力存活下来。
+
+ZH_A: 所以，网络安全能力未来可能会成为银行估值的一个核心溢价因素？
+
+ZH_B: 没错。报告还提到，未来银行可能会重新强调物理安全密钥，比如硬件令牌，来对抗越来越复杂的远程攻击。但这会和客户便利性产生冲突。
+
+ZH_A: 这听起来像是要倒退到过去。报告有没有提到监管应该怎么做？
+
+ZH_B: 报告认为，监管的重点不应该放在增加资本金上，而是应该放在基础设施和流程的“回测”上。比如，模拟一次真实的网络攻击，看看银行的反应速度和恢复能力。
+
+ZH_A: 这份报告里有没有提到一些我们还没完全搞清楚的问题？
+
+ZH_B: 当然有。比如，报告承认，作为外部观察者，我们很难真正区分不同银行在内部IT架构上的具体弱点。我们只能通过科技支出来做一个粗略判断。这是第一个悬念。
+
+ZH_A: 第二个呢？
+
+ZH_B: 报告提到了一个很关键但未完全解答的问题：AI驱动的防御和AI驱动的攻击，这两条曲线未来会在哪里交汇？银行通过投资来抬高攻击者的成本，但AI也在降低攻击者的成本。这个博弈的最终结果，报告并没有给出定论。
+
+ZH_A: 这确实值得深入思考。如果听众想了解更多细节，比如具体的银行名单或者技术细节，可以怎么获取完整报告？
+
+ZH_B: 完整报告里还有更多关于具体银行的分析、技术框架的拆解，以及监管趋势的推演。欢迎加入我们的社群，或者直接联系我们获取完整版PDF。
+
+ZH_A: 好，那我们今天就先聊到这里。感谢你的分享。
+
+ZH_B: 谢谢大家，我们下期再见。
+
+EN_A: So, I came across this JPM report that says cybersecurity is now a bigger risk for banks than credit risk. Is that really the case?
+
+EN_B: Absolutely. The report’s main argument is that cyber risk is one of the biggest undiscounted threats in bank valuations right now. And it’s not just about old-school hacking. It’s about the new generation of AI models, like Mythos and GPT-5.5.
+
+EN_A: Frontier models, right? What exactly makes them so scary for banks?
+
+EN_B: In simple terms, they can find and exploit software vulnerabilities in hours, not months or years. The UK’s AI Safety Institute tested Mythos and found it could complete expert-level hacking tasks with a 73% success rate. That’s a level we’ve never seen before.
+
+EN_A: 73%? So, does that mean every bank is essentially sitting on a ticking time bomb?
+
+EN_B: That’s the fear. But the report makes a more nuanced point. It says the traditional way of looking at bank risk, like focusing on capital ratios, might miss the real issue. The report argues that the real trigger in a cyber crisis could be liquidity risk.
+
+EN_A: Liquidity? How does that connect to a cyber attack?
+
+EN_B: Imagine a major cyber attack that triggers a panic. Depositors see the news on social media and start a run on the bank. The report argues that this kind of liquidity crisis, not bad loans, could be the main cause of the next banking crisis. We saw a version of this with CS.
+
+EN_A: So, banks need to stress-test their liquidity for a cyber-induced run, not just their loan books?
+
+EN_B: Exactly. The report suggests banks should run what it calls a “deposit-run liquidity haircut test.” It’s a much more practical way to think about resilience than just checking capital buffers.
+
+EN_A: But not all banks are equally exposed, right? Which ones are most at risk?
+
+EN_B: The report lays out a few key factors. First, banks with old, legacy systems are the most vulnerable. Think core banking systems written in COBOL decades ago. Current coders might not fully understand that code, but these new AI models can read it perfectly and find hidden weaknesses.
+
+EN_A: So, it’s a tech debt problem. Does that mean banks that spend more on tech are safer?
+
+EN_B: The report uses tech spending as a rough proxy. Right now, global banks spend about 17% of their operating expenses on tech. But the absolute amount matters more. US large-cap banks have a clear advantage here, with bigger budgets and earlier access to the latest AI models.
+
+EN_A: So, US banks are better positioned than European banks?
+
+EN_B: The report points to a geopolitical divide. The US is the epicenter of AI development. Projects like Anthropic’s “Project Glasswing” have US banks as core participants. European banks, on the other hand, are likely to face a delay in getting access to these new tools, which puts them at a disadvantage.
+
+EN_A: What does this mean for investors? How should we value banks going forward?
+
+EN_B: The report has a fascinating idea. It suggests that banks with “sticky” deposits, meaning a very stable customer base, deserve a higher valuation multiple. The logic is that these banks are better equipped to survive a future crisis.
+
+EN_A: So, cyber resilience could become a premium factor in bank valuations?
+
+EN_B: Exactly. The report also touches on a potential paradox. As attacks get more sophisticated, banks might have to go back to physical security keys, like hardware tokens, because they’re harder to hack remotely. But that would clash with customers’ desire for convenience.
+
+EN_A: That sounds like a step backwards. Does the report have any thoughts on what regulators should do?
+
+EN_B: It does. It argues that regulators should focus less on capital requirements and more on “back-testing” infrastructure and processes. Simulate a real cyber attack and see how the bank responds.
+
+EN_A: Are there any big questions the report leaves open?
+
+EN_B: Definitely. First, the report admits it’s very hard for an outsider to really know what’s inside a bank’s IT infrastructure. We can only guess based on their tech spending. That’s a big unknown.
+
+EN_A: And the second one?
+
+EN_B: The report talks about a future where AI-powered defenses and AI-powered attacks are racing against each other. Banks are investing to raise the cost of an attack, but AI is also lowering the cost for attackers. Where those two curves cross is a question the report doesn’t fully answer.
+
+EN_A: That’s a fascinating open question. If our listeners want to dig deeper into the specific banks or the technical details, how can they get the full report?
+
+EN_B: The full report has a lot more detail on individual banks, the technical breakdown of these models, and the regulatory outlook. Feel free to join our community or reach out to us directly for a PDF copy.
+
+EN_A: Great. Thanks for breaking this down for us.
+
+EN_B: Thanks for having me. See you next time.
