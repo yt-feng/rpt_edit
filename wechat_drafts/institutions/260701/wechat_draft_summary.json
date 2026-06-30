@@ -1,0 +1,98 @@
+{
+  "date_folder": "260701",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 3,
+  "selected_count": 3,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit813E8ru543dfmsVBN5abbIr-o0-sM_8VzTkQI7xhdN8_",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 3,
+      "payload_bytes": 33186,
+      "payload": "wechat_drafts/institutions/260701/draft_payload_01.json",
+      "titles": [
+        "IMF：AI正在把金融业网络安全变成一个“机器速度”战场，AI正在把攻击速度压缩到“分钟级”，防御窗口急剧收窄",
+        "IMF：洪都拉斯通过压力测试，但能源补贴仍是最大隐患，经济韧性超预期，但外部冲击正在传导",
+        "IMF：卢森堡的“低债务幻觉”正在被赤字吞噬，增长引擎熄火，公共部门“独木难支”，私人投资持续低迷"
+      ],
+      "wechat_titles": [
+        "IMF：AI正在把金融业网络安全变成一个“机器速度”战场，AI正在把攻击速度压缩到“分钟级”，防御窗口急剧收窄",
+        "IMF：洪都拉斯通过压力测试，但能源补贴仍是最大隐患，经济韧性超预期，但外部冲击正在传导",
+        "IMF：卢森堡的“低债务幻觉”正在被赤字吞噬，增长引擎熄火，公共部门“独木难支”，私人投资持续低迷"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 3,
+        "expected_article_count": 3,
+        "matches_expected_article_count": true,
+        "titles": [
+          "IMFï¼AIæ­£å¨æéèä¸ç½ç»å®å ¨åæä¸ä¸ªâæºå¨éåº¦âæåºï¼AIæ­£å¨ææ»å»éåº¦åç¼©å°âåéçº§âï¼é²å¾¡çªå£æ¥å§æ¶çª",
+          "IMFï¼æ´ªé½ææ¯éè¿ååæµè¯ï¼ä½è½æºè¡¥è´´ä»æ¯æå¤§éæ£ï¼ç»æµé§æ§è¶ é¢æï¼ä½å¤é¨å²å»æ­£å¨ä¼ å¯¼",
+          "IMFï¼å¢æ£®å ¡çâä½åºå¡å¹»è§âæ­£å¨è¢«èµ¤å­åå¬ï¼å¢é¿å¼æçç«ï¼å ¬å ±é¨é¨âç¬æ¨é¾æ¯âï¼ç§äººæèµæç»­ä½è¿·"
+        ],
+        "create_time": 1782861651,
+        "update_time": 1782861651
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "IMF：AI正在把金融业网络安全变成一个“机器速度”战场，AI正在把攻击速度压缩到“分钟级”，防御窗口急剧收窄",
+      "wechat_title": "IMF：AI正在把金融业网络安全变成一个“机器速度”战场，AI正在把攻击速度压缩到“分钟级”，防御窗口急剧收窄",
+      "institution_name": "IMF",
+      "source_report_name": "IMF Artificial-Intelligence-and-Cybersecurity-in-the-Financial-S 1d64100f",
+      "report_dir": "kc_translated_reports/institutions/260701/01-0001-IMF_Artificial-Intelligence-and-Cybersecurity-in-the-Financial-S_1d64100f",
+      "content_chars": 6735,
+      "content_bytes": 9665,
+      "visible_text_chars": 1534,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 2,
+      "cover_image": "kc_translated_reports/institutions/260701/01-0001-IMF_Artificial-Intelligence-and-Cybersecurity-in-the-Financial-S_1d64100f/assets/fig_001.jpg"
+    },
+    {
+      "title": "IMF：洪都拉斯通过压力测试，但能源补贴仍是最大隐患，经济韧性超预期，但外部冲击正在传导",
+      "wechat_title": "IMF：洪都拉斯通过压力测试，但能源补贴仍是最大隐患，经济韧性超预期，但外部冲击正在传导",
+      "institution_name": "IMF",
+      "source_report_name": "IMF Honduras-Fourth-and-Fifth-Reviews-Under-the-Extended-Fund-Fa 27a6426e",
+      "report_dir": "kc_translated_reports/institutions/260701/02-0002-IMF_Honduras-Fourth-and-Fifth-Reviews-Under-the-Extended-Fund-Fa_27a6426e",
+      "content_chars": 8754,
+      "content_bytes": 11644,
+      "visible_text_chars": 1589,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/institutions/260701/02-0002-IMF_Honduras-Fourth-and-Fifth-Reviews-Under-the-Extended-Fund-Fa_27a6426e/assets/fig_001.jpg"
+    },
+    {
+      "title": "IMF：卢森堡的“低债务幻觉”正在被赤字吞噬，增长引擎熄火，公共部门“独木难支”，私人投资持续低迷",
+      "wechat_title": "IMF：卢森堡的“低债务幻觉”正在被赤字吞噬，增长引擎熄火，公共部门“独木难支”，私人投资持续低迷",
+      "institution_name": "IMF",
+      "source_report_name": "IMF Luxembourg-2026-Article-IV-Consultation-Press-Release-Staff- 9d6aeec4",
+      "report_dir": "kc_translated_reports/institutions/260701/03-0003-IMF_Luxembourg-2026-Article-IV-Consultation-Press-Release-Staff-_9d6aeec4",
+      "content_chars": 7435,
+      "content_bytes": 10319,
+      "visible_text_chars": 1488,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/institutions/260701/03-0003-IMF_Luxembourg-2026-Article-IV-Consultation-Press-Release-Staff-_9d6aeec4/assets/fig_001.jpg"
+    }
+  ]
+}
