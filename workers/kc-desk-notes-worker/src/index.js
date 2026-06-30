@@ -1804,7 +1804,7 @@ function githubRef(env, repo = githubRepo(env)) {
 function githubToken(env, repo = githubRepo(env)) {
   const readToken = cleanEnv(env.GH_READ_TOKEN) || cleanEnv(env.GITHUB_TOKEN) || cleanEnv(env.GH_TOKEN);
   if (readToken) return readToken;
-  return repo === githubRepo(env) ? cleanEnv(env.GH_DISPATCH_TOKEN) : "";
+  return cleanEnv(env.GH_DISPATCH_TOKEN);
 }
 
 function githubHeaders(env, extra = {}, repo = githubRepo(env)) {
