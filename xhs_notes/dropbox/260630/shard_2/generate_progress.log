@@ -1,0 +1,52 @@
+Found 41 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u8r2am37/pdfs/0001-11-Morgan Stanley-Awaiting Policy Fine-tuning-260628.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u8r2am37/pdfs/0002-12-Nomura-Currency Horizons-Our medium-term FX views-260629.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u8r2am37/pdfs/0003-13-Goldman Sachs-THE CREDIT LINE-AI-Related Signals From Corporate Credit Commentary-260629.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u8r2am37/pdfs/0004-14-Nomura-City Gas Distribution-Delhi EV Policy - CNG faces terminal value risk-260629.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u8r2am37/pdfs/0005-15-JPM-Memory Market Update Our take on Korea-s AI mega-investment master plan and recent memory industry developments-260629.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=fc285742-19df-4d28-918e-7e2dacd1c9a2
+MinerU states: running, running, failed, pending, pending
+MinerU states: done, done, failed, done, done
+1 PDF(s) remain incomplete after attempt 1.
+MinerU attempt 2/4 using MINER_U: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u8r2am37/pdfs/0003-13-Goldman Sachs-THE CREDIT LINE-AI-Related Signals From Corporate Credit Commentary-260629.pdf
+MinerU attempt 2 using MINER_U batch_id=9937e892-6631-439b-9fbc-adee15055446
+MinerU states: waiting-file
+MinerU states: failed
+1 PDF(s) remain incomplete after attempt 2.
+MinerU attempt 3/4 using MINER_U_2: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u8r2am37/pdfs/0003-13-Goldman Sachs-THE CREDIT LINE-AI-Related Signals From Corporate Credit Commentary-260629.pdf
+MinerU attempt 3 using MINER_U_2 batch_id=e62887d5-0dcc-447f-a4ca-e676fc631caf
+MinerU states: waiting-file
+MinerU states: failed
+1 PDF(s) remain incomplete after attempt 3.
+MinerU attempt 4/4 using MINER_U: submitting 1 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u8r2am37/pdfs/0003-13-Goldman Sachs-THE CREDIT LINE-AI-Related Signals From Corporate Credit Commentary-260629.pdf
+MinerU attempt 4 using MINER_U batch_id=a4f2f88e-206e-4631-9464-5e35bc916152
+MinerU states: pending
+MinerU states: failed
+1 PDF(s) remain incomplete after attempt 4.
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:277: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 938a515bf768e319592b5139fd867620f9795813de0ff45f5822d4ade747a98e.jpg: score=-100;too_small:518x135
+Skip non-chart visual asset 3479e83837815c0510ae8369907ba507534fced33484af460ea80ddf299e4a16.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.28,large
+Skip non-chart visual asset 950b017f1d04dcb3d3dfda48d17749b9afbef19a51df179e32e24b661f7b9b2d.jpg: score=1;square_without_chart_hint,edge:0.46,contrast,large
+Skip non-chart visual asset 82e12247fa7f5a26dbc2e9121f1aed3026c1c6a01e05d6cfeed9e4b2e32b9012.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.15,large
+Skip non-chart visual asset 4d669e9921a60cd3188e00e0cce2a0f6a61857b511aff19b8aa8e1ac81a6ccaa.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.14,large
+Skip non-chart visual asset 3b9bd5e3e81e040f7437c3405dabfcc9389597a5a908e19f16945c173df8c505.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.27,large
+Skip non-chart visual asset 0c9d2dba18d86262fd6e171e494a507c7753fe24a1242bbd649ba858d3c9ad91.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.15,contrast,large
+Skip non-chart visual asset d22aeb25645a735678d50c066b6772b0f62a22749b6330ba579ca21e529324d6.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.27,contrast,large
+Skip non-chart visual asset c15a4b4f370eda875257d2512e7a702126fa4721b2bd9fef6ccb8c8f2c31c090.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.23,large
+Skip non-chart visual asset 780dd8c064ab04c28ab8be459de9cf6867bb97fb934f272a2140ba6de440bc3e.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.18,large
+Skip non-chart visual asset a82af23fc3e05a9b41b95f2e90137599d848969a571dada5557b8e1d8f55e620.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.20,large
+Skip non-chart visual asset 49fd632179e9dd62766f1a5373f91677d25b7ede70c02b2e249ab813e93abbf0.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.21,large
+Skipping PDF after MinerU retry exhaustion: 0003-13-Goldman Sachs-THE CREDIT LINE-AI-Related Signals From Corporate Credit Commentary-260629.pdf
+Skip non-chart visual asset ac687aded835667d37c18e863fad8321d9359e83cffa3a1f5057ae75e5ed0a83.jpg: score=-100;too_small:1412x148
+Skip non-chart visual asset cd8ea294baf44780c083899f1a16142243600382a14d8913e107e237fe5cdfb6.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.36,contrast
+Skip non-chart visual asset fd4f9f7011f5f0a8b968a1d4fa153fc43635ce3639dc4923f5033e83ff9c7910.jpg: score=0;square_without_chart_hint,edge:0.37,contrast
+Skip non-chart visual asset 610030ff7ba1f8e818507a1bcc53138936464d1b3c422de8f8422142a205d520.jpg: score=-100;too_small:982x167
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260630/shard_2; successful_reports=4; mineru_timed_out=False; mineru_attempts=4
+All batches completed successfully. Generated 4 report directories.
