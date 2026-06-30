@@ -1,0 +1,23 @@
+Found 41 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ctq_ei4m/pdfs/0001-16-J.P. Morgan-China-Solid but diverging industrial profits in May-Weak demand caps a broader profit recovery-260628.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ctq_ei4m/pdfs/0002-17-Morgan Stanley-China Surplus Meets EU Defense-260628.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ctq_ei4m/pdfs/0003-18-Nomura-Asia Insights-China monthly- June and Q2 data preview-260629.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ctq_ei4m/pdfs/0004-19-CITI-China Property- Conference Takeaways- More Sales Launches From Sep after Weak 1H26 Earnings- Positive View Despite Recent Sell-off-260628.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ctq_ei4m/pdfs/0005-20-CITI-China Battery Materials- China Battery Supply Chain on the Ground- Jul-26 production pipeline preview check-260628.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=998b1911-a846-4fa5-b668-a6ad4d8a26b0
+MinerU states: done, running, running, running, pending
+MinerU states: done, done, done, done, done
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:277: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 8b101015b536ff1448aa2feea780949aedb73d8e4bb878d0dc1a5e105a7a72a9.jpg: score=-100;too_small:518x135
+Skip non-chart visual asset 0c723555f09a9d3f80f96a97d69b6231c7fb7d82da678a318fcd35310b0a1c41.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.33,contrast,large
+MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
+Skip non-chart visual asset b08cd3cd5b5d664dad98aabb9e9f6370eeb8c6e25cfa162a703f555af54d2dae.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.54,large
+Skip non-chart visual asset 4fa9c9e6683ba7dacedee215a4b450d842b7740fb8f57742b32d9f1ac7754dac.jpg: score=2;chart_ratio,large
+Skip non-chart visual asset 2d2444af96dd5d9158658443114fa5d970c34f0413ba2cca76f4e21656240994.jpg: score=-100;too_small:1431x145
+Skip non-chart visual asset 82d48098b1fe0eaad5bbfb60b6b9297002ff9652ce0be9187172756d263e7355.jpg: score=-100;too_small:1431x145
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260630/shard_3; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
