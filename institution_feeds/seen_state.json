@@ -784,6 +784,30 @@
     "rand:https://www.rand.org/pubs/perspectives/PEA4491-5.html": {
       "first_seen": "2026-06-29",
       "status": "downloaded"
+    },
+    "imf:98a5e074a5f64d7c714929137a2275395a4fdcfde8ad5b6e89fb5cf21c64": {
+      "first_seen": "2026-06-30",
+      "status": "downloaded"
+    },
+    "imf:29009a3e65b7f2ba47a040d8dec130d5b9b939f4afcbc402355bd46b47a0": {
+      "first_seen": "2026-06-30",
+      "status": "downloaded"
+    },
+    "imf:e3e5e7419f526ca96ac55601c3546056de22df72d8d753099231ab75d1cf": {
+      "first_seen": "2026-06-30",
+      "status": "downloaded"
+    },
+    "imf:490d2dae6e468e764dcbe0a0a09557584ed6f8378cf0ab9cebe5126209a6": {
+      "first_seen": "2026-06-30",
+      "status": "too_old"
+    },
+    "imf:1787912b5d82472c44409a355557a4925bf1583e2d885a35eda1eecc575e": {
+      "first_seen": "2026-06-30",
+      "status": "too_old"
+    },
+    "brookings:https://www.brookings.edu/articles/low-tech-cash-cows-and-high-tech-bottlenecks-turkeys-defense-industry-matures/": {
+      "first_seen": "2026-06-30",
+      "status": "no_pdf"
     }
   }
 }
