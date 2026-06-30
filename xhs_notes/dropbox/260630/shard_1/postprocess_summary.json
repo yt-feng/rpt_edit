@@ -1,0 +1,68 @@
+[
+  {
+    "item": "0002-07-Goldman-Sachs-USA-Supreme-Court-Ruling-Supports-Fed-Independence-but-Fur",
+    "source_pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0002-07-GS-USA-Supreme Court Ruling Supports Fed Independence but Further Challenges Likely-260629.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "美联储独立性获关键背",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0004-09-CITI-China-Sportswear--Stock-implications-on-three-scenarios-of-Nike-Chi",
+    "source_pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0004-09-CITI-China Sportswear -Stock implications on three scenarios of Nike China-s online strategy-260628.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "Nike中国线上策略",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/xhs_card_01.png"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-10-Goldman-Sachs-Asia-Views--Oil-relief--dollar-pressure--tech-boom-260629",
+    "source_pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0005-10-GS-Asia Views- Oil relief- dollar pressure- tech boom-260629.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "油价暴跌、美元走强、",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
