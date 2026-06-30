@@ -2342,7 +2342,7 @@ async function buildWechatDraftSchedule(env) {
   };
 }
 
-function adminGithubFile(kind, label, item, date, note = "", repo = "") {
+function adminGithubFile(kind, label, item, date, note = "", repo = "", extra = {}) {
   return {
     type: "file",
     kind,
@@ -2353,6 +2353,7 @@ function adminGithubFile(kind, label, item, date, note = "", repo = "") {
     date: date || "",
     note,
     repo,
+    ...extra,
   };
 }
 
@@ -2469,6 +2470,77 @@ function renderedClipNote(path, info = bbgRenderedClipInfo(path)) {
   return notes.join(" · ");
 }
 
+function bbgVideoTitleText(path) {
+  const fileName = String(path || "").split("/").pop() || "";
+  const folderParts = String(path || "").split("/").slice(0, -1);
+  const folderHint = folderParts[folderParts.length - 1] || "";
+  const cleanFile = fileName
+    .replace(/\.mp4$/i, "")
+    .replace(/^\d+[_-]+/, "")
+    .replace(/[_-]+/g, " ")
+    .trim();
+  const cleanFolder = folderHint
+    .replace(/^\d+[_-]+/, "")
+    .replace(/[_-]+/g, " ")
+    .trim();
+  return `${cleanFile} ${cleanFolder}`.trim().toLowerCase();
+}
+
+function accountLabelMatch(text, rules) {
+  let score = 0;
+  const reasons = [];
+  for (const [label, weight, pattern] of rules) {
+    if (pattern.test(text)) {
+      score += weight;
+      reasons.push(label);
+    }
+  }
+  return { score, reasons };
+}
+
+const DESKTOP_VIDEO_RULES = [
+  ["机构/分析师/报告型内容", 4.0, /高盛|野村|clsa|中银|瀚亚|花旗|汇丰|瑞银|美银|巴克莱|伯恩斯坦|bernstein|pimco|摩根士丹利|分析师|策略师|完整版|报告|解读|lagarde|拉加德|央行|fed|fomc|美联储|通胀/i],
+  ["中国宏观/楼市/政策/信贷消费", 3.2, /楼市|房价|城市更新|地产|住房|信贷|消费|k型|k型分化|价值陷阱|财富效应|政策转向|复苏路径|人民币|中国经济/i],
+  ["投研结构化主题", 2.0, /路径|展望|周期|定价|估值|复苏|转向|策略|配置|预测|三大方向|十五五|低估值|阿里腾讯|半导体|泡沫/i],
+  ["行业政策/产业研究", 1.6, /绿色电力|能源预测|产业|行业|电力|半导体|银行体系|通胀回落|欧洲银行|能源局/i],
+];
+
+const BIAS_VIDEO_RULES = [
+  ["地缘/历史/公共议题叙事", 3.5, /特朗普|伊朗|美伊|巴基斯坦|巴拿马|运河|中美博弈|俄罗斯|乌克兰|美军|白宫|共和制|罗斯福|克拉苏|格林斯潘|最高法院|world cup|世界杯|法院|election|选票|burnham|伯纳姆/i],
+  ["科技趋势/个人观点感", 2.8, /deepseek|token|人形机器人|机器人|ai资本开支|数据中心|aidc|苹果|科技股|ai叙事|催化剂|云收入|经验工人|中国科技股|rocket lab|space.?x|ark|cathie|wood|tesla|bitcoin|芯片|人工智能/i],
+  ["市场叙事/反直觉标题", 1.9, /悖论|被低估|低估|爆发|暗藏|扛住|教训|言论|回调掩盖|机会|可期|走强|油价下跌|黄金|日元贬值|mania|warning|surge/i],
+  ["泛商业/生活化新闻", 1.4, /汽水|票房|温网|球迷|索尼|康卡斯特|创始人|收购|comcast|sony|tennis|wimbledon|soda|box office|nbcuniversal/i],
+];
+
+function bbgVideoAccountRecommendation(path, info) {
+  const text = `${bbgVideoTitleText(path)} ${info && info.source || ""}`.toLowerCase();
+  const desktop = accountLabelMatch(text, DESKTOP_VIDEO_RULES);
+  const bias = accountLabelMatch(text, BIAS_VIDEO_RULES);
+  if (info && info.source === "ark-invest") {
+    bias.score += 1.4;
+    bias.reasons.push("ARK/创新投资更贴近 KC偏见");
+  }
+  if (info && info.source === "top-videos" && desktop.score === 0 && bias.score === 0) {
+    bias.score += 0.7;
+    bias.reasons.push("top-videos 默认偏新闻/观点流");
+  }
+  if (info && info.source === "daily-clips" && desktop.score === 0 && bias.score === 0) {
+    bias.score += 0.5;
+    bias.reasons.push("普通 clips 默认偏观点短评");
+  }
+  const account = desktop.score > bias.score ? "KC桌面" : "KC偏见";
+  const diff = Math.abs(desktop.score - bias.score);
+  const confidence = diff >= 3.5 ? "高" : (diff >= 1.5 ? "中" : "低");
+  const reasons = account === "KC桌面" ? desktop.reasons : bias.reasons;
+  return {
+    recommended_account: account,
+    account_label_confidence: confidence,
+    account_label_reason: reasons.slice(0, 3).join("；") || "两边接近，按默认内容风格推荐",
+    kc_bias_score: Number(bias.score.toFixed(2)),
+    kc_desktop_score: Number(desktop.score.toFixed(2)),
+  };
+}
+
 function bbgClipTakeLimit(source) {
   if (source === "daily-clips") return 8;
   if (source === "top-videos") return 10;
@@ -2504,18 +2576,22 @@ async function latestBbgRenderedClipFiles(env, maxItems = 26) {
       return String(b.item.path || "").localeCompare(String(a.item.path || ""));
     })
     .slice(0, maxItems);
-  return dated.map(({ item, info }) => adminGithubFile(
-    info.source === "ark-invest" ? "bbg-ark-invest" : "bbg-show",
-    info.label,
-    {
-      name: String(item.path || "").split("/").pop(),
-      path: item.path,
-      size: item.size,
-    },
-    info.generatedDate,
-    renderedClipNote(item.path, info),
-    BBG_SHOW_REPO,
-  ));
+  return dated.map(({ item, info }) => {
+    const path = String(item.path || "");
+    return adminGithubFile(
+      info.source === "ark-invest" ? "bbg-ark-invest" : "bbg-show",
+      info.label,
+      {
+        name: path.split("/").pop(),
+        path,
+        size: item.size,
+      },
+      info.generatedDate,
+      renderedClipNote(path, info),
+      BBG_SHOW_REPO,
+      bbgVideoAccountRecommendation(path, info),
+    );
+  });
 }
 
 async function latestSiteVideoFiles(env, maxItems = 6) {
