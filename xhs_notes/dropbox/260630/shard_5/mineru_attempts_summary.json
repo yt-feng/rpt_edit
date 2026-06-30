@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_q9tln3o7/pdfs/0001-26-MS-Brands-US Marketing- -What-s the Feedback---260628.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_q9tln3o7/pdfs/0002-27-MS-Greater China Technology Hardware-GlassBridge and Fiber-to-PIC-s Implications for AI Transceiver and FAU Makers-260628.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_q9tln3o7/pdfs/0003-28-NOM-USD CNY fix model-Projection- 6.7882-260630.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_q9tln3o7/pdfs/0004-29-CITI-Overcoming Gridlock 2.0 -Solving Power Bottlenecks to Drive AI - Energy Security-260629.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_q9tln3o7/pdfs/0005-30-MS-Asia-Three Actionable Ideas-260628.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
