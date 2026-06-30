@@ -2402,33 +2402,118 @@ function renderedClipDate(path) {
   return match ? match[1] : "";
 }
 
-function renderedClipNote(path) {
+function isoDateAddDays(value, days) {
+  const match = String(value || "").match(/^(20\d{2})-(\d{2})-(\d{2})$/);
+  if (!match) return "";
+  const date = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]) + Number(days || 0)));
+  if (Number.isNaN(date.getTime())) return "";
+  return date.toISOString().slice(0, 10);
+}
+
+function bbgRenderedClipInfo(path) {
+  const clean = String(path || "").replace(/^\/+/, "");
+  const parts = clean.split("/");
+  const firstDate = renderedClipDate(clean);
+  const source = parts[1] || "";
+  if (source === "top-videos") {
+    return {
+      source: "top-videos",
+      label: "BBG Top Videos",
+      generatedDate: firstDate,
+      contentDate: firstDate,
+      sourceOrder: 1,
+      notePrefix: "top-videos",
+    };
+  }
+  if (source === "ark-invest") {
+    return {
+      source: "ark-invest",
+      label: "ARK Invest 视频",
+      generatedDate: firstDate,
+      contentDate: firstDate,
+      sourceOrder: 2,
+      notePrefix: "ark-invest",
+    };
+  }
+  if (/^20\d{2}-\d{2}-\d{2}$/.test(source)) {
+    const generatedDate = isoDateAddDays(source, 1);
+    return {
+      source: "daily-clips",
+      label: "BBG Show 视频",
+      generatedDate: generatedDate || source,
+      contentDate: source,
+      sourceOrder: 0,
+      notePrefix: "普通 clips",
+    };
+  }
+  return {
+    source: "other",
+    label: "BBG Show 视频",
+    generatedDate: firstDate,
+    contentDate: firstDate,
+    sourceOrder: 3,
+    notePrefix: "",
+  };
+}
+
+function renderedClipNote(path, info = bbgRenderedClipInfo(path)) {
   const parts = String(path || "").split("/");
   const dateIndex = parts.findIndex((part) => /^20\d{2}-\d{2}-\d{2}$/.test(part));
   const noteParts = dateIndex >= 0 ? parts.slice(dateIndex + 1, -1) : parts.slice(1, -1);
-  return noteParts.length ? noteParts.join(" / ").replace(/[-_]+/g, " ") : "";
+  const detail = noteParts.length ? noteParts.join(" / ").replace(/[-_]+/g, " ") : "";
+  const notes = [];
+  if (info.notePrefix) notes.push(info.notePrefix);
+  if (info.generatedDate) notes.push(`生成日期 ${info.generatedDate}`);
+  if (info.contentDate && info.contentDate !== info.generatedDate) notes.push(`内容日期 ${info.contentDate}`);
+  if (detail && detail !== info.notePrefix) notes.push(detail);
+  return notes.join(" · ");
 }
 
-async function latestBbgRenderedClipFiles(env, maxItems = 8) {
+function bbgClipTakeLimit(source) {
+  if (source === "daily-clips") return 8;
+  if (source === "top-videos") return 10;
+  if (source === "ark-invest") return 8;
+  return 4;
+}
+
+async function latestBbgRenderedClipFiles(env, maxItems = 26) {
   const tree = await githubRecursiveTree(env, BBG_SHOW_REPO);
-  const dated = tree
-    .filter((item) => item && item.type === "blob" && /^rendered-clips\/.+\.mp4$/i.test(item.path || "") && renderedClipDate(item.path))
-    .sort((a, b) => {
-      const score = dateScore(b.path) - dateScore(a.path);
+  const grouped = new Map();
+  for (const item of tree || []) {
+    if (!item || item.type !== "blob" || !/^rendered-clips\/.+\.mp4$/i.test(item.path || "")) continue;
+    const info = bbgRenderedClipInfo(item.path);
+    if (!info.generatedDate) continue;
+    const rows = grouped.get(info.source) || [];
+    rows.push({ item, info });
+    grouped.set(info.source, rows);
+  }
+  const picked = [];
+  for (const [source, rows] of grouped.entries()) {
+    rows.sort((a, b) => {
+      const score = dateScore(b.info.generatedDate) - dateScore(a.info.generatedDate);
       if (score) return score;
-      return String(b.path || "").localeCompare(String(a.path || ""));
+      return String(b.item.path || "").localeCompare(String(a.item.path || ""));
+    });
+    picked.push(...rows.slice(0, bbgClipTakeLimit(source)));
+  }
+  const dated = picked
+    .sort((a, b) => {
+      const score = dateScore(b.info.generatedDate) - dateScore(a.info.generatedDate);
+      if (score) return score;
+      if (a.info.sourceOrder !== b.info.sourceOrder) return a.info.sourceOrder - b.info.sourceOrder;
+      return String(b.item.path || "").localeCompare(String(a.item.path || ""));
     })
     .slice(0, maxItems);
-  return dated.map((item) => adminGithubFile(
-    "bbg-show",
-    "BBG Show 视频",
+  return dated.map(({ item, info }) => adminGithubFile(
+    info.source === "ark-invest" ? "bbg-ark-invest" : "bbg-show",
+    info.label,
     {
       name: String(item.path || "").split("/").pop(),
       path: item.path,
       size: item.size,
     },
-    renderedClipDate(item.path),
-    renderedClipNote(item.path),
+    info.generatedDate,
+    renderedClipNote(item.path, info),
     BBG_SHOW_REPO,
   ));
 }
@@ -2694,7 +2779,7 @@ async function pruneGithubCache(env, now = Date.now()) {
     const objects = Array.isArray(listed && listed.objects) ? listed.objects : [];
     for (const object of objects) {
       const metadata = object.customMetadata || {};
-      const pathScore = fileDateScoreFromPath(metadata.path || object.key || "");
+      const pathScore = dateScore(metadata.file_date || "") || fileDateScoreFromPath(metadata.path || object.key || "");
       const cachedAt = Date.parse(metadata.cached_at || object.uploaded || "");
       const tooOldByFileDate = pathScore && pathScore < cutoffDate;
       const tooOldByCacheDate = Number.isFinite(cachedAt) && cachedAt < cutoffTime;
@@ -2715,7 +2800,7 @@ async function pruneGithubCache(env, now = Date.now()) {
 async function warmAdminGithubCache(env, files = null) {
   const targetFiles = Array.isArray(files) ? files : await latestAdminGithubFiles(env);
   const warmed = [];
-  for (const file of targetFiles.filter((item) => item && item.type === "file").slice(0, 18)) {
+  for (const file of targetFiles.filter((item) => item && item.type === "file").slice(0, 36)) {
     try {
       warmed.push(await cacheGithubFile(env, file));
     } catch (error) {
