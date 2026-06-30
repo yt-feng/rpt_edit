@@ -1,0 +1,1463 @@
+[
+    {
+        "type": "image",
+        "img_path": "images/caa11e7cba0acb73d879751aa376be445ec48141d211bbcb3fb007c817c375f8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            398
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "CORPORATE FINANCE AND STRATEGY",
+        "bbox": [
+            50,
+            430,
+            311,
+            449
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Strong Markets, Hard Strategic Choices",
+        "text_level": 1,
+        "bbox": [
+            42,
+            476,
+            712,
+            580
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The 2026 Value Creators Rankings",
+        "bbox": [
+            40,
+            606,
+            419,
+            627
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "By Hady Farag, Jody Foldesy, Julien Ghesquieres, Gerry Hansell, Akshay Kohli, Jeff Kotzen, Martin Link, Alexander Roos, Alexis Colombo, and James Tucker",
+        "bbox": [
+            40,
+            656,
+            715,
+            695
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ARTICLE JUNE 30, 2026 8 MIN READ",
+        "bbox": [
+            40,
+            718,
+            358,
+            736
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Global stock markets continue to deliver strong, sustained, and broad-based performance, remaining resilient through inflation, geopolitical disruption, and recurring bouts of volatility. But for the first time in more than a decade, the companies and sectors leading that performance are not the ones investors have come to expect.",
+        "bbox": [
+            40,
+            796,
+            946,
+            878
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "BCG's 2026 Value Creators ranking reveals that leadership in value creation has rotated. Asset-heavy industries such as mining, oil and gas, aerospace and defense, construction, and banking now hold top positions that technology-driven sectors occupied for much of the past decade. Within technology itself, hardware and electrical components continue to outperform, while software and IT services have fallen sharply—from fourth place in last year’s rankings to 31st in this year’s.",
+        "bbox": [
+            40,
+            890,
+            932,
+            932
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            250,
+            984
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            941,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            40,
+            67,
+            941,
+            146
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "This rotation is not a market correction or a temporary blip. It reflects longer-term structural shifts, including where AI is disrupting business models, how geopolitical and macroeconomic forces are redirecting capital, and how investors are recalibrating expectations after years of expanding valuation multiples. Understanding what is driving the rotation—and what it demands of leadership teams—is the central challenge highlighted by this year’s rankings.",
+        "bbox": [
+            40,
+            160,
+            947,
+            261
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The 2026 rankings of top value creators are based on average annual total shareholder return (TSR) over the five years from 2021 through 2025. The five-year lens, which BCG has used in its Value Creators rankings since 1999, helps look past short-term market volatility to identify more durable trends in fundamental value creation. The 2026 sample includes 2,368 companies across 35 industries. (Their performance can be explored via this interactive exhibit; for more on our methodology, see “About the Research.”)",
+        "bbox": [
+            40,
+            274,
+            952,
+            393
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "- About the Research",
+        "text_level": 2,
+        "bbox": [
+            63,
+            424,
+            405,
+            449
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Since 1999, BCG has published annual rankings of top value creators based on total shareholder return over the previous five-year period. The 2026 rankings reflect our analysis of TSR at 2,368 companies worldwide from 2021 through 2025. To arrive at this sample, we began with TSR data provided by S&P Capital IQ—data that covers nearly 70,000 companies.",
+        "bbox": [
+            77,
+            488,
+            841,
+            587
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We eliminated companies that either were not listed on a stock exchange for the full five years of our study or did not currently have at least 20% of their shares traded in public capital markets. We allow exceptions to this rule for companies that are regarded as key industry players and whose stocks have sufficient liquidity. In addition, we eliminated companies for which five-year TSR was distorted by exogenous factors, such as speculative trading not based on fundamentals. We also eliminated companies that are headquartered in Russia or have predominantly Russian operations. Finally, we eliminated Argentinian, Turkish, and Venezuelan companies because these countries’ hyperinflationary environment skews TSR.",
+        "bbox": [
+            77,
+            606,
+            831,
+            804
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We further refined the sample by organizing the remaining companies into 35 industry groups and establishing an appropriate market capitalization hurdle to eliminate the smallest companies in each group. (We identify the size of the hurdle for each industry in the interactive exhibit.)",
+        "bbox": [
+            77,
+            822,
+            828,
+            903
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Our global large-cap ranking focuses on the top 50 of the 200 largest companies by market capitalization. We based the global and industry rankings on five-year average TSR performance for the individual companies from 2021 through 2025. TSRs and the contributing financial metrics are based on a company's reporting currency.",
+        "bbox": [
+            77,
+            67,
+            833,
+            165
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In addition, for all but four of the industry rankings, we divided TSR performance into the six investor-oriented financial metrics that BCG's TSR disaggregation model uses: sales growth, margin change, multiple change (based on EBITDA), dividend yield, change in the number of shares outstanding, and change in net debt plus leverage effect.",
+        "bbox": [
+            77,
+            185,
+            821,
+            284
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "For four industries—asset management and brokerage, banking, insurance, and real estate—we used a slightly different approach to TSR disaggregation because of the special analytical challenges involved in measuring value creation in those sectors. For asset management and brokerage and real estate, equity growth replaces sales growth, ROE change replaces margin change, and the price-to-earnings multiple replaces the EBITDA multiple. Change in net debt is not shown. For both banking and insurance, equity growth replaces sales growth and the price-to-book multiple replaces the EBITDA multiple. Margin change and change in net debt are not shown.",
+        "bbox": [
+            77,
+            303,
+            838,
+            481
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The interactive exhibit and this article reflect the rankings of companies in our 2026 database and do not include companies that dropped off the list before 2026 as a result of mergers, bankruptcies, or other events. For that reason, the rankings from previous Value Creators reports may be slightly different.",
+        "bbox": [
+            79,
+            500,
+            813,
+            579
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Sources: S&P Capital IQ; LSEG Workspace; BCG ValueScience® Center.",
+        "text_level": 2,
+        "bbox": [
+            79,
+            604,
+            740,
+            624
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Note: Market capitalization of equity is shown as of December 31, 2025. The location shown is of the corporate headquarters. The contribution of each factor in the TSR disaggregation to the five-year average TSR is shown in percentage points. Dividend yield may include cash dividends, special dividends, proceeds from spinoffs, other extraordinary payouts and adjustments for share splits, issuance of bonus shares, or other one-off events. Although disaggregation is multiplicative, it is converted and shown here as additive, with remainders assigned to the margin and multiple change fields. Because of rounding, the numbers may not add up to the TSR figure shown. Share change refers to the change in the number of shares outstanding, not to the change in share price. Net debt change refers to the change in market capitalization relative to the change in enterprise value, and it includes the change in debt and cash.",
+        "bbox": [
+            77,
+            643,
+            821,
+            881
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Disclaimer: The materials contained in the interactive exhibit and article are designed for information purposes only. BCG does not provide fairness opinions or valuations of market transactions, and these materials should not be relied on or construed as such. A company’s inclusion in the ranking does not represent an endorsement by BCG. The interactive and article do not provide investment or financial advice. Users should contact their advisors for such advice.",
+        "bbox": [
+            80,
+            898,
+            794,
+            919
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            77,
+            67,
+            841,
+            166
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "BCG has used publicly available data and has not independently verified the data and assumptions used in these analyses. BCG has made no undertaking to update these materials after the date they were gathered for publication, after which such information may become outdated or inaccurate. Changes in the underlying data or operating assumptions will have an impact on the analyses and conclusions. The underlying model used for the interactive and article is designed to work across industries and is no replacement for a detailed calculation that accommodates company- or industry-specific adjustments, which may have an impact on the accuracy of the results.",
+        "bbox": [
+            77,
+            185,
+            836,
+            363
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Markets Are Resilient, But the Landscape Is Changing",
+        "text_level": 1,
+        "bbox": [
+            40,
+            590,
+            779,
+            673
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Global markets have delivered average returns of approximately 12% annually since 2020. Although this is only modestly above the averages over the past 10 to 15 years, it is notably strong given recent periods of volatility—including stalled market performance post-COVID and the April 2025 correction amid shifting US trade policy. An unprecedented 11 companies exceeded \\$1 trillion in market capitalization at the end of 2025.",
+        "bbox": [
+            40,
+            697,
+            942,
+            797
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Beneath this stability, however, the composition of ranking leaders has changed dramatically. (See Exhibit 1.) Asset-heavy sectors have moved into the top ranks, displacing innovation-driven industries. Meanwhile, performance within technology has diverged. Hardware and electrical components have outperformed software and IT services as well as other technology-enabled sectors, such as financial infrastructure providers or medtech. The decline of software and IT",
+        "bbox": [
+            40,
+            812,
+            952,
+            912
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "services—a 27-place drop—is particularly striking: the sector was among the top five industries last year but now sits in the bottom five.",
+        "bbox": [
+            40,
+            67,
+            934,
+            105
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/afca6d92341252326d439bc8991408750ad86187d1537188e3af275b1296d531.jpg",
+        "table_caption": [
+            "EXHIBIT 1 Several Industry Rankings Shifted by Double Digits"
+        ],
+        "table_footnote": [
+            "Sources: S&P Capital IQ; BCG Value Creators database 2026; BCG ValueScience® Center.\nNote: The dataset includes more than 2,300 companies per year and applies minimum market capitalization thresholds by industry. Russian companies were omitted. Venezuelan, Argentinian, and Turkish firms were excluded because these countries' hyperinflationary environments skew valuations."
+        ],
+        "table_body": "<table><tr><td>Rank</td><td>Industry</td><td>Median 5-yr.TSR, 2020–2024 (%)</td></tr><tr><td>1</td><td>Technology Hardware</td><td>20.0</td></tr><tr><td>2</td><td>Construction</td><td>16.0</td></tr><tr><td>3</td><td>Mining</td><td>15.8</td></tr><tr><td>4</td><td>Software and IT Services</td><td>15.7</td></tr><tr><td>5</td><td>Machinery</td><td>15.2</td></tr><tr><td>6</td><td>Metals</td><td>14.2</td></tr><tr><td>7</td><td>Building Materials</td><td>13.8</td></tr><tr><td>8</td><td>Oil and Gas</td><td>12.7</td></tr><tr><td>9</td><td>Multibusiness</td><td>12.6</td></tr><tr><td>10</td><td>Electronic Components</td><td>12.6</td></tr><tr><td>11</td><td>Asset Management and Brokerage</td><td>12.2</td></tr><tr><td>12</td><td>Financial Infrastructure Providers</td><td>12.0</td></tr><tr><td>13</td><td>Insurance</td><td>11.8</td></tr><tr><td>14</td><td>Aerospace and Defense</td><td>11.6</td></tr><tr><td>15</td><td>Services</td><td>11.6</td></tr><tr><td>16</td><td>Automotive OEMs</td><td>11.5</td></tr><tr><td>17</td><td>Retail</td><td>11.4</td></tr><tr><td>18</td><td>Banks</td><td>11.3</td></tr><tr><td>19</td><td>Fashion and Luxury</td><td>10.1</td></tr><tr><td>20</td><td>Media and Publishing</td><td>8.5</td></tr><tr><td>21</td><td>Transportation and Logistics</td><td>8.2</td></tr><tr><td>22</td><td>Health Care Services</td><td>7.5</td></tr><tr><td>23</td><td>Forest Products and Packaging</td><td>7.5</td></tr><tr><td>24</td><td>Power and Utilities</td><td>7.4</td></tr><tr><td>25</td><td>Chemicals</td><td>7.4</td></tr><tr><td>26</td><td>Consumer Durables</td><td>7.2</td></tr><tr><td>27</td><td>Automotive Components</td><td>6.8</td></tr><tr><td>28</td><td>Medical Technology</td><td>6.8</td></tr><tr><td>29</td><td>Large-cap Pharma</td><td>6.5</td></tr><tr><td>30</td><td>Water and Environment</td><td>5.6</td></tr><tr><td>31</td><td>Mid-cap Pharma</td><td>5.3</td></tr><tr><td>32</td><td>Consumer Nondurables</td><td>4.3</td></tr><tr><td>33</td><td>Communication Service Providers</td><td>4.3</td></tr><tr><td>34</td><td>Travel and Tourism</td><td>3.7</td></tr><tr><td>35</td><td>Real Estate</td><td>1.4</td></tr></table>",
+        "bbox": [
+            43,
+            187,
+            728,
+            608
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Several forces are driving this rotation:",
+        "bbox": [
+            43,
+            690,
+            405,
+            709
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Among public companies, AI value is accruing to the physical infrastructure layer. The current phase of AI deployment is capital-intensive: it requires chips, data centers, power infrastructure, and physical connectivity. Hardware manufacturers, electrical component producers, and energy providers are direct beneficiaries. Software companies, by contrast, face a more uncertain monetization path. The AI-driven revenue uplift many investors expected has yet to materialize at scale, while AI itself is beginning to disrupt parts of the software value chain.",
+        "bbox": [
+            40,
+            740,
+            905,
+            878
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "\\- Geopolitics and trade policy are redirecting capital toward tangible assets. Defense spending has accelerated across Europe and Asia. Energy security has become a strategic priority. Oil and other raw materials prices have risen sharply. Infrastructure investment has increased in response to supply chain fragmentation. These trends directly favor aerospace and defense, oil and gas, mining, metals, and construction, now five of the top six performing sectors.",
+        "bbox": [
+            40,
+            892,
+            902,
+            933
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            60,
+            67,
+            922,
+            145
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Banks have benefited from the higher-rate environment. A sustained period of elevated interest rates has improved net interest margins for financial institutions, resulting in rising valuations of bank stocks. With inflation not returning to its low pre-COVID levels, investors appear to expect these tailwinds to outweigh concerns about private credit risks.",
+        "bbox": [
+            40,
+            160,
+            920,
+            241
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Regional patterns reflect these shifts. While the US continues to dominate in scale and mega-cap concentration, Asia remains overrepresented among top-performing companies, and Europe lags despite signs of stabilization.",
+        "bbox": [
+            40,
+            269,
+            949,
+            329
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Industry Is Not Destiny",
+        "text_level": 2,
+        "bbox": [
+            42,
+            401,
+            614,
+            442
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "While the sector rotation is consequential, BCG's data consistently shows that it does not determine outcomes at the company level. In all but three of the 35 industries studied, top-quartile companies outperformed the $12\\%$ market median—including in industries that ranked near the bottom of the overall rankings. (See Exhibit 2.)",
+        "bbox": [
+            40,
+            467,
+            927,
+            546
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Five-year average annual TSR, 2021–2025 (%)",
+        "bbox": [
+            43,
+            115,
+            306,
+            129
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/32cd1e65f8bf24e85fbd17fb07c980ffa88d8e005aad31209cf00f863f2971b4.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: S&P Capital IQ; LSEG Workspace; BCG Value Creators database 2026 (n=2368); BCG ValueScience® Center.\nNote: Russian companies were omitted. Venezuelan, Argentinian, and Turkish companies were excluded because these countries' hyperinflationary environment skews valuations."
+        ],
+        "bbox": [
+            43,
+            130,
+            727,
+            592
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "In other words, although the macro environment shapes the terrain, it does not pick the winners. A company in a low-performing sector can still deliver strong shareholder returns, and being in a sector that benefits from TSR tailwinds does not protect against underperformance.",
+        "bbox": [
+            40,
+            664,
+            941,
+            724
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "This highlights the important impact of company-level choices: strategy, capital allocation, operational execution, and the ability to adapt as conditions shift.",
+        "bbox": [
+            40,
+            737,
+            882,
+            778
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The Emerging Challenge",
+        "text_level": 2,
+        "bbox": [
+            40,
+            848,
+            659,
+            892
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "EXHIBIT 2",
+        "bbox": [
+            43,
+            64,
+            107,
+            77
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "A Broad Range of Company Performance Within Industries",
+        "bbox": [
+            42,
+            80,
+            624,
+            101
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Given record-high stock market levels, a significant consideration is the “expectation premium”—the gap between current market value and underlying fundamental value. For US non-financial companies, this premium has reached its highest level since 1926, exceeding even the peak of the dot-com bubble in 2000.",
+        "bbox": [
+            40,
+            67,
+            952,
+            145
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Companies, therefore, face a critical balancing act. They must meet near-term performance expectations while also investing to capture longer-term opportunities and navigating structural shifts in value creation. In many cases, this requires reshaping business portfolios—reallocating capital toward emerging sources of value—a process that is often complex and difficult to execute.",
+        "bbox": [
+            40,
+            160,
+            942,
+            259
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The required trade-offs are not always obvious. They depend on industry- and company-specific circumstances and on how leaders interpret current conditions—for example, whether they view current headwinds as temporary disruptions or indicators of structural changes.",
+        "bbox": [
+            40,
+            274,
+            942,
+            335
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Compelling strategies strike the right balance, translating into strong value creation across time horizons. Near-term performance can be boosted by an uplift in the valuation multiple or large capital returns (such as share buybacks). However, longer-term outperformance requires combining fundamental drivers (such as profitable revenue growth) with disciplined capital allocation, and valuations that reflect future upside. (See Exhibit 3.)",
+        "bbox": [
+            40,
+            348,
+            941,
+            448
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 3",
+        "text_level": 2,
+        "bbox": [
+            43,
+            480,
+            109,
+            494
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "In the Long Run, High-Quality Growth Is Essential for Value Creation",
+        "bbox": [
+            40,
+            495,
+            720,
+            517
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Sources of TSR for top-quartile performers among industrial businesses, 2005–2025 (%)",
+        "bbox": [
+            43,
+            531,
+            550,
+            546
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7a9b8a5aa067bf21d9143a21ce09b447bb299f23965a1013215a30850b679265.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: S&P Capital IQ, BCG ValueScience® Center.\nNote: Top quartile of the 2026 BCG Value Creators sample of industrial businesses (n=2056), 2005–2025. $^{1}$ Includes dividend contribution, share count change, and net debt change and leverage effect."
+        ],
+        "bbox": [
+            45,
+            555,
+            727,
+            739
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Control What You Can—and Bring Investors Along",
+        "text_level": 1,
+        "bbox": [
+            43,
+            66,
+            755,
+            149
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Going forward, companies will need to focus on what they can control near-term, including cost, pricing, and operations—and have a compelling value creation agenda for the long term. Successful leaders will approach these decisions with the urgency of activist investors, leveraging a tool kit that includes significant cost reduction, major changes to capital allocation priorities, and portfolio reshaping (including through divestitures).",
+        "bbox": [
+            40,
+            173,
+            949,
+            273
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "For some companies, this will require using the current tailwinds to deliver strong through-cycle performance rather than overspend today in response to their newfound prosperity. For others, the immediate priorities must be securing their financial foundation and freeing up capital for investments. In any case, CEOs and their leadership teams will need to identify the right paths to delivering the growth that is non-negotiable for longer-term value creation, including through AI and analytics and focused, value-accretive M&A.",
+        "bbox": [
+            40,
+            286,
+            947,
+            407
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "In a market defined by extremely high expectations, investor support is especially critical for durable value creation. Companies that make the right strategic choices but fail to bring investors along will not see those choices reflected in their valuations and TSR. Companies that manage investor expectations skillfully—while executing with the capabilities of seasoned operators — have a compounding advantage.",
+        "bbox": [
+            40,
+            420,
+            952,
+            520
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Some companies will also need to actively reshape their investor base—attracting long-term investors whose time horizon aligns with the company’s strategy, rather than relying on short-term holders whose investing decisions focus on quarterly performance. In a market this expectation-laden, the quality of a company’s investor base is itself a strategic asset.",
+        "bbox": [
+            40,
+            533,
+            912,
+            615
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "BCG's 2026 Value Creators rankings highlight both the strength and complexity of today's market. Sustained returns, historic valuation levels, and rapidly shifting sector performance are not contradictions. They are the defining features of the current environment, and they demand a thoughtful strategic response.",
+        "bbox": [
+            40,
+            664,
+            951,
+            744
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The companies that will lead the next phase of value creation are not simply those in the right sectors today. They are the ones making deliberate choices about near-term performance and long-term positioning—and executing those choices with discipline and strong investor alignment.",
+        "bbox": [
+            40,
+            758,
+            919,
+            838
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Authors",
+        "text_level": 2,
+        "bbox": [
+            43,
+            103,
+            245,
+            143
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/bd532354e5b771ad84319223f0bf183e7c8bd841bbd1a721d5ecdc4d8968d1ae.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            185,
+            220,
+            292
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/414fdbc0d75aaefbbd69aa5646b22d5b5ce2c917abf98c7aff1833e88a30df50.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            338,
+            218,
+            445
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/a23d46bb40f0b4f52e91b98699a69604031823555016e8c3685c32f4cf8afdb4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            70,
+            502,
+            218,
+            609
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/7ed6b68ec63a6e4c72ace1b80543edaaf84b834cb747eae94328ea5b249fbdc3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            70,
+            656,
+            218,
+            763
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/aa453a29891a531c1423020bf01d7d07d42f89edfdd31ea02ff39ca03fa61088.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            810,
+            220,
+            917
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Hady Farag",
+        "text_level": 2,
+        "bbox": [
+            245,
+            187,
+            370,
+            212
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Partner & Director, Shareholder Value Strategy\nNew York",
+        "bbox": [
+            242,
+            221,
+            459,
+            263
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/90070029bb908e7a8c5049eb7892c7983ae33d1fab14664040b063d5e2a62933.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            267,
+            274,
+            282
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Julien Ghesquieres",
+        "text_level": 2,
+        "bbox": [
+            244,
+            341,
+            451,
+            365
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner/ Global Leader, Corporate Finance\nNew York",
+        "bbox": [
+            242,
+            375,
+            436,
+            428
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/786ebc5572ec81546c991387dac3b812186750ad83c536e168eb35a3030b8f7d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            432,
+            272,
+            448
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Akshay Kohli",
+        "text_level": 2,
+        "bbox": [
+            244,
+            506,
+            387,
+            530
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "India Leader, Corporate Finance and Strategy\nMumbai",
+        "bbox": [
+            242,
+            539,
+            464,
+            580
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/9e8dcf6e8868ddaac061b06955f4800673678e61d9abbd898759de60436be104.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            586,
+            274,
+            602
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Martin Link",
+        "text_level": 2,
+        "bbox": [
+            244,
+            659,
+            378,
+            682
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Knowledge Expert, Team Manager\nMunich",
+        "bbox": [
+            242,
+            692,
+            417,
+            734
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/28284abc4e22382932ef537715c1cd18aef235bc95e00edaac132a25a70a976b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            738,
+            274,
+            755
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Alexis Colombo",
+        "text_level": 2,
+        "bbox": [
+            242,
+            829,
+            415,
+            853
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Partner\nLondon",
+        "bbox": [
+            242,
+            863,
+            444,
+            892
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/de5b156e99d6b16c305f95640fe632a8c4fdea10949cad213f57f836a287dda5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            245,
+            897,
+            274,
+            913
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/519696559298302b4686bdcd1c379f76bc891d4405e19ee411ef9b922a0b826e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            531,
+            186,
+            681,
+            292
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/52280ba42e582ae658c4ea8b2d158330b7473ec9d6b45d033f8295ebc234f932.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            533,
+            340,
+            681,
+            445
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/19b4b2068235196c22ed2b7591784c33bb7bdc08324d4ca2ee368a592fc33066.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            531,
+            504,
+            681,
+            611
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/00145c32d1d69793b0526fb01c55f716eec61ef4c3a2ad25e6ab2c0b809f5938.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            531,
+            656,
+            681,
+            763
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/b305d6671b77a12c5acaead4f9bab961fea97d24a61e7ee32337b3745aafbf83.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            533,
+            810,
+            681,
+            917
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Jody Foldesy",
+        "text_level": 2,
+        "bbox": [
+            705,
+            187,
+            846,
+            212
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner\nLos Angeles",
+        "bbox": [
+            705,
+            221,
+            898,
+            263
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/9980f39016ae56b5ad663fb63a99dfbeb83c876fd3f9f53eed148df3c1037cf0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            708,
+            267,
+            735,
+            282
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Gerry Hansell",
+        "text_level": 2,
+        "bbox": [
+            707,
+            347,
+            860,
+            370
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner\nChicago",
+        "bbox": [
+            705,
+            381,
+            898,
+            423
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/04301fd0d585ab81a470f4da32e17c30414795102245a4222541167af0305c05.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            708,
+            426,
+            735,
+            444
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Jeff Kotzen",
+        "text_level": 2,
+        "bbox": [
+            705,
+            506,
+            829,
+            530
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner\nNew Jersey",
+        "bbox": [
+            705,
+            539,
+            898,
+            581
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/8d0ae35585ca624e0c440884ad4d1dfdcf87fa4b9dff7171fb3ba60757063a33.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            708,
+            586,
+            735,
+            602
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Alexander Roos",
+        "text_level": 2,
+        "bbox": [
+            705,
+            659,
+            882,
+            683
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior Partner\nBerlin",
+        "bbox": [
+            705,
+            692,
+            898,
+            734
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/e90f537c2155ac9a0d34d7c3d0947032f2f8044c93f52c3d34a0cd689290c394.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            708,
+            738,
+            735,
+            755
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "James Tucker",
+        "text_level": 2,
+        "bbox": [
+            705,
+            813,
+            856,
+            835
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Senior\nPartner; Global Leader,\nCorporate Finance and Strategy\nPractice\nToronto",
+        "bbox": [
+            705,
+            846,
+            927,
+            910
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            934,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "ABOUT BOSTON CONSULTING GROUP",
+        "text_level": 2,
+        "bbox": [
+            42,
+            161,
+            434,
+            179
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+        "bbox": [
+            40,
+            196,
+            951,
+            316
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "#",
+        "bbox": [
+            708,
+            72,
+            735,
+            87
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            970,
+            249,
+            983
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            934,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 10
+    }
+]

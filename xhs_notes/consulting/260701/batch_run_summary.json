@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs",
+  "total_pdf_count_before_shard": 5,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Always-On-Portfolio-Management-How-Agentic-AI-Can-Give-a-Las_1c504fa2.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rbdqk7hs/pdfs/0001-BCG_Always-On-Portfolio-Management-How-Agentic-AI-Can-Give-a-Las_1c504fa2.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_How-AI-First-Banks-Are-Rewriting-the-Rules-of-Retail-Banking_421c4583.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rbdqk7hs/pdfs/0002-BCG_How-AI-First-Banks-Are-Rewriting-the-Rules-of-Retail-Banking_421c4583.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Processed-and-Pressured-CPG-s-Lost-Decade-of-R-D_a23301b3.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rbdqk7hs/pdfs/0003-BCG_Processed-and-Pressured-CPG-s-Lost-Decade-of-R-D_a23301b3.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-2026-Value-Creators-Rankings-Strong-Markets-Hard-Strateg_d3356088.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rbdqk7hs/pdfs/0004-BCG_The-2026-Value-Creators-Rankings-Strong-Markets-Hard-Strateg_d3356088.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-Great-Divide-How-the-US-and-China-Are-Splitting-the-AI-W_560cb425.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rbdqk7hs/pdfs/0005-BCG_The-Great-Divide-How-the-US-and-China-Are-Splitting-the-AI-W_560cb425.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
