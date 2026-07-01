@@ -1,0 +1,132 @@
+{
+  "date_folder": "260701",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 5,
+  "selected_count": 5,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit8_W5BPiZiyi6nI-vFJI3lPROZIohrx2Qw25qQ9oCacBM",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 5,
+      "payload_bytes": 43886,
+      "payload": "wechat_drafts/ark/260701/draft_payload_01.json",
+      "titles": [
+        "木头姐ARK：SpaceX星舰第12飞在即，IPO窗口或本周开启，星舰V3首飞在即，技术迭代加速商业化进程",
+        "木头姐ARK：Shopify正在为“代理式电商”搭建操作系统，营收增速放缓只是表象，GMV破千亿才是关键信号",
+        "木头姐ARK：Robinhood的“黄金”订阅才是真正的增长引擎，交易收入疲软只是表象，订阅模式正在重塑Robinhood的盈…",
+        "木头姐ARK：迷幻药审批加速，特朗普行政令打开政策绿灯，行政令直接缩短审评周期，迷幻药商业化时间表提前",
+        "木头姐ARK：DeFi正在从“实验”走向“金融基础设施”，稳定币与RWA，DeFi的“货币锚”正在被重新定义"
+      ],
+      "wechat_titles": [
+        "木头姐ARK：SpaceX星舰第12飞在即，IPO窗口或本周开启，星舰V3首飞在即，技术迭代加速商业化进程",
+        "木头姐ARK：Shopify正在为“代理式电商”搭建操作系统，营收增速放缓只是表象，GMV破千亿才是关键信号",
+        "木头姐ARK：Robinhood的“黄金”订阅才是真正的增长引擎，交易收入疲软只是表象，订阅模式正在重塑Robinhood的盈…",
+        "木头姐ARK：迷幻药审批加速，特朗普行政令打开政策绿灯，行政令直接缩短审评周期，迷幻药商业化时间表提前",
+        "木头姐ARK：DeFi正在从“实验”走向“金融基础设施”，稳定币与RWA，DeFi的“货币锚”正在被重新定义"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 5,
+        "expected_article_count": 5,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ¨å¤´å§ARKï¼SpaceXæè°ç¬¬12é£å¨å³ï¼IPOçªå£ææ¬å¨å¼å¯ï¼æè°V3é¦é£å¨å³ï¼ææ¯è¿­ä»£å éåä¸åè¿ç¨",
+          "æ¨å¤´å§ARKï¼Shopifyæ­£å¨ä¸ºâä»£çå¼çµåâæ­å»ºæä½ç³»ç»ï¼è¥æ¶å¢éæ¾ç¼åªæ¯è¡¨è±¡ï¼GMVç ´åäº¿ææ¯å ³é®ä¿¡å·",
+          "æ¨å¤´å§ARKï¼Robinhoodçâé»éâè®¢é ææ¯çæ­£çå¢é¿å¼æï¼äº¤ææ¶å ¥ç²è½¯åªæ¯è¡¨è±¡ï¼è®¢é æ¨¡å¼æ­£å¨éå¡Robinhoodççâ¦",
+          "æ¨å¤´å§ARKï¼è¿·å¹»è¯å®¡æ¹å éï¼ç¹ææ®è¡æ¿ä»¤æå¼æ¿ç­ç»¿ç¯ï¼è¡æ¿ä»¤ç´æ¥ç¼©ç­å®¡è¯å¨æï¼è¿·å¹»è¯åä¸åæ¶é´è¡¨æå",
+          "æ¨å¤´å§ARKï¼DeFiæ­£å¨ä»âå®éªâèµ°åâéèåºç¡è®¾æ½âï¼ç¨³å®å¸ä¸RWAï¼DeFiçâè´§å¸éâæ­£å¨è¢«éæ°å®ä¹"
+        ],
+        "create_time": 1782864240,
+        "update_time": 1782864241
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "木头姐ARK：SpaceX星舰第12飞在即，IPO窗口或本周开启，星舰V3首飞在即，技术迭代加速商业化进程",
+      "wechat_title": "木头姐ARK：SpaceX星舰第12飞在即，IPO窗口或本周开启，星舰V3首飞在即，技术迭代加速商业化进程",
+      "institution_name": "",
+      "source_report_name": "ARK 510-SpaceX-Targets-Starship-Flight-Test-12-Ahead-Of-Expected-IPO-Filing- 9362036511b6b53a",
+      "report_dir": "kc_translated_reports/ark/260701/01-0001-ARK_510-SpaceX-Targets-Starship-Flight-Test-12-Ahead-Of-Expected-IPO-Filing-_9362036511b6b5",
+      "content_chars": 5036,
+      "content_bytes": 6908,
+      "visible_text_chars": 1013,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260701/_assets/article_01_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：Shopify正在为“代理式电商”搭建操作系统，营收增速放缓只是表象，GMV破千亿才是关键信号",
+      "wechat_title": "木头姐ARK：Shopify正在为“代理式电商”搭建操作系统，营收增速放缓只是表象，GMV破千亿才是关键信号",
+      "institution_name": "",
+      "source_report_name": "ARK 509-Shopify-Is-Building-The-Operating-System-For-Agentic-Commerce-More bd4fc39a748858ce",
+      "report_dir": "kc_translated_reports/ark/260701/02-0002-ARK_509-Shopify-Is-Building-The-Operating-System-For-Agentic-Commerce-More_bd4fc39a748858ce",
+      "content_chars": 7156,
+      "content_bytes": 10272,
+      "visible_text_chars": 1789,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260701/_assets/article_02_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：Robinhood的“黄金”订阅才是真正的增长引擎，交易收入疲软只是表象，订阅模式正在重塑Robinhood的盈…",
+      "wechat_title": "木头姐ARK：Robinhood的“黄金”订阅才是真正的增长引擎，交易收入疲软只是表象，订阅模式正在重塑Robinhood的盈…",
+      "institution_name": "",
+      "source_report_name": "ARK 508-Robinhood-Is-Handing-Customers-And-Investors-A-Gold-en-Opportunity-M 9ad1d4daa0314db5",
+      "report_dir": "kc_translated_reports/ark/260701/03-0003-ARK_508-Robinhood-Is-Handing-Customers-And-Investors-A-Gold-en-Opportunity-M_9ad1d4daa0314d",
+      "content_chars": 6271,
+      "content_bytes": 8893,
+      "visible_text_chars": 1509,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260701/_assets/article_03_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：迷幻药审批加速，特朗普行政令打开政策绿灯，行政令直接缩短审评周期，迷幻药商业化时间表提前",
+      "wechat_title": "木头姐ARK：迷幻药审批加速，特朗普行政令打开政策绿灯，行政令直接缩短审评周期，迷幻药商业化时间表提前",
+      "institution_name": "",
+      "source_report_name": "ARK 507-A-New-Executive-Order-Is-The-Latest-Catalyst-Clearing-The-Path-For-P bd123408df15b388",
+      "report_dir": "kc_translated_reports/ark/260701/04-0004-ARK_507-A-New-Executive-Order-Is-The-Latest-Catalyst-Clearing-The-Path-For-P_bd123408df15b3",
+      "content_chars": 4976,
+      "content_bytes": 7098,
+      "visible_text_chars": 1062,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260701/_assets/article_04_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：DeFi正在从“实验”走向“金融基础设施”，稳定币与RWA，DeFi的“货币锚”正在被重新定义",
+      "wechat_title": "木头姐ARK：DeFi正在从“实验”走向“金融基础设施”，稳定币与RWA，DeFi的“货币锚”正在被重新定义",
+      "institution_name": "",
+      "source_report_name": "ARK The-DeFi-Quarterly-Q1-2026 8cfda2e38b7e545e",
+      "report_dir": "kc_translated_reports/ark/260701/05-0005-ARK_The-DeFi-Quarterly-Q1-2026_8cfda2e38b7e545e",
+      "content_chars": 6067,
+      "content_bytes": 8345,
+      "visible_text_chars": 1324,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260701/_assets/article_05_kc_ai_image_001.jpg"
+    }
+  ]
+}
