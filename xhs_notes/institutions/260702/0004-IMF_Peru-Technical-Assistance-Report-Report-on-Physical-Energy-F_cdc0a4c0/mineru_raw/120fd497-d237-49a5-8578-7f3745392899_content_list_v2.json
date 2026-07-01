@@ -1,0 +1,1624 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "TECHNICAL ASSISTANCE REPORT"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                143,
+                239,
+                839,
+                333
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "PERU"
+                    }
+                ]
+            },
+            "bbox": [
+                145,
+                415,
+                290,
+                450
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Report on Physical Energy Flow and Air Emissions Accounts (October 6–10, 2025)"
+                    }
+                ]
+            },
+            "bbox": [
+                142,
+                454,
+                816,
+                522
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "OCTOBER 2025"
+                    }
+                ]
+            },
+            "bbox": [
+                143,
+                535,
+                370,
+                561
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prepared By"
+                    }
+                ]
+            },
+            "bbox": [
+                142,
+                613,
+                274,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Lisbeth Rivas and Alcino Gomes"
+                    }
+                ]
+            },
+            "bbox": [
+                142,
+                633,
+                413,
+                654
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Authoring Departments:"
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                780,
+                388,
+                800
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Statistics Department"
+                    }
+                ]
+            },
+            "bbox": [
+                140,
+                809,
+                542,
+                839
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                143,
+                111,
+                267,
+                209
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "DISCLAIMER"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                136,
+                222,
+                151
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "\"The contents of this document constitute technical advice provided by the staff of the International Monetary Fund to the authorities of National Statistical Office of Peru (CD Recipient) in response to their request for technical assistance. This document (in whole or in part) or summaries thereof may be disclosed by the IMF to the IMF Executive Director for Peru, to other IMF Executive Directors and members of their staff, as well as to other agencies or instrumentalities of the CD recipient, and upon their request, to World Bank staff, and other technical assistance providers and donors with legitimate interest, unless the CD recipient specifically objects to such disclosure (see Operational Guidance for the Dissemination of Capacity Development Information). Publication or Disclosure of this report (in whole or in part) to parties outside the IMF other than agencies or instrumentalities of the CD recipient, World Bank staff, other technical assistance providers and donors with legitimate interest shall require the explicit consent of the CD recipient and the IMF's Statistics department.\""
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                167,
+                885,
+                351
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "MEMBERS/PARTNERS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                806,
+                294,
+                821
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/02947fbf1433d725bbe55a8e37473affba1b3e8e7efa6f06bc1f55381da61bd6.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                120,
+                844,
+                161,
+                878
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Schweizerische Eidgenossenschaft\nConfédération suisse\nConfederazione Svizzera\nConfederaziun svizra"
+                    }
+                ]
+            },
+            "bbox": [
+                171,
+                844,
+                401,
+                902
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "State Secretariat for Economic Affairs\nSECO\nEconomic Cooperation and Development"
+                    }
+                ]
+            },
+            "bbox": [
+                473,
+                845,
+                816,
+                898
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Table of Contents"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                90,
+                339,
+                113
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Acronyms and Abbreviations....2\nSummary of Mission Outcomes and Priority Recommendations....3\nSection II. Detailed Technical Assessment and Recommendations....5\nA. Officials Met During the Mission....7"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                132,
+                885,
+                246
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                959,
+                150,
+                973
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Technical Assistance Report – Peru"
+                    }
+                ]
+            },
+            "bbox": [
+                161,
+                959,
+                424,
+                974
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                959,
+                859,
+                974
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "1"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                960,
+                882,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Acronyms and Abbreviations"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                90,
+                483,
+                114
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AEA Air Emissions Accounts\nAPN Autoridade Portuária Nacioanl\nBCRP Banco Central de Reserva del Perú\nICSEEA Interinstitutional Committee of Statistics and Environmental and Economic Accounts\nIMF International Monetary Fund\nINEI Instituto Nacional de Estadística e Informática\nMIDAGRI Ministerio de Desarrollo Agrario y Riego\nMINAM Ministerio del Ambiente\nMINEM Ministerio de Energía y Minas\nMTC Ministerio de Transportes y Comunicaciones\nNA National Accounts\nNDNA National Directorate of National Accounts of the INEI\nOECD Organization for Economic Cooperation and Development\nOSINERGMIN Organismo Supervisor de la Inversión en Energía y Minería\nPEFA Physical Energy Flow Accounts\nSECO Swiss State Secretariat for Economic Affairs\nSEEA System of Environmental Economic Accounting\nSEEACF System of Environmental-Economic Accounting 2012 – Central Framework\nSEEA Energy. System of Environmental-Economic Accounting for Energy\nSENAMHI Servicio Nacional de Meteorología e Hidrología\nSERFOR Servicio Nacional Forestal y de Fauna Silvestre\nSNA System of National Accounts\nUNSIAP United Nations Statistical Institute for Asia and the Pacific"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                125,
+                846,
+                766
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Technical Assistance Report – Peru"
+                    }
+                ]
+            },
+            "bbox": [
+                160,
+                959,
+                424,
+                974
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                959,
+                859,
+                974
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                869,
+                959,
+                883,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Summary of Mission Outcomes and Priority Recommendations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                90,
+                661,
+                137
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. A technical assistance (TA) mission visited the Instituto Nacional de Estadística e Informática of Peru during October 6–10, 2025. The objective of the mission was to review, assess, analyze, and validate the results of the revised Physical Energy Flow Accounts (PEFA) and Air Emissions Accounts (AEA) for 2019, the preliminary PEFA for the period 2020–2022 and the preliminary AEA for the years 2020–2021, and discuss dissemination strategies for releasing these accounts. A second objective was to develop a time series for the indicators building on the experience of the data compiled for 2019 and set up a mechanism for regular production of the accounts. The mission also supported a broader stakeholder engagement. The COVID-19 Pandemic affected the availability and timeliness of the source data for compiling the accounts."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                154,
+                882,
+                311
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. The IMF Statistics Department with support from the Switzerland State Secretariat for Economic Affairs (SECO)—launched a two-year “Environmental and Climate Change Statistics Capacity Development Program” to assist countries in designing and implementing programs for developing timely and internationally comparable statistics that can help in formulating policies to address the environmental, financial, economic, and social implications of climate change."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                321,
+                882,
+                410
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3. The project was launched in March 2023, and a diagnostic mission conducted in July 2023 suggested that INEI could explore the development of energy and air emissions accounts.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Later, in February 2024, three participants from Peru attended the training workshop conducted in collaboration with the United Nations Statistical Institute for Asia and the Pacific (UNSIAP) in Chiba, Japan. Linking air emission and energy data to economic activities provides the necessary information to develop policies that promote reducing emissions and a shift towards a low-carbon economy. Further, because energy and air emission accounts use the same structure as supply and use tables, they can be used in the input-output modelling for calculating carbon footprints. These accounts also support decision making regarding carbon taxes/prices as well as understanding the effect of border carbon adjustments."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                419,
+                879,
+                578
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4. A TA mission visited the INEI of Peru during May 27–31, 2024, to initiate the compilation of energy and air emission accounts and to train compilers. Different teams from INEI, ministries and government institutions related to agriculture, forest, mines, energy, environment, and climate participated in the workshop and provided information on the data currently collected and compiled and their use. Exercises were developed and solved to illustrate the compilation procedures. The sources and methods of compilation for the energy and air emissions accounts were discussed based on presentations and examples using actual data from Peru."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                588,
+                883,
+                710
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5. The May 2024 mission stressed the need to enhance communication, collaboration and coordination among data producing agencies through data sharing mechanisms such as memorandums of understanding and establishing technical committees considering that the data needed to produce energy and air emission accounts are dispersed across institutions. The Peru's National Interinstitutional Committee of Statistics and Environmental and Economic Accounts (ICSEEA) serve as a coordination mechanism among various stakeholders. The mission stressed the importance of releasing the energy and air emission accounts before the end of the project in April 2025, even if the"
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                722,
+                883,
+                845
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  Peru: Technical Assistance Report-Report of the Diagnostic Mission on Macro-relevant Climate Change Statistics (July 10–14, 2023)"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                880,
+                866,
+                909
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF | Technical Assistance Report – Peru"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                959,
+                424,
+                974
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                959,
+                859,
+                974
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                959,
+                883,
+                974
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "data could be labelled as experimental. Continued virtual monthly TA was provided to the INEI for compiling the energy and air emissions accounts for 2019 following the mission."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                89,
+                823,
+                125
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "6. A third mission was conducted in February 2025 to provide assistance to the INEI in the data analysis/validation, dissemination strategies, and in preparing metadata and data releases on the energy and air emission accounts for 2019."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                136,
+                883,
+                188
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "7. The experimental accounts for 2019 were released on July 11, 2025, in a document called: \"Experimental Accounts of Physical Energy Flows and Air Emissions—Methodology and Results (Cuentas Experimentales de Flujos de Energía Física y Emisiones al Aire—Metodología y Resultados). "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " The publication provides the data, the description of the methodologies used as well as the indicators disseminated through user friendly charts. Several source data producers and other stakeholders made comments on the publication that will be considered at the next release of the accounts."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                199,
+                883,
+                321
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "8. This present mission reviewed, assessed, and validated the PEFA data for the period 2020–2022 and the AEA data for the period 2020–2021, and provided recommendations for improvement as needed, in particular, on the allocation of natural gas and diesel to the relevant industries and in applying the residence principle to maritime and inland water transport, involving the allocation of energy use and air emissions to the resident units in the country. These adjustments are necessary to align energy and air emission data to national accounts data."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                333,
+                883,
+                439
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "9. The mission provided hands-on assistance to make the recommended adjustments and interpret the results and the different indicators included in the accounts. Most adjustments were incorporated into the accounts on site."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                449,
+                862,
+                501
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "10. Additional hands-on assistance was provided by the mission on the allocation of different diesel types used by the domestic economy to PEFA energy products. Allocation was cross-checked with the Ministry of Energy and Mines (MINEM) experts on site."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                512,
+                877,
+                565
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "11. Economic-environmental indicators production and dissemination were discussed and settled, namely on the use of GDP at current or constant prices. In addition, the use of the supply and use table by product and the value added by economic activity at current prices from the national accounts was discussed."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                575,
+                854,
+                645
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "12. The mission also discussed guidelines for preparing the publication of the tables with the accounts and their respective metadata."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                657,
+                874,
+                691
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "13. The objective is that by April 2026, the country would have released the revised data for 2019 and the preliminary PEFA for the period 2020–2022 and the preliminary AEA for the period 2020–2021 and would have set up a mechanism for the regular compilation of the accounts. To accomplish this, additional human resources need to be allocated to the compilation of the PEFA and the AEA."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                703,
+                877,
+                789
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "14. To support progress in the above work areas, the mission recommended the following priority recommendations to compile PEFA and AEA."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                801,
+                849,
+                835
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "2 6954323-cuentas-experimentales-de-energia-y-emisiones-al-aire.pdf"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                893,
+                576,
+                909
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF | Technical Assistance Report – Peru"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                959,
+                424,
+                974
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                959,
+                859,
+                974
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                869,
+                960,
+                883,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/08baf70644f3060c42d2472ce49347ecdb702b4810de8d3f0a3fa583254639a8.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "TABLE 1. Priority Recommendations"
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Target Date</td><td>Priority Recommendation</td><td>Responsible Institutions</td></tr><tr><td>October 2025</td><td>Make the adjustments suggested by the mission on natural gas, diesel, and maritime and inland water transport to the accounts.</td><td>INEI</td></tr><tr><td>October 2025</td><td>Use the supply and use table and the GDP at current prices for the year in question to calculate the ratios for the adjustments and the indicators used in the accounts.</td><td>INEI</td></tr><tr><td>April 2026</td><td>Publish the tables with revised data, and their respective metadata, for 2019 and preliminary energy accounts for the period 2020–2022 and air emissions accounts for the period 2020–2021 by April 2026.</td><td>INEI</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                114,
+                112,
+                880,
+                325
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "15. Further details on the priority recommendations and the related actions/milestones can be found in the action plan under Detailed Technical Assessment and Recommendations."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                342,
+                880,
+                377
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Section II. Detailed Technical Assessment and Recommendations"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                386,
+                694,
+                433
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "16. A technical assistance mission visited the Instituto Nacional de Estadística e Informática of Peru during October 6–10, 2025. The objective of the mission was to review, assess, analyze, and validate the results of the revised Physical Energy Flow Accounts (PEFA) and Air Emissions Accounts (AEA) for 2019, the preliminary PEFA for the period 2020-2022 and the preliminary AEA for the years 2020–2021, and discuss dissemination strategies for releasing these accounts. A second objective was to develop a time series for the indicators building on the experience of the data compiled for 2019 and set up a mechanism for regular production of the accounts. The mission also supported a broader stakeholder engagement. The Covid-19 Pandemic affected the availability and timeliness of the source data for compiling the accounts."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                448,
+                883,
+                606
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "17. This present mission reviewed, assessed, and validated the PEFA data for the period 2020–2022 and the AEA data for the period 2020–2021."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                617,
+                836,
+                651
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "18. During the data analysis, incoherence in natural gas allocation was detected on the mining and manufacturing industry's data source: the energy balance. Therefore, revision and redistribution of the own consumption of energy products by the mining and manufacturing industries were recommended by the mission, because besides the own consumption of natural gas, it includes the consumption of oil derivative products that will affect both mining and manufacturing industries."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                662,
+                883,
+                751
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "19. The mission suggested collaboration and coordination with the MINEM to access additional detailed data for making the adjustments to the PEFA."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                761,
+                808,
+                796
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "20. Both PEFA and AEA compilation requires applying the national accounts residence principle, by which all energy flows and/or emissions used or generated by resident units should be included in these accounts, and all energy flows and/or emissions used or generated by non-resident units in the economic territory should be deducted. Issues requiring residence adjustment were reviewed."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                806,
+                872,
+                893
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Technical Assistance Report – Peru"
+                    }
+                ]
+            },
+            "bbox": [
+                158,
+                959,
+                424,
+                974
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                959,
+                859,
+                974
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                959,
+                883,
+                974
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "21. Allocation of natural gas and diesel to the relevant industries and residence principle adjustments to maritime and inland water transport require improvements, involving the allocation of energy use and air emissions to the resident units in the country. These adjustments are necessary to align energy and air emission data to national accounts data. The mission suggested contacting the OECD to request more detailed data on the experimental database on navigation transport, and the Reserve Bank of Peru to request the detailed balance of payments data (e.g., fuel sales to non-residents and fuel purchases abroad by residents)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                90,
+                875,
+                212
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "22. Special attention was given to inter-connections between PEFA and AEA. For example, adjustments to residence principle can be performed once for both accounts, using energy flows with emissions to boost compilation process productivity and data quality."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                223,
+                848,
+                275
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "23. The mission provided hands-on assistance to make the recommended adjustments and interpret the results and the different indicators included in the accounts. Most adjustments were incorporated into the accounts on site. AEA and PEFA are in line with the accounting structures and principles of the System of Environmental-Economic Accounting 2012—Central Framework (SEEA-CF), and, therefore, fully consistent with monetary data from the System of National Accounts (SNA). As stressed during the mission, this allows all kinds of analyses, and it can be an input for other statistics and/or accounts, such as between AEA and PEFA, or national accounts."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                286,
+                869,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "24. Additional hands-on assistance was provided by the mission on the allocation of different diesel types used by the domestic economy to PEFA energy products. Allocation was cross-checked with the MINEM experts on site."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                419,
+                877,
+                470
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "25. Economic-environmental indicators production and dissemination were discussed and settled, namely on the use of GDP at current or constant prices. In addition, the use of the supply and use table by product and the value added by economic activity at current prices from the national accounts was discussed."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                484,
+                854,
+                551
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "26. The mission also discussed guidelines for preparing the publication of the tables with the accounts and their respective metadata. Examples from other countries and international institutions published data and metadata were explored on site."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                565,
+                874,
+                617
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "27. The objective is that by April 2026, the country would have released the revised data for 2019 and the preliminary PEFA for the period 2020–2022 and the preliminary AEA for the period 2020–2021 and would have set up a mechanism for the regular compilation of the accounts. To accomplish this, additional human resources need to be allocated to the compilation of the PEFA and the AEA."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                628,
+                877,
+                714
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The mission made the following main recommendations:"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                727,
+                527,
+                743
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Allocate additional human resources to the compilation of the energy and air emission accounts."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                751,
+                841,
+                767
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Make the adjustments suggested by the mission on natural gas, diesel, and maritime and inland water transport to the accounts."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                776,
+                883,
+                808
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Review and redistribute the own consumption of energy products by the mining and manufacturing industries because besides the own consumption of natural gas, it includes the consumption of oil derivative products that will affect both mining and manufacturing industries. Request additional detailed data to the MINEM for making the adjustments to the PEFA."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                816,
+                885,
+                883
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Technical Assistance Report – Peru"
+                    }
+                ]
+            },
+            "bbox": [
+                160,
+                959,
+                424,
+                974
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                959,
+                859,
+                974
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                960,
+                883,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Use the supply and use table and the GDP at current prices for the year in question to calculate the ratios for the adjustments and the indicators used in the accounts."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                89,
+                883,
+                125
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Publish the tables with revised data, and their respective metadata for 2019, preliminary energy accounts for the period 2020–2022, and air emissions accounts for the period 2020–2021 by April 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                131,
+                885,
+                164
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Contact the OECD to request more detailed data on the experimental database on navigation transport and the and the Reserve Bank of Peru to request the detailed balance of payments data (e.g., fuel sales to non-residents and fuel purchases abroad by residents)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                171,
+                885,
+                222
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Increase the level of detail from aggregated to medium breakdown both on the AEA and the PEFA for the next compilation exercise."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                229,
+                883,
+                262
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Establish a mechanism for the regular compilation and publication of the accounts at national level from 2026 onwards."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                268,
+                883,
+                303
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Start the regular annual reporting of the AEA and the PEFA questionnaires to the United Nations and OECD by March 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                310,
+                883,
+                344
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A. OFFICIALS MET DURING THE MISSION"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                112,
+                359,
+                454,
+                375
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d327ab1cc5443dd5cf67f6f3b9b11c84c8d2e220d8e2cda4ab9c424b7c21d26a.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Name</td><td>Institution</td></tr><tr><td>Raymundo Guillermo Chirinos Cabrejos</td><td>BCRP</td></tr><tr><td>Sebastián Alejandro Basurto Cervantes</td><td>BCRP</td></tr><tr><td>Jhonatan Edwin Bruno Ramirez</td><td>SENAMHI</td></tr><tr><td>Juan Carlos Zegarra Vargas</td><td>SENAMHI</td></tr><tr><td>Rosalinda Cedy Aguirre Almeyda</td><td>SENAMHI</td></tr><tr><td>Carmen Carolina Calle Benavides</td><td>MTC</td></tr><tr><td>Diego Lope</td><td>MINAM</td></tr><tr><td>Robert Cordoña Ccahuata</td><td>MINEM</td></tr><tr><td>Giannina Ibarra</td><td>MINEM</td></tr><tr><td>Celia Bedoya Jimenez</td><td>MIDAGRI</td></tr><tr><td>Irma Romero</td><td>MIDAGRI</td></tr><tr><td>Milagros Montes Matos</td><td>MIDAGRI</td></tr><tr><td>Sandra Roncal</td><td>MIDAGRI</td></tr><tr><td>Alfredo Apaza Ticona</td><td>SERFOR</td></tr><tr><td>Alexs Arana Olivos</td><td>SERFOR</td></tr><tr><td>Wilder Santos Viera</td><td>OSINERGMIN</td></tr><tr><td>Jose Luis Robles</td><td>INEI</td></tr><tr><td>Consuelo Landa</td><td>INEI</td></tr><tr><td>Henry Meza Meza</td><td>INEI</td></tr><tr><td>Judith Samaniego</td><td>INEI</td></tr><tr><td>Ysabel Galvan Palomino</td><td>INEI</td></tr><tr><td>Ernesto Mercado</td><td>INEI</td></tr><tr><td>Bertha Rodriguez Jara</td><td>INEI</td></tr><tr><td>Carlos Carre Rodriguez</td><td>INEI</td></tr><tr><td>Felixalberto Lavado</td><td>INEI</td></tr><tr><td>Fanny Sumalave</td><td>INEI</td></tr><tr><td>Jean Gonzales Vitancio</td><td>INEI</td></tr><tr><td>Miluska Luy Fabab</td><td>INEI</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                114,
+                383,
+                882,
+                901
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                959,
+                150,
+                973
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Technical Assistance Report – Peru"
+                    }
+                ]
+            },
+            "bbox": [
+                160,
+                959,
+                424,
+                974
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                959,
+                859,
+                974
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                959,
+                883,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                114,
+                89,
+                882,
+                330
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                959,
+                150,
+                973
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Technical Assistance Report – Peru"
+                    }
+                ]
+            },
+            "bbox": [
+                161,
+                959,
+                424,
+                974
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "National Accounts Statistics Mission"
+                    }
+                ]
+            },
+            "bbox": [
+                594,
+                959,
+                859,
+                974
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                959,
+                883,
+                973
+            ]
+        }
+    ]
+]

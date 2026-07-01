@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_s1uwwnl4/pdfs/0001-Brookings_From-Geneva-AI-security-and-US-China-dialogue_ec17edbc.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_s1uwwnl4/pdfs/0002-IMF_Israel-2026-Article-IV-Consultation-Press-Release-Staff-Repo_7808265e.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_s1uwwnl4/pdfs/0003-IMF_Israel-Selected-Issues_92d8313f.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_s1uwwnl4/pdfs/0004-IMF_Peru-Technical-Assistance-Report-Report-on-Physical-Energy-F_cdc0a4c0.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_s1uwwnl4/pdfs/0005-RAND_Insights-from-table-top-exercises-in-Europe-on-AI-safety-and_fba279ec.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

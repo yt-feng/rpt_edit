@@ -1,0 +1,274 @@
+# Insights from table-top exercises in Europe on AI safety and cyber misuse
+
+Afek Shamir, Henri van Soest, Stephen Clare & Sana Zakaria
+
+For more information on this publication, visit www.rand.org/t/RRA5082-1
+
+## About RAND Europe
+
+RAND Europe is a not-for-profit research organisation that helps improve policy and decision making through research and analysis. To learn more about RAND Europe, visit www.randeurope.org.
+
+## Research Integrity
+
+Our mission to help improve policy and decision making through research and analysis is enabled through our core values of quality and objectivity and our unwavering commitment to the highest level of integrity and ethical behaviour. To help ensure our research and analysis are rigorous, objective, and nonpartisan, we subject our research publications to a robust and exacting quality-assurance process; avoid both the appearance and reality of financial and other conflicts of interest through staff training, project screening, and a policy of mandatory disclosure; and pursue transparency in our research engagements through our commitment to the open publication of our research findings and recommendations, disclosure of the source of funding of published research, and policies to ensure intellectual independence. For more information, visit www.rand.org/about/research-integrity.
+
+RAND's publications do not necessarily reflect the opinions of its research clients and sponsors.
+
+Published by the RAND Corporation, Santa Monica, Calif., and Cambridge, UK
+
+© 2026 RAND Corporation
+
+RAND® is a registered trademark.
+
+Cover: Adobe Stock
+
+## Limited Print and Electronic Distribution Rights
+
+This publication and trademark(s) contained herein are protected by law. This representation of RAND intellectual property is provided for noncommercial use only. Unauthorised posting of this publication online is prohibited; linking directly to its webpage on rand.org is encouraged. Permission is required from RAND to reproduce, or reuse in another form, any of its research products for commercial purposes. For information on reprint and reuse permissions, please visit www.rand.org/pubs/permissions.
+
+RAND Europe, the UK AI Security Institute (UK AISI) and Mila – Quebec AI Institute developed a series of tabletop exercises (TTXs) to explore artificial intelligence (AI) risks. This report presents the design, execution and findings of three TTXs run for senior policymakers in Germany, the Netherlands and France. The exercises were developed to support European and global decision-makers as they engage pragmatically with the AI misuse and malfunction risks identified in the 2026 International AI Safety Report. The scenario detailed in this report focuses on the use of AI capabilities by criminal actors to conduct large-scale cyberattacks.
+
+The TTXs utilise RAND's ‘Day After’ methodology: two-turn table-top simulations in which participants, playing the roles of Ministerial Cabinet members, confront a crisis scenario requiring their judgements and policy steer. After receiving a written and verbal brief, participants are asked to identify appropriate responses and develop compelling courses of action.
+
+The crisis scenario centres on a domestic AI company, backed by the national government as a tech ‘champion’, which is ambiguously tied to a string of AI-enabled cyberattacks made possible by rapid advances in leading AI models’ coding capabilities. This report focuses on the design of this scenario and covers key issues shaping participant discussion and decision-making, as well as the capabilities and governance measures that participants identified as most urgently needed.
+
+## Funding
+
+This research was conducted by RAND Europe in collaboration with the UK AI Security Institute in its capacity as Secretariat to the International AI Safety Report. The TTXs were delivered jointly by RAND Europe and the Secretariat to the International AI Safety Report. Funding was also provided by the UK AI Security Institute. RAND donors and sponsors have no influence over research findings or recommendations.
+
+This report presents the findings from three table-top exercises (TTXs) designed to help senior officials engage practically with the challenges posed by emerging AI risks. Knowing what the evidence says about AI risk is different from knowing how to use it to make effective decisions. Contextualising and adapting that evidence to a variety of different policy goals and institutional contexts is a challenging, and often neglected, task. This report presents results from a novel effort to bridge this gap: placing policymakers inside a simulated AI-driven cyber crisis, based on findings about capabilities and trends from the 2026 International AI Safety Report, and tasking them with developing practical policy responses.
+
+The TTXs highlighted significant gaps in AI incident response plans, including difficulties in gathering reliable evidence on AI capabilities and risks and coordinating across institutions to grapple with a highly capable, general-purpose technology. But they also surfaced a range of promising response possibilities, including leveraging existing incident response protocols and deploying AI systems to accelerate defensive efforts.
+
+Three discrete exercises were conducted in Berlin, The Hague and Paris under a programme developed jointly by RAND Europe and the UK AI Security Institute. Using RAND's ‘Day After’ methodology, each session placed 15 to 20 senior officials in the role of Ministerial Cabinet members confronting a dramatic increase in cyberattacks driven by improving AI capabilities. The exercises were built to answer three questions:
+
+1. What information do policymakers need when an AI crisis is underway?
+
+2. What preparatory measures would governments have found helpful?
+
+3. What immediate policy responses would they judge most urgent?
+
+Participants encountered multiple difficulties, including persistent evidence gaps, trade-offs between acting more quickly or waiting for more information, and coordination challenges among the range of actors involved. Seven discussion topics recurred across the exercises:
+
+\- Defining the crisis threshold. When does the pace and scale of AI-enabled cyberattacks amount to a national crisis rather than a more routine operational problem?
+
+\- Engaging a national AI champion. In the exercise, the state had publicly backed and funded the problematic model's developer. Acting against its interests meant admitting a governance failure and absorbing the political and economic cost of turning on a strategic asset.
+
+\- Calibrating risk management when capabilities cannot be reliably evaluated. With no trustworthy way to assess the model's risks independently, government was left relying on the developer's voluntary – and potentially biased – risk assessments.
+
+\- Preventing open-weight misuse. The diffusion of a highly-capable open-weight model in Turn 2 raised new challenges, as it is harder to monitor and implement safeguards on open-weight models.
+
+\- Hardening critical infrastructure. Proposals for protecting vulnerable systems ranged from restricting access to the AI model to simulating attacks against critical systems.
+
+\- Utilising this crisis as a catalyst for positive institutional change. The crisis brought attention, resources and political will that could be used to invest in durable preparedness measures.
+
+\- Cooperating with allies. Whether to restrict threat intelligence to trusted minilateral networks or share information broadly, including with potential adversaries.
+
+Participants also identified several priorities for crisis preparation. These centred on proactively generating evidence about AI capabilities and crisis response plans and creating communication channels and institutions to coordinate government response. Specifically, discussions surfaced the following priorities:
+
+\- Pre-agreed escalation thresholds. Without clear triggers for when an AI incident becomes a national crisis, participants spent time debating what they were facing rather than responding to it.
+
+\- Systematic cyberdefence reviews. National agencies lacked a baseline assessment of how exposed critical infrastructure and government systems were to AI-enabled attacks, and so could not triage during the crisis.
+
+\- Independent technical capacity to evaluate AI risks. Relying on the developer's own account of its model's risks left government unable to confidently assess the risk level.
+
+\- Targeted crisis communications strategies. Specific, practical information for the most-exposed actors was more useful than broad warnings or silence.
+
+\- Multilateral governance frameworks that can activate quickly. International cooperation was needed to manage risks and models that cross borders, but negotiations were too slow during the crisis.
+
+\- Structured information flows between developers and government. In the crisis, governments were reliant on what information the developer chose to share. Public funding and procurement measures would provide leverage to obtain more information.
+
+Beyond the substantive findings, the exercises show how rigorous risk assessment can be turned into practical policy preparation. Grounding the scenario in the 2026 International AI Safety Report's assessment of capabilities and trends made it realistic and evidence based rather than speculative; and dramatising findings as a live policy challenge made them concrete and actionable for the officials who must prepare for real events.
+
+Preface ....i
+Executive summary ....ii
+Glossary ....v
+Acknowledgements....vi
+1. Scenario design....1
+2. Scenario summary....4
+3. Key discussion themes....5
+4. Capabilities to invest in....10
+5. Limitations....13
+6. Conclusion and next steps....14
+References....15
+
+<table><tr><td>Open-source / open-weight models</td><td>Models with publicly downloadable weights; ‘open-source’ further implies permissive code/licensing and sometimes broader transparency.</td></tr><tr><td>Agents / agentic AI</td><td>AI systems that can plan, act and adapt to pursue goals across multi-step tasks with limited human oversight.</td></tr><tr><td>Frontier AI models</td><td>The most capable models at the cutting edge of performance and potential risk.</td></tr><tr><td>General-purpose AI (GPAI) models</td><td>Broadly capable models designed to perform many tasks across domains rather than a single narrow use.</td></tr><tr><td>Distillation</td><td>A form of training in which a ‘student’ AI model learns by imitating the outputs of a more powerful ‘teacher’ system.</td></tr><tr><td>Red-teaming</td><td>A systematic process in which dedicated individuals or teams search for vulnerabilities, limitations or potential for misuse through various methods. In AI, red teams often search for inputs that induce undesirable behaviour in a model or system.</td></tr><tr><td>Evidence dilemma</td><td>The challenge that policymakers face when making decisions about a new technology before there is strong scientific evidence about its benefits or risks, forcing them to weigh the risk of creating ineffective or unnecessary regulations against the risk of allowing serious harms to occur without adequate safeguards.</td></tr><tr><td>Adversarial prompting / prompt injection</td><td>Techniques used to manipulate an AI model into producing outputs it was designed to refuse, either by crafting inputs that circumvent safety filters or by embedding malicious instructions within data the model is asked to process.</td></tr><tr><td>Weight exfiltration</td><td>The unauthorised copying or theft of a model’s trained parameters, which can be used to recreate the model’s capabilities outside the developer’s control and without any of its original safeguards.</td></tr><tr><td>Staged / staggered access</td><td>A model release approach in which access is granted incrementally to different user groups over time, allowing developers and regulators to monitor for misuse and intervene before capabilities are made widely available.</td></tr><tr><td>Minilateral network</td><td>A small coalition of like-minded states that coordinates on a specific issue outside larger multilateral bodies, typically enabling faster decision-making and higher levels of trust among participants.</td></tr></table>
+
+We thank Patrick King, Samuel Kenny, Kat Lyness and Jai Sood at the UK AI Security Institute and Department for Science, Innovation and Technology (DSIT) for their partnership throughout the design and delivery of the exercises described in this report. We are grateful to the participants in Berlin, The Hague and Paris, who generously gave their time and engaged substantively with all sessions. We also thank Carina Prunkl for her support in developing the scenarios. We thank RAND's Geopolitics of AGI Center for training facilitators and for support throughout this project, particularly Rich Girven and Gregory Smith. Finally, we are grateful to our reviewers and the publications team at RAND Europe.
+
+## 1. Scenario design
+
+The table-top exercises (TTXs) covered in this report use RAND's ‘Day After’ methodology: a two-stage simulation in which participants, playing Ministerial Cabinet members, confront a crisis requiring their judgement and policy action. After a written and verbal brief, they identify appropriate responses and develop courses of action.
+
+The scenario in the TTXs centres on a domestic artificial intelligence (AI) company, backed by the national government as a tech ‘champion’, that is ambiguously tied to a string of AI-enabled cyberattacks made possible by rapid advances in frontier models’ coding capabilities. This section sets out the scenario’s design and the questions it was designed to elicit.
+
+## Building on the 2026 International AI Safety Report
+
+The scenario translates the risks identified in the International AI Safety Report into operational challenges for political leaders. As the most comprehensive review of the science on general-purpose AI (GPAI), chaired by Dr. Yoshua Bengio with over 100 independent experts contributing and an Expert Advisory Panel representing more than 30 countries and intergovernmental organisations, the Report establishes a global baseline on AI capabilities and delineates three risk categories: malicious use, malfunction and systemic risk. The methodological aim of the TTXs was to operationalise the science: by dropping policymakers into a multi-turn crisis, the simulation forced them to confront a scenario in which technical risks compound into cascading national security, economic and diplomatic threats.
+
+The scenario models how the criminal exploitation of a commercial frontier system can overwhelm national defences. The International AI Safety Report finds that dual-use capabilities may significantly expand the scale and speed of cyberattacks. $^{1}$ The exercise operationalises this risk using a fictional AI model called ‘FlowGPT’, a state-backed domestic model with significant commercial value. In the scenario, criminal networks systematically exploit the model to automate phishing and data harvesting, causing a surge in cyber incidents. This forces participants to manage immediate financial and operational shocks, such as regional banking fraud and the targeting of public sector information.
+
+The scenario integrates the ‘evaluation gap’ concept in the Report to test how governments handle imperfect information about technical risks during deployment. This evaluation gap highlights that pre-deployment testing cannot yet reliably quantify the misuse potential of dual-use models. $^{2}$ In Turn 1 of the exercise, participants face a developer whose internal safety tests have flagged potential risks but could not calculate their exact impact. This is paired with a regulator that authorised deployment because no explicit harm had yet been demonstrated. Participants must navigate the ‘evidence dilemma’: in particular, the political difficulty of acting on an anticipated threat before harm occurs. A national competitiveness element also becomes vivid in this scenario. Restricting a national AI champion based on potential risks creates immediate commercial and political blowback. However, waiting for clear evidence may leave the state in a reactive posture, forcing leaders to implement containment strategies after critical infrastructure and public trust are compromised.
+
+The simulation also highlights the governance challenges of the open-weight ecosystem. Turn 2 introduces ‘PieAI’, a similarly capable model that may have been cloned via exfiltrated weights or student-teacher model distillation from FlowGPT. Misuse risks from this model exacerbate the threat landscape, because unlike FlowGPT, whose safeguards can be evaded but not removed, PieAI’s model can be downloaded and modified directly. This design choice forces participants to think beyond localised enforcement, examining what type of cooperation with other national and international bodies is necessary to address misuse risks from open-weight models.
+
+## What the exercises were designed to address
+
+The exercises were designed to generate structured insights on three categories of questions:
+
+1. What information do key policymakers require when confronting AI-related crises?
+
+2. What capabilities would policymakers wish their governments had developed in advance of such a crisis?
+
+3. What governance measures and policy frameworks would participants identify as most urgently needed in light of this crisis?
+
+## Exercise structure
+
+Each TTX session ran for approximately two hours and followed a two-turn structure adapted from the Day After methodology developed by RAND. All three cohorts were faced with the same scenario. Each turn ran for approximately 50 minutes. The exercises were designed to require no advance preparation from participants and to be accessible to officials without robust AI or technical backgrounds. That said, the scenarios were more technically granular than some of RAND's other ‘Infinite Potential’ scenarios, which are often more strategic and geopolitical in nature. $^{3}$ This is largely because of this exercise's grounding in the technical, scientific and consensus-based nature of the International AI Safety Report.
+
+Each session opened with brief scene-setting from the facilitator, establishing the exercise format and the participant role: each participant is a senior Cabinet official without a specifically assigned ministerial portfolio. An expert briefer, who plays the role of an intelligence analyst, was then introduced to brief the participants, and was available to answer factual questions about the crisis situation itself. This format is designed to address the significant variation in technical and linguistic background across participant groups without simplifying the ambiguities at the heart of the scenario.
+
+The facilitator then opened the discussion, ensuring that the conversation oriented towards Cabinet recommendations for the Head of State. At the end of Turn 2, participants usually gave a closing position in one sentence, and a short retrospective discussion ensued exploring what governance measures, had they been in place, might have positively influenced the situation.
+
+## Setting
+
+The scenario is set approximately 12 to 18 months into the future from the date of the session. This timeframe was selected to make the scenario feel relevant without requiring participants to speculate about transformative changes to the AI or geopolitical landscape. Participants were instructed to assume that current AI capabilities, regulatory frameworks and political contexts were in place – for instance, the EU GPAI Code of Practice $^{4}$ – with only the specific developments described in the scenario having occurred.
+
+The scenario was localised to each national context. This included adapting the relevant regulatory authorities and institutional references to reflect the actual governance environment in each national setting. Localisation proved highly important in all three sessions: participants anchored their discussions in live institutional dynamics and realities.
+
+During each session, a dedicated note-taker captured participant discussions, with particular attention given to the key issues on which participant judgment hinged, proposed courses of action and their justifications, expressions of uncertainty or disagreement, and the capabilities and governance measures participants identified as missing. Notes from all three sessions were reviewed and compared by the RAND team to identify commonalities and differences in findings.
+
+Table 1. Exercise overview
+
+<table><tr><td>Berlin</td><td>The Hague</td><td>Paris</td></tr><tr><td>March 2026</td><td>April 2026</td><td>April 2026</td></tr><tr><td>~20 senior government officials</td><td>~20 senior officials and multilateral representatives</td><td>~15 senior officials and multilateral representatives</td></tr></table>
+
+## 2. Scenario summary
+
+In the scenario, FlowGPT is a frontier AI model developed by FlowAI, a domestic technology company that received substantial sovereign investment and was publicly championed by senior ministers. Its headline capabilities include advanced code generation, automated vulnerability analysis, penetration testing support, and natural language interfaces to complex software environments. Before release, FlowAI's internal evaluation team flagged significant uncertainty about the model's potential for misuse but disclosed this only in general terms to the relevant digital ministry, which accepted the absence of demonstrated harm as a sufficient basis to proceed.
+
+Turn 1, set approximately eight weeks post-release, presented participants with an ensuing crisis. Criminal actors were exploiting FlowGPT to identify software vulnerabilities, generate personalised phishing campaigns at scale, and produce novel malware variants at a speed that outpaced existing defensive infrastructure. Guardrail evasion techniques – such as adversarial prompting and prompt injection – had allowed criminal actors to extract outputs the model was designed not to produce. Agentic deployments, in which criminal actors provided FlowGPT with a target and goal and allowed it to autonomously plan and execute multi-step attack sequences, were also observed. The harm was disproportionately affecting small- and medium-sized enterprises, public sector bodies, and individuals rather than large organisations with mature security operations.
+
+Key Turn 1 decisions: how to respond to FlowAI and what to require of the company; how to contain harm to citizens and institutions while attacks are still unfolding; how to use or establish communication channels to engage allies and partner countries.
+
+Turn 2 escalated in two ways. Firstly, a detailed inquiry revealed that FlowAI's pre-release internal assessment had been more alarming than what was shared with the regulator, raising the question of how the government should respond to a disclosure failure for which no law clearly provides a remedy. Secondly, a competitor released an open-weight AI model with equivalent cyber capabilities but no safety constraints, enabling significantly more severe misuse and eliminating governance leverage over the developer. Agentic misuse scaled dramatically.
+
+Key Turn 2 decisions: how to respond to the disclosure failure and what new regulatory architecture is needed; how to develop an international response to the open-weight model problem without which domestic measures would be structurally incomplete; what measures should be developed in order to safeguard critical infrastructure against potential systemic attacks.
+
+## 3. Key discussion themes
+
+The following issues emerged across all three European sessions as the most significant drivers of participant discussion.
+
+## 1. How do we define the threshold of a crisis?
+
+Participants frequently debated whether the string of AI-enabled incidents constituted a national crisis or an operational problem to be delegated to the necessary authorities. This distinction proved important for several reasons. Firstly, to identify whether emergency powers or exceptional measures are justified: for instance, taking the model off the market. Secondly, to understand whether current institutions are fit to address the types of challenges governments face in the age of AI, such as managing a complex relationship with a powerful technology company or adequately testing AI models for safety requirements. Thirdly, to set a precedent for future AI-enabled incidents. Participants widely agreed that AI-enabled cyberattacks will be the norm. Knowing when a certain threshold has been crossed, whether monetary or to do with human agency, is crucial for the government to delineate and prepare for.
+
+The disagreement centres on what, if anything, makes frontier AI more worrying than ordinary crises. Some national security experts noted that conventional cyberattacks are common, and that financial losses in Turn 1 did not cross the threshold typical for Cabinet-level intervention. Other participants strongly disagreed, arguing that the speed, adaptability and autonomous exploitation capabilities of emerging AI systems fundamentally changed the nature of the threat. Participants in most games concluded that the defining threat was not the immediate financial harm, but the autonomous capacity of the model to iteratively find and exploit vulnerabilities, and the fact that this level of offensive cyber capability is ‘the new normal’ and will continue proliferating.
+
+## 2. How should a state engage with a national AI champion?
+
+The political salience of a developer's identity as a state-backed ‘national champion’ was a strong theme, often affecting how participants evaluated policy interventions. Participants disagreed about how to address the government's relationship to an influential AI company that is ambiguously tied to growing misuse risks. Policymakers were aware of the political sensitivity of acting against a company the government had publicly backed and invested in, though some felt that there were reasonable grounds to terminate a strategic relationship and even litigate upstream against developers of AI. Geopolitical concerns around the value of a domestic AI company were common and led to significant discussions.
+
+In one exercise, the developer's status as a publicly funded success story led some participants to argue that the government bore shared responsibility for the harm. Others agreed, but moved to treat FlowAI, the company, as a subject of investigation of potential negligence. Some noted that the government cannot single out FlowAI as it is just an ‘enabler’: if it chooses to take legal measures against FlowAI, it needs to map which other AI companies pose comparable risks, so that whatever governance response is applied to FlowAI will be applied consistently to similar actors.
+
+Yet within this same session and in other exercises, some participants prioritised treating the firm as an essential partner, given its strategic value in a highly competitive strategic field. They argued that heavy-handed crackdowns on a rare domestic success story would permanently cripple national tech competitiveness, forcing the state into total reliance on external, non-sovereign platforms. References to Anthropic's release of Mythos were common, particularly in terms of the reliance on non-European actors' goodwill for protection from advanced cyberattack capabilities. $^{5}$ Participants argued that taking such a model off the market might simply be impossible, particularly if it introduces new vulnerabilities by removing a tool many organisations now depend on. For instance, some participants worried that there was a risk that other government systems might already depend on FlowGPT, potentially including defensive systems. Moreover, other participants argued that Europe should not act differently to how the United States or China would if their tech leaders were involved in a similar scenario, with the assumption that they would protect their firms due to concerns around strategic competition.
+
+In Turn 2, when FlowAI was identified as a potential target of model theft or distillation and concerns about PieAI were becoming widespread, some participants proposed using FlowGPT defensively to strengthen cyberdefences against threats enabled by PieAI. The intelligence assessment in the scenario flagged a former FlowAI engineer who had left the company under undisclosed circumstances 14 months prior, whose current affiliation remained unknown. Participants discussed what an investigation of such a case would involve, including national intelligence services tracing the individual's activities and affiliations and cross-referencing with the timeline of PieAI's capability emergence. Suggestions on hardening cyberdefences included directing FlowGPT by private-public collaboration to simulate PieAI's likely attack vectors and probe domestic systems for the same vulnerabilities. This gives national cyber agencies advance visibility into exploitable gaps before adversaries identify them.
+
+## 3. How do we enforce guardrails on models we cannot reliably evaluate and test?
+
+All sessions led to a conclusion that current pre-deployment testing cannot reliably predict the real-world misuse potential of dual-use frontier models. Participants across the exercises independently concluded that the developer's internal safety tests flagged risks in general terms but failed to quantify their real-world impact. Regulators subsequently authorised deployment simply because no explicit harm had yet been shown, demonstrating the limits of voluntary safety standards.
+
+To close the evaluation gap, participants proposed adopting different testing regimes. In one exercise, discussions focused on technical solutions such as mandatory third-party audits, structured red-teaming, and staged, monitored rollouts of advanced models. Participants also emphasised legal documentation, evaluating whether tests met regional statutory obligations (e.g. with the EU AI Act and GPAI Code of Practice) and how uncertainty was communicated to state authorities. Some sessions discussed the need for robust tech-savvy, adaptable state institutions, often leading to debates on whether to establish an AI safety or security institute.
+
+Taking the model off the market was consistently raised as an option, but some participants quickly noted this would be a drastic and legally complex step. Participants identified that no clear legal mechanism exists to delay or halt a model release on the basis of pre-deployment risk assessments. Extensive discussion followed on EU AI Act obligations, GDPR constraints, and where liability falls between the company, users and the state.
+
+Moreover, because the developer broke no explicit laws and the regulator failed to demand comprehensive data, apportioning clear accountability proved difficult. Participants sometimes concluded that the government shared responsibility for the resulting harm due to its public endorsements and subsidies. This dynamic created acute friction, forcing ministers to engage the developer as an active crisis response partner while simultaneously preparing to investigate its conduct. To mitigate this, participants recommended replacing voluntary engagement with mandatory disclosure rules and using state investment as a direct policy lever.
+
+## 4. How do we prevent misuse of open-weight models?
+
+The proliferation of unconstrained open-weight models emerged as a highly complex governance challenge that bypasses domestic enforcement. When confronted with an adversarial model cloned via weight exfiltration or distillation, participants quickly decided that local enforcement was insufficient. While perspectives on how to respond differed, all groups favoured some level of international engagement. In one exercise, participants concluded that unilateral state action is virtually powerless, advocating strictly for international treaties and multilateral governance. Participants identified the EU, NATO, G7 and the OECD as natural forums, with some suggesting that engaging non-aligned countries also remains crucial. In another session, one participant identified potential structural policy levers: creating incentives – through procurement, subsidy or regulation – for the market to favour closed-weight models, which they argued can better provide developers with ongoing oversight and the ability to develop better safeguards.
+
+The open-weight governance challenge also created a distinct liability problem. Unlike FlowGPT, where the developer retains the ability to monitor use, update safeguards, and respond to emerging misuse patterns, the developer of an open-weight model with no staged access retains no meaningful control once release occurs. $^{6}$ Participants debated whether releasing a model with known offensive cyber capabilities into the open-weight ecosystem could itself constitute a form of negligence. Several participants concluded that the open-weight governance problem is at its core a supply-side problem, since demand-side enforcement against individual misusers is too diffuse to be effective at scale; governance measures are thus required that operate at the point of development and release rather than deployment. $^{7}$
+
+## 5. How should we harden our defences and prevent attacks on critical infrastructure?
+
+Discussions regarding critical infrastructure protection centred on the operational difficulty of isolating and safeguarding essential services without causing collateral economic harm, and produced two categories of response.
+
+The first was access restriction: limiting or suspending API access to FlowGPT for high-risk users during the acute phase of the crisis. Participants who supported this framed it as a time-limited emergency measure. Others raised concerns that it would disrupt legitimate commercial users, potentially introducing new vulnerabilities for organisations relying on FlowGPT defensively. The second was buying specialised cybersecurity services from leading AI companies to supplement state defensive capacity. This drew a different set of objections: concerns about strategic dependence, the sensitivity of disclosing national vulnerabilities to commercial third parties, and the risk of reliance on the same ecosystem of frontier AI providers that the crisis had already exposed.
+
+## 6. How do we utilise this crisis as a catalyst for positive change?
+
+Many discussions, particularly towards the end of both turns, developed around how to leverage this incident as a catalyst for long-term positive reform in terms of AI preparedness and resilience. Some participants argued that the scale of the incident should be used to elevate AI policy to a greater national priority, accelerate defensive investments, and build standing institutional capacity, such as a national AI safety or security body with capacity to assess and anticipate risks from capable AI models and systems. In other sessions, participants were uncertain which agencies and ministries owned the problem and several noted that establishing a new coordination mechanism in the midst of a live crisis was not realistic.
+
+## 7. How do we cooperate with our allies?
+
+While participants agreed that effective responses require multilateral engagement, they disagreed on the sequencing, scope and risks of international information sharing. All sessions recognised that unilateral state action cannot contain a global AI threat, but they diverged on execution. There was broad agreement that trusted, like-minded partners should be engaged first, with broader multilateral engagement to follow. The AISI network was consistently referenced as a key actor. In addition, existing US AI companies were mentioned as having relevant technical expertise that can be engaged in mitigating misuse harms. Another group focused on the institutional design of global collaboration, emphasising pre-agreed frameworks that enable immediate activation during an incident.
+
+Conversely, a significant counter-perspective emerged in a different session, during which participants urged strict caution due to the risk of data leakage and the sensitive nature of national defence responses, favouring calibrated, trust-based networks over full transparency. Additionally, across all sessions, participants noted a critical mismatch in pace: multilateral diplomacy operates too slowly to address a live AI-enabled attack, reinforcing the urgent need for already-socialised response protocols.
+
+## 4. Capabilities to invest in
+
+The core discussion points arising across all sessions also led to a set of capabilities and governance measures that participants discussed could materially improve preparedness for AI misuse crises. The following reflects recurring themes:
+
+## 1. Establishing escalation thresholds for AI incidents
+
+A dominant conclusion was that explicit escalation thresholds for AI-enabled incidents must be established before a crisis occurs, rather than derived reactively once one is underway. Participants widely agreed that relying on ad hoc mitigations during an unfolding event would be damaging. In the scenario, the absence of pre-agreed thresholds left participants debating whether they were addressing a national crisis or a routine problem, which may become a growing issue if cyberattacks become more normalised due to AI advances.
+
+Discussions revealed different ideas regarding what those thresholds should measure. Some groups argued that escalation should depend on traditional quantitative metrics, such as specific financial losses or critical infrastructure downtime, on the grounds that existing crisis management frameworks are already calibrated to these measures and deviation would create legal and political complications. A competing view countered that conventional metrics are structurally inadequate for AI-driven threats. Several participants argued that the autonomous deployment of agentic systems by an adversary should itself trigger exceptional state powers, regardless of immediate financial damage.
+
+A related practical issue that participants raised in all sessions was the need to map, in advance, which critical government services depend on AI systems. In particular, these might need to be restricted during a crisis, and participants questioned under what legal authority API access could be limited.
+
+## 2. Hardening cyberdefences against AI-enabled threats
+
+Most sessions agreed that existing defensive architectures must be systematically reviewed and updated to deal with the advent of automated exploit campaigns. The scenario illustrated a specific diagnostic gap: national cybersecurity agencies lacked baseline assessments of domestic resilience against the specific offensive capabilities that frontier AI systems enable, and were therefore unable to triage exposure or prioritise defensive investment during the crisis. Moreover, downstream providers, such as banks, were left exposed to sophisticated offensive attacks.
+
+To address this, participants recommended immediately tasking national cybersecurity agencies with rapid capability reviews assessing resilience against specific frontier systems. Participants in some sessions also discussed directing public-private collaboration to simulate the attack vectors of adversarial models against domestic systems, giving cyber agencies advance visibility into exploitable gaps before adversaries identify them – effectively converting domestic AI investment into a defensive intelligence asset. Alongside government-level measures, participants urged extending defensive requirements beyond the state. Telecommunications providers and critical downstream deployers, such as commercial banks, were consistently identified as the most exposed actors in the scenario and as the institutions best positioned to detect and interrupt automated phishing and malware campaigns in real time. Strengthening their detection capabilities was identified as a necessary complement to state-level defensive review.
+
+## 3. Building state technical capacity to monitor AI capabilities
+
+The exercises highlighted a critical gap in state capacity to evaluate AI risks, which consistently shaped the policy options available to participants. Some participants noted challenges making informed policy decisions about model risk without access to independent technical expertise, as well as an inability to hold developers to account without the capability to assess whether disclosed evaluations were adequate.
+
+Participants across all sessions concluded that a comprehensive national strategy is required to address AI-enabled cyber threats. A recurring theme was the urgent need to dismantle institutional silos between traditional cybersecurity authorities and emerging AI bodies. Officials observed that ministries and cybersecurity agencies tend to treat AI and cyber as distinct operational streams rather than deeply interconnected domains. Participants concluded that some key defensive agencies are behind the curve, failing to appreciate how automated vulnerability identification compresses defensive timelines to the point where conventional responses cannot keep pace.
+
+Opinions diverged on the governance structure best suited to address lagging defence agencies. Some participants proposed that – given their operational maturity and existing authority – established cyber agencies should absorb the AI risk portfolio. Others argued that dedicated AI safety institutes must hold primary authority, warning that traditional cybersecurity frameworks are ill-equipped to evaluate model architectures, capability elicitation, or the weight exfiltration that Turn 2 introduced. The debate remained unresolved across all sessions, but the shared conclusion – that the current separation is untenable – was consistent.
+
+## 4. Developing a focused crisis communications strategy
+
+Managing public confidence was identified as a top priority across all sessions. Participants warned that launching a large-scale public investigation too early could be counterproductive, signalling a lack of state control and generating panic among citizens and markets. At the same time, participants recognised that delayed or vague communications carried their own costs. Where the harm was concentrated among small- and medium-sized enterprises and public sector bodies, those actors needed actionable information quickly to limit ongoing losses. Participants in multiple sessions concluded that effective crisis communications must be calibrated to the actual exposure profile: rather than issuing broad public warnings, governments should provide immediate, specific and practical mitigations targeted at the institutions bearing the brunt of the campaign.
+
+## 5. Strengthening multilateral governance and enforcement
+
+AI systems operate transnationally, leading participants to conclude that unilateral state action in addressing misuse is insufficient. The open-weight dimension of Turn 2 made this even more apparent: domestic enforcement provides no leverage over a model that can be downloaded and modified anywhere. Most sessions agreed that governments must actively pool international research capacity to develop model-level safeguards and to build collective situational awareness of emerging threats.
+
+Participants also called for more systematic AI capability testing by AI Safety Institutes, better sharing of non-sensitive insights, evaluation methodologies and datasets, and frameworks that enable multilateral activation during an incident. Despite this consensus, some divergence existed regarding the scope of cooperation. One group advocated for a highly restrictive, sequential approach: intelligence sharing should remain limited to trusted like-minded allies, with broader multilateral engagement to follow only once national responses were coordinated. A separate group insisted that maintaining functional, technical communication channels with geopolitical adversaries is a necessity to prevent unintended escalation during a global incident, particularly where attribution is uncertain. Across all sessions, participants noted that multilateral diplomacy (e.g. through the United Nations) operates too slowly to address a live AI-enabled attack.
+
+## 6. Strengthening information flows between AI companies and government
+
+Establishing continuous information flows between frontier AI developers and government was identified as an essential priority. Across all sessions, participants found that the government's informational disadvantage, relying on a developer's voluntary characterisation of its own model's risks, was a consequential governance failure. The regulator in the scenario authorised deployment not because it assessed the risks as acceptable, but because it lacked the information and authority to assess them independently.
+
+Participants argued that governments should use state resources, public procurement requirements and existing investment stakes as direct leverage to require information sharing as a condition of operation and in some cases, public endorsement. Some participants asserted that state-backed national champions should be treated as critical public infrastructure during a crisis, allowing the government to exercise direct executive oversight over model access and deployment decisions. Others strongly rejected this top-down approach, warning that excessive state intervention would cripple the commercial viability of domestic technology firms and ultimately damage national competitiveness in a field where the gap between leading and lagging actors compounds rapidly. This tension remained unresolved across sessions, and reflects a genuine structural dilemma that no governance framework currently addresses adequately.
+
+## 5. Limitations
+
+The insights generated from the TTXs are subject to several limitations inherent to the 'Day After' methodology. Firstly, a compressed two-hour simulation involving senior policymakers cannot wholly replicate the operational friction, information scarcity, or prolonged psychological toll of an unfolding, multi-week crisis. Secondly, the limited number of participants (3 exercises with \~55 players total) constitutes a small sample size, and we recognise a larger sample size may identify a wider or different collection of issues. Thirdly, the findings represent the qualitative judgments of a specific cohort of participants from select ministries and do not reflect official government policy or an exhaustive consensus. Fourthly, the findings reflect European governance contexts, institutional frameworks and policy cultures. Exercises with non-European participants – including from the global south and from states with different AI regulatory approaches – would likely produce different key issues and different proposed responses. While TTXs are highly effective at surfacing institutional blind spots, governance gaps and strategic friction points, they are designed to explore the spectrum of plausible decision-maker behaviours rather than to predict specific pathways or definitive policy outcomes.
+
+This report presents findings from three TTXs run with senior government policymakers in Germany, the Netherlands and France. The exercises were designed in collaboration between RAND, the UK AI Security Institute, and Mila – Quebec AI Institute, and grounded in the 2026 International AI Safety Report. We attempted to place senior policymakers inside an unfolding AI crisis and observe what governance and policy mechanisms become pivotal during the response to the event. Across sessions, participants wrestled with a consistent set of challenges: how to define and respond to a new category of AI-enabled threat, how to govern a developer the state had publicly championed, how to act on evaluation uncertainty, and how to build international responses that move faster than multilateral diplomacy typically allows. From those discussions, a shared set of capability priorities emerged, which included: AI incident escalation thresholds, hardened cyberdefences, independent technical capacity at the heart of government, targeted crisis communications, multilateral governance and enforcement, and increased information flows between AI companies and government.
+
+Our next steps are to repeat this scenario with other audiences, not solely in government, and to run several of our other scenarios developed jointly with UK AISI. Future exercises could pursue several directions. Firstly, wider geographical reach: for instance, sessions in Asia are already scheduled and will begin to test whether the governance challenges identified in European sessions hold across different regulatory cultures, state-developer relationships, and levels of AI maturity. Secondly, future scenarios should engage more directly with questions of technological sovereignty and geopolitical positioning. The current scenario surfaces these tensions but does not force participants to resolve them, and a more geopolitically explicit design would generate richer findings on how middle powers navigate strategic dependence on foreign frontier AI providers and companies across the AI supply chain. Thirdly, the governance landscape has shifted since our scenarios were designed: staggered and staged access regimes are increasingly becoming standard practice, with developers and regulators regarding controlled rollouts as increasingly necessary to give defenders an edge. Future scenario design should reflect this development, testing how staged access frameworks perform under adversarial pressure and what governance architecture is needed to make them effective.
+
+Anthropic. 2026. ‘Project Glasswing: Securing Critical Software for the AI Era.’ As of 22 June 2026: https://www.anthropic.com/glasswing
+
+Bengio, Yoshua, et al. 2026. International AI Safety Report 2026. ArXiv. As of 22 June 2026: https://arxiv.org/abs/2602.21012
+
+European Commission. 2025. ‘The General-Purpose AI Code of Practice.’ Shaping Europe’s Digital Future. As of 22 June 2026: https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai
+
+Millot, Marc Dean, et al. 1993. “The Day After…” Study: Nuclear Proliferation in the Post-Cold War World. Volume II, Main Report. Santa Monica, Calif.: RAND Corporation. MR-253-AF. As of 22 June 2026: https://www.rand.org/pubs/monograph\_reports/MR253.html
+
+Paskov, Patricia, et al. 2026. Open-Weight AI Models Require Proportional Evaluation Approaches. Santa Monica, Calif.: RAND Corporation. PE-A4886-1. As of 22 June 2026: https://www.rand.org/pubs/perspectives/PEA4886-1.html
+
+Predd, Joel B., et al. 2025. Infinite Potential—Insights from the Two Moonshots Scenario: After-Action Report from a Sequence of Day after Artificial General Intelligence Exercises. Santa Monica, Calif.: RAND Corporation. RR-A4230-1. As of 22 June 2026: https://www.rand.org/pubs/research\_reports/RRA4230-1.html
+
+Smith, Gregory, et al. 2025. Infinite Potential—Insights from the Robot Insurgency Scenario: After-Action Report from a Sequence of Day after Artificial General Intelligence Exercises. Santa Monica, Calif.: RAND Corporation. RR-A4231-1. As of 22 June 2026: https://www.rand.org/pubs/research\_reports/RRA4231-1.html
+
+UK AISI. 2025. ‘Managing Risks from Increasingly Capable Open-Weight AI Systems.’ As of 22 June 2026:
+https://www.aisi.gov.uk/blog/managing-risks-from-increasingly-capable-open-weight-ai-systems

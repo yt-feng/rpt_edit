@@ -1,0 +1,3837 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.145,
+                0.112,
+                0.268,
+                0.21
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.145,
+                0.241,
+                0.84,
+                0.334
+            ],
+            "angle": 0,
+            "content": "TECHNICAL ASSISTANCE\nREPORT"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.146,
+                0.416,
+                0.292,
+                0.452
+            ],
+            "angle": 0,
+            "content": "PERU",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.143,
+                0.455,
+                0.818,
+                0.523
+            ],
+            "angle": 0,
+            "content": "Report on Physical Energy Flow and Air Emissions Accounts (October 6–10, 2025)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.144,
+                0.536,
+                0.372,
+                0.563
+            ],
+            "angle": 0,
+            "content": "OCTOBER 2025",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.143,
+                0.614,
+                0.275,
+                0.635
+            ],
+            "angle": 0,
+            "content": "Prepared By",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.143,
+                0.635,
+                0.415,
+                0.655
+            ],
+            "angle": 0,
+            "content": "Lisbeth Rivas and Alcino Gomes",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.781,
+                0.389,
+                0.801
+            ],
+            "angle": 0,
+            "content": "Authoring Departments:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.142,
+                0.81,
+                0.544,
+                0.84
+            ],
+            "angle": 0,
+            "content": "Statistics Department",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.244,
+                0.839,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.294,
+                0.371,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.412,
+                0.297,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.455,
+                0.779,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.49,
+                0.816,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.539,
+                0.369,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.612,
+                0.274,
+                0.635
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.634,
+                0.414,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.141,
+                0.78,
+                0.388,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.81,
+                0.542,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.137,
+                0.223,
+                0.152
+            ],
+            "angle": 0,
+            "content": "DISCLAIMER"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.168,
+                0.886,
+                0.352
+            ],
+            "angle": 0,
+            "content": "\"The contents of this document constitute technical advice provided by the staff of the International Monetary Fund to the authorities of National Statistical Office of Peru (CD Recipient) in response to their request for technical assistance. This document (in whole or in part) or summaries thereof may be disclosed by the IMF to the IMF Executive Director for Peru, to other IMF Executive Directors and members of their staff, as well as to other agencies or instrumentalities of the CD recipient, and upon their request, to World Bank staff, and other technical assistance providers and donors with legitimate interest, unless the CD recipient specifically objects to such disclosure (see Operational Guidance for the Dissemination of Capacity Development Information). Publication or Disclosure of this report (in whole or in part) to parties outside the IMF other than agencies or instrumentalities of the CD recipient, World Bank staff, other technical assistance providers and donors with legitimate interest shall require the explicit consent of the CD recipient and the IMF's Statistics department.\"",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.808,
+                0.295,
+                0.823
+            ],
+            "angle": 0,
+            "content": "MEMBERS/PARTNERS"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.122,
+                0.845,
+                0.163,
+                0.88
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.173,
+                0.845,
+                0.402,
+                0.903
+            ],
+            "angle": 0,
+            "content": "Schweizerische Eidgenossenschaft\nConfédération suisse\nConfederazione Svizzera\nConfederaziun svizra",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.474,
+                0.846,
+                0.817,
+                0.9
+            ],
+            "angle": 0,
+            "content": "State Secretariat for Economic Affairs\nSECO\nEconomic Cooperation and Development",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.14,
+                0.221,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.169,
+                0.829,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.185,
+                0.872,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.202,
+                0.824,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.219,
+                0.822,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.235,
+                0.883,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.252,
+                0.875,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.269,
+                0.814,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.286,
+                0.875,
+                0.299
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.303,
+                0.881,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.319,
+                0.848,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.336,
+                0.586,
+                0.349
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.811,
+                0.292,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.846,
+                0.4,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.861,
+                0.314,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.875,
+                0.338,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.89,
+                0.314,
+                0.901
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.478,
+                0.848,
+                0.782,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.475,
+                0.864,
+                0.524,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.478,
+                0.882,
+                0.815,
+                0.897
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.092,
+                0.341,
+                0.114
+            ],
+            "angle": 0,
+            "content": "Table of Contents"
+        },
+        {
+            "type": "index",
+            "bbox": [
+                0.113,
+                0.133,
+                0.886,
+                0.247
+            ],
+            "angle": 0,
+            "content": "Acronyms and Abbreviations....2\nSummary of Mission Outcomes and Priority Recommendations....3\nSection II. Detailed Technical Assessment and Recommendations....5\nA. Officials Met During the Mission....7"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.116,
+                0.96,
+                0.151,
+                0.974
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.162,
+                0.96,
+                0.425,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report – Peru"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.596,
+                0.96,
+                0.861,
+                0.975
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.961,
+                0.883,
+                0.974
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.092,
+                0.338,
+                0.114
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.113,
+                0.092,
+                0.484,
+                0.115
+            ],
+            "angle": 0,
+            "content": "Acronyms and Abbreviations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.125,
+                0.848,
+                0.767
+            ],
+            "angle": 0,
+            "content": "AEA Air Emissions Accounts\nAPN Autoridade Portuária Nacioanl\nBCRP Banco Central de Reserva del Perú\nICSEEA Interinstitutional Committee of Statistics and Environmental and Economic Accounts\nIMF International Monetary Fund\nINEI Instituto Nacional de Estadística e Informática\nMIDAGRI Ministerio de Desarrollo Agrario y Riego\nMINAM Ministerio del Ambiente\nMINEM Ministerio de Energía y Minas\nMTC Ministerio de Transportes y Comunicaciones\nNA National Accounts\nNDNA National Directorate of National Accounts of the INEI\nOECD Organization for Economic Cooperation and Development\nOSINERGMIN Organismo Supervisor de la Inversión en Energía y Minería\nPEFA Physical Energy Flow Accounts\nSECO Swiss State Secretariat for Economic Affairs\nSEEA System of Environmental Economic Accounting\nSEEACF System of Environmental-Economic Accounting 2012 – Central Framework\nSEEA Energy. System of Environmental-Economic Accounting for Energy\nSENAMHI Servicio Nacional de Meteorología e Hidrología\nSERFOR Servicio Nacional Forestal y de Fauna Silvestre\nSNA System of National Accounts\nUNSIAP United Nations Statistical Institute for Asia and the Pacific",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.161,
+                0.96,
+                0.425,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report – Peru"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.595,
+                0.96,
+                0.861,
+                0.975
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.87,
+                0.96,
+                0.884,
+                0.974
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.13,
+                0.153,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.235,
+                0.132,
+                0.406,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.158,
+                0.154,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.234,
+                0.16,
+                0.454,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.186,
+                0.164,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.235,
+                0.187,
+                0.492,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.214,
+                0.178,
+                0.229
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.233,
+                0.215,
+                0.841,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.242,
+                0.148,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.234,
+                0.244,
+                0.44,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.27,
+                0.151,
+                0.287
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.232,
+                0.271,
+                0.565,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.299,
+                0.19,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.232,
+                0.299,
+                0.523,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.326,
+                0.174,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.234,
+                0.328,
+                0.405,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.355,
+                0.174,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.234,
+                0.356,
+                0.45,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.381,
+                0.156,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.234,
+                0.385,
+                0.557,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.41,
+                0.143,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.232,
+                0.411,
+                0.366,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.438,
+                0.167,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.234,
+                0.441,
+                0.615,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.466,
+                0.168,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.236,
+                0.469,
+                0.655,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.495,
+                0.665,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.523,
+                0.162,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.235,
+                0.525,
+                0.463,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.551,
+                0.165,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.235,
+                0.553,
+                0.554,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.579,
+                0.164,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.234,
+                0.58,
+                0.578,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.608,
+                0.186,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.233,
+                0.609,
+                0.778,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.635,
+                0.164,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.233,
+                0.636,
+                0.72,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.664,
+                0.195,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.234,
+                0.664,
+                0.576,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.691,
+                0.188,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.234,
+                0.693,
+                0.578,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.72,
+                0.154,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.235,
+                0.721,
+                0.445,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.748,
+                0.18,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.234,
+                0.749,
+                0.65,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.113,
+                0.091,
+                0.663,
+                0.138
+            ],
+            "angle": 0,
+            "content": "Summary of Mission Outcomes and Priority Recommendations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.155,
+                0.883,
+                0.312
+            ],
+            "angle": 0,
+            "content": "1. A technical assistance (TA) mission visited the Instituto Nacional de Estadística e Informática of Peru during October 6–10, 2025. The objective of the mission was to review, assess, analyze, and validate the results of the revised Physical Energy Flow Accounts (PEFA) and Air Emissions Accounts (AEA) for 2019, the preliminary PEFA for the period 2020–2022 and the preliminary AEA for the years 2020–2021, and discuss dissemination strategies for releasing these accounts. A second objective was to develop a time series for the indicators building on the experience of the data compiled for 2019 and set up a mechanism for regular production of the accounts. The mission also supported a broader stakeholder engagement. The COVID-19 Pandemic affected the availability and timeliness of the source data for compiling the accounts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.323,
+                0.883,
+                0.411
+            ],
+            "angle": 0,
+            "content": "2. The IMF Statistics Department with support from the Switzerland State Secretariat for Economic Affairs (SECO)—launched a two-year “Environmental and Climate Change Statistics Capacity Development Program” to assist countries in designing and implementing programs for developing timely and internationally comparable statistics that can help in formulating policies to address the environmental, financial, economic, and social implications of climate change.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.42,
+                0.88,
+                0.579
+            ],
+            "angle": 0,
+            "content": "3. The project was launched in March 2023, and a diagnostic mission conducted in July 2023 suggested that INEI could explore the development of energy and air emissions accounts. \\( ^{1} \\)  Later, in February 2024, three participants from Peru attended the training workshop conducted in collaboration with the United Nations Statistical Institute for Asia and the Pacific (UNSIAP) in Chiba, Japan. Linking air emission and energy data to economic activities provides the necessary information to develop policies that promote reducing emissions and a shift towards a low-carbon economy. Further, because energy and air emission accounts use the same structure as supply and use tables, they can be used in the input-output modelling for calculating carbon footprints. These accounts also support decision making regarding carbon taxes/prices as well as understanding the effect of border carbon adjustments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.589,
+                0.884,
+                0.712
+            ],
+            "angle": 0,
+            "content": "4. A TA mission visited the INEI of Peru during May 27–31, 2024, to initiate the compilation of energy and air emission accounts and to train compilers. Different teams from INEI, ministries and government institutions related to agriculture, forest, mines, energy, environment, and climate participated in the workshop and provided information on the data currently collected and compiled and their use. Exercises were developed and solved to illustrate the compilation procedures. The sources and methods of compilation for the energy and air emissions accounts were discussed based on presentations and examples using actual data from Peru.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.723,
+                0.885,
+                0.846
+            ],
+            "angle": 0,
+            "content": "5. The May 2024 mission stressed the need to enhance communication, collaboration and coordination among data producing agencies through data sharing mechanisms such as memorandums of understanding and establishing technical committees considering that the data needed to produce energy and air emission accounts are dispersed across institutions. The Peru's National Interinstitutional Committee of Statistics and Environmental and Economic Accounts (ICSEEA) serve as a coordination mechanism among various stakeholders. The mission stressed the importance of releasing the energy and air emission accounts before the end of the project in April 2025, even if the",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.113,
+                0.881,
+                0.867,
+                0.91
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  Peru: Technical Assistance Report-Report of the Diagnostic Mission on Macro-relevant Climate Change Statistics (July 10–14, 2023)"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.115,
+                0.96,
+                0.425,
+                0.975
+            ],
+            "angle": 0,
+            "content": "IMF | Technical Assistance Report – Peru"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.595,
+                0.96,
+                0.861,
+                0.975
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.96,
+                0.884,
+                0.975
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.092,
+                0.66,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.118,
+                0.351,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.155,
+                0.132,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.156,
+                0.81,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.174,
+                0.854,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.189,
+                0.879,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.207,
+                0.881,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.226,
+                0.874,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.243,
+                0.861,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.26,
+                0.854,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.278,
+                0.868,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.296,
+                0.347,
+                0.308
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.324,
+                0.132,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.324,
+                0.837,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.342,
+                0.815,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.358,
+                0.813,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.377,
+                0.879,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.393,
+                0.703,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.422,
+                0.133,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.424,
+                0.876,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.44,
+                0.87,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.459,
+                0.872,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.473,
+                0.871,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.494,
+                0.862,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.509,
+                0.852,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.529,
+                0.841,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.545,
+                0.849,
+                0.558
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.563,
+                0.808,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.591,
+                0.132,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.591,
+                0.878,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.608,
+                0.86,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.626,
+                0.88,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.644,
+                0.842,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.661,
+                0.873,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.678,
+                0.849,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.698,
+                0.394,
+                0.707
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.723,
+                0.133,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.725,
+                0.854,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.741,
+                0.808,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.758,
+                0.876,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.776,
+                0.881,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.794,
+                0.865,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.81,
+                0.878,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.83,
+                0.847,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.09,
+                0.825,
+                0.125
+            ],
+            "angle": 0,
+            "content": "data could be labelled as experimental. Continued virtual monthly TA was provided to the INEI for compiling the energy and air emissions accounts for 2019 following the mission.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.137,
+                0.885,
+                0.189
+            ],
+            "angle": 0,
+            "content": "6. A third mission was conducted in February 2025 to provide assistance to the INEI in the data analysis/validation, dissemination strategies, and in preparing metadata and data releases on the energy and air emission accounts for 2019.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.2,
+                0.884,
+                0.322
+            ],
+            "angle": 0,
+            "content": "7. The experimental accounts for 2019 were released on July 11, 2025, in a document called: \"Experimental Accounts of Physical Energy Flows and Air Emissions—Methodology and Results (Cuentas Experimentales de Flujos de Energía Física y Emisiones al Aire—Metodología y Resultados).\\( ^{2} \\) The publication provides the data, the description of the methodologies used as well as the indicators disseminated through user friendly charts. Several source data producers and other stakeholders made comments on the publication that will be considered at the next release of the accounts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.334,
+                0.885,
+                0.44
+            ],
+            "angle": 0,
+            "content": "8. This present mission reviewed, assessed, and validated the PEFA data for the period 2020–2022 and the AEA data for the period 2020–2021, and provided recommendations for improvement as needed, in particular, on the allocation of natural gas and diesel to the relevant industries and in applying the residence principle to maritime and inland water transport, involving the allocation of energy use and air emissions to the resident units in the country. These adjustments are necessary to align energy and air emission data to national accounts data.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.45,
+                0.864,
+                0.502
+            ],
+            "angle": 0,
+            "content": "9. The mission provided hands-on assistance to make the recommended adjustments and interpret the results and the different indicators included in the accounts. Most adjustments were incorporated into the accounts on site.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.513,
+                0.878,
+                0.566
+            ],
+            "angle": 0,
+            "content": "10. Additional hands-on assistance was provided by the mission on the allocation of different diesel types used by the domestic economy to PEFA energy products. Allocation was cross-checked with the Ministry of Energy and Mines (MINEM) experts on site.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.577,
+                0.856,
+                0.646
+            ],
+            "angle": 0,
+            "content": "11. Economic-environmental indicators production and dissemination were discussed and settled, namely on the use of GDP at current or constant prices. In addition, the use of the supply and use table by product and the value added by economic activity at current prices from the national accounts was discussed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.658,
+                0.875,
+                0.693
+            ],
+            "angle": 0,
+            "content": "12. The mission also discussed guidelines for preparing the publication of the tables with the accounts and their respective metadata.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.704,
+                0.878,
+                0.79
+            ],
+            "angle": 0,
+            "content": "13. The objective is that by April 2026, the country would have released the revised data for 2019 and the preliminary PEFA for the period 2020–2022 and the preliminary AEA for the period 2020–2021 and would have set up a mechanism for the regular compilation of the accounts. To accomplish this, additional human resources need to be allocated to the compilation of the PEFA and the AEA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.803,
+                0.851,
+                0.837
+            ],
+            "angle": 0,
+            "content": "14. To support progress in the above work areas, the mission recommended the following priority recommendations to compile PEFA and AEA.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.113,
+                0.895,
+                0.578,
+                0.91
+            ],
+            "angle": 0,
+            "content": "2 6954323-cuentas-experimentales-de-energia-y-emisiones-al-aire.pdf"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.114,
+                0.96,
+                0.425,
+                0.975
+            ],
+            "angle": 0,
+            "content": "IMF | Technical Assistance Report – Peru"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.595,
+                0.96,
+                0.861,
+                0.975
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.87,
+                0.961,
+                0.884,
+                0.974
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.092,
+                0.821,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.11,
+                0.692,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.139,
+                0.137,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.139,
+                0.857,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.156,
+                0.881,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.173,
+                0.48,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.201,
+                0.134,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.201,
+                0.873,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.219,
+                0.871,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.237,
+                0.808,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.254,
+                0.881,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.271,
+                0.797,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.288,
+                0.819,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.307,
+                0.187,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.334,
+                0.133,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.335,
+                0.834,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.351,
+                0.819,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.37,
+                0.859,
+                0.382
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.387,
+                0.809,
+                0.4
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.405,
+                0.879,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.422,
+                0.775,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.451,
+                0.139,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.451,
+                0.856,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.469,
+                0.86,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.487,
+                0.391,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.514,
+                0.876,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.533,
+                0.823,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.549,
+                0.638,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.577,
+                0.853,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.595,
+                0.852,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.614,
+                0.848,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.631,
+                0.297,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.659,
+                0.872,
+                0.673
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.677,
+                0.428,
+                0.69
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.705,
+                0.148,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.705,
+                0.857,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.723,
+                0.858,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.739,
+                0.853,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.759,
+                0.873,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.775,
+                0.155,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.804,
+                0.846,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.822,
+                0.53,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.114,
+                0.09,
+                0.385,
+                0.107
+            ],
+            "angle": 0,
+            "content": "TABLE 1. Priority Recommendations"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.116,
+                0.113,
+                0.882,
+                0.327
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Target Date</td><td>Priority Recommendation</td><td>Responsible Institutions</td></tr><tr><td>October 2025</td><td>Make the adjustments suggested by the mission on natural gas, diesel, and maritime and inland water transport to the accounts.</td><td>INEI</td></tr><tr><td>October 2025</td><td>Use the supply and use table and the GDP at current prices for the year in question to calculate the ratios for the adjustments and the indicators used in the accounts.</td><td>INEI</td></tr><tr><td>April 2026</td><td>Publish the tables with revised data, and their respective metadata, for 2019 and preliminary energy accounts for the period 2020–2022 and air emissions accounts for the period 2020–2021 by April 2026.</td><td>INEI</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.343,
+                0.881,
+                0.378
+            ],
+            "angle": 0,
+            "content": "15. Further details on the priority recommendations and the related actions/milestones can be found in the action plan under Detailed Technical Assessment and Recommendations.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.113,
+                0.387,
+                0.695,
+                0.434
+            ],
+            "angle": 0,
+            "content": "Section II. Detailed Technical Assessment and Recommendations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.449,
+                0.885,
+                0.607
+            ],
+            "angle": 0,
+            "content": "16. A technical assistance mission visited the Instituto Nacional de Estadística e Informática of Peru during October 6–10, 2025. The objective of the mission was to review, assess, analyze, and validate the results of the revised Physical Energy Flow Accounts (PEFA) and Air Emissions Accounts (AEA) for 2019, the preliminary PEFA for the period 2020-2022 and the preliminary AEA for the years 2020–2021, and discuss dissemination strategies for releasing these accounts. A second objective was to develop a time series for the indicators building on the experience of the data compiled for 2019 and set up a mechanism for regular production of the accounts. The mission also supported a broader stakeholder engagement. The Covid-19 Pandemic affected the availability and timeliness of the source data for compiling the accounts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.618,
+                0.838,
+                0.652
+            ],
+            "angle": 0,
+            "content": "17. This present mission reviewed, assessed, and validated the PEFA data for the period 2020–2022 and the AEA data for the period 2020–2021.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.663,
+                0.884,
+                0.752
+            ],
+            "angle": 0,
+            "content": "18. During the data analysis, incoherence in natural gas allocation was detected on the mining and manufacturing industry's data source: the energy balance. Therefore, revision and redistribution of the own consumption of energy products by the mining and manufacturing industries were recommended by the mission, because besides the own consumption of natural gas, it includes the consumption of oil derivative products that will affect both mining and manufacturing industries.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.762,
+                0.809,
+                0.797
+            ],
+            "angle": 0,
+            "content": "19. The mission suggested collaboration and coordination with the MINEM to access additional detailed data for making the adjustments to the PEFA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.808,
+                0.874,
+                0.895
+            ],
+            "angle": 0,
+            "content": "20. Both PEFA and AEA compilation requires applying the national accounts residence principle, by which all energy flows and/or emissions used or generated by resident units should be included in these accounts, and all energy flows and/or emissions used or generated by non-resident units in the economic territory should be deducted. Issues requiring residence adjustment were reviewed.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.16,
+                0.96,
+                0.425,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report – Peru"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.595,
+                0.96,
+                0.861,
+                0.975
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.96,
+                0.884,
+                0.975
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.343,
+                0.879,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.362,
+                0.788,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.387,
+                0.692,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.413,
+                0.351,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.45,
+                0.148,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.451,
+                0.864,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.469,
+                0.859,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.486,
+                0.854,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.503,
+                0.85,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.52,
+                0.881,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.538,
+                0.869,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.556,
+                0.797,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.573,
+                0.859,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.591,
+                0.348,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.618,
+                0.835,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.637,
+                0.539,
+                0.649
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.665,
+                0.148,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.664,
+                0.881,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.683,
+                0.876,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.699,
+                0.786,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.716,
+                0.834,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.736,
+                0.801,
+                0.748
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.763,
+                0.806,
+                0.777
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.781,
+                0.618,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.809,
+                0.149,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.81,
+                0.825,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.827,
+                0.871,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.845,
+                0.824,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.863,
+                0.815,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.88,
+                0.311,
+                0.892
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.091,
+                0.876,
+                0.213
+            ],
+            "angle": 0,
+            "content": "21. Allocation of natural gas and diesel to the relevant industries and residence principle adjustments to maritime and inland water transport require improvements, involving the allocation of energy use and air emissions to the resident units in the country. These adjustments are necessary to align energy and air emission data to national accounts data. The mission suggested contacting the OECD to request more detailed data on the experimental database on navigation transport, and the Reserve Bank of Peru to request the detailed balance of payments data (e.g., fuel sales to non-residents and fuel purchases abroad by residents).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.224,
+                0.849,
+                0.276
+            ],
+            "angle": 0,
+            "content": "22. Special attention was given to inter-connections between PEFA and AEA. For example, adjustments to residence principle can be performed once for both accounts, using energy flows with emissions to boost compilation process productivity and data quality.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.287,
+                0.87,
+                0.409
+            ],
+            "angle": 0,
+            "content": "23. The mission provided hands-on assistance to make the recommended adjustments and interpret the results and the different indicators included in the accounts. Most adjustments were incorporated into the accounts on site. AEA and PEFA are in line with the accounting structures and principles of the System of Environmental-Economic Accounting 2012—Central Framework (SEEA-CF), and, therefore, fully consistent with monetary data from the System of National Accounts (SNA). As stressed during the mission, this allows all kinds of analyses, and it can be an input for other statistics and/or accounts, such as between AEA and PEFA, or national accounts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.42,
+                0.878,
+                0.472
+            ],
+            "angle": 0,
+            "content": "24. Additional hands-on assistance was provided by the mission on the allocation of different diesel types used by the domestic economy to PEFA energy products. Allocation was cross-checked with the MINEM experts on site.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.485,
+                0.856,
+                0.553
+            ],
+            "angle": 0,
+            "content": "25. Economic-environmental indicators production and dissemination were discussed and settled, namely on the use of GDP at current or constant prices. In addition, the use of the supply and use table by product and the value added by economic activity at current prices from the national accounts was discussed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.566,
+                0.875,
+                0.618
+            ],
+            "angle": 0,
+            "content": "26. The mission also discussed guidelines for preparing the publication of the tables with the accounts and their respective metadata. Examples from other countries and international institutions published data and metadata were explored on site.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.63,
+                0.878,
+                0.715
+            ],
+            "angle": 0,
+            "content": "27. The objective is that by April 2026, the country would have released the revised data for 2019 and the preliminary PEFA for the period 2020–2022 and the preliminary AEA for the period 2020–2021 and would have set up a mechanism for the regular compilation of the accounts. To accomplish this, additional human resources need to be allocated to the compilation of the PEFA and the AEA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.728,
+                0.529,
+                0.744
+            ],
+            "angle": 0,
+            "content": "The mission made the following main recommendations:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.752,
+                0.842,
+                0.768
+            ],
+            "angle": 0,
+            "content": "- Allocate additional human resources to the compilation of the energy and air emission accounts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.777,
+                0.885,
+                0.809
+            ],
+            "angle": 0,
+            "content": "- Make the adjustments suggested by the mission on natural gas, diesel, and maritime and inland water transport to the accounts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.817,
+                0.886,
+                0.885
+            ],
+            "angle": 0,
+            "content": "- Review and redistribute the own consumption of energy products by the mining and manufacturing industries because besides the own consumption of natural gas, it includes the consumption of oil derivative products that will affect both mining and manufacturing industries. Request additional detailed data to the MINEM for making the adjustments to the PEFA.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.161,
+                0.96,
+                0.425,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report – Peru"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.595,
+                0.96,
+                0.861,
+                0.975
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.961,
+                0.884,
+                0.974
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.09,
+                0.155,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.171,
+                0.091,
+                0.838,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.11,
+                0.866,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.127,
+                0.869,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.145,
+                0.836,
+                0.158
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.161,
+                0.834,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.179,
+                0.872,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.198,
+                0.412,
+                0.209
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.113,
+                0.224,
+                0.846,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.242,
+                0.844,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.261,
+                0.611,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.287,
+                0.148,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.288,
+                0.859,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.306,
+                0.86,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.324,
+                0.838,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.342,
+                0.866,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.359,
+                0.834,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.377,
+                0.848,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.394,
+                0.639,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.422,
+                0.876,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.44,
+                0.823,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.457,
+                0.411,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.485,
+                0.146,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.485,
+                0.851,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.502,
+                0.852,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.52,
+                0.849,
+                0.535
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.539,
+                0.297,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.565,
+                0.874,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.585,
+                0.862,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.603,
+                0.49,
+                0.614
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.172,
+                0.631,
+                0.857,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.648,
+                0.856,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.665,
+                0.853,
+                0.679
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.683,
+                0.874,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.7,
+                0.155,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.73,
+                0.526,
+                0.743
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.753,
+                0.839,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.779,
+                0.882,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.795,
+                0.33,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.818,
+                0.882,
+                0.832
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.836,
+                0.882,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.852,
+                0.882,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.87,
+                0.641,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.09,
+                0.884,
+                0.125
+            ],
+            "angle": 0,
+            "content": "- Use the supply and use table and the GDP at current prices for the year in question to calculate the ratios for the adjustments and the indicators used in the accounts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.132,
+                0.886,
+                0.165
+            ],
+            "angle": 0,
+            "content": "- Publish the tables with revised data, and their respective metadata for 2019, preliminary energy accounts for the period 2020–2022, and air emissions accounts for the period 2020–2021 by April 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.172,
+                0.886,
+                0.223
+            ],
+            "angle": 0,
+            "content": "- Contact the OECD to request more detailed data on the experimental database on navigation transport and the and the Reserve Bank of Peru to request the detailed balance of payments data (e.g., fuel sales to non-residents and fuel purchases abroad by residents).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.23,
+                0.885,
+                0.263
+            ],
+            "angle": 0,
+            "content": "- Increase the level of detail from aggregated to medium breakdown both on the AEA and the PEFA for the next compilation exercise.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.27,
+                0.885,
+                0.304
+            ],
+            "angle": 0,
+            "content": "- Establish a mechanism for the regular compilation and publication of the accounts at national level from 2026 onwards.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.311,
+                0.885,
+                0.345
+            ],
+            "angle": 0,
+            "content": "- Start the regular annual reporting of the AEA and the PEFA questionnaires to the United Nations and OECD by March 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.36,
+                0.455,
+                0.376
+            ],
+            "angle": 0,
+            "content": "A. OFFICIALS MET DURING THE MISSION"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.115,
+                0.385,
+                0.883,
+                0.902
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Name</td><td>Institution</td></tr><tr><td>Raymundo Guillermo Chirinos Cabrejos</td><td>BCRP</td></tr><tr><td>Sebastián Alejandro Basurto Cervantes</td><td>BCRP</td></tr><tr><td>Jhonatan Edwin Bruno Ramirez</td><td>SENAMHI</td></tr><tr><td>Juan Carlos Zegarra Vargas</td><td>SENAMHI</td></tr><tr><td>Rosalinda Cedy Aguirre Almeyda</td><td>SENAMHI</td></tr><tr><td>Carmen Carolina Calle Benavides</td><td>MTC</td></tr><tr><td>Diego Lope</td><td>MINAM</td></tr><tr><td>Robert Cordoña Ccahuata</td><td>MINEM</td></tr><tr><td>Giannina Ibarra</td><td>MINEM</td></tr><tr><td>Celia Bedoya Jimenez</td><td>MIDAGRI</td></tr><tr><td>Irma Romero</td><td>MIDAGRI</td></tr><tr><td>Milagros Montes Matos</td><td>MIDAGRI</td></tr><tr><td>Sandra Roncal</td><td>MIDAGRI</td></tr><tr><td>Alfredo Apaza Ticona</td><td>SERFOR</td></tr><tr><td>Alexs Arana Olivos</td><td>SERFOR</td></tr><tr><td>Wilder Santos Viera</td><td>OSINERGMIN</td></tr><tr><td>Jose Luis Robles</td><td>INEI</td></tr><tr><td>Consuelo Landa</td><td>INEI</td></tr><tr><td>Henry Meza Meza</td><td>INEI</td></tr></table>"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.115,
+                0.96,
+                0.151,
+                0.974
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.161,
+                0.96,
+                0.425,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report – Peru"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.595,
+                0.96,
+                0.861,
+                0.975
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.96,
+                0.884,
+                0.974
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.092,
+                0.88,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.11,
+                0.62,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.142,
+                0.131,
+                0.882,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.15,
+                0.881,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.174,
+                0.882,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.19,
+                0.882,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.208,
+                0.607,
+                0.22
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.143,
+                0.231,
+                0.883,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.25,
+                0.361,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.273,
+                0.882,
+                0.285
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.289,
+                0.252,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.313,
+                0.883,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.33,
+                0.31,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.362,
+                0.451,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "bbox": [
+                0.116,
+                0.09,
+                0.883,
+                0.332
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Name</td><td>Institution</td></tr><tr><td>Judith Samaniego</td><td>INEI</td></tr><tr><td>Ysabel Galvan Palomino</td><td>INEI</td></tr><tr><td>Ernesto Mercado</td><td>INEI</td></tr><tr><td>Bertha Rodriguez Jara</td><td>INEI</td></tr><tr><td>Carlos Carre Rodriguez</td><td>INEI</td></tr><tr><td>Felixalberto Lavado</td><td>INEI</td></tr><tr><td>Fanny Sumalave</td><td>INEI</td></tr><tr><td>Jean Gonzales Vitancio</td><td>INEI</td></tr><tr><td>Miluska Luy Fabab</td><td>INEI</td></tr></table>",
+            "cell_merge": [
+                0,
+                0
+            ]
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.116,
+                0.96,
+                0.151,
+                0.974
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.162,
+                0.96,
+                0.425,
+                0.975
+            ],
+            "angle": 0,
+            "content": "Technical Assistance Report – Peru"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.596,
+                0.96,
+                0.861,
+                0.975
+            ],
+            "angle": 0,
+            "content": "National Accounts Statistics Mission"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.96,
+                0.884,
+                0.974
+            ],
+            "angle": 0,
+            "content": "8"
+        }
+    ]
+]
