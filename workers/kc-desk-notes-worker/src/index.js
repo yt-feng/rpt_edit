@@ -2117,6 +2117,10 @@ function cachedPayloadIsFresh(cache) {
   return Number.isFinite(cachedAt) && Date.now() - cachedAt < SEARCH_CACHE_FRESH_MS;
 }
 
+function searchPayloadHasItems(payload) {
+  return Boolean(payload && Array.isArray(payload.items) && payload.items.length > 0);
+}
+
 async function handleCachedSearch(request, env, source, query, page, emptyPayload, fetcher, fallbackFetcher = null, options = {}) {
   const cached = await getSearchCache(env, source, query, page);
   if (cached && cached.payload && cachedPayloadIsFresh(cached)) {
@@ -2129,7 +2133,7 @@ async function handleCachedSearch(request, env, source, query, page, emptyPayloa
   }
   if (fallbackFetcher && options.preferFallback) {
     const fallback = await fallbackFetcher(null);
-    if (fallback) {
+    if (searchPayloadHasItems(fallback)) {
       return jsonResponse(request, env, 200, {
         ...fallback,
         cached: true,
