@@ -1,0 +1,71 @@
+{
+  "date_folder": "260702",
+  "max_reports": "all",
+  "selected_count": 5,
+  "successful_count": 5,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/ark/260702/0001-ARK_From-Robotaxis-To-Humanoids-Why-Embodied-AI-Represents-An-Order-Of-Magni_3aea3e0ad3bcab6a",
+      "title": "木头姐ARK：From Robotaxis To Humanoids: Why Embodied AI Represents An Order-Of-Magnitude Leap Into The Future",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260702/01-0001-ARK_From-Robotaxis-To-Humanoids-Why-Embodied-AI-Represents-An-Order-Of-Magni_3aea3e0ad3bcab",
+      "pdf_path": "kc_translated_reports/ark/260702/01-0001-ARK_From-Robotaxis-To-Humanoids-Why-Embodied-AI-Represents-An-Order-Of-Magni_3aea3e0ad3bcab/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260702/0002-ARK_506-Technology-Giants-Are-Accelerating-The-Convergence-Between-AI-And-Bi_fae1695aa267bbb9",
+      "title": "木头姐ARK：#506: Technology Giants Are Accelerating The Convergence Between AI And Biology, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260702/02-0002-ARK_506-Technology-Giants-Are-Accelerating-The-Convergence-Between-AI-And-Bi_fae1695aa267bb",
+      "pdf_path": "kc_translated_reports/ark/260702/02-0002-ARK_506-Technology-Giants-Are-Accelerating-The-Convergence-Between-AI-And-Bi_fae1695aa267bb/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260702/0003-ARK_The-Bitcoin-Quarterly-Q1-2026_8fdc1dd340671a16",
+      "title": "木头姐ARK：The Bitcoin Quarterly: Q1 2026",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260702/03-0003-ARK_The-Bitcoin-Quarterly-Q1-2026_8fdc1dd340671a16",
+      "pdf_path": "kc_translated_reports/ark/260702/03-0003-ARK_The-Bitcoin-Quarterly-Q1-2026_8fdc1dd340671a16/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260702/0004-ARK_505-Patent-Cliffs-And-Pipeline-Gaps-Are-Driving-A-Structural-Bid-For-Bio_4664792374689e37",
+      "title": "木头姐ARK：#505: Patent Cliffs And Pipeline Gaps Are Driving A Structural Bid For Biotech, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260702/04-0004-ARK_505-Patent-Cliffs-And-Pipeline-Gaps-Are-Driving-A-Structural-Bid-For-Bio_4664792374689e",
+      "pdf_path": "kc_translated_reports/ark/260702/04-0004-ARK_505-Patent-Cliffs-And-Pipeline-Gaps-Are-Driving-A-Structural-Bid-For-Bio_4664792374689e/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260702/0005-ARK_504-Elon-Musk-Unveils-Terafab-A-Chip-Fab-That-Will-Impact-SpaceX-xAI-And_6caab0925f7c64cc",
+      "title": "木头姐ARK：#504: Elon Musk Unveils Terafab, A Chip Fab That Will Impact SpaceX, xAI, And Tesla, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260702/05-0005-ARK_504-Elon-Musk-Unveils-Terafab-A-Chip-Fab-That-Will-Impact-SpaceX-xAI-And_6caab0925f7c64",
+      "pdf_path": "kc_translated_reports/ark/260702/05-0005-ARK_504-Elon-Musk-Unveils-Terafab-A-Chip-Fab-That-Will-Impact-SpaceX-xAI-And_6caab0925f7c64/kc_translated_report_05.pdf"
+    }
+  ]
+}
