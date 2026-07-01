@@ -223,8 +223,17 @@
     return Boolean(user && (user.role === "super" || user.is_super));
   }
 
+  function isOperatorSession(session = loadAuthSession()) {
+    const user = session && session.user;
+    return Boolean(user && (user.role === "operator" || user.is_operator));
+  }
+
+  function canOpenOperationsPanel(session = loadAuthSession()) {
+    return isSuperSession(session) || isOperatorSession(session);
+  }
+
   function privateToolsUnlocked() {
-    return Boolean(getAdminToken() || isSuperSession());
+    return Boolean(getAdminToken() || canOpenOperationsPanel());
   }
 
   async function refreshAuthSession(workerUrl) {
@@ -367,13 +376,21 @@
       if (signedIn) {
         document.getElementById("accountName").textContent = authUserLabel(session);
         document.getElementById("accountEmailText").textContent = session.user.email || "";
-        if (adminOpen) adminOpen.hidden = !isSuperSession(session);
-        setStatus(isSuperSession(session) ? "已登录，当前账号拥有管理员权限。" : `已登录。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`, "ok");
+        if (adminOpen) {
+          adminOpen.hidden = !canOpenOperationsPanel(session);
+          adminOpen.textContent = isOperatorSession(session) && !isSuperSession(session) ? "运营后台" : "管理后台";
+        }
+        setStatus(
+          isSuperSession(session)
+            ? "已登录，当前账号拥有管理员权限。"
+            : (isOperatorSession(session) ? "已登录，当前账号拥有运营权限。" : `已登录。如需开通下载权限，请联系微信 ${CONTACT_WECHAT}。`),
+          "ok",
+        );
         fetch(`${workerUrl}/entitlement`, { cache: "no-store", headers: authHeaders() })
           .then((response) => response.json())
           .then((data) => {
             const entitlement = data && data.entitlement;
-            if (entitlement && entitlement.active && (entitlement.plan === "annual" || entitlement.plan === "super")) {
+            if (entitlement && entitlement.active && (entitlement.plan === "annual" || entitlement.plan === "super" || entitlement.plan === "operator")) {
               setStatus(`账号下载权限有效${entitlement.current_period_end ? `至 ${entitlement.current_period_end.slice(0, 10)}` : ""}。`, "ok");
             }
           })
@@ -452,13 +469,16 @@
     if (!loadAuthSession() && username) username.focus();
   }
 
-  function accountAdminModalMarkup() {
+  function accountAdminModalMarkup(options = {}) {
+    const title = options.title || "管理后台";
+    const showWechat = options.showWechat !== false;
+    const showUsers = options.showUsers !== false;
     return `
       <div class="admin-modal account-admin-modal" id="accountAdminModal" role="dialog" aria-modal="true" aria-labelledby="accountAdminTitle">
         <div class="admin-dialog account-admin-dialog">
           <button class="admin-close" id="accountAdminClose" type="button" aria-label="Close">&times;</button>
           <div class="account-admin-top">
-            <h3 id="accountAdminTitle">管理后台</h3>
+            <h3 id="accountAdminTitle">${escapeHtml(title)}</h3>
             <button class="secondary-button" id="accountAdminRefresh" type="button">刷新</button>
           </div>
           <div id="accountAdminStatus" class="status-line" aria-live="polite">正在读取后台信息…</div>
@@ -469,7 +489,7 @@
             </div>
             <div id="accountAdminPicks" class="account-admin-picks"></div>
           </section>
-          <section class="account-admin-section account-admin-wechat-section">
+          <section class="account-admin-section account-admin-wechat-section" id="accountAdminWechatSection" ${showWechat ? "" : "hidden"}>
             <div class="account-admin-heading">
               <strong>公众号发送时间</strong>
               <span id="accountAdminWechatCount"></span>
@@ -483,7 +503,7 @@
             </div>
             <div id="accountAdminFiles" class="account-admin-files"></div>
           </section>
-          <section class="account-admin-section">
+          <section class="account-admin-section" id="accountAdminUsersSection" ${showUsers ? "" : "hidden"}>
             <div class="account-admin-heading">
               <strong>用户信息</strong>
               <span id="accountAdminUserCount"></span>
@@ -809,17 +829,26 @@
       const files = Array.isArray(data.files) ? data.files : [];
       const dailyPicks = Array.isArray(data.daily_picks) ? data.daily_picks : [];
       const wechatSchedule = data.wechat_schedule && typeof data.wechat_schedule === "object" ? data.wechat_schedule : {};
+      const canViewUsers = data.can_view_users !== false;
+      const canViewWechat = data.can_view_wechat !== false;
+      if (targets.title && data.dashboard_title) targets.title.textContent = data.dashboard_title;
+      if (targets.usersSection) targets.usersSection.hidden = !canViewUsers;
+      if (targets.wechatSection) targets.wechatSection.hidden = !canViewWechat;
       accountAdminDailyPicks = new Map(dailyPicks.map((pick) => [String(pick.id || ""), pick]));
       targets.pickCount.textContent = dailyPicks.length ? `${dailyPicks.length} reports` : "";
       targets.picks.innerHTML = dailyPicks.length
         ? dailyPicks.map(adminDailyPickRow).join("")
         : `<div class="empty-state">还没有可用精选。新 PDF 同步后会自动根据宏观/页数/横屏规则筛选。</div>`;
-      targets.wechatCount.textContent = wechatSchedule.total_batches ? `${wechatSchedule.total_batches} batches` : "";
-      targets.wechatSchedule.innerHTML = renderAdminWechatSchedule(wechatSchedule);
-      targets.userCount.textContent = `${users.length} users`;
-      targets.users.innerHTML = users.length
-        ? users.map(adminUserRow).join("")
-        : '<tr><td colspan="5">暂无用户。</td></tr>';
+      if (canViewWechat && targets.wechatCount && targets.wechatSchedule) {
+        targets.wechatCount.textContent = wechatSchedule.total_batches ? `${wechatSchedule.total_batches} batches` : "";
+        targets.wechatSchedule.innerHTML = renderAdminWechatSchedule(wechatSchedule);
+      }
+      if (canViewUsers && targets.userCount && targets.users) {
+        targets.userCount.textContent = `${users.length} users`;
+        targets.users.innerHTML = users.length
+          ? users.map(adminUserRow).join("")
+          : '<tr><td colspan="5">暂无用户。</td></tr>';
+      }
       targets.files.innerHTML = files.length
         ? files.map(adminFileRow).join("")
         : `<div class="empty-state">还没有找到最新文件。可以稍后刷新，或检查 GitHub workflow 是否已完成。</div>`;
@@ -834,12 +863,19 @@
   }
 
   function showAccountAdminModal(workerUrl) {
-    if (!workerUrl || !isSuperSession()) return;
+    if (!workerUrl || !canOpenOperationsPanel()) return;
+    const session = loadAuthSession();
+    const isOperatorOnly = isOperatorSession(session) && !isSuperSession(session);
     const existing = document.getElementById("accountAdminModal");
     if (existing) existing.remove();
-    document.body.insertAdjacentHTML("beforeend", accountAdminModalMarkup());
+    document.body.insertAdjacentHTML("beforeend", accountAdminModalMarkup({
+      title: isOperatorOnly ? "运营后台" : "管理后台",
+      showWechat: !isOperatorOnly,
+      showUsers: !isOperatorOnly,
+    }));
 
     const modal = document.getElementById("accountAdminModal");
+    const title = document.getElementById("accountAdminTitle");
     const close = document.getElementById("accountAdminClose");
     const refresh = document.getElementById("accountAdminRefresh");
     const status = document.getElementById("accountAdminStatus");
@@ -847,10 +883,12 @@
     const picks = document.getElementById("accountAdminPicks");
     const wechatCount = document.getElementById("accountAdminWechatCount");
     const wechatSchedule = document.getElementById("accountAdminWechatSchedule");
+    const wechatSection = document.getElementById("accountAdminWechatSection");
     const userCount = document.getElementById("accountAdminUserCount");
     const users = document.getElementById("accountAdminUsers");
+    const usersSection = document.getElementById("accountAdminUsersSection");
     const files = document.getElementById("accountAdminFiles");
-    const targets = { status, refresh, pickCount, picks, wechatCount, wechatSchedule, userCount, users, files };
+    const targets = { title, status, refresh, pickCount, picks, wechatCount, wechatSchedule, wechatSection, userCount, users, usersSection, files };
 
     function finish() {
       modal.remove();
@@ -1084,7 +1122,7 @@
     document.addEventListener("kcdesk-admin-change", update);
     document.addEventListener("kcdesk-auth-change", update);
     gate.addEventListener("click", () => {
-      if (isSuperSession()) showAccountAdminModal(workerUrl);
+      if (canOpenOperationsPanel()) showAccountAdminModal(workerUrl);
       else showAdminLogin(workerUrl);
     });
   }
@@ -2161,7 +2199,7 @@
 
   async function requestReportPassword(workerUrl, id) {
     const token = getAdminToken();
-    if (!token && !isSuperSession()) throw new Error("Private tools are locked.");
+    if (!token && !canOpenOperationsPanel()) throw new Error("Private tools are locked.");
     try {
       const response = await fetch(`${workerUrl}/admin/report-password`, {
         method: "POST",
@@ -2185,7 +2223,7 @@
 
   async function requestExternalPassword(workerUrl, id, source = EXTERNAL_SOURCE) {
     const token = getAdminToken();
-    if (!token && !isSuperSession()) throw new Error("Private tools are locked.");
+    if (!token && !canOpenOperationsPanel()) throw new Error("Private tools are locked.");
     try {
       const response = await fetch(`${workerUrl}/admin/report-password`, {
         method: "POST",
