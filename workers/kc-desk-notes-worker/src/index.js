@@ -77,6 +77,8 @@ const UPSTREAM_SEARCH_TIMEOUT_MS = 8500;
 const UPSTREAM_PDF_TIMEOUT_MS = 15000;
 const SEARCH_CACHE_PREFIX = "_search-cache";
 const SEARCH_CACHE_FRESH_MS = 6 * 60 * 60 * 1000;
+const SEARCH_MIRROR_PREFIX = "_search-mirror";
+const SEARCH_MIRROR_STALE_MS = 36 * 60 * 60 * 1000;
 
 let catalogCache = null;
 let catalogFetchedAt = 0;
@@ -2115,7 +2117,7 @@ function cachedPayloadIsFresh(cache) {
   return Number.isFinite(cachedAt) && Date.now() - cachedAt < SEARCH_CACHE_FRESH_MS;
 }
 
-async function handleCachedSearch(request, env, source, query, page, emptyPayload, fetcher) {
+async function handleCachedSearch(request, env, source, query, page, emptyPayload, fetcher, fallbackFetcher = null) {
   const cached = await getSearchCache(env, source, query, page);
   if (cached && cached.payload && cachedPayloadIsFresh(cached)) {
     return jsonResponse(request, env, 200, {
@@ -2143,6 +2145,17 @@ async function handleCachedSearch(request, env, source, query, page, emptyPayloa
         warning: "上游暂时不可用，已返回最近缓存结果。",
       });
     }
+    if (fallbackFetcher) {
+      const fallback = await fallbackFetcher(error);
+      if (fallback) {
+        return jsonResponse(request, env, 200, {
+          ...fallback,
+          cached: true,
+          cache_status: "mirror",
+          warning: "已返回站内镜像结果。",
+        });
+      }
+    }
     return jsonResponse(request, env, 200, {
       ...emptyPayload,
       cached: false,
@@ -2151,6 +2164,96 @@ async function handleCachedSearch(request, env, source, query, page, emptyPayloa
       upstream_error: String(error && error.message || error || "unavailable").slice(0, 160),
     });
   }
+}
+
+function searchMirrorKey(source) {
+  return `${SEARCH_MIRROR_PREFIX}/${source}/latest.json`;
+}
+
+async function getSearchMirror(env, source) {
+  if (!env.REPORT_BUCKET) return null;
+  try {
+    const object = await env.REPORT_BUCKET.get(searchMirrorKey(source));
+    if (!object) return null;
+    const data = JSON.parse(await object.text());
+    return data && typeof data === "object" ? data : null;
+  } catch (_error) {
+    return null;
+  }
+}
+
+function searchMirrorText(item) {
+  return [
+    item && item.title,
+    item && item.title_cn,
+    item && item.institution,
+    item && item.date,
+    item && item.summary,
+    item && item.report_type,
+    item && item.file_type,
+    item && item.kind_label,
+    item && item.author,
+    item && item.stock_code,
+    item && item.stock_name,
+  ].filter(Boolean).join(" ").normalize("NFKC").toLowerCase();
+}
+
+function searchMirrorTerms(query) {
+  const compact = compactSearchQuery(query).toLowerCase();
+  if (!compact) return [];
+  const tokens = compact.split(/[\s,，;；|/]+/).map((term) => term.trim()).filter((term) => term.length >= 2);
+  return tokens.length ? tokens : [compact];
+}
+
+function scoreSearchMirrorItem(item, query, terms) {
+  const title = String(item && (item.title || item.title_cn) || "").normalize("NFKC").toLowerCase();
+  const institution = String(item && item.institution || "").normalize("NFKC").toLowerCase();
+  const summary = String(item && item.summary || "").normalize("NFKC").toLowerCase();
+  const haystack = searchMirrorText(item);
+  const compact = compactSearchQuery(query).toLowerCase();
+  let score = 0;
+  if (compact && title.includes(compact)) score += 80;
+  if (compact && institution.includes(compact)) score += 60;
+  if (compact && summary.includes(compact)) score += 25;
+  for (const term of terms) {
+    if (title.includes(term)) score += 18;
+    else if (institution.includes(term)) score += 14;
+    else if (summary.includes(term)) score += 6;
+    else if (haystack.includes(term)) score += 3;
+    else return 0;
+  }
+  return score || (compact && haystack.includes(compact) ? 2 : 0);
+}
+
+function searchMirrorPayloadFromItems(items, query, page, pageSize) {
+  const terms = searchMirrorTerms(query);
+  const scored = (Array.isArray(items) ? items : [])
+    .map((item) => ({ item, score: terms.length ? scoreSearchMirrorItem(item, query, terms) : 1 }))
+    .filter((entry) => entry.score > 0)
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return dateScore(b.item && b.item.date) - dateScore(a.item && a.item.date);
+    })
+    .map((entry) => entry.item);
+  const start = Math.max(0, (page - 1) * pageSize);
+  return {
+    items: scored.slice(start, start + pageSize),
+    total: scored.length,
+  };
+}
+
+async function searchMirrorFallback(env, source, query, page, pageSize, formatter) {
+  const mirror = await getSearchMirror(env, source);
+  const generatedAt = String(mirror && mirror.generated_at || "");
+  const generatedMs = Date.parse(generatedAt);
+  const stale = Number.isFinite(generatedMs) && Date.now() - generatedMs > SEARCH_MIRROR_STALE_MS;
+  if (!mirror || !Array.isArray(mirror.items)) return null;
+  const result = searchMirrorPayloadFromItems(mirror.items, query, page, pageSize);
+  return formatter({
+    ...result,
+    generated_at: generatedAt,
+    mirror_stale: Boolean(stale),
+  });
 }
 
 function dateScore(value) {
@@ -3229,7 +3332,14 @@ async function handleExternalSearch(request, env) {
       page: Number(data.page_num || page),
       total_page: Number(data.total_page || 0),
     };
-  });
+  }, (_error) => searchMirrorFallback(env, "external", query, page, EXTERNAL_SEARCH_PAGE_SIZE, (result) => ({
+    items: result.items,
+    page,
+    total_page: Math.ceil(result.total / EXTERNAL_SEARCH_PAGE_SIZE),
+    total_count: result.total,
+    mirror_generated_at: result.generated_at,
+    mirror_stale: result.mirror_stale,
+  })));
 }
 
 // Fetch the upstream detail and, if the report is directly readable, return its
@@ -3615,7 +3725,20 @@ async function handleAuthoritySearch(request, env) {
       total: fulfilled.reduce((sum, result) => sum + result.total, 0),
       sources: fulfilled.map((result) => ({ kind: result.kind, total: result.total })),
     };
-  });
+  }, (_error) => searchMirrorFallback(env, AUTHORITY_SOURCE, query, page, AUTHORITY_SEARCH_PAGE_SIZE, (result) => {
+    const items = result.items.filter((item) => requestedKind === "both" || item.kind === requestedKind);
+    return {
+      items,
+      page,
+      total: result.total,
+      sources: Object.keys(AUTHORITY_KINDS).map((kind) => ({
+        kind,
+        total: items.filter((item) => item.kind === kind).length,
+      })),
+      mirror_generated_at: result.generated_at,
+      mirror_stale: result.mirror_stale,
+    };
+  }));
 }
 
 async function handleAuthorityPdf(request, env) {
