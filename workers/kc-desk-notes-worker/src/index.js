@@ -73,6 +73,10 @@ const HIBOR_SEARCH_PAGE_SIZE = 30;
 const HIBOR_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/137.0 Safari/537.36";
+const UPSTREAM_SEARCH_TIMEOUT_MS = 8500;
+const UPSTREAM_PDF_TIMEOUT_MS = 15000;
+const SEARCH_CACHE_PREFIX = "_search-cache";
+const SEARCH_CACHE_FRESH_MS = 6 * 60 * 60 * 1000;
 
 let catalogCache = null;
 let catalogFetchedAt = 0;
@@ -2052,6 +2056,103 @@ async function githubContentJson(env, path, repo = githubRepo(env), ref = github
   return JSON.parse(new TextDecoder().decode(bytes));
 }
 
+async function fetchWithTimeout(resource, init = {}, timeoutMs = UPSTREAM_SEARCH_TIMEOUT_MS) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort("timeout"), timeoutMs);
+  try {
+    return await fetch(resource, {
+      ...init,
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function compactSearchQuery(value) {
+  return String(value || "").normalize("NFKC").replace(/\s+/g, " ").trim().slice(0, 160);
+}
+
+async function searchCacheKey(source, query, page) {
+  const digest = await sha256Hex(`${source}:${page}:${compactSearchQuery(query).toLowerCase()}`);
+  return `${SEARCH_CACHE_PREFIX}/${source}/${digest}.json`;
+}
+
+async function getSearchCache(env, source, query, page) {
+  if (!env.REPORT_BUCKET) return null;
+  try {
+    const object = await env.REPORT_BUCKET.get(await searchCacheKey(source, query, page));
+    if (!object) return null;
+    const data = JSON.parse(await object.text());
+    return data && typeof data === "object" ? data : null;
+  } catch (_error) {
+    return null;
+  }
+}
+
+async function putSearchCache(env, source, query, page, payload) {
+  if (!env.REPORT_BUCKET) return;
+  try {
+    await env.REPORT_BUCKET.put(await searchCacheKey(source, query, page), JSON.stringify({
+      source,
+      query: compactSearchQuery(query),
+      page,
+      cached_at: new Date().toISOString(),
+      payload,
+    }), {
+      httpMetadata: {
+        contentType: "application/json; charset=utf-8",
+        cacheControl: "public, max-age=21600",
+      },
+    });
+  } catch (_error) {
+    // Search cache is an acceleration layer only.
+  }
+}
+
+function cachedPayloadIsFresh(cache) {
+  const cachedAt = Date.parse(cache && cache.cached_at || "");
+  return Number.isFinite(cachedAt) && Date.now() - cachedAt < SEARCH_CACHE_FRESH_MS;
+}
+
+async function handleCachedSearch(request, env, source, query, page, emptyPayload, fetcher) {
+  const cached = await getSearchCache(env, source, query, page);
+  if (cached && cached.payload && cachedPayloadIsFresh(cached)) {
+    return jsonResponse(request, env, 200, {
+      ...cached.payload,
+      cached: true,
+      cache_status: "fresh",
+      cached_at: cached.cached_at || "",
+    });
+  }
+  try {
+    const payload = await fetcher();
+    await putSearchCache(env, source, query, page, payload);
+    return jsonResponse(request, env, 200, {
+      ...payload,
+      cached: false,
+      cache_status: "refreshed",
+    });
+  } catch (error) {
+    if (cached && cached.payload) {
+      return jsonResponse(request, env, 200, {
+        ...cached.payload,
+        cached: true,
+        cache_status: "stale",
+        cached_at: cached.cached_at || "",
+        warning: "上游暂时不可用，已返回最近缓存结果。",
+      });
+    }
+    return jsonResponse(request, env, 200, {
+      ...emptyPayload,
+      cached: false,
+      cache_status: "miss",
+      warning: "上游暂时不可用，暂无缓存结果。",
+      upstream_error: String(error && error.message || error || "unavailable").slice(0, 160),
+    });
+  }
+}
+
 function dateScore(value) {
   const text = String(value || "");
   const iso = text.match(/(20\d{2})-(\d{2})-(\d{2})/);
@@ -3108,27 +3209,26 @@ async function handleExternalSearch(request, env) {
     return jsonResponse(request, env, 200, { items: [], page: 1, total_page: 0 });
   }
 
-  const target = new URL(`${EXTERNAL_API}/reports`);
-  target.searchParams.set("query", query);
-  target.searchParams.set("page_num", String(page));
-  target.searchParams.set("page_size", String(EXTERNAL_SEARCH_PAGE_SIZE));
-
-  let data;
-  try {
-    const upstream = await fetch(target.toString(), { headers: externalHeaders() });
+  return handleCachedSearch(request, env, "external", query, page, {
+    items: [],
+    page,
+    total_page: 0,
+  }, async () => {
+    const target = new URL(`${EXTERNAL_API}/reports`);
+    target.searchParams.set("query", query);
+    target.searchParams.set("page_num", String(page));
+    target.searchParams.set("page_size", String(EXTERNAL_SEARCH_PAGE_SIZE));
+    const upstream = await fetchWithTimeout(target.toString(), { headers: externalHeaders() });
     if (!upstream.ok) {
-      return jsonResponse(request, env, 502, { error: "Search is unavailable." });
+      throw new Error(`Search unavailable (${upstream.status}).`);
     }
-    data = await upstream.json();
-  } catch (_error) {
-    return jsonResponse(request, env, 502, { error: "Search is unavailable." });
-  }
-
-  const items = Array.isArray(data.items) ? data.items.map(slimExternalItem).filter((it) => it.id) : [];
-  return jsonResponse(request, env, 200, {
-    items,
-    page: Number(data.page_num || page),
-    total_page: Number(data.total_page || 0),
+    const data = await upstream.json();
+    const items = Array.isArray(data.items) ? data.items.map(slimExternalItem).filter((it) => it.id) : [];
+    return {
+      items,
+      page: Number(data.page_num || page),
+      total_page: Number(data.total_page || 0),
+    };
   });
 }
 
@@ -3136,7 +3236,7 @@ async function handleExternalSearch(request, env) {
 // presigned PDF url. Returns "" when the PDF is gated (needs a browser grab).
 async function externalDirectPdfUrl(id) {
   try {
-    const resp = await fetch(`${EXTERNAL_API}/reports/${id}`, { headers: externalHeaders() });
+    const resp = await fetchWithTimeout(`${EXTERNAL_API}/reports/${id}`, { headers: externalHeaders() });
     if (!resp.ok) return { url: "", title: "" };
     const data = await resp.json();
     const main = data.main || {};
@@ -3209,7 +3309,7 @@ async function handleExternalPdf(request, env) {
   const direct = await externalDirectPdfUrl(id);
   if (direct.url) {
     try {
-      const pdf = await fetch(direct.url, { headers: { "User-Agent": EXTERNAL_UA } });
+      const pdf = await fetchWithTimeout(direct.url, { headers: { "User-Agent": EXTERNAL_UA } }, UPSTREAM_PDF_TIMEOUT_MS);
       if (pdf.ok) {
         return externalPdfResponse(request, env, pdf.body, direct.title, id);
       }
@@ -3365,33 +3465,40 @@ async function handleHiborSearch(request, env) {
   const page = Math.max(1, Number(url.searchParams.get("page") || "1") || 1);
   if (!query) return jsonResponse(request, env, 200, { items: [], page: 1, total: 0 });
 
-  const body = new URLSearchParams({
-    hy1: "all",
-    hy2: "all",
-    ybbt: query,
-  }).toString();
-  const upstream = `${HIBOR_ORIGIN}/newweb/web/hangye?page=${encodeURIComponent(String(page))}`;
-  const response = await fetch(upstream, {
-    method: "POST",
-    headers: {
-      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-      "Origin": HIBOR_ORIGIN,
-      "Referer": `${HIBOR_ORIGIN}/newweb/web/hangye?page=1`,
-      "User-Agent": HIBOR_UA,
-    },
-    body,
-  });
-  if (!response.ok) {
-    return jsonResponse(request, env, 502, { error: `Report A search failed (${response.status}).` });
-  }
-  const html = await response.text();
-  const items = parseHiborItems(html);
-  return jsonResponse(request, env, 200, {
-    items,
+  return handleCachedSearch(request, env, HIBOR_SOURCE, query, page, {
+    items: [],
     page,
     total: 0,
     source: HIBOR_SOURCE,
+  }, async () => {
+    const body = new URLSearchParams({
+      hy1: "all",
+      hy2: "all",
+      ybbt: query,
+    }).toString();
+    const upstream = `${HIBOR_ORIGIN}/newweb/web/hangye?page=${encodeURIComponent(String(page))}`;
+    const response = await fetchWithTimeout(upstream, {
+      method: "POST",
+      headers: {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "Origin": HIBOR_ORIGIN,
+        "Referer": `${HIBOR_ORIGIN}/newweb/web/hangye?page=1`,
+        "User-Agent": HIBOR_UA,
+      },
+      body,
+    });
+    if (!response.ok) {
+      throw new Error(`Report A search failed (${response.status}).`);
+    }
+    const html = await response.text();
+    const items = parseHiborItems(html);
+    return {
+      items,
+      page,
+      total: 0,
+      source: HIBOR_SOURCE,
+    };
   });
 }
 
@@ -3460,7 +3567,7 @@ function slimAuthorityItem(kind, record) {
 
 async function authoritySearchOne(kind, query, page) {
   const config = AUTHORITY_KINDS[kind];
-  const response = await fetch(`${AUTHORITY_ORIGIN}${config.endpoint}`, {
+  const response = await fetchWithTimeout(`${AUTHORITY_ORIGIN}${config.endpoint}`, {
     method: "POST",
     headers: authoritySearchHeaders(config),
     body: JSON.stringify(authoritySearchPayload(query, page)),
@@ -3486,21 +3593,28 @@ async function handleAuthoritySearch(request, env) {
     return jsonResponse(request, env, 200, { items: [], page: 1, total: 0 });
   }
 
-  const kinds = AUTHORITY_KINDS[requestedKind] ? [requestedKind] : Object.keys(AUTHORITY_KINDS);
-  const results = await Promise.allSettled(kinds.map((kind) => authoritySearchOne(kind, query, page)));
-  const fulfilled = results
-    .filter((result) => result.status === "fulfilled")
-    .map((result) => result.value);
-  const items = fulfilled.flatMap((result) => result.items)
-    .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
-  if (!fulfilled.length && results.length) {
-    return jsonResponse(request, env, 502, { error: "Authority search is unavailable." });
-  }
-  return jsonResponse(request, env, 200, {
-    items,
+  return handleCachedSearch(request, env, AUTHORITY_SOURCE, `${requestedKind}:${query}`, page, {
+    items: [],
     page,
-    total: fulfilled.reduce((sum, result) => sum + result.total, 0),
-    sources: fulfilled.map((result) => ({ kind: result.kind, total: result.total })),
+    total: 0,
+    sources: [],
+  }, async () => {
+    const kinds = AUTHORITY_KINDS[requestedKind] ? [requestedKind] : Object.keys(AUTHORITY_KINDS);
+    const results = await Promise.allSettled(kinds.map((kind) => authoritySearchOne(kind, query, page)));
+    const fulfilled = results
+      .filter((result) => result.status === "fulfilled")
+      .map((result) => result.value);
+    const items = fulfilled.flatMap((result) => result.items)
+      .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+    if (!fulfilled.length && results.length) {
+      throw new Error("Authority search is unavailable.");
+    }
+    return {
+      items,
+      page,
+      total: fulfilled.reduce((sum, result) => sum + result.total, 0),
+      sources: fulfilled.map((result) => ({ kind: result.kind, total: result.total })),
+    };
   });
 }
 
