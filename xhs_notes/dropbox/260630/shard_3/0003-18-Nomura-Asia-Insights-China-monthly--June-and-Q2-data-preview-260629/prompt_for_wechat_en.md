@@ -203,11 +203,11 @@ Outstanding AF growth in June: 7.4% y-o-y (May: 7.7%)
 
 M2 growth in June: 8.4% y-o-y (May: 8.6%)
 
-We expect credit growth – measured as the year-on-year growth in outstanding aggregate financing (AF) – to decline further to 7.4% y-o-y in June from 7.7% in May, as strong corporate bond issuance was once again largely offset by weak new RMB loans. This is also likely to be weighed on by soft government bond issuance. Growth in outstanding RMB loans is also lik
+We expect credit growth – measured as the year-on-year growth in outstanding aggregate financing (AF) – to decline further to 7.4% y-o-y in June from 7.7% in May, as strong corporate bond issuance was once again largely offset by weak new RMB loans. This is also likely to be weighed on by soft government bond issuance. Growth in outstanding RMB loans is also likely to fall 
 
 [中间内容因长度限制已省略]
 
-34. The entity that prepared this document permits its separately operated affiliates within the NOM Group to make copies of such documents available to their clients.
+er the US Securities Exchange Act of 1934. The entity that prepared this document permits its separately operated affiliates within the NOM Group to make copies of such documents available to their clients.
 
 This document has not been approved for distribution to persons other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ (as defined by the Capital Markets Authority) in the Kingdom of Saudi Arabia ('Saudi Arabia') or a 'Market Counterparty' or a 'Professional Client' (as defined by the Dubai Financial Services Authority) in the United Arab Emirates ('UAE') or a 'Market Counterparty' or a 'Business Customer' (as defined by the Qatar Financial Centre Regulatory Authority) in the State of Qatar ('Qatar') by NOM Saudi Arabia, NIplc or any other member of the NOM Group, as the case may be. Neither this document nor any copy thereof may be taken or transmitted or distributed, directly or indirectly, by any person other than those authorised to do so into Saudi Arabia or in the UAE or in Qatar or to any person other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ located in Saudi Arabia or a 'Market Counterparty' or a 'Professional Client' in the UAE or a 'Market Counterparty' or a 'Business Customer' in Qatar. Any failure to comply with these restrictions may constitute a violation of the laws of the UAE or Saudi Arabia or Qatar.
 
