@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-06-30T22:51:35.086771+00:00",
+  "created_at_utc": "2026-07-01T22:55:05.562472+00:00",
   "source_date_dir": "xhs_notes/dropbox/260630",
   "output_dir": "publish_ready_zips/260630",
   "max_zip_mb": 90,
@@ -9,17 +9,17 @@
   "excluded_debug_files": true,
   "included_shard_count": 9,
   "skipped_shards": [],
-  "total_files": 668,
-  "total_renamed_markdown_count": 180,
-  "total_raw_file_bytes": 90687938,
-  "zip_count": 1,
+  "total_files": 867,
+  "total_renamed_markdown_count": 235,
+  "total_raw_file_bytes": 116622714,
+  "zip_count": 2,
   "zips": [
     {
-      "path": "publish_ready_zips/260630/publish_ready_260630.zip",
-      "size_bytes": 84791351,
-      "file_count": 668,
-      "renamed_markdown_count": 180,
-      "raw_file_bytes": 90687938,
+      "path": "publish_ready_zips/260630/publish_ready_260630_part001.zip",
+      "size_bytes": 88137368,
+      "file_count": 703,
+      "renamed_markdown_count": 195,
+      "raw_file_bytes": 94284814,
       "shards": [
         "shard_0",
         "shard_1",
@@ -28,6 +28,16 @@
         "shard_4",
         "shard_5",
         "shard_6",
+        "shard_7"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260630/publish_ready_260630_part002.zip",
+      "size_bytes": 20642455,
+      "file_count": 164,
+      "renamed_markdown_count": 40,
+      "raw_file_bytes": 22337900,
+      "shards": [
         "shard_7",
         "shard_8"
       ]
@@ -39,7 +49,7 @@
       "report_count": 4,
       "file_count": 80,
       "renamed_markdown_count": 20,
-      "raw_file_bytes": 9891519,
+      "raw_file_bytes": 9890043,
       "reports": [
         "0001-01-HSBC-Global-Economics-Crosscurrents-260629",
         "0002-02-Nomura-FX-Insights-Inflows-into-US-equities-slowed-amid-volatility-in-gl",
@@ -52,7 +62,7 @@
       "report_count": 3,
       "file_count": 35,
       "renamed_markdown_count": 15,
-      "raw_file_bytes": 3862018,
+      "raw_file_bytes": 3862962,
       "reports": [
         "0002-07-Goldman-Sachs-USA-Supreme-Court-Ruling-Supports-Fed-Independence-but-Fur",
         "0004-09-CITI-China-Sportswear--Stock-implications-on-three-scenarios-of-Nike-Chi",
@@ -64,7 +74,7 @@
       "report_count": 4,
       "file_count": 80,
       "renamed_markdown_count": 20,
-      "raw_file_bytes": 9969019,
+      "raw_file_bytes": 9968627,
       "reports": [
         "0001-11-Morgan-Stanley-Awaiting-Policy-Fine-tuning-260628",
         "0002-12-Nomura-Currency-Horizons-Our-medium-term-FX-views-260629",
@@ -77,7 +87,7 @@
       "report_count": 5,
       "file_count": 81,
       "renamed_markdown_count": 25,
-      "raw_file_bytes": 11240515,
+      "raw_file_bytes": 11239493,
       "reports": [
         "0001-16-J.P.-Morgan-China-Solid-but-diverging-industrial-profits-in-May-Weak-dem",
         "0002-17-Morgan-Stanley-China-Surplus-Meets-EU-Defense-260628",
@@ -91,7 +101,7 @@
       "report_count": 5,
       "file_count": 111,
       "renamed_markdown_count": 25,
-      "raw_file_bytes": 16495495,
+      "raw_file_bytes": 16499470,
       "reports": [
         "0001-21-CITI-Greater-China-Semiconductors--Apple-s-Reported-Interest-in-CXMT-Mem",
         "0002-22-GS-GS-DRAM-Sentiment-Indicator_-June-2026_-Positive-DDR5-pricing-trends-",
@@ -102,52 +112,63 @@
     },
     {
       "shard": "shard_5",
-      "report_count": 5,
-      "file_count": 85,
-      "renamed_markdown_count": 25,
-      "raw_file_bytes": 13541433,
+      "report_count": 8,
+      "file_count": 134,
+      "renamed_markdown_count": 40,
+      "raw_file_bytes": 19497573,
       "reports": [
         "0001-26-Morgan-Stanley-Brands-US-Marketing---What-s-the-Feedback---260628",
+        "0001-26-Morgan-Stanley-Greater-China-Technology-Hardware-GlassBridge-and-Fiber-t",
+        "0002-27-Morgan-Stanley-Brands-US-Marketing---What-s-the-Feedback---260628",
         "0002-27-Morgan-Stanley-Greater-China-Technology-Hardware-GlassBridge-and-Fiber-t",
         "0003-28-Nomura-USD-CNY-fix-model-Projection--6.7882-260630",
         "0004-29-CITI-Overcoming-Gridlock-2.0--Solving-Power-Bottlenecks-to-Drive-AI---En",
+        "0005-30-Goldman-Sachs-TRACKING-U.S.-SUPPLY-CHAIN-CONGESTION-GS-Supply-Chain-Cong",
         "0005-30-Morgan-Stanley-Asia-Three-Actionable-Ideas-260628"
       ]
     },
     {
       "shard": "shard_6",
-      "report_count": 5,
-      "file_count": 83,
-      "renamed_markdown_count": 25,
-      "raw_file_bytes": 10072516,
+      "report_count": 10,
+      "file_count": 166,
+      "renamed_markdown_count": 50,
+      "raw_file_bytes": 21179394,
       "reports": [
         "0001-31-CITI-China-Communications-Infrastructure-Our-thoughts-on-Corning-GlassBr",
+        "0001-31-Morgan-Stanley-Asia-Three-Actionable-Ideas-260628",
         "0002-32-Goldman-Sachs-Aerospace--Defense--Metals---Mining--Feedback-from-Singapo",
+        "0002-32-Morgan-Stanley-Asia-Chemicals-Strait-ening-Up-260628",
         "0003-33-Goldman-Sachs-TRACKING-U.S.-SUPPLY-CHAIN-CONGESTION-GS-Supply-Chain-Cong",
+        "0003-33-Nomura-China-Internet---New-Media-Monthly-App-Tracker---May-2026-260629",
+        "0004-34-CITI-China-Communications-Infrastructure-Our-thoughts-on-Corning-GlassBr",
         "0004-34-Morgan-Stanley-Asia-Chemicals-Strait-ening-Up-260628",
+        "0005-35-Goldman-Sachs-Aerospace--Defense--Metals---Mining--Feedback-from-Singapo",
         "0005-35-Nomura-China-Internet---New-Media-Monthly-App-Tracker---May-2026-260629"
       ]
     },
     {
       "shard": "shard_7",
-      "report_count": 4,
-      "file_count": 90,
-      "renamed_markdown_count": 20,
-      "raw_file_bytes": 13164571,
+      "report_count": 6,
+      "file_count": 136,
+      "renamed_markdown_count": 30,
+      "raw_file_bytes": 18718463,
       "reports": [
         "0002-37-Morgan-Stanley-Beijing-Reacts-to-Weak-Growth--EU-Reacts-to-Beijing-26062",
         "0003-38-Bernstein-U.S.-Machinery-Construction---Rental-Equipment--May-Dodge-Cons",
         "0004-39-MS-Electronic-Components---Japan-Investor-Visits-in-Singapore---Hong-Kon",
-        "0005-40-Morgan-Stanley-AI-s-Insatiable-Appetite-for-Memory-260628"
+        "0004-39-Morgan-Stanley-AI-s-Insatiable-Appetite-for-Memory-260628",
+        "0005-40-Morgan-Stanley-AI-s-Insatiable-Appetite-for-Memory-260628",
+        "0005-40-Morgan-Stanley-ASEAN-Telecoms---Data-Centers--Beneficiaries-of-the-New-C"
       ]
     },
     {
       "shard": "shard_8",
-      "report_count": 1,
-      "file_count": 23,
-      "renamed_markdown_count": 5,
-      "raw_file_bytes": 2450852,
+      "report_count": 2,
+      "file_count": 44,
+      "renamed_markdown_count": 10,
+      "raw_file_bytes": 5766689,
       "reports": [
+        "0001-41-MS-Electronic-Components---Japan-Investor-Visits-in-Singapore---Hong-Kon",
         "0001-41-Morgan-Stanley-ASEAN-Telecoms---Data-Centers--Beneficiaries-of-the-New-C"
       ]
     }
