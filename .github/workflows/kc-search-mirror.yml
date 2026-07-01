@@ -1,0 +1,43 @@
+name: KC Search Mirror
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kc-search-mirror
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install requests boto3
+
+      - name: Refresh search mirror
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID || '8182ec40eab8c484e11ebf5d6a516fbd' }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'kc-desk-notes-pdfs' }}
+        run: |
+          python scripts/kc_search_mirror.py \
+            --external-pages 40 \
+            --authority-pages 30 \
+            --page-size 50 \
+            --upload-r2
