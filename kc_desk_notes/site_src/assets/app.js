@@ -10,8 +10,8 @@
   const AUTHORITY_SOURCE = "authority";
   const REPORT_A_SOURCE = "report-a";
   const EXTERNAL_SOURCE = "external";
-  const PDFJS_MODULE_URL = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.mjs";
-  const PDFJS_WORKER_URL = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.mjs";
+  const PDFJS_MODULE_URL = "/assets/vendor/pdfjs/pdf.mjs";
+  const PDFJS_WORKER_URL = "/assets/vendor/pdfjs/pdf.worker.mjs";
   let accountAdminDailyPicks = new Map();
   let pdfJsLoadPromise = null;
 
