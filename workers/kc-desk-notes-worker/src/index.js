@@ -2117,7 +2117,7 @@ function cachedPayloadIsFresh(cache) {
   return Number.isFinite(cachedAt) && Date.now() - cachedAt < SEARCH_CACHE_FRESH_MS;
 }
 
-async function handleCachedSearch(request, env, source, query, page, emptyPayload, fetcher, fallbackFetcher = null) {
+async function handleCachedSearch(request, env, source, query, page, emptyPayload, fetcher, fallbackFetcher = null, options = {}) {
   const cached = await getSearchCache(env, source, query, page);
   if (cached && cached.payload && cachedPayloadIsFresh(cached)) {
     return jsonResponse(request, env, 200, {
@@ -2126,6 +2126,17 @@ async function handleCachedSearch(request, env, source, query, page, emptyPayloa
       cache_status: "fresh",
       cached_at: cached.cached_at || "",
     });
+  }
+  if (fallbackFetcher && options.preferFallback) {
+    const fallback = await fallbackFetcher(null);
+    if (fallback) {
+      return jsonResponse(request, env, 200, {
+        ...fallback,
+        cached: true,
+        cache_status: "mirror",
+        warning: "已返回站内镜像结果。",
+      });
+    }
   }
   try {
     const payload = await fetcher();
@@ -3339,7 +3350,7 @@ async function handleExternalSearch(request, env) {
     total_count: result.total,
     mirror_generated_at: result.generated_at,
     mirror_stale: result.mirror_stale,
-  })));
+  })), { preferFallback: true });
 }
 
 // Fetch the upstream detail and, if the report is directly readable, return its
@@ -3738,7 +3749,7 @@ async function handleAuthoritySearch(request, env) {
       mirror_generated_at: result.generated_at,
       mirror_stale: result.mirror_stale,
     };
-  }));
+  }), { preferFallback: true });
 }
 
 async function handleAuthorityPdf(request, env) {
