@@ -135,7 +135,7 @@ EXHIBIT 1: Dodge Construction Starts
 
 [中间内容因长度限制已省略]
 
-ence system.
+egoing in connection with your own internal machine learning or artificial intelligence system.
 
 Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.
 

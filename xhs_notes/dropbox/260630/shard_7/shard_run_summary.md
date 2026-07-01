@@ -8,7 +8,7 @@
 - Shard count: 40
 - Reports per shard: 5
 - Batch size: 5
-- Report directories generated: 4
+- Report directories generated: 6
 - Audio/video generation: disabled
-- Duration seconds: 711
+- Duration seconds: 791
 - Output directory: xhs_notes/dropbox/260630/shard_7
