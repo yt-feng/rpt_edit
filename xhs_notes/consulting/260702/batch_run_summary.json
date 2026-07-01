@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs",
+  "total_pdf_count_before_shard": 5,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Cybersecurity-in-the-Age-of-AI_44f8a79e.pdf",
+          "batch_file": "/tmp/pdf_batch_001_yehwfm89/pdfs/0001-BCG_Cybersecurity-in-the-Age-of-AI_44f8a79e.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Global-Asset-Management-Report-2026-Rebuilding-Asset-Managem_cbc82124.pdf",
+          "batch_file": "/tmp/pdf_batch_001_yehwfm89/pdfs/0002-BCG_Global-Asset-Management-Report-2026-Rebuilding-Asset-Managem_cbc82124.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_Return-on-AI-How-CFOs-and-CIOs-Can-Manage-the-Token-Meter_953e2cb1.pdf",
+          "batch_file": "/tmp/pdf_batch_001_yehwfm89/pdfs/0003-BCG_Return-on-AI-How-CFOs-and-CIOs-Can-Manage-the-Token-Meter_953e2cb1.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-Era-of-Token-Based-Competition-Is-Here.-Is-Your-AI-Strat_02295e07.pdf",
+          "batch_file": "/tmp/pdf_batch_001_yehwfm89/pdfs/0004-BCG_The-Era-of-Token-Based-Competition-Is-Here.-Is-Your-AI-Strat_02295e07.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_consulting_latest_pdfs/BCG_The-Transparency-Act_ecab2fcb.pdf",
+          "batch_file": "/tmp/pdf_batch_001_yehwfm89/pdfs/0005-BCG_The-Transparency-Act_ecab2fcb.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

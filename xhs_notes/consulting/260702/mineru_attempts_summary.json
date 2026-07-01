@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_yehwfm89/pdfs/0001-BCG_Cybersecurity-in-the-Age-of-AI_44f8a79e.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_yehwfm89/pdfs/0002-BCG_Global-Asset-Management-Report-2026-Rebuilding-Asset-Managem_cbc82124.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_yehwfm89/pdfs/0003-BCG_Return-on-AI-How-CFOs-and-CIOs-Can-Manage-the-Token-Meter_953e2cb1.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_yehwfm89/pdfs/0004-BCG_The-Era-of-Token-Based-Competition-Is-Here.-Is-Your-AI-Strat_02295e07.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_yehwfm89/pdfs/0005-BCG_The-Transparency-Act_ecab2fcb.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

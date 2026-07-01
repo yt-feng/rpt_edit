@@ -1,0 +1,1177 @@
+[
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.332,
+                0.07,
+                0.667,
+                0.124
+            ],
+            "angle": 0,
+            "content": "BCG BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.097,
+                0.167,
+                0.459,
+                0.184
+            ],
+            "angle": 0,
+            "content": "About Transparency Act/Åpenhetsloven"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.096,
+                0.189,
+                0.903,
+                0.273
+            ],
+            "angle": 0,
+            "content": "The Transparency Act (Åpenhetsloven) was effective July 2022 and its purpose is to ensure companies respect human rights and decent working conditions throughout their supply chain and own operations. The Act applies to the Norwegian branch of The Boston Consulting Group Nordic AB.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.098,
+                0.298,
+                0.204,
+                0.316
+            ],
+            "angle": 0,
+            "content": "About BCG"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.096,
+                0.321,
+                0.903,
+                0.493
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group (BCG) is a global consulting firm that partners with leaders in business and society to tackle their most important challenges and capture their greatest opportunities. BCG was the pioneer in business strategy when it was founded in 1963. Today, we help clients with total transformation - inspiring complex change, enabling organizations to grow, building competitive advantage, and driving bottom-line impact. BCG delivers solutions through leading-edge management consulting along with technology and design, corporate and digital ventures, and business purpose. BCG's Norwegian branch office has approximately 221 employees and is seated in Oslo.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.097,
+                0.519,
+                0.31,
+                0.536
+            ],
+            "angle": 0,
+            "content": "Our policies and values"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.096,
+                0.54,
+                0.903,
+                0.691
+            ],
+            "angle": 0,
+            "content": "BCG's Code of Conduct \\( ^{1} \\) encapsulates our commitment to acting responsibly, backed by individual integrity and professional and ethical conduct. Integrity is at the center of who we are at BCG – as an organization and as individuals that make up the organization – we are committed to instilling bold, truth-telling leadership and we will not tolerate any form of human rights abuse in any part of our business. BCG's commitment to respecting internationally recognized human rights is further outlined in our Global Human Rights Statement \\( ^{2} \\), which describes our expectations and approach across our operations and value chain.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.096,
+                0.716,
+                0.903,
+                0.824
+            ],
+            "angle": 0,
+            "content": "Our Code of Conduct sets out that all colleagues in the BCG community are personally accountable for behaving in a manner that is professional, lawful, and serves as a bridge between our purpose, our values and our processes and policies. We encourage BCG colleagues to report any behaviors or activities that they believe to be unethical or unlawful either to a trusted member of staff or via our Ombudsman process. Our Code of Conduct is distributed annually to all staff who by return",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.098,
+                0.871,
+                0.353,
+                0.9
+            ],
+            "angle": 0,
+            "content": "\\( ^{1} \\)  BCG – Code of Conduct\n \\( ^{2} \\)  BCG – Human Rights Statement"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.186,
+                0.915,
+                0.81,
+                0.944
+            ],
+            "angle": 0,
+            "content": "The Boston Consulting Group Nordic AB, Henrik Ibsens gate 4, 0255, Oslo, Norway. Org. number 991 661 557"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.323,
+                0.063,
+                0.518,
+                0.13
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.521,
+                0.072,
+                0.613,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.521,
+                0.09,
+                0.664,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.521,
+                0.108,
+                0.602,
+                0.122
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.168,
+                0.455,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.099,
+                0.189,
+                0.9,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.214,
+                0.898,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.235,
+                0.898,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.097,
+                0.255,
+                0.136,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.301,
+                0.2,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.324,
+                0.898,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.345,
+                0.898,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.368,
+                0.898,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.389,
+                0.898,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.412,
+                0.897,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.434,
+                0.898,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.455,
+                0.898,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.099,
+                0.476,
+                0.164,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.103,
+                0.521,
+                0.305,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.543,
+                0.898,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.566,
+                0.898,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.586,
+                0.898,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.608,
+                0.898,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.631,
+                0.898,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.652,
+                0.898,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.675,
+                0.496,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.719,
+                0.898,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.74,
+                0.898,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.764,
+                0.898,
+                0.775
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.785,
+                0.897,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.808,
+                0.897,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.096,
+                0.167,
+                0.902,
+                0.209
+            ],
+            "angle": 0,
+            "content": "must confirm they understand and are compliant with the Code. We work in adherence to our company values, which include Integrity, Respect for the Individual and Diversity.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.096,
+                0.233,
+                0.903,
+                0.318
+            ],
+            "angle": 0,
+            "content": "At BCG, we know our greatest asset is our people. We are committed to cultivating a respectful and inclusive workplace that supports wellbeing, ensures a safe and healthy working environment, and promotes continuous professional development. The branch is seen as having a positive work environment, and we are actively working to sustain and enhance it where needed.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.097,
+                0.343,
+                0.249,
+                0.36
+            ],
+            "angle": 0,
+            "content": "Risk assessment"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.096,
+                0.365,
+                0.903,
+                0.472
+            ],
+            "angle": 0,
+            "content": "When onboarding new vendors, we look for strong recommendations from current customers and online reviews, established companies where their provided services/goods shares BCG's vision on good quality – throughout the supply chain. Due to the nature of our business, we purchase goods and services from a range of sectors and countries, although mainly in Norway. Our main vendors would be related to professional services, IT and development and facility management.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.095,
+                0.497,
+                0.904,
+                0.604
+            ],
+            "angle": 0,
+            "content": "Our vendors mainly consist of large and reputable companies, which we have a good overview of and dialogue with. In general, we consider the risk of adverse impacts on human rights or decent working conditions in our supply chain to be low. In particular, we consider our usage of Norwegian vendors as low risk for human rights violations due to inter alia the fact that they are contained by the same laws and reporting obligations, such as Transparency Act, as ourselves.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.095,
+                0.628,
+                0.904,
+                0.846
+            ],
+            "angle": 0,
+            "content": "In industries, or geographical areas, known for a potential higher risk, we have particularly made sure to address our expectations to our vendors for them to ensure they have routines in place to ensure that human rights and decent working conditions are respected and that any risks are prevented or mitigated. One measure is by the distribution of our Supplier code of conduct. Our Supplier Code of Conduct (SCOC) \\( ^{3} \\) outlines the minimum requirements that suppliers must meet in order to do business with BCG. The SCOC forms the foundation of our systematic approach to cultivating a more sustainable and responsible supply chain. To that end, BCG includes a link to the SCOC in all of our standard supplier contract templates. The SCOC establishes requirements across four broad categories: business practices and ethics; labour practices and human rights; environmental regulations and protection; and protection of assets, intellectual property, and data.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.097,
+                0.884,
+                0.411,
+                0.9
+            ],
+            "angle": 0,
+            "content": "\\( ^{3} \\)  BCG - Supplier Code of Conduct (SCOC)"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.186,
+                0.93,
+                0.811,
+                0.959
+            ],
+            "angle": 0,
+            "content": "The Boston Consulting Group Nordic AB, Henrik Ibsens gate 4, 0255, Oslo, Norway. Org. number 991 661 557"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.17,
+                0.898,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.191,
+                0.769,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.236,
+                0.898,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.258,
+                0.897,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.28,
+                0.898,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.301,
+                0.779,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.345,
+                0.244,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.367,
+                0.898,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.39,
+                0.898,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.412,
+                0.897,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.434,
+                0.897,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.455,
+                0.82,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.103,
+                0.5,
+                0.899,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.521,
+                0.898,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.543,
+                0.898,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.565,
+                0.898,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.587,
+                0.756,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.631,
+                0.898,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.653,
+                0.898,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.675,
+                0.898,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.697,
+                0.898,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.718,
+                0.899,
+                0.732
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.74,
+                0.896,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.763,
+                0.897,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.784,
+                0.897,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.807,
+                0.897,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.829,
+                0.896,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.096,
+                0.167,
+                0.901,
+                0.209
+            ],
+            "angle": 0,
+            "content": "It also delineates the process for suppliers to use in reporting on their compliance, as well as the range of potential BCG responses to suppliers' failure to meet SCOC requirements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.095,
+                0.233,
+                0.903,
+                0.34
+            ],
+            "angle": 0,
+            "content": "Our due diligence for the period of 1 January 2025 to 31 December 2025 has not revealed any actual adverse impacts or significant risks requiring concrete measures further to our general measures implemented. However, the work on human rights and due diligence is a continuous effort, and we therefore continue to develop and evaluate our measures and assessment criteria to capture any risk of human rights violation in our operations or among our vendors.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.097,
+                0.365,
+                0.418,
+                0.383
+            ],
+            "angle": 0,
+            "content": "Due diligence and our commitment"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.096,
+                0.386,
+                0.903,
+                0.493
+            ],
+            "angle": 0,
+            "content": "BCG expects its Suppliers to share its commitment to human rights, inclusion and the principle of non-discrimination in the workplace. Suppliers shall conduct their employment practices in full compliance with all applicable laws and regulations. As any violation to human rights is unacceptable to any BCG partner, we continuously monitor our vendors and validate, their provided services, on any risk measure.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.097,
+                0.519,
+                0.427,
+                0.535
+            ],
+            "angle": 0,
+            "content": "Grievance Communication Channels"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.096,
+                0.541,
+                0.896,
+                0.647
+            ],
+            "angle": 0,
+            "content": "Grievances can be reported through BCG's existing grievance mechanisms set out in our current Whistleblower Policy, which is available through the BCG Speak Up Line, found on the Company's Internal Navigator page, as well as on the Company's external website\\(^{4}\\). Internal BCG complaints may also be reported directly to any member of the Ombuds team as set out in the above-mentioned Whistleblower Policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.097,
+                0.717,
+                0.606,
+                0.736
+            ],
+            "angle": 0,
+            "content": "This document is an English translation of the signed original.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.098,
+                0.884,
+                0.348,
+                0.9
+            ],
+            "angle": 0,
+            "content": "\\( ^{4} \\)  BCG - Home (integrityline.com)"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.186,
+                0.93,
+                0.811,
+                0.959
+            ],
+            "angle": 0,
+            "content": "The Boston Consulting Group Nordic AB, Henrik Ibsens gate 4, 0255, Oslo, Norway. Org. number 991 661 557"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.17,
+                0.897,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.192,
+                0.773,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.235,
+                0.898,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.103,
+                0.259,
+                0.897,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.28,
+                0.898,
+                0.293
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.302,
+                0.897,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.324,
+                0.71,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.368,
+                0.412,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.388,
+                0.9,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.41,
+                0.898,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.433,
+                0.898,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.455,
+                0.898,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.477,
+                0.421,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.103,
+                0.521,
+                0.421,
+                0.534
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.542,
+                0.881,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.1,
+                0.564,
+                0.808,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.587,
+                0.892,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.609,
+                0.869,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.63,
+                0.426,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.72,
+                0.603,
+                0.733
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

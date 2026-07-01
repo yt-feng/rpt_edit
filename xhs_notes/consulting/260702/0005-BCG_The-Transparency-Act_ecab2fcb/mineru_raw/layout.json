@@ -1,0 +1,1884 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        197,
+                        58,
+                        396,
+                        104
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                197,
+                                58,
+                                396,
+                                104
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        197,
+                                        58,
+                                        396,
+                                        104
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        57,
+                        140,
+                        273,
+                        154
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                140,
+                                273,
+                                154
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        140,
+                                        273,
+                                        154
+                                    ],
+                                    "type": "text",
+                                    "content": "About Transparency Act/Åpenhetsloven"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        57,
+                        158,
+                        537,
+                        229
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                158,
+                                537,
+                                229
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        158,
+                                        537,
+                                        229
+                                    ],
+                                    "type": "text",
+                                    "content": "The Transparency Act (Åpenhetsloven) was effective July 2022 and its purpose is to ensure companies respect human rights and decent working conditions throughout their supply chain and own operations. The Act applies to the Norwegian branch of The Boston Consulting Group Nordic AB."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        58,
+                        250,
+                        121,
+                        265
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                250,
+                                121,
+                                265
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        250,
+                                        121,
+                                        265
+                                    ],
+                                    "type": "text",
+                                    "content": "About BCG"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        57,
+                        269,
+                        537,
+                        414
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                269,
+                                537,
+                                414
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        269,
+                                        537,
+                                        414
+                                    ],
+                                    "type": "text",
+                                    "content": "Boston Consulting Group (BCG) is a global consulting firm that partners with leaders in business and society to tackle their most important challenges and capture their greatest opportunities. BCG was the pioneer in business strategy when it was founded in 1963. Today, we help clients with total transformation - inspiring complex change, enabling organizations to grow, building competitive advantage, and driving bottom-line impact. BCG delivers solutions through leading-edge management consulting along with technology and design, corporate and digital ventures, and business purpose. BCG's Norwegian branch office has approximately 221 employees and is seated in Oslo."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        57,
+                        436,
+                        184,
+                        450
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                436,
+                                184,
+                                450
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        436,
+                                        184,
+                                        450
+                                    ],
+                                    "type": "text",
+                                    "content": "Our policies and values"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        57,
+                        454,
+                        537,
+                        581
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                454,
+                                537,
+                                581
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        537,
+                                        581
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG's Code of Conduct "
+                                },
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        537,
+                                        581
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{1}"
+                                },
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        537,
+                                        581
+                                    ],
+                                    "type": "text",
+                                    "content": " encapsulates our commitment to acting responsibly, backed by individual integrity and professional and ethical conduct. Integrity is at the center of who we are at BCG – as an organization and as individuals that make up the organization – we are committed to instilling bold, truth-telling leadership and we will not tolerate any form of human rights abuse in any part of our business. BCG's commitment to respecting internationally recognized human rights is further outlined in our Global Human Rights Statement "
+                                },
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        537,
+                                        581
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{2}"
+                                },
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        537,
+                                        581
+                                    ],
+                                    "type": "text",
+                                    "content": ", which describes our expectations and approach across our operations and value chain."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        57,
+                        602,
+                        537,
+                        692
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                602,
+                                537,
+                                692
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        602,
+                                        537,
+                                        692
+                                    ],
+                                    "type": "text",
+                                    "content": "Our Code of Conduct sets out that all colleagues in the BCG community are personally accountable for behaving in a manner that is professional, lawful, and serves as a bridge between our purpose, our values and our processes and policies. We encourage BCG colleagues to report any behaviors or activities that they believe to be unethical or unlawful either to a trusted member of staff or via our Ombudsman process. Our Code of Conduct is distributed annually to all staff who by return"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        58,
+                        732,
+                        210,
+                        756
+                    ],
+                    "type": "page_footnote",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                732,
+                                210,
+                                756
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        732,
+                                        210,
+                                        756
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{1}"
+                                },
+                                {
+                                    "bbox": [
+                                        58,
+                                        732,
+                                        210,
+                                        756
+                                    ],
+                                    "type": "text",
+                                    "content": "  BCG – Code of Conduct\n "
+                                },
+                                {
+                                    "bbox": [
+                                        58,
+                                        732,
+                                        210,
+                                        756
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{2}"
+                                },
+                                {
+                                    "bbox": [
+                                        58,
+                                        732,
+                                        210,
+                                        756
+                                    ],
+                                    "type": "text",
+                                    "content": "  BCG – Human Rights Statement"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        110,
+                        769,
+                        481,
+                        793
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                769,
+                                481,
+                                793
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        769,
+                                        481,
+                                        793
+                                    ],
+                                    "type": "text",
+                                    "content": "The Boston Consulting Group Nordic AB, Henrik Ibsens gate 4, 0255, Oslo, Norway. Org. number 991 661 557"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        197,
+                        58,
+                        396,
+                        104
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                197,
+                                58,
+                                396,
+                                104
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        197,
+                                        58,
+                                        396,
+                                        104
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        57,
+                        140,
+                        273,
+                        154
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                140,
+                                273,
+                                154
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        140,
+                                        273,
+                                        154
+                                    ],
+                                    "type": "text",
+                                    "content": "About Transparency Act/Åpenhetsloven"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        57,
+                        158,
+                        537,
+                        229
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                158,
+                                537,
+                                229
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        158,
+                                        537,
+                                        229
+                                    ],
+                                    "type": "text",
+                                    "content": "The Transparency Act (Åpenhetsloven) was effective July 2022 and its purpose is to ensure companies respect human rights and decent working conditions throughout their supply chain and own operations. The Act applies to the Norwegian branch of The Boston Consulting Group Nordic AB."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        58,
+                        250,
+                        121,
+                        265
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                250,
+                                121,
+                                265
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        250,
+                                        121,
+                                        265
+                                    ],
+                                    "type": "text",
+                                    "content": "About BCG"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        57,
+                        269,
+                        537,
+                        414
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                269,
+                                537,
+                                414
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        269,
+                                        537,
+                                        414
+                                    ],
+                                    "type": "text",
+                                    "content": "Boston Consulting Group (BCG) is a global consulting firm that partners with leaders in business and society to tackle their most important challenges and capture their greatest opportunities. BCG was the pioneer in business strategy when it was founded in 1963. Today, we help clients with total transformation - inspiring complex change, enabling organizations to grow, building competitive advantage, and driving bottom-line impact. BCG delivers solutions through leading-edge management consulting along with technology and design, corporate and digital ventures, and business purpose. BCG's Norwegian branch office has approximately 221 employees and is seated in Oslo."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        57,
+                        436,
+                        184,
+                        450
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                436,
+                                184,
+                                450
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        436,
+                                        184,
+                                        450
+                                    ],
+                                    "type": "text",
+                                    "content": "Our policies and values"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        57,
+                        454,
+                        537,
+                        581
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                454,
+                                537,
+                                581
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        537,
+                                        581
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG's Code of Conduct "
+                                },
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        537,
+                                        581
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{1}"
+                                },
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        537,
+                                        581
+                                    ],
+                                    "type": "text",
+                                    "content": " encapsulates our commitment to acting responsibly, backed by individual integrity and professional and ethical conduct. Integrity is at the center of who we are at BCG – as an organization and as individuals that make up the organization – we are committed to instilling bold, truth-telling leadership and we will not tolerate any form of human rights abuse in any part of our business. BCG's commitment to respecting internationally recognized human rights is further outlined in our Global Human Rights Statement "
+                                },
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        537,
+                                        581
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{2}"
+                                },
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        537,
+                                        581
+                                    ],
+                                    "type": "text",
+                                    "content": ", which describes our expectations and approach across our operations and value chain."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        57,
+                        602,
+                        537,
+                        692
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                602,
+                                537,
+                                692
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        602,
+                                        537,
+                                        692
+                                    ],
+                                    "type": "text",
+                                    "content": "Our Code of Conduct sets out that all colleagues in the BCG community are personally accountable for behaving in a manner that is professional, lawful, and serves as a bridge between our purpose, our values and our processes and policies. We encourage BCG colleagues to report any behaviors or activities that they believe to be unethical or unlawful either to a trusted member of staff or via our Ombudsman process. Our Code of Conduct is distributed annually to all staff who by return"
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                57,
+                                140,
+                                536,
+                                175
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        140,
+                                        536,
+                                        175
+                                    ],
+                                    "type": "text",
+                                    "content": "must confirm they understand and are compliant with the Code. We work in adherence to our company values, which include Integrity, Respect for the Individual and Diversity.",
+                                    "cross_page": true
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        57,
+                        140,
+                        536,
+                        175
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                140,
+                                536,
+                                175
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        140,
+                                        536,
+                                        175
+                                    ],
+                                    "type": "text",
+                                    "content": "must confirm they understand and are compliant with the Code. We work in adherence to our company values, which include Integrity, Respect for the Individual and Diversity."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        57,
+                        195,
+                        537,
+                        267
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                195,
+                                537,
+                                267
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        195,
+                                        537,
+                                        267
+                                    ],
+                                    "type": "text",
+                                    "content": "At BCG, we know our greatest asset is our people. We are committed to cultivating a respectful and inclusive workplace that supports wellbeing, ensures a safe and healthy working environment, and promotes continuous professional development. The branch is seen as having a positive work environment, and we are actively working to sustain and enhance it where needed."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        57,
+                        288,
+                        148,
+                        302
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                288,
+                                148,
+                                302
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        288,
+                                        148,
+                                        302
+                                    ],
+                                    "type": "text",
+                                    "content": "Risk assessment"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        57,
+                        306,
+                        537,
+                        396
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                306,
+                                537,
+                                396
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        306,
+                                        537,
+                                        396
+                                    ],
+                                    "type": "text",
+                                    "content": "When onboarding new vendors, we look for strong recommendations from current customers and online reviews, established companies where their provided services/goods shares BCG's vision on good quality – throughout the supply chain. Due to the nature of our business, we purchase goods and services from a range of sectors and countries, although mainly in Norway. Our main vendors would be related to professional services, IT and development and facility management."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        417,
+                        537,
+                        507
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                56,
+                                417,
+                                537,
+                                507
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        56,
+                                        417,
+                                        537,
+                                        507
+                                    ],
+                                    "type": "text",
+                                    "content": "Our vendors mainly consist of large and reputable companies, which we have a good overview of and dialogue with. In general, we consider the risk of adverse impacts on human rights or decent working conditions in our supply chain to be low. In particular, we consider our usage of Norwegian vendors as low risk for human rights violations due to inter alia the fact that they are contained by the same laws and reporting obligations, such as Transparency Act, as ourselves."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        528,
+                        537,
+                        711
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                56,
+                                528,
+                                537,
+                                711
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        56,
+                                        528,
+                                        537,
+                                        711
+                                    ],
+                                    "type": "text",
+                                    "content": "In industries, or geographical areas, known for a potential higher risk, we have particularly made sure to address our expectations to our vendors for them to ensure they have routines in place to ensure that human rights and decent working conditions are respected and that any risks are prevented or mitigated. One measure is by the distribution of our Supplier code of conduct. Our Supplier Code of Conduct (SCOC) "
+                                },
+                                {
+                                    "bbox": [
+                                        56,
+                                        528,
+                                        537,
+                                        711
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{3}"
+                                },
+                                {
+                                    "bbox": [
+                                        56,
+                                        528,
+                                        537,
+                                        711
+                                    ],
+                                    "type": "text",
+                                    "content": " outlines the minimum requirements that suppliers must meet in order to do business with BCG. The SCOC forms the foundation of our systematic approach to cultivating a more sustainable and responsible supply chain. To that end, BCG includes a link to the SCOC in all of our standard supplier contract templates. The SCOC establishes requirements across four broad categories: business practices and ethics; labour practices and human rights; environmental regulations and protection; and protection of assets, intellectual property, and data."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        57,
+                        743,
+                        244,
+                        756
+                    ],
+                    "type": "page_footnote",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                743,
+                                244,
+                                756
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        743,
+                                        244,
+                                        756
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{3}"
+                                },
+                                {
+                                    "bbox": [
+                                        57,
+                                        743,
+                                        244,
+                                        756
+                                    ],
+                                    "type": "text",
+                                    "content": "  BCG - Supplier Code of Conduct (SCOC)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6
+                },
+                {
+                    "bbox": [
+                        110,
+                        782,
+                        482,
+                        806
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                782,
+                                482,
+                                806
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        782,
+                                        482,
+                                        806
+                                    ],
+                                    "type": "text",
+                                    "content": "The Boston Consulting Group Nordic AB, Henrik Ibsens gate 4, 0255, Oslo, Norway. Org. number 991 661 557"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        57,
+                        140,
+                        536,
+                        175
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [],
+                    "index": 0,
+                    "merge_prev": false,
+                    "lines_deleted": true
+                },
+                {
+                    "bbox": [
+                        57,
+                        195,
+                        537,
+                        267
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                195,
+                                537,
+                                267
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        195,
+                                        537,
+                                        267
+                                    ],
+                                    "type": "text",
+                                    "content": "At BCG, we know our greatest asset is our people. We are committed to cultivating a respectful and inclusive workplace that supports wellbeing, ensures a safe and healthy working environment, and promotes continuous professional development. The branch is seen as having a positive work environment, and we are actively working to sustain and enhance it where needed."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        57,
+                        288,
+                        148,
+                        302
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                288,
+                                148,
+                                302
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        288,
+                                        148,
+                                        302
+                                    ],
+                                    "type": "text",
+                                    "content": "Risk assessment"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        57,
+                        306,
+                        537,
+                        396
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                306,
+                                537,
+                                396
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        306,
+                                        537,
+                                        396
+                                    ],
+                                    "type": "text",
+                                    "content": "When onboarding new vendors, we look for strong recommendations from current customers and online reviews, established companies where their provided services/goods shares BCG's vision on good quality – throughout the supply chain. Due to the nature of our business, we purchase goods and services from a range of sectors and countries, although mainly in Norway. Our main vendors would be related to professional services, IT and development and facility management."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        417,
+                        537,
+                        507
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                56,
+                                417,
+                                537,
+                                507
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        56,
+                                        417,
+                                        537,
+                                        507
+                                    ],
+                                    "type": "text",
+                                    "content": "Our vendors mainly consist of large and reputable companies, which we have a good overview of and dialogue with. In general, we consider the risk of adverse impacts on human rights or decent working conditions in our supply chain to be low. In particular, we consider our usage of Norwegian vendors as low risk for human rights violations due to inter alia the fact that they are contained by the same laws and reporting obligations, such as Transparency Act, as ourselves."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        528,
+                        537,
+                        711
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                56,
+                                528,
+                                537,
+                                711
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        56,
+                                        528,
+                                        537,
+                                        711
+                                    ],
+                                    "type": "text",
+                                    "content": "In industries, or geographical areas, known for a potential higher risk, we have particularly made sure to address our expectations to our vendors for them to ensure they have routines in place to ensure that human rights and decent working conditions are respected and that any risks are prevented or mitigated. One measure is by the distribution of our Supplier code of conduct. Our Supplier Code of Conduct (SCOC) "
+                                },
+                                {
+                                    "bbox": [
+                                        56,
+                                        528,
+                                        537,
+                                        711
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{3}"
+                                },
+                                {
+                                    "bbox": [
+                                        56,
+                                        528,
+                                        537,
+                                        711
+                                    ],
+                                    "type": "text",
+                                    "content": " outlines the minimum requirements that suppliers must meet in order to do business with BCG. The SCOC forms the foundation of our systematic approach to cultivating a more sustainable and responsible supply chain. To that end, BCG includes a link to the SCOC in all of our standard supplier contract templates. The SCOC establishes requirements across four broad categories: business practices and ethics; labour practices and human rights; environmental regulations and protection; and protection of assets, intellectual property, and data."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        57,
+                        140,
+                        536,
+                        175
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                140,
+                                536,
+                                175
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        140,
+                                        536,
+                                        175
+                                    ],
+                                    "type": "text",
+                                    "content": "It also delineates the process for suppliers to use in reporting on their compliance, as well as the range of potential BCG responses to suppliers' failure to meet SCOC requirements."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        195,
+                        537,
+                        285
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                56,
+                                195,
+                                537,
+                                285
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        56,
+                                        195,
+                                        537,
+                                        285
+                                    ],
+                                    "type": "text",
+                                    "content": "Our due diligence for the period of 1 January 2025 to 31 December 2025 has not revealed any actual adverse impacts or significant risks requiring concrete measures further to our general measures implemented. However, the work on human rights and due diligence is a continuous effort, and we therefore continue to develop and evaluate our measures and assessment criteria to capture any risk of human rights violation in our operations or among our vendors."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        57,
+                        306,
+                        248,
+                        322
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                306,
+                                248,
+                                322
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        306,
+                                        248,
+                                        322
+                                    ],
+                                    "type": "text",
+                                    "content": "Due diligence and our commitment"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        57,
+                        324,
+                        537,
+                        414
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                324,
+                                537,
+                                414
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        324,
+                                        537,
+                                        414
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG expects its Suppliers to share its commitment to human rights, inclusion and the principle of non-discrimination in the workplace. Suppliers shall conduct their employment practices in full compliance with all applicable laws and regulations. As any violation to human rights is unacceptable to any BCG partner, we continuously monitor our vendors and validate, their provided services, on any risk measure."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        57,
+                        436,
+                        254,
+                        449
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                436,
+                                254,
+                                449
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        436,
+                                        254,
+                                        449
+                                    ],
+                                    "type": "text",
+                                    "content": "Grievance Communication Channels"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        57,
+                        454,
+                        533,
+                        544
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                454,
+                                533,
+                                544
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        533,
+                                        544
+                                    ],
+                                    "type": "text",
+                                    "content": "Grievances can be reported through BCG's existing grievance mechanisms set out in our current Whistleblower Policy, which is available through the BCG Speak Up Line, found on the Company's Internal Navigator page, as well as on the Company's external website"
+                                },
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        533,
+                                        544
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{4}"
+                                },
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        533,
+                                        544
+                                    ],
+                                    "type": "text",
+                                    "content": ". Internal BCG complaints may also be reported directly to any member of the Ombuds team as set out in the above-mentioned Whistleblower Policy."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        57,
+                        602,
+                        360,
+                        618
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                602,
+                                360,
+                                618
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        602,
+                                        360,
+                                        618
+                                    ],
+                                    "type": "text",
+                                    "content": "This document is an English translation of the signed original."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        58,
+                        743,
+                        207,
+                        756
+                    ],
+                    "type": "page_footnote",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                743,
+                                207,
+                                756
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        743,
+                                        207,
+                                        756
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{4}"
+                                },
+                                {
+                                    "bbox": [
+                                        58,
+                                        743,
+                                        207,
+                                        756
+                                    ],
+                                    "type": "text",
+                                    "content": "  BCG - Home (integrityline.com)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        110,
+                        782,
+                        482,
+                        806
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                110,
+                                782,
+                                482,
+                                806
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        110,
+                                        782,
+                                        482,
+                                        806
+                                    ],
+                                    "type": "text",
+                                    "content": "The Boston Consulting Group Nordic AB, Henrik Ibsens gate 4, 0255, Oslo, Norway. Org. number 991 661 557"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                }
+            ],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        57,
+                        140,
+                        536,
+                        175
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                140,
+                                536,
+                                175
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        140,
+                                        536,
+                                        175
+                                    ],
+                                    "type": "text",
+                                    "content": "It also delineates the process for suppliers to use in reporting on their compliance, as well as the range of potential BCG responses to suppliers' failure to meet SCOC requirements."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        56,
+                        195,
+                        537,
+                        285
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                56,
+                                195,
+                                537,
+                                285
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        56,
+                                        195,
+                                        537,
+                                        285
+                                    ],
+                                    "type": "text",
+                                    "content": "Our due diligence for the period of 1 January 2025 to 31 December 2025 has not revealed any actual adverse impacts or significant risks requiring concrete measures further to our general measures implemented. However, the work on human rights and due diligence is a continuous effort, and we therefore continue to develop and evaluate our measures and assessment criteria to capture any risk of human rights violation in our operations or among our vendors."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        57,
+                        306,
+                        248,
+                        322
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                306,
+                                248,
+                                322
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        306,
+                                        248,
+                                        322
+                                    ],
+                                    "type": "text",
+                                    "content": "Due diligence and our commitment"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        57,
+                        324,
+                        537,
+                        414
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                324,
+                                537,
+                                414
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        324,
+                                        537,
+                                        414
+                                    ],
+                                    "type": "text",
+                                    "content": "BCG expects its Suppliers to share its commitment to human rights, inclusion and the principle of non-discrimination in the workplace. Suppliers shall conduct their employment practices in full compliance with all applicable laws and regulations. As any violation to human rights is unacceptable to any BCG partner, we continuously monitor our vendors and validate, their provided services, on any risk measure."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        57,
+                        436,
+                        254,
+                        449
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                436,
+                                254,
+                                449
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        436,
+                                        254,
+                                        449
+                                    ],
+                                    "type": "text",
+                                    "content": "Grievance Communication Channels"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        57,
+                        454,
+                        533,
+                        544
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                454,
+                                533,
+                                544
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        533,
+                                        544
+                                    ],
+                                    "type": "text",
+                                    "content": "Grievances can be reported through BCG's existing grievance mechanisms set out in our current Whistleblower Policy, which is available through the BCG Speak Up Line, found on the Company's Internal Navigator page, as well as on the Company's external website"
+                                },
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        533,
+                                        544
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "^{4}"
+                                },
+                                {
+                                    "bbox": [
+                                        57,
+                                        454,
+                                        533,
+                                        544
+                                    ],
+                                    "type": "text",
+                                    "content": ". Internal BCG complaints may also be reported directly to any member of the Ombuds team as set out in the above-mentioned Whistleblower Policy."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        57,
+                        602,
+                        360,
+                        618
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                602,
+                                360,
+                                618
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        602,
+                                        360,
+                                        618
+                                    ],
+                                    "type": "text",
+                                    "content": "This document is an English translation of the signed original."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}
