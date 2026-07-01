@@ -1,0 +1,71 @@
+{
+  "date_folder": "260702",
+  "max_reports": "all",
+  "selected_count": 5,
+  "successful_count": 5,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/consulting/260702/0001-BCG_Cybersecurity-in-the-Age-of-AI_44f8a79e",
+      "title": "波士顿咨询：印度BFSI的AI安全缺口，不是技术问题，是同步问题",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 9,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/consulting/260702/01-0001-BCG_Cybersecurity-in-the-Age-of-AI_44f8a79e",
+      "pdf_path": "kc_translated_reports/consulting/260702/01-0001-BCG_Cybersecurity-in-the-Age-of-AI_44f8a79e/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260702/0002-BCG_Global-Asset-Management-Report-2026-Rebuilding-Asset-Managem_cbc82124",
+      "title": "波士顿咨询：资管行业告别“市场躺赢”，净流入能力成为唯一护城河",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 20,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/consulting/260702/02-0002-BCG_Global-Asset-Management-Report-2026-Rebuilding-Asset-Managem_cbc82124",
+      "pdf_path": "kc_translated_reports/consulting/260702/02-0002-BCG_Global-Asset-Management-Report-2026-Rebuilding-Asset-Managem_cbc82124/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260702/0003-BCG_Return-on-AI-How-CFOs-and-CIOs-Can-Manage-the-Token-Meter_953e2cb1",
+      "title": "波士顿咨询：AI成本失控前，CFO必须学会管好“Token计价器”",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 0,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/consulting/260702/03-0003-BCG_Return-on-AI-How-CFOs-and-CIOs-Can-Manage-the-Token-Meter_953e2cb1",
+      "pdf_path": "kc_translated_reports/consulting/260702/03-0003-BCG_Return-on-AI-How-CFOs-and-CIOs-Can-Manage-the-Token-Meter_953e2cb1/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260702/0004-BCG_The-Era-of-Token-Based-Competition-Is-Here.-Is-Your-AI-Strat_02295e07",
+      "title": "波士顿咨询：AI竞争已进入“Token时代”，增长差距正在拉大",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 1,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/consulting/260702/04-0004-BCG_The-Era-of-Token-Based-Competition-Is-Here",
+      "pdf_path": "kc_translated_reports/consulting/260702/04-0004-BCG_The-Era-of-Token-Based-Competition-Is-Here/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/consulting/260702/0005-BCG_The-Transparency-Act_ecab2fcb",
+      "title": "波士顿咨询：BCG报告揭示：供应链人权合规已成企业不可回避的硬约束",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 0,
+      "institution_name": "波士顿咨询",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/consulting/260702/05-0005-BCG_The-Transparency-Act_ecab2fcb",
+      "pdf_path": "kc_translated_reports/consulting/260702/05-0005-BCG_The-Transparency-Act_ecab2fcb/kc_translated_report_05.pdf"
+    }
+  ]
+}
