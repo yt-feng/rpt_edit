@@ -1,53 +1,71 @@
-ZH_A: 最近市场上有一种新技术叫GlassBridge，听说可能会颠覆现有的光纤阵列单元厂商，这是真的吗？
-ZH_B: 没错，GlassBridge确实是一个潜在的颠覆性技术，但影响范围和时间点需要仔细拆解。
-ZH_A: 那我们今天就来聊聊这份某外资投行发布的研报，它专门分析了GlassBridge对AI光模块和FAU制造商的影响。
-ZH_B: 好的，这份报告的核心判断是：GlassBridge对现有的FAU厂商有颠覆风险，但对AI光模块公司的影响非常有限，至少在未来一到两年内。
-ZH_A: 先给我们解释一下，GlassBridge到底是什么？为什么它会引发这么大的关注？
-ZH_B: 简单说，GlassBridge是一种玻璃基的光互连组件，由康宁公司在2025年6月正式发布。它的核心功能是把光纤直接连接到光子集成电路上，也就是PIC。
-ZH_A: 这不就是FAU在做的事情吗？有什么区别？
-ZH_B: 区别在于，传统FAU在高密度场景下，组装和扩展会变得非常复杂。而GlassBridge采用晶圆级的被动对准技术，能支持更高的密度、更好的扩展性，而且是可拆卸的。
-ZH_A: 所以它更像是一种替代方案，而不是完全取代？
-ZH_B: 对，报告里说它是“补充”FAU的方案，但在CPO共封装光学的发展中，确实对FAU厂商构成了颠覆风险。
-ZH_A: 那对于AI光模块厂商呢？他们是不是也很危险？
-ZH_B: 恰恰相反，报告认为影响有限。因为GlassBridge既可以用于CPO，也可以用于NPO，也就是近封装光学。
-ZH_A: 这意味着什么？
-ZH_B: 这意味着如果GlassBridge在NPO中广泛应用，反而可能抵消掉CPO带来的风险。光模块厂商有更灵活的选择。
-ZH_A: 听起来GlassBridge并不是一个全新的概念？
-ZH_B: 对，报告提到，早在2025年9月就有相关新闻，而且康宁在分析师日上提出的100亿美元光子学目标中，已经包含了GlassBridge。
-ZH_A: 那为什么市场反应这么大？
-ZH_B: 因为商业化时间表不确定。报告指出，真正的商业应用时间表仍然不明确，这就导致那些靠FAU期权价值高的公司股价波动很大。
-ZH_A: 所以投资者现在最大的困惑是什么？
-ZH_B: 最大的困惑是，GlassBridge到底什么时候能大规模量产？它会不会彻底替代FAU？还是只在高密度场景中使用？
-ZH_A: 这些问题的答案，报告里有没有给出？
-ZH_B: 报告给出了结构性判断，但并没有完全展开。比如，它提到GlassBridge可以用于NPO来对冲CPO风险，但具体怎么对冲，还要看完整报告。
-ZH_A: 那我们今天就先聊到这里，如果听众想了解更多细节，比如具体的投资影响和公司分析，建议去阅读完整报告。
-ZH_B: 没错，这份报告里还有很多值得深挖的内容，比如不同公司的风险敞口差异。
-ZH_A: 感谢你的分享，我们下期再见。
-ZH_B: 下期见。
+ZH_A: 最近市场上有个新词叫GlassBridge，听起来像是某种建筑技术，但实际上它可能改变整个光通信产业链。到底什么是GlassBridge？
 
-EN_A: So I heard there is this new technology called GlassBridge that could potentially disrupt existing FAU makers. Is that really the case?
-EN_B: It is indeed a potential disruption. But the impact and timeline need to be carefully broken down.
-EN_A: Let's dive into a recent report from a global investment bank that analyzes GlassBridge's implications for AI transceiver and FAU makers.
-EN_B: The report's core judgment is that GlassBridge poses a disruption risk to existing FAU makers, but the impact on AI transceiver companies is very limited, at least for the next one to two years.
-EN_A: First, can you explain what GlassBridge actually is and why it has caused such a stir?
-EN_B: Simply put, GlassBridge is a glass-based optical interconnect assembly launched by Corning in June 2025. Its core function is to bring optical fiber directly to a photonic integrated circuit, or PIC.
-EN_A: Isn't that what FAUs do? What is the difference?
-EN_B: The difference is that traditional FAUs become complex to assemble and scale at very high fiber counts. GlassBridge offers a wafer-based, passively aligned alternative that supports higher density, improved scalability, and is detachable.
-EN_A: So it is more of an alternative rather than a complete replacement?
-EN_B: Exactly. The report describes it as complementary to FAU-based approaches. But in the context of CPO development, it does pose a disruption risk to FAU makers.
-EN_A: What about AI transceiver companies? Are they in danger too?
-EN_B: On the contrary, the report says the impact should be limited. That is because GlassBridge can be used in both CPO and NPO, or near-packaged optics.
-EN_A: What does that mean?
-EN_B: It means if GlassBridge finds wider application in NPO, it could potentially offset the risk from CPO. Transceiver companies have a more flexible path.
-EN_A: So GlassBridge is not a completely new concept?
-EN_B: Correct. The report notes there was news about it back in September 2025, and it was already part of Corning's 10 billion dollar photonics target outlined at their Analyst Day.
-EN_A: Then why is the market reacting so strongly?
-EN_B: Because the timeline for real commercial application is still uncertain. The report points out that this uncertainty creates volatility for companies with high option value from FAU.
-EN_A: So what is the biggest question for investors right now?
-EN_B: The biggest question is when GlassBridge can achieve mass production. Will it completely replace FAU, or will it only be used in high-density scenarios?
-EN_A: Does the report provide answers to these questions?
-EN_B: It provides structural judgments, but it does not fully answer everything. For example, it mentions that GlassBridge can be used in NPO to hedge CPO risk, but the specifics are left for the full report.
-EN_A: We will leave it there for today. If our listeners want to learn more about specific investment implications and company analysis, we recommend reading the full report.
-EN_B: Absolutely. There is a lot more to explore, such as the different risk exposures across companies.
-EN_A: Thanks for the insights. See you next time.
-EN_B: See you.
+ZH_B: 简单来说，GlassBridge是康宁公司推出的一种玻璃光学互连组件。它直接让光纤连接到光子集成电路上，不再需要传统的光纤阵列单元。
+
+ZH_A: 这听起来像是一个技术细节，但为什么它会引起市场这么大的关注？
+
+ZH_B: 因为它的影响可能非常深远。对于现有的光纤阵列单元制造商来说，这可能是颠覆性的技术。但好消息是，对AI光模块公司的影响在未来一到两年内非常有限。
+
+ZH_A: 等等，你说颠覆性，但影响又有限。这听起来有点矛盾。
+
+ZH_B: 这不矛盾。关键在于时间线。GlassBridge的概念其实早在2025年9月就有报道了，它不是全新的技术。康宁在分析师日也提到过，这是他们100亿美元光子学目标的一部分。但真正的商业化时间表还不确定。
+
+ZH_A: 所以现在市场对这个技术的反应有些过度了？
+
+ZH_B: 没错。对于有光纤阵列单元业务的公司，市场给了它们很高的期权价值。一旦出现新技术替代的风险，股价就会剧烈波动。但实际落地还需要时间。
+
+ZH_A: 那GlassBridge到底比传统方案好在哪里？
+
+ZH_B: 传统的光纤阵列单元在光纤数量很高的时候，组装会变得非常复杂，规模化也困难。GlassBridge采用的是基于晶圆的被动对准方案，支持更高的密度和更好的可扩展性，而且可以拆卸。
+
+ZH_A: 那这对AI光模块公司意味着什么？
+
+ZH_B: 影响应该有限。因为GlassBridge既可以用于共封装光学，也可以用于近封装光学。如果它在近封装光学领域应用更广泛，反而可能抵消掉在共封装光学领域的风险。
+
+ZH_A: 所以对于投资者来说，现在应该关注什么？
+
+ZH_B: 关键是要区分两类公司。一类是光纤阵列单元制造商，它们面临的技术替代风险更大。另一类是AI光模块公司，它们受到的影响有限，甚至可能受益。
+
+ZH_A: 但报告里有没有留下一些没有完全展开的问题？
+
+ZH_B: 有。比如GlassBridge的真正商业化时间表，以及它在大规模生产中的良率和成本问题。这些在完整报告里有更详细的分析。
+
+ZH_A: 听起来这确实是一个值得深入研究的领域。如果听众想了解更多细节，应该去哪里看？
+
+ZH_B: 完整报告对这些问题有更系统的分析，包括具体的公司影响评估和时间线判断。欢迎加入我们的社群获取完整内容。
+
+EN_A: So there's this new term floating around the market called GlassBridge. It sounds like some kind of construction material, but actually it could change the entire optical communication supply chain. What exactly is it?
+
+EN_B: Simply put, GlassBridge is a glass optical interconnect assembly launched by Corning. It brings optical fiber directly to a photonic integrated circuit, replacing the traditional Fiber Array Unit.
+
+EN_A: That sounds like a technical detail. But why is it getting so much attention from the market?
+
+EN_B: Because the implications could be huge. For existing FAU manufacturers, this could be a disruptive technology. But here's the good news: the impact on AI transceiver companies is expected to be very limited in the next one to two years.
+
+EN_A: Wait, you said disruptive but also limited impact. That sounds a bit contradictory.
+
+EN_B: It's not contradictory. The key is the timeline. GlassBridge was actually reported back in September 2025, so it's not entirely new. Corning also mentioned it as part of their 10 billion dollar photonics target during their Analyst Day. But the real commercial timeline is still uncertain.
+
+EN_A: So the market might be overreacting to this technology?
+
+EN_B: Exactly. Companies with FAU exposure have high option value priced in. When there's a potential replacement technology, the stock volatility spikes. But actual deployment takes time.
+
+EN_A: So what makes GlassBridge better than the traditional approach?
+
+EN_B: Traditional FAUs become complex to assemble and scale at very high fiber counts. GlassBridge uses a wafer-based, passively aligned alternative that supports higher density, better scalability, and it's detachable.
+
+EN_A: And what does this mean for AI transceiver companies?
+
+EN_B: The impact should be limited. Because GlassBridge can be used in both CPO and NPO architectures. If it gets wider adoption in NPO, that could actually offset the risk from CPO.
+
+EN_A: So for investors, what should they be watching right now?
+
+EN_B: The key is to distinguish between two types of companies. One is the FAU makers, which face more technology replacement risk. The other is AI transceiver companies, which have limited impact and could even benefit.
+
+EN_A: But are there questions the report doesn't fully answer?
+
+EN_B: Yes. For example, the actual commercialization timeline for GlassBridge, and the yield and cost issues in mass production. The full report goes into more detail on these.
+
+EN_A: This sounds like an area worth digging into. If listeners want to learn more, where should they go?
+
+EN_B: The full report provides a more systematic analysis on these questions, including specific company impact assessments and timeline judgments. Feel free to join our community to get the full report.
