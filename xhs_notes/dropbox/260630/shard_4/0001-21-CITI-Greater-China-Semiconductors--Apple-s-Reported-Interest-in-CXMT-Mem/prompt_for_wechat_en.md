@@ -262,11 +262,13 @@ Short-Term View/Catalyst Watch Research
 <table><tr><td>Date1</td><td>ActionAdd STV</td><td>ExpectedDirectionUpside</td><td>Duration90 Days</td><td>ClosingPrice23.40</td><td>Date2</td><td>ActionRemove STV</td><td>ExpectedDirectionUpside</td><td>Duration90 Days</td><td>ClosingPrice23.74</td><td>Date3</td><td>ActionAdd STV</td><td>ExpectedDirectionUpside</td><td>Duration90 Days</td><td>ClosingPrice68.27</td></tr></table>
 
 CW - Catalyst Watch, STV - Short-Term View  
-Rating/target price changes above ref
+Rating/target price changes above reflect Eastern Time
+
+![](images/ee9af4b1321d46e2f8b5edfbe7b124b8083fb194f3c556c5f447ba34bd584e80.jpg) 
 
 [中间内容因长度限制已省略]
 
-lar investor. Accordingly, investors should, before acting on the advice, consider the appropriateness of the advice, having regard to their objectives, financial situation and needs. Prior to acquiring any financial product, it is the client's responsibility to obtain the relevant offer document for the product and consider it before making a decision as to whether to purchase the product.
+king account of the objectives, financial situation or needs of any particular investor. Accordingly, investors should, before acting on the advice, consider the appropriateness of the advice, having regard to their objectives, financial situation and needs. Prior to acquiring any financial product, it is the client's responsibility to obtain the relevant offer document for the product and consider it before making a decision as to whether to purchase the product.
 
 Card Insights. Where this report references Card Insights data, Card Insights consists of selected data from a subset of Citi's proprietary credit card transactions. Such data has undergone rigorous security protocols to keep all customer information confidential and secure; the data is highly aggregated and anonymized so that all unique customer identifiable information is removed from the data prior to receipt by the report's author or distribution to external parties. This data should be considered in the context of other economic indicators and publicly available information. Further, the selected data represents only a subset of Citi's proprietary credit card transactions due to the selection methodology or other limitations and should not be considered as indicative or predictive of the past or future financial performance of Citi or its credit card business.
 

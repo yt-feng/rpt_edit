@@ -1,51 +1,43 @@
 {
   "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
   "total_pdf_count_before_shard": 41,
-  "pdf_count_before_skip": 5,
-  "pdf_count": 5,
-  "generated_report_count": 5,
+  "pdf_count": 0,
+  "generated_report_count": 0,
   "batch_size": 5,
   "shard_index": 4,
   "shard_count": 40,
   "max_reports_per_shard": 5,
   "max_total_reports": 0,
   "skip_existing": true,
-  "skipped_existing_count": 0,
-  "skipped_existing": [],
-  "failures": 0,
-  "batches": [
+  "skipped_existing_count": 5,
+  "skipped_existing": [
     {
-      "batch_index": 1,
-      "pdf_count": 5,
-      "files": [
-        {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/21-CITI-Greater China Semiconductors： Apple’s Reported Interest in CXMT Memory a Strong Validation of the Company’s Technological Progress-260628.pdf",
-          "batch_file": "/tmp/pdf_batch_001_6v7_2d6t/pdfs/0001-21-CITI-Greater China Semiconductors- Apple-s Reported Interest in CXMT Memory a Strong Validation of the Company-s Technological Progress-260628.pdf",
-          "stable_index": "1"
-        },
-        {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/22-GS-GS DRAM Sentiment Indicator_ June 2026_ Positive DDR5 pricing trends, while more constructive on 2027 HBM pricing-260630.pdf",
-          "batch_file": "/tmp/pdf_batch_001_6v7_2d6t/pdfs/0002-22-GS-GS DRAM Sentiment Indicator_ June 2026_ Positive DDR5 pricing trends- while more constructive on 2027 HBM pricing-260630.pdf",
-          "stable_index": "2"
-        },
-        {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/23-CITI-South Korea Semiconductors：Samsung Group to Announce W1，000tr~range Investment Across Advanced Industries in Korea-260628.pdf",
-          "batch_file": "/tmp/pdf_batch_001_6v7_2d6t/pdfs/0003-23-CITI-South Korea Semiconductors-Samsung Group to Announce W1-000tr-range Investment Across Advanced Industries in Korea-260628.pdf",
-          "stable_index": "3"
-        },
-        {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/24-GS-CHINA PROPERTY WEEKLY WRAP：Week 26 Wrap~Transactions rebounded above pre~festival levels， concluding 1H26 with~14% flattish yoy in primary secondary-260630.pdf",
-          "batch_file": "/tmp/pdf_batch_001_6v7_2d6t/pdfs/0004-24-GS-CHINA PROPERTY WEEKLY WRAP-Week 26 Wrap-Transactions rebounded above pre-festival levels- concluding 1H26 with-14- flattish yoy in primary secondary-260630.pdf",
-          "stable_index": "4"
-        },
-        {
-          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/25-MS-Australia Materials：China and the Miners-260628.pdf",
-          "batch_file": "/tmp/pdf_batch_001_6v7_2d6t/pdfs/0005-25-MS-Australia Materials-China and the Miners-260628.pdf",
-          "stable_index": "5"
-        }
-      ],
-      "returncode": 0,
-      "status": "ok"
+      "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/21-CITI-Greater China Semiconductors： Apple’s Reported Interest in CXMT Memory a Strong Validation of the Company’s Technological Progress-260628.pdf",
+      "expected_item_dir": "/home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260630/shard_4/0001-21-CITI-Greater-China-Semiconductors--Apple-s-Reported-Interest-in-CXMT-Mem",
+      "reason": "already_converted"
+    },
+    {
+      "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/22-GS-GS DRAM Sentiment Indicator_ June 2026_ Positive DDR5 pricing trends, while more constructive on 2027 HBM pricing-260630.pdf",
+      "expected_item_dir": "/home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260630/shard_4/0002-22-GS-GS-DRAM-Sentiment-Indicator_-June-2026_-Positive-DDR5-pricing-trends-",
+      "reason": "already_converted"
+    },
+    {
+      "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/23-CITI-South Korea Semiconductors：Samsung Group to Announce W1，000tr~range Investment Across Advanced Industries in Korea-260628.pdf",
+      "expected_item_dir": "/home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260630/shard_4/0003-23-CITI-South-Korea-Semiconductors-Samsung-Group-to-Announce-W1-000tr-range",
+      "reason": "already_converted"
+    },
+    {
+      "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/24-GS-CHINA PROPERTY WEEKLY WRAP：Week 26 Wrap~Transactions rebounded above pre~festival levels， concluding 1H26 with~14% flattish yoy in primary secondary-260630.pdf",
+      "expected_item_dir": "/home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260630/shard_4/0004-24-Goldman-Sachs-CHINA-PROPERTY-WEEKLY-WRAP-Week-26-Wrap-Transactions-rebou",
+      "reason": "already_converted"
+    },
+    {
+      "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/25-MS-Australia Materials：China and the Miners-260628.pdf",
+      "expected_item_dir": "/home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260630/shard_4/0005-25-Morgan-Stanley-Australia-Materials-China-and-the-Miners-260628",
+      "reason": "already_converted"
     }
-  ]
+  ],
+  "failures": 0,
+  "batches": [],
+  "status": "empty_or_all_skipped"
 }
