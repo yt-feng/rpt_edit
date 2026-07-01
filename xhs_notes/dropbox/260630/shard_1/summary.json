@@ -1,60 +1,14 @@
 [
   {
-    "source_pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0001-06-GS-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf",
+    "source_pdf": "/tmp/pdf_batch_001_p_57k6si/pdfs/0001-06-GS-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf",
     "mineru_state": "failed",
-    "mineru_error": "parsing failed, please try again later",
+    "mineru_error": "retry limit reached (5 attempts), please replace the file",
     "error": "MinerU did not finish successfully after 4 attempt(s)."
   },
   {
-    "source_pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0002-07-GS-USA-Supreme Court Ruling Supports Fed Independence but Further Challenges Likely-260629.pdf",
-    "mineru_state": "done",
-    "mineru_error": "",
-    "institution_name": "GS",
-    "cover_short_title": "美联储独立性获关键背",
-    "cover_subtitle": "研报重点一图看懂",
-    "images": [
-      "assets/xhs_card_01.png"
-    ],
-    "cover": "assets/cover.png",
-    "wechat_article": "wechat_article.md"
-  },
-  {
-    "source_pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0003-08-JPM-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf",
+    "source_pdf": "/tmp/pdf_batch_001_p_57k6si/pdfs/0003-08-JPM-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf",
     "mineru_state": "failed",
-    "mineru_error": "parsing failed, please try again later",
+    "mineru_error": "retry limit reached (5 attempts), please replace the file",
     "error": "MinerU did not finish successfully after 4 attempt(s)."
-  },
-  {
-    "source_pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0004-09-CITI-China Sportswear -Stock implications on three scenarios of Nike China-s online strategy-260628.pdf",
-    "mineru_state": "done",
-    "mineru_error": "",
-    "institution_name": "Citi",
-    "cover_short_title": "Nike中国线上策略",
-    "cover_subtitle": "研报重点一图看懂",
-    "images": [
-      "assets/xhs_card_01.png"
-    ],
-    "cover": "assets/cover.png",
-    "wechat_article": "wechat_article.md"
-  },
-  {
-    "source_pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0005-10-GS-Asia Views- Oil relief- dollar pressure- tech boom-260629.pdf",
-    "mineru_state": "done",
-    "mineru_error": "",
-    "institution_name": "GS",
-    "cover_short_title": "油价暴跌、美元走强、",
-    "cover_subtitle": "研报重点一图看懂",
-    "images": [
-      "assets/xhs_card_01.png",
-      "assets/xhs_card_02.png",
-      "assets/xhs_card_03.png",
-      "assets/xhs_card_04.png",
-      "assets/xhs_card_05.png",
-      "assets/xhs_card_06.png",
-      "assets/xhs_card_07.png",
-      "assets/xhs_card_08.png"
-    ],
-    "cover": "assets/cover.png",
-    "wechat_article": "wechat_article.md"
   }
 ]

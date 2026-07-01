@@ -3,36 +3,21 @@
     "attempt": 1,
     "round": 1,
     "token_label": "MINER_U_2",
-    "submitted_pdf_count": 5,
-    "successful_pdf_count": 3,
+    "submitted_pdf_count": 2,
+    "successful_pdf_count": 0,
     "retry_pdf_count": 2,
     "timed_out": false,
     "error": "",
     "states": [
       {
-        "pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0001-06-GS-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf",
+        "pdf": "/tmp/pdf_batch_001_p_57k6si/pdfs/0001-06-GS-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf",
         "state": "failed",
         "error": "parsing failed, please try again later"
       },
       {
-        "pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0002-07-GS-USA-Supreme Court Ruling Supports Fed Independence but Further Challenges Likely-260629.pdf",
-        "state": "done",
-        "error": ""
-      },
-      {
-        "pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0003-08-JPM-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf",
+        "pdf": "/tmp/pdf_batch_001_p_57k6si/pdfs/0003-08-JPM-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf",
         "state": "failed",
         "error": "parsing failed, please try again later"
-      },
-      {
-        "pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0004-09-CITI-China Sportswear -Stock implications on three scenarios of Nike China-s online strategy-260628.pdf",
-        "state": "done",
-        "error": ""
-      },
-      {
-        "pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0005-10-GS-Asia Views- Oil relief- dollar pressure- tech boom-260629.pdf",
-        "state": "done",
-        "error": ""
       }
     ]
   },
@@ -47,14 +32,14 @@
     "error": "",
     "states": [
       {
-        "pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0001-06-GS-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf",
+        "pdf": "/tmp/pdf_batch_001_p_57k6si/pdfs/0001-06-GS-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf",
         "state": "failed",
-        "error": "parsing failed, please try again later"
+        "error": "retry limit reached (5 attempts), please replace the file"
       },
       {
-        "pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0003-08-JPM-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf",
+        "pdf": "/tmp/pdf_batch_001_p_57k6si/pdfs/0003-08-JPM-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf",
         "state": "failed",
-        "error": "parsing failed, please try again later"
+        "error": "retry limit reached (5 attempts), please replace the file"
       }
     ]
   },
@@ -69,14 +54,14 @@
     "error": "",
     "states": [
       {
-        "pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0001-06-GS-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf",
+        "pdf": "/tmp/pdf_batch_001_p_57k6si/pdfs/0001-06-GS-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf",
         "state": "failed",
-        "error": "parsing failed, please try again later"
+        "error": "retry limit reached (5 attempts), please replace the file"
       },
       {
-        "pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0003-08-JPM-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf",
+        "pdf": "/tmp/pdf_batch_001_p_57k6si/pdfs/0003-08-JPM-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf",
         "state": "failed",
-        "error": "parsing failed, please try again later"
+        "error": "retry limit reached (5 attempts), please replace the file"
       }
     ]
   },
@@ -91,14 +76,14 @@
     "error": "",
     "states": [
       {
-        "pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0001-06-GS-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf",
+        "pdf": "/tmp/pdf_batch_001_p_57k6si/pdfs/0001-06-GS-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf",
         "state": "failed",
-        "error": "parsing failed, please try again later"
+        "error": "retry limit reached (5 attempts), please replace the file"
       },
       {
-        "pdf": "/tmp/pdf_batch_001_oj6bper0/pdfs/0003-08-JPM-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf",
+        "pdf": "/tmp/pdf_batch_001_p_57k6si/pdfs/0003-08-JPM-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf",
         "state": "failed",
-        "error": "parsing failed, please try again later"
+        "error": "retry limit reached (5 attempts), please replace the file"
       }
     ]
   }

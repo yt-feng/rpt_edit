@@ -1,45 +1,39 @@
-Found 41 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
-Running batch 1: 5 PDFs
-Found 5 PDFs. MinerU token slots available=2.
-MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
-Uploading PDF to MinerU: /tmp/pdf_batch_001_oj6bper0/pdfs/0001-06-Goldman Sachs-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_oj6bper0/pdfs/0002-07-Goldman Sachs-USA-Supreme Court Ruling Supports Fed Independence but Further Challenges Likely-260629.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_oj6bper0/pdfs/0003-08-J.P. Morgan-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_oj6bper0/pdfs/0004-09-CITI-China Sportswear -Stock implications on three scenarios of Nike China-s online strategy-260628.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_oj6bper0/pdfs/0005-10-Goldman Sachs-Asia Views- Oil relief- dollar pressure- tech boom-260629.pdf
-MinerU attempt 1 using MINER_U_2 batch_id=e77d7767-bdbc-49a0-b288-faadee0c1262
-MinerU states: failed, running, failed, running, pending
-MinerU states: failed, done, failed, done, done
+Skipping already converted PDF: 07-Goldman Sachs-USA：Supreme Court Ruling Supports Fed Independence but Further Challenges Likely-260629.pdf -> /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260630/shard_1/0002-07-Goldman-Sachs-USA-Supreme-Court-Ruling-Supports-Fed-Independence-but-Fur
+Skipping already converted PDF: 09-CITI-China Sportswear ：Stock implications on three scenarios of Nike China’s online strategy-260628.pdf -> /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260630/shard_1/0004-09-CITI-China-Sportswear--Stock-implications-on-three-scenarios-of-Nike-Chi
+Skipping already converted PDF: 10-Goldman Sachs-Asia Views： Oil relief， dollar pressure， tech boom-260629.pdf -> /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260630/shard_1/0005-10-Goldman-Sachs-Asia-Views--Oil-relief--dollar-pressure--tech-boom-260629
+Found 41 total PDFs; shard 1/40 has 5 PDFs, skips 3 already converted, will process 2 PDFs with batch_size=5.
+Running batch 1: 2 PDFs
+Found 2 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 2 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p_57k6si/pdfs/0001-06-Goldman Sachs-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p_57k6si/pdfs/0003-08-J.P. Morgan-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=bf769aac-7b0f-462c-a58b-678128b0ba10
+MinerU states: pending, waiting-file
+MinerU states: failed, failed
 2 PDF(s) remain incomplete after attempt 1.
 MinerU attempt 2/4 using MINER_U: submitting 2 PDF(s).
-Uploading PDF to MinerU: /tmp/pdf_batch_001_oj6bper0/pdfs/0001-06-Goldman Sachs-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_oj6bper0/pdfs/0003-08-J.P. Morgan-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf
-MinerU attempt 2 using MINER_U batch_id=f7373d16-660c-4387-a823-79db02579852
-MinerU states: pending, pending
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p_57k6si/pdfs/0001-06-Goldman Sachs-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p_57k6si/pdfs/0003-08-J.P. Morgan-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf
+MinerU attempt 2 using MINER_U batch_id=cde75923-372e-4c66-8872-33dd2d99147e
+MinerU states: failed, pending
 MinerU states: failed, failed
 2 PDF(s) remain incomplete after attempt 2.
 MinerU attempt 3/4 using MINER_U_2: submitting 2 PDF(s).
-Uploading PDF to MinerU: /tmp/pdf_batch_001_oj6bper0/pdfs/0001-06-Goldman Sachs-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_oj6bper0/pdfs/0003-08-J.P. Morgan-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf
-MinerU attempt 3 using MINER_U_2 batch_id=6466850e-4037-4390-ad0d-f82bc9566753
-MinerU states: failed, pending
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p_57k6si/pdfs/0001-06-Goldman Sachs-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p_57k6si/pdfs/0003-08-J.P. Morgan-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf
+MinerU attempt 3 using MINER_U_2 batch_id=bd48f013-1ba3-4a8f-9797-c8924f8b402c
+MinerU states: failed, waiting-file
 MinerU states: failed, failed
 2 PDF(s) remain incomplete after attempt 3.
 MinerU attempt 4/4 using MINER_U: submitting 2 PDF(s).
-Uploading PDF to MinerU: /tmp/pdf_batch_001_oj6bper0/pdfs/0001-06-Goldman Sachs-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_oj6bper0/pdfs/0003-08-J.P. Morgan-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf
-MinerU attempt 4 using MINER_U batch_id=b83211b3-0e40-4143-83ef-5a54a45c4a71
-MinerU states: pending, pending
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p_57k6si/pdfs/0001-06-Goldman Sachs-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p_57k6si/pdfs/0003-08-J.P. Morgan-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf
+MinerU attempt 4 using MINER_U batch_id=d33cdc36-040e-4086-982d-4bce58b8d073
+MinerU states: failed, pending
 MinerU states: failed, failed
 2 PDF(s) remain incomplete after attempt 4.
 Skipping PDF after MinerU retry exhaustion: 0001-06-Goldman Sachs-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf
-MinerU result contained no standalone chart images; creating title card only.
 Skipping PDF after MinerU retry exhaustion: 0003-08-J.P. Morgan-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf
-Skip non-chart visual asset 2e1695d19f464f73f13863737ba1026819ab3194339ded9002a62824fcdc8f9d.jpg: score=-100;too_small:1429x151
-/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:277: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
-  pixels = list(gray.getdata())
-Skip non-chart visual asset e38190c979e1b3c481aa5e6bf5d52b336ecc53e879328327b3ce1b3745d709e3.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.54,large
-MinerU images did not look like charts; keeping only the title card and letting downstream AI fill body images.
-Skip non-chart visual asset 8231904465e69218782696c65946e344d3ae1f47b63589a1c4c5840921943f1e.jpg: score=2;chart_ratio,square_without_chart_hint,edge:0.27,contrast,large
-Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260630/shard_1; successful_reports=3; mineru_timed_out=False; mineru_attempts=4
-All batches completed successfully. Generated 3 report directories.
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260630/shard_1; successful_reports=0; mineru_timed_out=False; mineru_attempts=4
+Batch 1 failed: {'batch_index': 1, 'pdf_count': 2, 'files': [{'source': '/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-Goldman Sachs-China： What do local clients think about the economy？ Local marketing takeaways， June 2026-260630.pdf', 'batch_file': '/tmp/pdf_batch_001_p_57k6si/pdfs/0001-06-Goldman Sachs-China- What do local clients think about the economy- Local marketing takeaways- June 2026-260630.pdf', 'stable_index': '1'}, {'source': '/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-J.P. Morgan-Asia Edge： Off the boil： Revisiting the outlook-260629.pdf', 'batch_file': '/tmp/pdf_batch_001_p_57k6si/pdfs/0003-08-J.P. Morgan-Asia Edge- Off the boil- Revisiting the outlook-260629.pdf', 'stable_index': '3'}], 'returncode': 2, 'status': 'failed'}
+Completed with 1 failed batch(es). See /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260630/shard_1/batch_run_summary.json
