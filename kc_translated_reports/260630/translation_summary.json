@@ -1,8 +1,8 @@
 {
   "date_folder": "260630",
   "max_reports": "all",
-  "selected_count": 36,
-  "successful_count": 36,
+  "selected_count": 47,
+  "successful_count": 47,
   "sensitive_skipped_count": 0,
   "sensitive_skipped": [],
   "failures": [],
@@ -272,172 +272,304 @@
       "pdf_path": "kc_translated_reports/260630/22-0001-26-Morgan-Stanley-Brands-US-Marketing---What-s-the-Feedback---260628/kc_translated_report_22.pdf"
     },
     {
-      "source_report_dir": "xhs_notes/dropbox/260630/shard_5/0002-27-Morgan-Stanley-Greater-China-Technology-Hardware-GlassBridge-and-Fiber-t",
-      "title": "摩根斯坦利：MS：GlassBridge不是AI光模块的利空，但FAU厂商的护城河正在变窄",
+      "source_report_dir": "xhs_notes/dropbox/260630/shard_5/0001-26-Morgan-Stanley-Greater-China-Technology-Hardware-GlassBridge-and-Fiber-t",
+      "title": "摩根斯坦利：MS：GlassBridge不是AI光模块的敌人，但FAU厂商的护城河正在变浅",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
       "pdf": "kc_translated_report_23.pdf",
       "figure_count": 1,
       "institution_name": "摩根斯坦利",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/23-0002-27-Morgan-Stanley-Greater-China-Technology-Hardware-GlassBridge-and-Fiber-t",
-      "pdf_path": "kc_translated_reports/260630/23-0002-27-Morgan-Stanley-Greater-China-Technology-Hardware-GlassBridge-and-Fiber-t/kc_translated_report_23.pdf"
+      "output_dir": "kc_translated_reports/260630/23-0001-26-Morgan-Stanley-Greater-China-Technology-Hardware-GlassBridge-and-Fiber-t",
+      "pdf_path": "kc_translated_reports/260630/23-0001-26-Morgan-Stanley-Greater-China-Technology-Hardware-GlassBridge-and-Fiber-t/kc_translated_report_23.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260630/shard_5/0002-27-Morgan-Stanley-Brands-US-Marketing---What-s-the-Feedback---260628",
+      "title": "摩根斯坦利：MS：奢侈品行业正在经历一场“有条件的回暖”",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_24.pdf",
+      "figure_count": 0,
+      "institution_name": "摩根斯坦利",
+      "article_style": false,
+      "output_dir": "kc_translated_reports/260630/24-0002-27-Morgan-Stanley-Brands-US-Marketing---What-s-the-Feedback---260628",
+      "pdf_path": "kc_translated_reports/260630/24-0002-27-Morgan-Stanley-Brands-US-Marketing---What-s-the-Feedback---260628/kc_translated_report_24.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260630/shard_5/0002-27-Morgan-Stanley-Greater-China-Technology-Hardware-GlassBridge-and-Fiber-t",
+      "title": "摩根斯坦利：MS：GlassBridge不是AI光模块的利空，但FAU厂商的护城河正在变窄",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_25.pdf",
+      "figure_count": 1,
+      "institution_name": "摩根斯坦利",
+      "article_style": false,
+      "output_dir": "kc_translated_reports/260630/25-0002-27-Morgan-Stanley-Greater-China-Technology-Hardware-GlassBridge-and-Fiber-t",
+      "pdf_path": "kc_translated_reports/260630/25-0002-27-Morgan-Stanley-Greater-China-Technology-Hardware-GlassBridge-and-Fiber-t/kc_translated_report_25.pdf"
     },
     {
       "source_report_dir": "xhs_notes/dropbox/260630/shard_5/0003-28-Nomura-USD-CNY-fix-model-Projection--6.7882-260630",
       "title": "NOM：人民币中间价模型指向6.79，但逆周期因子才是真正的胜负手",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
-      "pdf": "kc_translated_report_24.pdf",
+      "pdf": "kc_translated_report_26.pdf",
       "figure_count": 3,
       "institution_name": "野村",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/24-0003-28-Nomura-USD-CNY-fix-model-Projection--6",
-      "pdf_path": "kc_translated_reports/260630/24-0003-28-Nomura-USD-CNY-fix-model-Projection--6/kc_translated_report_24.pdf"
+      "output_dir": "kc_translated_reports/260630/26-0003-28-Nomura-USD-CNY-fix-model-Projection--6",
+      "pdf_path": "kc_translated_reports/260630/26-0003-28-Nomura-USD-CNY-fix-model-Projection--6/kc_translated_report_26.pdf"
     },
     {
       "source_report_dir": "xhs_notes/dropbox/260630/shard_5/0004-29-CITI-Overcoming-Gridlock-2.0--Solving-Power-Bottlenecks-to-Drive-AI---En",
       "title": "Citi：AI缺的不是算力，是变压器和燃气轮机",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
-      "pdf": "kc_translated_report_25.pdf",
+      "pdf": "kc_translated_report_27.pdf",
       "figure_count": 28,
       "institution_name": "花旗",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/25-0004-29-CITI-Overcoming-Gridlock-2",
-      "pdf_path": "kc_translated_reports/260630/25-0004-29-CITI-Overcoming-Gridlock-2/kc_translated_report_25.pdf"
+      "output_dir": "kc_translated_reports/260630/27-0004-29-CITI-Overcoming-Gridlock-2",
+      "pdf_path": "kc_translated_reports/260630/27-0004-29-CITI-Overcoming-Gridlock-2/kc_translated_report_27.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260630/shard_5/0005-30-Goldman-Sachs-TRACKING-U.S.-SUPPLY-CHAIN-CONGESTION-GS-Supply-Chain-Cong",
+      "title": "GS：供应链拥堵已回到疫情前，但真正的考验还没来",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_28.pdf",
+      "figure_count": 16,
+      "institution_name": "高盛",
+      "article_style": false,
+      "output_dir": "kc_translated_reports/260630/28-0005-30-Goldman-Sachs-TRACKING-U.S",
+      "pdf_path": "kc_translated_reports/260630/28-0005-30-Goldman-Sachs-TRACKING-U.S/kc_translated_report_28.pdf"
     },
     {
       "source_report_dir": "xhs_notes/dropbox/260630/shard_5/0005-30-Morgan-Stanley-Asia-Three-Actionable-Ideas-260628",
       "title": "摩根斯坦利：MS：AI ASIC正在取代GPU，成为亚洲最值得下注的赛道",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
-      "pdf": "kc_translated_report_26.pdf",
+      "pdf": "kc_translated_report_29.pdf",
       "figure_count": 5,
       "institution_name": "摩根斯坦利",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/26-0005-30-Morgan-Stanley-Asia-Three-Actionable-Ideas-260628",
-      "pdf_path": "kc_translated_reports/260630/26-0005-30-Morgan-Stanley-Asia-Three-Actionable-Ideas-260628/kc_translated_report_26.pdf"
+      "output_dir": "kc_translated_reports/260630/29-0005-30-Morgan-Stanley-Asia-Three-Actionable-Ideas-260628",
+      "pdf_path": "kc_translated_reports/260630/29-0005-30-Morgan-Stanley-Asia-Three-Actionable-Ideas-260628/kc_translated_report_29.pdf"
     },
     {
       "source_report_dir": "xhs_notes/dropbox/260630/shard_6/0001-31-CITI-China-Communications-Infrastructure-Our-thoughts-on-Corning-GlassBr",
       "title": "Citi：康宁的“玻璃桥”技术，对中国光模块龙头影响有限",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
-      "pdf": "kc_translated_report_27.pdf",
+      "pdf": "kc_translated_report_30.pdf",
       "figure_count": 0,
       "institution_name": "花旗",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/27-0001-31-CITI-China-Communications-Infrastructure-Our-thoughts-on-Corning-GlassBr",
-      "pdf_path": "kc_translated_reports/260630/27-0001-31-CITI-China-Communications-Infrastructure-Our-thoughts-on-Corning-GlassBr/kc_translated_report_27.pdf"
+      "output_dir": "kc_translated_reports/260630/30-0001-31-CITI-China-Communications-Infrastructure-Our-thoughts-on-Corning-GlassBr",
+      "pdf_path": "kc_translated_reports/260630/30-0001-31-CITI-China-Communications-Infrastructure-Our-thoughts-on-Corning-GlassBr/kc_translated_report_30.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260630/shard_6/0001-31-Morgan-Stanley-Asia-Three-Actionable-Ideas-260628",
+      "title": "摩根斯坦利：MS：AI ASIC正在超越GPU，但真正的机会在三个不起眼的名字",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_31.pdf",
+      "figure_count": 5,
+      "institution_name": "摩根斯坦利",
+      "article_style": false,
+      "output_dir": "kc_translated_reports/260630/31-0001-31-Morgan-Stanley-Asia-Three-Actionable-Ideas-260628",
+      "pdf_path": "kc_translated_reports/260630/31-0001-31-Morgan-Stanley-Asia-Three-Actionable-Ideas-260628/kc_translated_report_31.pdf"
     },
     {
       "source_report_dir": "xhs_notes/dropbox/260630/shard_6/0002-32-Goldman-Sachs-Aerospace--Defense--Metals---Mining--Feedback-from-Singapo",
       "title": "GS：印度国防板块的下一轮上涨，不靠估值靠订单",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
-      "pdf": "kc_translated_report_28.pdf",
+      "pdf": "kc_translated_report_32.pdf",
       "figure_count": 0,
       "institution_name": "高盛",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/28-0002-32-Goldman-Sachs-Aerospace--Defense--Metals---Mining--Feedback-from-Singapo",
-      "pdf_path": "kc_translated_reports/260630/28-0002-32-Goldman-Sachs-Aerospace--Defense--Metals---Mining--Feedback-from-Singapo/kc_translated_report_28.pdf"
+      "output_dir": "kc_translated_reports/260630/32-0002-32-Goldman-Sachs-Aerospace--Defense--Metals---Mining--Feedback-from-Singapo",
+      "pdf_path": "kc_translated_reports/260630/32-0002-32-Goldman-Sachs-Aerospace--Defense--Metals---Mining--Feedback-from-Singapo/kc_translated_report_32.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260630/shard_6/0002-32-Morgan-Stanley-Asia-Chemicals-Strait-ening-Up-260628",
+      "title": "摩根斯坦利：化工周期比市场预期的来得更快",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_33.pdf",
+      "figure_count": 15,
+      "institution_name": "",
+      "article_style": false,
+      "output_dir": "kc_translated_reports/260630/33-0002-32-Morgan-Stanley-Asia-Chemicals-Strait-ening-Up-260628",
+      "pdf_path": "kc_translated_reports/260630/33-0002-32-Morgan-Stanley-Asia-Chemicals-Strait-ening-Up-260628/kc_translated_report_33.pdf"
     },
     {
       "source_report_dir": "xhs_notes/dropbox/260630/shard_6/0003-33-Goldman-Sachs-TRACKING-U.S.-SUPPLY-CHAIN-CONGESTION-GS-Supply-Chain-Cong",
       "title": "GS：美国供应链已经“正常”到让人忽略，但运费正在悄悄反弹",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
-      "pdf": "kc_translated_report_29.pdf",
+      "pdf": "kc_translated_report_34.pdf",
       "figure_count": 16,
       "institution_name": "高盛",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/29-0003-33-Goldman-Sachs-TRACKING-U.S",
-      "pdf_path": "kc_translated_reports/260630/29-0003-33-Goldman-Sachs-TRACKING-U.S/kc_translated_report_29.pdf"
+      "output_dir": "kc_translated_reports/260630/34-0003-33-Goldman-Sachs-TRACKING-U.S",
+      "pdf_path": "kc_translated_reports/260630/34-0003-33-Goldman-Sachs-TRACKING-U.S/kc_translated_report_34.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260630/shard_6/0003-33-Nomura-China-Internet---New-Media-Monthly-App-Tracker---May-2026-260629",
+      "title": "NOM：小红书首次下滑背后，中国互联网正在经历一场AI替代",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_35.pdf",
+      "figure_count": 28,
+      "institution_name": "野村",
+      "article_style": false,
+      "output_dir": "kc_translated_reports/260630/35-0003-33-Nomura-China-Internet---New-Media-Monthly-App-Tracker---May-2026-260629",
+      "pdf_path": "kc_translated_reports/260630/35-0003-33-Nomura-China-Internet---New-Media-Monthly-App-Tracker---May-2026-260629/kc_translated_report_35.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260630/shard_6/0004-34-CITI-China-Communications-Infrastructure-Our-thoughts-on-Corning-GlassBr",
+      "title": "Citi：康宁的GlassBridge，短期不必恐慌，但长期格局已埋下伏笔",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_36.pdf",
+      "figure_count": 0,
+      "institution_name": "花旗",
+      "article_style": false,
+      "output_dir": "kc_translated_reports/260630/36-0004-34-CITI-China-Communications-Infrastructure-Our-thoughts-on-Corning-GlassBr",
+      "pdf_path": "kc_translated_reports/260630/36-0004-34-CITI-China-Communications-Infrastructure-Our-thoughts-on-Corning-GlassBr/kc_translated_report_36.pdf"
     },
     {
       "source_report_dir": "xhs_notes/dropbox/260630/shard_6/0004-34-Morgan-Stanley-Asia-Chemicals-Strait-ening-Up-260628",
       "title": "摩根斯坦利：MS：化工周期比市场预期的来得更快，也更粘",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
-      "pdf": "kc_translated_report_30.pdf",
+      "pdf": "kc_translated_report_37.pdf",
       "figure_count": 15,
       "institution_name": "摩根斯坦利",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/30-0004-34-Morgan-Stanley-Asia-Chemicals-Strait-ening-Up-260628",
-      "pdf_path": "kc_translated_reports/260630/30-0004-34-Morgan-Stanley-Asia-Chemicals-Strait-ening-Up-260628/kc_translated_report_30.pdf"
+      "output_dir": "kc_translated_reports/260630/37-0004-34-Morgan-Stanley-Asia-Chemicals-Strait-ening-Up-260628",
+      "pdf_path": "kc_translated_reports/260630/37-0004-34-Morgan-Stanley-Asia-Chemicals-Strait-ening-Up-260628/kc_translated_report_37.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260630/shard_6/0005-35-Goldman-Sachs-Aerospace--Defense--Metals---Mining--Feedback-from-Singapo",
+      "title": "GS：印度国防股的下一轮催化，不在订单，在交付",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_38.pdf",
+      "figure_count": 0,
+      "institution_name": "高盛",
+      "article_style": false,
+      "output_dir": "kc_translated_reports/260630/38-0005-35-Goldman-Sachs-Aerospace--Defense--Metals---Mining--Feedback-from-Singapo",
+      "pdf_path": "kc_translated_reports/260630/38-0005-35-Goldman-Sachs-Aerospace--Defense--Metals---Mining--Feedback-from-Singapo/kc_translated_report_38.pdf"
     },
     {
       "source_report_dir": "xhs_notes/dropbox/260630/shard_6/0005-35-Nomura-China-Internet---New-Media-Monthly-App-Tracker---May-2026-260629",
       "title": "NOM：小红书首次下滑，中国互联网的“AI替代”开始兑现了",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
-      "pdf": "kc_translated_report_31.pdf",
+      "pdf": "kc_translated_report_39.pdf",
       "figure_count": 28,
       "institution_name": "野村",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/31-0005-35-Nomura-China-Internet---New-Media-Monthly-App-Tracker---May-2026-260629",
-      "pdf_path": "kc_translated_reports/260630/31-0005-35-Nomura-China-Internet---New-Media-Monthly-App-Tracker---May-2026-260629/kc_translated_report_31.pdf"
+      "output_dir": "kc_translated_reports/260630/39-0005-35-Nomura-China-Internet---New-Media-Monthly-App-Tracker---May-2026-260629",
+      "pdf_path": "kc_translated_reports/260630/39-0005-35-Nomura-China-Internet---New-Media-Monthly-App-Tracker---May-2026-260629/kc_translated_report_39.pdf"
     },
     {
       "source_report_dir": "xhs_notes/dropbox/260630/shard_7/0002-37-Morgan-Stanley-Beijing-Reacts-to-Weak-Growth--EU-Reacts-to-Beijing-26062",
       "title": "摩根斯坦利：MS：中国真正的考验不在出口，而在内需能否接棒",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
-      "pdf": "kc_translated_report_32.pdf",
+      "pdf": "kc_translated_report_40.pdf",
       "figure_count": 28,
       "institution_name": "摩根斯坦利",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/32-0002-37-Morgan-Stanley-Beijing-Reacts-to-Weak-Growth--EU-Reacts-to-Beijing-26062",
-      "pdf_path": "kc_translated_reports/260630/32-0002-37-Morgan-Stanley-Beijing-Reacts-to-Weak-Growth--EU-Reacts-to-Beijing-26062/kc_translated_report_32.pdf"
+      "output_dir": "kc_translated_reports/260630/40-0002-37-Morgan-Stanley-Beijing-Reacts-to-Weak-Growth--EU-Reacts-to-Beijing-26062",
+      "pdf_path": "kc_translated_reports/260630/40-0002-37-Morgan-Stanley-Beijing-Reacts-to-Weak-Growth--EU-Reacts-to-Beijing-26062/kc_translated_report_40.pdf"
     },
     {
       "source_report_dir": "xhs_notes/dropbox/260630/shard_7/0003-38-Bernstein-U.S.-Machinery-Construction---Rental-Equipment--May-Dodge-Cons",
       "title": "Bernstein：美国建筑市场正在被“巨型项目”重塑，而非住宅本身",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
-      "pdf": "kc_translated_report_33.pdf",
+      "pdf": "kc_translated_report_41.pdf",
       "figure_count": 18,
       "institution_name": "伯恩斯坦",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/33-0003-38-Bernstein-U.S",
-      "pdf_path": "kc_translated_reports/260630/33-0003-38-Bernstein-U.S/kc_translated_report_33.pdf"
+      "output_dir": "kc_translated_reports/260630/41-0003-38-Bernstein-U.S",
+      "pdf_path": "kc_translated_reports/260630/41-0003-38-Bernstein-U.S/kc_translated_report_41.pdf"
     },
     {
       "source_report_dir": "xhs_notes/dropbox/260630/shard_7/0004-39-MS-Electronic-Components---Japan-Investor-Visits-in-Singapore---Hong-Kon",
       "title": "摩根斯坦利：MS：村田不是靠涨价，是在重新定义MLCC的护城河",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
-      "pdf": "kc_translated_report_34.pdf",
+      "pdf": "kc_translated_report_42.pdf",
       "figure_count": 3,
       "institution_name": "摩根斯坦利",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/34-0004-39-MS-Electronic-Components---Japan-Investor-Visits-in-Singapore---Hong-Kon",
-      "pdf_path": "kc_translated_reports/260630/34-0004-39-MS-Electronic-Components---Japan-Investor-Visits-in-Singapore---Hong-Kon/kc_translated_report_34.pdf"
+      "output_dir": "kc_translated_reports/260630/42-0004-39-MS-Electronic-Components---Japan-Investor-Visits-in-Singapore---Hong-Kon",
+      "pdf_path": "kc_translated_reports/260630/42-0004-39-MS-Electronic-Components---Japan-Investor-Visits-in-Singapore---Hong-Kon/kc_translated_report_42.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260630/shard_7/0004-39-Morgan-Stanley-AI-s-Insatiable-Appetite-for-Memory-260628",
+      "title": "摩根斯坦利：AI对内存的饥渴，正在改写软件行业的估值逻辑",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_43.pdf",
+      "figure_count": 19,
+      "institution_name": "摩根斯坦利",
+      "article_style": false,
+      "output_dir": "kc_translated_reports/260630/43-0004-39-Morgan-Stanley-AI-s-Insatiable-Appetite-for-Memory-260628",
+      "pdf_path": "kc_translated_reports/260630/43-0004-39-Morgan-Stanley-AI-s-Insatiable-Appetite-for-Memory-260628/kc_translated_report_43.pdf"
     },
     {
       "source_report_dir": "xhs_notes/dropbox/260630/shard_7/0005-40-Morgan-Stanley-AI-s-Insatiable-Appetite-for-Memory-260628",
       "title": "摩根斯坦利：MS：AI对内存的“永不满足”胃口，正在改变整个软件业的底层逻辑",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
-      "pdf": "kc_translated_report_35.pdf",
+      "pdf": "kc_translated_report_44.pdf",
       "figure_count": 19,
       "institution_name": "摩根斯坦利",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/35-0005-40-Morgan-Stanley-AI-s-Insatiable-Appetite-for-Memory-260628",
-      "pdf_path": "kc_translated_reports/260630/35-0005-40-Morgan-Stanley-AI-s-Insatiable-Appetite-for-Memory-260628/kc_translated_report_35.pdf"
+      "output_dir": "kc_translated_reports/260630/44-0005-40-Morgan-Stanley-AI-s-Insatiable-Appetite-for-Memory-260628",
+      "pdf_path": "kc_translated_reports/260630/44-0005-40-Morgan-Stanley-AI-s-Insatiable-Appetite-for-Memory-260628/kc_translated_report_44.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260630/shard_7/0005-40-Morgan-Stanley-ASEAN-Telecoms---Data-Centers--Beneficiaries-of-the-New-C",
+      "title": "摩根斯坦利：MS：AI算力基建的下一个瓶颈不是芯片，是电和地",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_45.pdf",
+      "figure_count": 28,
+      "institution_name": "摩根斯坦利",
+      "article_style": false,
+      "output_dir": "kc_translated_reports/260630/45-0005-40-Morgan-Stanley-ASEAN-Telecoms---Data-Centers--Beneficiaries-of-the-New-C",
+      "pdf_path": "kc_translated_reports/260630/45-0005-40-Morgan-Stanley-ASEAN-Telecoms---Data-Centers--Beneficiaries-of-the-New-C/kc_translated_report_45.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260630/shard_8/0001-41-MS-Electronic-Components---Japan-Investor-Visits-in-Singapore---Hong-Kon",
+      "title": "摩根斯坦利：MLCC真正的赢家不是提价，而是产品迭代",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_46.pdf",
+      "figure_count": 3,
+      "institution_name": "摩根斯坦利",
+      "article_style": false,
+      "output_dir": "kc_translated_reports/260630/46-0001-41-MS-Electronic-Components---Japan-Investor-Visits-in-Singapore---Hong-Kon",
+      "pdf_path": "kc_translated_reports/260630/46-0001-41-MS-Electronic-Components---Japan-Investor-Visits-in-Singapore---Hong-Kon/kc_translated_report_46.pdf"
     },
     {
       "source_report_dir": "xhs_notes/dropbox/260630/shard_8/0001-41-Morgan-Stanley-ASEAN-Telecoms---Data-Centers--Beneficiaries-of-the-New-C",
       "title": "摩根斯坦利：MS：AI基建的下一站不在美国，在东盟",
       "source_clean": "source_clean.md",
       "translated_markdown": "translated.md",
-      "pdf": "kc_translated_report_36.pdf",
+      "pdf": "kc_translated_report_47.pdf",
       "figure_count": 28,
       "institution_name": "摩根斯坦利",
       "article_style": false,
-      "output_dir": "kc_translated_reports/260630/36-0001-41-Morgan-Stanley-ASEAN-Telecoms---Data-Centers--Beneficiaries-of-the-New-C",
-      "pdf_path": "kc_translated_reports/260630/36-0001-41-Morgan-Stanley-ASEAN-Telecoms---Data-Centers--Beneficiaries-of-the-New-C/kc_translated_report_36.pdf"
+      "output_dir": "kc_translated_reports/260630/47-0001-41-Morgan-Stanley-ASEAN-Telecoms---Data-Centers--Beneficiaries-of-the-New-C",
+      "pdf_path": "kc_translated_reports/260630/47-0001-41-Morgan-Stanley-ASEAN-Telecoms---Data-Centers--Beneficiaries-of-the-New-C/kc_translated_report_47.pdf"
     }
   ]
 }
