@@ -3,36 +3,16 @@
     "attempt": 1,
     "round": 1,
     "token_label": "MINER_U_2",
-    "submitted_pdf_count": 5,
-    "successful_pdf_count": 4,
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 0,
     "retry_pdf_count": 1,
     "timed_out": false,
     "error": "",
     "states": [
       {
-        "pdf": "/tmp/pdf_batch_001_no5tib_s/pdfs/0001-01-HSBC-Global Economics-Crosscurrents-260629.pdf",
-        "state": "done",
-        "error": ""
-      },
-      {
-        "pdf": "/tmp/pdf_batch_001_no5tib_s/pdfs/0002-02-NOM-FX Insights-Inflows into US equities slowed amid volatility in global tech AI stocks-260629.pdf",
-        "state": "done",
-        "error": ""
-      },
-      {
-        "pdf": "/tmp/pdf_batch_001_no5tib_s/pdfs/0003-03-GS-Macro Credit Views- Dispersion- not disruption-260629.pdf",
-        "state": "done",
-        "error": ""
-      },
-      {
-        "pdf": "/tmp/pdf_batch_001_no5tib_s/pdfs/0004-04-MS-Global Equity Strategy- Global Exposure Guide 2026-260628.pdf",
+        "pdf": "/tmp/pdf_batch_001_3wg1vvx6/pdfs/0004-04-MS-Global Equity Strategy- Global Exposure Guide 2026-260628.pdf",
         "state": "failed",
         "error": "parsing failed, please try again later"
-      },
-      {
-        "pdf": "/tmp/pdf_batch_001_no5tib_s/pdfs/0005-05-JPM-Global Banks- Mythos-class era- Cybersecurity a bigger concern than credit risk-260629.pdf",
-        "state": "done",
-        "error": ""
       }
     ]
   },
@@ -47,9 +27,9 @@
     "error": "",
     "states": [
       {
-        "pdf": "/tmp/pdf_batch_001_no5tib_s/pdfs/0004-04-MS-Global Equity Strategy- Global Exposure Guide 2026-260628.pdf",
+        "pdf": "/tmp/pdf_batch_001_3wg1vvx6/pdfs/0004-04-MS-Global Equity Strategy- Global Exposure Guide 2026-260628.pdf",
         "state": "failed",
-        "error": "parsing failed, please try again later"
+        "error": "retry limit reached (5 attempts), please replace the file"
       }
     ]
   },
@@ -64,9 +44,9 @@
     "error": "",
     "states": [
       {
-        "pdf": "/tmp/pdf_batch_001_no5tib_s/pdfs/0004-04-MS-Global Equity Strategy- Global Exposure Guide 2026-260628.pdf",
+        "pdf": "/tmp/pdf_batch_001_3wg1vvx6/pdfs/0004-04-MS-Global Equity Strategy- Global Exposure Guide 2026-260628.pdf",
         "state": "failed",
-        "error": "parsing failed, please try again later"
+        "error": "retry limit reached (5 attempts), please replace the file"
       }
     ]
   },
@@ -81,9 +61,9 @@
     "error": "",
     "states": [
       {
-        "pdf": "/tmp/pdf_batch_001_no5tib_s/pdfs/0004-04-MS-Global Equity Strategy- Global Exposure Guide 2026-260628.pdf",
+        "pdf": "/tmp/pdf_batch_001_3wg1vvx6/pdfs/0004-04-MS-Global Equity Strategy- Global Exposure Guide 2026-260628.pdf",
         "state": "failed",
-        "error": "parsing failed, please try again later"
+        "error": "retry limit reached (5 attempts), please replace the file"
       }
     ]
   }

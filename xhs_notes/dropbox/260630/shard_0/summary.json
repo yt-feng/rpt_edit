@@ -1,86 +1,8 @@
 [
   {
-    "source_pdf": "/tmp/pdf_batch_001_no5tib_s/pdfs/0001-01-HSBC-Global Economics-Crosscurrents-260629.pdf",
-    "mineru_state": "done",
-    "mineru_error": "",
-    "institution_name": "HSBC",
-    "cover_short_title": "油价降温，但别急着松",
-    "cover_subtitle": "研报重点一图看懂",
-    "images": [
-      "assets/xhs_card_01.png",
-      "assets/xhs_card_02.png",
-      "assets/xhs_card_03.png",
-      "assets/xhs_card_04.png",
-      "assets/xhs_card_05.png",
-      "assets/xhs_card_06.png",
-      "assets/xhs_card_07.png",
-      "assets/xhs_card_08.png",
-      "assets/xhs_card_09.png"
-    ],
-    "cover": "assets/cover.png",
-    "wechat_article": "wechat_article.md"
-  },
-  {
-    "source_pdf": "/tmp/pdf_batch_001_no5tib_s/pdfs/0002-02-NOM-FX Insights-Inflows into US equities slowed amid volatility in global tech AI stocks-260629.pdf",
-    "mineru_state": "done",
-    "mineru_error": "",
-    "institution_name": "NOM",
-    "cover_short_title": "全球资金悄悄转向，科",
-    "cover_subtitle": "研报重点一图看懂",
-    "images": [
-      "assets/xhs_card_01.png",
-      "assets/xhs_card_02.png",
-      "assets/xhs_card_03.png",
-      "assets/xhs_card_04.png",
-      "assets/xhs_card_05.png",
-      "assets/xhs_card_06.png",
-      "assets/xhs_card_07.png",
-      "assets/xhs_card_08.png",
-      "assets/xhs_card_09.png"
-    ],
-    "cover": "assets/cover.png",
-    "wechat_article": "wechat_article.md"
-  },
-  {
-    "source_pdf": "/tmp/pdf_batch_001_no5tib_s/pdfs/0003-03-GS-Macro Credit Views- Dispersion- not disruption-260629.pdf",
-    "mineru_state": "done",
-    "mineru_error": "",
-    "institution_name": "GS",
-    "cover_short_title": "信用利差很窄，但别只",
-    "cover_subtitle": "研报重点一图看懂",
-    "images": [
-      "assets/xhs_card_01.png",
-      "assets/xhs_card_02.png",
-      "assets/xhs_card_03.png",
-      "assets/xhs_card_04.png",
-      "assets/xhs_card_05.png",
-      "assets/xhs_card_06.png",
-      "assets/xhs_card_07.png",
-      "assets/xhs_card_08.png",
-      "assets/xhs_card_09.png"
-    ],
-    "cover": "assets/cover.png",
-    "wechat_article": "wechat_article.md"
-  },
-  {
-    "source_pdf": "/tmp/pdf_batch_001_no5tib_s/pdfs/0004-04-MS-Global Equity Strategy- Global Exposure Guide 2026-260628.pdf",
+    "source_pdf": "/tmp/pdf_batch_001_3wg1vvx6/pdfs/0004-04-MS-Global Equity Strategy- Global Exposure Guide 2026-260628.pdf",
     "mineru_state": "failed",
-    "mineru_error": "parsing failed, please try again later",
+    "mineru_error": "retry limit reached (5 attempts), please replace the file",
     "error": "MinerU did not finish successfully after 4 attempt(s)."
-  },
-  {
-    "source_pdf": "/tmp/pdf_batch_001_no5tib_s/pdfs/0005-05-JPM-Global Banks- Mythos-class era- Cybersecurity a bigger concern than credit risk-260629.pdf",
-    "mineru_state": "done",
-    "mineru_error": "",
-    "institution_name": "JPM",
-    "cover_short_title": "AI让银行更危险了，",
-    "cover_subtitle": "研报重点一图看懂",
-    "images": [
-      "assets/xhs_card_01.png",
-      "assets/xhs_card_02.png",
-      "assets/xhs_card_03.png"
-    ],
-    "cover": "assets/cover.png",
-    "wechat_article": "wechat_article.md"
   }
 ]
