@@ -73,7 +73,7 @@ const HIBOR_SEARCH_PAGE_SIZE = 30;
 const HIBOR_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/137.0 Safari/537.36";
-const UPSTREAM_SEARCH_TIMEOUT_MS = 8500;
+const UPSTREAM_SEARCH_TIMEOUT_MS = 15000;
 const UPSTREAM_PDF_TIMEOUT_MS = 15000;
 const SEARCH_CACHE_PREFIX = "_search-cache";
 const SEARCH_CACHE_FRESH_MS = 6 * 60 * 60 * 1000;
@@ -2123,7 +2123,7 @@ function searchPayloadHasItems(payload) {
 
 async function handleCachedSearch(request, env, source, query, page, emptyPayload, fetcher, fallbackFetcher = null, options = {}) {
   const cached = await getSearchCache(env, source, query, page);
-  if (cached && cached.payload && cachedPayloadIsFresh(cached)) {
+  if (!options.skipFreshCache && cached && cached.payload && cachedPayloadIsFresh(cached)) {
     return jsonResponse(request, env, 200, {
       ...cached.payload,
       cached: true,
@@ -3354,7 +3354,7 @@ async function handleExternalSearch(request, env) {
     total_count: result.total,
     mirror_generated_at: result.generated_at,
     mirror_stale: result.mirror_stale,
-  })), { preferFallback: true });
+  })), { skipFreshCache: true });
 }
 
 // Fetch the upstream detail and, if the report is directly readable, return its
@@ -3624,7 +3624,7 @@ async function handleHiborSearch(request, env) {
       total: 0,
       source: HIBOR_SOURCE,
     };
-  });
+  }, null, { skipFreshCache: true });
 }
 
 // ---------------------------------------------------------------------------
@@ -3753,7 +3753,7 @@ async function handleAuthoritySearch(request, env) {
       mirror_generated_at: result.generated_at,
       mirror_stale: result.mirror_stale,
     };
-  }), { preferFallback: true });
+  }), { skipFreshCache: true });
 }
 
 async function handleAuthorityPdf(request, env) {
