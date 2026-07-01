@@ -11,6 +11,8 @@ const EMAIL_PATTERN = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const ACTIVE_STATUSES = new Set(["active", "trialing"]);
 const SUPER_ACCOUNT_USERNAMES = new Set(["twotigers"]);
 const SUPER_ACCOUNT_EMAILS = new Set(["twotigers@users.kcdesk.com"]);
+const OPERATOR_ACCOUNT_USERNAMES = new Set(["liuxin"]);
+const OPERATOR_ACCOUNT_EMAILS = new Set(["liuxin@users.kcdesk.com"]);
 const DEFAULT_GITHUB_REPO = "yt-feng/rpt_edit";
 const DEFAULT_GITHUB_REF = "main";
 const BBG_SHOW_REPO = "yt-feng/bbg-show";
@@ -393,6 +395,23 @@ function isSuperAccount(user) {
   return SUPER_ACCOUNT_USERNAMES.has(username) || SUPER_ACCOUNT_EMAILS.has(email);
 }
 
+function isOperatorAccount(user) {
+  if (!user) return false;
+  const username = normalizeUsername(user.username);
+  const email = normalizeEmail(user.email);
+  return OPERATOR_ACCOUNT_USERNAMES.has(username) || OPERATOR_ACCOUNT_EMAILS.has(email);
+}
+
+function accountRole(user) {
+  if (isSuperAccount(user)) return "super";
+  if (isOperatorAccount(user)) return "operator";
+  return "user";
+}
+
+function isPrivilegedAccount(user) {
+  return accountRole(user) !== "user";
+}
+
 function generatedEmailForUsername(username) {
   return `${username}@${GENERATED_EMAIL_DOMAIN}`;
 }
@@ -444,7 +463,7 @@ async function createUserToken(env, user) {
 
 function publicUser(user) {
   const email = String(user.email || "");
-  const superAccount = isSuperAccount(user);
+  const role = accountRole(user);
   return {
     id: user.id || "",
     username: user.username || "",
@@ -452,8 +471,9 @@ function publicUser(user) {
     email_is_generated: Boolean(user.email_is_generated) || isGeneratedEmail(email),
     created_at: user.created_at || "",
     updated_at: user.updated_at || "",
-    role: superAccount ? "super" : "user",
-    is_super: superAccount,
+    role,
+    is_super: role === "super",
+    is_operator: role === "operator",
   };
 }
 
@@ -842,7 +862,7 @@ function publicEntitlement(row) {
 function superEntitlement(user) {
   return {
     email: normalizeEmail(user && user.email) || "",
-    plan: "super",
+    plan: accountRole(user),
     status: "active",
     lifetime: true,
     current_period_end: null,
@@ -854,7 +874,7 @@ function superEntitlement(user) {
 async function reportAccessForUser(env, user, reportId, source) {
   const email = normalizeEmail(user.email);
   if (!email) return { can_download: false, entitlement: publicEntitlement(null), purchase: null };
-  if (isSuperAccount(user)) {
+  if (isPrivilegedAccount(user)) {
     return {
       can_download: true,
       entitlement: superEntitlement(user),
@@ -1496,7 +1516,7 @@ async function requireAdminOrSuperUser(request, env, token) {
   }
   try {
     const user = await currentUserFromRequest(env, request);
-    if (isSuperAccount(user)) return { kind: "super", user };
+    if (isPrivilegedAccount(user)) return { kind: accountRole(user), user };
   } catch (_error) {
     // Use the token error below when an admin token was supplied.
   }
@@ -1583,12 +1603,18 @@ async function requireSuperUser(request, env) {
   return user;
 }
 
+async function requireOperationsUser(request, env) {
+  const user = await currentUserFromRequest(env, request);
+  if (!isPrivilegedAccount(user)) throw new Error("Only an admin account can access this area.");
+  return user;
+}
+
 function adminVisibleUser(user, entitlementRow) {
   const publicInfo = publicUser(user);
   return {
     ...publicInfo,
     last_login_at: user.last_login_at || "",
-    entitlement: isSuperAccount(user) ? superEntitlement(user) : publicEntitlement(entitlementRow),
+    entitlement: isPrivilegedAccount(user) ? superEntitlement(user) : publicEntitlement(entitlementRow),
   };
 }
 
@@ -2881,16 +2907,29 @@ async function latestAdminGithubFiles(env) {
   return [...bbg, ...market, ...fallback, ...siteVideos];
 }
 
+function operatorVisibleAdminFiles(files) {
+  return (Array.isArray(files) ? files : []).filter((file) => {
+    const kind = String(file && file.kind || "");
+    const label = String(file && file.label || "");
+    return kind !== "site-video" && !/站内视频/i.test(label);
+  });
+}
+
+function adminFilesForUser(files, user) {
+  return isSuperAccount(user) ? files : operatorVisibleAdminFiles(files);
+}
+
 async function handleAccountAdminSummary(request, env, ctx = null) {
   try {
-    const adminUser = await requireSuperUser(request, env);
-    const [users, entitlements, files, catalog, searchIndex, wechatSchedule] = await Promise.all([
-      listSiteUsers(env),
-      listEntitlementRows(env),
+    const adminUser = await requireOperationsUser(request, env);
+    const isSuper = isSuperAccount(adminUser);
+    const [userRows, entitlementRows, allFiles, catalog, searchIndex, wechatSchedule] = await Promise.all([
+      isSuper ? listSiteUsers(env) : Promise.resolve([]),
+      isSuper ? listEntitlementRows(env) : Promise.resolve([]),
       latestAdminGithubFiles(env),
       loadCatalog(env).catch(() => ({ items: [] })),
       loadSearchIndex(env).catch(() => ({ items: [] })),
-      buildWechatDraftSchedule(env).catch(() => ({
+      isSuper ? buildWechatDraftSchedule(env).catch(() => ({
         today_folder: bjtTodayFolder(),
         date_folder: "",
         date_label: "",
@@ -2900,19 +2939,23 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
         total_batches: 0,
         total_articles: 0,
         batches: [],
-      })),
+      })) : Promise.resolve(null),
     ]);
-    const entitlementsByEmail = entitlementMap(entitlements);
+    const files = adminFilesForUser(allFiles, adminUser);
+    const entitlementsByEmail = entitlementMap(entitlementRows);
     const dailyPicks = selectDailyPicks(catalog, 5, searchIndex);
     if (ctx && typeof ctx.waitUntil === "function") {
       ctx.waitUntil(warmAdminGithubCache(env, files).catch(() => null));
     }
     return jsonResponse(request, env, 200, {
       user: publicUser(adminUser),
-      users: users.map((user) => adminVisibleUser(user, entitlementsByEmail.get(normalizeEmail(user.email)))),
+      dashboard_title: isSuper ? "管理后台" : "运营后台",
+      can_view_users: isSuper,
+      can_view_wechat: isSuper,
+      users: isSuper ? userRows.map((user) => adminVisibleUser(user, entitlementsByEmail.get(normalizeEmail(user.email)))) : [],
       files,
       daily_picks: dailyPicks,
-      wechat_schedule: wechatSchedule,
+      wechat_schedule: wechatSchedule || null,
       repo: githubRepo(env),
       ref: githubRef(env),
       generated_at: new Date().toISOString(),
@@ -2924,7 +2967,7 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
 
 async function handleAccountAdminReportPdf(request, env) {
   try {
-    await requireSuperUser(request, env);
+    await requireOperationsUser(request, env);
   } catch (error) {
     return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
   }
@@ -2989,6 +3032,11 @@ function isAllowedAdminGithubFile(env, repo, path) {
   if (/^bilingual_podcast_videos\/.+\.mp4$/i.test(clean)) return true;
   if (/^market_view_summaries\/.+\.pdf$/i.test(clean)) return true;
   return false;
+}
+
+function operatorBlockedGithubFile(path) {
+  const clean = String(path || "").replace(/^\/+/, "");
+  return /^bilingual_podcast_videos\/.+\.mp4$/i.test(clean);
 }
 
 function contentTypeForGithubPath(path) {
@@ -3172,8 +3220,9 @@ async function fetchGithubRawFile(env, path, request, repo = githubRepo(env), ct
 }
 
 async function handleAccountAdminGithubFile(request, env, ctx = null) {
+  let adminUser;
   try {
-    await requireSuperUser(request, env);
+    adminUser = await requireOperationsUser(request, env);
   } catch (error) {
     return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
   }
@@ -3182,6 +3231,9 @@ async function handleAccountAdminGithubFile(request, env, ctx = null) {
   const repo = normalizeGithubRepoParam(env, url.searchParams.get("repo") || "");
   if (!repo || !isAllowedAdminGithubFile(env, repo, path)) {
     return jsonResponse(request, env, 400, { detail: "File path is not allowed." });
+  }
+  if (!isSuperAccount(adminUser) && operatorBlockedGithubFile(path)) {
+    return jsonResponse(request, env, 403, { detail: "File path is not allowed for this account." });
   }
   let upstream;
   try {
@@ -3211,14 +3263,26 @@ async function handleAccountAdminGithubFile(request, env, ctx = null) {
 }
 
 async function handleAccountAdminGithubArtifact(request, env) {
+  let adminUser;
   try {
-    await requireSuperUser(request, env);
+    adminUser = await requireOperationsUser(request, env);
   } catch (error) {
     return jsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
   }
   const url = new URL(request.url);
   const id = String(url.searchParams.get("id") || "").trim();
   if (!/^\d+$/.test(id)) return jsonResponse(request, env, 400, { detail: "Artifact id is invalid." });
+  if (!isSuperAccount(adminUser)) {
+    try {
+      const artifact = await githubApiJson(env, `/actions/artifacts/${encodeURIComponent(id)}`);
+      const name = String(artifact && artifact.name || "");
+      if (!/market-views-pdf/i.test(name)) {
+        return jsonResponse(request, env, 403, { detail: "Artifact is not allowed for this account." });
+      }
+    } catch (_error) {
+      return jsonResponse(request, env, 403, { detail: "Artifact is not allowed for this account." });
+    }
+  }
   let upstream;
   try {
     upstream = await githubApiFetch(env, `/actions/artifacts/${encodeURIComponent(id)}/zip`, {
