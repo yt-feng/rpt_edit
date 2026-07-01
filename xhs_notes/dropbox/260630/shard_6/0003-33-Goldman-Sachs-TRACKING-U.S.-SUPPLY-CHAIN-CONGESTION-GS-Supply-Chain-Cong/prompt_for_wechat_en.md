@@ -246,11 +246,11 @@ Source: IHS Markit
 
 Given the importance supply chain fluidity has on retailers, consumer goods companies, inflationary pricing, etc., we think this scale's importance is tied most directly to the pace at which supply chain congestion is on the mend. To this end, we look at a variety of variables that we think tie directly, or in some cases indirectly, to overall congestion; including ships at anchor, days to deliver, various dwell times, intermodal volume and velocity statistics amongst others. Aggregating this data, we create the Supply Chain Congestion Scale – an attempt to quantify the balance between supply chains being “Fully Bottlenecked” and “Fully Open,” relative to the pre-pandemic benchmark we chose as Feb 3 $^{rd}$ , 2020. Basically, how fluid is the overall transport logistics network.
 
-To det
+To determine the position of the Legacy Congestion Scale (1-10), we calculate growth or decline in each category (monthly and weekly varia
 
 [中间内容因长度限制已省略]
 
-m impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+ or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
 
 We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
 
