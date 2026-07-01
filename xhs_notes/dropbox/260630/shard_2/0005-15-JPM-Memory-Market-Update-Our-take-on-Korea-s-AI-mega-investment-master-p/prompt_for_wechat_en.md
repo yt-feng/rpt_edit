@@ -134,11 +134,15 @@ Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and
 <table><tr><td>Date</td><td>Rating</td><td>Price (W)</td><td>Price Target (W)</td></tr><tr><td>26-Nov-23</td><td>OW</td><td>160700</td><td>200,000</td></tr><tr><td>28-Feb-25</td><td>N</td><td>149500</td><td>160,000</td></tr><tr><td>05-Jun-25</td><td>OW</td><td>180700</td><td>230,000</td></tr><tr><td>05-Jan-26</td><td>OW</td><td>260000</td><td>350,000</td></tr><tr><td>21-May-26</td><td>OW</td><td>532000</td><td>870,000</td></tr></table>
 
 Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Apr 06, 2015. All share prices are as of market close on the previous business day.  
-The chart(s) show JPM's continuing coverage of the stocks; the current analysts may or may not have covered it over the entire period. JPM rating
+The chart(s) show JPM's continuing coverage of the stocks; the current analysts may or may not have covered it over the entire period. JPM ratings or designations: OW = Overweight, N = Neutral, UW = Underweight, NR = Not Rated
+
+## Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:
+
+JPM uses the
 
 [中间内容因长度限制已省略]
 
-the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.
+description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.
 
 U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.
 

@@ -3,36 +3,16 @@
     "attempt": 1,
     "round": 1,
     "token_label": "MINER_U_2",
-    "submitted_pdf_count": 5,
-    "successful_pdf_count": 4,
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 0,
     "retry_pdf_count": 1,
     "timed_out": false,
     "error": "",
     "states": [
       {
-        "pdf": "/tmp/pdf_batch_001_u8r2am37/pdfs/0001-11-MS-Awaiting Policy Fine-tuning-260628.pdf",
-        "state": "done",
-        "error": ""
-      },
-      {
-        "pdf": "/tmp/pdf_batch_001_u8r2am37/pdfs/0002-12-NOM-Currency Horizons-Our medium-term FX views-260629.pdf",
-        "state": "done",
-        "error": ""
-      },
-      {
-        "pdf": "/tmp/pdf_batch_001_u8r2am37/pdfs/0003-13-GS-THE CREDIT LINE-AI-Related Signals From Corporate Credit Commentary-260629.pdf",
+        "pdf": "/tmp/pdf_batch_001_b_5jf6ll/pdfs/0003-13-GS-THE CREDIT LINE-AI-Related Signals From Corporate Credit Commentary-260629.pdf",
         "state": "failed",
         "error": "parsing failed, please try again later"
-      },
-      {
-        "pdf": "/tmp/pdf_batch_001_u8r2am37/pdfs/0004-14-NOM-City Gas Distribution-Delhi EV Policy - CNG faces terminal value risk-260629.pdf",
-        "state": "done",
-        "error": ""
-      },
-      {
-        "pdf": "/tmp/pdf_batch_001_u8r2am37/pdfs/0005-15-JPM-Memory Market Update Our take on Korea-s AI mega-investment master plan and recent memory industry developments-260629.pdf",
-        "state": "done",
-        "error": ""
       }
     ]
   },
@@ -47,9 +27,9 @@
     "error": "",
     "states": [
       {
-        "pdf": "/tmp/pdf_batch_001_u8r2am37/pdfs/0003-13-GS-THE CREDIT LINE-AI-Related Signals From Corporate Credit Commentary-260629.pdf",
+        "pdf": "/tmp/pdf_batch_001_b_5jf6ll/pdfs/0003-13-GS-THE CREDIT LINE-AI-Related Signals From Corporate Credit Commentary-260629.pdf",
         "state": "failed",
-        "error": "parsing failed, please try again later"
+        "error": "retry limit reached (5 attempts), please replace the file"
       }
     ]
   },
@@ -64,9 +44,9 @@
     "error": "",
     "states": [
       {
-        "pdf": "/tmp/pdf_batch_001_u8r2am37/pdfs/0003-13-GS-THE CREDIT LINE-AI-Related Signals From Corporate Credit Commentary-260629.pdf",
+        "pdf": "/tmp/pdf_batch_001_b_5jf6ll/pdfs/0003-13-GS-THE CREDIT LINE-AI-Related Signals From Corporate Credit Commentary-260629.pdf",
         "state": "failed",
-        "error": "parsing failed, please try again later"
+        "error": "retry limit reached (5 attempts), please replace the file"
       }
     ]
   },
@@ -81,9 +61,9 @@
     "error": "",
     "states": [
       {
-        "pdf": "/tmp/pdf_batch_001_u8r2am37/pdfs/0003-13-GS-THE CREDIT LINE-AI-Related Signals From Corporate Credit Commentary-260629.pdf",
+        "pdf": "/tmp/pdf_batch_001_b_5jf6ll/pdfs/0003-13-GS-THE CREDIT LINE-AI-Related Signals From Corporate Credit Commentary-260629.pdf",
         "state": "failed",
-        "error": "parsing failed, please try again later"
+        "error": "retry limit reached (5 attempts), please replace the file"
       }
     ]
   }
