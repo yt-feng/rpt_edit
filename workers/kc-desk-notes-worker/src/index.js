@@ -75,7 +75,7 @@ const HIBOR_SEARCH_PAGE_SIZE = 30;
 const HIBOR_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/137.0 Safari/537.36";
-const UPSTREAM_SEARCH_TIMEOUT_MS = 15000;
+const UPSTREAM_SEARCH_TIMEOUT_MS = 28000;
 const UPSTREAM_PDF_TIMEOUT_MS = 15000;
 const SEARCH_CACHE_PREFIX = "_search-cache";
 const SEARCH_CACHE_FRESH_MS = 6 * 60 * 60 * 1000;
@@ -2178,6 +2178,15 @@ async function handleCachedSearch(request, env, source, query, page, emptyPayloa
     });
   } catch (error) {
     if (cached && cached.payload) {
+      const fallback = fallbackFetcher ? await fallbackFetcher(error) : null;
+      if (!searchPayloadHasItems(cached.payload) && searchPayloadHasItems(fallback)) {
+        return jsonResponse(request, env, 200, {
+          ...fallback,
+          cached: true,
+          cache_status: "mirror",
+          warning: "已返回站内镜像结果。",
+        });
+      }
       return jsonResponse(request, env, 200, {
         ...cached.payload,
         cached: true,
