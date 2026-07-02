@@ -37,6 +37,11 @@ PUBLIC_ITEM_KEYS = [
     "pdf_archived",
     "pdf_archived_at_bjt",
     "archive_reason",
+    "page_count",
+    "first_page_width",
+    "first_page_height",
+    "first_page_orientation",
+    "first_page_landscape",
 ]
 
 BANK_ALIASES = [
