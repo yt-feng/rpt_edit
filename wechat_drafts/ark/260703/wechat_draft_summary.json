@@ -1,0 +1,115 @@
+{
+  "date_folder": "260703",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 4,
+  "selected_count": 4,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit885--wVf8AWXx_HEvxNb_gzJu7dJhgz3Zv3PPj683Vlr",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 4,
+      "payload_bytes": 37967,
+      "payload": "wechat_drafts/ark/260703/draft_payload_01.json",
+      "titles": [
+        "木头姐ARK：英伟达万亿订单背后的AI代理野心，订单翻倍却遭抛售，市场在怀疑什么？",
+        "木头姐ARK：FDA关键人物离职，药物审批变局将至，FDA高层换血，药物审批节奏面临不确定性",
+        "木头姐ARK：量子计算不会一夜摧毁比特币，但长期风险不容忽视，量子计算对比特币的威胁，长期存在，但并非迫在眉睫",
+        "木头姐ARK：Robinhood正在打造金融超级应用，颠覆传统券商，Robinhood的用户增长与资产规模正在加速突破临界点"
+      ],
+      "wechat_titles": [
+        "木头姐ARK：英伟达万亿订单背后的AI代理野心，订单翻倍却遭抛售，市场在怀疑什么？",
+        "木头姐ARK：FDA关键人物离职，药物审批变局将至，FDA高层换血，药物审批节奏面临不确定性",
+        "木头姐ARK：量子计算不会一夜摧毁比特币，但长期风险不容忽视，量子计算对比特币的威胁，长期存在，但并非迫在眉睫",
+        "木头姐ARK：Robinhood正在打造金融超级应用，颠覆传统券商，Robinhood的用户增长与资产规模正在加速突破临界点"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 4,
+        "expected_article_count": 4,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ¨å¤´å§ARKï¼è±ä¼è¾¾ä¸äº¿è®¢åèåçAIä»£çéå¿ï¼è®¢åç¿»åå´é­æå®ï¼å¸åºå¨æçä»ä¹ï¼",
+          "æ¨å¤´å§ARKï¼FDAå ³é®äººç©ç¦»èï¼è¯ç©å®¡æ¹åå±å°è³ï¼FDAé«å±æ¢è¡ï¼è¯ç©å®¡æ¹èå¥é¢ä¸´ä¸ç¡®å®æ§",
+          "æ¨å¤´å§ARKï¼éå­è®¡ç®ä¸ä¼ä¸å¤æ§æ¯æ¯ç¹å¸ï¼ä½é¿æé£é©ä¸å®¹å¿½è§ï¼éå­è®¡ç®å¯¹æ¯ç¹å¸çå¨èï¼é¿æå­å¨ï¼ä½å¹¶éè¿«å¨çç«",
+          "æ¨å¤´å§ARKï¼Robinhoodæ­£å¨æé éèè¶ çº§åºç¨ï¼é¢ è¦ä¼ ç»å¸åï¼Robinhoodçç¨æ·å¢é¿ä¸èµäº§è§æ¨¡æ­£å¨å éçªç ´ä¸´çç¹"
+        ],
+        "create_time": 1783036665,
+        "update_time": 1783036665
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "木头姐ARK：英伟达万亿订单背后的AI代理野心，订单翻倍却遭抛售，市场在怀疑什么？",
+      "wechat_title": "木头姐ARK：英伟达万亿订单背后的AI代理野心，订单翻倍却遭抛售，市场在怀疑什么？",
+      "institution_name": "",
+      "source_report_name": "ARK 503-Nvidia-Has-A-Plan-For-Powering-AI-Agents-More e6658c77ca3dde4c",
+      "report_dir": "kc_translated_reports/ark/260703/01-0001-ARK_503-Nvidia-Has-A-Plan-For-Powering-AI-Agents-More_e6658c77ca3dde4c",
+      "content_chars": 7309,
+      "content_bytes": 10459,
+      "visible_text_chars": 1660,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260703/_assets/article_01_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：FDA关键人物离职，药物审批变局将至，FDA高层换血，药物审批节奏面临不确定性",
+      "wechat_title": "木头姐ARK：FDA关键人物离职，药物审批变局将至，FDA高层换血，药物审批节奏面临不确定性",
+      "institution_name": "",
+      "source_report_name": "ARK 502-What-Will-Prasad-s-Departure-From-The-FDA-Mean-For-Drug-Development- 9c8b767008f88a5c",
+      "report_dir": "kc_translated_reports/ark/260703/02-0002-ARK_502-What-Will-Prasad-s-Departure-From-The-FDA-Mean-For-Drug-Development-_9c8b767008f88a",
+      "content_chars": 6365,
+      "content_bytes": 8911,
+      "visible_text_chars": 1381,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260703/_assets/article_02_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：量子计算不会一夜摧毁比特币，但长期风险不容忽视，量子计算对比特币的威胁，长期存在，但并非迫在眉睫",
+      "wechat_title": "木头姐ARK：量子计算不会一夜摧毁比特币，但长期风险不容忽视，量子计算对比特币的威胁，长期存在，但并非迫在眉睫",
+      "institution_name": "",
+      "source_report_name": "ARK Bitcoin-And-Quantum-Computing 16b171460f6da313",
+      "report_dir": "kc_translated_reports/ark/260703/03-0003-ARK_Bitcoin-And-Quantum-Computing_16b171460f6da313",
+      "content_chars": 5411,
+      "content_bytes": 8173,
+      "visible_text_chars": 1398,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260703/_assets/article_03_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：Robinhood正在打造金融超级应用，颠覆传统券商，Robinhood的用户增长与资产规模正在加速突破临界点",
+      "wechat_title": "木头姐ARK：Robinhood正在打造金融超级应用，颠覆传统券商，Robinhood的用户增长与资产规模正在加速突破临界点",
+      "institution_name": "",
+      "source_report_name": "ARK 501-Robinhood-Is-Creating-A-Financial-SuperApp-More ec53918707639caa",
+      "report_dir": "kc_translated_reports/ark/260703/04-0004-ARK_501-Robinhood-Is-Creating-A-Financial-SuperApp-More_ec53918707639caa",
+      "content_chars": 5792,
+      "content_bytes": 8524,
+      "visible_text_chars": 1544,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260703/_assets/article_04_kc_ai_image_001.jpg"
+    }
+  ]
+}
