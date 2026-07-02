@@ -37,7 +37,8 @@ jobs:
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'kc-desk-notes-pdfs' }}
         run: |
           python scripts/kc_search_mirror.py \
-            --external-pages 40 \
+            --external-pages 80 \
+            --external-seed-pages 3 \
             --authority-pages 30 \
             --page-size 50 \
             --upload-r2
