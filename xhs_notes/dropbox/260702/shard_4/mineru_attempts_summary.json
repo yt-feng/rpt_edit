@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_9lk_sntz/pdfs/0001-21-GS-US Autos - Industrial Tech-June US auto SAAR was in the mid to high 16 mn range-260701.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_9lk_sntz/pdfs/0002-22-JPM-US Monthly -June--Despite concerns about high gasoline prices- demand remains solid-260702.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_9lk_sntz/pdfs/0003-23-MS-Property-Monthly Chartbook-260701.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_9lk_sntz/pdfs/0004-24-GS-AI Adoption Tracker June 2026-Adoption Rises to 20.6--260630.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_9lk_sntz/pdfs/0005-25-JPM-Chinese AI Models Catching Up- Vulnerabilities Accelerating-260630.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
