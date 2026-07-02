@@ -41,6 +41,13 @@
     "bofa", "barc", "jef", "jpmorgan", "morgan", "stanley", "goldman", "sachs", "nomura",
   ]);
 
+  const PAGE_RANGE_FILTERS = [
+    { value: "under5", label: "5页以下", matches: (pages) => pages > 0 && pages <= 5 },
+    { value: "5_10", label: "5-10页", matches: (pages) => pages >= 5 && pages <= 10 },
+    { value: "10_20", label: "10-20页", matches: (pages) => pages >= 10 && pages <= 20 },
+    { value: "over20", label: "20页以上", matches: (pages) => pages >= 20 },
+  ];
+
   function escapeHtml(value) {
     return String(value || "")
       .replace(/&/g, "&amp;")
@@ -788,6 +795,17 @@
       .join(" · ");
   }
 
+  function analyticsEventFilterText(event) {
+    const filters = [];
+    if (event.page_range_labels) filters.push(`页数: ${event.page_range_labels}`);
+    if (event.bank) filters.push(`机构: ${event.bank}`);
+    if (event.industry) filters.push(`行业: ${event.industry}`);
+    if (event.start_date || event.end_date) filters.push(`日期: ${event.start_date || "开始"}-${event.end_date || "今天"}`);
+    if (event.scope && event.scope !== "all") filters.push(`范围: ${event.scope}`);
+    if (event.availability) filters.push(`PDF: ${event.availability}`);
+    return filters.join(" · ");
+  }
+
   function analyticsMetric(label, value) {
     return `
       <div class="account-admin-metric">
@@ -870,6 +888,7 @@
                 : (event.report_title || event.report_id || event.path || "");
               const status = [
                 event.result_count ? `${event.result_count}条` : "",
+                analyticsEventFilterText(event),
                 event.cache_status || "",
                 event.status || "",
                 event.error || "",
@@ -1553,12 +1572,41 @@
     );
   }
 
+  function reportPageCountValue(item) {
+    const pages = Number(item && item.page_count);
+    return Number.isFinite(pages) && pages > 0 ? pages : 0;
+  }
+
+  function pageRangeForValue(value) {
+    return PAGE_RANGE_FILTERS.find((range) => range.value === value) || null;
+  }
+
+  function pageRangeLabel(value) {
+    const range = pageRangeForValue(value);
+    return range ? range.label : "";
+  }
+
+  function itemMatchesPageRanges(item, selectedRanges) {
+    if (!selectedRanges.length) return true;
+    const pages = reportPageCountValue(item);
+    if (!pages) return false;
+    return selectedRanges.some((value) => {
+      const range = pageRangeForValue(value);
+      return range ? range.matches(pages) : false;
+    });
+  }
+
   function resultRow(item) {
     const bank = item.bank_code || item.bank_name || "Other";
     const size = formatSize(item.size_bytes);
     const industry = inferIndustry(item);
     const available = isPdfAvailable(item);
-    const status = available ? size : "Text only";
+    const pages = reportPageCountValue(item);
+    const statusParts = [
+      pages ? `${pages}页` : "",
+      available ? size : "Text only",
+    ].filter(Boolean);
+    const status = statusParts.join(" · ");
     const zh = titleZhText(item);
     const url = reportPageUrl(item.id);
     return `
@@ -1716,6 +1764,7 @@
     const endDate = document.getElementById("endDate");
     const scopeFilter = document.getElementById("scopeFilter");
     const availabilityFilter = document.getElementById("availabilityFilter");
+    const pageRangeInputs = Array.from(document.querySelectorAll('input[name="pageRange"]'));
     const clearFilters = document.getElementById("clearFilters");
     const activeFilters = document.getElementById("activeFilters");
     const prevPage = document.getElementById("prevPage");
@@ -1773,10 +1822,23 @@
       if (industryFilter.value && inferIndustry(item) !== industryFilter.value) return false;
       if (availabilityFilter.value === "available" && !isPdfAvailable(item)) return false;
       if (availabilityFilter.value === "textOnly" && isPdfAvailable(item)) return false;
+      if (!itemMatchesPageRanges(item, selectedPageRangeValues())) return false;
       const date = itemDate(item);
       if (startDate.value && (!date || date < startDate.value)) return false;
       if (endDate.value && (!date || date > endDate.value)) return false;
       return true;
+    }
+
+    function selectedPageRangeValues() {
+      return pageRangeInputs
+        .filter((input) => input.checked)
+        .map((input) => input.value);
+    }
+
+    function selectedPageRangeLabels() {
+      return selectedPageRangeValues()
+        .map(pageRangeLabel)
+        .filter(Boolean);
     }
 
     function updateActiveFilters() {
@@ -1786,6 +1848,8 @@
       if (startDate.value || endDate.value) labels.push(`${startDate.value || "start"} to ${endDate.value || "today"}`);
       if (availabilityFilter.value === "available") labels.push("PDF available");
       if (availabilityFilter.value === "textOnly") labels.push("Text only");
+      const pageLabels = selectedPageRangeLabels();
+      if (pageLabels.length) labels.push(`Pages: ${pageLabels.join(", ")}`);
       if (scopeFilter.value !== "all") labels.push(scopeFilter.options[scopeFilter.selectedIndex].text);
       activeFilters.textContent = labels.length ? labels.join(" · ") : "No filters";
     }
@@ -1840,6 +1904,8 @@
         end_date: endDate.value,
         scope: scopeFilter.value,
         availability: availabilityFilter.value,
+        page_ranges: selectedPageRangeValues().join(","),
+        page_range_labels: selectedPageRangeLabels().join(", "),
       };
     }
 
@@ -1875,11 +1941,14 @@
       endDate.value = "";
       scopeFilter.value = "all";
       availabilityFilter.value = "";
+      pageRangeInputs.forEach((control) => {
+        control.checked = false;
+      });
       render({ resetPage: true });
     }
 
     input.addEventListener("input", () => render({ resetPage: true }));
-    [bankFilter, industryFilter, startDate, endDate, scopeFilter, availabilityFilter].forEach((control) => {
+    [bankFilter, industryFilter, startDate, endDate, scopeFilter, availabilityFilter, ...pageRangeInputs].forEach((control) => {
       control.addEventListener("change", () => render({ resetPage: true }));
     });
     pageSize.addEventListener("change", () => render({ resetPage: true }));
