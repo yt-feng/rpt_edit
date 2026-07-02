@@ -3158,17 +3158,62 @@ async function warmAdminGithubCache(env, files = null) {
   };
 }
 
-function cachedGithubResponse(request, env, object, path) {
+function parseRangeHeader(rangeHeader, size) {
+  const match = String(rangeHeader || "").match(/^bytes=(\d*)-(\d*)$/i);
+  if (!match || !Number.isFinite(size) || size <= 0) return null;
+  let startText = match[1];
+  let endText = match[2];
+  let start;
+  let end;
+  if (!startText && !endText) return null;
+  if (!startText) {
+    const suffix = Number(endText);
+    if (!Number.isFinite(suffix) || suffix <= 0) return null;
+    start = Math.max(0, size - suffix);
+    end = size - 1;
+  } else {
+    start = Number(startText);
+    end = endText ? Number(endText) : size - 1;
+    if (!Number.isFinite(start) || !Number.isFinite(end)) return null;
+  }
+  if (start < 0 || start >= size || end < start) return null;
+  end = Math.min(end, size - 1);
+  return {
+    offset: start,
+    length: end - start + 1,
+    start,
+    end,
+    size,
+  };
+}
+
+function rangeNotSatisfiableResponse(request, env, size) {
+  return new Response(null, {
+    status: 416,
+    headers: {
+      ...corsHeaders(request, env),
+      "Content-Range": `bytes */${size || 0}`,
+      "Accept-Ranges": "bytes",
+      "Cache-Control": "no-store, private",
+    },
+  });
+}
+
+function cachedGithubResponse(request, env, object, path, options = {}) {
+  const status = options.status || 200;
+  const range = options.range || null;
   const headers = {
     ...corsHeaders(request, env),
     "Content-Type": object.httpMetadata && object.httpMetadata.contentType || contentTypeForGithubPath(path),
     "Content-Disposition": contentDisposition(path.split("/").pop() || "download"),
-    "Content-Length": String(object.size || ""),
+    "Content-Length": String(range ? range.length : (object.size || "")),
+    "Accept-Ranges": "bytes",
     "Cache-Control": "no-store, private",
     "X-Content-Type-Options": "nosniff",
     "X-KCDesk-Cache": "R2",
   };
-  return new Response(object.body, { headers });
+  if (range) headers["Content-Range"] = `bytes ${range.start}-${range.end}/${range.size}`;
+  return new Response(object.body, { status, headers });
 }
 
 async function fetchGithubRawFile(env, path, request, repo = githubRepo(env), ctx = null) {
@@ -3176,10 +3221,25 @@ async function fetchGithubRawFile(env, path, request, repo = githubRepo(env), ct
   const encodedPath = encodeGithubPath(path);
   const cacheKey = await githubCacheKey(repo, ref, path);
   const range = request.headers.get("Range") || request.headers.get("range") || "";
-  if (!range && env.REPORT_BUCKET) {
+  if (env.REPORT_BUCKET) {
     try {
-      const cached = await env.REPORT_BUCKET.get(cacheKey);
-      if (cached) return cachedGithubResponse(request, env, cached, path);
+      if (range) {
+        const head = typeof env.REPORT_BUCKET.head === "function" ? await env.REPORT_BUCKET.head(cacheKey) : null;
+        if (head) {
+          const parsed = parseRangeHeader(range, Number(head.size || 0));
+          if (!parsed) return rangeNotSatisfiableResponse(request, env, Number(head.size || 0));
+          const cachedRange = await env.REPORT_BUCKET.get(cacheKey, {
+            range: {
+              offset: parsed.offset,
+              length: parsed.length,
+            },
+          });
+          if (cachedRange) return cachedGithubResponse(request, env, cachedRange, path, { status: 206, range: parsed });
+        }
+      } else {
+        const cached = await env.REPORT_BUCKET.get(cacheKey);
+        if (cached) return cachedGithubResponse(request, env, cached, path);
+      }
     } catch (_error) {
       // Fall through to GitHub.
     }
