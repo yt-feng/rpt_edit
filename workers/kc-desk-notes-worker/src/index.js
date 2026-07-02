@@ -2731,6 +2731,30 @@ function bbgVideoTitleText(path) {
   return `${cleanFile} ${cleanFolder}`.trim().toLowerCase();
 }
 
+function normalizeBbgGroupText(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, "");
+}
+
+function bbgVideoShareGroupKey(path, info = bbgRenderedClipInfo(path)) {
+  const fileName = String(path || "").split("/").pop() || "";
+  const stem = fileName
+    .replace(/\.mp4$/i, "")
+    .replace(/^\d+[_\-＿-]+/, "")
+    .trim();
+  const parts = stem.split(/[_＿]+/).map((part) => part.trim()).filter(Boolean);
+  const shareSource = parts.length >= 2 ? parts[0] : "";
+  const normalized = normalizeBbgGroupText(shareSource);
+  if (normalized.length < 4) return "";
+  return [
+    info && info.source || "",
+    info && (info.contentDate || info.generatedDate) || "",
+    normalized.slice(0, 120),
+  ].join("|");
+}
+
 function accountLabelMatch(text, rules) {
   let score = 0;
   const reasons = [];
@@ -2786,6 +2810,39 @@ function bbgVideoAccountRecommendation(path, info) {
   };
 }
 
+function applyBbgVideoGroupMajority(files) {
+  const groups = new Map();
+  for (const file of files || []) {
+    const key = String(file && file._bbg_group_key || "");
+    if (!key) continue;
+    const rows = groups.get(key) || [];
+    rows.push(file);
+    groups.set(key, rows);
+  }
+  for (const rows of groups.values()) {
+    if (rows.length < 2) continue;
+    const desktopCount = rows.filter((row) => row.recommended_account === "KC桌面").length;
+    const biasCount = rows.filter((row) => row.recommended_account === "KC偏见").length;
+    const desktopScore = rows.reduce((sum, row) => sum + Number(row.kc_desktop_score || 0), 0);
+    const biasScore = rows.reduce((sum, row) => sum + Number(row.kc_bias_score || 0), 0);
+    const chosen = desktopCount > biasCount
+      ? "KC桌面"
+      : (biasCount > desktopCount ? "KC偏见" : (desktopScore >= biasScore ? "KC桌面" : "KC偏见"));
+    const chosenCount = chosen === "KC桌面" ? desktopCount : biasCount;
+    const confidence = chosenCount === rows.length ? "高" : "中";
+    for (const row of rows) {
+      const previousReason = String(row.account_label_reason || "");
+      row.recommended_account = chosen;
+      row.account_label_confidence = confidence;
+      row.account_label_reason = `同源视频多数原则：${rows.length}条同组视频统一为${chosen}（${chosenCount}/${rows.length}）；${previousReason}`;
+    }
+  }
+  return (files || []).map((file) => {
+    if (file && Object.prototype.hasOwnProperty.call(file, "_bbg_group_key")) delete file._bbg_group_key;
+    return file;
+  });
+}
+
 function bbgClipTakeLimit(source) {
   if (source === "daily-clips") return 8;
   if (source === "top-videos") return 10;
@@ -2821,22 +2878,26 @@ async function latestBbgRenderedClipFiles(env, maxItems = 26) {
       return String(b.item.path || "").localeCompare(String(a.item.path || ""));
     })
     .slice(0, maxItems);
-  return dated.map(({ item, info }) => {
+  const files = dated.map(({ item, info }) => {
     const path = String(item.path || "");
-    return adminGithubFile(
-      info.source === "ark-invest" ? "bbg-ark-invest" : "bbg-show",
-      info.label,
-      {
-        name: path.split("/").pop(),
-        path,
-        size: item.size,
-      },
-      info.generatedDate,
-      renderedClipNote(path, info),
-      BBG_SHOW_REPO,
-      bbgVideoAccountRecommendation(path, info),
-    );
+    return {
+      ...adminGithubFile(
+        info.source === "ark-invest" ? "bbg-ark-invest" : "bbg-show",
+        info.label,
+        {
+          name: path.split("/").pop(),
+          path,
+          size: item.size,
+        },
+        info.generatedDate,
+        renderedClipNote(path, info),
+        BBG_SHOW_REPO,
+        bbgVideoAccountRecommendation(path, info),
+      ),
+      _bbg_group_key: bbgVideoShareGroupKey(path, info),
+    };
   });
+  return applyBbgVideoGroupMajority(files);
 }
 
 async function latestSiteVideoFiles(env, maxItems = 6) {
