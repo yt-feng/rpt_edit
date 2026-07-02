@@ -1,0 +1,2487 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.0,
+                0.0,
+                1.0,
+                0.396
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.05,
+                0.431,
+                0.231,
+                0.45
+            ],
+            "angle": 0,
+            "content": "ARTIFICIAL INTELLIGENCE",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.041,
+                0.478,
+                0.656,
+                0.58
+            ],
+            "angle": 0,
+            "content": "The CEO's Guide to Physical AI"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.602,
+                0.353,
+                0.621
+            ],
+            "angle": 0,
+            "content": "ARTICLE MAY 12, 2026 5 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.682,
+                0.427,
+                0.721
+            ],
+            "angle": 0,
+            "content": "What's at Stake"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.749,
+                0.947,
+                0.851
+            ],
+            "angle": 0,
+            "content": "CEOs who’ve never considered automation—or have yet to act on it—may be underestimating how much has changed in recent years. Thanks to advances in physical AI, robotics is entering a new era, expanding what can be automated across industries and supply chains. Robots can now see, adapt, and adjust in real time, reducing deployment costs and complexity, accelerating adoption, and raising the cost of standing still for companies that hesitate.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.041,
+                0.864,
+                0.623,
+                0.905
+            ],
+            "angle": 0,
+            "content": "What the Numbers Say"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.969,
+                0.251,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.437,
+                0.224,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.475,
+                0.658,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.528,
+                0.402,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.607,
+                0.347,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.682,
+                0.426,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.751,
+                0.923,
+                0.767
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.772,
+                0.932,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.793,
+                0.943,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.812,
+                0.891,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.832,
+                0.736,
+                0.847
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.863,
+                0.623,
+                0.905
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.119,
+                0.083,
+                0.258,
+                0.128
+            ],
+            "angle": 0,
+            "content": "50%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.053,
+                0.142,
+                0.323,
+                0.229
+            ],
+            "angle": 0,
+            "content": "Increase in the scope of work that can be automated compared to traditional robotics",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.433,
+                0.083,
+                0.57,
+                0.129
+            ],
+            "angle": 0,
+            "content": "70%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.375,
+                0.143,
+                0.627,
+                0.209
+            ],
+            "angle": 0,
+            "content": "Reduction in\nengineering time\nneeded to train robots",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.774,
+                0.084,
+                0.852,
+                0.128
+            ],
+            "angle": 0,
+            "content": "3x",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.674,
+                0.143,
+                0.951,
+                0.23
+            ],
+            "angle": 0,
+            "content": "Faster payback period for cutting-edge robotics investments (from 5–7 years to 1–3)",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.299,
+                0.455,
+                0.342
+            ],
+            "angle": 0,
+            "content": "What's Changed"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.366,
+                0.935,
+                0.407
+            ],
+            "angle": 0,
+            "content": "Physical AI has rapidly become more flexible and capable as both the hardware and the AI have improved.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.436,
+                0.831,
+                0.457
+            ],
+            "angle": 0,
+            "content": "- Tasks once seen as too variable or cost-prohibitive for automation are now in play.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.471,
+                0.91,
+                0.511
+            ],
+            "angle": 0,
+            "content": "- Many robots can be trained in virtual, digital environments so they can “learn” how to do a job before being installed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.525,
+                0.877,
+                0.566
+            ],
+            "angle": 0,
+            "content": "- This accelerates deployment and eliminates the need for onsite training, which is often disruptive and expensive.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.58,
+                0.904,
+                0.64
+            ],
+            "angle": 0,
+            "content": "- Upfront investment is falling fast: in traditional robotics, about 75% of costs come from system integration, setup, and engineering, but software-defined physical AI can cut those costs by more than half.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.711,
+                0.874,
+                0.791
+            ],
+            "angle": 0,
+            "content": "Five CEO Moves to Capture Value from Physical AI"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.817,
+                0.956,
+                0.897
+            ],
+            "angle": 0,
+            "content": "While some capabilities are improving quickly, such as perception powered by modern computer vision, other areas—like human-level dexterity and physical reasoning—remain stubbornly difficult for machines. For leaders, the opportunity lies in focusing on where physical AI can deliver value today. Here are five moves they can make now.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.083,
+                0.266,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.06,
+                0.145,
+                0.319,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.095,
+                0.166,
+                0.28,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.188,
+                0.319,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.209,
+                0.293,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.425,
+                0.08,
+                0.58,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.43,
+                0.145,
+                0.57,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.405,
+                0.166,
+                0.594,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.378,
+                0.188,
+                0.623,
+                0.205
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.77,
+                0.08,
+                0.86,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.676,
+                0.145,
+                0.947,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.694,
+                0.166,
+                0.929,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.689,
+                0.188,
+                0.935,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.74,
+                0.209,
+                0.881,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.298,
+                0.455,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.368,
+                0.931,
+                0.383
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.389,
+                0.14,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.437,
+                0.828,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.473,
+                0.907,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.064,
+                0.493,
+                0.31,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.528,
+                0.873,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.549,
+                0.306,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.583,
+                0.875,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.603,
+                0.9,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.622,
+                0.29,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.041,
+                0.707,
+                0.876,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.75,
+                0.46,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.819,
+                0.94,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.839,
+                0.892,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.858,
+                0.952,
+                0.874
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.88,
+                0.534,
+                0.893
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.045,
+                0.068,
+                0.856,
+                0.169
+            ],
+            "angle": 0,
+            "content": "Move #1: Assess Operational Inefficiencies with Next-Gen Physical AI in Mind"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.198,
+                0.955,
+                0.301
+            ],
+            "angle": 0,
+            "content": "Leaders should know where physical AI is advancing—and where it still has a long way to go. The sci-fi vision of a do-it-all, C-3PO-style humanoid robot is still distant. And we are years away from machines that can reliably navigate new environments and pass the “coffee test.” \\( ^{1} \\)  To clarify what’s newly deployable versus what’s still emerging, leaders can evaluate physical AI across four capabilities:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.33,
+                0.889,
+                0.371
+            ],
+            "angle": 0,
+            "content": "- Visual Perception. These robots are enhanced with machine vision that enables them to recognize objects and positions, extending automation to new environments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.384,
+                0.889,
+                0.445
+            ],
+            "angle": 0,
+            "content": "- Dexterous Manipulation. Robots that unlock complex automation by fusing perception, understanding, and force to handle variable or deformed objects. The currently available models still require extensive training for specific tasks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.459,
+                0.923,
+                0.5
+            ],
+            "angle": 0,
+            "content": "- Workflow Planning. Still under development, these robots can be told what to achieve—not how—by interpreting human intent and generating the workflow to complete the task.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.514,
+                0.925,
+                0.593
+            ],
+            "angle": 0,
+            "content": "- Reasoning. This is an envisioned future state of physical AI, characterized by robots that can reason how their actions will change their surrounding environment and then choose a path based on expected outcomes. It is the highest goal for humanoid-style consumer robots and remains elusive for now.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.623,
+                0.851,
+                0.691
+            ],
+            "angle": 0,
+            "content": "Move #2: Think Holistically About How Workflows and Processes Must Evolve"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.719,
+                0.918,
+                0.778
+            ],
+            "angle": 0,
+            "content": "Even state-of-the-art physical AI cannot replicate everything a human worker does. But it can often replace 50% of the tasks they perform and do them more efficiently and consistently. To maximize value, leaders can:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.808,
+                0.927,
+                0.908
+            ],
+            "angle": 0,
+            "content": "- Define a value-chain-wide automation model guided by a holistic view of where automation makes the most impact. The most strategic deployments of physical AI will require a systemic revamp, where tasks that were previously done by one worker are redistributed across the line. For example, a robot may be able to complete the repetitive physical task of an individual worker on an assembly line but not the same worker's visual quality control.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.956,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.068,
+                0.647,
+                0.101
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.103,
+                0.855,
+                0.136
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.136,
+                0.205,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.199,
+                0.933,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.218,
+                0.93,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.242,
+                0.901,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.263,
+                0.949,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.283,
+                0.162,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.333,
+                0.885,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.352,
+                0.782,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.386,
+                0.881,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.407,
+                0.885,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.427,
+                0.585,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.462,
+                0.92,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.481,
+                0.869,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.516,
+                0.922,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.535,
+                0.917,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.555,
+                0.917,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.575,
+                0.29,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.622,
+                0.849,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.658,
+                0.834,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.72,
+                0.904,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.741,
+                0.913,
+                0.756
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.761,
+                0.314,
+                0.776
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.809,
+                0.923,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.831,
+                0.849,
+                0.846
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.85,
+                0.888,
+                0.865
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.87,
+                0.921,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.89,
+                0.9,
+                0.905
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.068,
+                0.922,
+                0.108
+            ],
+            "angle": 0,
+            "content": "Ensure every partial task that is automated has a corresponding process redesign to unlock measurable cost and productivity gains.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.121,
+                0.931,
+                0.222
+            ],
+            "angle": 0,
+            "content": "- Design factories with robots in mind. While most companies are retrofitting human workspaces, the most significant gains will come from factories and warehouses designed and built for robots. Such factories never need to close. In some cases, the technology to achieve a robot-ready factory may not yet be available. But leaders who iterate and climb the innovation curve are more likely to unlock an advantage before their competitors.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.322,
+                0.731,
+                0.424
+            ],
+            "angle": 0,
+            "content": "Move #3: Know Your Target Tech Architecture Before You Buy from Vendors"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.452,
+                0.952,
+                0.512
+            ],
+            "angle": 0,
+            "content": "Approaching potential vendors without a solid plan for how to integrate their technology into your planned architecture could land you with an approach that matches the vendor's priorities rather than your company's needs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.541,
+                0.932,
+                0.622
+            ],
+            "angle": 0,
+            "content": "- Have a plan for integrating potential vendor systems across hardware, operating backbone, simulation training environment, and applications. Decide whether and where to codevelop technology or buy existing models. Determine how a new vendor system will integrate into your company’s existing IT infrastructure before you reach out.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.635,
+                0.931,
+                0.715
+            ],
+            "angle": 0,
+            "content": "- Don’t drag your feet. Physical AI is a rapidly emerging industry, and there will be competition for specific technologies. Vendors are more likely to engage with companies that have identified novel, rewarding challenges—so leaders with a systemic plan in place are more likely to attract the best in class.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.045,
+                0.745,
+                0.875,
+                0.814
+            ],
+            "angle": 0,
+            "content": "Move #4: Plan for How Jobs Will Change\nBefore They Do"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.84,
+                0.938,
+                0.88
+            ],
+            "angle": 0,
+            "content": "Just as designing a new tech architecture before implementation is a must, so is planning ahead for how the workforce will need to evolve.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.068,
+                0.92,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.088,
+                0.438,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.123,
+                0.848,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.144,
+                0.892,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.162,
+                0.886,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.183,
+                0.927,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.204,
+                0.826,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.322,
+                0.714,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.357,
+                0.729,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.391,
+                0.215,
+                0.422
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.454,
+                0.949,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.474,
+                0.946,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.494,
+                0.308,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.543,
+                0.928,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.564,
+                0.912,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.583,
+                0.901,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.603,
+                0.647,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.637,
+                0.928,
+                0.652
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.656,
+                0.858,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.677,
+                0.898,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.698,
+                0.374,
+                0.711
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.742,
+                0.877,
+                0.785
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.778,
+                0.364,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.043,
+                0.842,
+                0.935,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.862,
+                0.428,
+                0.877
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.068,
+                0.928,
+                0.186
+            ],
+            "angle": 0,
+            "content": "- Decide which human roles will shift from the factory floor to supervising, training, and integrating robots. Evaluate which workers are best positioned to be reskilled to supervise new robotic systems. Your existing workforce has the advantage of already understanding your specific needs and processes, and employees can often be transitioned to new robot-managing roles with the right upskilling. Some new talent will also be needed, so have a plan in place to secure the top candidates to fill these roles.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.201,
+                0.926,
+                0.319
+            ],
+            "angle": 0,
+            "content": "- Tell your workforce how their roles will evolve. Be transparent about the coming transition, communicating how roles will change. Workers who don’t know how their role will be impacted could fill that gap with fear, which can hamper adoption. For some workers, the transition will be welcome; an assembly line worker could have the opportunity to transition from repetitive tasks to a more rewarding job designing and managing the new automation systems.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.044,
+                0.35,
+                0.828,
+                0.42
+            ],
+            "angle": 0,
+            "content": "Move #5: Institute Strong Governance for Physical AI Systems"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.445,
+                0.95,
+                0.504
+            ],
+            "angle": 0,
+            "content": "As with other forms of artificial intelligence, physical AI comes with safety and security challenges that require vigilant governance. As they deploy the technology within their companies, CEOs must:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.534,
+                0.895,
+                0.574
+            ],
+            "angle": 0,
+            "content": "- Ensure robots won’t malfunction in ways that endanger the safety of their workforce and their operations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.589,
+                0.885,
+                0.67
+            ],
+            "angle": 0,
+            "content": "- Fully understand the cybersecurity implications of integrating physical AI. As machines become more autonomous, intelligent, and connected, they can become ripe targets for hackers and other hostile actors. CEOs must have a robust plan to mitigate physical AI cybersecurity risks and recover quickly if a robot or system is hacked.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.683,
+                0.895,
+                0.762
+            ],
+            "angle": 0,
+            "content": "- Remember that cybersecurity risks extend to third-party vendors. As your supply chain adds more third parties, it introduces potential new entry points for attackers looking for weak links into your network. Ensure your vendors are vigilant—otherwise your company could end up paying the price.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.833,
+                0.439,
+                0.872
+            ],
+            "angle": 0,
+            "content": "Final Gut Check"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.068,
+                0.862,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.089,
+                0.903,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.108,
+                0.897,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.128,
+                0.909,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.148,
+                0.924,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.168,
+                0.579,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.203,
+                0.918,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.223,
+                0.843,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.242,
+                0.881,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.263,
+                0.921,
+                0.277
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.281,
+                0.903,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.302,
+                0.151,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.35,
+                0.826,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.384,
+                0.525,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.446,
+                0.947,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.467,
+                0.905,
+                0.483
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.488,
+                0.1,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.537,
+                0.893,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.557,
+                0.223,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.591,
+                0.878,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.611,
+                0.881,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.63,
+                0.869,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.651,
+                0.71,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.684,
+                0.885,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.705,
+                0.888,
+                0.719
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.724,
+                0.892,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.744,
+                0.345,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.832,
+                0.439,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.377,
+                0.737,
+                0.393
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.955,
+                0.147
+            ],
+            "angle": 0,
+            "content": "Physical AI has advanced significantly in recent years, and that momentum is likely to continue. CEOs who make smart choices now about where and when to deploy it, and do so responsibly, will not only be better positioned to unlock new levels of efficiency and value. They will also build scale and know-how that slower competitors will struggle to match.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.218,
+                0.469,
+                0.26
+            ],
+            "angle": 0,
+            "content": "Featured Experts"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.301,
+                0.22,
+                0.407
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.31,
+                0.428,
+                0.333
+            ],
+            "angle": 0,
+            "content": "Tilman Buchner"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.343,
+                0.376,
+                0.372
+            ],
+            "angle": 0,
+            "content": "Partner & Director\nMunich"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.3,
+                0.682,
+                0.407
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.708,
+                0.31,
+                0.875,
+                0.334
+            ],
+            "angle": 0,
+            "content": "Mei-Jung Chen"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.343,
+                0.909,
+                0.372
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nTaipei",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.455,
+                0.219,
+                0.561
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.246,
+                0.458,
+                0.409,
+                0.481
+            ],
+            "angle": 0,
+            "content": "Daniel Küpper"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.49,
+                0.437,
+                0.533
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner\nCologne",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.246,
+                0.537,
+                0.275,
+                0.554
+            ],
+            "angle": 0,
+            "content": "[Non-textual symbol]",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.648,
+                0.436,
+                0.667
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.683,
+                0.952,
+                0.804
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.07,
+                0.932,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.091,
+                0.949,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.913,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.129,
+                0.665,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.217,
+                0.468,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.345,
+                0.905,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.358,
+                0.753,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.493,
+                0.433,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.505,
+                0.301,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.245,
+                0.516,
+                0.302,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.537,
+                0.274,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.652,
+                0.432,
+                0.668
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.685,
+                0.95,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.706,
+                0.9,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.725,
+                0.905,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.746,
+                0.912,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.765,
+                0.933,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.786,
+                0.593,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.068,
+                0.948,
+                0.113
+            ],
+            "angle": 0,
+            "content": "1 The “coffee test” is an informal benchmark in physical AI that asks whether a robot can autonomously prepare and serve a cup of coffee in an unfamiliar real-world environment. It encapsulates the challenge of integrating perception, manipulation, planning, and adaptability in unstructured settings as a proxy for general-purpose embodied intelligence.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.047,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.972,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.068,
+                0.933,
+                0.081
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.086,
+                0.944,
+                0.095
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.101,
+                0.668,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

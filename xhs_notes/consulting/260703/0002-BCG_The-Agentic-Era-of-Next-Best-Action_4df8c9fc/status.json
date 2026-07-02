@@ -1,0 +1,19 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_j4v088_k/pdfs/0002-BCG_The-Agentic-Era-of-Next-Best-Action_4df8c9fc.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "波士顿咨询",
+  "cover_short_title": "个性化营销，进入AI",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png"
+  ],
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}
