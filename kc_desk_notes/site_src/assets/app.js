@@ -992,8 +992,8 @@
     const name = String(button && button.dataset.name || "");
     const fileKind = String(button && button.dataset.fileKind || "");
     const size = Number(button && button.dataset.sizeBytes || 0) || 0;
-    if (/\.mp4$/i.test(name) && /^(bbg-show|bbg-ark-invest)$/i.test(fileKind)) return true;
-    return size > 5 * 1024 * 1024 && /\.(pdf|zip)$/i.test(name);
+    if (/\.mp4$/i.test(name) && /^(bbg-show|bbg-ark-invest|kc-entertain)$/i.test(fileKind)) return true;
+    return size > 5 * 1024 * 1024 && /\.(mp4|pdf|zip)$/i.test(name);
   }
 
   async function fetchRangeBlob(endpoint, start, end, signal) {
