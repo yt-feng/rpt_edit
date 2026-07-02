@@ -233,6 +233,13 @@ def inspect_pdf_metadata(local_path: Path) -> dict[str, Any]:
         return {}
 
 
+def item_has_pdf_metadata(item: dict[str, Any]) -> bool:
+    try:
+        return int(item.get("page_count") or 0) > 0
+    except (TypeError, ValueError):
+        return False
+
+
 def delete_r2_objects(client: Any, bucket: str, keys: list[str]) -> int:
     deleted = 0
     unique_keys = sorted({key for key in keys if key})
@@ -462,11 +469,12 @@ def sync_current_reports_to_r2(
     download_paths: dict[str, str],
     token: str,
     force_upload: bool,
-) -> int:
+) -> tuple[int, int]:
     bucket = require_env("R2_BUCKET")
     client = build_r2_client()
     by_id = {str(item.get("id")): item for item in catalog.get("items", []) if item.get("id")}
     uploaded = 0
+    inspected = 0
 
     with tempfile.TemporaryDirectory(prefix="kc-desk-notes-") as tmpdir:
         tmp_root = Path(tmpdir)
@@ -480,6 +488,14 @@ def sync_current_reports_to_r2(
                 continue
             if item.get("r2_synced") and not force_upload:
                 item["available"] = True
+                if not item_has_pdf_metadata(item):
+                    local_path = tmp_root / f"{report_id}.pdf"
+                    log(f"Inspecting missing PDF metadata: {report_id}")
+                    download_dropbox_file(token, dropbox_path, local_path)
+                    metadata = inspect_pdf_metadata(local_path)
+                    if metadata:
+                        item.update(metadata)
+                        inspected += 1
                 continue
 
             key = str(item.get("r2_key") or r2_key_for_id(report_id, DEFAULT_R2_PREFIX))
@@ -491,6 +507,8 @@ def sync_current_reports_to_r2(
             item["r2_synced"] = True
             item["available"] = True
             uploaded += 1
+            if item_has_pdf_metadata(item):
+                inspected += 1
 
     catalog["items"] = sorted(
         by_id.values(),
@@ -502,7 +520,7 @@ def sync_current_reports_to_r2(
     storage = catalog.get("storage")
     if isinstance(storage, dict):
         storage["total_size_bytes"] = catalog["total_size_bytes"]
-    return uploaded
+    return uploaded, inspected
 
 
 def main() -> int:
@@ -556,8 +574,9 @@ def main() -> int:
                 log("Skipping R2 deletion for archived PDFs because --sync-r2 is not enabled")
 
         uploaded = 0
+        inspected = 0
         if args.sync_r2:
-            uploaded = sync_current_reports_to_r2(
+            uploaded, inspected = sync_current_reports_to_r2(
                 catalog=catalog,
                 current_ids=set(current.keys()),
                 download_paths=download_paths,
@@ -570,7 +589,8 @@ def main() -> int:
         write_github_output("item_count", str(catalog.get("item_count", 0)))
         write_github_output("seen_count", str(len(current)))
         write_github_output("uploaded_count", str(uploaded))
-        log(f"Wrote {catalog_path}: {catalog.get('item_count', 0)} total reports, {len(current)} seen, {uploaded} uploaded")
+        write_github_output("metadata_inspected_count", str(inspected))
+        log(f"Wrote {catalog_path}: {catalog.get('item_count', 0)} total reports, {len(current)} seen, {uploaded} uploaded, {inspected} metadata inspected")
         return 0
     except Exception as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
