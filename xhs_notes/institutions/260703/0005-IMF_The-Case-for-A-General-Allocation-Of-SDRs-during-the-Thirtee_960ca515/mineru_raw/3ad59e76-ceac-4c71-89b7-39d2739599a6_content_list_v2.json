@@ -1,0 +1,1378 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF POLICY PAPER"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                202,
+                136,
+                555,
+                167
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                200,
+                143,
+                217
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRs\nDURING THE THIRTEENTH BASIC PERIOD"
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                174,
+                815,
+                220
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "IMF staff regularly produces papers proposing new IMF policies, exploring options for reform, or reviewing existing IMF policies and operations. The following documents have been released and are included in this package:"
+                    }
+                ]
+            },
+            "bbox": [
+                197,
+                234,
+                877,
+                289
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The Report of the Managing Director to the Board of Governors, transmitted to the Board of Governors on June 26, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                192,
+                324,
+                859,
+                359
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The Staff Report, prepared by IMF staff and completed on June 15, 2026 for the Executive Board's Information."
+                    }
+                ]
+            },
+            "bbox": [
+                192,
+                371,
+                838,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The IMF's transparency policy allows for the deletion of market-sensitive information and premature disclosure of the authorities' policy intentions in published staff reports and other documents."
+                    }
+                ]
+            },
+            "bbox": [
+                199,
+                436,
+                880,
+                489
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Electronic copies of IMF Policy Papers are available to the public from http://www.imf.org/external/pp/ppindex.aspx"
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                507,
+                715,
+                563
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "International Monetary Fund\nWashington, D.C."
+                    }
+                ]
+            },
+            "bbox": [
+                390,
+                580,
+                687,
+                625
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL\nMONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                16,
+                169,
+                95
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                223,
+                61,
+                805,
+                90
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 International Monetary Fund"
+                    }
+                ]
+            },
+            "bbox": [
+                194,
+                936,
+                478,
+                954
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                328,
+                99,
+                668,
+                118
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Report of the Managing Director to the Board of Governors Pursuant to Article XVIII, Section 4(c) for the Thirteenth Basic Period"
+                    }
+                ]
+            },
+            "bbox": [
+                130,
+                138,
+                869,
+                175
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "June 26, 2026"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                444,
+                207,
+                553,
+                223
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Twelfth Basic Period began on January 1, 2022 and is scheduled to end on December 31, 2026. The Thirteenth Basic Period will commence on January 1, 2027. The Articles of Agreement require the Managing Director to determine whether there is a case for a proposal regarding a general allocation or cancellation of Special Drawing Rights (SDR) in the next Basic Period to the Board of Governors no later than six months before the end of each Basic Period (Article XVIII, Section 4(c)."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                239,
+                885,
+                345
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Managing Director must be satisfied that a proposal for a general allocation or cancellation of SDRs, in her view: (i) is consistent with meeting the long-term global need to supplement existing reserve assets as set out in Article XVIII, Section 1(a); and (ii) would have broad support among participants in accordance with Section 4(b) of the same Article. Executive Board concurrence is required under Article XVIII, Section 4(a) for the proposal. Pursuant to Article XVIII, Section 4(d), a decision of the Board of Governors approving such a proposal of the Managing Director would require an 85 percent majority of the total voting power of members representing participants in the SDR Department, which currently encompasses all members of the Fund. If the Managing Director ascertains that there is no proposal consistent with Article XVIII, Section 1(a) that has broad support among participants, she must so report to the Board of Governors and to the Executive Board. The present report is submitted in accordance with these provisions."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                359,
+                877,
+                599
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In forming my view as to whether there is currently a basis for a new proposal, I have taken the following into consideration:"
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                612,
+                836,
+                652
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The case for a new allocation is not clear at this time. Since the 2021 General SDR allocation—the largest in Fund history—that took place during the last Basic Period, global developments have been characterized by resilient economic growth, high levels of international reserve assets, ample global liquidity, and improved access of emerging market economies to international capital markets. Despite the wars in Ukraine and the Middle East, since 2021, reserve assets have increased by over 21 percent globally, and by over 22 percent for emerging and developing countries (excluding China). The stock of SDRs relative to global reserves, capital flows, and international trade remain elevated, well above the levels before the 2021 Allocation as well as historical averages. While the war in the Middle East has already had major impacts on many members, its impact across members is asymmetric, along with its duration being unknown. As such, there is no strong evidence of a long-term"
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                666,
+                883,
+                906
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "need to supplement global reserve assets at the current juncture. Staff will continue to closely monitor the situation in case the effects of the war become more persistent and widespread."
+                    }
+                ]
+            },
+            "bbox": [
+                169,
+                90,
+                836,
+                154
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- A new general SDR allocation would not receive the necessary support in terms of voting majority at this stage that is required for any proposal to succeed. In recent bilateral consultations, while a few Executive Directors saw merit in an allocation, Directors representing a majority of participants in terms of their voting power indicated that they would not support a new allocation in the current context. For reference, the last two SDR general allocations took place in the context of major global economic developments; the 2021 General SDR Allocation (SDR 456.5 billion) in the context of the COVID-19 Crisis, and the 2009 General Allocation (SDR 161.2 billion, in addition to the special allocation of SDR 21.5 billion to implement the Fourth Amendment to the Articles of Agreement) during the Global Financial Crisis. Prior to 2009, no general allocation had been approved since 1981."
+                    }
+                ]
+            },
+            "bbox": [
+                109,
+                167,
+                864,
+                405
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "On the basis of these considerations, I informed the Executive Board in my report of June 15, 2026 of my view at this stage that I would not be in a position to make, by June 30 of this year, a proposal for the Thirteenth Basic Period consistent with the provisions of the Articles that would have the broad support among participants."
+                    }
+                ]
+            },
+            "bbox": [
+                111,
+                420,
+                883,
+                505
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In accordance with Article XVIII, Section 4(c), this does not preclude me during the Thirteenth Basic Period from making proposals on my own initiative, nor the Board of Governors or the Executive Board from requesting that I make a proposal, including in the event of unexpected major developments."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                518,
+                864,
+                603
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                491,
+                55,
+                504,
+                68
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                870,
+                936,
+                883,
+                949
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "June 15, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                35,
+                184,
+                145,
+                200
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRs DURING THE THIRTEENTH BASIC PERIOD"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                207,
+                157,
+                867,
+                205
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "EXECUTIVE SUMMARY"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                210,
+                250,
+                529,
+                273
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report sets out the basis for consideration of a new allocation or cancelation of Special Drawing Rights (SDRs) for the next (Thirteenth) Basic Period, scheduled to begin on January 1, 2027. The Articles of Agreement require that the Managing Director determine whether there is a case for general SDR allocation or cancellation to the Board of Governors no later than six months before the end of each five-year Basic Period. The case to make a proposal is based on two requirements: (i) consistency with meeting the long-term global need to supplement existing reserve assets; and (ii) broad support among participants for the proposal"
+                    }
+                ]
+            },
+            "bbox": [
+                207,
+                304,
+                883,
+                455
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This paper does not present a proposal for a new allocation of SDRs. There is neither a clear economic case nor the necessary support for a new allocation at present. Since the 2021 General SDR Allocation, global developments have been characterized by resilient economic growth, high levels of international reserve assets, ample global liquidity, and improved access of emerging market economies to international capital markets. Moreover, there are clear indications that a new general SDR allocation would not receive the necessary support to proceed."
+                    }
+                ]
+            },
+            "bbox": [
+                207,
+                474,
+                879,
+                607
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Based on these considerations, the Managing Director does not plan to make a proposal by June 30, 2026. This does not preclude the Managing Director to make a proposal, at her initiative or at the request of the Board of Governors or the Executive Board, at any time during the Thirteenth Basic Period. Management and staff will continue to carefully monitor the evolving global situation, and remain in close contact with the membership to see how the Fund can best meet their needs."
+                    }
+                ]
+            },
+            "bbox": [
+                207,
+                625,
+                874,
+                739
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                16,
+                178,
+                95
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                233,
+                61,
+                830,
+                90
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Approved By"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                124,
+                89,
+                261,
+                109
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Bernard Lauwers (FIN)"
+                    }
+                ]
+            },
+            "bbox": [
+                124,
+                109,
+                300,
+                127
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Yan Liu (LEG)"
+                    }
+                ]
+            },
+            "bbox": [
+                124,
+                127,
+                230,
+                143
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Christian Mumssen (SPR)"
+                    }
+                ]
+            },
+            "bbox": [
+                124,
+                143,
+                321,
+                161
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prepared by the Finance (FIN), Legal (LEG), and Strategy, Policy, and Review (SPR) Departments. The team was led by J. Gijón (FIN), C. Delong (LEG), and A. Shahmoradi (SPR); and comprised Q. Chen and N. Magud (FIN). J. Thornton provided overall guidance under the supervision of C. Oner (FIN), B. Steinki (LEG), and G. Chabert (SPR). G. Pais Marden (FIN) provided research assistance. M. DeGuzman and R. Avila (both FIN) helped prepare the report."
+                    }
+                ]
+            },
+            "bbox": [
+                336,
+                90,
+                859,
+                215
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CONTENTS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                138,
+                234,
+                279,
+                256
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "BACKGROUND 3"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                297,
+                857,
+                316
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CASE FOR AN ALLOCATION ____ 3"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                335,
+                857,
+                356
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CONCLUSION 4"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                375,
+                856,
+                393
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "FIGURES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                414,
+                191,
+                431
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Reserve Assets and Sovereign Issuances ____ 5"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                434,
+                856,
+                452
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Long-term Perspective of SDR Holdings, 1980–2025 ____ 6"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                453,
+                857,
+                470
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRS DURING THE THIRTEENTH BASIC PERIOD"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                47,
+                717,
+                63
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                116,
+                931,
+                130,
+                954
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                153,
+                938,
+                390,
+                953
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BACKGROUND"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                117,
+                97,
+                325,
+                119
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. The Articles of Agreement require the Managing Director to determine whether there is a case for a proposal regarding a general SDR allocation or cancellation to the Board of Governors no later than six months before the end of each five-year Basic Period. The Twelfth Basic Period began on January 1, 2022, and is scheduled to end on December 31, 2026. The Thirteenth Basic Period will commence on January 1, 2027, and based on Article XVIII, Section 4(c) the Managing Director has to make a proposal regarding a general allocation or cancellation to the Board of Governors by June 30, 2026."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                152,
+                872,
+                282
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Before making any proposal, the Managing Director must be satisfied that a proposal for a general allocation or cancellation of SDRs, in her view: (i) is consistent with meeting the long-term global need to supplement existing reserve assets as set out in Article XVIII, Section 1(a); and (ii) that there is broad support among participants for the proposal in accordance with Section 4(b) of the same Article. Executive Board concurrence is required under Article XVIII, Section 4(a) for the proposal. Under Article XVIII, Section 4(d), a decision of the Board of Governors approving such a proposal of the Managing Director requires an 85 percent majority of the total voting power of participants in the SDR Department, which currently encompasses all members of the Fund (Article XVIII, Section 4(d)). If the Managing Director ascertains that there is no proposal which she considers consistent with Article XVIII, Section 1(a) that has broad support among participants, she must so report to the Board of Governors and to the Executive Board (Article XVIII, Section 4(c)). The present report is submitted in accordance with these provisions."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                299,
+                880,
+                527
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CASE FOR AN ALLOCATION"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                116,
+                571,
+                498,
+                595
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3. In determining whether to make a proposal, the following issues were considered:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                114,
+                627,
+                841,
+                645
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The lack of a clear case for a new allocation. The case for a new allocation in accordance with Article XVII, Section 1(a) is not clear at this time. Since the 2021 General SDR allocation—the largest in Fund history—that took place during the last Basic Period, global developments have been characterized by resilient economic growth, high levels of international reserve assets, ample global liquidity, and improved access of emerging market economies to international capital markets (Figure 1). Notwithstanding the wars in Ukraine and the Middle East, reserve assets have increased by over 21 percent globally since 2021, and by over 22 percent for emerging and developing countries (excluding China). The stock of SDRs relative to global reserves, capital flows, and international trade remain elevated, well above the levels before the 2021 Allocation as well as historical averages (Figure 2). While the war in the Middle East has already had major impacts on many members, its impact across members is asymmetric, and its duration unknown. In view of the above-mentioned factors, staff does not see a case for new"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                662,
+                875,
+                888
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRS DURING THE THIRTEENTH BASIC PERIOD"
+                    }
+                ]
+            },
+            "bbox": [
+                279,
+                47,
+                880,
+                63
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                612,
+                938,
+                849,
+                953
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                862,
+                933,
+                875,
+                954
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "allocation. Staff will continue to monitor the situation closely in case the effects of the war become more persistent and widespread."
+                    }
+                ]
+            },
+            "bbox": [
+                143,
+                92,
+                830,
+                128
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- The lack of broad support of participants for a new allocation. There are clear indications that a new general SDR allocation would not receive the necessary 85 percent majority of the total voting power in the Board of Governors at present. In recent bilateral consultations, while a few Executive Directors saw merit in an allocation, Executive Directors representing a majority of the participants in terms of voting power indicated that they would not support a new allocation in the current context. For reference, the last two SDR general allocations took place in the context of major global economic developments; the 2021 General SDR Allocation (SDR 456.5 billion) in the context of the COVID-19 Crisis, and the 2009 General Allocation (SDR 161.2 billion, in addition to a special allocation of SDR 21.5 billion to implement the Fourth Amendment to the Articles of Agreement) during the Global Financial Crisis. Prior to 2009, no general allocation had been approved since 1981."
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                140,
+                880,
+                349
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CONCLUSION"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                116,
+                378,
+                308,
+                402
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4. In light of the considerations above, the Managing Director does not plan to make a proposal by June 30 of this year. This conclusion is based on Article XVIII, Section 4, which requires that the Managing Director make a proposal only if, in her view, such a proposal would be consistent with meeting the long-term global need to supplement existing reserve assets, and would also have broad support among participants. In view of this requirement, the considerations above, and the Executive Board's interest in streamlining, the Managing Director does not plan to propose a Board discussion of the issue on this occasion."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                434,
+                869,
+                566
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "5. This conclusion does not preclude the Managing Director from making a proposal during the Thirteenth Basic Period. In accordance with Article XVIII, Section 4(c), the Managing Director can propose an allocation or cancellation, at her own initiative or at the request of the Board of Governors or the Executive Board, at any time during the remainder of the Thirteenth Basic Period, such as in the case of unexpected major developments that could motivate such a proposal."
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                582,
+                877,
+                676
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRS DURING THE THIRTEENTH BASIC PERIOD"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                47,
+                717,
+                63
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                116,
+                931,
+                130,
+                954
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                153,
+                938,
+                390,
+                953
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2c355c76c7b30daee83e882dd567bc3957df960f6365890811fe110218f5a127.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1. Reserve Assets and Sovereign Issuances"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Global Reserve Assets, 1995–2025 (In trillions of SDRs)"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                264,
+                179,
+                725,
+                411
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b48aa9d523b84d2c1e16e4c2eda09522c36dc8294ca593a9641be65774461ba4.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Sovereign Issuances, 2005–2025\n(In billions of USD)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: IMF; World Economic Outlook; and Fund staff calculations."
+                    }
+                ]
+            },
+            "bbox": [
+                264,
+                491,
+                725,
+                714
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRS DURING THE THIRTEENTH BASIC PERIOD"
+                    }
+                ]
+            },
+            "bbox": [
+                281,
+                47,
+                883,
+                63
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                614,
+                938,
+                851,
+                953
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                864,
+                933,
+                877,
+                954
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7e348ed0148400e2cb5c97525cc48075cdb9f92f38e5fae7d4ccb5f966494f2c.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2. Long-term Perspective of SDR Holdings, 1980–2025 (In percent of)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Global Reserves 1/"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Global Gross Capital Flows"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                282,
+                172,
+                697,
+                368
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e0a35d9f69f9ea17a507ebf949e20e3deb470f381b2da1500514a8260f535447.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Global Trade 3/"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                287,
+                425,
+                712,
+                599
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8a5d5f257ae9a775547d50b1c2b76cc2a41b630a313d668f9969a60af137cf8e.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: IMF; World Economic Outlook; and Fund staff calculations."
+                    },
+                    {
+                        "type": "text",
+                        "content": "1/ Including gold."
+                    },
+                    {
+                        "type": "text",
+                        "content": "2/ Excluding China."
+                    },
+                    {
+                        "type": "text",
+                        "content": "3/ Goods and services."
+                    }
+                ]
+            },
+            "bbox": [
+                279,
+                656,
+                710,
+                820
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRS DURING THE THIRTEENTH BASIC PERIOD"
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                47,
+                715,
+                63
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                933,
+                127,
+                954
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "INTERNATIONAL MONETARY FUND"
+                    }
+                ]
+            },
+            "bbox": [
+                151,
+                938,
+                388,
+                953
+            ]
+        }
+    ]
+]

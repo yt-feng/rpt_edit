@@ -1,0 +1,18 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_6eeapowg/pdfs/0002-IMF_Financial-Market-Infrastructures-Evolution-in-a-Tokenized-Ec_6de79104.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "IMF",
+  "cover_short_title": "代币化时代，金融基础",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png"
+  ],
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md"
+}

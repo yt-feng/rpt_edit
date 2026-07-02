@@ -1,0 +1,1497 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.15,
+                0.137,
+                0.275,
+                0.233
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.125,
+                0.24,
+                0.731,
+                0.356
+            ],
+            "angle": 0,
+            "content": "HIGH-LEVEL SUMMARY\nTECHNICAL ASSISTANCE\nREPORT",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.124,
+                0.419,
+                0.789,
+                0.549
+            ],
+            "angle": 0,
+            "content": "CAMBODIA\nSTRENGTHENING THE CONTROL\nOVER BUDGET EXECUTION",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.125,
+                0.563,
+                0.303,
+                0.587
+            ],
+            "angle": 0,
+            "content": "March 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.124,
+                0.634,
+                0.605,
+                0.676
+            ],
+            "angle": 0,
+            "content": "Prepared By Jean-Luc Helis, Sha Wen, Davit Gamkrelidze, Anupam Raj",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.129,
+                0.732,
+                0.492,
+                0.75
+            ],
+            "angle": 0,
+            "content": "Authoring Departments/Institutions:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.133,
+                0.753,
+                0.398,
+                0.773
+            ],
+            "angle": 0,
+            "content": "Fiscal Affairs Department (FAD)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.133,
+                0.779,
+                0.572,
+                0.799
+            ],
+            "angle": 0,
+            "content": "IMF Capacity Development Office in Thailand (CDOT)",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.243,
+                0.678,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.282,
+                0.728,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.322,
+                0.324,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.131,
+                0.42,
+                0.407,
+                0.453
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.47,
+                0.786,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.518,
+                0.671,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.562,
+                0.301,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.635,
+                0.251,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.658,
+                0.602,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.731,
+                0.491,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.132,
+                0.752,
+                0.396,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.133,
+                0.779,
+                0.57,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.114,
+                0.09,
+                0.477,
+                0.107
+            ],
+            "angle": 0,
+            "content": "©2026 International Monetary Fund [HLS/26/035]"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.301,
+                0.122,
+                0.698,
+                0.159
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report\nFiscal Affairs Department"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.222,
+                0.178,
+                0.776,
+                0.214
+            ],
+            "angle": 0,
+            "content": "Strengthening the Control Over Budget Execution\nPrepared by Jean-Luc Helis, Sha Wen, Davit Gamkrelidze and Anupam Raj",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.232,
+                0.836,
+                0.287
+            ],
+            "angle": 0,
+            "content": "The High-Level Summary Technical Assistance Report series provides high-level summaries of the assistance provided to IMF capacity development recipients, describing the high-level objectives, findings, and recommendations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.305,
+                0.874,
+                0.432
+            ],
+            "angle": 0,
+            "content": "ABSTRACT: The technical assistance identifies strengths in budget execution – including in the legal framework, digitalization, cash management and implementation of the Treasury Single Account (TSA) – and in fiscal responsibility and upstream investment planning but also highlights the need to continue reforms in these areas. The report emphasizes the need to extend and enhance the FMIS to improve cash balance visibility, automatic reconciliation and commitment recording; strengthen the identification and management of cash advances and public arrears; fully implement the TSA system; and develop a more active cash management.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.122,
+                0.455,
+                0.442,
+                0.474
+            ],
+            "angle": 0,
+            "content": "JEL Classification Numbers H61, H63, H83",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.121,
+                0.483,
+                0.776,
+                0.502
+            ],
+            "angle": 0,
+            "content": "Keywords: Budget execution, FMIS, cash advances, arrears, cash management and TSA",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.654,
+                0.883,
+                0.744
+            ],
+            "angle": 0,
+            "content": "The contents of this document constitute a high-level summary of technical advice provided by the staff of the International Monetary Fund (IMF) to the authorities of Cambodia (the \"CD recipient\") in response to their request for capacity development. Unless the CD recipient specifically objects within 30 business days of its transmittal, the IMF will publish this high-level summary on IMF.org (see Staff Operational Guidance on the Dissemination of Capacity Development Information).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.321,
+                0.777,
+                0.675,
+                0.868
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund, IMF Publications\nP.O. Box 92780, Washington, DC 20090, U.S.A.\nT. +(1) 202.623.7430 • F. +(1) 202.623.7201\npublications@IMF.org\nIMF.org/pubs",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.304,
+                0.125,
+                0.696,
+                0.14
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.407,
+                0.144,
+                0.592,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.305,
+                0.18,
+                0.693,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.225,
+                0.197,
+                0.773,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.235,
+                0.834,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.253,
+                0.815,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.271,
+                0.348,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.306,
+                0.846,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.325,
+                0.871,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.342,
+                0.845,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.362,
+                0.846,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.38,
+                0.861,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.399,
+                0.861,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.417,
+                0.344,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.458,
+                0.438,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.487,
+                0.772,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.655,
+                0.879,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.673,
+                0.866,
+                0.685
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.691,
+                0.853,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.71,
+                0.842,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.728,
+                0.625,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.331,
+                0.779,
+                0.667,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.324,
+                0.798,
+                0.672,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.332,
+                0.815,
+                0.665,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.418,
+                0.834,
+                0.579,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.451,
+                0.853,
+                0.548,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.115,
+                0.093,
+                0.293,
+                0.118
+            ],
+            "angle": 0,
+            "content": "Background"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.134,
+                0.885,
+                0.252
+            ],
+            "angle": 0,
+            "content": "Upon the request of the Ministry of Finance and Economics (MEF) of Cambodia, a two-week in-country technical assistance (TA) mission was conducted in Phnom Penh on October 15–29, 2025. The TA aimed to undertake a comprehensive strategic review of the budget execution processes, managed by the General Department of Budgeting (GDB) and the General Department of National Treasury (GDNT), looking at areas to strengthen and automate processes and controls, including through the FMIS, to improve the efficiency of expenditure execution. Additionally, at GDNT's request, the mission provided a three-day training on cash forecasting.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.268,
+                0.424,
+                0.293
+            ],
+            "angle": 0,
+            "content": "Summary of Findings"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.308,
+                0.885,
+                0.394
+            ],
+            "angle": 0,
+            "content": "Since 2004, the Royal Government of Cambodia (RGC) has been carrying out an ambitious and sequenced Public Financial Management Reform Program (PFMRP) to modernize its public financial management (PFM) systems and practices. Various policies and strategies, including the updated Budget System Reform Strategy (BSRS) 2025-28 and the recently adopted Road Map for Managing Public Arrears 2025–2028 (\"the Roadmap\") accompany the implementation of the reform program.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.407,
+                0.875,
+                0.558
+            ],
+            "angle": 0,
+            "content": "Significant progress has been made over the last two decades on budget execution. Recent progress includes: a strengthened legal framework for PFM, with the 2023 Law on Public Finance System and Sub-Decree on Budget and Public Accounting Management, and two new sub-Decrees concerning the Budget Control Units within line ministries (LMs) and the Authority and Responsibilities of Budget Controllers; improved fiscal and budget management; and enhanced digital transformation. An important achievement has been the sustainability of the reform process over the years, with strong political commitment and ownership, and continuous support and involvement of the General Secretariat of the Public Financial Management Reform Steering Committee (GSC) and the main General Departments of the MEF.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.573,
+                0.885,
+                0.708
+            ],
+            "angle": 0,
+            "content": "The authorities, however, recognize that important efforts are still needed to fully implement priority reforms in the area of budget execution. These reforms, also identified in the roadmap, include the full implementation and use of the FMIS, speeding up business process streamlining for the remaining LMs to improve timeliness of financial transactions, efficiently closing the budget process at the end of the fiscal year, and effective delegation of budget management authority to budget entities. Other key reforms include strengthening public investment management, progressively decentralizing public procurement, better managing fiscal risks and cash advances, improving fiscal reporting, enhancing cash management, and developing a sound treasury single account (TSA) system.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.114,
+                0.74,
+                0.565,
+                0.764
+            ],
+            "angle": 0,
+            "content": "Summary of Recommendations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.78,
+                0.877,
+                0.848
+            ],
+            "angle": 0,
+            "content": "The mission assisted the authorities in developing a priority action plan to operationalize the implementation of the reform roadmap for the period 2026-28. Measurables performance indicators have been proposed to monitor the implementation of the priority measures and ensure rigorous implementation of the expected results. The priority recommendations concern the following:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.125,
+                0.854,
+                0.842,
+                0.905
+            ],
+            "angle": 0,
+            "content": "- FMIS Expansion and Enhancement. While the FMIS is the central digital tool for PFM with most entities adopting it, new modules like e-Procurement and e-Invoice need to be finalized and implemented. Converting all remaining unauthorized budget entities into fully authorized budget",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.115,
+                0.957,
+                0.152,
+                0.971
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.492,
+                0.957,
+                0.862,
+                0.973
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.869,
+                0.958,
+                0.884,
+                0.971
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.092,
+                0.292,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.135,
+                0.861,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.152,
+                0.882,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.169,
+                0.835,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.184,
+                0.841,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.202,
+                0.837,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.219,
+                0.867,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.235,
+                0.394,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.266,
+                0.422,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.309,
+                0.812,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.327,
+                0.846,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.344,
+                0.881,
+                0.358
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.361,
+                0.834,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.376,
+                0.779,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.41,
+                0.848,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.425,
+                0.846,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.441,
+                0.859,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.458,
+                0.818,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.475,
+                0.872,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.493,
+                0.821,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.509,
+                0.857,
+                0.522
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.525,
+                0.87,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.542,
+                0.184,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.575,
+                0.831,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.591,
+                0.852,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.606,
+                0.865,
+                0.621
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.625,
+                0.845,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.64,
+                0.882,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.656,
+                0.862,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.673,
+                0.879,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.692,
+                0.571,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.739,
+                0.564,
+                0.764
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.782,
+                0.78,
+                0.794
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.798,
+                0.872,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.815,
+                0.771,
+                0.827
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.83,
+                0.785,
+                0.845
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.856,
+                0.837,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.872,
+                0.806,
+                0.884
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.89,
+                0.836,
+                0.902
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.091,
+                0.877,
+                0.209
+            ],
+            "angle": 0,
+            "content": "entities by 2027 should boost budget execution efficiency by giving them direct access to FMIS and ability to use electronic funds transfer (EFT). Expanding FMIS linkage with banks and revenue systems will give a better view into balances of all non-TSA government accounts such as cash advance accounts and project accounts, and improve balance visibility, automatic reconciliation, and commitment recording. The FMIS functionality to record multi-year commitments can also be used to record recurrent commitments for a budget year in its preceding year to allow the procurement process to start early, making the expenditure more even across the quarters of the fiscal year.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.225,
+                0.873,
+                0.326
+            ],
+            "angle": 0,
+            "content": "- Cash Advances and Arrears Control. To ensure the full implementation of the Roadmap, the MEF should develop and adopt the necessary legal framework and further align the definition of expenditure arrears with international practices. In addition, to mitigate the impact of lengthy budget execution processes on the accumulation of arrears, the MEF could consider allowing the internal preparation and clearance of commitment requests before the start of the fiscal year and introducing tiered approval thresholds for commitment controls.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.125,
+                0.342,
+                0.875,
+                0.427
+            ],
+            "angle": 0,
+            "content": "- Treasury Single Account (TSA) and Cash Flow Forecasting. While revenue consolidation under TSA is strong, oversight and reconciliation of expenditure accounts outside TSA should be strengthened. Enhancing the legal framework is critical to provide clear monitoring rules, reporting obligations, and accountability for non-compliance, account visibility, phased TSA expansion, and improving cash forecasting quality and governance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.443,
+                0.882,
+                0.477
+            ],
+            "angle": 0,
+            "content": "- Active Cash Management. Linking FMIS with debt systems and strengthening the Cash Management Committee can improve planning and enable safe short-term investments to optimize idle funds.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.115,
+                0.957,
+                0.152,
+                0.971
+            ],
+            "angle": 0,
+            "content": "IMF"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.493,
+                0.957,
+                0.862,
+                0.973
+            ],
+            "angle": 0,
+            "content": "High-Level Summary Technical Assistance Report"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.869,
+                0.958,
+                0.883,
+                0.971
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.092,
+                0.865,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.108,
+                0.826,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.125,
+                0.835,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.142,
+                0.872,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.159,
+                0.874,
+                0.171
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.176,
+                0.829,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.193,
+                0.83,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.226,
+                0.851,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.243,
+                0.8,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.26,
+                0.866,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.277,
+                0.851,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.294,
+                0.869,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.311,
+                0.516,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.129,
+                0.343,
+                0.872,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.144,
+                0.359,
+                0.867,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.376,
+                0.868,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.145,
+                0.392,
+                0.846,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.411,
+                0.403,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.444,
+                0.878,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.462,
+                0.838,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

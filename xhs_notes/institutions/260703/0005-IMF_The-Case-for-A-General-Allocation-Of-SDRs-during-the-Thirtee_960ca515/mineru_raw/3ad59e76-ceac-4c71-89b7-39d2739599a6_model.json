@@ -1,0 +1,3115 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.076,
+                0.017,
+                0.171,
+                0.097
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL\nMONETARY FUND"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.225,
+                0.063,
+                0.806,
+                0.091
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.204,
+                0.137,
+                0.557,
+                0.168
+            ],
+            "angle": 0,
+            "content": "IMF POLICY PAPER"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.061,
+                0.201,
+                0.145,
+                0.218
+            ],
+            "angle": 0,
+            "content": "June 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.201,
+                0.175,
+                0.816,
+                0.221
+            ],
+            "angle": 0,
+            "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRs\nDURING THE THIRTEENTH BASIC PERIOD",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.199,
+                0.236,
+                0.878,
+                0.29
+            ],
+            "angle": 0,
+            "content": "IMF staff regularly produces papers proposing new IMF policies, exploring options for reform, or reviewing existing IMF policies and operations. The following documents have been released and are included in this package:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.194,
+                0.325,
+                0.861,
+                0.36
+            ],
+            "angle": 0,
+            "content": "- The Report of the Managing Director to the Board of Governors, transmitted to the Board of Governors on June 26, 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.194,
+                0.372,
+                0.839,
+                0.408
+            ],
+            "angle": 0,
+            "content": "- The Staff Report, prepared by IMF staff and completed on June 15, 2026 for the Executive Board's Information.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.2,
+                0.438,
+                0.881,
+                0.491
+            ],
+            "angle": 0,
+            "content": "The IMF's transparency policy allows for the deletion of market-sensitive information and premature disclosure of the authorities' policy intentions in published staff reports and other documents.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.364,
+                0.508,
+                0.716,
+                0.564
+            ],
+            "angle": 0,
+            "content": "Electronic copies of IMF Policy Papers are available to the public from http://www.imf.org/external/pp/ppindex.aspx",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.392,
+                0.581,
+                0.688,
+                0.625
+            ],
+            "angle": 0,
+            "content": "International Monetary Fund\nWashington, D.C.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.196,
+                0.938,
+                0.479,
+                0.955
+            ],
+            "angle": 0,
+            "content": "© 2026 International Monetary Fund"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.138,
+                0.554,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.064,
+                0.204,
+                0.141,
+                0.217
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.205,
+                0.18,
+                0.812,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.201,
+                0.714,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.204,
+                0.237,
+                0.854,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.204,
+                0.256,
+                0.875,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.204,
+                0.273,
+                0.564,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.199,
+                0.331,
+                0.206,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.226,
+                0.325,
+                0.858,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.227,
+                0.345,
+                0.541,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.199,
+                0.38,
+                0.206,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.228,
+                0.375,
+                0.835,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.227,
+                0.392,
+                0.455,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.205,
+                0.44,
+                0.879,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.205,
+                0.458,
+                0.859,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.206,
+                0.476,
+                0.338,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.396,
+                0.51,
+                0.684,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.421,
+                0.529,
+                0.659,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.368,
+                0.545,
+                0.712,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.395,
+                0.583,
+                0.685,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.453,
+                0.605,
+                0.626,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.33,
+                0.1,
+                0.669,
+                0.119
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.14,
+                0.87,
+                0.176
+            ],
+            "angle": 0,
+            "content": "Report of the Managing Director to the Board of Governors Pursuant to Article XVIII, Section 4(c) for the Thirteenth Basic Period",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.445,
+                0.208,
+                0.555,
+                0.224
+            ],
+            "angle": 0,
+            "content": "June 26, 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.24,
+                0.886,
+                0.346
+            ],
+            "angle": 0,
+            "content": "The Twelfth Basic Period began on January 1, 2022 and is scheduled to end on December 31, 2026. The Thirteenth Basic Period will commence on January 1, 2027. The Articles of Agreement require the Managing Director to determine whether there is a case for a proposal regarding a general allocation or cancellation of Special Drawing Rights (SDR) in the next Basic Period to the Board of Governors no later than six months before the end of each Basic Period (Article XVIII, Section 4(c).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.36,
+                0.879,
+                0.6
+            ],
+            "angle": 0,
+            "content": "The Managing Director must be satisfied that a proposal for a general allocation or cancellation of SDRs, in her view: (i) is consistent with meeting the long-term global need to supplement existing reserve assets as set out in Article XVIII, Section 1(a); and (ii) would have broad support among participants in accordance with Section 4(b) of the same Article. Executive Board concurrence is required under Article XVIII, Section 4(a) for the proposal. Pursuant to Article XVIII, Section 4(d), a decision of the Board of Governors approving such a proposal of the Managing Director would require an 85 percent majority of the total voting power of members representing participants in the SDR Department, which currently encompasses all members of the Fund. If the Managing Director ascertains that there is no proposal consistent with Article XVIII, Section 1(a) that has broad support among participants, she must so report to the Board of Governors and to the Executive Board. The present report is submitted in accordance with these provisions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.613,
+                0.837,
+                0.653
+            ],
+            "angle": 0,
+            "content": "In forming my view as to whether there is currently a basis for a new proposal, I have taken the following into consideration:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.667,
+                0.885,
+                0.907
+            ],
+            "angle": 0,
+            "content": "- The case for a new allocation is not clear at this time. Since the 2021 General SDR allocation—the largest in Fund history—that took place during the last Basic Period, global developments have been characterized by resilient economic growth, high levels of international reserve assets, ample global liquidity, and improved access of emerging market economies to international capital markets. Despite the wars in Ukraine and the Middle East, since 2021, reserve assets have increased by over 21 percent globally, and by over 22 percent for emerging and developing countries (excluding China). The stock of SDRs relative to global reserves, capital flows, and international trade remain elevated, well above the levels before the 2021 Allocation as well as historical averages. While the war in the Middle East has already had major impacts on many members, its impact across members is asymmetric, along with its duration being unknown. As such, there is no strong evidence of a long-term",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.332,
+                0.103,
+                0.666,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.135,
+                0.141,
+                0.868,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.159,
+                0.688,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.447,
+                0.209,
+                0.552,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.242,
+                0.864,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.263,
+                0.881,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.285,
+                0.883,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.308,
+                0.881,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.329,
+                0.744,
+                0.342
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.36,
+                0.861,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.383,
+                0.853,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.114,
+                0.405,
+                0.83,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.429,
+                0.837,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.45,
+                0.851,
+                0.464
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.472,
+                0.835,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.495,
+                0.876,
+                0.509
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.517,
+                0.858,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.539,
+                0.868,
+                0.55
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.561,
+                0.86,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.583,
+                0.6,
+                0.597
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.613,
+                0.834,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.636,
+                0.334,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.67,
+                0.79,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.692,
+                0.861,
+                0.704
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.714,
+                0.805,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.735,
+                0.876,
+                0.749
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.758,
+                0.872,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.779,
+                0.88,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.801,
+                0.832,
+                0.814
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.823,
+                0.865,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.845,
+                0.882,
+                0.859
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.869,
+                0.842,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.889,
+                0.864,
+                0.903
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.493,
+                0.056,
+                0.506,
+                0.069
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.171,
+                0.092,
+                0.838,
+                0.155
+            ],
+            "angle": 0,
+            "content": "need to supplement global reserve assets at the current juncture. Staff will continue to closely monitor the situation in case the effects of the war become more persistent and widespread.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.111,
+                0.169,
+                0.866,
+                0.406
+            ],
+            "angle": 0,
+            "content": "- A new general SDR allocation would not receive the necessary support in terms of voting majority at this stage that is required for any proposal to succeed. In recent bilateral consultations, while a few Executive Directors saw merit in an allocation, Directors representing a majority of participants in terms of their voting power indicated that they would not support a new allocation in the current context. For reference, the last two SDR general allocations took place in the context of major global economic developments; the 2021 General SDR Allocation (SDR 456.5 billion) in the context of the COVID-19 Crisis, and the 2009 General Allocation (SDR 161.2 billion, in addition to the special allocation of SDR 21.5 billion to implement the Fourth Amendment to the Articles of Agreement) during the Global Financial Crisis. Prior to 2009, no general allocation had been approved since 1981.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.112,
+                0.421,
+                0.884,
+                0.506
+            ],
+            "angle": 0,
+            "content": "On the basis of these considerations, I informed the Executive Board in my report of June 15, 2026 of my view at this stage that I would not be in a position to make, by June 30 of this year, a proposal for the Thirteenth Basic Period consistent with the provisions of the Articles that would have the broad support among participants.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.113,
+                0.52,
+                0.865,
+                0.604
+            ],
+            "angle": 0,
+            "content": "In accordance with Article XVIII, Section 4(c), this does not preclude me during the Thirteenth Basic Period from making proposals on my own initiative, nor the Board of Governors or the Executive Board from requesting that I make a proposal, including in the event of unexpected major developments.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.871,
+                0.937,
+                0.884,
+                0.95
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.095,
+                0.828,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.117,
+                0.835,
+                0.13
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.139,
+                0.268,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.17,
+                0.849,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.194,
+                0.809,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.215,
+                0.792,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.237,
+                0.844,
+                0.253
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.259,
+                0.854,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.281,
+                0.855,
+                0.295
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.175,
+                0.303,
+                0.857,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.324,
+                0.823,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.346,
+                0.862,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.174,
+                0.368,
+                0.838,
+                0.383
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.173,
+                0.389,
+                0.22,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.423,
+                0.88,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.445,
+                0.88,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.467,
+                0.865,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.489,
+                0.331,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.52,
+                0.864,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.544,
+                0.845,
+                0.557
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.565,
+                0.796,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.588,
+                0.228,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.017,
+                0.179,
+                0.097
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.235,
+                0.063,
+                0.831,
+                0.091
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.036,
+                0.185,
+                0.147,
+                0.201
+            ],
+            "angle": 0,
+            "content": "June 15, 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.209,
+                0.159,
+                0.869,
+                0.207
+            ],
+            "angle": 0,
+            "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRs DURING\nTHE THIRTEENTH BASIC PERIOD"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.211,
+                0.25,
+                0.53,
+                0.274
+            ],
+            "angle": 0,
+            "content": "EXECUTIVE SUMMARY"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.209,
+                0.305,
+                0.885,
+                0.457
+            ],
+            "angle": 0,
+            "content": "This report sets out the basis for consideration of a new allocation or cancelation of Special Drawing Rights (SDRs) for the next (Thirteenth) Basic Period, scheduled to begin on January 1, 2027. The Articles of Agreement require that the Managing Director determine whether there is a case for general SDR allocation or cancellation to the Board of Governors no later than six months before the end of each five-year Basic Period. The case to make a proposal is based on two requirements: (i) consistency with meeting the long-term global need to supplement existing reserve assets; and (ii) broad support among participants for the proposal",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.209,
+                0.475,
+                0.88,
+                0.608
+            ],
+            "angle": 0,
+            "content": "This paper does not present a proposal for a new allocation of SDRs. There is neither a clear economic case nor the necessary support for a new allocation at present. Since the 2021 General SDR Allocation, global developments have been characterized by resilient economic growth, high levels of international reserve assets, ample global liquidity, and improved access of emerging market economies to international capital markets. Moreover, there are clear indications that a new general SDR allocation would not receive the necessary support to proceed.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.209,
+                0.626,
+                0.875,
+                0.74
+            ],
+            "angle": 0,
+            "content": "Based on these considerations, the Managing Director does not plan to make a proposal by June 30, 2026. This does not preclude the Managing Director to make a proposal, at her initiative or at the request of the Board of Governors or the Executive Board, at any time during the Thirteenth Basic Period. Management and staff will continue to carefully monitor the evolving global situation, and remain in close contact with the membership to see how the Fund can best meet their needs.",
+            "merge_prev": false
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.039,
+                0.186,
+                0.144,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.215,
+                0.165,
+                0.865,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.215,
+                0.189,
+                0.575,
+                0.208
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.216,
+                0.253,
+                0.526,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.216,
+                0.307,
+                0.866,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.214,
+                0.325,
+                0.878,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.213,
+                0.344,
+                0.851,
+                0.36
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.215,
+                0.364,
+                0.874,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.213,
+                0.381,
+                0.871,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.214,
+                0.401,
+                0.87,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.214,
+                0.42,
+                0.881,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.214,
+                0.44,
+                0.553,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.215,
+                0.477,
+                0.832,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.214,
+                0.495,
+                0.878,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.214,
+                0.515,
+                0.862,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.214,
+                0.533,
+                0.861,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.214,
+                0.552,
+                0.862,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.214,
+                0.572,
+                0.871,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.214,
+                0.591,
+                0.561,
+                0.605
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.214,
+                0.628,
+                0.852,
+                0.642
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.215,
+                0.648,
+                0.864,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.212,
+                0.666,
+                0.862,
+                0.68
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.212,
+                0.685,
+                0.826,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.214,
+                0.705,
+                0.872,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.214,
+                0.723,
+                0.739,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.116,
+                0.049,
+                0.718,
+                0.064
+            ],
+            "angle": 0,
+            "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRS DURING THE THIRTEENTH BASIC PERIOD"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.125,
+                0.09,
+                0.262,
+                0.111
+            ],
+            "angle": 0,
+            "content": "Approved By"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.125,
+                0.111,
+                0.301,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Bernard Lauwers (FIN)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.125,
+                0.128,
+                0.232,
+                0.144
+            ],
+            "angle": 0,
+            "content": "Yan Liu (LEG)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.125,
+                0.145,
+                0.322,
+                0.162
+            ],
+            "angle": 0,
+            "content": "Christian Mumssen (SPR)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.337,
+                0.091,
+                0.861,
+                0.216
+            ],
+            "angle": 0,
+            "content": "Prepared by the Finance (FIN), Legal (LEG), and Strategy, Policy, and Review (SPR) Departments. The team was led by J. Gijón (FIN), C. Delong (LEG), and A. Shahmoradi (SPR); and comprised Q. Chen and N. Magud (FIN). J. Thornton provided overall guidance under the supervision of C. Oner (FIN), B. Steinki (LEG), and G. Chabert (SPR). G. Pais Marden (FIN) provided research assistance. M. DeGuzman and R. Avila (both FIN) helped prepare the report.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.139,
+                0.235,
+                0.281,
+                0.257
+            ],
+            "angle": 0,
+            "content": "CONTENTS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.299,
+                0.858,
+                0.318
+            ],
+            "angle": 0,
+            "content": "BACKGROUND 3",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.337,
+                0.858,
+                0.357
+            ],
+            "angle": 0,
+            "content": "CASE FOR AN ALLOCATION ____ 3",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.375,
+                0.857,
+                0.394
+            ],
+            "angle": 0,
+            "content": "CONCLUSION 4",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.415,
+                0.192,
+                0.433
+            ],
+            "angle": 0,
+            "content": "FIGURES"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.435,
+                0.857,
+                0.453
+            ],
+            "angle": 0,
+            "content": "1. Reserve Assets and Sovereign Issuances ____ 5",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.454,
+                0.858,
+                0.472
+            ],
+            "angle": 0,
+            "content": "2. Long-term Perspective of SDR Holdings, 1980–2025 ____ 6",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.117,
+                0.933,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.155,
+                0.939,
+                0.391,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.126,
+                0.09,
+                0.261,
+                0.112
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.112,
+                0.299,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.128,
+                0.229,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.128,
+                0.146,
+                0.32,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.338,
+                0.092,
+                0.855,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.339,
+                0.111,
+                0.828,
+                0.125
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.341,
+                0.129,
+                0.859,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.339,
+                0.147,
+                0.832,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.339,
+                0.164,
+                0.859,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.338,
+                0.18,
+                0.849,
+                0.196
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.338,
+                0.199,
+                0.684,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.235,
+                0.282,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.302,
+                0.241,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.841,
+                0.303,
+                0.856,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.339,
+                0.342,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.842,
+                0.34,
+                0.855,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.378,
+                0.232,
+                0.394
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.846,
+                0.378,
+                0.856,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.419,
+                0.189,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.436,
+                0.439,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.842,
+                0.437,
+                0.856,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.455,
+                0.529,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.843,
+                0.456,
+                0.856,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.28,
+                0.049,
+                0.882,
+                0.064
+            ],
+            "angle": 0,
+            "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRS DURING THE THIRTEENTH BASIC PERIOD"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.118,
+                0.098,
+                0.326,
+                0.12
+            ],
+            "angle": 0,
+            "content": "BACKGROUND"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.153,
+                0.874,
+                0.284
+            ],
+            "angle": 0,
+            "content": "1. The Articles of Agreement require the Managing Director to determine whether there is a case for a proposal regarding a general SDR allocation or cancellation to the Board of Governors no later than six months before the end of each five-year Basic Period. The Twelfth Basic Period began on January 1, 2022, and is scheduled to end on December 31, 2026. The Thirteenth Basic Period will commence on January 1, 2027, and based on Article XVIII, Section 4(c) the Managing Director has to make a proposal regarding a general allocation or cancellation to the Board of Governors by June 30, 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.3,
+                0.881,
+                0.528
+            ],
+            "angle": 0,
+            "content": "2. Before making any proposal, the Managing Director must be satisfied that a proposal for a general allocation or cancellation of SDRs, in her view: (i) is consistent with meeting the long-term global need to supplement existing reserve assets as set out in Article XVIII, Section 1(a); and (ii) that there is broad support among participants for the proposal in accordance with Section 4(b) of the same Article. Executive Board concurrence is required under Article XVIII, Section 4(a) for the proposal. Under Article XVIII, Section 4(d), a decision of the Board of Governors approving such a proposal of the Managing Director requires an 85 percent majority of the total voting power of participants in the SDR Department, which currently encompasses all members of the Fund (Article XVIII, Section 4(d)). If the Managing Director ascertains that there is no proposal which she considers consistent with Article XVIII, Section 1(a) that has broad support among participants, she must so report to the Board of Governors and to the Executive Board (Article XVIII, Section 4(c)). The present report is submitted in accordance with these provisions.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.573,
+                0.499,
+                0.597
+            ],
+            "angle": 0,
+            "content": "CASE FOR AN ALLOCATION"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.116,
+                0.628,
+                0.842,
+                0.646
+            ],
+            "angle": 0,
+            "content": "3. In determining whether to make a proposal, the following issues were considered:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.663,
+                0.876,
+                0.89
+            ],
+            "angle": 0,
+            "content": "- The lack of a clear case for a new allocation. The case for a new allocation in accordance with Article XVII, Section 1(a) is not clear at this time. Since the 2021 General SDR allocation—the largest in Fund history—that took place during the last Basic Period, global developments have been characterized by resilient economic growth, high levels of international reserve assets, ample global liquidity, and improved access of emerging market economies to international capital markets (Figure 1). Notwithstanding the wars in Ukraine and the Middle East, reserve assets have increased by over 21 percent globally since 2021, and by over 22 percent for emerging and developing countries (excluding China). The stock of SDRs relative to global reserves, capital flows, and international trade remain elevated, well above the levels before the 2021 Allocation as well as historical averages (Figure 2). While the war in the Middle East has already had major impacts on many members, its impact across members is asymmetric, and its duration unknown. In view of the above-mentioned factors, staff does not see a case for new",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.614,
+                0.939,
+                0.85,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.863,
+                0.934,
+                0.876,
+                0.955
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.1,
+                0.324,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.154,
+                0.136,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.154,
+                0.869,
+                0.168
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.173,
+                0.842,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.192,
+                0.869,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.211,
+                0.811,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.23,
+                0.857,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.249,
+                0.869,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.269,
+                0.401,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.301,
+                0.138,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.176,
+                0.303,
+                0.869,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.32,
+                0.871,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.34,
+                0.815,
+                0.354
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.36,
+                0.821,
+                0.372
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.378,
+                0.876,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.397,
+                0.88,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.416,
+                0.863,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.435,
+                0.834,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.454,
+                0.871,
+                0.467
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.473,
+                0.828,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.493,
+                0.828,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.511,
+                0.831,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.575,
+                0.496,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.115,
+                0.629,
+                0.841,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.664,
+                0.873,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.685,
+                0.843,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.704,
+                0.867,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.722,
+                0.837,
+                0.733
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.742,
+                0.843,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.759,
+                0.843,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.778,
+                0.816,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.797,
+                0.831,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.817,
+                0.868,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.147,
+                0.834,
+                0.847,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.855,
+                0.872,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.872,
+                0.85,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.121,
+                0.668,
+                0.125,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.116,
+                0.049,
+                0.718,
+                0.064
+            ],
+            "angle": 0,
+            "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRS DURING THE THIRTEENTH BASIC PERIOD"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.144,
+                0.093,
+                0.831,
+                0.13
+            ],
+            "angle": 0,
+            "content": "allocation. Staff will continue to monitor the situation closely in case the effects of the war become more persistent and widespread.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.116,
+                0.141,
+                0.881,
+                0.35
+            ],
+            "angle": 0,
+            "content": "- The lack of broad support of participants for a new allocation. There are clear indications that a new general SDR allocation would not receive the necessary 85 percent majority of the total voting power in the Board of Governors at present. In recent bilateral consultations, while a few Executive Directors saw merit in an allocation, Executive Directors representing a majority of the participants in terms of voting power indicated that they would not support a new allocation in the current context. For reference, the last two SDR general allocations took place in the context of major global economic developments; the 2021 General SDR Allocation (SDR 456.5 billion) in the context of the COVID-19 Crisis, and the 2009 General Allocation (SDR 161.2 billion, in addition to a special allocation of SDR 21.5 billion to implement the Fourth Amendment to the Articles of Agreement) during the Global Financial Crisis. Prior to 2009, no general allocation had been approved since 1981.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.38,
+                0.31,
+                0.404
+            ],
+            "angle": 0,
+            "content": "CONCLUSION"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.435,
+                0.87,
+                0.568
+            ],
+            "angle": 0,
+            "content": "4. In light of the considerations above, the Managing Director does not plan to make a proposal by June 30 of this year. This conclusion is based on Article XVIII, Section 4, which requires that the Managing Director make a proposal only if, in her view, such a proposal would be consistent with meeting the long-term global need to supplement existing reserve assets, and would also have broad support among participants. In view of this requirement, the considerations above, and the Executive Board's interest in streamlining, the Managing Director does not plan to propose a Board discussion of the issue on this occasion.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.114,
+                0.583,
+                0.879,
+                0.678
+            ],
+            "angle": 0,
+            "content": "5. This conclusion does not preclude the Managing Director from making a proposal during the Thirteenth Basic Period. In accordance with Article XVIII, Section 4(c), the Managing Director can propose an allocation or cancellation, at her own initiative or at the request of the Board of Governors or the Executive Board, at any time during the remainder of the Thirteenth Basic Period, such as in the case of unexpected major developments that could motivate such a proposal.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.117,
+                0.933,
+                0.131,
+                0.955
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.155,
+                0.939,
+                0.391,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.094,
+                0.828,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.114,
+                0.461,
+                0.129
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.147,
+                0.127,
+                0.153
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.143,
+                0.852,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.163,
+                0.852,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.18,
+                0.878,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.2,
+                0.875,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.219,
+                0.876,
+                0.232
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.238,
+                0.832,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.257,
+                0.77,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.276,
+                0.822,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.149,
+                0.295,
+                0.875,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.146,
+                0.312,
+                0.855,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.148,
+                0.333,
+                0.525,
+                0.346
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.117,
+                0.382,
+                0.309,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.437,
+                0.136,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.178,
+                0.438,
+                0.858,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.456,
+                0.816,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.475,
+                0.866,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.495,
+                0.828,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.513,
+                0.865,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.531,
+                0.855,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.551,
+                0.549,
+                0.564
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.584,
+                0.137,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.177,
+                0.585,
+                0.839,
+                0.6
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.604,
+                0.851,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.623,
+                0.835,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.118,
+                0.641,
+                0.876,
+                0.656
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.116,
+                0.66,
+                0.872,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.282,
+                0.049,
+                0.885,
+                0.064
+            ],
+            "angle": 0,
+            "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRS DURING THE THIRTEENTH BASIC PERIOD"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.299,
+                0.094,
+                0.701,
+                0.112
+            ],
+            "angle": 0,
+            "content": "Figure 1. Reserve Assets and Sovereign Issuances"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.378,
+                0.12,
+                0.621,
+                0.157
+            ],
+            "angle": 0,
+            "content": "Global Reserve Assets, 1995–2025 (In trillions of SDRs)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.266,
+                0.18,
+                0.727,
+                0.412
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.386,
+                0.442,
+                0.614,
+                0.479
+            ],
+            "angle": 0,
+            "content": "Sovereign Issuances, 2005–2025\n(In billions of USD)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.266,
+                0.492,
+                0.727,
+                0.715
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.727,
+                0.512,
+                0.743
+            ],
+            "angle": 0,
+            "content": "Source: IMF; World Economic Outlook; and Fund staff calculations."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.616,
+                0.939,
+                0.852,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.865,
+                0.934,
+                0.878,
+                0.955
+            ],
+            "angle": 0,
+            "content": "5"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.114,
+                0.048,
+                0.716,
+                0.064
+            ],
+            "angle": 0,
+            "content": "THE CASE FOR A GENERAL ALLOCATION OF SDRS DURING THE THIRTEENTH BASIC PERIOD"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.249,
+                0.093,
+                0.749,
+                0.131
+            ],
+            "angle": 0,
+            "content": "Figure 2. Long-term Perspective of SDR Holdings, 1980–2025 (In percent of)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.432,
+                0.139,
+                0.569,
+                0.157
+            ],
+            "angle": 0,
+            "content": "Global Reserves 1/"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.284,
+                0.173,
+                0.698,
+                0.369
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.405,
+                0.385,
+                0.594,
+                0.404
+            ],
+            "angle": 0,
+            "content": "Global Gross Capital Flows"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.289,
+                0.426,
+                0.713,
+                0.6
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.443,
+                0.614,
+                0.557,
+                0.63
+            ],
+            "angle": 0,
+            "content": "Global Trade 3/"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.281,
+                0.657,
+                0.712,
+                0.821
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.837,
+                0.512,
+                0.853
+            ],
+            "angle": 0,
+            "content": "Source: IMF; World Economic Outlook; and Fund staff calculations."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.852,
+                0.234,
+                0.866
+            ],
+            "angle": 0,
+            "content": "1/ Including gold."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.865,
+                0.24,
+                0.879
+            ],
+            "angle": 0,
+            "content": "2/ Excluding China."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.125,
+                0.879,
+                0.259,
+                0.892
+            ],
+            "angle": 0,
+            "content": "3/ Goods and services."
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.115,
+                0.934,
+                0.128,
+                0.955
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.152,
+                0.939,
+                0.389,
+                0.954
+            ],
+            "angle": 0,
+            "content": "INTERNATIONAL MONETARY FUND"
+        }
+    ]
+]
