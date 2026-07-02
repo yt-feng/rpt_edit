@@ -1,0 +1,1768 @@
+[
+    {
+        "type": "text",
+        "text": "June 30, 2026 03:12 PM GMT",
+        "bbox": [
+            62,
+            74,
+            256,
+            92
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Internet | North America",
+        "bbox": [
+            63,
+            97,
+            328,
+            119
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Where Are We Trading Now: Will the AI Flows Move Toward Internet Thru EPS?",
+        "text_level": 1,
+        "bbox": [
+            62,
+            128,
+            583,
+            239
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Internet names fell -6% (SPX/NDX -2/-5%) led by GOOGL -8% while AMZN/META both -5%. BKNG +6%, RDDT -5%, and RBLX -8%. AMZN/GOOGL/META 25X/23X/17X '26 EPS (-22%/-11%/-20% vs TTM avg).",
+        "bbox": [
+            60,
+            257,
+            594,
+            339
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MS & CO. LLC\nBrian Nowak, CFA\nEquity Analyst\nBrian.Nowak@morganstanley.com +1 212 761-3365\nMatthew Cost\nEquity Analyst\nMatthew.Cost@morganstanley.com +1 212 761-7252\nNathan Feather\nEquity Analyst\nNathan.Feather@morganstanley.com +1 212 761-9812\nJulian Herrera\nResearch Associate\nJulian.Herrera@morganstanley.com +1 212 761-1784\nGregory Gao\nResearch Associate\nGreg.Gao@morganstanley.com +1 212 296-3125\nKavya A Narayanan\nResearch Associate\nKavya.Narayanan@morganstanley.com +1 212 761-4183\nNikhil Javeri\nResearch Associate\nNikhil.Javeri1@morganstanley.com +1 212 761-3742\nCela VanLieshout\nResearch Associate\nCela.Vanlieshout1@morganstanley.com +1 212 761-2679",
+        "bbox": [
+            620,
+            95,
+            936,
+            416
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "INTERNET",
+        "text_level": 2,
+        "bbox": [
+            625,
+            425,
+            691,
+            438
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            62,
+            44,
+            366,
+            71
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            854,
+            49,
+            933,
+            66
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.",
+        "bbox": [
+            622,
+            823,
+            929,
+            904
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.",
+        "bbox": [
+            622,
+            905,
+            918,
+            943
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Comp Sheet",
+        "text_level": 2,
+        "bbox": [
+            65,
+            113,
+            246,
+            142
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/0f275502fe76df46f9df980d131114dc6d4321e6919126b3fc4ac5498d73ba39.jpg",
+        "table_caption": [
+            "Exhibit 1: Internet Comp Sheet: North America"
+        ],
+        "table_footnote": [
+            "Source: Company data, MS estimates"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Ticker</td><td rowspan=\"2\">Price 6/26/2026</td><td rowspan=\"2\">Mkt Cap ($ MM)</td><td rowspan=\"2\">EV ($ MM)</td><td colspan=\"2\">EV/Rev</td><td colspan=\"2\">EV/GP</td><td colspan=\"2\">EV/EBITDA</td><td colspan=\"2\">FCF Yield</td><td colspan=\"2\">EPS</td><td colspan=\"2\">P/E</td><td rowspan=\"2\">Short Interest</td></tr><tr><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td><td>2026E</td><td>2027E</td></tr><tr><td colspan=\"17\">Digital Media</td></tr><tr><td>BMBL</td><td>$3.04</td><td>498</td><td>840</td><td>1.0x</td><td>1.0x</td><td>1.4x</td><td>1.4x</td><td>3.1x</td><td>3.6x</td><td>45.0%</td><td>28.2%</td><td>0.78</td><td>0.61</td><td>3.9x</td><td>5.0x</td><td>11.7%</td></tr><tr><td>CRTO</td><td>$17.66</td><td>900</td><td>741</td><td>0.6x</td><td>0.6x</td><td>0.7x</td><td>0.7x</td><td>2.0x</td><td>1.9x</td><td>14.4%</td><td>17.3%</td><td>4.24</td><td>4.97</td><td>4.2x</td><td>3.6x</td><td>2.2%</td></tr><tr><td>DUOL</td><td>$121.49</td><td>5,933</td><td>4,681</td><td>3.9x</td><td>3.5x</td><td>5.5x</td><td>5.0x</td><td>15.0x</td><td>13.4x</td><td>6.3%</td><td>6.1%</td><td>2.68</td><td>2.81</td><td>45.3x</td><td>43.3x</td><td>20.0%</td></tr><tr><td>DV</td><td>$10.82</td><td>1,776</td><td>1,602</td><td>2.0x</td><td>1.8x</td><td>2.4x</td><td>2.2x</td><td>5.7x</td><td>5.1x</td><td>10.7%</td><td>11.2%</td><td>0.62</td><td>0.76</td><td>17.5x</td><td>14.2x</td><td>7.5%</td></tr><tr><td>GOOGL</td><td>$337.39</td><td>4,128,979</td><td>3,972,694</td><td>8.0x</td><td>6.3x</td><td>13.0x</td><td>10.2x</td><td>16.3x</td><td>12.0x</td><td>0.5%</td><td>0.0%</td><td>14.73</td><td>15.61</td><td>22.9x</td><td>21.6x</td><td>1.5%</td></tr><tr><td>GRND</td><td>$14.34</td><td>2,635</td><td>3,002</td><td>5.6x</td><td>4.8x</td><td>7.5x</td><td>6.4x</td><td>13.2x</td><td>11.4x</td><td>5.5%</td><td>6.8%</td><td>0.55</td><td>0.65</td><td>26.0x</td><td>22.0x</td><td>32.7%</td></tr><tr><td>META</td><td>$550.25</td><td>1,410,841</td><td>1,388,487</td><td>5.4x</td><td>4.5x</td><td>7.3x</td><td>6.3x</td><td>9.3x</td><td>7.5x</td><td>0.9%</td><td>1.1%</td><td>32.83</td><td>34.16</td><td>16.8x</td><td>16.1x</td><td>1.4%</td></tr><tr><td>MNTN</td><td>$9.62</td><td>759</td><td>545</td><td>1.6x</td><td>1.3x</td><td>2.0x</td><td>1.7x</td><td>5.5x</td><td>4.4x</td><td>NA</td><td>NA</td><td>1.06</td><td>1.08</td><td>9.1x</td><td>8.9x</td><td>6.1%</td></tr><tr><td>MTCH</td><td>$37.17</td><td>9,343</td><td>12,294</td><td>3.5x</td><td>3.4x</td><td>4.7x</td><td>4.5x</td><td>9.2x</td><td>8.7x</td><td>10.3%</td><td>10.5%</td><td>2.61</td><td>3.14</td><td>14.2x</td><td>11.8x</td><td>4.6%</td></tr><tr><td>PINS</td><td>$20.82</td><td>14,104</td><td>14,386</td><td>2.9x</td><td>2.6x</td><td>3.7x</td><td>3.4x</td><td>10.1x</td><td>9.1x</td><td>9.0%</td><td>10.3%</td><td>0.59</td><td>0.70</td><td>35.2x</td><td>29.8x</td><td>15.5%</td></tr><tr><td>RDDT</td><td>$166.94</td><td>33,809</td><td>31,039</td><td>9.2x</td><td>6.7x</td><td>10.0x</td><td>7.4x</td><td>20.2x</td><td>14.1x</td><td>3.6%</td><td>5.1%</td><td>6.86</td><td>9.10</td><td>24.3x</td><td>18.3x</td><td>12.0%</td></tr><tr><td>SNAP</td><td>$4.41</td><td>8,322</td><td>8,988</td><td>1.3x</td><td>1.2x</td><td>2.3x</td><td>2.0x</td><td>6.5x</td><td>5.0x</td><td>7.7%</td><td>13.8%</td><td>(0.07)</td><td>0.17</td><td>NM</td><td>25.4x</td><td>8.8%</td></tr><tr><td>SSTK</td><td>$14.20</td><td>520</td><td>632</td><td>0.8x</td><td>0.9x</td><td>1.4x</td><td>1.5x</td><td>4.3x</td><td>4.9x</td><td>3.6%</td><td>NM</td><td>(1.02)</td><td>0.49</td><td>NM</td><td>29.2x</td><td>4.4%</td></tr><tr><td>TTD</td><td>$18.37</td><td>8,760</td><td>7,882</td><td>2.5x</td><td>2.2x</td><td>3.2x</td><td>2.9x</td><td>6.2x</td><td>5.6x</td><td>10.5%</td><td>12.0%</td><td>2.02</td><td>2.21</td><td>9.1x</td><td>8.3x</td><td>17.5%</td></tr><tr><td>YELP</td><td>$24.00</td><td>1,541</td><td>1,208</td><td>0.8x</td><td>0.8x</td><td>0.9x</td><td>0.9x</td><td>3.9x</td><td>3.7x</td><td>14.8%</td><td>16.3%</td><td>2.11</td><td>2.13</td><td>11.4x</td><td>11.2x</td><td>15.6%</td></tr><tr><td colspan=\"2\">Digital Media Med.</td><td>7,127</td><td>6,281</td><td>2.7x</td><td>2.4x</td><td>3.5x</td><td>3.1x</td><td>7.9x</td><td>6.5x</td><td>7.7%</td><td>10.4%</td><td>$1.54</td><td>$1.64</td><td>17.1x</td><td>17.2x</td><td>8.1%</td></tr><tr><td colspan=\"17\">eCommerce/Marketplace</td></tr><tr><td>AMZN</td><td>$232.69</td><td>2,530,271</td><td>2,506,256</td><td>3.0x</td><td>2.6x</td><td>5.9x</td><td>4.9x</td><td>11.3x</td><td>8.5x</td><td>NM</td><td>NM</td><td>9.50</td><td>11.32</td><td>24.5x</td><td>20.6x</td><td>1.0%</td></tr><tr><td>CHWY</td><td>$18.55</td><td>7,774</td><td>7,254</td><td>0.5x</td><td>0.5x</td><td>1.8x</td><td>1.6x</td><td>8.0x</td><td>6.6x</td><td>0.5%</td><td>0.1%</td><td>1.52</td><td>1.82</td><td>12.2x</td><td>10.2x</td><td>11.1%</td></tr><tr><td>EBAY</td><td>$107.87</td><td>49,297</td><td>50,645</td><td>4.1x</td><td>3.8x</td><td>5.6x</td><td>5.2x</td><td>13.6x</td><td>12.1x</td><td>6.1%</td><td>6.5%</td><td>6.03</td><td>6.76</td><td>17.9x</td><td>16.0x</td><td>3.9%</td></tr><tr><td>ETSY</td><td>$78.04</td><td>9,445</td><td>8,491</td><td>3.0x</td><td>3.0x</td><td>4.1x</td><td>4.1x</td><td>10.3x</td><td>10.1x</td><td>7.7%</td><td>7.2%</td><td>3.71</td><td>4.40</td><td>21.0x</td><td>17.7x</td><td>14.3%</td></tr><tr><td>FIGS</td><td>$11.60</td><td>2,275</td><td>1,970</td><td>2.7x</td><td>2.5x</td><td>4.0x</td><td>3.7x</td><td>20.6x</td><td>16.4x</td><td>5.2%</td><td>6.3%</td><td>0.24</td><td>0.31</td><td>49.3x</td><td>37.2x</td><td>9.2%</td></tr><tr><td>PTON</td><td>$5.72</td><td>2,645</td><td>1,483</td><td>0.6x</td><td>0.6x</td><td>1.2x</td><td>1.1x</td><td>3.1x</td><td>3.0x</td><td>19.6%</td><td>18.2%</td><td>0.12</td><td>0.27</td><td>45.9x</td><td>21.0x</td><td>14.3%</td></tr><tr><td>RVLV</td><td>$23.76</td><td>1,717</td><td>1,381</td><td>1.0x</td><td>0.9x</td><td>1.9x</td><td>1.7x</td><td>14.6x</td><td>10.3x</td><td>5.2%</td><td>5.6%</td><td>0.83</td><td>1.18</td><td>28.8x</td><td>20.2x</td><td>10.8%</td></tr><tr><td>WW</td><td>$15.99</td><td>160</td><td>625</td><td>1.0x</td><td>1.0x</td><td>1.4x</td><td>1.4x</td><td>5.8x</td><td>6.2x</td><td>18.7%</td><td>21.7%</td><td>(4.68)</td><td>(0.90)</td><td>NM</td><td>NM</td><td>21.2%</td></tr><tr><td colspan=\"2\">eCommerce Med.</td><td>2,645</td><td>1,970</td><td>1.0x</td><td>1.0x</td><td>1.9x</td><td>1.7x</td><td>10.3x</td><td>8.5x</td><td>6.1%</td><td>6.8%</td><td>$1.52</td><td>$1.18</td><td>22.8x</td><td>20.2x</td><td>11.1%</td></tr><tr><td colspan=\"17\">Shared Economy/Rideshare</td></tr><tr><td>CART</td><td>$47.46</td><td>12,036</td><td>11,544</td><td>2.8x</td><td>2.5x</td><td>3.8x</td><td>3.4x</td><td>9.0x</td><td>7.8x</td><td>8.1%</td><td>10.0%</td><td>2.62</td><td>3.48</td><td>18.1x</td><td>13.7x</td><td>10.3%</td></tr><tr><td>DASH</td><td>$183.09</td><td>81,475</td><td>75,942</td><td>4.3x</td><td>3.6x</td><td>8.4x</td><td>6.8x</td><td>21.3x</td><td>15.8x</td><td>3.2%</td><td>4.6%</td><td>2.28</td><td>4.04</td><td>80.4x</td><td>45.3x</td><td>5.1%</td></tr><tr><td>LYFT</td><td>$14.27</td><td>5,742</td><td>4,908</td><td>0.7x</td><td>0.6x</td><td>1.5x</td><td>1.4x</td><td>7.3x</td><td>6.2x</td><td>23.1%</td><td>24.0%</td><td>0.67</td><td>1.01</td><td>21.4x</td><td>14.1x</td><td>25.6%</td></tr><tr><td>UBER</td><td>$76.20</td><td>157,840</td><td>161,583</td><td>2.8x</td><td>2.4x</td><td>6.3x</td><td>5.3x</td><td>14.2x</td><td>11.4x</td><td>NM</td><td>NM</td><td>3.38</td><td>4.40</td><td>22.5x</td><td>17.3x</td><td>2.8%</td></tr><tr><td colspan=\"2\">Shared Economy Med.</td><td>46,755</td><td>43,743</td><td>2.8x</td><td>2.4x</td><td>5.0x</td><td>4.4x</td><td>11.6x</td><td>9.6x</td><td>8.1%</td><td>10.0%</td><td>$2.45</td><td>$3.76</td><td>22.0x</td><td>15.7x</td><td>7.7%</td></tr><tr><td colspan=\"17\">Gaming/Mobile App</td></tr><tr><td>APP</td><td>$477.08</td><td>161,601</td><td>162,356</td><td>19.6x</td><td>15.6x</td><td>21.6x</td><td>17.2x</td><td>23.3x</td><td>18.5x</td><td>3.5%</td><td>4.4%</td><td>15.24</td><td>19.75</td><td>31.3x</td><td>24.2x</td><td>5.0%</td></tr><tr><td>EA</td><td>$205.25</td><td>52,134</td><td>50,639</td><td>6.0x</td><td>5.3x</td><td>7.2x</td><td>6.3x</td><td>17.0x</td><td>13.7x</td><td>1.3%</td><td>4.6%</td><td>9.08</td><td>11.38</td><td>22.6x</td><td>18.0x</td><td>4.6%</td></tr><tr><td>LFTO</td><td>$27.39</td><td>5,088</td><td>6,703</td><td>7.8x</td><td>6.8x</td><td>9.1x</td><td>7.9x</td><td>13.8x</td><td>11.5x</td><td>5.3%</td><td>4.8%</td><td>0.16</td><td>1.23</td><td>171.2x</td><td>22.3x</td><td>2.5%</td></tr><tr><td>PLTK</td><td>$3.83</td><td>1,414</td><td>3,352</td><td>1.2x</td><td>1.2x</td><td>1.6x</td><td>1.6x</td><td>4.5x</td><td>4.4x</td><td>2.9%</td><td>19.2%</td><td>0.48</td><td>0.68</td><td>8.0x</td><td>5.6x</td><td>9.8%</td></tr><tr><td>RBLX</td><td>$47.56</td><td>35,432</td><td>33,241</td><td>5.3x</td><td>4.3x</td><td>6.5x</td><td>5.3x</td><td>19.4x</td><td>15.6x</td><td>3.8%</td><td>4.4%</td><td>(1.35)</td><td>(0.83)</td><td>NM</td><td>NM</td><td>4.9%</td></tr><tr><td>TTWO</td><td>$238.53</td><td>44,123</td><td>44,609</td><td>6.4x</td><td>4.8x</td><td>10.7x</td><td>7.0x</td><td>29.5x</td><td>15.9x</td><td>3.1%</td><td>4.3%</td><td>6.00</td><td>11.40</td><td>39.8x</td><td>20.9x</td><td>4.9%</td></tr><tr><td>U</td><td>$28.23</td><td>14,185</td><td>13,988</td><td>6.6x</td><td>5.7x</td><td>9.3x</td><td>6.5x</td><td>23.3x</td><td>18.9x</td><td>NM</td><td>2.0%</td><td>(0.90)</td><td>0.65</td><td>NM</td><td>43.4x</td><td>10.5%</td></tr><tr><td colspan=\"2\">Video Game Med.</td><td>35,432</td><td>33,241</td><td>6.4x</td><td>5.3x</td><td>8.2x</td><td>6.4x</td><td>19.4x</td><td>15.6x</td><td>3.1%</td><td>4.4%</td><td>$0.48</td><td>$1.23</td><td>31.3x</td><td>21.6x</td><td>4.9%</td></tr><tr><td colspan=\"17\">Travel</td></tr><tr><td>ABNB</td><td>$145.56</td><td>93,304</td><td>83,774</td><td>6.0x</td><td>5.6x</td><td>7.2x</td><td>6.7x</td><td>17.1x</td><td>15.9x</td><td>5.9%</td><td>6.1%</td><td>4.85</td><td>5.35</td><td>30.0x</td><td>27.2x</td><td>3.7%</td></tr><tr><td>EXPE</td><td>$262.80</td><td>32,842</td><td>34,469</td><td>2.1x</td><td>1.9x</td><td>2.3x</td><td>2.1x</td><td>8.3x</td><td>7.3x</td><td>11.2%</td><td>12.0%</td><td>20.39</td><td>23.40</td><td>12.9x</td><td>11.2x</td><td>6.6%</td></tr><tr><td>BKNG</td><td>$181.46</td><td>144,079</td><td>143,453</td><td>4.9x</td><td>4.5x</td><td>4.9x</td><td>4.5x</td><td>12.3x</td><td>11.1x</td><td>6.3%</td><td>7.0%</td><td>10.29</td><td>12.12</td><td>17.6x</td><td>15.0x</td><td>3.2%</td></tr><tr><td colspan=\"2\">Travel Avg.</td><td>90,075</td><td>87,232</td><td>4.3x</td><td>4.0x</td><td>4.8x</td><td>4.4x</td><td>12.6x</td><td>11.4x</td><td>7.8%</td><td>8.4%</td><td>$11.84</td><td>$13.62</td><td>20.2x</td><td>17.8x</td><td>4.5%</td></tr><tr><td colspan=\"17\">Real Estate Tech</td></tr><tr><td>COMP</td><td>$11.40</td><td>9,387</td><td>12,199</td><td>0.9x</td><td>0.8x</td><td>NA</td><td>NA</td><td>14.6x</td><td>10.5x</td><td>0.0%</td><td>0.0%</td><td>0.36</td><td>0.55</td><td>31.4x</td><td>20.6x</td><td>7.1%</td></tr><tr><td>Z</td><td>$31.15</td><td>7,465</td><td>7,017</td><td>2.4x</td><td>2.1x</td><td>3.2x</td><td>2.9x</td><td>9.1x</td><td>7.4x</td><td>8.8%</td><td>9.7%</td><td>2.12</td><td>2.58</td><td>14.7x</td><td>12.1x</td><td>9.5%</td></tr><tr><td>OPEN</td><td>$4.37</td><td>3,030</td><td>3,068</td><td>0.8x</td><td>0.4x</td><td>8.8x</td><td>5.5x</td><td>NM</td><td>23.5x</td><td>NM</td><td>NM</td><td>(0.58)</td><td>(0.45)</td><td>NM</td><td>NM</td><td>19.1%</td></tr><tr><td colspan=\"2\">RE Tech Avg.</td><td>6,627</td><td>7,428</td><td>1.3x</td><td>1.1x</td><td>6.0x</td><td>4.2x</td><td>11.9x</td><td>13.8x</td><td>4.4%</td><td>4.9%</td><td>$0.63</td><td>$0.89</td><td>23.0x</td><td>16.3x</td><td>11.9%</td></tr><tr><td colspan=\"17\"></td></tr><tr><td colspan=\"17\"></td></tr><tr><td colspan=\"17\"></td></tr><tr><td colspan=\"17\"></td></tr><tr><td colspan=\"17\"></td></tr><tr><td colspan=\"17\"></td></tr><tr><td colspan=\"2\"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            63,
+            203,
+            933,
+            756
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            883,
+            49,
+            933,
+            61
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            65,
+            968,
+            76,
+            978
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/9d76f7ce457d6f346f4645469bb994f2a180df7b326822298e2f7df5ef6f540c.jpg",
+        "table_caption": [
+            "Exhibit 2: Digital Ads vs. Travel/Shared Economy 1-Week Price Performance"
+        ],
+        "table_footnote": [
+            "Source: FactSet, MS"
+        ],
+        "table_body": "<table><tr><td></td><td>Market Cap ($mn)</td><td>1 Week Performance</td></tr><tr><td colspan=\"3\">Digital Ads</td></tr><tr><td>GOOGL</td><td>$4,128,979</td><td>-8.3%</td></tr><tr><td>META</td><td>$1,410,841</td><td>-4.7%</td></tr><tr><td>SNAP</td><td>$8,322</td><td>-5.4%</td></tr><tr><td>PINS</td><td>$14,104</td><td>2.7%</td></tr><tr><td>RDDT</td><td>$33,878</td><td>-4.6%</td></tr><tr><td colspan=\"2\">Market-Cap Weighted Avg.</td><td>-7.3%</td></tr><tr><td colspan=\"3\">E-Commerce</td></tr><tr><td>AMZN</td><td>$2,530,271</td><td>-4.8%</td></tr><tr><td>CHWY</td><td>$7,774</td><td>1.9%</td></tr><tr><td>EBAY</td><td>$49,297</td><td>-0.3%</td></tr><tr><td>ETSY</td><td>$9,445</td><td>5.5%</td></tr><tr><td>FIGS</td><td>$2,275</td><td>-5.8%</td></tr><tr><td>PTON</td><td>$2,645</td><td>-0.9%</td></tr><tr><td>RVLV</td><td>$1,717</td><td>9.0%</td></tr><tr><td>WW</td><td>$160</td><td>-16.7%</td></tr><tr><td colspan=\"2\">Market-Cap Weighted Avg.</td><td>-4.6%</td></tr><tr><td colspan=\"3\">Travel</td></tr><tr><td>ABNB</td><td>$93,304</td><td>2.2%</td></tr><tr><td>BKNG</td><td>$144,079</td><td>5.6%</td></tr><tr><td>EXPE</td><td>$32,842</td><td>9.1%</td></tr><tr><td colspan=\"2\">Market-Cap Weighted Avg.</td><td>4.9%</td></tr><tr><td colspan=\"3\">Shared Economy</td></tr><tr><td>UBER</td><td>$157,840</td><td>6.4%</td></tr><tr><td>DASH</td><td>$81,475</td><td>5.6%</td></tr><tr><td>CART</td><td>$12,036</td><td>6.5%</td></tr><tr><td>LYFT</td><td>$5,742</td><td>-0.1%</td></tr><tr><td colspan=\"2\">Market-Cap Weighted Avg.</td><td>6.0%</td></tr></table>",
+        "bbox": [
+            66,
+            126,
+            589,
+            852
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            883,
+            49,
+            933,
+            61
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            921,
+            967,
+            933,
+            979
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            65,
+            967,
+            241,
+            979
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/6b9a4066fb44f523833cfbfb360d06bddf33ed7f3124ec105b72d8f8bfc4a80e.jpg",
+        "table_caption": [
+            "Exhibit 3: Assessing Internet – Price Performance"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"2\">Short interest %</td><td colspan=\"2\">1 Week Price Move</td><td colspan=\"2\">1 Month Price Move</td><td colspan=\"2\">YTD</td></tr><tr><td>Ticker</td><td>6/26/2026</td><td>Ticker</td><td>6/26/2026</td><td>Ticker</td><td>6/26/2026</td><td>Ticker</td><td>6/26/2026</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"3\"></td><td>AMZN</td><td>1.0%</td><td>AMZN</td><td>-4.8%</td><td>AMZN</td><td>-12.3%</td><td>AMZN</td><td>0.8%</td></tr><tr><td>GOOGL</td><td>1.5%</td><td>GOOGL</td><td>-8.3%</td><td>GOOGL</td><td>-13.2%</td><td>GOOGL</td><td>7.8%</td></tr><tr><td>META</td><td>1.4%</td><td>META</td><td>-4.7%</td><td>META</td><td>-10.1%</td><td>META</td><td>-16.6%</td></tr></table>",
+        "bbox": [
+            65,
+            125,
+            931,
+            220
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/a1559ba213a129b9e8bfeeaa6c9a9c71e94568355a735b8e672abbf9def2ed62.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Top 10</td><td colspan=\"2\">Short interest %</td><td colspan=\"2\">1 Week Price Move</td><td colspan=\"2\">1 Month Price Move</td><td colspan=\"2\">YTD</td></tr><tr><td>Ticker</td><td>6/26/2026</td><td>Ticker</td><td>6/26/2026</td><td>Ticker</td><td>6/26/2026</td><td>Ticker</td><td>6/26/2026</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>1</td><td>LYFT</td><td>25.6%</td><td>MNTN</td><td>15.2%</td><td>COMP</td><td>37.3%</td><td>ETSY</td><td>40.8%</td></tr><tr><td>2</td><td>WW</td><td>21.2%</td><td>COMP</td><td>13.9%</td><td>RVLV</td><td>22.5%</td><td>EBAY</td><td>23.8%</td></tr><tr><td>3</td><td>DUOL</td><td>20.0%</td><td>PLTK</td><td>9.7%</td><td>ETSY</td><td>21.3%</td><td>MTCH</td><td>15.1%</td></tr><tr><td>4</td><td>OPEN</td><td>19.1%</td><td>EXPE</td><td>9.1%</td><td>DASH</td><td>18.9%</td><td>COMP</td><td>7.9%</td></tr><tr><td>5</td><td>TTD</td><td>17.5%</td><td>RVLV</td><td>9.0%</td><td>EXPE</td><td>17.9%</td><td>GOOGL</td><td>7.8%</td></tr><tr><td>6</td><td>YELP</td><td>15.5%</td><td>SSTK</td><td>7.4%</td><td>CART</td><td>17.1%</td><td>ABNB</td><td>7.3%</td></tr><tr><td>7</td><td>PINS</td><td>15.5%</td><td>CART</td><td>6.5%</td><td>WW</td><td>15.5%</td><td>CART</td><td>5.5%</td></tr><tr><td>8</td><td>ETSY</td><td>14.3%</td><td>UBER</td><td>6.4%</td><td>RDDT</td><td>15.4%</td><td>FIGS</td><td>2.1%</td></tr><tr><td>9</td><td>PTON</td><td>14.3%</td><td>BKNG</td><td>5.6%</td><td>DUOL</td><td>14.1%</td><td>AMZN</td><td>0.8%</td></tr><tr><td>10</td><td>BMBL</td><td>12.5%</td><td>DASH</td><td>5.6%</td><td>PLTK</td><td>13.0%</td><td>EA</td><td>0.5%</td></tr></table>",
+        "bbox": [
+            65,
+            236,
+            931,
+            483
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/a92619958256856710986a4764b6f93e00d552bc1a978f29937beece7c069620.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Bottom 10</td><td colspan=\"2\">Short interest %</td><td colspan=\"2\">1 Week Price Move</td><td colspan=\"2\">1 Month Price Move</td><td colspan=\"2\">YTD</td></tr><tr><td>Ticker</td><td>6/26/2026</td><td>Ticker</td><td>6/26/2026</td><td>Ticker</td><td>6/26/2026</td><td>Ticker</td><td>6/26/2026</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>1</td><td>AMZN</td><td>1.0%</td><td>WW</td><td>-16.7%</td><td>SNAP</td><td>-23.3%</td><td>Z</td><td>-54.3%</td></tr><tr><td>2</td><td>META</td><td>1.4%</td><td>GOOGL</td><td>-8.3%</td><td>TTD</td><td>-17.2%</td><td>TTD</td><td>-51.6%</td></tr><tr><td>3</td><td>GOOGL</td><td>1.5%</td><td>RBLX</td><td>-7.7%</td><td>GOOGL</td><td>-13.2%</td><td>SNAP</td><td>-45.4%</td></tr><tr><td>4</td><td>CRTO</td><td>2.2%</td><td>FIGS</td><td>-5.8%</td><td>Z</td><td>-12.8%</td><td>WW</td><td>-45.3%</td></tr><tr><td>5</td><td>UBER</td><td>2.8%</td><td>SNAP</td><td>-5.4%</td><td>CHWY</td><td>-12.7%</td><td>CHWY</td><td>-43.9%</td></tr><tr><td>6</td><td>BKNG</td><td>3.2%</td><td>AMZN</td><td>-4.8%</td><td>AMZN</td><td>-12.3%</td><td>RBLX</td><td>-41.3%</td></tr><tr><td>7</td><td>ABNB</td><td>3.7%</td><td>META</td><td>-4.7%</td><td>SSTK</td><td>-12.0%</td><td>U</td><td>-36.1%</td></tr><tr><td>8</td><td>EBAY</td><td>3.9%</td><td>RDDT</td><td>-4.6%</td><td>META</td><td>-10.1%</td><td>DUOL</td><td>-30.8%</td></tr><tr><td>9</td><td>SSTK</td><td>4.4%</td><td>DUOL</td><td>-3.2%</td><td>FIGS</td><td>-9.4%</td><td>APP</td><td>-29.2%</td></tr><tr><td>10</td><td>MTCH</td><td>4.6%</td><td>Z</td><td>-3.0%</td><td>APP</td><td>-7.2%</td><td>RDDT</td><td>-27.4%</td></tr></table>",
+        "bbox": [
+            65,
+            497,
+            931,
+            744
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/e1b5c32b63e2a7634454d2da378993ef79ed5cfef9b0a9e35d4e89488685e348.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: FactSet, Company data, MS"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">(market-cap weighted)</td><td colspan=\"6\">Performance</td></tr><tr><td>1 Week</td><td>1 Month</td><td>3 Month</td><td>YTD</td><td>1 Year</td><td>3 Year</td></tr><tr><td>Internet Mean</td><td>-5.5%</td><td>-10.3%</td><td>14.2%</td><td>-0.2%</td><td>41.6%</td><td>161.6%</td></tr><tr><td>NASDAQ</td><td>-4.6%</td><td>-5.1%</td><td>18.2%</td><td>8.8%</td><td>25.4%</td><td>89.7%</td></tr><tr><td>S&amp;P 500</td><td>-2.0%</td><td>-2.2%</td><td>13.5%</td><td>7.4%</td><td>19.8%</td><td>69.9%</td></tr></table>",
+        "bbox": [
+            66,
+            758,
+            931,
+            840
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            883,
+            49,
+            933,
+            61
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            65,
+            968,
+            76,
+            978
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/35b9461811f007f03d9df9090084a728f1a56493741fbcea3c428c053487c3be.jpg",
+        "table_caption": [
+            "Exhibit 4: NTM EV/EBITDA for AMZN/GOOGL/META vs. Historical Averages"
+        ],
+        "table_footnote": [
+            "Source: FactSet, MS"
+        ],
+        "table_body": "<table><tr><td>NTM EV/EBITDA</td><td>AMZN</td><td>GOOGL</td><td>META</td></tr><tr><td>As of 6/26/26</td><td>11.0x</td><td>16.1x</td><td>8.9x</td></tr><tr><td>2-Year Average</td><td>12.9x</td><td>13.9x</td><td>12.5x</td></tr><tr><td>3-Year Average</td><td>13.2x</td><td>13.3x</td><td>12.0x</td></tr><tr><td>Premium/Discount vs. 2-Year Average</td><td>-15%</td><td>16%</td><td>-29%</td></tr><tr><td>Premium/Discount vs. 3-Year Average</td><td>-17%</td><td>21%</td><td>-26%</td></tr></table>",
+        "bbox": [
+            66,
+            125,
+            617,
+            220
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            885,
+            49,
+            933,
+            61
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            921,
+            968,
+            931,
+            978
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            65,
+            967,
+            241,
+            979
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7b5321e848bb3134e038409ff585f31ad253d3e027af9265b80e9ab36657e3f4.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 5: Internet names fell -6% last week (SPX/NDX -2/-5%)"
+        ],
+        "chart_footnote": [
+            "Source: FactSet, MS, Indexed to 100, performance is market cap weighted"
+        ],
+        "bbox": [
+            66,
+            125,
+            890,
+            361
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/15504c4484c65551ca5fdf9e5216a0332f95262487b272cb6791ba59212f41d6.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 6: NTM EV/EBITDA Multiples Are -10%/-16% vs. 5/10-Year Averages..."
+        ],
+        "chart_footnote": [
+            "Source: Compustat, FactSet, MS"
+        ],
+        "bbox": [
+            65,
+            468,
+            908,
+            719
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            883,
+            49,
+            933,
+            61
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            65,
+            968,
+            76,
+            978
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fbbfe1d4921bbcf2f1e477ec79f1eac5ba229f57e9fd4d023d3d207a0aa00ff0.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 8: Digital Media: Treating SBC as Cash Increases EV/EBITDA Multiples by \\~36%, on Average"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            88,
+            513,
+            921,
+            762
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/730e3a5ac96baf462b42abda625ed7d65c9659aea6bf01c419868c1fbed70a7c.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 7: ... and NTM EV/Sales Multiples Are +13%/+16% vs. 5/10-Year Averages"
+        ],
+        "chart_footnote": [
+            "Source: Compustat, FactSet, MS",
+            "Source: FactSet, Company data, MS estimates; Note: Median excludes SNAP"
+        ],
+        "bbox": [
+            68,
+            127,
+            897,
+            380
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            921,
+            968,
+            931,
+            979
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            883,
+            49,
+            933,
+            61
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            65,
+            967,
+            241,
+            979
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8bbdd1d19c4637b7d7c0209306fc5ebce957359b1d71972202cae2194be4d8fe.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 9: eCommerce: Treating SBC as Cash Increases EV/EBITDA Multiples by \\~30%, on Average ecommerce"
+        ],
+        "chart_footnote": [
+            "Source: FactSet, Company data, MS estimates"
+        ],
+        "bbox": [
+            71,
+            135,
+            919,
+            388
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/49c7992208ab0862a65558c60b2c78a4264f6da1d985d5a905f97a74a4f244d4.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 10: Video Games: Treating SBC as Cash Increases EV/EBITDA Multiples by \\~22%, on Average\nVideo Games"
+        ],
+        "chart_footnote": [
+            "Source: FactSet, Company data, MS estimates; Note: Median excludes RBLX & U"
+        ],
+        "bbox": [
+            70,
+            518,
+            921,
+            760
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            883,
+            49,
+            933,
+            61
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            65,
+            968,
+            76,
+            978
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/48ee55133e9da7ed9e07fc9134b883918a391eaf0fe7c7adb27b20141b432545.jpg",
+        "content": "",
+        "chart_caption": [
+            "Exhibit 11: Travel / Shared Economy / Real Estate Tech: Treating SBC as Cash Increases EV/EBITDA Multiples by \\~44%, on Average Travel / Shared Economy + Real Estate Tech"
+        ],
+        "chart_footnote": [
+            "Source: FactSet, Company data, MS estimates; Note: Median excludes Z"
+        ],
+        "bbox": [
+            73,
+            138,
+            919,
+            390
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            883,
+            49,
+            933,
+            61
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            921,
+            968,
+            931,
+            978
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            65,
+            967,
+            241,
+            979
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Interactive Comp Sheet",
+        "text_level": 2,
+        "bbox": [
+            62,
+            112,
+            405,
+            143
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Use the selections to navigate the data. Compare enables multiple industry / company selection. Hover over the line chart for details. Research Portal will open the Company page.",
+        "bbox": [
+            372,
+            186,
+            921,
+            210
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/26920a2f85b296de31a6a46626438ec847a0e17d3a2f8e07c42fa21a345f02c8.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            374,
+            215,
+            921,
+            496
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/f8fea39fd2867fc63a6b17b8e088d3088b747c2e5ba5e315300cd05c5ecdc2e4.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Note : DESP.N is covered by Andrew R Ruben with an industry view No Rating W.N is covered by Simeon Gutman CFA with an industry view In-Line."
+        ],
+        "table_body": "<table><tr><td>CLUSTER:</td><td colspan=\"2\">All Clusters</td><td colspan=\"2\">Large Cap</td><td colspan=\"2\">SMid Cap</td><td colspan=\"2\">RESET</td><td colspan=\"2\">Research Portal</td></tr><tr><td>METRIC:</td><td colspan=\"2\">EV/Sales</td><td>EV/EBITDA</td><td>P/FCF</td><td colspan=\"2\">P/E</td><td>PERIOD:</td><td>NTM</td><td>FY1</td><td>FY2</td></tr><tr><td>YEARS:</td><td>2014</td><td>2015</td><td>2016</td><td>2017</td><td>2018</td><td>2019</td><td>2020</td><td>2021</td><td>2022</td><td>2023</td></tr></table>",
+        "bbox": [
+            514,
+            217,
+            921,
+            276
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Source: Visible Alpha, FactSet, MS",
+        "bbox": [
+            362,
+            523,
+            694,
+            539
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            44,
+            250,
+            63
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            883,
+            49,
+            933,
+            61
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            65,
+            968,
+            84,
+            979
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Section",
+        "text_level": 2,
+        "bbox": [
+            63,
+            97,
+            284,
+            117
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The information and opinions in MS were prepared by MS & Co. LLC, and/or MS C.T.V.M. S.A., and/or MS Mexico, Casa de Bolsa, S.A. de C.V., and/or MS Canada Limited. As used in this disclosure section, \"MS\" includes MS & Co. LLC, MS C.T.V.M. S.A., MS Mexico, Casa de Bolsa, S.A. de C.V., MS Canada Limited and their affiliates as necessary.",
+        "bbox": [
+            63,
+            118,
+            934,
+            159
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.",
+        "bbox": [
+            63,
+            160,
+            934,
+            200
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.",
+        "bbox": [
+            63,
+            202,
+            934,
+            244
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification",
+        "text_level": 2,
+        "bbox": [
+            63,
+            250,
+            215,
+            263
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Matthew Cost; Brian Nowak, CFA.",
+        "bbox": [
+            63,
+            266,
+            931,
+            294
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Global Research Conflict Management Policy",
+        "text_level": 2,
+        "bbox": [
+            63,
+            314,
+            387,
+            329
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br",
+        "bbox": [
+            63,
+            330,
+            934,
+            358
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Important Regulatory Disclosures on Subject Companies",
+        "text_level": 2,
+        "bbox": [
+            63,
+            364,
+            468,
+            380
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The analyst or strategist (or a household member) identified below owns the following securities (or related derivatives): Gregory Gao - Alphabet Inc.(common or preferred stock), Amazon.com Inc(common or preferred stock), Meta Platforms Inc(common or preferred stock), Reddit Inc(common or preferred stock), Uber Technologies Inc(common or preferred stock).",
+        "bbox": [
+            63,
+            381,
+            933,
+            407
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "As of May 29, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: Airbnb Inc, Alphabet Inc., Amazon.com Inc, AppLovin Corp, Booking Holdings Inc, Bumble Inc., Chewy Inc, Criteo SA, DoorDash Inc, DoubleVerify Holdings Inc, Duolingo Inc, eBay Inc, Electronic Arts Inc, Etsy Inc, Expedia Inc., Instacart, Lyft Inc, Match Group Inc, Meta Platforms Inc, Opendoor Technologies Inc, Peloton Interactive, Inc., Pinterest Inc, Reddit Inc, Roblox Corporation, Shutterstock Inc, Snap Inc., Take-Two Interactive Software, Trade Desk Inc, Uber Technologies Inc, Unity Software Inc, Webtoon Entertainment Inc, Yelp Inc, Zillow Group Inc.",
+        "bbox": [
+            63,
+            409,
+            933,
+            463
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of Airbnb Inc, Alphabet Inc., Amazon.com Inc, Compass, Inc., eBay Inc, Liftoff Mobile Inc., Match Group Inc, Meta Platforms Inc, Uber Technologies Inc.",
+        "bbox": [
+            63,
+            464,
+            934,
+            491
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Within the last 12 months, MS has received compensation for investment banking services from Airbnb Inc, Alphabet Inc., Amazon.com Inc, Chewy Inc, DoorDash Inc, eBay Inc, Instacart, Liftoff Mobile Inc., Match Group Inc, Meta Platforms Inc, Reddit Inc, Uber Technologies Inc.",
+        "bbox": [
+            63,
+            492,
+            933,
+            518
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from Airbnb Inc, Alphabet Inc., Amazon.com Inc, AppLovin Corp, Booking Holdings Inc, Bumble Inc., Chewy Inc, Criteo SA, DoorDash Inc, DoubleVerify Holdings Inc, Duolingo Inc, eBay Inc, Electronic Arts Inc, Etsy Inc, Expedia Inc., FIGS, Inc., Instacart, Liftoff Mobile Inc., Lyft Inc, Match Group Inc, Meta Platforms Inc, MNTN Inc, Opendoor Technologies Inc, Peloton Interactive, Inc., Pinterest Inc, Playtika Holding Corp, Reddit Inc, Revolve Group Inc, Roblox Corporation, Shutterstock Inc, Snap Inc., Take-Two Interactive Software, Trade Desk Inc, Uber Technologies Inc, Unity Software Inc, Webtoon Entertainment Inc, Yelp Inc, Zillow Group Inc. Within the last 12 months, MS has received compensation for products and services other than investment banking services from Airbnb Inc, Alphabet Inc., Amazon.com Inc, AppLovin Corp, Booking Holdings Inc, Chewy Inc, DoorDash Inc, eBay Inc, Electronic Arts Inc, Expedia Inc., Instacart, Liftoff Mobile Inc., Match Group Inc, Meta Platforms Inc, Peloton Interactive, Inc., Pinterest Inc, Playtika Holding Corp, Reddit Inc, Revolve Group Inc, Snap Inc., Take-Two Interactive Software, Uber Technologies Inc, Unity Software Inc, WW International Inc, Zillow Group Inc.",
+        "bbox": [
+            63,
+            520,
+            934,
+            616
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: Airbnb Inc, Alphabet Inc., Amazon.com Inc, AppLovin Corp, Booking Holdings Inc, Bumble Inc., Chewy Inc, Compass, Inc., Criteo SA, DoorDash Inc, DoubleVerify Holdings Inc, Duolingo Inc, eBay Inc, Electronic Arts Inc, Etsy Inc, Expedia Inc., FIGS, Inc., Instacart, Liftoff Mobile Inc., Lyft Inc, Match Group Inc, Meta Platforms Inc, MNTN Inc, Opendoor Technologies Inc, Peloton Interactive, Inc., Pinterest Inc, Playtika Holding Corp, Reddit Inc, Revolve Group Inc, Roblox Corporation, Shutterstock Inc, Snap Inc., Take-Two Interactive Software, Trade Desk Inc, Uber Technologies Inc, Unity Software Inc, Webtoon Entertainment Inc, Yelp Inc, Zillow Group Inc.",
+        "bbox": [
+            63,
+            618,
+            934,
+            685
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: Airbnb Inc, Alphabet Inc., Amazon.com Inc, AppLovin Corp, Booking Holdings Inc, Chewy Inc, DoorDash Inc, eBay Inc, Electronic Arts Inc, Etsy Inc, Expedia Inc, Instacart, Liftoff Mobile Inc., Lyft Inc, Match Group Inc, Meta Platforms Inc, Opendoor Technologies Inc, Peloton Interactive, Inc., Pinterest Inc, Playtika Holding Corp, Reddit Inc, Revolve Group Inc, Snap Inc., Take-Two Interactive Software, Uber Technologies Inc, Unity Software Inc, WW International Inc, Zillow Group Inc.",
+        "bbox": [
+            63,
+            686,
+            934,
+            741
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "An employee, director or consultant of MS is a director of eBay Inc. This person is not a research analyst or a member of a research analyst's household.",
+        "bbox": [
+            63,
+            743,
+            830,
+            755
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "MS & Co. LLC makes a market in the securities of Bumble Inc., Criteo SA, DoubleVerify Holdings Inc, Expedia Inc., FIGS, Inc., Grindr Inc., Playtika Holding Corp, Revolve Group Inc, Shutterstock Inc, Webtoon Entertainment Inc, Yelp Inc, Zillow Group Inc.",
+        "bbox": [
+            63,
+            756,
+            933,
+            782
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.",
+        "bbox": [
+            63,
+            784,
+            934,
+            824
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.",
+        "bbox": [
+            63,
+            825,
+            934,
+            881
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.",
+        "bbox": [
+            63,
+            882,
+            562,
+            893
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "STOCK RATINGS",
+        "text_level": 2,
+        "bbox": [
+            63,
+            901,
+            187,
+            915
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.",
+        "bbox": [
+            63,
+            917,
+            934,
+            945
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            885,
+            49,
+            931,
+            61
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            915,
+            968,
+            931,
+            979
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            65,
+            967,
+            241,
+            979
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            62,
+            104,
+            934,
+            146
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Global Stock Ratings Distribution",
+        "text_level": 2,
+        "bbox": [
+            63,
+            152,
+            305,
+            167
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "(as of May 31, 2026)",
+        "text_level": 2,
+        "bbox": [
+            63,
+            169,
+            165,
+            181
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.",
+        "bbox": [
+            63,
+            181,
+            766,
+            196
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.",
+        "bbox": [
+            63,
+            195,
+            934,
+            252
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/6e0a4e78decee16a2b534c1c09b86d601aa218dd2e2d2de858ebb1d7bd80b397.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the \"% of total\" column may not add up to exactly 100 percent."
+        ],
+        "table_body": "<table><tr><td></td><td colspan=\"2\">Coverage Universe</td><td colspan=\"3\">Investment Banking Clients (IBC)</td><td colspan=\"2\">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1542</td><td>42%</td><td>465</td><td>51%</td><td>30%</td><td>707</td><td>43%</td></tr><tr><td>Equal-weight/Hold</td><td>1571</td><td>43%</td><td>369</td><td>40%</td><td>23%</td><td>723</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>551</td><td>15%</td><td>86</td><td>9%</td><td>16%</td><td>201</td><td>12%</td></tr><tr><td>Total</td><td>3,667</td><td></td><td>920</td><td></td><td></td><td>1632</td><td></td></tr></table>",
+        "bbox": [
+            112,
+            270,
+            875,
+            416
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Analyst Stock Ratings",
+        "text_level": 2,
+        "bbox": [
+            63,
+            455,
+            225,
+            470
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+        "bbox": [
+            63,
+            470,
+            933,
+            498
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+        "bbox": [
+            63,
+            500,
+            933,
+            526
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+        "bbox": [
+            63,
+            527,
+            933,
+            554
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+        "bbox": [
+            63,
+            555,
+            933,
+            580
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.",
+        "bbox": [
+            63,
+            583,
+            606,
+            595
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Analyst Industry Views",
+        "text_level": 2,
+        "bbox": [
+            63,
+            604,
+            233,
+            619
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.",
+        "bbox": [
+            63,
+            619,
+            933,
+            646
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.",
+        "bbox": [
+            63,
+            647,
+            934,
+            703
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures for MS Smith Barney LLC Customers",
+        "text_level": 2,
+        "bbox": [
+            63,
+            710,
+            580,
+            724
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.",
+        "bbox": [
+            63,
+            724,
+            933,
+            767
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.",
+        "bbox": [
+            63,
+            768,
+            933,
+            795
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Other Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            63,
+            801,
+            274,
+            816
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "A member of Research who had or could have had access to the research prior to completion owns securities (or related derivatives) in the Uber Technologies Inc. This person is not a research analyst or a member of research analyst's household.",
+        "bbox": [
+            63,
+            816,
+            933,
+            844
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.",
+        "bbox": [
+            63,
+            845,
+            934,
+            900
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.",
+        "bbox": [
+            63,
+            901,
+            933,
+            926
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "MS produces an equity research product called a \"Tactical Idea.\" Views contained in a \"Tactical Idea\" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.",
+        "bbox": [
+            63,
+            929,
+            934,
+            943
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            883,
+            49,
+            933,
+            61
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            65,
+            968,
+            84,
+            979
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            62,
+            104,
+            933,
+            131
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.",
+        "bbox": [
+            63,
+            133,
+            934,
+            172
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\\_and\\_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL\\_Morgan\\_Stanley\\_Research\\_Audit\\_Report.pdf).",
+        "bbox": [
+            63,
+            174,
+            934,
+            284
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.",
+        "bbox": [
+            62,
+            285,
+            934,
+            422
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.",
+        "bbox": [
+            63,
+            424,
+            934,
+            479
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The \"Important Regulatory Disclosures on Subject Companies\" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.",
+        "bbox": [
+            63,
+            479,
+            934,
+            547
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.",
+        "bbox": [
+            63,
+            549,
+            934,
+            604
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.",
+        "bbox": [
+            63,
+            604,
+            933,
+            631
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "MS may make investment decisions that are inconsistent with the recommendations or views in this report.",
+        "bbox": [
+            63,
+            633,
+            624,
+            645
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited (\"MSTL\"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.",
+        "bbox": [
+            63,
+            646,
+            934,
+            743
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.",
+        "bbox": [
+            63,
+            743,
+            934,
+            797
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118J); in Australia to \"wholesale clients\" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to \"wholesale clients\" and \"retail clients\" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration",
+        "bbox": [
+            62,
+            799,
+            934,
+            952
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            885,
+            49,
+            933,
+            61
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            915,
+            968,
+            933,
+            979
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            65,
+            967,
+            241,
+            979
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.",
+        "bbox": [
+            62,
+            104,
+            934,
+            297
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.",
+        "bbox": [
+            63,
+            299,
+            934,
+            367
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.",
+        "bbox": [
+            63,
+            368,
+            933,
+            395
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.",
+        "bbox": [
+            63,
+            396,
+            933,
+            450
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.",
+        "bbox": [
+            63,
+            452,
+            933,
+            492
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.",
+        "bbox": [
+            63,
+            493,
+            720,
+            506
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.",
+        "bbox": [
+            63,
+            507,
+            875,
+            520
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.",
+        "bbox": [
+            63,
+            521,
+            933,
+            563
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.",
+        "bbox": [
+            63,
+            564,
+            933,
+            616
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/47b642d5f3639547e3c56b3e88956f9bfbd2a8a1cfd8e969b6627602500d7263.jpg",
+        "table_caption": [
+            "INDUSTRY COVERAGE: Internet"
+        ],
+        "table_footnote": [
+            "Stock Ratings are subject to change. Please see latest research for each company.",
+            "\\* Historical prices are not split adjusted."
+        ],
+        "table_body": "<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (06/29/2026)</td></tr><tr><td colspan=\"3\">Brian Nowak, CFA</td></tr><tr><td>Airbnb Inc (ABNB.O)</td><td>U (12/06/2022)</td><td>$147.17</td></tr><tr><td>Alphabet Inc. (GOOGL.O)</td><td>O (08/11/2015)</td><td>$353.65</td></tr><tr><td>Amazon.com Inc (AMZN.O)</td><td>O (04/24/2015)</td><td>$240.14</td></tr><tr><td>Booking Holdings Inc (BKNG.O)</td><td>O (02/23/2026)</td><td>$182.41</td></tr><tr><td>DoorDash Inc (DASH.O)</td><td>O (02/21/2024)</td><td>$184.82</td></tr><tr><td>Expedia Inc. (EXPE.O)</td><td>E (01/09/2019)</td><td>$265.28</td></tr><tr><td>Instacart (CART.O)</td><td>E (01/29/2024)</td><td>$47.23</td></tr><tr><td>Lyft Inc (LYFT.O)</td><td>E (10/24/2019)</td><td>$15.25</td></tr><tr><td>Meta Platforms Inc (META.O)</td><td>O (03/20/2023)</td><td>$562.60</td></tr><tr><td>Pinterest Inc (PINS.N)</td><td>O (07/20/2025)</td><td>$21.88</td></tr><tr><td>Reddit Inc (RDDT.N)</td><td>O (12/08/2024)</td><td>$174.39</td></tr><tr><td>Snap Inc. (SNAP.N)</td><td>E (07/22/2024)</td><td>$4.42</td></tr><tr><td>Uber Technologies Inc (UBER.N)</td><td>O (06/04/2019)</td><td>$75.50</td></tr><tr><td colspan=\"3\">Matthew Cost</td></tr><tr><td>AppLovin Corp (APP.O)</td><td>O (04/10/2025)</td><td>$498.76</td></tr><tr><td>Compass, Inc. (COMP.N)</td><td>E (01/12/2026)</td><td>$12.00</td></tr><tr><td>Criteo SA (CRTO.O)</td><td>E (01/26/2016)</td><td>$18.60</td></tr><tr><td>DoubleVerify Holdings Inc (DV.N)</td><td>E (06/25/2024)</td><td>$10.92</td></tr><tr><td>Electronic Arts Inc (EA.O)</td><td>E (08/04/2021)</td><td>$205.05</td></tr><tr><td>Liftoff Mobile Inc. (LFTO.O)</td><td>E (06/29/2026)</td><td>$25.47</td></tr><tr><td>MNTN Inc (MNTN.N)</td><td>E (06/16/2025)</td><td>$9.03</td></tr><tr><td>Opendoor Technologies Inc (OPEN.O)</td><td>E (07/24/2023)</td><td>$4.60</td></tr><tr><td>Playtika Holding Corp (PLTK.O)</td><td>E (11/27/2022)</td><td>$3.91</td></tr><tr><td>Roblox Corporation (RBLX.N)</td><td>O (11/04/2024)</td><td>$54.34</td></tr><tr><td>Shutterstock Inc (SSTK.N)</td><td>E (07/28/2022)</td><td>$14.13</td></tr><tr><td>Take-Two Interactive Software (TTWO.O)</td><td>O (02/01/2018)</td><td>$247.15</td></tr><tr><td>Trade Desk Inc (TTD.O)</td><td>E (09/10/2025)</td><td>$18.65</td></tr><tr><td>Unity Software Inc (U.N)</td><td>O (09/02/2024)</td><td>$28.31</td></tr><tr><td>Webtoon Entertainment Inc (WBTN.O)</td><td>E (07/22/2024)</td><td>$12.04</td></tr><tr><td>Yelp Inc (YELP.N)</td><td>U (01/10/2019)</td><td>$24.63</td></tr><tr><td>Zillow Group Inc (Z.O)</td><td>E (04/18/2018)</td><td>$31.38</td></tr><tr><td colspan=\"3\">Nathan Feather</td></tr><tr><td>Bumble Inc. (BMBL.O)</td><td>E (03/08/2021)</td><td>$3.20</td></tr><tr><td>Chewy Inc (CHWY.N)</td><td>O (10/31/2023)</td><td>$19.42</td></tr><tr><td>Duolingo Inc (DUOL.O)</td><td>E (02/27/2026)</td><td>$116.03</td></tr><tr><td>eBay Inc (EBAY.O)</td><td>O (04/18/2024)</td><td>$110.80</td></tr><tr><td>Etsy Inc (ETSY.N)</td><td>E (07/20/2025)</td><td>$79.66</td></tr><tr><td>FIGS, Inc. (FIGS.N)</td><td>E (02/29/2024)</td><td>$11.08</td></tr><tr><td>Grindr Inc. (GRND.N)</td><td>E (02/24/2026)</td><td>$14.44</td></tr><tr><td>Match Group Inc (MTCH.O)</td><td>E (04/18/2024)</td><td>$38.73</td></tr><tr><td>Peloton Interactive, Inc. (PTON.O)</td><td>E (03/14/2022)</td><td>$5.77</td></tr><tr><td>Revolve Group Inc (RVLV.N)</td><td>E (10/20/2024)</td><td>$23.61</td></tr><tr><td>WW International Inc (WW.O)</td><td>E (08/01/2025)</td><td>$16.40</td></tr></table>",
+        "bbox": [
+            116,
+            648,
+            882,
+            939
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            885,
+            49,
+            933,
+            61
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            65,
+            968,
+            84,
+            979
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "",
+        "table_caption": [],
+        "table_footnote": [
+            "",
+            ""
+        ],
+        "bbox": [
+            122,
+            97,
+            883,
+            513
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "© 2026 MS",
+        "text_level": 2,
+        "bbox": [
+            63,
+            574,
+            235,
+            590
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "UPDATE",
+        "bbox": [
+            883,
+            49,
+            933,
+            61
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            65,
+            967,
+            241,
+            979
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            915,
+            968,
+            933,
+            979
+        ],
+        "page_idx": 14
+    }
+]
