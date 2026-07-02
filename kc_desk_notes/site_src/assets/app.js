@@ -7,6 +7,7 @@
   const ADMIN_COOKIE_MAX_AGE = 180 * 24 * 60 * 60;
   const DOWNLOAD_PASSWORD_KEY = "kcdesk_download_password";
   const AUTH_SESSION_KEY = "kcdesk_auth_session";
+  const VISITOR_ID_KEY = "kcdesk_visitor_id";
   const AUTHORITY_SOURCE = "authority";
   const REPORT_A_SOURCE = "report-a";
   const EXTERNAL_SOURCE = "external";
@@ -210,6 +211,64 @@
   function authHeaders() {
     const session = loadAuthSession();
     return session && session.token ? { "Authorization": `Bearer ${session.token}` } : {};
+  }
+
+  function randomVisitorId() {
+    if (window.crypto && typeof window.crypto.randomUUID === "function") {
+      return window.crypto.randomUUID();
+    }
+    return `v-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 12)}`;
+  }
+
+  function visitorId() {
+    try {
+      let value = localStorage.getItem(VISITOR_ID_KEY) || "";
+      if (!value) {
+        value = randomVisitorId();
+        localStorage.setItem(VISITOR_ID_KEY, value);
+      }
+      return value;
+    } catch (_error) {
+      return "";
+    }
+  }
+
+  function currentAnalyticsPath() {
+    return `${window.location.pathname}${window.location.search}`.slice(0, 240);
+  }
+
+  function trackEvent(workerUrl, type, data = {}) {
+    if (!workerUrl) return;
+    const payload = {
+      type,
+      visitor_id: visitorId(),
+      path: currentAnalyticsPath(),
+      data: {
+        page,
+        referrer: document.referrer || "",
+        ...data,
+      },
+    };
+    try {
+      fetch(`${workerUrl}/analytics`, {
+        method: "POST",
+        cache: "no-store",
+        keepalive: true,
+        headers: { "Content-Type": "application/json", ...authHeaders() },
+        body: JSON.stringify(payload),
+      }).catch(() => {});
+    } catch (_error) {
+      // Analytics should never block the user flow.
+    }
+  }
+
+  function analyticsReportPayload(item, source = "catalog") {
+    return {
+      source,
+      report_id: item && item.id || "",
+      report_title: item ? (item.title || item.title_zh || item.filename || "") : "",
+      institution: item ? (item.institution || item.bank_code || item.bank_name || "") : "",
+    };
   }
 
   function authUserLabel(session) {
@@ -473,6 +532,7 @@
     const title = options.title || "管理后台";
     const showWechat = options.showWechat !== false;
     const showUsers = options.showUsers !== false;
+    const showAnalytics = options.showAnalytics !== false;
     return `
       <div class="admin-modal account-admin-modal" id="accountAdminModal" role="dialog" aria-modal="true" aria-labelledby="accountAdminTitle">
         <div class="admin-dialog account-admin-dialog">
@@ -502,6 +562,13 @@
               <span>GitHub latest</span>
             </div>
             <div id="accountAdminFiles" class="account-admin-files"></div>
+          </section>
+          <section class="account-admin-section" id="accountAdminAnalyticsSection" ${showAnalytics ? "" : "hidden"}>
+            <div class="account-admin-heading">
+              <strong>访问与搜索</strong>
+              <span id="accountAdminAnalyticsCount"></span>
+            </div>
+            <div id="accountAdminAnalytics" class="account-admin-analytics"></div>
           </section>
           <section class="account-admin-section" id="accountAdminUsersSection" ${showUsers ? "" : "hidden"}>
             <div class="account-admin-heading">
@@ -709,6 +776,149 @@
     `;
   }
 
+  function analyticsTime(value) {
+    return String(value || "").replace("T", " ").slice(0, 16);
+  }
+
+  function analyticsSourcesText(sources) {
+    if (!sources || typeof sources !== "object") return "";
+    return Object.entries(sources)
+      .sort((a, b) => Number(b[1] || 0) - Number(a[1] || 0))
+      .map(([source, count]) => `${source} ${count}`)
+      .join(" · ");
+  }
+
+  function analyticsMetric(label, value) {
+    return `
+      <div class="account-admin-metric">
+        <span>${escapeHtml(label)}</span>
+        <strong>${escapeHtml(String(value || 0))}</strong>
+      </div>
+    `;
+  }
+
+  function renderAnalyticsTopSearches(searches) {
+    const rows = Array.isArray(searches) ? searches.slice(0, 12) : [];
+    if (!rows.length) return '<div class="empty-state">还没有搜索记录。</div>';
+    return `
+      <div class="account-admin-table-wrap">
+        <table class="account-admin-table account-admin-analytics-table">
+          <thead>
+            <tr>
+              <th>搜索词</th>
+              <th>次数</th>
+              <th>访客</th>
+              <th>来源</th>
+              <th>最近</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map((row) => `
+              <tr>
+                <td><strong>${escapeHtml(row.query || "")}</strong></td>
+                <td>${escapeHtml(row.count || 0)}</td>
+                <td>${escapeHtml(row.visitor_count || 0)}</td>
+                <td>${escapeHtml(analyticsSourcesText(row.sources))}</td>
+                <td>${escapeHtml(analyticsTime(row.last_at))}</td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function renderAnalyticsTopReports(reports) {
+    const rows = Array.isArray(reports) ? reports.slice(0, 10) : [];
+    if (!rows.length) return '<div class="empty-state">还没有报告点击记录。</div>';
+    return `
+      <div class="account-admin-files account-admin-analytics-list">
+        ${rows.map((row) => `
+          <div class="account-admin-file">
+            <div>
+              <strong>${escapeHtml(row.title || row.report_id || "")}</strong>
+              <span>${escapeHtml(row.source || "")} · 打开 ${escapeHtml(row.opens || 0)} · 下载 ${escapeHtml(row.downloads || 0)} · ${escapeHtml(analyticsTime(row.last_at))}</span>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  function renderAnalyticsRecentEvents(events) {
+    const rows = Array.isArray(events) ? events.slice(0, 30) : [];
+    if (!rows.length) return '<div class="empty-state">还没有最近事件。</div>';
+    return `
+      <div class="account-admin-table-wrap">
+        <table class="account-admin-table account-admin-analytics-table">
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>事件</th>
+              <th>用户/访客</th>
+              <th>内容</th>
+              <th>状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map((event) => {
+              const user = event.user && (event.user.username || event.user.email)
+                ? `${event.user.username || ""}${event.user.email ? ` · ${event.user.email}` : ""}`
+                : (event.visitor_id ? event.visitor_id.slice(0, 12) : "匿名");
+              const content = event.query
+                ? `${event.source || ""} 搜索：${event.query}`
+                : (event.report_title || event.report_id || event.path || "");
+              const status = [
+                event.result_count ? `${event.result_count}条` : "",
+                event.cache_status || "",
+                event.status || "",
+                event.error || "",
+              ].filter(Boolean).join(" · ");
+              return `
+                <tr>
+                  <td>${escapeHtml(analyticsTime(event.ts))}</td>
+                  <td>${escapeHtml(event.type || "")}</td>
+                  <td>${escapeHtml(user)}</td>
+                  <td>${escapeHtml(content)}</td>
+                  <td>${escapeHtml(status)}</td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function renderAccountAdminAnalytics(analytics) {
+    if (!analytics || typeof analytics !== "object") {
+      return '<div class="empty-state">还没有可用的访问数据。</div>';
+    }
+    return `
+      <div class="account-admin-metrics">
+        ${analyticsMetric("访客", analytics.visitor_count)}
+        ${analyticsMetric("搜索", analytics.search_count)}
+        ${analyticsMetric("报告打开", analytics.report_open_count)}
+        ${analyticsMetric("下载", analytics.download_success_count)}
+        ${analyticsMetric("发货链接", analytics.delivery_link_count)}
+      </div>
+      <div class="account-admin-analytics-grid">
+        <section>
+          <h4>热门搜索</h4>
+          ${renderAnalyticsTopSearches(analytics.top_searches)}
+        </section>
+        <section>
+          <h4>热门报告</h4>
+          ${renderAnalyticsTopReports(analytics.top_reports)}
+        </section>
+      </div>
+      <section>
+        <h4>最近事件</h4>
+        ${renderAnalyticsRecentEvents(analytics.recent_events)}
+      </section>
+    `;
+  }
+
   function resetDownloadProgress(progress) {
     if (!progress) return;
     const bar = progress.querySelector(".account-admin-progress-track span");
@@ -908,11 +1118,14 @@
       const files = Array.isArray(data.files) ? data.files : [];
       const dailyPicks = Array.isArray(data.daily_picks) ? data.daily_picks : [];
       const wechatSchedule = data.wechat_schedule && typeof data.wechat_schedule === "object" ? data.wechat_schedule : {};
+      const analytics = data.analytics && typeof data.analytics === "object" ? data.analytics : null;
       const canViewUsers = data.can_view_users !== false;
       const canViewWechat = data.can_view_wechat !== false;
+      const canViewAnalytics = data.can_view_analytics !== false;
       if (targets.title && data.dashboard_title) targets.title.textContent = data.dashboard_title;
       if (targets.usersSection) targets.usersSection.hidden = !canViewUsers;
       if (targets.wechatSection) targets.wechatSection.hidden = !canViewWechat;
+      if (targets.analyticsSection) targets.analyticsSection.hidden = !canViewAnalytics;
       accountAdminDailyPicks = new Map(dailyPicks.map((pick) => [String(pick.id || ""), pick]));
       targets.pickCount.textContent = dailyPicks.length ? `${dailyPicks.length} reports` : "";
       targets.picks.innerHTML = dailyPicks.length
@@ -927,6 +1140,10 @@
         targets.users.innerHTML = users.length
           ? users.map(adminUserRow).join("")
           : '<tr><td colspan="5">暂无用户。</td></tr>';
+      }
+      if (canViewAnalytics && targets.analytics && targets.analyticsCount) {
+        targets.analyticsCount.textContent = analytics ? `近 ${analytics.range_days || 30} 天 · ${analytics.event_count || 0} events` : "";
+        targets.analytics.innerHTML = renderAccountAdminAnalytics(analytics);
       }
       targets.files.innerHTML = files.length
         ? files.map(adminFileRow).join("")
@@ -951,6 +1168,7 @@
       title: isOperatorOnly ? "运营后台" : "管理后台",
       showWechat: !isOperatorOnly,
       showUsers: !isOperatorOnly,
+      showAnalytics: !isOperatorOnly,
     }));
 
     const modal = document.getElementById("accountAdminModal");
@@ -967,7 +1185,26 @@
     const users = document.getElementById("accountAdminUsers");
     const usersSection = document.getElementById("accountAdminUsersSection");
     const files = document.getElementById("accountAdminFiles");
-    const targets = { title, status, refresh, pickCount, picks, wechatCount, wechatSchedule, wechatSection, userCount, users, usersSection, files };
+    const analyticsCount = document.getElementById("accountAdminAnalyticsCount");
+    const analytics = document.getElementById("accountAdminAnalytics");
+    const analyticsSection = document.getElementById("accountAdminAnalyticsSection");
+    const targets = {
+      title,
+      status,
+      refresh,
+      pickCount,
+      picks,
+      wechatCount,
+      wechatSchedule,
+      wechatSection,
+      analyticsCount,
+      analytics,
+      analyticsSection,
+      userCount,
+      users,
+      usersSection,
+      files,
+    };
 
     function finish() {
       modal.remove();
@@ -1417,7 +1654,7 @@
     const meta = reportAMeta(item);
     const url = externalPageUrl({ ...item, source: REPORT_A_SOURCE }, "");
     return `
-      <a class="related-row report-a-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
+      <a class="related-row report-a-row" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" data-id="${escapeHtml(item.id)}">
         <span class="related-title">
           <span>${escapeHtml(item.title)}</span>
         </span>
@@ -1486,14 +1723,18 @@
     const pageInfo = document.getElementById("pageInfo");
     const pageSize = document.getElementById("pageSize");
     const items = Array.isArray(catalog.items) ? catalog.items : [];
+    const catalogById = new Map(items.map((item) => [String(item.id || ""), item]));
     const metadataById = new Map(items.map((item) => [item.id, metadataText(item)]));
     const searchTextById = new Map();
     let searchIndexLabel = "Text index loading";
     let currentPage = 1;
+    let catalogAnalyticsTimer = 0;
+    let lastCatalogAnalyticsKey = "";
 
     const workerUrl = workerBaseUrl(config);
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
+    trackEvent(workerUrl, "page_view", { page: "home", report_count: items.length });
 
     const bankOptions = new Map();
     const industryOptions = new Map();
@@ -1552,6 +1793,7 @@
     function render(options = {}) {
       if (options.resetPage) currentPage = 1;
       const query = normalize(input.value);
+      const rawQuery = input.value.trim();
       const scoped = items
         .filter(passesFilters)
         .map((item) => ({
@@ -1580,12 +1822,49 @@
 
       if (!scoped.length) {
         results.innerHTML = '<div class="empty-state">No matching reports.</div>';
+        scheduleCatalogSearchAnalytics(rawQuery, scoped.length);
         maybeRunAuthoritySearch(input.value.trim());
         return;
       }
       results.innerHTML = visible.map((entry) => resultRow(entry.item)).join("");
       results.scrollTop = 0;
+      scheduleCatalogSearchAnalytics(rawQuery, scoped.length);
       maybeRunAuthoritySearch(input.value.trim());
+    }
+
+    function activeFilterPayload() {
+      return {
+        bank: bankFilter.value,
+        industry: industryFilter.value,
+        start_date: startDate.value,
+        end_date: endDate.value,
+        scope: scopeFilter.value,
+        availability: availabilityFilter.value,
+      };
+    }
+
+    function hasActiveFilters() {
+      const filters = activeFilterPayload();
+      return Object.values(filters).some(Boolean) && !(filters.scope === "all" && Object.values({ ...filters, scope: "" }).every((value) => !value));
+    }
+
+    function scheduleCatalogSearchAnalytics(rawQuery, resultCount) {
+      const cleanQuery = String(rawQuery || "").trim();
+      const filtersActive = hasActiveFilters();
+      if (cleanQuery.length < 2 && !filtersActive) return;
+      const payload = {
+        source: "catalog",
+        query: cleanQuery,
+        result_count: resultCount,
+        ...activeFilterPayload(),
+      };
+      const key = JSON.stringify(payload);
+      if (key === lastCatalogAnalyticsKey) return;
+      window.clearTimeout(catalogAnalyticsTimer);
+      catalogAnalyticsTimer = window.setTimeout(() => {
+        lastCatalogAnalyticsKey = key;
+        trackEvent(workerUrl, "search", payload);
+      }, 900);
     }
 
     function clearAllFilters() {
@@ -1616,6 +1895,8 @@
     results.addEventListener("click", (event) => {
       const row = event.target.closest(".report-link");
       if (!row) return;
+      const item = catalogById.get(String(row.dataset.id || ""));
+      trackEvent(workerUrl, "report_open", analyticsReportPayload(item || { id: row.dataset.id }, "catalog"));
       if (isNativeNewTabLink(row)) return;
       event.preventDefault();
       event.stopPropagation();
@@ -1647,6 +1928,7 @@
     let externalQuery = "";
     let authorityQuery = "";
     const externalItems = new Map();
+    const reportAItems = new Map();
     const authorityItems = new Map();
 
     function setExternalStatus(text, kind) {
@@ -1665,6 +1947,7 @@
       reportAToken += 1;
       if (reportASection) reportASection.hidden = true;
       if (reportAResults) reportAResults.innerHTML = "";
+      reportAItems.clear();
       if (reportACount) reportACount.textContent = "";
       setReportAStatus("");
     }
@@ -1740,6 +2023,13 @@
         externalResults.innerHTML = items.length
           ? items.map(externalRow).join("")
           : '<div class="empty-state">暂无匹配结果。</div>';
+        trackEvent(workerUrl, "search", {
+          source: EXTERNAL_SOURCE,
+          query,
+          result_count: items.length,
+          total_count: data.total_count || data.total_page || 0,
+          cache_status: data.cache_status || "",
+        });
         maybeRunAuthoritySearch(query);
       } catch (error) {
         if (token !== externalToken) return;
@@ -1777,10 +2067,19 @@
         const data = await response.json();
         if (token !== reportAToken) return;
         const items = Array.isArray(data.items) ? data.items : [];
+        reportAItems.clear();
+        items.forEach((item) => reportAItems.set(String(item.id), item));
         if (reportACount) reportACount.textContent = items.length ? `${items.length} 条` : "";
         reportAResults.innerHTML = items.length
           ? items.map(reportARow).join("")
           : '<div class="empty-state">暂无匹配结果。</div>';
+        trackEvent(workerUrl, "search", {
+          source: REPORT_A_SOURCE,
+          query,
+          result_count: items.length,
+          total_count: data.total || 0,
+          cache_status: data.cache_status || "",
+        });
       } catch (error) {
         if (token !== reportAToken) return;
         if (reportACount) reportACount.textContent = "";
@@ -1821,6 +2120,13 @@
         authorityResults.innerHTML = items.length
           ? items.map(authorityRow).join("")
           : '<div class="empty-state">暂无匹配结果。</div>';
+        trackEvent(workerUrl, "search", {
+          source: AUTHORITY_SOURCE,
+          query,
+          result_count: items.length,
+          total_count: data.total || 0,
+          cache_status: data.cache_status || "",
+        });
       } catch (error) {
         if (token !== authorityToken) return;
         if (authorityCount) authorityCount.textContent = "";
@@ -1847,20 +2153,34 @@
     externalResults.addEventListener("click", (event) => {
       const row = event.target.closest(".external-row");
       if (!row) return;
+      const item = externalItems.get(String(row.dataset.id));
+      if (item) trackEvent(workerUrl, "report_open", analyticsReportPayload(item, EXTERNAL_SOURCE));
       if (isNativeNewTabLink(row)) return;
       event.preventDefault();
       event.stopPropagation();
-      const item = externalItems.get(String(row.dataset.id));
       if (item) openInNewTab(externalPageUrl(item, ""));
     });
+    if (reportAResults) {
+      reportAResults.addEventListener("click", (event) => {
+        const row = event.target.closest(".report-a-row");
+        if (!row) return;
+        const item = reportAItems.get(String(row.dataset.id || ""));
+        if (item) trackEvent(workerUrl, "report_open", analyticsReportPayload(item, REPORT_A_SOURCE));
+        if (isNativeNewTabLink(row)) return;
+        event.preventDefault();
+        event.stopPropagation();
+        if (item) openInNewTab(externalPageUrl({ ...item, source: REPORT_A_SOURCE }, ""));
+      });
+    }
     if (authorityResults) {
       authorityResults.addEventListener("click", (event) => {
         const row = event.target.closest(".authority-row");
         if (!row) return;
+        const item = authorityItems.get(String(row.dataset.id));
+        if (item) trackEvent(workerUrl, "report_open", analyticsReportPayload(item, AUTHORITY_SOURCE));
         if (isNativeNewTabLink(row)) return;
         event.preventDefault();
         event.stopPropagation();
-        const item = authorityItems.get(String(row.dataset.id));
         if (item) openInNewTab(externalPageUrl({ ...item, source: AUTHORITY_SOURCE }, ""));
       });
     }
@@ -2176,6 +2496,10 @@
 
   async function downloadCatalogWithAccount(workerUrl, item, statusTarget) {
     statusTarget("正在检查账号权益…");
+    trackEvent(workerUrl, "download_attempt", {
+      ...analyticsReportPayload(item, "catalog"),
+      action: "account_download",
+    });
     const response = await fetch(`${workerUrl}/download`, {
       method: "POST",
       headers: { "Content-Type": "application/json", ...authHeaders() },
@@ -2184,10 +2508,21 @@
     if (!response.ok) {
       const data = await response.json().catch(() => ({}));
       if (response.status === 401) clearAuthSession();
+      trackEvent(workerUrl, "download_error", {
+        ...analyticsReportPayload(item, "catalog"),
+        action: "account_download",
+        status: String(response.status),
+        error: data.error || "Download failed.",
+      });
       throw new Error(downloadErrorMessage(response.status, data.error || "Download failed.", data));
     }
     const blob = await response.blob();
     triggerBlobDownload(blob, response.headers.get("Content-Disposition"), item.filename);
+    trackEvent(workerUrl, "download_success", {
+      ...analyticsReportPayload(item, "catalog"),
+      action: "account_download",
+      status: "ok",
+    });
     statusTarget("下载已开始。", "ok");
   }
 
@@ -2355,6 +2690,7 @@
       try {
         const data = await requestReportPassword(workerUrl, item.id);
         linkInput.value = deliveryPageUrl(item.id, data.password);
+        trackEvent(workerUrl, "delivery_link_generate", analyticsReportPayload(item, "catalog"));
         status.textContent = "Delivery link generated.";
         status.classList.add("ok");
       } catch (error) {
@@ -2394,6 +2730,7 @@
   function renderDetail(item, config, catalogItems, searchTextById, options = {}) {
     const detail = document.getElementById("detail");
     const workerUrl = workerBaseUrl(config);
+    const catalogById = new Map((catalogItems || []).map((row) => [String(row.id || ""), row]));
     const available = isPdfAvailable(item);
     const setupWarning = workerUrl || !available
       ? ""
@@ -2440,10 +2777,16 @@
       ${workerUrl ? adminPanelMarkup() : ""}
       ${relatedMarkup}
     `;
+    trackEvent(workerUrl, "page_view", {
+      page: "report",
+      ...analyticsReportPayload(item, "catalog"),
+    });
 
     detail.addEventListener("click", (event) => {
       const row = event.target.closest(".report-link");
       if (!row) return;
+      const relatedItem = catalogById.get(String(row.dataset.id || ""));
+      trackEvent(workerUrl, "report_open", analyticsReportPayload(relatedItem || { id: row.dataset.id }, "catalog"));
       if (isNativeNewTabLink(row)) return;
       event.preventDefault();
       event.stopPropagation();
@@ -2488,6 +2831,10 @@
 
       button.disabled = true;
       status.textContent = "Checking password...";
+      trackEvent(workerUrl, "download_attempt", {
+        ...analyticsReportPayload(item, "catalog"),
+        action: "password_download",
+      });
       try {
         const response = await fetch(`${workerUrl}/download`, {
           method: "POST",
@@ -2509,15 +2856,32 @@
             // Ignore non-JSON errors.
           }
           if (response.status === 401) clearRememberedDownloadPassword();
+          trackEvent(workerUrl, "download_error", {
+            ...analyticsReportPayload(item, "catalog"),
+            action: "password_download",
+            status: String(response.status),
+            error: message,
+          });
           throw new Error(downloadErrorMessage(response.status, message, data));
         }
 
         const blob = await response.blob();
         triggerBlobDownload(blob, response.headers.get("Content-Disposition"), item.filename);
         setRememberedDownloadPassword(input.value);
+        trackEvent(workerUrl, "download_success", {
+          ...analyticsReportPayload(item, "catalog"),
+          action: "password_download",
+          status: "ok",
+        });
         status.textContent = "Download started.";
         status.classList.add("ok");
       } catch (error) {
+        trackEvent(workerUrl, "download_error", {
+          ...analyticsReportPayload(item, "catalog"),
+          action: "password_download",
+          status: "exception",
+          error: error.message || "Download failed.",
+        });
         status.textContent = error.message || "Download failed.";
         status.classList.add("error");
       } finally {
@@ -2608,6 +2972,10 @@
 
   async function fetchExternalPdf(workerUrl, item, password, statusTarget, options = {}) {
     statusTarget("正在获取报告…");
+    trackEvent(workerUrl, "download_attempt", {
+      ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
+      action: options.auth ? "account_download" : "password_download",
+    });
     const response = await fetch(`${workerUrl}/${docEndpoint(item)}/pdf`, {
       method: "POST",
       headers: { "Content-Type": "application/json", ...(options.auth ? authHeaders() : {}) },
@@ -2621,6 +2989,11 @@
       } catch (_error) {
         // Keep the generic pending state.
       }
+      trackEvent(workerUrl, "download_pending", {
+        ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
+        action: "pending",
+        status: "202",
+      });
       return { pending: true, wait_seconds: Number(data.wait_seconds || 0) || 480 };
     }
     if (!response.ok) {
@@ -2632,11 +3005,22 @@
         // Keep generic message.
       }
       if (response.status === 401) clearRememberedDownloadPassword();
+      trackEvent(workerUrl, "download_error", {
+        ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
+        action: options.auth ? "account_download" : "password_download",
+        status: String(response.status),
+        error: message,
+      });
       throw new Error(message);
     }
     const blob = await response.blob();
     triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${item.id}.pdf`);
     setRememberedDownloadPassword(password);
+    trackEvent(workerUrl, "download_success", {
+      ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
+      action: options.auth ? "account_download" : "password_download",
+      status: "ok",
+    });
     statusTarget("下载已开始。", "ok");
     return { pending: false };
   }
@@ -2709,6 +3093,10 @@
     }
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
+    trackEvent(workerUrl, "page_view", {
+      page: "doc",
+      ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
+    });
 
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     document.title = `${item.title || "Report"} | KC Desk Notes`;
@@ -2850,6 +3238,7 @@
       try {
         const data = await requestExternalPassword(workerUrl, item.id, item.source);
         linkInput.value = externalPageUrl(item, data.password);
+        trackEvent(workerUrl, "delivery_link_generate", analyticsReportPayload(item, item.source || EXTERNAL_SOURCE));
         deliveryStatus.className = "status-line ok";
         deliveryStatus.textContent = "Delivery link generated.";
       } catch (error) {
