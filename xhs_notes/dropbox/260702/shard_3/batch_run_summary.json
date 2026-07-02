@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 29,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 3,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-MS-Greater China Technology Semiconductors：Testing Consumables： Potential Price Hike Coming； Reiterate OW on MPI and WinWay-260630.pdf",
+          "batch_file": "/tmp/pdf_batch_001_0hpu5yyz/pdfs/0001-16-MS-Greater China Technology Semiconductors-Testing Consumables- Potential Price Hike Coming- Reiterate OW on MPI and WinWay-260630.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-NOM-USD CNY fix model：Projection： 6.7863-260701.pdf",
+          "batch_file": "/tmp/pdf_batch_001_0hpu5yyz/pdfs/0002-17-NOM-USD CNY fix model-Projection- 6.7863-260701.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-CITI-China Auto Manufacturers：Weekly EV Orders Missed （22~28 Jun）-260630.pdf",
+          "batch_file": "/tmp/pdf_batch_001_0hpu5yyz/pdfs/0003-18-CITI-China Auto Manufacturers-Weekly EV Orders Missed -22-28 Jun--260630.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-CITI-Taiwan PCB & Laminates ABF BT Sector： GM pricing Upcycle Underway； Buy with Higher TPs-260630.pdf",
+          "batch_file": "/tmp/pdf_batch_001_0hpu5yyz/pdfs/0004-19-CITI-Taiwan PCB - Laminates ABF BT Sector- GM pricing Upcycle Underway- Buy with Higher TPs-260630.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-DB-China NEV Weekly New Orders Monitor：China NEV demand leading indicator （weekly new orders）~June 4th week-260630.pdf",
+          "batch_file": "/tmp/pdf_batch_001_0hpu5yyz/pdfs/0005-20-DB-China NEV Weekly New Orders Monitor-China NEV demand leading indicator -weekly new orders--June 4th week-260630.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
