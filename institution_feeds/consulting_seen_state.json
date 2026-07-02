@@ -140,6 +140,34 @@
     "bcg:https://www.bcg.com/publications/2026/rebuilding-asset-management-for-an-ai-first-world": {
       "first_seen": "2026-07-01",
       "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/risk/our%20insights/mckinsey%20on%20risk%20number%2020/mckinsey-on-risk-and-resilience-number-20-2025.pdf": {
+      "first_seen": "2026-07-02",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-science-behind-next-best-action-programs": {
+      "first_seen": "2026-07-02",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/discover-the-agentic-era-of-next-best-action": {
+      "first_seen": "2026-07-02",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/agent-native-marketing-operating-model": {
+      "first_seen": "2026-07-02",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/cloud-ai-cost-beyond-token-pricing": {
+      "first_seen": "2026-07-02",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-ceos-guide-to-physical-ai": {
+      "first_seen": "2026-07-02",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/an-imperative-for-growth-and-the-new-economics-of-asset-management": {
+      "first_seen": "2026-07-02",
+      "status": "downloaded"
     }
   }
 }
