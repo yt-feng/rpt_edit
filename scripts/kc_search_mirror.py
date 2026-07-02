@@ -33,6 +33,28 @@ AUTHORITY_LABELS = {
 }
 
 R2_PREFIX = "_search-mirror"
+EXTERNAL_MIRROR_SEED_QUERIES = [
+    "Nomura",
+    "Goldman Sachs",
+    "Morgan Stanley",
+    "J.P. Morgan",
+    "JPMorgan",
+    "UBS",
+    "BofA",
+    "Citi",
+    "HSBC",
+    "Barclays",
+    "Deutsche Bank",
+    "Macquarie",
+    "Bernstein",
+    "Asia AI Semi",
+    "semiconductor",
+    "AI server",
+    "China macro",
+    "Global Views",
+    "equity strategy",
+    "FX rates",
+]
 
 
 def request_json_with_retries(
@@ -107,12 +129,68 @@ def slim_external(item: dict[str, Any]) -> dict[str, Any] | None:
     }
 
 
+def add_external_records(
+    raw_items: Any,
+    items: list[dict[str, Any]],
+    seen: set[str],
+) -> int:
+    if not isinstance(raw_items, list) or not raw_items:
+        return 0
+    added = 0
+    for raw in raw_items:
+        if not isinstance(raw, dict):
+            continue
+        slim = slim_external(raw)
+        if not slim or slim["id"] in seen:
+            continue
+        seen.add(slim["id"])
+        items.append(slim)
+        added += 1
+    return added
+
+
+def fetch_external_query_pages(
+    session: requests.Session,
+    query: str,
+    pages: int,
+    page_size: int,
+    timeout: float,
+    retries: int,
+    retry_backoff: float,
+    items: list[dict[str, Any]],
+    seen: set[str],
+) -> bool:
+    for page in range(1, pages + 1):
+        description = f"external {query or 'latest'} page {page}"
+        try:
+            data = request_json_with_retries(
+                session.get,
+                description,
+                retries=retries,
+                retry_backoff=retry_backoff,
+                url=EXTERNAL_API,
+                params={"query": query, "page_num": page, "page_size": page_size},
+                timeout=timeout,
+            )
+        except RuntimeError as error:
+            print(f"warning: stop {description}: {error}", file=sys.stderr)
+            return False
+        raw_items = data.get("items") if isinstance(data, dict) else []
+        if not isinstance(raw_items, list) or not raw_items:
+            break
+        add_external_records(raw_items, items, seen)
+        time.sleep(0.15)
+    return True
+
+
 def fetch_external_pages(
     pages: int,
     page_size: int,
     timeout: float,
     retries: int,
     retry_backoff: float,
+    seed_queries: list[str],
+    seed_pages: int,
 ) -> tuple[list[dict[str, Any]], bool]:
     session = requests.Session()
     session.headers.update({
@@ -122,32 +200,35 @@ def fetch_external_pages(
     })
     items: list[dict[str, Any]] = []
     seen: set[str] = set()
-    for page in range(1, pages + 1):
-        try:
-            data = request_json_with_retries(
-                session.get,
-                f"external page {page}",
-                retries=retries,
-                retry_backoff=retry_backoff,
-                url=EXTERNAL_API,
-                params={"query": "", "page_num": page, "page_size": page_size},
-                timeout=timeout,
+    complete = fetch_external_query_pages(
+        session,
+        "",
+        pages,
+        page_size,
+        timeout,
+        retries,
+        retry_backoff,
+        items,
+        seen,
+    )
+    if not complete:
+        return items, False
+    if seed_pages > 0:
+        for query in seed_queries:
+            seed = clean_text(query, 120)
+            if not seed:
+                continue
+            fetch_external_query_pages(
+                session,
+                seed,
+                seed_pages,
+                page_size,
+                timeout,
+                retries,
+                retry_backoff,
+                items,
+                seen,
             )
-        except RuntimeError as error:
-            print(f"warning: stop external mirror at page {page}: {error}", file=sys.stderr)
-            return items, False
-        raw_items = data.get("items") if isinstance(data, dict) else []
-        if not isinstance(raw_items, list) or not raw_items:
-            break
-        for raw in raw_items:
-            if not isinstance(raw, dict):
-                continue
-            slim = slim_external(raw)
-            if not slim or slim["id"] in seen:
-                continue
-            seen.add(slim["id"])
-            items.append(slim)
-        time.sleep(0.15)
     return items, True
 
 
@@ -298,9 +379,12 @@ def main() -> int:
     parser.add_argument("--timeout", type=float, default=30.0)
     parser.add_argument("--retries", type=int, default=3)
     parser.add_argument("--retry-backoff", type=float, default=1.5)
+    parser.add_argument("--external-seed-pages", type=int, default=3)
+    parser.add_argument("--external-seed-query", action="append", default=[])
     parser.add_argument("--output-dir", type=Path, default=Path("outputs/kc-search-mirror"))
     parser.add_argument("--upload-r2", action="store_true")
     args = parser.parse_args()
+    seed_queries = list(dict.fromkeys([*EXTERNAL_MIRROR_SEED_QUERIES, *args.external_seed_query]))
 
     external_items, external_complete = fetch_external_pages(
         args.external_pages,
@@ -308,6 +392,8 @@ def main() -> int:
         args.timeout,
         args.retries,
         args.retry_backoff,
+        seed_queries,
+        args.external_seed_pages,
     )
     authority_items, authority_complete = fetch_authority_pages(
         args.authority_pages,
