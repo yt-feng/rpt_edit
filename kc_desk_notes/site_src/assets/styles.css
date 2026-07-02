@@ -1302,6 +1302,12 @@ button.primary:disabled {
   color: var(--accent-strong);
 }
 
+.account-admin-file-label .is-entertain {
+  border: 1px solid #f4b7cc;
+  background: #fff0f5;
+  color: #9d174d;
+}
+
 .account-admin-file-label small {
   color: var(--muted);
   font-size: 12px;
