@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_clyox40k/pdfs/0001-06-JPM-Washington Policy Perspectives-US exceptionalism is back but with fatter tails- thinner patience-260630.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_clyox40k/pdfs/0002-07-MS-Automation - Read-across from China-s June Manufacturing PMI-260630.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_clyox40k/pdfs/0003-08-GS-COMMODITY ANALYST-Hormuz Fertilizer Disruption Eases- But Risks Remain-260701.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_clyox40k/pdfs/0004-09-NOM-Global Memory-Quick Note-260702.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_clyox40k/pdfs/0005-10-MS-Greater China Semiconductors-Asia Pacific Old memory-Near-term outlook remains positive-260701.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
