@@ -2831,6 +2831,7 @@
 
       button.disabled = true;
       status.textContent = "Checking password...";
+      let downloadErrorTracked = false;
       trackEvent(workerUrl, "download_attempt", {
         ...analyticsReportPayload(item, "catalog"),
         action: "password_download",
@@ -2862,6 +2863,7 @@
             status: String(response.status),
             error: message,
           });
+          downloadErrorTracked = true;
           throw new Error(downloadErrorMessage(response.status, message, data));
         }
 
@@ -2876,12 +2878,14 @@
         status.textContent = "Download started.";
         status.classList.add("ok");
       } catch (error) {
-        trackEvent(workerUrl, "download_error", {
-          ...analyticsReportPayload(item, "catalog"),
-          action: "password_download",
-          status: "exception",
-          error: error.message || "Download failed.",
-        });
+        if (!downloadErrorTracked) {
+          trackEvent(workerUrl, "download_error", {
+            ...analyticsReportPayload(item, "catalog"),
+            action: "password_download",
+            status: "exception",
+            error: error.message || "Download failed.",
+          });
+        }
         status.textContent = error.message || "Download failed.";
         status.classList.add("error");
       } finally {
