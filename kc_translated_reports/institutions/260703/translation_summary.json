@@ -1,0 +1,83 @@
+{
+  "date_folder": "260703",
+  "max_reports": "all",
+  "selected_count": 6,
+  "successful_count": 6,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/institutions/260703/0001-IMF_Cambodia-Strengthening-the-Control-over-Budget-Execution_9223c86b",
+      "title": "IMF报告：柬埔寨预算执行改革走到了哪一步，又卡在了哪里",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 0,
+      "institution_name": "IMF",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/institutions/260703/01-0001-IMF_Cambodia-Strengthening-the-Control-over-Budget-Execution_9223c86b",
+      "pdf_path": "kc_translated_reports/institutions/260703/01-0001-IMF_Cambodia-Strengthening-the-Control-over-Budget-Execution_9223c86b/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260703/0002-IMF_Financial-Market-Infrastructures-Evolution-in-a-Tokenized-Ec_6de79104",
+      "title": "IMF：Tokenization不会消灭金融基础设施，但会重新定义谁做什么",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 3,
+      "institution_name": "IMF",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/institutions/260703/02-0002-IMF_Financial-Market-Infrastructures-Evolution-in-a-Tokenized-Ec_6de79104",
+      "pdf_path": "kc_translated_reports/institutions/260703/02-0002-IMF_Financial-Market-Infrastructures-Evolution-in-a-Tokenized-Ec_6de79104/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260703/0003-IMF_Kyrgyz-Republic-2026-Article-IV-Consultation-Press-Release-S_da2bac9a",
+      "title": "IMF：吉尔吉斯斯坦三年狂飙后，真正的考验是通胀与改革窗口",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 28,
+      "institution_name": "IMF",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/institutions/260703/03-0003-IMF_Kyrgyz-Republic-2026-Article-IV-Consultation-Press-Release-S_da2bac9a",
+      "pdf_path": "kc_translated_reports/institutions/260703/03-0003-IMF_Kyrgyz-Republic-2026-Article-IV-Consultation-Press-Release-S_da2bac9a/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260703/0004-IMF_Kyrgyz-Republic-Selected-Issues_d76f575c",
+      "title": "IMF报告：吉尔吉斯共和国的真实货币政策远比政策利率宽松",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 28,
+      "institution_name": "IMF",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/institutions/260703/04-0004-IMF_Kyrgyz-Republic-Selected-Issues_d76f575c",
+      "pdf_path": "kc_translated_reports/institutions/260703/04-0004-IMF_Kyrgyz-Republic-Selected-Issues_d76f575c/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260703/0005-IMF_The-Case-for-A-General-Allocation-Of-SDRs-during-the-Thirtee_960ca515",
+      "title": "IMF：SDR新分配的门已经关上，但钥匙还在桌上",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 5,
+      "institution_name": "IMF",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/institutions/260703/05-0005-IMF_The-Case-for-A-General-Allocation-Of-SDRs-during-the-Thirtee_960ca515",
+      "pdf_path": "kc_translated_reports/institutions/260703/05-0005-IMF_The-Case-for-A-General-Allocation-Of-SDRs-during-the-Thirtee_960ca515/kc_translated_report_05.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260703/0006-IMF_The-Rise-of-Tokenization-Deciphering-New-Trends-in-Payments-_3f89dd14",
+      "title": "IMF报告：Tokenization正在重塑金融基础设施，但真正的赢家是“兼容者”",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_06.pdf",
+      "figure_count": 5,
+      "institution_name": "IMF",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/institutions/260703/06-0006-IMF_The-Rise-of-Tokenization-Deciphering-New-Trends-in-Payments-_3f89dd14",
+      "pdf_path": "kc_translated_reports/institutions/260703/06-0006-IMF_The-Rise-of-Tokenization-Deciphering-New-Trends-in-Payments-_3f89dd14/kc_translated_report_06.pdf"
+    }
+  ]
+}

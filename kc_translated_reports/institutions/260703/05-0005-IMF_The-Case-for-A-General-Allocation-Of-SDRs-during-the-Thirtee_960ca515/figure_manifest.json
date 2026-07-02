@@ -1,0 +1,37 @@
+[
+  {
+    "token": "[[KC_IMAGE_001]]",
+    "source_path": "xhs_notes/institutions/260703/0005-IMF_The-Case-for-A-General-Allocation-Of-SDRs-during-the-Thirtee_960ca515/mineru_raw/images/2c355c76c7b30daee83e882dd567bc3957df960f6365890811fe110218f5a127.jpg",
+    "path": "kc_translated_reports/institutions/260703/05-0005-IMF_The-Case-for-A-General-Allocation-Of-SDRs-during-the-Thirtee_960ca515/assets/fig_001.jpg",
+    "relative_path": "fig_001.jpg",
+    "chart_filter": "score=6;non_chart_context,chart_context,chart_ratio,edge:0.32,contrast,large"
+  },
+  {
+    "token": "[[KC_IMAGE_002]]",
+    "source_path": "xhs_notes/institutions/260703/0005-IMF_The-Case-for-A-General-Allocation-Of-SDRs-during-the-Thirtee_960ca515/mineru_raw/images/b48aa9d523b84d2c1e16e4c2eda09522c36dc8294ca593a9641be65774461ba4.jpg",
+    "path": "kc_translated_reports/institutions/260703/05-0005-IMF_The-Case-for-A-General-Allocation-Of-SDRs-during-the-Thirtee_960ca515/assets/fig_002.jpg",
+    "relative_path": "fig_002.jpg",
+    "chart_filter": "score=10;chart_context,chart_ratio,edge:0.18,large"
+  },
+  {
+    "token": "[[KC_IMAGE_003]]",
+    "source_path": "xhs_notes/institutions/260703/0005-IMF_The-Case-for-A-General-Allocation-Of-SDRs-during-the-Thirtee_960ca515/mineru_raw/images/7e348ed0148400e2cb5c97525cc48075cdb9f92f38e5fae7d4ccb5f966494f2c.jpg",
+    "path": "kc_translated_reports/institutions/260703/05-0005-IMF_The-Case-for-A-General-Allocation-Of-SDRs-during-the-Thirtee_960ca515/assets/fig_003.jpg",
+    "relative_path": "fig_003.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,edge:0.18"
+  },
+  {
+    "token": "[[KC_IMAGE_004]]",
+    "source_path": "xhs_notes/institutions/260703/0005-IMF_The-Case-for-A-General-Allocation-Of-SDRs-during-the-Thirtee_960ca515/mineru_raw/images/e0a35d9f69f9ea17a507ebf949e20e3deb470f381b2da1500514a8260f535447.jpg",
+    "path": "kc_translated_reports/institutions/260703/05-0005-IMF_The-Case-for-A-General-Allocation-Of-SDRs-during-the-Thirtee_960ca515/assets/fig_004.jpg",
+    "relative_path": "fig_004.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,edge:0.17"
+  },
+  {
+    "token": "[[KC_IMAGE_005]]",
+    "source_path": "xhs_notes/institutions/260703/0005-IMF_The-Case-for-A-General-Allocation-Of-SDRs-during-the-Thirtee_960ca515/mineru_raw/images/8a5d5f257ae9a775547d50b1c2b76cc2a41b630a313d668f9969a60af137cf8e.jpg",
+    "path": "kc_translated_reports/institutions/260703/05-0005-IMF_The-Case-for-A-General-Allocation-Of-SDRs-during-the-Thirtee_960ca515/assets/fig_005.jpg",
+    "relative_path": "fig_005.jpg",
+    "chart_filter": "score=9;chart_context,chart_ratio,edge:0.16"
+  }
+]
