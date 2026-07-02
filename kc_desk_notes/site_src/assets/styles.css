@@ -938,6 +938,57 @@ button.primary:disabled {
   gap: 10px;
 }
 
+.account-admin-analytics {
+  display: grid;
+  gap: 14px;
+}
+
+.account-admin-metrics {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.account-admin-metric {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.account-admin-metric span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.account-admin-metric strong {
+  color: var(--ink);
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.account-admin-analytics-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 14px;
+}
+
+.account-admin-analytics h4 {
+  margin: 4px 0 8px;
+  font-size: 14px;
+}
+
+.account-admin-analytics-table {
+  min-width: 680px;
+}
+
+.account-admin-analytics-list {
+  gap: 8px;
+}
+
 .account-admin-picks {
   display: grid;
   gap: 12px;
@@ -1485,6 +1536,8 @@ button.primary:disabled {
   .password-row,
   .delivery-row,
   .auth-grid,
+  .account-admin-metrics,
+  .account-admin-analytics-grid,
   .plan-grid,
   .account-admin-pick,
   .account-admin-wechat-batch,
