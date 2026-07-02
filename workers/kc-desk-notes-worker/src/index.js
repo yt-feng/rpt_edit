@@ -3051,6 +3051,10 @@ async function githubCacheKey(repo, ref, path) {
   return `${GITHUB_CACHE_PREFIX}/${digest}/${filename}`;
 }
 
+function githubArtifactCacheKey(id) {
+  return `${GITHUB_CACHE_PREFIX}/artifacts/${encodeURIComponent(String(id || ""))}.zip`;
+}
+
 async function githubCacheExists(env, cacheKey) {
   if (!env.REPORT_BUCKET) return false;
   try {
@@ -3106,6 +3110,33 @@ async function cacheGithubFile(env, file) {
   return { ok: true, cached: false, key: cacheKey };
 }
 
+async function cacheGithubArtifact(env, file) {
+  if (!env.REPORT_BUCKET || !file || file.type !== "artifact") return { ok: false, skipped: true };
+  const id = String(file.id || "").trim();
+  if (!/^\d+$/.test(id)) return { ok: false, skipped: true };
+  const cacheKey = githubArtifactCacheKey(id);
+  if (await githubCacheExists(env, cacheKey)) return { ok: true, cached: true, key: cacheKey };
+  const response = await githubApiFetch(env, `/actions/artifacts/${encodeURIComponent(id)}/zip`, {
+    headers: { "Accept": "application/vnd.github+json" },
+    redirect: "follow",
+  });
+  if (!response.ok || !response.body) return { ok: false, status: response.status };
+  const filename = /\.zip$/i.test(String(file.name || "")) ? String(file.name || "") : `${file.name || `github-artifact-${id}`}.zip`;
+  await env.REPORT_BUCKET.put(cacheKey, response.body, {
+    httpMetadata: {
+      contentType: "application/zip",
+      contentDisposition: contentDisposition(filename),
+    },
+    customMetadata: {
+      artifact_id: id,
+      path: filename.slice(0, 900),
+      cached_at: new Date().toISOString(),
+      file_date: String(file.date || "").slice(0, 40),
+    },
+  });
+  return { ok: true, cached: false, key: cacheKey };
+}
+
 async function pruneGithubCache(env, now = Date.now()) {
   if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function") return { deleted: 0 };
   const cutoffTime = now - GITHUB_CACHE_RETENTION_MS;
@@ -3143,9 +3174,9 @@ async function pruneGithubCache(env, now = Date.now()) {
 async function warmAdminGithubCache(env, files = null) {
   const targetFiles = Array.isArray(files) ? files : await latestAdminGithubFiles(env);
   const warmed = [];
-  for (const file of targetFiles.filter((item) => item && item.type === "file").slice(0, 36)) {
+  for (const file of targetFiles.filter((item) => item && (item.type === "file" || item.type === "artifact")).slice(0, 36)) {
     try {
-      warmed.push(await cacheGithubFile(env, file));
+      warmed.push(file.type === "artifact" ? await cacheGithubArtifact(env, file) : await cacheGithubFile(env, file));
     } catch (error) {
       warmed.push({ ok: false, error: String(error && error.message || error || "cache failed").slice(0, 200) });
     }
@@ -3322,7 +3353,7 @@ async function handleAccountAdminGithubFile(request, env, ctx = null) {
   });
 }
 
-async function handleAccountAdminGithubArtifact(request, env) {
+async function handleAccountAdminGithubArtifact(request, env, ctx = null) {
   let adminUser;
   try {
     adminUser = await requireOperationsUser(request, env);
@@ -3332,6 +3363,7 @@ async function handleAccountAdminGithubArtifact(request, env) {
   const url = new URL(request.url);
   const id = String(url.searchParams.get("id") || "").trim();
   if (!/^\d+$/.test(id)) return jsonResponse(request, env, 400, { detail: "Artifact id is invalid." });
+  let artifactName = `github-artifact-${id}.zip`;
   if (!isSuperAccount(adminUser)) {
     try {
       const artifact = await githubApiJson(env, `/actions/artifacts/${encodeURIComponent(id)}`);
@@ -3339,10 +3371,38 @@ async function handleAccountAdminGithubArtifact(request, env) {
       if (!/market-views-pdf/i.test(name)) {
         return jsonResponse(request, env, 403, { detail: "Artifact is not allowed for this account." });
       }
+      if (name) artifactName = /\.zip$/i.test(name) ? name : `${name}.zip`;
     } catch (_error) {
       return jsonResponse(request, env, 403, { detail: "Artifact is not allowed for this account." });
     }
   }
+
+  const cacheKey = githubArtifactCacheKey(id);
+  const range = request.headers.get("Range") || request.headers.get("range") || "";
+  if (env.REPORT_BUCKET) {
+    try {
+      if (range) {
+        const head = typeof env.REPORT_BUCKET.head === "function" ? await env.REPORT_BUCKET.head(cacheKey) : null;
+        if (head) {
+          const parsed = parseRangeHeader(range, Number(head.size || 0));
+          if (!parsed) return rangeNotSatisfiableResponse(request, env, Number(head.size || 0));
+          const cachedRange = await env.REPORT_BUCKET.get(cacheKey, {
+            range: {
+              offset: parsed.offset,
+              length: parsed.length,
+            },
+          });
+          if (cachedRange) return cachedGithubResponse(request, env, cachedRange, artifactName, { status: 206, range: parsed });
+        }
+      } else {
+        const cached = await env.REPORT_BUCKET.get(cacheKey);
+        if (cached) return cachedGithubResponse(request, env, cached, artifactName);
+      }
+    } catch (_error) {
+      // Fall through to GitHub.
+    }
+  }
+
   let upstream;
   try {
     upstream = await githubApiFetch(env, `/actions/artifacts/${encodeURIComponent(id)}/zip`, {
@@ -3352,14 +3412,36 @@ async function handleAccountAdminGithubArtifact(request, env) {
   } catch (_error) {
     return jsonResponse(request, env, 502, { detail: "GitHub artifact download is unavailable." });
   }
-  return new Response(upstream.body, {
-    headers: {
-      ...corsHeaders(request, env),
-      "Content-Type": "application/zip",
-      "Content-Disposition": contentDisposition(`github-artifact-${id}.zip`),
-      "Cache-Control": "no-store, private",
-      "X-Content-Type-Options": "nosniff",
-    },
+  let body = upstream.body;
+  if (body && env.REPORT_BUCKET) {
+    const [clientBody, cacheBody] = body.tee();
+    body = clientBody;
+    const cachePromise = env.REPORT_BUCKET.put(cacheKey, cacheBody, {
+      httpMetadata: {
+        contentType: "application/zip",
+        contentDisposition: contentDisposition(artifactName),
+      },
+      customMetadata: {
+        artifact_id: id,
+        path: artifactName.slice(0, 900),
+        cached_at: new Date().toISOString(),
+      },
+    }).catch(() => null);
+    if (ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(cachePromise);
+    else await cachePromise;
+  }
+  const headers = {
+    ...corsHeaders(request, env),
+    "Content-Type": "application/zip",
+    "Content-Disposition": contentDisposition(artifactName),
+    "Cache-Control": "no-store, private",
+    "X-Content-Type-Options": "nosniff",
+    "Accept-Ranges": "bytes",
+  };
+  const length = upstream.headers.get("Content-Length");
+  if (length) headers["Content-Length"] = length;
+  return new Response(body, {
+    headers,
   });
 }
 
@@ -3947,7 +4029,7 @@ export default {
     }
 
     if (pathname === "/account-admin/github-artifact" && request.method === "GET") {
-      return handleAccountAdminGithubArtifact(request, env);
+      return handleAccountAdminGithubArtifact(request, env, ctx);
     }
 
     if (pathname === "/account-admin/report-pdf" && request.method === "GET") {
