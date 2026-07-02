@@ -1,0 +1,59 @@
+{
+  "date_folder": "260703",
+  "max_reports": "all",
+  "selected_count": 4,
+  "successful_count": 4,
+  "sensitive_skipped_count": 0,
+  "sensitive_skipped": [],
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/ark/260703/0001-ARK_503-Nvidia-Has-A-Plan-For-Powering-AI-Agents-More_e6658c77ca3dde4c",
+      "title": "木头姐ARK：#503: Nvidia Has A Plan For Powering AI Agents, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260703/01-0001-ARK_503-Nvidia-Has-A-Plan-For-Powering-AI-Agents-More_e6658c77ca3dde4c",
+      "pdf_path": "kc_translated_reports/ark/260703/01-0001-ARK_503-Nvidia-Has-A-Plan-For-Powering-AI-Agents-More_e6658c77ca3dde4c/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260703/0002-ARK_502-What-Will-Prasad-s-Departure-From-The-FDA-Mean-For-Drug-Development-_9c8b767008f88a5c",
+      "title": "木头姐ARK：#502: What Will Prasad’s Departure From The FDA Mean For Drug Development?, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260703/02-0002-ARK_502-What-Will-Prasad-s-Departure-From-The-FDA-Mean-For-Drug-Development-_9c8b767008f88a",
+      "pdf_path": "kc_translated_reports/ark/260703/02-0002-ARK_502-What-Will-Prasad-s-Departure-From-The-FDA-Mean-For-Drug-Development-_9c8b767008f88a/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260703/0003-ARK_Bitcoin-And-Quantum-Computing_16b171460f6da313",
+      "title": "木头姐ARK：Bitcoin And Quantum Computing",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260703/03-0003-ARK_Bitcoin-And-Quantum-Computing_16b171460f6da313",
+      "pdf_path": "kc_translated_reports/ark/260703/03-0003-ARK_Bitcoin-And-Quantum-Computing_16b171460f6da313/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/ark/260703/0004-ARK_501-Robinhood-Is-Creating-A-Financial-SuperApp-More_ec53918707639caa",
+      "title": "木头姐ARK：#501: Robinhood Is Creating A Financial SuperApp, & More",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 0,
+      "institution_name": "木头姐ARK",
+      "article_style": true,
+      "output_dir": "kc_translated_reports/ark/260703/04-0004-ARK_501-Robinhood-Is-Creating-A-Financial-SuperApp-More_ec53918707639caa",
+      "pdf_path": "kc_translated_reports/ark/260703/04-0004-ARK_501-Robinhood-Is-Creating-A-Financial-SuperApp-More_ec53918707639caa/kc_translated_report_04.pdf"
+    }
+  ]
+}
