@@ -1,0 +1,201 @@
+你是财经类 AI Podcast 制作人，擅长把研报内容改写成中文、英文两条独立的访谈式播客脚本。
+
+【目标】
+- 基于下面研报解析内容，写两份 podcast 脚本：一份中文，一份英文。
+- 每份目标时长约 5 分钟。
+- 两份都要是“访谈聊天式”，不是单人念稿。
+- 听感：像一位主持人和一位研究员围绕报告做深度但自然的讨论。
+- 不要使用 emoji。
+- 不要把全文讲完，要留下 1-2 个“完整报告里会继续展开”的悬念。
+
+【输出格式必须严格遵守】
+- 中文部分只能使用 `ZH_A:` 和 `ZH_B:` 开头。
+- 英文部分只能使用 `EN_A:` 和 `EN_B:` 开头。
+- 每一句独立成行。
+- 不要输出 Markdown 标题。
+- 不要输出舞台说明、音效说明或括号注释。
+- 先输出完整中文脚本，再输出完整英文脚本。
+
+【角色设定】
+- A 是主持人：负责提问、转场、替听众追问“所以这意味着什么”。
+- B 是研究员：负责解释报告逻辑、给出结构化判断和保留悬念。
+- 两个角色必须频繁轮换，避免一个人连续说超过 3 句。
+- 每句要适合 TTS 朗读：短句、自然、不要太书面。
+
+【中文脚本结构】
+1. 开场：A 用一个问题引出报告价值，B 给出主判断。
+2. 第一部分：这份报告真正要回答的问题是什么。
+3. 第二部分：2-3 个关键洞察，每个洞察都要有“这意味着什么”。
+4. 第三部分：哪些问题仍然没有完全展开，为什么值得继续读完整报告。
+5. 结尾：自然引导听众加入社群/阅读完整报告，不要硬广。
+
+【英文脚本结构】
+- 英文不是中文逐句翻译，而是面向英文听众重新组织。
+- 保留同样的主线和洞察，但表达更口语、更 podcast。
+- Use natural conversational English.
+- Avoid long sentences and avoid reading like a research memo.
+
+【内容边界】
+- 可以基于研报内容做适度发散，但必须是从原文逻辑推出的判断。
+- 不要编造具体数据、公司动作或引用。
+- 对不确定内容要用“这里仍需要继续验证”或 “the report does not fully answer this yet” 表达。
+- 默认避免出现具体投行品牌名，比如“GS”“GS”，统一写作“投行研报”或 “a global investment bank report”。
+
+【研报解析内容】
+"""
+US ECONOMICS ANALYST
+
+# From Innovation to Productivity Boom: Lessons from the ICT Revolution for the AI Era
+
+We expect AI to meaningfully boost productivity growth over the next decade. Already, dozens of research studies and corporate anecdotes show evidence of large productivity gains at the micro level in a range of applications. But key questions for both equity and macro investors are when and where we might first see evidence of AI-driven productivity gains at the macro level.
+
+Elsie Peng  
++1(212)357-3137 | elsie.peng@gs.com  
+GS & Co. LLC
+
+We look back at the information and communications technology revolution (ICT) from roughly 1980-2000 to draw insights from history. A key lesson of that period is that the path from technological innovation to broad-based productivity gains is neither fast nor uniform.
+
+When did the impact of ICT on productivity first appear? The ICT productivity boom arrived 15 years after the commercialization of the personal computer. While ICT investment began rising sharply in the early 1980s, industry-level data show that its impact on productivity followed a J-curve: a modest drag on measured productivity growth in the first four years, with clear gains emerging only after eight years and peaking at year twelve. The impact was slow because key ICT component costs were initially high, network effects did not kick in until adoption reached a critical mass, and human and institutional impediments slowed technology adoption and were only gradually overcome with substantial investment in intangible organizational capital.
+
+\- Where did convincing evidence that ICT was boosting productivity first appear? Early productivity gains appeared in industries where ICT was already deeply embedded in the production process even before the innovation breakthrough of the early 1980s, in industries that invested in ICT earliest, and especially in industries that invested heavily in reorganization to use ICT more effectively. While productivity growth in these industries picked up earlier and more strongly than in the aggregate statistics, providing persuasive early evidence that ICT was having a meaningful impact, some of the key measures used today to identify these early winners, such as intangible investment, might not have been obvious to observers at the time.
+
+To what degree will these historical lessons from ICT apply to AI? With regard to timing, we expect to see a quicker impact of AI on productivity because costs are falling much faster for AI models than they did for ICT equipment, and network effects are less vital for realizing productivity gains. But similar human and institutional obstacles to adoption are again likely to delay the impact on
+
+productivity. While investment in hardware is already rising even faster than during the ICT buildout, investment in reorganization of work processes appears to be moving more slowly.
+
+With regard to where to look for the earliest tests of whether AI is boosting productivity growth, the industries to watch are clearer today thanks to the availability of higher frequency data on AI exposure and adoption in addition to data on investment in tangible and intangible capital. Our composite ranking across these measures implies that industries such as information, professional services, insurance, and finance should show the earliest and largest pickups in productivity growth. While productivity trends for these industries should provide the earliest test, industry-level data come out with a lag, so even here the evidence will likely take at least several years to arrive.
+
+## From Innovation to Productivity Boom: Lessons from the ICT Revolution for the AI Era
+
+We expect AI to meaningfully boost productivity growth over the next decade. Already, dozens of research studies and corporate anecdotes show evidence of large productivity gains at the micro level in a range of applications. But key questions for both equity and macro investors are when and where we might first see evidence of AI-driven productivity gains at the macro level.
+
+We look back at the information and communications technology revolution (ICT) from roughly 1980-2000 to draw some insight from history. A key lesson of that period is that the path from technological innovation to broad-based productivity gains is neither fast nor uniform.
+
+## When Did the Impact of ICT on Productivity First Appear in the Macro Data?
+
+The commercialization of the personal computer in the early 1980s set off a wave of technological innovation. Exhibit 1 shows that there was a sharp and sustained rise in breakthrough ICT patents per capita through the late 1980s and early 1990s. But productivity growth remained stubbornly flat for nearly 15 years, accelerating only in the second half of the 1990s.
+
+Exhibit 1: The Commercialization of the Personal Computer in the Early 1980s Set Off a Wave of Innovation, but Productivity Growth Did Not See a Meaningful Increase Until the Late 1990s  
+![](images/14a1ec9acb71a672a24d67d1133c4ad26f5dee10f54d92cf7e7d684e80954548.jpg)  
+\*Creative patents are defined as patents that contain original terminologies (e.g. "cloud computing" first emerged in 2007 patents). Patent data are from Kalyani (2024) and Kelly, Papanikolaou, Seru, and Taddy (2021).  
+Source: GS Global Investment Research, Department of Labor
+
+The impact on productivity growth took a while to appear even though ICT investment began to rise sharply as early as the 1980s (Exhibit 1, left). The increase in ICT investment was fairly broad-based, though industries like professional services, wholesale trade, transportation, and finance invested much more intensively (Exhibit 2, right).
+
+Exhibit 2: ICT Investment Began Rising Sharply in the Early 1980s, With Increases Seen Across Most Industries  
+![](images/ead7e274c8db41dc2322337807fa8b5089605bdb3f246ac469b3eb1953bf9c8a.jpg)
+
+![](images/1f1684f3f165611f63dc1dc41e90190bfe294364a7c8efa2e0e2aa8b8a11afce.jpg)  
+Note: ICT investment includes investment in personal computers, mainframes, storage devices, printers, terminals, tape drives, system integrators, and communication devices. Data are from BEA's fixed asset survey.  
+Source: GS Global Investment Research, Department of Commerce
+
+But it took a long time for an increase in ICT investment to have a notable impact on productivity. Using industry panel data, we find that an increase in ICT investment actually led to a modest decline in measured productivity growth in the first four years. The positive effects emerged only with a substantial lag: a 1pp increase in ICT investment as a percentage of the capital stock did not produce a statistically significant rise in productivity growth until roughly 8 years later, with the impact peaking at around 0.6pp in year twelve. $^{1}$
+
+Exhibit 3: ICT Investment Initially Weighed on Productivity Growth, With Positive Effects Emerging Roughly 8 Years Later  
+![](images/8ac3629863071082a34b4446d8b39a18f26892b901b3d28ea14f666a96427ee1.jpg)  
+Note: Error bars indicate $95\%$ confidence interval.  
+Source: GS Global Investment Research
+
+We see three factors that delayed productivity gains.
+
+First, key ICT components—such as semiconductors and telecommunication devices—remained expensive throughout the 1980s. Prices only began falling after regulatory interventions and increased competition opened previously concentrated markets in the 1990s.
+
+Exhibit 4: Key ICT Components Remained Expensive Through the 1980s; Prices Only Started to Fall Following Increased Competition and Regulatory Changes in the 1990s
+
+![](images/422ea6aff642543bfa09851e238de0cd7c37664ff0aeed3dbeea20e8a992e1e3.jpg)  
+Source: GS Global Investment Research, Department of Labor
+
+Second, many ICT applications such as the internet exhibited strong network effects, generating far greater value for their users after adoption reached a critical mass. Productivity gains tended to emerge only after adoption rates passed an inflection point in the late 1990s.
+
+Exhibit 5: ICT Applications Exhibited Strong Network Effects, and Productivity Gains Only Emerged After Adoption Rates for Technologies Like the Internet Passed an Inflection Point in the Late 1990s  
+![](images/97c235db80609481512bfe9cf71d3b8d22b1eb5c5b4165741e670019cf5c7f38.jpg)  
+Source: GS Global Investment Research
+
+Third, an even more important bottleneck was the time and resources required for firms to build intangible assets needed to support the technological transition, such as redesigning workflows, retraining workers, and restructuring organizations, and building new data systems, as discussed in detail in our Global Economics team's prior report. The left panel of Exhibit 6 shows that each \$1 of ICT hardware investment likely required at least an additional \$1.7 of complementary intangible investment, with roughly two-thirds directed toward software and data systems and the remainder toward workforce reorganization. $^{2}$ The right panel of Exhibit 6 shows that there was a clear increase in intangible capital investment in the mid-1990s, and even this likely understates the increase because much of the early spending for reorganization was not captured in the official GDP statistics.
+
+Exhibit 6: ICT Required Meaningful Investment in Intangible Capital to Reach Its Full Productivity Potential, and Companies Only Started to Invest Heavily in Intangible Capital in the Late 1990s  
+![](images/3f2be14c275bac4367435da1e929904141ffb842f07de1c976d7041ef97fc3f6.jpg)  
+Source: GS Global Investment Research, EUKLEMS, Haver Analytics
+
+## Where Did the Impact of ICT on Productivity First Become Visible?
+
+To identify where the ICT productivity boom first became visible at the industry level, we use a standard statistical test for structural breaks in productivity growth across major industries. Exhibit 7 shows the year in which each industry first exhibited a statistically significant acceleration in productivity growth. We find that education, management, wholesale trade, professional services, and administrative support were among the earliest to show a clear pickup, in some cases several years ahead of the acceleration in the aggregate data.
+
+How confident can we be that these structural breaks were driven by ICT rather than other factors? As a check, we estimate the impact of ICT investment on productivity growth separately for each major industry group and combine these estimates with actual ICT investment data at the detailed industry level to estimate impulses from ICT investment to productivity growth for each industry. We then run the same structural break test on these industry-level ICT impulses to productivity growth and find that the resulting break years are broadly consistent with those identified using productivity data alone, supporting the conclusion that these early productivity pickups were most likely ICT-driven.
+
+Exhibit 7: Some Industries Showed a Clear Pickup in Productivity Growth Several Years Ahead of the Acceleration in the Aggregate Data
+
+![](images/b7dbef2778c81064b14eb62b371ea81eaa83349413439861bf0bc9d607a31bec.jpg)  
+\*Structural break years are estimated using the supremum Wald test. The test identifies the year in which allowing productivity growth to follow a different statistical relationship before and after that year yields the greatest improvement in model fit.  
+Source: GS Global Investment Research, Department of Labor
+
+What characteristics distinguished the earliest and largest beneficiaries of ICT?
+
+We find that industries where ICT was already deeply embedded in the production process before the technological breakthroughs of the early 1980s—or those that were among the earliest to invest heavily in the new technologies when they first became available—tended to see an earlier productivity payoff, with productivity growth in these industries peaking as early as the mid-1990s (Exhibit 8).
+
+Exhibit 8: Industries Where ICT Was Already Deeply Embedded in the Production Process Before the Technological Breakthrough of the Early 1980s or Those That Adopted the New Technologies Earliest Tended to See an Earlier Productivity Payoff
+
+![](images/5a9143138722220bc6f90a0e19f9fb9bc7716916ce98ad43e439c43881ca885b.jpg)  
+Source: GS Global Investment Research, Department of Labor
+
+But the ultimate winners were those that invested heavily in intangible organizational capital alongside their ICT investment—restructuring workflows, retraining workers, and redesigning business processes. As Exhibit 9 shows, these industries went from underperforming the rest of the economy in productivity growth to pulling sharply ahead by the early 1990s—and sustained that lead for years afterward. This finding reinforces a central lesson of the ICT experience: the industries that gained the most were not simply those that adopted the technology first or invested the most in hardware, but those that also made the largest complementary investments in reorganizing their operations around it.
+
+Exhibit 9: The Ultimate Industry Winners Were Those That Invested Heavily in Reorganization Capital Alongside Their ICT Investment  
+![](images/7fc9d27010487eeeb5fbcdac2801aa649b7072bfcef07e4ec5116a3278b14d32.jpg)  
+Source: GS Global Investment Research, Department of Labor
+
+## The Lessons of the ICT Revolution for the AI Era
+
+To what degree will these historical lessons from ICT apply to AI? With regard to timing, we expect to see a quicker impact of AI on productivity because costs are falling faster for AI models than they did for ICT equipment. That said, headline pricing for some frontier US AI models has risen in recent months as leading providers seek to expand margins. Our equity analysts expect overall token prices to stabilize as competitive pressure and continued declines in underlying compute costs limit providers' ability to sustain elevated pricing. In addition, unlike with communication-oriented technologies, network effects are probably less vital for realizing productivity gains from AI.
+
+Exhibit 10: The Price of Using AI Models Is Falling Much More Quickly Than Personal Computer Prices Did  
+![](images/e2ab93653766318c64c0e742f6b85ac401f14c46b36a02b5a69c051f7bb06d37.jpg)  
+\*Price per million tokens averaged across different LLM models, indexed to March 2023.  
+\*\*Quality-adjusted LLM model price index from Demirer, Fradkin, Tadelis, and Peng (2025)
+
+## Source: GS Global Investment Research, Department of Commerce
+
+But similar human and institutional obstacles to adoption are again likely to delay the impact on productivity. The left side of Exhibit 11 shows that investment in hardware is already rising even faster than during the ICT buildout. Investment in reorganizing work processes—as measured by the share of compensation paid to employees engaging in reorganization—appears to be moving more slowly (Exhibit 11, right), though some intangible investment already underway might not be fully captured by official measures. For example, a recent Atlanta Fed survey of enterprises implies roughly \$280 billion in AI-related intangible capital spending in 2026, and our prior analysis based on company data suggest that labor costs associated with the AI transition are likely running at \$150bn/year in the US, and executive time allocations suggest \$40bn/year in organization capital investment is likely underway.
+
+Exhibit 11: Investment in Hardware Supporting AI Is Already Growing Very Quickly, but the Investment in Intangible Capital That Will Likely Be Required to Fully Exploit AI Appears Not to Have Followed Yet
+
+![](images/f52280b93907825c7e63934103f29f2e4c3e580474fbb132799bf1e2c3ab312b.jpg)
+
+![](images/bc9e68bd730addc0842fa5ba45d4761a7a4ebefe7d1e71af1632243b5d4155c7.jpg)  
+\* EUKLEMS intangible investment data only starts from 1987, so we also track intangible investment using share of total compensation paid to employees engaging in reorganization activities from the CPS data. To identify employees engaging in reorganization activities, we follow the method proposed by Squicciarini and Le Mouel (2012).  
+Source: GS Global Investment Research, Department of Labor, Department of Commerce
+
+With regard to where to look for the earliest tests of whether AI is boosting productivity growth, the industries to watch are clearer today thanks to the availability of data on AI exposure and adoption in addition to data on investment in tangible and intangible capital. Our composite ranking across these measures implies that industries such as information, professional services, insurance, and finance should show the earliest and largest pickups in productivity growth.
+
+Exhibit 12: We Classify Industries by Their Potential for an Early Impact of AI on Productivity Growth Based on Pre-Existing IT Exposure, AI Adoption, AI Exposure, and Investment in Work Reorganization
+
+<table><tr><td colspan="7">AI Potential Early Impact Score</td></tr><tr><td></td><td>Industry Name</td><td>Pre-Exposure to Information Technology*</td><td>AI Adoption Rate** (May 2026)</td><td>AI Exposure Score***</td><td>Reorganization Intensity Since 2022^</td><td>Average Score</td></tr><tr><td rowspan="13">High Potential</td><td>Information &amp; data processing</td><td>4.2</td><td>1.9</td><td>1.8</td><td>0.0</td><td>1.97</td></tr><tr><td>Professional services</td><td>2.4</td><td>2.0</td><td>1.4</td><td>0.1</td><td>1.48</td></tr><tr><td>Motion picture &amp; sound</td><td>1.5</td><td>1.9</td><td>1.0</td><td>0.4</td><td>1.21</td></tr><tr><td>Insurance carriers</td><td>1.9</td><td>0.7</td><td>2.5</td><td>-0.7</td><td>1.09</td></tr><tr><td>Credit intermediation</td><td>0.4</td><td>0.8</td><td>1.9</td><td>0.9</td><td>0.98</td></tr><tr><td>Computer and electronics manufacturing</td><td>2.1</td><td>0.8</td><td>0.7</td><td>0.2</td><td>0.97</td></tr><tr><td>Administrative &amp; support</td><td>1.7</td><td>0.4</td><td>0.3</td><td>0.5</td><td>0.74</td></tr><tr><td>Electrical equipment manufacturing</td><td>0.5</td><td>0.6</td><td>0.4</td><td>1.3</td><td>0.70</td></tr><tr><td>Management of companies</td><td>0.4</td><td>-1.5</td><td>1.3</td><td>2.3</td><td>0.64</td></tr><tr><td>Miscellaneous manufacturing</td><td>0.5</td><td>0.1</td><td>0.7</td><td>0.9</td><td>0.56</td></tr><tr><td>Broadcasting &amp; telecom</td><td>0.9</td><td>0.8</td><td>0.6</td><td>-0.3</td><td>0.48</td></tr><tr><td>Machinery manufacturing</td><td>0.3</td><td>0.3</td><td>0.4</td><td>1.0</td><td>0.48</td></tr><tr><td>Chemical products</td><td>1.1</td><td>1.2</td><td>-0.2</td><td>-0.2</td><td>0.48</td></tr><tr><td rowspan="28">Medium Potential</td><td>Warehou
+
+[中间内容因长度限制已省略]
+
+ have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.
+
+Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints.
+
+As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.
+"""
