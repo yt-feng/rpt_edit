@@ -35,6 +35,34 @@ AUTHORITY_LABELS = {
 R2_PREFIX = "_search-mirror"
 
 
+def request_json_with_retries(
+    method: Any,
+    description: str,
+    *,
+    retries: int,
+    retry_backoff: float,
+    **kwargs: Any,
+) -> Any:
+    last_error: Exception | None = None
+    for attempt in range(1, retries + 1):
+        try:
+            response = method(**kwargs)
+            response.raise_for_status()
+            return response.json()
+        except (requests.RequestException, ValueError) as error:
+            last_error = error
+            if attempt >= retries:
+                break
+            sleep_seconds = min(retry_backoff * (2 ** (attempt - 1)), 8.0)
+            print(
+                f"warning: {description} failed on attempt {attempt}/{retries}: {error}; "
+                f"retrying in {sleep_seconds:.1f}s",
+                file=sys.stderr,
+            )
+            time.sleep(sleep_seconds)
+    raise RuntimeError(f"{description} failed after {retries} attempts: {last_error}")
+
+
 def iso_date_from_ms(value: Any) -> str:
     try:
         ms = int(value or 0)
@@ -79,7 +107,13 @@ def slim_external(item: dict[str, Any]) -> dict[str, Any] | None:
     }
 
 
-def fetch_external_pages(pages: int, page_size: int, timeout: float) -> list[dict[str, Any]]:
+def fetch_external_pages(
+    pages: int,
+    page_size: int,
+    timeout: float,
+    retries: int,
+    retry_backoff: float,
+) -> tuple[list[dict[str, Any]], bool]:
     session = requests.Session()
     session.headers.update({
         "Accept": "application/json",
@@ -89,13 +123,19 @@ def fetch_external_pages(pages: int, page_size: int, timeout: float) -> list[dic
     items: list[dict[str, Any]] = []
     seen: set[str] = set()
     for page in range(1, pages + 1):
-        response = session.get(
-            EXTERNAL_API,
-            params={"query": "", "page_num": page, "page_size": page_size},
-            timeout=timeout,
-        )
-        response.raise_for_status()
-        data = response.json()
+        try:
+            data = request_json_with_retries(
+                session.get,
+                f"external page {page}",
+                retries=retries,
+                retry_backoff=retry_backoff,
+                url=EXTERNAL_API,
+                params={"query": "", "page_num": page, "page_size": page_size},
+                timeout=timeout,
+            )
+        except RuntimeError as error:
+            print(f"warning: stop external mirror at page {page}: {error}", file=sys.stderr)
+            return items, False
         raw_items = data.get("items") if isinstance(data, dict) else []
         if not isinstance(raw_items, list) or not raw_items:
             break
@@ -108,7 +148,7 @@ def fetch_external_pages(pages: int, page_size: int, timeout: float) -> list[dic
             seen.add(slim["id"])
             items.append(slim)
         time.sleep(0.15)
-    return items
+    return items, True
 
 
 def authority_payload(page: int, page_size: int) -> dict[str, Any]:
@@ -150,7 +190,13 @@ def slim_authority(kind: str, record: dict[str, Any]) -> dict[str, Any] | None:
     }
 
 
-def fetch_authority_pages(pages: int, page_size: int, timeout: float) -> list[dict[str, Any]]:
+def fetch_authority_pages(
+    pages: int,
+    page_size: int,
+    timeout: float,
+    retries: int,
+    retry_backoff: float,
+) -> tuple[list[dict[str, Any]], bool]:
     session = requests.Session()
     session.headers.update({
         "Accept": "application/json",
@@ -160,17 +206,25 @@ def fetch_authority_pages(pages: int, page_size: int, timeout: float) -> list[di
     })
     items: list[dict[str, Any]] = []
     seen: set[str] = set()
+    complete = True
     for kind, endpoint in AUTHORITY_ENDPOINTS.items():
         referer = f"{AUTHORITY_ORIGIN}/foreign.html" if kind == "foreign" else f"{AUTHORITY_ORIGIN}/foreign-rt.html"
         for page in range(1, pages + 1):
-            response = session.post(
-                f"{AUTHORITY_ORIGIN}{endpoint}",
-                headers={"Referer": referer},
-                json=authority_payload(page, page_size),
-                timeout=timeout,
-            )
-            response.raise_for_status()
-            data = response.json()
+            try:
+                data = request_json_with_retries(
+                    session.post,
+                    f"authority {kind} page {page}",
+                    retries=retries,
+                    retry_backoff=retry_backoff,
+                    url=f"{AUTHORITY_ORIGIN}{endpoint}",
+                    headers={"Referer": referer},
+                    json=authority_payload(page, page_size),
+                    timeout=timeout,
+                )
+            except RuntimeError as error:
+                print(f"warning: stop authority {kind} mirror at page {page}: {error}", file=sys.stderr)
+                complete = False
+                break
             records = ((data.get("data") or {}).get("records") if isinstance(data, dict) else []) or []
             if not isinstance(records, list) or not records:
                 break
@@ -183,14 +237,15 @@ def fetch_authority_pages(pages: int, page_size: int, timeout: float) -> list[di
                 seen.add(slim["id"])
                 items.append(slim)
             time.sleep(0.15)
-    return items
+    return items, complete
 
 
-def mirror_payload(source: str, items: list[dict[str, Any]]) -> dict[str, Any]:
+def mirror_payload(source: str, items: list[dict[str, Any]], complete: bool = True) -> dict[str, Any]:
     return {
         "source": source,
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
         "count": len(items),
+        "complete": complete,
         "items": items,
     }
 
@@ -241,21 +296,46 @@ def main() -> int:
     parser.add_argument("--authority-pages", type=int, default=30)
     parser.add_argument("--page-size", type=int, default=EXTERNAL_PAGE_SIZE)
     parser.add_argument("--timeout", type=float, default=30.0)
+    parser.add_argument("--retries", type=int, default=3)
+    parser.add_argument("--retry-backoff", type=float, default=1.5)
     parser.add_argument("--output-dir", type=Path, default=Path("outputs/kc-search-mirror"))
     parser.add_argument("--upload-r2", action="store_true")
     args = parser.parse_args()
 
-    external = mirror_payload("external", fetch_external_pages(args.external_pages, args.page_size, args.timeout))
-    authority = mirror_payload("authority", fetch_authority_pages(args.authority_pages, args.page_size, args.timeout))
+    external_items, external_complete = fetch_external_pages(
+        args.external_pages,
+        args.page_size,
+        args.timeout,
+        args.retries,
+        args.retry_backoff,
+    )
+    authority_items, authority_complete = fetch_authority_pages(
+        args.authority_pages,
+        args.page_size,
+        args.timeout,
+        args.retries,
+        args.retry_backoff,
+    )
+    external = mirror_payload("external", external_items, external_complete)
+    authority = mirror_payload("authority", authority_items, authority_complete)
 
     write_json(args.output_dir / "external.json", external)
     write_json(args.output_dir / "authority.json", authority)
 
     if args.upload_r2:
-        upload_r2("external", external)
-        upload_r2("authority", authority)
+        if external_complete:
+            upload_r2("external", external)
+        else:
+            print("warning: external mirror incomplete; keep previous R2 latest.json", file=sys.stderr)
+        if authority_complete:
+            upload_r2("authority", authority)
+        else:
+            print("warning: authority mirror incomplete; keep previous R2 latest.json", file=sys.stderr)
 
-    print(f"external={external['count']} authority={authority['count']}")
+    print(
+        f"external={external['count']} complete={external_complete} "
+        f"authority={authority['count']} complete={authority_complete}"
+    )
     return 0
 
 
