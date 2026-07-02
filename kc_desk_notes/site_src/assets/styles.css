@@ -250,6 +250,69 @@ h3 {
   background-repeat: no-repeat;
 }
 
+.page-range-control {
+  grid-column: span 3;
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.page-range-control legend {
+  margin: 0 0 8px;
+  padding: 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.page-range-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+}
+
+.page-range-options label {
+  cursor: pointer;
+}
+
+.page-range-options input {
+  position: absolute;
+  width: 1px;
+  min-height: 0;
+  border: 0;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.page-range-options span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 12px;
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.page-range-options input:focus-visible + span {
+  border-color: var(--accent);
+  outline: 3px solid rgba(15, 118, 110, 0.16);
+}
+
+.page-range-options input:checked + span {
+  border-color: #9fd5cd;
+  background: #e8f7f4;
+  color: var(--accent-strong);
+}
+
 .filter-actions {
   display: flex;
   grid-column: 1 / -1;
@@ -1500,6 +1563,10 @@ button.primary:disabled {
 
   .filter-grid {
     grid-template-columns: 1fr;
+  }
+
+  .page-range-control {
+    grid-column: 1 / -1;
   }
 
   .filter-actions {
