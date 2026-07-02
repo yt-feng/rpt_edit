@@ -17,6 +17,8 @@ const DEFAULT_GITHUB_REPO = "yt-feng/rpt_edit";
 const DEFAULT_GITHUB_REF = "main";
 const BBG_SHOW_REPO = "yt-feng/bbg-show";
 const BBG_SHOW_PREFIX = "rendered-clips";
+const ENTERTAIN_CUT_REPO = "yt-feng/entertain_cut";
+const KC_ENTERTAIN_PREFIX = "outputs/kc_entertain";
 const GITHUB_CACHE_PREFIX = "_account/github-cache";
 const GITHUB_CACHE_RETENTION_MS = 3 * 24 * 60 * 60 * 1000;
 const WECHAT_DRAFT_SOURCES = [
@@ -2339,6 +2341,7 @@ function githubRepo(env) {
 
 function githubRef(env, repo = githubRepo(env)) {
   if (repo === BBG_SHOW_REPO) return DEFAULT_GITHUB_REF;
+  if (repo === ENTERTAIN_CUT_REPO) return DEFAULT_GITHUB_REF;
   const configured = cleanEnv(env.GH_REF) || cleanEnv(env.GITHUB_BRANCH) || cleanEnv(env.GITHUB_REF);
   if (!configured) return DEFAULT_GITHUB_REF;
   return configured.startsWith("refs/heads/") ? configured.slice("refs/heads/".length) : configured;
@@ -3229,6 +3232,59 @@ async function latestBbgRenderedClipFiles(env, maxItems = 26) {
   return applyBbgVideoGroupMajority(files);
 }
 
+function kcEntertainmentDateFromPath(path) {
+  const clean = String(path || "").replace(/^\/+/, "");
+  const match = clean.match(/^outputs\/kc_entertain\/(20\d{2}-\d{2}-\d{2})\//);
+  return match ? match[1] : "";
+}
+
+function kcEntertainmentNote(path, date) {
+  const clean = String(path || "").replace(/^\/+/, "");
+  const parts = clean.split("/");
+  const folder = parts.length >= 3 ? parts[2] : "";
+  const notes = [];
+  if (date) notes.push(`生成日期 ${date}`);
+  if (folder && folder !== date) notes.push(folder.replace(/[-_]+/g, " "));
+  return notes.join(" · ");
+}
+
+async function latestKcEntertainmentFiles(env, maxItems = 12) {
+  let entries = [];
+  try {
+    entries = await githubContents(env, KC_ENTERTAIN_PREFIX, ENTERTAIN_CUT_REPO);
+  } catch (_error) {
+    return [];
+  }
+  const dateDirs = sortGithubDirsDesc(entries)
+    .filter((item) => /^20\d{2}-\d{2}-\d{2}$/.test(String(item.name || "")));
+  const results = [];
+  for (const dateDir of dateDirs.slice(0, 8)) {
+    let files = [];
+    try {
+      files = await githubContents(env, dateDir.path, ENTERTAIN_CUT_REPO);
+    } catch (_error) {
+      continue;
+    }
+    const videos = files
+      .filter((item) => item && item.type === "file" && /\.mp4$/i.test(item.name || ""))
+      .sort((a, b) => String(a.name || "").localeCompare(String(b.name || "")));
+    for (const video of videos) {
+      const path = String(video.path || "");
+      const date = kcEntertainmentDateFromPath(path) || dateDir.name;
+      results.push(adminGithubFile(
+        "kc-entertain",
+        "KC 娱乐视频",
+        video,
+        date,
+        kcEntertainmentNote(path, date),
+        ENTERTAIN_CUT_REPO,
+      ));
+      if (results.length >= maxItems) return results;
+    }
+  }
+  return results;
+}
+
 async function latestSiteVideoFiles(env, maxItems = 6) {
   const results = [];
   const dateDirs = sortGithubDirsDesc(await githubContents(env, "bilingual_podcast_videos"));
@@ -3285,16 +3341,17 @@ async function latestGithubArtifacts(env) {
 }
 
 async function latestAdminGithubFiles(env) {
-  const [bbg, market, siteVideos] = await Promise.all([
+  const [bbg, market, entertainVideos, siteVideos] = await Promise.all([
     latestBbgRenderedClipFiles(env).catch(() => []),
     latestMarketViewFiles(env).catch(() => []),
+    latestKcEntertainmentFiles(env).catch(() => []),
     latestSiteVideoFiles(env).catch(() => []),
   ]);
   const artifacts = await latestGithubArtifacts(env);
   const fallback = [];
   if (!market.length) fallback.push(...artifacts.filter((item) => item.kind === "market-views").slice(0, 3));
   if (!siteVideos.length) fallback.push(...artifacts.filter((item) => item.kind === "site-video").slice(0, 3));
-  return [...bbg, ...market, ...fallback, ...siteVideos];
+  return [...bbg, ...market, ...fallback, ...entertainVideos, ...siteVideos];
 }
 
 function operatorVisibleAdminFiles(files) {
@@ -3415,6 +3472,7 @@ function normalizeGithubRepoParam(env, value) {
   const repo = String(value || githubRepo(env)).trim();
   if (repo === githubRepo(env) || repo === DEFAULT_GITHUB_REPO) return githubRepo(env);
   if (repo === BBG_SHOW_REPO) return BBG_SHOW_REPO;
+  if (repo === ENTERTAIN_CUT_REPO) return ENTERTAIN_CUT_REPO;
   return "";
 }
 
@@ -3422,6 +3480,7 @@ function isAllowedAdminGithubFile(env, repo, path) {
   const clean = String(path || "").replace(/^\/+/, "");
   if (clean.includes("..")) return false;
   if (repo === BBG_SHOW_REPO) return /^rendered-clips\/.+\.mp4$/i.test(clean);
+  if (repo === ENTERTAIN_CUT_REPO) return /^outputs\/kc_entertain\/20\d{2}-\d{2}-\d{2}\/.+\.mp4$/i.test(clean);
   if (/^bilingual_podcast_videos\/.+\.mp4$/i.test(clean)) return true;
   if (/^market_view_summaries\/.+\.pdf$/i.test(clean)) return true;
   return false;
@@ -3567,7 +3626,7 @@ async function pruneGithubCache(env, now = Date.now()) {
 async function warmAdminGithubCache(env, files = null) {
   const targetFiles = Array.isArray(files) ? files : await latestAdminGithubFiles(env);
   const warmed = [];
-  for (const file of targetFiles.filter((item) => item && (item.type === "file" || item.type === "artifact")).slice(0, 36)) {
+  for (const file of targetFiles.filter((item) => item && (item.type === "file" || item.type === "artifact")).slice(0, 64)) {
     try {
       warmed.push(file.type === "artifact" ? await cacheGithubArtifact(env, file) : await cacheGithubFile(env, file));
     } catch (error) {
