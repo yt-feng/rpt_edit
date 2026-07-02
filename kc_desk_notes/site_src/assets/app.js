@@ -575,6 +575,7 @@
         <div class="account-admin-file-actions">
           <button class="secondary-button account-admin-download" type="button"
             data-kind="${escapeHtml(endpointAttr)}"
+            data-file-kind="${escapeHtml(file.kind || "")}"
             data-key="${escapeHtml(key || "")}"
             data-repo="${escapeHtml(repo)}"
             data-name="${escapeHtml(file.name || "download")}">下载</button>
@@ -750,6 +751,81 @@
     }
     setDownloadProgress(progress, loaded, total || loaded);
     return new Blob(chunks, { type: response.headers.get("Content-Type") || "application/octet-stream" });
+  }
+
+  function contentRangeTotal(value) {
+    const match = String(value || "").match(/^bytes\s+\d+-\d+\/(\d+)$/i);
+    return match ? Number(match[1]) : 0;
+  }
+
+  function shouldUseSegmentedDownload(button) {
+    const name = String(button && button.dataset.name || "");
+    const fileKind = String(button && button.dataset.fileKind || "");
+    return /\.mp4$/i.test(name) && /^(bbg-show|bbg-ark-invest)$/i.test(fileKind);
+  }
+
+  async function fetchRangeBlob(endpoint, start, end, signal) {
+    const response = await fetch(endpoint, {
+      headers: {
+        ...authHeaders(),
+        "Range": `bytes=${start}-${end}`,
+      },
+      signal,
+    });
+    if (response.status !== 206) {
+      if (response.ok && start === 0) return { response, blob: await response.blob(), total: Number(response.headers.get("Content-Length") || 0), full: true };
+      const data = await response.json().catch(() => ({}));
+      throw new Error(data.detail || `分段下载失败 (${response.status})。`);
+    }
+    return {
+      response,
+      blob: await response.blob(),
+      total: contentRangeTotal(response.headers.get("Content-Range")),
+      full: false,
+    };
+  }
+
+  async function segmentedAdminDownload(endpoint, fallbackName, progress, signal, options = {}) {
+    const chunkSize = options.chunkSize || 4 * 1024 * 1024;
+    const concurrency = options.concurrency || 4;
+    const first = await fetchRangeBlob(endpoint, 0, chunkSize - 1, signal);
+    if (first.full) {
+      setDownloadProgress(progress, first.blob.size, first.total || first.blob.size);
+      return first.blob;
+    }
+    const total = first.total;
+    if (!total || total <= first.blob.size) {
+      setDownloadProgress(progress, first.blob.size, first.blob.size || total);
+      return first.blob;
+    }
+    const chunks = [];
+    chunks[0] = first.blob;
+    let loaded = first.blob.size;
+    setDownloadProgress(progress, loaded, total);
+    const ranges = [];
+    for (let start = chunkSize; start < total; start += chunkSize) {
+      ranges.push([start, Math.min(total - 1, start + chunkSize - 1), ranges.length + 1]);
+    }
+    let cursor = 0;
+    async function worker() {
+      while (cursor < ranges.length) {
+        const [start, end, index] = ranges[cursor];
+        cursor += 1;
+        const part = await fetchRangeBlob(endpoint, start, end, signal);
+        chunks[index] = part.blob;
+        loaded += part.blob.size;
+        setDownloadProgress(progress, loaded, total);
+      }
+    }
+    await Promise.all(Array.from({ length: Math.min(concurrency, ranges.length) }, () => worker()));
+    setDownloadProgress(progress, total, total);
+    return new Blob(chunks, { type: first.response.headers.get("Content-Type") || contentTypeFromFilename(fallbackName) });
+  }
+
+  function contentTypeFromFilename(name) {
+    if (/\.mp4$/i.test(name)) return "video/mp4";
+    if (/\.pdf$/i.test(name)) return "application/pdf";
+    return "application/octet-stream";
   }
 
   function accountAdminReportEndpoint(workerUrl, id) {
@@ -967,6 +1043,7 @@
       const button = event.target.closest(".account-admin-download");
       if (!button) return;
       const kind = button.dataset.kind;
+      const segmented = kind === "file" && shouldUseSegmentedDownload(button);
       const key = button.dataset.key || "";
       const repo = button.dataset.repo || "";
       const name = button.dataset.name || "download";
@@ -985,15 +1062,22 @@
       }
       resetDownloadProgress(progress);
       status.className = "status-line";
-      status.textContent = "正在准备下载…";
+      status.textContent = segmented ? "正在分段下载…" : "正在准备下载…";
       try {
-        const response = await fetch(endpoint, { headers: authHeaders(), signal: controller.signal });
-        if (!response.ok) {
-          const data = await response.json().catch(() => ({}));
-          throw new Error(data.detail || `下载失败 (${response.status})。`);
+        let blob;
+        let disposition = "";
+        if (segmented) {
+          blob = await segmentedAdminDownload(endpoint, name, progress, controller.signal);
+        } else {
+          const response = await fetch(endpoint, { headers: authHeaders(), signal: controller.signal });
+          if (!response.ok) {
+            const data = await response.json().catch(() => ({}));
+            throw new Error(data.detail || `下载失败 (${response.status})。`);
+          }
+          disposition = response.headers.get("Content-Disposition") || "";
+          blob = await responseBlobWithProgress(response, progress);
         }
-        const blob = await responseBlobWithProgress(response, progress);
-        triggerBlobDownload(blob, response.headers.get("Content-Disposition"), name);
+        triggerBlobDownload(blob, disposition, name);
         status.textContent = "下载已开始。";
         status.classList.add("ok");
       } catch (error) {
