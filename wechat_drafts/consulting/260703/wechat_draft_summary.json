@@ -1,0 +1,149 @@
+{
+  "date_folder": "260703",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 6,
+  "selected_count": 6,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit80Fx-Ue9bqec2GXlR9abSWVyoJ6reFP_HSS2Qr1x3JVM",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 6,
+      "payload_bytes": 68390,
+      "payload": "wechat_drafts/consulting/260703/draft_payload_01.json",
+      "titles": [
+        "波士顿咨询：资管行业增长幻觉终结，净流入能力成为唯一护城河，增长公式失效，规模翻三倍，利润率原地踏步",
+        "波士顿咨询：营销的终极形态，不是“旅程”而是“原子动作”，从“旅程”到“原子动作”，营销决策单元的三次跃迁",
+        "波士顿咨询：Physical AI回报周期已从5-7年缩至1-3年，CEO们还在等什么？，三大数字揭示Physical AI已…",
+        "波士顿咨询：营销战役的终结，不是营销的终结，从“排期战役”到“智能货架”，70%-80%的客户触点将被实时交互取代",
+        "波士顿咨询：下一代个性化决策，关键不在算法而在组织架构，三层决策架构，从预测概率到智能推理，层层叠加而非替代",
+        "麦肯锡：银行对AI的“谨慎”正在变成一种竞争劣势，多数银行已把AI列为优先级，但全面部署者寥寥"
+      ],
+      "wechat_titles": [
+        "波士顿咨询：资管行业增长幻觉终结，净流入能力成为唯一护城河，增长公式失效，规模翻三倍，利润率原地踏步",
+        "波士顿咨询：营销的终极形态，不是“旅程”而是“原子动作”，从“旅程”到“原子动作”，营销决策单元的三次跃迁",
+        "波士顿咨询：Physical AI回报周期已从5-7年缩至1-3年，CEO们还在等什么？，三大数字揭示Physical AI已…",
+        "波士顿咨询：营销战役的终结，不是营销的终结，从“排期战役”到“智能货架”，70%-80%的客户触点将被实时交互取代",
+        "波士顿咨询：下一代个性化决策，关键不在算法而在组织架构，三层决策架构，从预测概率到智能推理，层层叠加而非替代",
+        "麦肯锡：银行对AI的“谨慎”正在变成一种竞争劣势，多数银行已把AI列为优先级，但全面部署者寥寥"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 6,
+        "expected_article_count": 6,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ³¢å£«é¡¿å¨è¯¢ï¼èµç®¡è¡ä¸å¢é¿å¹»è§ç»ç»ï¼åæµå ¥è½åæä¸ºå¯ä¸æ¤åæ²³ï¼å¢é¿å ¬å¼å¤±æï¼è§æ¨¡ç¿»ä¸åï¼å©æ¶¦çåå°è¸æ­¥",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼è¥éçç»æå½¢æï¼ä¸æ¯âæ ç¨âèæ¯âåå­å¨ä½âï¼ä»âæ ç¨âå°âåå­å¨ä½âï¼è¥éå³ç­åå çä¸æ¬¡è·è¿",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼Physical AIåæ¥å¨æå·²ä»5-7å¹´ç¼©è³1-3å¹´ï¼CEOä»¬è¿å¨ç­ä»ä¹ï¼ï¼ä¸å¤§æ°å­æ­ç¤ºPhysical AIå·²â¦",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼è¥éæå½¹çç»ç»ï¼ä¸æ¯è¥éçç»ç»ï¼ä»âæææå½¹âå°âæºè½è´§æ¶âï¼70%-80%çå®¢æ·è§¦ç¹å°è¢«å®æ¶äº¤äºåä»£",
+          "æ³¢å£«é¡¿å¨è¯¢ï¼ä¸ä¸ä»£ä¸ªæ§åå³ç­ï¼å ³é®ä¸å¨ç®æ³èå¨ç»ç»æ¶æï¼ä¸å±å³ç­æ¶æï¼ä»é¢æµæ¦çå°æºè½æ¨çï¼å±å±å å èéæ¿ä»£",
+          "éº¦è¯é¡ï¼é¶è¡å¯¹AIçâè°¨æ âæ­£å¨åæä¸ç§ç«äºå£å¿ï¼å¤æ°é¶è¡å·²æAIåä¸ºä¼å çº§ï¼ä½å ¨é¢é¨ç½²è å¯¥å¯¥"
+        ],
+        "create_time": 1783036130,
+        "update_time": 1783036130
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "波士顿咨询：资管行业增长幻觉终结，净流入能力成为唯一护城河，增长公式失效，规模翻三倍，利润率原地踏步",
+      "wechat_title": "波士顿咨询：资管行业增长幻觉终结，净流入能力成为唯一护城河，增长公式失效，规模翻三倍，利润率原地踏步",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG Global-Asset-Management-Report-2026-An-Imperative-for-Growth 7ce1888e",
+      "report_dir": "kc_translated_reports/consulting/260703/01-0001-BCG_Global-Asset-Management-Report-2026-An-Imperative-for-Growth_7ce1888e",
+      "content_chars": 9376,
+      "content_bytes": 13114,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/consulting/260703/01-0001-BCG_Global-Asset-Management-Report-2026-An-Imperative-for-Growth_7ce1888e/assets/fig_001.jpg"
+    },
+    {
+      "title": "波士顿咨询：营销的终极形态，不是“旅程”而是“原子动作”，从“旅程”到“原子动作”，营销决策单元的三次跃迁",
+      "wechat_title": "波士顿咨询：营销的终极形态，不是“旅程”而是“原子动作”，从“旅程”到“原子动作”，营销决策单元的三次跃迁",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG The-Agentic-Era-of-Next-Best-Action 4df8c9fc",
+      "report_dir": "kc_translated_reports/consulting/260703/02-0002-BCG_The-Agentic-Era-of-Next-Best-Action_4df8c9fc",
+      "content_chars": 6275,
+      "content_bytes": 10245,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/consulting/260703/02-0002-BCG_The-Agentic-Era-of-Next-Best-Action_4df8c9fc/assets/fig_001.jpg"
+    },
+    {
+      "title": "波士顿咨询：Physical AI回报周期已从5-7年缩至1-3年，CEO们还在等什么？，三大数字揭示Physical AI已…",
+      "wechat_title": "波士顿咨询：Physical AI回报周期已从5-7年缩至1-3年，CEO们还在等什么？，三大数字揭示Physical AI已…",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG The-CEO-s-Guide-to-Physical-AI 55633e40",
+      "report_dir": "kc_translated_reports/consulting/260703/03-0003-BCG_The-CEO-s-Guide-to-Physical-AI_55633e40",
+      "content_chars": 6596,
+      "content_bytes": 9986,
+      "visible_text_chars": 1812,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/consulting/260703/_assets/article_03_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "波士顿咨询：营销战役的终结，不是营销的终结，从“排期战役”到“智能货架”，70%-80%的客户触点将被实时交互取代",
+      "wechat_title": "波士顿咨询：营销战役的终结，不是营销的终结，从“排期战役”到“智能货架”，70%-80%的客户触点将被实时交互取代",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG The-End-of-Marketing-Campaigns-as-We-Know-Them a98ad172",
+      "report_dir": "kc_translated_reports/consulting/260703/04-0004-BCG_The-End-of-Marketing-Campaigns-as-We-Know-Them_a98ad172",
+      "content_chars": 6660,
+      "content_bytes": 10132,
+      "visible_text_chars": 1767,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/consulting/260703/_assets/article_04_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "波士顿咨询：下一代个性化决策，关键不在算法而在组织架构，三层决策架构，从预测概率到智能推理，层层叠加而非替代",
+      "wechat_title": "波士顿咨询：下一代个性化决策，关键不在算法而在组织架构，三层决策架构，从预测概率到智能推理，层层叠加而非替代",
+      "institution_name": "波士顿咨询",
+      "source_report_name": "BCG The-Science-Behind-Next-Best-Action 79d38587",
+      "report_dir": "kc_translated_reports/consulting/260703/05-0005-BCG_The-Science-Behind-Next-Best-Action_79d38587",
+      "content_chars": 5791,
+      "content_bytes": 9818,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 1,
+      "cover_image": "kc_translated_reports/consulting/260703/05-0005-BCG_The-Science-Behind-Next-Best-Action_79d38587/assets/fig_001.jpg"
+    },
+    {
+      "title": "麦肯锡：银行对AI的“谨慎”正在变成一种竞争劣势，多数银行已把AI列为优先级，但全面部署者寥寥",
+      "wechat_title": "麦肯锡：银行对AI的“谨慎”正在变成一种竞争劣势，多数银行已把AI列为优先级，但全面部署者寥寥",
+      "institution_name": "麦肯锡",
+      "source_report_name": "McKinsey PDF-McKinsey-on-Risk-Resilience fabac0ae",
+      "report_dir": "kc_translated_reports/consulting/260703/06-0006-McKinsey_PDF-McKinsey-on-Risk-Resilience_fabac0ae",
+      "content_chars": 8268,
+      "content_bytes": 12080,
+      "visible_text_chars": 1913,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/consulting/260703/06-0006-McKinsey_PDF-McKinsey-on-Risk-Resilience_fabac0ae/assets/fig_001.jpg"
+    }
+  ]
+}
