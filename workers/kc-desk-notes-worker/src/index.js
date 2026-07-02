@@ -3278,6 +3278,11 @@ async function latestKcEntertainmentFiles(env, maxItems = 12) {
         date,
         kcEntertainmentNote(path, date),
         ENTERTAIN_CUT_REPO,
+        {
+          recommended_account: "KC娱乐",
+          account_label_confidence: "高",
+          account_label_reason: "KC娱乐专属内容",
+        },
       ));
       if (results.length >= maxItems) return results;
     }
