@@ -625,10 +625,13 @@
     const key = file.type === "artifact" ? file.id : file.path;
     const endpointAttr = file.type === "artifact" ? "artifact" : "file";
     const note = file.note ? `<span>${escapeHtml(file.note)}</span>` : "";
+    const accountClass = file.recommended_account === "KC桌面"
+      ? "is-desktop"
+      : (file.recommended_account === "KC娱乐" ? "is-entertain" : "is-bias");
     const accountLabel = file.recommended_account
       ? `
         <div class="account-admin-file-label">
-          <span class="${file.recommended_account === "KC桌面" ? "is-desktop" : "is-bias"}">适合：${escapeHtml(file.recommended_account)}</span>
+          <span class="${accountClass}">适合：${escapeHtml(file.recommended_account)}</span>
           <small>${escapeHtml(file.account_label_confidence || "低")}信心 · ${escapeHtml(file.account_label_reason || "")}</small>
         </div>
       `
