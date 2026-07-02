@@ -578,6 +578,7 @@
             data-file-kind="${escapeHtml(file.kind || "")}"
             data-key="${escapeHtml(key || "")}"
             data-repo="${escapeHtml(repo)}"
+            data-size-bytes="${escapeHtml(String(file.size_bytes || 0))}"
             data-name="${escapeHtml(file.name || "download")}">下载</button>
           <button class="secondary-button account-admin-cancel" type="button" hidden>取消</button>
         </div>
@@ -761,7 +762,9 @@
   function shouldUseSegmentedDownload(button) {
     const name = String(button && button.dataset.name || "");
     const fileKind = String(button && button.dataset.fileKind || "");
-    return /\.mp4$/i.test(name) && /^(bbg-show|bbg-ark-invest)$/i.test(fileKind);
+    const size = Number(button && button.dataset.sizeBytes || 0) || 0;
+    if (/\.mp4$/i.test(name) && /^(bbg-show|bbg-ark-invest)$/i.test(fileKind)) return true;
+    return size > 5 * 1024 * 1024 && /\.(pdf|zip)$/i.test(name);
   }
 
   async function fetchRangeBlob(endpoint, start, end, signal) {
@@ -1043,7 +1046,7 @@
       const button = event.target.closest(".account-admin-download");
       if (!button) return;
       const kind = button.dataset.kind;
-      const segmented = kind === "file" && shouldUseSegmentedDownload(button);
+      const segmented = (kind === "file" || kind === "artifact") && shouldUseSegmentedDownload(button);
       const key = button.dataset.key || "";
       const repo = button.dataset.repo || "";
       const name = button.dataset.name || "download";
