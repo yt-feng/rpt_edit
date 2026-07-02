@@ -88,10 +88,10 @@ jobs:
           MODEL="${{ github.event.inputs.model || 'deepseek-chat' }}"
           BASE_URL="${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}"
           COMPILE_LATEX="${{ github.event.inputs.compile_latex || 'false' }}"
-          echo "::notice::Building market views from xhs_notes/dropbox/$DATE_FOLDER. No report or figure limits are applied. Fast PDF renderer will run after this step."
+          echo "::notice::Building market views from source roots with date_folder=$DATE_FOLDER. No report or figure limits are applied. Fast PDF renderer will run after this step."
           python scripts/build_market_views_pdf.py \
             --dropbox-output-root "xhs_notes/dropbox" \
-            --extra-roots "xhs_notes/institutions,xhs_notes/consulting,xhs_notes/ark" \
+            --extra-roots "xhs_notes/institutions,xhs_notes/consulting" \
             --date-folder "$DATE_FOLDER" \
             --output-root "market_view_summaries" \
             --model "$MODEL" \
@@ -102,7 +102,13 @@ jobs:
             --max-selected-figures 0 \
             --max-figures-per-report 0 \
             --compile "$COMPILE_LATEX" 2>&1 | tee market_views_build_progress.log
-          echo "DATE_FOLDER=$DATE_FOLDER" >> "$GITHUB_ENV"
+          RESOLVED_DATE_FOLDER="$(find market_view_summaries -maxdepth 1 -type d -regex '.*/[0-9]+' -printf '%f\n' | sort -n | tail -1)"
+          if [ -z "$RESOLVED_DATE_FOLDER" ]; then
+            echo "Could not resolve generated market_view_summaries date folder." >&2
+            exit 1
+          fi
+          echo "::notice::Resolved market views date folder: $RESOLVED_DATE_FOLDER"
+          echo "DATE_FOLDER=$RESOLVED_DATE_FOLDER" >> "$GITHUB_ENV"
 
       - name: Render fast PDF without LaTeX install
         run: |
