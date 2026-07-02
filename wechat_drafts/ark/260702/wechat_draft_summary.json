@@ -1,0 +1,132 @@
+{
+  "date_folder": "260702",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "input_selected_count": 5,
+  "selected_count": 5,
+  "skipped_title_policy_count": 0,
+  "skipped_title_policy": [],
+  "articles_per_draft": 8,
+  "draft_count": 1,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit86Ditb5b6LWbJIQf3DyFB5vOkaKsuiaXs_3BHYCwGdZ4",
+      "publish_id": "",
+      "published": false,
+      "reused_existing": false,
+      "article_count": 5,
+      "payload_bytes": 46343,
+      "payload": "wechat_drafts/ark/260702/draft_payload_01.json",
+      "titles": [
+        "木头姐ARK：从Robotaxi到人形机器人，具身智能将带来数量级跃迁，人形机器人将填补劳动力缺口，成为下一个万亿级市场",
+        "木头姐ARK：科技巨头正在加速AI与生物学的融合，科技巨头大举进军生命科学，AI生物学融合进入快车道",
+        "木头姐ARK：比特币Q1 2026，机构化浪潮下的新周期起点，比特币价格突破历史新高，机构资金成为核心驱动力",
+        "木头姐ARK：生物科技并购潮背后的结构性机会，专利悬崖与管线缺口正驱动生物科技行业的结构性买盘",
+        "木头姐ARK：马斯克“Terafab”计划——AI芯片产能的终极赌注，产能规模，从“晶圆厂”到“算力厂”的范式跃迁"
+      ],
+      "wechat_titles": [
+        "木头姐ARK：从Robotaxi到人形机器人，具身智能将带来数量级跃迁，人形机器人将填补劳动力缺口，成为下一个万亿级市场",
+        "木头姐ARK：科技巨头正在加速AI与生物学的融合，科技巨头大举进军生命科学，AI生物学融合进入快车道",
+        "木头姐ARK：比特币Q1 2026，机构化浪潮下的新周期起点，比特币价格突破历史新高，机构资金成为核心驱动力",
+        "木头姐ARK：生物科技并购潮背后的结构性机会，专利悬崖与管线缺口正驱动生物科技行业的结构性买盘",
+        "木头姐ARK：马斯克“Terafab”计划——AI芯片产能的终极赌注，产能规模，从“晶圆厂”到“算力厂”的范式跃迁"
+      ],
+      "draft_get": {
+        "ok": true,
+        "article_count": 5,
+        "expected_article_count": 5,
+        "matches_expected_article_count": true,
+        "titles": [
+          "æ¨å¤´å§ARKï¼ä»Robotaxiå°äººå½¢æºå¨äººï¼å ·èº«æºè½å°å¸¦æ¥æ°éçº§è·è¿ï¼äººå½¢æºå¨äººå°å¡«è¡¥å³å¨åç¼ºå£ï¼æä¸ºä¸ä¸ä¸ªä¸äº¿çº§å¸åº",
+          "æ¨å¤´å§ARKï¼ç§æå·¨å¤´æ­£å¨å éAIä¸çç©å­¦çèåï¼ç§æå·¨å¤´å¤§ä¸¾è¿åçå½ç§å­¦ï¼AIçç©å­¦èåè¿å ¥å¿«è½¦é",
+          "æ¨å¤´å§ARKï¼æ¯ç¹å¸Q1 2026ï¼æºæåæµªæ½®ä¸çæ°å¨æèµ·ç¹ï¼æ¯ç¹å¸ä»·æ ¼çªç ´åå²æ°é«ï¼æºæèµéæä¸ºæ ¸å¿é©±å¨å",
+          "æ¨å¤´å§ARKï¼çç©ç§æå¹¶è´­æ½®èåçç»ææ§æºä¼ï¼ä¸å©æ¬å´ä¸ç®¡çº¿ç¼ºå£æ­£é©±å¨çç©ç§æè¡ä¸çç»ææ§ä¹°ç",
+          "æ¨å¤´å§ARKï¼é©¬æ¯å âTerafabâè®¡åââAIè¯çäº§è½çç»æèµæ³¨ï¼äº§è½è§æ¨¡ï¼ä»âæ¶ååâå°âç®ååâçèå¼è·è¿"
+        ],
+        "create_time": 1782951136,
+        "update_time": 1782951137
+      }
+    }
+  ],
+  "articles": [
+    {
+      "title": "木头姐ARK：从Robotaxi到人形机器人，具身智能将带来数量级跃迁，人形机器人将填补劳动力缺口，成为下一个万亿级市场",
+      "wechat_title": "木头姐ARK：从Robotaxi到人形机器人，具身智能将带来数量级跃迁，人形机器人将填补劳动力缺口，成为下一个万亿级市场",
+      "institution_name": "",
+      "source_report_name": "ARK From-Robotaxis-To-Humanoids-Why-Embodied-AI-Represents-An-Order-Of-Magni 3aea3e0ad3bcab6a",
+      "report_dir": "kc_translated_reports/ark/260702/01-0001-ARK_From-Robotaxis-To-Humanoids-Why-Embodied-AI-Represents-An-Order-Of-Magni_3aea3e0ad3bcab",
+      "content_chars": 5165,
+      "content_bytes": 7373,
+      "visible_text_chars": 1130,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260702/_assets/article_01_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：科技巨头正在加速AI与生物学的融合，科技巨头大举进军生命科学，AI生物学融合进入快车道",
+      "wechat_title": "木头姐ARK：科技巨头正在加速AI与生物学的融合，科技巨头大举进军生命科学，AI生物学融合进入快车道",
+      "institution_name": "",
+      "source_report_name": "ARK 506-Technology-Giants-Are-Accelerating-The-Convergence-Between-AI-And-Bi fae1695aa267bbb9",
+      "report_dir": "kc_translated_reports/ark/260702/02-0002-ARK_506-Technology-Giants-Are-Accelerating-The-Convergence-Between-AI-And-Bi_fae1695aa267bb",
+      "content_chars": 6633,
+      "content_bytes": 10007,
+      "visible_text_chars": 1800,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260702/_assets/article_02_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：比特币Q1 2026，机构化浪潮下的新周期起点，比特币价格突破历史新高，机构资金成为核心驱动力",
+      "wechat_title": "木头姐ARK：比特币Q1 2026，机构化浪潮下的新周期起点，比特币价格突破历史新高，机构资金成为核心驱动力",
+      "institution_name": "",
+      "source_report_name": "ARK The-Bitcoin-Quarterly-Q1-2026 8fdc1dd340671a16",
+      "report_dir": "kc_translated_reports/ark/260702/03-0003-ARK_The-Bitcoin-Quarterly-Q1-2026_8fdc1dd340671a16",
+      "content_chars": 5622,
+      "content_bytes": 7462,
+      "visible_text_chars": 918,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260702/_assets/article_03_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：生物科技并购潮背后的结构性机会，专利悬崖与管线缺口正驱动生物科技行业的结构性买盘",
+      "wechat_title": "木头姐ARK：生物科技并购潮背后的结构性机会，专利悬崖与管线缺口正驱动生物科技行业的结构性买盘",
+      "institution_name": "",
+      "source_report_name": "ARK 505-Patent-Cliffs-And-Pipeline-Gaps-Are-Driving-A-Structural-Bid-For-Bio 4664792374689e37",
+      "report_dir": "kc_translated_reports/ark/260702/04-0004-ARK_505-Patent-Cliffs-And-Pipeline-Gaps-Are-Driving-A-Structural-Bid-For-Bio_4664792374689e",
+      "content_chars": 6229,
+      "content_bytes": 8855,
+      "visible_text_chars": 1275,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260702/_assets/article_04_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "木头姐ARK：马斯克“Terafab”计划——AI芯片产能的终极赌注，产能规模，从“晶圆厂”到“算力厂”的范式跃迁",
+      "wechat_title": "木头姐ARK：马斯克“Terafab”计划——AI芯片产能的终极赌注，产能规模，从“晶圆厂”到“算力厂”的范式跃迁",
+      "institution_name": "",
+      "source_report_name": "ARK 504-Elon-Musk-Unveils-Terafab-A-Chip-Fab-That-Will-Impact-SpaceX-xAI-And 6caab0925f7c64cc",
+      "report_dir": "kc_translated_reports/ark/260702/05-0005-ARK_504-Elon-Musk-Unveils-Terafab-A-Chip-Fab-That-Will-Impact-SpaceX-xAI-And_6caab0925f7c64",
+      "content_chars": 7102,
+      "content_bytes": 10217,
+      "visible_text_chars": 1838,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/ark/260702/_assets/article_05_kc_ai_image_001.jpg"
+    }
+  ]
+}
