@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_1zj31q_v/pdfs/0001-11-BARC-China-Modest improvement with sectoral divergence-260630.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1zj31q_v/pdfs/0002-12-Bernstein-Asian Industrial Technology Asian Industrial Tech- The Barometer -May June 2026--260701.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1zj31q_v/pdfs/0003-13-GS-Americas Technology- Hardware- Data center - campus networking preview-260701.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1zj31q_v/pdfs/0004-14-MS-China Property-Property Sales Decline Widened Further in June-260630.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_1zj31q_v/pdfs/0005-15-MS-Greater China Technology Hardware-Lenses- The Month Ahead - Catalyst Previews-260630.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
