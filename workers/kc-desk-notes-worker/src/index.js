@@ -81,6 +81,9 @@ const SEARCH_CACHE_PREFIX = "_search-cache";
 const SEARCH_CACHE_FRESH_MS = 6 * 60 * 60 * 1000;
 const SEARCH_MIRROR_PREFIX = "_search-mirror";
 const SEARCH_MIRROR_STALE_MS = 36 * 60 * 60 * 1000;
+const ANALYTICS_PREFIX = "_analytics/events";
+const ANALYTICS_DASHBOARD_DAYS = 30;
+const ANALYTICS_DASHBOARD_LIMIT = 1800;
 
 let catalogCache = null;
 let catalogFetchedAt = 0;
@@ -1618,6 +1621,307 @@ function adminVisibleUser(user, entitlementRow) {
   };
 }
 
+function cleanAnalyticsText(value, limit = 240) {
+  return String(value || "")
+    .normalize("NFKC")
+    .replace(/[\u0000-\u001f\u007f]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, limit);
+}
+
+function cleanAnalyticsNumber(value) {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : 0;
+}
+
+function analyticsBjtDateKey(ms = Date.now()) {
+  return new Date(ms + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
+}
+
+function analyticsRecentDateKeys(days = ANALYTICS_DASHBOARD_DAYS) {
+  const now = Date.now();
+  const keys = [];
+  for (let index = 0; index < days; index += 1) {
+    keys.push(analyticsBjtDateKey(now - index * 24 * 60 * 60 * 1000));
+  }
+  return keys;
+}
+
+function analyticsClientIp(request) {
+  return String(
+    request.headers.get("CF-Connecting-IP") ||
+    request.headers.get("X-Forwarded-For") ||
+    "",
+  ).split(",")[0].trim();
+}
+
+async function analyticsIpHash(request, env) {
+  const ip = analyticsClientIp(request);
+  if (!ip) return "";
+  let secret = "kcdesk";
+  try {
+    secret = accountSecret(env);
+  } catch (_error) {
+    // Hashing without the account secret is still enough to avoid storing the raw IP.
+  }
+  return (await sha256Hex(`${secret}:analytics-ip:${ip}`)).slice(0, 24);
+}
+
+async function optionalAnalyticsUser(request, env) {
+  try {
+    const user = await currentUserFromRequest(env, request);
+    return {
+      id: cleanAnalyticsText(user.id, 80),
+      username: cleanAnalyticsText(user.username, 80),
+      email: cleanAnalyticsText(user.email, 160),
+      role: accountRole(user),
+    };
+  } catch (_error) {
+    return null;
+  }
+}
+
+function analyticsEventFromPayload(request, payload, user, ipHash) {
+  const now = new Date();
+  const cf = request.cf || {};
+  const data = payload && typeof payload.data === "object" && payload.data ? payload.data : {};
+  const pathFromPayload = cleanAnalyticsText(payload.path || data.path, 240);
+  const path = pathFromPayload || cleanAnalyticsText(new URL(request.url).pathname, 240);
+  const type = cleanAnalyticsText(payload.type || data.type || "event", 60).toLowerCase() || "event";
+  return {
+    id: crypto.randomUUID ? crypto.randomUUID() : randomHex(16),
+    ts: now.toISOString(),
+    date: analyticsBjtDateKey(now.getTime()),
+    type,
+    visitor_id: cleanAnalyticsText(payload.visitor_id || data.visitor_id, 96),
+    path,
+    page: cleanAnalyticsText(data.page || payload.page, 80),
+    source: cleanAnalyticsText(data.source || payload.source, 80),
+    query: cleanAnalyticsText(data.query || payload.query, 240),
+    result_count: cleanAnalyticsNumber(data.result_count),
+    total_count: cleanAnalyticsNumber(data.total_count),
+    cache_status: cleanAnalyticsText(data.cache_status, 60),
+    report_id: cleanAnalyticsText(data.report_id || data.id, 120),
+    report_title: cleanAnalyticsText(data.report_title || data.title, 360),
+    institution: cleanAnalyticsText(data.institution, 160),
+    action: cleanAnalyticsText(data.action, 80),
+    status: cleanAnalyticsText(data.status, 80),
+    duration_ms: cleanAnalyticsNumber(data.duration_ms),
+    error: cleanAnalyticsText(data.error, 180),
+    referrer: cleanAnalyticsText(data.referrer || request.headers.get("Referer"), 320),
+    user,
+    ip_hash: ipHash,
+    country: cleanAnalyticsText(cf.country || request.headers.get("CF-IPCountry"), 16),
+    colo: cleanAnalyticsText(cf.colo, 16),
+    user_agent: cleanAnalyticsText(request.headers.get("User-Agent"), 240),
+  };
+}
+
+async function persistAnalyticsEvent(request, env, payload) {
+  if (!env.REPORT_BUCKET || !payload || typeof payload !== "object") return null;
+  const [user, ipHash] = await Promise.all([
+    optionalAnalyticsUser(request, env),
+    analyticsIpHash(request, env),
+  ]);
+  const event = analyticsEventFromPayload(request, payload, user, ipHash);
+  const key = `${ANALYTICS_PREFIX}/${event.date}/${event.ts.replace(/[:.]/g, "-")}-${event.id}.json`;
+  await env.REPORT_BUCKET.put(key, JSON.stringify(event), {
+    httpMetadata: {
+      contentType: "application/json; charset=utf-8",
+      cacheControl: "no-store",
+    },
+  });
+  return event;
+}
+
+async function handleAnalyticsEvent(request, env, ctx = null) {
+  let payload = {};
+  try {
+    payload = await request.json();
+  } catch (_error) {
+    return jsonResponse(request, env, 400, { detail: "Invalid JSON body." });
+  }
+  const write = persistAnalyticsEvent(request, env, payload).catch(() => null);
+  if (ctx && typeof ctx.waitUntil === "function") {
+    ctx.waitUntil(write);
+  } else {
+    await write;
+  }
+  return new Response(null, { status: 204, headers: corsHeaders(request, env) });
+}
+
+async function listAnalyticsEvents(env, days = ANALYTICS_DASHBOARD_DAYS, limit = ANALYTICS_DASHBOARD_LIMIT) {
+  if (!env.REPORT_BUCKET || typeof env.REPORT_BUCKET.list !== "function") return [];
+  const rows = [];
+  for (const date of analyticsRecentDateKeys(days)) {
+    let cursor = undefined;
+    do {
+      const listed = await env.REPORT_BUCKET.list({
+        prefix: `${ANALYTICS_PREFIX}/${date}/`,
+        limit: Math.min(1000, Math.max(1, limit - rows.length)),
+        cursor,
+      });
+      const objects = Array.isArray(listed && listed.objects) ? listed.objects : [];
+      const batch = await Promise.all(objects.map(async (object) => {
+        try {
+          const stored = await env.REPORT_BUCKET.get(object.key);
+          return stored ? JSON.parse(await stored.text()) : null;
+        } catch (_error) {
+          return null;
+        }
+      }));
+      for (const event of batch) {
+        if (event && typeof event === "object") rows.push(event);
+        if (rows.length >= limit) break;
+      }
+      if (rows.length >= limit || !listed || !listed.truncated || !listed.cursor) break;
+      cursor = listed.cursor;
+    } while (rows.length < limit);
+    if (rows.length >= limit) break;
+  }
+  return rows.sort((a, b) => String(b.ts || "").localeCompare(String(a.ts || "")));
+}
+
+function analyticsEventVisitorKey(event) {
+  return String(event && (event.visitor_id || event.ip_hash || (event.user && event.user.email)) || "");
+}
+
+function analyticsTopSearches(events, limit = 20) {
+  const grouped = new Map();
+  for (const event of events || []) {
+    if (String(event.type || "") !== "search") continue;
+    const query = cleanAnalyticsText(event.query, 240);
+    if (!query) continue;
+    const key = query.toLowerCase();
+    const row = grouped.get(key) || {
+      query,
+      count: 0,
+      visitors: new Set(),
+      sources: {},
+      last_at: "",
+      total_result_count: 0,
+    };
+    row.count += 1;
+    const visitor = analyticsEventVisitorKey(event);
+    if (visitor) row.visitors.add(visitor);
+    const source = cleanAnalyticsText(event.source || "unknown", 80) || "unknown";
+    row.sources[source] = (row.sources[source] || 0) + 1;
+    row.total_result_count += cleanAnalyticsNumber(event.result_count);
+    if (String(event.ts || "") > row.last_at) row.last_at = String(event.ts || "");
+    grouped.set(key, row);
+  }
+  return [...grouped.values()]
+    .sort((a, b) => b.count - a.count || String(b.last_at).localeCompare(String(a.last_at)))
+    .slice(0, limit)
+    .map((row) => ({
+      query: row.query,
+      count: row.count,
+      visitor_count: row.visitors.size,
+      sources: row.sources,
+      avg_result_count: row.count ? Math.round(row.total_result_count / row.count) : 0,
+      last_at: row.last_at,
+    }));
+}
+
+function analyticsTopReports(events, limit = 16) {
+  const grouped = new Map();
+  for (const event of events || []) {
+    const type = String(event.type || "");
+    if (type !== "report_open" && type !== "download_success") continue;
+    const id = cleanAnalyticsText(event.report_id, 120);
+    if (!id) continue;
+    const row = grouped.get(id) || {
+      report_id: id,
+      title: cleanAnalyticsText(event.report_title, 260),
+      source: cleanAnalyticsText(event.source, 80),
+      opens: 0,
+      downloads: 0,
+      last_at: "",
+    };
+    if (type === "report_open") row.opens += 1;
+    if (type === "download_success") row.downloads += 1;
+    if (!row.title && event.report_title) row.title = cleanAnalyticsText(event.report_title, 260);
+    if (String(event.ts || "") > row.last_at) row.last_at = String(event.ts || "");
+    grouped.set(id, row);
+  }
+  return [...grouped.values()]
+    .sort((a, b) => (b.opens + b.downloads * 2) - (a.opens + a.downloads * 2) || String(b.last_at).localeCompare(String(a.last_at)))
+    .slice(0, limit);
+}
+
+function analyticsDailySeries(events) {
+  const grouped = new Map();
+  for (const event of events || []) {
+    const date = cleanAnalyticsText(event.date || String(event.ts || "").slice(0, 10), 20);
+    if (!date) continue;
+    const row = grouped.get(date) || { date, events: 0, searches: 0, opens: 0, downloads: 0, visitors: new Set() };
+    row.events += 1;
+    if (event.type === "search") row.searches += 1;
+    if (event.type === "report_open") row.opens += 1;
+    if (event.type === "download_success") row.downloads += 1;
+    const visitor = analyticsEventVisitorKey(event);
+    if (visitor) row.visitors.add(visitor);
+    grouped.set(date, row);
+  }
+  return [...grouped.values()]
+    .sort((a, b) => String(a.date).localeCompare(String(b.date)))
+    .map((row) => ({
+      date: row.date,
+      events: row.events,
+      searches: row.searches,
+      opens: row.opens,
+      downloads: row.downloads,
+      visitor_count: row.visitors.size,
+    }));
+}
+
+async function buildAnalyticsDashboard(env) {
+  const events = await listAnalyticsEvents(env);
+  const visitorSet = new Set();
+  const userSet = new Set();
+  for (const event of events) {
+    const visitor = analyticsEventVisitorKey(event);
+    if (visitor) visitorSet.add(visitor);
+    const userEmail = event.user && event.user.email;
+    if (userEmail) userSet.add(userEmail);
+  }
+  return {
+    range_days: ANALYTICS_DASHBOARD_DAYS,
+    event_count: events.length,
+    visitor_count: visitorSet.size,
+    signed_in_user_count: userSet.size,
+    search_count: events.filter((event) => event.type === "search").length,
+    report_open_count: events.filter((event) => event.type === "report_open").length,
+    download_success_count: events.filter((event) => event.type === "download_success").length,
+    delivery_link_count: events.filter((event) => event.type === "delivery_link_generate").length,
+    top_searches: analyticsTopSearches(events),
+    top_reports: analyticsTopReports(events),
+    daily: analyticsDailySeries(events),
+    recent_events: events.slice(0, 120).map((event) => ({
+      ts: event.ts || "",
+      type: event.type || "",
+      visitor_id: event.visitor_id || "",
+      user: event.user ? {
+        username: event.user.username || "",
+        email: event.user.email || "",
+        role: event.user.role || "",
+      } : null,
+      country: event.country || "",
+      page: event.page || "",
+      path: event.path || "",
+      source: event.source || "",
+      query: event.query || "",
+      result_count: event.result_count || 0,
+      cache_status: event.cache_status || "",
+      report_id: event.report_id || "",
+      report_title: event.report_title || "",
+      status: event.status || "",
+      error: event.error || "",
+    })),
+  };
+}
+
 function normalizeText(value) {
   return String(value || "")
     .normalize("NFKC")
@@ -2993,7 +3297,7 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
   try {
     const adminUser = await requireOperationsUser(request, env);
     const isSuper = isSuperAccount(adminUser);
-    const [userRows, entitlementRows, allFiles, catalog, searchIndex, wechatSchedule] = await Promise.all([
+    const [userRows, entitlementRows, allFiles, catalog, searchIndex, wechatSchedule, analytics] = await Promise.all([
       isSuper ? listSiteUsers(env) : Promise.resolve([]),
       isSuper ? listEntitlementRows(env) : Promise.resolve([]),
       latestAdminGithubFiles(env),
@@ -3010,6 +3314,7 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
         total_articles: 0,
         batches: [],
       })) : Promise.resolve(null),
+      isSuper ? buildAnalyticsDashboard(env).catch(() => null) : Promise.resolve(null),
     ]);
     const files = adminFilesForUser(allFiles, adminUser);
     const entitlementsByEmail = entitlementMap(entitlementRows);
@@ -3022,10 +3327,12 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
       dashboard_title: isSuper ? "管理后台" : "运营后台",
       can_view_users: isSuper,
       can_view_wechat: isSuper,
+      can_view_analytics: isSuper,
       users: isSuper ? userRows.map((user) => adminVisibleUser(user, entitlementsByEmail.get(normalizeEmail(user.email)))) : [],
       files,
       daily_picks: dailyPicks,
       wechat_schedule: wechatSchedule || null,
+      analytics: analytics || null,
       repo: githubRepo(env),
       ref: githubRef(env),
       generated_at: new Date().toISOString(),
@@ -4052,6 +4359,10 @@ export default {
 
     if (pathname === "/health") {
       return jsonResponse(request, env, 200, { ok: true });
+    }
+
+    if (pathname === "/analytics" && request.method === "POST") {
+      return handleAnalyticsEvent(request, env, ctx);
     }
 
     if (pathname === "/calc" && request.method === "GET") {
