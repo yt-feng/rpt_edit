@@ -21,7 +21,6 @@ GH_REPO = "yt-feng/rpt_edit"
 # NEWSFEED_EMAIL_FROM = "KC Desk Newsfeed <newsfeed@kcdesk.com>"
 # [[send_email]]
 # name = "EMAIL"
-# remote = true
 
 [triggers]
 crons = ["*/30 * * * *"]

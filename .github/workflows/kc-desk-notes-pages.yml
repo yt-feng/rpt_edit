@@ -198,7 +198,6 @@ jobs:
 
           [[send_email]]
           name = "EMAIL"
-          remote = true
           EOF
           fi
           echo "enabled=true" >> "$GITHUB_OUTPUT"
