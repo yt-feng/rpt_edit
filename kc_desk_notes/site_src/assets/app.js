@@ -11,6 +11,7 @@
   const AUTHORITY_SOURCE = "authority";
   const REPORT_A_SOURCE = "report-a";
   const EXTERNAL_SOURCE = "external";
+  const NEWSFEED_TOPIC_LIMIT = 10000;
   const PDFJS_MODULE_URL = "/assets/vendor/pdfjs/pdf.mjs";
   const PDFJS_WORKER_URL = "/assets/vendor/pdfjs/pdf.worker.mjs";
   let accountAdminDailyPicks = new Map();
@@ -3451,6 +3452,32 @@
     `;
   }
 
+  function newsfeedSpinnerMarkup(label = "Loading") {
+    return `
+      <div class="newsfeed-loader" role="status" aria-live="polite">
+        <span></span>
+        <strong>${escapeHtml(label)}</strong>
+      </div>
+    `;
+  }
+
+  function newsfeedSkeletonMarkup(kind = "home", label = "Preparing Newsfeed") {
+    const rows = Array.from({ length: kind === "article" ? 5 : 4 }).map(() => `
+      <div class="news-skeleton-row">
+        <span></span>
+        <span></span>
+      </div>
+    `).join("");
+    return `
+      <section class="newsfeed-loading-panel">
+        ${newsfeedSpinnerMarkup(label)}
+        <div class="news-skeleton-block">
+          ${rows}
+        </div>
+      </section>
+    `;
+  }
+
   function newsfeedDigestMarkup(digest = []) {
     const rows = digest.slice(0, 4).map((line) => `<li>${escapeHtml(line)}</li>`).join("");
     return rows || "<li>Fresh digest is loading.</li>";
@@ -3517,6 +3544,15 @@
     `;
   }
 
+  function renderNewsfeedBoot(app, message = "Checking Newsfeed access...") {
+    app.innerHTML = `
+      <section class="newsfeed-access is-loading">
+        ${newsfeedSpinnerMarkup(message)}
+        <p>We are preparing your private Newsfeed workspace.</p>
+      </section>
+    `;
+  }
+
   async function newsfeedJson(workerUrl, path, options = {}) {
     const response = await fetch(`${workerUrl}${path}`, {
       cache: "no-store",
@@ -3551,6 +3587,12 @@
     status.textContent = text || "";
   }
 
+  function renderNewsfeedContentLoading(label, kind = "home") {
+    const content = document.getElementById("newsfeedContent");
+    if (content) content.innerHTML = newsfeedSkeletonMarkup(kind, label);
+    setNewsfeedStatus(label, "loading");
+  }
+
   function setNewsfeedTitle(text) {
     const title = document.getElementById("newsfeedTitle");
     if (title) title.textContent = text || "Newsfeed";
@@ -3580,6 +3622,57 @@
     `).join("");
   }
 
+  function newsfeedTimezoneOptions(selected = "Asia/Shanghai") {
+    const timezones = [
+      ["Asia/Shanghai", "China / Singapore"],
+      ["America/New_York", "New York"],
+      ["Europe/London", "London"],
+      ["UTC", "UTC"],
+    ];
+    return timezones.map(([value, label]) => `
+      <option value="${escapeHtml(value)}" ${value === selected ? "selected" : ""}>${escapeHtml(label)}</option>
+    `).join("");
+  }
+
+  function renderNewsfeedEmailSettings(state) {
+    const settings = state.settings || {};
+    const session = loadAuthSession();
+    const fallbackEmail = session && session.user && !session.user.email_is_generated ? session.user.email : "";
+    const email = settings.digest_email || fallbackEmail || "";
+    const enabled = Boolean(settings.digest_email_enabled);
+    const providerNote = settings.email_provider_configured === false
+      ? "Email sender needs Cloudflare Email binding or RESEND_API_KEY before scheduled delivery starts."
+      : "Saved settings are used by the scheduled digest sender.";
+    return `
+      <section class="news-email-settings">
+        <div class="news-email-copy">
+          <h2>Daily Digest Email</h2>
+          <p>Send the latest Daily Digest to your inbox once a day.</p>
+        </div>
+        <form id="newsEmailForm" class="news-email-form">
+          <label>Email
+            <input id="newsEmailInput" type="email" autocomplete="email" placeholder="you@example.com" value="${escapeHtml(email)}">
+          </label>
+          <label>Send time
+            <input id="newsEmailTime" type="time" value="${escapeHtml(settings.digest_send_time || "09:00")}">
+          </label>
+          <label>Timezone
+            <select id="newsEmailTimezone">${newsfeedTimezoneOptions(settings.digest_timezone || "Asia/Shanghai")}</select>
+          </label>
+          <label>Language
+            <select id="newsEmailLanguage">${newsfeedLanguageOptions(settings.digest_language || state.outputLanguage || "en")}</select>
+          </label>
+          <label class="news-toggle-row">
+            <input id="newsEmailEnabled" type="checkbox" ${enabled ? "checked" : ""}>
+            <span>Send daily digest</span>
+          </label>
+          <button id="newsEmailSubmit" class="primary" type="submit">Save email</button>
+        </form>
+        <div id="newsEmailStatus" class="status-line" aria-live="polite">${escapeHtml(providerNote)}</div>
+      </section>
+    `;
+  }
+
   function rememberNewsfeedArticles(state, items = [], topic = null) {
     for (const item of items || []) {
       if (!item || !item.id) continue;
@@ -3596,7 +3689,7 @@
     if (!list) return;
     const topics = [...(state.topics || [])].sort((a, b) => Number(Boolean(b.pinned)) - Number(Boolean(a.pinned)));
     list.innerHTML = topics.map(newsfeedTopicRow).join("") || '<div class="newsfeed-empty">No topics yet.</div>';
-    if (count) count.textContent = `${topics.length}/10 topics`;
+    if (count) count.textContent = `${topics.length}/${NEWSFEED_TOPIC_LIMIT} topics`;
   }
 
   function renderNewsfeedHome(state) {
@@ -3650,7 +3743,7 @@
     content.innerHTML = `
       <section class="news-add-panel">
         <div class="news-add-meta">
-          <strong>${escapeHtml(String((state.topics || []).length))}/10 topics created</strong>
+          <strong>${escapeHtml(String((state.topics || []).length))}/${NEWSFEED_TOPIC_LIMIT} topics created</strong>
           <span>Suggested Topics</span>
         </div>
         <div class="news-suggested-list">
@@ -3667,6 +3760,7 @@
           <textarea id="newsTopicInput" rows="4" placeholder="Type any topic you want to follow"></textarea>
           <button id="newsTopicSubmit" class="primary" type="submit" aria-label="Create topic">↑</button>
         </form>
+        ${renderNewsfeedEmailSettings(state)}
       </section>
     `;
   }
@@ -3769,8 +3863,8 @@
     const summary = document.getElementById("newsArticleSummary");
     const narrative = document.getElementById("newsArticleNarrative");
     if (!summary || !narrative) return;
-    summary.textContent = "";
-    narrative.textContent = "";
+    summary.textContent = "Generating summary...";
+    narrative.textContent = "Writing narrative...";
     try {
       const response = await fetch(`${workerUrl}/newsfeed/article`, {
         method: "POST",
@@ -3791,6 +3885,8 @@
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
       let buffer = "";
+      summary.textContent = "";
+      narrative.textContent = "";
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
@@ -3811,6 +3907,7 @@
 
   async function initNewsfeed() {
     const app = document.getElementById("newsfeedApp");
+    if (app) renderNewsfeedBoot(app, "Checking account...");
     const config = await loadOptionalJson("data/config.json", {});
     const workerUrl = workerBaseUrl(config);
     initAccountGate(workerUrl);
@@ -3819,7 +3916,10 @@
 
     if (!app) return;
     let session = loadAuthSession();
-    if (!isSuperSession(session)) session = await refreshAuthSession(workerUrl);
+    if (!isSuperSession(session)) {
+      renderNewsfeedBoot(app, "Checking Newsfeed access...");
+      session = await refreshAuthSession(workerUrl);
+    }
     if (!isSuperSession(session)) {
       renderNewsfeedAccess(app, workerUrl);
       return;
@@ -3829,6 +3929,7 @@
       workerUrl,
       home: null,
       explore: null,
+      settings: null,
       topics: [],
       articles: new Map(),
       articleLanguages: new Map(),
@@ -3843,16 +3944,17 @@
     trackEvent(workerUrl, "page_view", { page: "newsfeed" });
 
     async function loadHome() {
-      setNewsfeedStatus("Loading latest news...");
+      renderNewsfeedContentLoading("Loading latest news...", "home");
       const data = await newsfeedJson(workerUrl, "/newsfeed/home");
       state.home = data;
       state.topics = data.topics || [];
+      state.settings = data.settings || state.settings || {};
       setNewsfeedStatus("");
       renderNewsfeedHome(state);
     }
 
     async function loadExplore(category = state.exploreCategory) {
-      setNewsfeedStatus("Loading explore...");
+      renderNewsfeedContentLoading("Loading explore...", "explore");
       const data = await newsfeedJson(workerUrl, `/newsfeed/explore?category=${encodeURIComponent(category || "")}`);
       state.explore = data;
       state.exploreCategory = category || (data.categories && data.categories[0]) || "";
@@ -3863,7 +3965,7 @@
     }
 
     async function loadTopic(id) {
-      setNewsfeedStatus("Loading topic...");
+      renderNewsfeedContentLoading("Preparing topic package...", "topic");
       const data = await newsfeedJson(workerUrl, `/newsfeed/topic?id=${encodeURIComponent(id)}`);
       state.topics = data.topics || state.topics || [];
       setNewsfeedStatus("");
@@ -3963,9 +4065,13 @@
         state.outputLanguage = outputLanguage || "en";
         if (status) {
           status.className = "status-line";
-          status.textContent = "Creating topic...";
+          status.textContent = "Creating topic package...";
         }
-        if (submit) submit.disabled = true;
+        if (submit) {
+          submit.disabled = true;
+          submit.classList.add("is-loading");
+          submit.textContent = "…";
+        }
         try {
           const data = await newsfeedJson(workerUrl, "/newsfeed/topics", {
             method: "POST",
@@ -3981,7 +4087,56 @@
             status.textContent = error.message || "Could not create topic.";
           }
         } finally {
-          if (submit) submit.disabled = false;
+          if (submit) {
+            submit.disabled = false;
+            submit.classList.remove("is-loading");
+            submit.textContent = "↑";
+          }
+        }
+      }
+      if (event.target && event.target.id === "newsEmailForm") {
+        event.preventDefault();
+        const status = document.getElementById("newsEmailStatus");
+        const submit = document.getElementById("newsEmailSubmit");
+        const payload = {
+          digest_email_enabled: Boolean(document.getElementById("newsEmailEnabled")?.checked),
+          digest_email: document.getElementById("newsEmailInput")?.value || "",
+          digest_send_time: document.getElementById("newsEmailTime")?.value || "09:00",
+          digest_timezone: document.getElementById("newsEmailTimezone")?.value || "Asia/Shanghai",
+          digest_language: document.getElementById("newsEmailLanguage")?.value || state.outputLanguage || "en",
+        };
+        if (status) {
+          status.className = "status-line";
+          status.textContent = "Saving digest email settings...";
+        }
+        if (submit) {
+          submit.disabled = true;
+          submit.classList.add("is-loading");
+          submit.textContent = "Saving...";
+        }
+        try {
+          const data = await newsfeedJson(workerUrl, "/newsfeed/settings", {
+            method: "POST",
+            body: JSON.stringify(payload),
+          });
+          state.settings = data.settings || state.settings || {};
+          if (status) {
+            status.className = "status-line ok";
+            status.textContent = state.settings.email_provider_configured === false
+              ? "Settings saved. Email delivery starts after Cloudflare Email or Resend is configured."
+              : "Settings saved. Daily Digest will be sent at the selected time.";
+          }
+        } catch (error) {
+          if (status) {
+            status.className = "status-line error";
+            status.textContent = error.message || "Could not save email settings.";
+          }
+        } finally {
+          if (submit) {
+            submit.disabled = false;
+            submit.classList.remove("is-loading");
+            submit.textContent = "Save email";
+          }
         }
       }
     });

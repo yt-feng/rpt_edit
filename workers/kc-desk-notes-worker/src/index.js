@@ -91,7 +91,10 @@ const NEWSFEED_TOPICS_PREFIX = "_newsfeed/topics";
 const NEWSFEED_SETTINGS_PREFIX = "_newsfeed/settings";
 const NEWSFEED_CACHE_FRESH_MS = 30 * 60 * 1000;
 const NEWSFEED_CACHE_VERSION = 2;
-const NEWSFEED_MAX_USER_TOPICS = 10;
+const NEWSFEED_MAX_USER_TOPICS = 10000;
+const NEWSFEED_EMAIL_DEFAULT_TIME = "09:00";
+const NEWSFEED_EMAIL_DEFAULT_TIMEZONE = "Asia/Shanghai";
+const NEWSFEED_EMAIL_WINDOW_MINUTES = 35;
 const NEWSFEED_CATEGORIES = ["Investment", "Tech", "Politics", "Industries"];
 const NEWSFEED_UA = "KCDeskNewsfeed/0.1";
 const NEWSFEED_OUTPUT_LANGUAGES = [
@@ -2526,6 +2529,69 @@ function newsfeedSettingsKey(user) {
   return `${NEWSFEED_SETTINGS_PREFIX}/${newsfeedUserKey(user)}.json`;
 }
 
+function defaultNewsfeedSettings(user = null) {
+  return {
+    pinned: ["global-daily"],
+    user_key: user ? newsfeedUserKey(user) : "",
+    username: user && user.username || "",
+    user_email: normalizeEmail(user && user.email) || "",
+    digest_email_enabled: false,
+    digest_email: normalizeEmail(user && user.email) || "",
+    digest_send_time: NEWSFEED_EMAIL_DEFAULT_TIME,
+    digest_timezone: NEWSFEED_EMAIL_DEFAULT_TIMEZONE,
+    digest_language: "en",
+    digest_last_sent_date: "",
+  };
+}
+
+function normalizeNewsfeedTime(value) {
+  const match = String(value || "").trim().match(/^([01]?\d|2[0-3]):([0-5]\d)$/);
+  if (!match) return NEWSFEED_EMAIL_DEFAULT_TIME;
+  return `${match[1].padStart(2, "0")}:${match[2]}`;
+}
+
+function normalizeNewsfeedTimezone(value) {
+  const timezone = String(value || "").trim() || NEWSFEED_EMAIL_DEFAULT_TIMEZONE;
+  try {
+    new Intl.DateTimeFormat("en", { timeZone: timezone }).format(new Date());
+    return timezone;
+  } catch (_error) {
+    return NEWSFEED_EMAIL_DEFAULT_TIMEZONE;
+  }
+}
+
+function resendApiKey(env) {
+  return cleanEnv(env.RESEND_API_KEY);
+}
+
+function hasCloudflareEmailBinding(env) {
+  return Boolean(env.EMAIL && typeof env.EMAIL.send === "function");
+}
+
+function newsfeedEmailProvider(env) {
+  if (hasCloudflareEmailBinding(env)) return "cloudflare";
+  if (resendApiKey(env)) return "resend";
+  return "none";
+}
+
+function newsfeedEmailFrom(env) {
+  return cleanEnv(env.NEWSFEED_EMAIL_FROM) || cleanEnv(env.RESEND_FROM) || "KC Desk Newsfeed <newsfeed@kcdesk.com>";
+}
+
+function publicNewsfeedSettings(settings, user, env) {
+  const merged = { ...defaultNewsfeedSettings(user), ...(settings || {}) };
+  return {
+    digest_email_enabled: Boolean(merged.digest_email_enabled),
+    digest_email: normalizeEmail(merged.digest_email),
+    digest_send_time: normalizeNewsfeedTime(merged.digest_send_time),
+    digest_timezone: normalizeNewsfeedTimezone(merged.digest_timezone),
+    digest_language: normalizeNewsfeedLanguage(merged.digest_language),
+    digest_last_sent_date: String(merged.digest_last_sent_date || ""),
+    email_provider_configured: newsfeedEmailProvider(env) !== "none",
+    email_provider: newsfeedEmailProvider(env),
+  };
+}
+
 function simpleNewsfeedId(value) {
   let hash = 2166136261;
   const text = String(value || "");
@@ -2933,7 +2999,10 @@ async function requireNewsfeedUser(request, env) {
 }
 
 async function loadNewsfeedSettings(env, user) {
-  return await safeR2GetJson(env, newsfeedSettingsKey(user)) || { pinned: ["global-daily"] };
+  return {
+    ...defaultNewsfeedSettings(user),
+    ...(await safeR2GetJson(env, newsfeedSettingsKey(user)) || {}),
+  };
 }
 
 async function saveNewsfeedSettings(env, user, settings) {
@@ -3100,7 +3169,10 @@ async function generateNewsfeedTopicPackage(env, input, outputLanguage = "en") {
 async function handleNewsfeedHome(request, env) {
   try {
     const user = await requireNewsfeedUser(request, env);
-    const topics = await loadNewsfeedTopics(env, user);
+    const [topics, settings] = await Promise.all([
+      loadNewsfeedTopics(env, user),
+      loadNewsfeedSettings(env, user),
+    ]);
     const globalSpec = NEWSFEED_DEFAULT_TOPICS.find((topic) => topic.id === "global-daily") || NEWSFEED_DEFAULT_TOPICS[0];
     const defaultSpecs = NEWSFEED_DEFAULT_TOPICS.filter((topic) => topic.id !== "global-daily");
     const fetched = await Promise.all([
@@ -3121,6 +3193,7 @@ async function handleNewsfeedHome(request, env) {
       categories: NEWSFEED_CATEGORIES,
       topics: topics.map(publicNewsfeedTopic),
       suggested_topics: NEWSFEED_SUGGESTED_TOPICS,
+      settings: publicNewsfeedSettings(settings, user, env),
     });
   } catch (error) {
     return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Newsfeed unavailable." });
@@ -3235,6 +3308,35 @@ async function handleNewsfeedPinTopic(request, env) {
   }
 }
 
+async function handleNewsfeedSettings(request, env) {
+  try {
+    const user = await requireNewsfeedUser(request, env);
+    const settings = await loadNewsfeedSettings(env, user);
+    if (request.method === "GET") {
+      return jsonResponse(request, env, 200, { settings: publicNewsfeedSettings(settings, user, env) });
+    }
+    const payload = await request.json().catch(() => ({}));
+    const enabled = Boolean(payload.digest_email_enabled || payload.enabled);
+    const email = normalizeEmail(payload.digest_email || payload.email || settings.digest_email || user.email);
+    if (enabled && !email) return jsonResponse(request, env, 400, { detail: "A valid email is required." });
+    const next = {
+      ...settings,
+      user_key: newsfeedUserKey(user),
+      username: String(user.username || ""),
+      user_email: normalizeEmail(user.email) || "",
+      digest_email_enabled: enabled,
+      digest_email: email,
+      digest_send_time: normalizeNewsfeedTime(payload.digest_send_time || payload.send_time || settings.digest_send_time),
+      digest_timezone: normalizeNewsfeedTimezone(payload.digest_timezone || payload.timezone || settings.digest_timezone),
+      digest_language: normalizeNewsfeedLanguage(payload.digest_language || payload.output_language || settings.digest_language),
+    };
+    await saveNewsfeedSettings(env, user, next);
+    return jsonResponse(request, env, 200, { settings: publicNewsfeedSettings(next, user, env) });
+  } catch (error) {
+    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not save settings." });
+  }
+}
+
 function fallbackArticleNarrative(article) {
   const title = stripNewsfeedHtml(article && article.title || "This story");
   const source = stripNewsfeedHtml(article && (article.source || article.domain) || "the source");
@@ -3329,6 +3431,177 @@ async function handleNewsfeedArticle(request, env) {
   } catch (error) {
     return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not load story." });
   }
+}
+
+function escapeNewsfeedHtml(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function newsfeedLocalParts(date, timezone) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: normalizeNewsfeedTimezone(timezone),
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(date);
+  const value = (type) => Number(parts.find((part) => part.type === type)?.value || 0);
+  return {
+    year: value("year"),
+    month: value("month"),
+    day: value("day"),
+    hour: value("hour"),
+    minute: value("minute"),
+  };
+}
+
+function newsfeedDateKey(parts) {
+  return `${String(parts.year).padStart(4, "0")}-${String(parts.month).padStart(2, "0")}-${String(parts.day).padStart(2, "0")}`;
+}
+
+function newsfeedEmailDue(settings, now = new Date()) {
+  if (!settings || !settings.digest_email_enabled || !normalizeEmail(settings.digest_email)) return null;
+  const parts = newsfeedLocalParts(now, settings.digest_timezone);
+  const dateKey = newsfeedDateKey(parts);
+  if (String(settings.digest_last_sent_date || "") === dateKey) return null;
+  const [scheduledHour, scheduledMinute] = normalizeNewsfeedTime(settings.digest_send_time).split(":").map(Number);
+  const scheduled = scheduledHour * 60 + scheduledMinute;
+  const current = parts.hour * 60 + parts.minute;
+  if (current < scheduled || current >= scheduled + NEWSFEED_EMAIL_WINDOW_MINUTES) return null;
+  return { dateKey, parts };
+}
+
+async function fetchNewsfeedDigestPayload(env) {
+  const globalSpec = NEWSFEED_DEFAULT_TOPICS.find((topic) => topic.id === "global-daily") || NEWSFEED_DEFAULT_TOPICS[0];
+  const defaultSpecs = NEWSFEED_DEFAULT_TOPICS.filter((topic) => topic.id !== "global-daily");
+  const fetched = await Promise.all([
+    fetchNewsfeedItems(env, globalSpec, { limit: 20, includeGdelt: true }),
+    ...defaultSpecs.map((topic) => fetchNewsfeedItems(env, topic, { limit: 10 })),
+  ]);
+  const headlines = dedupeNewsfeedItems(fetched.flatMap((row) => row.items || []))
+    .sort((a, b) => newsfeedSortValue(b) - newsfeedSortValue(a))
+    .slice(0, 24);
+  return {
+    updated_at: new Date().toISOString(),
+    daily_digest: digestFromNewsItems(headlines),
+    headlines,
+  };
+}
+
+function newsfeedEmailSubject(settings, due) {
+  const dateText = due && due.dateKey || new Date().toISOString().slice(0, 10);
+  if (normalizeNewsfeedLanguage(settings.digest_language) === "zh-CN") return `KC Desk Daily Digest · ${dateText}`;
+  return `KC Desk Daily Digest · ${dateText}`;
+}
+
+function newsfeedEmailText(payload) {
+  const lines = [
+    "KC Desk Daily Digest",
+    "",
+    ...((payload.daily_digest || []).map((line) => `- ${line}`)),
+    "",
+    "Top headlines:",
+    ...((payload.headlines || []).slice(0, 10).map((item, index) => `${index + 1}. ${item.title} (${item.source || item.domain || "News"})${item.url ? `\n   ${item.url}` : ""}`)),
+  ];
+  return lines.join("\n");
+}
+
+function newsfeedEmailHtml(payload) {
+  const digest = (payload.daily_digest || []).map((line) => `<li>${escapeNewsfeedHtml(line)}</li>`).join("");
+  const rows = (payload.headlines || []).slice(0, 12).map((item) => `
+    <tr>
+      <td style="padding:14px 0;border-top:1px solid #e5e7eb;">
+        <a href="${escapeNewsfeedHtml(item.url || "https://kcdesk.com/newsfeed.html")}" style="color:#111827;font-size:17px;font-weight:700;text-decoration:none;">${escapeNewsfeedHtml(item.title)}</a>
+        <div style="margin-top:6px;color:#6b7280;font-size:13px;">${escapeNewsfeedHtml([item.source || item.domain || "News", item.category].filter(Boolean).join(" · "))}</div>
+      </td>
+    </tr>
+  `).join("");
+  return `
+    <div style="margin:0;padding:24px;background:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#111827;">
+      <div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:12px;padding:28px;">
+        <h1 style="margin:0 0 18px;font-size:24px;">KC Desk Daily Digest</h1>
+        <ul style="margin:0 0 24px;padding-left:20px;color:#374151;line-height:1.6;">${digest}</ul>
+        <h2 style="margin:0 0 10px;font-size:18px;">Top headlines</h2>
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0">${rows}</table>
+        <p style="margin:24px 0 0;color:#6b7280;font-size:13px;">Manage your Newsfeed email settings at <a href="https://kcdesk.com/newsfeed.html">kcdesk.com/newsfeed.html</a>.</p>
+      </div>
+    </div>
+  `;
+}
+
+async function sendNewsfeedEmail(env, { to, subject, html, text }) {
+  if (hasCloudflareEmailBinding(env)) {
+    const response = await env.EMAIL.send({
+      to,
+      from: newsfeedEmailFrom(env),
+      subject,
+      html,
+      text,
+    });
+    return { sent: true, provider: "cloudflare", response };
+  }
+  const apiKey = resendApiKey(env);
+  if (!apiKey) return { sent: false, detail: "Email provider is not configured." };
+  const response = await fetchWithTimeout("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+      "User-Agent": NEWSFEED_UA,
+    },
+    body: JSON.stringify({
+      from: newsfeedEmailFrom(env),
+      to: [to],
+      subject,
+      html,
+      text,
+    }),
+  }, 20000);
+  const body = await response.text();
+  if (!response.ok) throw new Error(`Email send failed ${response.status}: ${body.slice(0, 220)}`);
+  return { sent: true, provider: "resend", response: body ? JSON.parse(body) : null };
+}
+
+async function sendDueNewsfeedDigestEmails(env) {
+  if (!env.REPORT_BUCKET || newsfeedEmailProvider(env) === "none") return [];
+  const settingsRows = await listR2JsonObjects(env, `${NEWSFEED_SETTINGS_PREFIX}/`, 10000);
+  const dueRows = [];
+  const now = new Date();
+  for (const row of settingsRows) {
+    const settings = { ...defaultNewsfeedSettings(), ...(row || {}) };
+    const due = newsfeedEmailDue(settings, now);
+    if (due) dueRows.push({ settings, due });
+  }
+  if (!dueRows.length) return [];
+  const payload = await fetchNewsfeedDigestPayload(env);
+  const results = [];
+  for (const { settings, due } of dueRows) {
+    const email = normalizeEmail(settings.digest_email);
+    if (!email) continue;
+    const result = await sendNewsfeedEmail(env, {
+      to: email,
+      subject: newsfeedEmailSubject(settings, due),
+      html: newsfeedEmailHtml(payload),
+      text: newsfeedEmailText(payload),
+    });
+    const userKey = settings.user_key || newsfeedUserKey({ email: settings.user_email || email, username: settings.username || "" });
+    const next = {
+      ...settings,
+      user_key: userKey,
+      digest_last_sent_date: due.dateKey,
+      digest_last_sent_at: new Date().toISOString(),
+      digest_last_send_result: result.sent ? "sent" : result.detail || "skipped",
+    };
+    await r2PutJson(env, `${NEWSFEED_SETTINGS_PREFIX}/${userKey}.json`, next);
+    results.push({ email, result: next.digest_last_send_result });
+  }
+  return results;
 }
 
 async function warmNewsfeedCaches(env) {
@@ -5400,6 +5673,10 @@ export default {
       return handleNewsfeedPinTopic(request, env);
     }
 
+    if (pathname === "/newsfeed/settings" && (request.method === "GET" || request.method === "POST")) {
+      return handleNewsfeedSettings(request, env);
+    }
+
     if (pathname === "/newsfeed/article" && request.method === "POST") {
       return handleNewsfeedArticle(request, env);
     }
@@ -5467,6 +5744,7 @@ export default {
     ctx.waitUntil(Promise.all([
       warmAdminGithubCache(env).catch(() => null),
       warmNewsfeedCaches(env).catch(() => null),
+      sendDueNewsfeedDigestEmails(env).catch(() => null),
     ]));
   },
 };

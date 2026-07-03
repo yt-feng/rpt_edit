@@ -151,6 +151,7 @@ jobs:
           KC_DESK_DOWNLOAD_PASSWORD: ${{ secrets.KC_DESK_DOWNLOAD_PASSWORD }}
           PAGES_URL: ${{ vars.KC_DESK_PAGES_URL || steps.deployment.outputs.page_url }}
           R2_OBJECT_PREFIX: ${{ vars.R2_OBJECT_PREFIX || 'reports' }}
+          NEWSFEED_EMAIL_PROVIDER: ${{ vars.NEWSFEED_EMAIL_PROVIDER || 'resend' }}
         run: |
           if [ "$DEPLOY_WORKER" != "true" ]; then
             echo "enabled=false" >> "$GITHUB_OUTPUT"
@@ -183,6 +184,7 @@ jobs:
           PASSWORD_RULES_URL = "$PAGES_URL/data/password_rules.json"
           ALLOWED_ORIGIN = "$PAGES_ORIGIN"
           GH_REPO = "$GITHUB_REPOSITORY"
+          NEWSFEED_EMAIL_PROVIDER = "$NEWSFEED_EMAIL_PROVIDER"
 
           [triggers]
           crons = ["*/30 * * * *"]
@@ -191,6 +193,14 @@ jobs:
           binding = "REPORT_BUCKET"
           bucket_name = "$R2_BUCKET_NAME"
           EOF
+          if [ "$NEWSFEED_EMAIL_PROVIDER" = "cloudflare" ]; then
+            cat >> workers/kc-desk-notes-worker/wrangler.toml <<EOF
+
+          [[send_email]]
+          name = "EMAIL"
+          remote = true
+          EOF
+          fi
           echo "enabled=true" >> "$GITHUB_OUTPUT"
 
       - name: Deploy Cloudflare Worker
@@ -213,6 +223,8 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || 'unconfigured' }}
           DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
           DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-chat' }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY || 'unconfigured' }}
+          NEWSFEED_EMAIL_FROM: ${{ secrets.NEWSFEED_EMAIL_FROM || vars.NEWSFEED_EMAIL_FROM || 'KC Desk Newsfeed <newsfeed@kcdesk.com>' }}
           # External-report preparation token. Optional; the fallback keeps wrangler
           # from pushing an empty secret value.
           GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN || 'unconfigured' }}
@@ -238,4 +250,6 @@ jobs:
             DEEPSEEK_API_KEY
             DEEPSEEK_BASE_URL
             DEEPSEEK_MODEL
+            RESEND_API_KEY
+            NEWSFEED_EMAIL_FROM
             GH_DISPATCH_TOKEN

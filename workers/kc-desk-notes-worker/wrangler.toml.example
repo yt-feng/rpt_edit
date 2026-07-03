@@ -16,6 +16,14 @@ GH_REPO = "yt-feng/rpt_edit"
 # wrangler secret put DEEPSEEK_API_KEY
 # DEEPSEEK_BASE_URL = "https://api.deepseek.com"
 # DEEPSEEK_MODEL = "deepseek-chat"
+# Optional for scheduled Newsfeed digest emails via Resend:
+# wrangler secret put RESEND_API_KEY
+# NEWSFEED_EMAIL_FROM = "KC Desk Newsfeed <newsfeed@kcdesk.com>"
+# Or use Cloudflare Email Service by setting NEWSFEED_EMAIL_PROVIDER = "cloudflare"
+# and adding a send_email binding:
+# [[send_email]]
+# name = "EMAIL"
+# remote = true
 
 [triggers]
 crons = ["*/30 * * * *"]
