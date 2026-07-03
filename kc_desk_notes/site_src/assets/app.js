@@ -12,6 +12,8 @@
   const REPORT_A_SOURCE = "report-a";
   const EXTERNAL_SOURCE = "external";
   const NEWSFEED_TOPIC_LIMIT = 10000;
+  const NEWSFEED_ACCOUNT_USERNAMES = new Set(["twotigers", "jacob"]);
+  const NEWSFEED_ACCOUNT_EMAILS = new Set(["twotigers@users.kcdesk.com", "jacob@bo-axis.com"]);
   const PDFJS_MODULE_URL = "/assets/vendor/pdfjs/pdf.mjs";
   const PDFJS_WORKER_URL = "/assets/vendor/pdfjs/pdf.worker.mjs";
   let accountAdminDailyPicks = new Map();
@@ -299,6 +301,14 @@
     return isSuperSession(session) || isOperatorSession(session);
   }
 
+  function isNewsfeedSession(session = loadAuthSession()) {
+    const user = session && session.user;
+    if (!user) return false;
+    const username = String(user.username || "").trim().toLowerCase().replace(/^@+/, "");
+    const email = String(user.email || "").trim().toLowerCase();
+    return isSuperSession(session) || NEWSFEED_ACCOUNT_USERNAMES.has(username) || NEWSFEED_ACCOUNT_EMAILS.has(email);
+  }
+
   function privateToolsUnlocked() {
     return Boolean(getAdminToken() || canOpenOperationsPanel());
   }
@@ -339,7 +349,7 @@
     const links = Array.from(document.querySelectorAll("#newsfeedNav"));
     if (!links.length) return;
     function update() {
-      const visible = isSuperSession();
+      const visible = isNewsfeedSession();
       links.forEach((link) => {
         link.hidden = !visible;
       });
@@ -4340,11 +4350,11 @@
 
     if (!app) return;
     let session = loadAuthSession();
-    if (!isSuperSession(session)) {
+    if (!isNewsfeedSession(session)) {
       renderNewsfeedBoot(app, "Checking Newsfeed access...");
       session = await refreshAuthSession(workerUrl);
     }
-    if (!isSuperSession(session)) {
+    if (!isNewsfeedSession(session)) {
       renderNewsfeedAccess(app, workerUrl);
       return;
     }

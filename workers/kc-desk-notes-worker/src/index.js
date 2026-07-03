@@ -13,6 +13,8 @@ const SUPER_ACCOUNT_USERNAMES = new Set(["twotigers"]);
 const SUPER_ACCOUNT_EMAILS = new Set(["twotigers@users.kcdesk.com"]);
 const OPERATOR_ACCOUNT_USERNAMES = new Set(["liuxin"]);
 const OPERATOR_ACCOUNT_EMAILS = new Set(["liuxin@users.kcdesk.com"]);
+const NEWSFEED_ACCOUNT_USERNAMES = new Set(["twotigers", "jacob"]);
+const NEWSFEED_ACCOUNT_EMAILS = new Set(["twotigers@users.kcdesk.com", "jacob@bo-axis.com"]);
 const DEFAULT_GITHUB_REPO = "yt-feng/rpt_edit";
 const DEFAULT_GITHUB_REF = "main";
 const BBG_SHOW_REPO = "yt-feng/bbg-show";
@@ -537,6 +539,13 @@ function accountRole(user) {
 
 function isPrivilegedAccount(user) {
   return accountRole(user) !== "user";
+}
+
+function isNewsfeedAccount(user) {
+  if (!user) return false;
+  const username = normalizeUsername(user.username);
+  const email = normalizeEmail(user.email);
+  return isSuperAccount(user) || NEWSFEED_ACCOUNT_USERNAMES.has(username) || NEWSFEED_ACCOUNT_EMAILS.has(email);
 }
 
 function generatedEmailForUsername(username) {
@@ -3246,7 +3255,7 @@ async function fetchNewsfeedItems(env, spec, options = {}) {
 
 async function requireNewsfeedUser(request, env) {
   const user = await currentUserFromRequest(env, request);
-  if (!isSuperAccount(user)) throw new Error("Newsfeed is available for the twotigers test account.");
+  if (!isNewsfeedAccount(user)) throw new Error("Newsfeed is not enabled for this account.");
   return user;
 }
 
