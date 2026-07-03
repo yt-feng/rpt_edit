@@ -3783,13 +3783,15 @@
     return option ? option.label : value;
   }
 
-  function newsfeedPreferenceQuery(state) {
+  function newsfeedPreferenceQuery(state, options = {}) {
     const params = new URLSearchParams();
-    normalizeNewsfeedRegionsClient(state.preferredRegions).forEach((region) => params.append("regions", region));
-    params.set("language", newsfeedLanguageCode(state.interfaceLanguage || state.outputLanguage || "en"));
-    const regions = params.getAll("regions");
-    params.delete("regions");
-    params.set("regions", regions.join(","));
+    if (options.force || state.preferencesReady) {
+      normalizeNewsfeedRegionsClient(state.preferredRegions).forEach((region) => params.append("regions", region));
+      params.set("language", newsfeedLanguageCode(state.interfaceLanguage || state.outputLanguage || "en"));
+      const regions = params.getAll("regions");
+      params.delete("regions");
+      params.set("regions", regions.join(","));
+    }
     return params.toString();
   }
 
@@ -3798,6 +3800,7 @@
     state.interfaceLanguage = newsfeedLanguageCode(settings.interface_language || state.interfaceLanguage || "en");
     state.outputLanguage = newsfeedLanguageCode(settings.interface_language || state.outputLanguage || settings.digest_language || "en");
     state.preferredRegions = normalizeNewsfeedRegionsClient(settings.preferred_regions || state.preferredRegions || ["global"]);
+    state.preferencesReady = true;
   }
 
   function newsfeedLanguageOptions(selected = "en") {
@@ -4303,6 +4306,7 @@
       outputLanguage: "en",
       interfaceLanguage: "en",
       preferredRegions: ["global"],
+      preferencesReady: false,
       regionOptions: [],
       briefingPlaying: false,
       briefingProgress: 0,
@@ -4372,6 +4376,7 @@
     }
 
     async function saveNewsfeedPreferences(reload = true) {
+      state.preferencesReady = true;
       refreshNewsfeedChrome(state);
       const data = await newsfeedJson(workerUrl, "/newsfeed/settings", {
         method: "POST",
