@@ -3568,9 +3568,25 @@
     });
   }
 
-  function rememberNewsfeedArticles(state, items = []) {
+  function newsfeedLanguageOptions(selected = "en") {
+    const languages = [
+      ["en", "English"],
+      ["zh-CN", "中文"],
+      ["ja", "日本語"],
+      ["ko", "한국어"],
+    ];
+    return languages.map(([value, label]) => `
+      <option value="${escapeHtml(value)}" ${value === selected ? "selected" : ""}>${escapeHtml(label)}</option>
+    `).join("");
+  }
+
+  function rememberNewsfeedArticles(state, items = [], topic = null) {
     for (const item of items || []) {
-      if (item && item.id) state.articles.set(String(item.id), item);
+      if (!item || !item.id) continue;
+      const id = String(item.id);
+      const outputLanguage = item.output_language || topic && topic.output_language || state.outputLanguage || "en";
+      state.articles.set(id, item);
+      if (state.articleLanguages) state.articleLanguages.set(id, outputLanguage);
     }
   }
 
@@ -3640,11 +3656,17 @@
         <div class="news-suggested-list">
           ${suggestions.map((topic) => `<button type="button" data-action="suggest-topic" data-topic="${escapeHtml(topic)}">${escapeHtml(topic)}</button>`).join("")}
         </div>
+        <div class="news-language-row">
+          <label for="newsTopicLanguage">Output language</label>
+          <select id="newsTopicLanguage">
+            ${newsfeedLanguageOptions(state.outputLanguage || "en")}
+          </select>
+        </div>
+        <div id="newsTopicStatus" class="status-line" aria-live="polite"></div>
         <form id="newsTopicForm" class="news-topic-form">
           <textarea id="newsTopicInput" rows="4" placeholder="Type any topic you want to follow"></textarea>
-          <button class="primary" type="submit" aria-label="Create topic">↑</button>
+          <button id="newsTopicSubmit" class="primary" type="submit" aria-label="Create topic">↑</button>
         </form>
-        <div id="newsTopicStatus" class="status-line" aria-live="polite"></div>
       </section>
     `;
   }
@@ -3677,7 +3699,7 @@
   function renderNewsfeedTopic(state, topic, items) {
     const content = document.getElementById("newsfeedContent");
     if (!content) return;
-    rememberNewsfeedArticles(state, items || []);
+    rememberNewsfeedArticles(state, items || [], topic);
     setNewsfeedTitle(topic && topic.title || "Topic");
     updateNewsfeedTabs("topic");
     state.currentView = "topic";
@@ -3809,10 +3831,12 @@
       explore: null,
       topics: [],
       articles: new Map(),
+      articleLanguages: new Map(),
       currentView: "feed",
       lastListView: "feed",
       homeCategory: "Investment",
       exploreCategory: "Tech",
+      outputLanguage: "en",
     };
 
     app.innerHTML = newsfeedShellMarkup();
@@ -3910,9 +3934,10 @@
           return;
         }
         if (action === "open-article") {
-          const article = state.articles.get(String(control.dataset.id || ""));
+          const id = String(control.dataset.id || "");
+          const article = state.articles.get(id);
           state.lastListView = state.currentView === "article" ? state.lastListView : state.currentView;
-          await renderNewsfeedArticle(state, article);
+          await renderNewsfeedArticle(state, article ? { ...article, output_language: state.articleLanguages.get(id) || state.outputLanguage || "en" } : article);
           return;
         }
         if (action === "article-back") {
@@ -3929,26 +3954,34 @@
       if (event.target && event.target.id === "newsTopicForm") {
         event.preventDefault();
         const input = document.getElementById("newsTopicInput");
+        const language = document.getElementById("newsTopicLanguage");
         const status = document.getElementById("newsTopicStatus");
+        const submit = document.getElementById("newsTopicSubmit");
         const topic = input ? input.value.trim() : "";
         if (!topic) return;
+        const outputLanguage = language ? language.value : "en";
+        state.outputLanguage = outputLanguage || "en";
         if (status) {
           status.className = "status-line";
           status.textContent = "Creating topic...";
         }
+        if (submit) submit.disabled = true;
         try {
           const data = await newsfeedJson(workerUrl, "/newsfeed/topics", {
             method: "POST",
-            body: JSON.stringify({ topic }),
+            body: JSON.stringify({ topic, output_language: outputLanguage }),
           });
           state.topics = data.topics || state.topics || [];
           renderNewsfeedSidebar(state);
           renderNewsfeedTopic(state, data.topic, data.items || []);
+          setNewsfeedStatus(data.pending ? "Topic created. Stories are loading; open it again in a moment." : "", data.pending ? "ok" : "");
         } catch (error) {
           if (status) {
             status.className = "status-line error";
             status.textContent = error.message || "Could not create topic.";
           }
+        } finally {
+          if (submit) submit.disabled = false;
         }
       }
     });

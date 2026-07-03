@@ -90,9 +90,26 @@ const NEWSFEED_CACHE_PREFIX = "_newsfeed/cache";
 const NEWSFEED_TOPICS_PREFIX = "_newsfeed/topics";
 const NEWSFEED_SETTINGS_PREFIX = "_newsfeed/settings";
 const NEWSFEED_CACHE_FRESH_MS = 30 * 60 * 1000;
+const NEWSFEED_CACHE_VERSION = 2;
 const NEWSFEED_MAX_USER_TOPICS = 10;
 const NEWSFEED_CATEGORIES = ["Investment", "Tech", "Politics", "Industries"];
 const NEWSFEED_UA = "KCDeskNewsfeed/0.1";
+const NEWSFEED_OUTPUT_LANGUAGES = [
+  { code: "en", label: "English", instruction: "English" },
+  { code: "zh-CN", label: "中文", instruction: "Simplified Chinese" },
+  { code: "ja", label: "日本語", instruction: "Japanese" },
+  { code: "ko", label: "한국어", instruction: "Korean" },
+];
+const NEWSFEED_PUBLIC_RSS_FEEDS = [
+  { url: "https://feeds.bbci.co.uk/news/world/rss.xml", source: "BBC World", category: "Politics" },
+  { url: "https://www.theguardian.com/world/rss", source: "The Guardian World", category: "Politics" },
+  { url: "https://feeds.bbci.co.uk/news/business/rss.xml", source: "BBC Business", category: "Investment" },
+  { url: "https://www.theguardian.com/business/rss", source: "The Guardian Business", category: "Investment" },
+  { url: "https://feeds.bbci.co.uk/news/technology/rss.xml", source: "BBC Technology", category: "Tech" },
+  { url: "https://www.theguardian.com/technology/rss", source: "The Guardian Technology", category: "Tech" },
+  { url: "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml", source: "BBC Science", category: "Industries" },
+  { url: "https://feeds.bbci.co.uk/news/business/rss.xml", source: "BBC Business", category: "Industries" },
+];
 const NEWSFEED_DEFAULT_TOPICS = [
   {
     id: "global-daily",
@@ -2674,6 +2691,34 @@ function googleNewsRssUrl(query, locale = "en-US", region = "US") {
   return `https://news.google.com/rss/search?${params.toString()}`;
 }
 
+function normalizeNewsfeedLanguage(value) {
+  const code = String(value || "").trim();
+  return NEWSFEED_OUTPUT_LANGUAGES.some((item) => item.code === code) ? code : "en";
+}
+
+function newsfeedLanguageInstruction(value) {
+  const code = normalizeNewsfeedLanguage(value);
+  return (NEWSFEED_OUTPUT_LANGUAGES.find((item) => item.code === code) || NEWSFEED_OUTPUT_LANGUAGES[0]).instruction;
+}
+
+function newsfeedLanguageLabel(value) {
+  const code = normalizeNewsfeedLanguage(value);
+  return (NEWSFEED_OUTPUT_LANGUAGES.find((item) => item.code === code) || NEWSFEED_OUTPUT_LANGUAGES[0]).label;
+}
+
+function rssAttribute(block, tagPattern, attribute) {
+  const pattern = new RegExp(`<(?:${tagPattern})\\b[^>]*\\s${attribute}=["']([^"']+)["'][^>]*>`, "i");
+  const match = String(block || "").match(pattern);
+  return match ? decodeNewsfeedEntities(match[1]) : "";
+}
+
+function rssImageUrl(block) {
+  return cleanNewsfeedUrl(
+    rssAttribute(block, "media:content|media:thumbnail|enclosure", "url") ||
+      rssAttribute(block, "image", "url"),
+  );
+}
+
 function rssTag(block, tag) {
   const pattern = new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}>`, "i");
   const match = String(block || "").match(pattern);
@@ -2712,6 +2757,40 @@ function parseGoogleNewsRss(xml, query, defaults = {}) {
     if (item.title) out.push(item);
   }
   return out;
+}
+
+function parseGenericNewsRss(xml, defaults = {}) {
+  const out = [];
+  const blocks = String(xml || "").match(/<item\b[\s\S]*?<\/item>/gi) || [];
+  const fallbackDomain = domainFromUrl(defaults.feed_url || defaults.url || "");
+  for (const block of blocks) {
+    const link = cleanNewsfeedUrl(rssTag(block, "link") || rssTag(block, "guid"));
+    const pubDate = rssTag(block, "pubDate") || rssTag(block, "updated") || rssTag(block, "published");
+    const parsedDate = Date.parse(pubDate);
+    const item = newsfeedItem({
+      title: rssTag(block, "title"),
+      url: link,
+      source: defaults.source || fallbackDomain || "RSS",
+      source_url: defaults.feed_url || defaults.url || "",
+      domain: fallbackDomain || domainFromUrl(link),
+      published_at: Number.isFinite(parsedDate) ? new Date(parsedDate).toISOString() : "",
+      summary: rssTag(block, "description") || rssTag(block, "content:encoded"),
+      image_url: rssImageUrl(block),
+      query: defaults.query || "",
+      provider: "public-rss",
+    }, defaults);
+    if (item.title) out.push(item);
+  }
+  return out;
+}
+
+function newsfeedRssFeedsForSpec(spec) {
+  const category = spec && spec.category || "";
+  const feeds = NEWSFEED_PUBLIC_RSS_FEEDS.filter((feed) => !category || feed.category === category);
+  if (category !== "Politics") {
+    feeds.push(...NEWSFEED_PUBLIC_RSS_FEEDS.filter((feed) => feed.category === "Politics").slice(0, 1));
+  }
+  return feeds.slice(0, 3);
 }
 
 async function fetchGdeltNews(query, options = {}) {
@@ -2754,6 +2833,20 @@ async function fetchGoogleNews(query, options = {}) {
   }, 14000);
   if (!response.ok) return [];
   return parseGoogleNewsRss(await response.text(), query, options);
+}
+
+async function fetchPublicRssFeed(feed, spec = {}, options = {}) {
+  const response = await fetchWithTimeout(feed.url, {
+    headers: { "Accept": "application/rss+xml,application/xml;q=0.9,*/*;q=0.8", "User-Agent": NEWSFEED_UA },
+  }, 10000);
+  if (!response.ok) return [];
+  return parseGenericNewsRss(await response.text(), {
+    category: feed.category || spec.category,
+    source: feed.source,
+    feed_url: feed.url,
+    query: (spec.queries && spec.queries[0]) || spec.query || spec.title || "",
+    ...options,
+  });
 }
 
 function newsfeedCacheKey(scope, key) {
@@ -2799,7 +2892,7 @@ async function fetchNewsfeedItems(env, spec, options = {}) {
     .map(compactNewsfeedQuery)
     .filter(Boolean)
     .slice(0, 4);
-  const cacheKey = JSON.stringify({ id: spec && spec.id, queries, category: spec && spec.category, limit: options.limit || 30 });
+  const cacheKey = JSON.stringify({ version: NEWSFEED_CACHE_VERSION, id: spec && spec.id, queries, category: spec && spec.category, limit: options.limit || 30 });
   const cached = options.skipCache ? null : await getNewsfeedCache(env, "items", cacheKey);
   if (cached && cached.payload && newsfeedCacheIsFresh(cached)) {
     return { ...cached.payload, cached: true, cache_status: "fresh", cached_at: cached.cached_at };
@@ -2811,6 +2904,9 @@ async function fetchNewsfeedItems(env, spec, options = {}) {
   }
   for (const query of queries) {
     tasks.push(fetchGoogleNews(query, { category: spec.category, query }));
+  }
+  for (const feed of newsfeedRssFeedsForSpec(spec)) {
+    tasks.push(fetchPublicRssFeed(feed, spec));
   }
   const settled = await Promise.allSettled(tasks);
   const items = [];
@@ -2891,12 +2987,14 @@ function publicNewsfeedTopic(topic) {
     kind: topic.kind || "custom",
     category: topic.category || "Investment",
     pinned: Boolean(topic.pinned),
+    output_language: normalizeNewsfeedLanguage(topic.output_language),
+    output_language_label: newsfeedLanguageLabel(topic.output_language),
     last_updated_label: topicCountLabel(topic),
     query_plan: topic.query_plan || null,
   };
 }
 
-function fallbackNewsfeedTopicPackage(input) {
+function fallbackNewsfeedTopicPackage(input, outputLanguage = "en") {
   const clean = compactNewsfeedQuery(input);
   const title = clean.length > 58 ? `${clean.slice(0, 55)}...` : clean;
   const words = clean.split(/\s+/).filter(Boolean);
@@ -2916,6 +3014,7 @@ function fallbackNewsfeedTopicPackage(input) {
       exclude_terms: ["advertisement", "coupon", "job posting"],
       refresh: "30 minutes",
     },
+    output_language: normalizeNewsfeedLanguage(outputLanguage),
   };
 }
 
@@ -2957,8 +3056,9 @@ async function deepseekJson(env, messages, options = {}) {
   }
 }
 
-async function generateNewsfeedTopicPackage(env, input) {
-  const fallback = fallbackNewsfeedTopicPackage(input);
+async function generateNewsfeedTopicPackage(env, input, outputLanguage = "en") {
+  const language = normalizeNewsfeedLanguage(outputLanguage);
+  const fallback = fallbackNewsfeedTopicPackage(input, language);
   const generated = await deepseekJson(env, [
     {
       role: "system",
@@ -2969,6 +3069,7 @@ async function generateNewsfeedTopicPackage(env, input) {
       content: JSON.stringify({
         task: "Turn the user's interest into a reusable global news grabbing plan.",
         user_topic: input,
+        output_language: newsfeedLanguageInstruction(language),
         schema: {
           title: "short topic title",
           description: "one sentence",
@@ -2983,7 +3084,7 @@ async function generateNewsfeedTopicPackage(env, input) {
         },
       }),
     },
-  ], { temperature: 0.1, timeout: 45000 });
+  ], { temperature: 0.1, timeout: 12000 });
   if (!generated) return fallback;
   const queries = Array.isArray(generated.queries) ? generated.queries.map(compactNewsfeedQuery).filter(Boolean).slice(0, 4) : fallback.queries;
   return {
@@ -2992,6 +3093,7 @@ async function generateNewsfeedTopicPackage(env, input) {
     category: NEWSFEED_CATEGORIES.includes(generated.category) ? generated.category : fallback.category,
     queries: queries.length ? queries : fallback.queries,
     query_plan: generated.query_plan || fallback.query_plan,
+    output_language: language,
   };
 }
 
@@ -2999,8 +3101,12 @@ async function handleNewsfeedHome(request, env) {
   try {
     const user = await requireNewsfeedUser(request, env);
     const topics = await loadNewsfeedTopics(env, user);
+    const globalSpec = NEWSFEED_DEFAULT_TOPICS.find((topic) => topic.id === "global-daily") || NEWSFEED_DEFAULT_TOPICS[0];
     const defaultSpecs = NEWSFEED_DEFAULT_TOPICS.filter((topic) => topic.id !== "global-daily");
-    const fetched = await Promise.all(defaultSpecs.map((topic) => fetchNewsfeedItems(env, topic, { limit: 14 })));
+    const fetched = await Promise.all([
+      fetchNewsfeedItems(env, globalSpec, { limit: 20, includeGdelt: true }),
+      ...defaultSpecs.map((topic) => fetchNewsfeedItems(env, topic, { limit: 14 })),
+    ]);
     const headlines = dedupeNewsfeedItems(fetched.flatMap((row) => row.items || []))
       .sort((a, b) => newsfeedSortValue(b) - newsfeedSortValue(a))
       .slice(0, 42);
@@ -3029,7 +3135,7 @@ async function handleNewsfeedExplore(request, env) {
     const spec = NEWSFEED_DEFAULT_TOPICS.find((topic) => topic.category === requested) || NEWSFEED_DEFAULT_TOPICS[1];
     const [topics, payload] = await Promise.all([
       loadNewsfeedTopics(env, user),
-      fetchNewsfeedItems(env, spec, { limit: 34 }),
+      fetchNewsfeedItems(env, spec, { limit: 34, includeGdelt: true }),
     ]);
     return jsonResponse(request, env, 200, {
       categories: NEWSFEED_CATEGORIES,
@@ -3065,7 +3171,7 @@ async function handleNewsfeedTopic(request, env) {
   }
 }
 
-async function handleNewsfeedCreateTopic(request, env) {
+async function handleNewsfeedCreateTopic(request, env, ctx) {
   try {
     const user = await requireNewsfeedUser(request, env);
     const existing = await loadNewsfeedCustomTopics(env, user);
@@ -3075,7 +3181,8 @@ async function handleNewsfeedCreateTopic(request, env) {
     const payload = await request.json().catch(() => ({}));
     const input = compactNewsfeedQuery(payload.topic || payload.query || "");
     if (input.length < 2) return jsonResponse(request, env, 400, { detail: "Topic is required." });
-    const plan = await generateNewsfeedTopicPackage(env, input);
+    const outputLanguage = normalizeNewsfeedLanguage(payload.output_language || payload.language || "en");
+    const plan = await generateNewsfeedTopicPackage(env, input, outputLanguage);
     const id = `${slugifyNewsfeed(plan.title)}-${randomHex(3)}`;
     const topic = {
       id,
@@ -3083,6 +3190,7 @@ async function handleNewsfeedCreateTopic(request, env) {
       title: plan.title,
       description: plan.description,
       category: plan.category,
+      output_language: outputLanguage,
       queries: plan.queries,
       query_plan: plan.query_plan,
       created_from: input,
@@ -3090,14 +3198,18 @@ async function handleNewsfeedCreateTopic(request, env) {
       updated_at: new Date().toISOString(),
     };
     await r2PutJson(env, newsfeedTopicKey(user, id), topic);
-    const [topics, items] = await Promise.all([
+    const itemsPromise = fetchNewsfeedItems(env, topic, { limit: 34, skipCache: true, includeGdelt: true }).catch(() => null);
+    const [topics, fastItems] = await Promise.all([
       loadNewsfeedTopics(env, user),
-      fetchNewsfeedItems(env, topic, { limit: 34, skipCache: true, includeGdelt: true }),
+      Promise.race([itemsPromise, sleep(3500).then(() => null)]),
     ]);
+    if (!fastItems && ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(itemsPromise);
+    const items = fastItems || { items: [], updated_label: "Preparing stories" };
     return jsonResponse(request, env, 201, {
       topic: { ...publicNewsfeedTopic(topic), updated_label: items.updated_label },
       items: items.items || [],
       topics: topics.map(publicNewsfeedTopic),
+      pending: !fastItems,
     });
   } catch (error) {
     return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not create topic." });
@@ -3127,6 +3239,17 @@ function fallbackArticleNarrative(article) {
   const title = stripNewsfeedHtml(article && article.title || "This story");
   const source = stripNewsfeedHtml(article && (article.source || article.domain) || "the source");
   const summary = stripNewsfeedHtml(article && article.summary || "");
+  const language = normalizeNewsfeedLanguage(article && article.output_language);
+  if (language === "zh-CN") {
+    return {
+      summary: summary ? `${source} 报道：${summary}` : `${source} 报道了这条新闻：${title}。`,
+      narrative: [
+        `${source} 正在报道「${title}」。`,
+        summary ? `核心信息是：${summary}` : "这条标题显示事件仍在发展，后续需要结合更多原始来源继续跟踪。",
+        "当前新闻流保留了原始来源链接，方便你打开原文核对细节和语境。",
+      ].join("\n\n"),
+    };
+  }
   return {
     summary: summary || `${source} is reporting: ${title}.`,
     narrative: [
@@ -3138,10 +3261,11 @@ function fallbackArticleNarrative(article) {
 }
 
 async function generateArticleNarrative(env, article) {
+  const outputLanguage = normalizeNewsfeedLanguage(article && article.output_language);
   const generated = await deepseekJson(env, [
     {
       role: "system",
-      content: "You write concise news summaries. Output strict JSON with summary and narrative. Base everything only on the provided article metadata.",
+      content: `You write concise news summaries in ${newsfeedLanguageInstruction(outputLanguage)}. Output strict JSON with summary and narrative. Base everything only on the provided article metadata.`,
     },
     {
       role: "user",
@@ -3151,6 +3275,7 @@ async function generateArticleNarrative(env, article) {
         published_at: article.published_at || "",
         summary: article.summary || "",
         url: article.url || "",
+        output_language: newsfeedLanguageInstruction(outputLanguage),
         required_json: { summary: "2 short sentences", narrative: "3 concise paragraphs" },
       }),
     },
@@ -5268,7 +5393,7 @@ export default {
     }
 
     if (pathname === "/newsfeed/topics" && request.method === "POST") {
-      return handleNewsfeedCreateTopic(request, env);
+      return handleNewsfeedCreateTopic(request, env, ctx);
     }
 
     if (pathname === "/newsfeed/topics/pin" && request.method === "POST") {
