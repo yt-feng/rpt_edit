@@ -2698,6 +2698,10 @@ function publicNewsfeedSettings(settings, user, env) {
     digest_timezone: normalizeNewsfeedTimezone(merged.digest_timezone),
     digest_language: normalizeNewsfeedLanguage(merged.digest_language),
     digest_last_sent_date: String(merged.digest_last_sent_date || ""),
+    digest_last_sent_at: String(merged.digest_last_sent_at || ""),
+    digest_last_attempt_at: String(merged.digest_last_attempt_at || ""),
+    digest_last_send_result: String(merged.digest_last_send_result || ""),
+    digest_last_send_detail: String(merged.digest_last_send_detail || ""),
     interface_language: interfaceLanguage,
     interface_language_label: newsfeedLanguageLabel(interfaceLanguage),
     preferred_regions: preferredRegions,
@@ -3163,6 +3167,36 @@ async function saveNewsfeedSettings(env, user, settings) {
   });
 }
 
+function hasOwnField(object, field) {
+  return Object.prototype.hasOwnProperty.call(object || {}, field);
+}
+
+function nextNewsfeedSettingsFromPayload(settings, user, payload = {}) {
+  const hasDigestEnabled = hasOwnField(payload, "digest_email_enabled") || hasOwnField(payload, "enabled");
+  const hasDigestEmail = hasOwnField(payload, "digest_email") || hasOwnField(payload, "email");
+  const hasRegions = hasOwnField(payload, "preferred_regions") || hasOwnField(payload, "regions");
+  const hasInterfaceLanguage = hasOwnField(payload, "interface_language") || hasOwnField(payload, "language");
+  return {
+    ...settings,
+    user_key: newsfeedUserKey(user),
+    username: String(user.username || ""),
+    user_email: normalizeEmail(user.email) || "",
+    digest_email_enabled: hasDigestEnabled ? Boolean(payload.digest_email_enabled || payload.enabled) : Boolean(settings.digest_email_enabled),
+    digest_email: hasDigestEmail
+      ? normalizeEmail(payload.digest_email || payload.email)
+      : normalizeEmail(settings.digest_email || user.email),
+    digest_send_time: normalizeNewsfeedTime(payload.digest_send_time || payload.send_time || settings.digest_send_time),
+    digest_timezone: normalizeNewsfeedTimezone(payload.digest_timezone || payload.timezone || settings.digest_timezone),
+    digest_language: normalizeNewsfeedLanguage(payload.digest_language || payload.output_language || settings.digest_language),
+    interface_language: normalizeNewsfeedLanguage(hasInterfaceLanguage
+      ? (payload.interface_language || payload.language)
+      : (settings.interface_language || settings.digest_language)),
+    preferred_regions: normalizeNewsfeedRegions(hasRegions
+      ? (payload.preferred_regions || payload.regions)
+      : settings.preferred_regions),
+  };
+}
+
 async function loadNewsfeedCustomTopics(env, user) {
   const topics = await listR2JsonObjects(env, newsfeedTopicPrefix(user), NEWSFEED_MAX_USER_TOPICS + 20);
   return topics.filter(Boolean).sort((a, b) => Date.parse(b.created_at || "") - Date.parse(a.created_at || ""));
@@ -3528,30 +3562,44 @@ async function handleNewsfeedSettings(request, env) {
       return jsonResponse(request, env, 200, { settings: publicNewsfeedSettings(settings, user, env) });
     }
     const payload = await request.json().catch(() => ({}));
-    const hasDigestEnabled = Object.prototype.hasOwnProperty.call(payload, "digest_email_enabled") || Object.prototype.hasOwnProperty.call(payload, "enabled");
-    const hasDigestEmail = Object.prototype.hasOwnProperty.call(payload, "digest_email") || Object.prototype.hasOwnProperty.call(payload, "email");
-    const enabled = hasDigestEnabled ? Boolean(payload.digest_email_enabled || payload.enabled) : Boolean(settings.digest_email_enabled);
-    const email = hasDigestEmail
-      ? normalizeEmail(payload.digest_email || payload.email)
-      : normalizeEmail(settings.digest_email || user.email);
-    if (enabled && !email) return jsonResponse(request, env, 400, { detail: "A valid email is required." });
-    const next = {
-      ...settings,
-      user_key: newsfeedUserKey(user),
-      username: String(user.username || ""),
-      user_email: normalizeEmail(user.email) || "",
-      digest_email_enabled: enabled,
-      digest_email: email,
-      digest_send_time: normalizeNewsfeedTime(payload.digest_send_time || payload.send_time || settings.digest_send_time),
-      digest_timezone: normalizeNewsfeedTimezone(payload.digest_timezone || payload.timezone || settings.digest_timezone),
-      digest_language: normalizeNewsfeedLanguage(payload.digest_language || payload.output_language || settings.digest_language),
-      interface_language: normalizeNewsfeedLanguage(payload.interface_language || payload.language || settings.interface_language || settings.digest_language),
-      preferred_regions: normalizeNewsfeedRegions(payload.preferred_regions || payload.regions || settings.preferred_regions),
-    };
+    const next = nextNewsfeedSettingsFromPayload(settings, user, payload);
+    if (next.digest_email_enabled && !normalizeEmail(next.digest_email)) return jsonResponse(request, env, 400, { detail: "A valid email is required." });
     await saveNewsfeedSettings(env, user, next);
     return jsonResponse(request, env, 200, { settings: publicNewsfeedSettings(next, user, env) });
   } catch (error) {
     return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not save settings." });
+  }
+}
+
+async function handleNewsfeedEmailTest(request, env) {
+  try {
+    const user = await requireNewsfeedUser(request, env);
+    const settings = await loadNewsfeedSettings(env, user);
+    const payload = await request.json().catch(() => ({}));
+    const next = nextNewsfeedSettingsFromPayload(settings, user, payload);
+    const email = normalizeEmail(next.digest_email);
+    if (!email) return jsonResponse(request, env, 400, { detail: "A valid email is required." });
+    await saveNewsfeedSettings(env, user, next);
+    const parts = newsfeedLocalParts(new Date(), next.digest_timezone);
+    const due = { dateKey: newsfeedDateKey(parts), parts };
+    let result;
+    let recorded;
+    try {
+      ({ result } = await attemptNewsfeedDigestEmail(env, next, due, {
+        subject: `${newsfeedEmailSubject(next, due)} · Test`,
+      }));
+      recorded = await recordNewsfeedEmailAttempt(env, newsfeedUserKey(user), next, result, due, { test: true });
+    } catch (error) {
+      result = { sent: false, detail: error.message || "Email send failed." };
+      recorded = await recordNewsfeedEmailAttempt(env, newsfeedUserKey(user), next, result, due, { test: true });
+    }
+    return jsonResponse(request, env, 200, {
+      sent: Boolean(result && result.sent),
+      detail: result && (result.detail || result.message) || "",
+      settings: publicNewsfeedSettings(recorded || next, user, env),
+    });
+  } catch (error) {
+    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not send test email." });
   }
 }
 
@@ -3828,6 +3876,37 @@ async function sendNewsfeedEmail(env, { to, subject, html, text }) {
   return { sent: false, detail: "Cloudflare Email binding is not configured." };
 }
 
+async function attemptNewsfeedDigestEmail(env, settings, due, options = {}) {
+  const email = normalizeEmail(settings.digest_email);
+  if (!email) return { result: { sent: false, detail: "No digest email is configured." }, payload: null };
+  const payload = await fetchNewsfeedDigestPayload(env, settings);
+  const result = await sendNewsfeedEmail(env, {
+    to: email,
+    subject: options.subject || newsfeedEmailSubject(settings, due),
+    html: newsfeedEmailHtml(payload),
+    text: newsfeedEmailText(payload),
+  });
+  return { result, payload };
+}
+
+async function recordNewsfeedEmailAttempt(env, userKey, settings, result, due = null, options = {}) {
+  const sent = Boolean(result && result.sent);
+  const now = new Date().toISOString();
+  const next = {
+    ...settings,
+    user_key: userKey,
+    digest_last_attempt_at: now,
+    digest_last_send_result: sent ? "sent" : "failed",
+    digest_last_send_detail: sent ? "" : String(result && result.detail || result && result.message || "Email send failed.").slice(0, 500),
+  };
+  if (sent) {
+    next.digest_last_sent_at = now;
+    if (!options.test && due && due.dateKey) next.digest_last_sent_date = due.dateKey;
+  }
+  await r2PutJson(env, `${NEWSFEED_SETTINGS_PREFIX}/${userKey}.json`, next);
+  return next;
+}
+
 async function sendDueNewsfeedDigestEmails(env) {
   if (!env.REPORT_BUCKET || newsfeedEmailProvider(env) === "none") return [];
   const settingsRows = await listR2JsonObjects(env, `${NEWSFEED_SETTINGS_PREFIX}/`, 10000);
@@ -3843,22 +3922,16 @@ async function sendDueNewsfeedDigestEmails(env) {
   for (const { settings, due } of dueRows) {
     const email = normalizeEmail(settings.digest_email);
     if (!email) continue;
-    const payload = await fetchNewsfeedDigestPayload(env, settings);
-    const result = await sendNewsfeedEmail(env, {
-      to: email,
-      subject: newsfeedEmailSubject(settings, due),
-      html: newsfeedEmailHtml(payload),
-      text: newsfeedEmailText(payload),
-    });
     const userKey = settings.user_key || newsfeedUserKey({ email: settings.user_email || email, username: settings.username || "" });
-    const next = {
-      ...settings,
-      user_key: userKey,
-      digest_last_sent_date: due.dateKey,
-      digest_last_sent_at: new Date().toISOString(),
-      digest_last_send_result: result.sent ? "sent" : result.detail || "skipped",
-    };
-    await r2PutJson(env, `${NEWSFEED_SETTINGS_PREFIX}/${userKey}.json`, next);
+    let result;
+    let next;
+    try {
+      ({ result } = await attemptNewsfeedDigestEmail(env, settings, due));
+      next = await recordNewsfeedEmailAttempt(env, userKey, settings, result, due);
+    } catch (error) {
+      result = { sent: false, detail: error.message || "Email send failed." };
+      next = await recordNewsfeedEmailAttempt(env, userKey, settings, result, due);
+    }
     results.push({ email, result: next.digest_last_send_result });
   }
   return results;
@@ -5935,6 +6008,10 @@ export default {
 
     if (pathname === "/newsfeed/settings" && (request.method === "GET" || request.method === "POST")) {
       return handleNewsfeedSettings(request, env);
+    }
+
+    if (pathname === "/newsfeed/email-test" && request.method === "POST") {
+      return handleNewsfeedEmailTest(request, env);
     }
 
     if (pathname === "/newsfeed/article" && request.method === "POST") {

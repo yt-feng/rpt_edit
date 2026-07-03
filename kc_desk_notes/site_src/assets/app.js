@@ -3827,6 +3827,27 @@
     `).join("");
   }
 
+  function newsfeedEmailPayloadFromForm(state) {
+    return {
+      digest_email_enabled: Boolean(document.getElementById("newsEmailEnabled")?.checked),
+      digest_email: document.getElementById("newsEmailInput")?.value || "",
+      digest_send_time: document.getElementById("newsEmailTime")?.value || "09:00",
+      digest_timezone: document.getElementById("newsEmailTimezone")?.value || "Asia/Shanghai",
+      digest_language: document.getElementById("newsEmailLanguage")?.value || state.outputLanguage || "en",
+      interface_language: state.interfaceLanguage || "en",
+      preferred_regions: state.preferredRegions || ["global"],
+    };
+  }
+
+  function newsfeedEmailLastStatus(settings = {}) {
+    const result = String(settings.digest_last_send_result || "").trim();
+    if (!result) return "";
+    const at = settings.digest_last_attempt_at || settings.digest_last_sent_at || "";
+    const when = at ? newsfeedTimeLabel(at) : "";
+    const detail = settings.digest_last_send_detail ? ` · ${settings.digest_last_send_detail}` : "";
+    return `Last email attempt: ${result}${when ? ` · ${when}` : ""}${detail}`;
+  }
+
   function renderNewsfeedPreferences(state) {
     const mount = document.getElementById("newsfeedPreferences");
     if (!mount) return;
@@ -3868,7 +3889,8 @@
     const enabled = Boolean(settings.digest_email_enabled);
     const providerNote = settings.email_provider_configured === false
       ? "Email sender needs Cloudflare Email binding before scheduled delivery starts."
-      : "Saved settings are used by the scheduled digest sender.";
+      : "Saved settings are used by the scheduled digest sender. It runs every 30 minutes.";
+    const lastStatus = newsfeedEmailLastStatus(settings);
     return `
       <section class="news-email-settings">
         <div class="news-email-copy">
@@ -3893,8 +3915,9 @@
             <span>${escapeHtml(newsfeedText(state, "sendDailyDigest"))}</span>
           </label>
           <button id="newsEmailSubmit" class="primary" type="submit">${escapeHtml(newsfeedText(state, "saveEmail"))}</button>
+          <button id="newsEmailTest" class="secondary-button news-email-test" type="button" data-action="send-email-test">Send test now</button>
         </form>
-        <div id="newsEmailStatus" class="status-line" aria-live="polite">${escapeHtml(providerNote)}</div>
+        <div id="newsEmailStatus" class="status-line" aria-live="polite">${escapeHtml(lastStatus || providerNote)}</div>
       </section>
     `;
   }
@@ -4425,6 +4448,33 @@
           renderNewsfeedEmailView(state);
           return;
         }
+        if (action === "send-email-test") {
+          const status = document.getElementById("newsEmailStatus");
+          const button = document.getElementById("newsEmailTest");
+          if (status) {
+            status.className = "status-line";
+            status.textContent = "Sending test digest email...";
+          }
+          if (button) {
+            button.disabled = true;
+            button.classList.add("is-loading");
+            button.textContent = "Sending...";
+          }
+          const data = await newsfeedJson(workerUrl, "/newsfeed/email-test", {
+            method: "POST",
+            body: JSON.stringify(newsfeedEmailPayloadFromForm(state)),
+          });
+          applyNewsfeedSettings(state, data.settings || state.settings || {});
+          renderNewsfeedEmailView(state);
+          const nextStatus = document.getElementById("newsEmailStatus");
+          if (nextStatus) {
+            nextStatus.className = data.sent ? "status-line ok" : "status-line error";
+            nextStatus.textContent = data.sent
+              ? "Test digest sent. Please check inbox and spam folder."
+              : (data.detail || state.settings.digest_last_send_detail || "Test email was not sent.");
+          }
+          return;
+        }
         if (action === "toggle-region-menu") {
           const menu = document.getElementById("newsRegionMenu");
           const toggle = document.getElementById("newsRegionToggle");
@@ -4557,13 +4607,7 @@
         event.preventDefault();
         const status = document.getElementById("newsEmailStatus");
         const submit = document.getElementById("newsEmailSubmit");
-        const payload = {
-          digest_email_enabled: Boolean(document.getElementById("newsEmailEnabled")?.checked),
-          digest_email: document.getElementById("newsEmailInput")?.value || "",
-          digest_send_time: document.getElementById("newsEmailTime")?.value || "09:00",
-          digest_timezone: document.getElementById("newsEmailTimezone")?.value || "Asia/Shanghai",
-          digest_language: document.getElementById("newsEmailLanguage")?.value || state.outputLanguage || "en",
-        };
+        const payload = newsfeedEmailPayloadFromForm(state);
         if (status) {
           status.className = "status-line";
           status.textContent = "Saving digest email settings...";
