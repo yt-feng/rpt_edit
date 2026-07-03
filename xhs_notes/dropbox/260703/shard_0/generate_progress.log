@@ -1,0 +1,44 @@
+Found 32 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_aec_mz_4/pdfs/0001-01-Morgan Stanley-US Rates Strategy-Buy 10y TIPS with Payer Protection-260701.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_aec_mz_4/pdfs/0002-02-Nomura-Asia Insights-Korea- Inflation rises again on higher oil prices while core inflation remains sticky-260702.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_aec_mz_4/pdfs/0003-03-CITI-China Economics Signs of Stabilization Ahead of Politburo- - Jun Q2 Data Preview-260701.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_aec_mz_4/pdfs/0004-04-J.P. Morgan-J.P. Morgan Global Manufacturing PMI-Consolidating around solid growth in June-260701.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_aec_mz_4/pdfs/0005-05-Morgan Stanley-US Economics-Consumption growth has slowed - what gives--260701.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=08c51f6c-4b34-4f86-9caf-4ab311ebc022
+MinerU states: done, running, running, pending, waiting-file
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+/home/runner/work/rpt_edit/rpt_edit/scripts/pdf_to_xhs_batch.py:277: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Skip non-chart visual asset 19a6fc53cfaa973076d24fb38636b9cb2f3719518e9eec74b582b73145cbf6e5.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.18
+Skip non-chart visual asset 7f7c232896bc451cbe623fa749413caa1f2f412aae16996130cf41b5d3484730.jpg: score=-2;chart_ratio,square_without_chart_hint
+Skip non-chart visual asset 8b71c13738f472b5e415204506868bbbf3d463393e0345d73ac4baa74131fe87.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.21
+Skip non-chart visual asset 8e9fa71bbe388e0c468dbde5b9d6e665cf15274db405701f9b07aa39ae09be72.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.15
+Skip non-chart visual asset 3e89fa42bd77150be61693b085940d3f9f4452565d08959068a703441981a291.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.13
+Skip non-chart visual asset e5cec13a1124c112341ac025753276be039a617c5a2206f27c79ac1cd81c693f.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.15
+Skip non-chart visual asset 8091566eb6c0146ea4dc92dd6a1fe36618f968ba35f9cc1fdcd47677b58351c4.jpg: score=1;large
+Skip non-chart visual asset 5f0418761375605abc1ead1a2e201d9c6b991aa20c0dd235e261d11432b86450.jpg: score=0;chart_ratio,square_without_chart_hint,edge:0.17
+Skip non-chart visual asset 6fee24cd6175255313c477ef635e3a178916a598bb109fff5b8a4b691070e6fa.jpg: score=1;large
+Skip non-chart visual asset 5d321f0b82123a0aaa3aad69e00f5b07287fc9be8f135b695635de0d34c970a5.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.25,large
+Skip non-chart visual asset 0276f17ae1301abc62bd9546f5312bc8275fb5a8c71950244fd964da1ad52a51.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.22,contrast
+DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+Skip non-chart visual asset af9ab05b7d4b4ab610905a370e3f0f197fb3c3a04e50654ae9603cfb278633c5.jpg: score=0;square_without_chart_hint,edge:0.14,large
+DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+Skip non-chart visual asset 712e51926380de5f12f5d72c746058568dbf905676bebd3903774e83ec28b9ad.jpg: score=-2;square_without_chart_hint,large
+DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+DeepSeek generation failed for Xiaohongshu note: DeepSeek generate Xiaohongshu note: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+Skip non-chart visual asset 7a20491952cbd7db6140e4c48d41aa53bcef1d12100f99fa07687b25fc978084.jpg: score=-100;too_small:390x232
+Skip non-chart visual asset 9597c666a8de3856308f4c6b932e618899f658f8b274668fe5118253e38e396c.jpg: score=-100;too_small:387x224
+Skip non-chart visual asset edbf82a32d9dd6db500723f5bfd1224a9d5fac1307c6eab966d47570f5bab999.jpg: score=1;chart_ratio,square_without_chart_hint,edge:0.24,large
+Skip non-chart visual asset e5679eb07e35b3d5acd9f08fd5f631274e02855309b4a40ae1f5959a0b147347.jpg: score=1;large
+DeepSeek generation failed for WeChat article: DeepSeek generate WeChat article: HTTP 402, response={"error": {"message": "Insufficient Balance", "type": "unknown_error", "param": null, "code": "invalid_request_error"}}
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260703/shard_0; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
