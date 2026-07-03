@@ -2753,13 +2753,36 @@ function hasCloudflareEmailBinding(env) {
   return Boolean(env.EMAIL && typeof env.EMAIL.send === "function");
 }
 
+function hasBrevoEmailConfig(env) {
+  return Boolean(cleanEnv(env.BREVO_API_KEY));
+}
+
 function newsfeedEmailProvider(env) {
+  const configured = cleanEnv(env.NEWSFEED_EMAIL_PROVIDER).toLowerCase();
+  if (configured === "brevo") return hasBrevoEmailConfig(env) ? "brevo" : "none";
+  if (configured === "cloudflare") return hasCloudflareEmailBinding(env) ? "cloudflare" : "none";
+  if (hasBrevoEmailConfig(env)) return "brevo";
   if (hasCloudflareEmailBinding(env)) return "cloudflare";
   return "none";
 }
 
 function newsfeedEmailFrom(env) {
   return cleanEnv(env.NEWSFEED_EMAIL_FROM) || "KC Desk Newsfeed <newsfeed@kcdesk.com>";
+}
+
+function newsfeedSender(env) {
+  const fallback = newsfeedEmailFrom(env);
+  const configuredEmail = normalizeEmail(env.BREVO_SENDER_EMAIL);
+  const configuredName = cleanEnv(env.BREVO_SENDER_NAME);
+  if (configuredEmail) return { email: configuredEmail, name: configuredName || "KC Desk Newsfeed" };
+  const match = fallback.match(/^(.*?)<([^>]+)>$/);
+  if (match) {
+    return {
+      name: match[1].trim().replace(/^"|"$/g, "") || "KC Desk Newsfeed",
+      email: normalizeEmail(match[2]) || "newsfeed@kcdesk.com",
+    };
+  }
+  return { name: "KC Desk Newsfeed", email: normalizeEmail(fallback) || "newsfeed@kcdesk.com" };
 }
 
 function publicNewsfeedSettings(settings, user, env) {
@@ -3938,6 +3961,32 @@ function newsfeedEmailHtml(payload) {
 }
 
 async function sendNewsfeedEmail(env, { to, subject, html, text }) {
+  if (newsfeedEmailProvider(env) === "brevo") {
+    const response = await fetchWithTimeout("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "api-key": cleanEnv(env.BREVO_API_KEY),
+      },
+      body: JSON.stringify({
+        sender: newsfeedSender(env),
+        to: [{ email: to }],
+        subject,
+        htmlContent: html,
+        textContent: text,
+        tags: ["kcdesk-newsfeed"],
+      }),
+    }, 15000);
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      const detail = data && (data.message || data.code)
+        ? `${data.message || data.code}`
+        : `Brevo returned HTTP ${response.status}.`;
+      return { sent: false, provider: "brevo", detail };
+    }
+    return { sent: true, provider: "brevo", messageId: String(data.messageId || "") };
+  }
   if (hasCloudflareEmailBinding(env)) {
     const response = await env.EMAIL.send({
       to,

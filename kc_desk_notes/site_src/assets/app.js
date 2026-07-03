@@ -3906,10 +3906,16 @@
     const email = settings.digest_email || fallbackEmail || "";
     const enabled = Boolean(settings.digest_email_enabled);
     const providerNote = settings.email_provider_configured === false
-      ? "Email sender needs Cloudflare Email binding before scheduled delivery starts."
-      : (state.interfaceLanguage === "zh-CN"
-        ? "免费 Cloudflare 发件需要这个邮箱在 Destination Addresses 中完成验证；保存后可点 Send test now 测试。"
-        : "Free Cloudflare delivery needs this address verified in Destination Addresses. Save, then use Send test now.");
+      ? (state.interfaceLanguage === "zh-CN"
+        ? "邮件服务还没配置好，请先配置 Brevo API key。"
+        : "Email sender is not configured yet. Add the Brevo API key first.")
+      : (settings.email_provider === "brevo"
+        ? (state.interfaceLanguage === "zh-CN"
+          ? "Brevo 邮件服务已连接；保存后可点 Send test now 发送测试邮件。"
+          : "Brevo email is connected. Save, then use Send test now.")
+        : (state.interfaceLanguage === "zh-CN"
+          ? "Cloudflare 邮件服务已连接；保存后可点 Send test now 测试。"
+          : "Cloudflare email is connected. Save, then use Send test now."));
     const lastStatus = newsfeedEmailLastStatus(settings);
     return `
       <section class="news-email-settings">

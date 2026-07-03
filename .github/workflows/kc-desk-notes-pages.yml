@@ -223,6 +223,9 @@ jobs:
           DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
           DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-chat' }}
           NEWSFEED_EMAIL_FROM: ${{ secrets.NEWSFEED_EMAIL_FROM || vars.NEWSFEED_EMAIL_FROM || 'KC Desk Newsfeed <newsfeed@kcdesk.com>' }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY || 'unconfigured' }}
+          BREVO_SENDER_EMAIL: ${{ secrets.BREVO_SENDER_EMAIL || vars.BREVO_SENDER_EMAIL || 'unconfigured' }}
+          BREVO_SENDER_NAME: ${{ secrets.BREVO_SENDER_NAME || vars.BREVO_SENDER_NAME || 'KC Desk Newsfeed' }}
           CLOUDFLARE_EMAIL_ROUTING_API_TOKEN: ${{ secrets.CLOUDFLARE_EMAIL_ROUTING_API_TOKEN || secrets.CLOUDFLARE_API_TOKEN || 'unconfigured' }}
           CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID || secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID || 'unconfigured' }}
           # External-report preparation token. Optional; the fallback keeps wrangler
@@ -251,6 +254,9 @@ jobs:
             DEEPSEEK_BASE_URL
             DEEPSEEK_MODEL
             NEWSFEED_EMAIL_FROM
+            BREVO_API_KEY
+            BREVO_SENDER_EMAIL
+            BREVO_SENDER_NAME
             CLOUDFLARE_EMAIL_ROUTING_API_TOKEN
             CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID
             GH_DISPATCH_TOKEN
