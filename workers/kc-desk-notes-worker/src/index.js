@@ -90,7 +90,8 @@ const NEWSFEED_CACHE_PREFIX = "_newsfeed/cache";
 const NEWSFEED_TOPICS_PREFIX = "_newsfeed/topics";
 const NEWSFEED_SETTINGS_PREFIX = "_newsfeed/settings";
 const NEWSFEED_CACHE_FRESH_MS = 30 * 60 * 1000;
-const NEWSFEED_CACHE_VERSION = 2;
+const NEWSFEED_CACHE_STALE_MS = 6 * 60 * 60 * 1000;
+const NEWSFEED_CACHE_VERSION = 3;
 const NEWSFEED_MAX_USER_TOPICS = 10000;
 const NEWSFEED_EMAIL_DEFAULT_TIME = "09:00";
 const NEWSFEED_EMAIL_DEFAULT_TIMEZONE = "Asia/Shanghai";
@@ -102,6 +103,32 @@ const NEWSFEED_OUTPUT_LANGUAGES = [
   { code: "zh-CN", label: "中文", instruction: "Simplified Chinese" },
   { code: "ja", label: "日本語", instruction: "Japanese" },
   { code: "ko", label: "한국어", instruction: "Korean" },
+];
+const NEWSFEED_REGIONS = [
+  {
+    code: "global",
+    label: "Global",
+    query: "",
+    google: { hl: "en-US", gl: "US", ceid: "US:en" },
+  },
+  {
+    code: "mena",
+    label: "MENA",
+    query: "\"Middle East\" OR MENA OR GCC OR Saudi Arabia OR UAE OR Qatar OR Egypt OR Turkey OR Israel",
+    google: { hl: "en-AE", gl: "AE", ceid: "AE:en" },
+  },
+  {
+    code: "china",
+    label: "China",
+    query: "China OR Chinese OR Beijing OR Shanghai OR Shenzhen OR Hong Kong",
+    google: { hl: "zh-CN", gl: "CN", ceid: "CN:zh-Hans" },
+  },
+  {
+    code: "usa",
+    label: "USA",
+    query: "\"United States\" OR USA OR US OR Washington",
+    google: { hl: "en-US", gl: "US", ceid: "US:en" },
+  },
 ];
 const NEWSFEED_PUBLIC_RSS_FEEDS = [
   { url: "https://feeds.bbci.co.uk/news/world/rss.xml", source: "BBC World", category: "Politics" },
@@ -2541,6 +2568,8 @@ function defaultNewsfeedSettings(user = null) {
     digest_timezone: NEWSFEED_EMAIL_DEFAULT_TIMEZONE,
     digest_language: "en",
     digest_last_sent_date: "",
+    preferred_regions: ["global"],
+    interface_language: "en",
   };
 }
 
@@ -2560,6 +2589,91 @@ function normalizeNewsfeedTimezone(value) {
   }
 }
 
+function normalizeNewsfeedLanguage(value) {
+  const code = String(value || "").trim();
+  return NEWSFEED_OUTPUT_LANGUAGES.some((item) => item.code === code) ? code : "en";
+}
+
+function newsfeedLanguageInstruction(value) {
+  const code = normalizeNewsfeedLanguage(value);
+  return (NEWSFEED_OUTPUT_LANGUAGES.find((item) => item.code === code) || NEWSFEED_OUTPUT_LANGUAGES[0]).instruction;
+}
+
+function newsfeedLanguageLabel(value) {
+  const code = normalizeNewsfeedLanguage(value);
+  return (NEWSFEED_OUTPUT_LANGUAGES.find((item) => item.code === code) || NEWSFEED_OUTPUT_LANGUAGES[0]).label;
+}
+
+function normalizeNewsfeedRegionValue(value) {
+  const clean = stripNewsfeedHtml(value).replace(/\s+/g, " ").trim().slice(0, 54);
+  if (!clean) return "";
+  const normalized = clean.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  const builtIn = NEWSFEED_REGIONS.find((region) => region.code === normalized || region.label.toLowerCase() === clean.toLowerCase());
+  return builtIn ? builtIn.code : clean;
+}
+
+function normalizeNewsfeedRegions(value) {
+  const raw = Array.isArray(value)
+    ? value
+    : String(value || "").split(",").map((item) => item.trim());
+  const out = [];
+  const seen = new Set();
+  for (const item of raw) {
+    const clean = normalizeNewsfeedRegionValue(item);
+    const key = clean.toLowerCase();
+    if (!clean || seen.has(key)) continue;
+    seen.add(key);
+    out.push(clean);
+    if (out.length >= 8) break;
+  }
+  return out.length ? out : ["global"];
+}
+
+function newsfeedRegionLabel(value) {
+  const clean = normalizeNewsfeedRegionValue(value);
+  const builtIn = NEWSFEED_REGIONS.find((region) => region.code === clean);
+  return builtIn ? builtIn.label : clean;
+}
+
+function publicNewsfeedRegions(values) {
+  return normalizeNewsfeedRegions(values).map((value) => ({
+    value,
+    label: newsfeedRegionLabel(value),
+    custom: !NEWSFEED_REGIONS.some((region) => region.code === value),
+  }));
+}
+
+function newsfeedRegionQueryTerms(values) {
+  return normalizeNewsfeedRegions(values)
+    .map((value) => {
+      const builtIn = NEWSFEED_REGIONS.find((region) => region.code === value);
+      return builtIn ? builtIn.query : value;
+    })
+    .map(compactNewsfeedQuery)
+    .filter(Boolean);
+}
+
+function applyNewsfeedRegionsToQuery(query, regions) {
+  const cleanQuery = compactNewsfeedQuery(query);
+  const regionTerms = newsfeedRegionQueryTerms(regions);
+  if (!cleanQuery || !regionTerms.length) return cleanQuery;
+  const regionClause = regionTerms.length === 1 ? regionTerms[0] : `(${regionTerms.join(" OR ")})`;
+  return compactNewsfeedQuery(`${cleanQuery} ${regionClause}`);
+}
+
+function newsfeedGoogleLocale(regions, language) {
+  const values = normalizeNewsfeedRegions(regions);
+  const region = values
+    .map((value) => NEWSFEED_REGIONS.find((item) => item.code === value))
+    .find((item) => item && item.code !== "global");
+  if (region && region.google) return region.google;
+  const code = normalizeNewsfeedLanguage(language);
+  if (code === "zh-CN") return { hl: "zh-CN", gl: "CN", ceid: "CN:zh-Hans" };
+  if (code === "ja") return { hl: "ja", gl: "JP", ceid: "JP:ja" };
+  if (code === "ko") return { hl: "ko", gl: "KR", ceid: "KR:ko" };
+  return NEWSFEED_REGIONS[0].google;
+}
+
 function hasCloudflareEmailBinding(env) {
   return Boolean(env.EMAIL && typeof env.EMAIL.send === "function");
 }
@@ -2575,6 +2689,8 @@ function newsfeedEmailFrom(env) {
 
 function publicNewsfeedSettings(settings, user, env) {
   const merged = { ...defaultNewsfeedSettings(user), ...(settings || {}) };
+  const interfaceLanguage = normalizeNewsfeedLanguage(merged.interface_language || merged.digest_language || "en");
+  const preferredRegions = normalizeNewsfeedRegions(merged.preferred_regions);
   return {
     digest_email_enabled: Boolean(merged.digest_email_enabled),
     digest_email: normalizeEmail(merged.digest_email),
@@ -2582,6 +2698,10 @@ function publicNewsfeedSettings(settings, user, env) {
     digest_timezone: normalizeNewsfeedTimezone(merged.digest_timezone),
     digest_language: normalizeNewsfeedLanguage(merged.digest_language),
     digest_last_sent_date: String(merged.digest_last_sent_date || ""),
+    interface_language: interfaceLanguage,
+    interface_language_label: newsfeedLanguageLabel(interfaceLanguage),
+    preferred_regions: preferredRegions,
+    preferred_region_labels: publicNewsfeedRegions(preferredRegions),
     email_provider_configured: newsfeedEmailProvider(env) !== "none",
     email_provider: newsfeedEmailProvider(env),
   };
@@ -2746,25 +2866,9 @@ function newsfeedUpdatedLabel(value) {
   return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Shanghai" }).format(new Date(timestamp));
 }
 
-function googleNewsRssUrl(query, locale = "en-US", region = "US") {
-  const ceid = region.toUpperCase() === "CN" ? "CN:zh-Hans" : "US:en";
+function googleNewsRssUrl(query, locale = "en-US", region = "US", ceid = "US:en") {
   const params = new URLSearchParams({ q: query, hl: locale, gl: region, ceid });
   return `https://news.google.com/rss/search?${params.toString()}`;
-}
-
-function normalizeNewsfeedLanguage(value) {
-  const code = String(value || "").trim();
-  return NEWSFEED_OUTPUT_LANGUAGES.some((item) => item.code === code) ? code : "en";
-}
-
-function newsfeedLanguageInstruction(value) {
-  const code = normalizeNewsfeedLanguage(value);
-  return (NEWSFEED_OUTPUT_LANGUAGES.find((item) => item.code === code) || NEWSFEED_OUTPUT_LANGUAGES[0]).instruction;
-}
-
-function newsfeedLanguageLabel(value) {
-  const code = normalizeNewsfeedLanguage(value);
-  return (NEWSFEED_OUTPUT_LANGUAGES.find((item) => item.code === code) || NEWSFEED_OUTPUT_LANGUAGES[0]).label;
 }
 
 function rssAttribute(block, tagPattern, attribute) {
@@ -2870,7 +2974,7 @@ async function fetchGdeltNews(query, options = {}) {
   });
   const response = await fetchWithTimeout(`https://api.gdeltproject.org/api/v2/doc/doc?${params.toString()}`, {
     headers: { "Accept": "application/json", "User-Agent": NEWSFEED_UA },
-  }, 14000);
+  }, options.timeout || 14000);
   if (!response.ok) return [];
   const payload = await response.json();
   return (payload.articles || []).map((article) => newsfeedItem({
@@ -2888,10 +2992,17 @@ async function fetchGdeltNews(query, options = {}) {
 
 async function fetchGoogleNews(query, options = {}) {
   const days = Math.max(1, Math.round((options.days || 2)));
-  const cleanQuery = `${compactNewsfeedQuery(query)} when:${days}d`;
-  const response = await fetchWithTimeout(googleNewsRssUrl(cleanQuery, options.locale || "en-US", options.region || "US"), {
+  const regionalQuery = applyNewsfeedRegionsToQuery(query, options.regions || ["global"]);
+  const cleanQuery = `${regionalQuery} when:${days}d`;
+  const locale = newsfeedGoogleLocale(options.regions || ["global"], options.language || "en");
+  const response = await fetchWithTimeout(googleNewsRssUrl(
+    cleanQuery,
+    options.locale || locale.hl,
+    options.region || locale.gl,
+    options.ceid || locale.ceid,
+  ), {
     headers: { "Accept": "application/rss+xml,application/xml;q=0.9,*/*;q=0.8", "User-Agent": NEWSFEED_UA },
-  }, 14000);
+  }, options.timeout || 14000);
   if (!response.ok) return [];
   return parseGoogleNewsRss(await response.text(), query, options);
 }
@@ -2899,7 +3010,7 @@ async function fetchGoogleNews(query, options = {}) {
 async function fetchPublicRssFeed(feed, spec = {}, options = {}) {
   const response = await fetchWithTimeout(feed.url, {
     headers: { "Accept": "application/rss+xml,application/xml;q=0.9,*/*;q=0.8", "User-Agent": NEWSFEED_UA },
-  }, 10000);
+  }, options.timeout || 10000);
   if (!response.ok) return [];
   return parseGenericNewsRss(await response.text(), {
     category: feed.category || spec.category,
@@ -2948,26 +3059,67 @@ function newsfeedCacheIsFresh(cache) {
   return Number.isFinite(cachedAt) && Date.now() - cachedAt < NEWSFEED_CACHE_FRESH_MS;
 }
 
+function newsfeedCacheIsUsable(cache, maxAgeMs) {
+  const cachedAt = Date.parse(cache && cache.cached_at || "");
+  return Number.isFinite(cachedAt) && Date.now() - cachedAt < maxAgeMs;
+}
+
 async function fetchNewsfeedItems(env, spec, options = {}) {
   const queries = (Array.isArray(spec && spec.queries) ? spec.queries : [spec && spec.query || spec && spec.title])
     .map(compactNewsfeedQuery)
     .filter(Boolean)
-    .slice(0, 4);
-  const cacheKey = JSON.stringify({ version: NEWSFEED_CACHE_VERSION, id: spec && spec.id, queries, category: spec && spec.category, limit: options.limit || 30 });
-  const cached = options.skipCache ? null : await getNewsfeedCache(env, "items", cacheKey);
-  if (cached && cached.payload && newsfeedCacheIsFresh(cached)) {
-    return { ...cached.payload, cached: true, cache_status: "fresh", cached_at: cached.cached_at };
+    .slice(0, options.queryLimit || 4);
+  const regions = normalizeNewsfeedRegions(options.regions || spec && spec.regions || ["global"]);
+  const language = normalizeNewsfeedLanguage(options.language || spec && spec.output_language || "en");
+  const cacheKey = JSON.stringify({
+    version: NEWSFEED_CACHE_VERSION,
+    id: spec && spec.id,
+    queries,
+    category: spec && spec.category,
+    regions,
+    language,
+    limit: options.limit || 30,
+  });
+  const fullCached = options.skipCache ? null : await getNewsfeedCache(env, "items", cacheKey);
+  if (fullCached && fullCached.payload && newsfeedCacheIsFresh(fullCached)) {
+    return { ...fullCached.payload, cached: true, cache_status: "fresh", cached_at: fullCached.cached_at };
+  }
+  if (options.allowStale && fullCached && fullCached.payload && newsfeedCacheIsUsable(fullCached, NEWSFEED_CACHE_STALE_MS)) {
+    return { ...fullCached.payload, cached: true, cache_status: "stale", cached_at: fullCached.cached_at };
+  }
+  const cacheScope = options.fast ? "items-fast" : "items";
+  const fastCached = options.fast || options.allowStale ? await getNewsfeedCache(env, cacheScope, cacheKey) : null;
+  if (fastCached && fastCached.payload && newsfeedCacheIsUsable(fastCached, options.allowStale ? NEWSFEED_CACHE_STALE_MS : NEWSFEED_CACHE_FRESH_MS)) {
+    return { ...fastCached.payload, cached: true, cache_status: options.allowStale && !newsfeedCacheIsFresh(fastCached) ? "stale" : "fresh", cached_at: fastCached.cached_at };
   }
 
   const tasks = [];
   if (options.includeGdelt && queries[0]) {
-    tasks.push(fetchGdeltNews(queries[0], { category: spec.category, query: queries[0] }));
+    const gdeltQuery = applyNewsfeedRegionsToQuery(queries[0], regions);
+    tasks.push(fetchGdeltNews(gdeltQuery, {
+      category: spec.category,
+      query: queries[0],
+      regions,
+      language,
+      timeout: options.sourceTimeout,
+    }));
   }
   for (const query of queries) {
-    tasks.push(fetchGoogleNews(query, { category: spec.category, query }));
+    tasks.push(fetchGoogleNews(query, {
+      category: spec.category,
+      query,
+      regions,
+      language,
+      timeout: options.sourceTimeout,
+    }));
   }
-  for (const feed of newsfeedRssFeedsForSpec(spec)) {
-    tasks.push(fetchPublicRssFeed(feed, spec));
+  const rssLimit = Number.isFinite(options.rssLimit) ? options.rssLimit : 3;
+  for (const feed of newsfeedRssFeedsForSpec(spec).slice(0, rssLimit)) {
+    tasks.push(fetchPublicRssFeed(feed, spec, {
+      regions,
+      language,
+      timeout: options.sourceTimeout,
+    }));
   }
   const settled = await Promise.allSettled(tasks);
   const items = [];
@@ -2982,8 +3134,11 @@ async function fetchNewsfeedItems(env, spec, options = {}) {
     items: deduped,
     updated_at: new Date().toISOString(),
     updated_label: newsfeedUpdatedLabel(new Date().toISOString()),
+    regions,
+    language,
   };
-  await putNewsfeedCache(env, "items", cacheKey, payload);
+  await putNewsfeedCache(env, cacheScope, cacheKey, payload);
+  if (!options.fast) await putNewsfeedCache(env, "items", cacheKey, payload);
   return { ...payload, cached: false, cache_status: "refreshed" };
 }
 
@@ -3053,6 +3208,7 @@ function publicNewsfeedTopic(topic) {
     pinned: Boolean(topic.pinned),
     output_language: normalizeNewsfeedLanguage(topic.output_language),
     output_language_label: newsfeedLanguageLabel(topic.output_language),
+    regions: publicNewsfeedRegions(topic.regions || ["global"]),
     last_updated_label: topicCountLabel(topic),
     query_plan: topic.query_plan || null,
   };
@@ -3161,6 +3317,22 @@ async function generateNewsfeedTopicPackage(env, input, outputLanguage = "en") {
   };
 }
 
+function newsfeedPreferencesFromRequest(request, settings = {}) {
+  const url = new URL(request.url);
+  const regionsParam = url.searchParams.get("regions");
+  const languageParam = url.searchParams.get("language");
+  const regions = normalizeNewsfeedRegions(regionsParam ? regionsParam.split(",") : settings.preferred_regions);
+  const language = normalizeNewsfeedLanguage(languageParam || settings.interface_language || settings.digest_language || "en");
+  return { regions, language };
+}
+
+function newsfeedRegionOptionsPayload() {
+  return NEWSFEED_REGIONS.map((region) => ({
+    value: region.code,
+    label: region.label,
+  }));
+}
+
 async function handleNewsfeedHome(request, env) {
   try {
     const user = await requireNewsfeedUser(request, env);
@@ -3168,11 +3340,44 @@ async function handleNewsfeedHome(request, env) {
       loadNewsfeedTopics(env, user),
       loadNewsfeedSettings(env, user),
     ]);
+    const preferences = newsfeedPreferencesFromRequest(request, settings);
     const globalSpec = NEWSFEED_DEFAULT_TOPICS.find((topic) => topic.id === "global-daily") || NEWSFEED_DEFAULT_TOPICS[0];
     const defaultSpecs = NEWSFEED_DEFAULT_TOPICS.filter((topic) => topic.id !== "global-daily");
+    const url = new URL(request.url);
+    if (url.searchParams.get("fast") === "1") {
+      const fastPromise = fetchNewsfeedItems(env, globalSpec, {
+        limit: 24,
+        includeGdelt: false,
+        queryLimit: 2,
+        rssLimit: 1,
+        sourceTimeout: 2600,
+        fast: true,
+        allowStale: true,
+        regions: preferences.regions,
+        language: preferences.language,
+      });
+      const fastPayload = await Promise.race([fastPromise, sleep(3200).then(() => null)]);
+      const headlines = fastPayload && fastPayload.items || [];
+      return jsonResponse(request, env, 200, {
+        partial: true,
+        pending: !fastPayload || fastPayload.cache_status === "stale",
+        updated_at: new Date().toISOString(),
+        updated_label: fastPayload && fastPayload.updated_label || "Loading",
+        digest_count: Math.min(99, headlines.length),
+        daily_digest: digestFromNewsItems(headlines),
+        highlights: headlines.filter((item) => item.image_url).slice(0, 5),
+        headlines,
+        categories: NEWSFEED_CATEGORIES,
+        regions: newsfeedRegionOptionsPayload(),
+        languages: NEWSFEED_OUTPUT_LANGUAGES.map(({ code, label }) => ({ code, label })),
+        topics: topics.map(publicNewsfeedTopic),
+        suggested_topics: NEWSFEED_SUGGESTED_TOPICS,
+        settings: publicNewsfeedSettings({ ...settings, preferred_regions: preferences.regions, interface_language: preferences.language }, user, env),
+      });
+    }
     const fetched = await Promise.all([
-      fetchNewsfeedItems(env, globalSpec, { limit: 20, includeGdelt: true }),
-      ...defaultSpecs.map((topic) => fetchNewsfeedItems(env, topic, { limit: 14 })),
+      fetchNewsfeedItems(env, globalSpec, { limit: 20, includeGdelt: true, regions: preferences.regions, language: preferences.language }),
+      ...defaultSpecs.map((topic) => fetchNewsfeedItems(env, topic, { limit: 14, regions: preferences.regions, language: preferences.language })),
     ]);
     const headlines = dedupeNewsfeedItems(fetched.flatMap((row) => row.items || []))
       .sort((a, b) => newsfeedSortValue(b) - newsfeedSortValue(a))
@@ -3186,9 +3391,11 @@ async function handleNewsfeedHome(request, env) {
       highlights: highlights.length ? highlights : headlines.slice(0, 5),
       headlines,
       categories: NEWSFEED_CATEGORIES,
+      regions: newsfeedRegionOptionsPayload(),
+      languages: NEWSFEED_OUTPUT_LANGUAGES.map(({ code, label }) => ({ code, label })),
       topics: topics.map(publicNewsfeedTopic),
       suggested_topics: NEWSFEED_SUGGESTED_TOPICS,
-      settings: publicNewsfeedSettings(settings, user, env),
+      settings: publicNewsfeedSettings({ ...settings, preferred_regions: preferences.regions, interface_language: preferences.language }, user, env),
     });
   } catch (error) {
     return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Newsfeed unavailable." });
@@ -3199,14 +3406,18 @@ async function handleNewsfeedExplore(request, env) {
   try {
     const user = await requireNewsfeedUser(request, env);
     const url = new URL(request.url);
+    const settings = await loadNewsfeedSettings(env, user);
+    const preferences = newsfeedPreferencesFromRequest(request, settings);
     const requested = url.searchParams.get("category") || "Tech";
     const spec = NEWSFEED_DEFAULT_TOPICS.find((topic) => topic.category === requested) || NEWSFEED_DEFAULT_TOPICS[1];
     const [topics, payload] = await Promise.all([
       loadNewsfeedTopics(env, user),
-      fetchNewsfeedItems(env, spec, { limit: 34, includeGdelt: true }),
+      fetchNewsfeedItems(env, spec, { limit: 34, includeGdelt: true, regions: preferences.regions, language: preferences.language }),
     ]);
     return jsonResponse(request, env, 200, {
       categories: NEWSFEED_CATEGORIES,
+      regions: newsfeedRegionOptionsPayload(),
+      languages: NEWSFEED_OUTPUT_LANGUAGES.map(({ code, label }) => ({ code, label })),
       category: spec.category,
       items: payload.items || [],
       updated_at: payload.updated_at,
@@ -3224,10 +3435,14 @@ async function handleNewsfeedTopic(request, env) {
     const user = await requireNewsfeedUser(request, env);
     const url = new URL(request.url);
     const id = url.searchParams.get("id") || "global-daily";
-    const topics = await loadNewsfeedTopics(env, user);
+    const [topics, settings] = await Promise.all([
+      loadNewsfeedTopics(env, user),
+      loadNewsfeedSettings(env, user),
+    ]);
+    const preferences = newsfeedPreferencesFromRequest(request, settings);
     const topic = findNewsfeedTopic(topics, id);
     if (!topic) return jsonResponse(request, env, 404, { detail: "Topic not found." });
-    const payload = await fetchNewsfeedItems(env, topic, { limit: 34, includeGdelt: true });
+    const payload = await fetchNewsfeedItems(env, topic, { limit: 34, includeGdelt: true, regions: preferences.regions, language: preferences.language });
     return jsonResponse(request, env, 200, {
       topic: { ...publicNewsfeedTopic(topic), updated_label: payload.updated_label },
       items: payload.items || [],
@@ -3250,6 +3465,7 @@ async function handleNewsfeedCreateTopic(request, env, ctx) {
     const input = compactNewsfeedQuery(payload.topic || payload.query || "");
     if (input.length < 2) return jsonResponse(request, env, 400, { detail: "Topic is required." });
     const outputLanguage = normalizeNewsfeedLanguage(payload.output_language || payload.language || "en");
+    const regions = normalizeNewsfeedRegions(payload.preferred_regions || payload.regions || ["global"]);
     const plan = await generateNewsfeedTopicPackage(env, input, outputLanguage);
     const id = `${slugifyNewsfeed(plan.title)}-${randomHex(3)}`;
     const topic = {
@@ -3259,6 +3475,7 @@ async function handleNewsfeedCreateTopic(request, env, ctx) {
       description: plan.description,
       category: plan.category,
       output_language: outputLanguage,
+      regions,
       queries: plan.queries,
       query_plan: plan.query_plan,
       created_from: input,
@@ -3266,7 +3483,7 @@ async function handleNewsfeedCreateTopic(request, env, ctx) {
       updated_at: new Date().toISOString(),
     };
     await r2PutJson(env, newsfeedTopicKey(user, id), topic);
-    const itemsPromise = fetchNewsfeedItems(env, topic, { limit: 34, skipCache: true, includeGdelt: true }).catch(() => null);
+    const itemsPromise = fetchNewsfeedItems(env, topic, { limit: 34, skipCache: true, includeGdelt: true, regions, language: outputLanguage }).catch(() => null);
     const [topics, fastItems] = await Promise.all([
       loadNewsfeedTopics(env, user),
       Promise.race([itemsPromise, sleep(3500).then(() => null)]),
@@ -3311,8 +3528,12 @@ async function handleNewsfeedSettings(request, env) {
       return jsonResponse(request, env, 200, { settings: publicNewsfeedSettings(settings, user, env) });
     }
     const payload = await request.json().catch(() => ({}));
-    const enabled = Boolean(payload.digest_email_enabled || payload.enabled);
-    const email = normalizeEmail(payload.digest_email || payload.email || settings.digest_email || user.email);
+    const hasDigestEnabled = Object.prototype.hasOwnProperty.call(payload, "digest_email_enabled") || Object.prototype.hasOwnProperty.call(payload, "enabled");
+    const hasDigestEmail = Object.prototype.hasOwnProperty.call(payload, "digest_email") || Object.prototype.hasOwnProperty.call(payload, "email");
+    const enabled = hasDigestEnabled ? Boolean(payload.digest_email_enabled || payload.enabled) : Boolean(settings.digest_email_enabled);
+    const email = hasDigestEmail
+      ? normalizeEmail(payload.digest_email || payload.email)
+      : normalizeEmail(settings.digest_email || user.email);
     if (enabled && !email) return jsonResponse(request, env, 400, { detail: "A valid email is required." });
     const next = {
       ...settings,
@@ -3324,6 +3545,8 @@ async function handleNewsfeedSettings(request, env) {
       digest_send_time: normalizeNewsfeedTime(payload.digest_send_time || payload.send_time || settings.digest_send_time),
       digest_timezone: normalizeNewsfeedTimezone(payload.digest_timezone || payload.timezone || settings.digest_timezone),
       digest_language: normalizeNewsfeedLanguage(payload.digest_language || payload.output_language || settings.digest_language),
+      interface_language: normalizeNewsfeedLanguage(payload.interface_language || payload.language || settings.interface_language || settings.digest_language),
+      preferred_regions: normalizeNewsfeedRegions(payload.preferred_regions || payload.regions || settings.preferred_regions),
     };
     await saveNewsfeedSettings(env, user, next);
     return jsonResponse(request, env, 200, { settings: publicNewsfeedSettings(next, user, env) });
@@ -3428,6 +3651,63 @@ async function handleNewsfeedArticle(request, env) {
   }
 }
 
+function newsfeedBriefingLimit(language) {
+  const code = normalizeNewsfeedLanguage(language);
+  return code === "zh-CN" || code === "ja" || code === "ko" ? 260 : 680;
+}
+
+function buildNewsfeedBriefingScript(input = {}) {
+  const language = normalizeNewsfeedLanguage(input.language || input.output_language || "en");
+  const digest = Array.isArray(input.digest) ? input.digest : [];
+  const items = Array.isArray(input.items) ? input.items : [];
+  const lines = digest.length
+    ? digest
+    : items.slice(0, 5).map((item) => `${item.source ? `${item.source}: ` : ""}${item.title || ""}`);
+  const cleaned = lines.map(stripNewsfeedHtml).filter(Boolean).slice(0, 5);
+  let text = "";
+  if (language === "zh-CN") {
+    text = [
+      "这里是 KC Desk 三十秒新闻简报。",
+      ...cleaned.map((line, index) => `第 ${index + 1} 条，${line}。`),
+      "以上是当前新闻流重点。",
+    ].join("");
+  } else if (language === "ja") {
+    text = [
+      "KC Deskの30秒ニュースブリーフです。",
+      ...cleaned.map((line, index) => `${index + 1}本目、${line}。`),
+      "以上が現在のニュースフィードの要点です。",
+    ].join("");
+  } else if (language === "ko") {
+    text = [
+      "KC Desk 30초 뉴스 브리핑입니다.",
+      ...cleaned.map((line, index) => `${index + 1}번째, ${line}.`),
+      "이상 현재 뉴스피드 핵심입니다.",
+    ].join(" ");
+  } else {
+    text = [
+      "This is your KC Desk thirty second news briefing.",
+      ...cleaned.map((line, index) => `Story ${index + 1}: ${line}.`),
+      "That is the current read from your Newsfeed.",
+    ].join(" ");
+  }
+  return text.slice(0, newsfeedBriefingLimit(language));
+}
+
+async function handleNewsfeedBriefing(request, env) {
+  try {
+    await requireNewsfeedUser(request, env);
+    const payload = await request.json().catch(() => ({}));
+    const script = buildNewsfeedBriefingScript(payload);
+    return jsonResponse(request, env, 200, {
+      script,
+      provider: "browser-speech",
+      audio_seconds_target: 30,
+    });
+  } catch (error) {
+    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not prepare briefing." });
+  }
+}
+
 function escapeNewsfeedHtml(value) {
   return String(value || "")
     .replace(/&/g, "&amp;")
@@ -3472,12 +3752,14 @@ function newsfeedEmailDue(settings, now = new Date()) {
   return { dateKey, parts };
 }
 
-async function fetchNewsfeedDigestPayload(env) {
+async function fetchNewsfeedDigestPayload(env, settings = {}) {
   const globalSpec = NEWSFEED_DEFAULT_TOPICS.find((topic) => topic.id === "global-daily") || NEWSFEED_DEFAULT_TOPICS[0];
   const defaultSpecs = NEWSFEED_DEFAULT_TOPICS.filter((topic) => topic.id !== "global-daily");
+  const regions = normalizeNewsfeedRegions(settings.preferred_regions);
+  const language = normalizeNewsfeedLanguage(settings.digest_language || settings.interface_language || "en");
   const fetched = await Promise.all([
-    fetchNewsfeedItems(env, globalSpec, { limit: 20, includeGdelt: true }),
-    ...defaultSpecs.map((topic) => fetchNewsfeedItems(env, topic, { limit: 10 })),
+    fetchNewsfeedItems(env, globalSpec, { limit: 20, includeGdelt: true, regions, language }),
+    ...defaultSpecs.map((topic) => fetchNewsfeedItems(env, topic, { limit: 10, regions, language })),
   ]);
   const headlines = dedupeNewsfeedItems(fetched.flatMap((row) => row.items || []))
     .sort((a, b) => newsfeedSortValue(b) - newsfeedSortValue(a))
@@ -3486,6 +3768,8 @@ async function fetchNewsfeedDigestPayload(env) {
     updated_at: new Date().toISOString(),
     daily_digest: digestFromNewsItems(headlines),
     headlines,
+    regions,
+    language,
   };
 }
 
@@ -3555,11 +3839,11 @@ async function sendDueNewsfeedDigestEmails(env) {
     if (due) dueRows.push({ settings, due });
   }
   if (!dueRows.length) return [];
-  const payload = await fetchNewsfeedDigestPayload(env);
   const results = [];
   for (const { settings, due } of dueRows) {
     const email = normalizeEmail(settings.digest_email);
     if (!email) continue;
+    const payload = await fetchNewsfeedDigestPayload(env, settings);
     const result = await sendNewsfeedEmail(env, {
       to: email,
       subject: newsfeedEmailSubject(settings, due),
@@ -5655,6 +5939,10 @@ export default {
 
     if (pathname === "/newsfeed/article" && request.method === "POST") {
       return handleNewsfeedArticle(request, env);
+    }
+
+    if (pathname === "/newsfeed/briefing" && request.method === "POST") {
+      return handleNewsfeedBriefing(request, env);
     }
 
     if (pathname === "/paddle-config" && request.method === "GET") {

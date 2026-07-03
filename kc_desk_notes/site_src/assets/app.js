@@ -3394,6 +3394,122 @@
     return String(item && (item.source || item.source_name || item.domain) || "News").replace(/^GDELT\s*\/\s*/i, "");
   }
 
+  const NEWSFEED_UI_COPY = {
+    en: {
+      myFeed: "My feed",
+      explore: "Explore",
+      addTopics: "Add topics",
+      digestEmail: "Digest Email",
+      dailyDigest: "Daily Digest",
+      topHeadlines: "Top Headlines",
+      regions: "Regions",
+      language: "Language",
+      outputLanguage: "Output language",
+      suggestedTopics: "Suggested Topics",
+      sendDailyDigest: "Send daily digest",
+      saveEmail: "Save email",
+      email: "Email",
+      sendTime: "Send time",
+      timezone: "Timezone",
+      noHeadlines: "No headlines yet.",
+      loadingLatest: "Loading latest news...",
+      updating: "Updating full feed...",
+      playBriefing: "Play briefing",
+      nowPlaying: "Now Playing",
+      playlist: "Playlist",
+      readStory: "Read Story",
+      addRegion: "Add region",
+      customRegion: "Other region",
+    },
+    "zh-CN": {
+      myFeed: "我的新闻",
+      explore: "探索",
+      addTopics: "添加话题",
+      digestEmail: "邮件摘要",
+      dailyDigest: "每日摘要",
+      topHeadlines: "重点新闻",
+      regions: "区域",
+      language: "语言",
+      outputLanguage: "输出语言",
+      suggestedTopics: "热门话题",
+      sendDailyDigest: "发送每日摘要",
+      saveEmail: "保存邮箱",
+      email: "邮箱",
+      sendTime: "发送时间",
+      timezone: "时区",
+      noHeadlines: "暂无新闻。",
+      loadingLatest: "正在加载最新新闻...",
+      updating: "正在补全新闻流...",
+      playBriefing: "播放简报",
+      nowPlaying: "正在播放",
+      playlist: "播放列表",
+      readStory: "阅读新闻",
+      addRegion: "添加区域",
+      customRegion: "其他区域",
+    },
+    ja: {
+      myFeed: "My feed",
+      explore: "Explore",
+      addTopics: "Add topics",
+      digestEmail: "Digest Email",
+      dailyDigest: "Daily Digest",
+      topHeadlines: "Top Headlines",
+      regions: "Regions",
+      language: "Language",
+      outputLanguage: "Output language",
+      suggestedTopics: "Suggested Topics",
+      sendDailyDigest: "Send daily digest",
+      saveEmail: "Save email",
+      email: "Email",
+      sendTime: "Send time",
+      timezone: "Timezone",
+      noHeadlines: "No headlines yet.",
+      loadingLatest: "Loading latest news...",
+      updating: "Updating full feed...",
+      playBriefing: "Play briefing",
+      nowPlaying: "Now Playing",
+      playlist: "Playlist",
+      readStory: "Read Story",
+      addRegion: "Add region",
+      customRegion: "Other region",
+    },
+    ko: {
+      myFeed: "My feed",
+      explore: "Explore",
+      addTopics: "Add topics",
+      digestEmail: "Digest Email",
+      dailyDigest: "Daily Digest",
+      topHeadlines: "Top Headlines",
+      regions: "Regions",
+      language: "Language",
+      outputLanguage: "Output language",
+      suggestedTopics: "Suggested Topics",
+      sendDailyDigest: "Send daily digest",
+      saveEmail: "Save email",
+      email: "Email",
+      sendTime: "Send time",
+      timezone: "Timezone",
+      noHeadlines: "No headlines yet.",
+      loadingLatest: "Loading latest news...",
+      updating: "Updating full feed...",
+      playBriefing: "Play briefing",
+      nowPlaying: "Now Playing",
+      playlist: "Playlist",
+      readStory: "Read Story",
+      addRegion: "Add region",
+      customRegion: "Other region",
+    },
+  };
+
+  function newsfeedLanguageCode(value) {
+    return ["en", "zh-CN", "ja", "ko"].includes(value) ? value : "en";
+  }
+
+  function newsfeedText(state, key) {
+    const language = newsfeedLanguageCode(state && state.interfaceLanguage || "en");
+    return (NEWSFEED_UI_COPY[language] && NEWSFEED_UI_COPY[language][key]) || NEWSFEED_UI_COPY.en[key] || key;
+  }
+
   function newsfeedImageMarkup(item) {
     const image = String(item && item.image_url || "").trim();
     if (!image) return "";
@@ -3514,6 +3630,7 @@
           <div class="newsfeed-side-actions">
             <button type="button" data-action="show-feed">My feed</button>
             <button type="button" data-action="show-explore">Explore</button>
+            <button type="button" data-action="show-email">Digest Email</button>
           </div>
           <div class="newsfeed-following">
             <div class="newsfeed-sidebar-heading">
@@ -3529,11 +3646,13 @@
             <button class="news-icon-button" type="button" data-action="toggle-sidebar" aria-label="Topics">☰</button>
             <h1 id="newsfeedTitle">Daily Digest</h1>
             <div class="newsfeed-audio-actions">
-              <button class="news-icon-button is-wide" type="button" aria-label="Audio">▥ ▶</button>
+              <button id="newsBriefingButton" class="news-icon-button is-wide" type="button" data-action="play-briefing" aria-label="Audio">▥ ▶</button>
             </div>
           </div>
+          <div id="newsfeedPreferences" class="news-preference-bar"></div>
           <div id="newsfeedStatus" class="newsfeed-status" aria-live="polite"></div>
           <div id="newsfeedContent" class="newsfeed-content"></div>
+          <div id="newsBriefingPanel" class="news-briefing-panel" hidden></div>
           <nav class="newsfeed-bottom-tabs" aria-label="Newsfeed sections">
             <button type="button" data-action="show-feed" class="is-active"><span>▯</span>My feed</button>
             <button type="button" data-action="show-add"><span>＋</span>Add topics</button>
@@ -3598,6 +3717,24 @@
     if (title) title.textContent = text || "Newsfeed";
   }
 
+  function refreshNewsfeedChrome(state) {
+    const sideFeed = document.querySelector(".newsfeed-side-actions [data-action='show-feed']");
+    const sideExplore = document.querySelector(".newsfeed-side-actions [data-action='show-explore']");
+    const sideEmail = document.querySelector(".newsfeed-side-actions [data-action='show-email']");
+    if (sideFeed) sideFeed.textContent = newsfeedText(state, "myFeed");
+    if (sideExplore) sideExplore.textContent = newsfeedText(state, "explore");
+    if (sideEmail) sideEmail.textContent = newsfeedText(state, "digestEmail");
+    const bottomFeed = document.querySelector(".newsfeed-bottom-tabs [data-action='show-feed']");
+    const bottomAdd = document.querySelector(".newsfeed-bottom-tabs [data-action='show-add']");
+    const bottomExplore = document.querySelector(".newsfeed-bottom-tabs [data-action='show-explore']");
+    if (bottomFeed) bottomFeed.innerHTML = `<span>▯</span>${escapeHtml(newsfeedText(state, "myFeed"))}`;
+    if (bottomAdd) bottomAdd.innerHTML = `<span>＋</span>${escapeHtml(newsfeedText(state, "addTopics"))}`;
+    if (bottomExplore) bottomExplore.innerHTML = `<span>◇</span>${escapeHtml(newsfeedText(state, "explore"))}`;
+    const audio = document.getElementById("newsBriefingButton");
+    if (audio) audio.setAttribute("aria-label", newsfeedText(state, "playBriefing"));
+    renderNewsfeedPreferences(state);
+  }
+
   function updateNewsfeedTabs(view) {
     document.querySelectorAll(".newsfeed-bottom-tabs button").forEach((button) => {
       const action = button.dataset.action || "";
@@ -3605,9 +3742,62 @@
         "is-active",
         (view === "feed" && action === "show-feed") ||
           (view === "add" && action === "show-add") ||
-          (view === "explore" && action === "show-explore"),
+          (view === "explore" && action === "show-explore") ||
+          (view === "email" && action === "show-email"),
       );
     });
+  }
+
+  function normalizeNewsfeedRegionsClient(value) {
+    const raw = Array.isArray(value) ? value : String(value || "").split(",");
+    const out = [];
+    const seen = new Set();
+    for (const item of raw) {
+      const clean = String(item && (item.value || item) || "").trim().slice(0, 54);
+      const key = clean.toLowerCase();
+      if (!clean || seen.has(key)) continue;
+      seen.add(key);
+      out.push(clean);
+      if (out.length >= 8) break;
+    }
+    return out.length ? out : ["global"];
+  }
+
+  function newsfeedRegionOptions(state) {
+    const defaults = [
+      { value: "global", label: "Global" },
+      { value: "mena", label: "MENA" },
+      { value: "china", label: "China" },
+      { value: "usa", label: "USA" },
+    ];
+    const options = Array.isArray(state.regionOptions) && state.regionOptions.length ? state.regionOptions : defaults;
+    const selected = normalizeNewsfeedRegionsClient(state.preferredRegions);
+    const custom = selected
+      .filter((value) => !options.some((item) => item.value === value))
+      .map((value) => ({ value, label: value }));
+    return [...options, ...custom];
+  }
+
+  function newsfeedRegionLabel(state, value) {
+    const option = newsfeedRegionOptions(state).find((item) => item.value === value);
+    return option ? option.label : value;
+  }
+
+  function newsfeedPreferenceQuery(state) {
+    const params = new URLSearchParams();
+    normalizeNewsfeedRegionsClient(state.preferredRegions).forEach((region) => params.append("regions", region));
+    params.set("language", newsfeedLanguageCode(state.interfaceLanguage || state.outputLanguage || "en"));
+    const regions = params.getAll("regions");
+    params.delete("regions");
+    params.set("regions", regions.join(","));
+    return params.toString();
+  }
+
+  function applyNewsfeedSettings(state, settings = {}) {
+    state.settings = settings || state.settings || {};
+    state.interfaceLanguage = newsfeedLanguageCode(settings.interface_language || state.interfaceLanguage || "en");
+    state.outputLanguage = newsfeedLanguageCode(settings.interface_language || state.outputLanguage || settings.digest_language || "en");
+    state.preferredRegions = normalizeNewsfeedRegionsClient(settings.preferred_regions || state.preferredRegions || ["global"]);
   }
 
   function newsfeedLanguageOptions(selected = "en") {
@@ -3634,6 +3824,39 @@
     `).join("");
   }
 
+  function renderNewsfeedPreferences(state) {
+    const mount = document.getElementById("newsfeedPreferences");
+    if (!mount) return;
+    const selected = normalizeNewsfeedRegionsClient(state.preferredRegions);
+    const selectedLabels = selected.map((value) => newsfeedRegionLabel(state, value)).join(", ");
+    const options = newsfeedRegionOptions(state);
+    mount.innerHTML = `
+      <div class="news-region-picker">
+        <button id="newsRegionToggle" type="button" data-action="toggle-region-menu" aria-expanded="false">
+          <span>${escapeHtml(newsfeedText(state, "regions"))}</span>
+          <strong>${escapeHtml(selectedLabels || "Global")}</strong>
+          <span>▾</span>
+        </button>
+        <div id="newsRegionMenu" class="news-region-menu" hidden>
+          ${options.map((item) => `
+            <label>
+              <input type="checkbox" data-action="region-checkbox" value="${escapeHtml(item.value)}" ${selected.includes(item.value) ? "checked" : ""}>
+              <span>${escapeHtml(item.label)}</span>
+            </label>
+          `).join("")}
+          <form id="newsCustomRegionForm" class="news-custom-region-form">
+            <input id="newsCustomRegionInput" type="text" placeholder="${escapeHtml(newsfeedText(state, "customRegion"))}">
+            <button type="submit">${escapeHtml(newsfeedText(state, "addRegion"))}</button>
+          </form>
+        </div>
+      </div>
+      <label class="news-inline-select">
+        <span>${escapeHtml(newsfeedText(state, "language"))}</span>
+        <select id="newsInterfaceLanguage">${newsfeedLanguageOptions(state.interfaceLanguage || "en")}</select>
+      </label>
+    `;
+  }
+
   function renderNewsfeedEmailSettings(state) {
     const settings = state.settings || {};
     const session = loadAuthSession();
@@ -3646,27 +3869,27 @@
     return `
       <section class="news-email-settings">
         <div class="news-email-copy">
-          <h2>Daily Digest Email</h2>
-          <p>Send the latest Daily Digest to your inbox once a day.</p>
+          <h2>${escapeHtml(newsfeedText(state, "digestEmail"))}</h2>
+          <p>${state.interfaceLanguage === "zh-CN" ? "每天定点发送最新摘要到邮箱。" : "Send the latest Daily Digest to your inbox once a day."}</p>
         </div>
         <form id="newsEmailForm" class="news-email-form">
-          <label>Email
+          <label>${escapeHtml(newsfeedText(state, "email"))}
             <input id="newsEmailInput" type="email" autocomplete="email" placeholder="you@example.com" value="${escapeHtml(email)}">
           </label>
-          <label>Send time
+          <label>${escapeHtml(newsfeedText(state, "sendTime"))}
             <input id="newsEmailTime" type="time" value="${escapeHtml(settings.digest_send_time || "09:00")}">
           </label>
-          <label>Timezone
+          <label>${escapeHtml(newsfeedText(state, "timezone"))}
             <select id="newsEmailTimezone">${newsfeedTimezoneOptions(settings.digest_timezone || "Asia/Shanghai")}</select>
           </label>
-          <label>Language
+          <label>${escapeHtml(newsfeedText(state, "language"))}
             <select id="newsEmailLanguage">${newsfeedLanguageOptions(settings.digest_language || state.outputLanguage || "en")}</select>
           </label>
           <label class="news-toggle-row">
             <input id="newsEmailEnabled" type="checkbox" ${enabled ? "checked" : ""}>
-            <span>Send daily digest</span>
+            <span>${escapeHtml(newsfeedText(state, "sendDailyDigest"))}</span>
           </label>
-          <button id="newsEmailSubmit" class="primary" type="submit">Save email</button>
+          <button id="newsEmailSubmit" class="primary" type="submit">${escapeHtml(newsfeedText(state, "saveEmail"))}</button>
         </form>
         <div id="newsEmailStatus" class="status-line" aria-live="polite">${escapeHtml(providerNote)}</div>
       </section>
@@ -3696,7 +3919,7 @@
     const home = state.home || {};
     const content = document.getElementById("newsfeedContent");
     if (!content) return;
-    setNewsfeedTitle("Daily Digest");
+    setNewsfeedTitle(newsfeedText(state, "dailyDigest"));
     updateNewsfeedTabs("feed");
     state.currentView = "feed";
     state.topics = home.topics || state.topics || [];
@@ -3710,14 +3933,14 @@
     content.innerHTML = `
       <section class="news-digest-panel">
         <div>
-          <div class="news-section-kicker">Daily Digest <span>${escapeHtml(String(home.digest_count || 0).padStart(2, "0"))}</span></div>
+          <div class="news-section-kicker">${escapeHtml(newsfeedText(state, "dailyDigest"))} <span>${escapeHtml(String(home.digest_count || 0).padStart(2, "0"))}</span></div>
           <ul>${newsfeedDigestMarkup(home.daily_digest)}</ul>
         </div>
         ${newsfeedSourceStack(home.highlights || [])}
       </section>
       <section class="newsfeed-section">
         <div class="newsfeed-section-heading">
-          <h2>Top Headlines</h2>
+          <h2>${escapeHtml(newsfeedText(state, "topHeadlines"))}</h2>
           <span>${escapeHtml(home.updated_label || "")}</span>
         </div>
         <div class="news-category-tabs">
@@ -3726,7 +3949,7 @@
           `).join("")}
         </div>
         <div class="news-story-list">
-          ${visible.slice(0, 12).map((item, index) => newsfeedStoryCard(item, index + 1)).join("") || '<div class="newsfeed-empty">No headlines yet.</div>'}
+          ${visible.slice(0, 12).map((item, index) => newsfeedStoryCard(item, index + 1)).join("") || `<div class="newsfeed-empty">${escapeHtml(newsfeedText(state, "noHeadlines"))}</div>`}
         </div>
       </section>
     `;
@@ -3737,20 +3960,20 @@
     if (!content) return;
     const home = state.home || {};
     const suggestions = home.suggested_topics || [];
-    setNewsfeedTitle("Add Topics");
+    setNewsfeedTitle(newsfeedText(state, "addTopics"));
     updateNewsfeedTabs("add");
     state.currentView = "add";
     content.innerHTML = `
       <section class="news-add-panel">
         <div class="news-add-meta">
           <strong>${escapeHtml(String((state.topics || []).length))}/${NEWSFEED_TOPIC_LIMIT} topics created</strong>
-          <span>Suggested Topics</span>
+          <span>${escapeHtml(newsfeedText(state, "suggestedTopics"))}</span>
         </div>
         <div class="news-suggested-list">
           ${suggestions.map((topic) => `<button type="button" data-action="suggest-topic" data-topic="${escapeHtml(topic)}">${escapeHtml(topic)}</button>`).join("")}
         </div>
         <div class="news-language-row">
-          <label for="newsTopicLanguage">Output language</label>
+          <label for="newsTopicLanguage">${escapeHtml(newsfeedText(state, "outputLanguage"))}</label>
           <select id="newsTopicLanguage">
             ${newsfeedLanguageOptions(state.outputLanguage || "en")}
           </select>
@@ -3773,7 +3996,7 @@
     const category = state.exploreCategory || categories[0] || "";
     const items = (explore.items || []).filter((item) => !category || item.category === category);
     rememberNewsfeedArticles(state, explore.items || []);
-    setNewsfeedTitle("Explore");
+    setNewsfeedTitle(newsfeedText(state, "explore"));
     updateNewsfeedTabs("explore");
     state.currentView = "explore";
     content.innerHTML = `
@@ -3788,6 +4011,15 @@
         </div>
       </section>
     `;
+  }
+
+  function renderNewsfeedEmailView(state) {
+    const content = document.getElementById("newsfeedContent");
+    if (!content) return;
+    setNewsfeedTitle(newsfeedText(state, "digestEmail"));
+    updateNewsfeedTabs("email");
+    state.currentView = "email";
+    content.innerHTML = renderNewsfeedEmailSettings(state);
   }
 
   function renderNewsfeedTopic(state, topic, items) {
@@ -3905,6 +4137,137 @@
     }
   }
 
+  function newsfeedBriefingItems(state) {
+    if (state.currentView === "topic") return state.currentTopicItems || [];
+    if (state.currentView === "explore") return state.explore && state.explore.items || [];
+    return state.home && state.home.headlines || [];
+  }
+
+  function renderNewsfeedBriefingPanel(state, options = {}) {
+    const panel = document.getElementById("newsBriefingPanel");
+    if (!panel) return;
+    const items = newsfeedBriefingItems(state).slice(0, 5);
+    const first = items[0] || {};
+    const progress = Math.max(0, Math.min(100, options.progress || 0));
+    panel.hidden = false;
+    panel.innerHTML = `
+      <div class="news-briefing-head">
+        <div>
+          <strong>${escapeHtml(options.countText || "0/5 stories listened today")}</strong>
+          <span>${escapeHtml(options.status || newsfeedText(state, "playBriefing"))}</span>
+        </div>
+        <button class="news-icon-button" type="button" data-action="close-briefing" aria-label="Close">×</button>
+      </div>
+      <div class="news-briefing-now">
+        <div>
+          <span>${escapeHtml(newsfeedText(state, "nowPlaying"))}</span>
+          <h2>${escapeHtml(first.title || newsfeedText(state, "dailyDigest"))}</h2>
+          ${first.id ? `<button type="button" data-action="open-article" data-id="${escapeHtml(first.id)}">${escapeHtml(newsfeedText(state, "readStory"))}</button>` : ""}
+        </div>
+        ${first.image_url ? `<img src="${escapeHtml(first.image_url)}" alt="">` : newsfeedLogoMarkup(first)}
+      </div>
+      <div class="news-briefing-playlist">
+        <h3>${escapeHtml(newsfeedText(state, "playlist"))}</h3>
+        ${items.slice(0, 4).map((item) => `
+          <button type="button" data-action="open-article" data-id="${escapeHtml(item.id || "")}">
+            <span>${escapeHtml(item.title || "Story")}</span>
+            ${item.image_url ? `<img src="${escapeHtml(item.image_url)}" alt="">` : ""}
+          </button>
+        `).join("")}
+      </div>
+      <div class="news-briefing-player">
+        <div class="news-briefing-progress"><span style="width:${progress}%"></span></div>
+        <div class="news-briefing-controls">
+          <button type="button" data-action="briefing-prev">‹</button>
+          <button type="button" data-action="play-briefing" class="is-primary">${options.playing ? "❚❚" : "▶"}</button>
+          <button type="button" data-action="briefing-next">›</button>
+        </div>
+        <small>${escapeHtml(options.voiceLabel || "browser speech")}</small>
+      </div>
+    `;
+  }
+
+  function stopNewsfeedBriefing(state) {
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (state.briefingTimer) window.clearInterval(state.briefingTimer);
+    state.briefingTimer = null;
+    state.briefingPlaying = false;
+    const button = document.getElementById("newsBriefingButton");
+    if (button) {
+      button.classList.remove("is-playing", "is-loading");
+      button.innerHTML = "▥ ▶";
+    }
+  }
+
+  async function playNewsfeedBriefing(state) {
+    const button = document.getElementById("newsBriefingButton");
+    if (state.briefingPlaying) {
+      stopNewsfeedBriefing(state);
+      renderNewsfeedBriefingPanel(state, { status: "Paused", progress: state.briefingProgress || 0 });
+      return;
+    }
+    const items = newsfeedBriefingItems(state).slice(0, 8);
+    if (!items.length) {
+      renderNewsfeedBriefingPanel(state, { status: "No stories ready yet" });
+      return;
+    }
+    if (button) {
+      button.classList.add("is-loading");
+      button.innerHTML = "▥ …";
+    }
+    renderNewsfeedBriefingPanel(state, { status: "Preparing audio briefing...", playing: true });
+    try {
+      const data = await newsfeedJson(state.workerUrl, "/newsfeed/briefing", {
+        method: "POST",
+        body: JSON.stringify({
+          language: state.interfaceLanguage || state.outputLanguage || "en",
+          digest: state.home && state.home.daily_digest || [],
+          items,
+        }),
+      });
+      const script = data.script || "";
+      state.briefingScript = script;
+      state.briefingProgress = 0;
+      if (!("speechSynthesis" in window) || !script) {
+        renderNewsfeedBriefingPanel(state, { status: script || "Audio is not available in this browser.", progress: 100 });
+        return;
+      }
+      stopNewsfeedBriefing(state);
+      const utterance = new SpeechSynthesisUtterance(script);
+      utterance.lang = state.interfaceLanguage === "zh-CN" ? "zh-CN" : state.interfaceLanguage || "en-US";
+      utterance.rate = state.interfaceLanguage === "zh-CN" ? 1.05 : 1.08;
+      state.briefingPlaying = true;
+      if (button) {
+        button.classList.remove("is-loading");
+        button.classList.add("is-playing");
+        button.innerHTML = "▥ ❚❚";
+      }
+      const started = Date.now();
+      state.briefingTimer = window.setInterval(() => {
+        state.briefingProgress = Math.min(100, ((Date.now() - started) / 30000) * 100);
+        renderNewsfeedBriefingPanel(state, {
+          status: "Playing 30 sec briefing",
+          progress: state.briefingProgress,
+          playing: true,
+          voiceLabel: data.provider || "browser speech",
+        });
+      }, 800);
+      utterance.onend = () => {
+        stopNewsfeedBriefing(state);
+        state.briefingProgress = 100;
+        renderNewsfeedBriefingPanel(state, { status: "Briefing complete", progress: 100 });
+      };
+      utterance.onerror = () => {
+        stopNewsfeedBriefing(state);
+        renderNewsfeedBriefingPanel(state, { status: script, progress: 100 });
+      };
+      window.speechSynthesis.speak(utterance);
+    } catch (error) {
+      stopNewsfeedBriefing(state);
+      renderNewsfeedBriefingPanel(state, { status: error.message || "Could not prepare briefing." });
+    }
+  }
+
   async function initNewsfeed() {
     const app = document.getElementById("newsfeedApp");
     if (app) renderNewsfeedBoot(app, "Checking account...");
@@ -3938,39 +4301,88 @@
       homeCategory: "Investment",
       exploreCategory: "Tech",
       outputLanguage: "en",
+      interfaceLanguage: "en",
+      preferredRegions: ["global"],
+      regionOptions: [],
+      briefingPlaying: false,
+      briefingProgress: 0,
+      briefingTimer: null,
     };
 
     app.innerHTML = newsfeedShellMarkup();
+    refreshNewsfeedChrome(state);
     trackEvent(workerUrl, "page_view", { page: "newsfeed" });
 
     async function loadHome() {
-      renderNewsfeedContentLoading("Loading latest news...", "home");
-      const data = await newsfeedJson(workerUrl, "/newsfeed/home");
-      state.home = data;
-      state.topics = data.topics || [];
-      state.settings = data.settings || state.settings || {};
-      setNewsfeedStatus("");
+      renderNewsfeedContentLoading(newsfeedText(state, "loadingLatest"), "home");
+      const query = newsfeedPreferenceQuery(state);
+      const fast = await newsfeedJson(workerUrl, `/newsfeed/home?fast=1&${query}`);
+      state.home = fast;
+      state.regionOptions = fast.regions || state.regionOptions || [];
+      state.topics = fast.topics || [];
+      applyNewsfeedSettings(state, fast.settings || state.settings || {});
+      refreshNewsfeedChrome(state);
       renderNewsfeedHome(state);
+      setNewsfeedStatus(fast.pending ? newsfeedText(state, "updating") : "", fast.pending ? "loading" : "");
+      newsfeedJson(workerUrl, `/newsfeed/home?${newsfeedPreferenceQuery(state)}`)
+        .then((data) => {
+          state.home = data;
+          state.regionOptions = data.regions || state.regionOptions || [];
+          state.topics = data.topics || state.topics || [];
+          applyNewsfeedSettings(state, data.settings || state.settings || {});
+          refreshNewsfeedChrome(state);
+          setNewsfeedStatus("");
+          if (state.currentView === "feed") renderNewsfeedHome(state);
+          else renderNewsfeedSidebar(state);
+        })
+        .catch((error) => setNewsfeedStatus(error.message || "Newsfeed request failed.", "error"));
     }
 
     async function loadExplore(category = state.exploreCategory) {
       renderNewsfeedContentLoading("Loading explore...", "explore");
-      const data = await newsfeedJson(workerUrl, `/newsfeed/explore?category=${encodeURIComponent(category || "")}`);
+      const data = await newsfeedJson(workerUrl, `/newsfeed/explore?category=${encodeURIComponent(category || "")}&${newsfeedPreferenceQuery(state)}`);
       state.explore = data;
+      state.regionOptions = data.regions || state.regionOptions || [];
       state.exploreCategory = category || (data.categories && data.categories[0]) || "";
       state.topics = data.topics || state.topics || [];
       setNewsfeedStatus("");
+      refreshNewsfeedChrome(state);
       renderNewsfeedSidebar(state);
       renderNewsfeedExplore(state);
     }
 
     async function loadTopic(id) {
       renderNewsfeedContentLoading("Preparing topic package...", "topic");
-      const data = await newsfeedJson(workerUrl, `/newsfeed/topic?id=${encodeURIComponent(id)}`);
+      const data = await newsfeedJson(workerUrl, `/newsfeed/topic?id=${encodeURIComponent(id)}&${newsfeedPreferenceQuery(state)}`);
       state.topics = data.topics || state.topics || [];
       setNewsfeedStatus("");
+      refreshNewsfeedChrome(state);
       renderNewsfeedSidebar(state);
       renderNewsfeedTopic(state, data.topic, data.items || []);
+    }
+
+    async function reloadCurrentNewsfeed() {
+      if (state.currentView === "explore") return loadExplore(state.exploreCategory);
+      if (state.currentView === "topic" && state.currentTopic) return loadTopic(state.currentTopic.id);
+      if (state.currentView === "email") {
+        renderNewsfeedEmailView(state);
+        return null;
+      }
+      return loadHome();
+    }
+
+    async function saveNewsfeedPreferences(reload = true) {
+      refreshNewsfeedChrome(state);
+      const data = await newsfeedJson(workerUrl, "/newsfeed/settings", {
+        method: "POST",
+        body: JSON.stringify({
+          preferred_regions: state.preferredRegions,
+          interface_language: state.interfaceLanguage,
+        }),
+      });
+      applyNewsfeedSettings(state, data.settings || state.settings || {});
+      refreshNewsfeedChrome(state);
+      if (reload) await reloadCurrentNewsfeed();
     }
 
     function closeSidebar() {
@@ -4001,6 +4413,39 @@
         if (action === "show-explore") {
           closeSidebar();
           await loadExplore();
+          return;
+        }
+        if (action === "show-email") {
+          closeSidebar();
+          renderNewsfeedEmailView(state);
+          return;
+        }
+        if (action === "toggle-region-menu") {
+          const menu = document.getElementById("newsRegionMenu");
+          const toggle = document.getElementById("newsRegionToggle");
+          if (menu) {
+            const nextHidden = !menu.hidden ? true : false;
+            menu.hidden = nextHidden;
+            if (toggle) toggle.setAttribute("aria-expanded", String(!nextHidden));
+          }
+          return;
+        }
+        if (action === "play-briefing") {
+          await playNewsfeedBriefing(state);
+          return;
+        }
+        if (action === "close-briefing") {
+          stopNewsfeedBriefing(state);
+          const panel = document.getElementById("newsBriefingPanel");
+          if (panel) panel.hidden = true;
+          return;
+        }
+        if (action === "briefing-prev" || action === "briefing-next") {
+          renderNewsfeedBriefingPanel(state, {
+            status: state.briefingScript || newsfeedText(state, "playBriefing"),
+            progress: state.briefingProgress || 0,
+            playing: state.briefingPlaying,
+          });
           return;
         }
         if (action === "home-category") {
@@ -4075,7 +4520,7 @@
         try {
           const data = await newsfeedJson(workerUrl, "/newsfeed/topics", {
             method: "POST",
-            body: JSON.stringify({ topic, output_language: outputLanguage }),
+            body: JSON.stringify({ topic, output_language: outputLanguage, preferred_regions: state.preferredRegions }),
           });
           state.topics = data.topics || state.topics || [];
           renderNewsfeedSidebar(state);
@@ -4090,9 +4535,18 @@
           if (submit) {
             submit.disabled = false;
             submit.classList.remove("is-loading");
-            submit.textContent = "↑";
+          submit.textContent = "↑";
           }
         }
+      }
+      if (event.target && event.target.id === "newsCustomRegionForm") {
+        event.preventDefault();
+        const input = document.getElementById("newsCustomRegionInput");
+        const value = input ? input.value.trim() : "";
+        if (!value) return;
+        state.preferredRegions = normalizeNewsfeedRegionsClient([...(state.preferredRegions || []), value]);
+        if (input) input.value = "";
+        await saveNewsfeedPreferences(true);
       }
       if (event.target && event.target.id === "newsEmailForm") {
         event.preventDefault();
@@ -4135,9 +4589,31 @@
           if (submit) {
             submit.disabled = false;
             submit.classList.remove("is-loading");
-            submit.textContent = "Save email";
+            submit.textContent = newsfeedText(state, "saveEmail");
           }
         }
+      }
+    });
+
+    app.addEventListener("change", async (event) => {
+      const target = event.target;
+      try {
+        if (target && target.dataset && target.dataset.action === "region-checkbox") {
+          const selected = Array.from(document.querySelectorAll("[data-action='region-checkbox']:checked"))
+            .map((item) => item.value);
+          state.preferredRegions = normalizeNewsfeedRegionsClient(selected);
+          await saveNewsfeedPreferences(true);
+        }
+        if (target && target.id === "newsInterfaceLanguage") {
+          state.interfaceLanguage = newsfeedLanguageCode(target.value || "en");
+          state.outputLanguage = state.interfaceLanguage;
+          await saveNewsfeedPreferences(true);
+        }
+        if (target && target.id === "newsTopicLanguage") {
+          state.outputLanguage = newsfeedLanguageCode(target.value || "en");
+        }
+      } catch (error) {
+        setNewsfeedStatus(error.message || "Could not save preferences.", "error");
       }
     });
 
