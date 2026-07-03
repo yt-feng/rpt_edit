@@ -1,0 +1,35 @@
+{
+  "date_folder": "260704",
+  "max_reports": "all",
+  "selected_count": 6,
+  "successful_count": 0,
+  "sensitive_skipped_count": 6,
+  "sensitive_skipped": [
+    {
+      "source_report_dir": "xhs_notes/institutions/260704/0001-IMF_Credit-Expansion-in-the-Caucasus-and-Central-Asia_67995fe5",
+      "title": "Credit Expansion in the Caucasus and Central Asia"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260704/0002-IMF_Frontier-Markets-Analyzing-Drivers-of-Market-Growth-and-Sove_4120c4ec",
+      "title": "Frontier Markets"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260704/0003-IMF_Pricing-Reform-Progress-Evidence-from-Sovereign-Spreads-and-_1854100e",
+      "title": "Pricing Reform Progress: Evidence from Sovereign Spreads and Consensus Forecasts"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260704/0004-IMF_Resilience-by-Design-What-Role-Can-Policy-Frameworks-Play-in_56bf9e65",
+      "title": "Resilience by Design:"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260704/0005-IMF_Should-Oil-Economies-Worry-About-Oil-Shocks-Impact-on-the-Ba_28a3c2d9",
+      "title": "Should Oil Economies Worry About Oil Shocks' Impact on the Banking System? The Case of Oman"
+    },
+    {
+      "source_report_dir": "xhs_notes/institutions/260704/0006-IMF_Sovereign-Risk-and-Natural-Disaster-Shocks-Unraveling-the-Do_b6176fe7",
+      "title": "Sovereign Risk and Natural Disaster Shocks: Unraveling the Domestic Yield Curve Response"
+    }
+  ],
+  "failures": [],
+  "reports": []
+}
