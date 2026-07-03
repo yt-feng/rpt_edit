@@ -3641,7 +3641,7 @@
     const email = settings.digest_email || fallbackEmail || "";
     const enabled = Boolean(settings.digest_email_enabled);
     const providerNote = settings.email_provider_configured === false
-      ? "Email sender needs Cloudflare Email binding or RESEND_API_KEY before scheduled delivery starts."
+      ? "Email sender needs Cloudflare Email binding before scheduled delivery starts."
       : "Saved settings are used by the scheduled digest sender.";
     return `
       <section class="news-email-settings">
@@ -4123,7 +4123,7 @@
           if (status) {
             status.className = "status-line ok";
             status.textContent = state.settings.email_provider_configured === false
-              ? "Settings saved. Email delivery starts after Cloudflare Email or Resend is configured."
+              ? "Settings saved. Email delivery starts after Cloudflare Email is configured."
               : "Settings saved. Daily Digest will be sent at the selected time.";
           }
         } catch (error) {

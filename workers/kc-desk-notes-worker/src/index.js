@@ -2560,22 +2560,17 @@ function normalizeNewsfeedTimezone(value) {
   }
 }
 
-function resendApiKey(env) {
-  return cleanEnv(env.RESEND_API_KEY);
-}
-
 function hasCloudflareEmailBinding(env) {
   return Boolean(env.EMAIL && typeof env.EMAIL.send === "function");
 }
 
 function newsfeedEmailProvider(env) {
   if (hasCloudflareEmailBinding(env)) return "cloudflare";
-  if (resendApiKey(env)) return "resend";
   return "none";
 }
 
 function newsfeedEmailFrom(env) {
-  return cleanEnv(env.NEWSFEED_EMAIL_FROM) || cleanEnv(env.RESEND_FROM) || "KC Desk Newsfeed <newsfeed@kcdesk.com>";
+  return cleanEnv(env.NEWSFEED_EMAIL_FROM) || "KC Desk Newsfeed <newsfeed@kcdesk.com>";
 }
 
 function publicNewsfeedSettings(settings, user, env) {
@@ -3546,26 +3541,7 @@ async function sendNewsfeedEmail(env, { to, subject, html, text }) {
     });
     return { sent: true, provider: "cloudflare", response };
   }
-  const apiKey = resendApiKey(env);
-  if (!apiKey) return { sent: false, detail: "Email provider is not configured." };
-  const response = await fetchWithTimeout("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-      "User-Agent": NEWSFEED_UA,
-    },
-    body: JSON.stringify({
-      from: newsfeedEmailFrom(env),
-      to: [to],
-      subject,
-      html,
-      text,
-    }),
-  }, 20000);
-  const body = await response.text();
-  if (!response.ok) throw new Error(`Email send failed ${response.status}: ${body.slice(0, 220)}`);
-  return { sent: true, provider: "resend", response: body ? JSON.parse(body) : null };
+  return { sent: false, detail: "Cloudflare Email binding is not configured." };
 }
 
 async function sendDueNewsfeedDigestEmails(env) {
