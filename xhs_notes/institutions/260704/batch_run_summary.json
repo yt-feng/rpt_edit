@@ -1,0 +1,64 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs",
+  "total_pdf_count_before_shard": 6,
+  "pdf_count_before_skip": 6,
+  "pdf_count": 6,
+  "generated_report_count": 6,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 0,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Credit-Expansion-in-the-Caucasus-and-Central-Asia_67995fe5.pdf",
+          "batch_file": "/tmp/pdf_batch_001_p20cs0i_/pdfs/0001-IMF_Credit-Expansion-in-the-Caucasus-and-Central-Asia_67995fe5.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Frontier-Markets-Analyzing-Drivers-of-Market-Growth-and-Sove_4120c4ec.pdf",
+          "batch_file": "/tmp/pdf_batch_001_p20cs0i_/pdfs/0002-IMF_Frontier-Markets-Analyzing-Drivers-of-Market-Growth-and-Sove_4120c4ec.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Pricing-Reform-Progress-Evidence-from-Sovereign-Spreads-and-_1854100e.pdf",
+          "batch_file": "/tmp/pdf_batch_001_p20cs0i_/pdfs/0003-IMF_Pricing-Reform-Progress-Evidence-from-Sovereign-Spreads-and-_1854100e.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Resilience-by-Design-What-Role-Can-Policy-Frameworks-Play-in_56bf9e65.pdf",
+          "batch_file": "/tmp/pdf_batch_001_p20cs0i_/pdfs/0004-IMF_Resilience-by-Design-What-Role-Can-Policy-Frameworks-Play-in_56bf9e65.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Should-Oil-Economies-Worry-About-Oil-Shocks-Impact-on-the-Ba_28a3c2d9.pdf",
+          "batch_file": "/tmp/pdf_batch_001_p20cs0i_/pdfs/0005-IMF_Should-Oil-Economies-Worry-About-Oil-Shocks-Impact-on-the-Ba_28a3c2d9.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "batch_index": 2,
+      "pdf_count": 1,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_institution_latest_pdfs/IMF_Sovereign-Risk-and-Natural-Disaster-Shocks-Unraveling-the-Do_b6176fe7.pdf",
+          "batch_file": "/tmp/pdf_batch_002_y4adb9xb/pdfs/0006-IMF_Sovereign-Risk-and-Natural-Disaster-Shocks-Unraveling-the-Do_b6176fe7.pdf",
+          "stable_index": "6"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

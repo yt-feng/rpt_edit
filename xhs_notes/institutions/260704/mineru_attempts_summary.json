@@ -1,0 +1,19 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U",
+    "submitted_pdf_count": 1,
+    "successful_pdf_count": 1,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_002_y4adb9xb/pdfs/0006-IMF_Sovereign-Risk-and-Natural-Disaster-Shocks-Unraveling-the-Do_b6176fe7.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
