@@ -3227,7 +3227,7 @@
     if (isContactOnlyItem(item)) {
       const hint = isAuthorityItem(item)
         ? "高权报告仅提供检索线索，无法在本站直接下载。"
-        : "报告A仅提供检索线索，本站不直接展示原文或下载文件。";
+        : "联系 MacroGate 获取原文。";
       target.innerHTML = `
         ${detailHeader}
         <section class="unlock-box authority-contact-box">
