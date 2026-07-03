@@ -142,6 +142,7 @@ jobs:
 
       - name: Prepare Cloudflare Worker deploy config
         id: worker_config
+        if: ${{ always() }}
         env:
           DEPLOY_WORKER: ${{ github.event.inputs.deploy_worker || 'true' }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -149,7 +150,7 @@ jobs:
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'kc-desk-notes-pdfs' }}
           PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
           KC_DESK_DOWNLOAD_PASSWORD: ${{ secrets.KC_DESK_DOWNLOAD_PASSWORD }}
-          PAGES_URL: ${{ vars.KC_DESK_PAGES_URL || steps.deployment.outputs.page_url }}
+          PAGES_URL: ${{ vars.KC_DESK_PAGES_URL || steps.deployment.outputs.page_url || 'https://kcdesk.com' }}
           R2_OBJECT_PREFIX: ${{ vars.R2_OBJECT_PREFIX || 'reports' }}
           NEWSFEED_EMAIL_PROVIDER: ${{ vars.NEWSFEED_EMAIL_PROVIDER || 'cloudflare' }}
         run: |
@@ -203,7 +204,7 @@ jobs:
           echo "enabled=true" >> "$GITHUB_OUTPUT"
 
       - name: Deploy Cloudflare Worker
-        if: ${{ steps.worker_config.outputs.enabled == 'true' }}
+        if: ${{ always() && steps.worker_config.outputs.enabled == 'true' }}
         uses: cloudflare/wrangler-action@v3
         env:
           PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
