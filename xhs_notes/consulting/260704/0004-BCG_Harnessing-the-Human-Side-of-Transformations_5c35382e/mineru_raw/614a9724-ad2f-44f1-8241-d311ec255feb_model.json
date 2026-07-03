@@ -1,0 +1,2876 @@
+[
+    [
+        {
+            "type": "image",
+            "bbox": [
+                0.001,
+                0.0,
+                1.0,
+                0.395
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.051,
+                0.432,
+                0.263,
+                0.45
+            ],
+            "angle": 0,
+            "content": "BUSINESS TRANSFORMATION",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.478,
+                0.773,
+                0.627
+            ],
+            "angle": 0,
+            "content": "Harnessing the Human\nSide of\nTransformations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.657,
+                0.785,
+                0.696
+            ],
+            "angle": 0,
+            "content": "By Tuukka Seppä, Kristy Ellmer, Julia Dhar, Simon Weinstein, Garett Chau, Paul Catchlove, and Connor Currier",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.72,
+                0.365,
+                0.737
+            ],
+            "angle": 0,
+            "content": "ARTICLE APRIL 27, 2026 8 MIN READ",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.797,
+                0.943,
+                0.9
+            ],
+            "angle": 0,
+            "content": "The imperative for companies to transform is growing, but organizational transformations have a low success rate. According to BCG research, only about one in four succeeds in capturing short-term and long-term value. What sets the best, most successful transformations apart? A growing body of research from BCG's Bruce Henderson Institute and the firm's Behavioral Science Lab points to a crucial factor: a human-centric approach.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "1"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.056,
+                0.436,
+                0.257,
+                0.446
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.04,
+                0.476,
+                0.778,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.528,
+                0.273,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.579,
+                0.567,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.66,
+                0.782,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.678,
+                0.206,
+                0.692
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.723,
+                0.361,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.799,
+                0.941,
+                0.816
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.82,
+                0.935,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.839,
+                0.938,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.86,
+                0.918,
+                0.875
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.879,
+                0.532,
+                0.896
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.943,
+                0.187
+            ],
+            "angle": 0,
+            "content": "Human-centric transformations are grounded in, and informed by, principles of behavioral science—an understanding of how people act in different contexts—to predict behavior and design techniques and practices that can help achieve target outcomes. This type of transformation isn’t always easy. It requires elevating people at all levels, from top executives to frontline employees, to the center of the change process and tapping into their collective effort. But the approach can be learned, and it leads to measurably better transformation outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.201,
+                0.945,
+                0.301
+            ],
+            "angle": 0,
+            "content": "Companies that undertake human-centric transformations see faster scaling of initiatives, increased human capacity and capital within the organization, and better financial outcomes. In our experience supporting hundreds of transformations across industries, companies that make holistic, people-centered change management an integral part of the transformation outperform their peers by 15% in total shareholder return.",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.043,
+                0.37,
+                0.773,
+                0.451
+            ],
+            "angle": 0,
+            "content": "The Power of Human-Centric Change"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.477,
+                0.923,
+                0.517
+            ],
+            "angle": 0,
+            "content": "All transformations require considering the why, what, and how of the overall program. (See the exhibit.) True success hinges on a human-centric approach across all three:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.546,
+                0.832,
+                0.567
+            ],
+            "angle": 0,
+            "content": "• Why: Articulating the overarching purpose for undertaking the transformation now",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.581,
+                0.934,
+                0.642
+            ],
+            "angle": 0,
+            "content": "- What: Identifying the financial and operational objectives that must be met to create greater value—revenue growth, cost reduction, a stronger balance sheet, or some combination of the three—all aligned with the company strategy",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.656,
+                0.907,
+                0.696
+            ],
+            "angle": 0,
+            "content": "- How: Developing the behaviors, mindsets, organizational structure, tools, capabilities, and processes to make change happen and ensure that it sticks",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.971,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.069,
+                0.881,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.09,
+                0.906,
+                0.104
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.109,
+                0.825,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.129,
+                0.938,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.147,
+                0.935,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.167,
+                0.92,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.204,
+                0.883,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.223,
+                0.934,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.243,
+                0.935,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.263,
+                0.941,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.282,
+                0.475,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.369,
+                0.774,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.41,
+                0.237,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.479,
+                0.92,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.499,
+                0.744,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.549,
+                0.828,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.583,
+                0.927,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.604,
+                0.93,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.623,
+                0.486,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.658,
+                0.904,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.678,
+                0.622,
+                0.694
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.044,
+                0.064,
+                0.683,
+                0.104
+            ],
+            "angle": 0,
+            "content": "Transformations Are More Likely to Succeed When They Address Three Elements"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.044,
+                0.117,
+                0.727,
+                0.382
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.044,
+                0.399,
+                0.111,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Source: BCG."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.514,
+                0.935,
+                0.595
+            ],
+            "angle": 0,
+            "content": "Here we focus on the “how” element, which is where a human-centric approach is crucial. Transformations rely on people’s willingness to change and do things differently, yet people are naturally averse to change. By applying best practices from behavioral science to address this aversion, transformations can achieve better and more lasting outcomes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.608,
+                0.946,
+                0.668
+            ],
+            "angle": 0,
+            "content": "We have strong evidence of the power of human-centric change. Specifically, we see the following increases in the likelihood of sustained performance improvements through a people-based approach to transformation:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.697,
+                0.83,
+                0.736
+            ],
+            "angle": 0,
+            "content": "- 90% when holistic, people-centered change management is an integral part of the transformation",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.752,
+                0.91,
+                0.792
+            ],
+            "angle": 0,
+            "content": "- 27% when leaders are aligned on their roles and responsibilities in the transformation and can shape the behaviors of people on their team.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.806,
+                0.866,
+                0.847
+            ],
+            "angle": 0,
+            "content": "- 21% when a chief transformation officer is in place with sufficient authority to lead the transformation, challenge the status quo, and lead the overall workforce",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.861,
+                0.926,
+                0.9
+            ],
+            "angle": 0,
+            "content": "- 19% when all people in the organization are clear about what needs to change, how they can contribute, and how their work will evolve",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.984
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.065,
+                0.681,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.086,
+                0.202,
+                0.103
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.516,
+                0.869,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.537,
+                0.931,
+                0.552
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.556,
+                0.919,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.574,
+                0.727,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.61,
+                0.944,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.628,
+                0.898,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.651,
+                0.31,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.698,
+                0.826,
+                0.717
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.72,
+                0.208,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.754,
+                0.906,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.774,
+                0.524,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.809,
+                0.861,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.828,
+                0.736,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.862,
+                0.923,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.882,
+                0.449,
+                0.898
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.042,
+                0.068,
+                0.828,
+                0.149
+            ],
+            "angle": 0,
+            "content": "Four Elements of Success in\nDriving Human-Centric Change"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.174,
+                0.94,
+                0.215
+            ],
+            "angle": 0,
+            "content": "The “how” of transformation comprises four elements: leader enablement, people engagement, executional certainty, and desired culture.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.229,
+                0.949,
+                0.368
+            ],
+            "angle": 0,
+            "content": "Leader Enablement. Enabling leaders to support the change is critical in a transformation. Since organizational buy-in is paramount, transformation leaders must develop an explicit case for change that they can communicate consistently and pervasively to their teams: what will change, what will stay the same, and how both will contribute to the overall change program. The case for change is grounded in the broader “why” of the transformation and helps leaders to articulate why change is needed, instill a sense of urgency, and spur the right actions among the people on their team.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.381,
+                0.952,
+                0.442
+            ],
+            "angle": 0,
+            "content": "Transformations also require specific targets and timelines to help leaders steer toward defined goals, with related incentives (both short term and long term) that are linked to leaders' personal performance and their teams' overall results.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.455,
+                0.896,
+                0.537
+            ],
+            "angle": 0,
+            "content": "Another aspect of enablement is ensuring that leaders are clear on their roles and decision rights. Moreover, companies should push leaders to look beyond traditional command-and-control models and instead inspire their teams with a more empathetic approach that incorporates the head, heart, and hands elements of a change program.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.55,
+                0.942,
+                0.689
+            ],
+            "angle": 0,
+            "content": "People Engagement. In addition to enabling leaders, companies need to assess the transformation's impact on their people—taking into account other initiatives that are currently underway, what else has happened recently in the organization, and the capacity needed to take on new efforts—and demonstrate that they have a good sense of how employees are feeling. An impact assessment can help companies understand the potential burden that the transformation will create for key stakeholders and get ahead of people risks by reducing cognitive loads.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.703,
+                0.949,
+                0.842
+            ],
+            "angle": 0,
+            "content": "Companies should also create a robust communication roadmap to deepen engagement with the mass of the organization that is doing the work. For example, a communication platform can ensure that employees understand the need for change and the level of urgency. Monthly newsletters can provide clear updates on how the transformation is progressing, so employees feel informed and see their individual efforts reflected, shared, and even celebrated across the organization. Town halls and pulse checks can provide a mechanism for employees to provide feedback and ensure that they feel heard and have a voice in the transformation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.856,
+                0.89,
+                0.897
+            ],
+            "angle": 0,
+            "content": "Effective people engagement also involves understanding and addressing skill gaps in the organization as part of broader capability and confidence building. In addition, leaders can",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.065,
+                0.731,
+                0.107
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.108,
+                0.828,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.176,
+                0.935,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.195,
+                0.436,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.231,
+                0.938,
+                0.246
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.25,
+                0.909,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.27,
+                0.946,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.289,
+                0.94,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.31,
+                0.913,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.329,
+                0.935,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.349,
+                0.148,
+                0.364
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.385,
+                0.932,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.403,
+                0.949,
+                0.419
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.424,
+                0.466,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.458,
+                0.893,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.477,
+                0.886,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.498,
+                0.842,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.517,
+                0.708,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.553,
+                0.82,
+                0.567
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.571,
+                0.936,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.592,
+                0.938,
+                0.608
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.612,
+                0.934,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.631,
+                0.81,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.65,
+                0.873,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.671,
+                0.191,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.703,
+                0.947,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.725,
+                0.896,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.745,
+                0.874,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.764,
+                0.924,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.784,
+                0.917,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.804,
+                0.912,
+                0.818
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.823,
+                0.795,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.858,
+                0.882,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.879,
+                0.883,
+                0.892
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.068,
+                0.944,
+                0.108
+            ],
+            "angle": 0,
+            "content": "designate influential employees as change champions, as well as celebrating wins by teams and individual employees, to build enthusiasm for the transformation among the frontline workforce.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.121,
+                0.952,
+                0.221
+            ],
+            "angle": 0,
+            "content": "Executional Certainty. All transformations should be coordinated through a transformation office, which establishes clear governance and practices and creates a structure that organizes teams and people in explicit roles and ensures accountability. The office also sets a cadence for the overall program, such as weekly meetings for the extended leadership team and quarterly town halls for the full workforce.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.236,
+                0.952,
+                0.315
+            ],
+            "angle": 0,
+            "content": "Moreover, a rigorous stage gate methodology ensures that initiatives move forward in incremental steps and that the original goals of the program remain realistic. Robust reporting mechanisms provide real-time, efficient status tracking and a single source of truth, eliminating confusion about where the transformation currently stands.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.329,
+                0.956,
+                0.529
+            ],
+            "angle": 0,
+            "content": "Desired Culture. A transformation will succeed only if it fundamentally changes the organization's culture. Companies should conduct a diagnostic to obtain a current view of their organization's culture, operating model, leadership style, and ways of working. Doing so can lead to valuable insights, such as identification of specific areas that must be addressed to support a sustainable target culture. Moreover, companies can engage leaders, and the outsized impact they have on organizations, to model behaviors that will bring the new culture to life. For example, if a company aims to increase transparency to enable more informed decision making and a greater sense of inclusion, leaders can begin to share monthly reports and key leadership readouts with their teams. Such behaviors should be embedded into daily routines, processes, and policies, and companies should actively measure progress using quantifiable metrics.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.042,
+                0.598,
+                0.755,
+                0.678
+            ],
+            "angle": 0,
+            "content": "One Company's People-First Approach to Transformation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.704,
+                0.943,
+                0.803
+            ],
+            "angle": 0,
+            "content": "A leading global beverage company found itself underperforming compared with the competition in key metrics. To improve, it launched a comprehensive transformation, leveraging digital technology to make its supply chain more efficient and sustainable. Critically, the company also addressed the people component of change, focusing on each of the four parts of the “how” of transformation:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.832,
+                0.888,
+                0.873
+            ],
+            "angle": 0,
+            "content": "- The company developed a clear and compelling case for change and designed a tailored leader enablement program to upskill 250 leaders.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.888,
+                0.932,
+                0.928
+            ],
+            "angle": 0,
+            "content": "- Frequent communication through town halls, newsletters, and other channels ensured buy-in across the enterprise. Pulse surveys gave leaders crucial feedback from the workforce, with",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.045,
+                0.97,
+                0.25,
+                0.985
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.071,
+                0.941,
+                0.085
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.09,
+                0.938,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.124,
+                0.947,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.144,
+                0.928,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.163,
+                0.908,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.183,
+                0.926,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.202,
+                0.295,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.238,
+                0.949,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.258,
+                0.924,
+                0.273
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.278,
+                0.898,
+                0.291
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.298,
+                0.504,
+                0.311
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.331,
+                0.953,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.351,
+                0.92,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.372,
+                0.908,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.389,
+                0.938,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.411,
+                0.921,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.43,
+                0.95,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.451,
+                0.935,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.47,
+                0.902,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.489,
+                0.895,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.509,
+                0.717,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.596,
+                0.751,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.64,
+                0.756,
+                0.676
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.707,
+                0.942,
+                0.722
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.726,
+                0.874,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.744,
+                0.936,
+                0.762
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.765,
+                0.917,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.785,
+                0.194,
+                0.8
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.834,
+                0.886,
+                0.852
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.854,
+                0.543,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.891,
+                0.928,
+                0.905
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.91,
+                0.909,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.068,
+                0.903,
+                0.127
+            ],
+            "angle": 0,
+            "content": "more than 95% of employees saying that they understood the purpose of the program and more than 80% rating it favorably (a share that increased over time). Quarterly scorecards gave everyone a clear sense of progress.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.142,
+                0.934,
+                0.242
+            ],
+            "angle": 0,
+            "content": "- The program included more than 4,000 initiatives across nine workstreams in 24 countries. To keep everything on track, the leadership team deployed a robust governance structure, including a transformation team that built a roadmap with clearly defined stage gates. A regular cadence of weekly and monthly meetings, along with transparent reporting, created visibility across the organization.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.255,
+                0.888,
+                0.336
+            ],
+            "angle": 0,
+            "content": "- Critically, the company addressed its culture, examining whether employee and leader behaviors were supporting the change ambition. By clarifying roles and creating a collaborative working environment, the company was able to overcome numerous challenging practices and improve performance across all business units and functions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.364,
+                0.95,
+                0.464
+            ],
+            "angle": 0,
+            "content": "By putting people at the center in this way—focusing not just on the “what” but also on the “how” of the transformation—the company reduced supply chain costs by 15% to 20% and improved productivity by 55%. The newly digitized, efficient, and resilient supply chain helped the company close the performance gap with peers and gave it a sustained competitive advantage in operations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.515,
+                0.94,
+                0.595
+            ],
+            "angle": 0,
+            "content": "Transformation is an urgent priority for most companies, but it’s tough to get right. To succeed, they need to focus on the people aspect of change. This is a more holistic approach to transformation, but in our experience, it yields commensurate benefits in sustainable value and new capabilities—leaving companies far better equipped to thrive in the long term.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.943,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.07,
+                0.9,
+                0.086
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.089,
+                0.898,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.109,
+                0.445,
+                0.124
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.145,
+                0.931,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.164,
+                0.875,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.183,
+                0.881,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.204,
+                0.912,
+                0.219
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.222,
+                0.373,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.257,
+                0.867,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.277,
+                0.823,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.297,
+                0.829,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.316,
+                0.884,
+                0.331
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.366,
+                0.948,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.386,
+                0.92,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.406,
+                0.943,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.426,
+                0.854,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.447,
+                0.154,
+                0.461
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.517,
+                0.914,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.538,
+                0.84,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.557,
+                0.934,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.575,
+                0.82,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.104,
+                0.247,
+                0.143
+            ],
+            "angle": 0,
+            "content": "Authors"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.069,
+                0.186,
+                0.221,
+                0.294
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.071,
+                0.353,
+                0.22,
+                0.459
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.07,
+                0.516,
+                0.22,
+                0.622
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.073,
+                0.669,
+                0.22,
+                0.776
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.245,
+                0.189,
+                0.404,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Tuukka Seppä"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.244,
+                0.223,
+                0.44,
+                0.276
+            ],
+            "angle": 0,
+            "content": "Managing Director & Senior Partner; Global Leader, BCG Transform Practice\nHelsinki"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.28,
+                0.275,
+                0.296
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.244,
+                0.366,
+                0.359,
+                0.389
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.399,
+                0.446,
+                0.428
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner Miami",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.247,
+                0.433,
+                0.274,
+                0.45
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.244,
+                0.525,
+                0.384,
+                0.547
+            ],
+            "angle": 0,
+            "content": "Garett Chau"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.244,
+                0.557,
+                0.446,
+                0.586
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner Miami",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.592,
+                0.275,
+                0.608
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.244,
+                0.678,
+                0.415,
+                0.7
+            ],
+            "angle": 0,
+            "content": "Connor Currier"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.243,
+                0.711,
+                0.353,
+                0.74
+            ],
+            "angle": 0,
+            "content": "Senior Director\nACC – Boston",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.246,
+                0.745,
+                0.275,
+                0.761
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.532,
+                0.187,
+                0.684,
+                0.292
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.353,
+                0.682,
+                0.458
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.201,
+                0.852,
+                0.224
+            ],
+            "angle": 0,
+            "content": "Kristy Ellmer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.708,
+                0.234,
+                0.909,
+                0.263
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner\nBoston",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.268,
+                0.737,
+                0.284
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.354,
+                0.9,
+                0.376
+            ],
+            "angle": 0,
+            "content": "Simon Weinstein"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.387,
+                0.912,
+                0.44
+            ],
+            "angle": 0,
+            "content": "Managing Director & Partner; Global Product Lead, BCG Transform\nSeattle",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.445,
+                0.737,
+                0.46
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.533,
+                0.516,
+                0.682,
+                0.622
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.708,
+                0.519,
+                0.872,
+                0.54
+            ],
+            "angle": 0,
+            "content": "Paul Catchlove"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.706,
+                0.552,
+                0.86,
+                0.593
+            ],
+            "angle": 0,
+            "content": "Senior Director – BCG\nTransform\nACC – Boston",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.71,
+                0.598,
+                0.738,
+                0.614
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.042,
+                0.102,
+                0.247,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.19,
+                0.404,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.402,
+                0.442,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.415,
+                0.292,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.527,
+                0.38,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.56,
+                0.442,
+                0.571
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.573,
+                0.292,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.248,
+                0.681,
+                0.411,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.247,
+                0.712,
+                0.348,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.246,
+                0.727,
+                0.339,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.201,
+                0.851,
+                0.223
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.237,
+                0.905,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.251,
+                0.757,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.357,
+                0.897,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.389,
+                0.909,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.401,
+                0.884,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.413,
+                0.779,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.708,
+                0.425,
+                0.759,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.711,
+                0.52,
+                0.869,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.554,
+                0.856,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.566,
+                0.779,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.709,
+                0.579,
+                0.802,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.043,
+                0.103,
+                0.436,
+                0.121
+            ],
+            "angle": 0,
+            "content": "ABOUT BOSTON CONSULTING GROUP"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.138,
+                0.952,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.046,
+                0.971,
+                0.25,
+                0.984
+            ],
+            "angle": 0,
+            "content": "©2026 Boston Consulting Group"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.971,
+                0.955,
+                0.983
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.045,
+                0.105,
+                0.433,
+                0.123
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.14,
+                0.95,
+                0.155
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.044,
+                0.159,
+                0.9,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.18,
+                0.904,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.199,
+                0.911,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.218,
+                0.933,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.238,
+                0.593,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

@@ -1,0 +1,2507 @@
+[
+    {
+        "type": "text",
+        "text": "BCG X | BCG",
+        "text_level": 2,
+        "bbox": [
+            40,
+            68,
+            270,
+            144
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "BCG AI RADAR 2026",
+        "bbox": [
+            40,
+            375,
+            188,
+            410
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "As AI Investments Surge, CEOs Take the Lead",
+        "text_level": 2,
+        "bbox": [
+            38,
+            423,
+            355,
+            649
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "JANUARY 2026",
+        "bbox": [
+            40,
+            883,
+            140,
+            917
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Survey methodology",
+        "text_level": 2,
+        "bbox": [
+            40,
+            68,
+            293,
+            128
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2,360",
+        "bbox": [
+            42,
+            165,
+            183,
+            269
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/996d1d6e3f70e586f1db0f16b62887db765ef6819c45e449fc78ca7aeda1ba92.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            40,
+            66,
+            605,
+            348
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/290a4efead4a59cb815c0c1348397242de9201043e1f0120406ebd2bdddb38d2.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: BCG AI Radar Survey 2026 (n = 2,360); BCG analysis. $^{1}$ Executives who directly report to C-suite (EVP, SVP, VP, etc.)."
+        ],
+        "bbox": [
+            41,
+            398,
+            238,
+            875
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d559650cd740b4ce24345be1e981ba2c1f7c79ff48cc4631e8347f8b6899147f.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Markets (number of respondents)"
+        ],
+        "bbox": [
+            332,
+            398,
+            588,
+            890
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5b35e1b667a212344af2368f2275ee59a684594f4c94e8eb99bbbd47eeb1fbc3.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            675,
+            202,
+            966,
+            893
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Key takeaways",
+        "text_level": 2,
+        "bbox": [
+            40,
+            68,
+            227,
+            128
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "1",
+        "bbox": [
+            40,
+            250,
+            72,
+            329
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Corporate investments in AI have doubled since last year and are here to stay",
+        "bbox": [
+            40,
+            363,
+            277,
+            557
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "94%",
+        "bbox": [
+            40,
+            641,
+            135,
+            722
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "of CEOs say they will continue to invest even if it does not pay off in 2026",
+        "bbox": [
+            40,
+            735,
+            282,
+            882
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "2",
+        "bbox": [
+            371,
+            250,
+            405,
+            329
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "AI corporate transformation is moving from a CIO-led to a CEO-led initiative",
+        "bbox": [
+            371,
+            364,
+            621,
+            557
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "72%",
+        "bbox": [
+            373,
+            641,
+            466,
+            722
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "of CEOs say they are the main decision maker on AI in their organization",
+        "bbox": [
+            371,
+            735,
+            612,
+            883
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "3",
+        "bbox": [
+            705,
+            250,
+            740,
+            334
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Three CEO archetypes emerge with Trailblazer CEOs leading end-to-end AI transformation",
+        "bbox": [
+            706,
+            361,
+            946,
+            558
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "60%",
+        "bbox": [
+            708,
+            640,
+            803,
+            722
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "of Trailblazers' AI budget will be spent on agentic AI",
+        "bbox": [
+            707,
+            735,
+            918,
+            883
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Takeaway 1",
+        "text_level": 2,
+        "bbox": [
+            40,
+            442,
+            293,
+            533
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Corporate investments in AI have doubled since last year and are here to stay",
+        "bbox": [
+            485,
+            366,
+            870,
+            603
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "94%",
+        "text_level": 2,
+        "bbox": [
+            37,
+            240,
+            227,
+            401
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "of organizations\nwill continue their\ninvestments even\nif they do not pay\noff in 2026",
+        "bbox": [
+            37,
+            436,
+            271,
+            753
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Only 6% of companies plan to pull back AI investments if current initiatives fall short",
+        "bbox": [
+            367,
+            60,
+            883,
+            173
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cacfe21f226515f8e92e3a97fc613737182578d868e94d5a1d10535649739312.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: BCG AI Radar 2026 Survey (n = 2,360); BCG analysis.",
+            "Note: AI investments refer to all investments needed to realize the benefits from AI including but not limited to technology and infrastructure, data and architecture enablement, talent and upskilling, external partners, etc.",
+            "Question: “What is the plan if your organization’s AI investments do not produce the desired financial impact in the next 12 months?”"
+        ],
+        "bbox": [
+            368,
+            214,
+            905,
+            797
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Investment in AI as share of an organization’s revenue $(\\%)$ 1",
+        "bbox": [
+            367,
+            60,
+            752,
+            176
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Investments in\nAI is projected to\ndouble in 2026",
+        "bbox": [
+            40,
+            371,
+            297,
+            601
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/7940b0ca047fac9f8bd2909f057e3debee8f699a8f4c34df07830611de582416.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Note: AI investments refer to all investments needed to realize the benefits from AI including but not limited to technology and infrastructure, data and architecture enablement, talent and upskilling, external partners, etc.",
+            "Questions: “How much do you expect your organization to invest in AI in 2026?”, “What is the annual revenue range of your company or organization globally?” $^{1}$ The average base revenue of the underlying companies has remained almost the same."
+        ],
+        "content": "",
+        "bbox": [
+            368,
+            270,
+            962,
+            767
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "INVESTMENT IN AI AS SHARE OF ANNUAL REVENUE",
+        "bbox": [
+            40,
+            157,
+            365,
+            192
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "All industries plan to increase their AI investments in 2026",
+        "text_level": 2,
+        "bbox": [
+            38,
+            60,
+            752,
+            117
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/723bd3f036b850659d3e77bd31c321470878b7a0811eb496f2162f5bf4306ca9.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: BCG AI Radar 2026 Survey (n = 2,308 due to exclusion of “I don’t know” and blank responses); BCG analysis.",
+            "Note: Consumer combines consumer/retail and travel/tourism industries. Public sector combines government/public sector and education industries. Communication services combines advertising/marketing, media, and telecom industries. Industrials and real estate combines manufacturing, industrial goods, automotive, transportation, agriculture, and real estate industries.",
+            "Question: \"How much do you expect your organization to invest in AI in 2026?\""
+        ],
+        "bbox": [
+            40,
+            288,
+            955,
+            808
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/cbcb4327650974719177dc0d58929c6fbe722f547817686edc449014b1d6aa90.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Sources: BCG AI Radar 2026 Survey (n = 2,360), BCG AI Radar 2025 Survey (n = 1,803); BCG analysis. Question: “What are the top three risks you are most concerned about when it comes to AI?”"
+        ],
+        "table_body": "<table><tr><td rowspan=\"9\">Data privacy and cybersecurity remain the primary concern</td><td colspan=\"2\">Top three AI concerns remain the same, but their share is declining</td></tr><tr><td>Share of respondents</td><td>Change vs. 2025</td></tr><tr><td>Data privacy and cybersecurity risks</td><td>-12pp</td></tr><tr><td>Lack of control or understanding of AI decisions</td><td>-7pp</td></tr><tr><td>Regulatory or compliance challenges</td><td>-5pp</td></tr><tr><td colspan=\"2\">And a few other concerns have become more prominent</td></tr><tr><td>Technological failure</td><td>+6pp</td></tr><tr><td>Environmental impact of AI</td><td>+10pp</td></tr><tr><td>Geopolitical instability</td><td>+8pp</td></tr></table>",
+        "bbox": [
+            26,
+            41,
+            968,
+            840
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Agentic AI introduces both opportunity and risk in cybersecurity",
+        "text_level": 2,
+        "bbox": [
+            40,
+            60,
+            819,
+            121
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "9% of leaders view cybersecurity as the biggest threat from agentic AI",
+        "bbox": [
+            175,
+            257,
+            505,
+            340
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "32% of leaders view cybersecurity as the biggest opportunity of agentic AI",
+        "bbox": [
+            576,
+            254,
+            926,
+            343
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Automation",
+        "text_level": 2,
+        "bbox": [
+            40,
+            404,
+            120,
+            442
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Scale",
+        "bbox": [
+            40,
+            485,
+            80,
+            520
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "System access",
+        "bbox": [
+            40,
+            563,
+            135,
+            598
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "New targets",
+        "bbox": [
+            40,
+            644,
+            122,
+            681
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Can search for weaknesses and break without rest",
+        "bbox": [
+            176,
+            388,
+            401,
+            453
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Learning",
+        "bbox": [
+            40,
+            722,
+            102,
+            761
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Can send many fake messages and frauds to many users",
+        "bbox": [
+            176,
+            469,
+            362,
+            535
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "If taken over, can change settings, move data, or turn off protection",
+        "bbox": [
+            177,
+            547,
+            380,
+            616
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "AI systems can be hacked",
+        "bbox": [
+            177,
+            644,
+            333,
+            683
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Can learn which attacks work and keep improving them",
+        "bbox": [
+            177,
+            708,
+            377,
+            775
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Can watch systems continuously and react to problems quickly",
+        "bbox": [
+            740,
+            388,
+            935,
+            455
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "59%",
+        "bbox": [
+            505,
+            474,
+            605,
+            560
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Can check huge amounts of logs/alerts that humans would miss",
+        "bbox": [
+            735,
+            468,
+            935,
+            535
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Can repeatedly follow security steps quickly and correctly",
+        "bbox": [
+            753,
+            547,
+            935,
+            616
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "of leaders view it\nas both a threat and\nan opportunity",
+        "bbox": [
+            485,
+            576,
+            623,
+            679
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Can regularly check accounts, passwords, and settings for issues",
+        "bbox": [
+            732,
+            628,
+            935,
+            695
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Can learn which attacks appear and keep improving defense",
+        "bbox": [
+            745,
+            708,
+            935,
+            775
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Sources: BCG AI Radar 2026 Survey (n = 2,286 due to exclusion of executives who answered “I don’t know.”); BCG analysis. Question: “When it comes to your organization’s cybersecurity, do AI agents present an opportunity or are they a threat?”",
+        "bbox": [
+            38,
+            898,
+            495,
+            942
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Takeaway 2",
+        "text_level": 2,
+        "bbox": [
+            40,
+            442,
+            293,
+            533
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "AI corporate transformation is moving from a CIO-led to a CEO-led initiative",
+        "text_level": 2,
+        "bbox": [
+            460,
+            388,
+            893,
+            617
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "72%",
+        "bbox": [
+            41,
+            246,
+            265,
+            434
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "of CEOs say they are the main decision maker on AI in their organization",
+        "bbox": [
+            38,
+            463,
+            380,
+            654
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "2x last year",
+        "bbox": [
+            51,
+            695,
+            176,
+            745
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "82%",
+        "text_level": 2,
+        "bbox": [
+            547,
+            246,
+            770,
+            426
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "are more optimistic about AI's potential for ROI this year than last year",
+        "text_level": 2,
+        "bbox": [
+            545,
+            464,
+            876,
+            654
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis. Question: “What is your level of involvement in decision making related to AI in your company?”",
+        "bbox": [
+            40,
+            899,
+            398,
+            942
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Question: “Are you more optimistic or less optimistic about AI’s overall ability to deliver value than you were 12 months ago?”",
+        "bbox": [
+            546,
+            898,
+            915,
+            942
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Half of CEOs surveyed believe their job stability depends on getting AI strategy right",
+        "text_level": 2,
+        "bbox": [
+            40,
+            329,
+            410,
+            641
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "50%",
+        "bbox": [
+            672,
+            431,
+            837,
+            570
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis. Question: “Do you believe your job stability depends on getting AI investments and strategy right by 2026?”",
+        "bbox": [
+            40,
+            899,
+            440,
+            942
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "CEOs show stronger conviction in AI than their executive counterparts",
+        "text_level": 2,
+        "bbox": [
+            38,
+            60,
+            891,
+            119
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Expect major role disruption in the organization by 2030 $^{6}$",
+        "bbox": [
+            725,
+            181,
+            918,
+            257
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/03343bdbaa7fb5dccedb0845247607e532feed0cd6eeeab82c9aeaa167f2e783.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: BCG AI Radar 2026 Survey (n = 2,360); BCG analysis.",
+            "$^{1}$ Includes Chief Data Officer, Chief Digital Officer, Chief AI Officer, and Chief Analytics Officer. $^{2}$ Includes Chief Financial Officer, Chief Strategy Officer, and other C-suite roles who report to the CEO. $^{3}$ Includes VP-level roles reporting into CXOs. $^{4}$ “How confident are you in your ability to lead your organization through an AI transformation that will deliver a positive return on investment?”, Replies for “Very confident.” $^{5}$ “Which of the following best reflects how you feel about investing in AI?”, Replies for “Confident AI will pay off.” $^{6}$ “To what extent do you agree with the following: By 2030, more than half the roles in your organization, including the C-suite, will be gone or transformed by AI.”"
+        ],
+        "bbox": [
+            45,
+            178,
+            961,
+            775
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "CEOs in the\nEast are more\nconfident AI\nwill pay off",
+        "bbox": [
+            38,
+            320,
+            255,
+            633
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis.",
+        "bbox": [
+            40,
+            754,
+            250,
+            796
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Question: “Which of the following best reflects how you feel about investing in AI?”, Replies “Confident that AI will pay off.”",
+        "bbox": [
+            40,
+            796,
+            258,
+            858
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "$^{1}$ Greater China includes mainland China, Hong Kong, and Taiwan. $^{2}$ Middle East and Africa includes Morocco, Qatar, Saudi Arabia, South Africa, and the UAE. $^{3}$ Europe includes France, Germany, Italy, and Spain.",
+        "bbox": [
+            40,
+            858,
+            258,
+            944
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Global East\nSHARE OF CEOS CONFIDENT THAT AI WILL PAY OFF",
+        "bbox": [
+            333,
+            68,
+            655,
+            143
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3f051ade33b3d1a651c5694939ec61d3ac0ea4c057fe67506124c4cfcbf8b0ac.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Global West\nSHARE OF CEOS CONFIDENT THAT AI WILL PAY OFF"
+        ],
+        "bbox": [
+            335,
+            173,
+            931,
+            501
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/55c9e7475dc5e533b3c4c56a3f940401cf0a476f6f33f0e6296bc39646dc0349.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            335,
+            697,
+            840,
+            939
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "CEOs in Asia express confidence, while those in the West feel pressure",
+        "text_level": 2,
+        "bbox": [
+            38,
+            60,
+            896,
+            117
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5002a345b02b397b70c56309b1c67b34dc06f88599cf05c1f63028b136c64d92.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis.",
+            "Question: “Which of the following best reflects how you feel about investing in AI?”, Replies “Confident that AI will pay off” and “Pressured to act or risk falling behind.”",
+            "$^{1}$ Europe includes France, Germany, Italy, and Spain. $^{2}$ Middle East and Africa includes Morocco, Qatar, Saudi Arabia, South Africa, and the UAE. $^{3}$ Greater China includes mainland China, Hong Kong, and Taiwan."
+        ],
+        "bbox": [
+            40,
+            165,
+            936,
+            859
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "\\~90%",
+        "bbox": [
+            40,
+            343,
+            332,
+            528
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "of CEOs believe AI agents will enable their organizations to report measurable ROI in 2026",
+        "bbox": [
+            38,
+            566,
+            431,
+            757
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "CEOs have committed >30%",
+        "text_level": 1,
+        "bbox": [
+            545,
+            203,
+            830,
+            525
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "of their organization's AI investment for 2026 to agentic AI",
+        "bbox": [
+            545,
+            568,
+            865,
+            757
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "CEOs are excited about AI agents",
+        "bbox": [
+            40,
+            205,
+            456,
+            267
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis. Question: “To what extent do you agree with the following: AI agents will finally enable my organization to see measurable ROI from AI in 2026.”, Replies for “Strongly agree” and “Somewhat agree”.",
+        "bbox": [
+            40,
+            878,
+            450,
+            942
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "Question: “Approximately what percent of your organization’s AI investment for 2026 is in AI agents?”, average of responses.",
+        "bbox": [
+            545,
+            898,
+            926,
+            942
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Agentic AI is taking on multiple roles, changing how companies organize work",
+        "text_level": 2,
+        "bbox": [
+            40,
+            60,
+            966,
+            119
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "\"To what extent do AI applications occupy the following roles for people in your functional area?\"",
+        "bbox": [
+            40,
+            146,
+            730,
+            184
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "SHARE OF ORGANIZATIONS",
+        "bbox": [
+            40,
+            199,
+            213,
+            232
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8a4d267eb2965a180b4d9685c9047da66e040a3d1fd32d9d4d119d3d7fda86e1.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: BCG-MIT Sloan Management Review report, 2025 (n = 2,102); BCG analysis.",
+            "Note: Respondents who answered “strongly agree” or “agree” to the question."
+        ],
+        "bbox": [
+            40,
+            261,
+            955,
+            858
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "AI systems work\nindependently from\nhumans",
+        "bbox": [
+            365,
+            765,
+            497,
+            872
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "chart",
+        "img_path": "images/73cfc4d390208ecc86f16ae13fe0c490867a08ad63f0584268fbc9b33be06349.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            361,
+            286,
+            960,
+            933
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "As AI systems increasingly gain autonomy, leaders must develop adaptable governance structures",
+        "text_level": 2,
+        "bbox": [
+            363,
+            68,
+            920,
+            176
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "58%",
+        "bbox": [
+            40,
+            156,
+            227,
+            313
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "of leading\norganizations\nexpect a change in\ngovernance and\ndecision rights due\nto AI",
+        "bbox": [
+            37,
+            353,
+            285,
+            730
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "\"To what extent do you agree with the following statements about your organization?\"",
+        "bbox": [
+            360,
+            199,
+            832,
+            275
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "AI systems work\nwith ambiguous\ninputs",
+        "bbox": [
+            843,
+            765,
+            955,
+            874
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "Sources: BCG-MIT Sloan Management Review report, 2025 (n = 2,102); BCG analysis.\nNote: Respondents who answered “a great extent” or “a lot” to the question.",
+        "bbox": [
+            40,
+            856,
+            278,
+            942
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "90% of CEOs believe that by 2028 AI will significantly transform what success looks like",
+        "text_level": 2,
+        "bbox": [
+            38,
+            60,
+            870,
+            171
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Staying competitive",
+        "bbox": [
+            93,
+            262,
+            265,
+            308
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Building competitive advantage",
+        "bbox": [
+            527,
+            262,
+            795,
+            310
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/327d2c869fcee515de6eb7ded117f65cf33c5ec926c8730449dbeb182c12f9dd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            156,
+            450,
+            205,
+            587
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Deploy AI in\neveryday tasks",
+        "bbox": [
+            116,
+            621,
+            242,
+            710
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/38cdfa23d9a18b16f51a1e1735f762a8a6f6485bc0708d855098ebfb6221380f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            461,
+            455,
+            522,
+            589
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Reshape critical\nworkflows and\nfunctions",
+        "bbox": [
+            420,
+            621,
+            565,
+            750
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/ecc5ef8f1ca09f5931e7c6a2fb47d2084d4c136f7f2a7c08bd654b6470edf34f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            791,
+            468,
+            846,
+            573
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Invent new business\nmodels and revenue\nstreams",
+        "bbox": [
+            731,
+            622,
+            908,
+            750
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis.",
+        "bbox": [
+            40,
+            920,
+            300,
+            941
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Takeaway 3",
+        "text_level": 2,
+        "bbox": [
+            40,
+            442,
+            291,
+            533
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Three CEO archetypes emerge with Trailblazer CEOs leading end-to-end AI transformation",
+        "text_level": 2,
+        "bbox": [
+            455,
+            380,
+            898,
+            611
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Three CEO archetypes emerge from the survey data $^{1}$",
+        "text_level": 2,
+        "bbox": [
+            38,
+            60,
+            680,
+            119
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b62b52a603fd4f3233c406a8710a11014b1c92fa3df4fbedc284b85cccbed9d3.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis.",
+            "$^{1}$ K-means clustering analysis reveals the five key variables that differentiate CEOs. These variables are used to define the three CEO archetypes. $^{2}$ Investments in AI as a part of the organization's transformational budget in 2026. $^{3}$ Includes all forms of engagement, not just formal training but also discussions, briefings, demos, and direct exploration of tools."
+        ],
+        "bbox": [
+            40,
+            187,
+            956,
+            792
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Trailblazers emerge, but nearly all CEOs are focused on AI",
+        "text_level": 2,
+        "bbox": [
+            40,
+            60,
+            746,
+            119
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/b335a7ecb80df396a99b97d3acb5908ec5f8a1ec6ef269a431b3d4d96769b94a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            53,
+            149,
+            943,
+            770
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "\\~15% Followers",
+        "text_level": 2,
+        "bbox": [
+            66,
+            471,
+            277,
+            558
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Recognize AI's potential but lack full conviction, making some early, cautious investments",
+        "bbox": [
+            55,
+            613,
+            286,
+            724
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Are excited and confident about AI but only invest when they see evident value and low risk",
+        "bbox": [
+            388,
+            613,
+            605,
+            726
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "\\~15% Trailblazers",
+        "text_level": 2,
+        "bbox": [
+            716,
+            471,
+            942,
+            558
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Drive AI-powered transformation through decisive investment, rapid upskilling, and strong belief in AI's ROI",
+        "bbox": [
+            716,
+            597,
+            940,
+            743
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Increasing levels of confidence, investments, workforce upskilling, pressure to deliver, and excitement/preparedness",
+        "bbox": [
+            58,
+            840,
+            937,
+            883
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis.",
+        "bbox": [
+            40,
+            918,
+            300,
+            942
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/178d221d7414a4f511cca79412a15fb14b15e30a8dda71fa7cc948535ef196a9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            876,
+            468,
+            970,
+            644
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Trailblazer CEOs create a positive flywheel by prioritizing, investing, and upskilling the organization in AI",
+        "bbox": [
+            37,
+            60,
+            863,
+            175
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "1. Make AI and agentic AI a top priority",
+        "text_level": 2,
+        "bbox": [
+            42,
+            288,
+            210,
+            359
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Having “accelerate AI” as their top priority",
+        "bbox": [
+            42,
+            369,
+            178,
+            439
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "5. Track measurable ROI from AI",
+        "text_level": 2,
+        "bbox": [
+            42,
+            621,
+            280,
+            657
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Feeling “very confident” their AI strategy will pay off",
+        "bbox": [
+            42,
+            671,
+            206,
+            740
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "2. Deepen AI literacy",
+        "text_level": 2,
+        "bbox": [
+            685,
+            211,
+            840,
+            250
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Spending more than six hours a week expanding their expertise on AI",
+        "bbox": [
+            685,
+            259,
+            831,
+            361
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/588720dbc95b15a6aaf54f4ed97669851613af9ae599155a5105f685e140d5a5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            876,
+            210,
+            970,
+            380
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "3. Invest capital at scale",
+        "text_level": 2,
+        "bbox": [
+            685,
+            469,
+            861,
+            504
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Investing more than \\$50M in AI in 2026",
+        "bbox": [
+            686,
+            514,
+            806,
+            579
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "4. Upskill their organization",
+        "text_level": 2,
+        "bbox": [
+            685,
+            726,
+            885,
+            762
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Upskilling more than half of their workforce",
+        "bbox": [
+            685,
+            775,
+            838,
+            843
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/c6045350a030c48bf0d37813f8e520c17f98161b89276f7a62bb01ff109a6923.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            876,
+            727,
+            968,
+            901
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis.",
+        "bbox": [
+            40,
+            918,
+            300,
+            942
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "\"End-to-end AI transformation is one of our greatest opportunities to succeed with AI agents in the next 12 months\"",
+        "text_level": 2,
+        "bbox": [
+            356,
+            60,
+            953,
+            146
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "SHARE OF RESPONSES FROM CEOS THAT AGREE",
+        "bbox": [
+            365,
+            205,
+            665,
+            240
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Trailblazer CEOs are twice as likely to apply agentic AI end-to-end",
+        "text_level": 2,
+        "bbox": [
+            40,
+            353,
+            276,
+            603
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "image",
+        "img_path": "images/7f8a9db6b7e836505635309f57ffb633428241f9945f291a75f858fa60d3fec6.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Followers",
+            "Pragmatists",
+            "Trailblazers"
+        ],
+        "content": "",
+        "bbox": [
+            365,
+            262,
+            961,
+            864
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "1. MAKE AI AND AGENTIC AI A TOP PRIORITY",
+        "bbox": [
+            38,
+            50,
+            283,
+            143
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis.",
+        "bbox": [
+            41,
+            920,
+            300,
+            941
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Trailblazer CEOs\nsee value in AI\nagents and invest\nsignificantly",
+        "bbox": [
+            40,
+            339,
+            267,
+            593
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "image",
+        "img_path": "images/52b9720e98a1291e1b132cd78d46d935e11dd9aeead27677098d28c0f1b5108e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            438,
+            116,
+            628,
+            485
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Trailblazers",
+        "bbox": [
+            488,
+            288,
+            578,
+            324
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "image",
+        "img_path": "images/4c3410c286aab68aed4c3a64a0afa2776fa77bcba4e3b0ae4b8faee2ab2b1534.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Pragmatists"
+        ],
+        "content": "",
+        "bbox": [
+            536,
+            606,
+            626,
+            775
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "\\~60%",
+        "bbox": [
+            650,
+            192,
+            890,
+            343
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "of their AI budget is currently being spent on agentic AI",
+        "bbox": [
+            660,
+            364,
+            882,
+            452
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "image",
+        "img_path": "images/236177f85bdd7802389cd25e5a59248f4ff1cd94379a196b561c486b244d0a12.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            650,
+            512,
+            690,
+            592
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "image",
+        "img_path": "images/2a3c99807504f189ad4b4bb75040d206599ae3ec09f78ec341ed67cc6a2f6c93.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Followers"
+        ],
+        "content": "",
+        "bbox": [
+            720,
+            606,
+            810,
+            775
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "",
+        "bbox": [
+            40,
+            49,
+            88,
+            141
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "2. INVEST CAPITAL AT SCALE",
+        "bbox": [
+            96,
+            84,
+            285,
+            114
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis. Question: “Approximately what percent of your organization’s AI investment for 2026 is in AI agents?”",
+        "bbox": [
+            40,
+            878,
+            300,
+            942
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "% of AI spending on agentic AI",
+        "bbox": [
+            605,
+            893,
+            761,
+            923
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "image",
+        "img_path": "images/e9858e60542f3eb4082540758ae408d0d70d902cded9a4a4f0ac79d71636bebf.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            40,
+            63,
+            90,
+            152
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Trailblazers invest twice as much in upskilling their workforce",
+        "text_level": 2,
+        "bbox": [
+            96,
+            101,
+            847,
+            160
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/33746d6ae1735f70feb880fb9462d21c6461e217018efbaad49f1e17e99c5e37.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            42,
+            256,
+            172,
+            501
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "\\~60%",
+        "bbox": [
+            195,
+            265,
+            340,
+            361
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "of their organization's AI budget is allocated to upskilling and retraining current workforce on $\\mathsf{AI}^1$",
+        "bbox": [
+            193,
+            378,
+            435,
+            493
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "\\~70%",
+        "bbox": [
+            711,
+            265,
+            855,
+            361
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "of their workforce has been upskilled/reskilled on AI $^{2}$",
+        "bbox": [
+            711,
+            380,
+            893,
+            455
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "VS",
+        "bbox": [
+            227,
+            550,
+            246,
+            576
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "27%",
+        "bbox": [
+            130,
+            692,
+            165,
+            722
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/39563ae080d81301794ffa9f5305006f0ef498dce02c67551df23080fcb7180a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            107,
+            630,
+            188,
+            781
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Pragmatists",
+        "bbox": [
+            105,
+            791,
+            190,
+            828
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/6835a7885e26ef29a232ecb3b74cde7fc00b1330019b694f794caec4904b76c8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            285,
+            630,
+            365,
+            781
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "24%",
+        "bbox": [
+            310,
+            691,
+            343,
+            722
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Followers",
+        "bbox": [
+            293,
+            791,
+            360,
+            824
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/40730ddc1a851e40a5dae8c5a011157ec893afa3947bb014f5d5e85fb4aa3a45.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            602,
+            630,
+            680,
+            780
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "41%",
+        "bbox": [
+            625,
+            692,
+            658,
+            722
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Pragmatists",
+        "bbox": [
+            600,
+            791,
+            683,
+            826
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/8c8e61b60901114c010f2d5e0227c60842f995040a60a8f0cf2eea4945ddceef.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            781,
+            632,
+            855,
+            780
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "35%",
+        "bbox": [
+            803,
+            692,
+            837,
+            722
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Followers",
+        "bbox": [
+            788,
+            791,
+            855,
+            824
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Sources: BCG AI Radar 2026 Survey (n = 640 for CEOs); BCG analysis.",
+        "bbox": [
+            40,
+            898,
+            300,
+            920
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "$^{1}$ “Approximately what percent of your overall AI budget is being allocated to upskill and retrain your current workforce on AI?” $^{2}$ “What share of your workforce has been upskilled/reskilled for AI?”",
+        "bbox": [
+            38,
+            918,
+            752,
+            942
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "4. UPSKILL THEIR ORGANIZATION",
+        "bbox": [
+            97,
+            66,
+            317,
+            95
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "VS",
+        "bbox": [
+            737,
+            550,
+            756,
+            576
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Trailblazers see significant impact and returns from their investments in AI",
+        "text_level": 2,
+        "bbox": [
+            40,
+            63,
+            951,
+            119
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "image",
+        "img_path": "images/1c6168caf704de1ab57129ccb1d27ccec7c5ff8c17a64916fd9c586493657bb7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            73,
+            243,
+            146,
+            377
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "image",
+        "img_path": "images/d2669de467b3ea0cf0e85832f425b150a97eb47f62d1f7e3f480c79af2223d3e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            552,
+            235,
+            597,
+            378
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Foxconn",
+        "text_level": 2,
+        "bbox": [
+            77,
+            472,
+            185,
+            520
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Over \\$400M targeted savings identified from a scalable AI operating model and AI platform deployed across more than 200 factories",
+        "bbox": [
+            75,
+            546,
+            418,
+            722
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Reckitt",
+        "text_level": 2,
+        "bbox": [
+            553,
+            468,
+            646,
+            520
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Quality output doubled through an end-to-end AI-driven workflow reinvention in marketing, cutting routine activities by up to 90%",
+        "bbox": [
+            550,
+            546,
+            885,
+            724
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG client experience.",
+        "bbox": [
+            40,
+            918,
+            160,
+            941
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "CEOs must act decisively to execute their AI agenda",
+        "text_level": 2,
+        "bbox": [
+            40,
+            63,
+            670,
+            119
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "1. Make AI your key priority\nPosition the organization to be the disruptor, not the disrupted.",
+        "bbox": [
+            41,
+            272,
+            271,
+            396
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "5. Track measurable ROI from AI\nTrack AI's impact to drive sustainable ROI over time.",
+        "bbox": [
+            41,
+            606,
+            280,
+            730
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "2. Deepen AI literacy\nExpand individual AI fluency to effectively lead transformations.",
+        "bbox": [
+            701,
+            195,
+            931,
+            318
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "3. Commit investments at scale\nInvest decisively across end-to-end\nbusiness functions.",
+        "bbox": [
+            701,
+            452,
+            930,
+            570
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "4. Upskill the organization\nUpskill the workforce to optimize productivity, creativity, and judgment.",
+        "bbox": [
+            701,
+            710,
+            950,
+            837
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis.",
+        "bbox": [
+            40,
+            920,
+            126,
+            941
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "In summary",
+        "text_level": 2,
+        "bbox": [
+            40,
+            71,
+            191,
+            128
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Corporate investment in AI is here to stay...",
+        "bbox": [
+            40,
+            168,
+            455,
+            218
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "94%",
+        "bbox": [
+            55,
+            250,
+            162,
+            339
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "will continue to invest\neven if it does not pay off\nin 2026",
+        "bbox": [
+            55,
+            355,
+            271,
+            480
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "1.7%",
+        "bbox": [
+            370,
+            251,
+            487,
+            340
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "of an organization's revenue is dedicated to AI investment",
+        "bbox": [
+            368,
+            356,
+            567,
+            480
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "2x",
+        "bbox": [
+            685,
+            251,
+            750,
+            337
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "increase in projected AI investments from 2025",
+        "bbox": [
+            683,
+            355,
+            861,
+            477
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "AI transformation is moving from a CIO-led initiative to a CEO-led strategy...",
+        "bbox": [
+            38,
+            544,
+            762,
+            595
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "72%",
+        "bbox": [
+            57,
+            627,
+            161,
+            716
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "of CEOs say they are the main decision maker on AI, 2x last year",
+        "bbox": [
+            55,
+            732,
+            290,
+            856
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "50%",
+        "bbox": [
+            370,
+            625,
+            475,
+            714
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "of CEOs believe their job depends on getting AI right",
+        "bbox": [
+            367,
+            730,
+            564,
+            856
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "90%",
+        "bbox": [
+            683,
+            625,
+            790,
+            714
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "of CEOs believe AI agents will enable their companies to see measurable ROI this year",
+        "bbox": [
+            683,
+            730,
+            937,
+            856
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "Source: BCG analysis.",
+        "bbox": [
+            40,
+            920,
+            126,
+            941
+        ],
+        "page_idx": 28
+    }
+]

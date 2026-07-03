@@ -1,0 +1,3530 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "type": "image",
+                    "bbox": [
+                        0,
+                        0,
+                        594,
+                        333
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                0,
+                                0,
+                                594,
+                                333
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        0,
+                                        0,
+                                        594,
+                                        333
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                0,
+                                                0,
+                                                594,
+                                                333
+                                            ],
+                                            "type": "image",
+                                            "image_path": "ce0206988f53f78c22179da766225df5542a4e0965f95daf32c043cd4d2eca6e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        30,
+                        362,
+                        155,
+                        377
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                30,
+                                362,
+                                155,
+                                377
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        30,
+                                        362,
+                                        155,
+                                        377
+                                    ],
+                                    "type": "text",
+                                    "content": "BUSINESS TRANSFORMATION"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        25,
+                        401,
+                        440,
+                        528
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                25,
+                                401,
+                                440,
+                                528
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        25,
+                                        401,
+                                        440,
+                                        528
+                                    ],
+                                    "type": "text",
+                                    "content": "Five Barriers CEOs Must Overcome for AI Impact"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        26,
+                        552,
+                        135,
+                        568
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                552,
+                                135,
+                                568
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        552,
+                                        135,
+                                        568
+                                    ],
+                                    "type": "text",
+                                    "content": "By Matthieu Berthion"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        588,
+                        225,
+                        603
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                588,
+                                225,
+                                603
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        588,
+                                        225,
+                                        603
+                                    ],
+                                    "type": "text",
+                                    "content": "ARTICLE MARCH 26, 2026 8 MIN READ"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        654,
+                        567,
+                        721
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                654,
+                                567,
+                                721
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        654,
+                                        567,
+                                        721
+                                    ],
+                                    "type": "text",
+                                    "content": "AI's capabilities are inestimable, its transformative potential seemingly limitless. Unfortunately, few CEOs are getting AI transformation right. Recent BCG research shows that only "
+                                },
+                                {
+                                    "bbox": [
+                                        24,
+                                        654,
+                                        567,
+                                        721
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "5\\%"
+                                },
+                                {
+                                    "bbox": [
+                                        24,
+                                        654,
+                                        567,
+                                        721
+                                    ],
+                                    "type": "text",
+                                    "content": " of companies are generating sustained P&L impact while roughly "
+                                },
+                                {
+                                    "bbox": [
+                                        24,
+                                        654,
+                                        567,
+                                        721
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "60\\%"
+                                },
+                                {
+                                    "bbox": [
+                                        24,
+                                        654,
+                                        567,
+                                        721
+                                    ],
+                                    "type": "text",
+                                    "content": " have seen little or no material benefits."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        734,
+                        543,
+                        768
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                734,
+                                543,
+                                768
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        734,
+                                        543,
+                                        768
+                                    ],
+                                    "type": "text",
+                                    "content": "AI initiatives fail not because of technology but because leaders apply weak transformation discipline. At the same time, AI transformations differ from other transformations in two ways."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        26,
+                        814,
+                        148,
+                        828
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                814,
+                                148,
+                                828
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        814,
+                                        148,
+                                        828
+                                    ],
+                                    "type": "text",
+                                    "content": "©2026 Boston Consulting Group"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        560,
+                        816,
+                        567,
+                        827
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                560,
+                                816,
+                                567,
+                                827
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        560,
+                                        816,
+                                        567,
+                                        827
+                                    ],
+                                    "type": "text",
+                                    "content": "1"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                }
+            ],
+            "page_size": [
+                594,
+                841
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "type": "image",
+                    "bbox": [
+                        0,
+                        0,
+                        594,
+                        333
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                0,
+                                0,
+                                594,
+                                333
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        0,
+                                        0,
+                                        594,
+                                        333
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                0,
+                                                0,
+                                                594,
+                                                333
+                                            ],
+                                            "type": "image",
+                                            "image_path": "ce0206988f53f78c22179da766225df5542a4e0965f95daf32c043cd4d2eca6e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        30,
+                        362,
+                        155,
+                        377
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                30,
+                                362,
+                                155,
+                                377
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        30,
+                                        362,
+                                        155,
+                                        377
+                                    ],
+                                    "type": "text",
+                                    "content": "BUSINESS TRANSFORMATION"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        25,
+                        401,
+                        440,
+                        528
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                25,
+                                401,
+                                440,
+                                528
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        25,
+                                        401,
+                                        440,
+                                        528
+                                    ],
+                                    "type": "text",
+                                    "content": "Five Barriers CEOs Must Overcome for AI Impact"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        26,
+                        552,
+                        135,
+                        568
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                552,
+                                135,
+                                568
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        552,
+                                        135,
+                                        568
+                                    ],
+                                    "type": "text",
+                                    "content": "By Matthieu Berthion"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        588,
+                        225,
+                        603
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                588,
+                                225,
+                                603
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        588,
+                                        225,
+                                        603
+                                    ],
+                                    "type": "text",
+                                    "content": "ARTICLE MARCH 26, 2026 8 MIN READ"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        654,
+                        567,
+                        721
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                654,
+                                567,
+                                721
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        654,
+                                        567,
+                                        721
+                                    ],
+                                    "type": "text",
+                                    "content": "AI's capabilities are inestimable, its transformative potential seemingly limitless. Unfortunately, few CEOs are getting AI transformation right. Recent BCG research shows that only "
+                                },
+                                {
+                                    "bbox": [
+                                        24,
+                                        654,
+                                        567,
+                                        721
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "5\\%"
+                                },
+                                {
+                                    "bbox": [
+                                        24,
+                                        654,
+                                        567,
+                                        721
+                                    ],
+                                    "type": "text",
+                                    "content": " of companies are generating sustained P&L impact while roughly "
+                                },
+                                {
+                                    "bbox": [
+                                        24,
+                                        654,
+                                        567,
+                                        721
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "60\\%"
+                                },
+                                {
+                                    "bbox": [
+                                        24,
+                                        654,
+                                        567,
+                                        721
+                                    ],
+                                    "type": "text",
+                                    "content": " have seen little or no material benefits."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        734,
+                        543,
+                        768
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                734,
+                                543,
+                                768
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        734,
+                                        543,
+                                        768
+                                    ],
+                                    "type": "text",
+                                    "content": "AI initiatives fail not because of technology but because leaders apply weak transformation discipline. At the same time, AI transformations differ from other transformations in two ways."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        24,
+                        57,
+                        533,
+                        106
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                57,
+                                533,
+                                106
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        57,
+                                        533,
+                                        106
+                                    ],
+                                    "type": "text",
+                                    "content": "- AI delivers visible results quickly, creating the impression of fast progress. However, the deeper work—rewiring decision rights, reshaping how expertise is applied, and realigning incentives across the value chain—is obscure, more difficult, and often missed."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        118,
+                        520,
+                        152
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                118,
+                                520,
+                                152
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        118,
+                                        520,
+                                        152
+                                    ],
+                                    "type": "text",
+                                    "content": "- Much of AI's impact is indirect. It improves judgment, productivity, and insight, but the financial effects are second-order and fragile unless deliberately captured."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        176,
+                        538,
+                        211
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                176,
+                                538,
+                                211
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        176,
+                                        538,
+                                        211
+                                    ],
+                                    "type": "text",
+                                    "content": "This combination of early visibility, systemic disruption, and indirect value makes AI uniquely prone to underperformance."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        222,
+                        534,
+                        273
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                222,
+                                534,
+                                273
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        222,
+                                        534,
+                                        273
+                                    ],
+                                    "type": "text",
+                                    "content": "CEOs who stand to turn AI into financial value are those who apply proven, if unglamorous, transformation discipline. They can start with steering their organizations past five common barriers to AI success."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        332,
+                        488,
+                        398
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                332,
+                                488,
+                                398
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        332,
+                                        488,
+                                        398
+                                    ],
+                                    "type": "text",
+                                    "content": "Barrier #1: Piecemeal Poking at the Problem"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        24,
+                        423,
+                        546,
+                        507
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                423,
+                                546,
+                                507
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        423,
+                                        546,
+                                        507
+                                    ],
+                                    "type": "text",
+                                    "content": "AI is nearly everywhere now, with 90% of companies experimenting with it at a minimum, according to various reports. The problem is that companies stay too long in the experimental stage, taking baby steps with limited productivity gains. While many are intimidated by AI because of cost, complexity, and potential risk, fragmented efforts lack the scope and level of integration to provide lasting P&L impact."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        23,
+                        518,
+                        561,
+                        652
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                23,
+                                518,
+                                561,
+                                652
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        23,
+                                        518,
+                                        561,
+                                        652
+                                    ],
+                                    "type": "text",
+                                    "content": "The companies that are achieving value are the ones that embrace the need for bold reinvention. According to BCG estimates, roughly 70% of AI's value potential is concentrated in core business process workflows, where decisions, costs, and outcomes intersect. One way around the small-scope barrier is for the CEO to drive the organization's AI efforts, seeking deliberate and deep ways to reinvent areas of the business. CEOs can also use AI agents to help move beyond automation of isolated steps and instead rebuild value chains around business outcomes, from the ground up, allowing systems to adapt dynamically to achieve business goals. Without this AI-first orientation, AI remains incremental rather than transformative."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        709,
+                        503,
+                        776
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                709,
+                                503,
+                                776
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        709,
+                                        503,
+                                        776
+                                    ],
+                                    "type": "text",
+                                    "content": "Barrier #2: Underfunding Means Underachievement"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "level": 1
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        26,
+                        815,
+                        149,
+                        828
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                815,
+                                149,
+                                828
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        815,
+                                        149,
+                                        828
+                                    ],
+                                    "type": "text",
+                                    "content": "©2026 Boston Consulting Group"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        559,
+                        816,
+                        567,
+                        827
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                559,
+                                816,
+                                567,
+                                827
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        559,
+                                        816,
+                                        567,
+                                        827
+                                    ],
+                                    "type": "text",
+                                    "content": "2"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9
+                }
+            ],
+            "page_size": [
+                594,
+                841
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        24,
+                        57,
+                        533,
+                        106
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                57,
+                                533,
+                                106
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        57,
+                                        533,
+                                        106
+                                    ],
+                                    "type": "text",
+                                    "content": "- AI delivers visible results quickly, creating the impression of fast progress. However, the deeper work—rewiring decision rights, reshaping how expertise is applied, and realigning incentives across the value chain—is obscure, more difficult, and often missed."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        118,
+                        520,
+                        152
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                118,
+                                520,
+                                152
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        118,
+                                        520,
+                                        152
+                                    ],
+                                    "type": "text",
+                                    "content": "- Much of AI's impact is indirect. It improves judgment, productivity, and insight, but the financial effects are second-order and fragile unless deliberately captured."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        176,
+                        538,
+                        211
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                176,
+                                538,
+                                211
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        176,
+                                        538,
+                                        211
+                                    ],
+                                    "type": "text",
+                                    "content": "This combination of early visibility, systemic disruption, and indirect value makes AI uniquely prone to underperformance."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        222,
+                        534,
+                        273
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                222,
+                                534,
+                                273
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        222,
+                                        534,
+                                        273
+                                    ],
+                                    "type": "text",
+                                    "content": "CEOs who stand to turn AI into financial value are those who apply proven, if unglamorous, transformation discipline. They can start with steering their organizations past five common barriers to AI success."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        332,
+                        488,
+                        398
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                332,
+                                488,
+                                398
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        332,
+                                        488,
+                                        398
+                                    ],
+                                    "type": "text",
+                                    "content": "Barrier #1: Piecemeal Poking at the Problem"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        24,
+                        423,
+                        546,
+                        507
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                423,
+                                546,
+                                507
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        423,
+                                        546,
+                                        507
+                                    ],
+                                    "type": "text",
+                                    "content": "AI is nearly everywhere now, with 90% of companies experimenting with it at a minimum, according to various reports. The problem is that companies stay too long in the experimental stage, taking baby steps with limited productivity gains. While many are intimidated by AI because of cost, complexity, and potential risk, fragmented efforts lack the scope and level of integration to provide lasting P&L impact."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        23,
+                        518,
+                        561,
+                        652
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                23,
+                                518,
+                                561,
+                                652
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        23,
+                                        518,
+                                        561,
+                                        652
+                                    ],
+                                    "type": "text",
+                                    "content": "The companies that are achieving value are the ones that embrace the need for bold reinvention. According to BCG estimates, roughly 70% of AI's value potential is concentrated in core business process workflows, where decisions, costs, and outcomes intersect. One way around the small-scope barrier is for the CEO to drive the organization's AI efforts, seeking deliberate and deep ways to reinvent areas of the business. CEOs can also use AI agents to help move beyond automation of isolated steps and instead rebuild value chains around business outcomes, from the ground up, allowing systems to adapt dynamically to achieve business goals. Without this AI-first orientation, AI remains incremental rather than transformative."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        709,
+                        503,
+                        776
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                709,
+                                503,
+                                776
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        709,
+                                        503,
+                                        776
+                                    ],
+                                    "type": "text",
+                                    "content": "Barrier #2: Underfunding Means Underachievement"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "level": 1
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        24,
+                        57,
+                        564,
+                        123
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                57,
+                                564,
+                                123
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        57,
+                                        564,
+                                        123
+                                    ],
+                                    "type": "text",
+                                    "content": "Corporations expect to nearly double AI spending in 2026, yet many CEOs underestimate the scope of the investment required. AI's impact is cross-functional by nature. Its reach extends well beyond the technology function to data foundations, integration, operating model changes, and workforce enablement."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        133,
+                        561,
+                        253
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                133,
+                                561,
+                                253
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        133,
+                                        561,
+                                        253
+                                    ],
+                                    "type": "text",
+                                    "content": "The illusion of early success often causes leaders to limit funding before the transformation is complete. Getting from 70% performance to 95%—the last mile, where impact becomes structural—is critical. That requires a disproportionate effort and investment to strengthen data foundations, industrialize processes, resolve cross-functional interdependencies, and embed responsible AI and risk controls. The impressive results obscure the scale of the real investment required. The result is a broken cash flow curve that deprives the effort of financial fuel before impact is realized."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        263,
+                        535,
+                        315
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                263,
+                                535,
+                                315
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        263,
+                                        535,
+                                        315
+                                    ],
+                                    "type": "text",
+                                    "content": "CEOs can help overcome this by enabling financial support for the profound reinvention of workflows that is needed. It’s a commitment that requires a greater level of effort, time, hard trade-offs, and investment than many leaders anticipate."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        416,
+                        403,
+                        484
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                416,
+                                403,
+                                484
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        416,
+                                        403,
+                                        484
+                                    ],
+                                    "type": "text",
+                                    "content": "Barrier #3: No Value-First Blueprint"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        24,
+                        505,
+                        543,
+                        591
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                505,
+                                543,
+                                591
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        505,
+                                        543,
+                                        591
+                                    ],
+                                    "type": "text",
+                                    "content": "AI initiatives often fall short because leaders do not define, from the outset, how value will be created. Instead, they focus on visible productivity improvements within functional or process silos. While these gains may be real, they are not the same as revenue growth, structural cost reduction, margin expansion, or balance sheet impact. Without a clear economic blueprint, operational improvements remain disconnected from financial performance."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        602,
+                        567,
+                        652
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                602,
+                                567,
+                                652
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        602,
+                                        567,
+                                        652
+                                    ],
+                                    "type": "text",
+                                    "content": "In practice, when no explicit value logic has been defined, 10%–20% of anticipated value typically erodes before reaching the P&L. The issue is not that AI lacks potential, but that the pathway from local efficiency to enterprise-level impact has not been designed."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        664,
+                        567,
+                        748
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                664,
+                                567,
+                                748
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        664,
+                                        567,
+                                        748
+                                    ],
+                                    "type": "text",
+                                    "content": "CEOs must articulate a value-first blueprint before developing any AI initiative. This means identifying the precise P&L and balance sheet lines that will be impacted, quantifying targets, and assigning clear ownership for each source of value. To achieve expected financial benefits, leaders must map the steps and interdependencies—including adjacent functions and processes—from each impacted workflow to the P&L lines where value is realized."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        26,
+                        815,
+                        148,
+                        828
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                815,
+                                148,
+                                828
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        815,
+                                        148,
+                                        828
+                                    ],
+                                    "type": "text",
+                                    "content": "©2026 Boston Consulting Group"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        560,
+                        816,
+                        567,
+                        827
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                560,
+                                816,
+                                567,
+                                827
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        560,
+                                        816,
+                                        567,
+                                        827
+                                    ],
+                                    "type": "text",
+                                    "content": "3"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                }
+            ],
+            "page_size": [
+                594,
+                841
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        24,
+                        57,
+                        564,
+                        123
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                57,
+                                564,
+                                123
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        57,
+                                        564,
+                                        123
+                                    ],
+                                    "type": "text",
+                                    "content": "Corporations expect to nearly double AI spending in 2026, yet many CEOs underestimate the scope of the investment required. AI's impact is cross-functional by nature. Its reach extends well beyond the technology function to data foundations, integration, operating model changes, and workforce enablement."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        133,
+                        561,
+                        253
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                133,
+                                561,
+                                253
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        133,
+                                        561,
+                                        253
+                                    ],
+                                    "type": "text",
+                                    "content": "The illusion of early success often causes leaders to limit funding before the transformation is complete. Getting from 70% performance to 95%—the last mile, where impact becomes structural—is critical. That requires a disproportionate effort and investment to strengthen data foundations, industrialize processes, resolve cross-functional interdependencies, and embed responsible AI and risk controls. The impressive results obscure the scale of the real investment required. The result is a broken cash flow curve that deprives the effort of financial fuel before impact is realized."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        263,
+                        535,
+                        315
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                263,
+                                535,
+                                315
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        263,
+                                        535,
+                                        315
+                                    ],
+                                    "type": "text",
+                                    "content": "CEOs can help overcome this by enabling financial support for the profound reinvention of workflows that is needed. It’s a commitment that requires a greater level of effort, time, hard trade-offs, and investment than many leaders anticipate."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        416,
+                        403,
+                        484
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                416,
+                                403,
+                                484
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        416,
+                                        403,
+                                        484
+                                    ],
+                                    "type": "text",
+                                    "content": "Barrier #3: No Value-First Blueprint"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        24,
+                        505,
+                        543,
+                        591
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                505,
+                                543,
+                                591
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        505,
+                                        543,
+                                        591
+                                    ],
+                                    "type": "text",
+                                    "content": "AI initiatives often fall short because leaders do not define, from the outset, how value will be created. Instead, they focus on visible productivity improvements within functional or process silos. While these gains may be real, they are not the same as revenue growth, structural cost reduction, margin expansion, or balance sheet impact. Without a clear economic blueprint, operational improvements remain disconnected from financial performance."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        602,
+                        567,
+                        652
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                602,
+                                567,
+                                652
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        602,
+                                        567,
+                                        652
+                                    ],
+                                    "type": "text",
+                                    "content": "In practice, when no explicit value logic has been defined, 10%–20% of anticipated value typically erodes before reaching the P&L. The issue is not that AI lacks potential, but that the pathway from local efficiency to enterprise-level impact has not been designed."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        664,
+                        567,
+                        748
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                664,
+                                567,
+                                748
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        664,
+                                        567,
+                                        748
+                                    ],
+                                    "type": "text",
+                                    "content": "CEOs must articulate a value-first blueprint before developing any AI initiative. This means identifying the precise P&L and balance sheet lines that will be impacted, quantifying targets, and assigning clear ownership for each source of value. To achieve expected financial benefits, leaders must map the steps and interdependencies—including adjacent functions and processes—from each impacted workflow to the P&L lines where value is realized."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        24,
+                        57,
+                        560,
+                        124
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                57,
+                                560,
+                                124
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        57,
+                                        560,
+                                        124
+                                    ],
+                                    "type": "text",
+                                    "content": "This is a matter of financial architecture, not technology deployment. The CFO, the finance function, and the transformation office should play a central role in defining the value logic and embedding economic rigor from day one. AI does not create value by default. It creates potential. Converting that potential into measurable financial performance requires deliberate design."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        181,
+                        504,
+                        248
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                181,
+                                504,
+                                248
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        181,
+                                        504,
+                                        248
+                                    ],
+                                    "type": "text",
+                                    "content": "Barrier #4: Tracking Motion, Not Results"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        24,
+                        272,
+                        564,
+                        340
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                272,
+                                564,
+                                340
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        272,
+                                        564,
+                                        340
+                                    ],
+                                    "type": "text",
+                                    "content": "Even when a value-first blueprint exists, many leaders fail to install the mechanisms required to deliver and protect that value over time. Initial ambitions are clear, but the execution discipline is not. Without rigorous tracking, forecasting, and accountability embedded in performance management, value erodes quietly."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        23,
+                        352,
+                        559,
+                        419
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                23,
+                                352,
+                                559,
+                                419
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        23,
+                                        352,
+                                        559,
+                                        419
+                                    ],
+                                    "type": "text",
+                                    "content": "The most common failure is an overreliance on operational indicators. Tracking dashboards fill with impressive activity metrics, productivity measures, and tool adoption rates. Yet these do not automatically translate into economic outcomes. When KPIs are not explicitly linked to P&L impact, leaders gain visibility into motion rather than performance."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        430,
+                        542,
+                        497
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                430,
+                                542,
+                                497
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        430,
+                                        542,
+                                        497
+                                    ],
+                                    "type": "text",
+                                    "content": "The consequences are predictable. Baselines remain unclear. Metrics shift over time. One-off improvements are mistaken for structural gains. Without forward-looking forecasts tied to financial lines, management cannot distinguish temporary uplift from sustainable impact. Confidence declines, and course correction becomes reactive rather than deliberate."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        23,
+                        510,
+                        561,
+                        644
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                23,
+                                510,
+                                561,
+                                644
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        23,
+                                        510,
+                                        561,
+                                        644
+                                    ],
+                                    "type": "text",
+                                    "content": "A value protection system requires more than reporting. It requires governance. This governance must sit within a formal, multidisciplinary transformation office—bringing together finance, technology, operations, HR, and risk—to coordinate execution, resolve trade-offs, and maintain accountability across functions. P&L-connected KPIs must be defined and reviewed at the appropriate level of leadership. Clear accountability for each value lever must be embedded in incentives and operating reviews. Stage gates should act as decision checkpoints to enforce the quality of business cases and operational plans and confirm that operational improvements are converting into financial results before additional capital is deployed."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        654,
+                        553,
+                        705
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                654,
+                                553,
+                                705
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        654,
+                                        553,
+                                        705
+                                    ],
+                                    "type": "text",
+                                    "content": "AI transformations are no different from other enterprise transformations in this respect. Value must be protected during execution. Without systematic tracking, disciplined governance, and economic accountability, even well-designed initiatives drift."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        26,
+                        815,
+                        148,
+                        828
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                815,
+                                148,
+                                828
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        815,
+                                        148,
+                                        828
+                                    ],
+                                    "type": "text",
+                                    "content": "©2026 Boston Consulting Group"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        560,
+                        816,
+                        567,
+                        826
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                560,
+                                816,
+                                567,
+                                826
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        560,
+                                        816,
+                                        567,
+                                        826
+                                    ],
+                                    "type": "text",
+                                    "content": "4"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                }
+            ],
+            "page_size": [
+                594,
+                841
+            ],
+            "page_idx": 3,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        24,
+                        57,
+                        560,
+                        124
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                57,
+                                560,
+                                124
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        57,
+                                        560,
+                                        124
+                                    ],
+                                    "type": "text",
+                                    "content": "This is a matter of financial architecture, not technology deployment. The CFO, the finance function, and the transformation office should play a central role in defining the value logic and embedding economic rigor from day one. AI does not create value by default. It creates potential. Converting that potential into measurable financial performance requires deliberate design."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        181,
+                        504,
+                        248
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                181,
+                                504,
+                                248
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        181,
+                                        504,
+                                        248
+                                    ],
+                                    "type": "text",
+                                    "content": "Barrier #4: Tracking Motion, Not Results"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        24,
+                        272,
+                        564,
+                        340
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                272,
+                                564,
+                                340
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        272,
+                                        564,
+                                        340
+                                    ],
+                                    "type": "text",
+                                    "content": "Even when a value-first blueprint exists, many leaders fail to install the mechanisms required to deliver and protect that value over time. Initial ambitions are clear, but the execution discipline is not. Without rigorous tracking, forecasting, and accountability embedded in performance management, value erodes quietly."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        23,
+                        352,
+                        559,
+                        419
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                23,
+                                352,
+                                559,
+                                419
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        23,
+                                        352,
+                                        559,
+                                        419
+                                    ],
+                                    "type": "text",
+                                    "content": "The most common failure is an overreliance on operational indicators. Tracking dashboards fill with impressive activity metrics, productivity measures, and tool adoption rates. Yet these do not automatically translate into economic outcomes. When KPIs are not explicitly linked to P&L impact, leaders gain visibility into motion rather than performance."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        430,
+                        542,
+                        497
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                430,
+                                542,
+                                497
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        430,
+                                        542,
+                                        497
+                                    ],
+                                    "type": "text",
+                                    "content": "The consequences are predictable. Baselines remain unclear. Metrics shift over time. One-off improvements are mistaken for structural gains. Without forward-looking forecasts tied to financial lines, management cannot distinguish temporary uplift from sustainable impact. Confidence declines, and course correction becomes reactive rather than deliberate."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        23,
+                        510,
+                        561,
+                        644
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                23,
+                                510,
+                                561,
+                                644
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        23,
+                                        510,
+                                        561,
+                                        644
+                                    ],
+                                    "type": "text",
+                                    "content": "A value protection system requires more than reporting. It requires governance. This governance must sit within a formal, multidisciplinary transformation office—bringing together finance, technology, operations, HR, and risk—to coordinate execution, resolve trade-offs, and maintain accountability across functions. P&L-connected KPIs must be defined and reviewed at the appropriate level of leadership. Clear accountability for each value lever must be embedded in incentives and operating reviews. Stage gates should act as decision checkpoints to enforce the quality of business cases and operational plans and confirm that operational improvements are converting into financial results before additional capital is deployed."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        654,
+                        553,
+                        705
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                654,
+                                553,
+                                705
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        654,
+                                        553,
+                                        705
+                                    ],
+                                    "type": "text",
+                                    "content": "AI transformations are no different from other enterprise transformations in this respect. Value must be protected during execution. Without systematic tracking, disciplined governance, and economic accountability, even well-designed initiatives drift."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        24,
+                        57,
+                        506,
+                        125
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                57,
+                                506,
+                                125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        57,
+                                        506,
+                                        125
+                                    ],
+                                    "type": "text",
+                                    "content": "Barrier #5: Not Focusing on How People Use the Technology"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        24,
+                        146,
+                        565,
+                        213
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                146,
+                                565,
+                                213
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        146,
+                                        565,
+                                        213
+                                    ],
+                                    "type": "text",
+                                    "content": "Many leaders assume that AI transformations are difficult because the technology is sophisticated. In reality, the primary obstacles are organizational. Across industries, the most significant barriers to sustained impact are rooted in roles, incentives, decision rights, and culture rather than algorithms or infrastructure."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        225,
+                        566,
+                        310
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                225,
+                                566,
+                                310
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        225,
+                                        566,
+                                        310
+                                    ],
+                                    "type": "text",
+                                    "content": "AI changes how work is performed, how decisions are made, and how accountability is structured. Its greatest impact is not in automating isolated tasks but in reshaping workflows. This requires deliberate redesign of roles, processes, and performance expectations. BCG's 10-20-70 principle reflects this reality: only a small portion of effort lies in the algorithm and technology; the majority lies in enabling people and the organization to operate differently."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        320,
+                        545,
+                        421
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                320,
+                                545,
+                                421
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        320,
+                                        545,
+                                        421
+                                    ],
+                                    "type": "text",
+                                    "content": "Training and communication are necessary but insufficient. The deeper challenge is to move beyond incremental tool adoption toward an AI-first way of working. Individual usage does not guarantee enterprise impact. Meaningful results come when workflows are fundamentally redesigned, management layers adapt, and incentives reinforce new behaviors. Without these structural adjustments, organizations revert to legacy habits and AI remains an add-on rather than a performance engine."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        480,
+                        416,
+                        516
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                480,
+                                416,
+                                516
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        480,
+                                        416,
+                                        516
+                                    ],
+                                    "type": "text",
+                                    "content": "What AI Leaders Do Right"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        24,
+                        536,
+                        567,
+                        620
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                536,
+                                567,
+                                620
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        536,
+                                        567,
+                                        620
+                                    ],
+                                    "type": "text",
+                                    "content": "Companies that consistently generate AI value treat it as a CEO-led performance transformation, supported by a multidisciplinary transformation office, not as a technology or innovation program delegated to IT or strategy. They focus on a small set of high-impact priorities, define explicit economic ambition, fund the journey with intent, and embed value accountability into governance from the outset."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        632,
+                        567,
+                        699
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                632,
+                                567,
+                                699
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        632,
+                                        567,
+                                        699
+                                    ],
+                                    "type": "text",
+                                    "content": "Sustained impact requires organizational follow-through. Roles, workflows, and decision rights are redesigned, not merely adjusted. Incentives and performance management reinforce new behaviors. The CFO, CHRO, and business unit leaders align behind a single business roadmap tied directly to EBIT outcomes."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        711,
+                        507,
+                        729
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                711,
+                                507,
+                                729
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        711,
+                                        507,
+                                        729
+                                    ],
+                                    "type": "text",
+                                    "content": "AI will not transform your company. Your ability to run a disciplined transformation will."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        26,
+                        815,
+                        148,
+                        828
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                815,
+                                148,
+                                828
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        815,
+                                        148,
+                                        828
+                                    ],
+                                    "type": "text",
+                                    "content": "©2026 Boston Consulting Group"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        560,
+                        816,
+                        567,
+                        826
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                560,
+                                816,
+                                567,
+                                826
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        560,
+                                        816,
+                                        567,
+                                        826
+                                    ],
+                                    "type": "text",
+                                    "content": "5"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9
+                }
+            ],
+            "page_size": [
+                594,
+                841
+            ],
+            "page_idx": 4,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        24,
+                        57,
+                        506,
+                        125
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                57,
+                                506,
+                                125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        57,
+                                        506,
+                                        125
+                                    ],
+                                    "type": "text",
+                                    "content": "Barrier #5: Not Focusing on How People Use the Technology"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 1
+                },
+                {
+                    "bbox": [
+                        24,
+                        146,
+                        565,
+                        213
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                146,
+                                565,
+                                213
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        146,
+                                        565,
+                                        213
+                                    ],
+                                    "type": "text",
+                                    "content": "Many leaders assume that AI transformations are difficult because the technology is sophisticated. In reality, the primary obstacles are organizational. Across industries, the most significant barriers to sustained impact are rooted in roles, incentives, decision rights, and culture rather than algorithms or infrastructure."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        225,
+                        566,
+                        310
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                225,
+                                566,
+                                310
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        225,
+                                        566,
+                                        310
+                                    ],
+                                    "type": "text",
+                                    "content": "AI changes how work is performed, how decisions are made, and how accountability is structured. Its greatest impact is not in automating isolated tasks but in reshaping workflows. This requires deliberate redesign of roles, processes, and performance expectations. BCG's 10-20-70 principle reflects this reality: only a small portion of effort lies in the algorithm and technology; the majority lies in enabling people and the organization to operate differently."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        320,
+                        545,
+                        421
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                320,
+                                545,
+                                421
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        320,
+                                        545,
+                                        421
+                                    ],
+                                    "type": "text",
+                                    "content": "Training and communication are necessary but insufficient. The deeper challenge is to move beyond incremental tool adoption toward an AI-first way of working. Individual usage does not guarantee enterprise impact. Meaningful results come when workflows are fundamentally redesigned, management layers adapt, and incentives reinforce new behaviors. Without these structural adjustments, organizations revert to legacy habits and AI remains an add-on rather than a performance engine."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        480,
+                        416,
+                        516
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                480,
+                                416,
+                                516
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        480,
+                                        416,
+                                        516
+                                    ],
+                                    "type": "text",
+                                    "content": "What AI Leaders Do Right"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        24,
+                        536,
+                        567,
+                        620
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                536,
+                                567,
+                                620
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        536,
+                                        567,
+                                        620
+                                    ],
+                                    "type": "text",
+                                    "content": "Companies that consistently generate AI value treat it as a CEO-led performance transformation, supported by a multidisciplinary transformation office, not as a technology or innovation program delegated to IT or strategy. They focus on a small set of high-impact priorities, define explicit economic ambition, fund the journey with intent, and embed value accountability into governance from the outset."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        632,
+                        567,
+                        699
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                632,
+                                567,
+                                699
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        632,
+                                        567,
+                                        699
+                                    ],
+                                    "type": "text",
+                                    "content": "Sustained impact requires organizational follow-through. Roles, workflows, and decision rights are redesigned, not merely adjusted. Incentives and performance management reinforce new behaviors. The CFO, CHRO, and business unit leaders align behind a single business roadmap tied directly to EBIT outcomes."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        24,
+                        711,
+                        507,
+                        729
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                711,
+                                507,
+                                729
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        711,
+                                        507,
+                                        729
+                                    ],
+                                    "type": "text",
+                                    "content": "AI will not transform your company. Your ability to run a disciplined transformation will."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7,
+                    "merge_prev": false
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        26,
+                        88,
+                        146,
+                        119
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                88,
+                                146,
+                                119
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        88,
+                                        146,
+                                        119
+                                    ],
+                                    "type": "text",
+                                    "content": "Authors"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        41,
+                        157,
+                        130,
+                        246
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                41,
+                                157,
+                                130,
+                                246
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        157,
+                                        130,
+                                        246
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                41,
+                                                157,
+                                                130,
+                                                246
+                                            ],
+                                            "type": "image",
+                                            "image_path": "d018c589a2bc46681baed868026412d2562e726faf0c620614071accd63467f9.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        146,
+                        165,
+                        266,
+                        183
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                146,
+                                165,
+                                266,
+                                183
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        146,
+                                        165,
+                                        266,
+                                        183
+                                    ],
+                                    "type": "text",
+                                    "content": "Matthieu Berthion"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        145,
+                        193,
+                        264,
+                        217
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                145,
+                                193,
+                                264,
+                                217
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        145,
+                                        193,
+                                        264,
+                                        217
+                                    ],
+                                    "type": "text",
+                                    "content": "Managing Director & Partner\nCopenhagen"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        25,
+                        320,
+                        258,
+                        335
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                25,
+                                320,
+                                258,
+                                335
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        25,
+                                        320,
+                                        258,
+                                        335
+                                    ],
+                                    "type": "text",
+                                    "content": "ABOUT BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        24,
+                        349,
+                        565,
+                        451
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                349,
+                                565,
+                                451
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        349,
+                                        565,
+                                        451
+                                    ],
+                                    "type": "text",
+                                    "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        27,
+                        816,
+                        148,
+                        828
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                27,
+                                816,
+                                148,
+                                828
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        27,
+                                        816,
+                                        148,
+                                        828
+                                    ],
+                                    "type": "text",
+                                    "content": "©2026 Boston Consulting Group"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6
+                },
+                {
+                    "bbox": [
+                        560,
+                        816,
+                        567,
+                        826
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                560,
+                                816,
+                                567,
+                                826
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        560,
+                                        816,
+                                        567,
+                                        826
+                                    ],
+                                    "type": "text",
+                                    "content": "6"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                }
+            ],
+            "page_size": [
+                594,
+                841
+            ],
+            "page_idx": 5,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        26,
+                        88,
+                        146,
+                        119
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                26,
+                                88,
+                                146,
+                                119
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        26,
+                                        88,
+                                        146,
+                                        119
+                                    ],
+                                    "type": "text",
+                                    "content": "Authors"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0,
+                    "level": 2
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        41,
+                        157,
+                        130,
+                        246
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                41,
+                                157,
+                                130,
+                                246
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        157,
+                                        130,
+                                        246
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                41,
+                                                157,
+                                                130,
+                                                246
+                                            ],
+                                            "type": "image",
+                                            "image_path": "d018c589a2bc46681baed868026412d2562e726faf0c620614071accd63467f9.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        146,
+                        165,
+                        266,
+                        183
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                146,
+                                165,
+                                266,
+                                183
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        146,
+                                        165,
+                                        266,
+                                        183
+                                    ],
+                                    "type": "text",
+                                    "content": "Matthieu Berthion"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        145,
+                        193,
+                        264,
+                        217
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                145,
+                                193,
+                                264,
+                                217
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        145,
+                                        193,
+                                        264,
+                                        217
+                                    ],
+                                    "type": "text",
+                                    "content": "Managing Director & Partner\nCopenhagen"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3,
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        25,
+                        320,
+                        258,
+                        335
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                25,
+                                320,
+                                258,
+                                335
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        25,
+                                        320,
+                                        258,
+                                        335
+                                    ],
+                                    "type": "text",
+                                    "content": "ABOUT BOSTON CONSULTING GROUP"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "level": 2
+                },
+                {
+                    "bbox": [
+                        24,
+                        349,
+                        565,
+                        451
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                24,
+                                349,
+                                565,
+                                451
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        24,
+                                        349,
+                                        565,
+                                        451
+                                    ],
+                                    "type": "text",
+                                    "content": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com."
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5,
+                    "merge_prev": false
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": true,
+    "_version_name": "3.4.0"
+}

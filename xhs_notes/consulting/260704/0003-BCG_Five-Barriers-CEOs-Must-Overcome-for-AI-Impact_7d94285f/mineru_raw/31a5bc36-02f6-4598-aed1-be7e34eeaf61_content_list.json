@@ -1,0 +1,622 @@
+[
+    {
+        "type": "image",
+        "img_path": "images/ce0206988f53f78c22179da766225df5542a4e0965f95daf32c043cd4d2eca6e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            0,
+            1000,
+            395
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "BUSINESS TRANSFORMATION",
+        "bbox": [
+            50,
+            430,
+            260,
+            448
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Five Barriers CEOs Must Overcome for AI Impact",
+        "text_level": 1,
+        "bbox": [
+            42,
+            476,
+            740,
+            627
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "By Matthieu Berthion",
+        "bbox": [
+            43,
+            656,
+            227,
+            675
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ARTICLE MARCH 26, 2026 8 MIN READ",
+        "bbox": [
+            40,
+            699,
+            378,
+            717
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "AI's capabilities are inestimable, its transformative potential seemingly limitless. Unfortunately, few CEOs are getting AI transformation right. Recent BCG research shows that only $5\\%$ of companies are generating sustained P&L impact while roughly $60\\%$ have seen little or no material benefits.",
+        "bbox": [
+            40,
+            777,
+            954,
+            857
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "AI initiatives fail not because of technology but because leaders apply weak transformation discipline. At the same time, AI transformations differ from other transformations in two ways.",
+        "bbox": [
+            40,
+            872,
+            914,
+            913
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            967,
+            249,
+            984
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "1",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- AI delivers visible results quickly, creating the impression of fast progress. However, the deeper work—rewiring decision rights, reshaping how expertise is applied, and realigning incentives across the value chain—is obscure, more difficult, and often missed.",
+        "bbox": [
+            40,
+            67,
+            897,
+            126
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Much of AI's impact is indirect. It improves judgment, productivity, and insight, but the financial effects are second-order and fragile unless deliberately captured.",
+        "bbox": [
+            40,
+            140,
+            875,
+            180
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "This combination of early visibility, systemic disruption, and indirect value makes AI uniquely prone to underperformance.",
+        "bbox": [
+            40,
+            209,
+            905,
+            250
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "CEOs who stand to turn AI into financial value are those who apply proven, if unglamorous, transformation discipline. They can start with steering their organizations past five common barriers to AI success.",
+        "bbox": [
+            40,
+            263,
+            898,
+            324
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Barrier #1: Piecemeal Poking at the Problem",
+        "text_level": 2,
+        "bbox": [
+            40,
+            394,
+            821,
+            473
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "AI is nearly everywhere now, with 90% of companies experimenting with it at a minimum, according to various reports. The problem is that companies stay too long in the experimental stage, taking baby steps with limited productivity gains. While many are intimidated by AI because of cost, complexity, and potential risk, fragmented efforts lack the scope and level of integration to provide lasting P&L impact.",
+        "bbox": [
+            40,
+            502,
+            919,
+            602
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The companies that are achieving value are the ones that embrace the need for bold reinvention. According to BCG estimates, roughly 70% of AI's value potential is concentrated in core business process workflows, where decisions, costs, and outcomes intersect. One way around the small-scope barrier is for the CEO to drive the organization's AI efforts, seeking deliberate and deep ways to reinvent areas of the business. CEOs can also use AI agents to help move beyond automation of isolated steps and instead rebuild value chains around business outcomes, from the ground up, allowing systems to adapt dynamically to achieve business goals. Without this AI-first orientation, AI remains incremental rather than transformative.",
+        "bbox": [
+            38,
+            615,
+            944,
+            775
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Barrier #2: Underfunding Means Underachievement",
+        "text_level": 1,
+        "bbox": [
+            40,
+            843,
+            846,
+            922
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            250,
+            984
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            941,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Corporations expect to nearly double AI spending in 2026, yet many CEOs underestimate the scope of the investment required. AI's impact is cross-functional by nature. Its reach extends well beyond the technology function to data foundations, integration, operating model changes, and workforce enablement.",
+        "bbox": [
+            40,
+            67,
+            949,
+            146
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The illusion of early success often causes leaders to limit funding before the transformation is complete. Getting from 70% performance to 95%—the last mile, where impact becomes structural—is critical. That requires a disproportionate effort and investment to strengthen data foundations, industrialize processes, resolve cross-functional interdependencies, and embed responsible AI and risk controls. The impressive results obscure the scale of the real investment required. The result is a broken cash flow curve that deprives the effort of financial fuel before impact is realized.",
+        "bbox": [
+            40,
+            158,
+            944,
+            300
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "CEOs can help overcome this by enabling financial support for the profound reinvention of workflows that is needed. It’s a commitment that requires a greater level of effort, time, hard trade-offs, and investment than many leaders anticipate.",
+        "bbox": [
+            40,
+            312,
+            900,
+            374
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Barrier #3: No Value-First Blueprint",
+        "text_level": 2,
+        "bbox": [
+            40,
+            494,
+            678,
+            575
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "AI initiatives often fall short because leaders do not define, from the outset, how value will be created. Instead, they focus on visible productivity improvements within functional or process silos. While these gains may be real, they are not the same as revenue growth, structural cost reduction, margin expansion, or balance sheet impact. Without a clear economic blueprint, operational improvements remain disconnected from financial performance.",
+        "bbox": [
+            40,
+            600,
+            914,
+            702
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In practice, when no explicit value logic has been defined, 10%–20% of anticipated value typically erodes before reaching the P&L. The issue is not that AI lacks potential, but that the pathway from local efficiency to enterprise-level impact has not been designed.",
+        "bbox": [
+            40,
+            715,
+            954,
+            775
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "CEOs must articulate a value-first blueprint before developing any AI initiative. This means identifying the precise P&L and balance sheet lines that will be impacted, quantifying targets, and assigning clear ownership for each source of value. To achieve expected financial benefits, leaders must map the steps and interdependencies—including adjacent functions and processes—from each impacted workflow to the P&L lines where value is realized.",
+        "bbox": [
+            40,
+            789,
+            954,
+            889
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            942,
+            970,
+            954,
+            983
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "This is a matter of financial architecture, not technology deployment. The CFO, the finance function, and the transformation office should play a central role in defining the value logic and embedding economic rigor from day one. AI does not create value by default. It creates potential. Converting that potential into measurable financial performance requires deliberate design.",
+        "bbox": [
+            40,
+            67,
+            942,
+            147
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Barrier #4: Tracking Motion, Not Results",
+        "text_level": 1,
+        "bbox": [
+            40,
+            215,
+            848,
+            294
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Even when a value-first blueprint exists, many leaders fail to install the mechanisms required to deliver and protect that value over time. Initial ambitions are clear, but the execution discipline is not. Without rigorous tracking, forecasting, and accountability embedded in performance management, value erodes quietly.",
+        "bbox": [
+            40,
+            323,
+            949,
+            404
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The most common failure is an overreliance on operational indicators. Tracking dashboards fill with impressive activity metrics, productivity measures, and tool adoption rates. Yet these do not automatically translate into economic outcomes. When KPIs are not explicitly linked to P&L impact, leaders gain visibility into motion rather than performance.",
+        "bbox": [
+            38,
+            418,
+            941,
+            498
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The consequences are predictable. Baselines remain unclear. Metrics shift over time. One-off improvements are mistaken for structural gains. Without forward-looking forecasts tied to financial lines, management cannot distinguish temporary uplift from sustainable impact. Confidence declines, and course correction becomes reactive rather than deliberate.",
+        "bbox": [
+            40,
+            511,
+            912,
+            590
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "A value protection system requires more than reporting. It requires governance. This governance must sit within a formal, multidisciplinary transformation office—bringing together finance, technology, operations, HR, and risk—to coordinate execution, resolve trade-offs, and maintain accountability across functions. P&L-connected KPIs must be defined and reviewed at the appropriate level of leadership. Clear accountability for each value lever must be embedded in incentives and operating reviews. Stage gates should act as decision checkpoints to enforce the quality of business cases and operational plans and confirm that operational improvements are converting into financial results before additional capital is deployed.",
+        "bbox": [
+            38,
+            606,
+            944,
+            765
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "AI transformations are no different from other enterprise transformations in this respect. Value must be protected during execution. Without systematic tracking, disciplined governance, and economic accountability, even well-designed initiatives drift.",
+        "bbox": [
+            40,
+            777,
+            930,
+            838
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Barrier #5: Not Focusing on How People Use the Technology",
+        "text_level": 1,
+        "bbox": [
+            40,
+            67,
+            851,
+            148
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Many leaders assume that AI transformations are difficult because the technology is sophisticated. In reality, the primary obstacles are organizational. Across industries, the most significant barriers to sustained impact are rooted in roles, incentives, decision rights, and culture rather than algorithms or infrastructure.",
+        "bbox": [
+            40,
+            173,
+            951,
+            253
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "AI changes how work is performed, how decisions are made, and how accountability is structured. Its greatest impact is not in automating isolated tasks but in reshaping workflows. This requires deliberate redesign of roles, processes, and performance expectations. BCG's 10-20-70 principle reflects this reality: only a small portion of effort lies in the algorithm and technology; the majority lies in enabling people and the organization to operate differently.",
+        "bbox": [
+            40,
+            267,
+            952,
+            368
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Training and communication are necessary but insufficient. The deeper challenge is to move beyond incremental tool adoption toward an AI-first way of working. Individual usage does not guarantee enterprise impact. Meaningful results come when workflows are fundamentally redesigned, management layers adapt, and incentives reinforce new behaviors. Without these structural adjustments, organizations revert to legacy habits and AI remains an add-on rather than a performance engine.",
+        "bbox": [
+            40,
+            380,
+            917,
+            500
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "What AI Leaders Do Right",
+        "text_level": 2,
+        "bbox": [
+            40,
+            570,
+            700,
+            613
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Companies that consistently generate AI value treat it as a CEO-led performance transformation, supported by a multidisciplinary transformation office, not as a technology or innovation program delegated to IT or strategy. They focus on a small set of high-impact priorities, define explicit economic ambition, fund the journey with intent, and embed value accountability into governance from the outset.",
+        "bbox": [
+            40,
+            637,
+            954,
+            737
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Sustained impact requires organizational follow-through. Roles, workflows, and decision rights are redesigned, not merely adjusted. Incentives and performance management reinforce new behaviors. The CFO, CHRO, and business unit leaders align behind a single business roadmap tied directly to EBIT outcomes.",
+        "bbox": [
+            40,
+            751,
+            954,
+            831
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "AI will not transform your company. Your ability to run a disciplined transformation will.",
+        "bbox": [
+            40,
+            845,
+            853,
+            866
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            43,
+            969,
+            249,
+            984
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Authors",
+        "text_level": 2,
+        "bbox": [
+            43,
+            104,
+            245,
+            141
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/d018c589a2bc46681baed868026412d2562e726faf0c620614071accd63467f9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            186,
+            218,
+            292
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Matthieu Berthion",
+        "bbox": [
+            245,
+            196,
+            447,
+            217
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Managing Director & Partner\nCopenhagen",
+        "bbox": [
+            244,
+            229,
+            444,
+            258
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "ABOUT BOSTON CONSULTING GROUP",
+        "text_level": 2,
+        "bbox": [
+            42,
+            380,
+            434,
+            398
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Boston Consulting Group bridges the gap between ambition and outcomes for the world's leading companies and organizations. We are built for this era of unprecedented change — bringing strategic clarity rooted in over 60 years of deep domain knowledge, combined with applied AI shaped by our practitioners. BCG works shoulder-to-shoulder with CEOs across industries and geographies to deliver transformative impact at scale: stronger returns, transferred capabilities, and change that sticks. For more information, visit bcg.com.",
+        "bbox": [
+            40,
+            414,
+            951,
+            536
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "©2026 Boston Consulting Group",
+        "bbox": [
+            45,
+            970,
+            249,
+            984
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            942,
+            970,
+            954,
+            982
+        ],
+        "page_idx": 5
+    }
+]
