@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Newsfeed | KC Desk Notes</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body data-page="newsfeed" class="newsfeed-page">
+    <header class="topbar newsfeed-topbar">
+      <a class="brand compact" href="index.html" aria-label="KC Desk Notes home">
+        <img src="assets/kc-mark.svg" alt="" width="30" height="30">
+        <span>KC Desk Notes</span>
+      </a>
+      <div class="topbar-actions">
+        <a id="newsfeedNav" class="topbar-link is-active" href="newsfeed.html" hidden>Newsfeed</a>
+        <button id="accountGate" class="account-button" type="button">登录</button>
+        <button id="adminGate" class="admin-gate" type="button" aria-label="Private tools"></button>
+      </div>
+    </header>
+
+    <main id="newsfeedApp" class="newsfeed-shell">
+      <section class="newsfeed-access" id="newsfeedAccess">
+        <h1>Newsfeed</h1>
+        <p>Sign in as twotigers to open the test module.</p>
+        <button id="newsfeedLogin" class="primary" type="button">登录 / 账号</button>
+      </section>
+    </main>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>

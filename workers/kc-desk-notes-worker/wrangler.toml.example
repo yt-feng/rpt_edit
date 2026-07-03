@@ -12,6 +12,10 @@ ALLOWED_ORIGIN = "https://YOUR_GITHUB_PAGES_HOST"
 # GH_DISPATCH_TOKEN is a fine-grained PAT with Actions: read/write on this repo
 # (set it as a secret: `wrangler secret put GH_DISPATCH_TOKEN`).
 GH_REPO = "yt-feng/rpt_edit"
+# Optional for custom topic plans and story narratives:
+# wrangler secret put DEEPSEEK_API_KEY
+# DEEPSEEK_BASE_URL = "https://api.deepseek.com"
+# DEEPSEEK_MODEL = "deepseek-chat"
 
 [triggers]
 crons = ["*/30 * * * *"]

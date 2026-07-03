@@ -86,6 +86,79 @@ const SEARCH_MIRROR_STALE_MS = 36 * 60 * 60 * 1000;
 const ANALYTICS_PREFIX = "_analytics/events";
 const ANALYTICS_DASHBOARD_DAYS = 30;
 const ANALYTICS_DASHBOARD_LIMIT = 1800;
+const NEWSFEED_CACHE_PREFIX = "_newsfeed/cache";
+const NEWSFEED_TOPICS_PREFIX = "_newsfeed/topics";
+const NEWSFEED_SETTINGS_PREFIX = "_newsfeed/settings";
+const NEWSFEED_CACHE_FRESH_MS = 30 * 60 * 1000;
+const NEWSFEED_MAX_USER_TOPICS = 10;
+const NEWSFEED_CATEGORIES = ["Investment", "Tech", "Politics", "Industries"];
+const NEWSFEED_UA = "KCDeskNewsfeed/0.1";
+const NEWSFEED_DEFAULT_TOPICS = [
+  {
+    id: "global-daily",
+    title: "Global Daily",
+    description: "A broad feed across markets, policy, technology, and global affairs.",
+    kind: "system",
+    pinned: true,
+    category: "Investment",
+    queries: [
+      "global economy OR markets OR central banks OR geopolitics",
+      "major world news economy politics technology",
+    ],
+  },
+  {
+    id: "tech-ai",
+    title: "Tech",
+    description: "AI, robotics, semiconductors, software, and platform shifts.",
+    kind: "system",
+    category: "Tech",
+    queries: [
+      "artificial intelligence OR robotics OR semiconductors OR data centers",
+      "AI startup funding OR humanoid robots OR chips",
+    ],
+  },
+  {
+    id: "global-politics",
+    title: "Politics",
+    description: "Elections, policy, geopolitics, defense, sanctions, and trade.",
+    kind: "system",
+    category: "Politics",
+    queries: [
+      "election OR sanctions OR trade policy OR defense OR diplomacy",
+      "geopolitics OR tariff OR security council OR government policy",
+    ],
+  },
+  {
+    id: "industries",
+    title: "Industries",
+    description: "Energy, manufacturing, transport, healthcare, and industrial supply chains.",
+    kind: "system",
+    category: "Industries",
+    queries: [
+      "manufacturing OR energy OR logistics OR healthcare OR supply chain",
+      "industrial automation OR renewable energy OR aerospace OR biotech",
+    ],
+  },
+  {
+    id: "investment",
+    title: "Investment",
+    description: "Capital markets, IPOs, private equity, M&A, funding, and asset flows.",
+    kind: "system",
+    category: "Investment",
+    queries: [
+      "IPO OR funding round OR merger acquisition OR private equity",
+      "investment flows OR asset management OR venture capital OR markets",
+    ],
+  },
+];
+const NEWSFEED_SUGGESTED_TOPICS = [
+  "Self-driving snow groomers for ski resorts",
+  "Satellite-based wildfire early-warning apps",
+  "Robotic kitchen systems for home chefs",
+  "Zero-gravity manufacturing on the ISS",
+  "Middle East capital investing in China",
+  "Humanoid robot supply chains",
+];
 
 let catalogCache = null;
 let catalogFetchedAt = 0;
@@ -2420,6 +2493,723 @@ async function fetchWithTimeout(resource, init = {}, timeoutMs = UPSTREAM_SEARCH
   }
 }
 
+function newsfeedUserKey(user) {
+  return encodeURIComponent(normalizeEmail(user && user.email) || normalizeUsername(user && user.username) || String(user && user.id || "user"));
+}
+
+function newsfeedTopicPrefix(user) {
+  return `${NEWSFEED_TOPICS_PREFIX}/${newsfeedUserKey(user)}/`;
+}
+
+function newsfeedTopicKey(user, id) {
+  return `${newsfeedTopicPrefix(user)}${encodeURIComponent(String(id || ""))}.json`;
+}
+
+function newsfeedSettingsKey(user) {
+  return `${NEWSFEED_SETTINGS_PREFIX}/${newsfeedUserKey(user)}.json`;
+}
+
+function simpleNewsfeedId(value) {
+  let hash = 2166136261;
+  const text = String(value || "");
+  for (let index = 0; index < text.length; index += 1) {
+    hash ^= text.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return (hash >>> 0).toString(36);
+}
+
+function slugifyNewsfeed(value) {
+  const cleaned = String(value || "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fff]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 54);
+  return cleaned || `topic-${simpleNewsfeedId(value)}`;
+}
+
+function decodeNewsfeedEntities(value) {
+  const named = {
+    amp: "&",
+    lt: "<",
+    gt: ">",
+    quot: "\"",
+    apos: "'",
+    nbsp: " ",
+  };
+  return String(value || "").replace(/&(#x?[0-9a-f]+|[a-z]+);/gi, (match, entity) => {
+    const key = String(entity || "").toLowerCase();
+    if (named[key]) return named[key];
+    if (key.startsWith("#x")) {
+      const code = Number.parseInt(key.slice(2), 16);
+      return Number.isFinite(code) ? String.fromCodePoint(code) : match;
+    }
+    if (key.startsWith("#")) {
+      const code = Number.parseInt(key.slice(1), 10);
+      return Number.isFinite(code) ? String.fromCodePoint(code) : match;
+    }
+    return match;
+  });
+}
+
+function stripNewsfeedHtml(value) {
+  return decodeNewsfeedEntities(String(value || "")
+    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
+    .replace(/<[^>]+>/g, " "))
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function compactNewsfeedQuery(value) {
+  return String(value || "").normalize("NFKC").replace(/\s+/g, " ").trim().slice(0, 220);
+}
+
+function newsfeedUtcStamp(date) {
+  const pad = (number) => String(number).padStart(2, "0");
+  return [
+    date.getUTCFullYear(),
+    pad(date.getUTCMonth() + 1),
+    pad(date.getUTCDate()),
+    pad(date.getUTCHours()),
+    pad(date.getUTCMinutes()),
+    pad(date.getUTCSeconds()),
+  ].join("");
+}
+
+function parseGdeltDate(value) {
+  const text = String(value || "").trim();
+  const match = text.match(/^(\d{4})(\d{2})(\d{2})T?(\d{2})(\d{2})(\d{2})Z?$/);
+  if (!match) return text;
+  return `${match[1]}-${match[2]}-${match[3]}T${match[4]}:${match[5]}:${match[6]}Z`;
+}
+
+function cleanNewsfeedUrl(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+  try {
+    const url = new URL(raw);
+    [...url.searchParams.keys()].forEach((key) => {
+      if (/^utm_/i.test(key) || ["fbclid", "gclid", "mc_cid", "mc_eid"].includes(key.toLowerCase())) {
+        url.searchParams.delete(key);
+      }
+    });
+    url.hash = "";
+    return url.toString();
+  } catch (_error) {
+    return raw;
+  }
+}
+
+function domainFromUrl(value) {
+  try {
+    return new URL(value).hostname.replace(/^www\./i, "").toLowerCase();
+  } catch (_error) {
+    return "";
+  }
+}
+
+function inferNewsfeedCategory(text, fallback = "Investment") {
+  const haystack = String(text || "").toLowerCase();
+  if (/(ai|robot|semiconductor|chip|software|data center|cloud|startup|technology|tech)/.test(haystack)) return "Tech";
+  if (/(election|government|policy|sanction|tariff|war|defense|diplomacy|geopolitic|minister|president)/.test(haystack)) return "Politics";
+  if (/(energy|manufactur|supply chain|healthcare|biotech|aerospace|logistics|industrial|factory|mining|transport)/.test(haystack)) return "Industries";
+  if (/(ipo|funding|market|stock|bond|private equity|venture|investment|merger|acquisition|deal|bank)/.test(haystack)) return "Investment";
+  return fallback || "Investment";
+}
+
+function newsfeedItem(input, defaults = {}) {
+  const url = cleanNewsfeedUrl(input.url);
+  const domain = input.domain || domainFromUrl(url);
+  const source = input.source || input.source_name || domain || defaults.source || "News";
+  const title = stripNewsfeedHtml(input.title || "");
+  const summary = stripNewsfeedHtml(input.summary || input.description || "");
+  const category = input.category || inferNewsfeedCategory(`${title} ${summary} ${source}`, defaults.category);
+  const id = simpleNewsfeedId(`${title}|${url}|${source}`);
+  return {
+    id,
+    title,
+    url,
+    source,
+    domain,
+    source_url: input.source_url || (domain ? `https://${domain}` : ""),
+    logo_url: domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=64` : "",
+    image_url: input.image_url || "",
+    published_at: input.published_at || "",
+    summary,
+    category,
+    query: input.query || defaults.query || "",
+    provider: input.provider || defaults.provider || "",
+  };
+}
+
+function dedupeNewsfeedItems(items) {
+  const seen = new Set();
+  const out = [];
+  for (const item of items || []) {
+    if (!item || !item.title) continue;
+    const key = item.url ? cleanNewsfeedUrl(item.url).toLowerCase() : stripNewsfeedHtml(item.title).toLowerCase();
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    out.push(item);
+  }
+  return out;
+}
+
+function newsfeedSortValue(item) {
+  const time = Date.parse(item && item.published_at || "");
+  const base = Number.isFinite(time) ? time : 0;
+  return base + (item && item.image_url ? 90 * 60 * 1000 : 0);
+}
+
+function newsfeedUpdatedLabel(value) {
+  const timestamp = Date.parse(value || "");
+  if (!Number.isFinite(timestamp)) return "";
+  return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Shanghai" }).format(new Date(timestamp));
+}
+
+function googleNewsRssUrl(query, locale = "en-US", region = "US") {
+  const ceid = region.toUpperCase() === "CN" ? "CN:zh-Hans" : "US:en";
+  const params = new URLSearchParams({ q: query, hl: locale, gl: region, ceid });
+  return `https://news.google.com/rss/search?${params.toString()}`;
+}
+
+function rssTag(block, tag) {
+  const pattern = new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}>`, "i");
+  const match = String(block || "").match(pattern);
+  return match ? stripNewsfeedHtml(match[1]) : "";
+}
+
+function rssSource(block) {
+  const match = String(block || "").match(/<source(?:\s+url="([^"]*)")?[^>]*>([\s\S]*?)<\/source>/i);
+  if (!match) return { name: "", url: "" };
+  return {
+    name: stripNewsfeedHtml(match[2]),
+    url: cleanNewsfeedUrl(decodeNewsfeedEntities(match[1] || "")),
+  };
+}
+
+function parseGoogleNewsRss(xml, query, defaults = {}) {
+  const out = [];
+  const blocks = String(xml || "").match(/<item\b[\s\S]*?<\/item>/gi) || [];
+  for (const block of blocks) {
+    const source = rssSource(block);
+    const link = cleanNewsfeedUrl(rssTag(block, "link"));
+    const sourceDomain = domainFromUrl(source.url);
+    const pubDate = rssTag(block, "pubDate");
+    const parsedDate = Date.parse(pubDate);
+    const item = newsfeedItem({
+      title: rssTag(block, "title"),
+      url: link,
+      source: source.name || sourceDomain || "Google News",
+      source_url: source.url || "https://news.google.com/",
+      domain: sourceDomain || domainFromUrl(link),
+      published_at: Number.isFinite(parsedDate) ? new Date(parsedDate).toISOString() : "",
+      summary: rssTag(block, "description"),
+      query,
+      provider: "google-news-rss",
+    }, defaults);
+    if (item.title) out.push(item);
+  }
+  return out;
+}
+
+async function fetchGdeltNews(query, options = {}) {
+  const cleanQuery = compactNewsfeedQuery(query);
+  if (!cleanQuery) return [];
+  const end = options.end || new Date();
+  const start = options.start || new Date(end.getTime() - 36 * 60 * 60 * 1000);
+  const params = new URLSearchParams({
+    query: cleanQuery,
+    mode: "artlist",
+    format: "json",
+    maxrecords: String(options.maxrecords || 50),
+    sort: "hybridrel",
+    startdatetime: newsfeedUtcStamp(start),
+    enddatetime: newsfeedUtcStamp(end),
+  });
+  const response = await fetchWithTimeout(`https://api.gdeltproject.org/api/v2/doc/doc?${params.toString()}`, {
+    headers: { "Accept": "application/json", "User-Agent": NEWSFEED_UA },
+  }, 14000);
+  if (!response.ok) return [];
+  const payload = await response.json();
+  return (payload.articles || []).map((article) => newsfeedItem({
+    title: article.title || "",
+    url: article.url || "",
+    source: article.domain || "",
+    domain: article.domain || domainFromUrl(article.url || ""),
+    published_at: parseGdeltDate(article.seendate || ""),
+    summary: article.domain || article.language || "",
+    image_url: article.socialimage || "",
+    query: cleanQuery,
+    provider: "gdelt",
+  }, options)).filter((item) => item.title && item.url);
+}
+
+async function fetchGoogleNews(query, options = {}) {
+  const days = Math.max(1, Math.round((options.days || 2)));
+  const cleanQuery = `${compactNewsfeedQuery(query)} when:${days}d`;
+  const response = await fetchWithTimeout(googleNewsRssUrl(cleanQuery, options.locale || "en-US", options.region || "US"), {
+    headers: { "Accept": "application/rss+xml,application/xml;q=0.9,*/*;q=0.8", "User-Agent": NEWSFEED_UA },
+  }, 14000);
+  if (!response.ok) return [];
+  return parseGoogleNewsRss(await response.text(), query, options);
+}
+
+function newsfeedCacheKey(scope, key) {
+  return `${NEWSFEED_CACHE_PREFIX}/${scope}/${simpleNewsfeedId(key)}.json`;
+}
+
+async function getNewsfeedCache(env, scope, key) {
+  if (!env.REPORT_BUCKET) return null;
+  try {
+    const object = await env.REPORT_BUCKET.get(newsfeedCacheKey(scope, key));
+    if (!object) return null;
+    const data = JSON.parse(await object.text());
+    return data && typeof data === "object" ? data : null;
+  } catch (_error) {
+    return null;
+  }
+}
+
+async function putNewsfeedCache(env, scope, key, payload) {
+  if (!env.REPORT_BUCKET) return;
+  try {
+    await env.REPORT_BUCKET.put(newsfeedCacheKey(scope, key), JSON.stringify({
+      cached_at: new Date().toISOString(),
+      payload,
+    }), {
+      httpMetadata: {
+        contentType: "application/json; charset=utf-8",
+        cacheControl: "public, max-age=1800",
+      },
+    });
+  } catch (_error) {
+    // Cache misses only make the next request fetch upstream again.
+  }
+}
+
+function newsfeedCacheIsFresh(cache) {
+  const cachedAt = Date.parse(cache && cache.cached_at || "");
+  return Number.isFinite(cachedAt) && Date.now() - cachedAt < NEWSFEED_CACHE_FRESH_MS;
+}
+
+async function fetchNewsfeedItems(env, spec, options = {}) {
+  const queries = (Array.isArray(spec && spec.queries) ? spec.queries : [spec && spec.query || spec && spec.title])
+    .map(compactNewsfeedQuery)
+    .filter(Boolean)
+    .slice(0, 4);
+  const cacheKey = JSON.stringify({ id: spec && spec.id, queries, category: spec && spec.category, limit: options.limit || 30 });
+  const cached = options.skipCache ? null : await getNewsfeedCache(env, "items", cacheKey);
+  if (cached && cached.payload && newsfeedCacheIsFresh(cached)) {
+    return { ...cached.payload, cached: true, cache_status: "fresh", cached_at: cached.cached_at };
+  }
+
+  const tasks = [];
+  if (options.includeGdelt && queries[0]) {
+    tasks.push(fetchGdeltNews(queries[0], { category: spec.category, query: queries[0] }));
+  }
+  for (const query of queries) {
+    tasks.push(fetchGoogleNews(query, { category: spec.category, query }));
+  }
+  const settled = await Promise.allSettled(tasks);
+  const items = [];
+  for (const result of settled) {
+    if (result.status === "fulfilled") items.push(...result.value);
+  }
+  const deduped = dedupeNewsfeedItems(items)
+    .sort((a, b) => newsfeedSortValue(b) - newsfeedSortValue(a))
+    .slice(0, options.limit || 30);
+  const payload = {
+    topic_id: spec && spec.id || "",
+    items: deduped,
+    updated_at: new Date().toISOString(),
+    updated_label: newsfeedUpdatedLabel(new Date().toISOString()),
+  };
+  await putNewsfeedCache(env, "items", cacheKey, payload);
+  return { ...payload, cached: false, cache_status: "refreshed" };
+}
+
+async function requireNewsfeedUser(request, env) {
+  const user = await currentUserFromRequest(env, request);
+  if (!isSuperAccount(user)) throw new Error("Newsfeed is available for the twotigers test account.");
+  return user;
+}
+
+async function loadNewsfeedSettings(env, user) {
+  return await safeR2GetJson(env, newsfeedSettingsKey(user)) || { pinned: ["global-daily"] };
+}
+
+async function saveNewsfeedSettings(env, user, settings) {
+  if (!env.REPORT_BUCKET) return settings;
+  return r2PutJson(env, newsfeedSettingsKey(user), {
+    ...(settings || {}),
+    updated_at: new Date().toISOString(),
+  });
+}
+
+async function loadNewsfeedCustomTopics(env, user) {
+  const topics = await listR2JsonObjects(env, newsfeedTopicPrefix(user), NEWSFEED_MAX_USER_TOPICS + 20);
+  return topics.filter(Boolean).sort((a, b) => Date.parse(b.created_at || "") - Date.parse(a.created_at || ""));
+}
+
+async function loadNewsfeedTopics(env, user) {
+  const [settings, customTopics] = await Promise.all([
+    loadNewsfeedSettings(env, user),
+    loadNewsfeedCustomTopics(env, user),
+  ]);
+  const pinned = new Set(settings.pinned || []);
+  return [
+    ...NEWSFEED_DEFAULT_TOPICS.map((topic) => ({ ...topic, pinned: pinned.has(topic.id) })),
+    ...customTopics.map((topic) => ({ ...topic, kind: "custom", pinned: pinned.has(topic.id) })),
+  ];
+}
+
+function findNewsfeedTopic(topics, id) {
+  return (topics || []).find((topic) => String(topic.id || "") === String(id || ""));
+}
+
+function digestFromNewsItems(items) {
+  return (items || [])
+    .slice(0, 4)
+    .map((item) => {
+      const source = item.source ? `${item.source}: ` : "";
+      return `${source}${item.title}`.slice(0, 180);
+    });
+}
+
+function topicCountLabel(topic) {
+  if (topic.kind === "system") return "Latest";
+  return topic.created_at ? newsfeedUpdatedLabel(topic.created_at) : "Custom";
+}
+
+function publicNewsfeedTopic(topic) {
+  return {
+    id: topic.id,
+    title: topic.title,
+    description: topic.description || "",
+    kind: topic.kind || "custom",
+    category: topic.category || "Investment",
+    pinned: Boolean(topic.pinned),
+    last_updated_label: topicCountLabel(topic),
+    query_plan: topic.query_plan || null,
+  };
+}
+
+function fallbackNewsfeedTopicPackage(input) {
+  const clean = compactNewsfeedQuery(input);
+  const title = clean.length > 58 ? `${clean.slice(0, 55)}...` : clean;
+  const words = clean.split(/\s+/).filter(Boolean);
+  const compact = words.length > 1 ? `"${clean}"` : clean;
+  return {
+    title: title || "Custom Topic",
+    description: `Latest reporting around ${title || "this topic"}.`,
+    category: inferNewsfeedCategory(clean, "Investment"),
+    queries: [
+      compact,
+      `${clean} news OR analysis`,
+      `${clean} funding OR policy OR market`,
+    ].filter(Boolean),
+    query_plan: {
+      source_mix: ["GDELT DOC", "Google News RSS"],
+      include_terms: words.slice(0, 8),
+      exclude_terms: ["advertisement", "coupon", "job posting"],
+      refresh: "30 minutes",
+    },
+  };
+}
+
+function extractJsonObject(text) {
+  const cleaned = String(text || "").trim().replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "");
+  const start = cleaned.indexOf("{");
+  const end = cleaned.lastIndexOf("}");
+  if (start < 0 || end <= start) throw new Error("No JSON object returned.");
+  return JSON.parse(cleaned.slice(start, end + 1));
+}
+
+async function deepseekJson(env, messages, options = {}) {
+  const apiKey = cleanEnv(env.DEEPSEEK_API_KEY);
+  if (!apiKey) return null;
+  const baseUrl = cleanEnv(env.DEEPSEEK_BASE_URL) || "https://api.deepseek.com";
+  const model = cleanEnv(env.DEEPSEEK_MODEL) || "deepseek-chat";
+  const response = await fetchWithTimeout(`${baseUrl.replace(/\/+$/, "")}/chat/completions`, {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model,
+      messages,
+      temperature: options.temperature ?? 0.2,
+      stream: false,
+      response_format: { type: "json_object" },
+    }),
+  }, options.timeout || 45000);
+  if (!response.ok) return null;
+  const payload = await response.json();
+  const content = payload && payload.choices && payload.choices[0] && payload.choices[0].message && payload.choices[0].message.content;
+  if (!content) return null;
+  try {
+    return extractJsonObject(content);
+  } catch (_error) {
+    return null;
+  }
+}
+
+async function generateNewsfeedTopicPackage(env, input) {
+  const fallback = fallbackNewsfeedTopicPackage(input);
+  const generated = await deepseekJson(env, [
+    {
+      role: "system",
+      content: "You create machine-readable newsfeed topic packages. Output strict JSON only. Do not invent specific news facts.",
+    },
+    {
+      role: "user",
+      content: JSON.stringify({
+        task: "Turn the user's interest into a reusable global news grabbing plan.",
+        user_topic: input,
+        schema: {
+          title: "short topic title",
+          description: "one sentence",
+          category: "Investment | Tech | Politics | Industries",
+          queries: ["2-4 concise GDELT/Google News search queries"],
+          query_plan: {
+            source_mix: ["GDELT DOC", "Google News RSS"],
+            include_terms: ["important terms"],
+            exclude_terms: ["terms to avoid"],
+            refresh: "30 minutes",
+          },
+        },
+      }),
+    },
+  ], { temperature: 0.1, timeout: 45000 });
+  if (!generated) return fallback;
+  const queries = Array.isArray(generated.queries) ? generated.queries.map(compactNewsfeedQuery).filter(Boolean).slice(0, 4) : fallback.queries;
+  return {
+    title: stripNewsfeedHtml(generated.title || fallback.title).slice(0, 90),
+    description: stripNewsfeedHtml(generated.description || fallback.description).slice(0, 220),
+    category: NEWSFEED_CATEGORIES.includes(generated.category) ? generated.category : fallback.category,
+    queries: queries.length ? queries : fallback.queries,
+    query_plan: generated.query_plan || fallback.query_plan,
+  };
+}
+
+async function handleNewsfeedHome(request, env) {
+  try {
+    const user = await requireNewsfeedUser(request, env);
+    const topics = await loadNewsfeedTopics(env, user);
+    const defaultSpecs = NEWSFEED_DEFAULT_TOPICS.filter((topic) => topic.id !== "global-daily");
+    const fetched = await Promise.all(defaultSpecs.map((topic) => fetchNewsfeedItems(env, topic, { limit: 14 })));
+    const headlines = dedupeNewsfeedItems(fetched.flatMap((row) => row.items || []))
+      .sort((a, b) => newsfeedSortValue(b) - newsfeedSortValue(a))
+      .slice(0, 42);
+    const highlights = headlines.filter((item) => item.image_url).slice(0, 5);
+    return jsonResponse(request, env, 200, {
+      updated_at: new Date().toISOString(),
+      updated_label: newsfeedUpdatedLabel(new Date().toISOString()),
+      digest_count: Math.min(99, headlines.length),
+      daily_digest: digestFromNewsItems(headlines),
+      highlights: highlights.length ? highlights : headlines.slice(0, 5),
+      headlines,
+      categories: NEWSFEED_CATEGORIES,
+      topics: topics.map(publicNewsfeedTopic),
+      suggested_topics: NEWSFEED_SUGGESTED_TOPICS,
+    });
+  } catch (error) {
+    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Newsfeed unavailable." });
+  }
+}
+
+async function handleNewsfeedExplore(request, env) {
+  try {
+    const user = await requireNewsfeedUser(request, env);
+    const url = new URL(request.url);
+    const requested = url.searchParams.get("category") || "Tech";
+    const spec = NEWSFEED_DEFAULT_TOPICS.find((topic) => topic.category === requested) || NEWSFEED_DEFAULT_TOPICS[1];
+    const [topics, payload] = await Promise.all([
+      loadNewsfeedTopics(env, user),
+      fetchNewsfeedItems(env, spec, { limit: 34 }),
+    ]);
+    return jsonResponse(request, env, 200, {
+      categories: NEWSFEED_CATEGORIES,
+      category: spec.category,
+      items: payload.items || [],
+      updated_at: payload.updated_at,
+      updated_label: payload.updated_label,
+      cache_status: payload.cache_status,
+      topics: topics.map(publicNewsfeedTopic),
+    });
+  } catch (error) {
+    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Newsfeed unavailable." });
+  }
+}
+
+async function handleNewsfeedTopic(request, env) {
+  try {
+    const user = await requireNewsfeedUser(request, env);
+    const url = new URL(request.url);
+    const id = url.searchParams.get("id") || "global-daily";
+    const topics = await loadNewsfeedTopics(env, user);
+    const topic = findNewsfeedTopic(topics, id);
+    if (!topic) return jsonResponse(request, env, 404, { detail: "Topic not found." });
+    const payload = await fetchNewsfeedItems(env, topic, { limit: 34, includeGdelt: true });
+    return jsonResponse(request, env, 200, {
+      topic: { ...publicNewsfeedTopic(topic), updated_label: payload.updated_label },
+      items: payload.items || [],
+      topics: topics.map(publicNewsfeedTopic),
+      cache_status: payload.cache_status,
+    });
+  } catch (error) {
+    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Newsfeed unavailable." });
+  }
+}
+
+async function handleNewsfeedCreateTopic(request, env) {
+  try {
+    const user = await requireNewsfeedUser(request, env);
+    const existing = await loadNewsfeedCustomTopics(env, user);
+    if (existing.length >= NEWSFEED_MAX_USER_TOPICS) {
+      return jsonResponse(request, env, 400, { detail: "Topic limit reached." });
+    }
+    const payload = await request.json().catch(() => ({}));
+    const input = compactNewsfeedQuery(payload.topic || payload.query || "");
+    if (input.length < 2) return jsonResponse(request, env, 400, { detail: "Topic is required." });
+    const plan = await generateNewsfeedTopicPackage(env, input);
+    const id = `${slugifyNewsfeed(plan.title)}-${randomHex(3)}`;
+    const topic = {
+      id,
+      kind: "custom",
+      title: plan.title,
+      description: plan.description,
+      category: plan.category,
+      queries: plan.queries,
+      query_plan: plan.query_plan,
+      created_from: input,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+    await r2PutJson(env, newsfeedTopicKey(user, id), topic);
+    const [topics, items] = await Promise.all([
+      loadNewsfeedTopics(env, user),
+      fetchNewsfeedItems(env, topic, { limit: 34, skipCache: true, includeGdelt: true }),
+    ]);
+    return jsonResponse(request, env, 201, {
+      topic: { ...publicNewsfeedTopic(topic), updated_label: items.updated_label },
+      items: items.items || [],
+      topics: topics.map(publicNewsfeedTopic),
+    });
+  } catch (error) {
+    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not create topic." });
+  }
+}
+
+async function handleNewsfeedPinTopic(request, env) {
+  try {
+    const user = await requireNewsfeedUser(request, env);
+    const payload = await request.json().catch(() => ({}));
+    const id = String(payload.id || "").trim();
+    const pinned = Boolean(payload.pinned);
+    if (!id) return jsonResponse(request, env, 400, { detail: "Topic id is required." });
+    const settings = await loadNewsfeedSettings(env, user);
+    const next = new Set(settings.pinned || []);
+    if (pinned) next.add(id);
+    else next.delete(id);
+    await saveNewsfeedSettings(env, user, { ...settings, pinned: [...next] });
+    const topics = await loadNewsfeedTopics(env, user);
+    return jsonResponse(request, env, 200, { topics: topics.map(publicNewsfeedTopic) });
+  } catch (error) {
+    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not update topic." });
+  }
+}
+
+function fallbackArticleNarrative(article) {
+  const title = stripNewsfeedHtml(article && article.title || "This story");
+  const source = stripNewsfeedHtml(article && (article.source || article.domain) || "the source");
+  const summary = stripNewsfeedHtml(article && article.summary || "");
+  return {
+    summary: summary || `${source} is reporting: ${title}.`,
+    narrative: [
+      `${source} is carrying a new story on ${title}.`,
+      summary ? `The core read-through is ${summary}` : "The headline points to a developing story that is worth monitoring alongside follow-up coverage from primary sources.",
+      "For now, the feed keeps the original source attached so the user can open the underlying article and compare the narrative against the reported facts.",
+    ].join("\n\n"),
+  };
+}
+
+async function generateArticleNarrative(env, article) {
+  const generated = await deepseekJson(env, [
+    {
+      role: "system",
+      content: "You write concise news summaries. Output strict JSON with summary and narrative. Base everything only on the provided article metadata.",
+    },
+    {
+      role: "user",
+      content: JSON.stringify({
+        title: article.title || "",
+        source: article.source || article.domain || "",
+        published_at: article.published_at || "",
+        summary: article.summary || "",
+        url: article.url || "",
+        required_json: { summary: "2 short sentences", narrative: "3 concise paragraphs" },
+      }),
+    },
+  ], { temperature: 0.25, timeout: 45000 });
+  const fallback = fallbackArticleNarrative(article);
+  if (!generated) return fallback;
+  return {
+    summary: stripNewsfeedHtml(generated.summary || fallback.summary),
+    narrative: stripNewsfeedHtml(generated.narrative || fallback.narrative),
+  };
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function streamNewsfeedText(controller, encoder, type, text) {
+  const chunks = String(text || "").match(/.{1,42}(\s|$)|.{1,42}/g) || [String(text || "")];
+  for (const chunk of chunks) {
+    controller.enqueue(encoder.encode(`${JSON.stringify({ type, text: chunk })}\n`));
+    await sleep(18);
+  }
+}
+
+async function handleNewsfeedArticle(request, env) {
+  try {
+    await requireNewsfeedUser(request, env);
+    const payload = await request.json().catch(() => ({}));
+    const article = payload.article || {};
+    const result = await generateArticleNarrative(env, article);
+    const encoder = new TextEncoder();
+    const stream = new ReadableStream({
+      async start(controller) {
+        try {
+          await streamNewsfeedText(controller, encoder, "summary", result.summary);
+          await streamNewsfeedText(controller, encoder, "narrative", result.narrative);
+          controller.enqueue(encoder.encode(`${JSON.stringify({ type: "done" })}\n`));
+        } finally {
+          controller.close();
+        }
+      },
+    });
+    return new Response(stream, {
+      status: 200,
+      headers: {
+        ...corsHeaders(request, env),
+        "Content-Type": "application/x-ndjson; charset=utf-8",
+        "Cache-Control": "no-store",
+      },
+    });
+  } catch (error) {
+    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not load story." });
+  }
+}
+
+async function warmNewsfeedCaches(env) {
+  await Promise.all(NEWSFEED_DEFAULT_TOPICS.map((topic) => fetchNewsfeedItems(env, topic, { limit: 24 }).catch(() => null)));
+}
+
 function compactSearchQuery(value) {
   return String(value || "").normalize("NFKC").replace(/\s+/g, " ").trim().slice(0, 160);
 }
@@ -4465,6 +5255,30 @@ export default {
       return handleEntitlement(request, env);
     }
 
+    if (pathname === "/newsfeed/home" && request.method === "GET") {
+      return handleNewsfeedHome(request, env);
+    }
+
+    if (pathname === "/newsfeed/explore" && request.method === "GET") {
+      return handleNewsfeedExplore(request, env);
+    }
+
+    if (pathname === "/newsfeed/topic" && request.method === "GET") {
+      return handleNewsfeedTopic(request, env);
+    }
+
+    if (pathname === "/newsfeed/topics" && request.method === "POST") {
+      return handleNewsfeedCreateTopic(request, env);
+    }
+
+    if (pathname === "/newsfeed/topics/pin" && request.method === "POST") {
+      return handleNewsfeedPinTopic(request, env);
+    }
+
+    if (pathname === "/newsfeed/article" && request.method === "POST") {
+      return handleNewsfeedArticle(request, env);
+    }
+
     if (pathname === "/paddle-config" && request.method === "GET") {
       return handlePaddleConfig(request, env);
     }
@@ -4525,6 +5339,9 @@ export default {
   },
 
   async scheduled(_event, env, ctx) {
-    ctx.waitUntil(warmAdminGithubCache(env).catch(() => null));
+    ctx.waitUntil(Promise.all([
+      warmAdminGithubCache(env).catch(() => null),
+      warmNewsfeedCaches(env).catch(() => null),
+    ]));
   },
 };

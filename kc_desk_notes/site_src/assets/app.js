@@ -334,6 +334,19 @@
     refreshAuthSession(workerUrl).then(update);
   }
 
+  function initNewsfeedNav() {
+    const links = Array.from(document.querySelectorAll("#newsfeedNav"));
+    if (!links.length) return;
+    function update() {
+      const visible = isSuperSession();
+      links.forEach((link) => {
+        link.hidden = !visible;
+      });
+    }
+    update();
+    document.addEventListener("kcdesk-auth-change", update);
+  }
+
   function accountModalMarkup(context = {}) {
     const session = loadAuthSession();
     const signedIn = Boolean(session);
@@ -1786,6 +1799,7 @@
     const workerUrl = workerBaseUrl(config);
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
+    initNewsfeedNav();
     trackEvent(workerUrl, "page_view", { page: "home", report_count: items.length });
 
     const bankOptions = new Map();
@@ -2979,6 +2993,7 @@
     const workerUrl = workerBaseUrl(config);
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
+    initNewsfeedNav();
     const items = Array.isArray(catalog.items) ? catalog.items : [];
     const item = items.find((entry) => entry.id === id);
     if (!item) {
@@ -3169,6 +3184,7 @@
     }
     initAccountGate(workerUrl);
     initAdminGate(workerUrl);
+    initNewsfeedNav();
     trackEvent(workerUrl, "page_view", {
       page: "doc",
       ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
@@ -3354,6 +3370,592 @@
     }
   }
 
+  function newsfeedLogoUrl(item) {
+    if (item && item.logo_url) return item.logo_url;
+    const domain = String(item && (item.domain || item.source_domain) || "").trim();
+    return domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=64` : "";
+  }
+
+  function newsfeedTimeLabel(value) {
+    const timestamp = Date.parse(value || "");
+    if (!Number.isFinite(timestamp)) return "";
+    const diff = Date.now() - timestamp;
+    const minute = 60 * 1000;
+    const hour = 60 * minute;
+    const day = 24 * hour;
+    if (diff >= 0 && diff < hour) return `${Math.max(1, Math.round(diff / minute))}m ago`;
+    if (diff >= 0 && diff < day) return `${Math.max(1, Math.round(diff / hour))}h ago`;
+    if (diff >= 0 && diff < 3 * day) return `${Math.max(1, Math.round(diff / day))}d ago`;
+    return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(timestamp));
+  }
+
+  function newsfeedSourceName(item) {
+    return String(item && (item.source || item.source_name || item.domain) || "News").replace(/^GDELT\s*\/\s*/i, "");
+  }
+
+  function newsfeedImageMarkup(item) {
+    const image = String(item && item.image_url || "").trim();
+    if (!image) return "";
+    return `<img class="news-story-image" src="${escapeHtml(image)}" alt="">`;
+  }
+
+  function newsfeedLogoMarkup(item) {
+    const logo = newsfeedLogoUrl(item);
+    const label = newsfeedSourceName(item).slice(0, 1).toUpperCase() || "N";
+    return logo
+      ? `<img class="news-source-logo" src="${escapeHtml(logo)}" alt="">`
+      : `<span class="news-source-logo news-source-fallback">${escapeHtml(label)}</span>`;
+  }
+
+  function newsfeedSourceStack(items = []) {
+    const unique = [];
+    const seen = new Set();
+    for (const item of items) {
+      const key = String(item.domain || item.source || item.source_name || item.id || "");
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      unique.push(item);
+      if (unique.length >= 5) break;
+    }
+    if (!unique.length) return "";
+    return `
+      <div class="news-source-stack" aria-label="Sources">
+        ${unique.map(newsfeedLogoMarkup).join("")}
+      </div>
+    `;
+  }
+
+  function newsfeedStoryMeta(item) {
+    return [newsfeedTimeLabel(item && item.published_at), newsfeedSourceName(item), item && item.category]
+      .filter(Boolean)
+      .join(" · ");
+  }
+
+  function newsfeedStoryCard(item, index = 0, options = {}) {
+    if (!item) return "";
+    const id = String(item.id || "");
+    const image = newsfeedImageMarkup(item);
+    const summary = item.summary ? `<p>${escapeHtml(item.summary)}</p>` : "";
+    const className = options.featured ? "news-story is-featured" : "news-story";
+    return `
+      <button class="${className}" type="button" data-action="open-article" data-id="${escapeHtml(id)}">
+        <span class="news-story-rank">${index ? escapeHtml(index) : ""}</span>
+        <span class="news-story-main">
+          <strong>${escapeHtml(item.title || "Untitled")}</strong>
+          ${summary}
+          <span class="news-story-meta">${escapeHtml(newsfeedStoryMeta(item))}</span>
+        </span>
+        ${image}
+        <span class="news-story-actions">${newsfeedLogoMarkup(item)}<span>···</span></span>
+      </button>
+    `;
+  }
+
+  function newsfeedDigestMarkup(digest = []) {
+    const rows = digest.slice(0, 4).map((line) => `<li>${escapeHtml(line)}</li>`).join("");
+    return rows || "<li>Fresh digest is loading.</li>";
+  }
+
+  function newsfeedTopicIcon(topic) {
+    if (topic && topic.pinned) return "◆";
+    if (topic && topic.kind === "custom") return "“";
+    return "◇";
+  }
+
+  function newsfeedTopicRow(topic) {
+    const id = String(topic && topic.id || "");
+    return `
+      <div class="news-topic-row" data-topic-id="${escapeHtml(id)}">
+        <button class="news-topic-open" type="button" data-action="open-topic" data-id="${escapeHtml(id)}">
+          <span>${escapeHtml(newsfeedTopicIcon(topic))}</span>
+          <strong>${escapeHtml(topic.title || "Topic")}</strong>
+          <small>${escapeHtml(topic.last_updated_label || topic.description || "")}</small>
+        </button>
+        <button class="news-topic-pin" type="button" data-action="pin-topic" data-id="${escapeHtml(id)}" aria-label="Pin topic">${topic && topic.pinned ? "●" : "○"}</button>
+      </div>
+    `;
+  }
+
+  function newsfeedShellMarkup() {
+    return `
+      <section class="newsfeed-layout">
+        <aside class="newsfeed-sidebar" id="newsfeedSidebar">
+          <div class="newsfeed-profile">
+            <span class="newsfeed-avatar">KC</span>
+            <strong>${escapeHtml(authUserLabel(loadAuthSession()))}</strong>
+          </div>
+          <div class="newsfeed-side-actions">
+            <button type="button" data-action="show-feed">My feed</button>
+            <button type="button" data-action="show-explore">Explore</button>
+          </div>
+          <div class="newsfeed-following">
+            <div class="newsfeed-sidebar-heading">
+              <span>Following</span>
+              <strong id="newsfeedTopicCount">0 topics</strong>
+            </div>
+            <div id="newsfeedTopicList" class="newsfeed-topic-list"></div>
+          </div>
+          <button class="newsfeed-add-wide" type="button" data-action="show-add">+ Add Topics</button>
+        </aside>
+        <section class="newsfeed-main">
+          <div class="newsfeed-command">
+            <button class="news-icon-button" type="button" data-action="toggle-sidebar" aria-label="Topics">☰</button>
+            <h1 id="newsfeedTitle">Daily Digest</h1>
+            <div class="newsfeed-audio-actions">
+              <button class="news-icon-button is-wide" type="button" aria-label="Audio">▥ ▶</button>
+            </div>
+          </div>
+          <div id="newsfeedStatus" class="newsfeed-status" aria-live="polite"></div>
+          <div id="newsfeedContent" class="newsfeed-content"></div>
+          <nav class="newsfeed-bottom-tabs" aria-label="Newsfeed sections">
+            <button type="button" data-action="show-feed" class="is-active"><span>▯</span>My feed</button>
+            <button type="button" data-action="show-add"><span>＋</span>Add topics</button>
+            <button type="button" data-action="show-explore"><span>◇</span>Explore</button>
+          </nav>
+        </section>
+      </section>
+    `;
+  }
+
+  async function newsfeedJson(workerUrl, path, options = {}) {
+    const response = await fetch(`${workerUrl}${path}`, {
+      cache: "no-store",
+      ...options,
+      headers: {
+        ...(options.body ? { "Content-Type": "application/json" } : {}),
+        ...authHeaders(),
+        ...(options.headers || {}),
+      },
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.detail || data.error || "Newsfeed request failed.");
+    return data;
+  }
+
+  function renderNewsfeedAccess(app, workerUrl, message = "Sign in as twotigers to open the test module.") {
+    app.innerHTML = `
+      <section class="newsfeed-access">
+        <h1>Newsfeed</h1>
+        <p>${escapeHtml(message)}</p>
+        <button id="newsfeedLogin" class="primary" type="button">登录 / 账号</button>
+      </section>
+    `;
+    const login = document.getElementById("newsfeedLogin");
+    if (login) login.addEventListener("click", () => showAccountModal(workerUrl));
+  }
+
+  function setNewsfeedStatus(text, kind) {
+    const status = document.getElementById("newsfeedStatus");
+    if (!status) return;
+    status.className = kind ? `newsfeed-status ${kind}` : "newsfeed-status";
+    status.textContent = text || "";
+  }
+
+  function setNewsfeedTitle(text) {
+    const title = document.getElementById("newsfeedTitle");
+    if (title) title.textContent = text || "Newsfeed";
+  }
+
+  function updateNewsfeedTabs(view) {
+    document.querySelectorAll(".newsfeed-bottom-tabs button").forEach((button) => {
+      const action = button.dataset.action || "";
+      button.classList.toggle(
+        "is-active",
+        (view === "feed" && action === "show-feed") ||
+          (view === "add" && action === "show-add") ||
+          (view === "explore" && action === "show-explore"),
+      );
+    });
+  }
+
+  function rememberNewsfeedArticles(state, items = []) {
+    for (const item of items || []) {
+      if (item && item.id) state.articles.set(String(item.id), item);
+    }
+  }
+
+  function renderNewsfeedSidebar(state) {
+    const list = document.getElementById("newsfeedTopicList");
+    const count = document.getElementById("newsfeedTopicCount");
+    if (!list) return;
+    const topics = [...(state.topics || [])].sort((a, b) => Number(Boolean(b.pinned)) - Number(Boolean(a.pinned)));
+    list.innerHTML = topics.map(newsfeedTopicRow).join("") || '<div class="newsfeed-empty">No topics yet.</div>';
+    if (count) count.textContent = `${topics.length}/10 topics`;
+  }
+
+  function renderNewsfeedHome(state) {
+    const home = state.home || {};
+    const content = document.getElementById("newsfeedContent");
+    if (!content) return;
+    setNewsfeedTitle("Daily Digest");
+    updateNewsfeedTabs("feed");
+    state.currentView = "feed";
+    state.topics = home.topics || state.topics || [];
+    rememberNewsfeedArticles(state, home.highlights || []);
+    rememberNewsfeedArticles(state, home.headlines || []);
+    renderNewsfeedSidebar(state);
+    const category = state.homeCategory || "Investment";
+    const categories = home.categories || ["Investment", "Tech", "Politics", "Industries"];
+    const filtered = (home.headlines || []).filter((item) => !category || item.category === category);
+    const visible = filtered.length ? filtered : (home.headlines || []);
+    content.innerHTML = `
+      <section class="news-digest-panel">
+        <div>
+          <div class="news-section-kicker">Daily Digest <span>${escapeHtml(String(home.digest_count || 0).padStart(2, "0"))}</span></div>
+          <ul>${newsfeedDigestMarkup(home.daily_digest)}</ul>
+        </div>
+        ${newsfeedSourceStack(home.highlights || [])}
+      </section>
+      <section class="newsfeed-section">
+        <div class="newsfeed-section-heading">
+          <h2>Top Headlines</h2>
+          <span>${escapeHtml(home.updated_label || "")}</span>
+        </div>
+        <div class="news-category-tabs">
+          ${categories.map((item) => `
+            <button type="button" data-action="home-category" data-category="${escapeHtml(item)}" class="${item === category ? "is-active" : ""}">${escapeHtml(item)}</button>
+          `).join("")}
+        </div>
+        <div class="news-story-list">
+          ${visible.slice(0, 12).map((item, index) => newsfeedStoryCard(item, index + 1)).join("") || '<div class="newsfeed-empty">No headlines yet.</div>'}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderNewsfeedAdd(state) {
+    const content = document.getElementById("newsfeedContent");
+    if (!content) return;
+    const home = state.home || {};
+    const suggestions = home.suggested_topics || [];
+    setNewsfeedTitle("Add Topics");
+    updateNewsfeedTabs("add");
+    state.currentView = "add";
+    content.innerHTML = `
+      <section class="news-add-panel">
+        <div class="news-add-meta">
+          <strong>${escapeHtml(String((state.topics || []).length))}/10 topics created</strong>
+          <span>Suggested Topics</span>
+        </div>
+        <div class="news-suggested-list">
+          ${suggestions.map((topic) => `<button type="button" data-action="suggest-topic" data-topic="${escapeHtml(topic)}">${escapeHtml(topic)}</button>`).join("")}
+        </div>
+        <form id="newsTopicForm" class="news-topic-form">
+          <textarea id="newsTopicInput" rows="4" placeholder="Type any topic you want to follow"></textarea>
+          <button class="primary" type="submit" aria-label="Create topic">↑</button>
+        </form>
+        <div id="newsTopicStatus" class="status-line" aria-live="polite"></div>
+      </section>
+    `;
+  }
+
+  function renderNewsfeedExplore(state) {
+    const content = document.getElementById("newsfeedContent");
+    if (!content) return;
+    const explore = state.explore || {};
+    const categories = explore.categories || ["Tech", "Industries", "Investment", "Politics"];
+    const category = state.exploreCategory || categories[0] || "";
+    const items = (explore.items || []).filter((item) => !category || item.category === category);
+    rememberNewsfeedArticles(state, explore.items || []);
+    setNewsfeedTitle("Explore");
+    updateNewsfeedTabs("explore");
+    state.currentView = "explore";
+    content.innerHTML = `
+      <section class="newsfeed-section">
+        <div class="news-category-tabs news-category-tabs-large">
+          ${categories.map((item) => `
+            <button type="button" data-action="explore-category" data-category="${escapeHtml(item)}" class="${item === category ? "is-active" : ""}">${escapeHtml(item)}</button>
+          `).join("")}
+        </div>
+        <div class="news-story-list news-story-list-cards">
+          ${items.slice(0, 24).map((item, index) => newsfeedStoryCard(item, index + 1)).join("") || '<div class="newsfeed-empty">No stories yet.</div>'}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderNewsfeedTopic(state, topic, items) {
+    const content = document.getElementById("newsfeedContent");
+    if (!content) return;
+    rememberNewsfeedArticles(state, items || []);
+    setNewsfeedTitle(topic && topic.title || "Topic");
+    updateNewsfeedTabs("topic");
+    state.currentView = "topic";
+    state.currentTopic = topic;
+    state.currentTopicItems = items || [];
+    content.innerHTML = `
+      <section class="news-topic-hero">
+        <div>
+          <span class="news-topic-mark">“</span>
+          <h2>${escapeHtml(topic && topic.title || "Topic")}</h2>
+          <p>${escapeHtml(topic && topic.description || "")}</p>
+        </div>
+        <div class="news-topic-source-line">
+          <span>Sources</span>
+          ${newsfeedSourceStack(items || [])}
+        </div>
+      </section>
+      <section class="newsfeed-section">
+        <div class="newsfeed-section-heading">
+          <h2>Top Stories</h2>
+          <span>${escapeHtml(topic && topic.updated_label || "")}</span>
+        </div>
+        <div class="news-story-list news-story-list-cards">
+          ${(items || []).slice(0, 24).map((item, index) => newsfeedStoryCard(item, index + 1, { featured: index === 0 })).join("") || '<div class="newsfeed-empty">No stories yet.</div>'}
+        </div>
+      </section>
+    `;
+  }
+
+  async function renderNewsfeedArticle(state, article) {
+    const content = document.getElementById("newsfeedContent");
+    if (!content || !article) return;
+    state.currentView = "article";
+    setNewsfeedTitle("Story");
+    updateNewsfeedTabs("article");
+    content.innerHTML = `
+      <article class="news-article-detail">
+        <button class="news-icon-button" type="button" data-action="article-back" aria-label="Back">‹</button>
+        <header>
+          <div>
+            <h2>${escapeHtml(article.title || "Untitled")}</h2>
+            <p>${escapeHtml(newsfeedStoryMeta(article))}</p>
+          </div>
+          ${article.image_url ? `<img src="${escapeHtml(article.image_url)}" alt="">` : newsfeedLogoMarkup(article)}
+        </header>
+        <div class="news-article-source">
+          ${newsfeedLogoMarkup(article)}
+          <span>${escapeHtml(newsfeedSourceName(article))}</span>
+          ${article.url ? `<a href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer">Source</a>` : ""}
+        </div>
+        <div class="news-article-tabs">
+          <button type="button" class="is-active">Narrative</button>
+          <button type="button">Structured</button>
+        </div>
+        <section class="news-article-stream">
+          <h3>Summary</h3>
+          <div id="newsArticleSummary" class="news-stream-text"></div>
+          <h3>Narrative</h3>
+          <div id="newsArticleNarrative" class="news-stream-text"></div>
+        </section>
+      </article>
+    `;
+    await streamNewsfeedArticle(state.workerUrl, article);
+  }
+
+  async function streamNewsfeedArticle(workerUrl, article) {
+    const summary = document.getElementById("newsArticleSummary");
+    const narrative = document.getElementById("newsArticleNarrative");
+    if (!summary || !narrative) return;
+    summary.textContent = "";
+    narrative.textContent = "";
+    try {
+      const response = await fetch(`${workerUrl}/newsfeed/article`, {
+        method: "POST",
+        cache: "no-store",
+        headers: { "Content-Type": "application/json", ...authHeaders() },
+        body: JSON.stringify({ article }),
+      });
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.detail || "Could not load story.");
+      }
+      if (!response.body) {
+        const data = await response.json();
+        summary.textContent = data.summary || "";
+        narrative.textContent = data.narrative || "";
+        return;
+      }
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() || "";
+        for (const line of lines) {
+          if (!line.trim()) continue;
+          const event = JSON.parse(line);
+          if (event.type === "summary") summary.textContent += event.text || "";
+          if (event.type === "narrative") narrative.textContent += event.text || "";
+        }
+      }
+    } catch (error) {
+      narrative.textContent = error.message || "Could not load story.";
+    }
+  }
+
+  async function initNewsfeed() {
+    const app = document.getElementById("newsfeedApp");
+    const config = await loadOptionalJson("data/config.json", {});
+    const workerUrl = workerBaseUrl(config);
+    initAccountGate(workerUrl);
+    initAdminGate(workerUrl);
+    initNewsfeedNav();
+
+    if (!app) return;
+    let session = loadAuthSession();
+    if (!isSuperSession(session)) session = await refreshAuthSession(workerUrl);
+    if (!isSuperSession(session)) {
+      renderNewsfeedAccess(app, workerUrl);
+      return;
+    }
+
+    const state = {
+      workerUrl,
+      home: null,
+      explore: null,
+      topics: [],
+      articles: new Map(),
+      currentView: "feed",
+      lastListView: "feed",
+      homeCategory: "Investment",
+      exploreCategory: "Tech",
+    };
+
+    app.innerHTML = newsfeedShellMarkup();
+    trackEvent(workerUrl, "page_view", { page: "newsfeed" });
+
+    async function loadHome() {
+      setNewsfeedStatus("Loading latest news...");
+      const data = await newsfeedJson(workerUrl, "/newsfeed/home");
+      state.home = data;
+      state.topics = data.topics || [];
+      setNewsfeedStatus("");
+      renderNewsfeedHome(state);
+    }
+
+    async function loadExplore(category = state.exploreCategory) {
+      setNewsfeedStatus("Loading explore...");
+      const data = await newsfeedJson(workerUrl, `/newsfeed/explore?category=${encodeURIComponent(category || "")}`);
+      state.explore = data;
+      state.exploreCategory = category || (data.categories && data.categories[0]) || "";
+      state.topics = data.topics || state.topics || [];
+      setNewsfeedStatus("");
+      renderNewsfeedSidebar(state);
+      renderNewsfeedExplore(state);
+    }
+
+    async function loadTopic(id) {
+      setNewsfeedStatus("Loading topic...");
+      const data = await newsfeedJson(workerUrl, `/newsfeed/topic?id=${encodeURIComponent(id)}`);
+      state.topics = data.topics || state.topics || [];
+      setNewsfeedStatus("");
+      renderNewsfeedSidebar(state);
+      renderNewsfeedTopic(state, data.topic, data.items || []);
+    }
+
+    function closeSidebar() {
+      const sidebar = document.getElementById("newsfeedSidebar");
+      if (sidebar) sidebar.classList.remove("is-open");
+    }
+
+    app.addEventListener("click", async (event) => {
+      const control = event.target.closest("[data-action]");
+      if (!control) return;
+      const action = control.dataset.action;
+      try {
+        if (action === "toggle-sidebar") {
+          document.getElementById("newsfeedSidebar")?.classList.toggle("is-open");
+          return;
+        }
+        if (action === "show-feed") {
+          closeSidebar();
+          if (!state.home) await loadHome();
+          else renderNewsfeedHome(state);
+          return;
+        }
+        if (action === "show-add") {
+          closeSidebar();
+          renderNewsfeedAdd(state);
+          return;
+        }
+        if (action === "show-explore") {
+          closeSidebar();
+          await loadExplore();
+          return;
+        }
+        if (action === "home-category") {
+          state.homeCategory = control.dataset.category || "";
+          renderNewsfeedHome(state);
+          return;
+        }
+        if (action === "explore-category") {
+          state.exploreCategory = control.dataset.category || "";
+          renderNewsfeedExplore(state);
+          return;
+        }
+        if (action === "suggest-topic") {
+          const input = document.getElementById("newsTopicInput");
+          if (input) input.value = control.dataset.topic || "";
+          return;
+        }
+        if (action === "open-topic") {
+          closeSidebar();
+          await loadTopic(control.dataset.id || "");
+          return;
+        }
+        if (action === "pin-topic") {
+          const id = control.dataset.id || "";
+          const topic = (state.topics || []).find((item) => String(item.id) === id);
+          const pinned = !(topic && topic.pinned);
+          await newsfeedJson(workerUrl, "/newsfeed/topics/pin", {
+            method: "POST",
+            body: JSON.stringify({ id, pinned }),
+          });
+          if (topic) topic.pinned = pinned;
+          renderNewsfeedSidebar(state);
+          return;
+        }
+        if (action === "open-article") {
+          const article = state.articles.get(String(control.dataset.id || ""));
+          state.lastListView = state.currentView === "article" ? state.lastListView : state.currentView;
+          await renderNewsfeedArticle(state, article);
+          return;
+        }
+        if (action === "article-back") {
+          if (state.lastListView === "explore") renderNewsfeedExplore(state);
+          else if (state.lastListView === "topic") renderNewsfeedTopic(state, state.currentTopic, state.currentTopicItems);
+          else renderNewsfeedHome(state);
+        }
+      } catch (error) {
+        setNewsfeedStatus(error.message || "Newsfeed request failed.", "error");
+      }
+    });
+
+    app.addEventListener("submit", async (event) => {
+      if (event.target && event.target.id === "newsTopicForm") {
+        event.preventDefault();
+        const input = document.getElementById("newsTopicInput");
+        const status = document.getElementById("newsTopicStatus");
+        const topic = input ? input.value.trim() : "";
+        if (!topic) return;
+        if (status) {
+          status.className = "status-line";
+          status.textContent = "Creating topic...";
+        }
+        try {
+          const data = await newsfeedJson(workerUrl, "/newsfeed/topics", {
+            method: "POST",
+            body: JSON.stringify({ topic }),
+          });
+          state.topics = data.topics || state.topics || [];
+          renderNewsfeedSidebar(state);
+          renderNewsfeedTopic(state, data.topic, data.items || []);
+        } catch (error) {
+          if (status) {
+            status.className = "status-line error";
+            status.textContent = error.message || "Could not create topic.";
+          }
+        }
+      }
+    });
+
+    await loadHome();
+  }
+
   async function initDelivery() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
@@ -3382,7 +3984,9 @@
       ? initExternalDetail
       : page === "delivery"
         ? initDelivery
-        : initIndex;
+        : page === "newsfeed"
+          ? initNewsfeed
+          : initIndex;
   boot().catch((error) => {
     const target = page === "report"
       ? document.getElementById("detail")
@@ -3390,7 +3994,9 @@
         ? document.getElementById("externalDetail")
         : page === "delivery"
           ? document.getElementById("delivery")
-          : document.getElementById("results");
+          : page === "newsfeed"
+            ? document.getElementById("newsfeedApp")
+            : document.getElementById("results");
     if (target) target.innerHTML = `<div class="error-state">${escapeHtml(error.message)}</div>`;
   });
 }());
