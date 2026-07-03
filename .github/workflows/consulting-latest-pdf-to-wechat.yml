@@ -18,6 +18,11 @@ on:
         description: "Cap new PDFs per firm per run"
         required: true
         default: "5"
+      force_reprocess:
+        description: "Ignore seen-state and overwrite today's generated outputs"
+        required: true
+        type: boolean
+        default: false
       max_translated:
         description: "How many fetched reports to translate into WeChat articles. Use all."
         required: true
@@ -100,6 +105,7 @@ jobs:
             --max-per-institution "${{ github.event.inputs.max_per_institution || '5' }}" \
             --archive-path "institution_feeds/consulting_pdf_archive.jsonl" \
             --seen-state-path "institution_feeds/consulting_seen_state.json" \
+            --force-reprocess "${{ github.event.inputs.force_reprocess || 'false' }}" \
             2>&1 | tee consulting_fetch_progress.log
 
       - name: Generate MinerU source text and notes
@@ -110,11 +116,16 @@ jobs:
         run: |
           set -o pipefail
           DATE="${{ steps.fetch.outputs.date_folder }}"
+          SKIP_EXISTING="true"
+          if [ "${{ github.event.inputs.force_reprocess || 'false' }}" = "true" ]; then
+            rm -rf "xhs_notes/consulting/$DATE"
+            SKIP_EXISTING="false"
+          fi
           python scripts/run_pdf_to_xhs_in_batches.py \
             --input-dir _consulting_latest_pdfs \
             --output-dir "xhs_notes/consulting/$DATE" \
             --batch-size 5 \
-            --skip-existing true 2>&1 | tee consulting_xhs_progress.log
+            --skip-existing "$SKIP_EXISTING" 2>&1 | tee consulting_xhs_progress.log
 
       - name: Build KC translated report PDFs
         if: ${{ steps.fetch.outputs.pdf_count != '0' }}
@@ -124,6 +135,9 @@ jobs:
         run: |
           set -o pipefail
           DATE="${{ steps.fetch.outputs.date_folder }}"
+          if [ "${{ github.event.inputs.force_reprocess || 'false' }}" = "true" ]; then
+            rm -rf "kc_translated_reports/consulting/$DATE"
+          fi
           python scripts/build_kc_translated_reports.py \
             --dropbox-output-root "xhs_notes/consulting" \
             --date-folder "$DATE" \

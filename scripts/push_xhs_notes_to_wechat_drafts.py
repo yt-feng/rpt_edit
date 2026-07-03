@@ -70,6 +70,10 @@ TRAILING_IMAGE_MARKERS = {
     "prompts/zsxq_img.jpg",
     "github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg",
 }
+GENERATION_FAILURE_RE = re.compile(
+    r"(?:DeepSeek\s*生成[^\n]{0,80}失败|请复制对应\s*prompt|Missing\s+DEEPSEEK_API_KEY|Insufficient\s+Balance)",
+    re.I,
+)
 
 
 def latest_date_dir(root: Path) -> Path:
@@ -121,6 +125,12 @@ def clean_xhs_markdown(markdown: str) -> str:
     return "\n".join(cleaned).strip()
 
 
+def generation_failure_skip_reason(markdown: str) -> str:
+    if GENERATION_FAILURE_RE.search(markdown or ""):
+        return "deepseek_generation_failed_placeholder"
+    return ""
+
+
 def read_json(path: Path) -> dict[str, Any]:
     if not path.exists():
         return {}
@@ -159,6 +169,7 @@ def xhs_article_title_metadata(report_dir: Path) -> dict[str, str]:
         "wechat_title": title,
         "institution_name": institution_name,
         "source_report_name": source_report_name,
+        "generation_failure_reason": generation_failure_skip_reason(markdown),
     }
 
 
@@ -272,6 +283,9 @@ def build_article(
 ) -> dict[str, Any]:
     markdown_path = report_dir / "wechat_article.md"
     markdown = clean_xhs_markdown(markdown_path.read_text(encoding="utf-8", errors="ignore"))
+    placeholder_reason = generation_failure_skip_reason(markdown)
+    if placeholder_reason:
+        raise RuntimeError(f"Refusing to upload placeholder WeChat article for {report_dir.name}: {placeholder_reason}")
     status = read_json(report_dir / "status.json")
     institution_name = infer_institution_name(
         report_dir.name,
@@ -514,13 +528,13 @@ def main() -> int:
     allowed_selected: list[Path] = []
     for report_dir in selected:
         metadata = xhs_article_title_metadata(report_dir)
-        reason = wechat_title_policy_skip_reason(metadata["wechat_title"])
+        reason = metadata.get("generation_failure_reason") or wechat_title_policy_skip_reason(metadata["wechat_title"])
         if reason:
             record = dict(metadata)
             record["skip_reason"] = reason
             skipped_title_policy.append(record)
             log(
-                "Skipped WeChat draft article by title policy: "
+                "Skipped WeChat draft article before upload: "
                 f"{metadata['wechat_title']} ({reason})"
             )
         else:

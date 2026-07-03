@@ -853,6 +853,12 @@ def prune_seen_state(state: dict[str, Any], retention_days: int) -> None:
         del items[key]
 
 
+def as_bool(value: str | bool) -> bool:
+    if isinstance(value, bool):
+        return value
+    return str(value).strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
 def append_archive(path: Path, record: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("a", encoding="utf-8") as f:
@@ -877,6 +883,7 @@ def main() -> int:
     parser.add_argument("--worldbank-rows", type=int, default=30)
     parser.add_argument("--imf-rows", type=int, default=60, help="Coveo results to scan for IMF (newest first).")
     parser.add_argument("--ddg-df", default="", help="DuckDuckGo date filter for search sources: d/w/m/y or '' for none. The html endpoint returns nothing with a date filter, so default is none; recent reports still surface by relevance and seen-dedup avoids reprocessing.")
+    parser.add_argument("--force-reprocess", default="false", help="Ignore seen-state dedup and redownload matching fresh PDFs.")
     parser.add_argument("--request-timeout", type=int, default=60)
     parser.add_argument("--user-agent", default=DEFAULT_USER_AGENT)
     args = parser.parse_args()
@@ -908,6 +915,9 @@ def main() -> int:
     seen_items = state["items"]
     cutoff = datetime.now(timezone.utc) - timedelta(days=args.since_days)
     today = datetime.now(timezone.utc).date().isoformat()
+    force_reprocess = as_bool(args.force_reprocess)
+    if force_reprocess:
+        log("Force reprocess enabled: ignoring seen-state dedup for matching fresh PDFs.")
 
     downloaded: list[dict[str, Any]] = []
     skipped: list[dict[str, Any]] = []
@@ -938,7 +948,7 @@ def main() -> int:
                 break
 
             dedup_key = f"{key}:{item['guid'] or item['source_url']}"
-            if dedup_key in seen_items:
+            if dedup_key in seen_items and not force_reprocess:
                 continue
 
             published = parse_date(item["date"])
@@ -989,6 +999,7 @@ def main() -> int:
                 "pdf_url": used_url,
                 "local_filename": filename,
                 "bytes": dest.stat().st_size,
+                "force_reprocess": force_reprocess,
             }
             append_archive(archive_path, record)
             downloaded.append(record)
@@ -1008,6 +1019,7 @@ def main() -> int:
         "institutions": enabled,
         "downloaded_count": len(downloaded),
         "skipped_count": len(skipped),
+        "force_reprocess": force_reprocess,
         "downloaded": downloaded,
         "skipped": skipped,
     }

@@ -292,9 +292,6 @@ def main() -> int:
     if failures:
         log(f"Completed with {failures} failed batch(es). See {output_dir / 'batch_run_summary.json'}")
         if generated_report_count == 0:
-            if continue_on_error:
-                log("No publish-ready report directories were generated; keeping shard green because continue-on-batch-error=true.")
-                return 0
             log("No publish-ready report directories were generated; treating this shard as failed.")
             return 2
         return 0 if continue_on_error else 2

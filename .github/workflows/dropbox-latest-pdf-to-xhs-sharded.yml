@@ -39,6 +39,11 @@ on:
         description: "How many PDFs to send to MinerU per batch inside each shard"
         required: true
         default: "5"
+      force_reprocess:
+        description: "Overwrite existing shard outputs for the latest Dropbox folder"
+        required: true
+        type: boolean
+        default: false
       max_total_reports:
         description: "Max macro/trend reports after DeepSeek selection. 0 means all macro candidates."
         required: true
@@ -50,7 +55,7 @@ on:
       community_cta:
         description: "CTA style hint; DeepSeek rewrites it naturally for each article"
         required: true
-        default: "每天由 AI agent + 人工 review 生成国际投行中文摘要与 KC评论，daily 更新约 10-40 页，并整理当天最新数据图表合集，方便喂给 AI，也方便人工快速把握 market dynamics。欢迎来星球微信群里继续讨论。"
+        default: "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流"
       podcast_minutes:
         description: "Target length for Chinese and English podcast scripts. Audio/video are disabled here."
         required: true
@@ -121,6 +126,7 @@ jobs:
       shard_count: ${{ steps.vars.outputs.shard_count }}
       reports_per_shard: ${{ steps.vars.outputs.reports_per_shard }}
       batch_size: ${{ steps.vars.outputs.batch_size }}
+      force_reprocess: ${{ steps.vars.outputs.force_reprocess }}
       max_total_reports: ${{ steps.vars.outputs.max_total_reports }}
       wechat_length: ${{ steps.vars.outputs.wechat_length }}
       community_cta: ${{ steps.vars.outputs.community_cta }}
@@ -147,9 +153,10 @@ jobs:
           echo "shard_count=${{ github.event.inputs.shard_count || '40' }}" >> "$GITHUB_OUTPUT"
           echo "reports_per_shard=${{ github.event.inputs.reports_per_shard || '5' }}" >> "$GITHUB_OUTPUT"
           echo "batch_size=${{ github.event.inputs.batch_size || '5' }}" >> "$GITHUB_OUTPUT"
+          echo "force_reprocess=${{ github.event.inputs.force_reprocess || 'false' }}" >> "$GITHUB_OUTPUT"
           echo "max_total_reports=${{ github.event.inputs.max_total_reports || '0' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_length=${{ github.event.inputs.wechat_length || '3000' }}" >> "$GITHUB_OUTPUT"
-          echo "community_cta=${{ github.event.inputs.community_cta || '每天由 AI agent + 人工 review 生成国际投行中文摘要与 KC评论，daily 更新约 10-40 页，并整理当天最新数据图表合集，方便喂给 AI，也方便人工快速把握 market dynamics。欢迎来星球微信群里继续讨论。' }}" >> "$GITHUB_OUTPUT"
+          echo "community_cta=${{ github.event.inputs.community_cta || '更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流' }}" >> "$GITHUB_OUTPUT"
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
           echo "translated_report_count=${{ github.event.inputs.translated_report_count || 'all' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_upload=${{ github.event.inputs.wechat_draft_upload || 'true' }}" >> "$GITHUB_OUTPUT"
@@ -310,6 +317,11 @@ jobs:
           set -o pipefail
           OUTPUT_DIR="xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}"
           echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
+          SKIP_EXISTING="true"
+          if [ "${{ needs.resolve-inputs.outputs.force_reprocess }}" = "true" ]; then
+            rm -rf "$OUTPUT_DIR"
+            SKIP_EXISTING="false"
+          fi
           mkdir -p "$OUTPUT_DIR"
           cp "_selected_macro_pdfs/macro_classification_all.json" "$OUTPUT_DIR/macro_classification_all.json" || true
           cp "_selected_macro_pdfs/selected_macro_candidates.json" "$OUTPUT_DIR/selected_macro_candidates.json" || true
@@ -325,7 +337,7 @@ jobs:
             --shard-count "${{ needs.resolve-inputs.outputs.shard_count }}" \
             --max-reports-per-shard "${{ needs.resolve-inputs.outputs.reports_per_shard }}" \
             --max-total-reports "${{ needs.resolve-inputs.outputs.max_total_reports }}" \
-            --skip-existing true \
+            --skip-existing "$SKIP_EXISTING" \
             --model "${{ needs.resolve-inputs.outputs.model }}" \
             --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
             --mineru-model "${{ needs.resolve-inputs.outputs.mineru_model }}" \
@@ -556,6 +568,9 @@ jobs:
           set -o pipefail
           DATE_FOLDER="${{ needs.select-macro-reports.outputs.latest_folder }}"
           MAX_REPORTS="${{ needs.resolve-inputs.outputs.translated_report_count }}"
+          if [ "${{ needs.resolve-inputs.outputs.force_reprocess }}" = "true" ]; then
+            rm -rf "kc_translated_reports/$DATE_FOLDER"
+          fi
           echo "::notice::Building $MAX_REPORTS KC translated report PDF(s) from xhs_notes/dropbox/$DATE_FOLDER"
           python scripts/build_kc_translated_reports.py \
             --dropbox-output-root "xhs_notes/dropbox" \

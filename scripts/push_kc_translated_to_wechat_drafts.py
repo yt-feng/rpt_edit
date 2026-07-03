@@ -196,7 +196,7 @@ def alias_pattern(alias: str) -> str:
     if re.fullmatch(r"[A-Z]{2,5}", alias):
         return rf"(?<![A-Za-z]){re.escape(alias)}(?![A-Za-z])"
     if re.fullmatch(r"[A-Za-z. ]+", alias):
-        return r"\b" + re.escape(alias).replace(r"\ ", r"\s+") + r"\b"
+        return r"\b" + re.escape(alias).replace(r"\ ", r"[\s._-]+") + r"\b"
     return re.escape(alias)
 
 
@@ -211,8 +211,32 @@ def limit_title_colons(title: str) -> str:
     return f"{head.strip()}：{tail}"
 
 
+def clean_leading_report_slug(title: str) -> str:
+    cleaned = normalize_space(title)
+    cleaned = re.sub(
+        r"^([^：:]{1,18}[：:]\s*)(?:\d{4}[-_])?\d{1,4}[-_]\d{1,4}[-_]+",
+        r"\1",
+        cleaned,
+    )
+    cleaned = re.sub(r"^(?:\d{4}[-_])?\d{1,4}[-_]\d{1,4}[-_]+", "", cleaned)
+
+    def readable_slug_tail(value: str) -> str:
+        if value.count("-") + value.count("_") < 3:
+            return value
+        value = value.replace("_", " ")
+        value = re.sub(r"\s*-{2,}\s*", "，", value)
+        value = re.sub(r"\s*-\s*", " ", value)
+        return normalize_space(value)
+
+    for sep in ("：", ":"):
+        if sep in cleaned:
+            head, tail = cleaned.split(sep, 1)
+            return f"{head.strip()}：{readable_slug_tail(tail.strip())}".strip("： ")
+    return readable_slug_tail(cleaned).strip(" -_")
+
+
 def remove_redundant_title_aliases(title: str) -> str:
-    cleaned = canonicalize_institution_title_name(title)
+    cleaned = clean_leading_report_slug(canonicalize_institution_title_name(title))
     for cn_name, aliases in INSTITUTION_TITLE_ALIASES:
         alias_group = "|".join(alias_pattern(alias) for alias in aliases)
         cleaned = re.sub(

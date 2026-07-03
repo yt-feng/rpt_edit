@@ -568,7 +568,7 @@ def ensure_markdown_h1_institution(markdown: str, institution_name: str) -> str:
 def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
     api_key = os.getenv("DEEPSEEK_API_KEY")
     if not api_key:
-        return f"未检测到 DEEPSEEK_API_KEY。请复制对应 prompt 文件到 DeepSeek 中生成：{label}。\n"
+        raise RuntimeError(f"Missing DEEPSEEK_API_KEY for {label}")
     url = args.deepseek_base_url.rstrip("/") + "/chat/completions"
     payload = {
         "model": args.model,
@@ -590,8 +590,7 @@ def safe_generate_text(prompt: str, args: argparse.Namespace, label: str) -> str
     try:
         return call_deepseek(prompt, args, label)
     except Exception as exc:
-        log(f"DeepSeek generation failed for {label}: {exc}")
-        return f"DeepSeek 生成 {label} 失败：{exc}\n\n请复制对应 prompt 文件手动生成。\n"
+        raise RuntimeError(f"DeepSeek generation failed for {label}: {exc}") from exc
 
 
 def visible_char_count(text: str) -> int:
@@ -820,7 +819,13 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--style", default="投研博主风：信息密度高，但像给朋友讲逻辑")
     parser.add_argument("--length", type=int, default=1000)
     parser.add_argument("--wechat-length", type=int, default=1200)
-    parser.add_argument("--community-cta", default="加入社群，领取完整研报解读与原始图表。")
+    parser.add_argument(
+        "--community-cta",
+        default=(
+            "更多国际信源汇编&评论，扫码交流，每日更新，汇总国际主流叙事&数据&图表，观测边际变化。"
+            "汇聚了头部券商、PE/VC、投行、并购、hedge fund、资管机构、战略咨询、智库等朋友，期待交流"
+        ),
+    )
     parser.add_argument("--emoji", default="中")
     parser.add_argument("--hashtags", default="#学习笔记")
     parser.add_argument("--disclaimer", action="store_true", default=False)

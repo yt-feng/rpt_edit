@@ -592,11 +592,12 @@ def call_deepseek(
 
 
 def title_is_sensitive(title: str, args: argparse.Namespace) -> bool:
-    """Ask DeepSeek whether a report title is China-sensitive. Fails closed.
+    """Ask DeepSeek whether a report title is China-sensitive.
 
     Used to gate the WeChat draft path: a title that disparages China / touches
-    sensitive political topics must not reach the 公众号 draft box. On any error or
-    unclear verdict we return True (skip the report) to stay on the safe side.
+    sensitive political topics must not reach the 公众号 draft box. API errors are
+    fatal so an exhausted DeepSeek balance cannot be mistaken for sensitive titles.
+    Unclear verdicts still fail closed and skip only that report.
     """
     title = (title or "").strip()
     if not title:
@@ -609,9 +610,8 @@ def title_is_sensitive(title: str, args: argparse.Namespace) -> bool:
     )
     try:
         verdict = call_deepseek(prompt, args, f"title guard: {title[:40]}", temperature=0.0).upper()
-    except Exception as exc:  # noqa: BLE001 - fail closed
-        log(f"  [title-guard] DeepSeek error, skipping report to stay safe: {exc}")
-        return True
+    except Exception as exc:  # noqa: BLE001 - make quota/API issues visible
+        raise RuntimeError(f"title guard failed for {title[:80]}: {exc}") from exc
     if "SENSITIVE" in verdict:
         return True
     if "SAFE" in verdict:
