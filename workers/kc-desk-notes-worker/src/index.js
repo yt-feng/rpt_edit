@@ -96,6 +96,8 @@ const NEWSFEED_MAX_USER_TOPICS = 10000;
 const NEWSFEED_EMAIL_DEFAULT_TIME = "09:00";
 const NEWSFEED_EMAIL_DEFAULT_TIMEZONE = "Asia/Shanghai";
 const NEWSFEED_EMAIL_WINDOW_MINUTES = 35;
+const CLOUDFLARE_API_BASE = "https://api.cloudflare.com/client/v4";
+const CLOUDFLARE_EMAIL_TIMEOUT_MS = 10000;
 const NEWSFEED_CATEGORIES = ["Investment", "Tech", "Politics", "Industries"];
 const NEWSFEED_UA = "KCDeskNewsfeed/0.1";
 const NEWSFEED_OUTPUT_LANGUAGES = [
@@ -1168,14 +1170,9 @@ async function handleAuth(request, env) {
         return jsonResponse(request, env, 409, { detail: "用户名已被注册。" });
       }
       const rawEmail = String(payload.email || "");
-      let email = normalizeEmail(rawEmail);
-      let emailIsGenerated = false;
-      if (rawEmail.trim() && !email) {
-        return jsonResponse(request, env, 400, { detail: "邮箱格式不正确，可以留空。" });
-      }
+      const email = normalizeEmail(rawEmail);
       if (!email) {
-        email = generatedEmailForUsername(username);
-        emailIsGenerated = true;
+        return jsonResponse(request, env, 400, { detail: "注册必须填写有效邮箱。" });
       }
       const existingEmail = await findSiteUserByEmail(env, email);
       if (existingEmail) {
@@ -1188,7 +1185,7 @@ async function handleAuth(request, env) {
       const fields = {
         username,
         email,
-        email_is_generated: emailIsGenerated,
+        email_is_generated: false,
         ...passwordFields,
         created_at: now,
         updated_at: now,
@@ -1202,7 +1199,8 @@ async function handleAuth(request, env) {
         if (recovered) return recovered;
         throw error;
       }
-      return authSuccessResponse(request, env, 201, user);
+      const emailDestination = await requestCloudflareDestinationVerification(env, email);
+      return authSuccessResponse(request, env, 201, user, { email_destination: emailDestination });
     }
 
     const user = await findSiteUserByUsername(env, username);
@@ -1240,6 +1238,83 @@ async function handleEntitlement(request, env) {
 function cleanEnv(value) {
   const text = String(value || "").trim();
   return text === "unconfigured" ? "" : text;
+}
+
+function cloudflareEmailRoutingConfig(env) {
+  const accountId = cleanEnv(env.CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID || env.CLOUDFLARE_ACCOUNT_ID);
+  const token = cleanEnv(env.CLOUDFLARE_EMAIL_ROUTING_API_TOKEN || env.CLOUDFLARE_API_TOKEN);
+  return {
+    accountId,
+    token,
+    configured: Boolean(accountId && token),
+  };
+}
+
+async function cloudflareEmailRoutingJson(env, path, init = {}) {
+  const config = cloudflareEmailRoutingConfig(env);
+  if (!config.configured) throw new Error("Cloudflare Email Routing API is not configured.");
+  const headers = {
+    "Accept": "application/json",
+    "Authorization": `Bearer ${config.token}`,
+    ...(init.body ? { "Content-Type": "application/json" } : {}),
+    ...(init.headers || {}),
+  };
+  const response = await fetchWithTimeout(`${CLOUDFLARE_API_BASE}${path}`, {
+    ...init,
+    headers,
+  }, CLOUDFLARE_EMAIL_TIMEOUT_MS);
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok || data.success === false) {
+    const detail = Array.isArray(data.errors) && data.errors[0] && data.errors[0].message
+      ? data.errors[0].message
+      : `Cloudflare API returned HTTP ${response.status}.`;
+    throw new Error(detail);
+  }
+  return data.result;
+}
+
+async function requestCloudflareDestinationVerification(env, email) {
+  const cleanEmail = normalizeEmail(email);
+  if (!cleanEmail) return { status: "invalid", configured: false };
+  const config = cloudflareEmailRoutingConfig(env);
+  if (!config.configured) return { status: "not_configured", configured: false };
+  const basePath = `/accounts/${encodeURIComponent(config.accountId)}/email/routing/addresses`;
+  try {
+    const existing = await cloudflareEmailRoutingJson(env, `${basePath}?per_page=200`, { method: "GET" });
+    const match = (Array.isArray(existing) ? existing : [])
+      .find((address) => normalizeEmail(address && address.email) === cleanEmail);
+    if (match) {
+      return {
+        status: match.verified ? "verified" : "pending",
+        configured: true,
+        requested: false,
+        id: String(match.id || ""),
+      };
+    }
+  } catch (_error) {
+    // A write-only token can still create the address and trigger Cloudflare's email.
+  }
+  try {
+    const created = await cloudflareEmailRoutingJson(env, basePath, {
+      method: "POST",
+      body: JSON.stringify({ email: cleanEmail }),
+    });
+    return {
+      status: created && created.verified ? "verified" : "pending",
+      configured: true,
+      requested: true,
+      id: String(created && created.id || ""),
+    };
+  } catch (error) {
+    const detail = String(error && error.message || "Cloudflare destination verification failed.").slice(0, 300);
+    const status = /already exists|duplicate|exists/i.test(detail) ? "pending" : "failed";
+    return {
+      status,
+      configured: true,
+      requested: false,
+      detail,
+    };
+  }
 }
 
 function paddleClientToken(env) {

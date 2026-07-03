@@ -361,7 +361,7 @@
           <form id="accountAuthForm" class="auth-form" ${signedIn ? "hidden" : ""}>
             <div class="auth-grid">
               <label>用户名<input id="accountUsername" type="text" autocomplete="username" placeholder="yourname" required></label>
-              <label id="accountEmailLabel" hidden>邮箱（可选）<input id="accountEmail" type="email" autocomplete="email" placeholder="you@example.com"></label>
+              <label id="accountEmailLabel" hidden>邮箱（注册必填）<input id="accountEmail" type="email" autocomplete="email" placeholder="you@example.com"></label>
               <label>密码<input id="accountPassword" type="password" autocomplete="current-password" placeholder="至少 4 位" required></label>
             </div>
             <label class="captcha-field">验证码
@@ -485,6 +485,7 @@
     function setMode(nextMode) {
       mode = nextMode;
       emailLabel.hidden = mode !== "register";
+      email.required = mode === "register";
       password.autocomplete = mode === "register" ? "new-password" : "current-password";
       submit.textContent = mode === "register" ? "注册并登录" : "登录";
       toggle.textContent = mode === "register" ? "已有账号，去登录" : "注册新账号";
@@ -518,6 +519,9 @@
       submit.disabled = true;
       setStatus(mode === "register" ? "正在注册…" : "正在登录…");
       try {
+        if (mode === "register" && !email.value.trim()) {
+          throw new Error("注册需要绑定邮箱。");
+        }
         const response = await fetch(`${workerUrl}/auth`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -536,6 +540,20 @@
         password.value = "";
         answer.value = "";
         refreshUi();
+        if (mode === "register") {
+          const destination = data.email_destination || {};
+          if (destination.status === "verified") {
+            setStatus("注册成功，邮箱已完成 Cloudflare 收件地址验证。", "ok");
+          } else if (destination.status === "pending" && destination.requested) {
+            setStatus("注册成功，Cloudflare 已向邮箱发送验证邮件，请在邮箱里点击 Verify email address。", "ok");
+          } else if (destination.status === "pending") {
+            setStatus("注册成功，邮箱已经在 Cloudflare 待验证列表里，请在邮箱里完成验证。", "ok");
+          } else if (destination.status === "failed") {
+            setStatus(`注册成功，邮箱已绑定；Cloudflare 验证邮件暂时没有发出：${destination.detail || "请稍后重试。"}`, "error");
+          } else if (destination.status === "not_configured") {
+            setStatus("注册成功，邮箱已绑定；后续可在 Cloudflare Destination Addresses 完成验证。", "ok");
+          }
+        }
       } catch (error) {
         setStatus(error.message || "账号请求失败。", "error");
         answer.value = "";
@@ -3889,7 +3907,9 @@
     const enabled = Boolean(settings.digest_email_enabled);
     const providerNote = settings.email_provider_configured === false
       ? "Email sender needs Cloudflare Email binding before scheduled delivery starts."
-      : "Saved settings are used by the scheduled digest sender. It runs every 30 minutes.";
+      : (state.interfaceLanguage === "zh-CN"
+        ? "免费 Cloudflare 发件需要这个邮箱在 Destination Addresses 中完成验证；保存后可点 Send test now 测试。"
+        : "Free Cloudflare delivery needs this address verified in Destination Addresses. Save, then use Send test now.");
     const lastStatus = newsfeedEmailLastStatus(settings);
     return `
       <section class="news-email-settings">

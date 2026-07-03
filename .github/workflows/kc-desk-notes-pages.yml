@@ -223,6 +223,8 @@ jobs:
           DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
           DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-chat' }}
           NEWSFEED_EMAIL_FROM: ${{ secrets.NEWSFEED_EMAIL_FROM || vars.NEWSFEED_EMAIL_FROM || 'KC Desk Newsfeed <newsfeed@kcdesk.com>' }}
+          CLOUDFLARE_EMAIL_ROUTING_API_TOKEN: ${{ secrets.CLOUDFLARE_EMAIL_ROUTING_API_TOKEN || secrets.CLOUDFLARE_API_TOKEN || 'unconfigured' }}
+          CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID || secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID || 'unconfigured' }}
           # External-report preparation token. Optional; the fallback keeps wrangler
           # from pushing an empty secret value.
           GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN || 'unconfigured' }}
@@ -249,4 +251,6 @@ jobs:
             DEEPSEEK_BASE_URL
             DEEPSEEK_MODEL
             NEWSFEED_EMAIL_FROM
+            CLOUDFLARE_EMAIL_ROUTING_API_TOKEN
+            CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID
             GH_DISPATCH_TOKEN

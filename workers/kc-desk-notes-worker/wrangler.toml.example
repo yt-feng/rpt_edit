@@ -19,6 +19,9 @@ GH_REPO = "yt-feng/rpt_edit"
 # Optional for scheduled Newsfeed digest emails via Cloudflare Email Service:
 # NEWSFEED_EMAIL_PROVIDER = "cloudflare"
 # NEWSFEED_EMAIL_FROM = "KC Desk Newsfeed <newsfeed@kcdesk.com>"
+# Optional: auto-create Cloudflare Destination Addresses on new user registration:
+# wrangler secret put CLOUDFLARE_EMAIL_ROUTING_API_TOKEN
+# wrangler secret put CLOUDFLARE_EMAIL_ROUTING_ACCOUNT_ID
 # [[send_email]]
 # name = "EMAIL"
 
