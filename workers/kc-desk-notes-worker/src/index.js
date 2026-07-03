@@ -3669,7 +3669,8 @@ async function handleNewsfeedSettings(request, env) {
   }
 }
 
-async function handleNewsfeedEmailTest(request, env) {
+async function handleNewsfeedEmailSend(request, env, options = {}) {
+  const isTest = Boolean(options.test);
   try {
     const user = await requireNewsfeedUser(request, env);
     const settings = await loadNewsfeedSettings(env, user);
@@ -3683,21 +3684,25 @@ async function handleNewsfeedEmailTest(request, env) {
     let result;
     let recorded;
     try {
-      ({ result } = await attemptNewsfeedDigestEmail(env, next, due, {
-        subject: `${newsfeedEmailSubject(next, due)} · Test`,
-      }));
-      recorded = await recordNewsfeedEmailAttempt(env, newsfeedUserKey(user), next, result, due, { test: true });
+      ({ result } = await attemptNewsfeedDigestEmail(env, next, due, isTest
+        ? { subject: `${newsfeedEmailSubject(next, due)} · Test` }
+        : {}));
+      recorded = await recordNewsfeedEmailAttempt(env, newsfeedUserKey(user), next, result, due, { test: isTest });
     } catch (error) {
       result = { sent: false, detail: error.message || "Email send failed." };
-      recorded = await recordNewsfeedEmailAttempt(env, newsfeedUserKey(user), next, result, due, { test: true });
+      recorded = await recordNewsfeedEmailAttempt(env, newsfeedUserKey(user), next, result, due, { test: isTest });
     }
     return jsonResponse(request, env, 200, {
       sent: Boolean(result && result.sent),
       detail: result && (result.detail || result.message) || "",
+      provider: result && result.provider || newsfeedEmailProvider(env),
+      message_id: result && result.messageId || "",
+      test: isTest,
       settings: publicNewsfeedSettings(recorded || next, user, env),
     });
   } catch (error) {
-    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || "Could not send test email." });
+    const fallback = isTest ? "Could not send test email." : "Could not send newsletter email.";
+    return jsonResponse(request, env, /twotigers|log in|Account/i.test(String(error.message)) ? 403 : 500, { detail: error.message || fallback });
   }
 }
 
@@ -6135,7 +6140,11 @@ export default {
     }
 
     if (pathname === "/newsfeed/email-test" && request.method === "POST") {
-      return handleNewsfeedEmailTest(request, env);
+      return handleNewsfeedEmailSend(request, env, { test: true });
+    }
+
+    if (pathname === "/newsfeed/email-send" && request.method === "POST") {
+      return handleNewsfeedEmailSend(request, env);
     }
 
     if (pathname === "/newsfeed/article" && request.method === "POST") {

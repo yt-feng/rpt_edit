@@ -3426,6 +3426,8 @@
       suggestedTopics: "Suggested Topics",
       sendDailyDigest: "Send daily digest",
       saveEmail: "Save email",
+      sendTestNow: "Send test now",
+      sendNewsletterNow: "Send newsletter now",
       email: "Email",
       sendTime: "Send time",
       timezone: "Timezone",
@@ -3452,6 +3454,8 @@
       suggestedTopics: "热门话题",
       sendDailyDigest: "发送每日摘要",
       saveEmail: "保存邮箱",
+      sendTestNow: "发送测试邮件",
+      sendNewsletterNow: "立即发送 newsletter",
       email: "邮箱",
       sendTime: "发送时间",
       timezone: "时区",
@@ -3478,6 +3482,8 @@
       suggestedTopics: "Suggested Topics",
       sendDailyDigest: "Send daily digest",
       saveEmail: "Save email",
+      sendTestNow: "Send test now",
+      sendNewsletterNow: "Send newsletter now",
       email: "Email",
       sendTime: "Send time",
       timezone: "Timezone",
@@ -3504,6 +3510,8 @@
       suggestedTopics: "Suggested Topics",
       sendDailyDigest: "Send daily digest",
       saveEmail: "Save email",
+      sendTestNow: "Send test now",
+      sendNewsletterNow: "Send newsletter now",
       email: "Email",
       sendTime: "Send time",
       timezone: "Timezone",
@@ -3911,11 +3919,11 @@
         : "Email sender is not configured yet. Add the Brevo API key first.")
       : (settings.email_provider === "brevo"
         ? (state.interfaceLanguage === "zh-CN"
-          ? "Brevo 邮件服务已连接；保存后可点 Send test now 发送测试邮件。"
-          : "Brevo email is connected. Save, then use Send test now.")
+          ? "Brevo 邮件服务已连接；保存后可立即发送 newsletter。"
+          : "Brevo email is connected. Save, then send a newsletter now.")
         : (state.interfaceLanguage === "zh-CN"
-          ? "Cloudflare 邮件服务已连接；保存后可点 Send test now 测试。"
-          : "Cloudflare email is connected. Save, then use Send test now."));
+          ? "Cloudflare 邮件服务已连接；保存后可立即发送 newsletter。"
+          : "Cloudflare email is connected. Save, then send a newsletter now."));
     const lastStatus = newsfeedEmailLastStatus(settings);
     return `
       <section class="news-email-settings">
@@ -3941,7 +3949,8 @@
             <span>${escapeHtml(newsfeedText(state, "sendDailyDigest"))}</span>
           </label>
           <button id="newsEmailSubmit" class="primary" type="submit">${escapeHtml(newsfeedText(state, "saveEmail"))}</button>
-          <button id="newsEmailTest" class="secondary-button news-email-test" type="button" data-action="send-email-test">Send test now</button>
+          <button id="newsEmailSend" class="primary news-email-test" type="button" data-action="send-email-now">${escapeHtml(newsfeedText(state, "sendNewsletterNow"))}</button>
+          <button id="newsEmailTest" class="secondary-button news-email-test" type="button" data-action="send-email-test">${escapeHtml(newsfeedText(state, "sendTestNow"))}</button>
         </form>
         <div id="newsEmailStatus" class="status-line" aria-live="polite">${escapeHtml(lastStatus || providerNote)}</div>
       </section>
@@ -4474,19 +4483,20 @@
           renderNewsfeedEmailView(state);
           return;
         }
-        if (action === "send-email-test") {
+        if (action === "send-email-test" || action === "send-email-now") {
+          const isTest = action === "send-email-test";
           const status = document.getElementById("newsEmailStatus");
-          const button = document.getElementById("newsEmailTest");
+          const button = document.getElementById(isTest ? "newsEmailTest" : "newsEmailSend");
           if (status) {
             status.className = "status-line";
-            status.textContent = "Sending test digest email...";
+            status.textContent = isTest ? "Sending test digest email..." : "Sending newsletter digest...";
           }
           if (button) {
             button.disabled = true;
             button.classList.add("is-loading");
             button.textContent = "Sending...";
           }
-          const data = await newsfeedJson(workerUrl, "/newsfeed/email-test", {
+          const data = await newsfeedJson(workerUrl, isTest ? "/newsfeed/email-test" : "/newsfeed/email-send", {
             method: "POST",
             body: JSON.stringify(newsfeedEmailPayloadFromForm(state)),
           });
@@ -4495,9 +4505,12 @@
           const nextStatus = document.getElementById("newsEmailStatus");
           if (nextStatus) {
             nextStatus.className = data.sent ? "status-line ok" : "status-line error";
+            const idSuffix = data.message_id ? ` (${data.message_id})` : "";
             nextStatus.textContent = data.sent
-              ? "Test digest sent. Please check inbox and spam folder."
-              : (data.detail || state.settings.digest_last_send_detail || "Test email was not sent.");
+              ? (isTest
+                ? `Test digest accepted by ${data.provider || "email provider"}.${idSuffix}`
+                : `Newsletter accepted by ${data.provider || "email provider"}.${idSuffix}`)
+              : (data.detail || state.settings.digest_last_send_detail || (isTest ? "Test email was not sent." : "Newsletter email was not sent."));
           }
           return;
         }
@@ -4652,7 +4665,7 @@
           if (status) {
             status.className = "status-line ok";
             status.textContent = state.settings.email_provider_configured === false
-              ? "Settings saved. Email delivery starts after Cloudflare Email is configured."
+              ? "Settings saved. Email delivery starts after the email sender is configured."
               : "Settings saved. Daily Digest will be sent at the selected time.";
           }
         } catch (error) {
