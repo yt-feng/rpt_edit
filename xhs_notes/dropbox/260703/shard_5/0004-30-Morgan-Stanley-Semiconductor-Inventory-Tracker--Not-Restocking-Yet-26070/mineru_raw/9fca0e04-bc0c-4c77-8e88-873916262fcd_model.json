@@ -1,0 +1,6278 @@
+[
+    [
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.076,
+                0.243,
+                0.093
+            ],
+            "angle": 0,
+            "content": "July 1, 2026 04:14 AM GMT",
+            "merge_prev": false
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.045,
+                0.366,
+                0.071
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.855,
+                0.05,
+                0.933,
+                0.068
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.098,
+                0.408,
+                0.12
+            ],
+            "angle": 0,
+            "content": "Semiconductors | North America",
+            "merge_prev": false
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.065,
+                0.132,
+                0.521,
+                0.203
+            ],
+            "angle": 0,
+            "content": "Semiconductor Inventory\nTracker: Not Restocking Yet"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.22,
+                0.578,
+                0.303
+            ],
+            "angle": 0,
+            "content": "Supply chain inventory rose q/q but outperformed seasonality, with below-seasonal producer builds and distributor declines. Supply is tightening, but meaningful restocking has yet to emerge.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.069,
+                0.319,
+                0.204,
+                0.338
+            ],
+            "angle": 0,
+            "content": "Key Takeaways"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.343,
+                0.598,
+                0.377
+            ],
+            "angle": 0,
+            "content": "- Overall supply chain outperformed seasonality, increasing by less than the typical 1Q increase.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.383,
+                0.561,
+                0.4
+            ],
+            "angle": 0,
+            "content": "- Producer and disti DOIs outperformed seasonality; customers were ~in-line.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.406,
+                0.595,
+                0.441
+            ],
+            "angle": 0,
+            "content": "■ Auto OEM DOI moved above historical median, while Auto Supplier DOI declined to in-line with historical levels.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.456,
+                0.581,
+                0.562
+            ],
+            "angle": 0,
+            "content": "Overall supply chain inventory increased q/q in 1Q, but the build was below typical 1Q seasonality. We remain above historical median levels, as distributors declined and producers built less than seasonal levels, while customers were ~inline. While this is a step in the right direction, we still remain 33 days above historical median for the supply chain, and have not yet seen a broader restocking cycle.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.571,
+                0.597,
+                0.696
+            ],
+            "angle": 0,
+            "content": "The quarter reflected a mix of normal 1Q inventory build and continued discipline across the supply chain rather than broad restocking. Distributors continue to lean out, producer builds remain relatively steady, and customer trends were mixed. For stocks, we prefer areas where supply/demand is tightening or inventory risk is more defensible, including premium-end analog exposure in ADI and NXP, compute/networking names NVDA, AVGO, and CBRS, memory names MU and SNDK, and semicap names MKSI, KLAC, LRCX and ONTO.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.704,
+                0.581,
+                0.739
+            ],
+            "angle": 0,
+            "content": "Exhibit 1: Stacked DOI increased 9 days vs. a seasonal 19-day increase and is 33 days above the historical median. Trailing decreased ~2 days.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.073,
+                0.748,
+                0.592,
+                0.929
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.935,
+                0.238,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.622,
+                0.097,
+                0.936,
+                0.304
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"2\">MS &amp; CO. LLC</td></tr><tr><td colspan=\"2\">Joseph Moore</td></tr><tr><td colspan=\"2\">Equity Analyst</td></tr><tr><td>Joseph.Moore@morganstanley.com</td><td>+1 212 761-7516</td></tr><tr><td colspan=\"2\">Nicole Kozhukhov</td></tr><tr><td colspan=\"2\">Research Associate</td></tr><tr><td>Nicole.Kozhukhov@morganstanley.com</td><td>+1 212 761-1636</td></tr><tr><td colspan=\"2\">Ella Tulchinsky</td></tr><tr><td colspan=\"2\">Research Associate</td></tr><tr><td>Ella.Tulchinsky@morganstanley.com</td><td>+1 212 761-2222</td></tr><tr><td colspan=\"2\">Shane Brett</td></tr><tr><td colspan=\"2\">Equity Analyst</td></tr><tr><td>Shane.Brett@morganstanley.com</td><td>+1 212 761-1022</td></tr><tr><td colspan=\"2\">Mason Wayne</td></tr><tr><td colspan=\"2\">Research Associate</td></tr><tr><td>Mason.Wayne@morganstanley.com</td><td>+1 212 761-6012</td></tr></table>"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.624,
+                0.312,
+                0.932,
+                0.39
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"2\">SEMICONDUCTORS</td></tr><tr><td>North America</td><td></td></tr><tr><td>Industry View</td><td>Attractive</td></tr><tr><td colspan=\"2\">SEMICONDUCTOR CAPITAL EQUIPMENT</td></tr><tr><td>North America</td><td></td></tr><tr><td>Industry View</td><td>In-Line</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.624,
+                0.906,
+                0.919,
+                0.944
+            ],
+            "angle": 0,
+            "content": "For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_footnote",
+            "bbox": [
+                0.624,
+                0.824,
+                0.93,
+                0.905
+            ],
+            "angle": 0,
+            "content": "MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.08,
+                0.239,
+                0.09
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.099,
+                0.406,
+                0.118
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.133,
+                0.48,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.17,
+                0.519,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.221,
+                0.575,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.244,
+                0.566,
+                0.258
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.263,
+                0.535,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.286,
+                0.135,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.32,
+                0.201,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.346,
+                0.079,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.345,
+                0.595,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.362,
+                0.161,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.385,
+                0.558,
+                0.399
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.41,
+                0.083,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.408,
+                0.592,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.426,
+                0.276,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.458,
+                0.559,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.477,
+                0.571,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.494,
+                0.575,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.512,
+                0.536,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.528,
+                0.578,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.546,
+                0.105,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.573,
+                0.534,
+                0.585
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.591,
+                0.559,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.609,
+                0.587,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.627,
+                0.553,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.644,
+                0.594,
+                0.657
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.662,
+                0.586,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.68,
+                0.425,
+                0.691
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.705,
+                0.577,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.724,
+                0.483,
+                0.737
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.626,
+                0.908,
+                0.916,
+                0.919
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.626,
+                0.919,
+                0.912,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.626,
+                0.931,
+                0.664,
+                0.943
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.064
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.885,
+                0.05,
+                0.934,
+                0.063
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.113,
+                0.545,
+                0.144
+            ],
+            "angle": 0,
+            "content": "Supply Chain Inventory Overview"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.384,
+                0.177,
+                0.908,
+                0.284
+            ],
+            "angle": 0,
+            "content": "Supply chain inventory increased q/q in 1Q, but by less than typical seasonality, with customer inventory ~in-line, distributors declining, and producers building less than seasonal levels. Total supply chain DOI increased 9 days q/q vs. a seasonal increase of 19 days, leaving DOI 33 days above the historical median. The improvement was led by distributor lean-out and muted producer builds, while customers were mixed by end market.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.362,
+                0.308,
+                0.923,
+                0.431
+            ],
+            "angle": 0,
+            "content": "Semiconductor customer inventory increased by 9 days, ~in-line with the seasonal increase of 8 days, and now sits above the historical median by 6 days. The only semi customer where DOI decreased was Auto Suppliers (-1 day). Communications (+17 days) and ODMs (+16 days) saw the largest increases q/q. Storage remains slightly below its historical median, while other customers are now in-line (Auto suppliers, Auto OEMs, Consumer) or above (Industrials, Machinery, Computing/Mobile, Contract Manufacturers, and ODMs). Trailing four-quarter inventory increased from last quarter.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.363,
+                0.44,
+                0.925,
+                0.492
+            ],
+            "angle": 0,
+            "content": "Exhibit 2: Semi Customer DOI increased 9 days sequentially to 60 days vs a seasonal increase of 8 days. DOI is above the historical median and trailing 4 quarters increased from last quarter."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.371,
+                0.505,
+                0.935,
+                0.711
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.364,
+                0.718,
+                0.536,
+                0.729
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.066,
+                0.969,
+                0.078,
+                0.98
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.115,
+                0.542,
+                0.142
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.386,
+                0.178,
+                0.906,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.386,
+                0.195,
+                0.906,
+                0.211
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.388,
+                0.215,
+                0.861,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.388,
+                0.233,
+                0.9,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.386,
+                0.25,
+                0.882,
+                0.264
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.385,
+                0.268,
+                0.627,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.31,
+                0.902,
+                0.321
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.328,
+                0.915,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.345,
+                0.913,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.363,
+                0.904,
+                0.374
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.364,
+                0.379,
+                0.898,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.397,
+                0.921,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.414,
+                0.812,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.922,
+                0.969,
+                0.933,
+                0.98
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.886,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.364,
+                0.107,
+                0.832,
+                0.123
+            ],
+            "angle": 0,
+            "content": "Exhibit 3: Sequential and y/y change in semi customer inventory levels"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.365,
+                0.125,
+                0.932,
+                0.38
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\" colspan=\"2\"></td><td colspan=\"2\">Q/Q</td><td colspan=\"2\">Y/Y</td></tr><tr><td>Change in DOI</td><td>Change in $ Inventory</td><td>Change in DOI</td><td>Change in $ Inventory</td></tr><tr><td rowspan=\"11\">Customers</td><td>AUTO OEMS</td><td>7</td><td>7%</td><td>-1</td><td>3%</td></tr><tr><td>AUTO SUPPLIERS</td><td>-1</td><td>1%</td><td>-2</td><td>2%</td></tr><tr><td>US INDUSTRIALS</td><td>8</td><td>4%</td><td>-4</td><td>7%</td></tr><tr><td>MACHINERY</td><td>5</td><td>7%</td><td>-10</td><td>9%</td></tr><tr><td>COMMUNICATIONS</td><td>17</td><td>11%</td><td>6</td><td>21%</td></tr><tr><td>COMPUTING/MOBILE</td><td>11</td><td>27%</td><td>3</td><td>42%</td></tr><tr><td>STORAGE</td><td>0</td><td>1%</td><td>-12</td><td>4%</td></tr><tr><td>CONSUMER</td><td>4</td><td>-5%</td><td>-6</td><td>-7%</td></tr><tr><td>CONTRACT MANUFACTURERS</td><td>13</td><td>8%</td><td>-5</td><td>24%</td></tr><tr><td>ODM&#x27;S</td><td>16</td><td>45%</td><td>13</td><td>108%</td></tr><tr><td>TOTAL</td><td>9</td><td>11%</td><td>-1</td><td>15%</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.364,
+                0.386,
+                0.536,
+                0.398
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.362,
+                0.41,
+                0.933,
+                0.532
+            ],
+            "angle": 0,
+            "content": "Distributor inventory decreased by 2 days q/q, below a seasonal increase of 4 days, but still sits 7 days above the historical median of 54 days. DOI declined q/q at WPG and Avnet, driven by COGS growth outpacing inventory growth (WPG: inventory +18% vs. COGS +21%; Avnet: inventory +3% vs. COGS +13%), while Arrow's DOI increased by 2 days. Absolute $ of inventory increased for each distributor. Trailing 4-quarter decreased in the first quarter. (Arrow and Avnet are not covered by MS. WPG is covered by Daniel Yen.)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.363,
+                0.542,
+                0.912,
+                0.594
+            ],
+            "angle": 0,
+            "content": "Exhibit 4: Distributor inventory is at 61 days, down 2 days q/q, below the seasonal increase of 4 days. DOI is 7 days above the historical median while trailing 4-quarters decreased sequentially.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.371,
+                0.609,
+                0.925,
+                0.812
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.365,
+                0.818,
+                0.536,
+                0.83
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.968,
+                0.242,
+                0.98
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.411,
+                0.906,
+                0.424
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.429,
+                0.906,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.446,
+                0.926,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.464,
+                0.898,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.482,
+                0.918,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.5,
+                0.93,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.518,
+                0.509,
+                0.529
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.545,
+                0.902,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.562,
+                0.909,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.367,
+                0.581,
+                0.515,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.886,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.364,
+                0.107,
+                0.801,
+                0.123
+            ],
+            "angle": 0,
+            "content": "Exhibit 5: Sequential and y/y change in distributor inventory levels"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.365,
+                0.125,
+                0.932,
+                0.271
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\" colspan=\"2\"></td><td colspan=\"2\">Q/Q</td><td colspan=\"2\">Y/Y</td></tr><tr><td>Change in DOI</td><td>Change in $ Inventory</td><td>Change in DOI</td><td>Change in $ Inventory</td></tr><tr><td>Distributors</td><td>Distributors</td><td>-2</td><td>11%</td><td>-13</td><td>11%</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.365,
+                0.276,
+                0.536,
+                0.289
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.362,
+                0.3,
+                0.934,
+                0.424
+            ],
+            "angle": 0,
+            "content": "Semiconductor company inventory days went up by 2 days q/q, below the seasonal increase of 5 days, and is now 23 days above the historical median. The DOI increase was driven by Smartphones (20.8%) and Foundries (10.8%), while other sectors showed marginal changes in the range of -3.5% (Semi Cap Equipment) to +1.9% (Computing). Change in absolute $ inventory was broadly up across the board both q/q and y/y, with the exception of Memory holding ~flat y/y. Trailing 4-quarters DOI across semi companies slightly increased in 1Q.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.363,
+                0.433,
+                0.926,
+                0.485
+            ],
+            "angle": 0,
+            "content": "Exhibit 6: Semiconductor Company inventory is at 114 days, up 2 days q/q, below the seasonal increase of 5 days. DOI is 23 days above the historical median and trailing 4-quarters increased.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.551,
+                0.496,
+                0.746,
+                0.511
+            ],
+            "angle": 0,
+            "content": "Semiconductor Company (DOI)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.373,
+                0.515,
+                0.925,
+                0.702
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.364,
+                0.71,
+                0.536,
+                0.722
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.066,
+                0.969,
+                0.077,
+                0.98
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.302,
+                0.908,
+                0.314
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.32,
+                0.909,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.337,
+                0.916,
+                0.349
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.355,
+                0.892,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.373,
+                0.931,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.391,
+                0.902,
+                0.403
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.41,
+                0.512,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.435,
+                0.924,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.453,
+                0.916,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.47,
+                0.491,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.923,
+                0.969,
+                0.933,
+                0.98
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.886,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.364,
+                0.107,
+                0.831,
+                0.123
+            ],
+            "angle": 0,
+            "content": "Exhibit 7: Sequential and y/y change in semi company inventory levels"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.365,
+                0.125,
+                0.932,
+                0.349
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\" colspan=\"2\"></td><td colspan=\"2\">Q/Q</td><td colspan=\"2\">Y/Y</td></tr><tr><td>Change in DOI</td><td>Change in $ Inventory</td><td>Change in DOI</td><td>Change in $ Inventory</td></tr><tr><td rowspan=\"9\">Semi Companies</td><td>Computing</td><td>2</td><td>13%</td><td>31</td><td>54%</td></tr><tr><td>Analog/MCU</td><td>-2</td><td>0%</td><td>-9</td><td>5%</td></tr><tr><td>Smartphones/Networking/PLD&#x27;s/I</td><td>21</td><td>10%</td><td>28</td><td>31%</td></tr><tr><td>Memory</td><td>0</td><td>3%</td><td>-40</td><td>-1%</td></tr><tr><td>Foundries</td><td>8</td><td>6%</td><td>1</td><td>15%</td></tr><tr><td>Semi Cap Equipment</td><td>-6</td><td>0%</td><td>-24</td><td>5%</td></tr><tr><td>Components</td><td>0</td><td>10%</td><td>-2</td><td>25%</td></tr><tr><td>Others</td><td>1</td><td>3%</td><td>3</td><td>5%</td></tr><tr><td>TOTAL</td><td>2</td><td>5%</td><td>5</td><td>16%</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.364,
+                0.355,
+                0.536,
+                0.367
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.362,
+                0.378,
+                0.932,
+                0.518
+            ],
+            "angle": 0,
+            "content": "Total supply chain DOI across producers, distributors, and consumers increased 9 days q/q, increasing 10 days less than seasonality, and is now tracking 33 days above the historical median. Distributor and Company DOI both outperformed seasonality, with Distributors showing the greatest seasonal difference, decreasing by 2 days compared to a seasonal increase of 4. Customers DOI was ~in-line with seasonality, increasing by 1 day more than seasonal levels. Distributors in particular appear to be leaning out, driven by high COGS and revenue growth. Trailing 4-quarter DOI average was ~flat for the supply chain overall.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.362,
+                0.528,
+                0.922,
+                0.579
+            ],
+            "angle": 0,
+            "content": "Exhibit 8: Total supply chain inventory increased 9 days q/q, less than the seasonal increase of 19 days. DOI is 33 days above the historical median, and trailing 4-quarters was flat.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.373,
+                0.591,
+                0.926,
+                0.783
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.364,
+                0.79,
+                0.536,
+                0.802
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.968,
+                0.242,
+                0.98
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.38,
+                0.93,
+                0.392
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.398,
+                0.908,
+                0.41
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.415,
+                0.904,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.432,
+                0.929,
+                0.445
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.451,
+                0.91,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.468,
+                0.909,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.486,
+                0.913,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.504,
+                0.449,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.53,
+                0.91,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.548,
+                0.919,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.565,
+                0.421,
+                0.577
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.578,
+                0.66,
+                0.719,
+                0.674
+            ],
+            "angle": 0,
+            "content": "Semi Customers (DOI)"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.064
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.885,
+                0.05,
+                0.934,
+                0.063
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.064,
+                0.113,
+                0.892,
+                0.178
+            ],
+            "angle": 0,
+            "content": "Semi Inventory Analysis: DOI ~flat at Customers, lower at Producers and Distributors."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.364,
+                0.196,
+                0.551,
+                0.216
+            ],
+            "angle": 0,
+            "content": "Customer Inventory"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.362,
+                0.235,
+                0.908,
+                0.305
+            ],
+            "angle": 0,
+            "content": "Semi customer inventory DOI increased more than seasonality. Absolute inventory levels increased q/q for all end markets except for Consumer. COGS decreased in Auto OEMs, US Industrials, Communications, Computing/Mobile, Consumer, and Contract Manufacturers, and increased in Auto Suppliers, Machinery, Storage, and ODM's.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.362,
+                0.314,
+                0.9,
+                0.348
+            ],
+            "angle": 0,
+            "content": "Exhibit 9: Semi Customer Inventory Index increased 10.8% and trailing 4-quarters increased 3.7%.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.371,
+                0.369,
+                0.925,
+                0.566
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.364,
+                0.573,
+                0.536,
+                0.585
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.363,
+                0.597,
+                0.925,
+                0.648
+            ],
+            "angle": 0,
+            "content": "Exhibit 10: Semi Customer DOI increased 9 days sequentially to 60 days vs a seasonal increase of 8 days. DOI is above the historical median and trailing 4 quarters increased from last quarter."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.371,
+                0.664,
+                0.935,
+                0.866
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.364,
+                0.873,
+                0.536,
+                0.885
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.066,
+                0.969,
+                0.077,
+                0.98
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.115,
+                0.892,
+                0.141
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.151,
+                0.458,
+                0.176
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.197,
+                0.546,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.236,
+                0.898,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.254,
+                0.905,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.271,
+                0.892,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.29,
+                0.866,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.316,
+                0.898,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.335,
+                0.466,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.922,
+                0.969,
+                0.933,
+                0.98
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.886,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.064,
+                0.113,
+                0.485,
+                0.165
+            ],
+            "angle": 0,
+            "content": "Exhibit 11: Auto OEM DOI increased 7 days q/q and is above the historical median (56). Trailing 4-quarters decreased from last quarter."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.069,
+                0.172,
+                0.481,
+                0.326
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.333,
+                0.239,
+                0.345
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.511,
+                0.113,
+                0.932,
+                0.147
+            ],
+            "angle": 0,
+            "content": "Exhibit 12: Auto suppliers DOI decreased 1 day q/q and is in-line with the historical median. Trailing 4-quarters increased q/q."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.516,
+                0.156,
+                0.928,
+                0.31
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.513,
+                0.315,
+                0.686,
+                0.327
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.355,
+                0.483,
+                0.389
+            ],
+            "angle": 0,
+            "content": "Exhibit 13: Industrial DOI increased 8 days q/q, tracking 19 days above the historical median. Trailing 4-quarters declined q/q."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.07,
+                0.398,
+                0.48,
+                0.551
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.557,
+                0.238,
+                0.569
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.512,
+                0.355,
+                0.923,
+                0.407
+            ],
+            "angle": 0,
+            "content": "Exhibit 14: Machinery DOI increased by 5 days q/q, tracking 13 days above the historical median. Trailing 4-quarters increased q/q."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.518,
+                0.416,
+                0.928,
+                0.57
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.513,
+                0.575,
+                0.686,
+                0.587
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.064,
+                0.599,
+                0.482,
+                0.65
+            ],
+            "angle": 0,
+            "content": "Exhibit 15: Communications DOI increased 17 days q/q, tracking 23 days above the historical median. Trailing 4-quarters increased q/q."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.073,
+                0.66,
+                0.481,
+                0.813
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.82,
+                0.238,
+                0.83
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.511,
+                0.599,
+                0.922,
+                0.65
+            ],
+            "angle": 0,
+            "content": "Exhibit 16: Computing/Mobile company DOI increased by 11 days q/q, tracking 12 days above the historical median. Trailing 4-quarters increased sequentially."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.517,
+                0.66,
+                0.928,
+                0.812
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.513,
+                0.818,
+                0.686,
+                0.83
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.968,
+                0.242,
+                0.98
+            ],
+            "angle": 0,
+            "content": "MS"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.886,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.113,
+                0.473,
+                0.165
+            ],
+            "angle": 0,
+            "content": "Exhibit 17: Storage DOI remained flat q/q, now tracking 2 days below the historical median. Trailing 4-quarters increased from last quarter."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.07,
+                0.174,
+                0.479,
+                0.326
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.332,
+                0.238,
+                0.344
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.511,
+                0.113,
+                0.923,
+                0.165
+            ],
+            "angle": 0,
+            "content": "Exhibit 18: Consumer company DOI increased 4 days q/q, now tracking 2 days above the historical median. Trailing 4-quarters decreased."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.518,
+                0.175,
+                0.928,
+                0.326
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.514,
+                0.331,
+                0.686,
+                0.344
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.355,
+                0.475,
+                0.406
+            ],
+            "angle": 0,
+            "content": "Exhibit 19: Contract manufacturers DOI increased 13 days q/q, tracking 7 days above the historical median. Trailing 4-quarters decreased from last quarter."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.07,
+                0.415,
+                0.481,
+                0.567
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.573,
+                0.238,
+                0.585
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.512,
+                0.355,
+                0.915,
+                0.407
+            ],
+            "angle": 0,
+            "content": "Exhibit 20: ODM DOI increased 16 days q/q, tracking 21 days above historical median. Trailing 4-quarter increased from last quarter."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.516,
+                0.417,
+                0.928,
+                0.568
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.514,
+                0.574,
+                0.685,
+                0.586
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.364,
+                0.597,
+                0.562,
+                0.616
+            ],
+            "angle": 0,
+            "content": "Distributor Inventory"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.363,
+                0.635,
+                0.932,
+                0.67
+            ],
+            "angle": 0,
+            "content": "Distributor DOI decreased 2 days q/q, outperforming a seasonal increase of 4 days. DOI is tracking 7 days above the historical median.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.363,
+                0.68,
+                0.895,
+                0.713
+            ],
+            "angle": 0,
+            "content": "Exhibit 21: Distributor Inventory index increased 10.8% sequentially, and trailing 4-quarters increased from last quarter.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.372,
+                0.727,
+                0.924,
+                0.93
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.364,
+                0.938,
+                0.536,
+                0.95
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.066,
+                0.969,
+                0.077,
+                0.98
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.598,
+                0.559,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.367,
+                0.637,
+                0.931,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.655,
+                0.651,
+                0.666
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.682,
+                0.894,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.699,
+                0.602,
+                0.714
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.923,
+                0.969,
+                0.933,
+                0.98
+            ],
+            "angle": 0,
+            "content": "9"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.886,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.362,
+                0.107,
+                0.912,
+                0.159
+            ],
+            "angle": 0,
+            "content": "Exhibit 22: Distributor inventory is at 61 days, down 2 days q/q, below the seasonal increase of 4 days. DOI is 7 days above the historical median while trailing 4-quarters decreased sequentially.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.371,
+                0.17,
+                0.925,
+                0.377
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.364,
+                0.383,
+                0.537,
+                0.395
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.364,
+                0.408,
+                0.544,
+                0.427
+            ],
+            "angle": 0,
+            "content": "Producer Inventory"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.363,
+                0.445,
+                0.921,
+                0.498
+            ],
+            "angle": 0,
+            "content": "Semiconductor company DOI increased less than seasonality. DOI decreased the most for Semi Cap Equipment and Analog/MCU while Memory was ~flat. Overall DOI momentum increased again consecutively.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.363,
+                0.508,
+                0.92,
+                0.541
+            ],
+            "angle": 0,
+            "content": "Exhibit 23: Semi Company inventory index increased 5.2% q/q, with trailing 4-quarters increasing.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.502,
+                0.552,
+                0.764,
+                0.567
+            ],
+            "angle": 0,
+            "content": "Semiconductor Company Inventory Index"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.372,
+                0.57,
+                0.924,
+                0.759
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.364,
+                0.765,
+                0.536,
+                0.777
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.968,
+                0.242,
+                0.98
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.11,
+                0.901,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.127,
+                0.909,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.145,
+                0.514,
+                0.156
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.408,
+                0.541,
+                0.427
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.447,
+                0.919,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.465,
+                0.865,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.484,
+                0.628,
+                0.495
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.365,
+                0.51,
+                0.919,
+                0.523
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.528,
+                0.436,
+                0.54
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.885,
+                0.05,
+                0.934,
+                0.063
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.362,
+                0.107,
+                0.926,
+                0.159
+            ],
+            "angle": 0,
+            "content": "Exhibit 24: Semiconductor Company inventory is at 114 days, up 2 days q/q, below the seasonal increase of 5 days. DOI is 23 days above the historical median and trailing 4-quarters slightly increased.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.372,
+                0.17,
+                0.925,
+                0.378
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.364,
+                0.384,
+                0.536,
+                0.395
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.064,
+                0.434,
+                0.482,
+                0.485
+            ],
+            "angle": 0,
+            "content": "Exhibit 25: Computing group DOI increased 2 days q/q, now tracking 28 days above the historical median. Trailing 4-quarters increased."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.07,
+                0.495,
+                0.481,
+                0.648
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.654,
+                0.238,
+                0.665
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.064,
+                0.677,
+                0.482,
+                0.728
+            ],
+            "angle": 0,
+            "content": "Exhibit 27: Smartphone DOI increased 21 days q/q, now tracking 37 days above the historical median. Trailing 4-quarters increased q/q."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.511,
+                0.434,
+                0.928,
+                0.486
+            ],
+            "angle": 0,
+            "content": "Exhibit 26: Analog/MCU group DOI decreased 2 days q/q, now tracking 45 days above the historical median. Trailing 4-quarters fell q/q."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.517,
+                0.495,
+                0.927,
+                0.647
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.513,
+                0.653,
+                0.686,
+                0.665
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.071,
+                0.735,
+                0.481,
+                0.89
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.512,
+                0.677,
+                0.931,
+                0.71
+            ],
+            "angle": 0,
+            "content": "Exhibit 28: Memory group DOI remained flat q/q, now tracking 8 days above the historical median. Trailing 4-quarters decreased."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.895,
+                0.238,
+                0.907
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.516,
+                0.721,
+                0.928,
+                0.874
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.514,
+                0.879,
+                0.685,
+                0.89
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.066,
+                0.969,
+                0.084,
+                0.98
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.372,
+                0.679,
+                0.399,
+                0.692
+            ],
+            "latex": "",
+            "score": 0.4554
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.11,
+                0.924,
+                0.121
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.127,
+                0.916,
+                0.139
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.366,
+                0.145,
+                0.539,
+                0.157
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.886,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.064,
+                0.113,
+                0.474,
+                0.164
+            ],
+            "angle": 0,
+            "content": "Exhibit 29: Foundry group DOI increased by 8 days q/q, now tracking 8 days above the historical median. Trailing 4-quarters increased."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.071,
+                0.173,
+                0.48,
+                0.327
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.333,
+                0.238,
+                0.344
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.512,
+                0.113,
+                0.931,
+                0.165
+            ],
+            "angle": 0,
+            "content": "Exhibit 30: Semi Cap Equipment group DOI decreased 6 days q/q, now tracking 11 days above the historical median. Trailing 4-quarters decreased from last quarter."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.517,
+                0.174,
+                0.928,
+                0.327
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.514,
+                0.333,
+                0.686,
+                0.345
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.357,
+                0.477,
+                0.407
+            ],
+            "angle": 0,
+            "content": "Exhibit 31: Components group DOI was ~flat q/q, now tracking 1 day above the historical median. Trailing 4-quarters increased from last quarter."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.072,
+                0.419,
+                0.48,
+                0.57
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.916,
+                0.969,
+                0.932,
+                0.98
+            ],
+            "angle": 0,
+            "content": "11"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.065,
+                0.577,
+                0.238,
+                0.588
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.968,
+                0.242,
+                0.98
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "inline_formula",
+            "bbox": [
+                0.397,
+                0.115,
+                0.424,
+                0.129
+            ],
+            "latex": "",
+            "score": 0.4805
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.885,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.098,
+                0.285,
+                0.118
+            ],
+            "angle": 0,
+            "content": "Disclosure Section"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.119,
+                0.935,
+                0.16
+            ],
+            "angle": 0,
+            "content": "The information and opinions in MS were prepared by MS & Co. LLC, and/or MS C.T.V.M. S.A., and/or MS Mexico, Casa de Bolsa, S.A. de C.V., and/or MS Canada Limited. As used in this disclosure section, \"MS\" includes MS & Co. LLC, MS C.T.V.M. S.A., MS Mexico, Casa de Bolsa, S.A. de C.V., MS Canada Limited and their affiliates as necessary.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.161,
+                0.935,
+                0.201
+            ],
+            "angle": 0,
+            "content": "For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.202,
+                0.935,
+                0.245
+            ],
+            "angle": 0,
+            "content": "For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.251,
+                0.217,
+                0.265
+            ],
+            "angle": 0,
+            "content": "Analyst Certification"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.267,
+                0.933,
+                0.295
+            ],
+            "angle": 0,
+            "content": "The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Shane Brett; Joseph Moore; Ella Tulchinsky; Mason Wayne.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.315,
+                0.388,
+                0.33
+            ],
+            "angle": 0,
+            "content": "Global Research Conflict Management Policy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.331,
+                0.935,
+                0.359
+            ],
+            "angle": 0,
+            "content": "MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.366,
+                0.47,
+                0.381
+            ],
+            "angle": 0,
+            "content": "Important Regulatory Disclosures on Subject Companies"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.382,
+                0.935,
+                0.45
+            ],
+            "angle": 0,
+            "content": "As of May 29, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: Advanced Micro Devices, Aeva Technologies Inc, Ambarella Inc, Amkor Technology Inc, Analog Devices Inc., Applied Materials Inc., Arm Holdings plc, Astera Labs Inc, Broadcom Inc., Cadence Design Systems Inc, Cerebras Systems, Intel Corporation, IonQ Inc, KLA Corp, Lam Research Corp, Marvell Technology Group Ltd, Microchip Technology Inc., Micron Technology Inc., MKS Inc., NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., ONTO Innovation Inc, Qorvo Inc, Qualcomm Inc., SanDisk Corporation., Semtech Corp., Silicon Laboratories Inc., Skyworks Solutions Inc, Synopsys Inc., Teradyne Inc, Texas Instruments, Wolfspeed, INC.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.451,
+                0.934,
+                0.478
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of Aeva Technologies Inc, Broadcom Inc., Camtek, Cerebras Systems, GlobalFoundries Inc, Intel Corporation, MKS Inc., Nova Ltd, NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., ONTO Innovation Inc, Quantinuum, Semtech Corp..",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.479,
+                0.934,
+                0.52
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS has received compensation for investment banking services from Advanced Micro Devices, Aeva Technologies Inc, Allegro Microsystems Inc, Amkor Technology Inc, Applied Materials Inc., Broadcom Inc., Camtek, Cerebras Systems, Intel Corporation, IonQ Inc, Micron Technology Inc., MKS Inc., Nova Ltd, NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., Quantinuum, Semtech Corp., Texas Instruments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.521,
+                0.935,
+                0.589
+            ],
+            "angle": 0,
+            "content": "In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from Advanced Micro Devices, Aeva Technologies Inc, Allegro Microsystems Inc, Ambarella Inc, Amkor Technology Inc, Analog Devices Inc., Applied Materials Inc., Arm Holdings plc, Astera Labs Inc, Broadcom Inc., Cadence Design Systems Inc, Camtek, Cerebras Systems, GlobalFoundries Inc, Intel Corporation, IonQ Inc, KLA Corp, Lam Research Corp, Marvell Technology Group Ltd, Microchip Technology Inc., Micron Technology Inc., MKS Inc., Navitas Semiconductor Corp, Nova Ltd, NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., Qualcomm Inc., Quantinuum, SanDisk Corporation., Semtech Corp., Silicon Laboratories Inc., Skyworks Solutions Inc, Synopsys Inc., Teradyne Inc, Texas Instruments, Wolfspeed, INC.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.59,
+                0.935,
+                0.645
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS has received compensation for products and services other than investment banking services from Advanced Micro Devices, Allegro Microsystems Inc, Ambarella Inc, Amkor Technology Inc, Analog Devices Inc., Applied Materials Inc., Broadcom Inc., Cadence Design Systems Inc, Cerebras Systems, GlobalFoundries Inc, Intel Corporation, Marvell Technology Group Ltd, Microchip Technology Inc., Micron Technology Inc., MKS Inc., NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., Qorvo Inc, Qualcomm Inc., Semtech Corp., Silicon Laboratories Inc., Synopsys Inc., Texas Instruments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.646,
+                0.935,
+                0.715
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: Advanced Micro Devices, Aeva Technologies Inc, Allegro Microsystems Inc, Ambarella Inc, Amkor Technology Inc, Analog Devices Inc., Applied Materials Inc., Arm Holdings plc, Astera Labs Inc, Broadcom Inc., Cadence Design Systems Inc, Camtek, Cerebras Systems, GlobalFoundries Inc, Intel Corporation, IonQ Inc, KLA Corp, Lam Research Corp, Marvell Technology Group Ltd, Microchip Technology Inc., Micron Technology Inc., MKS Inc., Navitas Semiconductor Corp, Nova Ltd, NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., ONTO Innovation Inc, Qualcomm Inc., Quantinuum, SanDisk Corporation., Semtech Corp., Silicon Laboratories Inc., Skyworks Solutions Inc, Synopsys Inc., Teradyne Inc, Texas Instruments, Wolfspeed, INC.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.715,
+                0.935,
+                0.783
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: Advanced Micro Devices, Allegro Microsystems Inc, Ambarella Inc, Amkor Technology Inc, Analog Devices Inc., Applied Materials Inc., Broadcom Inc., Cadence Design Systems Inc, Cerebras Systems, GlobalFoundries Inc, Intel Corporation, IonQ Inc, Marvell Technology Group Ltd, Microchip Technology Inc., Micron Technology Inc., MKS Inc., NVIDIA Corp., NXP Semiconductor NV, ON Semiconductor Corp., Qorvo Inc, Qualcomm Inc., Semtech Corp., Silicon Laboratories Inc., Synopsys Inc., Texas Instruments, Wolfspeed, INC.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.785,
+                0.935,
+                0.84
+            ],
+            "angle": 0,
+            "content": "MS & Co. LLC makes a market in the securities of Aeva Technologies Inc, Ambarella Inc, Cerebras Systems, MKS Inc., ONTO Innovation Inc, Quantinuum, Silicon Laboratories Inc.. The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.84,
+                0.935,
+                0.897
+            ],
+            "angle": 0,
+            "content": "MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.896,
+                0.562,
+                0.909
+            ],
+            "angle": 0,
+            "content": "Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.916,
+                0.189,
+                0.93
+            ],
+            "angle": 0,
+            "content": "STOCK RATINGS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.932,
+                0.934,
+                0.946
+            ],
+            "angle": 0,
+            "content": "MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy,",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.066,
+                0.969,
+                0.085,
+                0.98
+            ],
+            "angle": 0,
+            "content": "12"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.097,
+                0.283,
+                0.12
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.122,
+                0.931,
+                0.13
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.135,
+                0.929,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.148,
+                0.489,
+                0.158
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.164,
+                0.931,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.178,
+                0.931,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.191,
+                0.262,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.205,
+                0.931,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.219,
+                0.931,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.232,
+                0.93,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.252,
+                0.215,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.269,
+                0.931,
+                0.279
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.284,
+                0.874,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.315,
+                0.384,
+                0.33
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.333,
+                0.931,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.347,
+                0.425,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.367,
+                0.468,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.384,
+                0.931,
+                0.393
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.398,
+                0.931,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.412,
+                0.931,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.426,
+                0.932,
+                0.435
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.44,
+                0.359,
+                0.449
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.453,
+                0.931,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.466,
+                0.878,
+                0.476
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.482,
+                0.931,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.495,
+                0.931,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.508,
+                0.43,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.523,
+                0.931,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.537,
+                0.931,
+                0.546
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.55,
+                0.931,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.565,
+                0.932,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.58,
+                0.488,
+                0.587
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.592,
+                0.932,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.606,
+                0.932,
+                0.616
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.62,
+                0.932,
+                0.63
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.635,
+                0.362,
+                0.643
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.648,
+                0.932,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.662,
+                0.932,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.677,
+                0.93,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.69,
+                0.931,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.703,
+                0.842,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.717,
+                0.931,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.733,
+                0.93,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.745,
+                0.931,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.758,
+                0.931,
+                0.769
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.774,
+                0.141,
+                0.781
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.787,
+                0.931,
+                0.797
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.801,
+                0.932,
+                0.811
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.814,
+                0.932,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.827,
+                0.759,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.842,
+                0.931,
+                0.852
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.855,
+                0.932,
+                0.866
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.87,
+                0.932,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.884,
+                0.564,
+                0.893
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.898,
+                0.56,
+                0.908
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.919,
+                0.187,
+                0.933
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.933,
+                0.93,
+                0.945
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.885,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.105,
+                0.935,
+                0.161
+            ],
+            "angle": 0,
+            "content": "Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.167,
+                0.307,
+                0.182
+            ],
+            "angle": 0,
+            "content": "Global Stock Ratings Distribution"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.183,
+                0.169,
+                0.196
+            ],
+            "angle": 0,
+            "content": "(as of June 30, 2026)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.197,
+                0.766,
+                0.21
+            ],
+            "angle": 0,
+            "content": "The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.21,
+                0.935,
+                0.268
+            ],
+            "angle": 0,
+            "content": "For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.11,
+                0.286,
+                0.876,
+                0.431
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td colspan=\"2\">Coverage Universe</td><td colspan=\"3\">Investment Banking Clients (IBC)</td><td colspan=\"2\">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1544</td><td>42%</td><td>453</td><td>49%</td><td>29%</td><td>757</td><td>44%</td></tr><tr><td>Equal-weight/Hold</td><td>1577</td><td>43%</td><td>390</td><td>42%</td><td>25%</td><td>769</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>1</td><td>0%</td><td>33%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>544</td><td>15%</td><td>89</td><td>10%</td><td>16%</td><td>204</td><td>12%</td></tr><tr><td>Total</td><td>3,668</td><td></td><td>933</td><td></td><td></td><td>1731</td><td></td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.064,
+                0.436,
+                0.934,
+                0.464
+            ],
+            "angle": 0,
+            "content": "Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the \"% of total\" column may not add up to exactly 100 percent."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.471,
+                0.226,
+                0.486
+            ],
+            "angle": 0,
+            "content": "Analyst Stock Ratings"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.487,
+                0.932,
+                0.512
+            ],
+            "angle": 0,
+            "content": "Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.515,
+                0.933,
+                0.54
+            ],
+            "angle": 0,
+            "content": "Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.542,
+                0.934,
+                0.569
+            ],
+            "angle": 0,
+            "content": "Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.57,
+                0.934,
+                0.596
+            ],
+            "angle": 0,
+            "content": "Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.597,
+                0.606,
+                0.611
+            ],
+            "angle": 0,
+            "content": "Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.618,
+                0.235,
+                0.633
+            ],
+            "angle": 0,
+            "content": "Analyst Industry Views"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.635,
+                0.934,
+                0.66
+            ],
+            "angle": 0,
+            "content": "Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.662,
+                0.934,
+                0.717
+            ],
+            "angle": 0,
+            "content": "In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.064,
+                0.725,
+                0.58,
+                0.74
+            ],
+            "angle": 0,
+            "content": "Important Disclosures for MS Smith Barney LLC Customers"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.74,
+                0.934,
+                0.781
+            ],
+            "angle": 0,
+            "content": "Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.782,
+                0.934,
+                0.81
+            ],
+            "angle": 0,
+            "content": "Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.816,
+                0.275,
+                0.831
+            ],
+            "angle": 0,
+            "content": "Other Important Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.833,
+                0.934,
+                0.859
+            ],
+            "angle": 0,
+            "content": "A member of Research who had or could have had access to the research prior to completion owns securities (or related derivatives) in the Micron Technology Inc., NVIDIA Corp.. This person is not a research analyst or a member of research analyst's household.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.86,
+                0.935,
+                0.915
+            ],
+            "angle": 0,
+            "content": "MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.916,
+                0.969,
+                0.934,
+                0.98
+            ],
+            "angle": 0,
+            "content": "13"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.916,
+                0.935,
+                0.944
+            ],
+            "angle": 0,
+            "content": "MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.968,
+                0.242,
+                0.98
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.108,
+                0.931,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.121,
+                0.932,
+                0.131
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.135,
+                0.93,
+                0.143
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.15,
+                0.672,
+                0.158
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.168,
+                0.305,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.185,
+                0.166,
+                0.196
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.199,
+                0.763,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.213,
+                0.932,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.227,
+                0.932,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.24,
+                0.932,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.255,
+                0.674,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.471,
+                0.223,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.488,
+                0.931,
+                0.499
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.503,
+                0.131,
+                0.511
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.516,
+                0.931,
+                0.526
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.53,
+                0.172,
+                0.539
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.543,
+                0.931,
+                0.555
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.559,
+                0.349,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.572,
+                0.931,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.587,
+                0.131,
+                0.595
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.6,
+                0.604,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.619,
+                0.232,
+                0.633
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.636,
+                0.932,
+                0.646
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.649,
+                0.101,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.664,
+                0.931,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.678,
+                0.93,
+                0.688
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.692,
+                0.931,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.706,
+                0.505,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.725,
+                0.577,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.742,
+                0.93,
+                0.751
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.756,
+                0.93,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.77,
+                0.678,
+                0.78
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.785,
+                0.931,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.797,
+                0.457,
+                0.807
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.817,
+                0.271,
+                0.831
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.835,
+                0.931,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.848,
+                0.392,
+                0.858
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.862,
+                0.931,
+                0.873
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.876,
+                0.931,
+                0.886
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.89,
+                0.932,
+                0.9
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.904,
+                0.309,
+                0.914
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.918,
+                0.931,
+                0.927
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.933,
+                0.358,
+                0.94
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.885,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.106,
+                0.935,
+                0.146
+            ],
+            "angle": 0,
+            "content": "MS produces an equity research product called a \"Tactical Idea.\" Views contained in a \"Tactical Idea\" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.147,
+                0.935,
+                0.188
+            ],
+            "angle": 0,
+            "content": "MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.189,
+                0.936,
+                0.299
+            ],
+            "angle": 0,
+            "content": "Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms_and_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL_Morgan_Stanley_Research_Audit_Report.pdf).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.3,
+                0.936,
+                0.438
+            ],
+            "angle": 0,
+            "content": "If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.439,
+                0.935,
+                0.494
+            ],
+            "angle": 0,
+            "content": "The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.494,
+                0.935,
+                0.564
+            ],
+            "angle": 0,
+            "content": "The \"Important Regulatory Disclosures on Subject Companies\" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.564,
+                0.935,
+                0.619
+            ],
+            "angle": 0,
+            "content": "With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.619,
+                0.934,
+                0.646
+            ],
+            "angle": 0,
+            "content": "MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.647,
+                0.626,
+                0.66
+            ],
+            "angle": 0,
+            "content": "MS may make investment decisions that are inconsistent with the recommendations or views in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.661,
+                0.935,
+                0.757
+            ],
+            "angle": 0,
+            "content": "To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited (\"MSTL\"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.758,
+                0.935,
+                0.813
+            ],
+            "angle": 0,
+            "content": "MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.062,
+                0.814,
+                0.936,
+                0.953
+            ],
+            "angle": 0,
+            "content": "MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118J); in Australia to \"wholesale clients\" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to \"wholesale clients\" and \"retail clients\" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.066,
+                0.969,
+                0.085,
+                0.98
+            ],
+            "angle": 0,
+            "content": "14"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.108,
+                0.931,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.121,
+                0.932,
+                0.13
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.135,
+                0.451,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.148,
+                0.931,
+                0.159
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.163,
+                0.931,
+                0.172
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.177,
+                0.688,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.19,
+                0.931,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.205,
+                0.931,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.218,
+                0.931,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.232,
+                0.931,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.245,
+                0.931,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.26,
+                0.931,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.274,
+                0.928,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.286,
+                0.323,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.302,
+                0.931,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.316,
+                0.931,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.33,
+                0.931,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.344,
+                0.931,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.358,
+                0.931,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.372,
+                0.931,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.386,
+                0.931,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.4,
+                0.928,
+                0.407
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.413,
+                0.931,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.428,
+                0.224,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.44,
+                0.931,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.455,
+                0.932,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.469,
+                0.932,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.483,
+                0.304,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.496,
+                0.932,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.51,
+                0.932,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.524,
+                0.931,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.538,
+                0.931,
+                0.547
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.551,
+                0.619,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.565,
+                0.93,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.58,
+                0.932,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.594,
+                0.932,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.608,
+                0.551,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.621,
+                0.931,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.635,
+                0.366,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.65,
+                0.622,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.662,
+                0.931,
+                0.672
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.677,
+                0.932,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.691,
+                0.931,
+                0.701
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.704,
+                0.93,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.719,
+                0.93,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.732,
+                0.931,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.747,
+                0.684,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.76,
+                0.93,
+                0.77
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.774,
+                0.931,
+                0.784
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.788,
+                0.932,
+                0.798
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.802,
+                0.726,
+                0.812
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.815,
+                0.931,
+                0.824
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.83,
+                0.931,
+                0.839
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.844,
+                0.931,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.858,
+                0.931,
+                0.867
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.872,
+                0.929,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.885,
+                0.931,
+                0.895
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.899,
+                0.931,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.914,
+                0.931,
+                0.921
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.927,
+                0.931,
+                0.936
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.941,
+                0.931,
+                0.95
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "page_number",
+            "bbox": [
+                0.916,
+                0.969,
+                0.934,
+                0.98
+            ],
+            "angle": 0,
+            "content": "15"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.25,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.886,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.063,
+                0.105,
+                0.935,
+                0.314
+            ],
+            "angle": 0,
+            "content": "Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.313,
+                0.935,
+                0.382
+            ],
+            "angle": 0,
+            "content": "The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.383,
+                0.934,
+                0.41
+            ],
+            "angle": 0,
+            "content": "The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.411,
+                0.935,
+                0.465
+            ],
+            "angle": 0,
+            "content": "As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.466,
+                0.935,
+                0.507
+            ],
+            "angle": 0,
+            "content": "The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.508,
+                0.721,
+                0.521
+            ],
+            "angle": 0,
+            "content": "MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.521,
+                0.876,
+                0.535
+            ],
+            "angle": 0,
+            "content": "Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.536,
+                0.934,
+                0.577
+            ],
+            "angle": 0,
+            "content": "The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.579,
+                0.934,
+                0.631
+            ],
+            "angle": 0,
+            "content": "Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.117,
+                0.644,
+                0.415,
+                0.659
+            ],
+            "angle": 0,
+            "content": "INDUSTRY COVERAGE: Semiconductors"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.118,
+                0.664,
+                0.882,
+                0.935
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (06/30/2026)</td></tr><tr><td colspan=\"3\">Joseph Moore</td></tr><tr><td>Advanced Micro Devices (AMD.O)</td><td>E (06/09/2024)</td><td>$580.91</td></tr><tr><td>Aeva Technologies Inc (AEVA.O)</td><td>E (07/19/2021)</td><td>$28.72</td></tr><tr><td>Allegro Microsystems Inc (ALGM.O)</td><td>O (02/13/2026)</td><td>$69.62</td></tr><tr><td>Ambarella Inc (AMBA.O)</td><td>O (03/29/2016)</td><td>$85.80</td></tr><tr><td>Amkor Technology Inc (AMKR.O)</td><td>E (11/08/2023)</td><td>$86.23</td></tr><tr><td>Analog Devices Inc. (ADI.O)</td><td>O (11/16/2023)</td><td>$397.17</td></tr><tr><td>Astera Labs Inc (ALAB.O)</td><td>O (05/11/2025)</td><td>$483.02</td></tr><tr><td>Broadcom Inc. (AVGO.O)</td><td>O (06/09/2024)</td><td>$377.75</td></tr><tr><td>Cerebras Systems (CBRS.O)</td><td>O (06/08/2026)</td><td>$221.00</td></tr><tr><td>GlobalFoundries Inc (GFS.O)</td><td>E (10/28/2024)</td><td>$82.41</td></tr><tr><td>Intel Corporation (INTC.O)</td><td>E (02/22/2023)</td><td>$139.63</td></tr><tr><td>IonQ Inc (IONQ.N)</td><td>E (04/25/2023)</td><td>$53.26</td></tr><tr><td>Marvell Technology Group Ltd (MRVL.O)</td><td>E (09/14/2015)</td><td>$297.89</td></tr><tr><td>Microchip Technology Inc. (MCHP.O)</td><td>E (07/10/2024)</td><td>$91.20</td></tr><tr><td>Micron Technology Inc. (MU.O)</td><td>O (10/06/2025)</td><td>$1,154.29</td></tr></table>"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.968,
+                0.242,
+                0.98
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.107,
+                0.931,
+                0.116
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.12,
+                0.931,
+                0.13
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.134,
+                0.93,
+                0.144
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.149,
+                0.931,
+                0.158
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.163,
+                0.931,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.176,
+                0.93,
+                0.185
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.19,
+                0.931,
+                0.2
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.206,
+                0.93,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.219,
+                0.931,
+                0.228
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.232,
+                0.932,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.246,
+                0.932,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.26,
+                0.931,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.274,
+                0.93,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.288,
+                0.931,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.302,
+                0.514,
+                0.312
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.316,
+                0.931,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.33,
+                0.93,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.342,
+                0.931,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.357,
+                0.931,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.372,
+                0.277,
+                0.381
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.385,
+                0.931,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.399,
+                0.765,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.413,
+                0.932,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.427,
+                0.932,
+                0.437
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.44,
+                0.932,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.455,
+                0.235,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.468,
+                0.931,
+                0.478
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.483,
+                0.931,
+                0.492
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.496,
+                0.349,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.51,
+                0.718,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.524,
+                0.872,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.537,
+                0.931,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.552,
+                0.929,
+                0.561
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.565,
+                0.733,
+                0.575
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.58,
+                0.93,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.598,
+                0.932,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.066,
+                0.615,
+                0.412,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.12,
+                0.646,
+                0.411,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.046,
+                0.251,
+                0.063
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.885,
+                0.05,
+                0.934,
+                0.062
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.122,
+                0.097,
+                0.883,
+                0.363
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Navitas Semiconductor Corp (NVTS.O)</td><td>U (04/06/2025)</td><td>$17.92</td></tr><tr><td>NVIDIA Corp. (NVDA.O)</td><td>O (03/16/2023)</td><td>$200.09</td></tr><tr><td>NXP Semiconductor NV (NXPI.O)</td><td>O (02/11/2025)</td><td>$281.03</td></tr><tr><td>ON Semiconductor Corp. (ON.O)</td><td>++</td><td>$94.54</td></tr><tr><td>Qorvo Inc (QRVO.O)</td><td>E (10/28/2025)</td><td>$93.27</td></tr><tr><td>Qualcomm Inc. (QCOM.O)</td><td>E (06/24/2026)</td><td>$184.79</td></tr><tr><td>Quantinuum (QNT.O)</td><td>E (06/29/2026)</td><td>$81.74</td></tr><tr><td>SanDisk Corporation. (SNDK.O)</td><td>O (03/03/2025)</td><td>$2,273.73</td></tr><tr><td>Semtech Corp. (SMTC.O)</td><td>E (04/06/2025)</td><td>$161.85</td></tr><tr><td>Silicon Laboratories Inc. (SLAB.O)</td><td>E (01/19/2021)</td><td>$218.56</td></tr><tr><td>Skyworks Solutions Inc (SWKS.O)</td><td>E (11/28/2018)</td><td>$67.80</td></tr><tr><td>Texas Instruments (TXN.O)</td><td>U (04/13/2020)</td><td>$298.07</td></tr><tr><td>Wolfspeed, INC (WOLF.N)</td><td>NR (04/06/2025)</td><td>$48.25</td></tr><tr><td colspan=\"3\">Lee Simpson</td></tr><tr><td>Arm Holdings plc (ARM.O)</td><td>E (04/07/2026)</td><td>$354.57</td></tr><tr><td>Cadence Design Systems Inc (CDNS.O)</td><td>O (02/14/2024)</td><td>$375.32</td></tr><tr><td>Synopsys Inc. (SNPS.O)</td><td>E (02/27/2026)</td><td>$446.07</td></tr></table>",
+            "cell_merge": [
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.117,
+                0.367,
+                0.525,
+                0.38
+            ],
+            "angle": 0,
+            "content": "Stock Ratings are subject to change. Please see latest research for each company."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.118,
+                0.38,
+                0.316,
+                0.393
+            ],
+            "angle": 0,
+            "content": "* Historical prices are not split adjusted.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.118,
+                0.407,
+                0.542,
+                0.423
+            ],
+            "angle": 0,
+            "content": "INDUSTRY COVERAGE: Semiconductor Capital Equipment"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.118,
+                0.426,
+                0.882,
+                0.591
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (06/30/2026)</td></tr><tr><td colspan=\"3\">Shane Brett</td></tr><tr><td>Applied Materials Inc. (AMAT.O)</td><td>E (05/18/2026)</td><td>$723.00</td></tr><tr><td>Camtek (CAMT.O)</td><td>E (12/01/2025)</td><td>$163.12</td></tr><tr><td>KLA Corp (KLAC.O)</td><td>O (01/15/2026)</td><td>$301.71</td></tr><tr><td>Lam Research Corp (LRCX.O)</td><td>O (05/18/2026)</td><td>$433.33</td></tr><tr><td>MKS Inc. (MKSI.O)</td><td>O (08/04/2024)</td><td>$444.80</td></tr><tr><td>Nova Ltd (NVMI.O)</td><td>E (12/01/2025)</td><td>$542.94</td></tr><tr><td>ONTO Innovation Inc (ONTO.N)</td><td>O (06/14/2026)</td><td>$378.45</td></tr><tr><td>Teradyne Inc (TER.O)</td><td>E (07/30/2025)</td><td>$483.84</td></tr></table>"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.117,
+                0.595,
+                0.526,
+                0.608
+            ],
+            "angle": 0,
+            "content": "Stock Ratings are subject to change. Please see latest research for each company."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.118,
+                0.608,
+                0.318,
+                0.621
+            ],
+            "angle": 0,
+            "content": "* Historical prices are not split adjusted."
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.065,
+                0.652,
+                0.236,
+                0.668
+            ],
+            "angle": 0,
+            "content": "© 2026 MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.066,
+                0.969,
+                0.084,
+                0.98
+            ],
+            "angle": 0,
+            "content": "16"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.119,
+                0.381,
+                0.314,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.653,
+                0.232,
+                0.667
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

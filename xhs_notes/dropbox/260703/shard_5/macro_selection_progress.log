@@ -1,0 +1,3 @@
+Loaded 50 PDFs for macro classification.
+DeepSeek classification failed, using heuristic fallback: DeepSeek classification failed: HTTP 402, {"error":{"message":"Insufficient Balance","type":"unknown_error","param":null,"code":"invalid_request_error"}}
+Selected 33 macro candidates; copied 33 PDFs for processing to /home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs

@@ -1,0 +1,39 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_a0b3a53u/pdfs/0003-29-MS-Energy Security - AI-Key Investor Questions-260702.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "institution_name": "摩根斯坦利",
+  "cover_short_title": "DeepSeek 生",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png",
+    "assets/xhs_card_03.png",
+    "assets/xhs_card_04.png",
+    "assets/xhs_card_05.png",
+    "assets/xhs_card_06.png",
+    "assets/xhs_card_07.png",
+    "assets/xhs_card_08.png",
+    "assets/xhs_card_09.png"
+  ],
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "wechat_en_error": "DeepSeek generate English WeChat-style article: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_error": "DeepSeek generate conversational Chinese and English podcast scripts: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md_error": "DeepSeek generate Xianyu listing note: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "xianyu_note_chars": "244",
+  "xianyu_note_no_emoji": "true",
+  "xianyu_note_max_chars": "1499",
+  "zhihu_article.md_error": "DeepSeek generate Zhihu article: HTTP 402, response={\"error\": {\"message\": \"Insufficient Balance\", \"type\": \"unknown_error\", \"param\": null, \"code\": \"invalid_request_error\"}}",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
