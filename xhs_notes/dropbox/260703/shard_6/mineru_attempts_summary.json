@@ -1,0 +1,24 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 2,
+    "successful_pdf_count": 2,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_vpxsuci1/pdfs/0001-32-NOM-Sungrow Power Supply-300274--US inverter ban- news and company call update-260701.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vpxsuci1/pdfs/0002-33-NOM-USD CNY fix model Projection- 6.7785-260703.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
