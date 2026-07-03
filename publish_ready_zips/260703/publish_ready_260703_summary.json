@@ -1,0 +1,131 @@
+{
+  "created_at_utc": "2026-07-03T22:21:12.123459+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260703",
+  "output_dir": "publish_ready_zips/260703",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 7,
+  "skipped_shards": [],
+  "total_files": 534,
+  "total_renamed_markdown_count": 160,
+  "total_raw_file_bytes": 68534357,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260703/publish_ready_260703.zip",
+      "size_bytes": 64482520,
+      "file_count": 534,
+      "renamed_markdown_count": 160,
+      "raw_file_bytes": 68534357,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5",
+        "shard_6"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 73,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 8684576,
+      "reports": [
+        "0001-01-Morgan-Stanley-US-Rates-Strategy-Buy-10y-TIPS-with-Payer-Protection-2607",
+        "0002-02-Nomura-Asia-Insights-Korea--Inflation-rises-again-on-higher-oil-prices-w",
+        "0003-03-CITI-China-Economics-Signs-of-Stabilization-Ahead-of-Politburo----Jun-Q2",
+        "0004-04-J.P.-Morgan-J.P.-Morgan-Global-Manufacturing-PMI-Consolidating-around-so",
+        "0005-05-Morgan-Stanley-US-Economics-Consumption-growth-has-slowed---what-gives--"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 89,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11952718,
+      "reports": [
+        "0001-06-Morgan-Stanley-Global-Technology-NAND-Industry-Outlook-Diverging-Trends-",
+        "0002-07-Goldman-Sachs-Strategy-Espresso-Europe-and-the-China-Dragon---a-fiercer-",
+        "0003-08-HSBC-China-Macro-Tracker-Engagement-continues-260701",
+        "0004-09-J.P.-Morgan-China-RatingDog-PMI--Stabilization--Not-Reflation-260701",
+        "0005-10-Nomura-Global-AI-Trend-Tracker-AI-expert-call-69-takeaways---InP-Epi-waf"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 81,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 10911916,
+      "reports": [
+        "0001-11-UBS-UBS-Global-I-O-Semiconductors-Cloud-AI--TSMC-and-ASE-driving-faster-",
+        "0002-12-UBS-US-Economic-Perspectives-Warsh-at-Sintra--3-takeaways-260701",
+        "0003-13-CITI-Kingboard-Group-The-Largest-Degree-of-Price-Inflation-on-E-glass-Fa",
+        "0004-14-Deutsche-Bank-Infineon-Technologies-IFXGn.DE--Postcard-from-Dresden-2607",
+        "0005-16-CITI-China-Auto-Manufacturers-Bi-Monthly-Duo-NEV-Pricing-Trends--Discoun"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11339682,
+      "reports": [
+        "0001-17-Goldman-Sachs-China-Data-Centers--Highlights-from-China-AI-Computing-Ind",
+        "0002-18-J.P.-Morgan-Hardware---Networking-Data-Center-Watch--AI-Demand-Supported",
+        "0003-19-Morgan-Stanley-China-Property-Weakening-Indicators-may-Lead-to-Faster-Ho",
+        "0004-20-Nomura-Asia-Insights-China--Retail-sales-revisited-260702",
+        "0005-21-UBS-China-Property-Top-100-Developers--Sales--softer-momentum-in-June-20"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 83,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11345771,
+      "reports": [
+        "0001-22-BofA-Securities-Top-10-US-Ideas-Quarterly-Introducing-the-Top-10-US-Idea",
+        "0002-23-J.P.-Morgan-China-A-Shares-Monthly-Wrap-June-2026--All-eyes-on-AI-260701",
+        "0003-24-HSBC-Digital-Assets-Pulse-Open-USD--Share-the-yield--share-the-hype-2607",
+        "0004-25-J.P.-Morgan-China-Internet-Cheap-is-acknowledged--urgency-still-needs-pr",
+        "0005-26-J.P.-Morgan-Shandong-Sinocera-A-300285-There-is-no-alternative--Buy-the-"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 95,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12190819,
+      "reports": [
+        "0001-27-Morgan-Stanley-China-Autos---Shared-Mobility-Overseas-strength-and-new-l",
+        "0002-28-Morgan-Stanley-China-Autos---Shared-Mobility-Extending-800V-EV-Technolog",
+        "0003-29-Morgan-Stanley-Energy-Security---AI-Key-Investor-Questions-260702",
+        "0004-30-Morgan-Stanley-Semiconductor-Inventory-Tracker--Not-Restocking-Yet-26070",
+        "0005-31-Nomura-China-factory-automation-data-June-2026-Airtac-sales-up-28--y-y-i"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 2,
+      "file_count": 22,
+      "renamed_markdown_count": 10,
+      "raw_file_bytes": 2108875,
+      "reports": [
+        "0001-32-Nomura-Sungrow-Power-Supply-300274--US-inverter-ban--news-and-company-ca",
+        "0002-33-Nomura-USD-CNY-fix-model-Projection--6.7785-260703"
+      ]
+    }
+  ]
+}
