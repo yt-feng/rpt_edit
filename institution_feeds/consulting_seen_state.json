@@ -188,6 +188,18 @@
     "bcg:https://www.bcg.com/publications/2026/global-wealth-growth-in-an-era-of-reordering": {
       "first_seen": "2026-07-03",
       "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/industries/private%20equity%20and%20principal%20investors/our%20insights/mckinseys%20global%20private%20markets%20report/2026/global-private-markets-report-2026-full-report.pdf": {
+      "first_seen": "2026-07-04",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20digital/our%20insights/the%20top%20trends%20in%20tech%202025/mckinsey-technology-trends-outlook-2025.pdf": {
+      "first_seen": "2026-07-04",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-will-reshape-more-jobs-than-it-replaces": {
+      "first_seen": "2026-07-04",
+      "status": "downloaded"
     }
   }
 }
