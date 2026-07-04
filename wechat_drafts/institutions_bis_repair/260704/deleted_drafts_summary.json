@@ -1,0 +1,16 @@
+{
+  "summary": "wechat_drafts/institutions_bis_repair/260704/missing_failed_bis_summary.json",
+  "dry_run": false,
+  "requested_count": 2,
+  "deleted_count": 2,
+  "results": [
+    {
+      "media_id": "avPwUQVH0p7DPpCFFkit86ilTboXn03Y7fqQyTDRu5UDWyKAqP0LS_SCC7cdwCfy",
+      "deleted": true
+    },
+    {
+      "media_id": "avPwUQVH0p7DPpCFFkit8wKmj6JaoZ3sg7lO6Sj9bf4Al-ao7uHJTHQ95n-ufHB6",
+      "deleted": true
+    }
+  ]
+}

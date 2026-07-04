@@ -1,0 +1,12 @@
+Selected 1 translated reports from kc_translated_reports/institutions/260704 (institution_filtered=72, skipped_title_policy=0/1)
+Fetched WeChat access token
+Uploaded trailing image: /opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg
+Building WeChat article 1/1: 01-0001-BIS_Annual-Economic-Report-2026_5ab56784
+Built WeChat article 1/1 in 3.2s: 国际清算银行：全球经济的“韧性”已到极限，下一步是“稳健性”还是危机？，关税与AI双引擎托底，但能源冲击已撕开新裂口 (body_images=3, ai_images=0)
+Preparing WeChat draft 1: articles=1 payload_bytes=12082
+Checking recent drafts before creating WeChat draft 1
+Creating WeChat draft 1
+Verifying WeChat draft 1: media_id=avPwUQVH0p7DPpCFFkit80rxvRf34zzg1hs2Szgn1F1SWbCTRkOSgQM_0JEUZFSE
+Verified draft/get: media_id=avPwUQVH0p7DPpCFFkit80rxvRf34zzg1hs2Szgn1F1SWbCTRkOSgQM_0JEUZFSE articles=1/1
+Draft 1: articles=1 media_id=avPwUQVH0p7DPpCFFkit80rxvRf34zzg1hs2Szgn1F1SWbCTRkOSgQM_0JEUZFSE
+Wrote summary: wechat_drafts/institutions_bis_repair/260704/wechat_draft_summary.json
